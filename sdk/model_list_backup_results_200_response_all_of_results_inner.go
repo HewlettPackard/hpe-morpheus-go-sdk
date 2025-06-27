@@ -45,8 +45,8 @@ type ListBackupResults200ResponseAllOfResultsInner struct {
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	LastUpdated          *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBackupResults200ResponseAllOfResultsInner ListBackupResults200ResponseAllOfResultsInner
@@ -1043,7 +1043,81 @@ func (o ListBackupResults200ResponseAllOfResultsInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *ListBackupResults200ResponseAllOfResultsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBackupResults200ResponseAllOfResultsInner := _ListBackupResults200ResponseAllOfResultsInner{}
+
+	err = json.Unmarshal(data, &varListBackupResults200ResponseAllOfResultsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupResults200ResponseAllOfResultsInner(varListBackupResults200ResponseAllOfResultsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "backupSetId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "durationMillis")
+		delete(additionalProperties, "sizeInBytes")
+		delete(additionalProperties, "sizeInMb")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "resultArchive")
+		delete(additionalProperties, "resultPath")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "snapshotId")
+		delete(additionalProperties, "snapshotExternalId")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBackupResults200ResponseAllOfResultsInner struct {
+	value *ListBackupResults200ResponseAllOfResultsInner
+	isSet bool
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInner) Get() *ListBackupResults200ResponseAllOfResultsInner {
+	return v.value
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInner) Set(val *ListBackupResults200ResponseAllOfResultsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackupResults200ResponseAllOfResultsInner(val *ListBackupResults200ResponseAllOfResultsInner) *NullableListBackupResults200ResponseAllOfResultsInner {
+	return &NullableListBackupResults200ResponseAllOfResultsInner{value: val, isSet: true}
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

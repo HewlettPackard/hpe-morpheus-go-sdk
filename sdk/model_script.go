@@ -20,24 +20,24 @@ var _ MappedNullable = &Script{}
 
 // Script struct for Script
 type Script struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Account              NullableString         `json:"account,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Labels               []string               `json:"labels,omitempty"`
-	Category             NullableString         `json:"category,omitempty"`
-	SortOrder            *int64                 `json:"sortOrder,omitempty"`
-	ScriptVersion        *string                `json:"scriptVersion,omitempty"`
-	ScriptPhase          *string                `json:"scriptPhase,omitempty"`
-	ScriptType           *string                `json:"scriptType,omitempty"`
-	Script               *string                `json:"script,omitempty"`
-	ScriptService        NullableString         `json:"scriptService,omitempty"`
-	ScriptMethod         NullableString         `json:"scriptMethod,omitempty"`
-	RunAsUser            NullableString         `json:"runAsUser,omitempty"`
-	RunAsPassword        NullableString         `json:"runAsPassword,omitempty"`
-	SudoUser             *bool                  `json:"sudoUser,omitempty"`
-	FailOnError          *bool                  `json:"failOnError,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	Code                 *string        `json:"code,omitempty"`
+	Account              NullableString `json:"account,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	Labels               []string       `json:"labels,omitempty"`
+	Category             NullableString `json:"category,omitempty"`
+	SortOrder            *int64         `json:"sortOrder,omitempty"`
+	ScriptVersion        *string        `json:"scriptVersion,omitempty"`
+	ScriptPhase          *string        `json:"scriptPhase,omitempty"`
+	ScriptType           *string        `json:"scriptType,omitempty"`
+	Script               *string        `json:"script,omitempty"`
+	ScriptService        NullableString `json:"scriptService,omitempty"`
+	ScriptMethod         NullableString `json:"scriptMethod,omitempty"`
+	RunAsUser            NullableString `json:"runAsUser,omitempty"`
+	RunAsPassword        NullableString `json:"runAsPassword,omitempty"`
+	SudoUser             *bool          `json:"sudoUser,omitempty"`
+	FailOnError          *bool          `json:"failOnError,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Script Script
@@ -739,7 +739,76 @@ func (o Script) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Script) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varScript := _Script{}
+
+	err = json.Unmarshal(data, &varScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Script(varScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "scriptService")
+		delete(additionalProperties, "scriptMethod")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "runAsPassword")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "failOnError")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableScript struct {
+	value *Script
+	isSet bool
+}
+
+func (v NullableScript) Get() *Script {
+	return v.value
+}
+
+func (v *NullableScript) Set(val *Script) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableScript(val *Script) *NullableScript {
+	return &NullableScript{value: val, isSet: true}
+}
+
+func (v NullableScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

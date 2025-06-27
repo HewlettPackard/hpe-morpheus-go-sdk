@@ -20,10 +20,10 @@ var _ MappedNullable = &GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner
 
 // GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct for GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
 type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	FilePath             *string                `json:"filePath,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	FilePath             *string `json:"filePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
@@ -168,7 +168,62 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) ToM
 	return toSerialize, nil
 }
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile := _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{}
+
+	err = json.Unmarshal(data, &varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile(varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "filePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct {
+	value *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
+	isSet bool
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Get() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
+	return v.value
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Set(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
+	return &NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{value: val, isSet: true}
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

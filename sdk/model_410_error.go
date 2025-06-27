@@ -20,8 +20,8 @@ var _ MappedNullable = &Model410Error{}
 
 // Model410Error struct for Model410Error
 type Model410Error struct {
-	Msg                  *string                `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Msg                  *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Model410Error Model410Error
@@ -96,7 +96,60 @@ func (o Model410Error) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Model410Error) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varModel410Error := _Model410Error{}
+
+	err = json.Unmarshal(data, &varModel410Error)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Model410Error(varModel410Error)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableModel410Error struct {
+	value *Model410Error
+	isSet bool
+}
+
+func (v NullableModel410Error) Get() *Model410Error {
+	return v.value
+}
+
+func (v *NullableModel410Error) Set(val *Model410Error) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableModel410Error) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableModel410Error) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableModel410Error(val *Model410Error) *NullableModel410Error {
+	return &NullableModel410Error{value: val, isSet: true}
+}
+
+func (v NullableModel410Error) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableModel410Error) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

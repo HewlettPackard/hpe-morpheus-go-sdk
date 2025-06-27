@@ -50,7 +50,7 @@ type GuidanceVmwareSizing struct {
 	PlanBeforeAction     *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction `json:"planBeforeAction,omitempty"`
 	PlanAfterAction      *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction  `json:"planAfterAction,omitempty"`
 	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig           `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GuidanceVmwareSizing GuidanceVmwareSizing
@@ -1149,7 +1149,88 @@ func (o GuidanceVmwareSizing) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GuidanceVmwareSizing) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGuidanceVmwareSizing := _GuidanceVmwareSizing{}
+
+	err = json.Unmarshal(data, &varGuidanceVmwareSizing)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GuidanceVmwareSizing(varGuidanceVmwareSizing)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "actionCategory")
+		delete(additionalProperties, "actionMessage")
+		delete(additionalProperties, "actionTitle")
+		delete(additionalProperties, "actionType")
+		delete(additionalProperties, "actionValue")
+		delete(additionalProperties, "actionValueType")
+		delete(additionalProperties, "actionPlanId")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "userId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "stateMessage")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "resolved")
+		delete(additionalProperties, "resolvedMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "savings")
+		delete(additionalProperties, "resource")
+		delete(additionalProperties, "planBeforeAction")
+		delete(additionalProperties, "planAfterAction")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGuidanceVmwareSizing struct {
+	value *GuidanceVmwareSizing
+	isSet bool
+}
+
+func (v NullableGuidanceVmwareSizing) Get() *GuidanceVmwareSizing {
+	return v.value
+}
+
+func (v *NullableGuidanceVmwareSizing) Set(val *GuidanceVmwareSizing) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGuidanceVmwareSizing) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGuidanceVmwareSizing) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGuidanceVmwareSizing(val *GuidanceVmwareSizing) *NullableGuidanceVmwareSizing {
+	return &NullableGuidanceVmwareSizing{value: val, isSet: true}
+}
+
+func (v NullableGuidanceVmwareSizing) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGuidanceVmwareSizing) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

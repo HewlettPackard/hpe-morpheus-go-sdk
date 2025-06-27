@@ -20,9 +20,9 @@ var _ MappedNullable = &MaxCoresPolicyTypeConfiguration{}
 
 // MaxCoresPolicyTypeConfiguration Configuration settings for the following policy types: - Max Cores
 type MaxCoresPolicyTypeConfiguration struct {
-	MaxCores             *string                `json:"maxCores,omitempty"`
-	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxCores             *string `json:"maxCores,omitempty"`
+	ExcludeContainers    *string `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MaxCoresPolicyTypeConfiguration MaxCoresPolicyTypeConfiguration
@@ -136,7 +136,61 @@ func (o MaxCoresPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *MaxCoresPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMaxCoresPolicyTypeConfiguration := _MaxCoresPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxCoresPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxCoresPolicyTypeConfiguration(varMaxCoresPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMaxCoresPolicyTypeConfiguration struct {
+	value *MaxCoresPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMaxCoresPolicyTypeConfiguration) Get() *MaxCoresPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMaxCoresPolicyTypeConfiguration) Set(val *MaxCoresPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxCoresPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxCoresPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxCoresPolicyTypeConfiguration(val *MaxCoresPolicyTypeConfiguration) *NullableMaxCoresPolicyTypeConfiguration {
+	return &NullableMaxCoresPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMaxCoresPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxCoresPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

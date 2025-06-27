@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateLoadBalancerPoolRequest{}
 // CreateLoadBalancerPoolRequest struct for CreateLoadBalancerPoolRequest
 type CreateLoadBalancerPoolRequest struct {
 	LoadBalancerPool     *CreateLoadBalancerPoolRequestLoadBalancerPool `json:"loadBalancerPool,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateLoadBalancerPoolRequest CreateLoadBalancerPoolRequest
@@ -96,7 +96,60 @@ func (o CreateLoadBalancerPoolRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateLoadBalancerPoolRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateLoadBalancerPoolRequest := _CreateLoadBalancerPoolRequest{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerPoolRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerPoolRequest(varCreateLoadBalancerPoolRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "loadBalancerPool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateLoadBalancerPoolRequest struct {
+	value *CreateLoadBalancerPoolRequest
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) Get() *CreateLoadBalancerPoolRequest {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) Set(val *CreateLoadBalancerPoolRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerPoolRequest(val *CreateLoadBalancerPoolRequest) *NullableCreateLoadBalancerPoolRequest {
+	return &NullableCreateLoadBalancerPoolRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

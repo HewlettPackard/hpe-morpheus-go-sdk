@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig type satisfies the MappedNullable interface at compile time
@@ -55,8 +56,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig struct {
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
-	TaskSetName          *string                `json:"taskSetName,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	TaskSetName          *string `json:"taskSetName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig
@@ -760,7 +761,108 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"group",
+		"cloud",
+		"type",
+		"name",
+		"config",
+		"volumes",
+		"layout",
+		"plan",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "ports")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "taskSetName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

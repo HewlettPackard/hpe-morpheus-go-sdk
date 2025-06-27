@@ -21,31 +21,31 @@ var _ MappedNullable = &InstanceThreshold{}
 
 // InstanceThreshold struct for InstanceThreshold
 type InstanceThreshold struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	AutoUp               *bool                  `json:"autoUp,omitempty"`
-	AutoDown             *bool                  `json:"autoDown,omitempty"`
-	MinCount             *int64                 `json:"minCount,omitempty"`
-	MaxCount             *int64                 `json:"maxCount,omitempty"`
-	ScaleIncrement       *int64                 `json:"scaleIncrement,omitempty"`
-	CpuEnabled           *bool                  `json:"cpuEnabled,omitempty"`
-	MinCpu               *int64                 `json:"minCpu,omitempty"`
-	MaxCpu               *int64                 `json:"maxCpu,omitempty"`
-	MemoryEnabled        *bool                  `json:"memoryEnabled,omitempty"`
-	MinMemory            *int64                 `json:"minMemory,omitempty"`
-	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
-	DiskEnabled          *bool                  `json:"diskEnabled,omitempty"`
-	MinDisk              *int64                 `json:"minDisk,omitempty"`
-	MaxDisk              *int64                 `json:"maxDisk,omitempty"`
-	MinNetwork           NullableString         `json:"minNetwork,omitempty"`
-	NetworkEnabled       *bool                  `json:"networkEnabled,omitempty"`
-	IopsEnabled          *bool                  `json:"iopsEnabled,omitempty"`
-	MinIops              NullableString         `json:"minIops,omitempty"`
-	MaxIops              NullableString         `json:"maxIops,omitempty"`
-	Comment              NullableString         `json:"comment,omitempty"`
-	ZoneId               NullableInt64          `json:"zoneId,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	AutoUp               *bool          `json:"autoUp,omitempty"`
+	AutoDown             *bool          `json:"autoDown,omitempty"`
+	MinCount             *int64         `json:"minCount,omitempty"`
+	MaxCount             *int64         `json:"maxCount,omitempty"`
+	ScaleIncrement       *int64         `json:"scaleIncrement,omitempty"`
+	CpuEnabled           *bool          `json:"cpuEnabled,omitempty"`
+	MinCpu               *int64         `json:"minCpu,omitempty"`
+	MaxCpu               *int64         `json:"maxCpu,omitempty"`
+	MemoryEnabled        *bool          `json:"memoryEnabled,omitempty"`
+	MinMemory            *int64         `json:"minMemory,omitempty"`
+	MaxMemory            *int64         `json:"maxMemory,omitempty"`
+	DiskEnabled          *bool          `json:"diskEnabled,omitempty"`
+	MinDisk              *int64         `json:"minDisk,omitempty"`
+	MaxDisk              *int64         `json:"maxDisk,omitempty"`
+	MinNetwork           NullableString `json:"minNetwork,omitempty"`
+	NetworkEnabled       *bool          `json:"networkEnabled,omitempty"`
+	IopsEnabled          *bool          `json:"iopsEnabled,omitempty"`
+	MinIops              NullableString `json:"minIops,omitempty"`
+	MaxIops              NullableString `json:"maxIops,omitempty"`
+	Comment              NullableString `json:"comment,omitempty"`
+	ZoneId               NullableInt64  `json:"zoneId,omitempty"`
+	DateCreated          *time.Time     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time     `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceThreshold InstanceThreshold
@@ -980,7 +980,83 @@ func (o InstanceThreshold) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceThreshold) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varInstanceThreshold := _InstanceThreshold{}
+
+	err = json.Unmarshal(data, &varInstanceThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceThreshold(varInstanceThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "scaleIncrement")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "minNetwork")
+		delete(additionalProperties, "networkEnabled")
+		delete(additionalProperties, "iopsEnabled")
+		delete(additionalProperties, "minIops")
+		delete(additionalProperties, "maxIops")
+		delete(additionalProperties, "comment")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableInstanceThreshold struct {
+	value *InstanceThreshold
+	isSet bool
+}
+
+func (v NullableInstanceThreshold) Get() *InstanceThreshold {
+	return v.value
+}
+
+func (v *NullableInstanceThreshold) Set(val *InstanceThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceThreshold(val *InstanceThreshold) *NullableInstanceThreshold {
+	return &NullableInstanceThreshold{value: val, isSet: true}
+}
+
+func (v NullableInstanceThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

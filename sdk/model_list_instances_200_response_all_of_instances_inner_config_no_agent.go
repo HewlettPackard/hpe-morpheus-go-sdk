@@ -25,22 +25,6 @@ type ListInstances200ResponseAllOfInstancesInnerConfigNoAgent struct {
 	String *string
 }
 
-func (dst *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &ListInstances200ResponseAllOfInstancesInnerConfigNoAgent{}
-	}
-
-	if out, ok := data.(bool); ok {
-		dst.Bool = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListInstances200ResponseAllOfInstancesInnerConfigNoAgent) UnmarshalJSON(data []byte) error {
 	var err error

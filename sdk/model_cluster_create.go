@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ClusterCreate type satisfies the MappedNullable interface at compile time
@@ -34,8 +35,8 @@ type ClusterCreate struct {
 	// Automatically Power on VMs
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
 	// Optional Workflow Id desired to be run
-	TaskSetId            *int64                 `json:"taskSetId,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	TaskSetId            *int64 `json:"taskSetId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterCreate ClusterCreate
@@ -375,7 +376,95 @@ func (o ClusterCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"name",
+		"group",
+		"cloud",
+		"layout",
+		"server",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varClusterCreate := _ClusterCreate{}
+
+	err = json.Unmarshal(data, &varClusterCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterCreate(varClusterCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "taskSetId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterCreate struct {
+	value *ClusterCreate
+	isSet bool
+}
+
+func (v NullableClusterCreate) Get() *ClusterCreate {
+	return v.value
+}
+
+func (v *NullableClusterCreate) Set(val *ClusterCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterCreate(val *ClusterCreate) *NullableClusterCreate {
+	return &NullableClusterCreate{value: val, isSet: true}
+}
+
+func (v NullableClusterCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

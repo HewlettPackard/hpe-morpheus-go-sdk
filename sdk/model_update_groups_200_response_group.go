@@ -36,7 +36,7 @@ type UpdateGroups200ResponseGroup struct {
 	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
 	ServerCount          *int64                                              `json:"serverCount,omitempty"`
 	Success              *bool                                               `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateGroups200ResponseGroup UpdateGroups200ResponseGroup
@@ -623,7 +623,74 @@ func (o UpdateGroups200ResponseGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateGroups200ResponseGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateGroups200ResponseGroup := _UpdateGroups200ResponseGroup{}
+
+	err = json.Unmarshal(data, &varUpdateGroups200ResponseGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateGroups200ResponseGroup(varUpdateGroups200ResponseGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateGroups200ResponseGroup struct {
+	value *UpdateGroups200ResponseGroup
+	isSet bool
+}
+
+func (v NullableUpdateGroups200ResponseGroup) Get() *UpdateGroups200ResponseGroup {
+	return v.value
+}
+
+func (v *NullableUpdateGroups200ResponseGroup) Set(val *UpdateGroups200ResponseGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateGroups200ResponseGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateGroups200ResponseGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateGroups200ResponseGroup(val *UpdateGroups200ResponseGroup) *NullableUpdateGroups200ResponseGroup {
+	return &NullableUpdateGroups200ResponseGroup{value: val, isSet: true}
+}
+
+func (v NullableUpdateGroups200ResponseGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateGroups200ResponseGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -35,7 +35,7 @@ type Policy struct {
 	Enabled              *bool                                                       `json:"enabled,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
 	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Policy Policy
@@ -645,7 +645,74 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Policy) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varPolicy := _Policy{}
+
+	err = json.Unmarshal(data, &varPolicy)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Policy(varPolicy)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "eachUser")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullablePolicy struct {
+	value *Policy
+	isSet bool
+}
+
+func (v NullablePolicy) Get() *Policy {
+	return v.value
+}
+
+func (v *NullablePolicy) Set(val *Policy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePolicy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePolicy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePolicy(val *Policy) *NullablePolicy {
+	return &NullablePolicy{value: val, isSet: true}
+}
+
+func (v NullablePolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePolicy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

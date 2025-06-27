@@ -20,11 +20,11 @@ var _ MappedNullable = &AddUserTenant200ResponseAllOfUserRolesInner{}
 
 // AddUserTenant200ResponseAllOfUserRolesInner struct for AddUserTenant200ResponseAllOfUserRolesInner
 type AddUserTenant200ResponseAllOfUserRolesInner struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Authority            *string                `json:"authority,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	Authority            *string `json:"authority,omitempty"`
+	Description          *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserTenant200ResponseAllOfUserRolesInner AddUserTenant200ResponseAllOfUserRolesInner
@@ -204,7 +204,63 @@ func (o AddUserTenant200ResponseAllOfUserRolesInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *AddUserTenant200ResponseAllOfUserRolesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddUserTenant200ResponseAllOfUserRolesInner := _AddUserTenant200ResponseAllOfUserRolesInner{}
+
+	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUserRolesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserTenant200ResponseAllOfUserRolesInner(varAddUserTenant200ResponseAllOfUserRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddUserTenant200ResponseAllOfUserRolesInner struct {
+	value *AddUserTenant200ResponseAllOfUserRolesInner
+	isSet bool
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserRolesInner) Get() *AddUserTenant200ResponseAllOfUserRolesInner {
+	return v.value
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserRolesInner) Set(val *AddUserTenant200ResponseAllOfUserRolesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserRolesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserRolesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddUserTenant200ResponseAllOfUserRolesInner(val *AddUserTenant200ResponseAllOfUserRolesInner) *NullableAddUserTenant200ResponseAllOfUserRolesInner {
+	return &NullableAddUserTenant200ResponseAllOfUserRolesInner{value: val, isSet: true}
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserRolesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserRolesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

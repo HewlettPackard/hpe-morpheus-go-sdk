@@ -23,7 +23,7 @@ type ListInstances200ResponseAllOfInstancesInnerCluster struct {
 	Id                   *int64                                                      `json:"id,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerCluster ListInstances200ResponseAllOfInstancesInnerCluster
@@ -168,7 +168,62 @@ func (o ListInstances200ResponseAllOfInstancesInnerCluster) ToMap() (map[string]
 	return toSerialize, nil
 }
 func (o *ListInstances200ResponseAllOfInstancesInnerCluster) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListInstances200ResponseAllOfInstancesInnerCluster := _ListInstances200ResponseAllOfInstancesInnerCluster{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerCluster)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerCluster(varListInstances200ResponseAllOfInstancesInnerCluster)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListInstances200ResponseAllOfInstancesInnerCluster struct {
+	value *ListInstances200ResponseAllOfInstancesInnerCluster
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerCluster) Get() *ListInstances200ResponseAllOfInstancesInnerCluster {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerCluster) Set(val *ListInstances200ResponseAllOfInstancesInnerCluster) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerCluster) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerCluster) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerCluster(val *ListInstances200ResponseAllOfInstancesInnerCluster) *NullableListInstances200ResponseAllOfInstancesInnerCluster {
+	return &NullableListInstances200ResponseAllOfInstancesInnerCluster{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerCluster) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerCluster) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

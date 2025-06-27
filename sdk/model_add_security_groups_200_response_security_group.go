@@ -36,7 +36,7 @@ type AddSecurityGroups200ResponseSecurityGroup struct {
 	Tenants              []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermission   *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
 	Success              *bool                                                                    `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityGroups200ResponseSecurityGroup AddSecurityGroups200ResponseSecurityGroup
@@ -680,7 +680,75 @@ func (o AddSecurityGroups200ResponseSecurityGroup) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *AddSecurityGroups200ResponseSecurityGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddSecurityGroups200ResponseSecurityGroup := _AddSecurityGroups200ResponseSecurityGroup{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroups200ResponseSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroups200ResponseSecurityGroup(varAddSecurityGroups200ResponseSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "groupSource")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "rules")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddSecurityGroups200ResponseSecurityGroup struct {
+	value *AddSecurityGroups200ResponseSecurityGroup
+	isSet bool
+}
+
+func (v NullableAddSecurityGroups200ResponseSecurityGroup) Get() *AddSecurityGroups200ResponseSecurityGroup {
+	return v.value
+}
+
+func (v *NullableAddSecurityGroups200ResponseSecurityGroup) Set(val *AddSecurityGroups200ResponseSecurityGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityGroups200ResponseSecurityGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityGroups200ResponseSecurityGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityGroups200ResponseSecurityGroup(val *AddSecurityGroups200ResponseSecurityGroup) *NullableAddSecurityGroups200ResponseSecurityGroup {
+	return &NullableAddSecurityGroups200ResponseSecurityGroup{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityGroups200ResponseSecurityGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityGroups200ResponseSecurityGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

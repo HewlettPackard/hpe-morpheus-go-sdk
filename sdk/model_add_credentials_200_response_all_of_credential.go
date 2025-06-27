@@ -45,7 +45,7 @@ type AddCredentials200ResponseAllOfCredential struct {
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	Config               *AddCredentials200ResponseAllOfCredentialConfig             `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCredentials200ResponseAllOfCredential AddCredentials200ResponseAllOfCredential
@@ -1057,7 +1057,83 @@ func (o AddCredentials200ResponseAllOfCredential) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddCredentials200ResponseAllOfCredential) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCredentials200ResponseAllOfCredential := _AddCredentials200ResponseAllOfCredential{}
+
+	err = json.Unmarshal(data, &varAddCredentials200ResponseAllOfCredential)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCredentials200ResponseAllOfCredential(varAddCredentials200ResponseAllOfCredential)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "authKey")
+		delete(additionalProperties, "authPath")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "user")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCredentials200ResponseAllOfCredential struct {
+	value *AddCredentials200ResponseAllOfCredential
+	isSet bool
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredential) Get() *AddCredentials200ResponseAllOfCredential {
+	return v.value
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredential) Set(val *AddCredentials200ResponseAllOfCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentials200ResponseAllOfCredential(val *AddCredentials200ResponseAllOfCredential) *NullableAddCredentials200ResponseAllOfCredential {
+	return &NullableAddCredentials200ResponseAllOfCredential{value: val, isSet: true}
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -26,7 +26,7 @@ type AddBlueprint200Response struct {
 	ErrorCode            NullableString                         `json:"errorCode,omitempty"`
 	InProgress           *bool                                  `json:"inProgress,omitempty"`
 	Success              *bool                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprint200Response AddBlueprint200Response
@@ -309,7 +309,65 @@ func (o AddBlueprint200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBlueprint200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddBlueprint200Response := _AddBlueprint200Response{}
+
+	err = json.Unmarshal(data, &varAddBlueprint200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprint200Response(varAddBlueprint200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "msg")
+		delete(additionalProperties, "errors")
+		delete(additionalProperties, "errorCode")
+		delete(additionalProperties, "inProgress")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBlueprint200Response struct {
+	value *AddBlueprint200Response
+	isSet bool
+}
+
+func (v NullableAddBlueprint200Response) Get() *AddBlueprint200Response {
+	return v.value
+}
+
+func (v *NullableAddBlueprint200Response) Set(val *AddBlueprint200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprint200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprint200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprint200Response(val *AddBlueprint200Response) *NullableAddBlueprint200Response {
+	return &NullableAddBlueprint200Response{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprint200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprint200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

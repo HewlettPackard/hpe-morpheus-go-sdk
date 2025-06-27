@@ -30,7 +30,7 @@ type SaveClusterDatastoreRequestDatastore struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SaveClusterDatastoreRequestDatastore SaveClusterDatastoreRequestDatastore
@@ -420,7 +420,69 @@ func (o SaveClusterDatastoreRequestDatastore) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *SaveClusterDatastoreRequestDatastore) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSaveClusterDatastoreRequestDatastore := _SaveClusterDatastoreRequestDatastore{}
+
+	err = json.Unmarshal(data, &varSaveClusterDatastoreRequestDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveClusterDatastoreRequestDatastore(varSaveClusterDatastoreRequestDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "datastoreType")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "datastores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSaveClusterDatastoreRequestDatastore struct {
+	value *SaveClusterDatastoreRequestDatastore
+	isSet bool
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastore) Get() *SaveClusterDatastoreRequestDatastore {
+	return v.value
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastore) Set(val *SaveClusterDatastoreRequestDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveClusterDatastoreRequestDatastore(val *SaveClusterDatastoreRequestDatastore) *NullableSaveClusterDatastoreRequestDatastore {
+	return &NullableSaveClusterDatastoreRequestDatastore{value: val, isSet: true}
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

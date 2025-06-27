@@ -23,7 +23,7 @@ type Permissions struct {
 	ResourcePool         *AddCluster200ResponseAllOfClusterPermissionsResourcePool             `json:"resourcePool,omitempty"`
 	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	TenantPermissions    *AddCloudResourcePoolRequestResourcePoolTenantPermissions             `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Permissions Permissions
@@ -168,7 +168,62 @@ func (o Permissions) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Permissions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varPermissions := _Permissions{}
+
+	err = json.Unmarshal(data, &varPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Permissions(varPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullablePermissions struct {
+	value *Permissions
+	isSet bool
+}
+
+func (v NullablePermissions) Get() *Permissions {
+	return v.value
+}
+
+func (v *NullablePermissions) Set(val *Permissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePermissions(val *Permissions) *NullablePermissions {
+	return &NullablePermissions{value: val, isSet: true}
+}
+
+func (v NullablePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

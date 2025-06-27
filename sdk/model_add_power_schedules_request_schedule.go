@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddPowerSchedulesRequestSchedule type satisfies the MappedNullable interface at compile time
@@ -57,8 +58,8 @@ type AddPowerSchedulesRequestSchedule struct {
 	// Sunday Start time of the day in 24-hour format
 	SundayOnTime *string `json:"sundayOnTime,omitempty"`
 	// Sunday Off time of the day in 24-hour format
-	SundayOffTime        *string                `json:"sundayOffTime,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	SundayOffTime        *string `json:"sundayOffTime,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPowerSchedulesRequestSchedule AddPowerSchedulesRequestSchedule
@@ -818,7 +819,99 @@ func (o AddPowerSchedulesRequestSchedule) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *AddPowerSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddPowerSchedulesRequestSchedule := _AddPowerSchedulesRequestSchedule{}
+
+	err = json.Unmarshal(data, &varAddPowerSchedulesRequestSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPowerSchedulesRequestSchedule(varAddPowerSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "mondayOnTime")
+		delete(additionalProperties, "mondayOffTime")
+		delete(additionalProperties, "tuesdayOnTime")
+		delete(additionalProperties, "tuesdayOffTime")
+		delete(additionalProperties, "wednesdayOnTime")
+		delete(additionalProperties, "wednesdayOffTime")
+		delete(additionalProperties, "thursdayOnTime")
+		delete(additionalProperties, "thursdayOffTime")
+		delete(additionalProperties, "fridayOnTime")
+		delete(additionalProperties, "fridayOffTime")
+		delete(additionalProperties, "saturdayOnTime")
+		delete(additionalProperties, "saturdayOffTime")
+		delete(additionalProperties, "sundayOnTime")
+		delete(additionalProperties, "sundayOffTime")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPowerSchedulesRequestSchedule struct {
+	value *AddPowerSchedulesRequestSchedule
+	isSet bool
+}
+
+func (v NullableAddPowerSchedulesRequestSchedule) Get() *AddPowerSchedulesRequestSchedule {
+	return v.value
+}
+
+func (v *NullableAddPowerSchedulesRequestSchedule) Set(val *AddPowerSchedulesRequestSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPowerSchedulesRequestSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPowerSchedulesRequestSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPowerSchedulesRequestSchedule(val *AddPowerSchedulesRequestSchedule) *NullableAddPowerSchedulesRequestSchedule {
+	return &NullableAddPowerSchedulesRequestSchedule{value: val, isSet: true}
+}
+
+func (v NullableAddPowerSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPowerSchedulesRequestSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the RunReportsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &RunReportsRequest{}
 // RunReportsRequest struct for RunReportsRequest
 type RunReportsRequest struct {
 	Report               RunReportsRequestReport `json:"report"`
-	AdditionalProperties map[string]interface{}  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RunReportsRequest RunReportsRequest
@@ -87,7 +88,81 @@ func (o RunReportsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *RunReportsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"report",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRunReportsRequest := _RunReportsRequest{}
+
+	err = json.Unmarshal(data, &varRunReportsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunReportsRequest(varRunReportsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "report")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableRunReportsRequest struct {
+	value *RunReportsRequest
+	isSet bool
+}
+
+func (v NullableRunReportsRequest) Get() *RunReportsRequest {
+	return v.value
+}
+
+func (v *NullableRunReportsRequest) Set(val *RunReportsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRunReportsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRunReportsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRunReportsRequest(val *RunReportsRequest) *NullableRunReportsRequest {
+	return &NullableRunReportsRequest{value: val, isSet: true}
+}
+
+func (v NullableRunReportsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRunReportsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

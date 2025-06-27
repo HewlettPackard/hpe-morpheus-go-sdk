@@ -25,8 +25,8 @@ type CreateNetworkPoolRequestNetworkPoolIpRangesInner struct {
 	// Ending IP Address
 	EndAddress *string `json:"endAddress,omitempty"`
 	// IPv6 Network CIDR
-	CidrIPv6             *string                `json:"cidrIPv6,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	CidrIPv6             *string `json:"cidrIPv6,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkPoolRequestNetworkPoolIpRangesInner CreateNetworkPoolRequestNetworkPoolIpRangesInner
@@ -171,7 +171,62 @@ func (o CreateNetworkPoolRequestNetworkPoolIpRangesInner) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkPoolRequestNetworkPoolIpRangesInner := _CreateNetworkPoolRequestNetworkPoolIpRangesInner{}
+
+	err = json.Unmarshal(data, &varCreateNetworkPoolRequestNetworkPoolIpRangesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkPoolRequestNetworkPoolIpRangesInner(varCreateNetworkPoolRequestNetworkPoolIpRangesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "startAddress")
+		delete(additionalProperties, "endAddress")
+		delete(additionalProperties, "cidrIPv6")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner struct {
+	value *CreateNetworkPoolRequestNetworkPoolIpRangesInner
+	isSet bool
+}
+
+func (v NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) Get() *CreateNetworkPoolRequestNetworkPoolIpRangesInner {
+	return v.value
+}
+
+func (v *NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) Set(val *CreateNetworkPoolRequestNetworkPoolIpRangesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkPoolRequestNetworkPoolIpRangesInner(val *CreateNetworkPoolRequestNetworkPoolIpRangesInner) *NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner {
+	return &NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

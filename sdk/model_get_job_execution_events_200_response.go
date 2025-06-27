@@ -21,7 +21,7 @@ var _ MappedNullable = &GetJobExecutionEvents200Response{}
 // GetJobExecutionEvents200Response struct for GetJobExecutionEvents200Response
 type GetJobExecutionEvents200Response struct {
 	ProcessEvent         *ListHistory200ResponseAllOfProcessesInnerEventsInner `json:"processEvent,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetJobExecutionEvents200Response GetJobExecutionEvents200Response
@@ -96,7 +96,60 @@ func (o GetJobExecutionEvents200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *GetJobExecutionEvents200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetJobExecutionEvents200Response := _GetJobExecutionEvents200Response{}
+
+	err = json.Unmarshal(data, &varGetJobExecutionEvents200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetJobExecutionEvents200Response(varGetJobExecutionEvents200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "processEvent")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetJobExecutionEvents200Response struct {
+	value *GetJobExecutionEvents200Response
+	isSet bool
+}
+
+func (v NullableGetJobExecutionEvents200Response) Get() *GetJobExecutionEvents200Response {
+	return v.value
+}
+
+func (v *NullableGetJobExecutionEvents200Response) Set(val *GetJobExecutionEvents200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetJobExecutionEvents200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetJobExecutionEvents200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetJobExecutionEvents200Response(val *GetJobExecutionEvents200Response) *NullableGetJobExecutionEvents200Response {
+	return &NullableGetJobExecutionEvents200Response{value: val, isSet: true}
+}
+
+func (v NullableGetJobExecutionEvents200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetJobExecutionEvents200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

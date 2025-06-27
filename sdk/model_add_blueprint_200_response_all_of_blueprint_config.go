@@ -73,38 +73,6 @@ func AddBlueprint200ResponseAllOfBlueprintConfigOneOf5AsAddBlueprint200ResponseA
 	}
 }
 
-func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddBlueprint200ResponseAllOfBlueprintConfig{}
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf = &out
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf1); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 = &out
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf2); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 = &out
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf3); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 = &out
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf4); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 = &out
-	}
-
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf5); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalJSON(data []byte) error {
 	var err error

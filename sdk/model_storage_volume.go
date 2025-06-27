@@ -78,7 +78,7 @@ type StorageVolume struct {
 	RawData              *string                                                     `json:"rawData,omitempty"`
 	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _StorageVolume StorageVolume
@@ -2357,7 +2357,117 @@ func (o StorageVolume) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *StorageVolume) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varStorageVolume := _StorageVolume{}
+
+	err = json.Unmarshal(data, &varStorageVolume)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageVolume(varStorageVolume)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "deviceName")
+		delete(additionalProperties, "deviceDisplayName")
+		delete(additionalProperties, "volumeName")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "diskMode")
+		delete(additionalProperties, "diskType")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "usedStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "removable")
+		delete(additionalProperties, "poolName")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "datastoreOption")
+		delete(additionalProperties, "storageGroup")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "copyType")
+		delete(additionalProperties, "fiberWwn")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "claimName")
+		delete(additionalProperties, "sharePath")
+		delete(additionalProperties, "sourceId")
+		delete(additionalProperties, "sourceImage")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "rawData")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableStorageVolume struct {
+	value *StorageVolume
+	isSet bool
+}
+
+func (v NullableStorageVolume) Get() *StorageVolume {
+	return v.value
+}
+
+func (v *NullableStorageVolume) Set(val *StorageVolume) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageVolume) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageVolume) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageVolume(val *StorageVolume) *NullableStorageVolume {
+	return &NullableStorageVolume{value: val, isSet: true}
+}
+
+func (v NullableStorageVolume) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageVolume) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddScriptRequestContainerScript type satisfies the MappedNullable interface at compile time
@@ -37,8 +38,8 @@ type AddScriptRequestContainerScript struct {
 	// Run as a specific user.
 	RunAsUser *string `json:"runAsUser,omitempty"`
 	// Sudo, whether or not to run with sudo.
-	SudoUser             *bool                  `json:"sudoUser,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	SudoUser             *bool `json:"sudoUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddScriptRequestContainerScript AddScriptRequestContainerScript
@@ -397,7 +398,89 @@ func (o AddScriptRequestContainerScript) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *AddScriptRequestContainerScript) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddScriptRequestContainerScript := _AddScriptRequestContainerScript{}
+
+	err = json.Unmarshal(data, &varAddScriptRequestContainerScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddScriptRequestContainerScript(varAddScriptRequestContainerScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "sudoUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddScriptRequestContainerScript struct {
+	value *AddScriptRequestContainerScript
+	isSet bool
+}
+
+func (v NullableAddScriptRequestContainerScript) Get() *AddScriptRequestContainerScript {
+	return v.value
+}
+
+func (v *NullableAddScriptRequestContainerScript) Set(val *AddScriptRequestContainerScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddScriptRequestContainerScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddScriptRequestContainerScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddScriptRequestContainerScript(val *AddScriptRequestContainerScript) *NullableAddScriptRequestContainerScript {
+	return &NullableAddScriptRequestContainerScript{value: val, isSet: true}
+}
+
+func (v NullableAddScriptRequestContainerScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddScriptRequestContainerScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

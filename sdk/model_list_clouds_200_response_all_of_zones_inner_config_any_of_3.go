@@ -37,7 +37,7 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 struct {
 	ServiceRegistryId    NullableString                                                `json:"serviceRegistryId,omitempty"`
 	ConfigManagementId   NullableString                                                `json:"configManagementId,omitempty"`
 	PrivateKeyHash       NullableString                                                `json:"privateKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
@@ -760,7 +760,76 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf3 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf3{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf3(varListClouds200ResponseAllOfZonesInnerConfigAnyOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "clientEmail")
+		delete(additionalProperties, "projectId")
+		delete(additionalProperties, "googleRegionId")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "privateKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3 struct {
+	value *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
+	isSet bool
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) Get() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 {
+	return v.value
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) Set(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3) *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3 {
+	return &NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3{value: val, isSet: true}
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf3) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

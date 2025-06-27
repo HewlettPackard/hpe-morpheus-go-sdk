@@ -20,9 +20,9 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 - Max Cores
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 struct {
-	MaxCores             *string                `json:"maxCores,omitempty"`
-	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxCores             *string `json:"maxCores,omitempty"`
+	ExcludeContainers    *string `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12
@@ -136,7 +136,61 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{}
+
+	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 struct {
+	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12
+	isSet bool
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 {
+	return v.value
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 {
+	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{value: val, isSet: true}
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

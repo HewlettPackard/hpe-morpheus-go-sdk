@@ -32,7 +32,7 @@ type StorageDatastoreCreate struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _StorageDatastoreCreate StorageDatastoreCreate
@@ -457,7 +457,70 @@ func (o StorageDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *StorageDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varStorageDatastoreCreate := _StorageDatastoreCreate{}
+
+	err = json.Unmarshal(data, &varStorageDatastoreCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageDatastoreCreate(varStorageDatastoreCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "datastoreType")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "datastores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableStorageDatastoreCreate struct {
+	value *StorageDatastoreCreate
+	isSet bool
+}
+
+func (v NullableStorageDatastoreCreate) Get() *StorageDatastoreCreate {
+	return v.value
+}
+
+func (v *NullableStorageDatastoreCreate) Set(val *StorageDatastoreCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageDatastoreCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageDatastoreCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageDatastoreCreate(val *StorageDatastoreCreate) *NullableStorageDatastoreCreate {
+	return &NullableStorageDatastoreCreate{value: val, isSet: true}
+}
+
+func (v NullableStorageDatastoreCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageDatastoreCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

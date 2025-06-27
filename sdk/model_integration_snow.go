@@ -35,7 +35,7 @@ type IntegrationSNOW struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationSNOW IntegrationSNOW
@@ -598,7 +598,73 @@ func (o IntegrationSNOW) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationSNOW) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationSNOW := _IntegrationSNOW{}
+
+	err = json.Unmarshal(data, &varIntegrationSNOW)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationSNOW(varIntegrationSNOW)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationSNOW struct {
+	value *IntegrationSNOW
+	isSet bool
+}
+
+func (v NullableIntegrationSNOW) Get() *IntegrationSNOW {
+	return v.value
+}
+
+func (v *NullableIntegrationSNOW) Set(val *IntegrationSNOW) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationSNOW) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationSNOW) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationSNOW(val *IntegrationSNOW) *NullableIntegrationSNOW {
+	return &NullableIntegrationSNOW{value: val, isSet: true}
+}
+
+func (v NullableIntegrationSNOW) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationSNOW) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

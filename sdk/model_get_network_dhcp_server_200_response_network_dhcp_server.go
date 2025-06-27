@@ -32,7 +32,7 @@ type GetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
 	Config               *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig             `json:"config,omitempty"`
 	Owner                *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"owner,omitempty"`
 	NetworkServer        *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkDhcpServer200ResponseNetworkDhcpServer GetNetworkDhcpServer200ResponseNetworkDhcpServer
@@ -457,7 +457,70 @@ func (o GetNetworkDhcpServer200ResponseNetworkDhcpServer) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkDhcpServer200ResponseNetworkDhcpServer := _GetNetworkDhcpServer200ResponseNetworkDhcpServer{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpServer200ResponseNetworkDhcpServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpServer200ResponseNetworkDhcpServer(varGetNetworkDhcpServer200ResponseNetworkDhcpServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "serverIpAddress")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "leaseTime")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer struct {
+	value *GetNetworkDhcpServer200ResponseNetworkDhcpServer
+	isSet bool
+}
+
+func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Get() *GetNetworkDhcpServer200ResponseNetworkDhcpServer {
+	return v.value
+}
+
+func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Set(val *GetNetworkDhcpServer200ResponseNetworkDhcpServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkDhcpServer200ResponseNetworkDhcpServer(val *GetNetworkDhcpServer200ResponseNetworkDhcpServer) *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer {
+	return &NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkDhcpServer200ResponseNetworkDhcpServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

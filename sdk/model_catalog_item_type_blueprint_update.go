@@ -51,8 +51,8 @@ type CatalogItemTypeBlueprintUpdate struct {
 	FormType *string                                            `json:"formType,omitempty"`
 	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
-	OptionTypes          []int64                `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OptionTypes          []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItemTypeBlueprintUpdate CatalogItemTypeBlueprintUpdate
@@ -741,7 +741,76 @@ func (o CatalogItemTypeBlueprintUpdate) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *CatalogItemTypeBlueprintUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCatalogItemTypeBlueprintUpdate := _CatalogItemTypeBlueprintUpdate{}
+
+	err = json.Unmarshal(data, &varCatalogItemTypeBlueprintUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItemTypeBlueprintUpdate(varCatalogItemTypeBlueprintUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCatalogItemTypeBlueprintUpdate struct {
+	value *CatalogItemTypeBlueprintUpdate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) Get() *CatalogItemTypeBlueprintUpdate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) Set(val *CatalogItemTypeBlueprintUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeBlueprintUpdate(val *CatalogItemTypeBlueprintUpdate) *NullableCatalogItemTypeBlueprintUpdate {
+	return &NullableCatalogItemTypeBlueprintUpdate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

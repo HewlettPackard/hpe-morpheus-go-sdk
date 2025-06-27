@@ -21,8 +21,8 @@ var _ MappedNullable = &CreateNetworkFirewallRuleRequestRuleRuleGroup{}
 // CreateNetworkFirewallRuleRequestRuleRuleGroup struct for CreateNetworkFirewallRuleRequestRuleRuleGroup
 type CreateNetworkFirewallRuleRequestRuleRuleGroup struct {
 	// Firewall rule group for rule (*applicable to select network servers).
-	Id                   *int32                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkFirewallRuleRequestRuleRuleGroup CreateNetworkFirewallRuleRequestRuleRuleGroup
@@ -97,7 +97,60 @@ func (o CreateNetworkFirewallRuleRequestRuleRuleGroup) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *CreateNetworkFirewallRuleRequestRuleRuleGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkFirewallRuleRequestRuleRuleGroup := _CreateNetworkFirewallRuleRequestRuleRuleGroup{}
+
+	err = json.Unmarshal(data, &varCreateNetworkFirewallRuleRequestRuleRuleGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkFirewallRuleRequestRuleRuleGroup(varCreateNetworkFirewallRuleRequestRuleRuleGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkFirewallRuleRequestRuleRuleGroup struct {
+	value *CreateNetworkFirewallRuleRequestRuleRuleGroup
+	isSet bool
+}
+
+func (v NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) Get() *CreateNetworkFirewallRuleRequestRuleRuleGroup {
+	return v.value
+}
+
+func (v *NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) Set(val *CreateNetworkFirewallRuleRequestRuleRuleGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkFirewallRuleRequestRuleRuleGroup(val *CreateNetworkFirewallRuleRequestRuleRuleGroup) *NullableCreateNetworkFirewallRuleRequestRuleRuleGroup {
+	return &NullableCreateNetworkFirewallRuleRequestRuleRuleGroup{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

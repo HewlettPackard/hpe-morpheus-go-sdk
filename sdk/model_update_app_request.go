@@ -29,8 +29,8 @@ type UpdateAppRequest struct {
 	// Environment code (appContext)
 	Environment *string `json:"environment,omitempty"`
 	// User ID, can be used to change app owner. This also changes the owner for each instance in the app.
-	OwnerId              *int64                 `json:"ownerId,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OwnerId              *int64 `json:"ownerId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateAppRequest UpdateAppRequest
@@ -246,7 +246,64 @@ func (o UpdateAppRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateAppRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateAppRequest := _UpdateAppRequest{}
+
+	err = json.Unmarshal(data, &varUpdateAppRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateAppRequest(varUpdateAppRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "ownerId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateAppRequest struct {
+	value *UpdateAppRequest
+	isSet bool
+}
+
+func (v NullableUpdateAppRequest) Get() *UpdateAppRequest {
+	return v.value
+}
+
+func (v *NullableUpdateAppRequest) Set(val *UpdateAppRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateAppRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateAppRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateAppRequest(val *UpdateAppRequest) *NullableUpdateAppRequest {
+	return &NullableUpdateAppRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateAppRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateAppRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

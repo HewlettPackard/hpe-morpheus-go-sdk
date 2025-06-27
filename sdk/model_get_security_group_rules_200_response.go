@@ -21,7 +21,7 @@ var _ MappedNullable = &GetSecurityGroupRules200Response{}
 // GetSecurityGroupRules200Response struct for GetSecurityGroupRules200Response
 type GetSecurityGroupRules200Response struct {
 	Rule                 *ListSecurityGroupRules200ResponseAllOfRulesInner `json:"rule,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetSecurityGroupRules200Response GetSecurityGroupRules200Response
@@ -96,7 +96,60 @@ func (o GetSecurityGroupRules200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *GetSecurityGroupRules200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetSecurityGroupRules200Response := _GetSecurityGroupRules200Response{}
+
+	err = json.Unmarshal(data, &varGetSecurityGroupRules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetSecurityGroupRules200Response(varGetSecurityGroupRules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetSecurityGroupRules200Response struct {
+	value *GetSecurityGroupRules200Response
+	isSet bool
+}
+
+func (v NullableGetSecurityGroupRules200Response) Get() *GetSecurityGroupRules200Response {
+	return v.value
+}
+
+func (v *NullableGetSecurityGroupRules200Response) Set(val *GetSecurityGroupRules200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetSecurityGroupRules200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetSecurityGroupRules200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetSecurityGroupRules200Response(val *GetSecurityGroupRules200Response) *NullableGetSecurityGroupRules200Response {
+	return &NullableGetSecurityGroupRules200Response{value: val, isSet: true}
+}
+
+func (v NullableGetSecurityGroupRules200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetSecurityGroupRules200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

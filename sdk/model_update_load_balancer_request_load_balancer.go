@@ -33,7 +33,7 @@ type UpdateLoadBalancerRequestLoadBalancer struct {
 	// Array of tenant account ids that are allowed access
 	Tenants              []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume `json:"tenants,omitempty"`
 	ResourcePermission   *CreateLoadBalancerRequestLoadBalancerResourcePermission             `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateLoadBalancerRequestLoadBalancer UpdateLoadBalancerRequestLoadBalancer
@@ -322,7 +322,66 @@ func (o UpdateLoadBalancerRequestLoadBalancer) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *UpdateLoadBalancerRequestLoadBalancer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateLoadBalancerRequestLoadBalancer := _UpdateLoadBalancerRequestLoadBalancer{}
+
+	err = json.Unmarshal(data, &varUpdateLoadBalancerRequestLoadBalancer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateLoadBalancerRequestLoadBalancer(varUpdateLoadBalancerRequestLoadBalancer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateLoadBalancerRequestLoadBalancer struct {
+	value *UpdateLoadBalancerRequestLoadBalancer
+	isSet bool
+}
+
+func (v NullableUpdateLoadBalancerRequestLoadBalancer) Get() *UpdateLoadBalancerRequestLoadBalancer {
+	return v.value
+}
+
+func (v *NullableUpdateLoadBalancerRequestLoadBalancer) Set(val *UpdateLoadBalancerRequestLoadBalancer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateLoadBalancerRequestLoadBalancer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateLoadBalancerRequestLoadBalancer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateLoadBalancerRequestLoadBalancer(val *UpdateLoadBalancerRequestLoadBalancer) *NullableUpdateLoadBalancerRequestLoadBalancer {
+	return &NullableUpdateLoadBalancerRequestLoadBalancer{value: val, isSet: true}
+}
+
+func (v NullableUpdateLoadBalancerRequestLoadBalancer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateLoadBalancerRequestLoadBalancer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

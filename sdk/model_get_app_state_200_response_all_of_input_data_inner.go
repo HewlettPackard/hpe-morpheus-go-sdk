@@ -23,7 +23,7 @@ type GetAppState200ResponseAllOfInputDataInner struct {
 	Key                  *string                                        `json:"key,omitempty"`
 	Name                 *GetAppState200ResponseAllOfInputDataInnerName `json:"name,omitempty"`
 	Type                 *string                                        `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetAppState200ResponseAllOfInputDataInner GetAppState200ResponseAllOfInputDataInner
@@ -168,7 +168,62 @@ func (o GetAppState200ResponseAllOfInputDataInner) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *GetAppState200ResponseAllOfInputDataInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetAppState200ResponseAllOfInputDataInner := _GetAppState200ResponseAllOfInputDataInner{}
+
+	err = json.Unmarshal(data, &varGetAppState200ResponseAllOfInputDataInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAppState200ResponseAllOfInputDataInner(varGetAppState200ResponseAllOfInputDataInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "key")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetAppState200ResponseAllOfInputDataInner struct {
+	value *GetAppState200ResponseAllOfInputDataInner
+	isSet bool
+}
+
+func (v NullableGetAppState200ResponseAllOfInputDataInner) Get() *GetAppState200ResponseAllOfInputDataInner {
+	return v.value
+}
+
+func (v *NullableGetAppState200ResponseAllOfInputDataInner) Set(val *GetAppState200ResponseAllOfInputDataInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAppState200ResponseAllOfInputDataInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAppState200ResponseAllOfInputDataInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAppState200ResponseAllOfInputDataInner(val *GetAppState200ResponseAllOfInputDataInner) *NullableGetAppState200ResponseAllOfInputDataInner {
+	return &NullableGetAppState200ResponseAllOfInputDataInner{value: val, isSet: true}
+}
+
+func (v NullableGetAppState200ResponseAllOfInputDataInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAppState200ResponseAllOfInputDataInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

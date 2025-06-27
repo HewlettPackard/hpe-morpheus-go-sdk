@@ -20,10 +20,10 @@ var _ MappedNullable = &BudgetPolicyTypeConfiguration{}
 
 // BudgetPolicyTypeConfiguration Configuration settings for the following policy types: - Budget
 type BudgetPolicyTypeConfiguration struct {
-	MaxPrice             *float32               `json:"maxPrice,omitempty"`
-	MaxPriceCurrency     *string                `json:"maxPriceCurrency,omitempty"`
-	MaxPriceUnit         *string                `json:"maxPriceUnit,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxPrice             *float32 `json:"maxPrice,omitempty"`
+	MaxPriceCurrency     *string  `json:"maxPriceCurrency,omitempty"`
+	MaxPriceUnit         *string  `json:"maxPriceUnit,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BudgetPolicyTypeConfiguration BudgetPolicyTypeConfiguration
@@ -168,7 +168,62 @@ func (o BudgetPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BudgetPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBudgetPolicyTypeConfiguration := _BudgetPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varBudgetPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BudgetPolicyTypeConfiguration(varBudgetPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxPrice")
+		delete(additionalProperties, "maxPriceCurrency")
+		delete(additionalProperties, "maxPriceUnit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBudgetPolicyTypeConfiguration struct {
+	value *BudgetPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableBudgetPolicyTypeConfiguration) Get() *BudgetPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableBudgetPolicyTypeConfiguration) Set(val *BudgetPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBudgetPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBudgetPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBudgetPolicyTypeConfiguration(val *BudgetPolicyTypeConfiguration) *NullableBudgetPolicyTypeConfiguration {
+	return &NullableBudgetPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableBudgetPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBudgetPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

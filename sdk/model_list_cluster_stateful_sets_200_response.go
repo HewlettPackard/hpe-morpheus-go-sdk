@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterStatefulSets200Response{}
 type ListClusterStatefulSets200Response struct {
 	Statefulsets         []ListClusterPods200ResponseAllOfPodsInner `json:"statefulsets,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta          `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClusterStatefulSets200Response ListClusterStatefulSets200Response
@@ -132,7 +132,61 @@ func (o ListClusterStatefulSets200Response) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *ListClusterStatefulSets200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClusterStatefulSets200Response := _ListClusterStatefulSets200Response{}
+
+	err = json.Unmarshal(data, &varListClusterStatefulSets200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterStatefulSets200Response(varListClusterStatefulSets200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "statefulsets")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClusterStatefulSets200Response struct {
+	value *ListClusterStatefulSets200Response
+	isSet bool
+}
+
+func (v NullableListClusterStatefulSets200Response) Get() *ListClusterStatefulSets200Response {
+	return v.value
+}
+
+func (v *NullableListClusterStatefulSets200Response) Set(val *ListClusterStatefulSets200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterStatefulSets200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterStatefulSets200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterStatefulSets200Response(val *ListClusterStatefulSets200Response) *NullableListClusterStatefulSets200Response {
+	return &NullableListClusterStatefulSets200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterStatefulSets200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterStatefulSets200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

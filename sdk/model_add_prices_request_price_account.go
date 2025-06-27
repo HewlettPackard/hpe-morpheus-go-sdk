@@ -21,8 +21,8 @@ var _ MappedNullable = &AddPricesRequestPriceAccount{}
 // AddPricesRequestPriceAccount struct for AddPricesRequestPriceAccount
 type AddPricesRequestPriceAccount struct {
 	// Assign to specified tenant account
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPricesRequestPriceAccount AddPricesRequestPriceAccount
@@ -97,7 +97,60 @@ func (o AddPricesRequestPriceAccount) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddPricesRequestPriceAccount) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddPricesRequestPriceAccount := _AddPricesRequestPriceAccount{}
+
+	err = json.Unmarshal(data, &varAddPricesRequestPriceAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPricesRequestPriceAccount(varAddPricesRequestPriceAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPricesRequestPriceAccount struct {
+	value *AddPricesRequestPriceAccount
+	isSet bool
+}
+
+func (v NullableAddPricesRequestPriceAccount) Get() *AddPricesRequestPriceAccount {
+	return v.value
+}
+
+func (v *NullableAddPricesRequestPriceAccount) Set(val *AddPricesRequestPriceAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPricesRequestPriceAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPricesRequestPriceAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPricesRequestPriceAccount(val *AddPricesRequestPriceAccount) *NullableAddPricesRequestPriceAccount {
+	return &NullableAddPricesRequestPriceAccount{value: val, isSet: true}
+}
+
+func (v NullableAddPricesRequestPriceAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPricesRequestPriceAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -25,22 +25,6 @@ type ListGuidances200ResponseAllOfDiscoveriesInner struct {
 	ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
 }
 
-func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &ListGuidances200ResponseAllOfDiscoveriesInner{}
-	}
-
-	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf); ok {
-		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf = &out
-	}
-
-	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1); ok {
-		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalJSON(data []byte) error {
 	var err error

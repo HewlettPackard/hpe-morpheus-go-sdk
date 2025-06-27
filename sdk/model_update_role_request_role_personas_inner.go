@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateRoleRequestRolePersonasInner type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type UpdateRoleRequestRolePersonasInner struct {
 	// `code` of the persona
 	Code *string `json:"code,omitempty"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleRequestRolePersonasInner UpdateRoleRequestRolePersonasInner
@@ -125,7 +126,82 @@ func (o UpdateRoleRequestRolePersonasInner) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *UpdateRoleRequestRolePersonasInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateRoleRequestRolePersonasInner := _UpdateRoleRequestRolePersonasInner{}
+
+	err = json.Unmarshal(data, &varUpdateRoleRequestRolePersonasInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateRoleRequestRolePersonasInner(varUpdateRoleRequestRolePersonasInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateRoleRequestRolePersonasInner struct {
+	value *UpdateRoleRequestRolePersonasInner
+	isSet bool
+}
+
+func (v NullableUpdateRoleRequestRolePersonasInner) Get() *UpdateRoleRequestRolePersonasInner {
+	return v.value
+}
+
+func (v *NullableUpdateRoleRequestRolePersonasInner) Set(val *UpdateRoleRequestRolePersonasInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleRequestRolePersonasInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleRequestRolePersonasInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleRequestRolePersonasInner(val *UpdateRoleRequestRolePersonasInner) *NullableUpdateRoleRequestRolePersonasInner {
+	return &NullableUpdateRoleRequestRolePersonasInner{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleRequestRolePersonasInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleRequestRolePersonasInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -57,7 +57,7 @@ type ListVDIPools200ResponseAllOfVdiPoolsInner struct {
 	Status                           *string                                             `json:"status,omitempty"`
 	DateCreated                      *time.Time                                          `json:"dateCreated,omitempty"`
 	LastUpdated                      *time.Time                                          `json:"lastUpdated,omitempty"`
-	AdditionalProperties             map[string]interface{}                              `json:",remain"`
+	AdditionalProperties             map[string]interface{}
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInner ListVDIPools200ResponseAllOfVdiPoolsInner
@@ -1489,7 +1489,95 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInner) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListVDIPools200ResponseAllOfVdiPoolsInner := _ListVDIPools200ResponseAllOfVdiPoolsInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInner(varListVDIPools200ResponseAllOfVdiPoolsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "minIdle")
+		delete(additionalProperties, "maxIdle")
+		delete(additionalProperties, "initialPoolSize")
+		delete(additionalProperties, "maxPoolSize")
+		delete(additionalProperties, "allocationTimeoutMinutes")
+		delete(additionalProperties, "persistentUser")
+		delete(additionalProperties, "recyclable")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "autoCreateLocalUserOnReservation")
+		delete(additionalProperties, "allowHypervisorConsole")
+		delete(additionalProperties, "allowCopy")
+		delete(additionalProperties, "allowPrinter")
+		delete(additionalProperties, "allowFileshare")
+		delete(additionalProperties, "guestConsoleJumpHost")
+		delete(additionalProperties, "guestConsoleJumpPort")
+		delete(additionalProperties, "guestConsoleJumpUsername")
+		delete(additionalProperties, "guestConsoleJumpPassword")
+		delete(additionalProperties, "guestConsoleJumpKeypair")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "usedCount")
+		delete(additionalProperties, "reservedCount")
+		delete(additionalProperties, "preparingCount")
+		delete(additionalProperties, "idleCount")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListVDIPools200ResponseAllOfVdiPoolsInner struct {
+	value *ListVDIPools200ResponseAllOfVdiPoolsInner
+	isSet bool
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInner {
+	return v.value
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVDIPools200ResponseAllOfVdiPoolsInner(val *ListVDIPools200ResponseAllOfVdiPoolsInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInner {
+	return &NullableListVDIPools200ResponseAllOfVdiPoolsInner{value: val, isSet: true}
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

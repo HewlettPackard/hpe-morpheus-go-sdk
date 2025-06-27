@@ -33,7 +33,7 @@ type GetArchiveBucket200ResponseArchiveFilesInner struct {
 	DownloadCount        *int64                                                          `json:"downloadCount,omitempty"`
 	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetArchiveBucket200ResponseArchiveFilesInner GetArchiveBucket200ResponseArchiveFilesInner
@@ -504,7 +504,71 @@ func (o GetArchiveBucket200ResponseArchiveFilesInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *GetArchiveBucket200ResponseArchiveFilesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetArchiveBucket200ResponseArchiveFilesInner := _GetArchiveBucket200ResponseArchiveFilesInner{}
+
+	err = json.Unmarshal(data, &varGetArchiveBucket200ResponseArchiveFilesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetArchiveBucket200ResponseArchiveFilesInner(varGetArchiveBucket200ResponseArchiveFilesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "filePath")
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "isDirectory")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "contentType")
+		delete(additionalProperties, "downloadCount")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetArchiveBucket200ResponseArchiveFilesInner struct {
+	value *GetArchiveBucket200ResponseArchiveFilesInner
+	isSet bool
+}
+
+func (v NullableGetArchiveBucket200ResponseArchiveFilesInner) Get() *GetArchiveBucket200ResponseArchiveFilesInner {
+	return v.value
+}
+
+func (v *NullableGetArchiveBucket200ResponseArchiveFilesInner) Set(val *GetArchiveBucket200ResponseArchiveFilesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetArchiveBucket200ResponseArchiveFilesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetArchiveBucket200ResponseArchiveFilesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetArchiveBucket200ResponseArchiveFilesInner(val *GetArchiveBucket200ResponseArchiveFilesInner) *NullableGetArchiveBucket200ResponseArchiveFilesInner {
+	return &NullableGetArchiveBucket200ResponseArchiveFilesInner{value: val, isSet: true}
+}
+
+func (v NullableGetArchiveBucket200ResponseArchiveFilesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetArchiveBucket200ResponseArchiveFilesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

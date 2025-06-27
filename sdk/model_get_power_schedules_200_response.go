@@ -23,7 +23,7 @@ type GetPowerSchedules200Response struct {
 	Instances            []GetPowerSchedules200ResponseAllOfInstancesInner `json:"instances,omitempty"`
 	Servers              []GetPowerSchedules200ResponseAllOfInstancesInner `json:"servers,omitempty"`
 	Schedule             *ListPowerSchedules200ResponseAllOfSchedulesInner `json:"schedule,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetPowerSchedules200Response GetPowerSchedules200Response
@@ -170,7 +170,62 @@ func (o GetPowerSchedules200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetPowerSchedules200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetPowerSchedules200Response := _GetPowerSchedules200Response{}
+
+	err = json.Unmarshal(data, &varGetPowerSchedules200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetPowerSchedules200Response(varGetPowerSchedules200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instances")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "schedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetPowerSchedules200Response struct {
+	value *GetPowerSchedules200Response
+	isSet bool
+}
+
+func (v NullableGetPowerSchedules200Response) Get() *GetPowerSchedules200Response {
+	return v.value
+}
+
+func (v *NullableGetPowerSchedules200Response) Set(val *GetPowerSchedules200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetPowerSchedules200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetPowerSchedules200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetPowerSchedules200Response(val *GetPowerSchedules200Response) *NullableGetPowerSchedules200Response {
+	return &NullableGetPowerSchedules200Response{value: val, isSet: true}
+}
+
+func (v NullableGetPowerSchedules200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetPowerSchedules200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

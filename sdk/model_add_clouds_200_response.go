@@ -22,7 +22,7 @@ var _ MappedNullable = &AddClouds200Response{}
 type AddClouds200Response struct {
 	Zone                 *ListClouds200ResponseAllOfZonesInner `json:"zone,omitempty"`
 	Success              *bool                                 `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClouds200Response AddClouds200Response
@@ -132,7 +132,61 @@ func (o AddClouds200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClouds200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClouds200Response := _AddClouds200Response{}
+
+	err = json.Unmarshal(data, &varAddClouds200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClouds200Response(varAddClouds200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClouds200Response struct {
+	value *AddClouds200Response
+	isSet bool
+}
+
+func (v NullableAddClouds200Response) Get() *AddClouds200Response {
+	return v.value
+}
+
+func (v *NullableAddClouds200Response) Set(val *AddClouds200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClouds200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClouds200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClouds200Response(val *AddClouds200Response) *NullableAddClouds200Response {
+	return &NullableAddClouds200Response{value: val, isSet: true}
+}
+
+func (v NullableAddClouds200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClouds200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

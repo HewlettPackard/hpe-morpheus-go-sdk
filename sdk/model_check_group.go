@@ -48,7 +48,7 @@ type CheckGroup struct {
 	Availability         NullableFloat32                                             `json:"availability,omitempty"`
 	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType              `json:"checkType,omitempty"`
 	Checks               []int64                                                     `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckGroup CheckGroup
@@ -1143,7 +1143,86 @@ func (o CheckGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCheckGroup := _CheckGroup{}
+
+	err = json.Unmarshal(data, &varCheckGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckGroup(varCheckGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "lastCheckStatus")
+		delete(additionalProperties, "lastWarningDate")
+		delete(additionalProperties, "lastErrorDate")
+		delete(additionalProperties, "lastSuccessDate")
+		delete(additionalProperties, "lastRunDate")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "outageTime")
+		delete(additionalProperties, "lastTimer")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "history")
+		delete(additionalProperties, "minHappy")
+		delete(additionalProperties, "lastMetric")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "availability")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCheckGroup struct {
+	value *CheckGroup
+	isSet bool
+}
+
+func (v NullableCheckGroup) Get() *CheckGroup {
+	return v.value
+}
+
+func (v *NullableCheckGroup) Set(val *CheckGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckGroup(val *CheckGroup) *NullableCheckGroup {
+	return &NullableCheckGroup{value: val, isSet: true}
+}
+
+func (v NullableCheckGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

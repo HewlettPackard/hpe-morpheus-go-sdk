@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateClusterPackageRequest{}
 // UpdateClusterPackageRequest struct for UpdateClusterPackageRequest
 type UpdateClusterPackageRequest struct {
 	ClusterPackage       *UpdateClusterPackageRequestClusterPackage `json:"clusterPackage,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateClusterPackageRequest UpdateClusterPackageRequest
@@ -96,7 +96,60 @@ func (o UpdateClusterPackageRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateClusterPackageRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateClusterPackageRequest := _UpdateClusterPackageRequest{}
+
+	err = json.Unmarshal(data, &varUpdateClusterPackageRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterPackageRequest(varUpdateClusterPackageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clusterPackage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateClusterPackageRequest struct {
+	value *UpdateClusterPackageRequest
+	isSet bool
+}
+
+func (v NullableUpdateClusterPackageRequest) Get() *UpdateClusterPackageRequest {
+	return v.value
+}
+
+func (v *NullableUpdateClusterPackageRequest) Set(val *UpdateClusterPackageRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterPackageRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterPackageRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterPackageRequest(val *UpdateClusterPackageRequest) *NullableUpdateClusterPackageRequest {
+	return &NullableUpdateClusterPackageRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterPackageRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterPackageRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

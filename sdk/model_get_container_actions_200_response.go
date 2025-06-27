@@ -22,7 +22,7 @@ var _ MappedNullable = &GetContainerActions200Response{}
 type GetContainerActions200Response struct {
 	ContainerIds         []int64                                                                     `json:"containerIds,omitempty"`
 	Actions              []ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner `json:"actions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetContainerActions200Response GetContainerActions200Response
@@ -132,7 +132,61 @@ func (o GetContainerActions200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetContainerActions200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetContainerActions200Response := _GetContainerActions200Response{}
+
+	err = json.Unmarshal(data, &varGetContainerActions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetContainerActions200Response(varGetContainerActions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerIds")
+		delete(additionalProperties, "actions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetContainerActions200Response struct {
+	value *GetContainerActions200Response
+	isSet bool
+}
+
+func (v NullableGetContainerActions200Response) Get() *GetContainerActions200Response {
+	return v.value
+}
+
+func (v *NullableGetContainerActions200Response) Set(val *GetContainerActions200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetContainerActions200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetContainerActions200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetContainerActions200Response(val *GetContainerActions200Response) *NullableGetContainerActions200Response {
+	return &NullableGetContainerActions200Response{value: val, isSet: true}
+}
+
+func (v NullableGetContainerActions200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetContainerActions200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

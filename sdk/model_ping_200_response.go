@@ -20,9 +20,9 @@ var _ MappedNullable = &Ping200Response{}
 
 // Ping200Response struct for Ping200Response
 type Ping200Response struct {
-	Success              *bool                  `json:"success,omitempty"`
-	BuildVersion         *string                `json:"buildVersion,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Success              *bool   `json:"success,omitempty"`
+	BuildVersion         *string `json:"buildVersion,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Ping200Response Ping200Response
@@ -132,7 +132,61 @@ func (o Ping200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Ping200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varPing200Response := _Ping200Response{}
+
+	err = json.Unmarshal(data, &varPing200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Ping200Response(varPing200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "buildVersion")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullablePing200Response struct {
+	value *Ping200Response
+	isSet bool
+}
+
+func (v NullablePing200Response) Get() *Ping200Response {
+	return v.value
+}
+
+func (v *NullablePing200Response) Set(val *Ping200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePing200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePing200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePing200Response(val *Ping200Response) *NullablePing200Response {
+	return &NullablePing200Response{value: val, isSet: true}
+}
+
+func (v NullablePing200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePing200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

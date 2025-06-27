@@ -84,7 +84,7 @@ type ListClouds200ResponseAllOfZonesInner struct {
 	NetworkServer        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkServer,omitempty"`
 	Stats                *ListClouds200ResponseAllOfZonesInnerStats         `json:"stats,omitempty"`
 	ServerCount          *int64                                             `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClouds200ResponseAllOfZonesInner ListClouds200ResponseAllOfZonesInner
@@ -2523,7 +2523,120 @@ func (o ListClouds200ResponseAllOfZonesInner) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClouds200ResponseAllOfZonesInner := _ListClouds200ResponseAllOfZonesInner{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInner(varListClouds200ResponseAllOfZonesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "costStatus")
+		delete(additionalProperties, "costStatusMessage")
+		delete(additionalProperties, "costStatusDate")
+		delete(additionalProperties, "costLastSyncDuration")
+		delete(additionalProperties, "costLastSync")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "zoneTypeId")
+		delete(additionalProperties, "guidanceMode")
+		delete(additionalProperties, "storageMode")
+		delete(additionalProperties, "agentMode")
+		delete(additionalProperties, "userDataLinux")
+		delete(additionalProperties, "userDataWindows")
+		delete(additionalProperties, "consoleKeymap")
+		delete(additionalProperties, "containerMode")
+		delete(additionalProperties, "costingMode")
+		delete(additionalProperties, "serviceVersion")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "apiProxy")
+		delete(additionalProperties, "provisioningProxy")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "autoRecoverPowerState")
+		delete(additionalProperties, "scalePriority")
+		delete(additionalProperties, "defaultDatastoreSyncActive")
+		delete(additionalProperties, "defaultNetworkSyncActive")
+		delete(additionalProperties, "defaultFolderSyncActive")
+		delete(additionalProperties, "defaultSecurityGroupSyncActive")
+		delete(additionalProperties, "defaultPoolSyncActive")
+		delete(additionalProperties, "defaultPlanSyncActive")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "groups")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "serverCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClouds200ResponseAllOfZonesInner struct {
+	value *ListClouds200ResponseAllOfZonesInner
+	isSet bool
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInner) Get() *ListClouds200ResponseAllOfZonesInner {
+	return v.value
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInner) Set(val *ListClouds200ResponseAllOfZonesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClouds200ResponseAllOfZonesInner(val *ListClouds200ResponseAllOfZonesInner) *NullableListClouds200ResponseAllOfZonesInner {
+	return &NullableListClouds200ResponseAllOfZonesInner{value: val, isSet: true}
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

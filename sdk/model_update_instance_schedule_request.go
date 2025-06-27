@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateInstanceScheduleRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &UpdateInstanceScheduleRequest{}
 // UpdateInstanceScheduleRequest struct for UpdateInstanceScheduleRequest
 type UpdateInstanceScheduleRequest struct {
 	InstanceSchedule     UpdateInstanceScheduleRequestInstanceSchedule `json:"instanceSchedule"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateInstanceScheduleRequest UpdateInstanceScheduleRequest
@@ -87,7 +88,81 @@ func (o UpdateInstanceScheduleRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateInstanceScheduleRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"instanceSchedule",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateInstanceScheduleRequest := _UpdateInstanceScheduleRequest{}
+
+	err = json.Unmarshal(data, &varUpdateInstanceScheduleRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstanceScheduleRequest(varUpdateInstanceScheduleRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceSchedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateInstanceScheduleRequest struct {
+	value *UpdateInstanceScheduleRequest
+	isSet bool
+}
+
+func (v NullableUpdateInstanceScheduleRequest) Get() *UpdateInstanceScheduleRequest {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) Set(val *UpdateInstanceScheduleRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceScheduleRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceScheduleRequest(val *UpdateInstanceScheduleRequest) *NullableUpdateInstanceScheduleRequest {
+	return &NullableUpdateInstanceScheduleRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceScheduleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateWhitelabelSettingsRequest{}
 // UpdateWhitelabelSettingsRequest struct for UpdateWhitelabelSettingsRequest
 type UpdateWhitelabelSettingsRequest struct {
 	WhitelabelSettings   *UpdateWhitelabelSettingsRequestWhitelabelSettings `json:"whitelabelSettings,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateWhitelabelSettingsRequest UpdateWhitelabelSettingsRequest
@@ -96,7 +96,60 @@ func (o UpdateWhitelabelSettingsRequest) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *UpdateWhitelabelSettingsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateWhitelabelSettingsRequest := _UpdateWhitelabelSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateWhitelabelSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateWhitelabelSettingsRequest(varUpdateWhitelabelSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "whitelabelSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateWhitelabelSettingsRequest struct {
+	value *UpdateWhitelabelSettingsRequest
+	isSet bool
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) Get() *UpdateWhitelabelSettingsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) Set(val *UpdateWhitelabelSettingsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateWhitelabelSettingsRequest(val *UpdateWhitelabelSettingsRequest) *NullableUpdateWhitelabelSettingsRequest {
+	return &NullableUpdateWhitelabelSettingsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

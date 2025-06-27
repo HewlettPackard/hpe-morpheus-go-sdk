@@ -26,26 +26,6 @@ type AddBackupsRequestBackup struct {
 	BackupStorageProvider *BackupStorageProvider
 }
 
-func (dst *AddBackupsRequestBackup) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddBackupsRequestBackup{}
-	}
-
-	if out, ok := data.(BackupInstance); ok {
-		dst.BackupInstance = &out
-	}
-
-	if out, ok := data.(BackupServerHost); ok {
-		dst.BackupServerHost = &out
-	}
-
-	if out, ok := data.(BackupStorageProvider); ok {
-		dst.BackupStorageProvider = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddBackupsRequestBackup) UnmarshalJSON(data []byte) error {
 	var err error

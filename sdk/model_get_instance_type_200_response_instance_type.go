@@ -50,8 +50,8 @@ type GetInstanceType200ResponseInstanceType struct {
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        NullableString         `json:"darkImagePath,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	DarkImagePath        NullableString `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetInstanceType200ResponseInstanceType GetInstanceType200ResponseInstanceType
@@ -1198,7 +1198,88 @@ func (o GetInstanceType200ResponseInstanceType) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *GetInstanceType200ResponseInstanceType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetInstanceType200ResponseInstanceType := _GetInstanceType200ResponseInstanceType{}
+
+	err = json.Unmarshal(data, &varGetInstanceType200ResponseInstanceType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceType200ResponseInstanceType(varGetInstanceType200ResponseInstanceType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "hasProvisioningStep")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "hasConfig")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "proxyType")
+		delete(additionalProperties, "proxyPort")
+		delete(additionalProperties, "proxyProtocol")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "backupType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "darkImagePath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetInstanceType200ResponseInstanceType struct {
+	value *GetInstanceType200ResponseInstanceType
+	isSet bool
+}
+
+func (v NullableGetInstanceType200ResponseInstanceType) Get() *GetInstanceType200ResponseInstanceType {
+	return v.value
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceType) Set(val *GetInstanceType200ResponseInstanceType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInstanceType200ResponseInstanceType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInstanceType200ResponseInstanceType(val *GetInstanceType200ResponseInstanceType) *NullableGetInstanceType200ResponseInstanceType {
+	return &NullableGetInstanceType200ResponseInstanceType{value: val, isSet: true}
+}
+
+func (v NullableGetInstanceType200ResponseInstanceType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

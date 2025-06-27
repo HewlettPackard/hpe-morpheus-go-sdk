@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 type satisfies the MappedNullable interface at compile time
@@ -42,8 +43,8 @@ type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword          *string                `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	SshPassword          *string `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
@@ -541,7 +542,97 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"host",
+		"port",
+		"send",
+		"responseMatch",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 := _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3{}
+
+	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3(varGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "send")
+		delete(additionalProperties, "responseMatch")
+		delete(additionalProperties, "checkUser")
+		delete(additionalProperties, "textCheckOn")
+		delete(additionalProperties, "checkPassword")
+		delete(additionalProperties, "webTextMatch")
+		delete(additionalProperties, "checkPasswordHash")
+		delete(additionalProperties, "tunnelOn")
+		delete(additionalProperties, "sshHost")
+		delete(additionalProperties, "sshPort")
+		delete(additionalProperties, "sshUser")
+		delete(additionalProperties, "sshPassword")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 struct {
+	value *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
+	isSet bool
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) Get() *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 {
+	return v.value
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) Set(val *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3(val *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 {
+	return &NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3{value: val, isSet: true}
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

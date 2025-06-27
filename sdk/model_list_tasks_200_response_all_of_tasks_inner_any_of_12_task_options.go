@@ -20,18 +20,18 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions struct {
-	PythonArgs               NullableString         `json:"pythonArgs,omitempty"`
-	PythonBinary             NullableString         `json:"pythonBinary,omitempty"`
-	PythonAdditionalPackages NullableString         `json:"pythonAdditionalPackages,omitempty"`
-	Port                     NullableString         `json:"port,omitempty"`
-	Host                     NullableString         `json:"host,omitempty"`
-	Username                 NullableString         `json:"username,omitempty"`
-	SshKey                   NullableString         `json:"sshKey,omitempty"`
-	Password                 NullableString         `json:"password,omitempty"`
-	PasswordHash             NullableString         `json:"passwordHash,omitempty"`
-	LocalScriptGitId         NullableString         `json:"localScriptGitId,omitempty"`
-	LocalScriptGitRef        NullableString         `json:"localScriptGitRef,omitempty"`
-	AdditionalProperties     map[string]interface{} `json:",remain"`
+	PythonArgs               NullableString `json:"pythonArgs,omitempty"`
+	PythonBinary             NullableString `json:"pythonBinary,omitempty"`
+	PythonAdditionalPackages NullableString `json:"pythonAdditionalPackages,omitempty"`
+	Port                     NullableString `json:"port,omitempty"`
+	Host                     NullableString `json:"host,omitempty"`
+	Username                 NullableString `json:"username,omitempty"`
+	SshKey                   NullableString `json:"sshKey,omitempty"`
+	Password                 NullableString `json:"password,omitempty"`
+	PasswordHash             NullableString `json:"passwordHash,omitempty"`
+	LocalScriptGitId         NullableString `json:"localScriptGitId,omitempty"`
+	LocalScriptGitRef        NullableString `json:"localScriptGitRef,omitempty"`
+	AdditionalProperties     map[string]interface{}
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions
@@ -577,7 +577,70 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "pythonArgs")
+		delete(additionalProperties, "pythonBinary")
+		delete(additionalProperties, "pythonAdditionalPackages")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "localScriptGitId")
+		delete(additionalProperties, "localScriptGitRef")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions struct {
+	value *ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions
+	isSet bool
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions {
+	return v.value
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions {
+	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions{value: val, isSet: true}
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf12TaskOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetCloudResourcePools200Response{}
 // GetCloudResourcePools200Response struct for GetCloudResourcePools200Response
 type GetCloudResourcePools200Response struct {
 	ResourcePool         *GetCloudResourcePools200ResponseAllOfResourcePool `json:"resourcePool,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetCloudResourcePools200Response GetCloudResourcePools200Response
@@ -96,7 +96,60 @@ func (o GetCloudResourcePools200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *GetCloudResourcePools200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetCloudResourcePools200Response := _GetCloudResourcePools200Response{}
+
+	err = json.Unmarshal(data, &varGetCloudResourcePools200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetCloudResourcePools200Response(varGetCloudResourcePools200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetCloudResourcePools200Response struct {
+	value *GetCloudResourcePools200Response
+	isSet bool
+}
+
+func (v NullableGetCloudResourcePools200Response) Get() *GetCloudResourcePools200Response {
+	return v.value
+}
+
+func (v *NullableGetCloudResourcePools200Response) Set(val *GetCloudResourcePools200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCloudResourcePools200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCloudResourcePools200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCloudResourcePools200Response(val *GetCloudResourcePools200Response) *NullableGetCloudResourcePools200Response {
+	return &NullableGetCloudResourcePools200Response{value: val, isSet: true}
+}
+
+func (v NullableGetCloudResourcePools200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCloudResourcePools200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

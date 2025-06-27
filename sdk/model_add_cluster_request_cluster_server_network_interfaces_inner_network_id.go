@@ -41,22 +41,6 @@ func StringAsAddClusterRequestClusterServerNetworkInterfacesInnerNetworkId(v *st
 	}
 }
 
-func (dst *AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId{}
-	}
-
-	if out, ok := data.(int32); ok {
-		dst.Int32 = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId) UnmarshalJSON(data []byte) error {
 	var err error

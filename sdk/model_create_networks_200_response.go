@@ -24,7 +24,7 @@ type CreateNetworks200Response struct {
 	Errors               map[string]interface{}                     `json:"errors,omitempty"`
 	Success              *bool                                      `json:"success,omitempty"`
 	Msg                  NullableString                             `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworks200Response CreateNetworks200Response
@@ -215,7 +215,63 @@ func (o CreateNetworks200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateNetworks200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworks200Response := _CreateNetworks200Response{}
+
+	err = json.Unmarshal(data, &varCreateNetworks200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworks200Response(varCreateNetworks200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "errors")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworks200Response struct {
+	value *CreateNetworks200Response
+	isSet bool
+}
+
+func (v NullableCreateNetworks200Response) Get() *CreateNetworks200Response {
+	return v.value
+}
+
+func (v *NullableCreateNetworks200Response) Set(val *CreateNetworks200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworks200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworks200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworks200Response(val *CreateNetworks200Response) *NullableCreateNetworks200Response {
+	return &NullableCreateNetworks200Response{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworks200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworks200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

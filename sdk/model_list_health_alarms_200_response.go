@@ -22,7 +22,7 @@ var _ MappedNullable = &ListHealthAlarms200Response{}
 type ListHealthAlarms200Response struct {
 	Alarm                []ListHealthAlarms200ResponseAllOfAlarmInner `json:"alarm,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta            `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListHealthAlarms200Response ListHealthAlarms200Response
@@ -132,7 +132,61 @@ func (o ListHealthAlarms200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListHealthAlarms200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListHealthAlarms200Response := _ListHealthAlarms200Response{}
+
+	err = json.Unmarshal(data, &varListHealthAlarms200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealthAlarms200Response(varListHealthAlarms200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "alarm")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListHealthAlarms200Response struct {
+	value *ListHealthAlarms200Response
+	isSet bool
+}
+
+func (v NullableListHealthAlarms200Response) Get() *ListHealthAlarms200Response {
+	return v.value
+}
+
+func (v *NullableListHealthAlarms200Response) Set(val *ListHealthAlarms200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHealthAlarms200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHealthAlarms200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHealthAlarms200Response(val *ListHealthAlarms200Response) *NullableListHealthAlarms200Response {
+	return &NullableListHealthAlarms200Response{value: val, isSet: true}
+}
+
+func (v NullableListHealthAlarms200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHealthAlarms200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

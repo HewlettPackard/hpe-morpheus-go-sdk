@@ -25,8 +25,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner struct {
 	// A name for the port.
 	Name *string `json:"name,omitempty"`
 	// The load balancer protocol. HTTP, HTTPS, or TCP.
-	Lb                   NullableString         `json:"lb,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Lb                   NullableString `json:"lb,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner
@@ -182,7 +182,62 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) ToMap() (
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "lb")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

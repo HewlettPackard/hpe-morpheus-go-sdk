@@ -23,8 +23,8 @@ type AllocateNetworkFloatingIpRequest struct {
 	// Id of the network server
 	NetworkServerId *int64 `json:"networkServerId,omitempty"`
 	// Id of the network floating ip pool
-	FloatingIpPoolId     *int64                 `json:"floatingIpPoolId,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	FloatingIpPoolId     *int64 `json:"floatingIpPoolId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AllocateNetworkFloatingIpRequest AllocateNetworkFloatingIpRequest
@@ -134,7 +134,61 @@ func (o AllocateNetworkFloatingIpRequest) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *AllocateNetworkFloatingIpRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAllocateNetworkFloatingIpRequest := _AllocateNetworkFloatingIpRequest{}
+
+	err = json.Unmarshal(data, &varAllocateNetworkFloatingIpRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AllocateNetworkFloatingIpRequest(varAllocateNetworkFloatingIpRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkServerId")
+		delete(additionalProperties, "floatingIpPoolId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAllocateNetworkFloatingIpRequest struct {
+	value *AllocateNetworkFloatingIpRequest
+	isSet bool
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) Get() *AllocateNetworkFloatingIpRequest {
+	return v.value
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) Set(val *AllocateNetworkFloatingIpRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAllocateNetworkFloatingIpRequest(val *AllocateNetworkFloatingIpRequest) *NullableAllocateNetworkFloatingIpRequest {
+	return &NullableAllocateNetworkFloatingIpRequest{value: val, isSet: true}
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

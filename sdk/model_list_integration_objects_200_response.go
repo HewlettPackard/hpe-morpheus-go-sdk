@@ -21,7 +21,7 @@ var _ MappedNullable = &ListIntegrationObjects200Response{}
 // ListIntegrationObjects200Response struct for ListIntegrationObjects200Response
 type ListIntegrationObjects200Response struct {
 	Objects              []ListIntegrationObjects200ResponseObjectsInner `json:"objects,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListIntegrationObjects200Response ListIntegrationObjects200Response
@@ -96,7 +96,60 @@ func (o ListIntegrationObjects200Response) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *ListIntegrationObjects200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIntegrationObjects200Response := _ListIntegrationObjects200Response{}
+
+	err = json.Unmarshal(data, &varListIntegrationObjects200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrationObjects200Response(varListIntegrationObjects200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "objects")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIntegrationObjects200Response struct {
+	value *ListIntegrationObjects200Response
+	isSet bool
+}
+
+func (v NullableListIntegrationObjects200Response) Get() *ListIntegrationObjects200Response {
+	return v.value
+}
+
+func (v *NullableListIntegrationObjects200Response) Set(val *ListIntegrationObjects200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrationObjects200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrationObjects200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrationObjects200Response(val *ListIntegrationObjects200Response) *NullableListIntegrationObjects200Response {
+	return &NullableListIntegrationObjects200Response{value: val, isSet: true}
+}
+
+func (v NullableListIntegrationObjects200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrationObjects200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

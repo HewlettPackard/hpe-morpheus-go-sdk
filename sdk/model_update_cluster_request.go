@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateClusterRequest{}
 // UpdateClusterRequest struct for UpdateClusterRequest
 type UpdateClusterRequest struct {
 	Cluster              *UpdateClusterRequestCluster `json:"cluster,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateClusterRequest UpdateClusterRequest
@@ -96,7 +96,60 @@ func (o UpdateClusterRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateClusterRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateClusterRequest := _UpdateClusterRequest{}
+
+	err = json.Unmarshal(data, &varUpdateClusterRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterRequest(varUpdateClusterRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cluster")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateClusterRequest struct {
+	value *UpdateClusterRequest
+	isSet bool
+}
+
+func (v NullableUpdateClusterRequest) Get() *UpdateClusterRequest {
+	return v.value
+}
+
+func (v *NullableUpdateClusterRequest) Set(val *UpdateClusterRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterRequest(val *UpdateClusterRequest) *NullableUpdateClusterRequest {
+	return &NullableUpdateClusterRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

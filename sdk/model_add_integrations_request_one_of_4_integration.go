@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddIntegrationsRequestOneOf4Integration type satisfies the MappedNullable interface at compile time
@@ -31,8 +32,8 @@ type AddIntegrationsRequestOneOf4Integration struct {
 	// Password
 	ServicePassword *string `json:"servicePassword,omitempty"`
 	// Access Token
-	ServiceToken         *string                `json:"serviceToken,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ServiceToken         *string `json:"serviceToken,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf4Integration AddIntegrationsRequestOneOf4Integration
@@ -264,7 +265,87 @@ func (o AddIntegrationsRequestOneOf4Integration) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *AddIntegrationsRequestOneOf4Integration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddIntegrationsRequestOneOf4Integration := _AddIntegrationsRequestOneOf4Integration{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf4Integration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf4Integration(varAddIntegrationsRequestOneOf4Integration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceToken")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddIntegrationsRequestOneOf4Integration struct {
+	value *AddIntegrationsRequestOneOf4Integration
+	isSet bool
+}
+
+func (v NullableAddIntegrationsRequestOneOf4Integration) Get() *AddIntegrationsRequestOneOf4Integration {
+	return v.value
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4Integration) Set(val *AddIntegrationsRequestOneOf4Integration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIntegrationsRequestOneOf4Integration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4Integration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIntegrationsRequestOneOf4Integration(val *AddIntegrationsRequestOneOf4Integration) *NullableAddIntegrationsRequestOneOf4Integration {
+	return &NullableAddIntegrationsRequestOneOf4Integration{value: val, isSet: true}
+}
+
+func (v NullableAddIntegrationsRequestOneOf4Integration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4Integration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

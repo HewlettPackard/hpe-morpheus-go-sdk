@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateIncidentsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &UpdateIncidentsRequest{}
 // UpdateIncidentsRequest struct for UpdateIncidentsRequest
 type UpdateIncidentsRequest struct {
 	Incident             UpdateIncidentsRequestIncident `json:"incident"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateIncidentsRequest UpdateIncidentsRequest
@@ -87,7 +88,81 @@ func (o UpdateIncidentsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateIncidentsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"incident",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateIncidentsRequest := _UpdateIncidentsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateIncidentsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateIncidentsRequest(varUpdateIncidentsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "incident")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateIncidentsRequest struct {
+	value *UpdateIncidentsRequest
+	isSet bool
+}
+
+func (v NullableUpdateIncidentsRequest) Get() *UpdateIncidentsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateIncidentsRequest) Set(val *UpdateIncidentsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateIncidentsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateIncidentsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateIncidentsRequest(val *UpdateIncidentsRequest) *NullableUpdateIncidentsRequest {
+	return &NullableUpdateIncidentsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateIncidentsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateIncidentsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

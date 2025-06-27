@@ -34,7 +34,7 @@ type IntegrationPuppet struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationPuppet IntegrationPuppet
@@ -573,7 +573,72 @@ func (o IntegrationPuppet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationPuppet) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationPuppet := _IntegrationPuppet{}
+
+	err = json.Unmarshal(data, &varIntegrationPuppet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationPuppet(varIntegrationPuppet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationPuppet struct {
+	value *IntegrationPuppet
+	isSet bool
+}
+
+func (v NullableIntegrationPuppet) Get() *IntegrationPuppet {
+	return v.value
+}
+
+func (v *NullableIntegrationPuppet) Set(val *IntegrationPuppet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationPuppet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationPuppet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationPuppet(val *IntegrationPuppet) *NullableIntegrationPuppet {
+	return &NullableIntegrationPuppet{value: val, isSet: true}
+}
+
+func (v NullableIntegrationPuppet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationPuppet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

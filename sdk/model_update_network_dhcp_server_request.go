@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateNetworkDhcpServerRequest{}
 // UpdateNetworkDhcpServerRequest The parameters for update a Network DHCP Server is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network server type.
 type UpdateNetworkDhcpServerRequest struct {
 	NetworkDhcpServer    map[string]interface{} `json:"networkDhcpServer,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateNetworkDhcpServerRequest UpdateNetworkDhcpServerRequest
@@ -96,7 +96,60 @@ func (o UpdateNetworkDhcpServerRequest) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *UpdateNetworkDhcpServerRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateNetworkDhcpServerRequest := _UpdateNetworkDhcpServerRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkDhcpServerRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkDhcpServerRequest(varUpdateNetworkDhcpServerRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateNetworkDhcpServerRequest struct {
+	value *UpdateNetworkDhcpServerRequest
+	isSet bool
+}
+
+func (v NullableUpdateNetworkDhcpServerRequest) Get() *UpdateNetworkDhcpServerRequest {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkDhcpServerRequest) Set(val *UpdateNetworkDhcpServerRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkDhcpServerRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkDhcpServerRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkDhcpServerRequest(val *UpdateNetworkDhcpServerRequest) *NullableUpdateNetworkDhcpServerRequest {
+	return &NullableUpdateNetworkDhcpServerRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkDhcpServerRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

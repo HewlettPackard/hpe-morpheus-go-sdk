@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddWorkflowsRequestTaskSet type satisfies the MappedNullable interface at compile time
@@ -33,7 +34,7 @@ type AddWorkflowsRequestTaskSet struct {
 	// List of option type IDs for use with operational workflow configuration.
 	OptionTypes          []int64                          `json:"optionTypes,omitempty"`
 	Tasks                *AddWorkflowsRequestTaskSetTasks `json:"tasks,omitempty"`
-	AdditionalProperties map[string]interface{}           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddWorkflowsRequestTaskSet AddWorkflowsRequestTaskSet
@@ -317,7 +318,87 @@ func (o AddWorkflowsRequestTaskSet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddWorkflowsRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddWorkflowsRequestTaskSet := _AddWorkflowsRequestTaskSet{}
+
+	err = json.Unmarshal(data, &varAddWorkflowsRequestTaskSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddWorkflowsRequestTaskSet(varAddWorkflowsRequestTaskSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "tasks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddWorkflowsRequestTaskSet struct {
+	value *AddWorkflowsRequestTaskSet
+	isSet bool
+}
+
+func (v NullableAddWorkflowsRequestTaskSet) Get() *AddWorkflowsRequestTaskSet {
+	return v.value
+}
+
+func (v *NullableAddWorkflowsRequestTaskSet) Set(val *AddWorkflowsRequestTaskSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddWorkflowsRequestTaskSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddWorkflowsRequestTaskSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddWorkflowsRequestTaskSet(val *AddWorkflowsRequestTaskSet) *NullableAddWorkflowsRequestTaskSet {
+	return &NullableAddWorkflowsRequestTaskSet{value: val, isSet: true}
+}
+
+func (v NullableAddWorkflowsRequestTaskSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddWorkflowsRequestTaskSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

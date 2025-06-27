@@ -50,8 +50,8 @@ type UpdatePricesRequestPrice struct {
 	VolumeType *AddPricesRequestPriceVolumeType `json:"volumeType,omitempty"`
 	Datastore  *AddPricesRequestPriceDatastore  `json:"datastore,omitempty"`
 	// Apply price across clouds, optional true/false flag for datastore price type
-	CrossCloudApply      *bool                  `json:"crossCloudApply,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	CrossCloudApply      *bool `json:"crossCloudApply,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePricesRequestPrice UpdatePricesRequestPrice
@@ -686,7 +686,76 @@ func (o UpdatePricesRequestPrice) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdatePricesRequestPrice) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdatePricesRequestPrice := _UpdatePricesRequestPrice{}
+
+	err = json.Unmarshal(data, &varUpdatePricesRequestPrice)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePricesRequestPrice(varUpdatePricesRequestPrice)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "priceType")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "incurCharges")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "markupType")
+		delete(additionalProperties, "markup")
+		delete(additionalProperties, "markupPercent")
+		delete(additionalProperties, "customPrice")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "software")
+		delete(additionalProperties, "volumeType")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "crossCloudApply")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdatePricesRequestPrice struct {
+	value *UpdatePricesRequestPrice
+	isSet bool
+}
+
+func (v NullableUpdatePricesRequestPrice) Get() *UpdatePricesRequestPrice {
+	return v.value
+}
+
+func (v *NullableUpdatePricesRequestPrice) Set(val *UpdatePricesRequestPrice) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePricesRequestPrice) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePricesRequestPrice) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePricesRequestPrice(val *UpdatePricesRequestPrice) *NullableUpdatePricesRequestPrice {
+	return &NullableUpdatePricesRequestPrice{value: val, isSet: true}
+}
+
+func (v NullableUpdatePricesRequestPrice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePricesRequestPrice) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

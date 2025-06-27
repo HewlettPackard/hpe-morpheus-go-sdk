@@ -24,7 +24,7 @@ type NetworkGroupsCreate struct {
 	Description          *string                  `json:"description,omitempty"`
 	Networks             []int64                  `json:"networks,omitempty"`
 	Subnets              []map[string]interface{} `json:"subnets,omitempty"`
-	AdditionalProperties map[string]interface{}   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkGroupsCreate NetworkGroupsCreate
@@ -204,7 +204,63 @@ func (o NetworkGroupsCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkGroupsCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkGroupsCreate := _NetworkGroupsCreate{}
+
+	err = json.Unmarshal(data, &varNetworkGroupsCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkGroupsCreate(varNetworkGroupsCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "networks")
+		delete(additionalProperties, "subnets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkGroupsCreate struct {
+	value *NetworkGroupsCreate
+	isSet bool
+}
+
+func (v NullableNetworkGroupsCreate) Get() *NetworkGroupsCreate {
+	return v.value
+}
+
+func (v *NullableNetworkGroupsCreate) Set(val *NetworkGroupsCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkGroupsCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkGroupsCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkGroupsCreate(val *NetworkGroupsCreate) *NullableNetworkGroupsCreate {
+	return &NullableNetworkGroupsCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkGroupsCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkGroupsCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

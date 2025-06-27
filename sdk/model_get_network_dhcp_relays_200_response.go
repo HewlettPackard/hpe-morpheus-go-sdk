@@ -22,7 +22,7 @@ var _ MappedNullable = &GetNetworkDhcpRelays200Response{}
 type GetNetworkDhcpRelays200Response struct {
 	NetworkDhcpRelays    interface{}                       `json:"networkDhcpRelays,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkDhcpRelays200Response GetNetworkDhcpRelays200Response
@@ -133,7 +133,61 @@ func (o GetNetworkDhcpRelays200Response) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *GetNetworkDhcpRelays200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkDhcpRelays200Response := _GetNetworkDhcpRelays200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkDhcpRelays200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkDhcpRelays200Response(varGetNetworkDhcpRelays200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpRelays")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkDhcpRelays200Response struct {
+	value *GetNetworkDhcpRelays200Response
+	isSet bool
+}
+
+func (v NullableGetNetworkDhcpRelays200Response) Get() *GetNetworkDhcpRelays200Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkDhcpRelays200Response) Set(val *GetNetworkDhcpRelays200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkDhcpRelays200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkDhcpRelays200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkDhcpRelays200Response(val *GetNetworkDhcpRelays200Response) *NullableGetNetworkDhcpRelays200Response {
+	return &NullableGetNetworkDhcpRelays200Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkDhcpRelays200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkDhcpRelays200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

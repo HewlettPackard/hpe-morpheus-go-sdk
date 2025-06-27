@@ -21,8 +21,8 @@ var _ MappedNullable = &AddPricesRequestPriceVolumeType{}
 // AddPricesRequestPriceVolumeType struct for AddPricesRequestPriceVolumeType
 type AddPricesRequestPriceVolumeType struct {
 	// Volume type ID, required for `storage` price type. The endpoint /api/prices/volume-types provides a list of available volume type options.
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPricesRequestPriceVolumeType AddPricesRequestPriceVolumeType
@@ -97,7 +97,60 @@ func (o AddPricesRequestPriceVolumeType) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *AddPricesRequestPriceVolumeType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddPricesRequestPriceVolumeType := _AddPricesRequestPriceVolumeType{}
+
+	err = json.Unmarshal(data, &varAddPricesRequestPriceVolumeType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPricesRequestPriceVolumeType(varAddPricesRequestPriceVolumeType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPricesRequestPriceVolumeType struct {
+	value *AddPricesRequestPriceVolumeType
+	isSet bool
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) Get() *AddPricesRequestPriceVolumeType {
+	return v.value
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) Set(val *AddPricesRequestPriceVolumeType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPricesRequestPriceVolumeType(val *AddPricesRequestPriceVolumeType) *NullableAddPricesRequestPriceVolumeType {
+	return &NullableAddPricesRequestPriceVolumeType{value: val, isSet: true}
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -66,7 +66,7 @@ type ProvisionType struct {
 	StorageTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"storageTypes,omitempty"`
 	RootStorageTypes      []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"rootStorageTypes,omitempty"`
 	ControllerTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner `json:"controllerTypes,omitempty"`
-	AdditionalProperties  map[string]interface{}                                                                                             `json:",remain"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ProvisionType ProvisionType
@@ -1777,7 +1777,105 @@ func (o ProvisionType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ProvisionType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varProvisionType := _ProvisionType{}
+
+	err = json.Unmarshal(data, &varProvisionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ProvisionType(varProvisionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "aclEnabled")
+		delete(additionalProperties, "multiTenant")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "hostNetwork")
+		delete(additionalProperties, "customSupported")
+		delete(additionalProperties, "mapPorts")
+		delete(additionalProperties, "exportServer")
+		delete(additionalProperties, "viewSet")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "hostType")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "hasVolumes")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "hasNetworks")
+		delete(additionalProperties, "maxNetworks")
+		delete(additionalProperties, "customizeVolume")
+		delete(additionalProperties, "rootDiskCustomizable")
+		delete(additionalProperties, "rootDiskSizeKnown")
+		delete(additionalProperties, "rootDiskResizable")
+		delete(additionalProperties, "lvmSupported")
+		delete(additionalProperties, "hostDiskMode")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		delete(additionalProperties, "resizeCopiesVolumes")
+		delete(additionalProperties, "supportsAutoDatastore")
+		delete(additionalProperties, "hasZonePools")
+		delete(additionalProperties, "hasSecurityGroups")
+		delete(additionalProperties, "hasParameters")
+		delete(additionalProperties, "canEnforceTags")
+		delete(additionalProperties, "disableRootDatastore")
+		delete(additionalProperties, "hasSnapshots")
+		delete(additionalProperties, "hasSpecTemplates")
+		delete(additionalProperties, "hasPreview")
+		delete(additionalProperties, "zonePoolRequired")
+		delete(additionalProperties, "planRequiresPool")
+		delete(additionalProperties, "hasFolders")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "customOptionTypes")
+		delete(additionalProperties, "networkTypes")
+		delete(additionalProperties, "storageTypes")
+		delete(additionalProperties, "rootStorageTypes")
+		delete(additionalProperties, "controllerTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableProvisionType struct {
+	value *ProvisionType
+	isSet bool
+}
+
+func (v NullableProvisionType) Get() *ProvisionType {
+	return v.value
+}
+
+func (v *NullableProvisionType) Set(val *ProvisionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableProvisionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableProvisionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableProvisionType(val *ProvisionType) *NullableProvisionType {
+	return &NullableProvisionType{value: val, isSet: true}
+}
+
+func (v NullableProvisionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableProvisionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

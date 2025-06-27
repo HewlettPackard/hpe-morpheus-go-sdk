@@ -23,8 +23,8 @@ type AddClusterRequestClusterServerSshHostsInner struct {
 	// Host IP
 	Ip *string `json:"ip,omitempty"`
 	// Host Name
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Name                 *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServerSshHostsInner AddClusterRequestClusterServerSshHostsInner
@@ -134,7 +134,61 @@ func (o AddClusterRequestClusterServerSshHostsInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterRequestClusterServerSshHostsInner := _AddClusterRequestClusterServerSshHostsInner{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerSshHostsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerSshHostsInner(varAddClusterRequestClusterServerSshHostsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterRequestClusterServerSshHostsInner struct {
+	value *AddClusterRequestClusterServerSshHostsInner
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) Get() *AddClusterRequestClusterServerSshHostsInner {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) Set(val *AddClusterRequestClusterServerSshHostsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerSshHostsInner(val *AddClusterRequestClusterServerSshHostsInner) *NullableAddClusterRequestClusterServerSshHostsInner {
+	return &NullableAddClusterRequestClusterServerSshHostsInner{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

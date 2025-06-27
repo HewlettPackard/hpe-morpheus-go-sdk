@@ -37,8 +37,8 @@ type UpdateScriptRequestContainerScript struct {
 	// Run as a specific user.
 	RunAsUser *string `json:"runAsUser,omitempty"`
 	// Sudo, whether or not to run with sudo.
-	SudoUser             *bool                  `json:"sudoUser,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	SudoUser             *bool `json:"sudoUser,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateScriptRequestContainerScript UpdateScriptRequestContainerScript
@@ -406,7 +406,68 @@ func (o UpdateScriptRequestContainerScript) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *UpdateScriptRequestContainerScript) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateScriptRequestContainerScript := _UpdateScriptRequestContainerScript{}
+
+	err = json.Unmarshal(data, &varUpdateScriptRequestContainerScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateScriptRequestContainerScript(varUpdateScriptRequestContainerScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "sudoUser")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateScriptRequestContainerScript struct {
+	value *UpdateScriptRequestContainerScript
+	isSet bool
+}
+
+func (v NullableUpdateScriptRequestContainerScript) Get() *UpdateScriptRequestContainerScript {
+	return v.value
+}
+
+func (v *NullableUpdateScriptRequestContainerScript) Set(val *UpdateScriptRequestContainerScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateScriptRequestContainerScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateScriptRequestContainerScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateScriptRequestContainerScript(val *UpdateScriptRequestContainerScript) *NullableUpdateScriptRequestContainerScript {
+	return &NullableUpdateScriptRequestContainerScript{value: val, isSet: true}
+}
+
+func (v NullableUpdateScriptRequestContainerScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateScriptRequestContainerScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -51,7 +51,7 @@ type ClusterHistory struct {
 	CreatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"createdBy,omitempty"`
 	UpdatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"updatedBy,omitempty"`
 	Events               []GetClusterHistory200ResponseAllOfProcessesInnerEventsInner               `json:"events,omitempty"`
-	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterHistory ClusterHistory
@@ -1295,7 +1295,89 @@ func (o ClusterHistory) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterHistory) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterHistory := _ClusterHistory{}
+
+	err = json.Unmarshal(data, &varClusterHistory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterHistory(varClusterHistory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "processType")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subType")
+		delete(additionalProperties, "subId")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "integrationId")
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "containerName")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "reason")
+		delete(additionalProperties, "percent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "message")
+		delete(additionalProperties, "output")
+		delete(additionalProperties, "error")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "events")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterHistory struct {
+	value *ClusterHistory
+	isSet bool
+}
+
+func (v NullableClusterHistory) Get() *ClusterHistory {
+	return v.value
+}
+
+func (v *NullableClusterHistory) Set(val *ClusterHistory) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterHistory) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterHistory) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterHistory(val *ClusterHistory) *NullableClusterHistory {
+	return &NullableClusterHistory{value: val, isSet: true}
+}
+
+func (v NullableClusterHistory) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterHistory) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

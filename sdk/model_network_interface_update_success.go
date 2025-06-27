@@ -24,7 +24,7 @@ type NetworkInterfaceUpdateSuccess struct {
 	InterfaceType        *string                                                              `json:"interfaceType,omitempty"`
 	NetId                *int64                                                               `json:"netId,omitempty"`
 	Server               *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer           `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}                                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkInterfaceUpdateSuccess NetworkInterfaceUpdateSuccess
@@ -204,7 +204,63 @@ func (o NetworkInterfaceUpdateSuccess) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkInterfaceUpdateSuccess) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkInterfaceUpdateSuccess := _NetworkInterfaceUpdateSuccess{}
+
+	err = json.Unmarshal(data, &varNetworkInterfaceUpdateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkInterfaceUpdateSuccess(varNetworkInterfaceUpdateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkInterface")
+		delete(additionalProperties, "interfaceType")
+		delete(additionalProperties, "netId")
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkInterfaceUpdateSuccess struct {
+	value *NetworkInterfaceUpdateSuccess
+	isSet bool
+}
+
+func (v NullableNetworkInterfaceUpdateSuccess) Get() *NetworkInterfaceUpdateSuccess {
+	return v.value
+}
+
+func (v *NullableNetworkInterfaceUpdateSuccess) Set(val *NetworkInterfaceUpdateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkInterfaceUpdateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkInterfaceUpdateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkInterfaceUpdateSuccess(val *NetworkInterfaceUpdateSuccess) *NullableNetworkInterfaceUpdateSuccess {
+	return &NullableNetworkInterfaceUpdateSuccess{value: val, isSet: true}
+}
+
+func (v NullableNetworkInterfaceUpdateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkInterfaceUpdateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

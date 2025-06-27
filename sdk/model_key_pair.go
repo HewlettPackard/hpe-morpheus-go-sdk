@@ -28,11 +28,11 @@ type KeyPair struct {
 	HasPrivateKey  *bool          `json:"hasPrivateKey,omitempty"`
 	PrivateKeyHash NullableString `json:"privateKeyHash,omitempty"`
 	// Only present in response to generate
-	PrivateKey           NullableString         `json:"privateKey,omitempty"`
-	Fingerprint          NullableString         `json:"fingerprint,omitempty"`
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	PrivateKey           NullableString `json:"privateKey,omitempty"`
+	Fingerprint          NullableString `json:"fingerprint,omitempty"`
+	DateCreated          *time.Time     `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time     `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _KeyPair KeyPair
@@ -466,7 +466,69 @@ func (o KeyPair) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *KeyPair) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varKeyPair := _KeyPair{}
+
+	err = json.Unmarshal(data, &varKeyPair)
+
+	if err != nil {
+		return err
+	}
+
+	*o = KeyPair(varKeyPair)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "hasPrivateKey")
+		delete(additionalProperties, "privateKeyHash")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "fingerprint")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableKeyPair struct {
+	value *KeyPair
+	isSet bool
+}
+
+func (v NullableKeyPair) Get() *KeyPair {
+	return v.value
+}
+
+func (v *NullableKeyPair) Set(val *KeyPair) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableKeyPair) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableKeyPair) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableKeyPair(val *KeyPair) *NullableKeyPair {
+	return &NullableKeyPair{value: val, isSet: true}
+}
+
+func (v NullableKeyPair) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableKeyPair) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

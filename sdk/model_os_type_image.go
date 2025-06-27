@@ -32,8 +32,8 @@ type OsTypeImage struct {
 	// The zone type of the osTypeImage.
 	ComputeZoneType NullableInt64 `json:"computeZoneType,omitempty"`
 	// The cloud that is attached to osTypeImage.
-	Zone                 NullableInt64          `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Zone                 NullableInt64 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _OsTypeImage OsTypeImage
@@ -362,7 +362,66 @@ func (o OsTypeImage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OsTypeImage) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varOsTypeImage := _OsTypeImage{}
+
+	err = json.Unmarshal(data, &varOsTypeImage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OsTypeImage(varOsTypeImage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "virtualImageName")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "computeZoneType")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableOsTypeImage struct {
+	value *OsTypeImage
+	isSet bool
+}
+
+func (v NullableOsTypeImage) Get() *OsTypeImage {
+	return v.value
+}
+
+func (v *NullableOsTypeImage) Set(val *OsTypeImage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOsTypeImage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOsTypeImage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOsTypeImage(val *OsTypeImage) *NullableOsTypeImage {
+	return &NullableOsTypeImage{value: val, isSet: true}
+}
+
+func (v NullableOsTypeImage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOsTypeImage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

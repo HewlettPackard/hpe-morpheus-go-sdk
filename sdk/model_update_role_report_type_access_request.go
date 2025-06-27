@@ -41,22 +41,6 @@ func UpdateRoleReportTypeAccessRequestOneOf1AsUpdateRoleReportTypeAccessRequest(
 	}
 }
 
-func (dst *UpdateRoleReportTypeAccessRequest) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &UpdateRoleReportTypeAccessRequest{}
-	}
-
-	if out, ok := data.(UpdateRoleReportTypeAccessRequestOneOf); ok {
-		dst.UpdateRoleReportTypeAccessRequestOneOf = &out
-	}
-
-	if out, ok := data.(UpdateRoleReportTypeAccessRequestOneOf1); ok {
-		dst.UpdateRoleReportTypeAccessRequestOneOf1 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleReportTypeAccessRequest) UnmarshalJSON(data []byte) error {
 	var err error

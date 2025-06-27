@@ -27,7 +27,7 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
 	Network                    *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
 	NetworkInterfaceTypeId     *int64                                                                              `json:"networkInterfaceTypeId,omitempty"`
 	NetworkInterfaceTypeIdName *string                                                                             `json:"networkInterfaceTypeIdName,omitempty"`
-	AdditionalProperties       map[string]interface{}                                                              `json:",remain"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
@@ -312,7 +312,66 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesIn
 	return toSerialize, nil
 }
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner := _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner{}
+
+	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner(varListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "ipMode")
+		delete(additionalProperties, "primaryInterface")
+		delete(additionalProperties, "showNetworkPoolLabel")
+		delete(additionalProperties, "showNetworkDhcpLabel")
+		delete(additionalProperties, "network")
+		delete(additionalProperties, "networkInterfaceTypeId")
+		delete(additionalProperties, "networkInterfaceTypeIdName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner struct {
+	value *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner
+	isSet bool
+}
+
+func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner {
+	return v.value
+}
+
+func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner(val *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner {
+	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

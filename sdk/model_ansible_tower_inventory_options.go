@@ -20,9 +20,9 @@ var _ MappedNullable = &AnsibleTowerInventoryOptions{}
 
 // AnsibleTowerInventoryOptions struct for AnsibleTowerInventoryOptions
 type AnsibleTowerInventoryOptions struct {
-	Name                 *string                `json:"name,omitempty"`
-	Value                *int64                 `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Name                 *string `json:"name,omitempty"`
+	Value                *int64  `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AnsibleTowerInventoryOptions AnsibleTowerInventoryOptions
@@ -132,7 +132,61 @@ func (o AnsibleTowerInventoryOptions) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AnsibleTowerInventoryOptions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAnsibleTowerInventoryOptions := _AnsibleTowerInventoryOptions{}
+
+	err = json.Unmarshal(data, &varAnsibleTowerInventoryOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AnsibleTowerInventoryOptions(varAnsibleTowerInventoryOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAnsibleTowerInventoryOptions struct {
+	value *AnsibleTowerInventoryOptions
+	isSet bool
+}
+
+func (v NullableAnsibleTowerInventoryOptions) Get() *AnsibleTowerInventoryOptions {
+	return v.value
+}
+
+func (v *NullableAnsibleTowerInventoryOptions) Set(val *AnsibleTowerInventoryOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAnsibleTowerInventoryOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAnsibleTowerInventoryOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAnsibleTowerInventoryOptions(val *AnsibleTowerInventoryOptions) *NullableAnsibleTowerInventoryOptions {
+	return &NullableAnsibleTowerInventoryOptions{value: val, isSet: true}
+}
+
+func (v NullableAnsibleTowerInventoryOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAnsibleTowerInventoryOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -26,7 +26,7 @@ type ListTasks200ResponseAllOfTasksInnerAnyOfFile struct {
 	ContentPath          NullableString                                     `json:"contentPath,omitempty"`
 	Repository           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
 	Content              NullableString                                     `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOfFile ListTasks200ResponseAllOfTasksInnerAnyOfFile
@@ -331,7 +331,65 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOfFile) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOfFile) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListTasks200ResponseAllOfTasksInnerAnyOfFile := _ListTasks200ResponseAllOfTasksInnerAnyOfFile{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOfFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOfFile(varListTasks200ResponseAllOfTasksInnerAnyOfFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "repository")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListTasks200ResponseAllOfTasksInnerAnyOfFile struct {
+	value *ListTasks200ResponseAllOfTasksInnerAnyOfFile
+	isSet bool
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Get() *ListTasks200ResponseAllOfTasksInnerAnyOfFile {
+	return v.value
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOfFile) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListTasks200ResponseAllOfTasksInnerAnyOfFile(val *ListTasks200ResponseAllOfTasksInnerAnyOfFile) *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile {
+	return &NullableListTasks200ResponseAllOfTasksInnerAnyOfFile{value: val, isSet: true}
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOfFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

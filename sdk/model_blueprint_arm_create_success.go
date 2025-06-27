@@ -35,7 +35,7 @@ type BlueprintARMCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant               map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintARMCreateSuccess BlueprintARMCreateSuccess
@@ -359,7 +359,67 @@ func (o BlueprintARMCreateSuccess) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BlueprintARMCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBlueprintARMCreateSuccess := _BlueprintARMCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintARMCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintARMCreateSuccess(varBlueprintARMCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "arm")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBlueprintARMCreateSuccess struct {
+	value *BlueprintARMCreateSuccess
+	isSet bool
+}
+
+func (v NullableBlueprintARMCreateSuccess) Get() *BlueprintARMCreateSuccess {
+	return v.value
+}
+
+func (v *NullableBlueprintARMCreateSuccess) Set(val *BlueprintARMCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintARMCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintARMCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintARMCreateSuccess(val *BlueprintARMCreateSuccess) *NullableBlueprintARMCreateSuccess {
+	return &NullableBlueprintARMCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableBlueprintARMCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintARMCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

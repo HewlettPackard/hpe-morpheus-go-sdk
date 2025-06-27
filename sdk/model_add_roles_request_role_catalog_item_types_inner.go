@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddRolesRequestRoleCatalogItemTypesInner type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type AddRolesRequestRoleCatalogItemTypesInner struct {
 	// `id` of the catalog item type
 	Id int32 `json:"id"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddRolesRequestRoleCatalogItemTypesInner AddRolesRequestRoleCatalogItemTypesInner
@@ -116,7 +117,83 @@ func (o AddRolesRequestRoleCatalogItemTypesInner) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddRolesRequestRoleCatalogItemTypesInner := _AddRolesRequestRoleCatalogItemTypesInner{}
+
+	err = json.Unmarshal(data, &varAddRolesRequestRoleCatalogItemTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddRolesRequestRoleCatalogItemTypesInner(varAddRolesRequestRoleCatalogItemTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddRolesRequestRoleCatalogItemTypesInner struct {
+	value *AddRolesRequestRoleCatalogItemTypesInner
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypesInner) Get() *AddRolesRequestRoleCatalogItemTypesInner {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) Set(val *AddRolesRequestRoleCatalogItemTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRoleCatalogItemTypesInner(val *AddRolesRequestRoleCatalogItemTypesInner) *NullableAddRolesRequestRoleCatalogItemTypesInner {
+	return &NullableAddRolesRequestRoleCatalogItemTypesInner{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

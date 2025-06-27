@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf1 type satisfies the MappedNullable interface at compile time
@@ -27,7 +28,7 @@ type AddBlueprintRequestOneOf1 struct {
 	// Array of label strings, can be used for filtering.
 	Labels               []string                                `json:"labels,omitempty"`
 	CloudFormation       AddBlueprintRequestOneOf1CloudFormation `json:"cloudFormation"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOf1 AddBlueprintRequestOneOf1
@@ -181,7 +182,86 @@ func (o AddBlueprintRequestOneOf1) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBlueprintRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"cloudFormation",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddBlueprintRequestOneOf1 := _AddBlueprintRequestOneOf1{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOf1(varAddBlueprintRequestOneOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "cloudFormation")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBlueprintRequestOneOf1 struct {
+	value *AddBlueprintRequestOneOf1
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf1) Get() *AddBlueprintRequestOneOf1 {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf1) Set(val *AddBlueprintRequestOneOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf1(val *AddBlueprintRequestOneOf1) *NullableAddBlueprintRequestOneOf1 {
+	return &NullableAddBlueprintRequestOneOf1{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &MaxVMsPolicyTypeConfiguration{}
 
 // MaxVMsPolicyTypeConfiguration Configuration settings for the following policy types: - Max VMs
 type MaxVMsPolicyTypeConfiguration struct {
-	MaxVms               *string                `json:"maxVms,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxVms               *string `json:"maxVms,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MaxVMsPolicyTypeConfiguration MaxVMsPolicyTypeConfiguration
@@ -96,7 +96,60 @@ func (o MaxVMsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *MaxVMsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMaxVMsPolicyTypeConfiguration := _MaxVMsPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxVMsPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxVMsPolicyTypeConfiguration(varMaxVMsPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxVms")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMaxVMsPolicyTypeConfiguration struct {
+	value *MaxVMsPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMaxVMsPolicyTypeConfiguration) Get() *MaxVMsPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMaxVMsPolicyTypeConfiguration) Set(val *MaxVMsPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxVMsPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxVMsPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxVMsPolicyTypeConfiguration(val *MaxVMsPolicyTypeConfiguration) *NullableMaxVMsPolicyTypeConfiguration {
+	return &NullableMaxVMsPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMaxVMsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxVMsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

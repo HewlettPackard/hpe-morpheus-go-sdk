@@ -25,8 +25,8 @@ type UserGroupCreate struct {
 	SudoUser    *bool          `json:"sudoUser,omitempty"`
 	ServerGroup NullableString `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
-	Users                []int64                `json:"users,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Users                []int64 `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UserGroupCreate UserGroupCreate
@@ -263,7 +263,64 @@ func (o UserGroupCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UserGroupCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUserGroupCreate := _UserGroupCreate{}
+
+	err = json.Unmarshal(data, &varUserGroupCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UserGroupCreate(varUserGroupCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUserGroupCreate struct {
+	value *UserGroupCreate
+	isSet bool
+}
+
+func (v NullableUserGroupCreate) Get() *UserGroupCreate {
+	return v.value
+}
+
+func (v *NullableUserGroupCreate) Set(val *UserGroupCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserGroupCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserGroupCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserGroupCreate(val *UserGroupCreate) *NullableUserGroupCreate {
+	return &NullableUserGroupCreate{value: val, isSet: true}
+}
+
+func (v NullableUserGroupCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserGroupCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -42,7 +42,7 @@ type UpdateTasksRequestTask struct {
 	RetryDelaySeconds    *float32                                          `json:"retryDelaySeconds,omitempty"`
 	File                 *AddTasksRequestTaskFile                          `json:"file,omitempty"`
 	Credential           *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateTasksRequestTask UpdateTasksRequestTask
@@ -556,7 +556,72 @@ func (o UpdateTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateTasksRequestTask) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateTasksRequestTask := _UpdateTasksRequestTask{}
+
+	err = json.Unmarshal(data, &varUpdateTasksRequestTask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTasksRequestTask(varUpdateTasksRequestTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateTasksRequestTask struct {
+	value *UpdateTasksRequestTask
+	isSet bool
+}
+
+func (v NullableUpdateTasksRequestTask) Get() *UpdateTasksRequestTask {
+	return v.value
+}
+
+func (v *NullableUpdateTasksRequestTask) Set(val *UpdateTasksRequestTask) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateTasksRequestTask) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateTasksRequestTask) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateTasksRequestTask(val *UpdateTasksRequestTask) *NullableUpdateTasksRequestTask {
+	return &NullableUpdateTasksRequestTask{value: val, isSet: true}
+}
+
+func (v NullableUpdateTasksRequestTask) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateTasksRequestTask) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &AddBaremetalHostRequestServerGroup{}
 
 // AddBaremetalHostRequestServerGroup struct for AddBaremetalHostRequestServerGroup
 type AddBaremetalHostRequestServerGroup struct {
-	Id                   *int32                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBaremetalHostRequestServerGroup AddBaremetalHostRequestServerGroup
@@ -96,7 +96,60 @@ func (o AddBaremetalHostRequestServerGroup) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddBaremetalHostRequestServerGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddBaremetalHostRequestServerGroup := _AddBaremetalHostRequestServerGroup{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerGroup(varAddBaremetalHostRequestServerGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBaremetalHostRequestServerGroup struct {
+	value *AddBaremetalHostRequestServerGroup
+	isSet bool
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) Get() *AddBaremetalHostRequestServerGroup {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) Set(val *AddBaremetalHostRequestServerGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHostRequestServerGroup(val *AddBaremetalHostRequestServerGroup) *NullableAddBaremetalHostRequestServerGroup {
+	return &NullableAddBaremetalHostRequestServerGroup{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

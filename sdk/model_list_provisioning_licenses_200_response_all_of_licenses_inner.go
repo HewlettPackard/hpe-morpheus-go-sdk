@@ -33,7 +33,7 @@ type ListProvisioningLicenses200ResponseAllOfLicensesInner struct {
 	Tenants              []map[string]interface{}                                    `json:"tenants,omitempty"`
 	VirtualImages        []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"virtualImages,omitempty"`
 	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListProvisioningLicenses200ResponseAllOfLicensesInner ListProvisioningLicenses200ResponseAllOfLicensesInner
@@ -528,7 +528,72 @@ func (o ListProvisioningLicenses200ResponseAllOfLicensesInner) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListProvisioningLicenses200ResponseAllOfLicensesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListProvisioningLicenses200ResponseAllOfLicensesInner := _ListProvisioningLicenses200ResponseAllOfLicensesInner{}
+
+	err = json.Unmarshal(data, &varListProvisioningLicenses200ResponseAllOfLicensesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProvisioningLicenses200ResponseAllOfLicensesInner(varListProvisioningLicenses200ResponseAllOfLicensesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "licenseType")
+		delete(additionalProperties, "licenseKey")
+		delete(additionalProperties, "orgName")
+		delete(additionalProperties, "fullName")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "reservationCount")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListProvisioningLicenses200ResponseAllOfLicensesInner struct {
+	value *ListProvisioningLicenses200ResponseAllOfLicensesInner
+	isSet bool
+}
+
+func (v NullableListProvisioningLicenses200ResponseAllOfLicensesInner) Get() *ListProvisioningLicenses200ResponseAllOfLicensesInner {
+	return v.value
+}
+
+func (v *NullableListProvisioningLicenses200ResponseAllOfLicensesInner) Set(val *ListProvisioningLicenses200ResponseAllOfLicensesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListProvisioningLicenses200ResponseAllOfLicensesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListProvisioningLicenses200ResponseAllOfLicensesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListProvisioningLicenses200ResponseAllOfLicensesInner(val *ListProvisioningLicenses200ResponseAllOfLicensesInner) *NullableListProvisioningLicenses200ResponseAllOfLicensesInner {
+	return &NullableListProvisioningLicenses200ResponseAllOfLicensesInner{value: val, isSet: true}
+}
+
+func (v NullableListProvisioningLicenses200ResponseAllOfLicensesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListProvisioningLicenses200ResponseAllOfLicensesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

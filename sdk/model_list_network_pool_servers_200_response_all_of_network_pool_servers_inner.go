@@ -63,7 +63,7 @@ type ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner struct {
 	Integration          *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
 	Pools                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"pools,omitempty"`
 	Credential           *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential  `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner
@@ -1164,7 +1164,85 @@ func (o ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) ToMap() (
 	return toSerialize, nil
 }
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner := _ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner{}
+
+	err = json.Unmarshal(data, &varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner(varListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceHost")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "serviceMode")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "servicePasswordHash")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "networkFilter")
+		delete(additionalProperties, "zoneFilter")
+		delete(additionalProperties, "tenantMatch")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "pools")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner struct {
+	value *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner
+	isSet bool
+}
+
+func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) Get() *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner {
+	return v.value
+}
+
+func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) Set(val *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner(val *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner {
+	return &NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner{value: val, isSet: true}
+}
+
+func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

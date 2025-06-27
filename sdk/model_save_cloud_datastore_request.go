@@ -21,7 +21,7 @@ var _ MappedNullable = &SaveCloudDatastoreRequest{}
 // SaveCloudDatastoreRequest struct for SaveCloudDatastoreRequest
 type SaveCloudDatastoreRequest struct {
 	Datastore            *SaveCloudDatastoreRequestDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SaveCloudDatastoreRequest SaveCloudDatastoreRequest
@@ -96,7 +96,60 @@ func (o SaveCloudDatastoreRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SaveCloudDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSaveCloudDatastoreRequest := _SaveCloudDatastoreRequest{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastoreRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastoreRequest(varSaveCloudDatastoreRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSaveCloudDatastoreRequest struct {
+	value *SaveCloudDatastoreRequest
+	isSet bool
+}
+
+func (v NullableSaveCloudDatastoreRequest) Get() *SaveCloudDatastoreRequest {
+	return v.value
+}
+
+func (v *NullableSaveCloudDatastoreRequest) Set(val *SaveCloudDatastoreRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveCloudDatastoreRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveCloudDatastoreRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveCloudDatastoreRequest(val *SaveCloudDatastoreRequest) *NullableSaveCloudDatastoreRequest {
+	return &NullableSaveCloudDatastoreRequest{value: val, isSet: true}
+}
+
+func (v NullableSaveCloudDatastoreRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveCloudDatastoreRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

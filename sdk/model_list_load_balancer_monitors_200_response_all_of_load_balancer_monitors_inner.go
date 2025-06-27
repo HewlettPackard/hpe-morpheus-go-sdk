@@ -60,7 +60,7 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
 	CreatedBy            NullableString                                                                 `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                     `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner
@@ -1597,7 +1597,98 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) ToMap
 	return toSerialize, nil
 }
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner := _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner(varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "monitorType")
+		delete(additionalProperties, "monitorInterval")
+		delete(additionalProperties, "monitorTimeout")
+		delete(additionalProperties, "sendData")
+		delete(additionalProperties, "sendVersion")
+		delete(additionalProperties, "sendType")
+		delete(additionalProperties, "receiveData")
+		delete(additionalProperties, "receiveCode")
+		delete(additionalProperties, "disabledData")
+		delete(additionalProperties, "monitorUsername")
+		delete(additionalProperties, "monitorPassword")
+		delete(additionalProperties, "monitorDestination")
+		delete(additionalProperties, "monitorReverse")
+		delete(additionalProperties, "monitorTransparent")
+		delete(additionalProperties, "monitorAdaptive")
+		delete(additionalProperties, "aliasAddress")
+		delete(additionalProperties, "aliasPort")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "monitorSource")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "maxRetry")
+		delete(additionalProperties, "fallCount")
+		delete(additionalProperties, "riseCount")
+		delete(additionalProperties, "dataLength")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner struct {
+	value *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner
+	isSet bool
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) Get() *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner {
+	return v.value
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) Set(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner {
+	return &NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner{value: val, isSet: true}
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

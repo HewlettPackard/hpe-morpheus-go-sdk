@@ -42,7 +42,7 @@ type ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {
 	ProvisionType        *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType     `json:"provisionType,omitempty"`
 	OptionTypes          []ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DisplayOrder         *int64                                                                         `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
@@ -852,7 +852,81 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) ToMap() (m
 	return toSerialize, nil
 }
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner := _ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner{}
+
+	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner(varListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "nodeType")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "externalDelete")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "controlPower")
+		delete(additionalProperties, "controlSuspend")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAgent")
+		delete(additionalProperties, "vmHypervisor")
+		delete(additionalProperties, "containerHypervisor")
+		delete(additionalProperties, "bareMetalHost")
+		delete(additionalProperties, "guestVm")
+		delete(additionalProperties, "hasAutomation")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "displayOrder")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner struct {
+	value *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner
+	isSet bool
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Get() *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner {
+	return v.value
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Set(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner {
+	return &NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

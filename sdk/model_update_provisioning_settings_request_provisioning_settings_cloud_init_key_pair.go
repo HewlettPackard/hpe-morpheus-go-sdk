@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequestProvisioningSettingsClo
 // UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair struct for UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair
 type UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair struct {
 	// Cloud-init key pair ID
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair
@@ -97,7 +97,60 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) T
 	return toSerialize, nil
 }
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair := _UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair(varUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair struct {
+	value *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) Get() *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) Set(val *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair(val *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) *NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair {
+	return &NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -45,7 +45,7 @@ type GetNetworkRouter200ResponseNetworkRouter struct {
 	Routes               []map[string]interface{}                                    `json:"routes,omitempty"`
 	Nats                 []map[string]interface{}                                    `json:"nats,omitempty"`
 	Permissions          *GetNetworkRouter200ResponseNetworkRouterPermissions        `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkRouter200ResponseNetworkRouter GetNetworkRouter200ResponseNetworkRouter
@@ -980,7 +980,83 @@ func (o GetNetworkRouter200ResponseNetworkRouter) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *GetNetworkRouter200ResponseNetworkRouter) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkRouter200ResponseNetworkRouter := _GetNetworkRouter200ResponseNetworkRouter{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouter(varGetNetworkRouter200ResponseNetworkRouter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "routerType")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "externalNetwork")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "interfaces")
+		delete(additionalProperties, "firewall")
+		delete(additionalProperties, "routes")
+		delete(additionalProperties, "nats")
+		delete(additionalProperties, "permissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkRouter200ResponseNetworkRouter struct {
+	value *GetNetworkRouter200ResponseNetworkRouter
+	isSet bool
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouter) Get() *GetNetworkRouter200ResponseNetworkRouter {
+	return v.value
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouter) Set(val *GetNetworkRouter200ResponseNetworkRouter) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouter) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouter) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkRouter200ResponseNetworkRouter(val *GetNetworkRouter200ResponseNetworkRouter) *NullableGetNetworkRouter200ResponseNetworkRouter {
+	return &NullableGetNetworkRouter200ResponseNetworkRouter{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouter) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

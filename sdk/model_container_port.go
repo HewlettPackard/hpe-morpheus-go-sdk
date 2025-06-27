@@ -20,22 +20,22 @@ var _ MappedNullable = &ContainerPort{}
 
 // ContainerPort struct for ContainerPort
 type ContainerPort struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Index                *int64                 `json:"index,omitempty"`
-	External             *int64                 `json:"external,omitempty"`
-	Internal             *int64                 `json:"internal,omitempty"`
-	DisplayName          *string                `json:"displayName,omitempty"`
-	PrimaryPort          *bool                  `json:"primaryPort,omitempty"`
-	Export               *bool                  `json:"export,omitempty"`
-	Visible              *bool                  `json:"visible,omitempty"`
-	ExportName           *string                `json:"exportName,omitempty"`
-	LoadBalanceProtocol  *string                `json:"loadBalanceProtocol,omitempty"`
-	LoadBalance          *bool                  `json:"loadBalance,omitempty"`
-	Protocol             *string                `json:"protocol,omitempty"`
-	Link                 *bool                  `json:"link,omitempty"`
-	ExternalIp           NullableString         `json:"externalIp,omitempty"`
-	InternalIp           NullableString         `json:"internalIp,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	Index                *int64         `json:"index,omitempty"`
+	External             *int64         `json:"external,omitempty"`
+	Internal             *int64         `json:"internal,omitempty"`
+	DisplayName          *string        `json:"displayName,omitempty"`
+	PrimaryPort          *bool          `json:"primaryPort,omitempty"`
+	Export               *bool          `json:"export,omitempty"`
+	Visible              *bool          `json:"visible,omitempty"`
+	ExportName           *string        `json:"exportName,omitempty"`
+	LoadBalanceProtocol  *string        `json:"loadBalanceProtocol,omitempty"`
+	LoadBalance          *bool          `json:"loadBalance,omitempty"`
+	Protocol             *string        `json:"protocol,omitempty"`
+	Link                 *bool          `json:"link,omitempty"`
+	ExternalIp           NullableString `json:"externalIp,omitempty"`
+	InternalIp           NullableString `json:"internalIp,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ContainerPort ContainerPort
@@ -622,7 +622,74 @@ func (o ContainerPort) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ContainerPort) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varContainerPort := _ContainerPort{}
+
+	err = json.Unmarshal(data, &varContainerPort)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ContainerPort(varContainerPort)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "index")
+		delete(additionalProperties, "external")
+		delete(additionalProperties, "internal")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "primaryPort")
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "visible")
+		delete(additionalProperties, "exportName")
+		delete(additionalProperties, "loadBalanceProtocol")
+		delete(additionalProperties, "loadBalance")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "link")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableContainerPort struct {
+	value *ContainerPort
+	isSet bool
+}
+
+func (v NullableContainerPort) Get() *ContainerPort {
+	return v.value
+}
+
+func (v *NullableContainerPort) Set(val *ContainerPort) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableContainerPort) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableContainerPort) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableContainerPort(val *ContainerPort) *NullableContainerPort {
+	return &NullableContainerPort{value: val, isSet: true}
+}
+
+func (v NullableContainerPort) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableContainerPort) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

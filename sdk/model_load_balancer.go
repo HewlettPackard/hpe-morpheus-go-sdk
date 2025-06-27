@@ -46,7 +46,7 @@ type LoadBalancer struct {
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential     `json:"credential,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
 	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _LoadBalancer LoadBalancer
@@ -1038,7 +1038,84 @@ func (o LoadBalancer) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *LoadBalancer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varLoadBalancer := _LoadBalancer{}
+
+	err = json.Unmarshal(data, &varLoadBalancer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = LoadBalancer(varLoadBalancer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableLoadBalancer struct {
+	value *LoadBalancer
+	isSet bool
+}
+
+func (v NullableLoadBalancer) Get() *LoadBalancer {
+	return v.value
+}
+
+func (v *NullableLoadBalancer) Set(val *LoadBalancer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLoadBalancer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLoadBalancer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLoadBalancer(val *LoadBalancer) *NullableLoadBalancer {
+	return &NullableLoadBalancer{value: val, isSet: true}
+}
+
+func (v NullableLoadBalancer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLoadBalancer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

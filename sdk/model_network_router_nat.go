@@ -21,29 +21,29 @@ var _ MappedNullable = &NetworkRouterNat{}
 
 // NetworkRouterNat struct for NetworkRouterNat
 type NetworkRouterNat struct {
-	Id                         *int32                 `json:"id,omitempty"`
-	Name                       *string                `json:"name,omitempty"`
-	Description                *string                `json:"description,omitempty"`
-	Enabled                    *bool                  `json:"enabled,omitempty"`
-	SourceNetwork              *string                `json:"sourceNetwork,omitempty"`
-	DestinationNetwork         NullableString         `json:"destinationNetwork,omitempty"`
-	TranslatedNetwork          *string                `json:"translatedNetwork,omitempty"`
-	SourcePorts                NullableString         `json:"sourcePorts,omitempty"`
-	DestinationPorts           NullableString         `json:"destinationPorts,omitempty"`
-	TranslatedPorts            NullableString         `json:"translatedPorts,omitempty"`
-	Priority                   *int32                 `json:"priority,omitempty"`
-	Protocol                   NullableString         `json:"protocol,omitempty"`
-	MatchIpv6DestinationPrefix NullableString         `json:"matchIpv6DestinationPrefix,omitempty"`
-	TranslatedIpv4SourcePrefix NullableString         `json:"translatedIpv4SourcePrefix,omitempty"`
-	RefType                    NullableString         `json:"refType,omitempty"`
-	RefId                      NullableString         `json:"refId,omitempty"`
-	SyncSource                 *string                `json:"syncSource,omitempty"`
-	InternalId                 NullableString         `json:"internalId,omitempty"`
-	ExternalId                 *string                `json:"externalId,omitempty"`
-	ProviderId                 *string                `json:"providerId,omitempty"`
-	DateCreated                *time.Time             `json:"dateCreated,omitempty"`
-	LastUpdated                *time.Time             `json:"lastUpdated,omitempty"`
-	AdditionalProperties       map[string]interface{} `json:",remain"`
+	Id                         *int32         `json:"id,omitempty"`
+	Name                       *string        `json:"name,omitempty"`
+	Description                *string        `json:"description,omitempty"`
+	Enabled                    *bool          `json:"enabled,omitempty"`
+	SourceNetwork              *string        `json:"sourceNetwork,omitempty"`
+	DestinationNetwork         NullableString `json:"destinationNetwork,omitempty"`
+	TranslatedNetwork          *string        `json:"translatedNetwork,omitempty"`
+	SourcePorts                NullableString `json:"sourcePorts,omitempty"`
+	DestinationPorts           NullableString `json:"destinationPorts,omitempty"`
+	TranslatedPorts            NullableString `json:"translatedPorts,omitempty"`
+	Priority                   *int32         `json:"priority,omitempty"`
+	Protocol                   NullableString `json:"protocol,omitempty"`
+	MatchIpv6DestinationPrefix NullableString `json:"matchIpv6DestinationPrefix,omitempty"`
+	TranslatedIpv4SourcePrefix NullableString `json:"translatedIpv4SourcePrefix,omitempty"`
+	RefType                    NullableString `json:"refType,omitempty"`
+	RefId                      NullableString `json:"refId,omitempty"`
+	SyncSource                 *string        `json:"syncSource,omitempty"`
+	InternalId                 NullableString `json:"internalId,omitempty"`
+	ExternalId                 *string        `json:"externalId,omitempty"`
+	ProviderId                 *string        `json:"providerId,omitempty"`
+	DateCreated                *time.Time     `json:"dateCreated,omitempty"`
+	LastUpdated                *time.Time     `json:"lastUpdated,omitempty"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _NetworkRouterNat NetworkRouterNat
@@ -963,7 +963,81 @@ func (o NetworkRouterNat) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkRouterNat) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkRouterNat := _NetworkRouterNat{}
+
+	err = json.Unmarshal(data, &varNetworkRouterNat)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterNat(varNetworkRouterNat)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "sourceNetwork")
+		delete(additionalProperties, "destinationNetwork")
+		delete(additionalProperties, "translatedNetwork")
+		delete(additionalProperties, "sourcePorts")
+		delete(additionalProperties, "destinationPorts")
+		delete(additionalProperties, "translatedPorts")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "matchIpv6DestinationPrefix")
+		delete(additionalProperties, "translatedIpv4SourcePrefix")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkRouterNat struct {
+	value *NetworkRouterNat
+	isSet bool
+}
+
+func (v NullableNetworkRouterNat) Get() *NetworkRouterNat {
+	return v.value
+}
+
+func (v *NullableNetworkRouterNat) Set(val *NetworkRouterNat) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterNat) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterNat) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterNat(val *NetworkRouterNat) *NullableNetworkRouterNat {
+	return &NullableNetworkRouterNat{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterNat) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterNat) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

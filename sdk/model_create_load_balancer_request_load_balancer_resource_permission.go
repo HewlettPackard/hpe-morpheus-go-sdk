@@ -23,8 +23,8 @@ type CreateLoadBalancerRequestLoadBalancerResourcePermission struct {
 	// Pass true to allow access to all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
-	Sites                []int64                `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Sites                []int64 `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateLoadBalancerRequestLoadBalancerResourcePermission CreateLoadBalancerRequestLoadBalancerResourcePermission
@@ -134,7 +134,61 @@ func (o CreateLoadBalancerRequestLoadBalancerResourcePermission) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *CreateLoadBalancerRequestLoadBalancerResourcePermission) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateLoadBalancerRequestLoadBalancerResourcePermission := _CreateLoadBalancerRequestLoadBalancerResourcePermission{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerRequestLoadBalancerResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerRequestLoadBalancerResourcePermission(varCreateLoadBalancerRequestLoadBalancerResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateLoadBalancerRequestLoadBalancerResourcePermission struct {
+	value *CreateLoadBalancerRequestLoadBalancerResourcePermission
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) Get() *CreateLoadBalancerRequestLoadBalancerResourcePermission {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) Set(val *CreateLoadBalancerRequestLoadBalancerResourcePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerRequestLoadBalancerResourcePermission(val *CreateLoadBalancerRequestLoadBalancerResourcePermission) *NullableCreateLoadBalancerRequestLoadBalancerResourcePermission {
+	return &NullableCreateLoadBalancerRequestLoadBalancerResourcePermission{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

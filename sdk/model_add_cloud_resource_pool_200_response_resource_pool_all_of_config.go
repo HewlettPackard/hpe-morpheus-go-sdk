@@ -26,26 +26,6 @@ type AddCloudResourcePool200ResponseResourcePoolAllOfConfig struct {
 	MapmapOfStringAny                                                    *map[string]interface{}
 }
 
-func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddCloudResourcePool200ResponseResourcePoolAllOfConfig{}
-	}
-
-	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf); ok {
-		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf = &out
-	}
-
-	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1); ok {
-		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 = &out
-	}
-
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalJSON(data []byte) error {
 	var err error

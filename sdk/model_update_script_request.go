@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateScriptRequest{}
 // UpdateScriptRequest struct for UpdateScriptRequest
 type UpdateScriptRequest struct {
 	ContainerScript      *UpdateScriptRequestContainerScript `json:"containerScript,omitempty"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateScriptRequest UpdateScriptRequest
@@ -96,7 +96,60 @@ func (o UpdateScriptRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateScriptRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateScriptRequest := _UpdateScriptRequest{}
+
+	err = json.Unmarshal(data, &varUpdateScriptRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateScriptRequest(varUpdateScriptRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateScriptRequest struct {
+	value *UpdateScriptRequest
+	isSet bool
+}
+
+func (v NullableUpdateScriptRequest) Get() *UpdateScriptRequest {
+	return v.value
+}
+
+func (v *NullableUpdateScriptRequest) Set(val *UpdateScriptRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateScriptRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateScriptRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateScriptRequest(val *UpdateScriptRequest) *NullableUpdateScriptRequest {
+	return &NullableUpdateScriptRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateScriptRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateScriptRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -27,7 +27,7 @@ type Vdi struct {
 	Status               *string                                         `json:"status,omitempty"`
 	AllocationStatus     *string                                         `json:"allocationStatus,omitempty"`
 	Allocation           *ListVdi200ResponseAllOfDesktopsInnerAllocation `json:"allocation,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Vdi Vdi
@@ -323,7 +323,66 @@ func (o Vdi) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Vdi) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varVdi := _Vdi{}
+
+	err = json.Unmarshal(data, &varVdi)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Vdi(varVdi)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "logo")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "allocationStatus")
+		delete(additionalProperties, "allocation")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableVdi struct {
+	value *Vdi
+	isSet bool
+}
+
+func (v NullableVdi) Get() *Vdi {
+	return v.value
+}
+
+func (v *NullableVdi) Set(val *Vdi) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableVdi) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableVdi) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableVdi(val *Vdi) *NullableVdi {
+	return &NullableVdi{value: val, isSet: true}
+}
+
+func (v NullableVdi) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableVdi) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

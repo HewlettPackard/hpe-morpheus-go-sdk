@@ -22,7 +22,7 @@ var _ MappedNullable = &GetOptionSourceData200Response{}
 type GetOptionSourceData200Response struct {
 	Data                 []map[string]interface{} `json:"data,omitempty"`
 	Success              *bool                    `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetOptionSourceData200Response GetOptionSourceData200Response
@@ -132,7 +132,61 @@ func (o GetOptionSourceData200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetOptionSourceData200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetOptionSourceData200Response := _GetOptionSourceData200Response{}
+
+	err = json.Unmarshal(data, &varGetOptionSourceData200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetOptionSourceData200Response(varGetOptionSourceData200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetOptionSourceData200Response struct {
+	value *GetOptionSourceData200Response
+	isSet bool
+}
+
+func (v NullableGetOptionSourceData200Response) Get() *GetOptionSourceData200Response {
+	return v.value
+}
+
+func (v *NullableGetOptionSourceData200Response) Set(val *GetOptionSourceData200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetOptionSourceData200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetOptionSourceData200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetOptionSourceData200Response(val *GetOptionSourceData200Response) *NullableGetOptionSourceData200Response {
+	return &NullableGetOptionSourceData200Response{value: val, isSet: true}
+}
+
+func (v NullableGetOptionSourceData200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetOptionSourceData200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

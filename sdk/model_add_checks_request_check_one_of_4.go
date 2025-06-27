@@ -32,8 +32,8 @@ type AddChecksRequestCheckOneOf4 struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity             *string                `json:"severity,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Severity             *string `json:"severity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddChecksRequestCheckOneOf4 AddChecksRequestCheckOneOf4
@@ -345,7 +345,66 @@ func (o AddChecksRequestCheckOneOf4) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddChecksRequestCheckOneOf4) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddChecksRequestCheckOneOf4 := _AddChecksRequestCheckOneOf4{}
+
+	err = json.Unmarshal(data, &varAddChecksRequestCheckOneOf4)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddChecksRequestCheckOneOf4(varAddChecksRequestCheckOneOf4)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddChecksRequestCheckOneOf4 struct {
+	value *AddChecksRequestCheckOneOf4
+	isSet bool
+}
+
+func (v NullableAddChecksRequestCheckOneOf4) Get() *AddChecksRequestCheckOneOf4 {
+	return v.value
+}
+
+func (v *NullableAddChecksRequestCheckOneOf4) Set(val *AddChecksRequestCheckOneOf4) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddChecksRequestCheckOneOf4) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddChecksRequestCheckOneOf4) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddChecksRequestCheckOneOf4(val *AddChecksRequestCheckOneOf4) *NullableAddChecksRequestCheckOneOf4 {
+	return &NullableAddChecksRequestCheckOneOf4{value: val, isSet: true}
+}
+
+func (v NullableAddChecksRequestCheckOneOf4) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddChecksRequestCheckOneOf4) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

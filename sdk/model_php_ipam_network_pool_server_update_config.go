@@ -23,8 +23,8 @@ type PhpIPAMNetworkPoolServerUpdateConfig struct {
 	// App ID (Your App name in phpIPAM)
 	AppId *string `json:"appId,omitempty"`
 	// Inventory Existing
-	InventoryExisting    *string                `json:"inventoryExisting,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	InventoryExisting    *string `json:"inventoryExisting,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PhpIPAMNetworkPoolServerUpdateConfig PhpIPAMNetworkPoolServerUpdateConfig
@@ -138,7 +138,61 @@ func (o PhpIPAMNetworkPoolServerUpdateConfig) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *PhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varPhpIPAMNetworkPoolServerUpdateConfig := _PhpIPAMNetworkPoolServerUpdateConfig{}
+
+	err = json.Unmarshal(data, &varPhpIPAMNetworkPoolServerUpdateConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PhpIPAMNetworkPoolServerUpdateConfig(varPhpIPAMNetworkPoolServerUpdateConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "appId")
+		delete(additionalProperties, "inventoryExisting")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullablePhpIPAMNetworkPoolServerUpdateConfig struct {
+	value *PhpIPAMNetworkPoolServerUpdateConfig
+	isSet bool
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) Get() *PhpIPAMNetworkPoolServerUpdateConfig {
+	return v.value
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) Set(val *PhpIPAMNetworkPoolServerUpdateConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePhpIPAMNetworkPoolServerUpdateConfig(val *PhpIPAMNetworkPoolServerUpdateConfig) *NullablePhpIPAMNetworkPoolServerUpdateConfig {
+	return &NullablePhpIPAMNetworkPoolServerUpdateConfig{value: val, isSet: true}
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

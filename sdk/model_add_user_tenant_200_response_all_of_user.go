@@ -48,7 +48,7 @@ type AddUserTenant200ResponseAllOfUser struct {
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	Access               *AddUserTenant200ResponseAllOfUserAccess                    `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserTenant200ResponseAllOfUser AddUserTenant200ResponseAllOfUser
@@ -1088,7 +1088,86 @@ func (o AddUserTenant200ResponseAllOfUser) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *AddUserTenant200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddUserTenant200ResponseAllOfUser := _AddUserTenant200ResponseAllOfUser{}
+
+	err = json.Unmarshal(data, &varAddUserTenant200ResponseAllOfUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserTenant200ResponseAllOfUser(varAddUserTenant200ResponseAllOfUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "isUsing2FA")
+		delete(additionalProperties, "accountExpired")
+		delete(additionalProperties, "accountLocked")
+		delete(additionalProperties, "passwordExpired")
+		delete(additionalProperties, "loginCount")
+		delete(additionalProperties, "loginAttempts")
+		delete(additionalProperties, "lastLoginDate")
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddUserTenant200ResponseAllOfUser struct {
+	value *AddUserTenant200ResponseAllOfUser
+	isSet bool
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUser) Get() *AddUserTenant200ResponseAllOfUser {
+	return v.value
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUser) Set(val *AddUserTenant200ResponseAllOfUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddUserTenant200ResponseAllOfUser(val *AddUserTenant200ResponseAllOfUser) *NullableAddUserTenant200ResponseAllOfUser {
+	return &NullableAddUserTenant200ResponseAllOfUser{value: val, isSet: true}
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

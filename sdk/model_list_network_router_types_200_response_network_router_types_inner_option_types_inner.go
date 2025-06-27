@@ -49,7 +49,7 @@ type ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner st
 	NoBlank              *bool                  `json:"noBlank,omitempty"`
 	DependsOnCode        *string                `json:"dependsOnCode,omitempty"`
 	ContextualDefault    *bool                  `json:"contextualDefault,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
@@ -1203,7 +1203,88 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 	return toSerialize, nil
 }
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner := _ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{}
+
+	err = json.Unmarshal(data, &varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(varListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldContext")
+		delete(additionalProperties, "fieldGroup")
+		delete(additionalProperties, "fieldClass")
+		delete(additionalProperties, "fieldAddOn")
+		delete(additionalProperties, "fieldComponent")
+		delete(additionalProperties, "fieldInput")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "optionSource")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "advanced")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "wrapperClass")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "noBlank")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "contextualDefault")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct {
+	value *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Get() *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Set(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
+	return &NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

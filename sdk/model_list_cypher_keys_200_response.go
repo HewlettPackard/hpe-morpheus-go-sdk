@@ -24,7 +24,7 @@ type ListCypherKeys200Response struct {
 	Cyphers              []ListCypherKeys200ResponseAllOfCyphersInner `json:"cyphers,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta            `json:"meta,omitempty"`
 	Success              *bool                                        `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCypherKeys200Response ListCypherKeys200Response
@@ -204,7 +204,63 @@ func (o ListCypherKeys200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListCypherKeys200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCypherKeys200Response := _ListCypherKeys200Response{}
+
+	err = json.Unmarshal(data, &varListCypherKeys200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCypherKeys200Response(varListCypherKeys200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "cyphers")
+		delete(additionalProperties, "meta")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCypherKeys200Response struct {
+	value *ListCypherKeys200Response
+	isSet bool
+}
+
+func (v NullableListCypherKeys200Response) Get() *ListCypherKeys200Response {
+	return v.value
+}
+
+func (v *NullableListCypherKeys200Response) Set(val *ListCypherKeys200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCypherKeys200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCypherKeys200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCypherKeys200Response(val *ListCypherKeys200Response) *NullableListCypherKeys200Response {
+	return &NullableListCypherKeys200Response{value: val, isSet: true}
+}
+
+func (v NullableListCypherKeys200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCypherKeys200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterDatastores200Response{}
 type ListClusterDatastores200Response struct {
 	Datastores           []ListClusterDatastores200ResponseAllOfDatastoresInner `json:"datastores,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                      `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClusterDatastores200Response ListClusterDatastores200Response
@@ -132,7 +132,61 @@ func (o ListClusterDatastores200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *ListClusterDatastores200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClusterDatastores200Response := _ListClusterDatastores200Response{}
+
+	err = json.Unmarshal(data, &varListClusterDatastores200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterDatastores200Response(varListClusterDatastores200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastores")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClusterDatastores200Response struct {
+	value *ListClusterDatastores200Response
+	isSet bool
+}
+
+func (v NullableListClusterDatastores200Response) Get() *ListClusterDatastores200Response {
+	return v.value
+}
+
+func (v *NullableListClusterDatastores200Response) Set(val *ListClusterDatastores200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterDatastores200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterDatastores200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterDatastores200Response(val *ListClusterDatastores200Response) *NullableListClusterDatastores200Response {
+	return &NullableListClusterDatastores200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterDatastores200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterDatastores200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

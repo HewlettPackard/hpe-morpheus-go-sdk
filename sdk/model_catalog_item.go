@@ -32,7 +32,7 @@ type CatalogItem struct {
 	OrderDate            *time.Time                                        `json:"orderDate,omitempty"`
 	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItem CatalogItem
@@ -468,7 +468,70 @@ func (o CatalogItem) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CatalogItem) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCatalogItem := _CatalogItem{}
+
+	err = json.Unmarshal(data, &varCatalogItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItem(varCatalogItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "quantity")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "orderDate")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCatalogItem struct {
+	value *CatalogItem
+	isSet bool
+}
+
+func (v NullableCatalogItem) Get() *CatalogItem {
+	return v.value
+}
+
+func (v *NullableCatalogItem) Set(val *CatalogItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItem(val *CatalogItem) *NullableCatalogItem {
+	return &NullableCatalogItem{value: val, isSet: true}
+}
+
+func (v NullableCatalogItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

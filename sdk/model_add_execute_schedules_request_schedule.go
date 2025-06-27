@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddExecuteSchedulesRequestSchedule type satisfies the MappedNullable interface at compile time
@@ -31,8 +32,8 @@ type AddExecuteSchedulesRequestSchedule struct {
 	// Cron Expression. The default is daily at midnight
 	Cron *string `json:"cron,omitempty"`
 	// Is enabled
-	Enabled              *bool                  `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Enabled              *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddExecuteSchedulesRequestSchedule AddExecuteSchedulesRequestSchedule
@@ -285,7 +286,86 @@ func (o AddExecuteSchedulesRequestSchedule) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddExecuteSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddExecuteSchedulesRequestSchedule := _AddExecuteSchedulesRequestSchedule{}
+
+	err = json.Unmarshal(data, &varAddExecuteSchedulesRequestSchedule)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddExecuteSchedulesRequestSchedule(varAddExecuteSchedulesRequestSchedule)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "scheduleType")
+		delete(additionalProperties, "scheduleTimezone")
+		delete(additionalProperties, "cron")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddExecuteSchedulesRequestSchedule struct {
+	value *AddExecuteSchedulesRequestSchedule
+	isSet bool
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) Get() *AddExecuteSchedulesRequestSchedule {
+	return v.value
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) Set(val *AddExecuteSchedulesRequestSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddExecuteSchedulesRequestSchedule(val *AddExecuteSchedulesRequestSchedule) *NullableAddExecuteSchedulesRequestSchedule {
+	return &NullableAddExecuteSchedulesRequestSchedule{value: val, isSet: true}
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

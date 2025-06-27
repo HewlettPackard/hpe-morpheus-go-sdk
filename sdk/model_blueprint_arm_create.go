@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the BlueprintARMCreate type satisfies the MappedNullable interface at compile time
@@ -29,7 +30,7 @@ type BlueprintARMCreate struct {
 	// Array of label strings, can be used for filtering.
 	Labels               []string                    `json:"labels,omitempty"`
 	Arm                  AddBlueprintRequestOneOfArm `json:"arm"`
-	AdditionalProperties map[string]interface{}      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintARMCreate BlueprintARMCreate
@@ -218,7 +219,87 @@ func (o BlueprintARMCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BlueprintARMCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"arm",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varBlueprintARMCreate := _BlueprintARMCreate{}
+
+	err = json.Unmarshal(data, &varBlueprintARMCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintARMCreate(varBlueprintARMCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "arm")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBlueprintARMCreate struct {
+	value *BlueprintARMCreate
+	isSet bool
+}
+
+func (v NullableBlueprintARMCreate) Get() *BlueprintARMCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintARMCreate) Set(val *BlueprintARMCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintARMCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintARMCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintARMCreate(val *BlueprintARMCreate) *NullableBlueprintARMCreate {
+	return &NullableBlueprintARMCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintARMCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintARMCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

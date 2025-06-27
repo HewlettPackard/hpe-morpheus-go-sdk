@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ClusterLayoutCreate type satisfies the MappedNullable interface at compile time
@@ -47,7 +48,7 @@ type ClusterLayoutCreate struct {
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
 	Workers              []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterLayoutCreate ClusterLayoutCreate
@@ -600,7 +601,98 @@ func (o ClusterLayoutCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterLayoutCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"computeVersion",
+		"groupType",
+		"provisionType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varClusterLayoutCreate := _ClusterLayoutCreate{}
+
+	err = json.Unmarshal(data, &varClusterLayoutCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterLayoutCreate(varClusterLayoutCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "masters")
+		delete(additionalProperties, "workers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterLayoutCreate struct {
+	value *ClusterLayoutCreate
+	isSet bool
+}
+
+func (v NullableClusterLayoutCreate) Get() *ClusterLayoutCreate {
+	return v.value
+}
+
+func (v *NullableClusterLayoutCreate) Set(val *ClusterLayoutCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterLayoutCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterLayoutCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterLayoutCreate(val *ClusterLayoutCreate) *NullableClusterLayoutCreate {
+	return &NullableClusterLayoutCreate{value: val, isSet: true}
+}
+
+func (v NullableClusterLayoutCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterLayoutCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

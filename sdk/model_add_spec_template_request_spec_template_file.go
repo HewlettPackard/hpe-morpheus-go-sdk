@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddSpecTemplateRequestSpecTemplateFile type satisfies the MappedNullable interface at compile time
@@ -29,7 +30,7 @@ type AddSpecTemplateRequestSpecTemplateFile struct {
 	// Content Ref, the branch/tag. Only used when sourceType is repo.
 	ContentRef           *string                                           `json:"contentRef,omitempty"`
 	Repository           *AddSpecTemplateRequestSpecTemplateFileRepository `json:"repository,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplateFile AddSpecTemplateRequestSpecTemplateFile
@@ -237,7 +238,85 @@ func (o AddSpecTemplateRequestSpecTemplateFile) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *AddSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"sourceType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddSpecTemplateRequestSpecTemplateFile := _AddSpecTemplateRequestSpecTemplateFile{}
+
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplateFile)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSpecTemplateRequestSpecTemplateFile(varAddSpecTemplateRequestSpecTemplateFile)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "contentPath")
+		delete(additionalProperties, "contentRef")
+		delete(additionalProperties, "repository")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddSpecTemplateRequestSpecTemplateFile struct {
+	value *AddSpecTemplateRequestSpecTemplateFile
+	isSet bool
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateFile) Get() *AddSpecTemplateRequestSpecTemplateFile {
+	return v.value
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateFile) Set(val *AddSpecTemplateRequestSpecTemplateFile) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateFile) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateFile) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSpecTemplateRequestSpecTemplateFile(val *AddSpecTemplateRequestSpecTemplateFile) *NullableAddSpecTemplateRequestSpecTemplateFile {
+	return &NullableAddSpecTemplateRequestSpecTemplateFile{value: val, isSet: true}
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

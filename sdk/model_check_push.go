@@ -32,8 +32,8 @@ type CheckPush struct {
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity             *string                `json:"severity,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Severity             *string `json:"severity,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckPush CheckPush
@@ -345,7 +345,66 @@ func (o CheckPush) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckPush) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCheckPush := _CheckPush{}
+
+	err = json.Unmarshal(data, &varCheckPush)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckPush(varCheckPush)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCheckPush struct {
+	value *CheckPush
+	isSet bool
+}
+
+func (v NullableCheckPush) Get() *CheckPush {
+	return v.value
+}
+
+func (v *NullableCheckPush) Set(val *CheckPush) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckPush) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckPush) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckPush(val *CheckPush) *NullableCheckPush {
+	return &NullableCheckPush{value: val, isSet: true}
+}
+
+func (v NullableCheckPush) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckPush) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

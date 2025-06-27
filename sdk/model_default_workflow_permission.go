@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the DefaultWorkflowPermission type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type DefaultWorkflowPermission struct {
 	// `TaskSet` is the code for Default Workflow Access
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _DefaultWorkflowPermission DefaultWorkflowPermission
@@ -116,7 +117,83 @@ func (o DefaultWorkflowPermission) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *DefaultWorkflowPermission) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"permissionCode",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varDefaultWorkflowPermission := _DefaultWorkflowPermission{}
+
+	err = json.Unmarshal(data, &varDefaultWorkflowPermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = DefaultWorkflowPermission(varDefaultWorkflowPermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissionCode")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableDefaultWorkflowPermission struct {
+	value *DefaultWorkflowPermission
+	isSet bool
+}
+
+func (v NullableDefaultWorkflowPermission) Get() *DefaultWorkflowPermission {
+	return v.value
+}
+
+func (v *NullableDefaultWorkflowPermission) Set(val *DefaultWorkflowPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultWorkflowPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultWorkflowPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultWorkflowPermission(val *DefaultWorkflowPermission) *NullableDefaultWorkflowPermission {
+	return &NullableDefaultWorkflowPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultWorkflowPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultWorkflowPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

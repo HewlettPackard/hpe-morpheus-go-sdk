@@ -46,7 +46,7 @@ type ListOsTypes200ResponseAllOfOsTypesInner struct {
 	// Whether the morpheus agent is installed.
 	InstallAgent         NullableBool                                         `json:"installAgent,omitempty"`
 	Images               []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListOsTypes200ResponseAllOfOsTypesInner ListOsTypes200ResponseAllOfOsTypesInner
@@ -665,7 +665,73 @@ func (o ListOsTypes200ResponseAllOfOsTypesInner) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *ListOsTypes200ResponseAllOfOsTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListOsTypes200ResponseAllOfOsTypesInner := _ListOsTypes200ResponseAllOfOsTypesInner{}
+
+	err = json.Unmarshal(data, &varListOsTypes200ResponseAllOfOsTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListOsTypes200ResponseAllOfOsTypesInner(varListOsTypes200ResponseAllOfOsTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "vendor")
+		delete(additionalProperties, "osName")
+		delete(additionalProperties, "osVersion")
+		delete(additionalProperties, "osCodename")
+		delete(additionalProperties, "osFamily")
+		delete(additionalProperties, "bitCount")
+		delete(additionalProperties, "cloudInitVersion")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "images")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListOsTypes200ResponseAllOfOsTypesInner struct {
+	value *ListOsTypes200ResponseAllOfOsTypesInner
+	isSet bool
+}
+
+func (v NullableListOsTypes200ResponseAllOfOsTypesInner) Get() *ListOsTypes200ResponseAllOfOsTypesInner {
+	return v.value
+}
+
+func (v *NullableListOsTypes200ResponseAllOfOsTypesInner) Set(val *ListOsTypes200ResponseAllOfOsTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListOsTypes200ResponseAllOfOsTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListOsTypes200ResponseAllOfOsTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListOsTypes200ResponseAllOfOsTypesInner(val *ListOsTypes200ResponseAllOfOsTypesInner) *NullableListOsTypes200ResponseAllOfOsTypesInner {
+	return &NullableListOsTypes200ResponseAllOfOsTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListOsTypes200ResponseAllOfOsTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListOsTypes200ResponseAllOfOsTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -20,13 +20,13 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config struct {
-	Noninteractive         *bool                  `json:"noninteractive,omitempty"`
-	LoginUrl               *string                `json:"loginUrl,omitempty"`
-	LogoutUrl              *string                `json:"logoutUrl,omitempty"`
-	EncryptionAlgo         *string                `json:"encryptionAlgo,omitempty"`
-	EncryptionKey          *string                `json:"encryptionKey,omitempty"`
-	RequiredAttributeValue *string                `json:"requiredAttributeValue,omitempty"`
-	AdditionalProperties   map[string]interface{} `json:",remain"`
+	Noninteractive         *bool   `json:"noninteractive,omitempty"`
+	LoginUrl               *string `json:"loginUrl,omitempty"`
+	LogoutUrl              *string `json:"logoutUrl,omitempty"`
+	EncryptionAlgo         *string `json:"encryptionAlgo,omitempty"`
+	EncryptionKey          *string `json:"encryptionKey,omitempty"`
+	RequiredAttributeValue *string `json:"requiredAttributeValue,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config
@@ -276,7 +276,65 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) ToMap()
 	return toSerialize, nil
 }
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noninteractive")
+		delete(additionalProperties, "loginUrl")
+		delete(additionalProperties, "logoutUrl")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		delete(additionalProperties, "requiredAttributeValue")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config struct {
+	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config
+	isSet bool
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config {
+	return v.value
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config {
+	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config{value: val, isSet: true}
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddStorageServersRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddStorageServersRequest{}
 // AddStorageServersRequest struct for AddStorageServersRequest
 type AddStorageServersRequest struct {
 	StorageServer        AddStorageServersRequestStorageServer `json:"storageServer"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageServersRequest AddStorageServersRequest
@@ -87,7 +88,81 @@ func (o AddStorageServersRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddStorageServersRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"storageServer",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddStorageServersRequest := _AddStorageServersRequest{}
+
+	err = json.Unmarshal(data, &varAddStorageServersRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageServersRequest(varAddStorageServersRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddStorageServersRequest struct {
+	value *AddStorageServersRequest
+	isSet bool
+}
+
+func (v NullableAddStorageServersRequest) Get() *AddStorageServersRequest {
+	return v.value
+}
+
+func (v *NullableAddStorageServersRequest) Set(val *AddStorageServersRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageServersRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageServersRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageServersRequest(val *AddStorageServersRequest) *NullableAddStorageServersRequest {
+	return &NullableAddStorageServersRequest{value: val, isSet: true}
+}
+
+func (v NullableAddStorageServersRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageServersRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

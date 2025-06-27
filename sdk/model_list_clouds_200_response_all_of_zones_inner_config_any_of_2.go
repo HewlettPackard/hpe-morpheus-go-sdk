@@ -53,7 +53,7 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
 	AzureCostingMode     *string                                                       `json:"azureCostingMode,omitempty"`
 	ClientSecretHash     *string                                                       `json:"clientSecretHash,omitempty"`
 	CspClientSecretHash  NullableString                                                `json:"cspClientSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
@@ -1292,7 +1292,92 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOf2 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf2{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf2(varListClouds200ResponseAllOfZonesInnerConfigAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subscriberId")
+		delete(additionalProperties, "tenantId")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "resourceGroup")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "inventoryLevel")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "accountType")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "cloudType")
+		delete(additionalProperties, "rpcMode")
+		delete(additionalProperties, "diskEncryption")
+		delete(additionalProperties, "encryptionSet")
+		delete(additionalProperties, "cspTenantId")
+		delete(additionalProperties, "cspClientId")
+		delete(additionalProperties, "cspClientSecret")
+		delete(additionalProperties, "cspCustomer")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "azureCostingMode")
+		delete(additionalProperties, "clientSecretHash")
+		delete(additionalProperties, "cspClientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2 struct {
+	value *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2
+	isSet bool
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Get() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 {
+	return v.value
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Set(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf2) *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2 {
+	return &NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2{value: val, isSet: true}
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf2) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

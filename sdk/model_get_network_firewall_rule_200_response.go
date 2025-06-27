@@ -21,7 +21,7 @@ var _ MappedNullable = &GetNetworkFirewallRule200Response{}
 // GetNetworkFirewallRule200Response struct for GetNetworkFirewallRule200Response
 type GetNetworkFirewallRule200Response struct {
 	Rule                 *GetNetworkFirewallRule200ResponseRule `json:"rule,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkFirewallRule200Response GetNetworkFirewallRule200Response
@@ -96,7 +96,60 @@ func (o GetNetworkFirewallRule200Response) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *GetNetworkFirewallRule200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkFirewallRule200Response := _GetNetworkFirewallRule200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkFirewallRule200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkFirewallRule200Response(varGetNetworkFirewallRule200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "rule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkFirewallRule200Response struct {
+	value *GetNetworkFirewallRule200Response
+	isSet bool
+}
+
+func (v NullableGetNetworkFirewallRule200Response) Get() *GetNetworkFirewallRule200Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkFirewallRule200Response) Set(val *GetNetworkFirewallRule200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkFirewallRule200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkFirewallRule200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkFirewallRule200Response(val *GetNetworkFirewallRule200Response) *NullableGetNetworkFirewallRule200Response {
+	return &NullableGetNetworkFirewallRule200Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkFirewallRule200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkFirewallRule200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -23,8 +23,8 @@ type AddBootScriptRequestBootScript struct {
 	// A name for the boot script
 	FileName *string `json:"fileName,omitempty"`
 	// The script content
-	Content              *string                `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Content              *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBootScriptRequestBootScript AddBootScriptRequestBootScript
@@ -134,7 +134,61 @@ func (o AddBootScriptRequestBootScript) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AddBootScriptRequestBootScript) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddBootScriptRequestBootScript := _AddBootScriptRequestBootScript{}
+
+	err = json.Unmarshal(data, &varAddBootScriptRequestBootScript)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBootScriptRequestBootScript(varAddBootScriptRequestBootScript)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBootScriptRequestBootScript struct {
+	value *AddBootScriptRequestBootScript
+	isSet bool
+}
+
+func (v NullableAddBootScriptRequestBootScript) Get() *AddBootScriptRequestBootScript {
+	return v.value
+}
+
+func (v *NullableAddBootScriptRequestBootScript) Set(val *AddBootScriptRequestBootScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBootScriptRequestBootScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBootScriptRequestBootScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBootScriptRequestBootScript(val *AddBootScriptRequestBootScript) *NullableAddBootScriptRequestBootScript {
+	return &NullableAddBootScriptRequestBootScript{value: val, isSet: true}
+}
+
+func (v NullableAddBootScriptRequestBootScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBootScriptRequestBootScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -26,8 +26,8 @@ type UpdateHostManagedRequest struct {
 	// Instance Type ID for the new Instance
 	InstanceTypeId *int64 `json:"instanceTypeId,omitempty"`
 	// Layout ID for the new Instance
-	Layout               *int64                 `json:"layout,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Layout               *int64 `json:"layout,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateHostManagedRequest UpdateHostManagedRequest
@@ -211,7 +211,63 @@ func (o UpdateHostManagedRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateHostManagedRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateHostManagedRequest := _UpdateHostManagedRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostManagedRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostManagedRequest(varUpdateHostManagedRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "instanceTypeId")
+		delete(additionalProperties, "layout")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateHostManagedRequest struct {
+	value *UpdateHostManagedRequest
+	isSet bool
+}
+
+func (v NullableUpdateHostManagedRequest) Get() *UpdateHostManagedRequest {
+	return v.value
+}
+
+func (v *NullableUpdateHostManagedRequest) Set(val *UpdateHostManagedRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostManagedRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostManagedRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostManagedRequest(val *UpdateHostManagedRequest) *NullableUpdateHostManagedRequest {
+	return &NullableUpdateHostManagedRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostManagedRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostManagedRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

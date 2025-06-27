@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IntegrationGitHubConfig type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &IntegrationGitHubConfig{}
 // IntegrationGitHubConfig struct for IntegrationGitHubConfig
 type IntegrationGitHubConfig struct {
 	Integration          AddIntegrationsRequestOneOf6Integration `json:"integration"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationGitHubConfig IntegrationGitHubConfig
@@ -87,7 +88,81 @@ func (o IntegrationGitHubConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationGitHubConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"integration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIntegrationGitHubConfig := _IntegrationGitHubConfig{}
+
+	err = json.Unmarshal(data, &varIntegrationGitHubConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationGitHubConfig(varIntegrationGitHubConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationGitHubConfig struct {
+	value *IntegrationGitHubConfig
+	isSet bool
+}
+
+func (v NullableIntegrationGitHubConfig) Get() *IntegrationGitHubConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationGitHubConfig) Set(val *IntegrationGitHubConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationGitHubConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationGitHubConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationGitHubConfig(val *IntegrationGitHubConfig) *NullableIntegrationGitHubConfig {
+	return &NullableIntegrationGitHubConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationGitHubConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationGitHubConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

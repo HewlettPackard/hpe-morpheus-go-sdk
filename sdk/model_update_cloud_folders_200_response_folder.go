@@ -35,7 +35,7 @@ type UpdateCloudFolders200ResponseFolder struct {
 	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
 	Success              *bool                                                                 `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudFolders200ResponseFolder UpdateCloudFolders200ResponseFolder
@@ -600,7 +600,74 @@ func (o UpdateCloudFolders200ResponseFolder) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *UpdateCloudFolders200ResponseFolder) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateCloudFolders200ResponseFolder := _UpdateCloudFolders200ResponseFolder{}
+
+	err = json.Unmarshal(data, &varUpdateCloudFolders200ResponseFolder)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudFolders200ResponseFolder(varUpdateCloudFolders200ResponseFolder)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultFolder")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "depth")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateCloudFolders200ResponseFolder struct {
+	value *UpdateCloudFolders200ResponseFolder
+	isSet bool
+}
+
+func (v NullableUpdateCloudFolders200ResponseFolder) Get() *UpdateCloudFolders200ResponseFolder {
+	return v.value
+}
+
+func (v *NullableUpdateCloudFolders200ResponseFolder) Set(val *UpdateCloudFolders200ResponseFolder) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudFolders200ResponseFolder) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudFolders200ResponseFolder) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudFolders200ResponseFolder(val *UpdateCloudFolders200ResponseFolder) *NullableUpdateCloudFolders200ResponseFolder {
+	return &NullableUpdateCloudFolders200ResponseFolder{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudFolders200ResponseFolder) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudFolders200ResponseFolder) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

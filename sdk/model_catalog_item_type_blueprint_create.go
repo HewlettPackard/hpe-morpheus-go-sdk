@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CatalogItemTypeBlueprintCreate type satisfies the MappedNullable interface at compile time
@@ -47,8 +48,8 @@ type CatalogItemTypeBlueprintCreate struct {
 	FormType *string                                            `json:"formType,omitempty"`
 	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
-	OptionTypes          []int64                `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OptionTypes          []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItemTypeBlueprintCreate CatalogItemTypeBlueprintCreate
@@ -646,7 +647,95 @@ func (o CatalogItemTypeBlueprintCreate) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *CatalogItemTypeBlueprintCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"blueprint",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCatalogItemTypeBlueprintCreate := _CatalogItemTypeBlueprintCreate{}
+
+	err = json.Unmarshal(data, &varCatalogItemTypeBlueprintCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItemTypeBlueprintCreate(varCatalogItemTypeBlueprintCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCatalogItemTypeBlueprintCreate struct {
+	value *CatalogItemTypeBlueprintCreate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeBlueprintCreate) Get() *CatalogItemTypeBlueprintCreate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeBlueprintCreate) Set(val *CatalogItemTypeBlueprintCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeBlueprintCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeBlueprintCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeBlueprintCreate(val *CatalogItemTypeBlueprintCreate) *NullableCatalogItemTypeBlueprintCreate {
+	return &NullableCatalogItemTypeBlueprintCreate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeBlueprintCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeBlueprintCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

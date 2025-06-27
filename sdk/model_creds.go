@@ -20,11 +20,11 @@ var _ MappedNullable = &Creds{}
 
 // Creds struct for Creds
 type Creds struct {
-	Id                   NullableInt64          `json:"id,omitempty"`
-	Name                 NullableString         `json:"name,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
-	Types                []string               `json:"types,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   NullableInt64  `json:"id,omitempty"`
+	Name                 NullableString `json:"name,omitempty"`
+	Type                 *string        `json:"type,omitempty"`
+	Types                []string       `json:"types,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Creds Creds
@@ -227,7 +227,63 @@ func (o Creds) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Creds) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreds := _Creds{}
+
+	err = json.Unmarshal(data, &varCreds)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Creds(varCreds)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "types")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreds struct {
+	value *Creds
+	isSet bool
+}
+
+func (v NullableCreds) Get() *Creds {
+	return v.value
+}
+
+func (v *NullableCreds) Set(val *Creds) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreds) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreds) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreds(val *Creds) *NullableCreds {
+	return &NullableCreds{value: val, isSet: true}
+}
+
+func (v NullableCreds) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreds) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

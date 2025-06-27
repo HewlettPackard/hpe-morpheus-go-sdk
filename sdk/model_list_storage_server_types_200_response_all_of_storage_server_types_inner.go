@@ -50,7 +50,7 @@ type ListStorageServerTypes200ResponseAllOfStorageServerTypesInner struct {
 	ShareOptionTypes       []map[string]interface{}                                                                                        `json:"shareOptionTypes,omitempty"`
 	ShareAccessOptionTypes []map[string]interface{}                                                                                        `json:"shareAccessOptionTypes,omitempty"`
 	StorageVolumeTypes     []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner `json:"storageVolumeTypes,omitempty"`
-	AdditionalProperties   map[string]interface{}                                                                                          `json:",remain"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _ListStorageServerTypes200ResponseAllOfStorageServerTypesInner ListStorageServerTypes200ResponseAllOfStorageServerTypesInner
@@ -1154,7 +1154,89 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) ToMap() (
 	return toSerialize, nil
 }
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListStorageServerTypes200ResponseAllOfStorageServerTypesInner := _ListStorageServerTypes200ResponseAllOfStorageServerTypesInner{}
+
+	err = json.Unmarshal(data, &varListStorageServerTypes200ResponseAllOfStorageServerTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageServerTypes200ResponseAllOfStorageServerTypesInner(varListStorageServerTypes200ResponseAllOfStorageServerTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasNamespaces")
+		delete(additionalProperties, "hasGroups")
+		delete(additionalProperties, "hasBlock")
+		delete(additionalProperties, "hasObject")
+		delete(additionalProperties, "hasFile")
+		delete(additionalProperties, "hasDatastore")
+		delete(additionalProperties, "hasDisks")
+		delete(additionalProperties, "hasHosts")
+		delete(additionalProperties, "createNamespaces")
+		delete(additionalProperties, "createGroup")
+		delete(additionalProperties, "createBlock")
+		delete(additionalProperties, "createObject")
+		delete(additionalProperties, "createFile")
+		delete(additionalProperties, "createDatastore")
+		delete(additionalProperties, "createDisk")
+		delete(additionalProperties, "createHost")
+		delete(additionalProperties, "iconCode")
+		delete(additionalProperties, "hasFileBrowser")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "groupOptionTypes")
+		delete(additionalProperties, "bucketOptionTypes")
+		delete(additionalProperties, "shareOptionTypes")
+		delete(additionalProperties, "shareAccessOptionTypes")
+		delete(additionalProperties, "storageVolumeTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner struct {
+	value *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner
+	isSet bool
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) Get() *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner {
+	return v.value
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) Set(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInner) *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner {
+	return &NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

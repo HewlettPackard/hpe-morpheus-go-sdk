@@ -25,7 +25,7 @@ type PolicyCloudUpdate struct {
 	// A description for the policy
 	Description          *string                                     `json:"description,omitempty"`
 	PolicyType           *UpdatePoliciesCloudRequestPolicyPolicyType `json:"policyType,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _PolicyCloudUpdate PolicyCloudUpdate
@@ -170,7 +170,62 @@ func (o PolicyCloudUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *PolicyCloudUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varPolicyCloudUpdate := _PolicyCloudUpdate{}
+
+	err = json.Unmarshal(data, &varPolicyCloudUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = PolicyCloudUpdate(varPolicyCloudUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "policyType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullablePolicyCloudUpdate struct {
+	value *PolicyCloudUpdate
+	isSet bool
+}
+
+func (v NullablePolicyCloudUpdate) Get() *PolicyCloudUpdate {
+	return v.value
+}
+
+func (v *NullablePolicyCloudUpdate) Set(val *PolicyCloudUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePolicyCloudUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePolicyCloudUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePolicyCloudUpdate(val *PolicyCloudUpdate) *NullablePolicyCloudUpdate {
+	return &NullablePolicyCloudUpdate{value: val, isSet: true}
+}
+
+func (v NullablePolicyCloudUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePolicyCloudUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

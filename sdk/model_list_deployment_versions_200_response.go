@@ -22,7 +22,7 @@ var _ MappedNullable = &ListDeploymentVersions200Response{}
 type ListDeploymentVersions200Response struct {
 	Versions             []ListDeploymentVersions200ResponseAllOfVersionsInner `json:"versions,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                     `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListDeploymentVersions200Response ListDeploymentVersions200Response
@@ -132,7 +132,61 @@ func (o ListDeploymentVersions200Response) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *ListDeploymentVersions200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListDeploymentVersions200Response := _ListDeploymentVersions200Response{}
+
+	err = json.Unmarshal(data, &varListDeploymentVersions200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListDeploymentVersions200Response(varListDeploymentVersions200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "versions")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListDeploymentVersions200Response struct {
+	value *ListDeploymentVersions200Response
+	isSet bool
+}
+
+func (v NullableListDeploymentVersions200Response) Get() *ListDeploymentVersions200Response {
+	return v.value
+}
+
+func (v *NullableListDeploymentVersions200Response) Set(val *ListDeploymentVersions200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListDeploymentVersions200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListDeploymentVersions200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListDeploymentVersions200Response(val *ListDeploymentVersions200Response) *NullableListDeploymentVersions200Response {
+	return &NullableListDeploymentVersions200Response{value: val, isSet: true}
+}
+
+func (v NullableListDeploymentVersions200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListDeploymentVersions200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

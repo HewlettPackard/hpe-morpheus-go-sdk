@@ -36,7 +36,7 @@ type SolarWindsNetworkPoolServerUpdate struct {
 	IgnoreSsl            *bool                           `json:"ignoreSsl,omitempty"`
 	Config               *BluecatNetworkPoolServerConfig `json:"config,omitempty"`
 	Credential           *NSXNetworkServerCredential     `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SolarWindsNetworkPoolServerUpdate SolarWindsNetworkPoolServerUpdate
@@ -443,7 +443,68 @@ func (o SolarWindsNetworkPoolServerUpdate) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *SolarWindsNetworkPoolServerUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSolarWindsNetworkPoolServerUpdate := _SolarWindsNetworkPoolServerUpdate{}
+
+	err = json.Unmarshal(data, &varSolarWindsNetworkPoolServerUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SolarWindsNetworkPoolServerUpdate(varSolarWindsNetworkPoolServerUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "serviceThrottleRate")
+		delete(additionalProperties, "ignoreSsl")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSolarWindsNetworkPoolServerUpdate struct {
+	value *SolarWindsNetworkPoolServerUpdate
+	isSet bool
+}
+
+func (v NullableSolarWindsNetworkPoolServerUpdate) Get() *SolarWindsNetworkPoolServerUpdate {
+	return v.value
+}
+
+func (v *NullableSolarWindsNetworkPoolServerUpdate) Set(val *SolarWindsNetworkPoolServerUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSolarWindsNetworkPoolServerUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSolarWindsNetworkPoolServerUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSolarWindsNetworkPoolServerUpdate(val *SolarWindsNetworkPoolServerUpdate) *NullableSolarWindsNetworkPoolServerUpdate {
+	return &NullableSolarWindsNetworkPoolServerUpdate{value: val, isSet: true}
+}
+
+func (v NullableSolarWindsNetworkPoolServerUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSolarWindsNetworkPoolServerUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

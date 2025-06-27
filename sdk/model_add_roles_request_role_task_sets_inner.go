@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddRolesRequestRoleTaskSetsInner type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type AddRolesRequestRoleTaskSetsInner struct {
 	// `id` of the workflow (taskSet)
 	Id int32 `json:"id"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddRolesRequestRoleTaskSetsInner AddRolesRequestRoleTaskSetsInner
@@ -116,7 +117,83 @@ func (o AddRolesRequestRoleTaskSetsInner) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *AddRolesRequestRoleTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddRolesRequestRoleTaskSetsInner := _AddRolesRequestRoleTaskSetsInner{}
+
+	err = json.Unmarshal(data, &varAddRolesRequestRoleTaskSetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddRolesRequestRoleTaskSetsInner(varAddRolesRequestRoleTaskSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddRolesRequestRoleTaskSetsInner struct {
+	value *AddRolesRequestRoleTaskSetsInner
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRoleTaskSetsInner) Get() *AddRolesRequestRoleTaskSetsInner {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRoleTaskSetsInner) Set(val *AddRolesRequestRoleTaskSetsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRoleTaskSetsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRoleTaskSetsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRoleTaskSetsInner(val *AddRolesRequestRoleTaskSetsInner) *NullableAddRolesRequestRoleTaskSetsInner {
+	return &NullableAddRolesRequestRoleTaskSetsInner{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRoleTaskSetsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRoleTaskSetsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

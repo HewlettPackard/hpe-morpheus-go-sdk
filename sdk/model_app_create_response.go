@@ -43,7 +43,7 @@ type AppCreateResponse struct {
 	ContainerCount       *int64                                                      `json:"containerCount,omitempty"`
 	AppTiers             []map[string]interface{}                                    `json:"appTiers,omitempty"`
 	Instances            []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"instances,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AppCreateResponse AppCreateResponse
@@ -864,7 +864,81 @@ func (o AppCreateResponse) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AppCreateResponse) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAppCreateResponse := _AppCreateResponse{}
+
+	err = json.Unmarshal(data, &varAppCreateResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppCreateResponse(varAppCreateResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "appContext")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "appStatus")
+		delete(additionalProperties, "instanceCount")
+		delete(additionalProperties, "containerCount")
+		delete(additionalProperties, "appTiers")
+		delete(additionalProperties, "instances")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAppCreateResponse struct {
+	value *AppCreateResponse
+	isSet bool
+}
+
+func (v NullableAppCreateResponse) Get() *AppCreateResponse {
+	return v.value
+}
+
+func (v *NullableAppCreateResponse) Set(val *AppCreateResponse) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppCreateResponse) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppCreateResponse) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppCreateResponse(val *AppCreateResponse) *NullableAppCreateResponse {
+	return &NullableAppCreateResponse{value: val, isSet: true}
+}
+
+func (v NullableAppCreateResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppCreateResponse) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetResourcePoolGroups200Response{}
 // GetResourcePoolGroups200Response struct for GetResourcePoolGroups200Response
 type GetResourcePoolGroups200Response struct {
 	ResourcePoolGroups   []GetResourcePoolGroups200ResponseResourcePoolGroupsInner `json:"resourcePoolGroups,omitempty"`
-	AdditionalProperties map[string]interface{}                                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetResourcePoolGroups200Response GetResourcePoolGroups200Response
@@ -96,7 +96,60 @@ func (o GetResourcePoolGroups200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *GetResourcePoolGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetResourcePoolGroups200Response := _GetResourcePoolGroups200Response{}
+
+	err = json.Unmarshal(data, &varGetResourcePoolGroups200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetResourcePoolGroups200Response(varGetResourcePoolGroups200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePoolGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetResourcePoolGroups200Response struct {
+	value *GetResourcePoolGroups200Response
+	isSet bool
+}
+
+func (v NullableGetResourcePoolGroups200Response) Get() *GetResourcePoolGroups200Response {
+	return v.value
+}
+
+func (v *NullableGetResourcePoolGroups200Response) Set(val *GetResourcePoolGroups200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetResourcePoolGroups200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetResourcePoolGroups200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetResourcePoolGroups200Response(val *GetResourcePoolGroups200Response) *NullableGetResourcePoolGroups200Response {
+	return &NullableGetResourcePoolGroups200Response{value: val, isSet: true}
+}
+
+func (v NullableGetResourcePoolGroups200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetResourcePoolGroups200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

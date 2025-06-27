@@ -51,8 +51,8 @@ type UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 struct {
 	FormType *string                                            `json:"formType,omitempty"`
 	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
-	OptionTypes          []int64                `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OptionTypes          []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
@@ -741,7 +741,76 @@ func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 := _UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1{}
+
+	err = json.Unmarshal(data, &varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1(varUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "appSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 struct {
+	value *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
+	isSet bool
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Get() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 {
+	return v.value
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Set(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 {
+	return &NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1{value: val, isSet: true}
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

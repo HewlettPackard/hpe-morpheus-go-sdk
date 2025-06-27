@@ -35,7 +35,7 @@ type StorageBucket struct {
 	RetentionPolicyType       NullableString                                               `json:"retentionPolicyType,omitempty"`
 	RetentionPolicyDays       NullableString                                               `json:"retentionPolicyDays,omitempty"`
 	RetentionProvider         NullableString                                               `json:"retentionProvider,omitempty"`
-	AdditionalProperties      map[string]interface{}                                       `json:",remain"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _StorageBucket StorageBucket
@@ -633,7 +633,74 @@ func (o StorageBucket) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *StorageBucket) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varStorageBucket := _StorageBucket{}
+
+	err = json.Unmarshal(data, &varStorageBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = StorageBucket(varStorageBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableStorageBucket struct {
+	value *StorageBucket
+	isSet bool
+}
+
+func (v NullableStorageBucket) Get() *StorageBucket {
+	return v.value
+}
+
+func (v *NullableStorageBucket) Set(val *StorageBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageBucket(val *StorageBucket) *NullableStorageBucket {
+	return &NullableStorageBucket{value: val, isSet: true}
+}
+
+func (v NullableStorageBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

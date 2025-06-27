@@ -47,7 +47,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 struct {
 	Type                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType    `json:"type,omitempty"`
 	Savings              *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings `json:"savings,omitempty"`
 	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
@@ -1041,7 +1041,85 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "actionCategory")
+		delete(additionalProperties, "actionMessage")
+		delete(additionalProperties, "actionTitle")
+		delete(additionalProperties, "actionType")
+		delete(additionalProperties, "actionValue")
+		delete(additionalProperties, "actionValueType")
+		delete(additionalProperties, "actionPlanId")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "userId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "stateMessage")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "resolved")
+		delete(additionalProperties, "resolvedMessage")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "savings")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 struct {
+	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1
+	isSet bool
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 {
+	return v.value
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 {
+	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1{value: val, isSet: true}
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

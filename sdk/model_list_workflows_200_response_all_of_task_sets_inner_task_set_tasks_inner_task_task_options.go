@@ -20,16 +20,16 @@ var _ MappedNullable = &ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksIn
 
 // ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions struct for ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions
 type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions struct {
-	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
-	Username             NullableString         `json:"username,omitempty"`
-	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
-	Host                 NullableString         `json:"host,omitempty"`
-	SshKey               NullableString         `json:"sshKey,omitempty"`
-	Port                 NullableString         `json:"port,omitempty"`
-	Password             NullableString         `json:"password,omitempty"`
-	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
-	ShellSudo            NullableString         `json:"shell.sudo,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	LocalScriptGitRef    NullableString `json:"localScriptGitRef,omitempty"`
+	Username             NullableString `json:"username,omitempty"`
+	LocalScriptGitId     NullableString `json:"localScriptGitId,omitempty"`
+	Host                 NullableString `json:"host,omitempty"`
+	SshKey               NullableString `json:"sshKey,omitempty"`
+	Port                 NullableString `json:"port,omitempty"`
+	Password             NullableString `json:"password,omitempty"`
+	PasswordHash         NullableString `json:"passwordHash,omitempty"`
+	ShellSudo            NullableString `json:"shell.sudo,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions
@@ -483,7 +483,68 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptio
 	return toSerialize, nil
 }
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "localScriptGitRef")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "localScriptGitId")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "shell.sudo")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions struct {
+	value *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions
+	isSet bool
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Get() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions {
+	return v.value
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Set(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions {
+	return &NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions{value: val, isSet: true}
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

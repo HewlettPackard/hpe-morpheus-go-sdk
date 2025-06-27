@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateUserSettingsRequest{}
 // UpdateUserSettingsRequest struct for UpdateUserSettingsRequest
 type UpdateUserSettingsRequest struct {
 	User                 *UpdateUserSettingsRequestUser `json:"user,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateUserSettingsRequest UpdateUserSettingsRequest
@@ -96,7 +96,60 @@ func (o UpdateUserSettingsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateUserSettingsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateUserSettingsRequest := _UpdateUserSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateUserSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserSettingsRequest(varUpdateUserSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "user")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateUserSettingsRequest struct {
+	value *UpdateUserSettingsRequest
+	isSet bool
+}
+
+func (v NullableUpdateUserSettingsRequest) Get() *UpdateUserSettingsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateUserSettingsRequest) Set(val *UpdateUserSettingsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserSettingsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserSettingsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserSettingsRequest(val *UpdateUserSettingsRequest) *NullableUpdateUserSettingsRequest {
+	return &NullableUpdateUserSettingsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserSettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserSettingsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -20,8 +20,8 @@ var _ MappedNullable = &ListActivity5XXResponse{}
 
 // ListActivity5XXResponse struct for ListActivity5XXResponse
 type ListActivity5XXResponse struct {
-	Msg                  *string                `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Msg                  *string `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListActivity5XXResponse ListActivity5XXResponse
@@ -96,7 +96,60 @@ func (o ListActivity5XXResponse) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListActivity5XXResponse) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListActivity5XXResponse := _ListActivity5XXResponse{}
+
+	err = json.Unmarshal(data, &varListActivity5XXResponse)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListActivity5XXResponse(varListActivity5XXResponse)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "msg")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListActivity5XXResponse struct {
+	value *ListActivity5XXResponse
+	isSet bool
+}
+
+func (v NullableListActivity5XXResponse) Get() *ListActivity5XXResponse {
+	return v.value
+}
+
+func (v *NullableListActivity5XXResponse) Set(val *ListActivity5XXResponse) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListActivity5XXResponse) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListActivity5XXResponse) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListActivity5XXResponse(val *ListActivity5XXResponse) *NullableListActivity5XXResponse {
+	return &NullableListActivity5XXResponse{value: val, isSet: true}
+}
+
+func (v NullableListActivity5XXResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListActivity5XXResponse) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

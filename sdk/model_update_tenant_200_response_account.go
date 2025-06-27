@@ -37,7 +37,7 @@ type UpdateTenant200ResponseAccount struct {
 	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
 	Success              *bool                                          `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateTenant200ResponseAccount UpdateTenant200ResponseAccount
@@ -681,7 +681,75 @@ func (o UpdateTenant200ResponseAccount) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *UpdateTenant200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateTenant200ResponseAccount := _UpdateTenant200ResponseAccount{}
+
+	err = json.Unmarshal(data, &varUpdateTenant200ResponseAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateTenant200ResponseAccount(varUpdateTenant200ResponseAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "customerNumber")
+		delete(additionalProperties, "accountNumber")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateTenant200ResponseAccount struct {
+	value *UpdateTenant200ResponseAccount
+	isSet bool
+}
+
+func (v NullableUpdateTenant200ResponseAccount) Get() *UpdateTenant200ResponseAccount {
+	return v.value
+}
+
+func (v *NullableUpdateTenant200ResponseAccount) Set(val *UpdateTenant200ResponseAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateTenant200ResponseAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateTenant200ResponseAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateTenant200ResponseAccount(val *UpdateTenant200ResponseAccount) *NullableUpdateTenant200ResponseAccount {
+	return &NullableUpdateTenant200ResponseAccount{value: val, isSet: true}
+}
+
+func (v NullableUpdateTenant200ResponseAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateTenant200ResponseAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

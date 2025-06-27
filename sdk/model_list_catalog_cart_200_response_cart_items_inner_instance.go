@@ -20,13 +20,13 @@ var _ MappedNullable = &ListCatalogCart200ResponseCartItemsInnerInstance{}
 
 // ListCatalogCart200ResponseCartItemsInnerInstance struct for ListCatalogCart200ResponseCartItemsInnerInstance
 type ListCatalogCart200ResponseCartItemsInnerInstance struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Status               *string                `json:"status,omitempty"`
-	Locations            []string               `json:"locations,omitempty"`
-	VirtualMachines      *int64                 `json:"virtualMachines,omitempty"`
-	Version              *string                `json:"version,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64   `json:"id,omitempty"`
+	Name                 *string  `json:"name,omitempty"`
+	Status               *string  `json:"status,omitempty"`
+	Locations            []string `json:"locations,omitempty"`
+	VirtualMachines      *int64   `json:"virtualMachines,omitempty"`
+	Version              *string  `json:"version,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCatalogCart200ResponseCartItemsInnerInstance ListCatalogCart200ResponseCartItemsInnerInstance
@@ -276,7 +276,65 @@ func (o ListCatalogCart200ResponseCartItemsInnerInstance) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *ListCatalogCart200ResponseCartItemsInnerInstance) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCatalogCart200ResponseCartItemsInnerInstance := _ListCatalogCart200ResponseCartItemsInnerInstance{}
+
+	err = json.Unmarshal(data, &varListCatalogCart200ResponseCartItemsInnerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCatalogCart200ResponseCartItemsInnerInstance(varListCatalogCart200ResponseCartItemsInnerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "virtualMachines")
+		delete(additionalProperties, "version")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCatalogCart200ResponseCartItemsInnerInstance struct {
+	value *ListCatalogCart200ResponseCartItemsInnerInstance
+	isSet bool
+}
+
+func (v NullableListCatalogCart200ResponseCartItemsInnerInstance) Get() *ListCatalogCart200ResponseCartItemsInnerInstance {
+	return v.value
+}
+
+func (v *NullableListCatalogCart200ResponseCartItemsInnerInstance) Set(val *ListCatalogCart200ResponseCartItemsInnerInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCatalogCart200ResponseCartItemsInnerInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCatalogCart200ResponseCartItemsInnerInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCatalogCart200ResponseCartItemsInnerInstance(val *ListCatalogCart200ResponseCartItemsInnerInstance) *NullableListCatalogCart200ResponseCartItemsInnerInstance {
+	return &NullableListCatalogCart200ResponseCartItemsInnerInstance{value: val, isSet: true}
+}
+
+func (v NullableListCatalogCart200ResponseCartItemsInnerInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCatalogCart200ResponseCartItemsInnerInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

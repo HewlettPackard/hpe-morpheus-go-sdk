@@ -41,7 +41,7 @@ type IdentitySourcesCustomSSOConfig struct {
 	ProviderSettings     map[string]interface{}                                                      `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IdentitySourcesCustomSSOConfig IdentitySourcesCustomSSOConfig
@@ -781,7 +781,79 @@ func (o IdentitySourcesCustomSSOConfig) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *IdentitySourcesCustomSSOConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIdentitySourcesCustomSSOConfig := _IdentitySourcesCustomSSOConfig{}
+
+	err = json.Unmarshal(data, &varIdentitySourcesCustomSSOConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdentitySourcesCustomSSOConfig(varIdentitySourcesCustomSSOConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "deleted")
+		delete(additionalProperties, "autoSyncOnLogin")
+		delete(additionalProperties, "externalLogin")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "loginURL")
+		delete(additionalProperties, "providerSettings")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIdentitySourcesCustomSSOConfig struct {
+	value *IdentitySourcesCustomSSOConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) Get() *IdentitySourcesCustomSSOConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) Set(val *IdentitySourcesCustomSSOConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesCustomSSOConfig(val *IdentitySourcesCustomSSOConfig) *NullableIdentitySourcesCustomSSOConfig {
+	return &NullableIdentitySourcesCustomSSOConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

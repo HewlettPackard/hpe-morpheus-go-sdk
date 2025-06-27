@@ -38,7 +38,7 @@ type ListUserSettings200ResponseAllOfUser struct {
 	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
 	IsUsing2FA           *bool                                                       `json:"isUsing2FA,omitempty"`
 	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListUserSettings200ResponseAllOfUser ListUserSettings200ResponseAllOfUser
@@ -719,7 +719,77 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *ListUserSettings200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListUserSettings200ResponseAllOfUser := _ListUserSettings200ResponseAllOfUser{}
+
+	err = json.Unmarshal(data, &varListUserSettings200ResponseAllOfUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListUserSettings200ResponseAllOfUser(varListUserSettings200ResponseAllOfUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "avatar")
+		delete(additionalProperties, "desktopBackground")
+		delete(additionalProperties, "receiveNotifications")
+		delete(additionalProperties, "defaultGroup")
+		delete(additionalProperties, "defaultCloud")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "isUsing2FA")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListUserSettings200ResponseAllOfUser struct {
+	value *ListUserSettings200ResponseAllOfUser
+	isSet bool
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) Get() *ListUserSettings200ResponseAllOfUser {
+	return v.value
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) Set(val *ListUserSettings200ResponseAllOfUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListUserSettings200ResponseAllOfUser(val *ListUserSettings200ResponseAllOfUser) *NullableListUserSettings200ResponseAllOfUser {
+	return &NullableListUserSettings200ResponseAllOfUser{value: val, isSet: true}
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

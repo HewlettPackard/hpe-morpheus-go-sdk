@@ -22,7 +22,7 @@ var _ MappedNullable = &AddClusterNamespace200Response{}
 type AddClusterNamespace200Response struct {
 	Namespace            *AddClusterNamespace200ResponseAllOfNamespace `json:"namespace,omitempty"`
 	Success              *bool                                         `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterNamespace200Response AddClusterNamespace200Response
@@ -132,7 +132,61 @@ func (o AddClusterNamespace200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AddClusterNamespace200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterNamespace200Response := _AddClusterNamespace200Response{}
+
+	err = json.Unmarshal(data, &varAddClusterNamespace200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterNamespace200Response(varAddClusterNamespace200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterNamespace200Response struct {
+	value *AddClusterNamespace200Response
+	isSet bool
+}
+
+func (v NullableAddClusterNamespace200Response) Get() *AddClusterNamespace200Response {
+	return v.value
+}
+
+func (v *NullableAddClusterNamespace200Response) Set(val *AddClusterNamespace200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterNamespace200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterNamespace200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterNamespace200Response(val *AddClusterNamespace200Response) *NullableAddClusterNamespace200Response {
+	return &NullableAddClusterNamespace200Response{value: val, isSet: true}
+}
+
+func (v NullableAddClusterNamespace200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterNamespace200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

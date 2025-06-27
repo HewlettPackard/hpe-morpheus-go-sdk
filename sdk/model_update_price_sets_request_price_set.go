@@ -31,9 +31,9 @@ type UpdatePriceSetsRequestPriceSet struct {
 	// Price Unit
 	PriceUnit *string `json:"priceUnit,omitempty"`
 	// Price set type
-	Type                 *string                `json:"type,omitempty"`
-	Prices               []int64                `json:"prices,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Type                 *string `json:"type,omitempty"`
+	Prices               []int64 `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePriceSetsRequestPriceSet UpdatePriceSetsRequestPriceSet
@@ -353,7 +353,67 @@ func (o UpdatePriceSetsRequestPriceSet) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *UpdatePriceSetsRequestPriceSet) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdatePriceSetsRequestPriceSet := _UpdatePriceSetsRequestPriceSet{}
+
+	err = json.Unmarshal(data, &varUpdatePriceSetsRequestPriceSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePriceSetsRequestPriceSet(varUpdatePriceSetsRequestPriceSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdatePriceSetsRequestPriceSet struct {
+	value *UpdatePriceSetsRequestPriceSet
+	isSet bool
+}
+
+func (v NullableUpdatePriceSetsRequestPriceSet) Get() *UpdatePriceSetsRequestPriceSet {
+	return v.value
+}
+
+func (v *NullableUpdatePriceSetsRequestPriceSet) Set(val *UpdatePriceSetsRequestPriceSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePriceSetsRequestPriceSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePriceSetsRequestPriceSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePriceSetsRequestPriceSet(val *UpdatePriceSetsRequestPriceSet) *NullableUpdatePriceSetsRequestPriceSet {
+	return &NullableUpdatePriceSetsRequestPriceSet{value: val, isSet: true}
+}
+
+func (v NullableUpdatePriceSetsRequestPriceSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePriceSetsRequestPriceSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

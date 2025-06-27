@@ -45,8 +45,8 @@ type CreateNetworkDomainRequestNetworkDomain struct {
 	// Guest Username. If set, will change the instances RPC Service User after joining a Domain.
 	GuestUsername *string `json:"guestUsername,omitempty"`
 	// Guest Password
-	GuestPassword        *string                `json:"guestPassword,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	GuestPassword        *string `json:"guestPassword,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkDomainRequestNetworkDomain CreateNetworkDomainRequestNetworkDomain
@@ -549,7 +549,72 @@ func (o CreateNetworkDomainRequestNetworkDomain) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *CreateNetworkDomainRequestNetworkDomain) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkDomainRequestNetworkDomain := _CreateNetworkDomainRequestNetworkDomain{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDomainRequestNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDomainRequestNetworkDomain(varCreateNetworkDomainRequestNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "taskSetId")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "guestUsername")
+		delete(additionalProperties, "guestPassword")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkDomainRequestNetworkDomain struct {
+	value *CreateNetworkDomainRequestNetworkDomain
+	isSet bool
+}
+
+func (v NullableCreateNetworkDomainRequestNetworkDomain) Get() *CreateNetworkDomainRequestNetworkDomain {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDomainRequestNetworkDomain) Set(val *CreateNetworkDomainRequestNetworkDomain) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDomainRequestNetworkDomain) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDomainRequestNetworkDomain) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDomainRequestNetworkDomain(val *CreateNetworkDomainRequestNetworkDomain) *NullableCreateNetworkDomainRequestNetworkDomain {
+	return &NullableCreateNetworkDomainRequestNetworkDomain{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDomainRequestNetworkDomain) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDomainRequestNetworkDomain) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

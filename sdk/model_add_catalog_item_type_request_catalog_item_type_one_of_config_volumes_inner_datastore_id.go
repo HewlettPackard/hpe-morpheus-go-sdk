@@ -25,22 +25,6 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId 
 	String *string
 }
 
-func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId{}
-	}
-
-	if out, ok := data.(int64); ok {
-		dst.Int64 = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId) UnmarshalJSON(data []byte) error {
 	var err error

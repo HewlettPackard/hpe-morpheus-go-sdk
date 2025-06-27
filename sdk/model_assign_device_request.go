@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AssignDeviceRequest type satisfies the MappedNullable interface at compile time
@@ -21,8 +22,8 @@ var _ MappedNullable = &AssignDeviceRequest{}
 // AssignDeviceRequest struct for AssignDeviceRequest
 type AssignDeviceRequest struct {
 	// Target Server (VM) ID
-	TargetServerId       int64                  `json:"targetServerId"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	TargetServerId       int64 `json:"targetServerId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AssignDeviceRequest AssignDeviceRequest
@@ -88,7 +89,81 @@ func (o AssignDeviceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AssignDeviceRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"targetServerId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAssignDeviceRequest := _AssignDeviceRequest{}
+
+	err = json.Unmarshal(data, &varAssignDeviceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AssignDeviceRequest(varAssignDeviceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "targetServerId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAssignDeviceRequest struct {
+	value *AssignDeviceRequest
+	isSet bool
+}
+
+func (v NullableAssignDeviceRequest) Get() *AssignDeviceRequest {
+	return v.value
+}
+
+func (v *NullableAssignDeviceRequest) Set(val *AssignDeviceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAssignDeviceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAssignDeviceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAssignDeviceRequest(val *AssignDeviceRequest) *NullableAssignDeviceRequest {
+	return &NullableAssignDeviceRequest{value: val, isSet: true}
+}
+
+func (v NullableAssignDeviceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAssignDeviceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -24,7 +24,7 @@ type UpdateNetworkRequestNetworkResourcePermissions struct {
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites                []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateNetworkRequestNetworkResourcePermissions UpdateNetworkRequestNetworkResourcePermissions
@@ -134,7 +134,61 @@ func (o UpdateNetworkRequestNetworkResourcePermissions) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *UpdateNetworkRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateNetworkRequestNetworkResourcePermissions := _UpdateNetworkRequestNetworkResourcePermissions{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRequestNetworkResourcePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRequestNetworkResourcePermissions(varUpdateNetworkRequestNetworkResourcePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateNetworkRequestNetworkResourcePermissions struct {
+	value *UpdateNetworkRequestNetworkResourcePermissions
+	isSet bool
+}
+
+func (v NullableUpdateNetworkRequestNetworkResourcePermissions) Get() *UpdateNetworkRequestNetworkResourcePermissions {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkRequestNetworkResourcePermissions) Set(val *UpdateNetworkRequestNetworkResourcePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkRequestNetworkResourcePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkRequestNetworkResourcePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkRequestNetworkResourcePermissions(val *UpdateNetworkRequestNetworkResourcePermissions) *NullableUpdateNetworkRequestNetworkResourcePermissions {
+	return &NullableUpdateNetworkRequestNetworkResourcePermissions{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkRequestNetworkResourcePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkRequestNetworkResourcePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

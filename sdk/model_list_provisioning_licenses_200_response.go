@@ -22,7 +22,7 @@ var _ MappedNullable = &ListProvisioningLicenses200Response{}
 type ListProvisioningLicenses200Response struct {
 	Licenses             []ListProvisioningLicenses200ResponseAllOfLicensesInner `json:"licenses,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                       `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListProvisioningLicenses200Response ListProvisioningLicenses200Response
@@ -132,7 +132,61 @@ func (o ListProvisioningLicenses200Response) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *ListProvisioningLicenses200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListProvisioningLicenses200Response := _ListProvisioningLicenses200Response{}
+
+	err = json.Unmarshal(data, &varListProvisioningLicenses200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListProvisioningLicenses200Response(varListProvisioningLicenses200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "licenses")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListProvisioningLicenses200Response struct {
+	value *ListProvisioningLicenses200Response
+	isSet bool
+}
+
+func (v NullableListProvisioningLicenses200Response) Get() *ListProvisioningLicenses200Response {
+	return v.value
+}
+
+func (v *NullableListProvisioningLicenses200Response) Set(val *ListProvisioningLicenses200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListProvisioningLicenses200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListProvisioningLicenses200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListProvisioningLicenses200Response(val *ListProvisioningLicenses200Response) *NullableListProvisioningLicenses200Response {
+	return &NullableListProvisioningLicenses200Response{value: val, isSet: true}
+}
+
+func (v NullableListProvisioningLicenses200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListProvisioningLicenses200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

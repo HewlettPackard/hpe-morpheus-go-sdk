@@ -21,7 +21,7 @@ var _ MappedNullable = &AddClusterPackageRequest{}
 // AddClusterPackageRequest struct for AddClusterPackageRequest
 type AddClusterPackageRequest struct {
 	ClusterPackage       *AddClusterPackageRequestClusterPackage `json:"clusterPackage,omitempty"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterPackageRequest AddClusterPackageRequest
@@ -96,7 +96,60 @@ func (o AddClusterPackageRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClusterPackageRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterPackageRequest := _AddClusterPackageRequest{}
+
+	err = json.Unmarshal(data, &varAddClusterPackageRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterPackageRequest(varAddClusterPackageRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clusterPackage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterPackageRequest struct {
+	value *AddClusterPackageRequest
+	isSet bool
+}
+
+func (v NullableAddClusterPackageRequest) Get() *AddClusterPackageRequest {
+	return v.value
+}
+
+func (v *NullableAddClusterPackageRequest) Set(val *AddClusterPackageRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterPackageRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterPackageRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterPackageRequest(val *AddClusterPackageRequest) *NullableAddClusterPackageRequest {
+	return &NullableAddClusterPackageRequest{value: val, isSet: true}
+}
+
+func (v NullableAddClusterPackageRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterPackageRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

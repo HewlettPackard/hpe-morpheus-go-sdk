@@ -29,7 +29,7 @@ type OptionTypeFieldGroup struct {
 	DefaultCollapsed     *bool                                                         `json:"defaultCollapsed,omitempty"`
 	VisibleOnCode        NullableString                                                `json:"visibleOnCode,omitempty"`
 	Options              []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _OptionTypeFieldGroup OptionTypeFieldGroup
@@ -417,7 +417,68 @@ func (o OptionTypeFieldGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OptionTypeFieldGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varOptionTypeFieldGroup := _OptionTypeFieldGroup{}
+
+	err = json.Unmarshal(data, &varOptionTypeFieldGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionTypeFieldGroup(varOptionTypeFieldGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "localizedName")
+		delete(additionalProperties, "collapsible")
+		delete(additionalProperties, "defaultCollapsed")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "options")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableOptionTypeFieldGroup struct {
+	value *OptionTypeFieldGroup
+	isSet bool
+}
+
+func (v NullableOptionTypeFieldGroup) Get() *OptionTypeFieldGroup {
+	return v.value
+}
+
+func (v *NullableOptionTypeFieldGroup) Set(val *OptionTypeFieldGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionTypeFieldGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionTypeFieldGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionTypeFieldGroup(val *OptionTypeFieldGroup) *NullableOptionTypeFieldGroup {
+	return &NullableOptionTypeFieldGroup{value: val, isSet: true}
+}
+
+func (v NullableOptionTypeFieldGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionTypeFieldGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

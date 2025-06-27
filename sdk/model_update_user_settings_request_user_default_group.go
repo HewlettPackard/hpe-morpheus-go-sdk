@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateUserSettingsRequestUserDefaultGroup{}
 // UpdateUserSettingsRequestUserDefaultGroup struct for UpdateUserSettingsRequestUserDefaultGroup
 type UpdateUserSettingsRequestUserDefaultGroup struct {
 	// Default Group ID
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateUserSettingsRequestUserDefaultGroup UpdateUserSettingsRequestUserDefaultGroup
@@ -97,7 +97,60 @@ func (o UpdateUserSettingsRequestUserDefaultGroup) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *UpdateUserSettingsRequestUserDefaultGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateUserSettingsRequestUserDefaultGroup := _UpdateUserSettingsRequestUserDefaultGroup{}
+
+	err = json.Unmarshal(data, &varUpdateUserSettingsRequestUserDefaultGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserSettingsRequestUserDefaultGroup(varUpdateUserSettingsRequestUserDefaultGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateUserSettingsRequestUserDefaultGroup struct {
+	value *UpdateUserSettingsRequestUserDefaultGroup
+	isSet bool
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) Get() *UpdateUserSettingsRequestUserDefaultGroup {
+	return v.value
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) Set(val *UpdateUserSettingsRequestUserDefaultGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserSettingsRequestUserDefaultGroup(val *UpdateUserSettingsRequestUserDefaultGroup) *NullableUpdateUserSettingsRequestUserDefaultGroup {
+	return &NullableUpdateUserSettingsRequestUserDefaultGroup{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

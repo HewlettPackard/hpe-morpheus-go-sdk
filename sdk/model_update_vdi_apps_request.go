@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateVDIAppsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &UpdateVDIAppsRequest{}
 // UpdateVDIAppsRequest Updates VDI App
 type UpdateVDIAppsRequest struct {
 	VdiApp               UpdateVDIAppsRequestVdiApp `json:"vdiApp"`
-	AdditionalProperties map[string]interface{}     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateVDIAppsRequest UpdateVDIAppsRequest
@@ -87,7 +88,81 @@ func (o UpdateVDIAppsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateVDIAppsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"vdiApp",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateVDIAppsRequest := _UpdateVDIAppsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateVDIAppsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateVDIAppsRequest(varUpdateVDIAppsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiApp")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateVDIAppsRequest struct {
+	value *UpdateVDIAppsRequest
+	isSet bool
+}
+
+func (v NullableUpdateVDIAppsRequest) Get() *UpdateVDIAppsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateVDIAppsRequest) Set(val *UpdateVDIAppsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVDIAppsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVDIAppsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVDIAppsRequest(val *UpdateVDIAppsRequest) *NullableUpdateVDIAppsRequest {
+	return &NullableUpdateVDIAppsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateVDIAppsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVDIAppsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

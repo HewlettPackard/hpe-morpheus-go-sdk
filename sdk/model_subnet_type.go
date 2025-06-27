@@ -29,7 +29,7 @@ type SubnetType struct {
 	DhcpServerEditable   *bool                                                                       `json:"dhcpServerEditable,omitempty"`
 	CanAssignPool        *bool                                                                       `json:"canAssignPool,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SubnetType SubnetType
@@ -384,7 +384,68 @@ func (o SubnetType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SubnetType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSubnetType := _SubnetType{}
+
+	err = json.Unmarshal(data, &varSubnetType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SubnetType(varSubnetType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "dhcpServerEditable")
+		delete(additionalProperties, "canAssignPool")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSubnetType struct {
+	value *SubnetType
+	isSet bool
+}
+
+func (v NullableSubnetType) Get() *SubnetType {
+	return v.value
+}
+
+func (v *NullableSubnetType) Set(val *SubnetType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSubnetType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSubnetType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSubnetType(val *SubnetType) *NullableSubnetType {
+	return &NullableSubnetType{value: val, isSet: true}
+}
+
+func (v NullableSubnetType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSubnetType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

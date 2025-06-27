@@ -21,8 +21,8 @@ var _ MappedNullable = &CreateSubnetRequestSubnetType{}
 // CreateSubnetRequestSubnetType struct for CreateSubnetRequestSubnetType
 type CreateSubnetRequestSubnetType struct {
 	// Subnet Type ID
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateSubnetRequestSubnetType CreateSubnetRequestSubnetType
@@ -97,7 +97,60 @@ func (o CreateSubnetRequestSubnetType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateSubnetRequestSubnetType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateSubnetRequestSubnetType := _CreateSubnetRequestSubnetType{}
+
+	err = json.Unmarshal(data, &varCreateSubnetRequestSubnetType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateSubnetRequestSubnetType(varCreateSubnetRequestSubnetType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateSubnetRequestSubnetType struct {
+	value *CreateSubnetRequestSubnetType
+	isSet bool
+}
+
+func (v NullableCreateSubnetRequestSubnetType) Get() *CreateSubnetRequestSubnetType {
+	return v.value
+}
+
+func (v *NullableCreateSubnetRequestSubnetType) Set(val *CreateSubnetRequestSubnetType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateSubnetRequestSubnetType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateSubnetRequestSubnetType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateSubnetRequestSubnetType(val *CreateSubnetRequestSubnetType) *NullableCreateSubnetRequestSubnetType {
+	return &NullableCreateSubnetRequestSubnetType{value: val, isSet: true}
+}
+
+func (v NullableCreateSubnetRequestSubnetType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateSubnetRequestSubnetType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

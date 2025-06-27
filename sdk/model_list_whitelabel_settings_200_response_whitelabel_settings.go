@@ -44,7 +44,7 @@ type ListWhitelabelSettings200ResponseWhitelabelSettings struct {
 	TermsOfUse                *string                                                                    `json:"termsOfUse,omitempty"`
 	PrivacyPolicy             *string                                                                    `json:"privacyPolicy,omitempty"`
 	SupportMenuLinks          []ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
-	AdditionalProperties      map[string]interface{}                                                     `json:",remain"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _ListWhitelabelSettings200ResponseWhitelabelSettings ListWhitelabelSettings200ResponseWhitelabelSettings
@@ -924,7 +924,83 @@ func (o ListWhitelabelSettings200ResponseWhitelabelSettings) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListWhitelabelSettings200ResponseWhitelabelSettings := _ListWhitelabelSettings200ResponseWhitelabelSettings{}
+
+	err = json.Unmarshal(data, &varListWhitelabelSettings200ResponseWhitelabelSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWhitelabelSettings200ResponseWhitelabelSettings(varListWhitelabelSettings200ResponseWhitelabelSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "applianceName")
+		delete(additionalProperties, "disableSupportMenu")
+		delete(additionalProperties, "headerLogo")
+		delete(additionalProperties, "footerLogo")
+		delete(additionalProperties, "loginLogo")
+		delete(additionalProperties, "favicon")
+		delete(additionalProperties, "headerBgColor")
+		delete(additionalProperties, "headerFgColor")
+		delete(additionalProperties, "navBgColor")
+		delete(additionalProperties, "navFgColor")
+		delete(additionalProperties, "navHoverColor")
+		delete(additionalProperties, "primaryButtonBgColor")
+		delete(additionalProperties, "primaryButtonFgColor")
+		delete(additionalProperties, "primaryButtonHoverBgColor")
+		delete(additionalProperties, "primaryButtonHoverFgColor")
+		delete(additionalProperties, "footerBgColor")
+		delete(additionalProperties, "footerFgColor")
+		delete(additionalProperties, "loginBgColor")
+		delete(additionalProperties, "overrideCss")
+		delete(additionalProperties, "copyrightString")
+		delete(additionalProperties, "termsOfUse")
+		delete(additionalProperties, "privacyPolicy")
+		delete(additionalProperties, "supportMenuLinks")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListWhitelabelSettings200ResponseWhitelabelSettings struct {
+	value *ListWhitelabelSettings200ResponseWhitelabelSettings
+	isSet bool
+}
+
+func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) Get() *ListWhitelabelSettings200ResponseWhitelabelSettings {
+	return v.value
+}
+
+func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) Set(val *ListWhitelabelSettings200ResponseWhitelabelSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWhitelabelSettings200ResponseWhitelabelSettings(val *ListWhitelabelSettings200ResponseWhitelabelSettings) *NullableListWhitelabelSettings200ResponseWhitelabelSettings {
+	return &NullableListWhitelabelSettings200ResponseWhitelabelSettings{value: val, isSet: true}
+}
+
+func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

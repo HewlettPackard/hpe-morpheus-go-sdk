@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdatePluginRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &UpdatePluginRequest{}
 // UpdatePluginRequest struct for UpdatePluginRequest
 type UpdatePluginRequest struct {
 	Plugin               UpdatePluginRequestPlugin `json:"plugin"`
-	AdditionalProperties map[string]interface{}    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePluginRequest UpdatePluginRequest
@@ -87,7 +88,81 @@ func (o UpdatePluginRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdatePluginRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"plugin",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdatePluginRequest := _UpdatePluginRequest{}
+
+	err = json.Unmarshal(data, &varUpdatePluginRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePluginRequest(varUpdatePluginRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "plugin")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdatePluginRequest struct {
+	value *UpdatePluginRequest
+	isSet bool
+}
+
+func (v NullableUpdatePluginRequest) Get() *UpdatePluginRequest {
+	return v.value
+}
+
+func (v *NullableUpdatePluginRequest) Set(val *UpdatePluginRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePluginRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePluginRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePluginRequest(val *UpdatePluginRequest) *NullableUpdatePluginRequest {
+	return &NullableUpdatePluginRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdatePluginRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePluginRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

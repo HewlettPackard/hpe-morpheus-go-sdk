@@ -21,7 +21,7 @@ var _ MappedNullable = &GetScript200Response{}
 // GetScript200Response struct for GetScript200Response
 type GetScript200Response struct {
 	ContainerScript      *ListScripts200ResponseAllOfContainerScriptsInner `json:"containerScript,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetScript200Response GetScript200Response
@@ -96,7 +96,60 @@ func (o GetScript200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetScript200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetScript200Response := _GetScript200Response{}
+
+	err = json.Unmarshal(data, &varGetScript200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetScript200Response(varGetScript200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "containerScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetScript200Response struct {
+	value *GetScript200Response
+	isSet bool
+}
+
+func (v NullableGetScript200Response) Get() *GetScript200Response {
+	return v.value
+}
+
+func (v *NullableGetScript200Response) Set(val *GetScript200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetScript200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetScript200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetScript200Response(val *GetScript200Response) *NullableGetScript200Response {
+	return &NullableGetScript200Response{value: val, isSet: true}
+}
+
+func (v NullableGetScript200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetScript200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

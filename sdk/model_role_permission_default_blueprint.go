@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the RolePermissionDefaultBlueprint type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type RolePermissionDefaultBlueprint struct {
 	// `AppTemplate` is the code for Default Blueprint Access
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionDefaultBlueprint RolePermissionDefaultBlueprint
@@ -116,7 +117,83 @@ func (o RolePermissionDefaultBlueprint) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *RolePermissionDefaultBlueprint) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"permissionCode",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRolePermissionDefaultBlueprint := _RolePermissionDefaultBlueprint{}
+
+	err = json.Unmarshal(data, &varRolePermissionDefaultBlueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RolePermissionDefaultBlueprint(varRolePermissionDefaultBlueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissionCode")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableRolePermissionDefaultBlueprint struct {
+	value *RolePermissionDefaultBlueprint
+	isSet bool
+}
+
+func (v NullableRolePermissionDefaultBlueprint) Get() *RolePermissionDefaultBlueprint {
+	return v.value
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) Set(val *RolePermissionDefaultBlueprint) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionDefaultBlueprint) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionDefaultBlueprint(val *RolePermissionDefaultBlueprint) *NullableRolePermissionDefaultBlueprint {
+	return &NullableRolePermissionDefaultBlueprint{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionDefaultBlueprint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

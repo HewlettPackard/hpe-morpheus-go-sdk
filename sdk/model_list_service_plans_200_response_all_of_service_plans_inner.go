@@ -51,7 +51,7 @@ type ListServicePlans200ResponseAllOfServicePlansInner struct {
 	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
 	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
-	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListServicePlans200ResponseAllOfServicePlansInner ListServicePlans200ResponseAllOfServicePlansInner
@@ -1252,7 +1252,89 @@ func (o ListServicePlans200ResponseAllOfServicePlansInner) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListServicePlans200ResponseAllOfServicePlansInner := _ListServicePlans200ResponseAllOfServicePlansInner{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInner(varListServicePlans200ResponseAllOfServicePlansInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "maxDisks")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "customCpu")
+		delete(additionalProperties, "customCores")
+		delete(additionalProperties, "customMaxStorage")
+		delete(additionalProperties, "customMaxDataStorage")
+		delete(additionalProperties, "customMaxMemory")
+		delete(additionalProperties, "addVolumes")
+		delete(additionalProperties, "memoryOptionSource")
+		delete(additionalProperties, "cpuOptionSource")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListServicePlans200ResponseAllOfServicePlansInner struct {
+	value *ListServicePlans200ResponseAllOfServicePlansInner
+	isSet bool
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInner) Get() *ListServicePlans200ResponseAllOfServicePlansInner {
+	return v.value
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInner) Set(val *ListServicePlans200ResponseAllOfServicePlansInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListServicePlans200ResponseAllOfServicePlansInner(val *ListServicePlans200ResponseAllOfServicePlansInner) *NullableListServicePlans200ResponseAllOfServicePlansInner {
+	return &NullableListServicePlans200ResponseAllOfServicePlansInner{value: val, isSet: true}
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

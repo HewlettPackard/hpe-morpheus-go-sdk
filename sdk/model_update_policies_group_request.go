@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdatePoliciesGroupRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &UpdatePoliciesGroupRequest{}
 // UpdatePoliciesGroupRequest struct for UpdatePoliciesGroupRequest
 type UpdatePoliciesGroupRequest struct {
 	Policy               UpdatePoliciesGroupRequestPolicy `json:"policy"`
-	AdditionalProperties map[string]interface{}           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdatePoliciesGroupRequest UpdatePoliciesGroupRequest
@@ -87,7 +88,81 @@ func (o UpdatePoliciesGroupRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdatePoliciesGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"policy",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdatePoliciesGroupRequest := _UpdatePoliciesGroupRequest{}
+
+	err = json.Unmarshal(data, &varUpdatePoliciesGroupRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdatePoliciesGroupRequest(varUpdatePoliciesGroupRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "policy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdatePoliciesGroupRequest struct {
+	value *UpdatePoliciesGroupRequest
+	isSet bool
+}
+
+func (v NullableUpdatePoliciesGroupRequest) Get() *UpdatePoliciesGroupRequest {
+	return v.value
+}
+
+func (v *NullableUpdatePoliciesGroupRequest) Set(val *UpdatePoliciesGroupRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePoliciesGroupRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePoliciesGroupRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePoliciesGroupRequest(val *UpdatePoliciesGroupRequest) *NullableUpdatePoliciesGroupRequest {
+	return &NullableUpdatePoliciesGroupRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdatePoliciesGroupRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePoliciesGroupRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

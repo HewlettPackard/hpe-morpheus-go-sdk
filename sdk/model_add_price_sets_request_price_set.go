@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddPriceSetsRequestPriceSet type satisfies the MappedNullable interface at compile time
@@ -31,9 +32,9 @@ type AddPriceSetsRequestPriceSet struct {
 	// Price Unit
 	PriceUnit string `json:"priceUnit"`
 	// Price set type
-	Type                 string                 `json:"type"`
-	Prices               []int64                `json:"prices,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Type                 string  `json:"type"`
+	Prices               []int64 `json:"prices,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPriceSetsRequestPriceSet AddPriceSetsRequestPriceSet
@@ -317,7 +318,91 @@ func (o AddPriceSetsRequestPriceSet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddPriceSetsRequestPriceSet) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"code",
+		"priceUnit",
+		"type",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddPriceSetsRequestPriceSet := _AddPriceSetsRequestPriceSet{}
+
+	err = json.Unmarshal(data, &varAddPriceSetsRequestPriceSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPriceSetsRequestPriceSet(varAddPriceSetsRequestPriceSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "priceUnit")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "prices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPriceSetsRequestPriceSet struct {
+	value *AddPriceSetsRequestPriceSet
+	isSet bool
+}
+
+func (v NullableAddPriceSetsRequestPriceSet) Get() *AddPriceSetsRequestPriceSet {
+	return v.value
+}
+
+func (v *NullableAddPriceSetsRequestPriceSet) Set(val *AddPriceSetsRequestPriceSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPriceSetsRequestPriceSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPriceSetsRequestPriceSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPriceSetsRequestPriceSet(val *AddPriceSetsRequestPriceSet) *NullableAddPriceSetsRequestPriceSet {
+	return &NullableAddPriceSetsRequestPriceSet{value: val, isSet: true}
+}
+
+func (v NullableAddPriceSetsRequestPriceSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPriceSetsRequestPriceSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

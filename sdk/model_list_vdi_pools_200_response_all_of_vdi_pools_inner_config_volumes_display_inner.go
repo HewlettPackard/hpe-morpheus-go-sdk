@@ -20,14 +20,14 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDi
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct {
-	Storage              *string                `json:"storage,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Controller           NullableString         `json:"controller,omitempty"`
-	Datastore            *string                `json:"datastore,omitempty"`
-	DisplayOrder         NullableString         `json:"displayOrder,omitempty"`
-	Size                 *int64                 `json:"size,omitempty"`
-	MountPoint           NullableString         `json:"mountPoint,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Storage              *string        `json:"storage,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	Controller           NullableString `json:"controller,omitempty"`
+	Datastore            *string        `json:"datastore,omitempty"`
+	DisplayOrder         NullableString `json:"displayOrder,omitempty"`
+	Size                 *int64         `json:"size,omitempty"`
+	MountPoint           NullableString `json:"mountPoint,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner
@@ -345,7 +345,66 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) ToMa
 	return toSerialize, nil
 }
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storage")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "controller")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "mountPoint")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner struct {
+	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner
+	isSet bool
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner {
+	return v.value
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner {
+	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner{value: val, isSet: true}
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

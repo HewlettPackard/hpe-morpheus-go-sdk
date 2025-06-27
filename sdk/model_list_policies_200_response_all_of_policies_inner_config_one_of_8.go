@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 type satisfies the MappedNullable interface at compile time
@@ -20,9 +21,9 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8{}
 
 // ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 - Hostname
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 struct {
-	HostNamingType       string                 `json:"hostNamingType"`
-	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	HostNamingType       string  `json:"hostNamingType"`
+	HostNamingPattern    *string `json:"hostNamingPattern,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8
@@ -123,7 +124,82 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"hostNamingType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8{}
+
+	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hostNamingType")
+		delete(additionalProperties, "hostNamingPattern")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 struct {
+	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8
+	isSet bool
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 {
+	return v.value
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 {
+	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8{value: val, isSet: true}
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

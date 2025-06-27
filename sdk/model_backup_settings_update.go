@@ -35,8 +35,8 @@ type BackupSettingsUpdate struct {
 	ClearDefaultSchedule *bool                                                          `json:"clearDefaultSchedule,omitempty"`
 	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
-	ClearDefaultStorageBucket *bool                  `json:"clearDefaultStorageBucket,omitempty"`
-	AdditionalProperties      map[string]interface{} `json:",remain"`
+	ClearDefaultStorageBucket *bool `json:"clearDefaultStorageBucket,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _BackupSettingsUpdate BackupSettingsUpdate
@@ -391,7 +391,68 @@ func (o BackupSettingsUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BackupSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBackupSettingsUpdate := _BackupSettingsUpdate{}
+
+	err = json.Unmarshal(data, &varBackupSettingsUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupSettingsUpdate(varBackupSettingsUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupsEnabled")
+		delete(additionalProperties, "retentionCount")
+		delete(additionalProperties, "createBackups")
+		delete(additionalProperties, "backupAppliance")
+		delete(additionalProperties, "updateExisting")
+		delete(additionalProperties, "defaultSchedule")
+		delete(additionalProperties, "clearDefaultSchedule")
+		delete(additionalProperties, "defaultStorageBucket")
+		delete(additionalProperties, "clearDefaultStorageBucket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBackupSettingsUpdate struct {
+	value *BackupSettingsUpdate
+	isSet bool
+}
+
+func (v NullableBackupSettingsUpdate) Get() *BackupSettingsUpdate {
+	return v.value
+}
+
+func (v *NullableBackupSettingsUpdate) Set(val *BackupSettingsUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupSettingsUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupSettingsUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupSettingsUpdate(val *BackupSettingsUpdate) *NullableBackupSettingsUpdate {
+	return &NullableBackupSettingsUpdate{value: val, isSet: true}
+}
+
+func (v NullableBackupSettingsUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupSettingsUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

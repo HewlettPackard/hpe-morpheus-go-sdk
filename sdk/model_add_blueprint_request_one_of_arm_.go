@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOfArm type satisfies the MappedNullable interface at compile time
@@ -31,7 +32,7 @@ type AddBlueprintRequestOneOfArm struct {
 	OsType               *string                                      `json:"osType,omitempty"`
 	InstallAgent         *AddBlueprintRequestOneOfArmInstallAgent     `json:"installAgent,omitempty"`
 	CloudInitEnabled     *AddBlueprintRequestOneOfArmCloudInitEnabled `json:"cloudInitEnabled,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBlueprintRequestOneOfArm AddBlueprintRequestOneOfArm
@@ -307,7 +308,87 @@ func (o AddBlueprintRequestOneOfArm) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBlueprintRequestOneOfArm) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"configType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddBlueprintRequestOneOfArm := _AddBlueprintRequestOneOfArm{}
+
+	err = json.Unmarshal(data, &varAddBlueprintRequestOneOfArm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBlueprintRequestOneOfArm(varAddBlueprintRequestOneOfArm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "configType")
+		delete(additionalProperties, "json")
+		delete(additionalProperties, "yaml")
+		delete(additionalProperties, "git")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "cloudInitEnabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBlueprintRequestOneOfArm struct {
+	value *AddBlueprintRequestOneOfArm
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOfArm) Get() *AddBlueprintRequestOneOfArm {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOfArm) Set(val *AddBlueprintRequestOneOfArm) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOfArm) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOfArm) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOfArm(val *AddBlueprintRequestOneOfArm) *NullableAddBlueprintRequestOneOfArm {
+	return &NullableAddBlueprintRequestOneOfArm{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOfArm) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOfArm) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

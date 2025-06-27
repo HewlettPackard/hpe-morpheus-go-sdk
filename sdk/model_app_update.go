@@ -29,8 +29,8 @@ type AppUpdate struct {
 	// Environment code (appContext)
 	Environment *string `json:"environment,omitempty"`
 	// User ID, can be used to change app owner. This also changes the owner for each instance in the app.
-	OwnerId              *int64                 `json:"ownerId,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OwnerId              *int64 `json:"ownerId,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AppUpdate AppUpdate
@@ -246,7 +246,64 @@ func (o AppUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AppUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAppUpdate := _AppUpdate{}
+
+	err = json.Unmarshal(data, &varAppUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppUpdate(varAppUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "ownerId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAppUpdate struct {
+	value *AppUpdate
+	isSet bool
+}
+
+func (v NullableAppUpdate) Get() *AppUpdate {
+	return v.value
+}
+
+func (v *NullableAppUpdate) Set(val *AppUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppUpdate(val *AppUpdate) *NullableAppUpdate {
+	return &NullableAppUpdate{value: val, isSet: true}
+}
+
+func (v NullableAppUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

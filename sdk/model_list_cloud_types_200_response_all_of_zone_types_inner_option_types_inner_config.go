@@ -20,8 +20,8 @@ var _ MappedNullable = &ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesI
 
 // ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct for ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
 type ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct {
-	CredentialTypes      []string               `json:"credentialTypes,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	CredentialTypes      []string `json:"credentialTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
@@ -96,7 +96,60 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) ToMa
 	return toSerialize, nil
 }
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig := _ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig{}
+
+	err = json.Unmarshal(data, &varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig(varListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "credentialTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig struct {
+	value *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig
+	isSet bool
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) Get() *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig {
+	return v.value
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) Set(val *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig(val *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) *NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig {
+	return &NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig{value: val, isSet: true}
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInnerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

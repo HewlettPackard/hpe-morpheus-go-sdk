@@ -26,8 +26,8 @@ type ListBackups200ResponseAllOfBackupsInnerLastResult struct {
 	// Last Result Status
 	Name *string `json:"name,omitempty"`
 	// Last Result Date Created
-	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	DateCreated          *time.Time `json:"dateCreated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBackups200ResponseAllOfBackupsInnerLastResult ListBackups200ResponseAllOfBackupsInnerLastResult
@@ -172,7 +172,62 @@ func (o ListBackups200ResponseAllOfBackupsInnerLastResult) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *ListBackups200ResponseAllOfBackupsInnerLastResult) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBackups200ResponseAllOfBackupsInnerLastResult := _ListBackups200ResponseAllOfBackupsInnerLastResult{}
+
+	err = json.Unmarshal(data, &varListBackups200ResponseAllOfBackupsInnerLastResult)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackups200ResponseAllOfBackupsInnerLastResult(varListBackups200ResponseAllOfBackupsInnerLastResult)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "dateCreated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBackups200ResponseAllOfBackupsInnerLastResult struct {
+	value *ListBackups200ResponseAllOfBackupsInnerLastResult
+	isSet bool
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerLastResult) Get() *ListBackups200ResponseAllOfBackupsInnerLastResult {
+	return v.value
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerLastResult) Set(val *ListBackups200ResponseAllOfBackupsInnerLastResult) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerLastResult) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerLastResult) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackups200ResponseAllOfBackupsInnerLastResult(val *ListBackups200ResponseAllOfBackupsInnerLastResult) *NullableListBackups200ResponseAllOfBackupsInnerLastResult {
+	return &NullableListBackups200ResponseAllOfBackupsInnerLastResult{value: val, isSet: true}
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerLastResult) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerLastResult) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

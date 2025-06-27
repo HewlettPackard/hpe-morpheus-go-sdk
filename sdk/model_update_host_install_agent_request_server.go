@@ -25,7 +25,7 @@ type UpdateHostInstallAgentRequestServer struct {
 	// SSH password to use, if not specified the account public key can be used
 	SshPassword          *string                                      `json:"sshPassword,omitempty"`
 	ServerOs             *UpdateHostInstallAgentRequestServerServerOs `json:"serverOs,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateHostInstallAgentRequestServer UpdateHostInstallAgentRequestServer
@@ -170,7 +170,62 @@ func (o UpdateHostInstallAgentRequestServer) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *UpdateHostInstallAgentRequestServer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateHostInstallAgentRequestServer := _UpdateHostInstallAgentRequestServer{}
+
+	err = json.Unmarshal(data, &varUpdateHostInstallAgentRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostInstallAgentRequestServer(varUpdateHostInstallAgentRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "serverOs")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateHostInstallAgentRequestServer struct {
+	value *UpdateHostInstallAgentRequestServer
+	isSet bool
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) Get() *UpdateHostInstallAgentRequestServer {
+	return v.value
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) Set(val *UpdateHostInstallAgentRequestServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostInstallAgentRequestServer(val *UpdateHostInstallAgentRequestServer) *NullableUpdateHostInstallAgentRequestServer {
+	return &NullableUpdateHostInstallAgentRequestServer{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

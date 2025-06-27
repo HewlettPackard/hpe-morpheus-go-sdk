@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CreateNetworksRequestNetworkType type satisfies the MappedNullable interface at compile time
@@ -21,8 +22,8 @@ var _ MappedNullable = &CreateNetworksRequestNetworkType{}
 // CreateNetworksRequestNetworkType struct for CreateNetworksRequestNetworkType
 type CreateNetworksRequestNetworkType struct {
 	// Network Type ID
-	Id                   int64                  `json:"id"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworksRequestNetworkType CreateNetworksRequestNetworkType
@@ -88,7 +89,81 @@ func (o CreateNetworksRequestNetworkType) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *CreateNetworksRequestNetworkType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCreateNetworksRequestNetworkType := _CreateNetworksRequestNetworkType{}
+
+	err = json.Unmarshal(data, &varCreateNetworksRequestNetworkType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworksRequestNetworkType(varCreateNetworksRequestNetworkType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworksRequestNetworkType struct {
+	value *CreateNetworksRequestNetworkType
+	isSet bool
+}
+
+func (v NullableCreateNetworksRequestNetworkType) Get() *CreateNetworksRequestNetworkType {
+	return v.value
+}
+
+func (v *NullableCreateNetworksRequestNetworkType) Set(val *CreateNetworksRequestNetworkType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworksRequestNetworkType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworksRequestNetworkType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworksRequestNetworkType(val *CreateNetworksRequestNetworkType) *NullableCreateNetworksRequestNetworkType {
+	return &NullableCreateNetworksRequestNetworkType{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworksRequestNetworkType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworksRequestNetworkType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

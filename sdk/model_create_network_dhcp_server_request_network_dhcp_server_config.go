@@ -25,8 +25,8 @@ type CreateNetworkDhcpServerRequestNetworkDhcpServerConfig struct {
 	// Active Edge Node Options obtained by calling option source with :optionSource = nsxtEdgeNodes and networkServerId param
 	PreferredEdgeNode1 *string `json:"preferredEdgeNode1,omitempty"`
 	// Standby Edge Node Options obtained by calling option source with optionSource = nsxtEdgeNodes and networkServerId param
-	PreferredEdgeNode2   *string                `json:"preferredEdgeNode2,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	PreferredEdgeNode2   *string `json:"preferredEdgeNode2,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkDhcpServerRequestNetworkDhcpServerConfig CreateNetworkDhcpServerRequestNetworkDhcpServerConfig
@@ -171,7 +171,62 @@ func (o CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig := _CreateNetworkDhcpServerRequestNetworkDhcpServerConfig{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDhcpServerRequestNetworkDhcpServerConfig(varCreateNetworkDhcpServerRequestNetworkDhcpServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "edgeCluster")
+		delete(additionalProperties, "preferredEdgeNode1")
+		delete(additionalProperties, "preferredEdgeNode2")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig struct {
+	value *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig
+	isSet bool
+}
+
+func (v NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) Get() *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) Set(val *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig(val *CreateNetworkDhcpServerRequestNetworkDhcpServerConfig) *NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig {
+	return &NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDhcpServerRequestNetworkDhcpServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

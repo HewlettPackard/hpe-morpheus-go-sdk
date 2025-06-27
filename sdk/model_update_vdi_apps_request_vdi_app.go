@@ -33,18 +33,6 @@ func UpdateVDIAppsRequestVdiAppOneOfAsUpdateVDIAppsRequestVdiApp(v *UpdateVDIApp
 	}
 }
 
-func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &UpdateVDIAppsRequestVdiApp{}
-	}
-
-	if out, ok := data.(UpdateVDIAppsRequestVdiAppOneOf); ok {
-		dst.UpdateVDIAppsRequestVdiAppOneOf = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalJSON(data []byte) error {
 	var err error

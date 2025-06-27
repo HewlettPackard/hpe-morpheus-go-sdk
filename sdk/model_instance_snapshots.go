@@ -22,7 +22,7 @@ var _ MappedNullable = &InstanceSnapshots{}
 type InstanceSnapshots struct {
 	// List of snapshot objects
 	Snapshots            []SnapshotsInstance200ResponseSnapshotsInner `json:"snapshots,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceSnapshots InstanceSnapshots
@@ -97,7 +97,60 @@ func (o InstanceSnapshots) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceSnapshots) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varInstanceSnapshots := _InstanceSnapshots{}
+
+	err = json.Unmarshal(data, &varInstanceSnapshots)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceSnapshots(varInstanceSnapshots)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "snapshots")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableInstanceSnapshots struct {
+	value *InstanceSnapshots
+	isSet bool
+}
+
+func (v NullableInstanceSnapshots) Get() *InstanceSnapshots {
+	return v.value
+}
+
+func (v *NullableInstanceSnapshots) Set(val *InstanceSnapshots) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceSnapshots) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceSnapshots) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceSnapshots(val *InstanceSnapshots) *NullableInstanceSnapshots {
+	return &NullableInstanceSnapshots{value: val, isSet: true}
+}
+
+func (v NullableInstanceSnapshots) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceSnapshots) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

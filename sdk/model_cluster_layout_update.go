@@ -48,7 +48,7 @@ type ClusterLayoutUpdate struct {
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
 	Workers              []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterLayoutUpdate ClusterLayoutUpdate
@@ -637,7 +637,74 @@ func (o ClusterLayoutUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterLayoutUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterLayoutUpdate := _ClusterLayoutUpdate{}
+
+	err = json.Unmarshal(data, &varClusterLayoutUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterLayoutUpdate(varClusterLayoutUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "computeVersion")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "installContainerRuntime")
+		delete(additionalProperties, "memoryRequirement")
+		delete(additionalProperties, "groupType")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "masters")
+		delete(additionalProperties, "workers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterLayoutUpdate struct {
+	value *ClusterLayoutUpdate
+	isSet bool
+}
+
+func (v NullableClusterLayoutUpdate) Get() *ClusterLayoutUpdate {
+	return v.value
+}
+
+func (v *NullableClusterLayoutUpdate) Set(val *ClusterLayoutUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterLayoutUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterLayoutUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterLayoutUpdate(val *ClusterLayoutUpdate) *NullableClusterLayoutUpdate {
+	return &NullableClusterLayoutUpdate{value: val, isSet: true}
+}
+
+func (v NullableClusterLayoutUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterLayoutUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

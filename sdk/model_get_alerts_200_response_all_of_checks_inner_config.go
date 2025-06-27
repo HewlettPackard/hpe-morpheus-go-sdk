@@ -29,38 +29,6 @@ type GetAlerts200ResponseAllOfChecksInnerConfig struct {
 	MapmapOfStringAny                                *map[string]interface{}
 }
 
-func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &GetAlerts200ResponseAllOfChecksInnerConfig{}
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = &out
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 = &out
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 = &out
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 = &out
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 = &out
-	}
-
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte) error {
 	var err error

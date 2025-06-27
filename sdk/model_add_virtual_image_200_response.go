@@ -22,7 +22,7 @@ var _ MappedNullable = &AddVirtualImage200Response{}
 type AddVirtualImage200Response struct {
 	VirtualImage         *ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImage,omitempty"`
 	Success              *bool                                                `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVirtualImage200Response AddVirtualImage200Response
@@ -132,7 +132,61 @@ func (o AddVirtualImage200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddVirtualImage200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddVirtualImage200Response := _AddVirtualImage200Response{}
+
+	err = json.Unmarshal(data, &varAddVirtualImage200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVirtualImage200Response(varAddVirtualImage200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "virtualImage")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddVirtualImage200Response struct {
+	value *AddVirtualImage200Response
+	isSet bool
+}
+
+func (v NullableAddVirtualImage200Response) Get() *AddVirtualImage200Response {
+	return v.value
+}
+
+func (v *NullableAddVirtualImage200Response) Set(val *AddVirtualImage200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVirtualImage200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVirtualImage200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVirtualImage200Response(val *AddVirtualImage200Response) *NullableAddVirtualImage200Response {
+	return &NullableAddVirtualImage200Response{value: val, isSet: true}
+}
+
+func (v NullableAddVirtualImage200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVirtualImage200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

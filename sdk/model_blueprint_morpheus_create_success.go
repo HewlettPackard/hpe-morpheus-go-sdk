@@ -33,7 +33,7 @@ type BlueprintMorpheusCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant               map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintMorpheusCreateSuccess BlueprintMorpheusCreateSuccess
@@ -322,7 +322,66 @@ func (o BlueprintMorpheusCreateSuccess) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *BlueprintMorpheusCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBlueprintMorpheusCreateSuccess := _BlueprintMorpheusCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintMorpheusCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintMorpheusCreateSuccess(varBlueprintMorpheusCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBlueprintMorpheusCreateSuccess struct {
+	value *BlueprintMorpheusCreateSuccess
+	isSet bool
+}
+
+func (v NullableBlueprintMorpheusCreateSuccess) Get() *BlueprintMorpheusCreateSuccess {
+	return v.value
+}
+
+func (v *NullableBlueprintMorpheusCreateSuccess) Set(val *BlueprintMorpheusCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintMorpheusCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintMorpheusCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintMorpheusCreateSuccess(val *BlueprintMorpheusCreateSuccess) *NullableBlueprintMorpheusCreateSuccess {
+	return &NullableBlueprintMorpheusCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableBlueprintMorpheusCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintMorpheusCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

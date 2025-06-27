@@ -42,7 +42,7 @@ type GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner s
 	SourceGroup          NullableString                                      `json:"sourceGroup,omitempty"`
 	SourceTier           NullableString                                      `json:"sourceTier,omitempty"`
 	Applications         []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"applications,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
@@ -940,7 +940,81 @@ func (o GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInne
 	return toSerialize, nil
 }
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner := _GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner(varGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "groupName")
+		delete(additionalProperties, "direction")
+		delete(additionalProperties, "ruleType")
+		delete(additionalProperties, "policy")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "sourceType")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "destinationType")
+		delete(additionalProperties, "profiles")
+		delete(additionalProperties, "protocol")
+		delete(additionalProperties, "application")
+		delete(additionalProperties, "applicationType")
+		delete(additionalProperties, "portRange")
+		delete(additionalProperties, "sourcePortRange")
+		delete(additionalProperties, "destinationPortRange")
+		delete(additionalProperties, "sourceGroup")
+		delete(additionalProperties, "sourceTier")
+		delete(additionalProperties, "applications")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner struct {
+	value *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner
+	isSet bool
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Get() *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner {
+	return v.value
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Set(val *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner(val *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner {
+	return &NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInnerRulesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

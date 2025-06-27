@@ -89,46 +89,6 @@ func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7AsAddIdentitySourc
 	}
 }
 
-func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddIdentitySources200ResponseAllOfTask{}
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = &out
-	}
-
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
 	var err error

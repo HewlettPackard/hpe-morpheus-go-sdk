@@ -45,7 +45,7 @@ type NetworkType struct {
 	HasFloatingIps         *bool                                                                                                                                `json:"hasFloatingIps,omitempty"`
 	OptionTypes            []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                                          `json:"optionTypes,omitempty"`
 	RouteOptionTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
-	AdditionalProperties   map[string]interface{}                                                                                                               `json:",remain"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _NetworkType NetworkType
@@ -993,7 +993,84 @@ func (o NetworkType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkType := _NetworkType{}
+
+	err = json.Unmarshal(data, &varNetworkType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkType(varNetworkType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "externalType")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "overlay")
+		delete(additionalProperties, "nameEditable")
+		delete(additionalProperties, "cidrRequired")
+		delete(additionalProperties, "cidrEditable")
+		delete(additionalProperties, "dhcpServerEditable")
+		delete(additionalProperties, "dnsEditable")
+		delete(additionalProperties, "gatewayEditable")
+		delete(additionalProperties, "vlanIdEditable")
+		delete(additionalProperties, "staticOverrideEditable")
+		delete(additionalProperties, "networkDomainEditable")
+		delete(additionalProperties, "canAssignPool")
+		delete(additionalProperties, "deletable")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "hasCidr")
+		delete(additionalProperties, "hasStaticRoutes")
+		delete(additionalProperties, "hasFloatingIps")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "routeOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkType struct {
+	value *NetworkType
+	isSet bool
+}
+
+func (v NullableNetworkType) Get() *NetworkType {
+	return v.value
+}
+
+func (v *NullableNetworkType) Set(val *NetworkType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkType(val *NetworkType) *NullableNetworkType {
+	return &NullableNetworkType{value: val, isSet: true}
+}
+
+func (v NullableNetworkType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

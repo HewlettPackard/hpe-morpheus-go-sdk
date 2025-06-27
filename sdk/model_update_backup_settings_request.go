@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateBackupSettingsRequest{}
 // UpdateBackupSettingsRequest struct for UpdateBackupSettingsRequest
 type UpdateBackupSettingsRequest struct {
 	BackupSettings       *UpdateBackupSettingsRequestBackupSettings `json:"backupSettings,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateBackupSettingsRequest UpdateBackupSettingsRequest
@@ -96,7 +96,60 @@ func (o UpdateBackupSettingsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateBackupSettingsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateBackupSettingsRequest := _UpdateBackupSettingsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateBackupSettingsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupSettingsRequest(varUpdateBackupSettingsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupSettings")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateBackupSettingsRequest struct {
+	value *UpdateBackupSettingsRequest
+	isSet bool
+}
+
+func (v NullableUpdateBackupSettingsRequest) Get() *UpdateBackupSettingsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateBackupSettingsRequest) Set(val *UpdateBackupSettingsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBackupSettingsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBackupSettingsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBackupSettingsRequest(val *UpdateBackupSettingsRequest) *NullableUpdateBackupSettingsRequest {
+	return &NullableUpdateBackupSettingsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateBackupSettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBackupSettingsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

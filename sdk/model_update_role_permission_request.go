@@ -113,58 +113,6 @@ func FeaturePermissionAsUpdateRolePermissionRequest(v *FeaturePermission) Update
 	}
 }
 
-func (dst *UpdateRolePermissionRequest) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &UpdateRolePermissionRequest{}
-	}
-
-	if out, ok := data.(DefaultBlueprintPermission); ok {
-		dst.DefaultBlueprintPermission = &out
-	}
-
-	if out, ok := data.(DefaultCatalogItemTypePermission); ok {
-		dst.DefaultCatalogItemTypePermission = &out
-	}
-
-	if out, ok := data.(DefaultCloudPermission); ok {
-		dst.DefaultCloudPermission = &out
-	}
-
-	if out, ok := data.(DefaultGroupPermission); ok {
-		dst.DefaultGroupPermission = &out
-	}
-
-	if out, ok := data.(DefaultInstanceTypePermission); ok {
-		dst.DefaultInstanceTypePermission = &out
-	}
-
-	if out, ok := data.(DefaultPersonaPermission); ok {
-		dst.DefaultPersonaPermission = &out
-	}
-
-	if out, ok := data.(DefaultReportTypePermission); ok {
-		dst.DefaultReportTypePermission = &out
-	}
-
-	if out, ok := data.(DefaultTaskPermission); ok {
-		dst.DefaultTaskPermission = &out
-	}
-
-	if out, ok := data.(DefaultVDIPoolPermission); ok {
-		dst.DefaultVDIPoolPermission = &out
-	}
-
-	if out, ok := data.(DefaultWorkflowPermission); ok {
-		dst.DefaultWorkflowPermission = &out
-	}
-
-	if out, ok := data.(FeaturePermission); ok {
-		dst.FeaturePermission = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRolePermissionRequest) UnmarshalJSON(data []byte) error {
 	var err error

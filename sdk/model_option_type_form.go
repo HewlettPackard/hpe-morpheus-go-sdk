@@ -29,7 +29,7 @@ type OptionTypeForm struct {
 	Labels               []string                                                          `json:"labels,omitempty"`
 	Options              []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner     `json:"options,omitempty"`
 	FieldGroups          []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _OptionTypeForm OptionTypeForm
@@ -407,7 +407,68 @@ func (o OptionTypeForm) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OptionTypeForm) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varOptionTypeForm := _OptionTypeForm{}
+
+	err = json.Unmarshal(data, &varOptionTypeForm)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionTypeForm(varOptionTypeForm)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "context")
+		delete(additionalProperties, "locked")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "options")
+		delete(additionalProperties, "fieldGroups")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableOptionTypeForm struct {
+	value *OptionTypeForm
+	isSet bool
+}
+
+func (v NullableOptionTypeForm) Get() *OptionTypeForm {
+	return v.value
+}
+
+func (v *NullableOptionTypeForm) Set(val *OptionTypeForm) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionTypeForm) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionTypeForm) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionTypeForm(val *OptionTypeForm) *NullableOptionTypeForm {
+	return &NullableOptionTypeForm{value: val, isSet: true}
+}
+
+func (v NullableOptionTypeForm) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionTypeForm) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddBackupJobsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddBackupJobsRequest{}
 // AddBackupJobsRequest struct for AddBackupJobsRequest
 type AddBackupJobsRequest struct {
 	Job                  AddBackupJobsRequestJob `json:"job"`
-	AdditionalProperties map[string]interface{}  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBackupJobsRequest AddBackupJobsRequest
@@ -87,7 +88,81 @@ func (o AddBackupJobsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBackupJobsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"job",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddBackupJobsRequest := _AddBackupJobsRequest{}
+
+	err = json.Unmarshal(data, &varAddBackupJobsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBackupJobsRequest(varAddBackupJobsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "job")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBackupJobsRequest struct {
+	value *AddBackupJobsRequest
+	isSet bool
+}
+
+func (v NullableAddBackupJobsRequest) Get() *AddBackupJobsRequest {
+	return v.value
+}
+
+func (v *NullableAddBackupJobsRequest) Set(val *AddBackupJobsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBackupJobsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBackupJobsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBackupJobsRequest(val *AddBackupJobsRequest) *NullableAddBackupJobsRequest {
+	return &NullableAddBackupJobsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddBackupJobsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBackupJobsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

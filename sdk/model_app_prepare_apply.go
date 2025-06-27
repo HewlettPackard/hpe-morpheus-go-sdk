@@ -21,7 +21,7 @@ var _ MappedNullable = &AppPrepareApply{}
 // AppPrepareApply struct for AppPrepareApply
 type AppPrepareApply struct {
 	Data                 *PrepareAppApply200ResponseAllOfData `json:"data,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AppPrepareApply AppPrepareApply
@@ -96,7 +96,60 @@ func (o AppPrepareApply) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AppPrepareApply) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAppPrepareApply := _AppPrepareApply{}
+
+	err = json.Unmarshal(data, &varAppPrepareApply)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppPrepareApply(varAppPrepareApply)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAppPrepareApply struct {
+	value *AppPrepareApply
+	isSet bool
+}
+
+func (v NullableAppPrepareApply) Get() *AppPrepareApply {
+	return v.value
+}
+
+func (v *NullableAppPrepareApply) Set(val *AppPrepareApply) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppPrepareApply) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppPrepareApply) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppPrepareApply(val *AppPrepareApply) *NullableAppPrepareApply {
+	return &NullableAppPrepareApply{value: val, isSet: true}
+}
+
+func (v NullableAppPrepareApply) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppPrepareApply) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

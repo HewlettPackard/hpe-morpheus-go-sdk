@@ -44,8 +44,8 @@ type AddImageBuildRequestImageBuild struct {
 	BuildOutputName   NullableString `json:"buildOutputName,omitempty"`
 	ConversionFormats NullableString `json:"conversionFormats,omitempty"`
 	// Keep Results - Keep only the most recent builds. Older executions will be deleted along with their associated Virtual Images. The value 0 disables this functionality.
-	KeepResults          *int64                 `json:"keepResults,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	KeepResults          *int64 `json:"keepResults,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddImageBuildRequestImageBuild AddImageBuildRequestImageBuild
@@ -658,7 +658,74 @@ func (o AddImageBuildRequestImageBuild) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AddImageBuildRequestImageBuild) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddImageBuildRequestImageBuild := _AddImageBuildRequestImageBuild{}
+
+	err = json.Unmarshal(data, &varAddImageBuildRequestImageBuild)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddImageBuildRequestImageBuild(varAddImageBuildRequestImageBuild)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "bootScript")
+		delete(additionalProperties, "preseedScript")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "buildOutputName")
+		delete(additionalProperties, "conversionFormats")
+		delete(additionalProperties, "keepResults")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddImageBuildRequestImageBuild struct {
+	value *AddImageBuildRequestImageBuild
+	isSet bool
+}
+
+func (v NullableAddImageBuildRequestImageBuild) Get() *AddImageBuildRequestImageBuild {
+	return v.value
+}
+
+func (v *NullableAddImageBuildRequestImageBuild) Set(val *AddImageBuildRequestImageBuild) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddImageBuildRequestImageBuild) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddImageBuildRequestImageBuild) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddImageBuildRequestImageBuild(val *AddImageBuildRequestImageBuild) *NullableAddImageBuildRequestImageBuild {
+	return &NullableAddImageBuildRequestImageBuild{value: val, isSet: true}
+}
+
+func (v NullableAddImageBuildRequestImageBuild) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddImageBuildRequestImageBuild) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

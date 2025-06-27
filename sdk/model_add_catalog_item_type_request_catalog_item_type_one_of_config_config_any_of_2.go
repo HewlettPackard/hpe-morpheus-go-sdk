@@ -31,8 +31,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
 	// Service Account
 	ServiceAccount *string `json:"serviceAccount,omitempty"`
 	// Access Scope
-	AccessScope          *string                `json:"accessScope,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AccessScope          *string `json:"accessScope,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
@@ -297,7 +297,65 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) ToMap()
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "noAgent")
+		delete(additionalProperties, "googleZoneId")
+		delete(additionalProperties, "externalIpType")
+		delete(additionalProperties, "networkTags")
+		delete(additionalProperties, "serviceAccount")
+		delete(additionalProperties, "accessScope")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -41,7 +41,7 @@ type IdentitySourcesJumpCloudConfig struct {
 	ProviderSettings     map[string]interface{}                                                       `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IdentitySourcesJumpCloudConfig IdentitySourcesJumpCloudConfig
@@ -781,7 +781,79 @@ func (o IdentitySourcesJumpCloudConfig) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *IdentitySourcesJumpCloudConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIdentitySourcesJumpCloudConfig := _IdentitySourcesJumpCloudConfig{}
+
+	err = json.Unmarshal(data, &varIdentitySourcesJumpCloudConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdentitySourcesJumpCloudConfig(varIdentitySourcesJumpCloudConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "deleted")
+		delete(additionalProperties, "autoSyncOnLogin")
+		delete(additionalProperties, "externalLogin")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "loginURL")
+		delete(additionalProperties, "providerSettings")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIdentitySourcesJumpCloudConfig struct {
+	value *IdentitySourcesJumpCloudConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesJumpCloudConfig) Get() *IdentitySourcesJumpCloudConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesJumpCloudConfig) Set(val *IdentitySourcesJumpCloudConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesJumpCloudConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesJumpCloudConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesJumpCloudConfig(val *IdentitySourcesJumpCloudConfig) *NullableIdentitySourcesJumpCloudConfig {
+	return &NullableIdentitySourcesJumpCloudConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesJumpCloudConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesJumpCloudConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

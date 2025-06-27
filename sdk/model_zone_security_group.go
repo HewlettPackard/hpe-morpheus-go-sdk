@@ -20,11 +20,11 @@ var _ MappedNullable = &ZoneSecurityGroup{}
 
 // ZoneSecurityGroup struct for ZoneSecurityGroup
 type ZoneSecurityGroup struct {
-	Id                   *int32                 `json:"id,omitempty"`
-	AccountId            *int32                 `json:"accountId,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int32  `json:"id,omitempty"`
+	AccountId            *int32  `json:"accountId,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	Description          *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ZoneSecurityGroup ZoneSecurityGroup
@@ -204,7 +204,63 @@ func (o ZoneSecurityGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneSecurityGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varZoneSecurityGroup := _ZoneSecurityGroup{}
+
+	err = json.Unmarshal(data, &varZoneSecurityGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneSecurityGroup(varZoneSecurityGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableZoneSecurityGroup struct {
+	value *ZoneSecurityGroup
+	isSet bool
+}
+
+func (v NullableZoneSecurityGroup) Get() *ZoneSecurityGroup {
+	return v.value
+}
+
+func (v *NullableZoneSecurityGroup) Set(val *ZoneSecurityGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneSecurityGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneSecurityGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneSecurityGroup(val *ZoneSecurityGroup) *NullableZoneSecurityGroup {
+	return &NullableZoneSecurityGroup{value: val, isSet: true}
+}
+
+func (v NullableZoneSecurityGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneSecurityGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

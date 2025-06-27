@@ -20,11 +20,11 @@ var _ MappedNullable = &AddBaremetalHostRequestServerConfig{}
 
 // AddBaremetalHostRequestServerConfig struct for AddBaremetalHostRequestServerConfig
 type AddBaremetalHostRequestServerConfig struct {
-	IloIpAddress         *string                `json:"iloIpAddress,omitempty"`
-	IloUsername          *string                `json:"iloUsername,omitempty"`
-	IloPassword          *string                `json:"iloPassword,omitempty"`
-	MacAddress           *string                `json:"macAddress,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	IloIpAddress         *string `json:"iloIpAddress,omitempty"`
+	IloUsername          *string `json:"iloUsername,omitempty"`
+	IloPassword          *string `json:"iloPassword,omitempty"`
+	MacAddress           *string `json:"macAddress,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddBaremetalHostRequestServerConfig AddBaremetalHostRequestServerConfig
@@ -204,7 +204,63 @@ func (o AddBaremetalHostRequestServerConfig) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *AddBaremetalHostRequestServerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddBaremetalHostRequestServerConfig := _AddBaremetalHostRequestServerConfig{}
+
+	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddBaremetalHostRequestServerConfig(varAddBaremetalHostRequestServerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "iloIpAddress")
+		delete(additionalProperties, "iloUsername")
+		delete(additionalProperties, "iloPassword")
+		delete(additionalProperties, "macAddress")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddBaremetalHostRequestServerConfig struct {
+	value *AddBaremetalHostRequestServerConfig
+	isSet bool
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) Get() *AddBaremetalHostRequestServerConfig {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) Set(val *AddBaremetalHostRequestServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHostRequestServerConfig(val *AddBaremetalHostRequestServerConfig) *NullableAddBaremetalHostRequestServerConfig {
+	return &NullableAddBaremetalHostRequestServerConfig{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

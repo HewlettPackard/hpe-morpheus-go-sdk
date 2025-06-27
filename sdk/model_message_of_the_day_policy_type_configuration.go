@@ -27,7 +27,7 @@ type MessageOfTheDayPolicyTypeConfiguration struct {
 	MotdType             *string                                     `json:"motd.type,omitempty"`
 	MotdFullPage         NullableBool                                `json:"motd._fullPage,omitempty"`
 	MotdDate             *time.Time                                  `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MessageOfTheDayPolicyTypeConfiguration MessageOfTheDayPolicyTypeConfiguration
@@ -288,7 +288,65 @@ func (o MessageOfTheDayPolicyTypeConfiguration) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *MessageOfTheDayPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMessageOfTheDayPolicyTypeConfiguration := _MessageOfTheDayPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMessageOfTheDayPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MessageOfTheDayPolicyTypeConfiguration(varMessageOfTheDayPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "motd.title")
+		delete(additionalProperties, "motd")
+		delete(additionalProperties, "motd.message")
+		delete(additionalProperties, "motd.type")
+		delete(additionalProperties, "motd._fullPage")
+		delete(additionalProperties, "motd.date")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMessageOfTheDayPolicyTypeConfiguration struct {
+	value *MessageOfTheDayPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) Get() *MessageOfTheDayPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) Set(val *MessageOfTheDayPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMessageOfTheDayPolicyTypeConfiguration(val *MessageOfTheDayPolicyTypeConfiguration) *NullableMessageOfTheDayPolicyTypeConfiguration {
+	return &NullableMessageOfTheDayPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

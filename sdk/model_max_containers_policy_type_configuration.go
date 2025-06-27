@@ -20,8 +20,8 @@ var _ MappedNullable = &MaxContainersPolicyTypeConfiguration{}
 
 // MaxContainersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Containers
 type MaxContainersPolicyTypeConfiguration struct {
-	MaxContainers        *string                `json:"maxContainers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxContainers        *string `json:"maxContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MaxContainersPolicyTypeConfiguration MaxContainersPolicyTypeConfiguration
@@ -96,7 +96,60 @@ func (o MaxContainersPolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *MaxContainersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMaxContainersPolicyTypeConfiguration := _MaxContainersPolicyTypeConfiguration{}
+
+	err = json.Unmarshal(data, &varMaxContainersPolicyTypeConfiguration)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxContainersPolicyTypeConfiguration(varMaxContainersPolicyTypeConfiguration)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMaxContainersPolicyTypeConfiguration struct {
+	value *MaxContainersPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMaxContainersPolicyTypeConfiguration) Get() *MaxContainersPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMaxContainersPolicyTypeConfiguration) Set(val *MaxContainersPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxContainersPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxContainersPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxContainersPolicyTypeConfiguration(val *MaxContainersPolicyTypeConfiguration) *NullableMaxContainersPolicyTypeConfiguration {
+	return &NullableMaxContainersPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMaxContainersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxContainersPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

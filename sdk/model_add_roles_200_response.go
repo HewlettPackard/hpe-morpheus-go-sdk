@@ -43,7 +43,7 @@ type AddRoles200Response struct {
 	GlobalTaskSetAccess         *string                                                `json:"globalTaskSetAccess,omitempty"`
 	TaskSetPermissions          []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskSetPermissions,omitempty"`
 	Success                     *bool                                                  `json:"success,omitempty"`
-	AdditionalProperties        map[string]interface{}                                 `json:",remain"`
+	AdditionalProperties        map[string]interface{}
 }
 
 type _AddRoles200Response AddRoles200Response
@@ -888,7 +888,82 @@ func (o AddRoles200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddRoles200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddRoles200Response := _AddRoles200Response{}
+
+	err = json.Unmarshal(data, &varAddRoles200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddRoles200Response(varAddRoles200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "role")
+		delete(additionalProperties, "featurePermissions")
+		delete(additionalProperties, "globalSiteAccess")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "globalZoneAccess")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "globalInstanceTypeAccess")
+		delete(additionalProperties, "instanceTypePermissions")
+		delete(additionalProperties, "globalAppTemplateAccess")
+		delete(additionalProperties, "appTemplatePermissions")
+		delete(additionalProperties, "globalCatalogItemTypeAccess")
+		delete(additionalProperties, "catalogItemTypePermissions")
+		delete(additionalProperties, "globalPersonaAccess")
+		delete(additionalProperties, "personaPermissions")
+		delete(additionalProperties, "globalVdiPoolAccess")
+		delete(additionalProperties, "vdiPoolPermissions")
+		delete(additionalProperties, "globalReportTypeAccess")
+		delete(additionalProperties, "reportTypePermissions")
+		delete(additionalProperties, "globalTaskAccess")
+		delete(additionalProperties, "taskPermissions")
+		delete(additionalProperties, "globalTaskSetAccess")
+		delete(additionalProperties, "taskSetPermissions")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddRoles200Response struct {
+	value *AddRoles200Response
+	isSet bool
+}
+
+func (v NullableAddRoles200Response) Get() *AddRoles200Response {
+	return v.value
+}
+
+func (v *NullableAddRoles200Response) Set(val *AddRoles200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRoles200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRoles200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRoles200Response(val *AddRoles200Response) *NullableAddRoles200Response {
+	return &NullableAddRoles200Response{value: val, isSet: true}
+}
+
+func (v NullableAddRoles200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRoles200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

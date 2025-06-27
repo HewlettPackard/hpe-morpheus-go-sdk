@@ -34,7 +34,7 @@ type CheckSql struct {
 	// Severity level threshold for sending notifications.
 	Severity             *string                            `json:"severity,omitempty"`
 	Config               *AddChecksRequestCheckOneOf1Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckSql CheckSql
@@ -381,7 +381,67 @@ func (o CheckSql) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckSql) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCheckSql := _CheckSql{}
+
+	err = json.Unmarshal(data, &varCheckSql)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckSql(varCheckSql)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCheckSql struct {
+	value *CheckSql
+	isSet bool
+}
+
+func (v NullableCheckSql) Get() *CheckSql {
+	return v.value
+}
+
+func (v *NullableCheckSql) Set(val *CheckSql) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckSql) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckSql) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckSql(val *CheckSql) *NullableCheckSql {
+	return &NullableCheckSql{value: val, isSet: true}
+}
+
+func (v NullableCheckSql) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckSql) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

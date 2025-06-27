@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -27,7 +28,7 @@ type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 struct {
 	MotdType             *string                                                             `json:"motd.type,omitempty"`
 	MotdFullPage         *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage `json:"motd._fullPage,omitempty"`
 	MotdDate             *time.Time                                                          `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19
@@ -279,7 +280,86 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"motd",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19{}
+
+	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "motd.title")
+		delete(additionalProperties, "motd")
+		delete(additionalProperties, "motd.message")
+		delete(additionalProperties, "motd.type")
+		delete(additionalProperties, "motd._fullPage")
+		delete(additionalProperties, "motd.date")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 struct {
+	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19
+	isSet bool
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 {
+	return v.value
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 {
+	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19{value: val, isSet: true}
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

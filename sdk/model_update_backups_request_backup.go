@@ -25,8 +25,8 @@ type UpdateBackupsRequestBackup struct {
 	// The Backup Job ID to assign the backup to. This determines when the backup is run.
 	JobId *int64 `json:"jobId,omitempty"`
 	// Can be used to enable or disable the backup
-	Enabled              *bool                  `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Enabled              *bool `json:"enabled,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateBackupsRequestBackup UpdateBackupsRequestBackup
@@ -171,7 +171,62 @@ func (o UpdateBackupsRequestBackup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateBackupsRequestBackup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateBackupsRequestBackup := _UpdateBackupsRequestBackup{}
+
+	err = json.Unmarshal(data, &varUpdateBackupsRequestBackup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupsRequestBackup(varUpdateBackupsRequestBackup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "jobId")
+		delete(additionalProperties, "enabled")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateBackupsRequestBackup struct {
+	value *UpdateBackupsRequestBackup
+	isSet bool
+}
+
+func (v NullableUpdateBackupsRequestBackup) Get() *UpdateBackupsRequestBackup {
+	return v.value
+}
+
+func (v *NullableUpdateBackupsRequestBackup) Set(val *UpdateBackupsRequestBackup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBackupsRequestBackup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBackupsRequestBackup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBackupsRequestBackup(val *UpdateBackupsRequestBackup) *NullableUpdateBackupsRequestBackup {
+	return &NullableUpdateBackupsRequestBackup{value: val, isSet: true}
+}
+
+func (v NullableUpdateBackupsRequestBackup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBackupsRequestBackup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

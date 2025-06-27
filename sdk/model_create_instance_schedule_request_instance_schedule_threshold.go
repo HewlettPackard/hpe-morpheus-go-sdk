@@ -47,8 +47,8 @@ type CreateInstanceScheduleRequestInstanceScheduleThreshold struct {
 	// Min Disk (%)
 	MinDisk *float64 `json:"minDisk,omitempty"`
 	// Max Disk (%)
-	MaxDisk              *float64               `json:"maxDisk,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxDisk              *float64 `json:"maxDisk,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateInstanceScheduleRequestInstanceScheduleThreshold CreateInstanceScheduleRequestInstanceScheduleThreshold
@@ -622,7 +622,73 @@ func (o CreateInstanceScheduleRequestInstanceScheduleThreshold) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *CreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateInstanceScheduleRequestInstanceScheduleThreshold := _CreateInstanceScheduleRequestInstanceScheduleThreshold{}
+
+	err = json.Unmarshal(data, &varCreateInstanceScheduleRequestInstanceScheduleThreshold)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateInstanceScheduleRequestInstanceScheduleThreshold(varCreateInstanceScheduleRequestInstanceScheduleThreshold)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceThresholdId")
+		delete(additionalProperties, "autoUp")
+		delete(additionalProperties, "autoDown")
+		delete(additionalProperties, "minCount")
+		delete(additionalProperties, "maxCount")
+		delete(additionalProperties, "cpuEnabled")
+		delete(additionalProperties, "minCpu")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "memoryEnabled")
+		delete(additionalProperties, "minMemory")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "diskEnabled")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "maxDisk")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateInstanceScheduleRequestInstanceScheduleThreshold struct {
+	value *CreateInstanceScheduleRequestInstanceScheduleThreshold
+	isSet bool
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Get() *CreateInstanceScheduleRequestInstanceScheduleThreshold {
+	return v.value
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Set(val *CreateInstanceScheduleRequestInstanceScheduleThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateInstanceScheduleRequestInstanceScheduleThreshold(val *CreateInstanceScheduleRequestInstanceScheduleThreshold) *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold {
+	return &NullableCreateInstanceScheduleRequestInstanceScheduleThreshold{value: val, isSet: true}
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

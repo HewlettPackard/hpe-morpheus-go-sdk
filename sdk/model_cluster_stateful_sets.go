@@ -34,7 +34,7 @@ type ClusterStatefulSets struct {
 	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
 	TotalCpuUsage        *int64                                       `json:"totalCpuUsage,omitempty"`
 	Stats                map[string]interface{}                       `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterStatefulSets ClusterStatefulSets
@@ -551,7 +551,72 @@ func (o ClusterStatefulSets) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterStatefulSets) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterStatefulSets := _ClusterStatefulSets{}
+
+	err = json.Unmarshal(data, &varClusterStatefulSets)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterStatefulSets(varClusterStatefulSets)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "resourceLevel")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "managed")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "totalCpuUsage")
+		delete(additionalProperties, "stats")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterStatefulSets struct {
+	value *ClusterStatefulSets
+	isSet bool
+}
+
+func (v NullableClusterStatefulSets) Get() *ClusterStatefulSets {
+	return v.value
+}
+
+func (v *NullableClusterStatefulSets) Set(val *ClusterStatefulSets) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterStatefulSets) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterStatefulSets) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterStatefulSets(val *ClusterStatefulSets) *NullableClusterStatefulSets {
+	return &NullableClusterStatefulSets{value: val, isSet: true}
+}
+
+func (v NullableClusterStatefulSets) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterStatefulSets) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

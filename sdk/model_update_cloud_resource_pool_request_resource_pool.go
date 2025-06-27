@@ -30,7 +30,7 @@ type UpdateCloudResourcePoolRequestResourcePool struct {
 	Inventory            *bool                                                     `json:"inventory,omitempty"`
 	TenantPermissions    *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudResourcePoolRequestResourcePool UpdateCloudResourcePoolRequestResourcePool
@@ -284,7 +284,65 @@ func (o UpdateCloudResourcePoolRequestResourcePool) ToMap() (map[string]interfac
 	return toSerialize, nil
 }
 func (o *UpdateCloudResourcePoolRequestResourcePool) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateCloudResourcePoolRequestResourcePool := _UpdateCloudResourcePoolRequestResourcePool{}
+
+	err = json.Unmarshal(data, &varUpdateCloudResourcePoolRequestResourcePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudResourcePoolRequestResourcePool(varUpdateCloudResourcePoolRequestResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateCloudResourcePoolRequestResourcePool struct {
+	value *UpdateCloudResourcePoolRequestResourcePool
+	isSet bool
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) Get() *UpdateCloudResourcePoolRequestResourcePool {
+	return v.value
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) Set(val *UpdateCloudResourcePoolRequestResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudResourcePoolRequestResourcePool(val *UpdateCloudResourcePoolRequestResourcePool) *NullableUpdateCloudResourcePoolRequestResourcePool {
+	return &NullableUpdateCloudResourcePoolRequestResourcePool{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

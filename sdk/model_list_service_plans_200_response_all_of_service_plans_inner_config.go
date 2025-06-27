@@ -23,7 +23,7 @@ type ListServicePlans200ResponseAllOfServicePlansInnerConfig struct {
 	StorageSizeType      NullableString                                                 `json:"storageSizeType,omitempty"`
 	MemorySizeType       NullableString                                                 `json:"memorySizeType,omitempty"`
 	Ranges               *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges `json:"ranges,omitempty"`
-	AdditionalProperties map[string]interface{}                                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListServicePlans200ResponseAllOfServicePlansInnerConfig ListServicePlans200ResponseAllOfServicePlansInnerConfig
@@ -190,7 +190,62 @@ func (o ListServicePlans200ResponseAllOfServicePlansInnerConfig) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListServicePlans200ResponseAllOfServicePlansInnerConfig := _ListServicePlans200ResponseAllOfServicePlansInnerConfig{}
+
+	err = json.Unmarshal(data, &varListServicePlans200ResponseAllOfServicePlansInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListServicePlans200ResponseAllOfServicePlansInnerConfig(varListServicePlans200ResponseAllOfServicePlansInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "storageSizeType")
+		delete(additionalProperties, "memorySizeType")
+		delete(additionalProperties, "ranges")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListServicePlans200ResponseAllOfServicePlansInnerConfig struct {
+	value *ListServicePlans200ResponseAllOfServicePlansInnerConfig
+	isSet bool
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) Get() *ListServicePlans200ResponseAllOfServicePlansInnerConfig {
+	return v.value
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) Set(val *ListServicePlans200ResponseAllOfServicePlansInnerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListServicePlans200ResponseAllOfServicePlansInnerConfig(val *ListServicePlans200ResponseAllOfServicePlansInnerConfig) *NullableListServicePlans200ResponseAllOfServicePlansInnerConfig {
+	return &NullableListServicePlans200ResponseAllOfServicePlansInnerConfig{value: val, isSet: true}
+}
+
+func (v NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListServicePlans200ResponseAllOfServicePlansInnerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

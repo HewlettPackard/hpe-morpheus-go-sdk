@@ -20,9 +20,9 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerRole{}
 
 // ListPolicies200ResponseAllOfPoliciesInnerRole struct for ListPolicies200ResponseAllOfPoliciesInnerRole
 type ListPolicies200ResponseAllOfPoliciesInnerRole struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Authority            *string                `json:"authority,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Authority            *string `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerRole ListPolicies200ResponseAllOfPoliciesInnerRole
@@ -132,7 +132,61 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerRole) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *ListPolicies200ResponseAllOfPoliciesInnerRole) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListPolicies200ResponseAllOfPoliciesInnerRole := _ListPolicies200ResponseAllOfPoliciesInnerRole{}
+
+	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListPolicies200ResponseAllOfPoliciesInnerRole(varListPolicies200ResponseAllOfPoliciesInnerRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "authority")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListPolicies200ResponseAllOfPoliciesInnerRole struct {
+	value *ListPolicies200ResponseAllOfPoliciesInnerRole
+	isSet bool
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerRole) Get() *ListPolicies200ResponseAllOfPoliciesInnerRole {
+	return v.value
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerRole) Set(val *ListPolicies200ResponseAllOfPoliciesInnerRole) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerRole) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerRole) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPolicies200ResponseAllOfPoliciesInnerRole(val *ListPolicies200ResponseAllOfPoliciesInnerRole) *NullableListPolicies200ResponseAllOfPoliciesInnerRole {
+	return &NullableListPolicies200ResponseAllOfPoliciesInnerRole{value: val, isSet: true}
+}
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerRole) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPolicies200ResponseAllOfPoliciesInnerRole) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

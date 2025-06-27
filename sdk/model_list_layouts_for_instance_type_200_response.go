@@ -22,7 +22,7 @@ var _ MappedNullable = &ListLayoutsForInstanceType200Response{}
 type ListLayoutsForInstanceType200Response struct {
 	InstanceTypeLayouts  []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                                `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListLayoutsForInstanceType200Response ListLayoutsForInstanceType200Response
@@ -132,7 +132,61 @@ func (o ListLayoutsForInstanceType200Response) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *ListLayoutsForInstanceType200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListLayoutsForInstanceType200Response := _ListLayoutsForInstanceType200Response{}
+
+	err = json.Unmarshal(data, &varListLayoutsForInstanceType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLayoutsForInstanceType200Response(varListLayoutsForInstanceType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceTypeLayouts")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListLayoutsForInstanceType200Response struct {
+	value *ListLayoutsForInstanceType200Response
+	isSet bool
+}
+
+func (v NullableListLayoutsForInstanceType200Response) Get() *ListLayoutsForInstanceType200Response {
+	return v.value
+}
+
+func (v *NullableListLayoutsForInstanceType200Response) Set(val *ListLayoutsForInstanceType200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLayoutsForInstanceType200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLayoutsForInstanceType200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLayoutsForInstanceType200Response(val *ListLayoutsForInstanceType200Response) *NullableListLayoutsForInstanceType200Response {
+	return &NullableListLayoutsForInstanceType200Response{value: val, isSet: true}
+}
+
+func (v NullableListLayoutsForInstanceType200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLayoutsForInstanceType200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -37,7 +37,7 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10
@@ -671,7 +671,75 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "serviceFlag")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 struct {
+	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 {
+	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

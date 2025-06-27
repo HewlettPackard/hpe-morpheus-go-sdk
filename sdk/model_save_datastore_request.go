@@ -21,7 +21,7 @@ var _ MappedNullable = &SaveDatastoreRequest{}
 // SaveDatastoreRequest struct for SaveDatastoreRequest
 type SaveDatastoreRequest struct {
 	Datastore            *SaveDatastoreRequestDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SaveDatastoreRequest SaveDatastoreRequest
@@ -96,7 +96,60 @@ func (o SaveDatastoreRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SaveDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSaveDatastoreRequest := _SaveDatastoreRequest{}
+
+	err = json.Unmarshal(data, &varSaveDatastoreRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveDatastoreRequest(varSaveDatastoreRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastore")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSaveDatastoreRequest struct {
+	value *SaveDatastoreRequest
+	isSet bool
+}
+
+func (v NullableSaveDatastoreRequest) Get() *SaveDatastoreRequest {
+	return v.value
+}
+
+func (v *NullableSaveDatastoreRequest) Set(val *SaveDatastoreRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveDatastoreRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveDatastoreRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveDatastoreRequest(val *SaveDatastoreRequest) *NullableSaveDatastoreRequest {
+	return &NullableSaveDatastoreRequest{value: val, isSet: true}
+}
+
+func (v NullableSaveDatastoreRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveDatastoreRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

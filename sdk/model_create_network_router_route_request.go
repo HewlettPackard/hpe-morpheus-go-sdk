@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateNetworkRouterRouteRequest{}
 // CreateNetworkRouterRouteRequest struct for CreateNetworkRouterRouteRequest
 type CreateNetworkRouterRouteRequest struct {
 	NetworkRoute         *CreateNetworkRouterRouteRequestNetworkRoute `json:"networkRoute,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkRouterRouteRequest CreateNetworkRouterRouteRequest
@@ -96,7 +96,60 @@ func (o CreateNetworkRouterRouteRequest) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *CreateNetworkRouterRouteRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkRouterRouteRequest := _CreateNetworkRouterRouteRequest{}
+
+	err = json.Unmarshal(data, &varCreateNetworkRouterRouteRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkRouterRouteRequest(varCreateNetworkRouterRouteRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkRoute")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkRouterRouteRequest struct {
+	value *CreateNetworkRouterRouteRequest
+	isSet bool
+}
+
+func (v NullableCreateNetworkRouterRouteRequest) Get() *CreateNetworkRouterRouteRequest {
+	return v.value
+}
+
+func (v *NullableCreateNetworkRouterRouteRequest) Set(val *CreateNetworkRouterRouteRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkRouterRouteRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkRouterRouteRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkRouterRouteRequest(val *CreateNetworkRouterRouteRequest) *NullableCreateNetworkRouterRouteRequest {
+	return &NullableCreateNetworkRouterRouteRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkRouterRouteRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkRouterRouteRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

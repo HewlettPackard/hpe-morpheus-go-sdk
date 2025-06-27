@@ -41,7 +41,7 @@ type NetworkDomain struct {
 	DomainSerial         NullableString                                     `json:"domainSerial,omitempty"`
 	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkDomain NetworkDomain
@@ -959,7 +959,80 @@ func (o NetworkDomain) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkDomain) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkDomain := _NetworkDomain{}
+
+	err = json.Unmarshal(data, &varNetworkDomain)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkDomain(varNetworkDomain)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "fqdn")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "domainController")
+		delete(additionalProperties, "publicZone")
+		delete(additionalProperties, "domainUsername")
+		delete(additionalProperties, "domainPassword")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "ouPath")
+		delete(additionalProperties, "dcServer")
+		delete(additionalProperties, "zoneType")
+		delete(additionalProperties, "dnssec")
+		delete(additionalProperties, "domainSerial")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "owner")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkDomain struct {
+	value *NetworkDomain
+	isSet bool
+}
+
+func (v NullableNetworkDomain) Get() *NetworkDomain {
+	return v.value
+}
+
+func (v *NullableNetworkDomain) Set(val *NetworkDomain) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkDomain) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkDomain) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkDomain(val *NetworkDomain) *NullableNetworkDomain {
+	return &NullableNetworkDomain{value: val, isSet: true}
+}
+
+func (v NullableNetworkDomain) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkDomain) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

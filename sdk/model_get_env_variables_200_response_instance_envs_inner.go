@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GetEnvVariables200ResponseInstanceEnvsInner type satisfies the MappedNullable interface at compile time
@@ -20,11 +21,11 @@ var _ MappedNullable = &GetEnvVariables200ResponseInstanceEnvsInner{}
 
 // GetEnvVariables200ResponseInstanceEnvsInner struct for GetEnvVariables200ResponseInstanceEnvsInner
 type GetEnvVariables200ResponseInstanceEnvsInner struct {
-	Export               bool                   `json:"export"`
-	Masked               bool                   `json:"masked"`
-	Name                 string                 `json:"name"`
-	Value                string                 `json:"value"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Export               bool   `json:"export"`
+	Masked               bool   `json:"masked"`
+	Name                 string `json:"name"`
+	Value                string `json:"value"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetEnvVariables200ResponseInstanceEnvsInner GetEnvVariables200ResponseInstanceEnvsInner
@@ -168,7 +169,87 @@ func (o GetEnvVariables200ResponseInstanceEnvsInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *GetEnvVariables200ResponseInstanceEnvsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"export",
+		"masked",
+		"name",
+		"value",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGetEnvVariables200ResponseInstanceEnvsInner := _GetEnvVariables200ResponseInstanceEnvsInner{}
+
+	err = json.Unmarshal(data, &varGetEnvVariables200ResponseInstanceEnvsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetEnvVariables200ResponseInstanceEnvsInner(varGetEnvVariables200ResponseInstanceEnvsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "export")
+		delete(additionalProperties, "masked")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetEnvVariables200ResponseInstanceEnvsInner struct {
+	value *GetEnvVariables200ResponseInstanceEnvsInner
+	isSet bool
+}
+
+func (v NullableGetEnvVariables200ResponseInstanceEnvsInner) Get() *GetEnvVariables200ResponseInstanceEnvsInner {
+	return v.value
+}
+
+func (v *NullableGetEnvVariables200ResponseInstanceEnvsInner) Set(val *GetEnvVariables200ResponseInstanceEnvsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetEnvVariables200ResponseInstanceEnvsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetEnvVariables200ResponseInstanceEnvsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetEnvVariables200ResponseInstanceEnvsInner(val *GetEnvVariables200ResponseInstanceEnvsInner) *NullableGetEnvVariables200ResponseInstanceEnvsInner {
+	return &NullableGetEnvVariables200ResponseInstanceEnvsInner{value: val, isSet: true}
+}
+
+func (v NullableGetEnvVariables200ResponseInstanceEnvsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetEnvVariables200ResponseInstanceEnvsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

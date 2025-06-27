@@ -37,7 +37,7 @@ type IntegrationPowerDNS struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationPowerDNS IntegrationPowerDNS
@@ -671,7 +671,75 @@ func (o IntegrationPowerDNS) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationPowerDNS) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationPowerDNS := _IntegrationPowerDNS{}
+
+	err = json.Unmarshal(data, &varIntegrationPowerDNS)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationPowerDNS(varIntegrationPowerDNS)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "serviceFlag")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationPowerDNS struct {
+	value *IntegrationPowerDNS
+	isSet bool
+}
+
+func (v NullableIntegrationPowerDNS) Get() *IntegrationPowerDNS {
+	return v.value
+}
+
+func (v *NullableIntegrationPowerDNS) Set(val *IntegrationPowerDNS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationPowerDNS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationPowerDNS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationPowerDNS(val *IntegrationPowerDNS) *NullableIntegrationPowerDNS {
+	return &NullableIntegrationPowerDNS{value: val, isSet: true}
+}
+
+func (v NullableIntegrationPowerDNS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationPowerDNS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

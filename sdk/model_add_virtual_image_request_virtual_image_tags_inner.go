@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddVirtualImageRequestVirtualImageTagsInner type satisfies the MappedNullable interface at compile time
@@ -20,9 +21,9 @@ var _ MappedNullable = &AddVirtualImageRequestVirtualImageTagsInner{}
 
 // AddVirtualImageRequestVirtualImageTagsInner struct for AddVirtualImageRequestVirtualImageTagsInner
 type AddVirtualImageRequestVirtualImageTagsInner struct {
-	Name                 string                 `json:"name"`
-	Value                string                 `json:"value"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Name                 string `json:"name"`
+	Value                string `json:"value"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVirtualImageRequestVirtualImageTagsInner AddVirtualImageRequestVirtualImageTagsInner
@@ -114,7 +115,83 @@ func (o AddVirtualImageRequestVirtualImageTagsInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *AddVirtualImageRequestVirtualImageTagsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"value",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddVirtualImageRequestVirtualImageTagsInner := _AddVirtualImageRequestVirtualImageTagsInner{}
+
+	err = json.Unmarshal(data, &varAddVirtualImageRequestVirtualImageTagsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVirtualImageRequestVirtualImageTagsInner(varAddVirtualImageRequestVirtualImageTagsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddVirtualImageRequestVirtualImageTagsInner struct {
+	value *AddVirtualImageRequestVirtualImageTagsInner
+	isSet bool
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageTagsInner) Get() *AddVirtualImageRequestVirtualImageTagsInner {
+	return v.value
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageTagsInner) Set(val *AddVirtualImageRequestVirtualImageTagsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageTagsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageTagsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVirtualImageRequestVirtualImageTagsInner(val *AddVirtualImageRequestVirtualImageTagsInner) *NullableAddVirtualImageRequestVirtualImageTagsInner {
+	return &NullableAddVirtualImageRequestVirtualImageTagsInner{value: val, isSet: true}
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageTagsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageTagsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

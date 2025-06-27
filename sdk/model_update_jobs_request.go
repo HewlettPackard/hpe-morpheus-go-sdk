@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateJobsRequest type satisfies the MappedNullable interface at compile time
@@ -20,8 +21,8 @@ var _ MappedNullable = &UpdateJobsRequest{}
 
 // UpdateJobsRequest struct for UpdateJobsRequest
 type UpdateJobsRequest struct {
-	Job                  UpdateJobsRequestJob   `json:"job"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Job                  UpdateJobsRequestJob `json:"job"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateJobsRequest UpdateJobsRequest
@@ -87,7 +88,81 @@ func (o UpdateJobsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateJobsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"job",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateJobsRequest := _UpdateJobsRequest{}
+
+	err = json.Unmarshal(data, &varUpdateJobsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateJobsRequest(varUpdateJobsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "job")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateJobsRequest struct {
+	value *UpdateJobsRequest
+	isSet bool
+}
+
+func (v NullableUpdateJobsRequest) Get() *UpdateJobsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateJobsRequest) Set(val *UpdateJobsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateJobsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateJobsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateJobsRequest(val *UpdateJobsRequest) *NullableUpdateJobsRequest {
+	return &NullableUpdateJobsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateJobsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateJobsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -39,7 +39,7 @@ type ListTasks200ResponseAllOfTasksInnerAnyOf struct {
 	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf `json:"credential,omitempty"`
 	DateCreated          *time.Time                                           `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                           `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf ListTasks200ResponseAllOfTasksInnerAnyOf
@@ -731,7 +731,77 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListTasks200ResponseAllOfTasksInnerAnyOf := _ListTasks200ResponseAllOfTasksInnerAnyOf{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOf(varListTasks200ResponseAllOfTasksInnerAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListTasks200ResponseAllOfTasksInnerAnyOf struct {
+	value *ListTasks200ResponseAllOfTasksInnerAnyOf
+	isSet bool
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf {
+	return v.value
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf(val *ListTasks200ResponseAllOfTasksInnerAnyOf) *NullableListTasks200ResponseAllOfTasksInnerAnyOf {
+	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf{value: val, isSet: true}
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

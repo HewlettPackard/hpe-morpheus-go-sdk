@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{
 
 // AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint Blueprint object, identified by id or name. Only applies to type blueprint
 type AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint
@@ -132,7 +132,61 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint := _AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint(varAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

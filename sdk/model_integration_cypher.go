@@ -37,7 +37,7 @@ type IntegrationCypher struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationCypher IntegrationCypher
@@ -671,7 +671,75 @@ func (o IntegrationCypher) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationCypher) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationCypher := _IntegrationCypher{}
+
+	err = json.Unmarshal(data, &varIntegrationCypher)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationCypher(varIntegrationCypher)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "token")
+		delete(additionalProperties, "tokenHash")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationCypher struct {
+	value *IntegrationCypher
+	isSet bool
+}
+
+func (v NullableIntegrationCypher) Get() *IntegrationCypher {
+	return v.value
+}
+
+func (v *NullableIntegrationCypher) Set(val *IntegrationCypher) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationCypher) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationCypher) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationCypher(val *IntegrationCypher) *NullableIntegrationCypher {
+	return &NullableIntegrationCypher{value: val, isSet: true}
+}
+
+func (v NullableIntegrationCypher) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationCypher) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

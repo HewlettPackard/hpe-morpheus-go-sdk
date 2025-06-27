@@ -45,8 +45,8 @@ type BackupResult struct {
 	// Date Created
 	DateCreated *time.Time `json:"dateCreated,omitempty"`
 	// Last Updated
-	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	LastUpdated          *time.Time `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BackupResult BackupResult
@@ -1043,7 +1043,81 @@ func (o BackupResult) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BackupResult) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBackupResult := _BackupResult{}
+
+	err = json.Unmarshal(data, &varBackupResult)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupResult(varBackupResult)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "backup")
+		delete(additionalProperties, "backupSetId")
+		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "containerId")
+		delete(additionalProperties, "serverId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "durationMillis")
+		delete(additionalProperties, "sizeInBytes")
+		delete(additionalProperties, "sizeInMb")
+		delete(additionalProperties, "volumePath")
+		delete(additionalProperties, "resultArchive")
+		delete(additionalProperties, "resultPath")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "snapshotId")
+		delete(additionalProperties, "snapshotExternalId")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBackupResult struct {
+	value *BackupResult
+	isSet bool
+}
+
+func (v NullableBackupResult) Get() *BackupResult {
+	return v.value
+}
+
+func (v *NullableBackupResult) Set(val *BackupResult) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupResult) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupResult) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupResult(val *BackupResult) *NullableBackupResult {
+	return &NullableBackupResult{value: val, isSet: true}
+}
+
+func (v NullableBackupResult) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupResult) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

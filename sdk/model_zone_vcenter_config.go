@@ -54,7 +54,7 @@ type ZoneVcenterConfig struct {
 	ConfigCmdbDiscovery        *bool                                                         `json:"configCmdbDiscovery,omitempty"`
 	DistributedWorkerId        NullableString                                                `json:"distributedWorkerId,omitempty"`
 	PasswordHash               NullableString                                                `json:"passwordHash,omitempty"`
-	AdditionalProperties       map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties       map[string]interface{}
 }
 
 type _ZoneVcenterConfig ZoneVcenterConfig
@@ -1493,7 +1493,93 @@ func (o ZoneVcenterConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneVcenterConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varZoneVcenterConfig := _ZoneVcenterConfig{}
+
+	err = json.Unmarshal(data, &varZoneVcenterConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneVcenterConfig(varZoneVcenterConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "apiUrl")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "datacenter")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "rpcMode")
+		delete(additionalProperties, "hideHostSelection")
+		delete(additionalProperties, "importExisting")
+		delete(additionalProperties, "enableVnc")
+		delete(additionalProperties, "enableDiskTypeSelection")
+		delete(additionalProperties, "enableNetworkTypeSelection")
+		delete(additionalProperties, "diskStorageType")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityMode")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "configCmdbId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmId")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "kubeUrl")
+		delete(additionalProperties, "apiVersion")
+		delete(additionalProperties, "datacenterId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "distributedWorkerId")
+		delete(additionalProperties, "passwordHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableZoneVcenterConfig struct {
+	value *ZoneVcenterConfig
+	isSet bool
+}
+
+func (v NullableZoneVcenterConfig) Get() *ZoneVcenterConfig {
+	return v.value
+}
+
+func (v *NullableZoneVcenterConfig) Set(val *ZoneVcenterConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneVcenterConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneVcenterConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneVcenterConfig(val *ZoneVcenterConfig) *NullableZoneVcenterConfig {
+	return &NullableZoneVcenterConfig{value: val, isSet: true}
+}
+
+func (v NullableZoneVcenterConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneVcenterConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

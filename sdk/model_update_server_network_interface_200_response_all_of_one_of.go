@@ -24,7 +24,7 @@ type UpdateServerNetworkInterface200ResponseAllOfOneOf struct {
 	InterfaceType        *string                                                              `json:"interfaceType,omitempty"`
 	NetId                *int64                                                               `json:"netId,omitempty"`
 	Server               *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServer           `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}                                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateServerNetworkInterface200ResponseAllOfOneOf UpdateServerNetworkInterface200ResponseAllOfOneOf
@@ -204,7 +204,63 @@ func (o UpdateServerNetworkInterface200ResponseAllOfOneOf) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *UpdateServerNetworkInterface200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateServerNetworkInterface200ResponseAllOfOneOf := _UpdateServerNetworkInterface200ResponseAllOfOneOf{}
+
+	err = json.Unmarshal(data, &varUpdateServerNetworkInterface200ResponseAllOfOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateServerNetworkInterface200ResponseAllOfOneOf(varUpdateServerNetworkInterface200ResponseAllOfOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkInterface")
+		delete(additionalProperties, "interfaceType")
+		delete(additionalProperties, "netId")
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateServerNetworkInterface200ResponseAllOfOneOf struct {
+	value *UpdateServerNetworkInterface200ResponseAllOfOneOf
+	isSet bool
+}
+
+func (v NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) Get() *UpdateServerNetworkInterface200ResponseAllOfOneOf {
+	return v.value
+}
+
+func (v *NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) Set(val *UpdateServerNetworkInterface200ResponseAllOfOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateServerNetworkInterface200ResponseAllOfOneOf(val *UpdateServerNetworkInterface200ResponseAllOfOneOf) *NullableUpdateServerNetworkInterface200ResponseAllOfOneOf {
+	return &NullableUpdateServerNetworkInterface200ResponseAllOfOneOf{value: val, isSet: true}
+}
+
+func (v NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateServerNetworkInterface200ResponseAllOfOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -25,7 +25,7 @@ type ListArchiveFiles200Response struct {
 	ParentDirectory      NullableString                                         `json:"parentDirectory,omitempty"`
 	ArchiveFiles         []GetArchiveBucket200ResponseArchiveFilesInner         `json:"archiveFiles,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                      `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListArchiveFiles200Response ListArchiveFiles200Response
@@ -251,7 +251,64 @@ func (o ListArchiveFiles200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListArchiveFiles200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListArchiveFiles200Response := _ListArchiveFiles200Response{}
+
+	err = json.Unmarshal(data, &varListArchiveFiles200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListArchiveFiles200Response(varListArchiveFiles200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveBucket")
+		delete(additionalProperties, "isOwner")
+		delete(additionalProperties, "parentDirectory")
+		delete(additionalProperties, "archiveFiles")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListArchiveFiles200Response struct {
+	value *ListArchiveFiles200Response
+	isSet bool
+}
+
+func (v NullableListArchiveFiles200Response) Get() *ListArchiveFiles200Response {
+	return v.value
+}
+
+func (v *NullableListArchiveFiles200Response) Set(val *ListArchiveFiles200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListArchiveFiles200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListArchiveFiles200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListArchiveFiles200Response(val *ListArchiveFiles200Response) *NullableListArchiveFiles200Response {
+	return &NullableListArchiveFiles200Response{value: val, isSet: true}
+}
+
+func (v NullableListArchiveFiles200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListArchiveFiles200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

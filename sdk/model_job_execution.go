@@ -34,7 +34,7 @@ type JobExecution struct {
 	Status               *string                                                 `json:"status,omitempty"`
 	StatusMessage        NullableString                                          `json:"statusMessage,omitempty"`
 	CreatedBy            NullableString                                          `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _JobExecution JobExecution
@@ -584,7 +584,72 @@ func (o JobExecution) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *JobExecution) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varJobExecution := _JobExecution{}
+
+	err = json.Unmarshal(data, &varJobExecution)
+
+	if err != nil {
+		return err
+	}
+
+	*o = JobExecution(varJobExecution)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "process")
+		delete(additionalProperties, "job")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "duration")
+		delete(additionalProperties, "resultData")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "createdBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableJobExecution struct {
+	value *JobExecution
+	isSet bool
+}
+
+func (v NullableJobExecution) Get() *JobExecution {
+	return v.value
+}
+
+func (v *NullableJobExecution) Set(val *JobExecution) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableJobExecution) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableJobExecution) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableJobExecution(val *JobExecution) *NullableJobExecution {
+	return &NullableJobExecution{value: val, isSet: true}
+}
+
+func (v NullableJobExecution) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableJobExecution) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

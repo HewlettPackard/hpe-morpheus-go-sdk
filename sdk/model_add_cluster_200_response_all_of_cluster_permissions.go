@@ -22,7 +22,7 @@ var _ MappedNullable = &AddCluster200ResponseAllOfClusterPermissions{}
 type AddCluster200ResponseAllOfClusterPermissions struct {
 	ResourcePool         *AddCluster200ResponseAllOfClusterPermissionsResourcePool        `json:"resourcePool,omitempty"`
 	ResourcePermissions  *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCluster200ResponseAllOfClusterPermissions AddCluster200ResponseAllOfClusterPermissions
@@ -132,7 +132,61 @@ func (o AddCluster200ResponseAllOfClusterPermissions) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *AddCluster200ResponseAllOfClusterPermissions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCluster200ResponseAllOfClusterPermissions := _AddCluster200ResponseAllOfClusterPermissions{}
+
+	err = json.Unmarshal(data, &varAddCluster200ResponseAllOfClusterPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCluster200ResponseAllOfClusterPermissions(varAddCluster200ResponseAllOfClusterPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCluster200ResponseAllOfClusterPermissions struct {
+	value *AddCluster200ResponseAllOfClusterPermissions
+	isSet bool
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) Get() *AddCluster200ResponseAllOfClusterPermissions {
+	return v.value
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) Set(val *AddCluster200ResponseAllOfClusterPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCluster200ResponseAllOfClusterPermissions(val *AddCluster200ResponseAllOfClusterPermissions) *NullableAddCluster200ResponseAllOfClusterPermissions {
+	return &NullableAddCluster200ResponseAllOfClusterPermissions{value: val, isSet: true}
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

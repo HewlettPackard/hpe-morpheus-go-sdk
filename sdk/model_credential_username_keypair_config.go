@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CredentialUsernameKeypairConfig type satisfies the MappedNullable interface at compile time
@@ -32,7 +33,7 @@ type CredentialUsernameKeypairConfig struct {
 	// Username
 	Username             string                                       `json:"username"`
 	AuthKey              AddCredentialsRequestCredentialOneOf2AuthKey `json:"authKey"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CredentialUsernameKeypairConfig CredentialUsernameKeypairConfig
@@ -285,7 +286,90 @@ func (o CredentialUsernameKeypairConfig) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *CredentialUsernameKeypairConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"name",
+		"username",
+		"authKey",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCredentialUsernameKeypairConfig := _CredentialUsernameKeypairConfig{}
+
+	err = json.Unmarshal(data, &varCredentialUsernameKeypairConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CredentialUsernameKeypairConfig(varCredentialUsernameKeypairConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "authKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCredentialUsernameKeypairConfig struct {
+	value *CredentialUsernameKeypairConfig
+	isSet bool
+}
+
+func (v NullableCredentialUsernameKeypairConfig) Get() *CredentialUsernameKeypairConfig {
+	return v.value
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) Set(val *CredentialUsernameKeypairConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialUsernameKeypairConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialUsernameKeypairConfig(val *CredentialUsernameKeypairConfig) *NullableCredentialUsernameKeypairConfig {
+	return &NullableCredentialUsernameKeypairConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialUsernameKeypairConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

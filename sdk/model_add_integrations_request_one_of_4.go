@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddIntegrationsRequestOneOf4 type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddIntegrationsRequestOneOf4{}
 // AddIntegrationsRequestOneOf4 struct for AddIntegrationsRequestOneOf4
 type AddIntegrationsRequestOneOf4 struct {
 	Integration          AddIntegrationsRequestOneOf4Integration `json:"integration"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIntegrationsRequestOneOf4 AddIntegrationsRequestOneOf4
@@ -87,7 +88,81 @@ func (o AddIntegrationsRequestOneOf4) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddIntegrationsRequestOneOf4) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"integration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddIntegrationsRequestOneOf4 := _AddIntegrationsRequestOneOf4{}
+
+	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf4)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIntegrationsRequestOneOf4(varAddIntegrationsRequestOneOf4)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddIntegrationsRequestOneOf4 struct {
+	value *AddIntegrationsRequestOneOf4
+	isSet bool
+}
+
+func (v NullableAddIntegrationsRequestOneOf4) Get() *AddIntegrationsRequestOneOf4 {
+	return v.value
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4) Set(val *AddIntegrationsRequestOneOf4) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIntegrationsRequestOneOf4) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIntegrationsRequestOneOf4(val *AddIntegrationsRequestOneOf4) *NullableAddIntegrationsRequestOneOf4 {
+	return &NullableAddIntegrationsRequestOneOf4{value: val, isSet: true}
+}
+
+func (v NullableAddIntegrationsRequestOneOf4) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIntegrationsRequestOneOf4) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

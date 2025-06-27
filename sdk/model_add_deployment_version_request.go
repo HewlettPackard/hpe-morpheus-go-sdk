@@ -21,7 +21,7 @@ var _ MappedNullable = &AddDeploymentVersionRequest{}
 // AddDeploymentVersionRequest struct for AddDeploymentVersionRequest
 type AddDeploymentVersionRequest struct {
 	Version              *AddDeploymentVersionRequestVersion `json:"version,omitempty"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddDeploymentVersionRequest AddDeploymentVersionRequest
@@ -96,7 +96,60 @@ func (o AddDeploymentVersionRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddDeploymentVersionRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddDeploymentVersionRequest := _AddDeploymentVersionRequest{}
+
+	err = json.Unmarshal(data, &varAddDeploymentVersionRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddDeploymentVersionRequest(varAddDeploymentVersionRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "version")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddDeploymentVersionRequest struct {
+	value *AddDeploymentVersionRequest
+	isSet bool
+}
+
+func (v NullableAddDeploymentVersionRequest) Get() *AddDeploymentVersionRequest {
+	return v.value
+}
+
+func (v *NullableAddDeploymentVersionRequest) Set(val *AddDeploymentVersionRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddDeploymentVersionRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddDeploymentVersionRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddDeploymentVersionRequest(val *AddDeploymentVersionRequest) *NullableAddDeploymentVersionRequest {
+	return &NullableAddDeploymentVersionRequest{value: val, isSet: true}
+}
+
+func (v NullableAddDeploymentVersionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddDeploymentVersionRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

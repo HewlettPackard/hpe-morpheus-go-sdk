@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the IntegrationSaltMasterConfig type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &IntegrationSaltMasterConfig{}
 // IntegrationSaltMasterConfig struct for IntegrationSaltMasterConfig
 type IntegrationSaltMasterConfig struct {
 	Integration          AddIntegrationsRequestOneOf3Integration `json:"integration"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationSaltMasterConfig IntegrationSaltMasterConfig
@@ -87,7 +88,81 @@ func (o IntegrationSaltMasterConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationSaltMasterConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"integration",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varIntegrationSaltMasterConfig := _IntegrationSaltMasterConfig{}
+
+	err = json.Unmarshal(data, &varIntegrationSaltMasterConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationSaltMasterConfig(varIntegrationSaltMasterConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integration")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationSaltMasterConfig struct {
+	value *IntegrationSaltMasterConfig
+	isSet bool
+}
+
+func (v NullableIntegrationSaltMasterConfig) Get() *IntegrationSaltMasterConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationSaltMasterConfig) Set(val *IntegrationSaltMasterConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationSaltMasterConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationSaltMasterConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationSaltMasterConfig(val *IntegrationSaltMasterConfig) *NullableIntegrationSaltMasterConfig {
+	return &NullableIntegrationSaltMasterConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationSaltMasterConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationSaltMasterConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

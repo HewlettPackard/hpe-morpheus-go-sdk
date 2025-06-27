@@ -21,8 +21,8 @@ var _ MappedNullable = &AddCloudResourcePoolRequestResourcePoolTenantPermissions
 // AddCloudResourcePoolRequestResourcePoolTenantPermissions struct for AddCloudResourcePoolRequestResourcePoolTenantPermissions
 type AddCloudResourcePoolRequestResourcePoolTenantPermissions struct {
 	// Array of tenant account ids that are allowed access
-	Accounts             []int64                `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Accounts             []int64 `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCloudResourcePoolRequestResourcePoolTenantPermissions AddCloudResourcePoolRequestResourcePoolTenantPermissions
@@ -97,7 +97,60 @@ func (o AddCloudResourcePoolRequestResourcePoolTenantPermissions) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *AddCloudResourcePoolRequestResourcePoolTenantPermissions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCloudResourcePoolRequestResourcePoolTenantPermissions := _AddCloudResourcePoolRequestResourcePoolTenantPermissions{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolTenantPermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePoolRequestResourcePoolTenantPermissions(varAddCloudResourcePoolRequestResourcePoolTenantPermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions struct {
+	value *AddCloudResourcePoolRequestResourcePoolTenantPermissions
+	isSet bool
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Get() *AddCloudResourcePoolRequestResourcePoolTenantPermissions {
+	return v.value
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Set(val *AddCloudResourcePoolRequestResourcePoolTenantPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudResourcePoolRequestResourcePoolTenantPermissions(val *AddCloudResourcePoolRequestResourcePoolTenantPermissions) *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions {
+	return &NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions{value: val, isSet: true}
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

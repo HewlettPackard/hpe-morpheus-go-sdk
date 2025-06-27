@@ -61,7 +61,7 @@ type GetIntegrationTypeOptionTypes200ResponseOptionTypesInner struct {
 	ShowOnCreate          NullableBool             `json:"showOnCreate,omitempty"`
 	ShowOnEdit            NullableBool             `json:"showOnEdit,omitempty"`
 	LocalCredential       NullableBool             `json:"localCredential,omitempty"`
-	AdditionalProperties  map[string]interface{}   `json:",remain"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _GetIntegrationTypeOptionTypes200ResponseOptionTypesInner GetIntegrationTypeOptionTypes200ResponseOptionTypesInner
@@ -1800,7 +1800,100 @@ func (o GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetIntegrationTypeOptionTypes200ResponseOptionTypesInner := _GetIntegrationTypeOptionTypes200ResponseOptionTypesInner{}
+
+	err = json.Unmarshal(data, &varGetIntegrationTypeOptionTypes200ResponseOptionTypesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetIntegrationTypeOptionTypes200ResponseOptionTypesInner(varGetIntegrationTypeOptionTypes200ResponseOptionTypesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldCode")
+		delete(additionalProperties, "fieldContext")
+		delete(additionalProperties, "fieldGroup")
+		delete(additionalProperties, "fieldClass")
+		delete(additionalProperties, "fieldAddOn")
+		delete(additionalProperties, "fieldComponent")
+		delete(additionalProperties, "fieldInput")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "helpBlockFieldCode")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "optionSource")
+		delete(additionalProperties, "optionSourceType")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "advanced")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "wrapperClass")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "noBlank")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "requireOnCode")
+		delete(additionalProperties, "contextualDefault")
+		delete(additionalProperties, "displayValueOnDetails")
+		delete(additionalProperties, "showOnCreate")
+		delete(additionalProperties, "showOnEdit")
+		delete(additionalProperties, "localCredential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner struct {
+	value *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner
+	isSet bool
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Get() *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Set(val *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner(val *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner {
+	return &NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

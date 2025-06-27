@@ -27,7 +27,7 @@ type ListHealth200ResponseAllOfHealthElastic struct {
 	Stats                *ListHealth200ResponseAllOfHealthElasticStats       `json:"stats,omitempty"`
 	Indices              []map[string]interface{}                            `json:"indices,omitempty"`
 	BadIndices           []map[string]interface{}                            `json:"badIndices,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListHealth200ResponseAllOfHealthElastic ListHealth200ResponseAllOfHealthElastic
@@ -314,7 +314,66 @@ func (o ListHealth200ResponseAllOfHealthElastic) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *ListHealth200ResponseAllOfHealthElastic) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListHealth200ResponseAllOfHealthElastic := _ListHealth200ResponseAllOfHealthElastic{}
+
+	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthElastic)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHealth200ResponseAllOfHealthElastic(varListHealth200ResponseAllOfHealthElastic)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "master")
+		delete(additionalProperties, "nodes")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "indices")
+		delete(additionalProperties, "badIndices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListHealth200ResponseAllOfHealthElastic struct {
+	value *ListHealth200ResponseAllOfHealthElastic
+	isSet bool
+}
+
+func (v NullableListHealth200ResponseAllOfHealthElastic) Get() *ListHealth200ResponseAllOfHealthElastic {
+	return v.value
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthElastic) Set(val *ListHealth200ResponseAllOfHealthElastic) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHealth200ResponseAllOfHealthElastic) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthElastic) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHealth200ResponseAllOfHealthElastic(val *ListHealth200ResponseAllOfHealthElastic) *NullableListHealth200ResponseAllOfHealthElastic {
+	return &NullableListHealth200ResponseAllOfHealthElastic{value: val, isSet: true}
+}
+
+func (v NullableListHealth200ResponseAllOfHealthElastic) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthElastic) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

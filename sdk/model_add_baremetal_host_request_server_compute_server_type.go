@@ -25,22 +25,6 @@ type AddBaremetalHostRequestServerComputeServerType struct {
 	AddBaremetalHostRequestServerComputeServerTypeAnyOf1 *AddBaremetalHostRequestServerComputeServerTypeAnyOf1
 }
 
-func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddBaremetalHostRequestServerComputeServerType{}
-	}
-
-	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf); ok {
-		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf = &out
-	}
-
-	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf1); ok {
-		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalJSON(data []byte) error {
 	var err error

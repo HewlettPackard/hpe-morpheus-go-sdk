@@ -53,8 +53,8 @@ type CatalogItemTypeInstanceUpdate struct {
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-	Content              *string                `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Content              *string `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CatalogItemTypeInstanceUpdate CatalogItemTypeInstanceUpdate
@@ -778,7 +778,77 @@ func (o CatalogItemTypeInstanceUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CatalogItemTypeInstanceUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCatalogItemTypeInstanceUpdate := _CatalogItemTypeInstanceUpdate{}
+
+	err = json.Unmarshal(data, &varCatalogItemTypeInstanceUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CatalogItemTypeInstanceUpdate(varCatalogItemTypeInstanceUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "layoutCode")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "allowQuantity")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "instanceSpec")
+		delete(additionalProperties, "formType")
+		delete(additionalProperties, "form")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "content")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCatalogItemTypeInstanceUpdate struct {
+	value *CatalogItemTypeInstanceUpdate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) Get() *CatalogItemTypeInstanceUpdate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) Set(val *CatalogItemTypeInstanceUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeInstanceUpdate(val *CatalogItemTypeInstanceUpdate) *NullableCatalogItemTypeInstanceUpdate {
+	return &NullableCatalogItemTypeInstanceUpdate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -53,7 +53,7 @@ type ListBudgets200ResponseAllOfBudgetsInner struct {
 	UpdatedByName        NullableString                                     `json:"updatedByName,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBudgets200ResponseAllOfBudgetsInner ListBudgets200ResponseAllOfBudgetsInner
@@ -1290,7 +1290,91 @@ func (o ListBudgets200ResponseAllOfBudgetsInner) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *ListBudgets200ResponseAllOfBudgetsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBudgets200ResponseAllOfBudgetsInner := _ListBudgets200ResponseAllOfBudgetsInner{}
+
+	err = json.Unmarshal(data, &varListBudgets200ResponseAllOfBudgetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBudgets200ResponseAllOfBudgetsInner(varListBudgets200ResponseAllOfBudgetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "refScope")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refName")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "year")
+		delete(additionalProperties, "resourceType")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "interval")
+		delete(additionalProperties, "costs")
+		delete(additionalProperties, "isFiscal")
+		delete(additionalProperties, "averageCost")
+		delete(additionalProperties, "totalCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "rollover")
+		delete(additionalProperties, "warningLimit")
+		delete(additionalProperties, "overLimit")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "createdById")
+		delete(additionalProperties, "createdByName")
+		delete(additionalProperties, "updatedById")
+		delete(additionalProperties, "updatedByName")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBudgets200ResponseAllOfBudgetsInner struct {
+	value *ListBudgets200ResponseAllOfBudgetsInner
+	isSet bool
+}
+
+func (v NullableListBudgets200ResponseAllOfBudgetsInner) Get() *ListBudgets200ResponseAllOfBudgetsInner {
+	return v.value
+}
+
+func (v *NullableListBudgets200ResponseAllOfBudgetsInner) Set(val *ListBudgets200ResponseAllOfBudgetsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBudgets200ResponseAllOfBudgetsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBudgets200ResponseAllOfBudgetsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBudgets200ResponseAllOfBudgetsInner(val *ListBudgets200ResponseAllOfBudgetsInner) *NullableListBudgets200ResponseAllOfBudgetsInner {
+	return &NullableListBudgets200ResponseAllOfBudgetsInner{value: val, isSet: true}
+}
+
+func (v NullableListBudgets200ResponseAllOfBudgetsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBudgets200ResponseAllOfBudgetsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

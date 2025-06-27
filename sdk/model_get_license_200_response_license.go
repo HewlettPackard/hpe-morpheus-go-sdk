@@ -83,7 +83,7 @@ type GetLicense200ResponseLicense struct {
 	LastUpdated          *time.Time                            `json:"lastUpdated,omitempty"`
 	DateCreated          *time.Time                            `json:"dateCreated,omitempty"`
 	RecalculationDate    NullableTime                          `json:"recalculationDate,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetLicense200ResponseLicense GetLicense200ResponseLicense
@@ -1457,7 +1457,93 @@ func (o GetLicense200ResponseLicense) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetLicense200ResponseLicense) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetLicense200ResponseLicense := _GetLicense200ResponseLicense{}
+
+	err = json.Unmarshal(data, &varGetLicense200ResponseLicense)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetLicense200ResponseLicense(varGetLicense200ResponseLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "keyId")
+		delete(additionalProperties, "hash")
+		delete(additionalProperties, "productTier")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "maxInstances")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "limitType")
+		delete(additionalProperties, "maxManagedServers")
+		delete(additionalProperties, "maxDiscoveredServers")
+		delete(additionalProperties, "maxHosts")
+		delete(additionalProperties, "maxMvm")
+		delete(additionalProperties, "maxMvmSockets")
+		delete(additionalProperties, "maxIac")
+		delete(additionalProperties, "maxXaas")
+		delete(additionalProperties, "maxExecutions")
+		delete(additionalProperties, "maxDistributedWorkers")
+		delete(additionalProperties, "maxDiscoveredObjects")
+		delete(additionalProperties, "hardLimit")
+		delete(additionalProperties, "freeTrial")
+		delete(additionalProperties, "multiTenant")
+		delete(additionalProperties, "whitelabel")
+		delete(additionalProperties, "reportStatus")
+		delete(additionalProperties, "supportLevel")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "amazonProductCodes")
+		delete(additionalProperties, "features")
+		delete(additionalProperties, "zoneTypes")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "recalculationDate")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetLicense200ResponseLicense struct {
+	value *GetLicense200ResponseLicense
+	isSet bool
+}
+
+func (v NullableGetLicense200ResponseLicense) Get() *GetLicense200ResponseLicense {
+	return v.value
+}
+
+func (v *NullableGetLicense200ResponseLicense) Set(val *GetLicense200ResponseLicense) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetLicense200ResponseLicense) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetLicense200ResponseLicense) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetLicense200ResponseLicense(val *GetLicense200ResponseLicense) *NullableGetLicense200ResponseLicense {
+	return &NullableGetLicense200ResponseLicense{value: val, isSet: true}
+}
+
+func (v NullableGetLicense200ResponseLicense) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetLicense200ResponseLicense) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

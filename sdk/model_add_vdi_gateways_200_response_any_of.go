@@ -21,7 +21,7 @@ var _ MappedNullable = &AddVDIGateways200ResponseAnyOf{}
 // AddVDIGateways200ResponseAnyOf struct for AddVDIGateways200ResponseAnyOf
 type AddVDIGateways200ResponseAnyOf struct {
 	VdiGateway           *ListVDIGateways200ResponseAllOfVdiGatewaysInner `json:"vdiGateway,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVDIGateways200ResponseAnyOf AddVDIGateways200ResponseAnyOf
@@ -96,7 +96,60 @@ func (o AddVDIGateways200ResponseAnyOf) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AddVDIGateways200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddVDIGateways200ResponseAnyOf := _AddVDIGateways200ResponseAnyOf{}
+
+	err = json.Unmarshal(data, &varAddVDIGateways200ResponseAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVDIGateways200ResponseAnyOf(varAddVDIGateways200ResponseAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiGateway")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddVDIGateways200ResponseAnyOf struct {
+	value *AddVDIGateways200ResponseAnyOf
+	isSet bool
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) Get() *AddVDIGateways200ResponseAnyOf {
+	return v.value
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) Set(val *AddVDIGateways200ResponseAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVDIGateways200ResponseAnyOf(val *AddVDIGateways200ResponseAnyOf) *NullableAddVDIGateways200ResponseAnyOf {
+	return &NullableAddVDIGateways200ResponseAnyOf{value: val, isSet: true}
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

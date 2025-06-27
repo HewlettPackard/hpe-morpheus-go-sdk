@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GroupCreate type satisfies the MappedNullable interface at compile time
@@ -29,7 +30,7 @@ type GroupCreate struct {
 	// Optional location argument for your group
 	Location             *string                      `json:"location,omitempty"`
 	Config               *AddGroupsRequestGroupConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GroupCreate GroupCreate
@@ -235,7 +236,85 @@ func (o GroupCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GroupCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGroupCreate := _GroupCreate{}
+
+	err = json.Unmarshal(data, &varGroupCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GroupCreate(varGroupCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGroupCreate struct {
+	value *GroupCreate
+	isSet bool
+}
+
+func (v NullableGroupCreate) Get() *GroupCreate {
+	return v.value
+}
+
+func (v *NullableGroupCreate) Set(val *GroupCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGroupCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGroupCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGroupCreate(val *GroupCreate) *NullableGroupCreate {
+	return &NullableGroupCreate{value: val, isSet: true}
+}
+
+func (v NullableGroupCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGroupCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

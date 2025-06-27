@@ -21,8 +21,8 @@ var _ MappedNullable = &CustomOptionsForAmazon{}
 // CustomOptionsForAmazon struct for CustomOptionsForAmazon
 type CustomOptionsForAmazon struct {
 	// External ID of Amazon VPC
-	Vpc                  *string                `json:"vpc,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Vpc                  *string `json:"vpc,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CustomOptionsForAmazon CustomOptionsForAmazon
@@ -97,7 +97,60 @@ func (o CustomOptionsForAmazon) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CustomOptionsForAmazon) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCustomOptionsForAmazon := _CustomOptionsForAmazon{}
+
+	err = json.Unmarshal(data, &varCustomOptionsForAmazon)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CustomOptionsForAmazon(varCustomOptionsForAmazon)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vpc")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCustomOptionsForAmazon struct {
+	value *CustomOptionsForAmazon
+	isSet bool
+}
+
+func (v NullableCustomOptionsForAmazon) Get() *CustomOptionsForAmazon {
+	return v.value
+}
+
+func (v *NullableCustomOptionsForAmazon) Set(val *CustomOptionsForAmazon) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCustomOptionsForAmazon) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCustomOptionsForAmazon) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCustomOptionsForAmazon(val *CustomOptionsForAmazon) *NullableCustomOptionsForAmazon {
+	return &NullableCustomOptionsForAmazon{value: val, isSet: true}
+}
+
+func (v NullableCustomOptionsForAmazon) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCustomOptionsForAmazon) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

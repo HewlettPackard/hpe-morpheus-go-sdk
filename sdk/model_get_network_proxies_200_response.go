@@ -23,7 +23,7 @@ type GetNetworkProxies200Response struct {
 	NetworkProxies       interface{}                       `json:"networkProxies,omitempty"`
 	NetworkProxyCount    *int32                            `json:"networkProxyCount,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkProxies200Response GetNetworkProxies200Response
@@ -169,7 +169,62 @@ func (o GetNetworkProxies200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetNetworkProxies200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkProxies200Response := _GetNetworkProxies200Response{}
+
+	err = json.Unmarshal(data, &varGetNetworkProxies200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkProxies200Response(varGetNetworkProxies200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkProxies")
+		delete(additionalProperties, "networkProxyCount")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkProxies200Response struct {
+	value *GetNetworkProxies200Response
+	isSet bool
+}
+
+func (v NullableGetNetworkProxies200Response) Get() *GetNetworkProxies200Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkProxies200Response) Set(val *GetNetworkProxies200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkProxies200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkProxies200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkProxies200Response(val *GetNetworkProxies200Response) *NullableGetNetworkProxies200Response {
+	return &NullableGetNetworkProxies200Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkProxies200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkProxies200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -49,26 +49,6 @@ func WorkflowJobPayloadAsAddJobsRequestJob(v *WorkflowJobPayload) AddJobsRequest
 	}
 }
 
-func (dst *AddJobsRequestJob) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddJobsRequestJob{}
-	}
-
-	if out, ok := data.(SecurityScanJob); ok {
-		dst.SecurityScanJob = &out
-	}
-
-	if out, ok := data.(TaskJobPayload); ok {
-		dst.TaskJobPayload = &out
-	}
-
-	if out, ok := data.(WorkflowJobPayload); ok {
-		dst.WorkflowJobPayload = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddJobsRequestJob) UnmarshalJSON(data []byte) error {
 	var err error

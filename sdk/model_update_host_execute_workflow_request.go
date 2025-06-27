@@ -22,8 +22,8 @@ var _ MappedNullable = &UpdateHostExecuteWorkflowRequest{}
 type UpdateHostExecuteWorkflowRequest struct {
 	TaskSet *UpdateHostExecuteWorkflowRequestTaskSet `json:"taskSet,omitempty"`
 	// Task Phase to run for Provisioning workflows. The default is `provision`.
-	TaskPhase            *string                `json:"taskPhase,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	TaskPhase            *string `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateHostExecuteWorkflowRequest UpdateHostExecuteWorkflowRequest
@@ -137,7 +137,61 @@ func (o UpdateHostExecuteWorkflowRequest) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *UpdateHostExecuteWorkflowRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateHostExecuteWorkflowRequest := _UpdateHostExecuteWorkflowRequest{}
+
+	err = json.Unmarshal(data, &varUpdateHostExecuteWorkflowRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateHostExecuteWorkflowRequest(varUpdateHostExecuteWorkflowRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "taskSet")
+		delete(additionalProperties, "taskPhase")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateHostExecuteWorkflowRequest struct {
+	value *UpdateHostExecuteWorkflowRequest
+	isSet bool
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) Get() *UpdateHostExecuteWorkflowRequest {
+	return v.value
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) Set(val *UpdateHostExecuteWorkflowRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostExecuteWorkflowRequest(val *UpdateHostExecuteWorkflowRequest) *NullableUpdateHostExecuteWorkflowRequest {
+	return &NullableUpdateHostExecuteWorkflowRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

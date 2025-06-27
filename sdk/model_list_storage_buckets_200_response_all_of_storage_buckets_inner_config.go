@@ -20,13 +20,13 @@ var _ MappedNullable = &ListStorageBuckets200ResponseAllOfStorageBucketsInnerCon
 
 // ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct for ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig
 type ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct {
-	AccessKey            *string                `json:"accessKey,omitempty"`
-	SecretKey            *string                `json:"secretKey,omitempty"`
-	StsAssumeRole        *string                `json:"stsAssumeRole,omitempty"`
-	UseHostCredentials   *bool                  `json:"useHostCredentials,omitempty"`
-	Endpoint             *string                `json:"endpoint,omitempty"`
-	SecretKeyHash        *string                `json:"secretKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AccessKey            *string `json:"accessKey,omitempty"`
+	SecretKey            *string `json:"secretKey,omitempty"`
+	StsAssumeRole        *string `json:"stsAssumeRole,omitempty"`
+	UseHostCredentials   *bool   `json:"useHostCredentials,omitempty"`
+	Endpoint             *string `json:"endpoint,omitempty"`
+	SecretKeyHash        *string `json:"secretKeyHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig
@@ -276,7 +276,65 @@ func (o ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) ToMap() (ma
 	return toSerialize, nil
 }
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig := _ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig{}
+
+	err = json.Unmarshal(data, &varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig(varListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "accessKey")
+		delete(additionalProperties, "secretKey")
+		delete(additionalProperties, "stsAssumeRole")
+		delete(additionalProperties, "useHostCredentials")
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "secretKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig struct {
+	value *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig
+	isSet bool
+}
+
+func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) Get() *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig {
+	return v.value
+}
+
+func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) Set(val *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig(val *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) *NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig {
+	return &NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig{value: val, isSet: true}
+}
+
+func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

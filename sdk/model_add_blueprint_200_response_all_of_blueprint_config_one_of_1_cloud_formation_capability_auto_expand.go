@@ -41,22 +41,6 @@ func StringAsAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPA
 	}
 }
 
-func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND{}
-	}
-
-	if out, ok := data.(bool); ok {
-		dst.Bool = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYAUTOEXPAND) UnmarshalJSON(data []byte) error {
 	var err error

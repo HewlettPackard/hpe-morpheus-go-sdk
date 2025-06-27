@@ -67,7 +67,7 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
 	Status               *string                                                             `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInner ListVirtualImages200ResponseAllOfVirtualImagesInner
@@ -1893,7 +1893,105 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListVirtualImages200ResponseAllOfVirtualImagesInner := _ListVirtualImages200ResponseAllOfVirtualImagesInner{}
+
+	err = json.Unmarshal(data, &varListVirtualImages200ResponseAllOfVirtualImagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImages200ResponseAllOfVirtualImagesInner(varListVirtualImages200ResponseAllOfVirtualImagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "imageType")
+		delete(additionalProperties, "userUploaded")
+		delete(additionalProperties, "userDefined")
+		delete(additionalProperties, "systemImage")
+		delete(additionalProperties, "isCloudInit")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshPasswordHash")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "osType")
+		delete(additionalProperties, "minRam")
+		delete(additionalProperties, "minRamGB")
+		delete(additionalProperties, "minDisk")
+		delete(additionalProperties, "minDiskGB")
+		delete(additionalProperties, "rawSize")
+		delete(additionalProperties, "rawSizeGB")
+		delete(additionalProperties, "trialVersion")
+		delete(additionalProperties, "virtioSupported")
+		delete(additionalProperties, "uefi")
+		delete(additionalProperties, "isAutoJoinDomain")
+		delete(additionalProperties, "vmToolsInstalled")
+		delete(additionalProperties, "installAgent")
+		delete(additionalProperties, "isForceCustomization")
+		delete(additionalProperties, "isSysprep")
+		delete(additionalProperties, "fipsEnabled")
+		delete(additionalProperties, "userData")
+		delete(additionalProperties, "consoleKeymap")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "accounts")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "locations")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "status")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListVirtualImages200ResponseAllOfVirtualImagesInner struct {
+	value *ListVirtualImages200ResponseAllOfVirtualImagesInner
+	isSet bool
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInner) Get() *ListVirtualImages200ResponseAllOfVirtualImagesInner {
+	return v.value
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInner) Set(val *ListVirtualImages200ResponseAllOfVirtualImagesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVirtualImages200ResponseAllOfVirtualImagesInner(val *ListVirtualImages200ResponseAllOfVirtualImagesInner) *NullableListVirtualImages200ResponseAllOfVirtualImagesInner {
+	return &NullableListVirtualImages200ResponseAllOfVirtualImagesInner{value: val, isSet: true}
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

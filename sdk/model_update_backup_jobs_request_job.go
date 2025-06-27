@@ -27,8 +27,8 @@ type UpdateBackupJobsRequestJob struct {
 	// Execute Schedule ID to use for the backup job
 	ScheduleId NullableInt64 `json:"scheduleId,omitempty"`
 	// Retention Count
-	RetentionCount       *int64                 `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	RetentionCount       *int64 `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateBackupJobsRequestJob UpdateBackupJobsRequestJob
@@ -219,7 +219,63 @@ func (o UpdateBackupJobsRequestJob) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateBackupJobsRequestJob) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateBackupJobsRequestJob := _UpdateBackupJobsRequestJob{}
+
+	err = json.Unmarshal(data, &varUpdateBackupJobsRequestJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateBackupJobsRequestJob(varUpdateBackupJobsRequestJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "scheduleId")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateBackupJobsRequestJob struct {
+	value *UpdateBackupJobsRequestJob
+	isSet bool
+}
+
+func (v NullableUpdateBackupJobsRequestJob) Get() *UpdateBackupJobsRequestJob {
+	return v.value
+}
+
+func (v *NullableUpdateBackupJobsRequestJob) Set(val *UpdateBackupJobsRequestJob) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBackupJobsRequestJob) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBackupJobsRequestJob) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBackupJobsRequestJob(val *UpdateBackupJobsRequestJob) *NullableUpdateBackupJobsRequestJob {
+	return &NullableUpdateBackupJobsRequestJob{value: val, isSet: true}
+}
+
+func (v NullableUpdateBackupJobsRequestJob) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBackupJobsRequestJob) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

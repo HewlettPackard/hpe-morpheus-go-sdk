@@ -98,7 +98,7 @@ type AddInstance200ResponseAllOfOneOfInstance struct {
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
 	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
-	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstance200ResponseAllOfOneOfInstance AddInstance200ResponseAllOfOneOfInstance
@@ -3045,7 +3045,136 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddInstance200ResponseAllOfOneOfInstance := _AddInstance200ResponseAllOfOneOfInstance{}
+
+	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddInstance200ResponseAllOfOneOfInstance(varAddInstance200ResponseAllOfOneOfInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "instanceType")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "cluster")
+		delete(additionalProperties, "containers")
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "connectionInfo")
+		delete(additionalProperties, "layout")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "configGroup")
+		delete(additionalProperties, "configId")
+		delete(additionalProperties, "configRole")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "controllers")
+		delete(additionalProperties, "interfaces")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "instanceVersion")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "evars")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "coresPerSocket")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "instancePrice")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "hostName")
+		delete(additionalProperties, "domainName")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "firewallEnabled")
+		delete(additionalProperties, "networkLevel")
+		delete(additionalProperties, "autoScale")
+		delete(additionalProperties, "instanceContext")
+		delete(additionalProperties, "currentDeployId")
+		delete(additionalProperties, "locked")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusPercent")
+		delete(additionalProperties, "statusEta")
+		delete(additionalProperties, "userStatus")
+		delete(additionalProperties, "expireDays")
+		delete(additionalProperties, "renewDays")
+		delete(additionalProperties, "expireCount")
+		delete(additionalProperties, "expireDate")
+		delete(additionalProperties, "expireWarningDate")
+		delete(additionalProperties, "expireWarningSent")
+		delete(additionalProperties, "shutdownDays")
+		delete(additionalProperties, "shutdownRenewDays")
+		delete(additionalProperties, "shutdownCount")
+		delete(additionalProperties, "shutdownDate")
+		delete(additionalProperties, "shutdownWarningDate")
+		delete(additionalProperties, "shutdownWarningSent")
+		delete(additionalProperties, "removalDate")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "notes")
+		delete(additionalProperties, "stats")
+		delete(additionalProperties, "powerSchedule")
+		delete(additionalProperties, "isScalable")
+		delete(additionalProperties, "instanceThreshold")
+		delete(additionalProperties, "isBusy")
+		delete(additionalProperties, "apps")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddInstance200ResponseAllOfOneOfInstance struct {
+	value *AddInstance200ResponseAllOfOneOfInstance
+	isSet bool
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstance) Get() *AddInstance200ResponseAllOfOneOfInstance {
+	return v.value
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstance) Set(val *AddInstance200ResponseAllOfOneOfInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstance200ResponseAllOfOneOfInstance(val *AddInstance200ResponseAllOfOneOfInstance) *NullableAddInstance200ResponseAllOfOneOfInstance {
+	return &NullableAddInstance200ResponseAllOfOneOfInstance{value: val, isSet: true}
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

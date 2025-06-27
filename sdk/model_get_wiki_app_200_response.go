@@ -21,7 +21,7 @@ var _ MappedNullable = &GetWikiApp200Response{}
 // GetWikiApp200Response struct for GetWikiApp200Response
 type GetWikiApp200Response struct {
 	Page                 *GetWikiApp200ResponsePage `json:"page,omitempty"`
-	AdditionalProperties map[string]interface{}     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetWikiApp200Response GetWikiApp200Response
@@ -96,7 +96,60 @@ func (o GetWikiApp200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetWikiApp200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetWikiApp200Response := _GetWikiApp200Response{}
+
+	err = json.Unmarshal(data, &varGetWikiApp200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetWikiApp200Response(varGetWikiApp200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "page")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetWikiApp200Response struct {
+	value *GetWikiApp200Response
+	isSet bool
+}
+
+func (v NullableGetWikiApp200Response) Get() *GetWikiApp200Response {
+	return v.value
+}
+
+func (v *NullableGetWikiApp200Response) Set(val *GetWikiApp200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetWikiApp200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetWikiApp200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetWikiApp200Response(val *GetWikiApp200Response) *NullableGetWikiApp200Response {
+	return &NullableGetWikiApp200Response{value: val, isSet: true}
+}
+
+func (v NullableGetWikiApp200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetWikiApp200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

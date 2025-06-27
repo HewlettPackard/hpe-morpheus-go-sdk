@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the FeaturePermission type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type FeaturePermission struct {
 	// The code of the feature permission being changed
 	PermissionCode string `json:"permissionCode"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _FeaturePermission FeaturePermission
@@ -116,7 +117,83 @@ func (o FeaturePermission) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *FeaturePermission) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"permissionCode",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varFeaturePermission := _FeaturePermission{}
+
+	err = json.Unmarshal(data, &varFeaturePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = FeaturePermission(varFeaturePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "permissionCode")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableFeaturePermission struct {
+	value *FeaturePermission
+	isSet bool
+}
+
+func (v NullableFeaturePermission) Get() *FeaturePermission {
+	return v.value
+}
+
+func (v *NullableFeaturePermission) Set(val *FeaturePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFeaturePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFeaturePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFeaturePermission(val *FeaturePermission) *NullableFeaturePermission {
+	return &NullableFeaturePermission{value: val, isSet: true}
+}
+
+func (v NullableFeaturePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFeaturePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -41,7 +41,7 @@ type IdentitySourcesOneLoginConfig struct {
 	ProviderSettings     map[string]interface{}                                                       `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IdentitySourcesOneLoginConfig IdentitySourcesOneLoginConfig
@@ -781,7 +781,79 @@ func (o IdentitySourcesOneLoginConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IdentitySourcesOneLoginConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIdentitySourcesOneLoginConfig := _IdentitySourcesOneLoginConfig{}
+
+	err = json.Unmarshal(data, &varIdentitySourcesOneLoginConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdentitySourcesOneLoginConfig(varIdentitySourcesOneLoginConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "deleted")
+		delete(additionalProperties, "autoSyncOnLogin")
+		delete(additionalProperties, "externalLogin")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "loginURL")
+		delete(additionalProperties, "providerSettings")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIdentitySourcesOneLoginConfig struct {
+	value *IdentitySourcesOneLoginConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesOneLoginConfig) Get() *IdentitySourcesOneLoginConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesOneLoginConfig) Set(val *IdentitySourcesOneLoginConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesOneLoginConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesOneLoginConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesOneLoginConfig(val *IdentitySourcesOneLoginConfig) *NullableIdentitySourcesOneLoginConfig {
+	return &NullableIdentitySourcesOneLoginConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesOneLoginConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesOneLoginConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

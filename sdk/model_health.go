@@ -34,7 +34,7 @@ type Health struct {
 	Database             *ListHealth200ResponseAllOfHealthDatabase `json:"database,omitempty"`
 	Elastic              *ListHealth200ResponseAllOfHealthElastic  `json:"elastic,omitempty"`
 	Rabbit               *ListHealth200ResponseAllOfHealthRabbit   `json:"rabbit,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Health Health
@@ -529,7 +529,72 @@ func (o Health) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Health) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varHealth := _Health{}
+
+	err = json.Unmarshal(data, &varHealth)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Health(varHealth)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "buildVersion")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "setupNeeded")
+		delete(additionalProperties, "date")
+		delete(additionalProperties, "cpu")
+		delete(additionalProperties, "memory")
+		delete(additionalProperties, "threads")
+		delete(additionalProperties, "database")
+		delete(additionalProperties, "elastic")
+		delete(additionalProperties, "rabbit")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableHealth struct {
+	value *Health
+	isSet bool
+}
+
+func (v NullableHealth) Get() *Health {
+	return v.value
+}
+
+func (v *NullableHealth) Set(val *Health) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableHealth) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableHealth) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableHealth(val *Health) *NullableHealth {
+	return &NullableHealth{value: val, isSet: true}
+}
+
+func (v NullableHealth) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableHealth) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

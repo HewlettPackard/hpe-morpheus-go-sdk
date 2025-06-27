@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the GroupUpdate type satisfies the MappedNullable interface at compile time
@@ -29,7 +30,7 @@ type GroupUpdate struct {
 	// Optional location argument for your group
 	Location             *string                      `json:"location,omitempty"`
 	Config               *AddGroupsRequestGroupConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GroupUpdate GroupUpdate
@@ -235,7 +236,85 @@ func (o GroupUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GroupUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varGroupUpdate := _GroupUpdate{}
+
+	err = json.Unmarshal(data, &varGroupUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GroupUpdate(varGroupUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "location")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGroupUpdate struct {
+	value *GroupUpdate
+	isSet bool
+}
+
+func (v NullableGroupUpdate) Get() *GroupUpdate {
+	return v.value
+}
+
+func (v *NullableGroupUpdate) Set(val *GroupUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGroupUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGroupUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGroupUpdate(val *GroupUpdate) *NullableGroupUpdate {
+	return &NullableGroupUpdate{value: val, isSet: true}
+}
+
+func (v NullableGroupUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGroupUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

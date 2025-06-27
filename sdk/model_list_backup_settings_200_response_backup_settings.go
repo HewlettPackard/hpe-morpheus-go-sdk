@@ -26,7 +26,7 @@ type ListBackupSettings200ResponseBackupSettings struct {
 	DefaultStorageBucket *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultStorageBucket,omitempty"`
 	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
 	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBackupSettings200ResponseBackupSettings ListBackupSettings200ResponseBackupSettings
@@ -276,7 +276,65 @@ func (o ListBackupSettings200ResponseBackupSettings) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *ListBackupSettings200ResponseBackupSettings) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBackupSettings200ResponseBackupSettings := _ListBackupSettings200ResponseBackupSettings{}
+
+	err = json.Unmarshal(data, &varListBackupSettings200ResponseBackupSettings)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupSettings200ResponseBackupSettings(varListBackupSettings200ResponseBackupSettings)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "backupsEnabled")
+		delete(additionalProperties, "createBackups")
+		delete(additionalProperties, "backupAppliance")
+		delete(additionalProperties, "defaultStorageBucket")
+		delete(additionalProperties, "defaultSchedule")
+		delete(additionalProperties, "retentionCount")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBackupSettings200ResponseBackupSettings struct {
+	value *ListBackupSettings200ResponseBackupSettings
+	isSet bool
+}
+
+func (v NullableListBackupSettings200ResponseBackupSettings) Get() *ListBackupSettings200ResponseBackupSettings {
+	return v.value
+}
+
+func (v *NullableListBackupSettings200ResponseBackupSettings) Set(val *ListBackupSettings200ResponseBackupSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackupSettings200ResponseBackupSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackupSettings200ResponseBackupSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackupSettings200ResponseBackupSettings(val *ListBackupSettings200ResponseBackupSettings) *NullableListBackupSettings200ResponseBackupSettings {
+	return &NullableListBackupSettings200ResponseBackupSettings{value: val, isSet: true}
+}
+
+func (v NullableListBackupSettings200ResponseBackupSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackupSettings200ResponseBackupSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

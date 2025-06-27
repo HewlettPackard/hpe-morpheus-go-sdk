@@ -20,11 +20,11 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCr
 
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct for ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential
 type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct {
-	Id                   NullableInt64          `json:"id,omitempty"`
-	Name                 NullableString         `json:"name,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
-	Types                []string               `json:"types,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   NullableInt64  `json:"id,omitempty"`
+	Name                 NullableString `json:"name,omitempty"`
+	Type                 *string        `json:"type,omitempty"`
+	Types                []string       `json:"types,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential
@@ -227,7 +227,63 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) ToMap(
 	return toSerialize, nil
 }
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "types")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct {
+	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential {
+	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

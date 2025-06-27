@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddPolicies200ResponseAllOfPolicyConfigOneOf type satisfies the MappedNullable interface at compile time
@@ -20,17 +21,17 @@ var _ MappedNullable = &AddPolicies200ResponseAllOfPolicyConfigOneOf{}
 
 // AddPolicies200ResponseAllOfPolicyConfigOneOf - Expiration
 type AddPolicies200ResponseAllOfPolicyConfigOneOf struct {
-	LifecycleType                     string                 `json:"lifecycleType"`
-	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
-	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
-	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
-	LifecycleMessage                  *string                `json:"lifecycleMessage,omitempty"`
-	LifecycleAutoRenew                *string                `json:"lifecycleAutoRenew,omitempty"`
-	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
-	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
-	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
-	AdditionalProperties              map[string]interface{} `json:",remain"`
+	LifecycleType                     string  `json:"lifecycleType"`
+	LifecycleAge                      *string `json:"lifecycleAge,omitempty"`
+	LifecycleRenewal                  *string `json:"lifecycleRenewal,omitempty"`
+	LifecycleNotify                   *string `json:"lifecycleNotify,omitempty"`
+	LifecycleMessage                  *string `json:"lifecycleMessage,omitempty"`
+	LifecycleAutoRenew                *string `json:"lifecycleAutoRenew,omitempty"`
+	LifecycleAllowExtend              *string `json:"lifecycleAllowExtend,omitempty"`
+	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId              *string `json:"accountIntegrationId,omitempty"`
+	LifecycleHideFixed                *bool   `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties              map[string]interface{}
 }
 
 type _AddPolicies200ResponseAllOfPolicyConfigOneOf AddPolicies200ResponseAllOfPolicyConfigOneOf
@@ -419,7 +420,90 @@ func (o AddPolicies200ResponseAllOfPolicyConfigOneOf) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"lifecycleType",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddPolicies200ResponseAllOfPolicyConfigOneOf := _AddPolicies200ResponseAllOfPolicyConfigOneOf{}
+
+	err = json.Unmarshal(data, &varAddPolicies200ResponseAllOfPolicyConfigOneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPolicies200ResponseAllOfPolicyConfigOneOf(varAddPolicies200ResponseAllOfPolicyConfigOneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "lifecycleType")
+		delete(additionalProperties, "lifecycleAge")
+		delete(additionalProperties, "lifecycleRenewal")
+		delete(additionalProperties, "lifecycleNotify")
+		delete(additionalProperties, "lifecycleMessage")
+		delete(additionalProperties, "lifecycleAutoRenew")
+		delete(additionalProperties, "lifecycleAllowExtend")
+		delete(additionalProperties, "lifecycleExtensionsBeforeApproval")
+		delete(additionalProperties, "accountIntegrationId")
+		delete(additionalProperties, "lifecycleHideFixed")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPolicies200ResponseAllOfPolicyConfigOneOf struct {
+	value *AddPolicies200ResponseAllOfPolicyConfigOneOf
+	isSet bool
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) Get() *AddPolicies200ResponseAllOfPolicyConfigOneOf {
+	return v.value
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) Set(val *AddPolicies200ResponseAllOfPolicyConfigOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPolicies200ResponseAllOfPolicyConfigOneOf(val *AddPolicies200ResponseAllOfPolicyConfigOneOf) *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf {
+	return &NullableAddPolicies200ResponseAllOfPolicyConfigOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

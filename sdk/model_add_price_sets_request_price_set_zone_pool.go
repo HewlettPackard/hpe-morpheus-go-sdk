@@ -21,8 +21,8 @@ var _ MappedNullable = &AddPriceSetsRequestPriceSetZonePool{}
 // AddPriceSetsRequestPriceSetZonePool struct for AddPriceSetsRequestPriceSetZonePool
 type AddPriceSetsRequestPriceSetZonePool struct {
 	// Resource Pool ID
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddPriceSetsRequestPriceSetZonePool AddPriceSetsRequestPriceSetZonePool
@@ -97,7 +97,60 @@ func (o AddPriceSetsRequestPriceSetZonePool) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *AddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddPriceSetsRequestPriceSetZonePool := _AddPriceSetsRequestPriceSetZonePool{}
+
+	err = json.Unmarshal(data, &varAddPriceSetsRequestPriceSetZonePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddPriceSetsRequestPriceSetZonePool(varAddPriceSetsRequestPriceSetZonePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddPriceSetsRequestPriceSetZonePool struct {
+	value *AddPriceSetsRequestPriceSetZonePool
+	isSet bool
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) Get() *AddPriceSetsRequestPriceSetZonePool {
+	return v.value
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) Set(val *AddPriceSetsRequestPriceSetZonePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPriceSetsRequestPriceSetZonePool(val *AddPriceSetsRequestPriceSetZonePool) *NullableAddPriceSetsRequestPriceSetZonePool {
+	return &NullableAddPriceSetsRequestPriceSetZonePool{value: val, isSet: true}
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -28,7 +28,7 @@ type UpdateNetworkRouterRequestNetworkRouter struct {
 	Enabled              *bool                                                 `json:"enabled,omitempty"`
 	Zone                 *UpdateNetworkRouterRequestNetworkRouterZone          `json:"zone,omitempty"`
 	NetworkServer        *UpdateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateNetworkRouterRequestNetworkRouter UpdateNetworkRouterRequestNetworkRouter
@@ -278,7 +278,65 @@ func (o UpdateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *UpdateNetworkRouterRequestNetworkRouter) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateNetworkRouterRequestNetworkRouter := _UpdateNetworkRouterRequestNetworkRouter{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkRouterRequestNetworkRouter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkRouterRequestNetworkRouter(varUpdateNetworkRouterRequestNetworkRouter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateNetworkRouterRequestNetworkRouter struct {
+	value *UpdateNetworkRouterRequestNetworkRouter
+	isSet bool
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouter) Get() *UpdateNetworkRouterRequestNetworkRouter {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouter) Set(val *UpdateNetworkRouterRequestNetworkRouter) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouter) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouter) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkRouterRequestNetworkRouter(val *UpdateNetworkRouterRequestNetworkRouter) *NullableUpdateNetworkRouterRequestNetworkRouter {
+	return &NullableUpdateNetworkRouterRequestNetworkRouter{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouter) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

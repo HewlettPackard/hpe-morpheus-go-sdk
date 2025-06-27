@@ -40,7 +40,7 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	DefaultPersona       NullableString                                     `json:"defaultPersona,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
@@ -684,7 +684,75 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *ListRoles200ResponseAllOfRolesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListRoles200ResponseAllOfRolesInner := _ListRoles200ResponseAllOfRolesInner{}
+
+	err = json.Unmarshal(data, &varListRoles200ResponseAllOfRolesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListRoles200ResponseAllOfRolesInner(varListRoles200ResponseAllOfRolesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "roleType")
+		delete(additionalProperties, "multitenant")
+		delete(additionalProperties, "multitenantLocked")
+		delete(additionalProperties, "parentRoleId")
+		delete(additionalProperties, "diverged")
+		delete(additionalProperties, "ownerId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListRoles200ResponseAllOfRolesInner struct {
+	value *ListRoles200ResponseAllOfRolesInner
+	isSet bool
+}
+
+func (v NullableListRoles200ResponseAllOfRolesInner) Get() *ListRoles200ResponseAllOfRolesInner {
+	return v.value
+}
+
+func (v *NullableListRoles200ResponseAllOfRolesInner) Set(val *ListRoles200ResponseAllOfRolesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListRoles200ResponseAllOfRolesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListRoles200ResponseAllOfRolesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListRoles200ResponseAllOfRolesInner(val *ListRoles200ResponseAllOfRolesInner) *NullableListRoles200ResponseAllOfRolesInner {
+	return &NullableListRoles200ResponseAllOfRolesInner{value: val, isSet: true}
+}
+
+func (v NullableListRoles200ResponseAllOfRolesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListRoles200ResponseAllOfRolesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

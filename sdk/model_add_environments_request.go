@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddEnvironmentsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddEnvironmentsRequest{}
 // AddEnvironmentsRequest struct for AddEnvironmentsRequest
 type AddEnvironmentsRequest struct {
 	Environment          AddEnvironmentsRequestEnvironment `json:"environment"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddEnvironmentsRequest AddEnvironmentsRequest
@@ -87,7 +88,81 @@ func (o AddEnvironmentsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddEnvironmentsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"environment",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddEnvironmentsRequest := _AddEnvironmentsRequest{}
+
+	err = json.Unmarshal(data, &varAddEnvironmentsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddEnvironmentsRequest(varAddEnvironmentsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "environment")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddEnvironmentsRequest struct {
+	value *AddEnvironmentsRequest
+	isSet bool
+}
+
+func (v NullableAddEnvironmentsRequest) Get() *AddEnvironmentsRequest {
+	return v.value
+}
+
+func (v *NullableAddEnvironmentsRequest) Set(val *AddEnvironmentsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddEnvironmentsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddEnvironmentsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddEnvironmentsRequest(val *AddEnvironmentsRequest) *NullableAddEnvironmentsRequest {
+	return &NullableAddEnvironmentsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddEnvironmentsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddEnvironmentsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

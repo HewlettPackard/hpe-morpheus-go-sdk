@@ -23,7 +23,7 @@ type ManageHostPlacementRequestServer struct {
 	// Placement Strategy
 	PlacementStrategy     *string                                                `json:"placementStrategy,omitempty"`
 	PreferredParentServer *ManageHostPlacementRequestServerPreferredParentServer `json:"preferredParentServer,omitempty"`
-	AdditionalProperties  map[string]interface{}                                 `json:",remain"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _ManageHostPlacementRequestServer ManageHostPlacementRequestServer
@@ -133,7 +133,61 @@ func (o ManageHostPlacementRequestServer) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *ManageHostPlacementRequestServer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varManageHostPlacementRequestServer := _ManageHostPlacementRequestServer{}
+
+	err = json.Unmarshal(data, &varManageHostPlacementRequestServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ManageHostPlacementRequestServer(varManageHostPlacementRequestServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "placementStrategy")
+		delete(additionalProperties, "preferredParentServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableManageHostPlacementRequestServer struct {
+	value *ManageHostPlacementRequestServer
+	isSet bool
+}
+
+func (v NullableManageHostPlacementRequestServer) Get() *ManageHostPlacementRequestServer {
+	return v.value
+}
+
+func (v *NullableManageHostPlacementRequestServer) Set(val *ManageHostPlacementRequestServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableManageHostPlacementRequestServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableManageHostPlacementRequestServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableManageHostPlacementRequestServer(val *ManageHostPlacementRequestServer) *NullableManageHostPlacementRequestServer {
+	return &NullableManageHostPlacementRequestServer{value: val, isSet: true}
+}
+
+func (v NullableManageHostPlacementRequestServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableManageHostPlacementRequestServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

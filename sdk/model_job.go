@@ -49,7 +49,7 @@ type Job struct {
 	SecurityProfile      NullableString                                       `json:"securityProfile,omitempty"`
 	CustomConfig         NullableString                                       `json:"customConfig,omitempty"`
 	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Job Job
@@ -1122,7 +1122,85 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Job) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varJob := _Job{}
+
+	err = json.Unmarshal(data, &varJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Job(varJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "task")
+		delete(additionalProperties, "securityPackage")
+		delete(additionalProperties, "jobSummary")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "namespace")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastRun")
+		delete(additionalProperties, "lastResult")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "scanPath")
+		delete(additionalProperties, "securityProfile")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableJob struct {
+	value *Job
+	isSet bool
+}
+
+func (v NullableJob) Get() *Job {
+	return v.value
+}
+
+func (v *NullableJob) Set(val *Job) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableJob) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableJob) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableJob(val *Job) *NullableJob {
+	return &NullableJob{value: val, isSet: true}
+}
+
+func (v NullableJob) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableJob) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

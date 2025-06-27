@@ -20,8 +20,8 @@ var _ MappedNullable = &AddClusterRequestClusterServerServerType{}
 
 // AddClusterRequestClusterServerServerType Server type to create.  See `/api/server-types` for available server types for the cloud.
 type AddClusterRequestClusterServerServerType struct {
-	Id                   *int32                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int32 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServerServerType AddClusterRequestClusterServerServerType
@@ -96,7 +96,60 @@ func (o AddClusterRequestClusterServerServerType) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterServerServerType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterRequestClusterServerServerType := _AddClusterRequestClusterServerServerType{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerServerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerServerType(varAddClusterRequestClusterServerServerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterRequestClusterServerServerType struct {
+	value *AddClusterRequestClusterServerServerType
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerServerType) Get() *AddClusterRequestClusterServerServerType {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerServerType) Set(val *AddClusterRequestClusterServerServerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerServerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerServerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerServerType(val *AddClusterRequestClusterServerServerType) *NullableAddClusterRequestClusterServerServerType {
+	return &NullableAddClusterRequestClusterServerServerType{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerServerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerServerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

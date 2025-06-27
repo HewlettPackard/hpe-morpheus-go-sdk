@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the CreateNetworkRouterRequestNetworkRouter type satisfies the MappedNullable interface at compile time
@@ -28,7 +29,7 @@ type CreateNetworkRouterRequestNetworkRouter struct {
 	Enabled              *bool                                                 `json:"enabled,omitempty"`
 	Zone                 *CreateNetworkRouterRequestNetworkRouterZone          `json:"zone,omitempty"`
 	NetworkServer        *CreateNetworkRouterRequestNetworkRouterNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkRouterRequestNetworkRouter CreateNetworkRouterRequestNetworkRouter
@@ -251,7 +252,88 @@ func (o CreateNetworkRouterRequestNetworkRouter) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *CreateNetworkRouterRequestNetworkRouter) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"site",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varCreateNetworkRouterRequestNetworkRouter := _CreateNetworkRouterRequestNetworkRouter{}
+
+	err = json.Unmarshal(data, &varCreateNetworkRouterRequestNetworkRouter)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkRouterRequestNetworkRouter(varCreateNetworkRouterRequestNetworkRouter)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "site")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "networkServer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkRouterRequestNetworkRouter struct {
+	value *CreateNetworkRouterRequestNetworkRouter
+	isSet bool
+}
+
+func (v NullableCreateNetworkRouterRequestNetworkRouter) Get() *CreateNetworkRouterRequestNetworkRouter {
+	return v.value
+}
+
+func (v *NullableCreateNetworkRouterRequestNetworkRouter) Set(val *CreateNetworkRouterRequestNetworkRouter) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkRouterRequestNetworkRouter) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkRouterRequestNetworkRouter) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkRouterRequestNetworkRouter(val *CreateNetworkRouterRequestNetworkRouter) *NullableCreateNetworkRouterRequestNetworkRouter {
+	return &NullableCreateNetworkRouterRequestNetworkRouter{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkRouterRequestNetworkRouter) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkRouterRequestNetworkRouter) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

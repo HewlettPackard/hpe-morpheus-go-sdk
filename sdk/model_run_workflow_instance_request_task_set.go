@@ -22,7 +22,7 @@ var _ MappedNullable = &RunWorkflowInstanceRequestTaskSet{}
 type RunWorkflowInstanceRequestTaskSet struct {
 	// Object containing any custom option type configuration parameters
 	CustomOptions        map[string]interface{} `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RunWorkflowInstanceRequestTaskSet RunWorkflowInstanceRequestTaskSet
@@ -97,7 +97,60 @@ func (o RunWorkflowInstanceRequestTaskSet) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *RunWorkflowInstanceRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varRunWorkflowInstanceRequestTaskSet := _RunWorkflowInstanceRequestTaskSet{}
+
+	err = json.Unmarshal(data, &varRunWorkflowInstanceRequestTaskSet)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RunWorkflowInstanceRequestTaskSet(varRunWorkflowInstanceRequestTaskSet)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "customOptions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableRunWorkflowInstanceRequestTaskSet struct {
+	value *RunWorkflowInstanceRequestTaskSet
+	isSet bool
+}
+
+func (v NullableRunWorkflowInstanceRequestTaskSet) Get() *RunWorkflowInstanceRequestTaskSet {
+	return v.value
+}
+
+func (v *NullableRunWorkflowInstanceRequestTaskSet) Set(val *RunWorkflowInstanceRequestTaskSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRunWorkflowInstanceRequestTaskSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRunWorkflowInstanceRequestTaskSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRunWorkflowInstanceRequestTaskSet(val *RunWorkflowInstanceRequestTaskSet) *NullableRunWorkflowInstanceRequestTaskSet {
+	return &NullableRunWorkflowInstanceRequestTaskSet{value: val, isSet: true}
+}
+
+func (v NullableRunWorkflowInstanceRequestTaskSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRunWorkflowInstanceRequestTaskSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

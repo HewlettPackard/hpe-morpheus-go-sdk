@@ -23,7 +23,7 @@ type CloneInstanceRequest struct {
 	// A name for the new cloned instance. If none is specified the existing name will be duplicated with the 'clone' suffix added.
 	Name                 *string                    `json:"name,omitempty"`
 	Group                *CloneInstanceRequestGroup `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CloneInstanceRequest CloneInstanceRequest
@@ -133,7 +133,61 @@ func (o CloneInstanceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CloneInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCloneInstanceRequest := _CloneInstanceRequest{}
+
+	err = json.Unmarshal(data, &varCloneInstanceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CloneInstanceRequest(varCloneInstanceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "group")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCloneInstanceRequest struct {
+	value *CloneInstanceRequest
+	isSet bool
+}
+
+func (v NullableCloneInstanceRequest) Get() *CloneInstanceRequest {
+	return v.value
+}
+
+func (v *NullableCloneInstanceRequest) Set(val *CloneInstanceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCloneInstanceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCloneInstanceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCloneInstanceRequest(val *CloneInstanceRequest) *NullableCloneInstanceRequest {
+	return &NullableCloneInstanceRequest{value: val, isSet: true}
+}
+
+func (v NullableCloneInstanceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCloneInstanceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

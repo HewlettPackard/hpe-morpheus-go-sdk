@@ -60,7 +60,7 @@ type NetworkUpdate struct {
 	// Array of tenant account ids that are allowed access
 	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
 	ResourcePermissions  *UpdateNetworkRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkUpdate NetworkUpdate
@@ -908,7 +908,81 @@ func (o NetworkUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkUpdate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkUpdate := _NetworkUpdate{}
+
+	err = json.Unmarshal(data, &varNetworkUpdate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkUpdate(varNetworkUpdate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "cidr")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "dnsPrimary")
+		delete(additionalProperties, "dnsSecondary")
+		delete(additionalProperties, "vlanId")
+		delete(additionalProperties, "pool")
+		delete(additionalProperties, "allowStaticOverride")
+		delete(additionalProperties, "assignPublicIp")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "dhcpServer")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "searchDomains")
+		delete(additionalProperties, "networkProxy")
+		delete(additionalProperties, "applianceUrlProxyBypass")
+		delete(additionalProperties, "noProxy")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkUpdate struct {
+	value *NetworkUpdate
+	isSet bool
+}
+
+func (v NullableNetworkUpdate) Get() *NetworkUpdate {
+	return v.value
+}
+
+func (v *NullableNetworkUpdate) Set(val *NetworkUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkUpdate(val *NetworkUpdate) *NullableNetworkUpdate {
+	return &NullableNetworkUpdate{value: val, isSet: true}
+}
+
+func (v NullableNetworkUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

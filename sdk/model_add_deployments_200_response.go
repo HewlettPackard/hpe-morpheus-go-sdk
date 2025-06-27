@@ -22,7 +22,7 @@ var _ MappedNullable = &AddDeployments200Response{}
 type AddDeployments200Response struct {
 	Deployment           *AddDeployments200ResponseAllOfDeployment `json:"deployment,omitempty"`
 	Success              *bool                                     `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddDeployments200Response AddDeployments200Response
@@ -132,7 +132,61 @@ func (o AddDeployments200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddDeployments200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddDeployments200Response := _AddDeployments200Response{}
+
+	err = json.Unmarshal(data, &varAddDeployments200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddDeployments200Response(varAddDeployments200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "deployment")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddDeployments200Response struct {
+	value *AddDeployments200Response
+	isSet bool
+}
+
+func (v NullableAddDeployments200Response) Get() *AddDeployments200Response {
+	return v.value
+}
+
+func (v *NullableAddDeployments200Response) Set(val *AddDeployments200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddDeployments200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddDeployments200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddDeployments200Response(val *AddDeployments200Response) *NullableAddDeployments200Response {
+	return &NullableAddDeployments200Response{value: val, isSet: true}
+}
+
+func (v NullableAddDeployments200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddDeployments200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -23,8 +23,8 @@ type ClusterDatastoreConfigNFS struct {
 	// Host name or IP address for target NFS instance.
 	SourceHostname *string `json:"sourceHostname,omitempty"`
 	// Path to the target NFS export directory.
-	SourceDirPath        *string                `json:"sourceDirPath,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	SourceDirPath        *string `json:"sourceDirPath,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterDatastoreConfigNFS ClusterDatastoreConfigNFS
@@ -134,7 +134,61 @@ func (o ClusterDatastoreConfigNFS) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterDatastoreConfigNFS) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterDatastoreConfigNFS := _ClusterDatastoreConfigNFS{}
+
+	err = json.Unmarshal(data, &varClusterDatastoreConfigNFS)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterDatastoreConfigNFS(varClusterDatastoreConfigNFS)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceHostname")
+		delete(additionalProperties, "sourceDirPath")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterDatastoreConfigNFS struct {
+	value *ClusterDatastoreConfigNFS
+	isSet bool
+}
+
+func (v NullableClusterDatastoreConfigNFS) Get() *ClusterDatastoreConfigNFS {
+	return v.value
+}
+
+func (v *NullableClusterDatastoreConfigNFS) Set(val *ClusterDatastoreConfigNFS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterDatastoreConfigNFS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterDatastoreConfigNFS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterDatastoreConfigNFS(val *ClusterDatastoreConfigNFS) *NullableClusterDatastoreConfigNFS {
+	return &NullableClusterDatastoreConfigNFS{value: val, isSet: true}
+}
+
+func (v NullableClusterDatastoreConfigNFS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterDatastoreConfigNFS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

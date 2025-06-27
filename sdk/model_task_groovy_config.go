@@ -39,7 +39,7 @@ type TaskGroovyConfig struct {
 	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
 	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _TaskGroovyConfig TaskGroovyConfig
@@ -731,7 +731,77 @@ func (o TaskGroovyConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *TaskGroovyConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varTaskGroovyConfig := _TaskGroovyConfig{}
+
+	err = json.Unmarshal(data, &varTaskGroovyConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TaskGroovyConfig(varTaskGroovyConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableTaskGroovyConfig struct {
+	value *TaskGroovyConfig
+	isSet bool
+}
+
+func (v NullableTaskGroovyConfig) Get() *TaskGroovyConfig {
+	return v.value
+}
+
+func (v *NullableTaskGroovyConfig) Set(val *TaskGroovyConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskGroovyConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskGroovyConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskGroovyConfig(val *TaskGroovyConfig) *NullableTaskGroovyConfig {
+	return &NullableTaskGroovyConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskGroovyConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskGroovyConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

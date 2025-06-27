@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddSpecTemplateRequestSpecTemplate type satisfies the MappedNullable interface at compile time
@@ -27,7 +28,7 @@ type AddSpecTemplateRequestSpecTemplate struct {
 	Type                 AddSpecTemplateRequestSpecTemplateType    `json:"type"`
 	File                 AddSpecTemplateRequestSpecTemplateFile    `json:"file"`
 	Config               *AddSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSpecTemplateRequestSpecTemplate AddSpecTemplateRequestSpecTemplate
@@ -216,7 +217,87 @@ func (o AddSpecTemplateRequestSpecTemplate) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddSpecTemplateRequestSpecTemplate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"file",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddSpecTemplateRequestSpecTemplate := _AddSpecTemplateRequestSpecTemplate{}
+
+	err = json.Unmarshal(data, &varAddSpecTemplateRequestSpecTemplate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSpecTemplateRequestSpecTemplate(varAddSpecTemplateRequestSpecTemplate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddSpecTemplateRequestSpecTemplate struct {
+	value *AddSpecTemplateRequestSpecTemplate
+	isSet bool
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplate) Get() *AddSpecTemplateRequestSpecTemplate {
+	return v.value
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplate) Set(val *AddSpecTemplateRequestSpecTemplate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSpecTemplateRequestSpecTemplate(val *AddSpecTemplateRequestSpecTemplate) *NullableAddSpecTemplateRequestSpecTemplate {
+	return &NullableAddSpecTemplateRequestSpecTemplate{value: val, isSet: true}
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

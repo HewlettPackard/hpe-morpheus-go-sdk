@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the NetworkRouterRouteCreate type satisfies the MappedNullable interface at compile time
@@ -33,8 +34,8 @@ type NetworkRouterRouteCreate struct {
 	// Destination address or range
 	Destination string `json:"destination"`
 	// MTU
-	NetworkMtu           string                 `json:"networkMtu"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	NetworkMtu           string `json:"networkMtu"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkRouterRouteCreate NetworkRouterRouteCreate
@@ -300,7 +301,89 @@ func (o NetworkRouterRouteCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkRouterRouteCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"source",
+		"destination",
+		"networkMtu",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varNetworkRouterRouteCreate := _NetworkRouterRouteCreate{}
+
+	err = json.Unmarshal(data, &varNetworkRouterRouteCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterRouteCreate(varNetworkRouterRouteCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "defaultRoute")
+		delete(additionalProperties, "source")
+		delete(additionalProperties, "destination")
+		delete(additionalProperties, "networkMtu")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkRouterRouteCreate struct {
+	value *NetworkRouterRouteCreate
+	isSet bool
+}
+
+func (v NullableNetworkRouterRouteCreate) Get() *NetworkRouterRouteCreate {
+	return v.value
+}
+
+func (v *NullableNetworkRouterRouteCreate) Set(val *NetworkRouterRouteCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterRouteCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterRouteCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterRouteCreate(val *NetworkRouterRouteCreate) *NullableNetworkRouterRouteCreate {
+	return &NullableNetworkRouterRouteCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterRouteCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterRouteCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

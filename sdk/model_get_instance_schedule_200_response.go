@@ -21,7 +21,7 @@ var _ MappedNullable = &GetInstanceSchedule200Response{}
 // GetInstanceSchedule200Response struct for GetInstanceSchedule200Response
 type GetInstanceSchedule200Response struct {
 	InstanceSchedule     *GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedule,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetInstanceSchedule200Response GetInstanceSchedule200Response
@@ -96,7 +96,60 @@ func (o GetInstanceSchedule200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetInstanceSchedule200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetInstanceSchedule200Response := _GetInstanceSchedule200Response{}
+
+	err = json.Unmarshal(data, &varGetInstanceSchedule200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetInstanceSchedule200Response(varGetInstanceSchedule200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instanceSchedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetInstanceSchedule200Response struct {
+	value *GetInstanceSchedule200Response
+	isSet bool
+}
+
+func (v NullableGetInstanceSchedule200Response) Get() *GetInstanceSchedule200Response {
+	return v.value
+}
+
+func (v *NullableGetInstanceSchedule200Response) Set(val *GetInstanceSchedule200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInstanceSchedule200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInstanceSchedule200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInstanceSchedule200Response(val *GetInstanceSchedule200Response) *NullableGetInstanceSchedule200Response {
+	return &NullableGetInstanceSchedule200Response{value: val, isSet: true}
+}
+
+func (v NullableGetInstanceSchedule200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInstanceSchedule200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

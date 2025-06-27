@@ -26,7 +26,7 @@ type UpdateCloudDatastoresRequestDatastore struct {
 	Visibility           *string                                                   `json:"visibility,omitempty"`
 	TenantPermissions    *UpdateCloudDatastoresRequestDatastoreTenantPermissions   `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateCloudDatastoresRequestDatastore UpdateCloudDatastoresRequestDatastore
@@ -210,7 +210,63 @@ func (o UpdateCloudDatastoresRequestDatastore) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *UpdateCloudDatastoresRequestDatastore) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateCloudDatastoresRequestDatastore := _UpdateCloudDatastoresRequestDatastore{}
+
+	err = json.Unmarshal(data, &varUpdateCloudDatastoresRequestDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateCloudDatastoresRequestDatastore(varUpdateCloudDatastoresRequestDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenantPermissions")
+		delete(additionalProperties, "resourcePermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateCloudDatastoresRequestDatastore struct {
+	value *UpdateCloudDatastoresRequestDatastore
+	isSet bool
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastore) Get() *UpdateCloudDatastoresRequestDatastore {
+	return v.value
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastore) Set(val *UpdateCloudDatastoresRequestDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudDatastoresRequestDatastore(val *UpdateCloudDatastoresRequestDatastore) *NullableUpdateCloudDatastoresRequestDatastore {
+	return &NullableUpdateCloudDatastoresRequestDatastore{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &AddClusterWorker200Response{}
 type AddClusterWorker200Response struct {
 	Servers              []map[string]interface{} `json:"servers,omitempty"`
 	Success              *bool                    `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterWorker200Response AddClusterWorker200Response
@@ -132,7 +132,61 @@ func (o AddClusterWorker200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClusterWorker200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterWorker200Response := _AddClusterWorker200Response{}
+
+	err = json.Unmarshal(data, &varAddClusterWorker200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterWorker200Response(varAddClusterWorker200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "servers")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterWorker200Response struct {
+	value *AddClusterWorker200Response
+	isSet bool
+}
+
+func (v NullableAddClusterWorker200Response) Get() *AddClusterWorker200Response {
+	return v.value
+}
+
+func (v *NullableAddClusterWorker200Response) Set(val *AddClusterWorker200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterWorker200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterWorker200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterWorker200Response(val *AddClusterWorker200Response) *NullableAddClusterWorker200Response {
+	return &NullableAddClusterWorker200Response{value: val, isSet: true}
+}
+
+func (v NullableAddClusterWorker200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterWorker200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -34,7 +34,7 @@ type AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct {
 	CreatedBy            *ListBackupResults200ResponseAllOfResultsInnerCreatedBy `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                              `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                              `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
@@ -527,7 +527,71 @@ func (o AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) ToMap() (map
 	return toSerialize, nil
 }
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp := _AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp{}
+
+	err = json.Unmarshal(data, &varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp(varAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "server")
+		delete(additionalProperties, "ipStatus")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "ipRange")
+		delete(additionalProperties, "ptrId")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp struct {
+	value *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp
+	isSet bool
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) Get() *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp {
+	return v.value
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) Set(val *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp(val *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp {
+	return &NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp{value: val, isSet: true}
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIp) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

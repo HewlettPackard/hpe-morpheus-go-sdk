@@ -25,22 +25,6 @@ type AddCloudsRequestZoneZoneType struct {
 	AddCloudsRequestZoneZoneTypeAnyOf1 *AddCloudsRequestZoneZoneTypeAnyOf1
 }
 
-func (dst *AddCloudsRequestZoneZoneType) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddCloudsRequestZoneZoneType{}
-	}
-
-	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf); ok {
-		dst.AddCloudsRequestZoneZoneTypeAnyOf = &out
-	}
-
-	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf1); ok {
-		dst.AddCloudsRequestZoneZoneTypeAnyOf1 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudsRequestZoneZoneType) UnmarshalJSON(data []byte) error {
 	var err error

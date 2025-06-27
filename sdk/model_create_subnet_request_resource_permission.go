@@ -26,7 +26,7 @@ type CreateSubnetRequestResourcePermission struct {
 	Sites                []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
 	AllPlans             *bool                                         `json:"allPlans,omitempty"`
 	Plans                []map[string]interface{}                      `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateSubnetRequestResourcePermission CreateSubnetRequestResourcePermission
@@ -206,7 +206,63 @@ func (o CreateSubnetRequestResourcePermission) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *CreateSubnetRequestResourcePermission) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateSubnetRequestResourcePermission := _CreateSubnetRequestResourcePermission{}
+
+	err = json.Unmarshal(data, &varCreateSubnetRequestResourcePermission)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateSubnetRequestResourcePermission(varCreateSubnetRequestResourcePermission)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "all")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "allPlans")
+		delete(additionalProperties, "plans")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateSubnetRequestResourcePermission struct {
+	value *CreateSubnetRequestResourcePermission
+	isSet bool
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) Get() *CreateSubnetRequestResourcePermission {
+	return v.value
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) Set(val *CreateSubnetRequestResourcePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateSubnetRequestResourcePermission(val *CreateSubnetRequestResourcePermission) *NullableCreateSubnetRequestResourcePermission {
+	return &NullableCreateSubnetRequestResourcePermission{value: val, isSet: true}
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

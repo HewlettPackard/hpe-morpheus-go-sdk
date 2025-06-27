@@ -28,7 +28,7 @@ type GetNetworkGroups200ResponseNetworkGroupsInner struct {
 	Networks             []int64                                             `json:"networks,omitempty"`
 	Subnets              []map[string]interface{}                            `json:"subnets,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkGroups200ResponseNetworkGroupsInner GetNetworkGroups200ResponseNetworkGroupsInner
@@ -348,7 +348,67 @@ func (o GetNetworkGroups200ResponseNetworkGroupsInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *GetNetworkGroups200ResponseNetworkGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkGroups200ResponseNetworkGroupsInner := _GetNetworkGroups200ResponseNetworkGroupsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkGroups200ResponseNetworkGroupsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkGroups200ResponseNetworkGroupsInner(varGetNetworkGroups200ResponseNetworkGroupsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "networks")
+		delete(additionalProperties, "subnets")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkGroups200ResponseNetworkGroupsInner struct {
+	value *GetNetworkGroups200ResponseNetworkGroupsInner
+	isSet bool
+}
+
+func (v NullableGetNetworkGroups200ResponseNetworkGroupsInner) Get() *GetNetworkGroups200ResponseNetworkGroupsInner {
+	return v.value
+}
+
+func (v *NullableGetNetworkGroups200ResponseNetworkGroupsInner) Set(val *GetNetworkGroups200ResponseNetworkGroupsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkGroups200ResponseNetworkGroupsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkGroups200ResponseNetworkGroupsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkGroups200ResponseNetworkGroupsInner(val *GetNetworkGroups200ResponseNetworkGroupsInner) *NullableGetNetworkGroups200ResponseNetworkGroupsInner {
+	return &NullableGetNetworkGroups200ResponseNetworkGroupsInner{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkGroups200ResponseNetworkGroupsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkGroups200ResponseNetworkGroupsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

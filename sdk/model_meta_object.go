@@ -27,8 +27,8 @@ type MetaObject struct {
 	// Number of records returned in the response
 	Size *int64 `json:"size,omitempty"`
 	// Total number of records found
-	Total                *int64                 `json:"total,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Total                *int64 `json:"total,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MetaObject MetaObject
@@ -224,7 +224,63 @@ func (o MetaObject) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *MetaObject) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMetaObject := _MetaObject{}
+
+	err = json.Unmarshal(data, &varMetaObject)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MetaObject(varMetaObject)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "total")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMetaObject struct {
+	value *MetaObject
+	isSet bool
+}
+
+func (v NullableMetaObject) Get() *MetaObject {
+	return v.value
+}
+
+func (v *NullableMetaObject) Set(val *MetaObject) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMetaObject) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMetaObject) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMetaObject(val *MetaObject) *NullableMetaObject {
+	return &NullableMetaObject{value: val, isSet: true}
+}
+
+func (v NullableMetaObject) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMetaObject) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddArchiveBucketRequest{}
 // AddArchiveBucketRequest struct for AddArchiveBucketRequest
 type AddArchiveBucketRequest struct {
 	ArchiveBucket        *AddArchiveBucketRequestArchiveBucket `json:"archiveBucket,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddArchiveBucketRequest AddArchiveBucketRequest
@@ -96,7 +96,60 @@ func (o AddArchiveBucketRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddArchiveBucketRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddArchiveBucketRequest := _AddArchiveBucketRequest{}
+
+	err = json.Unmarshal(data, &varAddArchiveBucketRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddArchiveBucketRequest(varAddArchiveBucketRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "archiveBucket")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddArchiveBucketRequest struct {
+	value *AddArchiveBucketRequest
+	isSet bool
+}
+
+func (v NullableAddArchiveBucketRequest) Get() *AddArchiveBucketRequest {
+	return v.value
+}
+
+func (v *NullableAddArchiveBucketRequest) Set(val *AddArchiveBucketRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddArchiveBucketRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddArchiveBucketRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddArchiveBucketRequest(val *AddArchiveBucketRequest) *NullableAddArchiveBucketRequest {
+	return &NullableAddArchiveBucketRequest{value: val, isSet: true}
+}
+
+func (v NullableAddArchiveBucketRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddArchiveBucketRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

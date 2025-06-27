@@ -34,7 +34,7 @@ type CheckElastic struct {
 	// Severity level threshold for sending notifications.
 	Severity             *string                            `json:"severity,omitempty"`
 	Config               *AddChecksRequestCheckOneOf3Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CheckElastic CheckElastic
@@ -381,7 +381,67 @@ func (o CheckElastic) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckElastic) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCheckElastic := _CheckElastic{}
+
+	err = json.Unmarshal(data, &varCheckElastic)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CheckElastic(varCheckElastic)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCheckElastic struct {
+	value *CheckElastic
+	isSet bool
+}
+
+func (v NullableCheckElastic) Get() *CheckElastic {
+	return v.value
+}
+
+func (v *NullableCheckElastic) Set(val *CheckElastic) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckElastic) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckElastic) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckElastic(val *CheckElastic) *NullableCheckElastic {
+	return &NullableCheckElastic{value: val, isSet: true}
+}
+
+func (v NullableCheckElastic) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckElastic) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

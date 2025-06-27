@@ -27,7 +27,7 @@ type ListBootScripts200ResponseAllOfBootScriptsInner struct {
 	Content              *string                                                         `json:"content,omitempty"`
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	Visibility           *string                                                         `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBootScripts200ResponseAllOfBootScriptsInner ListBootScripts200ResponseAllOfBootScriptsInner
@@ -323,7 +323,66 @@ func (o ListBootScripts200ResponseAllOfBootScriptsInner) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *ListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBootScripts200ResponseAllOfBootScriptsInner := _ListBootScripts200ResponseAllOfBootScriptsInner{}
+
+	err = json.Unmarshal(data, &varListBootScripts200ResponseAllOfBootScriptsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBootScripts200ResponseAllOfBootScriptsInner(varListBootScripts200ResponseAllOfBootScriptsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "fileName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "visibility")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBootScripts200ResponseAllOfBootScriptsInner struct {
+	value *ListBootScripts200ResponseAllOfBootScriptsInner
+	isSet bool
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) Get() *ListBootScripts200ResponseAllOfBootScriptsInner {
+	return v.value
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) Set(val *ListBootScripts200ResponseAllOfBootScriptsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBootScripts200ResponseAllOfBootScriptsInner(val *ListBootScripts200ResponseAllOfBootScriptsInner) *NullableListBootScripts200ResponseAllOfBootScriptsInner {
+	return &NullableListBootScripts200ResponseAllOfBootScriptsInner{value: val, isSet: true}
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

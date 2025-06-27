@@ -20,9 +20,9 @@ var _ MappedNullable = &GetBudgets200ResponseAllOfBudgetForecastType{}
 
 // GetBudgets200ResponseAllOfBudgetForecastType Forecast Model type
 type GetBudgets200ResponseAllOfBudgetForecastType struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetBudgets200ResponseAllOfBudgetForecastType GetBudgets200ResponseAllOfBudgetForecastType
@@ -132,7 +132,61 @@ func (o GetBudgets200ResponseAllOfBudgetForecastType) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *GetBudgets200ResponseAllOfBudgetForecastType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetBudgets200ResponseAllOfBudgetForecastType := _GetBudgets200ResponseAllOfBudgetForecastType{}
+
+	err = json.Unmarshal(data, &varGetBudgets200ResponseAllOfBudgetForecastType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBudgets200ResponseAllOfBudgetForecastType(varGetBudgets200ResponseAllOfBudgetForecastType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetBudgets200ResponseAllOfBudgetForecastType struct {
+	value *GetBudgets200ResponseAllOfBudgetForecastType
+	isSet bool
+}
+
+func (v NullableGetBudgets200ResponseAllOfBudgetForecastType) Get() *GetBudgets200ResponseAllOfBudgetForecastType {
+	return v.value
+}
+
+func (v *NullableGetBudgets200ResponseAllOfBudgetForecastType) Set(val *GetBudgets200ResponseAllOfBudgetForecastType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetBudgets200ResponseAllOfBudgetForecastType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetBudgets200ResponseAllOfBudgetForecastType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetBudgets200ResponseAllOfBudgetForecastType(val *GetBudgets200ResponseAllOfBudgetForecastType) *NullableGetBudgets200ResponseAllOfBudgetForecastType {
+	return &NullableGetBudgets200ResponseAllOfBudgetForecastType{value: val, isSet: true}
+}
+
+func (v NullableGetBudgets200ResponseAllOfBudgetForecastType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetBudgets200ResponseAllOfBudgetForecastType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

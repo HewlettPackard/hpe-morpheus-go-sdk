@@ -25,7 +25,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner 
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	MaxDevices           *int64                                                      `json:"maxDevices,omitempty"`
 	ReservedUnitNumber   *int64                                                      `json:"reservedUnitNumber,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner
@@ -240,7 +240,64 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInn
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "maxDevices")
+		delete(additionalProperties, "reservedUnitNumber")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner struct {
+	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner
+	isSet bool
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner {
+	return v.value
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner {
+	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner{value: val, isSet: true}
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddAppsRequest type satisfies the MappedNullable interface at compile time
@@ -34,7 +35,7 @@ type AddAppsRequest struct {
 	Environment *string `json:"environment,omitempty"`
 	// Configuration of app elements
 	Tiers                map[string]interface{} `json:"tiers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddAppsRequest AddAppsRequest
@@ -372,7 +373,90 @@ func (o AddAppsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddAppsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"blueprintId",
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddAppsRequest := _AddAppsRequest{}
+
+	err = json.Unmarshal(data, &varAddAppsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddAppsRequest(varAddAppsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "templateId")
+		delete(additionalProperties, "blueprintId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "group")
+		delete(additionalProperties, "defaultCloud")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "tiers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddAppsRequest struct {
+	value *AddAppsRequest
+	isSet bool
+}
+
+func (v NullableAddAppsRequest) Get() *AddAppsRequest {
+	return v.value
+}
+
+func (v *NullableAddAppsRequest) Set(val *AddAppsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddAppsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddAppsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddAppsRequest(val *AddAppsRequest) *NullableAddAppsRequest {
+	return &NullableAddAppsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddAppsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddAppsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

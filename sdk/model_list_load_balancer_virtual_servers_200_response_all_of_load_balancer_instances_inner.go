@@ -62,7 +62,7 @@ type ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner st
 	ExternalPortId       NullableString                                                                 `json:"externalPortId,omitempty"`
 	Status               *string                                                                        `json:"status,omitempty"`
 	VipStatus            *string                                                                        `json:"vipStatus,omitempty"`
-	AdditionalProperties map[string]interface{}                                                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
@@ -1779,7 +1779,100 @@ func (o ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
 	return toSerialize, nil
 }
 func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner := _ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner(varListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "loadBalancer")
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "sticky")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "externalAddress")
+		delete(additionalProperties, "backendPort")
+		delete(additionalProperties, "vipType")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipScheme")
+		delete(additionalProperties, "vipMode")
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipSticky")
+		delete(additionalProperties, "vipBalance")
+		delete(additionalProperties, "servicePort")
+		delete(additionalProperties, "sourceAddress")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslMode")
+		delete(additionalProperties, "sslRedirectMode")
+		delete(additionalProperties, "vipShared")
+		delete(additionalProperties, "vipDirectAddress")
+		delete(additionalProperties, "serverName")
+		delete(additionalProperties, "poolName")
+		delete(additionalProperties, "removing")
+		delete(additionalProperties, "vipSource")
+		delete(additionalProperties, "extraConfig")
+		delete(additionalProperties, "serviceAccess")
+		delete(additionalProperties, "networkId")
+		delete(additionalProperties, "subnetId")
+		delete(additionalProperties, "externalPortId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "vipStatus")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner struct {
+	value *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner
+	isSet bool
+}
+
+func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Get() *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner {
+	return v.value
+}
+
+func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Set(val *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner(val *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner {
+	return &NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner{value: val, isSet: true}
+}
+
+func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

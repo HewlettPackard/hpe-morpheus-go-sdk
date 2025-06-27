@@ -20,10 +20,10 @@ var _ MappedNullable = &ListCredentials200ResponseAllOfCredentialsInnerUser{}
 
 // ListCredentials200ResponseAllOfCredentialsInnerUser struct for ListCredentials200ResponseAllOfCredentialsInnerUser
 type ListCredentials200ResponseAllOfCredentialsInnerUser struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Username             *string                `json:"username,omitempty"`
-	DisplayName          *string                `json:"displayName,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Username             *string `json:"username,omitempty"`
+	DisplayName          *string `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCredentials200ResponseAllOfCredentialsInnerUser ListCredentials200ResponseAllOfCredentialsInnerUser
@@ -168,7 +168,62 @@ func (o ListCredentials200ResponseAllOfCredentialsInnerUser) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListCredentials200ResponseAllOfCredentialsInnerUser) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCredentials200ResponseAllOfCredentialsInnerUser := _ListCredentials200ResponseAllOfCredentialsInnerUser{}
+
+	err = json.Unmarshal(data, &varListCredentials200ResponseAllOfCredentialsInnerUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCredentials200ResponseAllOfCredentialsInnerUser(varListCredentials200ResponseAllOfCredentialsInnerUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "displayName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCredentials200ResponseAllOfCredentialsInnerUser struct {
+	value *ListCredentials200ResponseAllOfCredentialsInnerUser
+	isSet bool
+}
+
+func (v NullableListCredentials200ResponseAllOfCredentialsInnerUser) Get() *ListCredentials200ResponseAllOfCredentialsInnerUser {
+	return v.value
+}
+
+func (v *NullableListCredentials200ResponseAllOfCredentialsInnerUser) Set(val *ListCredentials200ResponseAllOfCredentialsInnerUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCredentials200ResponseAllOfCredentialsInnerUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCredentials200ResponseAllOfCredentialsInnerUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCredentials200ResponseAllOfCredentialsInnerUser(val *ListCredentials200ResponseAllOfCredentialsInnerUser) *NullableListCredentials200ResponseAllOfCredentialsInnerUser {
+	return &NullableListCredentials200ResponseAllOfCredentialsInnerUser{value: val, isSet: true}
+}
+
+func (v NullableListCredentials200ResponseAllOfCredentialsInnerUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCredentials200ResponseAllOfCredentialsInnerUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

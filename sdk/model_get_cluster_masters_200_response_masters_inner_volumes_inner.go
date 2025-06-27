@@ -20,22 +20,22 @@ var _ MappedNullable = &GetClusterMasters200ResponseMastersInnerVolumesInner{}
 
 // GetClusterMasters200ResponseMastersInnerVolumesInner struct for GetClusterMasters200ResponseMastersInnerVolumesInner
 type GetClusterMasters200ResponseMastersInnerVolumesInner struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	ControllerId         NullableString         `json:"controllerId,omitempty"`
-	ControllerMountPoint NullableString         `json:"controllerMountPoint,omitempty"`
-	Resizeable           *bool                  `json:"resizeable,omitempty"`
-	PlanResizable        *bool                  `json:"planResizable,omitempty"`
-	RootVolume           *bool                  `json:"rootVolume,omitempty"`
-	UnitNumber           NullableString         `json:"unitNumber,omitempty"`
-	TypeId               *int64                 `json:"typeId,omitempty"`
-	ConfigurableIOPS     *bool                  `json:"configurableIOPS,omitempty"`
-	DatastoreId          NullableString         `json:"datastoreId,omitempty"`
-	MaxStorage           *int64                 `json:"maxStorage,omitempty"`
-	DisplayOrder         *int64                 `json:"displayOrder,omitempty"`
-	MaxIOPS              NullableString         `json:"maxIOPS,omitempty"`
-	Uuid                 *string                `json:"uuid,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	ControllerId         NullableString `json:"controllerId,omitempty"`
+	ControllerMountPoint NullableString `json:"controllerMountPoint,omitempty"`
+	Resizeable           *bool          `json:"resizeable,omitempty"`
+	PlanResizable        *bool          `json:"planResizable,omitempty"`
+	RootVolume           *bool          `json:"rootVolume,omitempty"`
+	UnitNumber           NullableString `json:"unitNumber,omitempty"`
+	TypeId               *int64         `json:"typeId,omitempty"`
+	ConfigurableIOPS     *bool          `json:"configurableIOPS,omitempty"`
+	DatastoreId          NullableString `json:"datastoreId,omitempty"`
+	MaxStorage           *int64         `json:"maxStorage,omitempty"`
+	DisplayOrder         *int64         `json:"displayOrder,omitempty"`
+	MaxIOPS              NullableString `json:"maxIOPS,omitempty"`
+	Uuid                 *string        `json:"uuid,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetClusterMasters200ResponseMastersInnerVolumesInner GetClusterMasters200ResponseMastersInnerVolumesInner
@@ -655,7 +655,74 @@ func (o GetClusterMasters200ResponseMastersInnerVolumesInner) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetClusterMasters200ResponseMastersInnerVolumesInner := _GetClusterMasters200ResponseMastersInnerVolumesInner{}
+
+	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetClusterMasters200ResponseMastersInnerVolumesInner(varGetClusterMasters200ResponseMastersInnerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "controllerId")
+		delete(additionalProperties, "controllerMountPoint")
+		delete(additionalProperties, "resizeable")
+		delete(additionalProperties, "planResizable")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "unitNumber")
+		delete(additionalProperties, "typeId")
+		delete(additionalProperties, "configurableIOPS")
+		delete(additionalProperties, "datastoreId")
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "maxIOPS")
+		delete(additionalProperties, "uuid")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetClusterMasters200ResponseMastersInnerVolumesInner struct {
+	value *GetClusterMasters200ResponseMastersInnerVolumesInner
+	isSet bool
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerVolumesInner) Get() *GetClusterMasters200ResponseMastersInnerVolumesInner {
+	return v.value
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerVolumesInner) Set(val *GetClusterMasters200ResponseMastersInnerVolumesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerVolumesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerVolumesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterMasters200ResponseMastersInnerVolumesInner(val *GetClusterMasters200ResponseMastersInnerVolumesInner) *NullableGetClusterMasters200ResponseMastersInnerVolumesInner {
+	return &NullableGetClusterMasters200ResponseMastersInnerVolumesInner{value: val, isSet: true}
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerVolumesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerVolumesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

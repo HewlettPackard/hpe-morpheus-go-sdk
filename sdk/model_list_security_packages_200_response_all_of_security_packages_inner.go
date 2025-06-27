@@ -32,7 +32,7 @@ type ListSecurityPackages200ResponseAllOfSecurityPackagesInner struct {
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	Config               map[string]interface{}                                      `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListSecurityPackages200ResponseAllOfSecurityPackagesInner ListSecurityPackages200ResponseAllOfSecurityPackagesInner
@@ -458,7 +458,70 @@ func (o ListSecurityPackages200ResponseAllOfSecurityPackagesInner) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListSecurityPackages200ResponseAllOfSecurityPackagesInner := _ListSecurityPackages200ResponseAllOfSecurityPackagesInner{}
+
+	err = json.Unmarshal(data, &varListSecurityPackages200ResponseAllOfSecurityPackagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListSecurityPackages200ResponseAllOfSecurityPackagesInner(varListSecurityPackages200ResponseAllOfSecurityPackagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner struct {
+	value *ListSecurityPackages200ResponseAllOfSecurityPackagesInner
+	isSet bool
+}
+
+func (v NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) Get() *ListSecurityPackages200ResponseAllOfSecurityPackagesInner {
+	return v.value
+}
+
+func (v *NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) Set(val *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListSecurityPackages200ResponseAllOfSecurityPackagesInner(val *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) *NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner {
+	return &NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner{value: val, isSet: true}
+}
+
+func (v NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

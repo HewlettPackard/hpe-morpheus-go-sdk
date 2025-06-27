@@ -22,7 +22,7 @@ var _ MappedNullable = &CreateSubnetRequest{}
 type CreateSubnetRequest struct {
 	Subnet               *CreateSubnetRequestSubnet             `json:"subnet,omitempty"`
 	ResourcePermission   *CreateSubnetRequestResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateSubnetRequest CreateSubnetRequest
@@ -132,7 +132,61 @@ func (o CreateSubnetRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateSubnetRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateSubnetRequest := _CreateSubnetRequest{}
+
+	err = json.Unmarshal(data, &varCreateSubnetRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateSubnetRequest(varCreateSubnetRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "subnet")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateSubnetRequest struct {
+	value *CreateSubnetRequest
+	isSet bool
+}
+
+func (v NullableCreateSubnetRequest) Get() *CreateSubnetRequest {
+	return v.value
+}
+
+func (v *NullableCreateSubnetRequest) Set(val *CreateSubnetRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateSubnetRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateSubnetRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateSubnetRequest(val *CreateSubnetRequest) *NullableCreateSubnetRequest {
+	return &NullableCreateSubnetRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateSubnetRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateSubnetRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

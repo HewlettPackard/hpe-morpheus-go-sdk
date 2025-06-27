@@ -32,8 +32,8 @@ type GetOsTypeImage200ResponseOsType struct {
 	// The zone type of the osTypeImage.
 	ComputeZoneType NullableInt64 `json:"computeZoneType,omitempty"`
 	// The cloud that is attached to osTypeImage.
-	Zone                 NullableInt64          `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Zone                 NullableInt64 `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetOsTypeImage200ResponseOsType GetOsTypeImage200ResponseOsType
@@ -362,7 +362,66 @@ func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *GetOsTypeImage200ResponseOsType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetOsTypeImage200ResponseOsType := _GetOsTypeImage200ResponseOsType{}
+
+	err = json.Unmarshal(data, &varGetOsTypeImage200ResponseOsType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetOsTypeImage200ResponseOsType(varGetOsTypeImage200ResponseOsType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "virtualImageName")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "provisionType")
+		delete(additionalProperties, "computeZoneType")
+		delete(additionalProperties, "zone")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetOsTypeImage200ResponseOsType struct {
+	value *GetOsTypeImage200ResponseOsType
+	isSet bool
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) Get() *GetOsTypeImage200ResponseOsType {
+	return v.value
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) Set(val *GetOsTypeImage200ResponseOsType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetOsTypeImage200ResponseOsType(val *GetOsTypeImage200ResponseOsType) *NullableGetOsTypeImage200ResponseOsType {
+	return &NullableGetOsTypeImage200ResponseOsType{value: val, isSet: true}
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

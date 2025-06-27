@@ -21,7 +21,7 @@ var _ MappedNullable = &ServerBaremetalCreate{}
 // ServerBaremetalCreate struct for ServerBaremetalCreate
 type ServerBaremetalCreate struct {
 	Server               *AddBaremetalHostRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ServerBaremetalCreate ServerBaremetalCreate
@@ -96,7 +96,60 @@ func (o ServerBaremetalCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ServerBaremetalCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varServerBaremetalCreate := _ServerBaremetalCreate{}
+
+	err = json.Unmarshal(data, &varServerBaremetalCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ServerBaremetalCreate(varServerBaremetalCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "server")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableServerBaremetalCreate struct {
+	value *ServerBaremetalCreate
+	isSet bool
+}
+
+func (v NullableServerBaremetalCreate) Get() *ServerBaremetalCreate {
+	return v.value
+}
+
+func (v *NullableServerBaremetalCreate) Set(val *ServerBaremetalCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServerBaremetalCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServerBaremetalCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServerBaremetalCreate(val *ServerBaremetalCreate) *NullableServerBaremetalCreate {
+	return &NullableServerBaremetalCreate{value: val, isSet: true}
+}
+
+func (v NullableServerBaremetalCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServerBaremetalCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

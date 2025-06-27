@@ -51,7 +51,7 @@ type UpdateNodeTypeRequestContainerType struct {
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.
 	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateNodeTypeRequestContainerType UpdateNodeTypeRequestContainerType
@@ -651,7 +651,75 @@ func (o UpdateNodeTypeRequestContainerType) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *UpdateNodeTypeRequestContainerType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateNodeTypeRequestContainerType := _UpdateNodeTypeRequestContainerType{}
+
+	err = json.Unmarshal(data, &varUpdateNodeTypeRequestContainerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNodeTypeRequestContainerType(varUpdateNodeTypeRequestContainerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "shortName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "containerVersion")
+		delete(additionalProperties, "provisionTypeCode")
+		delete(additionalProperties, "scripts")
+		delete(additionalProperties, "templates")
+		delete(additionalProperties, "virtualImageId")
+		delete(additionalProperties, "osTypeId")
+		delete(additionalProperties, "statTypeCode")
+		delete(additionalProperties, "logTypeCode")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "containerPorts")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateNodeTypeRequestContainerType struct {
+	value *UpdateNodeTypeRequestContainerType
+	isSet bool
+}
+
+func (v NullableUpdateNodeTypeRequestContainerType) Get() *UpdateNodeTypeRequestContainerType {
+	return v.value
+}
+
+func (v *NullableUpdateNodeTypeRequestContainerType) Set(val *UpdateNodeTypeRequestContainerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNodeTypeRequestContainerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNodeTypeRequestContainerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNodeTypeRequestContainerType(val *UpdateNodeTypeRequestContainerType) *NullableUpdateNodeTypeRequestContainerType {
+	return &NullableUpdateNodeTypeRequestContainerType{value: val, isSet: true}
+}
+
+func (v NullableUpdateNodeTypeRequestContainerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNodeTypeRequestContainerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -28,7 +28,7 @@ type GetStateInstance200ResponseAllOfInstance struct {
 	PlanData             *string                                        `json:"planData,omitempty"`
 	Input                *GetStateInstance200ResponseAllOfInstanceInput `json:"input,omitempty"`
 	Output               *GetAppState200ResponseAllOfOutput             `json:"output,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetStateInstance200ResponseAllOfInstance GetStateInstance200ResponseAllOfInstance
@@ -348,7 +348,67 @@ func (o GetStateInstance200ResponseAllOfInstance) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *GetStateInstance200ResponseAllOfInstance) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetStateInstance200ResponseAllOfInstance := _GetStateInstance200ResponseAllOfInstance{}
+
+	err = json.Unmarshal(data, &varGetStateInstance200ResponseAllOfInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetStateInstance200ResponseAllOfInstance(varGetStateInstance200ResponseAllOfInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "workloads")
+		delete(additionalProperties, "iacDrift")
+		delete(additionalProperties, "planResources")
+		delete(additionalProperties, "specs")
+		delete(additionalProperties, "stateData")
+		delete(additionalProperties, "planData")
+		delete(additionalProperties, "input")
+		delete(additionalProperties, "output")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetStateInstance200ResponseAllOfInstance struct {
+	value *GetStateInstance200ResponseAllOfInstance
+	isSet bool
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) Get() *GetStateInstance200ResponseAllOfInstance {
+	return v.value
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) Set(val *GetStateInstance200ResponseAllOfInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetStateInstance200ResponseAllOfInstance(val *GetStateInstance200ResponseAllOfInstance) *NullableGetStateInstance200ResponseAllOfInstance {
+	return &NullableGetStateInstance200ResponseAllOfInstance{value: val, isSet: true}
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -61,7 +61,7 @@ type OptionType struct {
 	ShowOnCreate          NullableBool                                       `json:"showOnCreate,omitempty"`
 	ShowOnEdit            NullableBool                                       `json:"showOnEdit,omitempty"`
 	LocalCredential       NullableBool                                       `json:"localCredential,omitempty"`
-	AdditionalProperties  map[string]interface{}                             `json:",remain"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _OptionType OptionType
@@ -1791,7 +1791,100 @@ func (o OptionType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OptionType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varOptionType := _OptionType{}
+
+	err = json.Unmarshal(data, &varOptionType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = OptionType(varOptionType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "fieldName")
+		delete(additionalProperties, "fieldLabel")
+		delete(additionalProperties, "fieldCode")
+		delete(additionalProperties, "fieldContext")
+		delete(additionalProperties, "fieldGroup")
+		delete(additionalProperties, "fieldClass")
+		delete(additionalProperties, "fieldAddOn")
+		delete(additionalProperties, "fieldComponent")
+		delete(additionalProperties, "fieldInput")
+		delete(additionalProperties, "placeHolder")
+		delete(additionalProperties, "verifyPattern")
+		delete(additionalProperties, "helpBlock")
+		delete(additionalProperties, "helpBlockFieldCode")
+		delete(additionalProperties, "defaultValue")
+		delete(additionalProperties, "optionSource")
+		delete(additionalProperties, "optionSourceType")
+		delete(additionalProperties, "optionList")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "advanced")
+		delete(additionalProperties, "required")
+		delete(additionalProperties, "exportMeta")
+		delete(additionalProperties, "editable")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "displayOrder")
+		delete(additionalProperties, "wrapperClass")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "noBlank")
+		delete(additionalProperties, "dependsOnCode")
+		delete(additionalProperties, "visibleOnCode")
+		delete(additionalProperties, "requireOnCode")
+		delete(additionalProperties, "contextualDefault")
+		delete(additionalProperties, "displayValueOnDetails")
+		delete(additionalProperties, "showOnCreate")
+		delete(additionalProperties, "showOnEdit")
+		delete(additionalProperties, "localCredential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableOptionType struct {
+	value *OptionType
+	isSet bool
+}
+
+func (v NullableOptionType) Get() *OptionType {
+	return v.value
+}
+
+func (v *NullableOptionType) Set(val *OptionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionType(val *OptionType) *NullableOptionType {
+	return &NullableOptionType{value: val, isSet: true}
+}
+
+func (v NullableOptionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

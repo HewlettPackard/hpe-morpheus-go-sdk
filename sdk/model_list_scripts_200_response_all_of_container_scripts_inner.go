@@ -20,24 +20,24 @@ var _ MappedNullable = &ListScripts200ResponseAllOfContainerScriptsInner{}
 
 // ListScripts200ResponseAllOfContainerScriptsInner struct for ListScripts200ResponseAllOfContainerScriptsInner
 type ListScripts200ResponseAllOfContainerScriptsInner struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Account              NullableString         `json:"account,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Labels               []string               `json:"labels,omitempty"`
-	Category             NullableString         `json:"category,omitempty"`
-	SortOrder            *int64                 `json:"sortOrder,omitempty"`
-	ScriptVersion        *string                `json:"scriptVersion,omitempty"`
-	ScriptPhase          *string                `json:"scriptPhase,omitempty"`
-	ScriptType           *string                `json:"scriptType,omitempty"`
-	Script               *string                `json:"script,omitempty"`
-	ScriptService        NullableString         `json:"scriptService,omitempty"`
-	ScriptMethod         NullableString         `json:"scriptMethod,omitempty"`
-	RunAsUser            NullableString         `json:"runAsUser,omitempty"`
-	RunAsPassword        NullableString         `json:"runAsPassword,omitempty"`
-	SudoUser             *bool                  `json:"sudoUser,omitempty"`
-	FailOnError          *bool                  `json:"failOnError,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	Code                 *string        `json:"code,omitempty"`
+	Account              NullableString `json:"account,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	Labels               []string       `json:"labels,omitempty"`
+	Category             NullableString `json:"category,omitempty"`
+	SortOrder            *int64         `json:"sortOrder,omitempty"`
+	ScriptVersion        *string        `json:"scriptVersion,omitempty"`
+	ScriptPhase          *string        `json:"scriptPhase,omitempty"`
+	ScriptType           *string        `json:"scriptType,omitempty"`
+	Script               *string        `json:"script,omitempty"`
+	ScriptService        NullableString `json:"scriptService,omitempty"`
+	ScriptMethod         NullableString `json:"scriptMethod,omitempty"`
+	RunAsUser            NullableString `json:"runAsUser,omitempty"`
+	RunAsPassword        NullableString `json:"runAsPassword,omitempty"`
+	SudoUser             *bool          `json:"sudoUser,omitempty"`
+	FailOnError          *bool          `json:"failOnError,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListScripts200ResponseAllOfContainerScriptsInner ListScripts200ResponseAllOfContainerScriptsInner
@@ -739,7 +739,76 @@ func (o ListScripts200ResponseAllOfContainerScriptsInner) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListScripts200ResponseAllOfContainerScriptsInner := _ListScripts200ResponseAllOfContainerScriptsInner{}
+
+	err = json.Unmarshal(data, &varListScripts200ResponseAllOfContainerScriptsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListScripts200ResponseAllOfContainerScriptsInner(varListScripts200ResponseAllOfContainerScriptsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "sortOrder")
+		delete(additionalProperties, "scriptVersion")
+		delete(additionalProperties, "scriptPhase")
+		delete(additionalProperties, "scriptType")
+		delete(additionalProperties, "script")
+		delete(additionalProperties, "scriptService")
+		delete(additionalProperties, "scriptMethod")
+		delete(additionalProperties, "runAsUser")
+		delete(additionalProperties, "runAsPassword")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "failOnError")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListScripts200ResponseAllOfContainerScriptsInner struct {
+	value *ListScripts200ResponseAllOfContainerScriptsInner
+	isSet bool
+}
+
+func (v NullableListScripts200ResponseAllOfContainerScriptsInner) Get() *ListScripts200ResponseAllOfContainerScriptsInner {
+	return v.value
+}
+
+func (v *NullableListScripts200ResponseAllOfContainerScriptsInner) Set(val *ListScripts200ResponseAllOfContainerScriptsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListScripts200ResponseAllOfContainerScriptsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListScripts200ResponseAllOfContainerScriptsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListScripts200ResponseAllOfContainerScriptsInner(val *ListScripts200ResponseAllOfContainerScriptsInner) *NullableListScripts200ResponseAllOfContainerScriptsInner {
+	return &NullableListScripts200ResponseAllOfContainerScriptsInner{value: val, isSet: true}
+}
+
+func (v NullableListScripts200ResponseAllOfContainerScriptsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListScripts200ResponseAllOfContainerScriptsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

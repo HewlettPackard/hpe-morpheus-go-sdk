@@ -25,7 +25,7 @@ type AddCypherKey200Response struct {
 	LeaseDuration        NullableInt64                               `json:"lease_duration,omitempty"`
 	Cypher               *ListCypherKeys200ResponseAllOfCyphersInner `json:"cypher,omitempty"`
 	Success              *bool                                       `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCypherKey200Response AddCypherKey200Response
@@ -251,7 +251,64 @@ func (o AddCypherKey200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCypherKey200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCypherKey200Response := _AddCypherKey200Response{}
+
+	err = json.Unmarshal(data, &varAddCypherKey200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCypherKey200Response(varAddCypherKey200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "lease_duration")
+		delete(additionalProperties, "cypher")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCypherKey200Response struct {
+	value *AddCypherKey200Response
+	isSet bool
+}
+
+func (v NullableAddCypherKey200Response) Get() *AddCypherKey200Response {
+	return v.value
+}
+
+func (v *NullableAddCypherKey200Response) Set(val *AddCypherKey200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCypherKey200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCypherKey200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCypherKey200Response(val *AddCypherKey200Response) *NullableAddCypherKey200Response {
+	return &NullableAddCypherKey200Response{value: val, isSet: true}
+}
+
+func (v NullableAddCypherKey200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCypherKey200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

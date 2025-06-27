@@ -27,30 +27,6 @@ type CreateNetworkPoolServerRequestNetworkPoolServer struct {
 	SolarWindsNetworkPoolServer *SolarWindsNetworkPoolServer
 }
 
-func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &CreateNetworkPoolServerRequestNetworkPoolServer{}
-	}
-
-	if out, ok := data.(BluecatNetworkPoolServer); ok {
-		dst.BluecatNetworkPoolServer = &out
-	}
-
-	if out, ok := data.(InfobloxNetworkPoolServer); ok {
-		dst.InfobloxNetworkPoolServer = &out
-	}
-
-	if out, ok := data.(PhpIPAMNetworkPoolServer); ok {
-		dst.PhpIPAMNetworkPoolServer = &out
-	}
-
-	if out, ok := data.(SolarWindsNetworkPoolServer); ok {
-		dst.SolarWindsNetworkPoolServer = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data []byte) error {
 	var err error

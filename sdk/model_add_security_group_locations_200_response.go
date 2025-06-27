@@ -22,7 +22,7 @@ var _ MappedNullable = &AddSecurityGroupLocations200Response{}
 type AddSecurityGroupLocations200Response struct {
 	SecurityGroupLocation *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner `json:"securityGroupLocation,omitempty"`
 	Success               *bool                                                                `json:"success,omitempty"`
-	AdditionalProperties  map[string]interface{}                                               `json:",remain"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _AddSecurityGroupLocations200Response AddSecurityGroupLocations200Response
@@ -132,7 +132,61 @@ func (o AddSecurityGroupLocations200Response) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *AddSecurityGroupLocations200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddSecurityGroupLocations200Response := _AddSecurityGroupLocations200Response{}
+
+	err = json.Unmarshal(data, &varAddSecurityGroupLocations200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityGroupLocations200Response(varAddSecurityGroupLocations200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityGroupLocation")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddSecurityGroupLocations200Response struct {
+	value *AddSecurityGroupLocations200Response
+	isSet bool
+}
+
+func (v NullableAddSecurityGroupLocations200Response) Get() *AddSecurityGroupLocations200Response {
+	return v.value
+}
+
+func (v *NullableAddSecurityGroupLocations200Response) Set(val *AddSecurityGroupLocations200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityGroupLocations200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityGroupLocations200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityGroupLocations200Response(val *AddSecurityGroupLocations200Response) *NullableAddSecurityGroupLocations200Response {
+	return &NullableAddSecurityGroupLocations200Response{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityGroupLocations200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityGroupLocations200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

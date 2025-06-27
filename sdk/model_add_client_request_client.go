@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddClientRequestClient type satisfies the MappedNullable interface at compile time
@@ -29,8 +30,8 @@ type AddClientRequestClient struct {
 	// Length of time refreshToken is valid in seconds.
 	RefreshTokenValiditySeconds NullableInt32 `json:"refreshTokenValiditySeconds"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
-	RedirectUris         []string               `json:"redirectUris,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	RedirectUris         []string `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClientRequestClient AddClientRequestClient
@@ -222,7 +223,87 @@ func (o AddClientRequestClient) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClientRequestClient) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"clientId",
+		"accessTokenValiditySeconds",
+		"refreshTokenValiditySeconds",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddClientRequestClient := _AddClientRequestClient{}
+
+	err = json.Unmarshal(data, &varAddClientRequestClient)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClientRequestClient(varAddClientRequestClient)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "accessTokenValiditySeconds")
+		delete(additionalProperties, "refreshTokenValiditySeconds")
+		delete(additionalProperties, "redirectUris")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClientRequestClient struct {
+	value *AddClientRequestClient
+	isSet bool
+}
+
+func (v NullableAddClientRequestClient) Get() *AddClientRequestClient {
+	return v.value
+}
+
+func (v *NullableAddClientRequestClient) Set(val *AddClientRequestClient) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClientRequestClient) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClientRequestClient) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClientRequestClient(val *AddClientRequestClient) *NullableAddClientRequestClient {
+	return &NullableAddClientRequestClient{value: val, isSet: true}
+}
+
+func (v NullableAddClientRequestClient) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClientRequestClient) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

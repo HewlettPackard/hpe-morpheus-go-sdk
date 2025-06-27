@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the SpecTemplateCreate type satisfies the MappedNullable interface at compile time
@@ -27,7 +28,7 @@ type SpecTemplateCreate struct {
 	Type                 AddSpecTemplateRequestSpecTemplateType    `json:"type"`
 	File                 AddSpecTemplateRequestSpecTemplateFile    `json:"file"`
 	Config               *AddSpecTemplateRequestSpecTemplateConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SpecTemplateCreate SpecTemplateCreate
@@ -216,7 +217,87 @@ func (o SpecTemplateCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SpecTemplateCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"file",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSpecTemplateCreate := _SpecTemplateCreate{}
+
+	err = json.Unmarshal(data, &varSpecTemplateCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SpecTemplateCreate(varSpecTemplateCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSpecTemplateCreate struct {
+	value *SpecTemplateCreate
+	isSet bool
+}
+
+func (v NullableSpecTemplateCreate) Get() *SpecTemplateCreate {
+	return v.value
+}
+
+func (v *NullableSpecTemplateCreate) Set(val *SpecTemplateCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSpecTemplateCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSpecTemplateCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSpecTemplateCreate(val *SpecTemplateCreate) *NullableSpecTemplateCreate {
+	return &NullableSpecTemplateCreate{value: val, isSet: true}
+}
+
+func (v NullableSpecTemplateCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSpecTemplateCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

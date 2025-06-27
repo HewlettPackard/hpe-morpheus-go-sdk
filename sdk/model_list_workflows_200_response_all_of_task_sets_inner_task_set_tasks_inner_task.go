@@ -37,7 +37,7 @@ type ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask struct {
 	AllowCustomConfig    *bool                                                                       `json:"allowCustomConfig,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask
@@ -660,7 +660,75 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) ToMap()
 	return toSerialize, nil
 }
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask := _ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask{}
+
+	err = json.Unmarshal(data, &varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask(varListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "file")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask struct {
+	value *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask
+	isSet bool
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) Get() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask {
+	return v.value
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) Set(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask {
+	return &NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask{value: val, isSet: true}
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTask) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

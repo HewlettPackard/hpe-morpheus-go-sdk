@@ -25,22 +25,6 @@ type ListClouds200ResponseAllOfZonesInnerCredential struct {
 	ListClouds200ResponseAllOfZonesInnerCredentialAnyOf *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
 }
 
-func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &ListClouds200ResponseAllOfZonesInnerCredential{}
-	}
-
-	if out, ok := data.(ListApps200ResponseAllOfAppsInnerBlueprint); ok {
-		dst.ListApps200ResponseAllOfAppsInnerBlueprint = &out
-	}
-
-	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerCredentialAnyOf); ok {
-		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(data []byte) error {
 	var err error

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateRoleVDIPoolAccessRequest type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type UpdateRoleVDIPoolAccessRequest struct {
 	// `id` of the VDI Pool
 	VdiPoolId int32 `json:"vdiPoolId"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleVDIPoolAccessRequest UpdateRoleVDIPoolAccessRequest
@@ -116,7 +117,83 @@ func (o UpdateRoleVDIPoolAccessRequest) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *UpdateRoleVDIPoolAccessRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"vdiPoolId",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateRoleVDIPoolAccessRequest := _UpdateRoleVDIPoolAccessRequest{}
+
+	err = json.Unmarshal(data, &varUpdateRoleVDIPoolAccessRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateRoleVDIPoolAccessRequest(varUpdateRoleVDIPoolAccessRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vdiPoolId")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateRoleVDIPoolAccessRequest struct {
+	value *UpdateRoleVDIPoolAccessRequest
+	isSet bool
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) Get() *UpdateRoleVDIPoolAccessRequest {
+	return v.value
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) Set(val *UpdateRoleVDIPoolAccessRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleVDIPoolAccessRequest(val *UpdateRoleVDIPoolAccessRequest) *NullableUpdateRoleVDIPoolAccessRequest {
+	return &NullableUpdateRoleVDIPoolAccessRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

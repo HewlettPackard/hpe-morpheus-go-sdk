@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateNetworkDomain200Response{}
 // CreateNetworkDomain200Response struct for CreateNetworkDomain200Response
 type CreateNetworkDomain200Response struct {
 	NetworkDomain        *CreateNetworkDomain200ResponseNetworkDomain `json:"networkDomain,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateNetworkDomain200Response CreateNetworkDomain200Response
@@ -96,7 +96,60 @@ func (o CreateNetworkDomain200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *CreateNetworkDomain200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateNetworkDomain200Response := _CreateNetworkDomain200Response{}
+
+	err = json.Unmarshal(data, &varCreateNetworkDomain200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateNetworkDomain200Response(varCreateNetworkDomain200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDomain")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateNetworkDomain200Response struct {
+	value *CreateNetworkDomain200Response
+	isSet bool
+}
+
+func (v NullableCreateNetworkDomain200Response) Get() *CreateNetworkDomain200Response {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDomain200Response) Set(val *CreateNetworkDomain200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDomain200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDomain200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDomain200Response(val *CreateNetworkDomain200Response) *NullableCreateNetworkDomain200Response {
+	return &NullableCreateNetworkDomain200Response{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDomain200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDomain200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the InstanceTypeCreate type satisfies the MappedNullable interface at compile time
@@ -47,8 +48,8 @@ type InstanceTypeCreate struct {
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
-	OptionTypes          []int64                `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	OptionTypes          []int64 `json:"optionTypes,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceTypeCreate InstanceTypeCreate
@@ -574,7 +575,94 @@ func (o InstanceTypeCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceTypeCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInstanceTypeCreate := _InstanceTypeCreate{}
+
+	err = json.Unmarshal(data, &varInstanceTypeCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceTypeCreate(varInstanceTypeCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "featured")
+		delete(additionalProperties, "hasSettings")
+		delete(additionalProperties, "hasAutoScale")
+		delete(additionalProperties, "hasDeployment")
+		delete(additionalProperties, "environmentPrefix")
+		delete(additionalProperties, "environmentVariables")
+		delete(additionalProperties, "priceSets")
+		delete(additionalProperties, "optionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableInstanceTypeCreate struct {
+	value *InstanceTypeCreate
+	isSet bool
+}
+
+func (v NullableInstanceTypeCreate) Get() *InstanceTypeCreate {
+	return v.value
+}
+
+func (v *NullableInstanceTypeCreate) Set(val *InstanceTypeCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceTypeCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceTypeCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceTypeCreate(val *InstanceTypeCreate) *NullableInstanceTypeCreate {
+	return &NullableInstanceTypeCreate{value: val, isSet: true}
+}
+
+func (v NullableInstanceTypeCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceTypeCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

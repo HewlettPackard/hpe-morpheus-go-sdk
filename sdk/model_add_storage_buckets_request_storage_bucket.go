@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddStorageBucketsRequestStorageBucket type satisfies the MappedNullable interface at compile time
@@ -43,7 +44,7 @@ type AddStorageBucketsRequestStorageBucket struct {
 	// Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
 	CreateBucket         *bool                                       `json:"createBucket,omitempty"`
 	Config               AddStorageBucketsRequestStorageBucketConfig `json:"config"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddStorageBucketsRequestStorageBucket AddStorageBucketsRequestStorageBucket
@@ -487,7 +488,95 @@ func (o AddStorageBucketsRequestStorageBucket) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *AddStorageBucketsRequestStorageBucket) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"providerType",
+		"bucketName",
+		"config",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddStorageBucketsRequestStorageBucket := _AddStorageBucketsRequestStorageBucket{}
+
+	err = json.Unmarshal(data, &varAddStorageBucketsRequestStorageBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddStorageBucketsRequestStorageBucket(varAddStorageBucketsRequestStorageBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "providerType")
+		delete(additionalProperties, "defaultBackupTarget")
+		delete(additionalProperties, "copyToStore")
+		delete(additionalProperties, "defaultDeploymentTarget")
+		delete(additionalProperties, "defaultVirtualImageTarget")
+		delete(additionalProperties, "retentionPolicyType")
+		delete(additionalProperties, "retentionPolicyDays")
+		delete(additionalProperties, "retentionProvider")
+		delete(additionalProperties, "bucketName")
+		delete(additionalProperties, "createBucket")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddStorageBucketsRequestStorageBucket struct {
+	value *AddStorageBucketsRequestStorageBucket
+	isSet bool
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucket) Get() *AddStorageBucketsRequestStorageBucket {
+	return v.value
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucket) Set(val *AddStorageBucketsRequestStorageBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageBucketsRequestStorageBucket(val *AddStorageBucketsRequestStorageBucket) *NullableAddStorageBucketsRequestStorageBucket {
+	return &NullableAddStorageBucketsRequestStorageBucket{value: val, isSet: true}
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

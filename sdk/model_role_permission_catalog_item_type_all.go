@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the RolePermissionCatalogItemTypeAll type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type RolePermissionCatalogItemTypeAll struct {
 	// Apply to all catalog item types
 	AllCatalogItemTypes bool `json:"allCatalogItemTypes"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionCatalogItemTypeAll RolePermissionCatalogItemTypeAll
@@ -116,7 +117,83 @@ func (o RolePermissionCatalogItemTypeAll) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *RolePermissionCatalogItemTypeAll) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"allCatalogItemTypes",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRolePermissionCatalogItemTypeAll := _RolePermissionCatalogItemTypeAll{}
+
+	err = json.Unmarshal(data, &varRolePermissionCatalogItemTypeAll)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RolePermissionCatalogItemTypeAll(varRolePermissionCatalogItemTypeAll)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allCatalogItemTypes")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableRolePermissionCatalogItemTypeAll struct {
+	value *RolePermissionCatalogItemTypeAll
+	isSet bool
+}
+
+func (v NullableRolePermissionCatalogItemTypeAll) Get() *RolePermissionCatalogItemTypeAll {
+	return v.value
+}
+
+func (v *NullableRolePermissionCatalogItemTypeAll) Set(val *RolePermissionCatalogItemTypeAll) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionCatalogItemTypeAll) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionCatalogItemTypeAll) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionCatalogItemTypeAll(val *RolePermissionCatalogItemTypeAll) *NullableRolePermissionCatalogItemTypeAll {
+	return &NullableRolePermissionCatalogItemTypeAll{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionCatalogItemTypeAll) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionCatalogItemTypeAll) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

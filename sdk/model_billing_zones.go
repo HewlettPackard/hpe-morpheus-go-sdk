@@ -26,7 +26,7 @@ type BillingZones struct {
 	StartDate            *time.Time                                                `json:"startDate,omitempty"`
 	EndDate              *time.Time                                                `json:"endDate,omitempty"`
 	Zones                []ListBillingAccount200ResponseAllOfBillingInfoZonesInner `json:"zones,omitempty"`
-	AdditionalProperties map[string]interface{}                                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BillingZones BillingZones
@@ -241,7 +241,64 @@ func (o BillingZones) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BillingZones) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBillingZones := _BillingZones{}
+
+	err = json.Unmarshal(data, &varBillingZones)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BillingZones(varBillingZones)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "zones")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBillingZones struct {
+	value *BillingZones
+	isSet bool
+}
+
+func (v NullableBillingZones) Get() *BillingZones {
+	return v.value
+}
+
+func (v *NullableBillingZones) Set(val *BillingZones) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBillingZones) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBillingZones) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBillingZones(val *BillingZones) *NullableBillingZones {
+	return &NullableBillingZones{value: val, isSet: true}
+}
+
+func (v NullableBillingZones) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBillingZones) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

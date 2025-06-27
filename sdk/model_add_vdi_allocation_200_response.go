@@ -22,7 +22,7 @@ var _ MappedNullable = &AddVdiAllocation200Response{}
 type AddVdiAllocation200Response struct {
 	Desktop              *ListVdi200ResponseAllOfDesktopsInner `json:"desktop,omitempty"`
 	Success              *bool                                 `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddVdiAllocation200Response AddVdiAllocation200Response
@@ -132,7 +132,61 @@ func (o AddVdiAllocation200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddVdiAllocation200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddVdiAllocation200Response := _AddVdiAllocation200Response{}
+
+	err = json.Unmarshal(data, &varAddVdiAllocation200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddVdiAllocation200Response(varAddVdiAllocation200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "desktop")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddVdiAllocation200Response struct {
+	value *AddVdiAllocation200Response
+	isSet bool
+}
+
+func (v NullableAddVdiAllocation200Response) Get() *AddVdiAllocation200Response {
+	return v.value
+}
+
+func (v *NullableAddVdiAllocation200Response) Set(val *AddVdiAllocation200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVdiAllocation200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVdiAllocation200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVdiAllocation200Response(val *AddVdiAllocation200Response) *NullableAddVdiAllocation200Response {
+	return &NullableAddVdiAllocation200Response{value: val, isSet: true}
+}
+
+func (v NullableAddVdiAllocation200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVdiAllocation200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -30,7 +30,7 @@ type ArchiveBucketCreate struct {
 	// Public URL - Set to true to allow anonymous access
 	IsPublic             *bool                                        `json:"isPublic,omitempty"`
 	Accounts             *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ArchiveBucketCreate ArchiveBucketCreate
@@ -288,7 +288,65 @@ func (o ArchiveBucketCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ArchiveBucketCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varArchiveBucketCreate := _ArchiveBucketCreate{}
+
+	err = json.Unmarshal(data, &varArchiveBucketCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ArchiveBucketCreate(varArchiveBucketCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "storageProvider")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableArchiveBucketCreate struct {
+	value *ArchiveBucketCreate
+	isSet bool
+}
+
+func (v NullableArchiveBucketCreate) Get() *ArchiveBucketCreate {
+	return v.value
+}
+
+func (v *NullableArchiveBucketCreate) Set(val *ArchiveBucketCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableArchiveBucketCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableArchiveBucketCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableArchiveBucketCreate(val *ArchiveBucketCreate) *NullableArchiveBucketCreate {
+	return &NullableArchiveBucketCreate{value: val, isSet: true}
+}
+
+func (v NullableArchiveBucketCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableArchiveBucketCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

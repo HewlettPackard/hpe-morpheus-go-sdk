@@ -35,7 +35,7 @@ type IntegrationRoute53 struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationRoute53 IntegrationRoute53
@@ -599,7 +599,73 @@ func (o IntegrationRoute53) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationRoute53) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationRoute53 := _IntegrationRoute53{}
+
+	err = json.Unmarshal(data, &varIntegrationRoute53)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationRoute53(varIntegrationRoute53)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationRoute53 struct {
+	value *IntegrationRoute53
+	isSet bool
+}
+
+func (v NullableIntegrationRoute53) Get() *IntegrationRoute53 {
+	return v.value
+}
+
+func (v *NullableIntegrationRoute53) Set(val *IntegrationRoute53) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationRoute53) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationRoute53) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationRoute53(val *IntegrationRoute53) *NullableIntegrationRoute53 {
+	return &NullableIntegrationRoute53{value: val, isSet: true}
+}
+
+func (v NullableIntegrationRoute53) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationRoute53) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

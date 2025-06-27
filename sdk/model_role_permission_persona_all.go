@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the RolePermissionPersonaAll type satisfies the MappedNullable interface at compile time
@@ -23,8 +24,8 @@ type RolePermissionPersonaAll struct {
 	// Apply to all personas
 	AllPersonas bool `json:"allPersonas"`
 	// The new access level.
-	Access               string                 `json:"access"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Access               string `json:"access"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _RolePermissionPersonaAll RolePermissionPersonaAll
@@ -116,7 +117,83 @@ func (o RolePermissionPersonaAll) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *RolePermissionPersonaAll) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"allPersonas",
+		"access",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varRolePermissionPersonaAll := _RolePermissionPersonaAll{}
+
+	err = json.Unmarshal(data, &varRolePermissionPersonaAll)
+
+	if err != nil {
+		return err
+	}
+
+	*o = RolePermissionPersonaAll(varRolePermissionPersonaAll)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "allPersonas")
+		delete(additionalProperties, "access")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableRolePermissionPersonaAll struct {
+	value *RolePermissionPersonaAll
+	isSet bool
+}
+
+func (v NullableRolePermissionPersonaAll) Get() *RolePermissionPersonaAll {
+	return v.value
+}
+
+func (v *NullableRolePermissionPersonaAll) Set(val *RolePermissionPersonaAll) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionPersonaAll) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionPersonaAll) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionPersonaAll(val *RolePermissionPersonaAll) *NullableRolePermissionPersonaAll {
+	return &NullableRolePermissionPersonaAll{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionPersonaAll) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionPersonaAll) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -36,7 +36,7 @@ type IntegrationGitRepo struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationGitRepo IntegrationGitRepo
@@ -645,7 +645,74 @@ func (o IntegrationGitRepo) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationGitRepo) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationGitRepo := _IntegrationGitRepo{}
+
+	err = json.Unmarshal(data, &varIntegrationGitRepo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationGitRepo(varIntegrationGitRepo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "serviceKey")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationGitRepo struct {
+	value *IntegrationGitRepo
+	isSet bool
+}
+
+func (v NullableIntegrationGitRepo) Get() *IntegrationGitRepo {
+	return v.value
+}
+
+func (v *NullableIntegrationGitRepo) Set(val *IntegrationGitRepo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationGitRepo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationGitRepo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationGitRepo(val *IntegrationGitRepo) *NullableIntegrationGitRepo {
+	return &NullableIntegrationGitRepo{value: val, isSet: true}
+}
+
+func (v NullableIntegrationGitRepo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationGitRepo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

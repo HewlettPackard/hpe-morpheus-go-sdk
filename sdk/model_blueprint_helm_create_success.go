@@ -35,7 +35,7 @@ type BlueprintHelmCreateSuccess struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant               map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintHelmCreateSuccess BlueprintHelmCreateSuccess
@@ -359,7 +359,67 @@ func (o BlueprintHelmCreateSuccess) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BlueprintHelmCreateSuccess) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBlueprintHelmCreateSuccess := _BlueprintHelmCreateSuccess{}
+
+	err = json.Unmarshal(data, &varBlueprintHelmCreateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintHelmCreateSuccess(varBlueprintHelmCreateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "helm")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenant")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBlueprintHelmCreateSuccess struct {
+	value *BlueprintHelmCreateSuccess
+	isSet bool
+}
+
+func (v NullableBlueprintHelmCreateSuccess) Get() *BlueprintHelmCreateSuccess {
+	return v.value
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) Set(val *BlueprintHelmCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintHelmCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintHelmCreateSuccess(val *BlueprintHelmCreateSuccess) *NullableBlueprintHelmCreateSuccess {
+	return &NullableBlueprintHelmCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableBlueprintHelmCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

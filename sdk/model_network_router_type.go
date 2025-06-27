@@ -36,7 +36,7 @@ type NetworkRouterType struct {
 	RuleGroupOptionTypes []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"ruleGroupOptionTypes,omitempty"`
 	NatOptionTypes       []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"natOptionTypes,omitempty"`
 	BgpOptionTypes       []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"bgpOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkRouterType NetworkRouterType
@@ -636,7 +636,75 @@ func (o NetworkRouterType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkRouterType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkRouterType := _NetworkRouterType{}
+
+	err = json.Unmarshal(data, &varNetworkRouterType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkRouterType(varNetworkRouterType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		delete(additionalProperties, "ruleGroupOptionTypes")
+		delete(additionalProperties, "natOptionTypes")
+		delete(additionalProperties, "bgpOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkRouterType struct {
+	value *NetworkRouterType
+	isSet bool
+}
+
+func (v NullableNetworkRouterType) Get() *NetworkRouterType {
+	return v.value
+}
+
+func (v *NullableNetworkRouterType) Set(val *NetworkRouterType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterType(val *NetworkRouterType) *NullableNetworkRouterType {
+	return &NullableNetworkRouterType{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

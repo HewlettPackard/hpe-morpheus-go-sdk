@@ -31,8 +31,8 @@ type UpdateProvisioningLicenseRequestLicense struct {
 	// Virtual Images - Array of Virtual Image IDs to associate with license.
 	VirtualImages []int64 `json:"virtualImages,omitempty"`
 	// Tenants - Array of tenants that are allowed to use the key.
-	Tenants              []int64                `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Tenants              []int64 `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateProvisioningLicenseRequestLicense UpdateProvisioningLicenseRequestLicense
@@ -286,7 +286,65 @@ func (o UpdateProvisioningLicenseRequestLicense) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *UpdateProvisioningLicenseRequestLicense) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateProvisioningLicenseRequestLicense := _UpdateProvisioningLicenseRequestLicense{}
+
+	err = json.Unmarshal(data, &varUpdateProvisioningLicenseRequestLicense)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateProvisioningLicenseRequestLicense(varUpdateProvisioningLicenseRequestLicense)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "licenseVersion")
+		delete(additionalProperties, "copies")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateProvisioningLicenseRequestLicense struct {
+	value *UpdateProvisioningLicenseRequestLicense
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningLicenseRequestLicense) Get() *UpdateProvisioningLicenseRequestLicense {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningLicenseRequestLicense) Set(val *UpdateProvisioningLicenseRequestLicense) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningLicenseRequestLicense) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningLicenseRequestLicense) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningLicenseRequestLicense(val *UpdateProvisioningLicenseRequestLicense) *NullableUpdateProvisioningLicenseRequestLicense {
+	return &NullableUpdateProvisioningLicenseRequestLicense{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningLicenseRequestLicense) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningLicenseRequestLicense) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

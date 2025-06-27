@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 	"time"
 )
 
@@ -44,8 +45,8 @@ type WorkflowJobPayload struct {
 	// Date and Time to execute the job. Use UTC time in the format 2020-02-15T05:00:00Z. Required when scheduleMode is 'dateTime'.
 	DateTime *time.Time `json:"dateTime,omitempty"`
 	// If true, executes job
-	Run                  *bool                  `json:"run,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Run                  *bool `json:"run,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WorkflowJobPayload WorkflowJobPayload
@@ -545,7 +546,97 @@ func (o WorkflowJobPayload) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *WorkflowJobPayload) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"workflow",
+		"targetType",
+		"scheduleMode",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varWorkflowJobPayload := _WorkflowJobPayload{}
+
+	err = json.Unmarshal(data, &varWorkflowJobPayload)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WorkflowJobPayload(varWorkflowJobPayload)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "task")
+		delete(additionalProperties, "workflow")
+		delete(additionalProperties, "targetType")
+		delete(additionalProperties, "targets")
+		delete(additionalProperties, "instanceLabel")
+		delete(additionalProperties, "serverLabel")
+		delete(additionalProperties, "scheduleMode")
+		delete(additionalProperties, "customOptions")
+		delete(additionalProperties, "customConfig")
+		delete(additionalProperties, "dateTime")
+		delete(additionalProperties, "run")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableWorkflowJobPayload struct {
+	value *WorkflowJobPayload
+	isSet bool
+}
+
+func (v NullableWorkflowJobPayload) Get() *WorkflowJobPayload {
+	return v.value
+}
+
+func (v *NullableWorkflowJobPayload) Set(val *WorkflowJobPayload) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWorkflowJobPayload) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWorkflowJobPayload) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWorkflowJobPayload(val *WorkflowJobPayload) *NullableWorkflowJobPayload {
+	return &NullableWorkflowJobPayload{value: val, isSet: true}
+}
+
+func (v NullableWorkflowJobPayload) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWorkflowJobPayload) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

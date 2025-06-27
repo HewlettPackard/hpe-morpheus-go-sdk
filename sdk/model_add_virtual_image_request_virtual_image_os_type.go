@@ -41,22 +41,6 @@ func StringAsAddVirtualImageRequestVirtualImageOsType(v *string) AddVirtualImage
 	}
 }
 
-func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddVirtualImageRequestVirtualImageOsType{}
-	}
-
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) error {
 	var err error

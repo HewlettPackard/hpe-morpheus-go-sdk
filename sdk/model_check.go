@@ -58,7 +58,7 @@ type Check struct {
 	Severity             *string                                                     `json:"severity,omitempty"`
 	StartDate            NullableTime                                                `json:"startDate,omitempty"`
 	Deleted              *bool                                                       `json:"deleted,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Check Check
@@ -1602,7 +1602,96 @@ func (o Check) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Check) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCheck := _Check{}
+
+	err = json.Unmarshal(data, &varCheck)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Check(varCheck)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "apiKey")
+		delete(additionalProperties, "availability")
+		delete(additionalProperties, "checkAgent")
+		delete(additionalProperties, "checkInterval")
+		delete(additionalProperties, "checkSpec")
+		delete(additionalProperties, "checkType")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "container")
+		delete(additionalProperties, "createIncident")
+		delete(additionalProperties, "muted")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "health")
+		delete(additionalProperties, "inUptime")
+		delete(additionalProperties, "lastBoxStats")
+		delete(additionalProperties, "lastCheckStatus")
+		delete(additionalProperties, "lastError")
+		delete(additionalProperties, "lastErrorDate")
+		delete(additionalProperties, "lastMessage")
+		delete(additionalProperties, "lastMetric")
+		delete(additionalProperties, "lastRunDate")
+		delete(additionalProperties, "lastStats")
+		delete(additionalProperties, "lastSuccessDate")
+		delete(additionalProperties, "lastTimer")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "lastWarningDate")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "nextRunDate")
+		delete(additionalProperties, "outageTime")
+		delete(additionalProperties, "severity")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "deleted")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCheck struct {
+	value *Check
+	isSet bool
+}
+
+func (v NullableCheck) Get() *Check {
+	return v.value
+}
+
+func (v *NullableCheck) Set(val *Check) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheck) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheck) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheck(val *Check) *NullableCheck {
+	return &NullableCheck{value: val, isSet: true}
+}
+
+func (v NullableCheck) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheck) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

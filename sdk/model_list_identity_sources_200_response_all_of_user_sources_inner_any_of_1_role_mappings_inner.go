@@ -23,7 +23,7 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner 
 	SourceRoleName       *string                                                                     `json:"sourceRoleName,omitempty"`
 	SourceRoleFqn        *string                                                                     `json:"sourceRoleFqn,omitempty"`
 	MappedRole           *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole `json:"mappedRole,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner
@@ -168,7 +168,62 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInn
 	return toSerialize, nil
 }
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner{}
+
+	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sourceRoleName")
+		delete(additionalProperties, "sourceRoleFqn")
+		delete(additionalProperties, "mappedRole")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner struct {
+	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner
+	isSet bool
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner {
+	return v.value
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner {
+	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner{value: val, isSet: true}
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1RoleMappingsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

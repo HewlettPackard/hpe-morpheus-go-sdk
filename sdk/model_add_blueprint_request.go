@@ -73,38 +73,6 @@ func AddBlueprintRequestOneOf5AsAddBlueprintRequest(v *AddBlueprintRequestOneOf5
 	}
 }
 
-func (dst *AddBlueprintRequest) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddBlueprintRequest{}
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf); ok {
-		dst.AddBlueprintRequestOneOf = &out
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf1); ok {
-		dst.AddBlueprintRequestOneOf1 = &out
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf2); ok {
-		dst.AddBlueprintRequestOneOf2 = &out
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf3); ok {
-		dst.AddBlueprintRequestOneOf3 = &out
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf4); ok {
-		dst.AddBlueprintRequestOneOf4 = &out
-	}
-
-	if out, ok := data.(AddBlueprintRequestOneOf5); ok {
-		dst.AddBlueprintRequestOneOf5 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddBlueprintRequest) UnmarshalJSON(data []byte) error {
 	var err error

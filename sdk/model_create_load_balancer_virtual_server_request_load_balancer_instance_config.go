@@ -41,22 +41,6 @@ func MapmapOfStringAnyAsCreateLoadBalancerVirtualServerRequestLoadBalancerInstan
 	}
 }
 
-func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig{}
-	}
-
-	if out, ok := data.(NSXVirtualServerConfigObject); ok {
-		dst.NSXVirtualServerConfigObject = &out
-	}
-
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) UnmarshalJSON(data []byte) error {
 	var err error

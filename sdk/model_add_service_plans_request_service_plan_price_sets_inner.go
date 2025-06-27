@@ -21,8 +21,8 @@ var _ MappedNullable = &AddServicePlansRequestServicePlanPriceSetsInner{}
 // AddServicePlansRequestServicePlanPriceSetsInner struct for AddServicePlansRequestServicePlanPriceSetsInner
 type AddServicePlansRequestServicePlanPriceSetsInner struct {
 	// Price Set ID
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddServicePlansRequestServicePlanPriceSetsInner AddServicePlansRequestServicePlanPriceSetsInner
@@ -97,7 +97,60 @@ func (o AddServicePlansRequestServicePlanPriceSetsInner) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *AddServicePlansRequestServicePlanPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddServicePlansRequestServicePlanPriceSetsInner := _AddServicePlansRequestServicePlanPriceSetsInner{}
+
+	err = json.Unmarshal(data, &varAddServicePlansRequestServicePlanPriceSetsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddServicePlansRequestServicePlanPriceSetsInner(varAddServicePlansRequestServicePlanPriceSetsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddServicePlansRequestServicePlanPriceSetsInner struct {
+	value *AddServicePlansRequestServicePlanPriceSetsInner
+	isSet bool
+}
+
+func (v NullableAddServicePlansRequestServicePlanPriceSetsInner) Get() *AddServicePlansRequestServicePlanPriceSetsInner {
+	return v.value
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPriceSetsInner) Set(val *AddServicePlansRequestServicePlanPriceSetsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddServicePlansRequestServicePlanPriceSetsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPriceSetsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddServicePlansRequestServicePlanPriceSetsInner(val *AddServicePlansRequestServicePlanPriceSetsInner) *NullableAddServicePlansRequestServicePlanPriceSetsInner {
+	return &NullableAddServicePlansRequestServicePlanPriceSetsInner{value: val, isSet: true}
+}
+
+func (v NullableAddServicePlansRequestServicePlanPriceSetsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPriceSetsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

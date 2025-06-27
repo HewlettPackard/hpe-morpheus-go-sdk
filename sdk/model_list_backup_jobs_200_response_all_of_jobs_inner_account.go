@@ -23,8 +23,8 @@ type ListBackupJobs200ResponseAllOfJobsInnerAccount struct {
 	// Tenant ID
 	Id *int64 `json:"id,omitempty"`
 	// Tenant Name
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Name                 *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBackupJobs200ResponseAllOfJobsInnerAccount ListBackupJobs200ResponseAllOfJobsInnerAccount
@@ -134,7 +134,61 @@ func (o ListBackupJobs200ResponseAllOfJobsInnerAccount) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *ListBackupJobs200ResponseAllOfJobsInnerAccount) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBackupJobs200ResponseAllOfJobsInnerAccount := _ListBackupJobs200ResponseAllOfJobsInnerAccount{}
+
+	err = json.Unmarshal(data, &varListBackupJobs200ResponseAllOfJobsInnerAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBackupJobs200ResponseAllOfJobsInnerAccount(varListBackupJobs200ResponseAllOfJobsInnerAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBackupJobs200ResponseAllOfJobsInnerAccount struct {
+	value *ListBackupJobs200ResponseAllOfJobsInnerAccount
+	isSet bool
+}
+
+func (v NullableListBackupJobs200ResponseAllOfJobsInnerAccount) Get() *ListBackupJobs200ResponseAllOfJobsInnerAccount {
+	return v.value
+}
+
+func (v *NullableListBackupJobs200ResponseAllOfJobsInnerAccount) Set(val *ListBackupJobs200ResponseAllOfJobsInnerAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackupJobs200ResponseAllOfJobsInnerAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackupJobs200ResponseAllOfJobsInnerAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackupJobs200ResponseAllOfJobsInnerAccount(val *ListBackupJobs200ResponseAllOfJobsInnerAccount) *NullableListBackupJobs200ResponseAllOfJobsInnerAccount {
+	return &NullableListBackupJobs200ResponseAllOfJobsInnerAccount{value: val, isSet: true}
+}
+
+func (v NullableListBackupJobs200ResponseAllOfJobsInnerAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackupJobs200ResponseAllOfJobsInnerAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

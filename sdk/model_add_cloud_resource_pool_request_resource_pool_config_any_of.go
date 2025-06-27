@@ -23,8 +23,8 @@ type AddCloudResourcePoolRequestResourcePoolConfigAnyOf struct {
 	// Provide the base CIDR Block to use for this VPC (must be between a /16 and /28 Block)
 	CidrBlock *string `json:"cidrBlock,omitempty"`
 	// default or dedicated
-	Tenancy              *string                `json:"tenancy,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Tenancy              *string `json:"tenancy,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCloudResourcePoolRequestResourcePoolConfigAnyOf AddCloudResourcePoolRequestResourcePoolConfigAnyOf
@@ -138,7 +138,61 @@ func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf) ToMap() (map[string]
 	return toSerialize, nil
 }
 func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCloudResourcePoolRequestResourcePoolConfigAnyOf := _AddCloudResourcePoolRequestResourcePoolConfigAnyOf{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePoolConfigAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePoolRequestResourcePoolConfigAnyOf(varAddCloudResourcePoolRequestResourcePoolConfigAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "cidrBlock")
+		delete(additionalProperties, "tenancy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf struct {
+	value *AddCloudResourcePoolRequestResourcePoolConfigAnyOf
+	isSet bool
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) Get() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf {
+	return v.value
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) Set(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf) *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf {
+	return &NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf{value: val, isSet: true}
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

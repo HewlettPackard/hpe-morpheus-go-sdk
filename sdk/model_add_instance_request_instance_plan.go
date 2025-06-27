@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddInstanceRequestInstancePlan type satisfies the MappedNullable interface at compile time
@@ -21,8 +22,8 @@ var _ MappedNullable = &AddInstanceRequestInstancePlan{}
 // AddInstanceRequestInstancePlan struct for AddInstanceRequestInstancePlan
 type AddInstanceRequestInstancePlan struct {
 	// The id for the memory and storage option pre-configured within Morpheus.
-	Id                   int64                  `json:"id"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   int64 `json:"id"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddInstanceRequestInstancePlan AddInstanceRequestInstancePlan
@@ -88,7 +89,81 @@ func (o AddInstanceRequestInstancePlan) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AddInstanceRequestInstancePlan) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"id",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddInstanceRequestInstancePlan := _AddInstanceRequestInstancePlan{}
+
+	err = json.Unmarshal(data, &varAddInstanceRequestInstancePlan)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddInstanceRequestInstancePlan(varAddInstanceRequestInstancePlan)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddInstanceRequestInstancePlan struct {
+	value *AddInstanceRequestInstancePlan
+	isSet bool
+}
+
+func (v NullableAddInstanceRequestInstancePlan) Get() *AddInstanceRequestInstancePlan {
+	return v.value
+}
+
+func (v *NullableAddInstanceRequestInstancePlan) Set(val *AddInstanceRequestInstancePlan) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstanceRequestInstancePlan) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstanceRequestInstancePlan) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstanceRequestInstancePlan(val *AddInstanceRequestInstancePlan) *NullableAddInstanceRequestInstancePlan {
+	return &NullableAddInstanceRequestInstancePlan{value: val, isSet: true}
+}
+
+func (v NullableAddInstanceRequestInstancePlan) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstanceRequestInstancePlan) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

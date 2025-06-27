@@ -48,7 +48,7 @@ type GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner stru
 	Config               *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig `json:"config,omitempty"`
 	DateCreated          *time.Time                                                                    `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                    `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
@@ -1099,7 +1099,86 @@ func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) 
 	return toSerialize, nil
 }
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner := _GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{}
+
+	err = json.Unmarshal(data, &varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner(varGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "ipAddress")
+		delete(additionalProperties, "forwardingAddress")
+		delete(additionalProperties, "protocolAddress")
+		delete(additionalProperties, "remoteAs")
+		delete(additionalProperties, "weight")
+		delete(additionalProperties, "keepAlive")
+		delete(additionalProperties, "holdDown")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "routeFilteringType")
+		delete(additionalProperties, "routeFilteringIn")
+		delete(additionalProperties, "routeFilteringOut")
+		delete(additionalProperties, "bfdEnabled")
+		delete(additionalProperties, "bfdInterval")
+		delete(additionalProperties, "bfdMultiple")
+		delete(additionalProperties, "allowAsIn")
+		delete(additionalProperties, "hopLimit")
+		delete(additionalProperties, "restartMode")
+		delete(additionalProperties, "providerId")
+		delete(additionalProperties, "syncSource")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner struct {
+	value *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner
+	isSet bool
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Get() *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner {
+	return v.value
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Set(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner {
+	return &NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

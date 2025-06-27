@@ -53,7 +53,7 @@ type ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInne
 	ServicePlanName      *string                                                                                                        `json:"servicePlanName,omitempty"`
 	ResourcePoolId       *int64                                                                                                         `json:"resourcePoolId,omitempty"`
 	ResourcePoolName     *string                                                                                                        `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}                                                                                         `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner
@@ -1236,7 +1236,91 @@ func (o ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersI
 	return toSerialize, nil
 }
 func (o *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner := _ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner{}
+
+	err = json.Unmarshal(data, &varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner(varListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "instanceName")
+		delete(additionalProperties, "zoneName")
+		delete(additionalProperties, "accountName")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "maxMemory")
+		delete(additionalProperties, "maxCpu")
+		delete(additionalProperties, "maxCores")
+		delete(additionalProperties, "serverExternalId")
+		delete(additionalProperties, "serverInternalId")
+		delete(additionalProperties, "planName")
+		delete(additionalProperties, "hourlyPrice")
+		delete(additionalProperties, "hourlyCost")
+		delete(additionalProperties, "currency")
+		delete(additionalProperties, "pricesUsed")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "createdByUser")
+		delete(additionalProperties, "createdByUserId")
+		delete(additionalProperties, "siteId")
+		delete(additionalProperties, "siteName")
+		delete(additionalProperties, "siteUUID")
+		delete(additionalProperties, "siteCode")
+		delete(additionalProperties, "startDate")
+		delete(additionalProperties, "endDate")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "applicablePrices")
+		delete(additionalProperties, "servicePlanId")
+		delete(additionalProperties, "servicePlanName")
+		delete(additionalProperties, "resourcePoolId")
+		delete(additionalProperties, "resourcePoolName")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner struct {
+	value *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner
+	isSet bool
+}
+
+func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) Get() *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner {
+	return v.value
+}
+
+func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) Set(val *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner(val *ListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner {
+	return &NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner{value: val, isSet: true}
+}
+
+func (v NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBillingInstances200ResponseAllOfBillingInfoInstancesInnerContainersInnerUsagesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

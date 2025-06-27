@@ -40,7 +40,7 @@ type ZoneResourcePool struct {
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
 	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ZoneResourcePool ZoneResourcePool
@@ -824,7 +824,79 @@ func (o ZoneResourcePool) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneResourcePool) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varZoneResourcePool := _ZoneResourcePool{}
+
+	err = json.Unmarshal(data, &varZoneResourcePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneResourcePool(varZoneResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultPool")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "depth")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableZoneResourcePool struct {
+	value *ZoneResourcePool
+	isSet bool
+}
+
+func (v NullableZoneResourcePool) Get() *ZoneResourcePool {
+	return v.value
+}
+
+func (v *NullableZoneResourcePool) Set(val *ZoneResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneResourcePool(val *ZoneResourcePool) *NullableZoneResourcePool {
+	return &NullableZoneResourcePool{value: val, isSet: true}
+}
+
+func (v NullableZoneResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &ListCloudDatastores200Response{}
 type ListCloudDatastores200Response struct {
 	Datastores           []ListCloudDatastores200ResponseAllOfDatastoresInner `json:"datastores,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                    `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListCloudDatastores200Response ListCloudDatastores200Response
@@ -132,7 +132,61 @@ func (o ListCloudDatastores200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *ListCloudDatastores200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListCloudDatastores200Response := _ListCloudDatastores200Response{}
+
+	err = json.Unmarshal(data, &varListCloudDatastores200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListCloudDatastores200Response(varListCloudDatastores200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "datastores")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListCloudDatastores200Response struct {
+	value *ListCloudDatastores200Response
+	isSet bool
+}
+
+func (v NullableListCloudDatastores200Response) Get() *ListCloudDatastores200Response {
+	return v.value
+}
+
+func (v *NullableListCloudDatastores200Response) Set(val *ListCloudDatastores200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudDatastores200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudDatastores200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudDatastores200Response(val *ListCloudDatastores200Response) *NullableListCloudDatastores200Response {
+	return &NullableListCloudDatastores200Response{value: val, isSet: true}
+}
+
+func (v NullableListCloudDatastores200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudDatastores200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

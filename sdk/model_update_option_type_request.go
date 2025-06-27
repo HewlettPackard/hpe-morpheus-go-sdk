@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateOptionTypeRequest{}
 // UpdateOptionTypeRequest struct for UpdateOptionTypeRequest
 type UpdateOptionTypeRequest struct {
 	OptionType           *UpdateOptionTypeRequestOptionType `json:"optionType,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateOptionTypeRequest UpdateOptionTypeRequest
@@ -96,7 +96,60 @@ func (o UpdateOptionTypeRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateOptionTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateOptionTypeRequest := _UpdateOptionTypeRequest{}
+
+	err = json.Unmarshal(data, &varUpdateOptionTypeRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateOptionTypeRequest(varUpdateOptionTypeRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "optionType")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateOptionTypeRequest struct {
+	value *UpdateOptionTypeRequest
+	isSet bool
+}
+
+func (v NullableUpdateOptionTypeRequest) Get() *UpdateOptionTypeRequest {
+	return v.value
+}
+
+func (v *NullableUpdateOptionTypeRequest) Set(val *UpdateOptionTypeRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateOptionTypeRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateOptionTypeRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateOptionTypeRequest(val *UpdateOptionTypeRequest) *NullableUpdateOptionTypeRequest {
+	return &NullableUpdateOptionTypeRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateOptionTypeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateOptionTypeRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

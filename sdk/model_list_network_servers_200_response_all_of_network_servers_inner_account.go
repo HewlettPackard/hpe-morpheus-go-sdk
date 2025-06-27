@@ -20,9 +20,9 @@ var _ MappedNullable = &ListNetworkServers200ResponseAllOfNetworkServersInnerAcc
 
 // ListNetworkServers200ResponseAllOfNetworkServersInnerAccount Owner Tenant
 type ListNetworkServers200ResponseAllOfNetworkServersInnerAccount struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListNetworkServers200ResponseAllOfNetworkServersInnerAccount ListNetworkServers200ResponseAllOfNetworkServersInnerAccount
@@ -132,7 +132,61 @@ func (o ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) ToMap() (m
 	return toSerialize, nil
 }
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListNetworkServers200ResponseAllOfNetworkServersInnerAccount := _ListNetworkServers200ResponseAllOfNetworkServersInnerAccount{}
+
+	err = json.Unmarshal(data, &varListNetworkServers200ResponseAllOfNetworkServersInnerAccount)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServers200ResponseAllOfNetworkServersInnerAccount(varListNetworkServers200ResponseAllOfNetworkServersInnerAccount)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount struct {
+	value *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount
+	isSet bool
+}
+
+func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) Get() *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount {
+	return v.value
+}
+
+func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) Set(val *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount(val *ListNetworkServers200ResponseAllOfNetworkServersInnerAccount) *NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount {
+	return &NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount{value: val, isSet: true}
+}
+
+func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInnerAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

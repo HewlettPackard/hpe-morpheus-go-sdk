@@ -26,26 +26,6 @@ type AddSecurityGroupsRequestSecurityGroupCustomOptions struct {
 	CustomOptionsForOpenstackOpenTelekomHuawei *CustomOptionsForOpenstackOpenTelekomHuawei
 }
 
-func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddSecurityGroupsRequestSecurityGroupCustomOptions{}
-	}
-
-	if out, ok := data.(CustomOptionsForAmazon); ok {
-		dst.CustomOptionsForAmazon = &out
-	}
-
-	if out, ok := data.(CustomOptionsForAzure); ok {
-		dst.CustomOptionsForAzure = &out
-	}
-
-	if out, ok := data.(CustomOptionsForOpenstackOpenTelekomHuawei); ok {
-		dst.CustomOptionsForOpenstackOpenTelekomHuawei = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalJSON(data []byte) error {
 	var err error

@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterVolumeclaims200Response{}
 type ListClusterVolumeclaims200Response struct {
 	Volumeclaims         []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumeclaims,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClusterVolumeclaims200Response ListClusterVolumeclaims200Response
@@ -132,7 +132,61 @@ func (o ListClusterVolumeclaims200Response) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *ListClusterVolumeclaims200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClusterVolumeclaims200Response := _ListClusterVolumeclaims200Response{}
+
+	err = json.Unmarshal(data, &varListClusterVolumeclaims200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClusterVolumeclaims200Response(varListClusterVolumeclaims200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "volumeclaims")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClusterVolumeclaims200Response struct {
+	value *ListClusterVolumeclaims200Response
+	isSet bool
+}
+
+func (v NullableListClusterVolumeclaims200Response) Get() *ListClusterVolumeclaims200Response {
+	return v.value
+}
+
+func (v *NullableListClusterVolumeclaims200Response) Set(val *ListClusterVolumeclaims200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterVolumeclaims200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterVolumeclaims200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterVolumeclaims200Response(val *ListClusterVolumeclaims200Response) *NullableListClusterVolumeclaims200Response {
+	return &NullableListClusterVolumeclaims200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterVolumeclaims200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterVolumeclaims200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

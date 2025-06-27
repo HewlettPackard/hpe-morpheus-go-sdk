@@ -35,7 +35,7 @@ type ListApprovals200ResponseAllOfApprovalsInner struct {
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
 	RequestBy            *string                                            `json:"requestBy,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListApprovals200ResponseAllOfApprovalsInner ListApprovals200ResponseAllOfApprovalsInner
@@ -620,7 +620,73 @@ func (o ListApprovals200ResponseAllOfApprovalsInner) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *ListApprovals200ResponseAllOfApprovalsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListApprovals200ResponseAllOfApprovalsInner := _ListApprovals200ResponseAllOfApprovalsInner{}
+
+	err = json.Unmarshal(data, &varListApprovals200ResponseAllOfApprovalsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListApprovals200ResponseAllOfApprovalsInner(varListApprovals200ResponseAllOfApprovalsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalName")
+		delete(additionalProperties, "requestType")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "approver")
+		delete(additionalProperties, "accountIntegration")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "requestBy")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListApprovals200ResponseAllOfApprovalsInner struct {
+	value *ListApprovals200ResponseAllOfApprovalsInner
+	isSet bool
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInner) Get() *ListApprovals200ResponseAllOfApprovalsInner {
+	return v.value
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInner) Set(val *ListApprovals200ResponseAllOfApprovalsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListApprovals200ResponseAllOfApprovalsInner(val *ListApprovals200ResponseAllOfApprovalsInner) *NullableListApprovals200ResponseAllOfApprovalsInner {
+	return &NullableListApprovals200ResponseAllOfApprovalsInner{value: val, isSet: true}
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetTenant200Response{}
 // GetTenant200Response struct for GetTenant200Response
 type GetTenant200Response struct {
 	Account              *ListTenants200ResponseAllOfAccountsInner `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetTenant200Response GetTenant200Response
@@ -96,7 +96,60 @@ func (o GetTenant200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetTenant200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetTenant200Response := _GetTenant200Response{}
+
+	err = json.Unmarshal(data, &varGetTenant200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetTenant200Response(varGetTenant200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "account")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetTenant200Response struct {
+	value *GetTenant200Response
+	isSet bool
+}
+
+func (v NullableGetTenant200Response) Get() *GetTenant200Response {
+	return v.value
+}
+
+func (v *NullableGetTenant200Response) Set(val *GetTenant200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetTenant200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetTenant200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetTenant200Response(val *GetTenant200Response) *NullableGetTenant200Response {
+	return &NullableGetTenant200Response{value: val, isSet: true}
+}
+
+func (v NullableGetTenant200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetTenant200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

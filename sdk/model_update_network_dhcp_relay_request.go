@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateNetworkDhcpRelayRequest{}
 // UpdateNetworkDhcpRelayRequest The parameters for update a Network DHCP Relay is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type.
 type UpdateNetworkDhcpRelayRequest struct {
 	NetworkDhcpRelay     map[string]interface{} `json:"networkDhcpRelay,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateNetworkDhcpRelayRequest UpdateNetworkDhcpRelayRequest
@@ -96,7 +96,60 @@ func (o UpdateNetworkDhcpRelayRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateNetworkDhcpRelayRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateNetworkDhcpRelayRequest := _UpdateNetworkDhcpRelayRequest{}
+
+	err = json.Unmarshal(data, &varUpdateNetworkDhcpRelayRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateNetworkDhcpRelayRequest(varUpdateNetworkDhcpRelayRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkDhcpRelay")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateNetworkDhcpRelayRequest struct {
+	value *UpdateNetworkDhcpRelayRequest
+	isSet bool
+}
+
+func (v NullableUpdateNetworkDhcpRelayRequest) Get() *UpdateNetworkDhcpRelayRequest {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkDhcpRelayRequest) Set(val *UpdateNetworkDhcpRelayRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkDhcpRelayRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkDhcpRelayRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkDhcpRelayRequest(val *UpdateNetworkDhcpRelayRequest) *NullableUpdateNetworkDhcpRelayRequest {
+	return &NullableUpdateNetworkDhcpRelayRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkDhcpRelayRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkDhcpRelayRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

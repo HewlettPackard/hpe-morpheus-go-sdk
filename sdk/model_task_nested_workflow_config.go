@@ -38,7 +38,7 @@ type TaskNestedWorkflowConfig struct {
 	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
 	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _TaskNestedWorkflowConfig TaskNestedWorkflowConfig
@@ -695,7 +695,76 @@ func (o TaskNestedWorkflowConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *TaskNestedWorkflowConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varTaskNestedWorkflowConfig := _TaskNestedWorkflowConfig{}
+
+	err = json.Unmarshal(data, &varTaskNestedWorkflowConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = TaskNestedWorkflowConfig(varTaskNestedWorkflowConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "taskType")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "taskOptions")
+		delete(additionalProperties, "resultType")
+		delete(additionalProperties, "executeTarget")
+		delete(additionalProperties, "retryable")
+		delete(additionalProperties, "retryCount")
+		delete(additionalProperties, "retryDelaySeconds")
+		delete(additionalProperties, "allowCustomConfig")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableTaskNestedWorkflowConfig struct {
+	value *TaskNestedWorkflowConfig
+	isSet bool
+}
+
+func (v NullableTaskNestedWorkflowConfig) Get() *TaskNestedWorkflowConfig {
+	return v.value
+}
+
+func (v *NullableTaskNestedWorkflowConfig) Set(val *TaskNestedWorkflowConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskNestedWorkflowConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskNestedWorkflowConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskNestedWorkflowConfig(val *TaskNestedWorkflowConfig) *NullableTaskNestedWorkflowConfig {
+	return &NullableTaskNestedWorkflowConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskNestedWorkflowConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskNestedWorkflowConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

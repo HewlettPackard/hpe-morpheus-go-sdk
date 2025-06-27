@@ -45,8 +45,8 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf5 struct {
 	// Role Attribute Name
 	RoleAttributeName *string `json:"roleAttributeName,omitempty"`
 	// Role Attibute Required Value
-	RequiredAttributeValue *string                `json:"requiredAttributeValue,omitempty"`
-	AdditionalProperties   map[string]interface{} `json:",remain"`
+	RequiredAttributeValue *string `json:"requiredAttributeValue,omitempty"`
+	AdditionalProperties   map[string]interface{}
 }
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf5 AddIdentitySourcesRequestUserSourceConfigOneOf5
@@ -553,7 +553,72 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf5) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf5) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddIdentitySourcesRequestUserSourceConfigOneOf5 := _AddIdentitySourcesRequestUserSourceConfigOneOf5{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf5)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf5(varAddIdentitySourcesRequestUserSourceConfigOneOf5)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "doNotIncludeSAMLRequest")
+		delete(additionalProperties, "logoutUrl")
+		delete(additionalProperties, "SAMLSignatureMode")
+		delete(additionalProperties, "request509Certificate")
+		delete(additionalProperties, "requestPrivateKey")
+		delete(additionalProperties, "doNotValidateSignature")
+		delete(additionalProperties, "publicKey")
+		delete(additionalProperties, "privateKey")
+		delete(additionalProperties, "givenNameAttribute")
+		delete(additionalProperties, "surnameAttribute")
+		delete(additionalProperties, "roleAttributeName")
+		delete(additionalProperties, "requiredAttributeValue")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddIdentitySourcesRequestUserSourceConfigOneOf5 struct {
+	value *AddIdentitySourcesRequestUserSourceConfigOneOf5
+	isSet bool
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) Get() *AddIdentitySourcesRequestUserSourceConfigOneOf5 {
+	return v.value
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) Set(val *AddIdentitySourcesRequestUserSourceConfigOneOf5) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySourcesRequestUserSourceConfigOneOf5(val *AddIdentitySourcesRequestUserSourceConfigOneOf5) *NullableAddIdentitySourcesRequestUserSourceConfigOneOf5 {
+	return &NullableAddIdentitySourcesRequestUserSourceConfigOneOf5{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf5) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetBootScript200Response{}
 // GetBootScript200Response struct for GetBootScript200Response
 type GetBootScript200Response struct {
 	BootScript           *ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScript,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetBootScript200Response GetBootScript200Response
@@ -96,7 +96,60 @@ func (o GetBootScript200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetBootScript200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetBootScript200Response := _GetBootScript200Response{}
+
+	err = json.Unmarshal(data, &varGetBootScript200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetBootScript200Response(varGetBootScript200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "bootScript")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetBootScript200Response struct {
+	value *GetBootScript200Response
+	isSet bool
+}
+
+func (v NullableGetBootScript200Response) Get() *GetBootScript200Response {
+	return v.value
+}
+
+func (v *NullableGetBootScript200Response) Set(val *GetBootScript200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetBootScript200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetBootScript200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetBootScript200Response(val *GetBootScript200Response) *NullableGetBootScript200Response {
+	return &NullableGetBootScript200Response{value: val, isSet: true}
+}
+
+func (v NullableGetBootScript200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetBootScript200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

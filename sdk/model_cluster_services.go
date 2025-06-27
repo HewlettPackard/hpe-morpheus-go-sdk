@@ -21,18 +21,18 @@ var _ MappedNullable = &ClusterServices{}
 
 // ClusterServices struct for ClusterServices
 type ClusterServices struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Type                 NullableString         `json:"type,omitempty"`
-	Code                 NullableString         `json:"code,omitempty"`
-	ExternalIp           NullableString         `json:"externalIp,omitempty"`
-	InternalIp           NullableString         `json:"internalIp,omitempty"`
-	ExternalPort         NullableString         `json:"externalPort,omitempty"`
-	InternalPort         NullableString         `json:"internalPort,omitempty"`
-	Status               NullableString         `json:"status,omitempty"`
-	DateCreated          NullableTime           `json:"dateCreated,omitempty"`
-	LastUpdated          NullableTime           `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64         `json:"id,omitempty"`
+	Name                 *string        `json:"name,omitempty"`
+	Type                 NullableString `json:"type,omitempty"`
+	Code                 NullableString `json:"code,omitempty"`
+	ExternalIp           NullableString `json:"externalIp,omitempty"`
+	InternalIp           NullableString `json:"internalIp,omitempty"`
+	ExternalPort         NullableString `json:"externalPort,omitempty"`
+	InternalPort         NullableString `json:"internalPort,omitempty"`
+	Status               NullableString `json:"status,omitempty"`
+	DateCreated          NullableTime   `json:"dateCreated,omitempty"`
+	LastUpdated          NullableTime   `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterServices ClusterServices
@@ -556,7 +556,70 @@ func (o ClusterServices) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterServices) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterServices := _ClusterServices{}
+
+	err = json.Unmarshal(data, &varClusterServices)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterServices(varClusterServices)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalPort")
+		delete(additionalProperties, "internalPort")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterServices struct {
+	value *ClusterServices
+	isSet bool
+}
+
+func (v NullableClusterServices) Get() *ClusterServices {
+	return v.value
+}
+
+func (v *NullableClusterServices) Set(val *ClusterServices) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterServices) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterServices) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterServices(val *ClusterServices) *NullableClusterServices {
+	return &NullableClusterServices{value: val, isSet: true}
+}
+
+func (v NullableClusterServices) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterServices) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

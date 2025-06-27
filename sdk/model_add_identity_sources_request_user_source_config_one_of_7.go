@@ -27,8 +27,8 @@ type AddIdentitySourcesRequestUserSourceConfigOneOf7 struct {
 	// Encryption Algorithm
 	EncryptionAlgo *string `json:"encryptionAlgo,omitempty"`
 	// Encryption Key
-	EncryptionKey        *string                `json:"encryptionKey,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	EncryptionKey        *string `json:"encryptionKey,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddIdentitySourcesRequestUserSourceConfigOneOf7 AddIdentitySourcesRequestUserSourceConfigOneOf7
@@ -208,7 +208,63 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf7) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddIdentitySourcesRequestUserSourceConfigOneOf7 := _AddIdentitySourcesRequestUserSourceConfigOneOf7{}
+
+	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceConfigOneOf7)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddIdentitySourcesRequestUserSourceConfigOneOf7(varAddIdentitySourcesRequestUserSourceConfigOneOf7)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "apiStyle")
+		delete(additionalProperties, "encryptionAlgo")
+		delete(additionalProperties, "encryptionKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddIdentitySourcesRequestUserSourceConfigOneOf7 struct {
+	value *AddIdentitySourcesRequestUserSourceConfigOneOf7
+	isSet bool
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Get() *AddIdentitySourcesRequestUserSourceConfigOneOf7 {
+	return v.value
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Set(val *AddIdentitySourcesRequestUserSourceConfigOneOf7) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySourcesRequestUserSourceConfigOneOf7(val *AddIdentitySourcesRequestUserSourceConfigOneOf7) *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7 {
+	return &NullableAddIdentitySourcesRequestUserSourceConfigOneOf7{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

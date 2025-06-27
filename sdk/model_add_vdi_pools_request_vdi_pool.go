@@ -41,22 +41,6 @@ func AddVDIPoolsRequestVdiPoolOneOf1AsAddVDIPoolsRequestVdiPool(v *AddVDIPoolsRe
 	}
 }
 
-func (dst *AddVDIPoolsRequestVdiPool) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddVDIPoolsRequestVdiPool{}
-	}
-
-	if out, ok := data.(AddVDIPoolsRequestVdiPoolOneOf); ok {
-		dst.AddVDIPoolsRequestVdiPoolOneOf = &out
-	}
-
-	if out, ok := data.(AddVDIPoolsRequestVdiPoolOneOf1); ok {
-		dst.AddVDIPoolsRequestVdiPoolOneOf1 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVDIPoolsRequestVdiPool) UnmarshalJSON(data []byte) error {
 	var err error

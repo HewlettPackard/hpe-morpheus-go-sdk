@@ -38,7 +38,7 @@ type IntegrationCherwell struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationCherwell IntegrationCherwell
@@ -717,7 +717,76 @@ func (o IntegrationCherwell) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationCherwell) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationCherwell := _IntegrationCherwell{}
+
+	err = json.Unmarshal(data, &varIntegrationCherwell)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationCherwell(varIntegrationCherwell)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationCherwell struct {
+	value *IntegrationCherwell
+	isSet bool
+}
+
+func (v NullableIntegrationCherwell) Get() *IntegrationCherwell {
+	return v.value
+}
+
+func (v *NullableIntegrationCherwell) Set(val *IntegrationCherwell) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationCherwell) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationCherwell) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationCherwell(val *IntegrationCherwell) *NullableIntegrationCherwell {
+	return &NullableIntegrationCherwell{value: val, isSet: true}
+}
+
+func (v NullableIntegrationCherwell) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationCherwell) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

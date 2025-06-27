@@ -38,7 +38,7 @@ type ListHostDevices200ResponseDevicesInner struct {
 	IommuGroup           NullableInt32                               `json:"iommuGroup,omitempty"`
 	IommuDeviceCount     NullableInt32                               `json:"iommuDeviceCount,omitempty"`
 	Type                 *ListHostDevices200ResponseDevicesInnerType `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListHostDevices200ResponseDevicesInner ListHostDevices200ResponseDevicesInner
@@ -816,7 +816,76 @@ func (o ListHostDevices200ResponseDevicesInner) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *ListHostDevices200ResponseDevicesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListHostDevices200ResponseDevicesInner := _ListHostDevices200ResponseDevicesInner{}
+
+	err = json.Unmarshal(data, &varListHostDevices200ResponseDevicesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListHostDevices200ResponseDevicesInner(varListHostDevices200ResponseDevicesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "domainId")
+		delete(additionalProperties, "bus")
+		delete(additionalProperties, "slot")
+		delete(additionalProperties, "device")
+		delete(additionalProperties, "vendorId")
+		delete(additionalProperties, "productId")
+		delete(additionalProperties, "functionId")
+		delete(additionalProperties, "uniqueId")
+		delete(additionalProperties, "iommuGroup")
+		delete(additionalProperties, "iommuDeviceCount")
+		delete(additionalProperties, "type")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListHostDevices200ResponseDevicesInner struct {
+	value *ListHostDevices200ResponseDevicesInner
+	isSet bool
+}
+
+func (v NullableListHostDevices200ResponseDevicesInner) Get() *ListHostDevices200ResponseDevicesInner {
+	return v.value
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInner) Set(val *ListHostDevices200ResponseDevicesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHostDevices200ResponseDevicesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHostDevices200ResponseDevicesInner(val *ListHostDevices200ResponseDevicesInner) *NullableListHostDevices200ResponseDevicesInner {
+	return &NullableListHostDevices200ResponseDevicesInner{value: val, isSet: true}
+}
+
+func (v NullableListHostDevices200ResponseDevicesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

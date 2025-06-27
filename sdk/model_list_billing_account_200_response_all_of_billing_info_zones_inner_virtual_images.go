@@ -24,7 +24,7 @@ type ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages struct
 	Cost                 *float32                 `json:"cost,omitempty"`
 	VirtualImages        []map[string]interface{} `json:"virtualImages,omitempty"`
 	Count                *int64                   `json:"count,omitempty"`
-	AdditionalProperties map[string]interface{}   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages
@@ -204,7 +204,63 @@ func (o ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) To
 	return toSerialize, nil
 }
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages := _ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages{}
+
+	err = json.Unmarshal(data, &varListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages(varListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "price")
+		delete(additionalProperties, "cost")
+		delete(additionalProperties, "virtualImages")
+		delete(additionalProperties, "count")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages struct {
+	value *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages
+	isSet bool
+}
+
+func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) Get() *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages {
+	return v.value
+}
+
+func (v *NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) Set(val *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages(val *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) *NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages {
+	return &NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages{value: val, isSet: true}
+}
+
+func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerVirtualImages) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

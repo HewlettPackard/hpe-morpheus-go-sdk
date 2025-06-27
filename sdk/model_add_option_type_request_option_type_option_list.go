@@ -21,8 +21,8 @@ var _ MappedNullable = &AddOptionTypeRequestOptionTypeOptionList{}
 // AddOptionTypeRequestOptionTypeOptionList struct for AddOptionTypeRequestOptionTypeOptionList
 type AddOptionTypeRequestOptionTypeOptionList struct {
 	// ID of Option List. For use with type select, this will set optionSource to the list.
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddOptionTypeRequestOptionTypeOptionList AddOptionTypeRequestOptionTypeOptionList
@@ -97,7 +97,60 @@ func (o AddOptionTypeRequestOptionTypeOptionList) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddOptionTypeRequestOptionTypeOptionList) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddOptionTypeRequestOptionTypeOptionList := _AddOptionTypeRequestOptionTypeOptionList{}
+
+	err = json.Unmarshal(data, &varAddOptionTypeRequestOptionTypeOptionList)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddOptionTypeRequestOptionTypeOptionList(varAddOptionTypeRequestOptionTypeOptionList)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddOptionTypeRequestOptionTypeOptionList struct {
+	value *AddOptionTypeRequestOptionTypeOptionList
+	isSet bool
+}
+
+func (v NullableAddOptionTypeRequestOptionTypeOptionList) Get() *AddOptionTypeRequestOptionTypeOptionList {
+	return v.value
+}
+
+func (v *NullableAddOptionTypeRequestOptionTypeOptionList) Set(val *AddOptionTypeRequestOptionTypeOptionList) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOptionTypeRequestOptionTypeOptionList) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOptionTypeRequestOptionTypeOptionList) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOptionTypeRequestOptionTypeOptionList(val *AddOptionTypeRequestOptionTypeOptionList) *NullableAddOptionTypeRequestOptionTypeOptionList {
+	return &NullableAddOptionTypeRequestOptionTypeOptionList{value: val, isSet: true}
+}
+
+func (v NullableAddOptionTypeRequestOptionTypeOptionList) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOptionTypeRequestOptionTypeOptionList) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

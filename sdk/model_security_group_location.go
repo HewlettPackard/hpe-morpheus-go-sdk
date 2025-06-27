@@ -30,7 +30,7 @@ type SecurityGroupLocation struct {
 	Status               *string                                            `json:"status,omitempty"`
 	Priority             NullableString                                     `json:"priority,omitempty"`
 	GroupLayer           NullableString                                     `json:"groupLayer,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SecurityGroupLocation SecurityGroupLocation
@@ -464,7 +464,69 @@ func (o SecurityGroupLocation) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSecurityGroupLocation := _SecurityGroupLocation{}
+
+	err = json.Unmarshal(data, &varSecurityGroupLocation)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupLocation(varSecurityGroupLocation)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "priority")
+		delete(additionalProperties, "groupLayer")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSecurityGroupLocation struct {
+	value *SecurityGroupLocation
+	isSet bool
+}
+
+func (v NullableSecurityGroupLocation) Get() *SecurityGroupLocation {
+	return v.value
+}
+
+func (v *NullableSecurityGroupLocation) Set(val *SecurityGroupLocation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupLocation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupLocation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupLocation(val *SecurityGroupLocation) *NullableSecurityGroupLocation {
+	return &NullableSecurityGroupLocation{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupLocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupLocation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

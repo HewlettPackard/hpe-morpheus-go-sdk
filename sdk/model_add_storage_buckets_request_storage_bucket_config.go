@@ -81,42 +81,6 @@ func AddStorageBucketsRequestStorageBucketConfigOneOf6AsAddStorageBucketsRequest
 	}
 }
 
-func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddStorageBucketsRequestStorageBucketConfig{}
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf1); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf1 = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf2); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf2 = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf3); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf3 = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf4); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf4 = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf5); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf5 = &out
-	}
-
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf6); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf6 = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalJSON(data []byte) error {
 	var err error

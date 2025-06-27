@@ -21,8 +21,8 @@ var _ MappedNullable = &SecurityGroupLocationAzureCustomOptions{}
 // SecurityGroupLocationAzureCustomOptions struct for SecurityGroupLocationAzureCustomOptions
 type SecurityGroupLocationAzureCustomOptions struct {
 	// External ID of Azure Resource Group
-	ResourceGroup        *string                `json:"resourceGroup,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ResourceGroup        *string `json:"resourceGroup,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SecurityGroupLocationAzureCustomOptions SecurityGroupLocationAzureCustomOptions
@@ -97,7 +97,60 @@ func (o SecurityGroupLocationAzureCustomOptions) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *SecurityGroupLocationAzureCustomOptions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSecurityGroupLocationAzureCustomOptions := _SecurityGroupLocationAzureCustomOptions{}
+
+	err = json.Unmarshal(data, &varSecurityGroupLocationAzureCustomOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SecurityGroupLocationAzureCustomOptions(varSecurityGroupLocationAzureCustomOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourceGroup")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSecurityGroupLocationAzureCustomOptions struct {
+	value *SecurityGroupLocationAzureCustomOptions
+	isSet bool
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) Get() *SecurityGroupLocationAzureCustomOptions {
+	return v.value
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) Set(val *SecurityGroupLocationAzureCustomOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupLocationAzureCustomOptions(val *SecurityGroupLocationAzureCustomOptions) *NullableSecurityGroupLocationAzureCustomOptions {
+	return &NullableSecurityGroupLocationAzureCustomOptions{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

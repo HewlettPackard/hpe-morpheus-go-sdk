@@ -45,7 +45,7 @@ type SaveCloudDatastore200ResponseAllOfDatastore struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SaveCloudDatastore200ResponseAllOfDatastore SaveCloudDatastore200ResponseAllOfDatastore
@@ -993,7 +993,84 @@ func (o SaveCloudDatastore200ResponseAllOfDatastore) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSaveCloudDatastore200ResponseAllOfDatastore := _SaveCloudDatastore200ResponseAllOfDatastore{}
+
+	err = json.Unmarshal(data, &varSaveCloudDatastore200ResponseAllOfDatastore)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SaveCloudDatastore200ResponseAllOfDatastore(varSaveCloudDatastore200ResponseAllOfDatastore)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "datastoreType")
+		delete(additionalProperties, "storageServer")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "storageSize")
+		delete(additionalProperties, "freeSpace")
+		delete(additionalProperties, "drsEnabled")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "allowWrite")
+		delete(additionalProperties, "defaultStore")
+		delete(additionalProperties, "online")
+		delete(additionalProperties, "allowRead")
+		delete(additionalProperties, "allowProvision")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "zonePool")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "datastores")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSaveCloudDatastore200ResponseAllOfDatastore struct {
+	value *SaveCloudDatastore200ResponseAllOfDatastore
+	isSet bool
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) Get() *SaveCloudDatastore200ResponseAllOfDatastore {
+	return v.value
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Set(val *SaveCloudDatastore200ResponseAllOfDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveCloudDatastore200ResponseAllOfDatastore(val *SaveCloudDatastore200ResponseAllOfDatastore) *NullableSaveCloudDatastore200ResponseAllOfDatastore {
+	return &NullableSaveCloudDatastore200ResponseAllOfDatastore{value: val, isSet: true}
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

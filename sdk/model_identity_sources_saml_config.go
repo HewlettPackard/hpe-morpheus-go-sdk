@@ -41,7 +41,7 @@ type IdentitySourcesSAMLConfig struct {
 	ProviderSettings     *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings   `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IdentitySourcesSAMLConfig IdentitySourcesSAMLConfig
@@ -781,7 +781,79 @@ func (o IdentitySourcesSAMLConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IdentitySourcesSAMLConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIdentitySourcesSAMLConfig := _IdentitySourcesSAMLConfig{}
+
+	err = json.Unmarshal(data, &varIdentitySourcesSAMLConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IdentitySourcesSAMLConfig(varIdentitySourcesSAMLConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "deleted")
+		delete(additionalProperties, "autoSyncOnLogin")
+		delete(additionalProperties, "externalLogin")
+		delete(additionalProperties, "allowCustomMappings")
+		delete(additionalProperties, "manualRoleAssignment")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "defaultAccountRole")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "roleMappings")
+		delete(additionalProperties, "subdomain")
+		delete(additionalProperties, "loginURL")
+		delete(additionalProperties, "providerSettings")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIdentitySourcesSAMLConfig struct {
+	value *IdentitySourcesSAMLConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesSAMLConfig) Get() *IdentitySourcesSAMLConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) Set(val *IdentitySourcesSAMLConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesSAMLConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesSAMLConfig(val *IdentitySourcesSAMLConfig) *NullableIdentitySourcesSAMLConfig {
+	return &NullableIdentitySourcesSAMLConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesSAMLConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

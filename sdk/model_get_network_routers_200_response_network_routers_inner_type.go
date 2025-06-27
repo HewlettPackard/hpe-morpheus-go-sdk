@@ -33,7 +33,7 @@ type GetNetworkRouters200ResponseNetworkRoutersInnerType struct {
 	HasNetworkServer     *bool                    `json:"hasNetworkServer,omitempty"`
 	OptionTypes          []map[string]interface{} `json:"optionTypes,omitempty"`
 	RuleOptionTypes      []map[string]interface{} `json:"ruleOptionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}   `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetNetworkRouters200ResponseNetworkRoutersInnerType GetNetworkRouters200ResponseNetworkRoutersInnerType
@@ -528,7 +528,72 @@ func (o GetNetworkRouters200ResponseNetworkRoutersInnerType) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *GetNetworkRouters200ResponseNetworkRoutersInnerType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetNetworkRouters200ResponseNetworkRoutersInnerType := _GetNetworkRouters200ResponseNetworkRoutersInnerType{}
+
+	err = json.Unmarshal(data, &varGetNetworkRouters200ResponseNetworkRoutersInnerType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetNetworkRouters200ResponseNetworkRoutersInnerType(varGetNetworkRouters200ResponseNetworkRoutersInnerType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "creatable")
+		delete(additionalProperties, "selectable")
+		delete(additionalProperties, "hasFirewall")
+		delete(additionalProperties, "hasDhcp")
+		delete(additionalProperties, "hasRouting")
+		delete(additionalProperties, "hasNetworkServer")
+		delete(additionalProperties, "optionTypes")
+		delete(additionalProperties, "ruleOptionTypes")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetNetworkRouters200ResponseNetworkRoutersInnerType struct {
+	value *GetNetworkRouters200ResponseNetworkRoutersInnerType
+	isSet bool
+}
+
+func (v NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) Get() *GetNetworkRouters200ResponseNetworkRoutersInnerType {
+	return v.value
+}
+
+func (v *NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) Set(val *GetNetworkRouters200ResponseNetworkRoutersInnerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkRouters200ResponseNetworkRoutersInnerType(val *GetNetworkRouters200ResponseNetworkRoutersInnerType) *NullableGetNetworkRouters200ResponseNetworkRoutersInnerType {
+	return &NullableGetNetworkRouters200ResponseNetworkRoutersInnerType{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkRouters200ResponseNetworkRoutersInnerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

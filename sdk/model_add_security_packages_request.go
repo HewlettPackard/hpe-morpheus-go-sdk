@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddSecurityPackagesRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddSecurityPackagesRequest{}
 // AddSecurityPackagesRequest struct for AddSecurityPackagesRequest
 type AddSecurityPackagesRequest struct {
 	SecurityPackage      AddSecurityPackagesRequestSecurityPackage `json:"securityPackage"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddSecurityPackagesRequest AddSecurityPackagesRequest
@@ -87,7 +88,81 @@ func (o AddSecurityPackagesRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddSecurityPackagesRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"securityPackage",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddSecurityPackagesRequest := _AddSecurityPackagesRequest{}
+
+	err = json.Unmarshal(data, &varAddSecurityPackagesRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddSecurityPackagesRequest(varAddSecurityPackagesRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "securityPackage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddSecurityPackagesRequest struct {
+	value *AddSecurityPackagesRequest
+	isSet bool
+}
+
+func (v NullableAddSecurityPackagesRequest) Get() *AddSecurityPackagesRequest {
+	return v.value
+}
+
+func (v *NullableAddSecurityPackagesRequest) Set(val *AddSecurityPackagesRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityPackagesRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityPackagesRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityPackagesRequest(val *AddSecurityPackagesRequest) *NullableAddSecurityPackagesRequest {
+	return &NullableAddSecurityPackagesRequest{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityPackagesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityPackagesRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

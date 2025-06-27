@@ -41,22 +41,6 @@ func StringAsAddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId(v *str
 	}
 }
 
-func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId{}
-	}
-
-	if out, ok := data.(int64); ok {
-		dst.Int64 = &out
-	}
-
-	if out, ok := data.(string); ok {
-		dst.String = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) UnmarshalJSON(data []byte) error {
 	var err error

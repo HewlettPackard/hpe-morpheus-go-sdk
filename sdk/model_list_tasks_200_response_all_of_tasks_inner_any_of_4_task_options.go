@@ -20,15 +20,15 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions struct {
-	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
-	Password             NullableString         `json:"password,omitempty"`
-	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
-	Host                 NullableString         `json:"host,omitempty"`
-	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
-	SshKey               NullableString         `json:"sshKey,omitempty"`
-	Port                 NullableString         `json:"port,omitempty"`
-	Username             NullableString         `json:"username,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	LocalScriptGitRef    NullableString `json:"localScriptGitRef,omitempty"`
+	Password             NullableString `json:"password,omitempty"`
+	PasswordHash         NullableString `json:"passwordHash,omitempty"`
+	Host                 NullableString `json:"host,omitempty"`
+	LocalScriptGitId     NullableString `json:"localScriptGitId,omitempty"`
+	SshKey               NullableString `json:"sshKey,omitempty"`
+	Port                 NullableString `json:"port,omitempty"`
+	Username             NullableString `json:"username,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions
@@ -436,7 +436,67 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions{}
+
+	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "localScriptGitRef")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "localScriptGitId")
+		delete(additionalProperties, "sshKey")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions struct {
+	value *ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions
+	isSet bool
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions {
+	return v.value
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions {
+	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions{value: val, isSet: true}
+}
+
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

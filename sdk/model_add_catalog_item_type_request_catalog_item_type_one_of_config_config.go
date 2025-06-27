@@ -28,34 +28,6 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
 	MapmapOfStringAny                                               *map[string]interface{}
 }
 
-func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig{}
-	}
-
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf = &out
-	}
-
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 = &out
-	}
-
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 = &out
-	}
-
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 = &out
-	}
-
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJSON(data []byte) error {
 	var err error

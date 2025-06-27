@@ -33,7 +33,7 @@ type WikiPage struct {
 	UpdatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"updatedBy,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _WikiPage WikiPage
@@ -515,7 +515,71 @@ func (o WikiPage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *WikiPage) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varWikiPage := _WikiPage{}
+
+	err = json.Unmarshal(data, &varWikiPage)
+
+	if err != nil {
+		return err
+	}
+
+	*o = WikiPage(varWikiPage)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "urlName")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "format")
+		delete(additionalProperties, "content")
+		delete(additionalProperties, "createdBy")
+		delete(additionalProperties, "updatedBy")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableWikiPage struct {
+	value *WikiPage
+	isSet bool
+}
+
+func (v NullableWikiPage) Get() *WikiPage {
+	return v.value
+}
+
+func (v *NullableWikiPage) Set(val *WikiPage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWikiPage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWikiPage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWikiPage(val *WikiPage) *NullableWikiPage {
+	return &NullableWikiPage{value: val, isSet: true}
+}
+
+func (v NullableWikiPage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWikiPage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

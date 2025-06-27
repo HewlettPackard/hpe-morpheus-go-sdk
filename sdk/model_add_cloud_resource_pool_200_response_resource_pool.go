@@ -41,7 +41,7 @@ type AddCloudResourcePool200ResponseResourcePool struct {
 	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
 	Success              *bool                                                                 `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCloudResourcePool200ResponseResourcePool AddCloudResourcePool200ResponseResourcePool
@@ -860,7 +860,80 @@ func (o AddCloudResourcePool200ResponseResourcePool) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *AddCloudResourcePool200ResponseResourcePool) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCloudResourcePool200ResponseResourcePool := _AddCloudResourcePool200ResponseResourcePool{}
+
+	err = json.Unmarshal(data, &varAddCloudResourcePool200ResponseResourcePool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCloudResourcePool200ResponseResourcePool(varAddCloudResourcePool200ResponseResourcePool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "parent")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "regionCode")
+		delete(additionalProperties, "iacId")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "readOnly")
+		delete(additionalProperties, "defaultPool")
+		delete(additionalProperties, "active")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "inventory")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "displayName")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		delete(additionalProperties, "depth")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCloudResourcePool200ResponseResourcePool struct {
+	value *AddCloudResourcePool200ResponseResourcePool
+	isSet bool
+}
+
+func (v NullableAddCloudResourcePool200ResponseResourcePool) Get() *AddCloudResourcePool200ResponseResourcePool {
+	return v.value
+}
+
+func (v *NullableAddCloudResourcePool200ResponseResourcePool) Set(val *AddCloudResourcePool200ResponseResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudResourcePool200ResponseResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudResourcePool200ResponseResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudResourcePool200ResponseResourcePool(val *AddCloudResourcePool200ResponseResourcePool) *NullableAddCloudResourcePool200ResponseResourcePool {
+	return &NullableAddCloudResourcePool200ResponseResourcePool{value: val, isSet: true}
+}
+
+func (v NullableAddCloudResourcePool200ResponseResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudResourcePool200ResponseResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

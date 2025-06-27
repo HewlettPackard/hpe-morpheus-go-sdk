@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ResizeInstance200Response type satisfies the MappedNullable interface at compile time
@@ -25,7 +26,7 @@ type ResizeInstance200Response struct {
 	ZoneId               int64                  `json:"zoneId"`
 	Success              *bool                  `json:"success,omitempty"`
 	Errors               map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ResizeInstance200Response ResizeInstance200Response
@@ -188,7 +189,85 @@ func (o ResizeInstance200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ResizeInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"instance",
+		"zoneId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varResizeInstance200Response := _ResizeInstance200Response{}
+
+	err = json.Unmarshal(data, &varResizeInstance200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ResizeInstance200Response(varResizeInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableResizeInstance200Response struct {
+	value *ResizeInstance200Response
+	isSet bool
+}
+
+func (v NullableResizeInstance200Response) Get() *ResizeInstance200Response {
+	return v.value
+}
+
+func (v *NullableResizeInstance200Response) Set(val *ResizeInstance200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResizeInstance200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResizeInstance200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResizeInstance200Response(val *ResizeInstance200Response) *NullableResizeInstance200Response {
+	return &NullableResizeInstance200Response{value: val, isSet: true}
+}
+
+func (v NullableResizeInstance200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResizeInstance200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

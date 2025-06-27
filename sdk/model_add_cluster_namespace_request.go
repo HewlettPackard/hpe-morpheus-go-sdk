@@ -21,7 +21,7 @@ var _ MappedNullable = &AddClusterNamespaceRequest{}
 // AddClusterNamespaceRequest struct for AddClusterNamespaceRequest
 type AddClusterNamespaceRequest struct {
 	Namespace            *AddClusterNamespaceRequestNamespace `json:"namespace,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterNamespaceRequest AddClusterNamespaceRequest
@@ -96,7 +96,60 @@ func (o AddClusterNamespaceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClusterNamespaceRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddClusterNamespaceRequest := _AddClusterNamespaceRequest{}
+
+	err = json.Unmarshal(data, &varAddClusterNamespaceRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterNamespaceRequest(varAddClusterNamespaceRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "namespace")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterNamespaceRequest struct {
+	value *AddClusterNamespaceRequest
+	isSet bool
+}
+
+func (v NullableAddClusterNamespaceRequest) Get() *AddClusterNamespaceRequest {
+	return v.value
+}
+
+func (v *NullableAddClusterNamespaceRequest) Set(val *AddClusterNamespaceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterNamespaceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterNamespaceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterNamespaceRequest(val *AddClusterNamespaceRequest) *NullableAddClusterNamespaceRequest {
+	return &NullableAddClusterNamespaceRequest{value: val, isSet: true}
+}
+
+func (v NullableAddClusterNamespaceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterNamespaceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

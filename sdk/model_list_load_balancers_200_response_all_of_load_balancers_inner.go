@@ -46,7 +46,7 @@ type ListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential     `json:"credential,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
 	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListLoadBalancers200ResponseAllOfLoadBalancersInner ListLoadBalancers200ResponseAllOfLoadBalancersInner
@@ -1038,7 +1038,84 @@ func (o ListLoadBalancers200ResponseAllOfLoadBalancersInner) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListLoadBalancers200ResponseAllOfLoadBalancersInner := _ListLoadBalancers200ResponseAllOfLoadBalancersInner{}
+
+	err = json.Unmarshal(data, &varListLoadBalancers200ResponseAllOfLoadBalancersInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLoadBalancers200ResponseAllOfLoadBalancersInner(varListLoadBalancers200ResponseAllOfLoadBalancersInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "uuid")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "host")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "ip")
+		delete(additionalProperties, "internalIp")
+		delete(additionalProperties, "externalIp")
+		delete(additionalProperties, "apiPort")
+		delete(additionalProperties, "adminPort")
+		delete(additionalProperties, "sslEnabled")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "credential")
+		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListLoadBalancers200ResponseAllOfLoadBalancersInner struct {
+	value *ListLoadBalancers200ResponseAllOfLoadBalancersInner
+	isSet bool
+}
+
+func (v NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) Get() *ListLoadBalancers200ResponseAllOfLoadBalancersInner {
+	return v.value
+}
+
+func (v *NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) Set(val *ListLoadBalancers200ResponseAllOfLoadBalancersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLoadBalancers200ResponseAllOfLoadBalancersInner(val *ListLoadBalancers200ResponseAllOfLoadBalancersInner) *NullableListLoadBalancers200ResponseAllOfLoadBalancersInner {
+	return &NullableListLoadBalancers200ResponseAllOfLoadBalancersInner{value: val, isSet: true}
+}
+
+func (v NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

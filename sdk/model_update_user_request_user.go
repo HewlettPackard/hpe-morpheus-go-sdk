@@ -37,7 +37,7 @@ type UpdateUserRequestUser struct {
 	Password *string `json:"password,omitempty"`
 	// List of Roles
 	Roles                []UpdateUserRequestUserRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateUserRequestUser UpdateUserRequestUser
@@ -539,7 +539,70 @@ func (o UpdateUserRequestUser) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateUserRequestUser) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateUserRequestUser := _UpdateUserRequestUser{}
+
+	err = json.Unmarshal(data, &varUpdateUserRequestUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateUserRequestUser(varUpdateUserRequestUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "firstName")
+		delete(additionalProperties, "lastName")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "linuxUsername")
+		delete(additionalProperties, "linuxPassword")
+		delete(additionalProperties, "linuxKeyPairId")
+		delete(additionalProperties, "windowsUsername")
+		delete(additionalProperties, "windowsPassword")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "roles")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateUserRequestUser struct {
+	value *UpdateUserRequestUser
+	isSet bool
+}
+
+func (v NullableUpdateUserRequestUser) Get() *UpdateUserRequestUser {
+	return v.value
+}
+
+func (v *NullableUpdateUserRequestUser) Set(val *UpdateUserRequestUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserRequestUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserRequestUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserRequestUser(val *UpdateUserRequestUser) *NullableUpdateUserRequestUser {
+	return &NullableUpdateUserRequestUser{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserRequestUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserRequestUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -23,8 +23,8 @@ type BackupInstanceBackupJob struct {
 	// Enable synthetic full backups on this backup jobAction. Only applies to `kvm` backup type.
 	SyntheticFullEnabled *bool `json:"syntheticFullEnabled,omitempty"`
 	// the ID of the execute schedule for the synthetic full backup to be created. Only applies to `kvm` backup type.
-	SyntheticFullSchedule *int64                 `json:"syntheticFullSchedule,omitempty"`
-	AdditionalProperties  map[string]interface{} `json:",remain"`
+	SyntheticFullSchedule *int64 `json:"syntheticFullSchedule,omitempty"`
+	AdditionalProperties  map[string]interface{}
 }
 
 type _BackupInstanceBackupJob BackupInstanceBackupJob
@@ -134,7 +134,61 @@ func (o BackupInstanceBackupJob) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BackupInstanceBackupJob) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varBackupInstanceBackupJob := _BackupInstanceBackupJob{}
+
+	err = json.Unmarshal(data, &varBackupInstanceBackupJob)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BackupInstanceBackupJob(varBackupInstanceBackupJob)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "syntheticFullEnabled")
+		delete(additionalProperties, "syntheticFullSchedule")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBackupInstanceBackupJob struct {
+	value *BackupInstanceBackupJob
+	isSet bool
+}
+
+func (v NullableBackupInstanceBackupJob) Get() *BackupInstanceBackupJob {
+	return v.value
+}
+
+func (v *NullableBackupInstanceBackupJob) Set(val *BackupInstanceBackupJob) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupInstanceBackupJob) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupInstanceBackupJob) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupInstanceBackupJob(val *BackupInstanceBackupJob) *NullableBackupInstanceBackupJob {
+	return &NullableBackupInstanceBackupJob{value: val, isSet: true}
+}
+
+func (v NullableBackupInstanceBackupJob) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupInstanceBackupJob) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

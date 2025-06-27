@@ -70,8 +70,8 @@ type UpdateVDIPoolsRequestVdiPool struct {
 	// Guest Console Jump Password
 	GuestConsoleJumpPassword *string `json:"guestConsoleJumpPassword,omitempty"`
 	// Guest Console Jump Key Pair. see `Key Pair`
-	GuestConsoleJumpKeypair *int64                 `json:"guestConsoleJumpKeypair,omitempty"`
-	AdditionalProperties    map[string]interface{} `json:",remain"`
+	GuestConsoleJumpKeypair *int64 `json:"guestConsoleJumpKeypair,omitempty"`
+	AdditionalProperties    map[string]interface{}
 }
 
 type _UpdateVDIPoolsRequestVdiPool UpdateVDIPoolsRequestVdiPool
@@ -1053,7 +1053,85 @@ func (o UpdateVDIPoolsRequestVdiPool) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateVDIPoolsRequestVdiPool) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateVDIPoolsRequestVdiPool := _UpdateVDIPoolsRequestVdiPool{}
+
+	err = json.Unmarshal(data, &varUpdateVDIPoolsRequestVdiPool)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateVDIPoolsRequestVdiPool(varUpdateVDIPoolsRequestVdiPool)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "minIdle")
+		delete(additionalProperties, "initialPoolSize")
+		delete(additionalProperties, "maxIdle")
+		delete(additionalProperties, "maxPoolSize")
+		delete(additionalProperties, "allocationTimeoutMinutes")
+		delete(additionalProperties, "persistentUser")
+		delete(additionalProperties, "recyclable")
+		delete(additionalProperties, "allowCopy")
+		delete(additionalProperties, "allowPrinter")
+		delete(additionalProperties, "allowFileshare")
+		delete(additionalProperties, "allowHypervisorConsole")
+		delete(additionalProperties, "autoCreateLocalUserOnReservation")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "iconPath")
+		delete(additionalProperties, "apps")
+		delete(additionalProperties, "gateway")
+		delete(additionalProperties, "instanceConfig")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "guestConsoleJumpHost")
+		delete(additionalProperties, "guestConsoleJumpPort")
+		delete(additionalProperties, "guestConsoleJumpUsername")
+		delete(additionalProperties, "guestConsoleJumpPassword")
+		delete(additionalProperties, "guestConsoleJumpKeypair")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateVDIPoolsRequestVdiPool struct {
+	value *UpdateVDIPoolsRequestVdiPool
+	isSet bool
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) Get() *UpdateVDIPoolsRequestVdiPool {
+	return v.value
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) Set(val *UpdateVDIPoolsRequestVdiPool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVDIPoolsRequestVdiPool(val *UpdateVDIPoolsRequestVdiPool) *NullableUpdateVDIPoolsRequestVdiPool {
+	return &NullableUpdateVDIPoolsRequestVdiPool{value: val, isSet: true}
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

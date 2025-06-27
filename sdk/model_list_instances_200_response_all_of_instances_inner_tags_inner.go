@@ -20,9 +20,9 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerTagsInner{}
 
 // ListInstances200ResponseAllOfInstancesInnerTagsInner struct for ListInstances200ResponseAllOfInstancesInnerTagsInner
 type ListInstances200ResponseAllOfInstancesInnerTagsInner struct {
-	Name                 *string                `json:"name,omitempty"`
-	Value                NullableString         `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Name                 *string        `json:"name,omitempty"`
+	Value                NullableString `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerTagsInner ListInstances200ResponseAllOfInstancesInnerTagsInner
@@ -143,7 +143,61 @@ func (o ListInstances200ResponseAllOfInstancesInnerTagsInner) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListInstances200ResponseAllOfInstancesInnerTagsInner := _ListInstances200ResponseAllOfInstancesInnerTagsInner{}
+
+	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerTagsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListInstances200ResponseAllOfInstancesInnerTagsInner(varListInstances200ResponseAllOfInstancesInnerTagsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "value")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListInstances200ResponseAllOfInstancesInnerTagsInner struct {
+	value *ListInstances200ResponseAllOfInstancesInnerTagsInner
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Get() *ListInstances200ResponseAllOfInstancesInnerTagsInner {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Set(val *ListInstances200ResponseAllOfInstancesInnerTagsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerTagsInner(val *ListInstances200ResponseAllOfInstancesInnerTagsInner) *NullableListInstances200ResponseAllOfInstancesInnerTagsInner {
+	return &NullableListInstances200ResponseAllOfInstancesInnerTagsInner{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

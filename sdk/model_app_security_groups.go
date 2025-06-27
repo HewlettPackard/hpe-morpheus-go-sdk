@@ -20,11 +20,11 @@ var _ MappedNullable = &AppSecurityGroups{}
 
 // AppSecurityGroups struct for AppSecurityGroups
 type AppSecurityGroups struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	AccountId            *int64                 `json:"accountId,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	AccountId            *int64  `json:"accountId,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	Description          *string `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AppSecurityGroups AppSecurityGroups
@@ -204,7 +204,63 @@ func (o AppSecurityGroups) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AppSecurityGroups) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAppSecurityGroups := _AppSecurityGroups{}
+
+	err = json.Unmarshal(data, &varAppSecurityGroups)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AppSecurityGroups(varAppSecurityGroups)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "accountId")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAppSecurityGroups struct {
+	value *AppSecurityGroups
+	isSet bool
+}
+
+func (v NullableAppSecurityGroups) Get() *AppSecurityGroups {
+	return v.value
+}
+
+func (v *NullableAppSecurityGroups) Set(val *AppSecurityGroups) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppSecurityGroups) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppSecurityGroups) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppSecurityGroups(val *AppSecurityGroups) *NullableAppSecurityGroups {
+	return &NullableAppSecurityGroups{value: val, isSet: true}
+}
+
+func (v NullableAppSecurityGroups) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppSecurityGroups) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -36,7 +36,7 @@ type IntegrationAnsibleTower struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationAnsibleTower IntegrationAnsibleTower
@@ -635,7 +635,74 @@ func (o IntegrationAnsibleTower) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationAnsibleTower) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationAnsibleTower := _IntegrationAnsibleTower{}
+
+	err = json.Unmarshal(data, &varIntegrationAnsibleTower)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationAnsibleTower(varIntegrationAnsibleTower)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "version")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationAnsibleTower struct {
+	value *IntegrationAnsibleTower
+	isSet bool
+}
+
+func (v NullableIntegrationAnsibleTower) Get() *IntegrationAnsibleTower {
+	return v.value
+}
+
+func (v *NullableIntegrationAnsibleTower) Set(val *IntegrationAnsibleTower) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationAnsibleTower) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationAnsibleTower) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationAnsibleTower(val *IntegrationAnsibleTower) *NullableIntegrationAnsibleTower {
+	return &NullableIntegrationAnsibleTower{value: val, isSet: true}
+}
+
+func (v NullableIntegrationAnsibleTower) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationAnsibleTower) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

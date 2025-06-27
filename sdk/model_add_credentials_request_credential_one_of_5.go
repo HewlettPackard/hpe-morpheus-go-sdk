@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddCredentialsRequestCredentialOneOf5 type satisfies the MappedNullable interface at compile time
@@ -32,7 +33,7 @@ type AddCredentialsRequestCredentialOneOf5 struct {
 	// Username
 	Username             string                                       `json:"username"`
 	AuthKey              AddCredentialsRequestCredentialOneOf2AuthKey `json:"authKey"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCredentialsRequestCredentialOneOf5 AddCredentialsRequestCredentialOneOf5
@@ -285,7 +286,90 @@ func (o AddCredentialsRequestCredentialOneOf5) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *AddCredentialsRequestCredentialOneOf5) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"type",
+		"name",
+		"username",
+		"authKey",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddCredentialsRequestCredentialOneOf5 := _AddCredentialsRequestCredentialOneOf5{}
+
+	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOf5)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCredentialsRequestCredentialOneOf5(varAddCredentialsRequestCredentialOneOf5)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "integration")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "authKey")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCredentialsRequestCredentialOneOf5 struct {
+	value *AddCredentialsRequestCredentialOneOf5
+	isSet bool
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) Get() *AddCredentialsRequestCredentialOneOf5 {
+	return v.value
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) Set(val *AddCredentialsRequestCredentialOneOf5) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentialsRequestCredentialOneOf5(val *AddCredentialsRequestCredentialOneOf5) *NullableAddCredentialsRequestCredentialOneOf5 {
+	return &NullableAddCredentialsRequestCredentialOneOf5{value: val, isSet: true}
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

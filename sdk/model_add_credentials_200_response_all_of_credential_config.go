@@ -20,14 +20,14 @@ var _ MappedNullable = &AddCredentials200ResponseAllOfCredentialConfig{}
 
 // AddCredentials200ResponseAllOfCredentialConfig struct for AddCredentials200ResponseAllOfCredentialConfig
 type AddCredentials200ResponseAllOfCredentialConfig struct {
-	ClientSecret         *string                `json:"clientSecret,omitempty"`
-	ClientId             *string                `json:"clientId,omitempty"`
-	ClientAuth           *string                `json:"clientAuth,omitempty"`
-	Scope                *string                `json:"scope,omitempty"`
-	GrantType            *string                `json:"grantType,omitempty"`
-	AccessTokenUrl       *string                `json:"accessTokenUrl,omitempty"`
-	ClientSecretHash     *string                `json:"clientSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ClientSecret         *string `json:"clientSecret,omitempty"`
+	ClientId             *string `json:"clientId,omitempty"`
+	ClientAuth           *string `json:"clientAuth,omitempty"`
+	Scope                *string `json:"scope,omitempty"`
+	GrantType            *string `json:"grantType,omitempty"`
+	AccessTokenUrl       *string `json:"accessTokenUrl,omitempty"`
+	ClientSecretHash     *string `json:"clientSecretHash,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCredentials200ResponseAllOfCredentialConfig AddCredentials200ResponseAllOfCredentialConfig
@@ -312,7 +312,66 @@ func (o AddCredentials200ResponseAllOfCredentialConfig) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *AddCredentials200ResponseAllOfCredentialConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCredentials200ResponseAllOfCredentialConfig := _AddCredentials200ResponseAllOfCredentialConfig{}
+
+	err = json.Unmarshal(data, &varAddCredentials200ResponseAllOfCredentialConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCredentials200ResponseAllOfCredentialConfig(varAddCredentials200ResponseAllOfCredentialConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "clientSecret")
+		delete(additionalProperties, "clientId")
+		delete(additionalProperties, "clientAuth")
+		delete(additionalProperties, "scope")
+		delete(additionalProperties, "grantType")
+		delete(additionalProperties, "accessTokenUrl")
+		delete(additionalProperties, "clientSecretHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCredentials200ResponseAllOfCredentialConfig struct {
+	value *AddCredentials200ResponseAllOfCredentialConfig
+	isSet bool
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredentialConfig) Get() *AddCredentials200ResponseAllOfCredentialConfig {
+	return v.value
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredentialConfig) Set(val *AddCredentials200ResponseAllOfCredentialConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredentialConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredentialConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentials200ResponseAllOfCredentialConfig(val *AddCredentials200ResponseAllOfCredentialConfig) *NullableAddCredentials200ResponseAllOfCredentialConfig {
+	return &NullableAddCredentials200ResponseAllOfCredentialConfig{value: val, isSet: true}
+}
+
+func (v NullableAddCredentials200ResponseAllOfCredentialConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentials200ResponseAllOfCredentialConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &AddCatalogItemType200Response{}
 type AddCatalogItemType200Response struct {
 	CatalogItemType      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"catalogItemType,omitempty"`
 	Success              *bool                                        `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddCatalogItemType200Response AddCatalogItemType200Response
@@ -132,7 +132,61 @@ func (o AddCatalogItemType200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCatalogItemType200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddCatalogItemType200Response := _AddCatalogItemType200Response{}
+
+	err = json.Unmarshal(data, &varAddCatalogItemType200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddCatalogItemType200Response(varAddCatalogItemType200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "catalogItemType")
+		delete(additionalProperties, "success")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddCatalogItemType200Response struct {
+	value *AddCatalogItemType200Response
+	isSet bool
+}
+
+func (v NullableAddCatalogItemType200Response) Get() *AddCatalogItemType200Response {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemType200Response) Set(val *AddCatalogItemType200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemType200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemType200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemType200Response(val *AddCatalogItemType200Response) *NullableAddCatalogItemType200Response {
+	return &NullableAddCatalogItemType200Response{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemType200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemType200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

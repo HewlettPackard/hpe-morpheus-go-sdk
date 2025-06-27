@@ -23,7 +23,7 @@ type ClusterUpdatePermissions struct {
 	ResourcePermissions  *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
 	ResourcePool         *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool        `json:"resourcePool,omitempty"`
 	TenantPermissions    *UpdateCloudDatastoresRequestDatastoreTenantPermissions               `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterUpdatePermissions ClusterUpdatePermissions
@@ -168,7 +168,62 @@ func (o ClusterUpdatePermissions) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterUpdatePermissions) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varClusterUpdatePermissions := _ClusterUpdatePermissions{}
+
+	err = json.Unmarshal(data, &varClusterUpdatePermissions)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterUpdatePermissions(varClusterUpdatePermissions)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "resourcePermissions")
+		delete(additionalProperties, "resourcePool")
+		delete(additionalProperties, "tenantPermissions")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterUpdatePermissions struct {
+	value *ClusterUpdatePermissions
+	isSet bool
+}
+
+func (v NullableClusterUpdatePermissions) Get() *ClusterUpdatePermissions {
+	return v.value
+}
+
+func (v *NullableClusterUpdatePermissions) Set(val *ClusterUpdatePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterUpdatePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterUpdatePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterUpdatePermissions(val *ClusterUpdatePermissions) *NullableClusterUpdatePermissions {
+	return &NullableClusterUpdatePermissions{value: val, isSet: true}
+}
+
+func (v NullableClusterUpdatePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterUpdatePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

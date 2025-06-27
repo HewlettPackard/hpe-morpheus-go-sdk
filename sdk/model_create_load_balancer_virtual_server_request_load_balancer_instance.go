@@ -37,7 +37,7 @@ type CreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
 	// SSL Server Certificate ID
 	SslServerCert        *int64                                                            `json:"sslServerCert,omitempty"`
 	Config               *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _CreateLoadBalancerVirtualServerRequestLoadBalancerInstance CreateLoadBalancerVirtualServerRequestLoadBalancerInstance
@@ -392,7 +392,68 @@ func (o CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) ToMap() (map
 	return toSerialize, nil
 }
 func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance := _CreateLoadBalancerVirtualServerRequestLoadBalancerInstance{}
+
+	err = json.Unmarshal(data, &varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = CreateLoadBalancerVirtualServerRequestLoadBalancerInstance(varCreateLoadBalancerVirtualServerRequestLoadBalancerInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "vipName")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "vipAddress")
+		delete(additionalProperties, "vipPort")
+		delete(additionalProperties, "vipProtocol")
+		delete(additionalProperties, "vipHostname")
+		delete(additionalProperties, "sslCert")
+		delete(additionalProperties, "sslServerCert")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance struct {
+	value *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) Get() *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) Set(val *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance(val *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) *NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance {
+	return &NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddClusterRequestClusterServerVolumesInner type satisfies the MappedNullable interface at compile time
@@ -33,8 +34,8 @@ type AddClusterRequestClusterServerVolumesInner struct {
 	// Identifier for LV type
 	StorageType *int64 `json:"storageType,omitempty"`
 	// The ID of the specific datastore. Auto selection can be specified as auto or `autoCluster` (for clusters).
-	DatastoreId          NullableString         `json:"datastoreId"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	DatastoreId          NullableString `json:"datastoreId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddClusterRequestClusterServerVolumesInner AddClusterRequestClusterServerVolumesInner
@@ -324,7 +325,88 @@ func (o AddClusterRequestClusterServerVolumesInner) ToMap() (map[string]interfac
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterServerVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"datastoreId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddClusterRequestClusterServerVolumesInner := _AddClusterRequestClusterServerVolumesInner{}
+
+	err = json.Unmarshal(data, &varAddClusterRequestClusterServerVolumesInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddClusterRequestClusterServerVolumesInner(varAddClusterRequestClusterServerVolumesInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "rootVolume")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "size")
+		delete(additionalProperties, "sizeId")
+		delete(additionalProperties, "storageType")
+		delete(additionalProperties, "datastoreId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddClusterRequestClusterServerVolumesInner struct {
+	value *AddClusterRequestClusterServerVolumesInner
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerVolumesInner) Get() *AddClusterRequestClusterServerVolumesInner {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerVolumesInner) Set(val *AddClusterRequestClusterServerVolumesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerVolumesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerVolumesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerVolumesInner(val *AddClusterRequestClusterServerVolumesInner) *NullableAddClusterRequestClusterServerVolumesInner {
+	return &NullableAddClusterRequestClusterServerVolumesInner{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerVolumesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerVolumesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

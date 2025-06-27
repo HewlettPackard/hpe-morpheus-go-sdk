@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateClusterRequestClusterIntegrationsInner{}
 // UpdateClusterRequestClusterIntegrationsInner struct for UpdateClusterRequestClusterIntegrationsInner
 type UpdateClusterRequestClusterIntegrationsInner struct {
 	// Integration ID. Only certain integration types may be associated to a cluster.
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateClusterRequestClusterIntegrationsInner UpdateClusterRequestClusterIntegrationsInner
@@ -97,7 +97,60 @@ func (o UpdateClusterRequestClusterIntegrationsInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *UpdateClusterRequestClusterIntegrationsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateClusterRequestClusterIntegrationsInner := _UpdateClusterRequestClusterIntegrationsInner{}
+
+	err = json.Unmarshal(data, &varUpdateClusterRequestClusterIntegrationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateClusterRequestClusterIntegrationsInner(varUpdateClusterRequestClusterIntegrationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateClusterRequestClusterIntegrationsInner struct {
+	value *UpdateClusterRequestClusterIntegrationsInner
+	isSet bool
+}
+
+func (v NullableUpdateClusterRequestClusterIntegrationsInner) Get() *UpdateClusterRequestClusterIntegrationsInner {
+	return v.value
+}
+
+func (v *NullableUpdateClusterRequestClusterIntegrationsInner) Set(val *UpdateClusterRequestClusterIntegrationsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterRequestClusterIntegrationsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterRequestClusterIntegrationsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterRequestClusterIntegrationsInner(val *UpdateClusterRequestClusterIntegrationsInner) *NullableUpdateClusterRequestClusterIntegrationsInner {
+	return &NullableUpdateClusterRequestClusterIntegrationsInner{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterRequestClusterIntegrationsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterRequestClusterIntegrationsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

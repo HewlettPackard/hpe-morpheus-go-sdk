@@ -40,7 +40,7 @@ type IntegrationDockerRepo struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationDockerRepo IntegrationDockerRepo
@@ -801,7 +801,78 @@ func (o IntegrationDockerRepo) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationDockerRepo) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationDockerRepo := _IntegrationDockerRepo{}
+
+	err = json.Unmarshal(data, &varIntegrationDockerRepo)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationDockerRepo(varIntegrationDockerRepo)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "passwordHash")
+		delete(additionalProperties, "token")
+		delete(additionalProperties, "tokenHash")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationDockerRepo struct {
+	value *IntegrationDockerRepo
+	isSet bool
+}
+
+func (v NullableIntegrationDockerRepo) Get() *IntegrationDockerRepo {
+	return v.value
+}
+
+func (v *NullableIntegrationDockerRepo) Set(val *IntegrationDockerRepo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationDockerRepo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationDockerRepo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationDockerRepo(val *IntegrationDockerRepo) *NullableIntegrationDockerRepo {
+	return &NullableIntegrationDockerRepo{value: val, isSet: true}
+}
+
+func (v NullableIntegrationDockerRepo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationDockerRepo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

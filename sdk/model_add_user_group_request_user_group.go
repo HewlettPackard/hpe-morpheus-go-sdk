@@ -25,8 +25,8 @@ type AddUserGroupRequestUserGroup struct {
 	SudoUser    *bool          `json:"sudoUser,omitempty"`
 	ServerGroup NullableString `json:"serverGroup,omitempty"`
 	// A list of IDs of users that are in the user group
-	Users                []int64                `json:"users,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Users                []int64 `json:"users,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddUserGroupRequestUserGroup AddUserGroupRequestUserGroup
@@ -263,7 +263,64 @@ func (o AddUserGroupRequestUserGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddUserGroupRequestUserGroup) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddUserGroupRequestUserGroup := _AddUserGroupRequestUserGroup{}
+
+	err = json.Unmarshal(data, &varAddUserGroupRequestUserGroup)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddUserGroupRequestUserGroup(varAddUserGroupRequestUserGroup)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "sudoUser")
+		delete(additionalProperties, "serverGroup")
+		delete(additionalProperties, "users")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddUserGroupRequestUserGroup struct {
+	value *AddUserGroupRequestUserGroup
+	isSet bool
+}
+
+func (v NullableAddUserGroupRequestUserGroup) Get() *AddUserGroupRequestUserGroup {
+	return v.value
+}
+
+func (v *NullableAddUserGroupRequestUserGroup) Set(val *AddUserGroupRequestUserGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddUserGroupRequestUserGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddUserGroupRequestUserGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddUserGroupRequestUserGroup(val *AddUserGroupRequestUserGroup) *NullableAddUserGroupRequestUserGroup {
+	return &NullableAddUserGroupRequestUserGroup{value: val, isSet: true}
+}
+
+func (v NullableAddUserGroupRequestUserGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddUserGroupRequestUserGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

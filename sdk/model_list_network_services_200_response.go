@@ -21,7 +21,7 @@ var _ MappedNullable = &ListNetworkServices200Response{}
 // ListNetworkServices200Response struct for ListNetworkServices200Response
 type ListNetworkServices200Response struct {
 	NetworkServices      []ListNetworkServices200ResponseNetworkServicesInner `json:"networkServices,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListNetworkServices200Response ListNetworkServices200Response
@@ -96,7 +96,60 @@ func (o ListNetworkServices200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *ListNetworkServices200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListNetworkServices200Response := _ListNetworkServices200Response{}
+
+	err = json.Unmarshal(data, &varListNetworkServices200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListNetworkServices200Response(varListNetworkServices200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "networkServices")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListNetworkServices200Response struct {
+	value *ListNetworkServices200Response
+	isSet bool
+}
+
+func (v NullableListNetworkServices200Response) Get() *ListNetworkServices200Response {
+	return v.value
+}
+
+func (v *NullableListNetworkServices200Response) Set(val *ListNetworkServices200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkServices200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkServices200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkServices200Response(val *ListNetworkServices200Response) *NullableListNetworkServices200Response {
+	return &NullableListNetworkServices200Response{value: val, isSet: true}
+}
+
+func (v NullableListNetworkServices200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkServices200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

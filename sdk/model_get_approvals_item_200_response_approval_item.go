@@ -36,7 +36,7 @@ type GetApprovalsItem200ResponseApprovalItem struct {
 	DateDenied           NullableTime                                      `json:"dateDenied,omitempty"`
 	Approval             *GetAlerts200ResponseAllOfChecksInnerAccount      `json:"approval,omitempty"`
 	Reference            *GetApprovalsItem200ResponseApprovalItemReference `json:"reference,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _GetApprovalsItem200ResponseApprovalItem GetApprovalsItem200ResponseApprovalItem
@@ -667,7 +667,74 @@ func (o GetApprovalsItem200ResponseApprovalItem) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *GetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varGetApprovalsItem200ResponseApprovalItem := _GetApprovalsItem200ResponseApprovalItem{}
+
+	err = json.Unmarshal(data, &varGetApprovalsItem200ResponseApprovalItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = GetApprovalsItem200ResponseApprovalItem(varGetApprovalsItem200ResponseApprovalItem)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalName")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "approvedBy")
+		delete(additionalProperties, "deniedBy")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "errorMessage")
+		delete(additionalProperties, "dateCreated")
+		delete(additionalProperties, "lastUpdated")
+		delete(additionalProperties, "dateApproved")
+		delete(additionalProperties, "dateDenied")
+		delete(additionalProperties, "approval")
+		delete(additionalProperties, "reference")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableGetApprovalsItem200ResponseApprovalItem struct {
+	value *GetApprovalsItem200ResponseApprovalItem
+	isSet bool
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) Get() *GetApprovalsItem200ResponseApprovalItem {
+	return v.value
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) Set(val *GetApprovalsItem200ResponseApprovalItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetApprovalsItem200ResponseApprovalItem(val *GetApprovalsItem200ResponseApprovalItem) *NullableGetApprovalsItem200ResponseApprovalItem {
+	return &NullableGetApprovalsItem200ResponseApprovalItem{value: val, isSet: true}
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

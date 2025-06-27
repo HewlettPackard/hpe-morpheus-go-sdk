@@ -21,7 +21,7 @@ var _ MappedNullable = &AddDeploymentsRequest{}
 // AddDeploymentsRequest struct for AddDeploymentsRequest
 type AddDeploymentsRequest struct {
 	Deployment           *AddDeploymentsRequestDeployment `json:"deployment,omitempty"`
-	AdditionalProperties map[string]interface{}           `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddDeploymentsRequest AddDeploymentsRequest
@@ -96,7 +96,60 @@ func (o AddDeploymentsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddDeploymentsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varAddDeploymentsRequest := _AddDeploymentsRequest{}
+
+	err = json.Unmarshal(data, &varAddDeploymentsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddDeploymentsRequest(varAddDeploymentsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "deployment")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddDeploymentsRequest struct {
+	value *AddDeploymentsRequest
+	isSet bool
+}
+
+func (v NullableAddDeploymentsRequest) Get() *AddDeploymentsRequest {
+	return v.value
+}
+
+func (v *NullableAddDeploymentsRequest) Set(val *AddDeploymentsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddDeploymentsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddDeploymentsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddDeploymentsRequest(val *AddDeploymentsRequest) *NullableAddDeploymentsRequest {
+	return &NullableAddDeploymentsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddDeploymentsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddDeploymentsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

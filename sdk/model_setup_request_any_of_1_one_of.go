@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the SetupRequestAnyOf1OneOf type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &SetupRequestAnyOf1OneOf{}
 // SetupRequestAnyOf1OneOf Object for logging in to the [Morpheus Hub](https://morpheushub.com) with existing credentials. This is only required for `hubmode=login`.
 type SetupRequestAnyOf1OneOf struct {
 	Hub                  SetupRequestAnyOf1OneOfHub `json:"hub"`
-	AdditionalProperties map[string]interface{}     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _SetupRequestAnyOf1OneOf SetupRequestAnyOf1OneOf
@@ -87,7 +88,81 @@ func (o SetupRequestAnyOf1OneOf) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SetupRequestAnyOf1OneOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"hub",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varSetupRequestAnyOf1OneOf := _SetupRequestAnyOf1OneOf{}
+
+	err = json.Unmarshal(data, &varSetupRequestAnyOf1OneOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = SetupRequestAnyOf1OneOf(varSetupRequestAnyOf1OneOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "hub")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSetupRequestAnyOf1OneOf struct {
+	value *SetupRequestAnyOf1OneOf
+	isSet bool
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) Get() *SetupRequestAnyOf1OneOf {
+	return v.value
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) Set(val *SetupRequestAnyOf1OneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSetupRequestAnyOf1OneOf(val *SetupRequestAnyOf1OneOf) *NullableSetupRequestAnyOf1OneOf {
+	return &NullableSetupRequestAnyOf1OneOf{value: val, isSet: true}
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

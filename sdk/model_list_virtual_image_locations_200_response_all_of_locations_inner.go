@@ -45,7 +45,7 @@ type ListVirtualImageLocations200ResponseAllOfLocationsInner struct {
 	StorageControllers   []map[string]interface{}                                             `json:"storageControllers,omitempty"`
 	NetworkInterfaces    []map[string]interface{}                                             `json:"networkInterfaces,omitempty"`
 	VirtualImage         *ListVirtualImageLocations200ResponseAllOfLocationsInnerVirtualImage `json:"virtualImage,omitempty"`
-	AdditionalProperties map[string]interface{}                                               `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListVirtualImageLocations200ResponseAllOfLocationsInner ListVirtualImageLocations200ResponseAllOfLocationsInner
@@ -1059,7 +1059,84 @@ func (o ListVirtualImageLocations200ResponseAllOfLocationsInner) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListVirtualImageLocations200ResponseAllOfLocationsInner := _ListVirtualImageLocations200ResponseAllOfLocationsInner{}
+
+	err = json.Unmarshal(data, &varListVirtualImageLocations200ResponseAllOfLocationsInner)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVirtualImageLocations200ResponseAllOfLocationsInner(varListVirtualImageLocations200ResponseAllOfLocationsInner)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "cloud")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "internalId")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "externalDiskId")
+		delete(additionalProperties, "remotePath")
+		delete(additionalProperties, "imagePath")
+		delete(additionalProperties, "imageName")
+		delete(additionalProperties, "imageRegion")
+		delete(additionalProperties, "imageFolder")
+		delete(additionalProperties, "refType")
+		delete(additionalProperties, "refId")
+		delete(additionalProperties, "nodeRefType")
+		delete(additionalProperties, "nodeRefId")
+		delete(additionalProperties, "subRefType")
+		delete(additionalProperties, "subRefId")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "systemImage")
+		delete(additionalProperties, "diskIndex")
+		delete(additionalProperties, "pricePlan")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "storageControllers")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "virtualImage")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListVirtualImageLocations200ResponseAllOfLocationsInner struct {
+	value *ListVirtualImageLocations200ResponseAllOfLocationsInner
+	isSet bool
+}
+
+func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Get() *ListVirtualImageLocations200ResponseAllOfLocationsInner {
+	return v.value
+}
+
+func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Set(val *ListVirtualImageLocations200ResponseAllOfLocationsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVirtualImageLocations200ResponseAllOfLocationsInner(val *ListVirtualImageLocations200ResponseAllOfLocationsInner) *NullableListVirtualImageLocations200ResponseAllOfLocationsInner {
+	return &NullableListVirtualImageLocations200ResponseAllOfLocationsInner{value: val, isSet: true}
+}
+
+func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -33,18 +33,6 @@ func NSXNetworkServerUpdateAsUpdateNetworkServerRequestNetworkServer(v *NSXNetwo
 	}
 }
 
-func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &UpdateNetworkServerRequestNetworkServer{}
-	}
-
-	if out, ok := data.(NSXNetworkServerUpdate); ok {
-		dst.NSXNetworkServerUpdate = &out
-	}
-
-	return dst, nil
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalJSON(data []byte) error {
 	var err error

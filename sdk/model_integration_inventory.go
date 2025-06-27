@@ -26,7 +26,7 @@ type IntegrationInventory struct {
 	ExternalId           NullableString                                      `json:"externalId,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"owner,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationInventory IntegrationInventory
@@ -298,7 +298,65 @@ func (o IntegrationInventory) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationInventory) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationInventory := _IntegrationInventory{}
+
+	err = json.Unmarshal(data, &varIntegrationInventory)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationInventory(varIntegrationInventory)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "owner")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationInventory struct {
+	value *IntegrationInventory
+	isSet bool
+}
+
+func (v NullableIntegrationInventory) Get() *IntegrationInventory {
+	return v.value
+}
+
+func (v *NullableIntegrationInventory) Set(val *IntegrationInventory) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationInventory) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationInventory) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationInventory(val *IntegrationInventory) *NullableIntegrationInventory {
+	return &NullableIntegrationInventory{value: val, isSet: true}
+}
+
+func (v NullableIntegrationInventory) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationInventory) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

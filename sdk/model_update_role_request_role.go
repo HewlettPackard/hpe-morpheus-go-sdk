@@ -69,7 +69,7 @@ type UpdateRoleRequestRole struct {
 	GlobalTaskSetAccess *string `json:"globalTaskSetAccess,omitempty"`
 	// Set the access level for the specified workflows (taskSets)
 	TaskSets             []AddRolesRequestRoleTaskSetsInner `json:"taskSets,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateRoleRequestRole UpdateRoleRequestRole
@@ -1017,7 +1017,84 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateRoleRequestRole) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateRoleRequestRole := _UpdateRoleRequestRole{}
+
+	err = json.Unmarshal(data, &varUpdateRoleRequestRole)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateRoleRequestRole(varUpdateRoleRequestRole)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "authority")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "landingUrl")
+		delete(additionalProperties, "defaultPersona")
+		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "globalSiteAccess")
+		delete(additionalProperties, "sites")
+		delete(additionalProperties, "globalZoneAccess")
+		delete(additionalProperties, "zones")
+		delete(additionalProperties, "globalInstanceTypeAccess")
+		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "globalAppTemplateAccess")
+		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "globalCatalogItemTypeAccess")
+		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "globalPersonaAccess")
+		delete(additionalProperties, "personas")
+		delete(additionalProperties, "globalVdiPoolAccess")
+		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "globalReportTypeAccess")
+		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "globalTaskAccess")
+		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "globalTaskSetAccess")
+		delete(additionalProperties, "taskSets")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateRoleRequestRole struct {
+	value *UpdateRoleRequestRole
+	isSet bool
+}
+
+func (v NullableUpdateRoleRequestRole) Get() *UpdateRoleRequestRole {
+	return v.value
+}
+
+func (v *NullableUpdateRoleRequestRole) Set(val *UpdateRoleRequestRole) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleRequestRole) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleRequestRole) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleRequestRole(val *UpdateRoleRequestRole) *NullableUpdateRoleRequestRole {
+	return &NullableUpdateRoleRequestRole{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleRequestRole) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleRequestRole) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

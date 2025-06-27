@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the UpdateInstance200Response type satisfies the MappedNullable interface at compile time
@@ -25,7 +26,7 @@ type UpdateInstance200Response struct {
 	ZoneId               int64                  `json:"zoneId"`
 	Success              *bool                  `json:"success,omitempty"`
 	Errors               map[string]interface{} `json:"errors,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateInstance200Response UpdateInstance200Response
@@ -188,7 +189,85 @@ func (o UpdateInstance200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateInstance200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"instance",
+		"zoneId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUpdateInstance200Response := _UpdateInstance200Response{}
+
+	err = json.Unmarshal(data, &varUpdateInstance200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateInstance200Response(varUpdateInstance200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "errors")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateInstance200Response struct {
+	value *UpdateInstance200Response
+	isSet bool
+}
+
+func (v NullableUpdateInstance200Response) Get() *UpdateInstance200Response {
+	return v.value
+}
+
+func (v *NullableUpdateInstance200Response) Set(val *UpdateInstance200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstance200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstance200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstance200Response(val *UpdateInstance200Response) *NullableUpdateInstance200Response {
+	return &NullableUpdateInstance200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstance200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstance200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

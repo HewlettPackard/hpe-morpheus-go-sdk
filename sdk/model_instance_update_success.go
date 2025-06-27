@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the InstanceUpdateSuccess type satisfies the MappedNullable interface at compile time
@@ -22,8 +23,8 @@ var _ MappedNullable = &InstanceUpdateSuccess{}
 type InstanceUpdateSuccess struct {
 	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
-	ZoneId               int64                  `json:"zoneId"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ZoneId               int64 `json:"zoneId"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _InstanceUpdateSuccess InstanceUpdateSuccess
@@ -115,7 +116,83 @@ func (o InstanceUpdateSuccess) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceUpdateSuccess) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"instance",
+		"zoneId",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varInstanceUpdateSuccess := _InstanceUpdateSuccess{}
+
+	err = json.Unmarshal(data, &varInstanceUpdateSuccess)
+
+	if err != nil {
+		return err
+	}
+
+	*o = InstanceUpdateSuccess(varInstanceUpdateSuccess)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "instance")
+		delete(additionalProperties, "zoneId")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableInstanceUpdateSuccess struct {
+	value *InstanceUpdateSuccess
+	isSet bool
+}
+
+func (v NullableInstanceUpdateSuccess) Get() *InstanceUpdateSuccess {
+	return v.value
+}
+
+func (v *NullableInstanceUpdateSuccess) Set(val *InstanceUpdateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceUpdateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceUpdateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceUpdateSuccess(val *InstanceUpdateSuccess) *NullableInstanceUpdateSuccess {
+	return &NullableInstanceUpdateSuccess{value: val, isSet: true}
+}
+
+func (v NullableInstanceUpdateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceUpdateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

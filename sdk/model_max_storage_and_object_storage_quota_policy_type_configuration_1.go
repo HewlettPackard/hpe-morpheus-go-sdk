@@ -20,9 +20,9 @@ var _ MappedNullable = &MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1{
 
 // MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max Storage - Object Storage Quota
 type MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 struct {
-	MaxStorage           *string                `json:"maxStorage,omitempty"`
-	ExcludeContainers    *bool                  `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MaxStorage           *string `json:"maxStorage,omitempty"`
+	ExcludeContainers    *bool   `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
@@ -132,7 +132,61 @@ func (o MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 := _MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1{}
+
+	err = json.Unmarshal(data, &varMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1)
+
+	if err != nil {
+		return err
+	}
+
+	*o = MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1(varMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "maxStorage")
+		delete(additionalProperties, "excludeContainers")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 struct {
+	value *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
+	isSet bool
+}
+
+func (v NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) Get() *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 {
+	return v.value
+}
+
+func (v *NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) Set(val *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1(val *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) *NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 {
+	return &NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1{value: val, isSet: true}
+}
+
+func (v NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -20,11 +20,11 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{}
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Code                 *string                `json:"code,omitempty"`
-	Title                *string                `json:"title,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64  `json:"id,omitempty"`
+	Name                 *string `json:"name,omitempty"`
+	Code                 *string `json:"code,omitempty"`
+	Title                *string `json:"title,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType
@@ -204,7 +204,63 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{}
+
+	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "code")
+		delete(additionalProperties, "title")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType struct {
+	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType
+	isSet bool
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType {
+	return v.value
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType {
+	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType{value: val, isSet: true}
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

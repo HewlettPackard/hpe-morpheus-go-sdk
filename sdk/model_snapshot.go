@@ -35,7 +35,7 @@ type Snapshot struct {
 	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner                                             `json:"snapshotFiles,omitempty"`
 	CurrentlyActive      *bool                                                                                                      `json:"currentlyActive,omitempty"`
 	DateCreated          *time.Time                                                                                                 `json:"dateCreated,omitempty"`
-	AdditionalProperties map[string]interface{}                                                                                     `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _Snapshot Snapshot
@@ -631,7 +631,73 @@ func (o Snapshot) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Snapshot) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varSnapshot := _Snapshot{}
+
+	err = json.Unmarshal(data, &varSnapshot)
+
+	if err != nil {
+		return err
+	}
+
+	*o = Snapshot(varSnapshot)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "state")
+		delete(additionalProperties, "snapshotType")
+		delete(additionalProperties, "snapshotCreated")
+		delete(additionalProperties, "zone")
+		delete(additionalProperties, "datastore")
+		delete(additionalProperties, "parentSnapshot")
+		delete(additionalProperties, "snapshotFiles")
+		delete(additionalProperties, "currentlyActive")
+		delete(additionalProperties, "dateCreated")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableSnapshot struct {
+	value *Snapshot
+	isSet bool
+}
+
+func (v NullableSnapshot) Get() *Snapshot {
+	return v.value
+}
+
+func (v *NullableSnapshot) Set(val *Snapshot) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSnapshot) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSnapshot) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSnapshot(val *Snapshot) *NullableSnapshot {
+	return &NullableSnapshot{value: val, isSet: true}
+}
+
+func (v NullableSnapshot) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSnapshot) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

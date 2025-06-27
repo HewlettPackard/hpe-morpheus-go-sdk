@@ -22,7 +22,7 @@ var _ MappedNullable = &ListRoles200Response{}
 type ListRoles200Response struct {
 	Roles                []ListRoles200ResponseAllOfRolesInner `json:"roles,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta     `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListRoles200Response ListRoles200Response
@@ -132,7 +132,61 @@ func (o ListRoles200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListRoles200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListRoles200Response := _ListRoles200Response{}
+
+	err = json.Unmarshal(data, &varListRoles200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListRoles200Response(varListRoles200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "roles")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListRoles200Response struct {
+	value *ListRoles200Response
+	isSet bool
+}
+
+func (v NullableListRoles200Response) Get() *ListRoles200Response {
+	return v.value
+}
+
+func (v *NullableListRoles200Response) Set(val *ListRoles200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListRoles200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListRoles200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListRoles200Response(val *ListRoles200Response) *NullableListRoles200Response {
+	return &NullableListRoles200Response{value: val, isSet: true}
+}
+
+func (v NullableListRoles200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListRoles200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

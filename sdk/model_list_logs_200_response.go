@@ -32,7 +32,7 @@ type ListLogs200Response struct {
 	Success              *bool                               `json:"success,omitempty"`
 	Count                *int64                              `json:"count,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta   `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListLogs200Response ListLogs200Response
@@ -457,7 +457,70 @@ func (o ListLogs200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListLogs200Response) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListLogs200Response := _ListLogs200Response{}
+
+	err = json.Unmarshal(data, &varListLogs200Response)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListLogs200Response(varListLogs200Response)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "sort")
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "start")
+		delete(additionalProperties, "end")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "max")
+		delete(additionalProperties, "grandTotal")
+		delete(additionalProperties, "total")
+		delete(additionalProperties, "success")
+		delete(additionalProperties, "count")
+		delete(additionalProperties, "meta")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListLogs200Response struct {
+	value *ListLogs200Response
+	isSet bool
+}
+
+func (v NullableListLogs200Response) Get() *ListLogs200Response {
+	return v.value
+}
+
+func (v *NullableListLogs200Response) Set(val *ListLogs200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLogs200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLogs200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLogs200Response(val *ListLogs200Response) *NullableListLogs200Response {
+	return &NullableListLogs200Response{value: val, isSet: true}
+}
+
+func (v NullableListLogs200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLogs200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

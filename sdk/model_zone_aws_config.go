@@ -51,7 +51,7 @@ type ZoneAwsConfig struct {
 	ConfigCmdbDiscovery  *bool                                                         `json:"configCmdbDiscovery,omitempty"`
 	SecretKeyHash        *string                                                       `json:"secretKeyHash,omitempty"`
 	CostingSecretKeyHash NullableString                                                `json:"costingSecretKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ZoneAwsConfig ZoneAwsConfig
@@ -1209,7 +1209,90 @@ func (o ZoneAwsConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneAwsConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varZoneAwsConfig := _ZoneAwsConfig{}
+
+	err = json.Unmarshal(data, &varZoneAwsConfig)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ZoneAwsConfig(varZoneAwsConfig)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "endpoint")
+		delete(additionalProperties, "accessKey")
+		delete(additionalProperties, "secretKey")
+		delete(additionalProperties, "useHostCredentials")
+		delete(additionalProperties, "stsAssumeRole")
+		delete(additionalProperties, "isVpc")
+		delete(additionalProperties, "vpc")
+		delete(additionalProperties, "imageStoreId")
+		delete(additionalProperties, "ebsEncryption")
+		delete(additionalProperties, "costingReport")
+		delete(additionalProperties, "costingFolder")
+		delete(additionalProperties, "costingBucket")
+		delete(additionalProperties, "costingBucketName")
+		delete(additionalProperties, "costingRegion")
+		delete(additionalProperties, "costingAccessKey")
+		delete(additionalProperties, "costingSecretKey")
+		delete(additionalProperties, "costingReportName")
+		delete(additionalProperties, "applianceUrl")
+		delete(additionalProperties, "datacenterName")
+		delete(additionalProperties, "networkServer.id")
+		delete(additionalProperties, "networkServer")
+		delete(additionalProperties, "securityServer")
+		delete(additionalProperties, "certificateProvider")
+		delete(additionalProperties, "backupMode")
+		delete(additionalProperties, "replicationMode")
+		delete(additionalProperties, "dnsIntegrationId")
+		delete(additionalProperties, "serviceRegistryId")
+		delete(additionalProperties, "configManagementId")
+		delete(additionalProperties, "configCmdbDiscovery")
+		delete(additionalProperties, "secretKeyHash")
+		delete(additionalProperties, "costingSecretKeyHash")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableZoneAwsConfig struct {
+	value *ZoneAwsConfig
+	isSet bool
+}
+
+func (v NullableZoneAwsConfig) Get() *ZoneAwsConfig {
+	return v.value
+}
+
+func (v *NullableZoneAwsConfig) Set(val *ZoneAwsConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneAwsConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneAwsConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneAwsConfig(val *ZoneAwsConfig) *NullableZoneAwsConfig {
+	return &NullableZoneAwsConfig{value: val, isSet: true}
+}
+
+func (v NullableZoneAwsConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneAwsConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the BlueprintTerraformCreate type satisfies the MappedNullable interface at compile time
@@ -30,7 +31,7 @@ type BlueprintTerraformCreate struct {
 	Labels               []string                           `json:"labels,omitempty"`
 	Terraform            AddBlueprintRequestOneOf5Terraform `json:"terraform"`
 	Config               *AddBlueprintRequestOneOf5Config   `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _BlueprintTerraformCreate BlueprintTerraformCreate
@@ -254,7 +255,88 @@ func (o BlueprintTerraformCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BlueprintTerraformCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"name",
+		"type",
+		"terraform",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varBlueprintTerraformCreate := _BlueprintTerraformCreate{}
+
+	err = json.Unmarshal(data, &varBlueprintTerraformCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = BlueprintTerraformCreate(varBlueprintTerraformCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "image")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "terraform")
+		delete(additionalProperties, "config")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableBlueprintTerraformCreate struct {
+	value *BlueprintTerraformCreate
+	isSet bool
+}
+
+func (v NullableBlueprintTerraformCreate) Get() *BlueprintTerraformCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintTerraformCreate) Set(val *BlueprintTerraformCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintTerraformCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintTerraformCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintTerraformCreate(val *BlueprintTerraformCreate) *NullableBlueprintTerraformCreate {
+	return &NullableBlueprintTerraformCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintTerraformCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintTerraformCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

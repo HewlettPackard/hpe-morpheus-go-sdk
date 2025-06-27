@@ -32,7 +32,7 @@ type NetworkServerUpdateNSX struct {
 	Visibility *string `json:"visibility,omitempty"`
 	// Array of tenant account ids that are allowed access
 	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _NetworkServerUpdateNSX NetworkServerUpdateNSX
@@ -319,7 +319,65 @@ func (o NetworkServerUpdateNSX) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkServerUpdateNSX) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varNetworkServerUpdateNSX := _NetworkServerUpdateNSX{}
+
+	err = json.Unmarshal(data, &varNetworkServerUpdateNSX)
+
+	if err != nil {
+		return err
+	}
+
+	*o = NetworkServerUpdateNSX(varNetworkServerUpdateNSX)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "serviceUrl")
+		delete(additionalProperties, "serviceUsername")
+		delete(additionalProperties, "servicePassword")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "tenants")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableNetworkServerUpdateNSX struct {
+	value *NetworkServerUpdateNSX
+	isSet bool
+}
+
+func (v NullableNetworkServerUpdateNSX) Get() *NetworkServerUpdateNSX {
+	return v.value
+}
+
+func (v *NullableNetworkServerUpdateNSX) Set(val *NetworkServerUpdateNSX) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkServerUpdateNSX) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkServerUpdateNSX) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkServerUpdateNSX(val *NetworkServerUpdateNSX) *NullableNetworkServerUpdateNSX {
+	return &NullableNetworkServerUpdateNSX{value: val, isSet: true}
+}
+
+func (v NullableNetworkServerUpdateNSX) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkServerUpdateNSX) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

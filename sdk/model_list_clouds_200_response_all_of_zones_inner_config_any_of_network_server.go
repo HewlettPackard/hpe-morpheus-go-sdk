@@ -20,8 +20,8 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkSe
 
 // ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct for ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
 type ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct {
-	Id                   *string                `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *string `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
@@ -96,7 +96,60 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) ToMap() (m
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer := _ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer{}
+
+	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer(varListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer struct {
+	value *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
+	isSet bool
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) Get() *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer {
+	return v.value
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) Set(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer {
+	return &NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer{value: val, isSet: true}
+}
+
+func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

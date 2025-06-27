@@ -36,7 +36,7 @@ type IntegrationMicrosoftDNS struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                                            `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _IntegrationMicrosoftDNS IntegrationMicrosoftDNS
@@ -635,7 +635,74 @@ func (o IntegrationMicrosoftDNS) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationMicrosoftDNS) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varIntegrationMicrosoftDNS := _IntegrationMicrosoftDNS{}
+
+	err = json.Unmarshal(data, &varIntegrationMicrosoftDNS)
+
+	if err != nil {
+		return err
+	}
+
+	*o = IntegrationMicrosoftDNS(varIntegrationMicrosoftDNS)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "integrationType")
+		delete(additionalProperties, "url")
+		delete(additionalProperties, "serviceFlag")
+		delete(additionalProperties, "isPlugin")
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "status")
+		delete(additionalProperties, "statusDate")
+		delete(additionalProperties, "statusMessage")
+		delete(additionalProperties, "lastSync")
+		delete(additionalProperties, "lastSyncDuration")
+		delete(additionalProperties, "credential")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableIntegrationMicrosoftDNS struct {
+	value *IntegrationMicrosoftDNS
+	isSet bool
+}
+
+func (v NullableIntegrationMicrosoftDNS) Get() *IntegrationMicrosoftDNS {
+	return v.value
+}
+
+func (v *NullableIntegrationMicrosoftDNS) Set(val *IntegrationMicrosoftDNS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationMicrosoftDNS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationMicrosoftDNS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationMicrosoftDNS(val *IntegrationMicrosoftDNS) *NullableIntegrationMicrosoftDNS {
+	return &NullableIntegrationMicrosoftDNS{value: val, isSet: true}
+}
+
+func (v NullableIntegrationMicrosoftDNS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationMicrosoftDNS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

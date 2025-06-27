@@ -29,7 +29,7 @@ type UpdateArchiveBucketRequestArchiveBucket struct {
 	// Public URL - Set to true to allow anonymous access
 	IsPublic             *bool                                        `json:"isPublic,omitempty"`
 	Accounts             *GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _UpdateArchiveBucketRequestArchiveBucket UpdateArchiveBucketRequestArchiveBucket
@@ -252,7 +252,64 @@ func (o UpdateArchiveBucketRequestArchiveBucket) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *UpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varUpdateArchiveBucketRequestArchiveBucket := _UpdateArchiveBucketRequestArchiveBucket{}
+
+	err = json.Unmarshal(data, &varUpdateArchiveBucketRequestArchiveBucket)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UpdateArchiveBucketRequestArchiveBucket(varUpdateArchiveBucketRequestArchiveBucket)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "isPublic")
+		delete(additionalProperties, "accounts")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableUpdateArchiveBucketRequestArchiveBucket struct {
+	value *UpdateArchiveBucketRequestArchiveBucket
+	isSet bool
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) Get() *UpdateArchiveBucketRequestArchiveBucket {
+	return v.value
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) Set(val *UpdateArchiveBucketRequestArchiveBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateArchiveBucketRequestArchiveBucket(val *UpdateArchiveBucketRequestArchiveBucket) *NullableUpdateArchiveBucketRequestArchiveBucket {
+	return &NullableUpdateArchiveBucketRequestArchiveBucket{value: val, isSet: true}
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

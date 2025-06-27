@@ -21,7 +21,7 @@ var _ MappedNullable = &ListIntegrations200ResponseAnyOf{}
 // ListIntegrations200ResponseAnyOf struct for ListIntegrations200ResponseAnyOf
 type ListIntegrations200ResponseAnyOf struct {
 	Integrations         []ListIntegrations200ResponseAnyOfIntegrationsInner `json:"integrations,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListIntegrations200ResponseAnyOf ListIntegrations200ResponseAnyOf
@@ -96,7 +96,60 @@ func (o ListIntegrations200ResponseAnyOf) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *ListIntegrations200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListIntegrations200ResponseAnyOf := _ListIntegrations200ResponseAnyOf{}
+
+	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOf)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListIntegrations200ResponseAnyOf(varListIntegrations200ResponseAnyOf)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "integrations")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListIntegrations200ResponseAnyOf struct {
+	value *ListIntegrations200ResponseAnyOf
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOf) Get() *ListIntegrations200ResponseAnyOf {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOf) Set(val *ListIntegrations200ResponseAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOf(val *ListIntegrations200ResponseAnyOf) *NullableListIntegrations200ResponseAnyOf {
+	return &NullableListIntegrations200ResponseAnyOf{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

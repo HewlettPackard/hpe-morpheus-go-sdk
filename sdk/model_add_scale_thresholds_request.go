@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the AddScaleThresholdsRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +22,7 @@ var _ MappedNullable = &AddScaleThresholdsRequest{}
 // AddScaleThresholdsRequest struct for AddScaleThresholdsRequest
 type AddScaleThresholdsRequest struct {
 	ScaleThreshold       AddScaleThresholdsRequestScaleThreshold `json:"scaleThreshold"`
-	AdditionalProperties map[string]interface{}                  `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _AddScaleThresholdsRequest AddScaleThresholdsRequest
@@ -87,7 +88,81 @@ func (o AddScaleThresholdsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddScaleThresholdsRequest) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"scaleThreshold",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varAddScaleThresholdsRequest := _AddScaleThresholdsRequest{}
+
+	err = json.Unmarshal(data, &varAddScaleThresholdsRequest)
+
+	if err != nil {
+		return err
+	}
+
+	*o = AddScaleThresholdsRequest(varAddScaleThresholdsRequest)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "scaleThreshold")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableAddScaleThresholdsRequest struct {
+	value *AddScaleThresholdsRequest
+	isSet bool
+}
+
+func (v NullableAddScaleThresholdsRequest) Get() *AddScaleThresholdsRequest {
+	return v.value
+}
+
+func (v *NullableAddScaleThresholdsRequest) Set(val *AddScaleThresholdsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddScaleThresholdsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddScaleThresholdsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddScaleThresholdsRequest(val *AddScaleThresholdsRequest) *NullableAddScaleThresholdsRequest {
+	return &NullableAddScaleThresholdsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddScaleThresholdsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddScaleThresholdsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

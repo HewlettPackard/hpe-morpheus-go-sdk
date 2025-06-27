@@ -13,6 +13,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 // checks if the ClusterServerCreate type satisfies the MappedNullable interface at compile time
@@ -52,7 +53,7 @@ type ClusterServerCreate struct {
 	// SSH Password
 	SshPassword          NullableString                            `json:"sshPassword,omitempty"`
 	SshKeyPair           *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ClusterServerCreate ClusterServerCreate
@@ -767,7 +768,101 @@ func (o ClusterServerCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterServerCreate) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"config",
+		"name",
+		"plan",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err
+	}
+
+	for _, requiredProperty := range requiredProperties {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varClusterServerCreate := _ClusterServerCreate{}
+
+	err = json.Unmarshal(data, &varClusterServerCreate)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ClusterServerCreate(varClusterServerCreate)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "config")
+		delete(additionalProperties, "serverType")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "plan")
+		delete(additionalProperties, "servicePlanOptions")
+		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "networkInterfaces")
+		delete(additionalProperties, "securityGroups")
+		delete(additionalProperties, "visibility")
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "networkDomain")
+		delete(additionalProperties, "hostname")
+		delete(additionalProperties, "nodeCount")
+		delete(additionalProperties, "tags")
+		delete(additionalProperties, "labels")
+		delete(additionalProperties, "sshHosts")
+		delete(additionalProperties, "sshUsername")
+		delete(additionalProperties, "sshPassword")
+		delete(additionalProperties, "sshKeyPair")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableClusterServerCreate struct {
+	value *ClusterServerCreate
+	isSet bool
+}
+
+func (v NullableClusterServerCreate) Get() *ClusterServerCreate {
+	return v.value
+}
+
+func (v *NullableClusterServerCreate) Set(val *ClusterServerCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterServerCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterServerCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterServerCreate(val *ClusterServerCreate) *NullableClusterServerCreate {
+	return &NullableClusterServerCreate{value: val, isSet: true}
+}
+
+func (v NullableClusterServerCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterServerCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache

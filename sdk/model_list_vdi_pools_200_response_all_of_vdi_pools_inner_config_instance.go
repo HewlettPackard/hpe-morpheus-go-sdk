@@ -22,7 +22,7 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {
 	UserGroup            *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"userGroup,omitempty"`
 	NetworkDomain        *GetAlerts200ResponseAllOfChecksInnerAccount                  `json:"networkDomain,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	AdditionalProperties map[string]interface{}
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
@@ -132,7 +132,61 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
+	varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance := _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{}
+
+	err = json.Unmarshal(data, &varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance)
+
+	if err != nil {
+		return err
+	}
+
+	*o = ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance(varListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "userGroup")
+		delete(additionalProperties, "networkDomain")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {
+	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
+	isSet bool
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance {
+	return v.value
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance {
+	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{value: val, isSet: true}
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
 }
 
 // - model_simple.mustache
