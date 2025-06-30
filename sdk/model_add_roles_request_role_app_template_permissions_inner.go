@@ -16,41 +16,41 @@ import (
 	"fmt"
 )
 
-// checks if the AddRolesRequestRoleTasksInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddRolesRequestRoleTasksInner{}
+// checks if the AddRolesRequestRoleAppTemplatePermissionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRolesRequestRoleAppTemplatePermissionsInner{}
 
-// AddRolesRequestRoleTasksInner struct for AddRolesRequestRoleTasksInner
-type AddRolesRequestRoleTasksInner struct {
-	// `id` of the task
+// AddRolesRequestRoleAppTemplatePermissionsInner struct for AddRolesRequestRoleAppTemplatePermissionsInner
+type AddRolesRequestRoleAppTemplatePermissionsInner struct {
+	// `id` of the blueprint (appTemplate)
 	Id int32 `json:"id"`
 	// The new access level.
 	Access               string `json:"access"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddRolesRequestRoleTasksInner AddRolesRequestRoleTasksInner
+type _AddRolesRequestRoleAppTemplatePermissionsInner AddRolesRequestRoleAppTemplatePermissionsInner
 
-// NewAddRolesRequestRoleTasksInner instantiates a new AddRolesRequestRoleTasksInner object
+// NewAddRolesRequestRoleAppTemplatePermissionsInner instantiates a new AddRolesRequestRoleAppTemplatePermissionsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleTasksInner(id int32, access string) *AddRolesRequestRoleTasksInner {
-	this := AddRolesRequestRoleTasksInner{}
+func NewAddRolesRequestRoleAppTemplatePermissionsInner(id int32, access string) *AddRolesRequestRoleAppTemplatePermissionsInner {
+	this := AddRolesRequestRoleAppTemplatePermissionsInner{}
 	this.Id = id
 	this.Access = access
 	return &this
 }
 
-// NewAddRolesRequestRoleTasksInnerWithDefaults instantiates a new AddRolesRequestRoleTasksInner object
+// NewAddRolesRequestRoleAppTemplatePermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleAppTemplatePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestRoleTasksInnerWithDefaults() *AddRolesRequestRoleTasksInner {
-	this := AddRolesRequestRoleTasksInner{}
+func NewAddRolesRequestRoleAppTemplatePermissionsInnerWithDefaults() *AddRolesRequestRoleAppTemplatePermissionsInner {
+	this := AddRolesRequestRoleAppTemplatePermissionsInner{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleTasksInner) GetId() int32 {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) GetId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *AddRolesRequestRoleTasksInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleTasksInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,12 +69,12 @@ func (o *AddRolesRequestRoleTasksInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleTasksInner) SetId(v int32) {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) SetId(v int32) {
 	o.Id = v
 }
 
 // GetAccess returns the Access field value
-func (o *AddRolesRequestRoleTasksInner) GetAccess() string {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) GetAccess() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *AddRolesRequestRoleTasksInner) GetAccess() string {
 
 // GetAccessOk returns a tuple with the Access field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleTasksInner) GetAccessOk() (*string, bool) {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) GetAccessOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,11 +93,11 @@ func (o *AddRolesRequestRoleTasksInner) GetAccessOk() (*string, bool) {
 }
 
 // SetAccess sets field value
-func (o *AddRolesRequestRoleTasksInner) SetAccess(v string) {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) SetAccess(v string) {
 	o.Access = v
 }
 
-func (o AddRolesRequestRoleTasksInner) MarshalJSON() ([]byte, error) {
+func (o AddRolesRequestRoleAppTemplatePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -105,7 +105,7 @@ func (o AddRolesRequestRoleTasksInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AddRolesRequestRoleTasksInner) ToMap() (map[string]interface{}, error) {
+func (o AddRolesRequestRoleAppTemplatePermissionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
@@ -116,7 +116,7 @@ func (o AddRolesRequestRoleTasksInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
-func (o *AddRolesRequestRoleTasksInner) UnmarshalJSON(data []byte) (err error) {
+func (o *AddRolesRequestRoleAppTemplatePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -139,15 +139,15 @@ func (o *AddRolesRequestRoleTasksInner) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varAddRolesRequestRoleTasksInner := _AddRolesRequestRoleTasksInner{}
+	varAddRolesRequestRoleAppTemplatePermissionsInner := _AddRolesRequestRoleAppTemplatePermissionsInner{}
 
-	err = json.Unmarshal(data, &varAddRolesRequestRoleTasksInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleAppTemplatePermissionsInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddRolesRequestRoleTasksInner(varAddRolesRequestRoleTasksInner)
+	*o = AddRolesRequestRoleAppTemplatePermissionsInner(varAddRolesRequestRoleAppTemplatePermissionsInner)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -160,38 +160,38 @@ func (o *AddRolesRequestRoleTasksInner) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
-type NullableAddRolesRequestRoleTasksInner struct {
-	value *AddRolesRequestRoleTasksInner
+type NullableAddRolesRequestRoleAppTemplatePermissionsInner struct {
+	value *AddRolesRequestRoleAppTemplatePermissionsInner
 	isSet bool
 }
 
-func (v NullableAddRolesRequestRoleTasksInner) Get() *AddRolesRequestRoleTasksInner {
+func (v NullableAddRolesRequestRoleAppTemplatePermissionsInner) Get() *AddRolesRequestRoleAppTemplatePermissionsInner {
 	return v.value
 }
 
-func (v *NullableAddRolesRequestRoleTasksInner) Set(val *AddRolesRequestRoleTasksInner) {
+func (v *NullableAddRolesRequestRoleAppTemplatePermissionsInner) Set(val *AddRolesRequestRoleAppTemplatePermissionsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddRolesRequestRoleTasksInner) IsSet() bool {
+func (v NullableAddRolesRequestRoleAppTemplatePermissionsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddRolesRequestRoleTasksInner) Unset() {
+func (v *NullableAddRolesRequestRoleAppTemplatePermissionsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddRolesRequestRoleTasksInner(val *AddRolesRequestRoleTasksInner) *NullableAddRolesRequestRoleTasksInner {
-	return &NullableAddRolesRequestRoleTasksInner{value: val, isSet: true}
+func NewNullableAddRolesRequestRoleAppTemplatePermissionsInner(val *AddRolesRequestRoleAppTemplatePermissionsInner) *NullableAddRolesRequestRoleAppTemplatePermissionsInner {
+	return &NullableAddRolesRequestRoleAppTemplatePermissionsInner{value: val, isSet: true}
 }
 
-func (v NullableAddRolesRequestRoleTasksInner) MarshalJSON() ([]byte, error) {
+func (v NullableAddRolesRequestRoleAppTemplatePermissionsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddRolesRequestRoleTasksInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAddRolesRequestRoleAppTemplatePermissionsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -136716,7 +136716,7 @@ paths:
                       enum:
                         - full
                         - none
-                    instanceTypes:
+                    instanceTypePermissions:
                       type: array
                       description: Set the access level for the specified instance types
                       items:
@@ -136741,7 +136741,7 @@ paths:
                       enum:
                         - full
                         - none
-                    appTemplates:
+                    appTemplatePermissions:
                       type: array
                       description: Set the access level for the specified blueprints (appTemplates)
                       items:
@@ -136763,7 +136763,7 @@ paths:
                       enum:
                         - full
                         - none
-                    catalogItemTypes:
+                    catalogItemTypePermissions:
                       type: array
                       description: Set the access level for the specified catalog item types
                       items:
@@ -136785,7 +136785,7 @@ paths:
                       enum:
                         - full
                         - none
-                    personas:
+                    personaPermissions:
                       type: array
                       description: Set the access level for the specified personas
                       items:
@@ -136811,7 +136811,7 @@ paths:
                       enum:
                         - full
                         - none
-                    vdiPools:
+                    vdiPoolPermissions:
                       type: array
                       description: Set the access level for the specified VDI pools
                       items:
@@ -136833,7 +136833,7 @@ paths:
                       enum:
                         - full
                         - none
-                    reportTypes:
+                    reportTypePermissions:
                       type: array
                       description: Set the access level for the specified report types
                       items:
@@ -136855,7 +136855,7 @@ paths:
                       enum:
                         - full
                         - none
-                    tasks:
+                    taskPermissions:
                       type: array
                       description: Set the access level for the specified tasks
                       items:
@@ -136877,7 +136877,7 @@ paths:
                       enum:
                         - full
                         - none
-                    taskSets:
+                    taskSetPermissions:
                       type: array
                       description: Set the access level for the specified workflows (taskSets)
                       items:
@@ -139351,7 +139351,7 @@ paths:
                             - vdi
                         - type: 'null'
                       description: Set the default persona by code.
-                    permissions:
+                    featurePermissions:
                       type: array
                       description: Set the access level for the specified permissions.
                       items:
@@ -139428,7 +139428,7 @@ paths:
                       enum:
                         - full
                         - none
-                    instanceTypes:
+                    instanceTypePermissions:
                       type: array
                       description: Set the access level for the specified instance types
                       items:
@@ -139450,7 +139450,7 @@ paths:
                       enum:
                         - full
                         - none
-                    appTemplates:
+                    appTemplatePermissions:
                       type: array
                       description: Set the access level for the specified blueprints (appTemplates)
                       items:
@@ -139472,7 +139472,7 @@ paths:
                       enum:
                         - full
                         - none
-                    catalogItemTypes:
+                    catalogItemTypePermissions:
                       type: array
                       description: Set the access level for the specified catalog item types
                       items:
@@ -139494,7 +139494,7 @@ paths:
                       enum:
                         - full
                         - none
-                    personas:
+                    personaPermissions:
                       type: array
                       description: Set the access level for the specified personas
                       items:
@@ -139520,7 +139520,7 @@ paths:
                       enum:
                         - full
                         - none
-                    vdiPools:
+                    vdiPoolPermissions:
                       type: array
                       description: Set the access level for the specified VDI pools
                       items:
@@ -139542,7 +139542,7 @@ paths:
                       enum:
                         - full
                         - none
-                    reportTypes:
+                    reportTypePermissions:
                       type: array
                       description: Set the access level for the specified report types
                       items:
@@ -139564,7 +139564,7 @@ paths:
                       enum:
                         - full
                         - none
-                    tasks:
+                    taskPermissions:
                       type: array
                       description: Set the access level for the specified tasks
                       items:
@@ -139586,7 +139586,7 @@ paths:
                       enum:
                         - full
                         - none
-                    taskSets:
+                    taskSetPermissions:
                       type: array
                       description: Set the access level for the specified workflows (taskSets)
                       items:

@@ -28,7 +28,7 @@ type UpdateRoleRequestRole struct {
 	LandingUrl     NullableString `json:"landingUrl,omitempty"`
 	DefaultPersona NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
-	Permissions []AddRolesRequestRoleFeaturePermissionsInner `json:"permissions,omitempty"`
+	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
 	GlobalSiteAccess *string `json:"globalSiteAccess,omitempty"`
 	// Set the access level for the specified groups (sites). Only applies to user roles.
@@ -40,35 +40,35 @@ type UpdateRoleRequestRole struct {
 	// Set the default access level for for instance types
 	GlobalInstanceTypeAccess *string `json:"globalInstanceTypeAccess,omitempty"`
 	// Set the access level for the specified instance types
-	InstanceTypes []AddRolesRequestRoleInstanceTypesInner `json:"instanceTypes,omitempty"`
+	InstanceTypePermissions []AddRolesRequestRoleInstanceTypePermissionsInner `json:"instanceTypePermissions,omitempty"`
 	// Set the default access level for blueprints
 	GlobalAppTemplateAccess *string `json:"globalAppTemplateAccess,omitempty"`
 	// Set the access level for the specified blueprints (appTemplates)
-	AppTemplates []AddRolesRequestRoleAppTemplatesInner `json:"appTemplates,omitempty"`
+	AppTemplatePermissions []AddRolesRequestRoleAppTemplatePermissionsInner `json:"appTemplatePermissions,omitempty"`
 	// Set the default access level for catalog item types
 	GlobalCatalogItemTypeAccess *string `json:"globalCatalogItemTypeAccess,omitempty"`
 	// Set the access level for the specified catalog item types
-	CatalogItemTypes []AddRolesRequestRoleCatalogItemTypesInner `json:"catalogItemTypes,omitempty"`
+	CatalogItemTypePermissions []AddRolesRequestRoleCatalogItemTypePermissionsInner `json:"catalogItemTypePermissions,omitempty"`
 	// Set the default access level for personas
 	GlobalPersonaAccess *string `json:"globalPersonaAccess,omitempty"`
 	// Set the access level for the specified personas
-	Personas []UpdateRoleRequestRolePersonasInner `json:"personas,omitempty"`
+	PersonaPermissions []UpdateRoleRequestRolePersonaPermissionsInner `json:"personaPermissions,omitempty"`
 	// Set the default access level for VDI pools
 	GlobalVdiPoolAccess *string `json:"globalVdiPoolAccess,omitempty"`
 	// Set the access level for the specified VDI pools
-	VdiPools []AddRolesRequestRoleVdiPoolsInner `json:"vdiPools,omitempty"`
+	VdiPoolPermissions []AddRolesRequestRoleVdiPoolPermissionsInner `json:"vdiPoolPermissions,omitempty"`
 	// Set the default access level for report types
 	GlobalReportTypeAccess *string `json:"globalReportTypeAccess,omitempty"`
 	// Set the access level for the specified report types
-	ReportTypes []AddRolesRequestRoleReportTypesInner `json:"reportTypes,omitempty"`
+	ReportTypePermissions []AddRolesRequestRoleReportTypePermissionsInner `json:"reportTypePermissions,omitempty"`
 	// Set the default access level for tasks
 	GlobalTaskAccess *string `json:"globalTaskAccess,omitempty"`
 	// Set the access level for the specified tasks
-	Tasks []AddRolesRequestRoleTasksInner `json:"tasks,omitempty"`
+	TaskPermissions []AddRolesRequestRoleTaskPermissionsInner `json:"taskPermissions,omitempty"`
 	// Set the default access level for workflows (taskSets)
 	GlobalTaskSetAccess *string `json:"globalTaskSetAccess,omitempty"`
 	// Set the access level for the specified workflows (taskSets)
-	TaskSets             []AddRolesRequestRoleTaskSetsInner `json:"taskSets,omitempty"`
+	TaskSetPermissions   []AddRolesRequestRoleTaskSetPermissionsInner `json:"taskSetPermissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -252,36 +252,36 @@ func (o *UpdateRoleRequestRole) UnsetDefaultPersona() {
 	o.DefaultPersona.Unset()
 }
 
-// GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetPermissions() []AddRolesRequestRoleFeaturePermissionsInner {
-	if o == nil || IsNil(o.Permissions) {
+// GetFeaturePermissions returns the FeaturePermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner {
+	if o == nil || IsNil(o.FeaturePermissions) {
 		var ret []AddRolesRequestRoleFeaturePermissionsInner
 		return ret
 	}
-	return o.Permissions
+	return o.FeaturePermissions
 }
 
-// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
+// GetFeaturePermissionsOk returns a tuple with the FeaturePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetPermissionsOk() ([]AddRolesRequestRoleFeaturePermissionsInner, bool) {
-	if o == nil || IsNil(o.Permissions) {
+func (o *UpdateRoleRequestRole) GetFeaturePermissionsOk() ([]AddRolesRequestRoleFeaturePermissionsInner, bool) {
+	if o == nil || IsNil(o.FeaturePermissions) {
 		return nil, false
 	}
-	return o.Permissions, true
+	return o.FeaturePermissions, true
 }
 
-// IsSetPermissions returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetPermissions() bool {
-	if o != nil && !IsNil(o.Permissions) {
+// IsSetFeaturePermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetFeaturePermissions() bool {
+	if o != nil && !IsNil(o.FeaturePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetPermissions gets a reference to the given []AddRolesRequestRoleFeaturePermissionsInner and assigns it to the Permissions field.
-func (o *UpdateRoleRequestRole) SetPermissions(v []AddRolesRequestRoleFeaturePermissionsInner) {
-	o.Permissions = v
+// SetFeaturePermissions gets a reference to the given []AddRolesRequestRoleFeaturePermissionsInner and assigns it to the FeaturePermissions field.
+func (o *UpdateRoleRequestRole) SetFeaturePermissions(v []AddRolesRequestRoleFeaturePermissionsInner) {
+	o.FeaturePermissions = v
 }
 
 // GetGlobalSiteAccess returns the GlobalSiteAccess field value if set, zero value otherwise.
@@ -444,36 +444,36 @@ func (o *UpdateRoleRequestRole) SetGlobalInstanceTypeAccess(v string) {
 	o.GlobalInstanceTypeAccess = &v
 }
 
-// GetInstanceTypes returns the InstanceTypes field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetInstanceTypes() []AddRolesRequestRoleInstanceTypesInner {
-	if o == nil || IsNil(o.InstanceTypes) {
-		var ret []AddRolesRequestRoleInstanceTypesInner
+// GetInstanceTypePermissions returns the InstanceTypePermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetInstanceTypePermissions() []AddRolesRequestRoleInstanceTypePermissionsInner {
+	if o == nil || IsNil(o.InstanceTypePermissions) {
+		var ret []AddRolesRequestRoleInstanceTypePermissionsInner
 		return ret
 	}
-	return o.InstanceTypes
+	return o.InstanceTypePermissions
 }
 
-// GetInstanceTypesOk returns a tuple with the InstanceTypes field value if set, nil otherwise
+// GetInstanceTypePermissionsOk returns a tuple with the InstanceTypePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetInstanceTypesOk() ([]AddRolesRequestRoleInstanceTypesInner, bool) {
-	if o == nil || IsNil(o.InstanceTypes) {
+func (o *UpdateRoleRequestRole) GetInstanceTypePermissionsOk() ([]AddRolesRequestRoleInstanceTypePermissionsInner, bool) {
+	if o == nil || IsNil(o.InstanceTypePermissions) {
 		return nil, false
 	}
-	return o.InstanceTypes, true
+	return o.InstanceTypePermissions, true
 }
 
-// IsSetInstanceTypes returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
+// IsSetInstanceTypePermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetInstanceTypePermissions() bool {
+	if o != nil && !IsNil(o.InstanceTypePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetInstanceTypes gets a reference to the given []AddRolesRequestRoleInstanceTypesInner and assigns it to the InstanceTypes field.
-func (o *UpdateRoleRequestRole) SetInstanceTypes(v []AddRolesRequestRoleInstanceTypesInner) {
-	o.InstanceTypes = v
+// SetInstanceTypePermissions gets a reference to the given []AddRolesRequestRoleInstanceTypePermissionsInner and assigns it to the InstanceTypePermissions field.
+func (o *UpdateRoleRequestRole) SetInstanceTypePermissions(v []AddRolesRequestRoleInstanceTypePermissionsInner) {
+	o.InstanceTypePermissions = v
 }
 
 // GetGlobalAppTemplateAccess returns the GlobalAppTemplateAccess field value if set, zero value otherwise.
@@ -508,36 +508,36 @@ func (o *UpdateRoleRequestRole) SetGlobalAppTemplateAccess(v string) {
 	o.GlobalAppTemplateAccess = &v
 }
 
-// GetAppTemplates returns the AppTemplates field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetAppTemplates() []AddRolesRequestRoleAppTemplatesInner {
-	if o == nil || IsNil(o.AppTemplates) {
-		var ret []AddRolesRequestRoleAppTemplatesInner
+// GetAppTemplatePermissions returns the AppTemplatePermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetAppTemplatePermissions() []AddRolesRequestRoleAppTemplatePermissionsInner {
+	if o == nil || IsNil(o.AppTemplatePermissions) {
+		var ret []AddRolesRequestRoleAppTemplatePermissionsInner
 		return ret
 	}
-	return o.AppTemplates
+	return o.AppTemplatePermissions
 }
 
-// GetAppTemplatesOk returns a tuple with the AppTemplates field value if set, nil otherwise
+// GetAppTemplatePermissionsOk returns a tuple with the AppTemplatePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetAppTemplatesOk() ([]AddRolesRequestRoleAppTemplatesInner, bool) {
-	if o == nil || IsNil(o.AppTemplates) {
+func (o *UpdateRoleRequestRole) GetAppTemplatePermissionsOk() ([]AddRolesRequestRoleAppTemplatePermissionsInner, bool) {
+	if o == nil || IsNil(o.AppTemplatePermissions) {
 		return nil, false
 	}
-	return o.AppTemplates, true
+	return o.AppTemplatePermissions, true
 }
 
-// IsSetAppTemplates returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetAppTemplates() bool {
-	if o != nil && !IsNil(o.AppTemplates) {
+// IsSetAppTemplatePermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetAppTemplatePermissions() bool {
+	if o != nil && !IsNil(o.AppTemplatePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetAppTemplates gets a reference to the given []AddRolesRequestRoleAppTemplatesInner and assigns it to the AppTemplates field.
-func (o *UpdateRoleRequestRole) SetAppTemplates(v []AddRolesRequestRoleAppTemplatesInner) {
-	o.AppTemplates = v
+// SetAppTemplatePermissions gets a reference to the given []AddRolesRequestRoleAppTemplatePermissionsInner and assigns it to the AppTemplatePermissions field.
+func (o *UpdateRoleRequestRole) SetAppTemplatePermissions(v []AddRolesRequestRoleAppTemplatePermissionsInner) {
+	o.AppTemplatePermissions = v
 }
 
 // GetGlobalCatalogItemTypeAccess returns the GlobalCatalogItemTypeAccess field value if set, zero value otherwise.
@@ -572,36 +572,36 @@ func (o *UpdateRoleRequestRole) SetGlobalCatalogItemTypeAccess(v string) {
 	o.GlobalCatalogItemTypeAccess = &v
 }
 
-// GetCatalogItemTypes returns the CatalogItemTypes field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetCatalogItemTypes() []AddRolesRequestRoleCatalogItemTypesInner {
-	if o == nil || IsNil(o.CatalogItemTypes) {
-		var ret []AddRolesRequestRoleCatalogItemTypesInner
+// GetCatalogItemTypePermissions returns the CatalogItemTypePermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissions() []AddRolesRequestRoleCatalogItemTypePermissionsInner {
+	if o == nil || IsNil(o.CatalogItemTypePermissions) {
+		var ret []AddRolesRequestRoleCatalogItemTypePermissionsInner
 		return ret
 	}
-	return o.CatalogItemTypes
+	return o.CatalogItemTypePermissions
 }
 
-// GetCatalogItemTypesOk returns a tuple with the CatalogItemTypes field value if set, nil otherwise
+// GetCatalogItemTypePermissionsOk returns a tuple with the CatalogItemTypePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetCatalogItemTypesOk() ([]AddRolesRequestRoleCatalogItemTypesInner, bool) {
-	if o == nil || IsNil(o.CatalogItemTypes) {
+func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissionsOk() ([]AddRolesRequestRoleCatalogItemTypePermissionsInner, bool) {
+	if o == nil || IsNil(o.CatalogItemTypePermissions) {
 		return nil, false
 	}
-	return o.CatalogItemTypes, true
+	return o.CatalogItemTypePermissions, true
 }
 
-// IsSetCatalogItemTypes returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetCatalogItemTypes() bool {
-	if o != nil && !IsNil(o.CatalogItemTypes) {
+// IsSetCatalogItemTypePermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetCatalogItemTypePermissions() bool {
+	if o != nil && !IsNil(o.CatalogItemTypePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetCatalogItemTypes gets a reference to the given []AddRolesRequestRoleCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
-func (o *UpdateRoleRequestRole) SetCatalogItemTypes(v []AddRolesRequestRoleCatalogItemTypesInner) {
-	o.CatalogItemTypes = v
+// SetCatalogItemTypePermissions gets a reference to the given []AddRolesRequestRoleCatalogItemTypePermissionsInner and assigns it to the CatalogItemTypePermissions field.
+func (o *UpdateRoleRequestRole) SetCatalogItemTypePermissions(v []AddRolesRequestRoleCatalogItemTypePermissionsInner) {
+	o.CatalogItemTypePermissions = v
 }
 
 // GetGlobalPersonaAccess returns the GlobalPersonaAccess field value if set, zero value otherwise.
@@ -636,36 +636,36 @@ func (o *UpdateRoleRequestRole) SetGlobalPersonaAccess(v string) {
 	o.GlobalPersonaAccess = &v
 }
 
-// GetPersonas returns the Personas field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetPersonas() []UpdateRoleRequestRolePersonasInner {
-	if o == nil || IsNil(o.Personas) {
-		var ret []UpdateRoleRequestRolePersonasInner
+// GetPersonaPermissions returns the PersonaPermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetPersonaPermissions() []UpdateRoleRequestRolePersonaPermissionsInner {
+	if o == nil || IsNil(o.PersonaPermissions) {
+		var ret []UpdateRoleRequestRolePersonaPermissionsInner
 		return ret
 	}
-	return o.Personas
+	return o.PersonaPermissions
 }
 
-// GetPersonasOk returns a tuple with the Personas field value if set, nil otherwise
+// GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetPersonasOk() ([]UpdateRoleRequestRolePersonasInner, bool) {
-	if o == nil || IsNil(o.Personas) {
+func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() ([]UpdateRoleRequestRolePersonaPermissionsInner, bool) {
+	if o == nil || IsNil(o.PersonaPermissions) {
 		return nil, false
 	}
-	return o.Personas, true
+	return o.PersonaPermissions, true
 }
 
-// IsSetPersonas returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetPersonas() bool {
-	if o != nil && !IsNil(o.Personas) {
+// IsSetPersonaPermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetPersonaPermissions() bool {
+	if o != nil && !IsNil(o.PersonaPermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetPersonas gets a reference to the given []UpdateRoleRequestRolePersonasInner and assigns it to the Personas field.
-func (o *UpdateRoleRequestRole) SetPersonas(v []UpdateRoleRequestRolePersonasInner) {
-	o.Personas = v
+// SetPersonaPermissions gets a reference to the given []UpdateRoleRequestRolePersonaPermissionsInner and assigns it to the PersonaPermissions field.
+func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []UpdateRoleRequestRolePersonaPermissionsInner) {
+	o.PersonaPermissions = v
 }
 
 // GetGlobalVdiPoolAccess returns the GlobalVdiPoolAccess field value if set, zero value otherwise.
@@ -700,36 +700,36 @@ func (o *UpdateRoleRequestRole) SetGlobalVdiPoolAccess(v string) {
 	o.GlobalVdiPoolAccess = &v
 }
 
-// GetVdiPools returns the VdiPools field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetVdiPools() []AddRolesRequestRoleVdiPoolsInner {
-	if o == nil || IsNil(o.VdiPools) {
-		var ret []AddRolesRequestRoleVdiPoolsInner
+// GetVdiPoolPermissions returns the VdiPoolPermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetVdiPoolPermissions() []AddRolesRequestRoleVdiPoolPermissionsInner {
+	if o == nil || IsNil(o.VdiPoolPermissions) {
+		var ret []AddRolesRequestRoleVdiPoolPermissionsInner
 		return ret
 	}
-	return o.VdiPools
+	return o.VdiPoolPermissions
 }
 
-// GetVdiPoolsOk returns a tuple with the VdiPools field value if set, nil otherwise
+// GetVdiPoolPermissionsOk returns a tuple with the VdiPoolPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetVdiPoolsOk() ([]AddRolesRequestRoleVdiPoolsInner, bool) {
-	if o == nil || IsNil(o.VdiPools) {
+func (o *UpdateRoleRequestRole) GetVdiPoolPermissionsOk() ([]AddRolesRequestRoleVdiPoolPermissionsInner, bool) {
+	if o == nil || IsNil(o.VdiPoolPermissions) {
 		return nil, false
 	}
-	return o.VdiPools, true
+	return o.VdiPoolPermissions, true
 }
 
-// IsSetVdiPools returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetVdiPools() bool {
-	if o != nil && !IsNil(o.VdiPools) {
+// IsSetVdiPoolPermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetVdiPoolPermissions() bool {
+	if o != nil && !IsNil(o.VdiPoolPermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetVdiPools gets a reference to the given []AddRolesRequestRoleVdiPoolsInner and assigns it to the VdiPools field.
-func (o *UpdateRoleRequestRole) SetVdiPools(v []AddRolesRequestRoleVdiPoolsInner) {
-	o.VdiPools = v
+// SetVdiPoolPermissions gets a reference to the given []AddRolesRequestRoleVdiPoolPermissionsInner and assigns it to the VdiPoolPermissions field.
+func (o *UpdateRoleRequestRole) SetVdiPoolPermissions(v []AddRolesRequestRoleVdiPoolPermissionsInner) {
+	o.VdiPoolPermissions = v
 }
 
 // GetGlobalReportTypeAccess returns the GlobalReportTypeAccess field value if set, zero value otherwise.
@@ -764,36 +764,36 @@ func (o *UpdateRoleRequestRole) SetGlobalReportTypeAccess(v string) {
 	o.GlobalReportTypeAccess = &v
 }
 
-// GetReportTypes returns the ReportTypes field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetReportTypes() []AddRolesRequestRoleReportTypesInner {
-	if o == nil || IsNil(o.ReportTypes) {
-		var ret []AddRolesRequestRoleReportTypesInner
+// GetReportTypePermissions returns the ReportTypePermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetReportTypePermissions() []AddRolesRequestRoleReportTypePermissionsInner {
+	if o == nil || IsNil(o.ReportTypePermissions) {
+		var ret []AddRolesRequestRoleReportTypePermissionsInner
 		return ret
 	}
-	return o.ReportTypes
+	return o.ReportTypePermissions
 }
 
-// GetReportTypesOk returns a tuple with the ReportTypes field value if set, nil otherwise
+// GetReportTypePermissionsOk returns a tuple with the ReportTypePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetReportTypesOk() ([]AddRolesRequestRoleReportTypesInner, bool) {
-	if o == nil || IsNil(o.ReportTypes) {
+func (o *UpdateRoleRequestRole) GetReportTypePermissionsOk() ([]AddRolesRequestRoleReportTypePermissionsInner, bool) {
+	if o == nil || IsNil(o.ReportTypePermissions) {
 		return nil, false
 	}
-	return o.ReportTypes, true
+	return o.ReportTypePermissions, true
 }
 
-// IsSetReportTypes returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetReportTypes() bool {
-	if o != nil && !IsNil(o.ReportTypes) {
+// IsSetReportTypePermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetReportTypePermissions() bool {
+	if o != nil && !IsNil(o.ReportTypePermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetReportTypes gets a reference to the given []AddRolesRequestRoleReportTypesInner and assigns it to the ReportTypes field.
-func (o *UpdateRoleRequestRole) SetReportTypes(v []AddRolesRequestRoleReportTypesInner) {
-	o.ReportTypes = v
+// SetReportTypePermissions gets a reference to the given []AddRolesRequestRoleReportTypePermissionsInner and assigns it to the ReportTypePermissions field.
+func (o *UpdateRoleRequestRole) SetReportTypePermissions(v []AddRolesRequestRoleReportTypePermissionsInner) {
+	o.ReportTypePermissions = v
 }
 
 // GetGlobalTaskAccess returns the GlobalTaskAccess field value if set, zero value otherwise.
@@ -828,36 +828,36 @@ func (o *UpdateRoleRequestRole) SetGlobalTaskAccess(v string) {
 	o.GlobalTaskAccess = &v
 }
 
-// GetTasks returns the Tasks field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetTasks() []AddRolesRequestRoleTasksInner {
-	if o == nil || IsNil(o.Tasks) {
-		var ret []AddRolesRequestRoleTasksInner
+// GetTaskPermissions returns the TaskPermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetTaskPermissions() []AddRolesRequestRoleTaskPermissionsInner {
+	if o == nil || IsNil(o.TaskPermissions) {
+		var ret []AddRolesRequestRoleTaskPermissionsInner
 		return ret
 	}
-	return o.Tasks
+	return o.TaskPermissions
 }
 
-// GetTasksOk returns a tuple with the Tasks field value if set, nil otherwise
+// GetTaskPermissionsOk returns a tuple with the TaskPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetTasksOk() ([]AddRolesRequestRoleTasksInner, bool) {
-	if o == nil || IsNil(o.Tasks) {
+func (o *UpdateRoleRequestRole) GetTaskPermissionsOk() ([]AddRolesRequestRoleTaskPermissionsInner, bool) {
+	if o == nil || IsNil(o.TaskPermissions) {
 		return nil, false
 	}
-	return o.Tasks, true
+	return o.TaskPermissions, true
 }
 
-// IsSetTasks returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetTasks() bool {
-	if o != nil && !IsNil(o.Tasks) {
+// IsSetTaskPermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetTaskPermissions() bool {
+	if o != nil && !IsNil(o.TaskPermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetTasks gets a reference to the given []AddRolesRequestRoleTasksInner and assigns it to the Tasks field.
-func (o *UpdateRoleRequestRole) SetTasks(v []AddRolesRequestRoleTasksInner) {
-	o.Tasks = v
+// SetTaskPermissions gets a reference to the given []AddRolesRequestRoleTaskPermissionsInner and assigns it to the TaskPermissions field.
+func (o *UpdateRoleRequestRole) SetTaskPermissions(v []AddRolesRequestRoleTaskPermissionsInner) {
+	o.TaskPermissions = v
 }
 
 // GetGlobalTaskSetAccess returns the GlobalTaskSetAccess field value if set, zero value otherwise.
@@ -892,36 +892,36 @@ func (o *UpdateRoleRequestRole) SetGlobalTaskSetAccess(v string) {
 	o.GlobalTaskSetAccess = &v
 }
 
-// GetTaskSets returns the TaskSets field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetTaskSets() []AddRolesRequestRoleTaskSetsInner {
-	if o == nil || IsNil(o.TaskSets) {
-		var ret []AddRolesRequestRoleTaskSetsInner
+// GetTaskSetPermissions returns the TaskSetPermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetTaskSetPermissions() []AddRolesRequestRoleTaskSetPermissionsInner {
+	if o == nil || IsNil(o.TaskSetPermissions) {
+		var ret []AddRolesRequestRoleTaskSetPermissionsInner
 		return ret
 	}
-	return o.TaskSets
+	return o.TaskSetPermissions
 }
 
-// GetTaskSetsOk returns a tuple with the TaskSets field value if set, nil otherwise
+// GetTaskSetPermissionsOk returns a tuple with the TaskSetPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetTaskSetsOk() ([]AddRolesRequestRoleTaskSetsInner, bool) {
-	if o == nil || IsNil(o.TaskSets) {
+func (o *UpdateRoleRequestRole) GetTaskSetPermissionsOk() ([]AddRolesRequestRoleTaskSetPermissionsInner, bool) {
+	if o == nil || IsNil(o.TaskSetPermissions) {
 		return nil, false
 	}
-	return o.TaskSets, true
+	return o.TaskSetPermissions, true
 }
 
-// IsSetTaskSets returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRole) IsSetTaskSets() bool {
-	if o != nil && !IsNil(o.TaskSets) {
+// IsSetTaskSetPermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetTaskSetPermissions() bool {
+	if o != nil && !IsNil(o.TaskSetPermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetTaskSets gets a reference to the given []AddRolesRequestRoleTaskSetsInner and assigns it to the TaskSets field.
-func (o *UpdateRoleRequestRole) SetTaskSets(v []AddRolesRequestRoleTaskSetsInner) {
-	o.TaskSets = v
+// SetTaskSetPermissions gets a reference to the given []AddRolesRequestRoleTaskSetPermissionsInner and assigns it to the TaskSetPermissions field.
+func (o *UpdateRoleRequestRole) SetTaskSetPermissions(v []AddRolesRequestRoleTaskSetPermissionsInner) {
+	o.TaskSetPermissions = v
 }
 
 func (o UpdateRoleRequestRole) MarshalJSON() ([]byte, error) {
@@ -946,8 +946,8 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	if o.DefaultPersona.IsSet() {
 		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
 	}
-	if !IsNil(o.Permissions) {
-		toSerialize["permissions"] = o.Permissions
+	if !IsNil(o.FeaturePermissions) {
+		toSerialize["featurePermissions"] = o.FeaturePermissions
 	}
 	if !IsNil(o.GlobalSiteAccess) {
 		toSerialize["globalSiteAccess"] = o.GlobalSiteAccess
@@ -964,50 +964,50 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GlobalInstanceTypeAccess) {
 		toSerialize["globalInstanceTypeAccess"] = o.GlobalInstanceTypeAccess
 	}
-	if !IsNil(o.InstanceTypes) {
-		toSerialize["instanceTypes"] = o.InstanceTypes
+	if !IsNil(o.InstanceTypePermissions) {
+		toSerialize["instanceTypePermissions"] = o.InstanceTypePermissions
 	}
 	if !IsNil(o.GlobalAppTemplateAccess) {
 		toSerialize["globalAppTemplateAccess"] = o.GlobalAppTemplateAccess
 	}
-	if !IsNil(o.AppTemplates) {
-		toSerialize["appTemplates"] = o.AppTemplates
+	if !IsNil(o.AppTemplatePermissions) {
+		toSerialize["appTemplatePermissions"] = o.AppTemplatePermissions
 	}
 	if !IsNil(o.GlobalCatalogItemTypeAccess) {
 		toSerialize["globalCatalogItemTypeAccess"] = o.GlobalCatalogItemTypeAccess
 	}
-	if !IsNil(o.CatalogItemTypes) {
-		toSerialize["catalogItemTypes"] = o.CatalogItemTypes
+	if !IsNil(o.CatalogItemTypePermissions) {
+		toSerialize["catalogItemTypePermissions"] = o.CatalogItemTypePermissions
 	}
 	if !IsNil(o.GlobalPersonaAccess) {
 		toSerialize["globalPersonaAccess"] = o.GlobalPersonaAccess
 	}
-	if !IsNil(o.Personas) {
-		toSerialize["personas"] = o.Personas
+	if !IsNil(o.PersonaPermissions) {
+		toSerialize["personaPermissions"] = o.PersonaPermissions
 	}
 	if !IsNil(o.GlobalVdiPoolAccess) {
 		toSerialize["globalVdiPoolAccess"] = o.GlobalVdiPoolAccess
 	}
-	if !IsNil(o.VdiPools) {
-		toSerialize["vdiPools"] = o.VdiPools
+	if !IsNil(o.VdiPoolPermissions) {
+		toSerialize["vdiPoolPermissions"] = o.VdiPoolPermissions
 	}
 	if !IsNil(o.GlobalReportTypeAccess) {
 		toSerialize["globalReportTypeAccess"] = o.GlobalReportTypeAccess
 	}
-	if !IsNil(o.ReportTypes) {
-		toSerialize["reportTypes"] = o.ReportTypes
+	if !IsNil(o.ReportTypePermissions) {
+		toSerialize["reportTypePermissions"] = o.ReportTypePermissions
 	}
 	if !IsNil(o.GlobalTaskAccess) {
 		toSerialize["globalTaskAccess"] = o.GlobalTaskAccess
 	}
-	if !IsNil(o.Tasks) {
-		toSerialize["tasks"] = o.Tasks
+	if !IsNil(o.TaskPermissions) {
+		toSerialize["taskPermissions"] = o.TaskPermissions
 	}
 	if !IsNil(o.GlobalTaskSetAccess) {
 		toSerialize["globalTaskSetAccess"] = o.GlobalTaskSetAccess
 	}
-	if !IsNil(o.TaskSets) {
-		toSerialize["taskSets"] = o.TaskSets
+	if !IsNil(o.TaskSetPermissions) {
+		toSerialize["taskSetPermissions"] = o.TaskSetPermissions
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -1034,27 +1034,27 @@ func (o *UpdateRoleRequestRole) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "landingUrl")
 		delete(additionalProperties, "defaultPersona")
-		delete(additionalProperties, "permissions")
+		delete(additionalProperties, "featurePermissions")
 		delete(additionalProperties, "globalSiteAccess")
 		delete(additionalProperties, "sites")
 		delete(additionalProperties, "globalZoneAccess")
 		delete(additionalProperties, "zones")
 		delete(additionalProperties, "globalInstanceTypeAccess")
-		delete(additionalProperties, "instanceTypes")
+		delete(additionalProperties, "instanceTypePermissions")
 		delete(additionalProperties, "globalAppTemplateAccess")
-		delete(additionalProperties, "appTemplates")
+		delete(additionalProperties, "appTemplatePermissions")
 		delete(additionalProperties, "globalCatalogItemTypeAccess")
-		delete(additionalProperties, "catalogItemTypes")
+		delete(additionalProperties, "catalogItemTypePermissions")
 		delete(additionalProperties, "globalPersonaAccess")
-		delete(additionalProperties, "personas")
+		delete(additionalProperties, "personaPermissions")
 		delete(additionalProperties, "globalVdiPoolAccess")
-		delete(additionalProperties, "vdiPools")
+		delete(additionalProperties, "vdiPoolPermissions")
 		delete(additionalProperties, "globalReportTypeAccess")
-		delete(additionalProperties, "reportTypes")
+		delete(additionalProperties, "reportTypePermissions")
 		delete(additionalProperties, "globalTaskAccess")
-		delete(additionalProperties, "tasks")
+		delete(additionalProperties, "taskPermissions")
 		delete(additionalProperties, "globalTaskSetAccess")
-		delete(additionalProperties, "taskSets")
+		delete(additionalProperties, "taskSetPermissions")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -16,41 +16,41 @@ import (
 	"fmt"
 )
 
-// checks if the AddRolesRequestRoleCatalogItemTypesInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddRolesRequestRoleCatalogItemTypesInner{}
+// checks if the AddRolesRequestRoleInstanceTypePermissionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRolesRequestRoleInstanceTypePermissionsInner{}
 
-// AddRolesRequestRoleCatalogItemTypesInner struct for AddRolesRequestRoleCatalogItemTypesInner
-type AddRolesRequestRoleCatalogItemTypesInner struct {
-	// `id` of the catalog item type
+// AddRolesRequestRoleInstanceTypePermissionsInner struct for AddRolesRequestRoleInstanceTypePermissionsInner
+type AddRolesRequestRoleInstanceTypePermissionsInner struct {
+	// `id` of the instance type
 	Id int32 `json:"id"`
 	// The new access level.
 	Access               string `json:"access"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddRolesRequestRoleCatalogItemTypesInner AddRolesRequestRoleCatalogItemTypesInner
+type _AddRolesRequestRoleInstanceTypePermissionsInner AddRolesRequestRoleInstanceTypePermissionsInner
 
-// NewAddRolesRequestRoleCatalogItemTypesInner instantiates a new AddRolesRequestRoleCatalogItemTypesInner object
+// NewAddRolesRequestRoleInstanceTypePermissionsInner instantiates a new AddRolesRequestRoleInstanceTypePermissionsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleCatalogItemTypesInner(id int32, access string) *AddRolesRequestRoleCatalogItemTypesInner {
-	this := AddRolesRequestRoleCatalogItemTypesInner{}
+func NewAddRolesRequestRoleInstanceTypePermissionsInner(id int32, access string) *AddRolesRequestRoleInstanceTypePermissionsInner {
+	this := AddRolesRequestRoleInstanceTypePermissionsInner{}
 	this.Id = id
 	this.Access = access
 	return &this
 }
 
-// NewAddRolesRequestRoleCatalogItemTypesInnerWithDefaults instantiates a new AddRolesRequestRoleCatalogItemTypesInner object
+// NewAddRolesRequestRoleInstanceTypePermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleInstanceTypePermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestRoleCatalogItemTypesInnerWithDefaults() *AddRolesRequestRoleCatalogItemTypesInner {
-	this := AddRolesRequestRoleCatalogItemTypesInner{}
+func NewAddRolesRequestRoleInstanceTypePermissionsInnerWithDefaults() *AddRolesRequestRoleInstanceTypePermissionsInner {
+	this := AddRolesRequestRoleInstanceTypePermissionsInner{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleCatalogItemTypesInner) GetId() int32 {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) GetId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleCatalogItemTypesInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,12 +69,12 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleCatalogItemTypesInner) SetId(v int32) {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) SetId(v int32) {
 	o.Id = v
 }
 
 // GetAccess returns the Access field value
-func (o *AddRolesRequestRoleCatalogItemTypesInner) GetAccess() string {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) GetAccess() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) GetAccess() string {
 
 // GetAccessOk returns a tuple with the Access field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleCatalogItemTypesInner) GetAccessOk() (*string, bool) {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) GetAccessOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,11 +93,11 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) GetAccessOk() (*string, bool)
 }
 
 // SetAccess sets field value
-func (o *AddRolesRequestRoleCatalogItemTypesInner) SetAccess(v string) {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) SetAccess(v string) {
 	o.Access = v
 }
 
-func (o AddRolesRequestRoleCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
+func (o AddRolesRequestRoleInstanceTypePermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -105,7 +105,7 @@ func (o AddRolesRequestRoleCatalogItemTypesInner) MarshalJSON() ([]byte, error) 
 	return json.Marshal(toSerialize)
 }
 
-func (o AddRolesRequestRoleCatalogItemTypesInner) ToMap() (map[string]interface{}, error) {
+func (o AddRolesRequestRoleInstanceTypePermissionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
@@ -116,7 +116,7 @@ func (o AddRolesRequestRoleCatalogItemTypesInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
-func (o *AddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
+func (o *AddRolesRequestRoleInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -139,15 +139,15 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(data []byte) (e
 		}
 	}
 
-	varAddRolesRequestRoleCatalogItemTypesInner := _AddRolesRequestRoleCatalogItemTypesInner{}
+	varAddRolesRequestRoleInstanceTypePermissionsInner := _AddRolesRequestRoleInstanceTypePermissionsInner{}
 
-	err = json.Unmarshal(data, &varAddRolesRequestRoleCatalogItemTypesInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleInstanceTypePermissionsInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddRolesRequestRoleCatalogItemTypesInner(varAddRolesRequestRoleCatalogItemTypesInner)
+	*o = AddRolesRequestRoleInstanceTypePermissionsInner(varAddRolesRequestRoleInstanceTypePermissionsInner)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -160,38 +160,38 @@ func (o *AddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(data []byte) (e
 	return err
 }
 
-type NullableAddRolesRequestRoleCatalogItemTypesInner struct {
-	value *AddRolesRequestRoleCatalogItemTypesInner
+type NullableAddRolesRequestRoleInstanceTypePermissionsInner struct {
+	value *AddRolesRequestRoleInstanceTypePermissionsInner
 	isSet bool
 }
 
-func (v NullableAddRolesRequestRoleCatalogItemTypesInner) Get() *AddRolesRequestRoleCatalogItemTypesInner {
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) Get() *AddRolesRequestRoleInstanceTypePermissionsInner {
 	return v.value
 }
 
-func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) Set(val *AddRolesRequestRoleCatalogItemTypesInner) {
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) Set(val *AddRolesRequestRoleInstanceTypePermissionsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddRolesRequestRoleCatalogItemTypesInner) IsSet() bool {
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) Unset() {
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddRolesRequestRoleCatalogItemTypesInner(val *AddRolesRequestRoleCatalogItemTypesInner) *NullableAddRolesRequestRoleCatalogItemTypesInner {
-	return &NullableAddRolesRequestRoleCatalogItemTypesInner{value: val, isSet: true}
+func NewNullableAddRolesRequestRoleInstanceTypePermissionsInner(val *AddRolesRequestRoleInstanceTypePermissionsInner) *NullableAddRolesRequestRoleInstanceTypePermissionsInner {
+	return &NullableAddRolesRequestRoleInstanceTypePermissionsInner{value: val, isSet: true}
 }
 
-func (v NullableAddRolesRequestRoleCatalogItemTypesInner) MarshalJSON() ([]byte, error) {
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddRolesRequestRoleCatalogItemTypesInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

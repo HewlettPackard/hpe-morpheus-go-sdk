@@ -1,4 +1,4 @@
-# UpdateRoleRequestRolePersonasInner
+# UpdateRoleRequestRolePersonaPermissionsInner
 
 ## Properties
 
@@ -9,64 +9,64 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUpdateRoleRequestRolePersonasInner
+### NewUpdateRoleRequestRolePersonaPermissionsInner
 
-`func NewUpdateRoleRequestRolePersonasInner(access string, ) *UpdateRoleRequestRolePersonasInner`
+`func NewUpdateRoleRequestRolePersonaPermissionsInner(access string, ) *UpdateRoleRequestRolePersonaPermissionsInner`
 
-NewUpdateRoleRequestRolePersonasInner instantiates a new UpdateRoleRequestRolePersonasInner object
+NewUpdateRoleRequestRolePersonaPermissionsInner instantiates a new UpdateRoleRequestRolePersonaPermissionsInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateRoleRequestRolePersonasInnerWithDefaults
+### NewUpdateRoleRequestRolePersonaPermissionsInnerWithDefaults
 
-`func NewUpdateRoleRequestRolePersonasInnerWithDefaults() *UpdateRoleRequestRolePersonasInner`
+`func NewUpdateRoleRequestRolePersonaPermissionsInnerWithDefaults() *UpdateRoleRequestRolePersonaPermissionsInner`
 
-NewUpdateRoleRequestRolePersonasInnerWithDefaults instantiates a new UpdateRoleRequestRolePersonasInner object
+NewUpdateRoleRequestRolePersonaPermissionsInnerWithDefaults instantiates a new UpdateRoleRequestRolePersonaPermissionsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCode
 
-`func (o *UpdateRoleRequestRolePersonasInner) GetCode() string`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetCode() string`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *UpdateRoleRequestRolePersonasInner) GetCodeOk() (*string, bool)`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetCodeOk() (*string, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *UpdateRoleRequestRolePersonasInner) SetCode(v string)`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) SetCode(v string)`
 
 SetCode sets Code field to given value.
 
 ### HasCode
 
-`func (o *UpdateRoleRequestRolePersonasInner) HasCode() bool`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
 
 ### GetAccess
 
-`func (o *UpdateRoleRequestRolePersonasInner) GetAccess() string`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetAccess() string`
 
 GetAccess returns the Access field if non-nil, zero value otherwise.
 
 ### GetAccessOk
 
-`func (o *UpdateRoleRequestRolePersonasInner) GetAccessOk() (*string, bool)`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetAccessOk() (*string, bool)`
 
 GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccess
 
-`func (o *UpdateRoleRequestRolePersonasInner) SetAccess(v string)`
+`func (o *UpdateRoleRequestRolePersonaPermissionsInner) SetAccess(v string)`
 
 SetAccess sets Access field to given value.
 

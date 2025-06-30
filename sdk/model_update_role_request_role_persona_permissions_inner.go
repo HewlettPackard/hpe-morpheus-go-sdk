@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the UpdateRoleRequestRolePersonasInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UpdateRoleRequestRolePersonasInner{}
+// checks if the UpdateRoleRequestRolePersonaPermissionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UpdateRoleRequestRolePersonaPermissionsInner{}
 
-// UpdateRoleRequestRolePersonasInner struct for UpdateRoleRequestRolePersonasInner
-type UpdateRoleRequestRolePersonasInner struct {
+// UpdateRoleRequestRolePersonaPermissionsInner struct for UpdateRoleRequestRolePersonaPermissionsInner
+type UpdateRoleRequestRolePersonaPermissionsInner struct {
 	// `code` of the persona
 	Code *string `json:"code,omitempty"`
 	// The new access level.
@@ -28,28 +28,28 @@ type UpdateRoleRequestRolePersonasInner struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _UpdateRoleRequestRolePersonasInner UpdateRoleRequestRolePersonasInner
+type _UpdateRoleRequestRolePersonaPermissionsInner UpdateRoleRequestRolePersonaPermissionsInner
 
-// NewUpdateRoleRequestRolePersonasInner instantiates a new UpdateRoleRequestRolePersonasInner object
+// NewUpdateRoleRequestRolePersonaPermissionsInner instantiates a new UpdateRoleRequestRolePersonaPermissionsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUpdateRoleRequestRolePersonasInner(access string) *UpdateRoleRequestRolePersonasInner {
-	this := UpdateRoleRequestRolePersonasInner{}
+func NewUpdateRoleRequestRolePersonaPermissionsInner(access string) *UpdateRoleRequestRolePersonaPermissionsInner {
+	this := UpdateRoleRequestRolePersonaPermissionsInner{}
 	this.Access = access
 	return &this
 }
 
-// NewUpdateRoleRequestRolePersonasInnerWithDefaults instantiates a new UpdateRoleRequestRolePersonasInner object
+// NewUpdateRoleRequestRolePersonaPermissionsInnerWithDefaults instantiates a new UpdateRoleRequestRolePersonaPermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUpdateRoleRequestRolePersonasInnerWithDefaults() *UpdateRoleRequestRolePersonasInner {
-	this := UpdateRoleRequestRolePersonasInner{}
+func NewUpdateRoleRequestRolePersonaPermissionsInnerWithDefaults() *UpdateRoleRequestRolePersonaPermissionsInner {
+	this := UpdateRoleRequestRolePersonaPermissionsInner{}
 	return &this
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRolePersonasInner) GetCode() string {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetCode() string {
 	if o == nil || IsNil(o.Code) {
 		var ret string
 		return ret
@@ -59,7 +59,7 @@ func (o *UpdateRoleRequestRolePersonasInner) GetCode() string {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRolePersonasInner) GetCodeOk() (*string, bool) {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
@@ -67,7 +67,7 @@ func (o *UpdateRoleRequestRolePersonasInner) GetCodeOk() (*string, bool) {
 }
 
 // IsSetCode returns a boolean if a field has been set.
-func (o *UpdateRoleRequestRolePersonasInner) IsSetCode() bool {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) IsSetCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -76,12 +76,12 @@ func (o *UpdateRoleRequestRolePersonasInner) IsSetCode() bool {
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *UpdateRoleRequestRolePersonasInner) SetCode(v string) {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) SetCode(v string) {
 	o.Code = &v
 }
 
 // GetAccess returns the Access field value
-func (o *UpdateRoleRequestRolePersonasInner) GetAccess() string {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetAccess() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -92,7 +92,7 @@ func (o *UpdateRoleRequestRolePersonasInner) GetAccess() string {
 
 // GetAccessOk returns a tuple with the Access field value
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRolePersonasInner) GetAccessOk() (*string, bool) {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) GetAccessOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,11 +100,11 @@ func (o *UpdateRoleRequestRolePersonasInner) GetAccessOk() (*string, bool) {
 }
 
 // SetAccess sets field value
-func (o *UpdateRoleRequestRolePersonasInner) SetAccess(v string) {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) SetAccess(v string) {
 	o.Access = v
 }
 
-func (o UpdateRoleRequestRolePersonasInner) MarshalJSON() ([]byte, error) {
+func (o UpdateRoleRequestRolePersonaPermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -112,7 +112,7 @@ func (o UpdateRoleRequestRolePersonasInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UpdateRoleRequestRolePersonasInner) ToMap() (map[string]interface{}, error) {
+func (o UpdateRoleRequestRolePersonaPermissionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -125,7 +125,7 @@ func (o UpdateRoleRequestRolePersonasInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
-func (o *UpdateRoleRequestRolePersonasInner) UnmarshalJSON(data []byte) (err error) {
+func (o *UpdateRoleRequestRolePersonaPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -147,15 +147,15 @@ func (o *UpdateRoleRequestRolePersonasInner) UnmarshalJSON(data []byte) (err err
 		}
 	}
 
-	varUpdateRoleRequestRolePersonasInner := _UpdateRoleRequestRolePersonasInner{}
+	varUpdateRoleRequestRolePersonaPermissionsInner := _UpdateRoleRequestRolePersonaPermissionsInner{}
 
-	err = json.Unmarshal(data, &varUpdateRoleRequestRolePersonasInner)
+	err = json.Unmarshal(data, &varUpdateRoleRequestRolePersonaPermissionsInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = UpdateRoleRequestRolePersonasInner(varUpdateRoleRequestRolePersonasInner)
+	*o = UpdateRoleRequestRolePersonaPermissionsInner(varUpdateRoleRequestRolePersonaPermissionsInner)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -168,38 +168,38 @@ func (o *UpdateRoleRequestRolePersonasInner) UnmarshalJSON(data []byte) (err err
 	return err
 }
 
-type NullableUpdateRoleRequestRolePersonasInner struct {
-	value *UpdateRoleRequestRolePersonasInner
+type NullableUpdateRoleRequestRolePersonaPermissionsInner struct {
+	value *UpdateRoleRequestRolePersonaPermissionsInner
 	isSet bool
 }
 
-func (v NullableUpdateRoleRequestRolePersonasInner) Get() *UpdateRoleRequestRolePersonasInner {
+func (v NullableUpdateRoleRequestRolePersonaPermissionsInner) Get() *UpdateRoleRequestRolePersonaPermissionsInner {
 	return v.value
 }
 
-func (v *NullableUpdateRoleRequestRolePersonasInner) Set(val *UpdateRoleRequestRolePersonasInner) {
+func (v *NullableUpdateRoleRequestRolePersonaPermissionsInner) Set(val *UpdateRoleRequestRolePersonaPermissionsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUpdateRoleRequestRolePersonasInner) IsSet() bool {
+func (v NullableUpdateRoleRequestRolePersonaPermissionsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUpdateRoleRequestRolePersonasInner) Unset() {
+func (v *NullableUpdateRoleRequestRolePersonaPermissionsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUpdateRoleRequestRolePersonasInner(val *UpdateRoleRequestRolePersonasInner) *NullableUpdateRoleRequestRolePersonasInner {
-	return &NullableUpdateRoleRequestRolePersonasInner{value: val, isSet: true}
+func NewNullableUpdateRoleRequestRolePersonaPermissionsInner(val *UpdateRoleRequestRolePersonaPermissionsInner) *NullableUpdateRoleRequestRolePersonaPermissionsInner {
+	return &NullableUpdateRoleRequestRolePersonaPermissionsInner{value: val, isSet: true}
 }
 
-func (v NullableUpdateRoleRequestRolePersonasInner) MarshalJSON() ([]byte, error) {
+func (v NullableUpdateRoleRequestRolePersonaPermissionsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUpdateRoleRequestRolePersonasInner) UnmarshalJSON(src []byte) error {
+func (v *NullableUpdateRoleRequestRolePersonaPermissionsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

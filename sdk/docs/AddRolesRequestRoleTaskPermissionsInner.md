@@ -1,4 +1,4 @@
-# AddRolesRequestRoleTasksInner
+# AddRolesRequestRoleTaskPermissionsInner
 
 ## Properties
 
@@ -9,59 +9,59 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewAddRolesRequestRoleTasksInner
+### NewAddRolesRequestRoleTaskPermissionsInner
 
-`func NewAddRolesRequestRoleTasksInner(id int32, access string, ) *AddRolesRequestRoleTasksInner`
+`func NewAddRolesRequestRoleTaskPermissionsInner(id int32, access string, ) *AddRolesRequestRoleTaskPermissionsInner`
 
-NewAddRolesRequestRoleTasksInner instantiates a new AddRolesRequestRoleTasksInner object
+NewAddRolesRequestRoleTaskPermissionsInner instantiates a new AddRolesRequestRoleTaskPermissionsInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddRolesRequestRoleTasksInnerWithDefaults
+### NewAddRolesRequestRoleTaskPermissionsInnerWithDefaults
 
-`func NewAddRolesRequestRoleTasksInnerWithDefaults() *AddRolesRequestRoleTasksInner`
+`func NewAddRolesRequestRoleTaskPermissionsInnerWithDefaults() *AddRolesRequestRoleTaskPermissionsInner`
 
-NewAddRolesRequestRoleTasksInnerWithDefaults instantiates a new AddRolesRequestRoleTasksInner object
+NewAddRolesRequestRoleTaskPermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleTaskPermissionsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddRolesRequestRoleTasksInner) GetId() int32`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) GetId() int32`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddRolesRequestRoleTasksInner) GetIdOk() (*int32, bool)`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) GetIdOk() (*int32, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddRolesRequestRoleTasksInner) SetId(v int32)`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) SetId(v int32)`
 
 SetId sets Id field to given value.
 
 
 ### GetAccess
 
-`func (o *AddRolesRequestRoleTasksInner) GetAccess() string`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) GetAccess() string`
 
 GetAccess returns the Access field if non-nil, zero value otherwise.
 
 ### GetAccessOk
 
-`func (o *AddRolesRequestRoleTasksInner) GetAccessOk() (*string, bool)`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) GetAccessOk() (*string, bool)`
 
 GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccess
 
-`func (o *AddRolesRequestRoleTasksInner) SetAccess(v string)`
+`func (o *AddRolesRequestRoleTaskPermissionsInner) SetAccess(v string)`
 
 SetAccess sets Access field to given value.
 

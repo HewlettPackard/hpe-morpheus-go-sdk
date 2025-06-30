@@ -16,41 +16,41 @@ import (
 	"fmt"
 )
 
-// checks if the AddRolesRequestRoleVdiPoolsInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddRolesRequestRoleVdiPoolsInner{}
+// checks if the AddRolesRequestRoleTaskPermissionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRolesRequestRoleTaskPermissionsInner{}
 
-// AddRolesRequestRoleVdiPoolsInner struct for AddRolesRequestRoleVdiPoolsInner
-type AddRolesRequestRoleVdiPoolsInner struct {
-	// `id` of the VDI pool
+// AddRolesRequestRoleTaskPermissionsInner struct for AddRolesRequestRoleTaskPermissionsInner
+type AddRolesRequestRoleTaskPermissionsInner struct {
+	// `id` of the task
 	Id int32 `json:"id"`
 	// The new access level.
 	Access               string `json:"access"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddRolesRequestRoleVdiPoolsInner AddRolesRequestRoleVdiPoolsInner
+type _AddRolesRequestRoleTaskPermissionsInner AddRolesRequestRoleTaskPermissionsInner
 
-// NewAddRolesRequestRoleVdiPoolsInner instantiates a new AddRolesRequestRoleVdiPoolsInner object
+// NewAddRolesRequestRoleTaskPermissionsInner instantiates a new AddRolesRequestRoleTaskPermissionsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleVdiPoolsInner(id int32, access string) *AddRolesRequestRoleVdiPoolsInner {
-	this := AddRolesRequestRoleVdiPoolsInner{}
+func NewAddRolesRequestRoleTaskPermissionsInner(id int32, access string) *AddRolesRequestRoleTaskPermissionsInner {
+	this := AddRolesRequestRoleTaskPermissionsInner{}
 	this.Id = id
 	this.Access = access
 	return &this
 }
 
-// NewAddRolesRequestRoleVdiPoolsInnerWithDefaults instantiates a new AddRolesRequestRoleVdiPoolsInner object
+// NewAddRolesRequestRoleTaskPermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleTaskPermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestRoleVdiPoolsInnerWithDefaults() *AddRolesRequestRoleVdiPoolsInner {
-	this := AddRolesRequestRoleVdiPoolsInner{}
+func NewAddRolesRequestRoleTaskPermissionsInnerWithDefaults() *AddRolesRequestRoleTaskPermissionsInner {
+	this := AddRolesRequestRoleTaskPermissionsInner{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleVdiPoolsInner) GetId() int32 {
+func (o *AddRolesRequestRoleTaskPermissionsInner) GetId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *AddRolesRequestRoleVdiPoolsInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleVdiPoolsInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleTaskPermissionsInner) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,12 +69,12 @@ func (o *AddRolesRequestRoleVdiPoolsInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleVdiPoolsInner) SetId(v int32) {
+func (o *AddRolesRequestRoleTaskPermissionsInner) SetId(v int32) {
 	o.Id = v
 }
 
 // GetAccess returns the Access field value
-func (o *AddRolesRequestRoleVdiPoolsInner) GetAccess() string {
+func (o *AddRolesRequestRoleTaskPermissionsInner) GetAccess() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *AddRolesRequestRoleVdiPoolsInner) GetAccess() string {
 
 // GetAccessOk returns a tuple with the Access field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleVdiPoolsInner) GetAccessOk() (*string, bool) {
+func (o *AddRolesRequestRoleTaskPermissionsInner) GetAccessOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,11 +93,11 @@ func (o *AddRolesRequestRoleVdiPoolsInner) GetAccessOk() (*string, bool) {
 }
 
 // SetAccess sets field value
-func (o *AddRolesRequestRoleVdiPoolsInner) SetAccess(v string) {
+func (o *AddRolesRequestRoleTaskPermissionsInner) SetAccess(v string) {
 	o.Access = v
 }
 
-func (o AddRolesRequestRoleVdiPoolsInner) MarshalJSON() ([]byte, error) {
+func (o AddRolesRequestRoleTaskPermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -105,7 +105,7 @@ func (o AddRolesRequestRoleVdiPoolsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AddRolesRequestRoleVdiPoolsInner) ToMap() (map[string]interface{}, error) {
+func (o AddRolesRequestRoleTaskPermissionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
@@ -116,7 +116,7 @@ func (o AddRolesRequestRoleVdiPoolsInner) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
-func (o *AddRolesRequestRoleVdiPoolsInner) UnmarshalJSON(data []byte) (err error) {
+func (o *AddRolesRequestRoleTaskPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -139,15 +139,15 @@ func (o *AddRolesRequestRoleVdiPoolsInner) UnmarshalJSON(data []byte) (err error
 		}
 	}
 
-	varAddRolesRequestRoleVdiPoolsInner := _AddRolesRequestRoleVdiPoolsInner{}
+	varAddRolesRequestRoleTaskPermissionsInner := _AddRolesRequestRoleTaskPermissionsInner{}
 
-	err = json.Unmarshal(data, &varAddRolesRequestRoleVdiPoolsInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleTaskPermissionsInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddRolesRequestRoleVdiPoolsInner(varAddRolesRequestRoleVdiPoolsInner)
+	*o = AddRolesRequestRoleTaskPermissionsInner(varAddRolesRequestRoleTaskPermissionsInner)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -160,38 +160,38 @@ func (o *AddRolesRequestRoleVdiPoolsInner) UnmarshalJSON(data []byte) (err error
 	return err
 }
 
-type NullableAddRolesRequestRoleVdiPoolsInner struct {
-	value *AddRolesRequestRoleVdiPoolsInner
+type NullableAddRolesRequestRoleTaskPermissionsInner struct {
+	value *AddRolesRequestRoleTaskPermissionsInner
 	isSet bool
 }
 
-func (v NullableAddRolesRequestRoleVdiPoolsInner) Get() *AddRolesRequestRoleVdiPoolsInner {
+func (v NullableAddRolesRequestRoleTaskPermissionsInner) Get() *AddRolesRequestRoleTaskPermissionsInner {
 	return v.value
 }
 
-func (v *NullableAddRolesRequestRoleVdiPoolsInner) Set(val *AddRolesRequestRoleVdiPoolsInner) {
+func (v *NullableAddRolesRequestRoleTaskPermissionsInner) Set(val *AddRolesRequestRoleTaskPermissionsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddRolesRequestRoleVdiPoolsInner) IsSet() bool {
+func (v NullableAddRolesRequestRoleTaskPermissionsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddRolesRequestRoleVdiPoolsInner) Unset() {
+func (v *NullableAddRolesRequestRoleTaskPermissionsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddRolesRequestRoleVdiPoolsInner(val *AddRolesRequestRoleVdiPoolsInner) *NullableAddRolesRequestRoleVdiPoolsInner {
-	return &NullableAddRolesRequestRoleVdiPoolsInner{value: val, isSet: true}
+func NewNullableAddRolesRequestRoleTaskPermissionsInner(val *AddRolesRequestRoleTaskPermissionsInner) *NullableAddRolesRequestRoleTaskPermissionsInner {
+	return &NullableAddRolesRequestRoleTaskPermissionsInner{value: val, isSet: true}
 }
 
-func (v NullableAddRolesRequestRoleVdiPoolsInner) MarshalJSON() ([]byte, error) {
+func (v NullableAddRolesRequestRoleTaskPermissionsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddRolesRequestRoleVdiPoolsInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAddRolesRequestRoleTaskPermissionsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

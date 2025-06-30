@@ -1,67 +1,67 @@
-# AddRolesRequestRoleAppTemplatesInner
+# AddRolesRequestRoleVdiPoolPermissionsInner
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** | &#x60;id&#x60; of the blueprint (appTemplate) | 
+**Id** | **int32** | &#x60;id&#x60; of the VDI pool | 
 **Access** | **string** | The new access level. | 
 
 ## Methods
 
-### NewAddRolesRequestRoleAppTemplatesInner
+### NewAddRolesRequestRoleVdiPoolPermissionsInner
 
-`func NewAddRolesRequestRoleAppTemplatesInner(id int32, access string, ) *AddRolesRequestRoleAppTemplatesInner`
+`func NewAddRolesRequestRoleVdiPoolPermissionsInner(id int32, access string, ) *AddRolesRequestRoleVdiPoolPermissionsInner`
 
-NewAddRolesRequestRoleAppTemplatesInner instantiates a new AddRolesRequestRoleAppTemplatesInner object
+NewAddRolesRequestRoleVdiPoolPermissionsInner instantiates a new AddRolesRequestRoleVdiPoolPermissionsInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddRolesRequestRoleAppTemplatesInnerWithDefaults
+### NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults
 
-`func NewAddRolesRequestRoleAppTemplatesInnerWithDefaults() *AddRolesRequestRoleAppTemplatesInner`
+`func NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults() *AddRolesRequestRoleVdiPoolPermissionsInner`
 
-NewAddRolesRequestRoleAppTemplatesInnerWithDefaults instantiates a new AddRolesRequestRoleAppTemplatesInner object
+NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleVdiPoolPermissionsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) GetId() int32`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetId() int32`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) GetIdOk() (*int32, bool)`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int32, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) SetId(v int32)`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetId(v int32)`
 
 SetId sets Id field to given value.
 
 
 ### GetAccess
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) GetAccess() string`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetAccess() string`
 
 GetAccess returns the Access field if non-nil, zero value otherwise.
 
 ### GetAccessOk
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) GetAccessOk() (*string, bool)`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetAccessOk() (*string, bool)`
 
 GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccess
 
-`func (o *AddRolesRequestRoleAppTemplatesInner) SetAccess(v string)`
+`func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetAccess(v string)`
 
 SetAccess sets Access field to given value.
 

@@ -16,41 +16,41 @@ import (
 	"fmt"
 )
 
-// checks if the AddRolesRequestRoleInstanceTypesInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddRolesRequestRoleInstanceTypesInner{}
+// checks if the AddRolesRequestRoleVdiPoolPermissionsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddRolesRequestRoleVdiPoolPermissionsInner{}
 
-// AddRolesRequestRoleInstanceTypesInner struct for AddRolesRequestRoleInstanceTypesInner
-type AddRolesRequestRoleInstanceTypesInner struct {
-	// `id` of the instance type
+// AddRolesRequestRoleVdiPoolPermissionsInner struct for AddRolesRequestRoleVdiPoolPermissionsInner
+type AddRolesRequestRoleVdiPoolPermissionsInner struct {
+	// `id` of the VDI pool
 	Id int32 `json:"id"`
 	// The new access level.
 	Access               string `json:"access"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddRolesRequestRoleInstanceTypesInner AddRolesRequestRoleInstanceTypesInner
+type _AddRolesRequestRoleVdiPoolPermissionsInner AddRolesRequestRoleVdiPoolPermissionsInner
 
-// NewAddRolesRequestRoleInstanceTypesInner instantiates a new AddRolesRequestRoleInstanceTypesInner object
+// NewAddRolesRequestRoleVdiPoolPermissionsInner instantiates a new AddRolesRequestRoleVdiPoolPermissionsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleInstanceTypesInner(id int32, access string) *AddRolesRequestRoleInstanceTypesInner {
-	this := AddRolesRequestRoleInstanceTypesInner{}
+func NewAddRolesRequestRoleVdiPoolPermissionsInner(id int32, access string) *AddRolesRequestRoleVdiPoolPermissionsInner {
+	this := AddRolesRequestRoleVdiPoolPermissionsInner{}
 	this.Id = id
 	this.Access = access
 	return &this
 }
 
-// NewAddRolesRequestRoleInstanceTypesInnerWithDefaults instantiates a new AddRolesRequestRoleInstanceTypesInner object
+// NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults instantiates a new AddRolesRequestRoleVdiPoolPermissionsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddRolesRequestRoleInstanceTypesInnerWithDefaults() *AddRolesRequestRoleInstanceTypesInner {
-	this := AddRolesRequestRoleInstanceTypesInner{}
+func NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults() *AddRolesRequestRoleVdiPoolPermissionsInner {
+	this := AddRolesRequestRoleVdiPoolPermissionsInner{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleInstanceTypesInner) GetId() int32 {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *AddRolesRequestRoleInstanceTypesInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleInstanceTypesInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,12 +69,12 @@ func (o *AddRolesRequestRoleInstanceTypesInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleInstanceTypesInner) SetId(v int32) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetId(v int32) {
 	o.Id = v
 }
 
 // GetAccess returns the Access field value
-func (o *AddRolesRequestRoleInstanceTypesInner) GetAccess() string {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetAccess() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -85,7 +85,7 @@ func (o *AddRolesRequestRoleInstanceTypesInner) GetAccess() string {
 
 // GetAccessOk returns a tuple with the Access field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleInstanceTypesInner) GetAccessOk() (*string, bool) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetAccessOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -93,11 +93,11 @@ func (o *AddRolesRequestRoleInstanceTypesInner) GetAccessOk() (*string, bool) {
 }
 
 // SetAccess sets field value
-func (o *AddRolesRequestRoleInstanceTypesInner) SetAccess(v string) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetAccess(v string) {
 	o.Access = v
 }
 
-func (o AddRolesRequestRoleInstanceTypesInner) MarshalJSON() ([]byte, error) {
+func (o AddRolesRequestRoleVdiPoolPermissionsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -105,7 +105,7 @@ func (o AddRolesRequestRoleInstanceTypesInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AddRolesRequestRoleInstanceTypesInner) ToMap() (map[string]interface{}, error) {
+func (o AddRolesRequestRoleVdiPoolPermissionsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["access"] = o.Access
@@ -116,7 +116,7 @@ func (o AddRolesRequestRoleInstanceTypesInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-func (o *AddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(data []byte) (err error) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -139,15 +139,15 @@ func (o *AddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(data []byte) (err 
 		}
 	}
 
-	varAddRolesRequestRoleInstanceTypesInner := _AddRolesRequestRoleInstanceTypesInner{}
+	varAddRolesRequestRoleVdiPoolPermissionsInner := _AddRolesRequestRoleVdiPoolPermissionsInner{}
 
-	err = json.Unmarshal(data, &varAddRolesRequestRoleInstanceTypesInner)
+	err = json.Unmarshal(data, &varAddRolesRequestRoleVdiPoolPermissionsInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddRolesRequestRoleInstanceTypesInner(varAddRolesRequestRoleInstanceTypesInner)
+	*o = AddRolesRequestRoleVdiPoolPermissionsInner(varAddRolesRequestRoleVdiPoolPermissionsInner)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -160,38 +160,38 @@ func (o *AddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(data []byte) (err 
 	return err
 }
 
-type NullableAddRolesRequestRoleInstanceTypesInner struct {
-	value *AddRolesRequestRoleInstanceTypesInner
+type NullableAddRolesRequestRoleVdiPoolPermissionsInner struct {
+	value *AddRolesRequestRoleVdiPoolPermissionsInner
 	isSet bool
 }
 
-func (v NullableAddRolesRequestRoleInstanceTypesInner) Get() *AddRolesRequestRoleInstanceTypesInner {
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) Get() *AddRolesRequestRoleVdiPoolPermissionsInner {
 	return v.value
 }
 
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) Set(val *AddRolesRequestRoleInstanceTypesInner) {
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) Set(val *AddRolesRequestRoleVdiPoolPermissionsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddRolesRequestRoleInstanceTypesInner) IsSet() bool {
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) Unset() {
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddRolesRequestRoleInstanceTypesInner(val *AddRolesRequestRoleInstanceTypesInner) *NullableAddRolesRequestRoleInstanceTypesInner {
-	return &NullableAddRolesRequestRoleInstanceTypesInner{value: val, isSet: true}
+func NewNullableAddRolesRequestRoleVdiPoolPermissionsInner(val *AddRolesRequestRoleVdiPoolPermissionsInner) *NullableAddRolesRequestRoleVdiPoolPermissionsInner {
+	return &NullableAddRolesRequestRoleVdiPoolPermissionsInner{value: val, isSet: true}
 }
 
-func (v NullableAddRolesRequestRoleInstanceTypesInner) MarshalJSON() ([]byte, error) {
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddRolesRequestRoleInstanceTypesInner) UnmarshalJSON(src []byte) error {
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
