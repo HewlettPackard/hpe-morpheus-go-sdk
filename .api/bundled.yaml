@@ -149448,10 +149448,48 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - type: object
-                    properties:
-                      servicePlan:
+                type: object 
+                allOf: 
+                  - properties:
+                      id:
+                        type: integer
+                        format: int64
+                  - properties: *ref_7 
+              examples:
+                Service Plan Response:
+                  value:
+                    success: true
+                    id: 123
+        4XX:
+          description: Error Codes
+          content: *ref_3
+        5XX:
+          description: Error Codes
+          content: *ref_4
+  /api/service-plans/{id}:
+    get:
+      summary: Retrieves a Specific Service Plan
+      description: |
+        Retrieves a specific service plan.
+      operationId: getServicePlans
+      tags:
+        - Service Plans
+      parameters:
+        - name: id
+          in: path
+          description: Morpheus ID of the Object being referenced
+          required: true
+          schema: *ref_6
+          example: 1
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  servicePlan:
                         type: object
                         properties: &ref_1137
                           id:
@@ -149690,123 +149728,6 @@ paths:
                                     items:
                                       type: integer
                                       format: int64
-                  - type: object
-                    properties: *ref_7
-              examples:
-                Service Plan Response:
-                  value:
-                    servicePlan: &ref_1138
-                      id: 898
-                      name: 1 CPU, 4GB Memory
-                      code: vm-4096
-                      active: true
-                      sortOrder: 100
-                      description: 1 CPU, 4GB Memory
-                      maxStorage: 0
-                      maxMemory: 4294967296
-                      maxCpu: 0
-                      maxCores: 1
-                      maxDisks: null
-                      coresPerSocket: 1
-                      customCpu: false
-                      customCores: true
-                      customMaxStorage: true
-                      customMaxDataStorage: true
-                      customMaxMemory: true
-                      addVolumes: true
-                      memoryOptionSource: null
-                      cpuOptionSource: null
-                      dateCreated: '2018-12-15T01:40:58Z'
-                      lastUpdated: '2022-08-18T20:08:55Z'
-                      regionCode: null
-                      visibility: public
-                      editable: true
-                      provisionType:
-                        id: 13
-                        name: VMware
-                        code: vmware
-                        rootDiskCustomizable: true
-                        addVolumes: true
-                        customizeVolume: true
-                        hasConfigurableCpuSockets: true
-                      tenants: Home, Customer 123
-                      priceSets:
-                        - id: 554
-                          name: VMware Price Set
-                          code: vmwareprices
-                          priceUnit: month
-                      config:
-                        storageSizeType: gb
-                        memorySizeType: mb
-                        ranges:
-                          minStorage: '1'
-                          maxStorage: '2'
-                          minMemory: 1048576
-                          maxMemory: 2097152
-                          minCores: '1'
-                          maxCores: '2'
-                          minSockets: '1'
-                          maxSockets: '10'
-                          minCoresPerSocket: '1'
-                          maxCoresPerSocket: '10'
-                      zones:
-                        - id: 1
-                          name: vCenter
-                          code: labvCenter
-                      permissions:
-                        resourcePermissions:
-                          defaultStore: false
-                          allPlans: false
-                          defaultTarget: false
-                          canManage: false
-                          all: true
-                          account:
-                            id: 1
-                          sites:
-                            - id: 1
-                              name: Personal
-                              default: false
-                            - id: 6
-                              name: Work
-                              default: false
-                          plans: []
-                        tenantPermissions:
-                          accounts:
-                            - 1
-                            - 94
-                    success: true
-        4XX:
-          description: Error Codes
-          content: *ref_3
-        5XX:
-          description: Error Codes
-          content: *ref_4
-  /api/service-plans/{id}:
-    get:
-      summary: Retrieves a Specific Service Plan
-      description: |
-        Retrieves a specific service plan.
-      operationId: getServicePlans
-      tags:
-        - Service Plans
-      parameters:
-        - name: id
-          in: path
-          description: Morpheus ID of the Object being referenced
-          required: true
-          schema: *ref_6
-          example: 1
-      responses:
-        '200':
-          description: Successful Request
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  servicePlan:
-                    type: object
-                    properties: *ref_1137
               examples:
                 Service Plan Response:
                   value:
@@ -150056,7 +149977,85 @@ paths:
               examples:
                 Service Plan Response:
                   value:
-                    servicePlan: *ref_1138
+                    servicePlan: &ref_1138
+                      id: 898
+                      name: 1 CPU, 4GB Memory
+                      code: vm-4096
+                      active: true
+                      sortOrder: 100
+                      description: 1 CPU, 4GB Memory
+                      maxStorage: 0
+                      maxMemory: 4294967296
+                      maxCpu: 0
+                      maxCores: 1
+                      maxDisks: null
+                      coresPerSocket: 1
+                      customCpu: false
+                      customCores: true
+                      customMaxStorage: true
+                      customMaxDataStorage: true
+                      customMaxMemory: true
+                      addVolumes: true
+                      memoryOptionSource: null
+                      cpuOptionSource: null
+                      dateCreated: '2018-12-15T01:40:58Z'
+                      lastUpdated: '2022-08-18T20:08:55Z'
+                      regionCode: null
+                      visibility: public
+                      editable: true
+                      provisionType:
+                        id: 13
+                        name: VMware
+                        code: vmware
+                        rootDiskCustomizable: true
+                        addVolumes: true
+                        customizeVolume: true
+                        hasConfigurableCpuSockets: true
+                      tenants: Home, Customer 123
+                      priceSets:
+                        - id: 554
+                          name: VMware Price Set
+                          code: vmwareprices
+                          priceUnit: month
+                      config:
+                        storageSizeType: gb
+                        memorySizeType: mb
+                        ranges:
+                          minStorage: '1'
+                          maxStorage: '2'
+                          minMemory: 1048576
+                          maxMemory: 2097152
+                          minCores: '1'
+                          maxCores: '2'
+                          minSockets: '1'
+                          maxSockets: '10'
+                          minCoresPerSocket: '1'
+                          maxCoresPerSocket: '10'
+                      zones:
+                        - id: 1
+                          name: vCenter
+                          code: labvCenter
+                      permissions:
+                        resourcePermissions:
+                          defaultStore: false
+                          allPlans: false
+                          defaultTarget: false
+                          canManage: false
+                          all: true
+                          account:
+                            id: 1
+                          sites:
+                            - id: 1
+                              name: Personal
+                              default: false
+                            - id: 6
+                              name: Work
+                              default: false
+                          plans: []
+                        tenantPermissions:
+                          accounts:
+                            - 1
+                            - 94
                     success: true
         4XX:
           description: Error Codes

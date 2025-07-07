@@ -51,7 +51,7 @@ type ServicePlan struct {
 	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
 	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
-	Permissions          *AddServicePlans200ResponseAllOfServicePlanPermissions                             `json:"permissions,omitempty"`
+	Permissions          *GetServicePlans200ResponseServicePlanPermissions                                  `json:"permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -1146,9 +1146,9 @@ func (o *ServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDe
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePlanPermissions {
+func (o *ServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret AddServicePlans200ResponseAllOfServicePlanPermissions
+		var ret GetServicePlans200ResponseServicePlanPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -1156,7 +1156,7 @@ func (o *ServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePla
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetPermissionsOk() (*AddServicePlans200ResponseAllOfServicePlanPermissions, bool) {
+func (o *ServicePlan) GetPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -1172,8 +1172,8 @@ func (o *ServicePlan) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given AddServicePlans200ResponseAllOfServicePlanPermissions and assigns it to the Permissions field.
-func (o *ServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePlanPermissions) {
+// SetPermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissions and assigns it to the Permissions field.
+func (o *ServicePlan) SetPermissions(v GetServicePlans200ResponseServicePlanPermissions) {
 	o.Permissions = &v
 }
 
