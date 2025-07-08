@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
+// checks if the AmazonInstanceConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AmazonInstanceConfiguration{}
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
+// AmazonInstanceConfiguration struct for AmazonInstanceConfiguration
+type AmazonInstanceConfiguration struct {
 	// Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
 	NoAgent NullableBool `json:"noAgent,omitempty"`
 	// Amazon Cloud Type
@@ -37,14 +37,14 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
+type _AmazonInstanceConfiguration AmazonInstanceConfiguration
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 object
+// NewAmazonInstanceConfiguration instantiates a new AmazonInstanceConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
+func NewAmazonInstanceConfiguration() *AmazonInstanceConfiguration {
+	this := AmazonInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var isEC2 string = "false"
@@ -52,11 +52,11 @@ func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3() *AddCa
 	return &this
 }
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 object
+// NewAmazonInstanceConfigurationWithDefaults instantiates a new AmazonInstanceConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
+func NewAmazonInstanceConfigurationWithDefaults() *AmazonInstanceConfiguration {
+	this := AmazonInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var isEC2 string = "false"
@@ -65,7 +65,7 @@ func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefau
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoAgent() bool {
+func (o *AmazonInstanceConfiguration) GetNoAgent() bool {
 	if o == nil || IsNil(o.NoAgent.Get()) {
 		var ret bool
 		return ret
@@ -76,7 +76,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoA
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoAgentOk() (*bool, bool) {
+func (o *AmazonInstanceConfiguration) GetNoAgentOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoA
 }
 
 // IsSetNoAgent returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetNoAgent() bool {
+func (o *AmazonInstanceConfiguration) IsSetNoAgent() bool {
 	if o != nil && o.NoAgent.IsSet() {
 		return true
 	}
@@ -93,22 +93,22 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetN
 }
 
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetNoAgent(v bool) {
+func (o *AmazonInstanceConfiguration) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
 }
 
 // SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetNoAgentNil() {
+func (o *AmazonInstanceConfiguration) SetNoAgentNil() {
 	o.NoAgent.Set(nil)
 }
 
 // UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnsetNoAgent() {
+func (o *AmazonInstanceConfiguration) UnsetNoAgent() {
 	o.NoAgent.Unset()
 }
 
 // GetIsEC2 returns the IsEC2 field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsEC2() string {
+func (o *AmazonInstanceConfiguration) GetIsEC2() string {
 	if o == nil || IsNil(o.IsEC2) {
 		var ret string
 		return ret
@@ -118,7 +118,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsE
 
 // GetIsEC2Ok returns a tuple with the IsEC2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsEC2Ok() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetIsEC2Ok() (*string, bool) {
 	if o == nil || IsNil(o.IsEC2) {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsE
 }
 
 // IsSetIsEC2 returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetIsEC2() bool {
+func (o *AmazonInstanceConfiguration) IsSetIsEC2() bool {
 	if o != nil && !IsNil(o.IsEC2) {
 		return true
 	}
@@ -135,12 +135,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetI
 }
 
 // SetIsEC2 gets a reference to the given string and assigns it to the IsEC2 field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetIsEC2(v string) {
+func (o *AmazonInstanceConfiguration) SetIsEC2(v string) {
 	o.IsEC2 = &v
 }
 
 // GetAvailabilityId returns the AvailabilityId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAvailabilityId() string {
+func (o *AmazonInstanceConfiguration) GetAvailabilityId() string {
 	if o == nil || IsNil(o.AvailabilityId) {
 		var ret string
 		return ret
@@ -150,7 +150,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAva
 
 // GetAvailabilityIdOk returns a tuple with the AvailabilityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAvailabilityIdOk() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetAvailabilityIdOk() (*string, bool) {
 	if o == nil || IsNil(o.AvailabilityId) {
 		return nil, false
 	}
@@ -158,7 +158,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAva
 }
 
 // IsSetAvailabilityId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetAvailabilityId() bool {
+func (o *AmazonInstanceConfiguration) IsSetAvailabilityId() bool {
 	if o != nil && !IsNil(o.AvailabilityId) {
 		return true
 	}
@@ -167,12 +167,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetA
 }
 
 // SetAvailabilityId gets a reference to the given string and assigns it to the AvailabilityId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetAvailabilityId(v string) {
+func (o *AmazonInstanceConfiguration) SetAvailabilityId(v string) {
 	o.AvailabilityId = &v
 }
 
 // GetSecurityId returns the SecurityId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSecurityId() string {
+func (o *AmazonInstanceConfiguration) GetSecurityId() string {
 	if o == nil || IsNil(o.SecurityId) {
 		var ret string
 		return ret
@@ -182,7 +182,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSec
 
 // GetSecurityIdOk returns a tuple with the SecurityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSecurityIdOk() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetSecurityIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SecurityId) {
 		return nil, false
 	}
@@ -190,7 +190,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSec
 }
 
 // IsSetSecurityId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetSecurityId() bool {
+func (o *AmazonInstanceConfiguration) IsSetSecurityId() bool {
 	if o != nil && !IsNil(o.SecurityId) {
 		return true
 	}
@@ -199,12 +199,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetS
 }
 
 // SetSecurityId gets a reference to the given string and assigns it to the SecurityId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetSecurityId(v string) {
+func (o *AmazonInstanceConfiguration) SetSecurityId(v string) {
 	o.SecurityId = &v
 }
 
 // GetPublicIpType returns the PublicIpType field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPublicIpType() string {
+func (o *AmazonInstanceConfiguration) GetPublicIpType() string {
 	if o == nil || IsNil(o.PublicIpType) {
 		var ret string
 		return ret
@@ -214,7 +214,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPub
 
 // GetPublicIpTypeOk returns a tuple with the PublicIpType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPublicIpTypeOk() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetPublicIpTypeOk() (*string, bool) {
 	if o == nil || IsNil(o.PublicIpType) {
 		return nil, false
 	}
@@ -222,7 +222,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPub
 }
 
 // IsSetPublicIpType returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetPublicIpType() bool {
+func (o *AmazonInstanceConfiguration) IsSetPublicIpType() bool {
 	if o != nil && !IsNil(o.PublicIpType) {
 		return true
 	}
@@ -231,12 +231,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetP
 }
 
 // SetPublicIpType gets a reference to the given string and assigns it to the PublicIpType field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetPublicIpType(v string) {
+func (o *AmazonInstanceConfiguration) SetPublicIpType(v string) {
 	o.PublicIpType = &v
 }
 
 // GetInstanceProfile returns the InstanceProfile field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetInstanceProfile() string {
+func (o *AmazonInstanceConfiguration) GetInstanceProfile() string {
 	if o == nil || IsNil(o.InstanceProfile) {
 		var ret string
 		return ret
@@ -246,7 +246,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIns
 
 // GetInstanceProfileOk returns a tuple with the InstanceProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetInstanceProfileOk() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetInstanceProfileOk() (*string, bool) {
 	if o == nil || IsNil(o.InstanceProfile) {
 		return nil, false
 	}
@@ -254,7 +254,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIns
 }
 
 // IsSetInstanceProfile returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetInstanceProfile() bool {
+func (o *AmazonInstanceConfiguration) IsSetInstanceProfile() bool {
 	if o != nil && !IsNil(o.InstanceProfile) {
 		return true
 	}
@@ -263,12 +263,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetI
 }
 
 // SetInstanceProfile gets a reference to the given string and assigns it to the InstanceProfile field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetInstanceProfile(v string) {
+func (o *AmazonInstanceConfiguration) SetInstanceProfile(v string) {
 	o.InstanceProfile = &v
 }
 
 // GetKmsKeyId returns the KmsKeyId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKmsKeyId() string {
+func (o *AmazonInstanceConfiguration) GetKmsKeyId() string {
 	if o == nil || IsNil(o.KmsKeyId) {
 		var ret string
 		return ret
@@ -278,7 +278,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKms
 
 // GetKmsKeyIdOk returns a tuple with the KmsKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKmsKeyIdOk() (*string, bool) {
+func (o *AmazonInstanceConfiguration) GetKmsKeyIdOk() (*string, bool) {
 	if o == nil || IsNil(o.KmsKeyId) {
 		return nil, false
 	}
@@ -286,7 +286,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKms
 }
 
 // IsSetKmsKeyId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetKmsKeyId() bool {
+func (o *AmazonInstanceConfiguration) IsSetKmsKeyId() bool {
 	if o != nil && !IsNil(o.KmsKeyId) {
 		return true
 	}
@@ -295,11 +295,11 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSetK
 }
 
 // SetKmsKeyId gets a reference to the given string and assigns it to the KmsKeyId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetKmsKeyId(v string) {
+func (o *AmazonInstanceConfiguration) SetKmsKeyId(v string) {
 	o.KmsKeyId = &v
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) MarshalJSON() ([]byte, error) {
+func (o AmazonInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -307,7 +307,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Marshal
 	return json.Marshal(toSerialize)
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) ToMap() (map[string]interface{}, error) {
+func (o AmazonInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.NoAgent.IsSet() {
 		toSerialize["noAgent"] = o.NoAgent.Get()
@@ -337,16 +337,16 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) ToMap()
 
 	return toSerialize, nil
 }
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{}
+func (o *AmazonInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varAmazonInstanceConfiguration := _AmazonInstanceConfiguration{}
 
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+	err = json.Unmarshal(data, &varAmazonInstanceConfiguration)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+	*o = AmazonInstanceConfiguration(varAmazonInstanceConfiguration)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -364,38 +364,38 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Unmars
 	return err
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
+type NullableAmazonInstanceConfiguration struct {
+	value *AmazonInstanceConfiguration
 	isSet bool
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
+func (v NullableAmazonInstanceConfiguration) Get() *AmazonInstanceConfiguration {
 	return v.value
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) {
+func (v *NullableAmazonInstanceConfiguration) Set(val *AmazonInstanceConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) IsSet() bool {
+func (v NullableAmazonInstanceConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) Unset() {
+func (v *NullableAmazonInstanceConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3{value: val, isSet: true}
+func NewNullableAmazonInstanceConfiguration(val *AmazonInstanceConfiguration) *NullableAmazonInstanceConfiguration {
+	return &NullableAmazonInstanceConfiguration{value: val, isSet: true}
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) MarshalJSON() ([]byte, error) {
+func (v NullableAmazonInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnmarshalJSON(src []byte) error {
+func (v *NullableAmazonInstanceConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **CanEnforceTags** | Pointer to **NullableBool** |  | [optional] 
 **DisableRootDatastore** | Pointer to **bool** |  | [optional] 
 **HasSnapshots** | Pointer to **bool** |  | [optional] 
+**HasMemorySnapshots** | Pointer to **bool** |  | [optional] 
 **HasSpecTemplates** | Pointer to **bool** |  | [optional] 
 **HasPreview** | Pointer to **bool** |  | [optional] 
 **ZonePoolRequired** | Pointer to **bool** |  | [optional] 
@@ -984,6 +985,31 @@ SetHasSnapshots sets HasSnapshots field to given value.
 `func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) HasHasSnapshots() bool`
 
 HasHasSnapshots returns a boolean if a field has been set.
+
+### GetHasMemorySnapshots
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) GetHasMemorySnapshots() bool`
+
+GetHasMemorySnapshots returns the HasMemorySnapshots field if non-nil, zero value otherwise.
+
+### GetHasMemorySnapshotsOk
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) GetHasMemorySnapshotsOk() (*bool, bool)`
+
+GetHasMemorySnapshotsOk returns a tuple with the HasMemorySnapshots field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasMemorySnapshots
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) SetHasMemorySnapshots(v bool)`
+
+SetHasMemorySnapshots sets HasMemorySnapshots field to given value.
+
+### HasHasMemorySnapshots
+
+`func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) HasHasMemorySnapshots() bool`
+
+HasHasMemorySnapshots returns a boolean if a field has been set.
 
 ### GetHasSpecTemplates
 

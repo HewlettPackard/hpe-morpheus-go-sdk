@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -23,7 +23,9 @@ type SnapshotInstanceRequestSnapshot struct {
 	// Optional name for the snapshot being created.
 	Name *string `json:"name,omitempty"`
 	// Optional description for the snapshot
-	Description          *string `json:"description,omitempty"`
+	Description *string `json:"description,omitempty"`
+	// Whether to include the memory state in the snapshot. Only supported by certain provision types such as VMware
+	MemorySnapshot       *bool `json:"memorySnapshot,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,6 +39,8 @@ func NewSnapshotInstanceRequestSnapshot() *SnapshotInstanceRequestSnapshot {
 	this := SnapshotInstanceRequestSnapshot{}
 	var name string = "{serverName}.{timestamp}"
 	this.Name = &name
+	var memorySnapshot bool = false
+	this.MemorySnapshot = &memorySnapshot
 	return &this
 }
 
@@ -47,6 +51,8 @@ func NewSnapshotInstanceRequestSnapshotWithDefaults() *SnapshotInstanceRequestSn
 	this := SnapshotInstanceRequestSnapshot{}
 	var name string = "{serverName}.{timestamp}"
 	this.Name = &name
+	var memorySnapshot bool = false
+	this.MemorySnapshot = &memorySnapshot
 	return &this
 }
 
@@ -114,6 +120,38 @@ func (o *SnapshotInstanceRequestSnapshot) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMemorySnapshot returns the MemorySnapshot field value if set, zero value otherwise.
+func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshot() bool {
+	if o == nil || IsNil(o.MemorySnapshot) {
+		var ret bool
+		return ret
+	}
+	return *o.MemorySnapshot
+}
+
+// GetMemorySnapshotOk returns a tuple with the MemorySnapshot field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshotOk() (*bool, bool) {
+	if o == nil || IsNil(o.MemorySnapshot) {
+		return nil, false
+	}
+	return o.MemorySnapshot, true
+}
+
+// IsSetMemorySnapshot returns a boolean if a field has been set.
+func (o *SnapshotInstanceRequestSnapshot) IsSetMemorySnapshot() bool {
+	if o != nil && !IsNil(o.MemorySnapshot) {
+		return true
+	}
+
+	return false
+}
+
+// SetMemorySnapshot gets a reference to the given bool and assigns it to the MemorySnapshot field.
+func (o *SnapshotInstanceRequestSnapshot) SetMemorySnapshot(v bool) {
+	o.MemorySnapshot = &v
+}
+
 func (o SnapshotInstanceRequestSnapshot) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -129,6 +167,9 @@ func (o SnapshotInstanceRequestSnapshot) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.MemorySnapshot) {
+		toSerialize["memorySnapshot"] = o.MemorySnapshot
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -153,6 +194,7 @@ func (o *SnapshotInstanceRequestSnapshot) UnmarshalJSON(data []byte) (err error)
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "description")
+		delete(additionalProperties, "memorySnapshot")
 		o.AdditionalProperties = additionalProperties
 	}
 

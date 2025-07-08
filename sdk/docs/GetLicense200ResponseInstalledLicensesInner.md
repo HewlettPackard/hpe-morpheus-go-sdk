@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | ID | [optional] 
 **KeyId** | Pointer to **string** | Key ID (only the first 8 characters are required to identify license to uninstall) | [optional] 
 **Hash** | Pointer to **string** | Hash of the license content which can be used as a fingerprint identifier | [optional] 
+**LicenseVersion** | Pointer to **int64** | License Version which determines the required appliance version to install this license. | [optional] 
 **ProductTier** | Pointer to **string** | Product Tier | [optional] 
 **StartDate** | Pointer to **time.Time** | The start date of the applied license. | [optional] 
 **EndDate** | Pointer to **time.Time** | The expiration date of the applied license. | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **MaxHosts** | Pointer to **NullableInt64** | Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
 **MaxMvm** | Pointer to **NullableInt64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
 **MaxMvmSockets** | Pointer to **NullableInt64** | HPE VM Host Limit. 0 is enforced and null is used for unlimited. | [optional] 
+**MaxSockets** | Pointer to **NullableInt64** | Global Socket Limit. 0 is enforced and null is used for unlimited. | [optional] 
 **MaxIac** | Pointer to **NullableInt64** | IAC Deployments Limit. 0 is enforced and null is used for unlimited. | [optional] 
 **MaxXaas** | Pointer to **NullableInt64** | Xaas Instances Limit. 0 is enforced and null is used for unlimited. | [optional] 
 **MaxExecutions** | Pointer to **NullableInt64** | Execution Limit. 0 is enforced and null is used for unlimited. | [optional] 
@@ -132,6 +134,31 @@ SetHash sets Hash field to given value.
 `func (o *GetLicense200ResponseInstalledLicensesInner) HasHash() bool`
 
 HasHash returns a boolean if a field has been set.
+
+### GetLicenseVersion
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) GetLicenseVersion() int64`
+
+GetLicenseVersion returns the LicenseVersion field if non-nil, zero value otherwise.
+
+### GetLicenseVersionOk
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) GetLicenseVersionOk() (*int64, bool)`
+
+GetLicenseVersionOk returns a tuple with the LicenseVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicenseVersion
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetLicenseVersion(v int64)`
+
+SetLicenseVersion sets LicenseVersion field to given value.
+
+### HasLicenseVersion
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) HasLicenseVersion() bool`
+
+HasLicenseVersion returns a boolean if a field has been set.
 
 ### GetProductTier
 
@@ -483,6 +510,41 @@ HasMaxMvmSockets returns a boolean if a field has been set.
 `func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxMvmSockets()`
 
 UnsetMaxMvmSockets ensures that no value is present for MaxMvmSockets, not even an explicit nil
+### GetMaxSockets
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxSockets() int64`
+
+GetMaxSockets returns the MaxSockets field if non-nil, zero value otherwise.
+
+### GetMaxSocketsOk
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxSocketsOk() (*int64, bool)`
+
+GetMaxSocketsOk returns a tuple with the MaxSockets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxSockets
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxSockets(v int64)`
+
+SetMaxSockets sets MaxSockets field to given value.
+
+### HasMaxSockets
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) HasMaxSockets() bool`
+
+HasMaxSockets returns a boolean if a field has been set.
+
+### SetMaxSocketsNil
+
+`func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxSocketsNil(b bool)`
+
+ SetMaxSocketsNil sets the value for MaxSockets to be an explicit nil
+
+### UnsetMaxSockets
+`func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxSockets()`
+
+UnsetMaxSockets ensures that no value is present for MaxSockets, not even an explicit nil
 ### GetMaxIac
 
 `func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxIac() int64`

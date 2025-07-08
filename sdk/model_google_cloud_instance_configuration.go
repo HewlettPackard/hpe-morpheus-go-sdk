@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+// checks if the GoogleCloudInstanceConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GoogleCloudInstanceConfiguration{}
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
-type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
+// GoogleCloudInstanceConfiguration struct for GoogleCloudInstanceConfiguration
+type GoogleCloudInstanceConfiguration struct {
 	// Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
 	NoAgent NullableBool `json:"noAgent,omitempty"`
 	// External ID of the Google zone to use for instance.
@@ -35,31 +35,31 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
+type _GoogleCloudInstanceConfiguration GoogleCloudInstanceConfiguration
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 object
+// NewGoogleCloudInstanceConfiguration instantiates a new GoogleCloudInstanceConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+func NewGoogleCloudInstanceConfiguration() *GoogleCloudInstanceConfiguration {
+	this := GoogleCloudInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	return &this
 }
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 object
+// NewGoogleCloudInstanceConfigurationWithDefaults instantiates a new GoogleCloudInstanceConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+func NewGoogleCloudInstanceConfigurationWithDefaults() *GoogleCloudInstanceConfiguration {
+	this := GoogleCloudInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	return &this
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoAgent() bool {
+func (o *GoogleCloudInstanceConfiguration) GetNoAgent() bool {
 	if o == nil || IsNil(o.NoAgent.Get()) {
 		var ret bool
 		return ret
@@ -70,7 +70,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoA
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoAgentOk() (*bool, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetNoAgentOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -78,7 +78,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoA
 }
 
 // IsSetNoAgent returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetNoAgent() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetNoAgent() bool {
 	if o != nil && o.NoAgent.IsSet() {
 		return true
 	}
@@ -87,22 +87,22 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetN
 }
 
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNoAgent(v bool) {
+func (o *GoogleCloudInstanceConfiguration) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
 }
 
 // SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNoAgentNil() {
+func (o *GoogleCloudInstanceConfiguration) SetNoAgentNil() {
 	o.NoAgent.Set(nil)
 }
 
 // UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnsetNoAgent() {
+func (o *GoogleCloudInstanceConfiguration) UnsetNoAgent() {
 	o.NoAgent.Unset()
 }
 
 // GetGoogleZoneId returns the GoogleZoneId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoogleZoneId() int64 {
+func (o *GoogleCloudInstanceConfiguration) GetGoogleZoneId() int64 {
 	if o == nil || IsNil(o.GoogleZoneId) {
 		var ret int64
 		return ret
@@ -112,7 +112,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoo
 
 // GetGoogleZoneIdOk returns a tuple with the GoogleZoneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoogleZoneIdOk() (*int64, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetGoogleZoneIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GoogleZoneId) {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoo
 }
 
 // IsSetGoogleZoneId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetGoogleZoneId() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetGoogleZoneId() bool {
 	if o != nil && !IsNil(o.GoogleZoneId) {
 		return true
 	}
@@ -129,12 +129,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetG
 }
 
 // SetGoogleZoneId gets a reference to the given int64 and assigns it to the GoogleZoneId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetGoogleZoneId(v int64) {
+func (o *GoogleCloudInstanceConfiguration) SetGoogleZoneId(v int64) {
 	o.GoogleZoneId = &v
 }
 
 // GetExternalIpType returns the ExternalIpType field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExternalIpType() int64 {
+func (o *GoogleCloudInstanceConfiguration) GetExternalIpType() int64 {
 	if o == nil || IsNil(o.ExternalIpType) {
 		var ret int64
 		return ret
@@ -144,7 +144,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExt
 
 // GetExternalIpTypeOk returns a tuple with the ExternalIpType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExternalIpTypeOk() (*int64, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetExternalIpTypeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ExternalIpType) {
 		return nil, false
 	}
@@ -152,7 +152,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExt
 }
 
 // IsSetExternalIpType returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetExternalIpType() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetExternalIpType() bool {
 	if o != nil && !IsNil(o.ExternalIpType) {
 		return true
 	}
@@ -161,12 +161,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetE
 }
 
 // SetExternalIpType gets a reference to the given int64 and assigns it to the ExternalIpType field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetExternalIpType(v int64) {
+func (o *GoogleCloudInstanceConfiguration) SetExternalIpType(v int64) {
 	o.ExternalIpType = &v
 }
 
 // GetNetworkTags returns the NetworkTags field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNetworkTags() string {
+func (o *GoogleCloudInstanceConfiguration) GetNetworkTags() string {
 	if o == nil || IsNil(o.NetworkTags) {
 		var ret string
 		return ret
@@ -176,7 +176,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNet
 
 // GetNetworkTagsOk returns a tuple with the NetworkTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNetworkTagsOk() (*string, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetNetworkTagsOk() (*string, bool) {
 	if o == nil || IsNil(o.NetworkTags) {
 		return nil, false
 	}
@@ -184,7 +184,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNet
 }
 
 // IsSetNetworkTags returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetNetworkTags() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetNetworkTags() bool {
 	if o != nil && !IsNil(o.NetworkTags) {
 		return true
 	}
@@ -193,12 +193,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetN
 }
 
 // SetNetworkTags gets a reference to the given string and assigns it to the NetworkTags field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNetworkTags(v string) {
+func (o *GoogleCloudInstanceConfiguration) SetNetworkTags(v string) {
 	o.NetworkTags = &v
 }
 
 // GetServiceAccount returns the ServiceAccount field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetServiceAccount() string {
+func (o *GoogleCloudInstanceConfiguration) GetServiceAccount() string {
 	if o == nil || IsNil(o.ServiceAccount) {
 		var ret string
 		return ret
@@ -208,7 +208,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetSer
 
 // GetServiceAccountOk returns a tuple with the ServiceAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetServiceAccountOk() (*string, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetServiceAccountOk() (*string, bool) {
 	if o == nil || IsNil(o.ServiceAccount) {
 		return nil, false
 	}
@@ -216,7 +216,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetSer
 }
 
 // IsSetServiceAccount returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetServiceAccount() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetServiceAccount() bool {
 	if o != nil && !IsNil(o.ServiceAccount) {
 		return true
 	}
@@ -225,12 +225,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetS
 }
 
 // SetServiceAccount gets a reference to the given string and assigns it to the ServiceAccount field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetServiceAccount(v string) {
+func (o *GoogleCloudInstanceConfiguration) SetServiceAccount(v string) {
 	o.ServiceAccount = &v
 }
 
 // GetAccessScope returns the AccessScope field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAccessScope() string {
+func (o *GoogleCloudInstanceConfiguration) GetAccessScope() string {
 	if o == nil || IsNil(o.AccessScope) {
 		var ret string
 		return ret
@@ -240,7 +240,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAcc
 
 // GetAccessScopeOk returns a tuple with the AccessScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAccessScopeOk() (*string, bool) {
+func (o *GoogleCloudInstanceConfiguration) GetAccessScopeOk() (*string, bool) {
 	if o == nil || IsNil(o.AccessScope) {
 		return nil, false
 	}
@@ -248,7 +248,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAcc
 }
 
 // IsSetAccessScope returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetAccessScope() bool {
+func (o *GoogleCloudInstanceConfiguration) IsSetAccessScope() bool {
 	if o != nil && !IsNil(o.AccessScope) {
 		return true
 	}
@@ -257,11 +257,11 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSetA
 }
 
 // SetAccessScope gets a reference to the given string and assigns it to the AccessScope field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetAccessScope(v string) {
+func (o *GoogleCloudInstanceConfiguration) SetAccessScope(v string) {
 	o.AccessScope = &v
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) MarshalJSON() ([]byte, error) {
+func (o GoogleCloudInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -269,7 +269,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Marshal
 	return json.Marshal(toSerialize)
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) ToMap() (map[string]interface{}, error) {
+func (o GoogleCloudInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.NoAgent.IsSet() {
 		toSerialize["noAgent"] = o.NoAgent.Get()
@@ -296,16 +296,16 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) ToMap()
 
 	return toSerialize, nil
 }
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{}
+func (o *GoogleCloudInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varGoogleCloudInstanceConfiguration := _GoogleCloudInstanceConfiguration{}
 
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+	err = json.Unmarshal(data, &varGoogleCloudInstanceConfiguration)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+	*o = GoogleCloudInstanceConfiguration(varGoogleCloudInstanceConfiguration)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -322,38 +322,38 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Unmars
 	return err
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
+type NullableGoogleCloudInstanceConfiguration struct {
+	value *GoogleCloudInstanceConfiguration
 	isSet bool
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
+func (v NullableGoogleCloudInstanceConfiguration) Get() *GoogleCloudInstanceConfiguration {
 	return v.value
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) {
+func (v *NullableGoogleCloudInstanceConfiguration) Set(val *GoogleCloudInstanceConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) IsSet() bool {
+func (v NullableGoogleCloudInstanceConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) Unset() {
+func (v *NullableGoogleCloudInstanceConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2{value: val, isSet: true}
+func NewNullableGoogleCloudInstanceConfiguration(val *GoogleCloudInstanceConfiguration) *NullableGoogleCloudInstanceConfiguration {
+	return &NullableGoogleCloudInstanceConfiguration{value: val, isSet: true}
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) MarshalJSON() ([]byte, error) {
+func (v NullableGoogleCloudInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnmarshalJSON(src []byte) error {
+func (v *NullableGoogleCloudInstanceConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

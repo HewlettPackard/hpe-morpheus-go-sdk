@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -21,66 +21,66 @@ var _ fmt.Stringer
 
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
-	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf  *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
-	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
-	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
-	AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-	MapmapOfStringAny                                               *map[string]interface{}
+	AmazonInstanceConfiguration      *AmazonInstanceConfiguration
+	AzureInstanceConfiguration       *AzureInstanceConfiguration
+	GoogleCloudInstanceConfiguration *GoogleCloudInstanceConfiguration
+	VMWareInstanceConfiguration      *VMWareInstanceConfiguration
+	MapmapOfStringAny                *map[string]interface{}
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+	// try to unmarshal JSON data into AmazonInstanceConfiguration
+	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf = nil
+		jsonAmazonInstanceConfiguration, _ := json.Marshal(dst.AmazonInstanceConfiguration)
+		if string(jsonAmazonInstanceConfiguration) == "{}" { // empty struct
+			dst.AmazonInstanceConfiguration = nil
 		} else {
-			return nil // data stored in dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf, return on the first match
+			return nil // data stored in dst.AmazonInstanceConfiguration, return on the first match
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf = nil
+		dst.AmazonInstanceConfiguration = nil
 	}
 
-	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+	// try to unmarshal JSON data into AzureInstanceConfiguration
+	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 = nil
+		jsonAzureInstanceConfiguration, _ := json.Marshal(dst.AzureInstanceConfiguration)
+		if string(jsonAzureInstanceConfiguration) == "{}" { // empty struct
+			dst.AzureInstanceConfiguration = nil
 		} else {
-			return nil // data stored in dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1, return on the first match
+			return nil // data stored in dst.AzureInstanceConfiguration, return on the first match
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 = nil
+		dst.AzureInstanceConfiguration = nil
 	}
 
-	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration
+	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 = nil
+		jsonGoogleCloudInstanceConfiguration, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration)
+		if string(jsonGoogleCloudInstanceConfiguration) == "{}" { // empty struct
+			dst.GoogleCloudInstanceConfiguration = nil
 		} else {
-			return nil // data stored in dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2, return on the first match
+			return nil // data stored in dst.GoogleCloudInstanceConfiguration, return on the first match
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 = nil
+		dst.GoogleCloudInstanceConfiguration = nil
 	}
 
-	// try to unmarshal JSON data into AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
-	err = json.Unmarshal(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+	// try to unmarshal JSON data into VMWareInstanceConfiguration
+	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration)
 	if err == nil {
-		jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3, _ := json.Marshal(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
-		if string(jsonAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) == "{}" { // empty struct
-			dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 = nil
+		jsonVMWareInstanceConfiguration, _ := json.Marshal(dst.VMWareInstanceConfiguration)
+		if string(jsonVMWareInstanceConfiguration) == "{}" { // empty struct
+			dst.VMWareInstanceConfiguration = nil
 		} else {
-			return nil // data stored in dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3, return on the first match
+			return nil // data stored in dst.VMWareInstanceConfiguration, return on the first match
 		}
 	} else {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 = nil
+		dst.VMWareInstanceConfiguration = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -101,20 +101,20 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJ
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) MarshalJSON() ([]byte, error) {
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+	if src.AmazonInstanceConfiguration != nil {
+		return json.Marshal(&src.AmazonInstanceConfiguration)
 	}
 
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+	if src.AzureInstanceConfiguration != nil {
+		return json.Marshal(&src.AzureInstanceConfiguration)
 	}
 
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2)
+	if src.GoogleCloudInstanceConfiguration != nil {
+		return json.Marshal(&src.GoogleCloudInstanceConfiguration)
 	}
 
-	if src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 != nil {
-		return json.Marshal(&src.AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3)
+	if src.VMWareInstanceConfiguration != nil {
+		return json.Marshal(&src.VMWareInstanceConfiguration)
 	}
 
 	if src.MapmapOfStringAny != nil {

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -885,7 +885,7 @@ func (r ApiUpdateServicePlansRequest) UpdateServicePlansRequest(updateServicePla
 	return r
 }
 
-func (r ApiUpdateServicePlansRequest) Execute() (*AddServicePlans200Response, *http.Response, error) {
+func (r ApiUpdateServicePlansRequest) Execute() (*UpdateServicePlans200Response, *http.Response, error) {
 	return r.ApiService.UpdateServicePlansExecute(r)
 }
 
@@ -908,13 +908,13 @@ func (a *ServicePlansAPIService) UpdateServicePlans(ctx context.Context, id int6
 
 // Execute executes the request
 //
-//	@return AddServicePlans200Response
-func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePlansRequest) (*AddServicePlans200Response, *http.Response, error) {
+//	@return UpdateServicePlans200Response
+func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePlansRequest) (*UpdateServicePlans200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddServicePlans200Response
+		localVarReturnValue *UpdateServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.UpdateServicePlans")

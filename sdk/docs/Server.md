@@ -76,6 +76,7 @@ Name | Type | Description | Notes
 **TagCompliant** | Pointer to **NullableString** |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Config** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfig**](ListHosts200ResponseAllOfServersInnerConfig.md) |  | [optional] 
+**Instance** | Pointer to [**ListHosts200ResponseAllOfServersInnerInstance**](ListHosts200ResponseAllOfServersInnerInstance.md) |  | [optional] 
 **GuestConsolePreferred** | Pointer to **bool** |  | [optional] 
 **GuestConsoleType** | Pointer to **NullableString** |  | [optional] 
 **GuestConsoleUsername** | Pointer to **NullableString** |  | [optional] 
@@ -2181,6 +2182,31 @@ SetConfig sets Config field to given value.
 `func (o *Server) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
+
+### GetInstance
+
+`func (o *Server) GetInstance() ListHosts200ResponseAllOfServersInnerInstance`
+
+GetInstance returns the Instance field if non-nil, zero value otherwise.
+
+### GetInstanceOk
+
+`func (o *Server) GetInstanceOk() (*ListHosts200ResponseAllOfServersInnerInstance, bool)`
+
+GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstance
+
+`func (o *Server) SetInstance(v ListHosts200ResponseAllOfServersInnerInstance)`
+
+SetInstance sets Instance field to given value.
+
+### HasInstance
+
+`func (o *Server) HasInstance() bool`
+
+HasInstance returns a boolean if a field has been set.
 
 ### GetGuestConsolePreferred
 

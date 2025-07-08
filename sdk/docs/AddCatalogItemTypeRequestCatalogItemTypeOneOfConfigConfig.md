@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 
 **NestedVirtualization** | Pointer to **string** | Enable Nested Virtualization | [optional] [default to "off"]
 **VmwareFolderId** | Pointer to **string** | VMWare Folder External ID (as a String) or ID (as an Integer or String) | [optional] 
+**Template** | Pointer to **int64** | Image ID. This is the ID of a Virtual Image. | [optional] 
 **GoogleZoneId** | Pointer to **int64** | External ID of the Google zone to use for instance. | [optional] 
 **ExternalIpType** | Pointer to **int64** | External IP Type.  &#x60;-1&#x60; for ephemeral IP. | [optional] 
 **NetworkTags** | Pointer to **string** | Network Tags | [optional] 
@@ -398,6 +399,31 @@ SetVmwareFolderId sets VmwareFolderId field to given value.
 `func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) HasVmwareFolderId() bool`
 
 HasVmwareFolderId returns a boolean if a field has been set.
+
+### GetTemplate
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) GetTemplate() int64`
+
+GetTemplate returns the Template field if non-nil, zero value otherwise.
+
+### GetTemplateOk
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) GetTemplateOk() (*int64, bool)`
+
+GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplate
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) SetTemplate(v int64)`
+
+SetTemplate sets Template field to given value.
+
+### HasTemplate
+
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) HasTemplate() bool`
+
+HasTemplate returns a boolean if a field has been set.
 
 ### GetGoogleZoneId
 

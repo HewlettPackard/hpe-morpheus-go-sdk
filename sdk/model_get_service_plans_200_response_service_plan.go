@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -16,11 +16,11 @@ import (
 	"time"
 )
 
-// checks if the AddServicePlans200ResponseAllOfServicePlan type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddServicePlans200ResponseAllOfServicePlan{}
+// checks if the GetServicePlans200ResponseServicePlan type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetServicePlans200ResponseServicePlan{}
 
-// AddServicePlans200ResponseAllOfServicePlan struct for AddServicePlans200ResponseAllOfServicePlan
-type AddServicePlans200ResponseAllOfServicePlan struct {
+// GetServicePlans200ResponseServicePlan struct for GetServicePlans200ResponseServicePlan
+type GetServicePlans200ResponseServicePlan struct {
 	Id                   *int64                                                                             `json:"id,omitempty"`
 	Name                 *string                                                                            `json:"name,omitempty"`
 	Code                 *string                                                                            `json:"code,omitempty"`
@@ -51,31 +51,31 @@ type AddServicePlans200ResponseAllOfServicePlan struct {
 	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
 	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
-	Permissions          *AddServicePlans200ResponseAllOfServicePlanPermissions                             `json:"permissions,omitempty"`
+	Permissions          *GetServicePlans200ResponseServicePlanPermissions                                  `json:"permissions,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddServicePlans200ResponseAllOfServicePlan AddServicePlans200ResponseAllOfServicePlan
+type _GetServicePlans200ResponseServicePlan GetServicePlans200ResponseServicePlan
 
-// NewAddServicePlans200ResponseAllOfServicePlan instantiates a new AddServicePlans200ResponseAllOfServicePlan object
+// NewGetServicePlans200ResponseServicePlan instantiates a new GetServicePlans200ResponseServicePlan object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddServicePlans200ResponseAllOfServicePlan() *AddServicePlans200ResponseAllOfServicePlan {
-	this := AddServicePlans200ResponseAllOfServicePlan{}
+func NewGetServicePlans200ResponseServicePlan() *GetServicePlans200ResponseServicePlan {
+	this := GetServicePlans200ResponseServicePlan{}
 	return &this
 }
 
-// NewAddServicePlans200ResponseAllOfServicePlanWithDefaults instantiates a new AddServicePlans200ResponseAllOfServicePlan object
+// NewGetServicePlans200ResponseServicePlanWithDefaults instantiates a new GetServicePlans200ResponseServicePlan object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddServicePlans200ResponseAllOfServicePlanWithDefaults() *AddServicePlans200ResponseAllOfServicePlan {
-	this := AddServicePlans200ResponseAllOfServicePlan{}
+func NewGetServicePlans200ResponseServicePlanWithDefaults() *GetServicePlans200ResponseServicePlan {
+	this := GetServicePlans200ResponseServicePlan{}
 	return &this
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetId() int64 {
+func (o *GetServicePlans200ResponseServicePlan) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
@@ -85,7 +85,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetIdOk() (*int64, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetIdOk() (*int64, bool) {
 }
 
 // IsSetId returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetId() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -102,12 +102,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetId() bool {
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetId(v int64) {
+func (o *GetServicePlans200ResponseServicePlan) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetName() string {
+func (o *GetServicePlans200ResponseServicePlan) GetName() string {
 	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
@@ -117,7 +117,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetNameOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetNameOk() (*string, bool) {
 	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
@@ -125,7 +125,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetNameOk() (*string, bool)
 }
 
 // IsSetName returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetName() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetName() bool {
 	if o != nil && !IsNil(o.Name) {
 		return true
 	}
@@ -134,12 +134,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetName(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetName(v string) {
 	o.Name = &v
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCode() string {
+func (o *GetServicePlans200ResponseServicePlan) GetCode() string {
 	if o == nil || IsNil(o.Code) {
 		var ret string
 		return ret
@@ -149,7 +149,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCode() string {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCodeOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
@@ -157,7 +157,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCodeOk() (*string, bool)
 }
 
 // IsSetCode returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCode() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -166,12 +166,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCode() bool {
 }
 
 // SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCode(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetCode(v string) {
 	o.Code = &v
 }
 
 // GetActive returns the Active field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetActive() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetActive() bool {
 	if o == nil || IsNil(o.Active) {
 		var ret bool
 		return ret
@@ -181,7 +181,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetActive() bool {
 
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetActiveOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetActiveOk() (*bool, bool) {
 	if o == nil || IsNil(o.Active) {
 		return nil, false
 	}
@@ -189,7 +189,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetActiveOk() (*bool, bool)
 }
 
 // IsSetActive returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetActive() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetActive() bool {
 	if o != nil && !IsNil(o.Active) {
 		return true
 	}
@@ -198,12 +198,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetActive() bool {
 }
 
 // SetActive gets a reference to the given bool and assigns it to the Active field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetActive(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetActive(v bool) {
 	o.Active = &v
 }
 
 // GetSortOrder returns the SortOrder field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrder() int64 {
+func (o *GetServicePlans200ResponseServicePlan) GetSortOrder() int64 {
 	if o == nil || IsNil(o.SortOrder) {
 		var ret int64
 		return ret
@@ -213,7 +213,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrder() int64 {
 
 // GetSortOrderOk returns a tuple with the SortOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrderOk() (*int64, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetSortOrderOk() (*int64, bool) {
 	if o == nil || IsNil(o.SortOrder) {
 		return nil, false
 	}
@@ -221,7 +221,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrderOk() (*int64, b
 }
 
 // IsSetSortOrder returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetSortOrder() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetSortOrder() bool {
 	if o != nil && !IsNil(o.SortOrder) {
 		return true
 	}
@@ -230,12 +230,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetSortOrder() bool {
 }
 
 // SetSortOrder gets a reference to the given int64 and assigns it to the SortOrder field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetSortOrder(v int64) {
+func (o *GetServicePlans200ResponseServicePlan) SetSortOrder(v int64) {
 	o.SortOrder = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescription() string {
+func (o *GetServicePlans200ResponseServicePlan) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -245,7 +245,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescriptionOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -253,7 +253,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescriptionOk() (*string
 }
 
 // IsSetDescription returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetDescription() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -262,12 +262,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetDescription(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorage() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() float32 {
 	if o == nil || IsNil(o.MaxStorage) {
 		var ret float32
 		return ret
@@ -277,7 +277,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorage() float32 {
 
 // GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorageOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*float32, bool) {
 	if o == nil || IsNil(o.MaxStorage) {
 		return nil, false
 	}
@@ -285,7 +285,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorageOk() (*float32
 }
 
 // IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxStorage() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxStorage() bool {
 	if o != nil && !IsNil(o.MaxStorage) {
 		return true
 	}
@@ -294,12 +294,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxStorage() bool {
 }
 
 // SetMaxStorage gets a reference to the given float32 and assigns it to the MaxStorage field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxStorage(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v float32) {
 	o.MaxStorage = &v
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemory() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() float32 {
 	if o == nil || IsNil(o.MaxMemory) {
 		var ret float32
 		return ret
@@ -309,7 +309,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemory() float32 {
 
 // GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemoryOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*float32, bool) {
 	if o == nil || IsNil(o.MaxMemory) {
 		return nil, false
 	}
@@ -317,7 +317,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemoryOk() (*float32,
 }
 
 // IsSetMaxMemory returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxMemory() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxMemory() bool {
 	if o != nil && !IsNil(o.MaxMemory) {
 		return true
 	}
@@ -326,12 +326,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxMemory() bool {
 }
 
 // SetMaxMemory gets a reference to the given float32 and assigns it to the MaxMemory field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxMemory(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v float32) {
 	o.MaxMemory = &v
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpu() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() float32 {
 	if o == nil || IsNil(o.MaxCpu.Get()) {
 		var ret float32
 		return ret
@@ -342,7 +342,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpu() float32 {
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpuOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -350,7 +350,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpuOk() (*float32, bo
 }
 
 // IsSetMaxCpu returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxCpu() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxCpu() bool {
 	if o != nil && o.MaxCpu.IsSet() {
 		return true
 	}
@@ -359,22 +359,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxCpu() bool {
 }
 
 // SetMaxCpu gets a reference to the given NullableFloat32 and assigns it to the MaxCpu field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCpu(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v float32) {
 	o.MaxCpu.Set(&v)
 }
 
 // SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCpuNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCpuNil() {
 	o.MaxCpu.Set(nil)
 }
 
 // UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxCpu() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCpu() {
 	o.MaxCpu.Unset()
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCores() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() float32 {
 	if o == nil || IsNil(o.MaxCores.Get()) {
 		var ret float32
 		return ret
@@ -385,7 +385,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCores() float32 {
 // GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCoresOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -393,7 +393,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCoresOk() (*float32, 
 }
 
 // IsSetMaxCores returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxCores() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxCores() bool {
 	if o != nil && o.MaxCores.IsSet() {
 		return true
 	}
@@ -402,22 +402,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxCores() bool {
 }
 
 // SetMaxCores gets a reference to the given NullableFloat32 and assigns it to the MaxCores field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCores(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v float32) {
 	o.MaxCores.Set(&v)
 }
 
 // SetMaxCoresNil sets the value for MaxCores to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCoresNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCoresNil() {
 	o.MaxCores.Set(nil)
 }
 
 // UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxCores() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCores() {
 	o.MaxCores.Unset()
 }
 
 // GetMaxDisks returns the MaxDisks field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisks() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() float32 {
 	if o == nil || IsNil(o.MaxDisks.Get()) {
 		var ret float32
 		return ret
@@ -428,7 +428,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisks() float32 {
 // GetMaxDisksOk returns a tuple with the MaxDisks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisksOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -436,7 +436,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisksOk() (*float32, 
 }
 
 // IsSetMaxDisks returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxDisks() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxDisks() bool {
 	if o != nil && o.MaxDisks.IsSet() {
 		return true
 	}
@@ -445,22 +445,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMaxDisks() bool {
 }
 
 // SetMaxDisks gets a reference to the given NullableFloat32 and assigns it to the MaxDisks field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxDisks(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v float32) {
 	o.MaxDisks.Set(&v)
 }
 
 // SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxDisksNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetMaxDisksNil() {
 	o.MaxDisks.Set(nil)
 }
 
 // UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxDisks() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetMaxDisks() {
 	o.MaxDisks.Unset()
 }
 
 // GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocket() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() float32 {
 	if o == nil || IsNil(o.CoresPerSocket) {
 		var ret float32
 		return ret
@@ -470,7 +470,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocket() float32
 
 // GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocketOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*float32, bool) {
 	if o == nil || IsNil(o.CoresPerSocket) {
 		return nil, false
 	}
@@ -478,7 +478,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocketOk() (*flo
 }
 
 // IsSetCoresPerSocket returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCoresPerSocket() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCoresPerSocket() bool {
 	if o != nil && !IsNil(o.CoresPerSocket) {
 		return true
 	}
@@ -487,12 +487,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCoresPerSocket() bool 
 }
 
 // SetCoresPerSocket gets a reference to the given float32 and assigns it to the CoresPerSocket field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCoresPerSocket(v float32) {
+func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v float32) {
 	o.CoresPerSocket = &v
 }
 
 // GetCustomCpu returns the CustomCpu field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpu() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomCpu() bool {
 	if o == nil || IsNil(o.CustomCpu) {
 		var ret bool
 		return ret
@@ -502,7 +502,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpu() bool {
 
 // GetCustomCpuOk returns a tuple with the CustomCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpuOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomCpuOk() (*bool, bool) {
 	if o == nil || IsNil(o.CustomCpu) {
 		return nil, false
 	}
@@ -510,7 +510,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpuOk() (*bool, bo
 }
 
 // IsSetCustomCpu returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomCpu() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCustomCpu() bool {
 	if o != nil && !IsNil(o.CustomCpu) {
 		return true
 	}
@@ -519,12 +519,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomCpu() bool {
 }
 
 // SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomCpu(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomCpu(v bool) {
 	o.CustomCpu = &v
 }
 
 // GetCustomCores returns the CustomCores field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCores() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomCores() bool {
 	if o == nil || IsNil(o.CustomCores) {
 		var ret bool
 		return ret
@@ -534,7 +534,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCores() bool {
 
 // GetCustomCoresOk returns a tuple with the CustomCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCoresOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomCoresOk() (*bool, bool) {
 	if o == nil || IsNil(o.CustomCores) {
 		return nil, false
 	}
@@ -542,7 +542,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCoresOk() (*bool, 
 }
 
 // IsSetCustomCores returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomCores() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCustomCores() bool {
 	if o != nil && !IsNil(o.CustomCores) {
 		return true
 	}
@@ -551,12 +551,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomCores() bool {
 }
 
 // SetCustomCores gets a reference to the given bool and assigns it to the CustomCores field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomCores(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomCores(v bool) {
 	o.CustomCores = &v
 }
 
 // GetCustomMaxStorage returns the CustomMaxStorage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorage() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxStorage() bool {
 	if o == nil || IsNil(o.CustomMaxStorage.Get()) {
 		var ret bool
 		return ret
@@ -567,7 +567,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorage() bool 
 // GetCustomMaxStorageOk returns a tuple with the CustomMaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorageOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxStorageOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -575,7 +575,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorageOk() (*b
 }
 
 // IsSetCustomMaxStorage returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxStorage() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCustomMaxStorage() bool {
 	if o != nil && o.CustomMaxStorage.IsSet() {
 		return true
 	}
@@ -584,22 +584,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxStorage() boo
 }
 
 // SetCustomMaxStorage gets a reference to the given NullableBool and assigns it to the CustomMaxStorage field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxStorage(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxStorage(v bool) {
 	o.CustomMaxStorage.Set(&v)
 }
 
 // SetCustomMaxStorageNil sets the value for CustomMaxStorage to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxStorageNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxStorageNil() {
 	o.CustomMaxStorage.Set(nil)
 }
 
 // UnsetCustomMaxStorage ensures that no value is present for CustomMaxStorage, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxStorage() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxStorage() {
 	o.CustomMaxStorage.Unset()
 }
 
 // GetCustomMaxDataStorage returns the CustomMaxDataStorage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorage() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxDataStorage() bool {
 	if o == nil || IsNil(o.CustomMaxDataStorage.Get()) {
 		var ret bool
 		return ret
@@ -610,7 +610,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorage() b
 // GetCustomMaxDataStorageOk returns a tuple with the CustomMaxDataStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorageOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxDataStorageOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -618,7 +618,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorageOk()
 }
 
 // IsSetCustomMaxDataStorage returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxDataStorage() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCustomMaxDataStorage() bool {
 	if o != nil && o.CustomMaxDataStorage.IsSet() {
 		return true
 	}
@@ -627,22 +627,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxDataStorage()
 }
 
 // SetCustomMaxDataStorage gets a reference to the given NullableBool and assigns it to the CustomMaxDataStorage field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxDataStorage(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxDataStorage(v bool) {
 	o.CustomMaxDataStorage.Set(&v)
 }
 
 // SetCustomMaxDataStorageNil sets the value for CustomMaxDataStorage to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxDataStorageNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxDataStorageNil() {
 	o.CustomMaxDataStorage.Set(nil)
 }
 
 // UnsetCustomMaxDataStorage ensures that no value is present for CustomMaxDataStorage, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxDataStorage() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxDataStorage() {
 	o.CustomMaxDataStorage.Unset()
 }
 
 // GetCustomMaxMemory returns the CustomMaxMemory field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemory() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxMemory() bool {
 	if o == nil || IsNil(o.CustomMaxMemory.Get()) {
 		var ret bool
 		return ret
@@ -653,7 +653,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemory() bool {
 // GetCustomMaxMemoryOk returns a tuple with the CustomMaxMemory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemoryOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxMemoryOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -661,7 +661,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemoryOk() (*bo
 }
 
 // IsSetCustomMaxMemory returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxMemory() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCustomMaxMemory() bool {
 	if o != nil && o.CustomMaxMemory.IsSet() {
 		return true
 	}
@@ -670,22 +670,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCustomMaxMemory() bool
 }
 
 // SetCustomMaxMemory gets a reference to the given NullableBool and assigns it to the CustomMaxMemory field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxMemory(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxMemory(v bool) {
 	o.CustomMaxMemory.Set(&v)
 }
 
 // SetCustomMaxMemoryNil sets the value for CustomMaxMemory to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxMemoryNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxMemoryNil() {
 	o.CustomMaxMemory.Set(nil)
 }
 
 // UnsetCustomMaxMemory ensures that no value is present for CustomMaxMemory, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxMemory() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxMemory() {
 	o.CustomMaxMemory.Unset()
 }
 
 // GetAddVolumes returns the AddVolumes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumes() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetAddVolumes() bool {
 	if o == nil || IsNil(o.AddVolumes.Get()) {
 		var ret bool
 		return ret
@@ -696,7 +696,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumes() bool {
 // GetAddVolumesOk returns a tuple with the AddVolumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumesOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetAddVolumesOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -704,7 +704,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumesOk() (*bool, b
 }
 
 // IsSetAddVolumes returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetAddVolumes() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetAddVolumes() bool {
 	if o != nil && o.AddVolumes.IsSet() {
 		return true
 	}
@@ -713,22 +713,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetAddVolumes() bool {
 }
 
 // SetAddVolumes gets a reference to the given NullableBool and assigns it to the AddVolumes field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetAddVolumes(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetAddVolumes(v bool) {
 	o.AddVolumes.Set(&v)
 }
 
 // SetAddVolumesNil sets the value for AddVolumes to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetAddVolumesNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetAddVolumesNil() {
 	o.AddVolumes.Set(nil)
 }
 
 // UnsetAddVolumes ensures that no value is present for AddVolumes, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetAddVolumes() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetAddVolumes() {
 	o.AddVolumes.Unset()
 }
 
 // GetMemoryOptionSource returns the MemoryOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSource() string {
+func (o *GetServicePlans200ResponseServicePlan) GetMemoryOptionSource() string {
 	if o == nil || IsNil(o.MemoryOptionSource.Get()) {
 		var ret string
 		return ret
@@ -739,7 +739,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSource() str
 // GetMemoryOptionSourceOk returns a tuple with the MemoryOptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSourceOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMemoryOptionSourceOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -747,7 +747,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSourceOk() (
 }
 
 // IsSetMemoryOptionSource returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMemoryOptionSource() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetMemoryOptionSource() bool {
 	if o != nil && o.MemoryOptionSource.IsSet() {
 		return true
 	}
@@ -756,22 +756,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetMemoryOptionSource() b
 }
 
 // SetMemoryOptionSource gets a reference to the given NullableString and assigns it to the MemoryOptionSource field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMemoryOptionSource(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetMemoryOptionSource(v string) {
 	o.MemoryOptionSource.Set(&v)
 }
 
 // SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetMemoryOptionSourceNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetMemoryOptionSourceNil() {
 	o.MemoryOptionSource.Set(nil)
 }
 
 // UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMemoryOptionSource() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetMemoryOptionSource() {
 	o.MemoryOptionSource.Unset()
 }
 
 // GetCpuOptionSource returns the CpuOptionSource field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSource() string {
+func (o *GetServicePlans200ResponseServicePlan) GetCpuOptionSource() string {
 	if o == nil || IsNil(o.CpuOptionSource.Get()) {
 		var ret string
 		return ret
@@ -782,7 +782,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSource() string
 // GetCpuOptionSourceOk returns a tuple with the CpuOptionSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSourceOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetCpuOptionSourceOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -790,7 +790,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSourceOk() (*st
 }
 
 // IsSetCpuOptionSource returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCpuOptionSource() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetCpuOptionSource() bool {
 	if o != nil && o.CpuOptionSource.IsSet() {
 		return true
 	}
@@ -799,22 +799,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetCpuOptionSource() bool
 }
 
 // SetCpuOptionSource gets a reference to the given NullableString and assigns it to the CpuOptionSource field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCpuOptionSource(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetCpuOptionSource(v string) {
 	o.CpuOptionSource.Set(&v)
 }
 
 // SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetCpuOptionSourceNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetCpuOptionSourceNil() {
 	o.CpuOptionSource.Set(nil)
 }
 
 // UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCpuOptionSource() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetCpuOptionSource() {
 	o.CpuOptionSource.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreated() time.Time {
+func (o *GetServicePlans200ResponseServicePlan) GetDateCreated() time.Time {
 	if o == nil || IsNil(o.DateCreated) {
 		var ret time.Time
 		return ret
@@ -824,7 +824,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreated() time.Time 
 
 // GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreatedOk() (*time.Time, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetDateCreatedOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.DateCreated) {
 		return nil, false
 	}
@@ -832,7 +832,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreatedOk() (*time.T
 }
 
 // IsSetDateCreated returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetDateCreated() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetDateCreated() bool {
 	if o != nil && !IsNil(o.DateCreated) {
 		return true
 	}
@@ -841,12 +841,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetDateCreated() bool {
 }
 
 // SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetDateCreated(v time.Time) {
+func (o *GetServicePlans200ResponseServicePlan) SetDateCreated(v time.Time) {
 	o.DateCreated = &v
 }
 
 // GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdated() time.Time {
+func (o *GetServicePlans200ResponseServicePlan) GetLastUpdated() time.Time {
 	if o == nil || IsNil(o.LastUpdated) {
 		var ret time.Time
 		return ret
@@ -856,7 +856,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdated() time.Time 
 
 // GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdatedOk() (*time.Time, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetLastUpdatedOk() (*time.Time, bool) {
 	if o == nil || IsNil(o.LastUpdated) {
 		return nil, false
 	}
@@ -864,7 +864,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdatedOk() (*time.T
 }
 
 // IsSetLastUpdated returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetLastUpdated() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetLastUpdated() bool {
 	if o != nil && !IsNil(o.LastUpdated) {
 		return true
 	}
@@ -873,12 +873,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetLastUpdated() bool {
 }
 
 // SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetLastUpdated(v time.Time) {
+func (o *GetServicePlans200ResponseServicePlan) SetLastUpdated(v time.Time) {
 	o.LastUpdated = &v
 }
 
 // GetRegionCode returns the RegionCode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCode() string {
+func (o *GetServicePlans200ResponseServicePlan) GetRegionCode() string {
 	if o == nil || IsNil(o.RegionCode.Get()) {
 		var ret string
 		return ret
@@ -889,7 +889,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCode() string {
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCodeOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetRegionCodeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -897,7 +897,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCodeOk() (*string,
 }
 
 // IsSetRegionCode returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetRegionCode() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetRegionCode() bool {
 	if o != nil && o.RegionCode.IsSet() {
 		return true
 	}
@@ -906,22 +906,22 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetRegionCode() bool {
 }
 
 // SetRegionCode gets a reference to the given NullableString and assigns it to the RegionCode field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetRegionCode(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetRegionCode(v string) {
 	o.RegionCode.Set(&v)
 }
 
 // SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetRegionCodeNil() {
+func (o *GetServicePlans200ResponseServicePlan) SetRegionCodeNil() {
 	o.RegionCode.Set(nil)
 }
 
 // UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetRegionCode() {
+func (o *GetServicePlans200ResponseServicePlan) UnsetRegionCode() {
 	o.RegionCode.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibility() string {
+func (o *GetServicePlans200ResponseServicePlan) GetVisibility() string {
 	if o == nil || IsNil(o.Visibility) {
 		var ret string
 		return ret
@@ -931,7 +931,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibility() string {
 
 // GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibilityOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetVisibilityOk() (*string, bool) {
 	if o == nil || IsNil(o.Visibility) {
 		return nil, false
 	}
@@ -939,7 +939,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibilityOk() (*string,
 }
 
 // IsSetVisibility returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetVisibility() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetVisibility() bool {
 	if o != nil && !IsNil(o.Visibility) {
 		return true
 	}
@@ -948,12 +948,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetVisibility() bool {
 }
 
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetVisibility(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetVisibility(v string) {
 	o.Visibility = &v
 }
 
 // GetEditable returns the Editable field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditable() bool {
+func (o *GetServicePlans200ResponseServicePlan) GetEditable() bool {
 	if o == nil || IsNil(o.Editable) {
 		var ret bool
 		return ret
@@ -963,7 +963,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditable() bool {
 
 // GetEditableOk returns a tuple with the Editable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditableOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetEditableOk() (*bool, bool) {
 	if o == nil || IsNil(o.Editable) {
 		return nil, false
 	}
@@ -971,7 +971,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditableOk() (*bool, boo
 }
 
 // IsSetEditable returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetEditable() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetEditable() bool {
 	if o != nil && !IsNil(o.Editable) {
 		return true
 	}
@@ -980,12 +980,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetEditable() bool {
 }
 
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetEditable(v bool) {
+func (o *GetServicePlans200ResponseServicePlan) SetEditable(v bool) {
 	o.Editable = &v
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType {
+func (o *GetServicePlans200ResponseServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
 		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
 		return ret
@@ -995,7 +995,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionType() ListGuid
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -1003,7 +1003,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionTypeOk() (*List
 }
 
 // IsSetProvisionType returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetProvisionType() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetProvisionType() bool {
 	if o != nil && !IsNil(o.ProvisionType) {
 		return true
 	}
@@ -1012,12 +1012,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetProvisionType() bool {
 }
 
 // SetProvisionType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType and assigns it to the ProvisionType field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) {
+func (o *GetServicePlans200ResponseServicePlan) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) {
 	o.ProvisionType = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenants() string {
+func (o *GetServicePlans200ResponseServicePlan) GetTenants() string {
 	if o == nil || IsNil(o.Tenants) {
 		var ret string
 		return ret
@@ -1027,7 +1027,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenants() string {
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenantsOk() (*string, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetTenantsOk() (*string, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1035,7 +1035,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenantsOk() (*string, bo
 }
 
 // IsSetTenants returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetTenants() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetTenants() bool {
 	if o != nil && !IsNil(o.Tenants) {
 		return true
 	}
@@ -1044,12 +1044,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetTenants() bool {
 }
 
 // SetTenants gets a reference to the given string and assigns it to the Tenants field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetTenants(v string) {
+func (o *GetServicePlans200ResponseServicePlan) SetTenants(v string) {
 	o.Tenants = &v
 }
 
 // GetPriceSets returns the PriceSets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner {
+func (o *GetServicePlans200ResponseServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner {
 	if o == nil {
 		var ret []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner
 		return ret
@@ -1060,7 +1060,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSets() []ListGuidan
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSetsOk() ([]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetPriceSetsOk() ([]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
 	}
@@ -1068,7 +1068,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSetsOk() ([]ListGui
 }
 
 // IsSetPriceSets returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetPriceSets() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetPriceSets() bool {
 	if o != nil && !IsNil(o.PriceSets) {
 		return true
 	}
@@ -1077,12 +1077,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetPriceSets() bool {
 }
 
 // SetPriceSets gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner and assigns it to the PriceSets field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner) {
+func (o *GetServicePlans200ResponseServicePlan) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner) {
 	o.PriceSets = v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig {
+func (o *GetServicePlans200ResponseServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig {
 	if o == nil || IsNil(o.Config) {
 		var ret ListServicePlans200ResponseAllOfServicePlansInnerConfig
 		return ret
@@ -1092,7 +1092,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfig() ListServicePlan
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1100,7 +1100,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfigOk() (*ListService
 }
 
 // IsSetConfig returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetConfig() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetConfig() bool {
 	if o != nil && !IsNil(o.Config) {
 		return true
 	}
@@ -1109,12 +1109,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetConfig() bool {
 }
 
 // SetConfig gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInnerConfig and assigns it to the Config field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig) {
+func (o *GetServicePlans200ResponseServicePlan) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig) {
 	o.Config = &v
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *GetServicePlans200ResponseServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
 	if o == nil || IsNil(o.Zones) {
 		var ret []ListBackupSettings200ResponseBackupSettingsDefaultSchedule
 		return ret
@@ -1124,7 +1124,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetZones() []ListBackupSett
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetZonesOk() ([]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetZonesOk() ([]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -1132,7 +1132,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetZonesOk() ([]ListBackupS
 }
 
 // IsSetZones returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetZones() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetZones() bool {
 	if o != nil && !IsNil(o.Zones) {
 		return true
 	}
@@ -1141,14 +1141,14 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetZones() bool {
 }
 
 // SetZones gets a reference to the given []ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Zones field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+func (o *GetServicePlans200ResponseServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
 	o.Zones = v
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePlanPermissions {
+func (o *GetServicePlans200ResponseServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret AddServicePlans200ResponseAllOfServicePlanPermissions
+		var ret GetServicePlans200ResponseServicePlanPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -1156,7 +1156,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissions() AddService
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissionsOk() (*AddServicePlans200ResponseAllOfServicePlanPermissions, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -1164,7 +1164,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissionsOk() (*AddSer
 }
 
 // IsSetPermissions returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetPermissions() bool {
+func (o *GetServicePlans200ResponseServicePlan) IsSetPermissions() bool {
 	if o != nil && !IsNil(o.Permissions) {
 		return true
 	}
@@ -1172,12 +1172,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given AddServicePlans200ResponseAllOfServicePlanPermissions and assigns it to the Permissions field.
-func (o *AddServicePlans200ResponseAllOfServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePlanPermissions) {
+// SetPermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissions and assigns it to the Permissions field.
+func (o *GetServicePlans200ResponseServicePlan) SetPermissions(v GetServicePlans200ResponseServicePlanPermissions) {
 	o.Permissions = &v
 }
 
-func (o AddServicePlans200ResponseAllOfServicePlan) MarshalJSON() ([]byte, error) {
+func (o GetServicePlans200ResponseServicePlan) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -1185,7 +1185,7 @@ func (o AddServicePlans200ResponseAllOfServicePlan) MarshalJSON() ([]byte, error
 	return json.Marshal(toSerialize)
 }
 
-func (o AddServicePlans200ResponseAllOfServicePlan) ToMap() (map[string]interface{}, error) {
+func (o GetServicePlans200ResponseServicePlan) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
@@ -1287,16 +1287,16 @@ func (o AddServicePlans200ResponseAllOfServicePlan) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-func (o *AddServicePlans200ResponseAllOfServicePlan) UnmarshalJSON(data []byte) (err error) {
-	varAddServicePlans200ResponseAllOfServicePlan := _AddServicePlans200ResponseAllOfServicePlan{}
+func (o *GetServicePlans200ResponseServicePlan) UnmarshalJSON(data []byte) (err error) {
+	varGetServicePlans200ResponseServicePlan := _GetServicePlans200ResponseServicePlan{}
 
-	err = json.Unmarshal(data, &varAddServicePlans200ResponseAllOfServicePlan)
+	err = json.Unmarshal(data, &varGetServicePlans200ResponseServicePlan)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddServicePlans200ResponseAllOfServicePlan(varAddServicePlans200ResponseAllOfServicePlan)
+	*o = GetServicePlans200ResponseServicePlan(varGetServicePlans200ResponseServicePlan)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -1338,38 +1338,38 @@ func (o *AddServicePlans200ResponseAllOfServicePlan) UnmarshalJSON(data []byte) 
 	return err
 }
 
-type NullableAddServicePlans200ResponseAllOfServicePlan struct {
-	value *AddServicePlans200ResponseAllOfServicePlan
+type NullableGetServicePlans200ResponseServicePlan struct {
+	value *GetServicePlans200ResponseServicePlan
 	isSet bool
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlan) Get() *AddServicePlans200ResponseAllOfServicePlan {
+func (v NullableGetServicePlans200ResponseServicePlan) Get() *GetServicePlans200ResponseServicePlan {
 	return v.value
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlan) Set(val *AddServicePlans200ResponseAllOfServicePlan) {
+func (v *NullableGetServicePlans200ResponseServicePlan) Set(val *GetServicePlans200ResponseServicePlan) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlan) IsSet() bool {
+func (v NullableGetServicePlans200ResponseServicePlan) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlan) Unset() {
+func (v *NullableGetServicePlans200ResponseServicePlan) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddServicePlans200ResponseAllOfServicePlan(val *AddServicePlans200ResponseAllOfServicePlan) *NullableAddServicePlans200ResponseAllOfServicePlan {
-	return &NullableAddServicePlans200ResponseAllOfServicePlan{value: val, isSet: true}
+func NewNullableGetServicePlans200ResponseServicePlan(val *GetServicePlans200ResponseServicePlan) *NullableGetServicePlans200ResponseServicePlan {
+	return &NullableGetServicePlans200ResponseServicePlan{value: val, isSet: true}
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlan) MarshalJSON() ([]byte, error) {
+func (v NullableGetServicePlans200ResponseServicePlan) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlan) UnmarshalJSON(src []byte) error {
+func (v *NullableGetServicePlans200ResponseServicePlan) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

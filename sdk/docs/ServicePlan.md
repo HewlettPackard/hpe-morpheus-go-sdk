@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **PriceSets** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner.md) |  | [optional] 
 **Config** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerConfig**](ListServicePlans200ResponseAllOfServicePlansInnerConfig.md) |  | [optional] 
 **Zones** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Permissions** | Pointer to [**AddServicePlans200ResponseAllOfServicePlanPermissions**](AddServicePlans200ResponseAllOfServicePlanPermissions.md) |  | [optional] 
+**Permissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissions**](GetServicePlans200ResponseServicePlanPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -917,20 +917,20 @@ HasZones returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *ServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePlanPermissions`
+`func (o *ServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *ServicePlan) GetPermissionsOk() (*AddServicePlans200ResponseAllOfServicePlanPermissions, bool)`
+`func (o *ServicePlan) GetPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *ServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePlanPermissions)`
+`func (o *ServicePlan) SetPermissions(v GetServicePlans200ResponseServicePlanPermissions)`
 
 SetPermissions sets Permissions field to given value.
 

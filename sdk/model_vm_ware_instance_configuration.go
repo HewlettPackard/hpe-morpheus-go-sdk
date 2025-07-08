@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
+// checks if the VMWareInstanceConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VMWareInstanceConfiguration{}
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
-type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
+// VMWareInstanceConfiguration struct for VMWareInstanceConfiguration
+type VMWareInstanceConfiguration struct {
 	// Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
 	NoAgent NullableBool `json:"noAgent,omitempty"`
 	// id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
@@ -31,18 +31,20 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
 	// Enable Nested Virtualization
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
-	VmwareFolderId       *string `json:"vmwareFolderId,omitempty"`
+	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
+	// Image ID. This is the ID of a Virtual Image.
+	Template             *int64 `json:"template,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
+type _VMWareInstanceConfiguration VMWareInstanceConfiguration
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 object
+// NewVMWareInstanceConfiguration instantiates a new VMWareInstanceConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
+func NewVMWareInstanceConfiguration() *VMWareInstanceConfiguration {
+	this := VMWareInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
@@ -50,11 +52,11 @@ func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1() *AddCa
 	return &this
 }
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 object
+// NewVMWareInstanceConfigurationWithDefaults instantiates a new VMWareInstanceConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
+func NewVMWareInstanceConfigurationWithDefaults() *VMWareInstanceConfiguration {
+	this := VMWareInstanceConfiguration{}
 	var noAgent bool = false
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
@@ -63,7 +65,7 @@ func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefau
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgent() bool {
+func (o *VMWareInstanceConfiguration) GetNoAgent() bool {
 	if o == nil || IsNil(o.NoAgent.Get()) {
 		var ret bool
 		return ret
@@ -74,7 +76,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoA
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgentOk() (*bool, bool) {
+func (o *VMWareInstanceConfiguration) GetNoAgentOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -82,7 +84,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoA
 }
 
 // IsSetNoAgent returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetNoAgent() bool {
+func (o *VMWareInstanceConfiguration) IsSetNoAgent() bool {
 	if o != nil && o.NoAgent.IsSet() {
 		return true
 	}
@@ -91,22 +93,22 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetN
 }
 
 // SetNoAgent gets a reference to the given NullableBool and assigns it to the NoAgent field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgent(v bool) {
+func (o *VMWareInstanceConfiguration) SetNoAgent(v bool) {
 	o.NoAgent.Set(&v)
 }
 
 // SetNoAgentNil sets the value for NoAgent to be an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgentNil() {
+func (o *VMWareInstanceConfiguration) SetNoAgentNil() {
 	o.NoAgent.Set(nil)
 }
 
 // UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnsetNoAgent() {
+func (o *VMWareInstanceConfiguration) UnsetNoAgent() {
 	o.NoAgent.Unset()
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetResourcePoolId() string {
+func (o *VMWareInstanceConfiguration) GetResourcePoolId() string {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		var ret string
 		return ret
@@ -116,7 +118,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetRes
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetResourcePoolIdOk() (*string, bool) {
+func (o *VMWareInstanceConfiguration) GetResourcePoolIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -124,7 +126,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetRes
 }
 
 // IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetResourcePoolId() bool {
+func (o *VMWareInstanceConfiguration) IsSetResourcePoolId() bool {
 	if o != nil && !IsNil(o.ResourcePoolId) {
 		return true
 	}
@@ -133,12 +135,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetR
 }
 
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetResourcePoolId(v string) {
+func (o *VMWareInstanceConfiguration) SetResourcePoolId(v string) {
 	o.ResourcePoolId = &v
 }
 
 // GetHostId returns the HostId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHostId() string {
+func (o *VMWareInstanceConfiguration) GetHostId() string {
 	if o == nil || IsNil(o.HostId) {
 		var ret string
 		return ret
@@ -148,7 +150,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHos
 
 // GetHostIdOk returns a tuple with the HostId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHostIdOk() (*string, bool) {
+func (o *VMWareInstanceConfiguration) GetHostIdOk() (*string, bool) {
 	if o == nil || IsNil(o.HostId) {
 		return nil, false
 	}
@@ -156,7 +158,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHos
 }
 
 // IsSetHostId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetHostId() bool {
+func (o *VMWareInstanceConfiguration) IsSetHostId() bool {
 	if o != nil && !IsNil(o.HostId) {
 		return true
 	}
@@ -165,12 +167,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetH
 }
 
 // SetHostId gets a reference to the given string and assigns it to the HostId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetHostId(v string) {
+func (o *VMWareInstanceConfiguration) SetHostId(v string) {
 	o.HostId = &v
 }
 
 // GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmbiosAssetTag() string {
+func (o *VMWareInstanceConfiguration) GetSmbiosAssetTag() string {
 	if o == nil || IsNil(o.SmbiosAssetTag) {
 		var ret string
 		return ret
@@ -180,7 +182,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmb
 
 // GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmbiosAssetTagOk() (*string, bool) {
+func (o *VMWareInstanceConfiguration) GetSmbiosAssetTagOk() (*string, bool) {
 	if o == nil || IsNil(o.SmbiosAssetTag) {
 		return nil, false
 	}
@@ -188,7 +190,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmb
 }
 
 // IsSetSmbiosAssetTag returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetSmbiosAssetTag() bool {
+func (o *VMWareInstanceConfiguration) IsSetSmbiosAssetTag() bool {
 	if o != nil && !IsNil(o.SmbiosAssetTag) {
 		return true
 	}
@@ -197,12 +199,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetS
 }
 
 // SetSmbiosAssetTag gets a reference to the given string and assigns it to the SmbiosAssetTag field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetSmbiosAssetTag(v string) {
+func (o *VMWareInstanceConfiguration) SetSmbiosAssetTag(v string) {
 	o.SmbiosAssetTag = &v
 }
 
 // GetNestedVirtualization returns the NestedVirtualization field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNestedVirtualization() string {
+func (o *VMWareInstanceConfiguration) GetNestedVirtualization() string {
 	if o == nil || IsNil(o.NestedVirtualization) {
 		var ret string
 		return ret
@@ -212,7 +214,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNes
 
 // GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNestedVirtualizationOk() (*string, bool) {
+func (o *VMWareInstanceConfiguration) GetNestedVirtualizationOk() (*string, bool) {
 	if o == nil || IsNil(o.NestedVirtualization) {
 		return nil, false
 	}
@@ -220,7 +222,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNes
 }
 
 // IsSetNestedVirtualization returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetNestedVirtualization() bool {
+func (o *VMWareInstanceConfiguration) IsSetNestedVirtualization() bool {
 	if o != nil && !IsNil(o.NestedVirtualization) {
 		return true
 	}
@@ -229,12 +231,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetN
 }
 
 // SetNestedVirtualization gets a reference to the given string and assigns it to the NestedVirtualization field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNestedVirtualization(v string) {
+func (o *VMWareInstanceConfiguration) SetNestedVirtualization(v string) {
 	o.NestedVirtualization = &v
 }
 
 // GetVmwareFolderId returns the VmwareFolderId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmwareFolderId() string {
+func (o *VMWareInstanceConfiguration) GetVmwareFolderId() string {
 	if o == nil || IsNil(o.VmwareFolderId) {
 		var ret string
 		return ret
@@ -244,7 +246,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmw
 
 // GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmwareFolderIdOk() (*string, bool) {
+func (o *VMWareInstanceConfiguration) GetVmwareFolderIdOk() (*string, bool) {
 	if o == nil || IsNil(o.VmwareFolderId) {
 		return nil, false
 	}
@@ -252,7 +254,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmw
 }
 
 // IsSetVmwareFolderId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetVmwareFolderId() bool {
+func (o *VMWareInstanceConfiguration) IsSetVmwareFolderId() bool {
 	if o != nil && !IsNil(o.VmwareFolderId) {
 		return true
 	}
@@ -261,11 +263,43 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSetV
 }
 
 // SetVmwareFolderId gets a reference to the given string and assigns it to the VmwareFolderId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetVmwareFolderId(v string) {
+func (o *VMWareInstanceConfiguration) SetVmwareFolderId(v string) {
 	o.VmwareFolderId = &v
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) MarshalJSON() ([]byte, error) {
+// GetTemplate returns the Template field value if set, zero value otherwise.
+func (o *VMWareInstanceConfiguration) GetTemplate() int64 {
+	if o == nil || IsNil(o.Template) {
+		var ret int64
+		return ret
+	}
+	return *o.Template
+}
+
+// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VMWareInstanceConfiguration) GetTemplateOk() (*int64, bool) {
+	if o == nil || IsNil(o.Template) {
+		return nil, false
+	}
+	return o.Template, true
+}
+
+// IsSetTemplate returns a boolean if a field has been set.
+func (o *VMWareInstanceConfiguration) IsSetTemplate() bool {
+	if o != nil && !IsNil(o.Template) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemplate gets a reference to the given int64 and assigns it to the Template field.
+func (o *VMWareInstanceConfiguration) SetTemplate(v int64) {
+	o.Template = &v
+}
+
+func (o VMWareInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -273,7 +307,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Marshal
 	return json.Marshal(toSerialize)
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap() (map[string]interface{}, error) {
+func (o VMWareInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.NoAgent.IsSet() {
 		toSerialize["noAgent"] = o.NoAgent.Get()
@@ -293,6 +327,9 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap()
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
 	}
+	if !IsNil(o.Template) {
+		toSerialize["template"] = o.Template
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -300,16 +337,16 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) ToMap()
 
 	return toSerialize, nil
 }
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{}
+func (o *VMWareInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varVMWareInstanceConfiguration := _VMWareInstanceConfiguration{}
 
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+	err = json.Unmarshal(data, &varVMWareInstanceConfiguration)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1)
+	*o = VMWareInstanceConfiguration(varVMWareInstanceConfiguration)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -320,44 +357,45 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Unmars
 		delete(additionalProperties, "smbiosAssetTag")
 		delete(additionalProperties, "nestedVirtualization")
 		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "template")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
+type NullableVMWareInstanceConfiguration struct {
+	value *VMWareInstanceConfiguration
 	isSet bool
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
+func (v NullableVMWareInstanceConfiguration) Get() *VMWareInstanceConfiguration {
 	return v.value
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) {
+func (v *NullableVMWareInstanceConfiguration) Set(val *VMWareInstanceConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) IsSet() bool {
+func (v NullableVMWareInstanceConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) Unset() {
+func (v *NullableVMWareInstanceConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1{value: val, isSet: true}
+func NewNullableVMWareInstanceConfiguration(val *VMWareInstanceConfiguration) *NullableVMWareInstanceConfiguration {
+	return &NullableVMWareInstanceConfiguration{value: val, isSet: true}
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) MarshalJSON() ([]byte, error) {
+func (v NullableVMWareInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnmarshalJSON(src []byte) error {
+func (v *NullableVMWareInstanceConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

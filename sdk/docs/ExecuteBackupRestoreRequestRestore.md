@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BackupResultId** | **int64** | Id of backup result | 
 **RestoreInstance** | **string** | Type of restore | 
 **InstanceId** | Pointer to **int64** | Id of instance | [optional] 
+**SiteId** | Pointer to **int64** | Id of site for restore to new | [optional] 
 **Config** | Pointer to **map[string]interface{}** | Additional config | [optional] 
 **InstanceConfig** | Pointer to **map[string]interface{}** | Instance config for restore to new. | [optional] 
 
@@ -93,6 +94,31 @@ SetInstanceId sets InstanceId field to given value.
 `func (o *ExecuteBackupRestoreRequestRestore) HasInstanceId() bool`
 
 HasInstanceId returns a boolean if a field has been set.
+
+### GetSiteId
+
+`func (o *ExecuteBackupRestoreRequestRestore) GetSiteId() int64`
+
+GetSiteId returns the SiteId field if non-nil, zero value otherwise.
+
+### GetSiteIdOk
+
+`func (o *ExecuteBackupRestoreRequestRestore) GetSiteIdOk() (*int64, bool)`
+
+GetSiteIdOk returns a tuple with the SiteId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSiteId
+
+`func (o *ExecuteBackupRestoreRequestRestore) SetSiteId(v int64)`
+
+SetSiteId sets SiteId field to given value.
+
+### HasSiteId
+
+`func (o *ExecuteBackupRestoreRequestRestore) HasSiteId() bool`
+
+HasSiteId returns a boolean if a field has been set.
 
 ### GetConfig
 

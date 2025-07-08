@@ -1,4 +1,4 @@
-# AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
+# AmazonInstanceConfiguration
 
 ## Properties
 
@@ -14,205 +14,205 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3
+### NewAmazonInstanceConfiguration
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3`
+`func NewAmazonInstanceConfiguration() *AmazonInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 object
+NewAmazonInstanceConfiguration instantiates a new AmazonInstanceConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefaults
+### NewAmazonInstanceConfigurationWithDefaults
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3`
+`func NewAmazonInstanceConfigurationWithDefaults() *AmazonInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3 object
+NewAmazonInstanceConfigurationWithDefaults instantiates a new AmazonInstanceConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoAgent() bool`
+`func (o *AmazonInstanceConfiguration) GetNoAgent() bool`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetNoAgentOk() (*bool, bool)`
+`func (o *AmazonInstanceConfiguration) GetNoAgentOk() (*bool, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetNoAgent(v bool)`
+`func (o *AmazonInstanceConfiguration) SetNoAgent(v bool)`
 
 SetNoAgent sets NoAgent field to given value.
 
 ### HasNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasNoAgent() bool`
+`func (o *AmazonInstanceConfiguration) HasNoAgent() bool`
 
 HasNoAgent returns a boolean if a field has been set.
 
 ### SetNoAgentNil
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetNoAgentNil(b bool)`
+`func (o *AmazonInstanceConfiguration) SetNoAgentNil(b bool)`
 
  SetNoAgentNil sets the value for NoAgent to be an explicit nil
 
 ### UnsetNoAgent
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) UnsetNoAgent()`
+`func (o *AmazonInstanceConfiguration) UnsetNoAgent()`
 
 UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetIsEC2
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsEC2() string`
+`func (o *AmazonInstanceConfiguration) GetIsEC2() string`
 
 GetIsEC2 returns the IsEC2 field if non-nil, zero value otherwise.
 
 ### GetIsEC2Ok
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetIsEC2Ok() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetIsEC2Ok() (*string, bool)`
 
 GetIsEC2Ok returns a tuple with the IsEC2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsEC2
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetIsEC2(v string)`
+`func (o *AmazonInstanceConfiguration) SetIsEC2(v string)`
 
 SetIsEC2 sets IsEC2 field to given value.
 
 ### HasIsEC2
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasIsEC2() bool`
+`func (o *AmazonInstanceConfiguration) HasIsEC2() bool`
 
 HasIsEC2 returns a boolean if a field has been set.
 
 ### GetAvailabilityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAvailabilityId() string`
+`func (o *AmazonInstanceConfiguration) GetAvailabilityId() string`
 
 GetAvailabilityId returns the AvailabilityId field if non-nil, zero value otherwise.
 
 ### GetAvailabilityIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetAvailabilityIdOk() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetAvailabilityIdOk() (*string, bool)`
 
 GetAvailabilityIdOk returns a tuple with the AvailabilityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailabilityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetAvailabilityId(v string)`
+`func (o *AmazonInstanceConfiguration) SetAvailabilityId(v string)`
 
 SetAvailabilityId sets AvailabilityId field to given value.
 
 ### HasAvailabilityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasAvailabilityId() bool`
+`func (o *AmazonInstanceConfiguration) HasAvailabilityId() bool`
 
 HasAvailabilityId returns a boolean if a field has been set.
 
 ### GetSecurityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSecurityId() string`
+`func (o *AmazonInstanceConfiguration) GetSecurityId() string`
 
 GetSecurityId returns the SecurityId field if non-nil, zero value otherwise.
 
 ### GetSecurityIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetSecurityIdOk() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetSecurityIdOk() (*string, bool)`
 
 GetSecurityIdOk returns a tuple with the SecurityId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetSecurityId(v string)`
+`func (o *AmazonInstanceConfiguration) SetSecurityId(v string)`
 
 SetSecurityId sets SecurityId field to given value.
 
 ### HasSecurityId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasSecurityId() bool`
+`func (o *AmazonInstanceConfiguration) HasSecurityId() bool`
 
 HasSecurityId returns a boolean if a field has been set.
 
 ### GetPublicIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPublicIpType() string`
+`func (o *AmazonInstanceConfiguration) GetPublicIpType() string`
 
 GetPublicIpType returns the PublicIpType field if non-nil, zero value otherwise.
 
 ### GetPublicIpTypeOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetPublicIpTypeOk() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetPublicIpTypeOk() (*string, bool)`
 
 GetPublicIpTypeOk returns a tuple with the PublicIpType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublicIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetPublicIpType(v string)`
+`func (o *AmazonInstanceConfiguration) SetPublicIpType(v string)`
 
 SetPublicIpType sets PublicIpType field to given value.
 
 ### HasPublicIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasPublicIpType() bool`
+`func (o *AmazonInstanceConfiguration) HasPublicIpType() bool`
 
 HasPublicIpType returns a boolean if a field has been set.
 
 ### GetInstanceProfile
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetInstanceProfile() string`
+`func (o *AmazonInstanceConfiguration) GetInstanceProfile() string`
 
 GetInstanceProfile returns the InstanceProfile field if non-nil, zero value otherwise.
 
 ### GetInstanceProfileOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetInstanceProfileOk() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetInstanceProfileOk() (*string, bool)`
 
 GetInstanceProfileOk returns a tuple with the InstanceProfile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceProfile
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetInstanceProfile(v string)`
+`func (o *AmazonInstanceConfiguration) SetInstanceProfile(v string)`
 
 SetInstanceProfile sets InstanceProfile field to given value.
 
 ### HasInstanceProfile
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasInstanceProfile() bool`
+`func (o *AmazonInstanceConfiguration) HasInstanceProfile() bool`
 
 HasInstanceProfile returns a boolean if a field has been set.
 
 ### GetKmsKeyId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKmsKeyId() string`
+`func (o *AmazonInstanceConfiguration) GetKmsKeyId() string`
 
 GetKmsKeyId returns the KmsKeyId field if non-nil, zero value otherwise.
 
 ### GetKmsKeyIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) GetKmsKeyIdOk() (*string, bool)`
+`func (o *AmazonInstanceConfiguration) GetKmsKeyIdOk() (*string, bool)`
 
 GetKmsKeyIdOk returns a tuple with the KmsKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKmsKeyId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) SetKmsKeyId(v string)`
+`func (o *AmazonInstanceConfiguration) SetKmsKeyId(v string)`
 
 SetKmsKeyId sets KmsKeyId field to given value.
 
 ### HasKmsKeyId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf3) HasKmsKeyId() bool`
+`func (o *AmazonInstanceConfiguration) HasKmsKeyId() bool`
 
 HasKmsKeyId returns a boolean if a field has been set.
 
