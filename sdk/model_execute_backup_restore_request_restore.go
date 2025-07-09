@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -27,6 +27,8 @@ type ExecuteBackupRestoreRequestRestore struct {
 	RestoreInstance string `json:"restoreInstance"`
 	// Id of instance
 	InstanceId *int64 `json:"instanceId,omitempty"`
+	// Id of site for restore to new
+	SiteId *int64 `json:"siteId,omitempty"`
 	// Additional config
 	Config map[string]interface{} `json:"config,omitempty"`
 	// Instance config for restore to new.
@@ -135,6 +137,38 @@ func (o *ExecuteBackupRestoreRequestRestore) SetInstanceId(v int64) {
 	o.InstanceId = &v
 }
 
+// GetSiteId returns the SiteId field value if set, zero value otherwise.
+func (o *ExecuteBackupRestoreRequestRestore) GetSiteId() int64 {
+	if o == nil || IsNil(o.SiteId) {
+		var ret int64
+		return ret
+	}
+	return *o.SiteId
+}
+
+// GetSiteIdOk returns a tuple with the SiteId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExecuteBackupRestoreRequestRestore) GetSiteIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.SiteId) {
+		return nil, false
+	}
+	return o.SiteId, true
+}
+
+// IsSetSiteId returns a boolean if a field has been set.
+func (o *ExecuteBackupRestoreRequestRestore) IsSetSiteId() bool {
+	if o != nil && !IsNil(o.SiteId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteId gets a reference to the given int64 and assigns it to the SiteId field.
+func (o *ExecuteBackupRestoreRequestRestore) SetSiteId(v int64) {
+	o.SiteId = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
 func (o *ExecuteBackupRestoreRequestRestore) GetConfig() map[string]interface{} {
 	if o == nil || IsNil(o.Config) {
@@ -214,6 +248,9 @@ func (o ExecuteBackupRestoreRequestRestore) ToMap() (map[string]interface{}, err
 	if !IsNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
+	if !IsNil(o.SiteId) {
+		toSerialize["siteId"] = o.SiteId
+	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
@@ -266,6 +303,7 @@ func (o *ExecuteBackupRestoreRequestRestore) UnmarshalJSON(data []byte) (err err
 		delete(additionalProperties, "backupResultId")
 		delete(additionalProperties, "restoreInstance")
 		delete(additionalProperties, "instanceId")
+		delete(additionalProperties, "siteId")
 		delete(additionalProperties, "config")
 		delete(additionalProperties, "instanceConfig")
 		o.AdditionalProperties = additionalProperties

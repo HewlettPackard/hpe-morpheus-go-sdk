@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -34,6 +34,7 @@ type SnapshotsInstance200ResponseSnapshotsInner struct {
 	ParentSnapshot       NullableString                                                                                             `json:"parentSnapshot,omitempty"`
 	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner                                             `json:"snapshotFiles,omitempty"`
 	CurrentlyActive      *bool                                                                                                      `json:"currentlyActive,omitempty"`
+	MemorySnapshot       *bool                                                                                                      `json:"memorySnapshot,omitempty"`
 	DateCreated          *time.Time                                                                                                 `json:"dateCreated,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -539,6 +540,38 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) SetCurrentlyActive(v bool) 
 	o.CurrentlyActive = &v
 }
 
+// GetMemorySnapshot returns the MemorySnapshot field value if set, zero value otherwise.
+func (o *SnapshotsInstance200ResponseSnapshotsInner) GetMemorySnapshot() bool {
+	if o == nil || IsNil(o.MemorySnapshot) {
+		var ret bool
+		return ret
+	}
+	return *o.MemorySnapshot
+}
+
+// GetMemorySnapshotOk returns a tuple with the MemorySnapshot field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnapshotsInstance200ResponseSnapshotsInner) GetMemorySnapshotOk() (*bool, bool) {
+	if o == nil || IsNil(o.MemorySnapshot) {
+		return nil, false
+	}
+	return o.MemorySnapshot, true
+}
+
+// IsSetMemorySnapshot returns a boolean if a field has been set.
+func (o *SnapshotsInstance200ResponseSnapshotsInner) IsSetMemorySnapshot() bool {
+	if o != nil && !IsNil(o.MemorySnapshot) {
+		return true
+	}
+
+	return false
+}
+
+// SetMemorySnapshot gets a reference to the given bool and assigns it to the MemorySnapshot field.
+func (o *SnapshotsInstance200ResponseSnapshotsInner) SetMemorySnapshot(v bool) {
+	o.MemorySnapshot = &v
+}
+
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
 func (o *SnapshotsInstance200ResponseSnapshotsInner) GetDateCreated() time.Time {
 	if o == nil || IsNil(o.DateCreated) {
@@ -620,6 +653,9 @@ func (o SnapshotsInstance200ResponseSnapshotsInner) ToMap() (map[string]interfac
 	if !IsNil(o.CurrentlyActive) {
 		toSerialize["currentlyActive"] = o.CurrentlyActive
 	}
+	if !IsNil(o.MemorySnapshot) {
+		toSerialize["memorySnapshot"] = o.MemorySnapshot
+	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated
 	}
@@ -657,6 +693,7 @@ func (o *SnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(data []byte) 
 		delete(additionalProperties, "parentSnapshot")
 		delete(additionalProperties, "snapshotFiles")
 		delete(additionalProperties, "currentlyActive")
+		delete(additionalProperties, "memorySnapshot")
 		delete(additionalProperties, "dateCreated")
 		o.AdditionalProperties = additionalProperties
 	}

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -55,6 +55,7 @@ type ProvisionType struct {
 	CanEnforceTags        NullableBool                                                                                                       `json:"canEnforceTags,omitempty"`
 	DisableRootDatastore  *bool                                                                                                              `json:"disableRootDatastore,omitempty"`
 	HasSnapshots          *bool                                                                                                              `json:"hasSnapshots,omitempty"`
+	HasMemorySnapshots    *bool                                                                                                              `json:"hasMemorySnapshots,omitempty"`
 	HasSpecTemplates      *bool                                                                                                              `json:"hasSpecTemplates,omitempty"`
 	HasPreview            *bool                                                                                                              `json:"hasPreview,omitempty"`
 	ZonePoolRequired      *bool                                                                                                              `json:"zonePoolRequired,omitempty"`
@@ -1252,6 +1253,38 @@ func (o *ProvisionType) SetHasSnapshots(v bool) {
 	o.HasSnapshots = &v
 }
 
+// GetHasMemorySnapshots returns the HasMemorySnapshots field value if set, zero value otherwise.
+func (o *ProvisionType) GetHasMemorySnapshots() bool {
+	if o == nil || IsNil(o.HasMemorySnapshots) {
+		var ret bool
+		return ret
+	}
+	return *o.HasMemorySnapshots
+}
+
+// GetHasMemorySnapshotsOk returns a tuple with the HasMemorySnapshots field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ProvisionType) GetHasMemorySnapshotsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasMemorySnapshots) {
+		return nil, false
+	}
+	return o.HasMemorySnapshots, true
+}
+
+// IsSetHasMemorySnapshots returns a boolean if a field has been set.
+func (o *ProvisionType) IsSetHasMemorySnapshots() bool {
+	if o != nil && !IsNil(o.HasMemorySnapshots) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasMemorySnapshots gets a reference to the given bool and assigns it to the HasMemorySnapshots field.
+func (o *ProvisionType) SetHasMemorySnapshots(v bool) {
+	o.HasMemorySnapshots = &v
+}
+
 // GetHasSpecTemplates returns the HasSpecTemplates field value if set, zero value otherwise.
 func (o *ProvisionType) GetHasSpecTemplates() bool {
 	if o == nil || IsNil(o.HasSpecTemplates) {
@@ -1736,6 +1769,9 @@ func (o ProvisionType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.HasSnapshots) {
 		toSerialize["hasSnapshots"] = o.HasSnapshots
 	}
+	if !IsNil(o.HasMemorySnapshots) {
+		toSerialize["hasMemorySnapshots"] = o.HasMemorySnapshots
+	}
 	if !IsNil(o.HasSpecTemplates) {
 		toSerialize["hasSpecTemplates"] = o.HasSpecTemplates
 	}
@@ -1825,6 +1861,7 @@ func (o *ProvisionType) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "canEnforceTags")
 		delete(additionalProperties, "disableRootDatastore")
 		delete(additionalProperties, "hasSnapshots")
+		delete(additionalProperties, "hasMemorySnapshots")
 		delete(additionalProperties, "hasSpecTemplates")
 		delete(additionalProperties, "hasPreview")
 		delete(additionalProperties, "zonePoolRequired")

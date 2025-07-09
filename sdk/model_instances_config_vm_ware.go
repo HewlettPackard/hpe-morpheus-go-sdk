@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -31,7 +31,9 @@ type InstancesConfigVMWare struct {
 	// Enable Nested Virtualization
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
-	VmwareFolderId       *string `json:"vmwareFolderId,omitempty"`
+	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
+	// Image ID. This is the ID of a Virtual Image.
+	Template             *int64 `json:"template,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -265,6 +267,38 @@ func (o *InstancesConfigVMWare) SetVmwareFolderId(v string) {
 	o.VmwareFolderId = &v
 }
 
+// GetTemplate returns the Template field value if set, zero value otherwise.
+func (o *InstancesConfigVMWare) GetTemplate() int64 {
+	if o == nil || IsNil(o.Template) {
+		var ret int64
+		return ret
+	}
+	return *o.Template
+}
+
+// GetTemplateOk returns a tuple with the Template field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InstancesConfigVMWare) GetTemplateOk() (*int64, bool) {
+	if o == nil || IsNil(o.Template) {
+		return nil, false
+	}
+	return o.Template, true
+}
+
+// IsSetTemplate returns a boolean if a field has been set.
+func (o *InstancesConfigVMWare) IsSetTemplate() bool {
+	if o != nil && !IsNil(o.Template) {
+		return true
+	}
+
+	return false
+}
+
+// SetTemplate gets a reference to the given int64 and assigns it to the Template field.
+func (o *InstancesConfigVMWare) SetTemplate(v int64) {
+	o.Template = &v
+}
+
 func (o InstancesConfigVMWare) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -293,6 +327,9 @@ func (o InstancesConfigVMWare) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
 	}
+	if !IsNil(o.Template) {
+		toSerialize["template"] = o.Template
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -320,6 +357,7 @@ func (o *InstancesConfigVMWare) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "smbiosAssetTag")
 		delete(additionalProperties, "nestedVirtualization")
 		delete(additionalProperties, "vmwareFolderId")
+		delete(additionalProperties, "template")
 		o.AdditionalProperties = additionalProperties
 	}
 

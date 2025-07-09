@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ParentSnapshot** | Pointer to **NullableString** |  | [optional] 
 **SnapshotFiles** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner.md) |  | [optional] 
 **CurrentlyActive** | Pointer to **bool** |  | [optional] 
+**MemorySnapshot** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -422,6 +423,31 @@ SetCurrentlyActive sets CurrentlyActive field to given value.
 `func (o *Snapshot) HasCurrentlyActive() bool`
 
 HasCurrentlyActive returns a boolean if a field has been set.
+
+### GetMemorySnapshot
+
+`func (o *Snapshot) GetMemorySnapshot() bool`
+
+GetMemorySnapshot returns the MemorySnapshot field if non-nil, zero value otherwise.
+
+### GetMemorySnapshotOk
+
+`func (o *Snapshot) GetMemorySnapshotOk() (*bool, bool)`
+
+GetMemorySnapshotOk returns a tuple with the MemorySnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemorySnapshot
+
+`func (o *Snapshot) SetMemorySnapshot(v bool)`
+
+SetMemorySnapshot sets MemorySnapshot field to given value.
+
+### HasMemorySnapshot
+
+`func (o *Snapshot) HasMemorySnapshot() bool`
+
+HasMemorySnapshot returns a boolean if a field has been set.
 
 ### GetDateCreated
 

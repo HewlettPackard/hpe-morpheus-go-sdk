@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Optional name for the snapshot being created. | [optional] [default to "{serverName}.{timestamp}"]
 **Description** | Pointer to **string** | Optional description for the snapshot | [optional] 
+**MemorySnapshot** | Pointer to **bool** | Whether to include the memory state in the snapshot. Only supported by certain provision types such as VMware | [optional] [default to false]
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetDescription sets Description field to given value.
 `func (o *SnapshotInstanceRequestSnapshot) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMemorySnapshot
+
+`func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshot() bool`
+
+GetMemorySnapshot returns the MemorySnapshot field if non-nil, zero value otherwise.
+
+### GetMemorySnapshotOk
+
+`func (o *SnapshotInstanceRequestSnapshot) GetMemorySnapshotOk() (*bool, bool)`
+
+GetMemorySnapshotOk returns a tuple with the MemorySnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemorySnapshot
+
+`func (o *SnapshotInstanceRequestSnapshot) SetMemorySnapshot(v bool)`
+
+SetMemorySnapshot sets MemorySnapshot field to given value.
+
+### HasMemorySnapshot
+
+`func (o *SnapshotInstanceRequestSnapshot) HasMemorySnapshot() bool`
+
+HasMemorySnapshot returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,4 +1,4 @@
-# AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
+# GoogleCloudInstanceConfiguration
 
 ## Properties
 
@@ -13,180 +13,180 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2
+### NewGoogleCloudInstanceConfiguration
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2`
+`func NewGoogleCloudInstanceConfiguration() *GoogleCloudInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 object
+NewGoogleCloudInstanceConfiguration instantiates a new GoogleCloudInstanceConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2WithDefaults
+### NewGoogleCloudInstanceConfigurationWithDefaults
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2`
+`func NewGoogleCloudInstanceConfigurationWithDefaults() *GoogleCloudInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2 object
+NewGoogleCloudInstanceConfigurationWithDefaults instantiates a new GoogleCloudInstanceConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoAgent() bool`
+`func (o *GoogleCloudInstanceConfiguration) GetNoAgent() bool`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNoAgentOk() (*bool, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetNoAgentOk() (*bool, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNoAgent(v bool)`
+`func (o *GoogleCloudInstanceConfiguration) SetNoAgent(v bool)`
 
 SetNoAgent sets NoAgent field to given value.
 
 ### HasNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasNoAgent() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasNoAgent() bool`
 
 HasNoAgent returns a boolean if a field has been set.
 
 ### SetNoAgentNil
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNoAgentNil(b bool)`
+`func (o *GoogleCloudInstanceConfiguration) SetNoAgentNil(b bool)`
 
  SetNoAgentNil sets the value for NoAgent to be an explicit nil
 
 ### UnsetNoAgent
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) UnsetNoAgent()`
+`func (o *GoogleCloudInstanceConfiguration) UnsetNoAgent()`
 
 UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetGoogleZoneId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoogleZoneId() int64`
+`func (o *GoogleCloudInstanceConfiguration) GetGoogleZoneId() int64`
 
 GetGoogleZoneId returns the GoogleZoneId field if non-nil, zero value otherwise.
 
 ### GetGoogleZoneIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetGoogleZoneIdOk() (*int64, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetGoogleZoneIdOk() (*int64, bool)`
 
 GetGoogleZoneIdOk returns a tuple with the GoogleZoneId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGoogleZoneId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetGoogleZoneId(v int64)`
+`func (o *GoogleCloudInstanceConfiguration) SetGoogleZoneId(v int64)`
 
 SetGoogleZoneId sets GoogleZoneId field to given value.
 
 ### HasGoogleZoneId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasGoogleZoneId() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasGoogleZoneId() bool`
 
 HasGoogleZoneId returns a boolean if a field has been set.
 
 ### GetExternalIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExternalIpType() int64`
+`func (o *GoogleCloudInstanceConfiguration) GetExternalIpType() int64`
 
 GetExternalIpType returns the ExternalIpType field if non-nil, zero value otherwise.
 
 ### GetExternalIpTypeOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetExternalIpTypeOk() (*int64, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetExternalIpTypeOk() (*int64, bool)`
 
 GetExternalIpTypeOk returns a tuple with the ExternalIpType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetExternalIpType(v int64)`
+`func (o *GoogleCloudInstanceConfiguration) SetExternalIpType(v int64)`
 
 SetExternalIpType sets ExternalIpType field to given value.
 
 ### HasExternalIpType
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasExternalIpType() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasExternalIpType() bool`
 
 HasExternalIpType returns a boolean if a field has been set.
 
 ### GetNetworkTags
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNetworkTags() string`
+`func (o *GoogleCloudInstanceConfiguration) GetNetworkTags() string`
 
 GetNetworkTags returns the NetworkTags field if non-nil, zero value otherwise.
 
 ### GetNetworkTagsOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetNetworkTagsOk() (*string, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetNetworkTagsOk() (*string, bool)`
 
 GetNetworkTagsOk returns a tuple with the NetworkTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkTags
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetNetworkTags(v string)`
+`func (o *GoogleCloudInstanceConfiguration) SetNetworkTags(v string)`
 
 SetNetworkTags sets NetworkTags field to given value.
 
 ### HasNetworkTags
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasNetworkTags() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasNetworkTags() bool`
 
 HasNetworkTags returns a boolean if a field has been set.
 
 ### GetServiceAccount
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetServiceAccount() string`
+`func (o *GoogleCloudInstanceConfiguration) GetServiceAccount() string`
 
 GetServiceAccount returns the ServiceAccount field if non-nil, zero value otherwise.
 
 ### GetServiceAccountOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetServiceAccountOk() (*string, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetServiceAccountOk() (*string, bool)`
 
 GetServiceAccountOk returns a tuple with the ServiceAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceAccount
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetServiceAccount(v string)`
+`func (o *GoogleCloudInstanceConfiguration) SetServiceAccount(v string)`
 
 SetServiceAccount sets ServiceAccount field to given value.
 
 ### HasServiceAccount
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasServiceAccount() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasServiceAccount() bool`
 
 HasServiceAccount returns a boolean if a field has been set.
 
 ### GetAccessScope
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAccessScope() string`
+`func (o *GoogleCloudInstanceConfiguration) GetAccessScope() string`
 
 GetAccessScope returns the AccessScope field if non-nil, zero value otherwise.
 
 ### GetAccessScopeOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) GetAccessScopeOk() (*string, bool)`
+`func (o *GoogleCloudInstanceConfiguration) GetAccessScopeOk() (*string, bool)`
 
 GetAccessScopeOk returns a tuple with the AccessScope field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessScope
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) SetAccessScope(v string)`
+`func (o *GoogleCloudInstanceConfiguration) SetAccessScope(v string)`
 
 SetAccessScope sets AccessScope field to given value.
 
 ### HasAccessScope
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf2) HasAccessScope() bool`
+`func (o *GoogleCloudInstanceConfiguration) HasAccessScope() bool`
 
 HasAccessScope returns a boolean if a field has been set.
 

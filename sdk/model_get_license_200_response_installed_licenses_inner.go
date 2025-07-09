@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -27,6 +27,8 @@ type GetLicense200ResponseInstalledLicensesInner struct {
 	KeyId *string `json:"keyId,omitempty"`
 	// Hash of the license content which can be used as a fingerprint identifier
 	Hash *string `json:"hash,omitempty"`
+	// License Version which determines the required appliance version to install this license.
+	LicenseVersion *int64 `json:"licenseVersion,omitempty"`
 	// Product Tier
 	ProductTier *string `json:"productTier,omitempty"`
 	// The start date of the applied license.
@@ -51,6 +53,8 @@ type GetLicense200ResponseInstalledLicensesInner struct {
 	MaxMvm NullableInt64 `json:"maxMvm,omitempty"`
 	// HPE VM Host Limit. 0 is enforced and null is used for unlimited.
 	MaxMvmSockets NullableInt64 `json:"maxMvmSockets,omitempty"`
+	// Global Socket Limit. 0 is enforced and null is used for unlimited.
+	MaxSockets NullableInt64 `json:"maxSockets,omitempty"`
 	// IAC Deployments Limit. 0 is enforced and null is used for unlimited.
 	MaxIac NullableInt64 `json:"maxIac,omitempty"`
 	// Xaas Instances Limit. 0 is enforced and null is used for unlimited.
@@ -199,6 +203,38 @@ func (o *GetLicense200ResponseInstalledLicensesInner) IsSetHash() bool {
 // SetHash gets a reference to the given string and assigns it to the Hash field.
 func (o *GetLicense200ResponseInstalledLicensesInner) SetHash(v string) {
 	o.Hash = &v
+}
+
+// GetLicenseVersion returns the LicenseVersion field value if set, zero value otherwise.
+func (o *GetLicense200ResponseInstalledLicensesInner) GetLicenseVersion() int64 {
+	if o == nil || IsNil(o.LicenseVersion) {
+		var ret int64
+		return ret
+	}
+	return *o.LicenseVersion
+}
+
+// GetLicenseVersionOk returns a tuple with the LicenseVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetLicense200ResponseInstalledLicensesInner) GetLicenseVersionOk() (*int64, bool) {
+	if o == nil || IsNil(o.LicenseVersion) {
+		return nil, false
+	}
+	return o.LicenseVersion, true
+}
+
+// IsSetLicenseVersion returns a boolean if a field has been set.
+func (o *GetLicense200ResponseInstalledLicensesInner) IsSetLicenseVersion() bool {
+	if o != nil && !IsNil(o.LicenseVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetLicenseVersion gets a reference to the given int64 and assigns it to the LicenseVersion field.
+func (o *GetLicense200ResponseInstalledLicensesInner) SetLicenseVersion(v int64) {
+	o.LicenseVersion = &v
 }
 
 // GetProductTier returns the ProductTier field value if set, zero value otherwise.
@@ -638,6 +674,49 @@ func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxMvmSocketsNil() {
 // UnsetMaxMvmSockets ensures that no value is present for MaxMvmSockets, not even an explicit nil
 func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxMvmSockets() {
 	o.MaxMvmSockets.Unset()
+}
+
+// GetMaxSockets returns the MaxSockets field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxSockets() int64 {
+	if o == nil || IsNil(o.MaxSockets.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxSockets.Get()
+}
+
+// GetMaxSocketsOk returns a tuple with the MaxSockets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetLicense200ResponseInstalledLicensesInner) GetMaxSocketsOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MaxSockets.Get(), o.MaxSockets.IsSet()
+}
+
+// IsSetMaxSockets returns a boolean if a field has been set.
+func (o *GetLicense200ResponseInstalledLicensesInner) IsSetMaxSockets() bool {
+	if o != nil && o.MaxSockets.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxSockets gets a reference to the given NullableInt64 and assigns it to the MaxSockets field.
+func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxSockets(v int64) {
+	o.MaxSockets.Set(&v)
+}
+
+// SetMaxSocketsNil sets the value for MaxSockets to be an explicit nil
+func (o *GetLicense200ResponseInstalledLicensesInner) SetMaxSocketsNil() {
+	o.MaxSockets.Set(nil)
+}
+
+// UnsetMaxSockets ensures that no value is present for MaxSockets, not even an explicit nil
+func (o *GetLicense200ResponseInstalledLicensesInner) UnsetMaxSockets() {
+	o.MaxSockets.Unset()
 }
 
 // GetMaxIac returns the MaxIac field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1356,6 +1435,9 @@ func (o GetLicense200ResponseInstalledLicensesInner) ToMap() (map[string]interfa
 	if !IsNil(o.Hash) {
 		toSerialize["hash"] = o.Hash
 	}
+	if !IsNil(o.LicenseVersion) {
+		toSerialize["licenseVersion"] = o.LicenseVersion
+	}
 	if !IsNil(o.ProductTier) {
 		toSerialize["productTier"] = o.ProductTier
 	}
@@ -1391,6 +1473,9 @@ func (o GetLicense200ResponseInstalledLicensesInner) ToMap() (map[string]interfa
 	}
 	if o.MaxMvmSockets.IsSet() {
 		toSerialize["maxMvmSockets"] = o.MaxMvmSockets.Get()
+	}
+	if o.MaxSockets.IsSet() {
+		toSerialize["maxSockets"] = o.MaxSockets.Get()
 	}
 	if o.MaxIac.IsSet() {
 		toSerialize["maxIac"] = o.MaxIac.Get()
@@ -1473,6 +1558,7 @@ func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte)
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "keyId")
 		delete(additionalProperties, "hash")
+		delete(additionalProperties, "licenseVersion")
 		delete(additionalProperties, "productTier")
 		delete(additionalProperties, "startDate")
 		delete(additionalProperties, "endDate")
@@ -1485,6 +1571,7 @@ func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte)
 		delete(additionalProperties, "maxHosts")
 		delete(additionalProperties, "maxMvm")
 		delete(additionalProperties, "maxMvmSockets")
+		delete(additionalProperties, "maxSockets")
 		delete(additionalProperties, "maxIac")
 		delete(additionalProperties, "maxXaas")
 		delete(additionalProperties, "maxExecutions")

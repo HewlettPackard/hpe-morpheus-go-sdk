@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -93,6 +93,7 @@ type Server struct {
 	TagCompliant             NullableString                                                                      `json:"tagCompliant,omitempty"`
 	Containers               []int64                                                                             `json:"containers,omitempty"`
 	Config                   *ListHosts200ResponseAllOfServersInnerConfig                                        `json:"config,omitempty"`
+	Instance                 *ListHosts200ResponseAllOfServersInnerInstance                                      `json:"instance,omitempty"`
 	GuestConsolePreferred    *bool                                                                               `json:"guestConsolePreferred,omitempty"`
 	GuestConsoleType         NullableString                                                                      `json:"guestConsoleType,omitempty"`
 	GuestConsoleUsername     NullableString                                                                      `json:"guestConsoleUsername,omitempty"`
@@ -2713,6 +2714,38 @@ func (o *Server) SetConfig(v ListHosts200ResponseAllOfServersInnerConfig) {
 	o.Config = &v
 }
 
+// GetInstance returns the Instance field value if set, zero value otherwise.
+func (o *Server) GetInstance() ListHosts200ResponseAllOfServersInnerInstance {
+	if o == nil || IsNil(o.Instance) {
+		var ret ListHosts200ResponseAllOfServersInnerInstance
+		return ret
+	}
+	return *o.Instance
+}
+
+// GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Server) GetInstanceOk() (*ListHosts200ResponseAllOfServersInnerInstance, bool) {
+	if o == nil || IsNil(o.Instance) {
+		return nil, false
+	}
+	return o.Instance, true
+}
+
+// IsSetInstance returns a boolean if a field has been set.
+func (o *Server) IsSetInstance() bool {
+	if o != nil && !IsNil(o.Instance) {
+		return true
+	}
+
+	return false
+}
+
+// SetInstance gets a reference to the given ListHosts200ResponseAllOfServersInnerInstance and assigns it to the Instance field.
+func (o *Server) SetInstance(v ListHosts200ResponseAllOfServersInnerInstance) {
+	o.Instance = &v
+}
+
 // GetGuestConsolePreferred returns the GuestConsolePreferred field value if set, zero value otherwise.
 func (o *Server) GetGuestConsolePreferred() bool {
 	if o == nil || IsNil(o.GuestConsolePreferred) {
@@ -3186,6 +3219,9 @@ func (o Server) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
 	}
+	if !IsNil(o.Instance) {
+		toSerialize["instance"] = o.Instance
+	}
 	if !IsNil(o.GuestConsolePreferred) {
 		toSerialize["guestConsolePreferred"] = o.GuestConsolePreferred
 	}
@@ -3297,6 +3333,7 @@ func (o *Server) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "tagCompliant")
 		delete(additionalProperties, "containers")
 		delete(additionalProperties, "config")
+		delete(additionalProperties, "instance")
 		delete(additionalProperties, "guestConsolePreferred")
 		delete(additionalProperties, "guestConsoleType")
 		delete(additionalProperties, "guestConsoleUsername")

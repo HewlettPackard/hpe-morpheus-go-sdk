@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.7
+API version: 8.0.8
 Contact: dev@morpheusdata.com
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
+// checks if the AzureInstanceConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AzureInstanceConfiguration{}
 
-// AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
-type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
+// AzureInstanceConfiguration struct for AzureInstanceConfiguration
+type AzureInstanceConfiguration struct {
 	// id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
 	ResourcePoolId *string `json:"resourcePoolId,omitempty"`
 	// Availability Options
@@ -41,31 +41,31 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
+type _AzureInstanceConfiguration AzureInstanceConfiguration
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf object
+// NewAzureInstanceConfiguration instantiates a new AzureInstanceConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
+func NewAzureInstanceConfiguration() *AzureInstanceConfiguration {
+	this := AzureInstanceConfiguration{}
 	var createUser bool = true
 	this.CreateUser = &createUser
 	return &this
 }
 
-// NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOfWithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf object
+// NewAzureInstanceConfigurationWithDefaults instantiates a new AzureInstanceConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOfWithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
-	this := AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
+func NewAzureInstanceConfigurationWithDefaults() *AzureInstanceConfiguration {
+	this := AzureInstanceConfiguration{}
 	var createUser bool = true
 	this.CreateUser = &createUser
 	return &this
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetResourcePoolId() string {
+func (o *AzureInstanceConfiguration) GetResourcePoolId() string {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		var ret string
 		return ret
@@ -75,7 +75,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetReso
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetResourcePoolIdOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetResourcePoolIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -83,7 +83,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetReso
 }
 
 // IsSetResourcePoolId returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetResourcePoolId() bool {
+func (o *AzureInstanceConfiguration) IsSetResourcePoolId() bool {
 	if o != nil && !IsNil(o.ResourcePoolId) {
 		return true
 	}
@@ -92,12 +92,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetRe
 }
 
 // SetResourcePoolId gets a reference to the given string and assigns it to the ResourcePoolId field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetResourcePoolId(v string) {
+func (o *AzureInstanceConfiguration) SetResourcePoolId(v string) {
 	o.ResourcePoolId = &v
 }
 
 // GetAvailabilityOptions returns the AvailabilityOptions field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilityOptions() string {
+func (o *AzureInstanceConfiguration) GetAvailabilityOptions() string {
 	if o == nil || IsNil(o.AvailabilityOptions) {
 		var ret string
 		return ret
@@ -107,7 +107,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 
 // GetAvailabilityOptionsOk returns a tuple with the AvailabilityOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilityOptionsOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetAvailabilityOptionsOk() (*string, bool) {
 	if o == nil || IsNil(o.AvailabilityOptions) {
 		return nil, false
 	}
@@ -115,7 +115,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 }
 
 // IsSetAvailabilityOptions returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAvailabilityOptions() bool {
+func (o *AzureInstanceConfiguration) IsSetAvailabilityOptions() bool {
 	if o != nil && !IsNil(o.AvailabilityOptions) {
 		return true
 	}
@@ -124,12 +124,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAv
 }
 
 // SetAvailabilityOptions gets a reference to the given string and assigns it to the AvailabilityOptions field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetAvailabilityOptions(v string) {
+func (o *AzureInstanceConfiguration) SetAvailabilityOptions(v string) {
 	o.AvailabilityOptions = &v
 }
 
 // GetAvailabilitySet returns the AvailabilitySet field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilitySet() string {
+func (o *AzureInstanceConfiguration) GetAvailabilitySet() string {
 	if o == nil || IsNil(o.AvailabilitySet) {
 		var ret string
 		return ret
@@ -139,7 +139,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 
 // GetAvailabilitySetOk returns a tuple with the AvailabilitySet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilitySetOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetAvailabilitySetOk() (*string, bool) {
 	if o == nil || IsNil(o.AvailabilitySet) {
 		return nil, false
 	}
@@ -147,7 +147,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 }
 
 // IsSetAvailabilitySet returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAvailabilitySet() bool {
+func (o *AzureInstanceConfiguration) IsSetAvailabilitySet() bool {
 	if o != nil && !IsNil(o.AvailabilitySet) {
 		return true
 	}
@@ -156,12 +156,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAv
 }
 
 // SetAvailabilitySet gets a reference to the given string and assigns it to the AvailabilitySet field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetAvailabilitySet(v string) {
+func (o *AzureInstanceConfiguration) SetAvailabilitySet(v string) {
 	o.AvailabilitySet = &v
 }
 
 // GetAvailabilityZone returns the AvailabilityZone field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilityZone() int64 {
+func (o *AzureInstanceConfiguration) GetAvailabilityZone() int64 {
 	if o == nil || IsNil(o.AvailabilityZone) {
 		var ret int64
 		return ret
@@ -171,7 +171,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 
 // GetAvailabilityZoneOk returns a tuple with the AvailabilityZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvailabilityZoneOk() (*int64, bool) {
+func (o *AzureInstanceConfiguration) GetAvailabilityZoneOk() (*int64, bool) {
 	if o == nil || IsNil(o.AvailabilityZone) {
 		return nil, false
 	}
@@ -179,7 +179,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAvai
 }
 
 // IsSetAvailabilityZone returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAvailabilityZone() bool {
+func (o *AzureInstanceConfiguration) IsSetAvailabilityZone() bool {
 	if o != nil && !IsNil(o.AvailabilityZone) {
 		return true
 	}
@@ -188,12 +188,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAv
 }
 
 // SetAvailabilityZone gets a reference to the given int64 and assigns it to the AvailabilityZone field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetAvailabilityZone(v int64) {
+func (o *AzureInstanceConfiguration) SetAvailabilityZone(v int64) {
 	o.AvailabilityZone = &v
 }
 
 // GetAzurefloatingIp returns the AzurefloatingIp field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAzurefloatingIp() string {
+func (o *AzureInstanceConfiguration) GetAzurefloatingIp() string {
 	if o == nil || IsNil(o.AzurefloatingIp) {
 		var ret string
 		return ret
@@ -203,7 +203,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAzur
 
 // GetAzurefloatingIpOk returns a tuple with the AzurefloatingIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAzurefloatingIpOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetAzurefloatingIpOk() (*string, bool) {
 	if o == nil || IsNil(o.AzurefloatingIp) {
 		return nil, false
 	}
@@ -211,7 +211,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetAzur
 }
 
 // IsSetAzurefloatingIp returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAzurefloatingIp() bool {
+func (o *AzureInstanceConfiguration) IsSetAzurefloatingIp() bool {
 	if o != nil && !IsNil(o.AzurefloatingIp) {
 		return true
 	}
@@ -220,12 +220,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetAz
 }
 
 // SetAzurefloatingIp gets a reference to the given string and assigns it to the AzurefloatingIp field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetAzurefloatingIp(v string) {
+func (o *AzureInstanceConfiguration) SetAzurefloatingIp(v string) {
 	o.AzurefloatingIp = &v
 }
 
 // GetBootDiagnostics returns the BootDiagnostics field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetBootDiagnostics() string {
+func (o *AzureInstanceConfiguration) GetBootDiagnostics() string {
 	if o == nil || IsNil(o.BootDiagnostics) {
 		var ret string
 		return ret
@@ -235,7 +235,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetBoot
 
 // GetBootDiagnosticsOk returns a tuple with the BootDiagnostics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetBootDiagnosticsOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetBootDiagnosticsOk() (*string, bool) {
 	if o == nil || IsNil(o.BootDiagnostics) {
 		return nil, false
 	}
@@ -243,7 +243,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetBoot
 }
 
 // IsSetBootDiagnostics returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetBootDiagnostics() bool {
+func (o *AzureInstanceConfiguration) IsSetBootDiagnostics() bool {
 	if o != nil && !IsNil(o.BootDiagnostics) {
 		return true
 	}
@@ -252,12 +252,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetBo
 }
 
 // SetBootDiagnostics gets a reference to the given string and assigns it to the BootDiagnostics field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetBootDiagnostics(v string) {
+func (o *AzureInstanceConfiguration) SetBootDiagnostics(v string) {
 	o.BootDiagnostics = &v
 }
 
 // GetOsGuestDiagnostics returns the OsGuestDiagnostics field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetOsGuestDiagnostics() string {
+func (o *AzureInstanceConfiguration) GetOsGuestDiagnostics() string {
 	if o == nil || IsNil(o.OsGuestDiagnostics) {
 		var ret string
 		return ret
@@ -267,7 +267,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetOsGu
 
 // GetOsGuestDiagnosticsOk returns a tuple with the OsGuestDiagnostics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetOsGuestDiagnosticsOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetOsGuestDiagnosticsOk() (*string, bool) {
 	if o == nil || IsNil(o.OsGuestDiagnostics) {
 		return nil, false
 	}
@@ -275,7 +275,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetOsGu
 }
 
 // IsSetOsGuestDiagnostics returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetOsGuestDiagnostics() bool {
+func (o *AzureInstanceConfiguration) IsSetOsGuestDiagnostics() bool {
 	if o != nil && !IsNil(o.OsGuestDiagnostics) {
 		return true
 	}
@@ -284,12 +284,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetOs
 }
 
 // SetOsGuestDiagnostics gets a reference to the given string and assigns it to the OsGuestDiagnostics field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetOsGuestDiagnostics(v string) {
+func (o *AzureInstanceConfiguration) SetOsGuestDiagnostics(v string) {
 	o.OsGuestDiagnostics = &v
 }
 
 // GetDiagnosticsStorageAccount returns the DiagnosticsStorageAccount field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetDiagnosticsStorageAccount() string {
+func (o *AzureInstanceConfiguration) GetDiagnosticsStorageAccount() string {
 	if o == nil || IsNil(o.DiagnosticsStorageAccount) {
 		var ret string
 		return ret
@@ -299,7 +299,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetDiag
 
 // GetDiagnosticsStorageAccountOk returns a tuple with the DiagnosticsStorageAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetDiagnosticsStorageAccountOk() (*string, bool) {
+func (o *AzureInstanceConfiguration) GetDiagnosticsStorageAccountOk() (*string, bool) {
 	if o == nil || IsNil(o.DiagnosticsStorageAccount) {
 		return nil, false
 	}
@@ -307,7 +307,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetDiag
 }
 
 // IsSetDiagnosticsStorageAccount returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetDiagnosticsStorageAccount() bool {
+func (o *AzureInstanceConfiguration) IsSetDiagnosticsStorageAccount() bool {
 	if o != nil && !IsNil(o.DiagnosticsStorageAccount) {
 		return true
 	}
@@ -316,12 +316,12 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetDi
 }
 
 // SetDiagnosticsStorageAccount gets a reference to the given string and assigns it to the DiagnosticsStorageAccount field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetDiagnosticsStorageAccount(v string) {
+func (o *AzureInstanceConfiguration) SetDiagnosticsStorageAccount(v string) {
 	o.DiagnosticsStorageAccount = &v
 }
 
 // GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetCreateUser() bool {
+func (o *AzureInstanceConfiguration) GetCreateUser() bool {
 	if o == nil || IsNil(o.CreateUser) {
 		var ret bool
 		return ret
@@ -331,7 +331,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetCrea
 
 // GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetCreateUserOk() (*bool, bool) {
+func (o *AzureInstanceConfiguration) GetCreateUserOk() (*bool, bool) {
 	if o == nil || IsNil(o.CreateUser) {
 		return nil, false
 	}
@@ -339,7 +339,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) GetCrea
 }
 
 // IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetCreateUser() bool {
+func (o *AzureInstanceConfiguration) IsSetCreateUser() bool {
 	if o != nil && !IsNil(o.CreateUser) {
 		return true
 	}
@@ -348,11 +348,11 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSetCr
 }
 
 // SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) SetCreateUser(v bool) {
+func (o *AzureInstanceConfiguration) SetCreateUser(v bool) {
 	o.CreateUser = &v
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) MarshalJSON() ([]byte, error) {
+func (o AzureInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -360,7 +360,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) MarshalJ
 	return json.Marshal(toSerialize)
 }
 
-func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) ToMap() (map[string]interface{}, error) {
+func (o AzureInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ResourcePoolId) {
 		toSerialize["resourcePoolId"] = o.ResourcePoolId
@@ -396,16 +396,16 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) ToMap() 
 
 	return toSerialize, nil
 }
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{}
+func (o *AzureInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
+	varAzureInstanceConfiguration := _AzureInstanceConfiguration{}
 
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+	err = json.Unmarshal(data, &varAzureInstanceConfiguration)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf)
+	*o = AzureInstanceConfiguration(varAzureInstanceConfiguration)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -425,38 +425,38 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Unmarsh
 	return err
 }
 
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf
+type NullableAzureInstanceConfiguration struct {
+	value *AzureInstanceConfiguration
 	isSet bool
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
+func (v NullableAzureInstanceConfiguration) Get() *AzureInstanceConfiguration {
 	return v.value
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) {
+func (v *NullableAzureInstanceConfiguration) Set(val *AzureInstanceConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) IsSet() bool {
+func (v NullableAzureInstanceConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) Unset() {
+func (v *NullableAzureInstanceConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf{value: val, isSet: true}
+func NewNullableAzureInstanceConfiguration(val *AzureInstanceConfiguration) *NullableAzureInstanceConfiguration {
+	return &NullableAzureInstanceConfiguration{value: val, isSet: true}
 }
 
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) MarshalJSON() ([]byte, error) {
+func (v NullableAzureInstanceConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf) UnmarshalJSON(src []byte) error {
+func (v *NullableAzureInstanceConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

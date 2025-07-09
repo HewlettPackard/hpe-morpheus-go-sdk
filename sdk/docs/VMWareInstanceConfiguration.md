@@ -1,4 +1,4 @@
-# AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
+# VMWareInstanceConfiguration
 
 ## Properties
 
@@ -10,185 +10,211 @@ Name | Type | Description | Notes
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 
 **NestedVirtualization** | Pointer to **string** | Enable Nested Virtualization | [optional] [default to "off"]
 **VmwareFolderId** | Pointer to **string** | VMWare Folder External ID (as a String) or ID (as an Integer or String) | [optional] 
+**Template** | Pointer to **int64** | Image ID. This is the ID of a Virtual Image. | [optional] 
 
 ## Methods
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1
+### NewVMWareInstanceConfiguration
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1`
+`func NewVMWareInstanceConfiguration() *VMWareInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 object
+NewVMWareInstanceConfiguration instantiates a new VMWareInstanceConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults
+### NewVMWareInstanceConfigurationWithDefaults
 
-`func NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1`
+`func NewVMWareInstanceConfigurationWithDefaults() *VMWareInstanceConfiguration`
 
-NewAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1WithDefaults instantiates a new AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1 object
+NewVMWareInstanceConfigurationWithDefaults instantiates a new VMWareInstanceConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgent() bool`
+`func (o *VMWareInstanceConfiguration) GetNoAgent() bool`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNoAgentOk() (*bool, bool)`
+`func (o *VMWareInstanceConfiguration) GetNoAgentOk() (*bool, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgent(v bool)`
+`func (o *VMWareInstanceConfiguration) SetNoAgent(v bool)`
 
 SetNoAgent sets NoAgent field to given value.
 
 ### HasNoAgent
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasNoAgent() bool`
+`func (o *VMWareInstanceConfiguration) HasNoAgent() bool`
 
 HasNoAgent returns a boolean if a field has been set.
 
 ### SetNoAgentNil
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNoAgentNil(b bool)`
+`func (o *VMWareInstanceConfiguration) SetNoAgentNil(b bool)`
 
  SetNoAgentNil sets the value for NoAgent to be an explicit nil
 
 ### UnsetNoAgent
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) UnsetNoAgent()`
+`func (o *VMWareInstanceConfiguration) UnsetNoAgent()`
 
 UnsetNoAgent ensures that no value is present for NoAgent, not even an explicit nil
 ### GetResourcePoolId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetResourcePoolId() string`
+`func (o *VMWareInstanceConfiguration) GetResourcePoolId() string`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetResourcePoolIdOk() (*string, bool)`
+`func (o *VMWareInstanceConfiguration) GetResourcePoolIdOk() (*string, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetResourcePoolId(v string)`
+`func (o *VMWareInstanceConfiguration) SetResourcePoolId(v string)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 
 ### HasResourcePoolId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasResourcePoolId() bool`
+`func (o *VMWareInstanceConfiguration) HasResourcePoolId() bool`
 
 HasResourcePoolId returns a boolean if a field has been set.
 
 ### GetHostId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHostId() string`
+`func (o *VMWareInstanceConfiguration) GetHostId() string`
 
 GetHostId returns the HostId field if non-nil, zero value otherwise.
 
 ### GetHostIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetHostIdOk() (*string, bool)`
+`func (o *VMWareInstanceConfiguration) GetHostIdOk() (*string, bool)`
 
 GetHostIdOk returns a tuple with the HostId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHostId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetHostId(v string)`
+`func (o *VMWareInstanceConfiguration) SetHostId(v string)`
 
 SetHostId sets HostId field to given value.
 
 ### HasHostId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasHostId() bool`
+`func (o *VMWareInstanceConfiguration) HasHostId() bool`
 
 HasHostId returns a boolean if a field has been set.
 
 ### GetSmbiosAssetTag
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmbiosAssetTag() string`
+`func (o *VMWareInstanceConfiguration) GetSmbiosAssetTag() string`
 
 GetSmbiosAssetTag returns the SmbiosAssetTag field if non-nil, zero value otherwise.
 
 ### GetSmbiosAssetTagOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetSmbiosAssetTagOk() (*string, bool)`
+`func (o *VMWareInstanceConfiguration) GetSmbiosAssetTagOk() (*string, bool)`
 
 GetSmbiosAssetTagOk returns a tuple with the SmbiosAssetTag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSmbiosAssetTag
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetSmbiosAssetTag(v string)`
+`func (o *VMWareInstanceConfiguration) SetSmbiosAssetTag(v string)`
 
 SetSmbiosAssetTag sets SmbiosAssetTag field to given value.
 
 ### HasSmbiosAssetTag
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasSmbiosAssetTag() bool`
+`func (o *VMWareInstanceConfiguration) HasSmbiosAssetTag() bool`
 
 HasSmbiosAssetTag returns a boolean if a field has been set.
 
 ### GetNestedVirtualization
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNestedVirtualization() string`
+`func (o *VMWareInstanceConfiguration) GetNestedVirtualization() string`
 
 GetNestedVirtualization returns the NestedVirtualization field if non-nil, zero value otherwise.
 
 ### GetNestedVirtualizationOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetNestedVirtualizationOk() (*string, bool)`
+`func (o *VMWareInstanceConfiguration) GetNestedVirtualizationOk() (*string, bool)`
 
 GetNestedVirtualizationOk returns a tuple with the NestedVirtualization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNestedVirtualization
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetNestedVirtualization(v string)`
+`func (o *VMWareInstanceConfiguration) SetNestedVirtualization(v string)`
 
 SetNestedVirtualization sets NestedVirtualization field to given value.
 
 ### HasNestedVirtualization
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasNestedVirtualization() bool`
+`func (o *VMWareInstanceConfiguration) HasNestedVirtualization() bool`
 
 HasNestedVirtualization returns a boolean if a field has been set.
 
 ### GetVmwareFolderId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmwareFolderId() string`
+`func (o *VMWareInstanceConfiguration) GetVmwareFolderId() string`
 
 GetVmwareFolderId returns the VmwareFolderId field if non-nil, zero value otherwise.
 
 ### GetVmwareFolderIdOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) GetVmwareFolderIdOk() (*string, bool)`
+`func (o *VMWareInstanceConfiguration) GetVmwareFolderIdOk() (*string, bool)`
 
 GetVmwareFolderIdOk returns a tuple with the VmwareFolderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVmwareFolderId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) SetVmwareFolderId(v string)`
+`func (o *VMWareInstanceConfiguration) SetVmwareFolderId(v string)`
 
 SetVmwareFolderId sets VmwareFolderId field to given value.
 
 ### HasVmwareFolderId
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfigAnyOf1) HasVmwareFolderId() bool`
+`func (o *VMWareInstanceConfiguration) HasVmwareFolderId() bool`
 
 HasVmwareFolderId returns a boolean if a field has been set.
+
+### GetTemplate
+
+`func (o *VMWareInstanceConfiguration) GetTemplate() int64`
+
+GetTemplate returns the Template field if non-nil, zero value otherwise.
+
+### GetTemplateOk
+
+`func (o *VMWareInstanceConfiguration) GetTemplateOk() (*int64, bool)`
+
+GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplate
+
+`func (o *VMWareInstanceConfiguration) SetTemplate(v int64)`
+
+SetTemplate sets Template field to given value.
+
+### HasTemplate
+
+`func (o *VMWareInstanceConfiguration) HasTemplate() bool`
+
+HasTemplate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
