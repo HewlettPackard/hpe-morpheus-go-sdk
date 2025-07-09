@@ -20,8 +20,9 @@ var _ MappedNullable = &AddServicePlans200Response{}
 
 // AddServicePlans200Response struct for AddServicePlans200Response
 type AddServicePlans200Response struct {
-	ServicePlan          *AddServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
-	Success              *bool                                       `json:"success,omitempty"`
+	// The ID of the Service Plan created
+	Id                   *int64 `json:"id,omitempty"`
+	Success              *bool  `json:"success,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,36 +45,36 @@ func NewAddServicePlans200ResponseWithDefaults() *AddServicePlans200Response {
 	return &this
 }
 
-// GetServicePlan returns the ServicePlan field value if set, zero value otherwise.
-func (o *AddServicePlans200Response) GetServicePlan() AddServicePlans200ResponseAllOfServicePlan {
-	if o == nil || IsNil(o.ServicePlan) {
-		var ret AddServicePlans200ResponseAllOfServicePlan
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AddServicePlans200Response) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
 		return ret
 	}
-	return *o.ServicePlan
+	return *o.Id
 }
 
-// GetServicePlanOk returns a tuple with the ServicePlan field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200Response) GetServicePlanOk() (*AddServicePlans200ResponseAllOfServicePlan, bool) {
-	if o == nil || IsNil(o.ServicePlan) {
+func (o *AddServicePlans200Response) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.ServicePlan, true
+	return o.Id, true
 }
 
-// IsSetServicePlan returns a boolean if a field has been set.
-func (o *AddServicePlans200Response) IsSetServicePlan() bool {
-	if o != nil && !IsNil(o.ServicePlan) {
+// IsSetId returns a boolean if a field has been set.
+func (o *AddServicePlans200Response) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetServicePlan gets a reference to the given AddServicePlans200ResponseAllOfServicePlan and assigns it to the ServicePlan field.
-func (o *AddServicePlans200Response) SetServicePlan(v AddServicePlans200ResponseAllOfServicePlan) {
-	o.ServicePlan = &v
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AddServicePlans200Response) SetId(v int64) {
+	o.Id = &v
 }
 
 // GetSuccess returns the Success field value if set, zero value otherwise.
@@ -118,8 +119,8 @@ func (o AddServicePlans200Response) MarshalJSON() ([]byte, error) {
 
 func (o AddServicePlans200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServicePlan) {
-		toSerialize["servicePlan"] = o.ServicePlan
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
@@ -145,7 +146,7 @@ func (o *AddServicePlans200Response) UnmarshalJSON(data []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "servicePlan")
+		delete(additionalProperties, "id")
 		delete(additionalProperties, "success")
 		o.AdditionalProperties = additionalProperties
 	}

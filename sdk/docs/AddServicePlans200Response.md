@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServicePlan** | Pointer to [**AddServicePlans200ResponseAllOfServicePlan**](AddServicePlans200ResponseAllOfServicePlan.md) |  | [optional] 
+**Id** | Pointer to **int64** | The ID of the Service Plan created | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewAddServicePlans200ResponseWithDefaults instantiates a new AddServicePlans200R
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServicePlan
+### GetId
 
-`func (o *AddServicePlans200Response) GetServicePlan() AddServicePlans200ResponseAllOfServicePlan`
+`func (o *AddServicePlans200Response) GetId() int64`
 
-GetServicePlan returns the ServicePlan field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetServicePlanOk
+### GetIdOk
 
-`func (o *AddServicePlans200Response) GetServicePlanOk() (*AddServicePlans200ResponseAllOfServicePlan, bool)`
+`func (o *AddServicePlans200Response) GetIdOk() (*int64, bool)`
 
-GetServicePlanOk returns a tuple with the ServicePlan field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServicePlan
+### SetId
 
-`func (o *AddServicePlans200Response) SetServicePlan(v AddServicePlans200ResponseAllOfServicePlan)`
+`func (o *AddServicePlans200Response) SetId(v int64)`
 
-SetServicePlan sets ServicePlan field to given value.
+SetId sets Id field to given value.
 
-### HasServicePlan
+### HasId
 
-`func (o *AddServicePlans200Response) HasServicePlan() bool`
+`func (o *AddServicePlans200Response) HasId() bool`
 
-HasServicePlan returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetSuccess
 

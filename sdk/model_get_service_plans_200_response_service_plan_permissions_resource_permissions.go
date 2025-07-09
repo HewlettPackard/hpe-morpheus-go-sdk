@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{}
+// checks if the GetServicePlans200ResponseServicePlanPermissionsResourcePermissions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
 
-// AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct for AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
-type AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct {
+// GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct for GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
+type GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct {
 	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
 	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
 	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
@@ -31,27 +31,27 @@ type AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions st
 	AdditionalProperties map[string]interface{}
 }
 
-type _AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
+type _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
 
-// NewAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions instantiates a new AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions object
+// NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissions instantiates a new GetServicePlans200ResponseServicePlanPermissionsResourcePermissions object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions() *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
-	this := AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{}
+func NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissions() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
+	this := GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
 	return &this
 }
 
-// NewAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissionsWithDefaults instantiates a new AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions object
+// NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults instantiates a new GetServicePlans200ResponseServicePlanPermissionsResourcePermissions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissionsWithDefaults() *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
-	this := AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{}
+func NewGetServicePlans200ResponseServicePlanPermissionsResourcePermissionsWithDefaults() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
+	this := GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
 	return &this
 }
 
 // GetDefaultStore returns the DefaultStore field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetDefaultStore() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetDefaultStore() bool {
 	if o == nil || IsNil(o.DefaultStore) {
 		var ret bool
 		return ret
@@ -61,7 +61,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetDefaultStoreOk returns a tuple with the DefaultStore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool) {
 	if o == nil || IsNil(o.DefaultStore) {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetDefaultStore returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetDefaultStore() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetDefaultStore() bool {
 	if o != nil && !IsNil(o.DefaultStore) {
 		return true
 	}
@@ -78,12 +78,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetDefaultStore gets a reference to the given bool and assigns it to the DefaultStore field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetDefaultStore(v bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
 }
 
 // GetAllPlans returns the AllPlans field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAllPlans() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAllPlans() bool {
 	if o == nil || IsNil(o.AllPlans) {
 		var ret bool
 		return ret
@@ -93,7 +93,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetAllPlansOk returns a tuple with the AllPlans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAllPlansOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAllPlansOk() (*bool, bool) {
 	if o == nil || IsNil(o.AllPlans) {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetAllPlans returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetAllPlans() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetAllPlans() bool {
 	if o != nil && !IsNil(o.AllPlans) {
 		return true
 	}
@@ -110,12 +110,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetAllPlans gets a reference to the given bool and assigns it to the AllPlans field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetAllPlans(v bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAllPlans(v bool) {
 	o.AllPlans = &v
 }
 
 // GetDefaultTarget returns the DefaultTarget field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetDefaultTarget() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetDefaultTarget() bool {
 	if o == nil || IsNil(o.DefaultTarget) {
 		var ret bool
 		return ret
@@ -125,7 +125,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetDefaultTargetOk returns a tuple with the DefaultTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetDefaultTargetOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetDefaultTargetOk() (*bool, bool) {
 	if o == nil || IsNil(o.DefaultTarget) {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetDefaultTarget returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetDefaultTarget() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetDefaultTarget() bool {
 	if o != nil && !IsNil(o.DefaultTarget) {
 		return true
 	}
@@ -142,12 +142,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetDefaultTarget gets a reference to the given bool and assigns it to the DefaultTarget field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetDefaultTarget(v bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetDefaultTarget(v bool) {
 	o.DefaultTarget = &v
 }
 
 // GetCanManage returns the CanManage field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetCanManage() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetCanManage() bool {
 	if o == nil || IsNil(o.CanManage) {
 		var ret bool
 		return ret
@@ -157,7 +157,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetCanManageOk returns a tuple with the CanManage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetCanManageOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetCanManageOk() (*bool, bool) {
 	if o == nil || IsNil(o.CanManage) {
 		return nil, false
 	}
@@ -165,7 +165,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetCanManage returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetCanManage() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetCanManage() bool {
 	if o != nil && !IsNil(o.CanManage) {
 		return true
 	}
@@ -174,12 +174,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetCanManage gets a reference to the given bool and assigns it to the CanManage field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetCanManage(v bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetCanManage(v bool) {
 	o.CanManage = &v
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAll() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAll() bool {
 	if o == nil || IsNil(o.All) {
 		var ret bool
 		return ret
@@ -189,7 +189,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetAllOk returns a tuple with the All field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAllOk() (*bool, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAllOk() (*bool, bool) {
 	if o == nil || IsNil(o.All) {
 		return nil, false
 	}
@@ -197,7 +197,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetAll returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetAll() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetAll() bool {
 	if o != nil && !IsNil(o.All) {
 		return true
 	}
@@ -206,12 +206,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetAll(v bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAll(v bool) {
 	o.All = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
 	if o == nil || IsNil(o.Account) {
 		var ret GetAlerts200ResponseAllOfChecksInnerAccount
 		return ret
@@ -221,7 +221,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -229,7 +229,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetAccount returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetAccount() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetAccount() bool {
 	if o != nil && !IsNil(o.Account) {
 		return true
 	}
@@ -238,12 +238,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
 	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
 	if o == nil || IsNil(o.Sites) {
 		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
 		return ret
@@ -253,7 +253,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -261,7 +261,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetSites returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetSites() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetSites() bool {
 	if o != nil && !IsNil(o.Sites) {
 		return true
 	}
@@ -270,12 +270,12 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetSites gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
 	o.Sites = v
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetPlans() []map[string]interface{} {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetPlans() []map[string]interface{} {
 	if o == nil {
 		var ret []map[string]interface{}
 		return ret
@@ -286,7 +286,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) GetPlansOk() ([]map[string]interface{}, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetPlansOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -294,7 +294,7 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // IsSetPlans returns a boolean if a field has been set.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSetPlans() bool {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSetPlans() bool {
 	if o != nil && !IsNil(o.Plans) {
 		return true
 	}
@@ -303,11 +303,11 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 }
 
 // SetPlans gets a reference to the given []map[string]interface{} and assigns it to the Plans field.
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) SetPlans(v []map[string]interface{}) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetPlans(v []map[string]interface{}) {
 	o.Plans = v
 }
 
-func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
+func (o GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -315,7 +315,7 @@ func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
 	return json.Marshal(toSerialize)
 }
 
-func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) ToMap() (map[string]interface{}, error) {
+func (o GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
@@ -348,16 +348,16 @@ func (o AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
 
 	return toSerialize, nil
 }
-func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions := _AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{}
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+	varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions := _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
 
-	err = json.Unmarshal(data, &varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions)
+	err = json.Unmarshal(data, &varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions)
 
 	if err != nil {
 		return err
 	}
 
-	*o = AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions(varAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions)
+	*o = GetServicePlans200ResponseServicePlanPermissionsResourcePermissions(varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -376,38 +376,38 @@ func (o *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermission
 	return err
 }
 
-type NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions struct {
-	value *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions
+type NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct {
+	value *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
 	isSet bool
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Get() *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
+func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Get() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
 	return v.value
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Set(val *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) {
+func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Set(val *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) IsSet() bool {
+func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) Unset() {
+func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions(val *AddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions {
-	return &NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions{value: val, isSet: true}
+func NewNullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions(val *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
+	return &NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions{value: val, isSet: true}
 }
 
-func (v NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
+func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
+func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -885,7 +885,7 @@ func (r ApiUpdateServicePlansRequest) UpdateServicePlansRequest(updateServicePla
 	return r
 }
 
-func (r ApiUpdateServicePlansRequest) Execute() (*AddServicePlans200Response, *http.Response, error) {
+func (r ApiUpdateServicePlansRequest) Execute() (*UpdateServicePlans200Response, *http.Response, error) {
 	return r.ApiService.UpdateServicePlansExecute(r)
 }
 
@@ -908,13 +908,13 @@ func (a *ServicePlansAPIService) UpdateServicePlans(ctx context.Context, id int6
 
 // Execute executes the request
 //
-//	@return AddServicePlans200Response
-func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePlansRequest) (*AddServicePlans200Response, *http.Response, error) {
+//	@return UpdateServicePlans200Response
+func (a *ServicePlansAPIService) UpdateServicePlansExecute(r ApiUpdateServicePlansRequest) (*UpdateServicePlans200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddServicePlans200Response
+		localVarReturnValue *UpdateServicePlans200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicePlansAPIService.UpdateServicePlans")

@@ -1,4 +1,4 @@
-# AddServicePlans200ResponseAllOfServicePlan
+# GetServicePlans200ResponseServicePlan
 
 ## Properties
 
@@ -34,909 +34,909 @@ Name | Type | Description | Notes
 **PriceSets** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner.md) |  | [optional] 
 **Config** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerConfig**](ListServicePlans200ResponseAllOfServicePlansInnerConfig.md) |  | [optional] 
 **Zones** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Permissions** | Pointer to [**AddServicePlans200ResponseAllOfServicePlanPermissions**](AddServicePlans200ResponseAllOfServicePlanPermissions.md) |  | [optional] 
+**Permissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissions**](GetServicePlans200ResponseServicePlanPermissions.md) |  | [optional] 
 
 ## Methods
 
-### NewAddServicePlans200ResponseAllOfServicePlan
+### NewGetServicePlans200ResponseServicePlan
 
-`func NewAddServicePlans200ResponseAllOfServicePlan() *AddServicePlans200ResponseAllOfServicePlan`
+`func NewGetServicePlans200ResponseServicePlan() *GetServicePlans200ResponseServicePlan`
 
-NewAddServicePlans200ResponseAllOfServicePlan instantiates a new AddServicePlans200ResponseAllOfServicePlan object
+NewGetServicePlans200ResponseServicePlan instantiates a new GetServicePlans200ResponseServicePlan object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddServicePlans200ResponseAllOfServicePlanWithDefaults
+### NewGetServicePlans200ResponseServicePlanWithDefaults
 
-`func NewAddServicePlans200ResponseAllOfServicePlanWithDefaults() *AddServicePlans200ResponseAllOfServicePlan`
+`func NewGetServicePlans200ResponseServicePlanWithDefaults() *GetServicePlans200ResponseServicePlan`
 
-NewAddServicePlans200ResponseAllOfServicePlanWithDefaults instantiates a new AddServicePlans200ResponseAllOfServicePlan object
+NewGetServicePlans200ResponseServicePlanWithDefaults instantiates a new GetServicePlans200ResponseServicePlan object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetId() int64`
+`func (o *GetServicePlans200ResponseServicePlan) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetIdOk() (*int64, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetId(v int64)`
+`func (o *GetServicePlans200ResponseServicePlan) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasId() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetName() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetNameOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetName(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasName() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCode() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetCode() string`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCodeOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCodeOk() (*string, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCode(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCode(v string)`
 
 SetCode sets Code field to given value.
 
 ### HasCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCode() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
 
 ### GetActive
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetActive() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetActive() bool`
 
 GetActive returns the Active field if non-nil, zero value otherwise.
 
 ### GetActiveOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetActiveOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetActiveOk() (*bool, bool)`
 
 GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActive
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetActive(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetActive(v bool)`
 
 SetActive sets Active field to given value.
 
 ### HasActive
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasActive() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
 
 ### GetSortOrder
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrder() int64`
+`func (o *GetServicePlans200ResponseServicePlan) GetSortOrder() int64`
 
 GetSortOrder returns the SortOrder field if non-nil, zero value otherwise.
 
 ### GetSortOrderOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetSortOrderOk() (*int64, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetSortOrderOk() (*int64, bool)`
 
 GetSortOrderOk returns a tuple with the SortOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSortOrder
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetSortOrder(v int64)`
+`func (o *GetServicePlans200ResponseServicePlan) SetSortOrder(v int64)`
 
 SetSortOrder sets SortOrder field to given value.
 
 ### HasSortOrder
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasSortOrder() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasSortOrder() bool`
 
 HasSortOrder returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescription() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetDescriptionOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetDescription(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasDescription() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorage() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() float32`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxStorageOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*float32, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxStorage(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v float32)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
 ### HasMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMaxStorage() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxStorage() bool`
 
 HasMaxStorage returns a boolean if a field has been set.
 
 ### GetMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemory() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() float32`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxMemoryOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*float32, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxMemory(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v float32)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
 ### HasMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMaxMemory() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxMemory() bool`
 
 HasMaxMemory returns a boolean if a field has been set.
 
 ### GetMaxCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpu() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() float32`
 
 GetMaxCpu returns the MaxCpu field if non-nil, zero value otherwise.
 
 ### GetMaxCpuOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCpuOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*float32, bool)`
 
 GetMaxCpuOk returns a tuple with the MaxCpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCpu(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v float32)`
 
 SetMaxCpu sets MaxCpu field to given value.
 
 ### HasMaxCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMaxCpu() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxCpu() bool`
 
 HasMaxCpu returns a boolean if a field has been set.
 
 ### SetMaxCpuNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCpuNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCpuNil(b bool)`
 
  SetMaxCpuNil sets the value for MaxCpu to be an explicit nil
 
 ### UnsetMaxCpu
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxCpu()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCpu()`
 
 UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
 ### GetMaxCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCores() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() float32`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxCoresOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*float32, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCores(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v float32)`
 
 SetMaxCores sets MaxCores field to given value.
 
 ### HasMaxCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMaxCores() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxCores() bool`
 
 HasMaxCores returns a boolean if a field has been set.
 
 ### SetMaxCoresNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxCoresNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCoresNil(b bool)`
 
  SetMaxCoresNil sets the value for MaxCores to be an explicit nil
 
 ### UnsetMaxCores
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxCores()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCores()`
 
 UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMaxDisks
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisks() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() float32`
 
 GetMaxDisks returns the MaxDisks field if non-nil, zero value otherwise.
 
 ### GetMaxDisksOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMaxDisksOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*float32, bool)`
 
 GetMaxDisksOk returns a tuple with the MaxDisks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxDisks
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxDisks(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v float32)`
 
 SetMaxDisks sets MaxDisks field to given value.
 
 ### HasMaxDisks
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMaxDisks() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxDisks() bool`
 
 HasMaxDisks returns a boolean if a field has been set.
 
 ### SetMaxDisksNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMaxDisksNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxDisksNil(b bool)`
 
  SetMaxDisksNil sets the value for MaxDisks to be an explicit nil
 
 ### UnsetMaxDisks
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMaxDisks()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetMaxDisks()`
 
 UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetCoresPerSocket
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocket() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() float32`
 
 GetCoresPerSocket returns the CoresPerSocket field if non-nil, zero value otherwise.
 
 ### GetCoresPerSocketOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCoresPerSocketOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*float32, bool)`
 
 GetCoresPerSocketOk returns a tuple with the CoresPerSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCoresPerSocket
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCoresPerSocket(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v float32)`
 
 SetCoresPerSocket sets CoresPerSocket field to given value.
 
 ### HasCoresPerSocket
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCoresPerSocket() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCoresPerSocket() bool`
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
 ### GetCustomCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpu() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomCpu() bool`
 
 GetCustomCpu returns the CustomCpu field if non-nil, zero value otherwise.
 
 ### GetCustomCpuOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCpuOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomCpuOk() (*bool, bool)`
 
 GetCustomCpuOk returns a tuple with the CustomCpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomCpu(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomCpu(v bool)`
 
 SetCustomCpu sets CustomCpu field to given value.
 
 ### HasCustomCpu
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCustomCpu() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCustomCpu() bool`
 
 HasCustomCpu returns a boolean if a field has been set.
 
 ### GetCustomCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCores() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomCores() bool`
 
 GetCustomCores returns the CustomCores field if non-nil, zero value otherwise.
 
 ### GetCustomCoresOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomCoresOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomCoresOk() (*bool, bool)`
 
 GetCustomCoresOk returns a tuple with the CustomCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomCores(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomCores(v bool)`
 
 SetCustomCores sets CustomCores field to given value.
 
 ### HasCustomCores
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCustomCores() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCustomCores() bool`
 
 HasCustomCores returns a boolean if a field has been set.
 
 ### GetCustomMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorage() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxStorage() bool`
 
 GetCustomMaxStorage returns the CustomMaxStorage field if non-nil, zero value otherwise.
 
 ### GetCustomMaxStorageOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxStorageOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxStorageOk() (*bool, bool)`
 
 GetCustomMaxStorageOk returns a tuple with the CustomMaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxStorage(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxStorage(v bool)`
 
 SetCustomMaxStorage sets CustomMaxStorage field to given value.
 
 ### HasCustomMaxStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCustomMaxStorage() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCustomMaxStorage() bool`
 
 HasCustomMaxStorage returns a boolean if a field has been set.
 
 ### SetCustomMaxStorageNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxStorageNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxStorageNil(b bool)`
 
  SetCustomMaxStorageNil sets the value for CustomMaxStorage to be an explicit nil
 
 ### UnsetCustomMaxStorage
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxStorage()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxStorage()`
 
 UnsetCustomMaxStorage ensures that no value is present for CustomMaxStorage, not even an explicit nil
 ### GetCustomMaxDataStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorage() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxDataStorage() bool`
 
 GetCustomMaxDataStorage returns the CustomMaxDataStorage field if non-nil, zero value otherwise.
 
 ### GetCustomMaxDataStorageOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxDataStorageOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxDataStorageOk() (*bool, bool)`
 
 GetCustomMaxDataStorageOk returns a tuple with the CustomMaxDataStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomMaxDataStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxDataStorage(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxDataStorage(v bool)`
 
 SetCustomMaxDataStorage sets CustomMaxDataStorage field to given value.
 
 ### HasCustomMaxDataStorage
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCustomMaxDataStorage() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCustomMaxDataStorage() bool`
 
 HasCustomMaxDataStorage returns a boolean if a field has been set.
 
 ### SetCustomMaxDataStorageNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxDataStorageNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxDataStorageNil(b bool)`
 
  SetCustomMaxDataStorageNil sets the value for CustomMaxDataStorage to be an explicit nil
 
 ### UnsetCustomMaxDataStorage
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxDataStorage()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxDataStorage()`
 
 UnsetCustomMaxDataStorage ensures that no value is present for CustomMaxDataStorage, not even an explicit nil
 ### GetCustomMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemory() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxMemory() bool`
 
 GetCustomMaxMemory returns the CustomMaxMemory field if non-nil, zero value otherwise.
 
 ### GetCustomMaxMemoryOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCustomMaxMemoryOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCustomMaxMemoryOk() (*bool, bool)`
 
 GetCustomMaxMemoryOk returns a tuple with the CustomMaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxMemory(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxMemory(v bool)`
 
 SetCustomMaxMemory sets CustomMaxMemory field to given value.
 
 ### HasCustomMaxMemory
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCustomMaxMemory() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCustomMaxMemory() bool`
 
 HasCustomMaxMemory returns a boolean if a field has been set.
 
 ### SetCustomMaxMemoryNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCustomMaxMemoryNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCustomMaxMemoryNil(b bool)`
 
  SetCustomMaxMemoryNil sets the value for CustomMaxMemory to be an explicit nil
 
 ### UnsetCustomMaxMemory
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCustomMaxMemory()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetCustomMaxMemory()`
 
 UnsetCustomMaxMemory ensures that no value is present for CustomMaxMemory, not even an explicit nil
 ### GetAddVolumes
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumes() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetAddVolumes() bool`
 
 GetAddVolumes returns the AddVolumes field if non-nil, zero value otherwise.
 
 ### GetAddVolumesOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetAddVolumesOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetAddVolumesOk() (*bool, bool)`
 
 GetAddVolumesOk returns a tuple with the AddVolumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddVolumes
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetAddVolumes(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetAddVolumes(v bool)`
 
 SetAddVolumes sets AddVolumes field to given value.
 
 ### HasAddVolumes
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasAddVolumes() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasAddVolumes() bool`
 
 HasAddVolumes returns a boolean if a field has been set.
 
 ### SetAddVolumesNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetAddVolumesNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetAddVolumesNil(b bool)`
 
  SetAddVolumesNil sets the value for AddVolumes to be an explicit nil
 
 ### UnsetAddVolumes
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetAddVolumes()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetAddVolumes()`
 
 UnsetAddVolumes ensures that no value is present for AddVolumes, not even an explicit nil
 ### GetMemoryOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSource() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetMemoryOptionSource() string`
 
 GetMemoryOptionSource returns the MemoryOptionSource field if non-nil, zero value otherwise.
 
 ### GetMemoryOptionSourceOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetMemoryOptionSourceOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMemoryOptionSourceOk() (*string, bool)`
 
 GetMemoryOptionSourceOk returns a tuple with the MemoryOptionSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemoryOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMemoryOptionSource(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMemoryOptionSource(v string)`
 
 SetMemoryOptionSource sets MemoryOptionSource field to given value.
 
 ### HasMemoryOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasMemoryOptionSource() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasMemoryOptionSource() bool`
 
 HasMemoryOptionSource returns a boolean if a field has been set.
 
 ### SetMemoryOptionSourceNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetMemoryOptionSourceNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMemoryOptionSourceNil(b bool)`
 
  SetMemoryOptionSourceNil sets the value for MemoryOptionSource to be an explicit nil
 
 ### UnsetMemoryOptionSource
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetMemoryOptionSource()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetMemoryOptionSource()`
 
 UnsetMemoryOptionSource ensures that no value is present for MemoryOptionSource, not even an explicit nil
 ### GetCpuOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSource() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetCpuOptionSource() string`
 
 GetCpuOptionSource returns the CpuOptionSource field if non-nil, zero value otherwise.
 
 ### GetCpuOptionSourceOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetCpuOptionSourceOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCpuOptionSourceOk() (*string, bool)`
 
 GetCpuOptionSourceOk returns a tuple with the CpuOptionSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCpuOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCpuOptionSource(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCpuOptionSource(v string)`
 
 SetCpuOptionSource sets CpuOptionSource field to given value.
 
 ### HasCpuOptionSource
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasCpuOptionSource() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasCpuOptionSource() bool`
 
 HasCpuOptionSource returns a boolean if a field has been set.
 
 ### SetCpuOptionSourceNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetCpuOptionSourceNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCpuOptionSourceNil(b bool)`
 
  SetCpuOptionSourceNil sets the value for CpuOptionSource to be an explicit nil
 
 ### UnsetCpuOptionSource
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetCpuOptionSource()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetCpuOptionSource()`
 
 UnsetCpuOptionSource ensures that no value is present for CpuOptionSource, not even an explicit nil
 ### GetDateCreated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreated() time.Time`
+`func (o *GetServicePlans200ResponseServicePlan) GetDateCreated() time.Time`
 
 GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
 
 ### GetDateCreatedOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetDateCreatedOk() (*time.Time, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetDateCreatedOk() (*time.Time, bool)`
 
 GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDateCreated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetDateCreated(v time.Time)`
+`func (o *GetServicePlans200ResponseServicePlan) SetDateCreated(v time.Time)`
 
 SetDateCreated sets DateCreated field to given value.
 
 ### HasDateCreated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasDateCreated() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasDateCreated() bool`
 
 HasDateCreated returns a boolean if a field has been set.
 
 ### GetLastUpdated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdated() time.Time`
+`func (o *GetServicePlans200ResponseServicePlan) GetLastUpdated() time.Time`
 
 GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
 
 ### GetLastUpdatedOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetLastUpdatedOk() (*time.Time, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetLastUpdatedOk() (*time.Time, bool)`
 
 GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastUpdated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetLastUpdated(v time.Time)`
+`func (o *GetServicePlans200ResponseServicePlan) SetLastUpdated(v time.Time)`
 
 SetLastUpdated sets LastUpdated field to given value.
 
 ### HasLastUpdated
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasLastUpdated() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasLastUpdated() bool`
 
 HasLastUpdated returns a boolean if a field has been set.
 
 ### GetRegionCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCode() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetRegionCode() string`
 
 GetRegionCode returns the RegionCode field if non-nil, zero value otherwise.
 
 ### GetRegionCodeOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetRegionCodeOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetRegionCodeOk() (*string, bool)`
 
 GetRegionCodeOk returns a tuple with the RegionCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegionCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetRegionCode(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetRegionCode(v string)`
 
 SetRegionCode sets RegionCode field to given value.
 
 ### HasRegionCode
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasRegionCode() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasRegionCode() bool`
 
 HasRegionCode returns a boolean if a field has been set.
 
 ### SetRegionCodeNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetRegionCodeNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetRegionCodeNil(b bool)`
 
  SetRegionCodeNil sets the value for RegionCode to be an explicit nil
 
 ### UnsetRegionCode
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetRegionCode()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetRegionCode()`
 
 UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetVisibility
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibility() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetVisibility() string`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetVisibilityOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetVisibilityOk() (*string, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetVisibility(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetVisibility(v string)`
 
 SetVisibility sets Visibility field to given value.
 
 ### HasVisibility
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasVisibility() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
 
 ### GetEditable
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditable() bool`
+`func (o *GetServicePlans200ResponseServicePlan) GetEditable() bool`
 
 GetEditable returns the Editable field if non-nil, zero value otherwise.
 
 ### GetEditableOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetEditableOk() (*bool, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetEditableOk() (*bool, bool)`
 
 GetEditableOk returns a tuple with the Editable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEditable
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetEditable(v bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetEditable(v bool)`
 
 SetEditable sets Editable field to given value.
 
 ### HasEditable
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasEditable() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasEditable() bool`
 
 HasEditable returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType`
+`func (o *GetServicePlans200ResponseServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)`
+`func (o *GetServicePlans200ResponseServicePlan) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
 ### HasProvisionType
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasProvisionType() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasProvisionType() bool`
 
 HasProvisionType returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenants() string`
+`func (o *GetServicePlans200ResponseServicePlan) GetTenants() string`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetTenantsOk() (*string, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetTenantsOk() (*string, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetTenants(v string)`
+`func (o *GetServicePlans200ResponseServicePlan) SetTenants(v string)`
 
 SetTenants sets Tenants field to given value.
 
 ### HasTenants
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasTenants() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasTenants() bool`
 
 HasTenants returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner`
+`func (o *GetServicePlans200ResponseServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetPriceSetsOk() (*[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetPriceSetsOk() (*[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner)`
+`func (o *GetServicePlans200ResponseServicePlan) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 
 ### HasPriceSets
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasPriceSets() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasPriceSets() bool`
 
 HasPriceSets returns a boolean if a field has been set.
 
 ### SetPriceSetsNil
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetPriceSetsNil(b bool)`
+`func (o *GetServicePlans200ResponseServicePlan) SetPriceSetsNil(b bool)`
 
  SetPriceSetsNil sets the value for PriceSets to be an explicit nil
 
 ### UnsetPriceSets
-`func (o *AddServicePlans200ResponseAllOfServicePlan) UnsetPriceSets()`
+`func (o *GetServicePlans200ResponseServicePlan) UnsetPriceSets()`
 
 UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
 ### GetConfig
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig`
+`func (o *GetServicePlans200ResponseServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig)`
+`func (o *GetServicePlans200ResponseServicePlan) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig)`
 
 SetConfig sets Config field to given value.
 
 ### HasConfig
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasConfig() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *GetServicePlans200ResponseServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetZonesOk() (*[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetZonesOk() (*[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *GetServicePlans200ResponseServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetZones sets Zones field to given value.
 
 ### HasZones
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasZones() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasZones() bool`
 
 HasZones returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissions() AddServicePlans200ResponseAllOfServicePlanPermissions`
+`func (o *GetServicePlans200ResponseServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) GetPermissionsOk() (*AddServicePlans200ResponseAllOfServicePlanPermissions, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) SetPermissions(v AddServicePlans200ResponseAllOfServicePlanPermissions)`
+`func (o *GetServicePlans200ResponseServicePlan) SetPermissions(v GetServicePlans200ResponseServicePlanPermissions)`
 
 SetPermissions sets Permissions field to given value.
 
 ### HasPermissions
 
-`func (o *AddServicePlans200ResponseAllOfServicePlan) HasPermissions() bool`
+`func (o *GetServicePlans200ResponseServicePlan) HasPermissions() bool`
 
 HasPermissions returns a boolean if a field has been set.
 

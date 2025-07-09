@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ## UpdateServicePlans
 
-> AddServicePlans200Response UpdateServicePlans(ctx, id).UpdateServicePlansRequest(updateServicePlansRequest).Execute()
+> UpdateServicePlans200Response UpdateServicePlans(ctx, id).UpdateServicePlansRequest(updateServicePlansRequest).Execute()
 
 Updates a Service Plan
 
@@ -473,7 +473,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicePlansAPI.UpdateServicePlans``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateServicePlans`: AddServicePlans200Response
+	// response from `UpdateServicePlans`: UpdateServicePlans200Response
 	fmt.Fprintf(os.Stdout, "Response from `ServicePlansAPI.UpdateServicePlans`: %v\n", resp)
 }
 ```
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddServicePlans200Response**](AddServicePlans200Response.md)
+[**UpdateServicePlans200Response**](UpdateServicePlans200Response.md)
 
 ### Authorization
 
