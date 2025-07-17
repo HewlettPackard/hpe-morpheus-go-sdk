@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name | [optional] 
 **DisplayName** | Pointer to **string** | Network Display Name | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
+**Group** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerGroup**](ListNetworks200ResponseAllOfNetworksInnerGroup.md) |  | [optional] 
 **Zone** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZone**](ListNetworks200ResponseAllOfNetworksInnerZone.md) |  | [optional] 
 **Type** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerType**](ListNetworks200ResponseAllOfNetworksInnerType.md) |  | [optional] 
 **Owner** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerOwner**](ListNetworks200ResponseAllOfNetworksInnerOwner.md) |  | [optional] 
@@ -67,6 +68,7 @@ Name | Type | Description | Notes
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerConfig**](ListNetworks200ResponseAllOfNetworksInnerConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ResourcePermission** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerResourcePermission**](ListNetworks200ResponseAllOfNetworksInnerResourcePermission.md) |  | [optional] 
 
 ## Methods
 
@@ -197,6 +199,31 @@ HasLabels returns a boolean if a field has been set.
 `func (o *Network) UnsetLabels()`
 
 UnsetLabels ensures that no value is present for Labels, not even an explicit nil
+### GetGroup
+
+`func (o *Network) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup`
+
+GetGroup returns the Group field if non-nil, zero value otherwise.
+
+### GetGroupOk
+
+`func (o *Network) GetGroupOk() (*ListNetworks200ResponseAllOfNetworksInnerGroup, bool)`
+
+GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroup
+
+`func (o *Network) SetGroup(v ListNetworks200ResponseAllOfNetworksInnerGroup)`
+
+SetGroup sets Group field to given value.
+
+### HasGroup
+
+`func (o *Network) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
+
 ### GetZone
 
 `func (o *Network) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone`
@@ -2021,6 +2048,31 @@ SetTenants sets Tenants field to given value.
 `func (o *Network) HasTenants() bool`
 
 HasTenants returns a boolean if a field has been set.
+
+### GetResourcePermission
+
+`func (o *Network) GetResourcePermission() ListNetworks200ResponseAllOfNetworksInnerResourcePermission`
+
+GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
+
+### GetResourcePermissionOk
+
+`func (o *Network) GetResourcePermissionOk() (*ListNetworks200ResponseAllOfNetworksInnerResourcePermission, bool)`
+
+GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePermission
+
+`func (o *Network) SetResourcePermission(v ListNetworks200ResponseAllOfNetworksInnerResourcePermission)`
+
+SetResourcePermission sets ResourcePermission field to given value.
+
+### HasResourcePermission
+
+`func (o *Network) HasResourcePermission() bool`
+
+HasResourcePermission returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

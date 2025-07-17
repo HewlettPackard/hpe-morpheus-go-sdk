@@ -33,7 +33,7 @@ type AddRolesRequestRole struct {
 	BaseRoleId *int64 `json:"baseRoleId,omitempty"`
 	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant*
 	Multitenant *bool `json:"multitenant,omitempty"`
-	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant*
+	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant*
 	MultitenantLocked *bool          `json:"multitenantLocked,omitempty"`
 	DefaultPersona    NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.

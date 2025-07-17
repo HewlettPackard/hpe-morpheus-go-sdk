@@ -27,6 +27,7 @@ type Network struct {
 	// Network Display Name
 	DisplayName *string                                         `json:"displayName,omitempty"`
 	Labels      []string                                        `json:"labels,omitempty"`
+	Group       *ListNetworks200ResponseAllOfNetworksInnerGroup `json:"group,omitempty"`
 	Zone        *ListNetworks200ResponseAllOfNetworksInnerZone  `json:"zone,omitempty"`
 	Type        *ListNetworks200ResponseAllOfNetworksInnerType  `json:"type,omitempty"`
 	Owner       *ListNetworks200ResponseAllOfNetworksInnerOwner `json:"owner,omitempty"`
@@ -72,31 +73,32 @@ type Network struct {
 	// Secondary IPv6 DNS Server
 	DnsSecondaryIPv6 NullableString `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
-	CidrIPv6                NullableString                                          `json:"cidrIPv6,omitempty"`
-	TftpServer              NullableString                                          `json:"tftpServer,omitempty"`
-	BootFile                NullableString                                          `json:"bootFile,omitempty"`
-	SwitchId                NullableString                                          `json:"switchId,omitempty"`
-	FabricId                NullableString                                          `json:"fabricId,omitempty"`
-	NetworkRole             NullableString                                          `json:"networkRole,omitempty"`
-	Status                  *string                                                 `json:"status,omitempty"`
-	AvailabilityZone        NullableString                                          `json:"availabilityZone,omitempty"`
-	Pool                    map[string]interface{}                                  `json:"pool,omitempty"`
-	PoolIPv6                map[string]interface{}                                  `json:"poolIPv6,omitempty"`
-	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy  `json:"networkProxy,omitempty"`
-	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
-	SearchDomains           NullableString                                          `json:"searchDomains,omitempty"`
-	PrefixLength            NullableString                                          `json:"prefixLength,omitempty"`
-	Visibility              *string                                                 `json:"visibility,omitempty"`
-	EnableAdmin             *bool                                                   `json:"enableAdmin,omitempty"`
-	Active                  *bool                                                   `json:"active,omitempty"`
-	DefaultNetwork          *bool                                                   `json:"defaultNetwork,omitempty"`
-	AssignPublicIp          *bool                                                   `json:"assignPublicIp,omitempty"`
-	NoProxy                 NullableString                                          `json:"noProxy,omitempty"`
-	ApplianceUrlProxyBypass *bool                                                   `json:"applianceUrlProxyBypass,omitempty"`
-	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance      `json:"zonePool,omitempty"`
-	AllowStaticOverride     *bool                                                   `json:"allowStaticOverride,omitempty"`
-	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig        `json:"config,omitempty"`
-	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance     `json:"tenants,omitempty"`
+	CidrIPv6                NullableString                                               `json:"cidrIPv6,omitempty"`
+	TftpServer              NullableString                                               `json:"tftpServer,omitempty"`
+	BootFile                NullableString                                               `json:"bootFile,omitempty"`
+	SwitchId                NullableString                                               `json:"switchId,omitempty"`
+	FabricId                NullableString                                               `json:"fabricId,omitempty"`
+	NetworkRole             NullableString                                               `json:"networkRole,omitempty"`
+	Status                  *string                                                      `json:"status,omitempty"`
+	AvailabilityZone        NullableString                                               `json:"availabilityZone,omitempty"`
+	Pool                    map[string]interface{}                                       `json:"pool,omitempty"`
+	PoolIPv6                map[string]interface{}                                       `json:"poolIPv6,omitempty"`
+	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy       `json:"networkProxy,omitempty"`
+	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain      `json:"networkDomain,omitempty"`
+	SearchDomains           NullableString                                               `json:"searchDomains,omitempty"`
+	PrefixLength            NullableString                                               `json:"prefixLength,omitempty"`
+	Visibility              *string                                                      `json:"visibility,omitempty"`
+	EnableAdmin             *bool                                                        `json:"enableAdmin,omitempty"`
+	Active                  *bool                                                        `json:"active,omitempty"`
+	DefaultNetwork          *bool                                                        `json:"defaultNetwork,omitempty"`
+	AssignPublicIp          *bool                                                        `json:"assignPublicIp,omitempty"`
+	NoProxy                 NullableString                                               `json:"noProxy,omitempty"`
+	ApplianceUrlProxyBypass *bool                                                        `json:"applianceUrlProxyBypass,omitempty"`
+	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"zonePool,omitempty"`
+	AllowStaticOverride     *bool                                                        `json:"allowStaticOverride,omitempty"`
+	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig             `json:"config,omitempty"`
+	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenants,omitempty"`
+	ResourcePermission      *ListNetworks200ResponseAllOfNetworksInnerResourcePermission `json:"resourcePermission,omitempty"`
 	AdditionalProperties    map[string]interface{}
 }
 
@@ -246,6 +248,38 @@ func (o *Network) IsSetLabels() bool {
 // SetLabels gets a reference to the given []string and assigns it to the Labels field.
 func (o *Network) SetLabels(v []string) {
 	o.Labels = v
+}
+
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *Network) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup {
+	if o == nil || IsNil(o.Group) {
+		var ret ListNetworks200ResponseAllOfNetworksInnerGroup
+		return ret
+	}
+	return *o.Group
+}
+
+// GetGroupOk returns a tuple with the Group field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Network) GetGroupOk() (*ListNetworks200ResponseAllOfNetworksInnerGroup, bool) {
+	if o == nil || IsNil(o.Group) {
+		return nil, false
+	}
+	return o.Group, true
+}
+
+// IsSetGroup returns a boolean if a field has been set.
+func (o *Network) IsSetGroup() bool {
+	if o != nil && !IsNil(o.Group) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroup gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerGroup and assigns it to the Group field.
+func (o *Network) SetGroup(v ListNetworks200ResponseAllOfNetworksInnerGroup) {
+	o.Group = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -2501,6 +2535,38 @@ func (o *Network) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstan
 	o.Tenants = v
 }
 
+// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
+func (o *Network) GetResourcePermission() ListNetworks200ResponseAllOfNetworksInnerResourcePermission {
+	if o == nil || IsNil(o.ResourcePermission) {
+		var ret ListNetworks200ResponseAllOfNetworksInnerResourcePermission
+		return ret
+	}
+	return *o.ResourcePermission
+}
+
+// GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Network) GetResourcePermissionOk() (*ListNetworks200ResponseAllOfNetworksInnerResourcePermission, bool) {
+	if o == nil || IsNil(o.ResourcePermission) {
+		return nil, false
+	}
+	return o.ResourcePermission, true
+}
+
+// IsSetResourcePermission returns a boolean if a field has been set.
+func (o *Network) IsSetResourcePermission() bool {
+	if o != nil && !IsNil(o.ResourcePermission) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourcePermission gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerResourcePermission and assigns it to the ResourcePermission field.
+func (o *Network) SetResourcePermission(v ListNetworks200ResponseAllOfNetworksInnerResourcePermission) {
+	o.ResourcePermission = &v
+}
+
 func (o Network) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -2522,6 +2588,9 @@ func (o Network) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
+	}
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone
@@ -2700,6 +2769,9 @@ func (o Network) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
+	if !IsNil(o.ResourcePermission) {
+		toSerialize["resourcePermission"] = o.ResourcePermission
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -2725,6 +2797,7 @@ func (o *Network) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "displayName")
 		delete(additionalProperties, "labels")
+		delete(additionalProperties, "group")
 		delete(additionalProperties, "zone")
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "owner")
@@ -2784,6 +2857,7 @@ func (o *Network) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "allowStaticOverride")
 		delete(additionalProperties, "config")
 		delete(additionalProperties, "tenants")
+		delete(additionalProperties, "resourcePermission")
 		o.AdditionalProperties = additionalProperties
 	}
 
