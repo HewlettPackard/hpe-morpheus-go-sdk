@@ -67,7 +67,7 @@ type UpdateWhitelabelSettingsRequestWhitelabelSettings struct {
 	// Privacy policy content
 	PrivacyPolicy        *string                                                                  `json:"privacyPolicy,omitempty"`
 	SupportMenuLinks     []UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner `json:"supportMenuLinks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _UpdateWhitelabelSettingsRequestWhitelabelSettings UpdateWhitelabelSettingsRequestWhitelabelSettings
@@ -947,83 +947,7 @@ func (o UpdateWhitelabelSettingsRequestWhitelabelSettings) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
-	varUpdateWhitelabelSettingsRequestWhitelabelSettings := _UpdateWhitelabelSettingsRequestWhitelabelSettings{}
-
-	err = json.Unmarshal(data, &varUpdateWhitelabelSettingsRequestWhitelabelSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateWhitelabelSettingsRequestWhitelabelSettings(varUpdateWhitelabelSettingsRequestWhitelabelSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "applianceName")
-		delete(additionalProperties, "disableSupportMenu")
-		delete(additionalProperties, "resetHeaderLogo")
-		delete(additionalProperties, "resetFooterLogo")
-		delete(additionalProperties, "resetLoginLogo")
-		delete(additionalProperties, "resetFavicon")
-		delete(additionalProperties, "headerBgColor")
-		delete(additionalProperties, "headerFgColor")
-		delete(additionalProperties, "navBgColor")
-		delete(additionalProperties, "navFgColor")
-		delete(additionalProperties, "navHoverColor")
-		delete(additionalProperties, "primaryButtonBgColor")
-		delete(additionalProperties, "primaryButtonFgColor")
-		delete(additionalProperties, "primaryButtonHoverBgColor")
-		delete(additionalProperties, "primaryButtonHoverFgColor")
-		delete(additionalProperties, "footerBgColor")
-		delete(additionalProperties, "footerFgColor")
-		delete(additionalProperties, "loginBgColor")
-		delete(additionalProperties, "copyrightString")
-		delete(additionalProperties, "overrideCss")
-		delete(additionalProperties, "termsOfUse")
-		delete(additionalProperties, "privacyPolicy")
-		delete(additionalProperties, "supportMenuLinks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateWhitelabelSettingsRequestWhitelabelSettings struct {
-	value *UpdateWhitelabelSettingsRequestWhitelabelSettings
-	isSet bool
-}
-
-func (v NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) Get() *UpdateWhitelabelSettingsRequestWhitelabelSettings {
-	return v.value
-}
-
-func (v *NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) Set(val *UpdateWhitelabelSettingsRequestWhitelabelSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateWhitelabelSettingsRequestWhitelabelSettings(val *UpdateWhitelabelSettingsRequestWhitelabelSettings) *NullableUpdateWhitelabelSettingsRequestWhitelabelSettings {
-	return &NullableUpdateWhitelabelSettingsRequestWhitelabelSettings{value: val, isSet: true}
-}
-
-func (v NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

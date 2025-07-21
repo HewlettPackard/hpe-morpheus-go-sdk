@@ -34,7 +34,7 @@ type ZoneFolder struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ZoneFolder ZoneFolder
@@ -564,73 +564,7 @@ func (o ZoneFolder) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneFolder) UnmarshalJSON(data []byte) (err error) {
-	varZoneFolder := _ZoneFolder{}
-
-	err = json.Unmarshal(data, &varZoneFolder)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneFolder(varZoneFolder)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultFolder")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableZoneFolder struct {
-	value *ZoneFolder
-	isSet bool
-}
-
-func (v NullableZoneFolder) Get() *ZoneFolder {
-	return v.value
-}
-
-func (v *NullableZoneFolder) Set(val *ZoneFolder) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneFolder) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneFolder) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneFolder(val *ZoneFolder) *NullableZoneFolder {
-	return &NullableZoneFolder{value: val, isSet: true}
-}
-
-func (v NullableZoneFolder) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneFolder) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

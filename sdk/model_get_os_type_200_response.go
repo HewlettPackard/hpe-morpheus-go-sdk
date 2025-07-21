@@ -21,7 +21,7 @@ var _ MappedNullable = &GetOsType200Response{}
 // GetOsType200Response struct for GetOsType200Response
 type GetOsType200Response struct {
 	OsType               *ListOsTypes200ResponseAllOfOsTypesInner `json:"osType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetOsType200Response GetOsType200Response
@@ -96,60 +96,7 @@ func (o GetOsType200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetOsType200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetOsType200Response := _GetOsType200Response{}
-
-	err = json.Unmarshal(data, &varGetOsType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetOsType200Response(varGetOsType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "osType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetOsType200Response struct {
-	value *GetOsType200Response
-	isSet bool
-}
-
-func (v NullableGetOsType200Response) Get() *GetOsType200Response {
-	return v.value
-}
-
-func (v *NullableGetOsType200Response) Set(val *GetOsType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetOsType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetOsType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetOsType200Response(val *GetOsType200Response) *NullableGetOsType200Response {
-	return &NullableGetOsType200Response{value: val, isSet: true}
-}
-
-func (v NullableGetOsType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetOsType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

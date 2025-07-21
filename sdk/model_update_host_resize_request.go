@@ -28,7 +28,7 @@ type UpdateHostResizeRequest struct {
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configurations. Include id to update an existing interface.
 	NetworkInterfaces    []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _UpdateHostResizeRequest UpdateHostResizeRequest
@@ -247,64 +247,7 @@ func (o UpdateHostResizeRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateHostResizeRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostResizeRequest := _UpdateHostResizeRequest{}
-
-	err = json.Unmarshal(data, &varUpdateHostResizeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostResizeRequest(varUpdateHostResizeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "servicePlanOptions")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "deleteOriginalVolumes")
-		delete(additionalProperties, "networkInterfaces")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostResizeRequest struct {
-	value *UpdateHostResizeRequest
-	isSet bool
-}
-
-func (v NullableUpdateHostResizeRequest) Get() *UpdateHostResizeRequest {
-	return v.value
-}
-
-func (v *NullableUpdateHostResizeRequest) Set(val *UpdateHostResizeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostResizeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostResizeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostResizeRequest(val *UpdateHostResizeRequest) *NullableUpdateHostResizeRequest {
-	return &NullableUpdateHostResizeRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostResizeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostResizeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateCredentialsRequest type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &UpdateCredentialsRequest{}
 // UpdateCredentialsRequest struct for UpdateCredentialsRequest
 type UpdateCredentialsRequest struct {
 	Credential           UpdateCredentialsRequestCredential `json:"credential"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _UpdateCredentialsRequest UpdateCredentialsRequest
@@ -88,81 +87,7 @@ func (o UpdateCredentialsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateCredentialsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"credential",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateCredentialsRequest := _UpdateCredentialsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateCredentialsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCredentialsRequest(varUpdateCredentialsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateCredentialsRequest struct {
-	value *UpdateCredentialsRequest
-	isSet bool
-}
-
-func (v NullableUpdateCredentialsRequest) Get() *UpdateCredentialsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateCredentialsRequest) Set(val *UpdateCredentialsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCredentialsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCredentialsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCredentialsRequest(val *UpdateCredentialsRequest) *NullableUpdateCredentialsRequest {
-	return &NullableUpdateCredentialsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateCredentialsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCredentialsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

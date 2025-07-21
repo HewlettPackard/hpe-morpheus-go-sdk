@@ -41,6 +41,22 @@ func UpdateRoleCloudAccessRequestOneOf1AsUpdateRoleCloudAccessRequest(v *UpdateR
 	}
 }
 
+func (dst *UpdateRoleCloudAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleCloudAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleCloudAccessRequestOneOf); ok {
+		dst.UpdateRoleCloudAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleCloudAccessRequestOneOf1); ok {
+		dst.UpdateRoleCloudAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleCloudAccessRequest) UnmarshalJSON(data []byte) error {
 	var err error

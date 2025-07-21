@@ -26,7 +26,7 @@ type ListIntegrationObjects200ResponseObjectsInnerLayout struct {
 	ProvisionType        *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
 	InstanceType         *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
 	InstanceVersion      *string                                                     `json:"instanceVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListIntegrationObjects200ResponseObjectsInnerLayout ListIntegrationObjects200ResponseObjectsInnerLayout
@@ -276,65 +276,7 @@ func (o ListIntegrationObjects200ResponseObjectsInnerLayout) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *ListIntegrationObjects200ResponseObjectsInnerLayout) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrationObjects200ResponseObjectsInnerLayout := _ListIntegrationObjects200ResponseObjectsInnerLayout{}
-
-	err = json.Unmarshal(data, &varListIntegrationObjects200ResponseObjectsInnerLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrationObjects200ResponseObjectsInnerLayout(varListIntegrationObjects200ResponseObjectsInnerLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "instanceVersion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListIntegrationObjects200ResponseObjectsInnerLayout struct {
-	value *ListIntegrationObjects200ResponseObjectsInnerLayout
-	isSet bool
-}
-
-func (v NullableListIntegrationObjects200ResponseObjectsInnerLayout) Get() *ListIntegrationObjects200ResponseObjectsInnerLayout {
-	return v.value
-}
-
-func (v *NullableListIntegrationObjects200ResponseObjectsInnerLayout) Set(val *ListIntegrationObjects200ResponseObjectsInnerLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrationObjects200ResponseObjectsInnerLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrationObjects200ResponseObjectsInnerLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrationObjects200ResponseObjectsInnerLayout(val *ListIntegrationObjects200ResponseObjectsInnerLayout) *NullableListIntegrationObjects200ResponseObjectsInnerLayout {
-	return &NullableListIntegrationObjects200ResponseObjectsInnerLayout{value: val, isSet: true}
-}
-
-func (v NullableListIntegrationObjects200ResponseObjectsInnerLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrationObjects200ResponseObjectsInnerLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

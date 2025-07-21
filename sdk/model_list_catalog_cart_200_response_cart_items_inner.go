@@ -32,7 +32,7 @@ type ListCatalogCart200ResponseCartItemsInner struct {
 	OrderDate            *time.Time                                        `json:"orderDate,omitempty"`
 	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _ListCatalogCart200ResponseCartItemsInner ListCatalogCart200ResponseCartItemsInner
@@ -468,70 +468,7 @@ func (o ListCatalogCart200ResponseCartItemsInner) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *ListCatalogCart200ResponseCartItemsInner) UnmarshalJSON(data []byte) (err error) {
-	varListCatalogCart200ResponseCartItemsInner := _ListCatalogCart200ResponseCartItemsInner{}
-
-	err = json.Unmarshal(data, &varListCatalogCart200ResponseCartItemsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCatalogCart200ResponseCartItemsInner(varListCatalogCart200ResponseCartItemsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "quantity")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "orderDate")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCatalogCart200ResponseCartItemsInner struct {
-	value *ListCatalogCart200ResponseCartItemsInner
-	isSet bool
-}
-
-func (v NullableListCatalogCart200ResponseCartItemsInner) Get() *ListCatalogCart200ResponseCartItemsInner {
-	return v.value
-}
-
-func (v *NullableListCatalogCart200ResponseCartItemsInner) Set(val *ListCatalogCart200ResponseCartItemsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCatalogCart200ResponseCartItemsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCatalogCart200ResponseCartItemsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCatalogCart200ResponseCartItemsInner(val *ListCatalogCart200ResponseCartItemsInner) *NullableListCatalogCart200ResponseCartItemsInner {
-	return &NullableListCatalogCart200ResponseCartItemsInner{value: val, isSet: true}
-}
-
-func (v NullableListCatalogCart200ResponseCartItemsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCatalogCart200ResponseCartItemsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

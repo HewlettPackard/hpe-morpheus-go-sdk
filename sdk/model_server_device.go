@@ -38,7 +38,7 @@ type ServerDevice struct {
 	IommuGroup           NullableInt32                               `json:"iommuGroup,omitempty"`
 	IommuDeviceCount     NullableInt32                               `json:"iommuDeviceCount,omitempty"`
 	Type                 *ListHostDevices200ResponseDevicesInnerType `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _ServerDevice ServerDevice
@@ -816,76 +816,7 @@ func (o ServerDevice) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ServerDevice) UnmarshalJSON(data []byte) (err error) {
-	varServerDevice := _ServerDevice{}
-
-	err = json.Unmarshal(data, &varServerDevice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServerDevice(varServerDevice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "domainId")
-		delete(additionalProperties, "bus")
-		delete(additionalProperties, "slot")
-		delete(additionalProperties, "device")
-		delete(additionalProperties, "vendorId")
-		delete(additionalProperties, "productId")
-		delete(additionalProperties, "functionId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "iommuGroup")
-		delete(additionalProperties, "iommuDeviceCount")
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableServerDevice struct {
-	value *ServerDevice
-	isSet bool
-}
-
-func (v NullableServerDevice) Get() *ServerDevice {
-	return v.value
-}
-
-func (v *NullableServerDevice) Set(val *ServerDevice) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServerDevice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServerDevice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServerDevice(val *ServerDevice) *NullableServerDevice {
-	return &NullableServerDevice{value: val, isSet: true}
-}
-
-func (v NullableServerDevice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServerDevice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

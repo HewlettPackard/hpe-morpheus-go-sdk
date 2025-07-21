@@ -25,6 +25,22 @@ type AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent struct {
 	String *string
 }
 
+func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent{}
+	}
+
+	if out, ok := data.(bool); ok {
+		dst.Bool = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) UnmarshalJSON(data []byte) error {
 	var err error

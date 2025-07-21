@@ -22,7 +22,7 @@ var _ MappedNullable = &UpdateServicePlans200Response{}
 type UpdateServicePlans200Response struct {
 	ServicePlan          *GetServicePlans200ResponseServicePlan `json:"servicePlan,omitempty"`
 	Success              *bool                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _UpdateServicePlans200Response UpdateServicePlans200Response
@@ -132,61 +132,7 @@ func (o UpdateServicePlans200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateServicePlans200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateServicePlans200Response := _UpdateServicePlans200Response{}
-
-	err = json.Unmarshal(data, &varUpdateServicePlans200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateServicePlans200Response(varUpdateServicePlans200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "servicePlan")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateServicePlans200Response struct {
-	value *UpdateServicePlans200Response
-	isSet bool
-}
-
-func (v NullableUpdateServicePlans200Response) Get() *UpdateServicePlans200Response {
-	return v.value
-}
-
-func (v *NullableUpdateServicePlans200Response) Set(val *UpdateServicePlans200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateServicePlans200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateServicePlans200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateServicePlans200Response(val *UpdateServicePlans200Response) *NullableUpdateServicePlans200Response {
-	return &NullableUpdateServicePlans200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateServicePlans200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateServicePlans200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

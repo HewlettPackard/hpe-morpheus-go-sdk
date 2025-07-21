@@ -50,7 +50,7 @@ type UpdateLayoutRequestInstanceTypeLayout struct {
 	// Array of price set objects
 	PriceSets            []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	Permissions          *AddLayoutRequestInstanceTypeLayoutPermissions     `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _UpdateLayoutRequestInstanceTypeLayout UpdateLayoutRequestInstanceTypeLayout
@@ -663,75 +663,7 @@ func (o UpdateLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *UpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
-	varUpdateLayoutRequestInstanceTypeLayout := _UpdateLayoutRequestInstanceTypeLayout{}
-
-	err = json.Unmarshal(data, &varUpdateLayoutRequestInstanceTypeLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateLayoutRequestInstanceTypeLayout(varUpdateLayoutRequestInstanceTypeLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateLayoutRequestInstanceTypeLayout struct {
-	value *UpdateLayoutRequestInstanceTypeLayout
-	isSet bool
-}
-
-func (v NullableUpdateLayoutRequestInstanceTypeLayout) Get() *UpdateLayoutRequestInstanceTypeLayout {
-	return v.value
-}
-
-func (v *NullableUpdateLayoutRequestInstanceTypeLayout) Set(val *UpdateLayoutRequestInstanceTypeLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateLayoutRequestInstanceTypeLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateLayoutRequestInstanceTypeLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateLayoutRequestInstanceTypeLayout(val *UpdateLayoutRequestInstanceTypeLayout) *NullableUpdateLayoutRequestInstanceTypeLayout {
-	return &NullableUpdateLayoutRequestInstanceTypeLayout{value: val, isSet: true}
-}
-
-func (v NullableUpdateLayoutRequestInstanceTypeLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

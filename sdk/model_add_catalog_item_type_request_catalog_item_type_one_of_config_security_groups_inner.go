@@ -21,8 +21,8 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecur
 // AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner struct for AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner struct {
 	// Security Group ID
-	Id                   *string `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner
@@ -97,60 +97,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) 
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

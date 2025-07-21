@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusters200Response{}
 type ListClusters200Response struct {
 	Clusters             []ListClusters200ResponseAllOfClustersInner `json:"clusters,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta           `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _ListClusters200Response ListClusters200Response
@@ -132,61 +132,7 @@ func (o ListClusters200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListClusters200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusters200Response := _ListClusters200Response{}
-
-	err = json.Unmarshal(data, &varListClusters200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusters200Response(varListClusters200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clusters")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusters200Response struct {
-	value *ListClusters200Response
-	isSet bool
-}
-
-func (v NullableListClusters200Response) Get() *ListClusters200Response {
-	return v.value
-}
-
-func (v *NullableListClusters200Response) Set(val *ListClusters200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusters200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusters200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusters200Response(val *ListClusters200Response) *NullableListClusters200Response {
-	return &NullableListClusters200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusters200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusters200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -24,9 +24,9 @@ type AddIntegrationsRequestOneOf2IntegrationConfig struct {
 	ServiceNowCmdbClassMapping   []map[string]interface{} `json:"serviceNowCmdbClassMapping,omitempty"`
 	ServiceNowCMDBBusinessObject []map[string]interface{} `json:"serviceNowCMDBBusinessObject,omitempty"`
 	// Ignore SSL Errors.
-	IgnoreCertErrors     *bool   `json:"ignoreCertErrors,omitempty"`
-	CmdbMode             *string `json:"cmdbMode,omitempty"`
-	AdditionalProperties map[string]interface{}
+	IgnoreCertErrors     *bool                  `json:"ignoreCertErrors,omitempty"`
+	CmdbMode             *string                `json:"cmdbMode,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOf2IntegrationConfig AddIntegrationsRequestOneOf2IntegrationConfig
@@ -249,64 +249,7 @@ func (o AddIntegrationsRequestOneOf2IntegrationConfig) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *AddIntegrationsRequestOneOf2IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationsRequestOneOf2IntegrationConfig := _AddIntegrationsRequestOneOf2IntegrationConfig{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOf2IntegrationConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOf2IntegrationConfig(varAddIntegrationsRequestOneOf2IntegrationConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serviceNowCustomCmdbMapping")
-		delete(additionalProperties, "serviceNowCmdbClassMapping")
-		delete(additionalProperties, "serviceNowCMDBBusinessObject")
-		delete(additionalProperties, "ignoreCertErrors")
-		delete(additionalProperties, "cmdbMode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddIntegrationsRequestOneOf2IntegrationConfig struct {
-	value *AddIntegrationsRequestOneOf2IntegrationConfig
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOf2IntegrationConfig) Get() *AddIntegrationsRequestOneOf2IntegrationConfig {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2IntegrationConfig) Set(val *AddIntegrationsRequestOneOf2IntegrationConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOf2IntegrationConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2IntegrationConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOf2IntegrationConfig(val *AddIntegrationsRequestOneOf2IntegrationConfig) *NullableAddIntegrationsRequestOneOf2IntegrationConfig {
-	return &NullableAddIntegrationsRequestOneOf2IntegrationConfig{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOf2IntegrationConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOf2IntegrationConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

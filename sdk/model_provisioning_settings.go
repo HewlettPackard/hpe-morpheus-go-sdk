@@ -34,7 +34,7 @@ type ProvisioningSettings struct {
 	PxeRootPassword           NullableString                                              `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
 	DeployStorageProvider     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"deployStorageProvider,omitempty"`
-	AdditionalProperties      map[string]interface{}
+	AdditionalProperties      map[string]interface{}                                      `json:",remain"`
 }
 
 type _ProvisioningSettings ProvisioningSettings
@@ -586,73 +586,7 @@ func (o ProvisioningSettings) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
-	varProvisioningSettings := _ProvisioningSettings{}
-
-	err = json.Unmarshal(data, &varProvisioningSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProvisioningSettings(varProvisioningSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allowZoneSelection")
-		delete(additionalProperties, "allowServerSelection")
-		delete(additionalProperties, "requireEnvironments")
-		delete(additionalProperties, "showPricing")
-		delete(additionalProperties, "hideDatastoreStats")
-		delete(additionalProperties, "crossTenantNamingPolicies")
-		delete(additionalProperties, "reuseSequence")
-		delete(additionalProperties, "cloudInitUsername")
-		delete(additionalProperties, "cloudInitPassword")
-		delete(additionalProperties, "cloudInitKeyPair")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "pxeRootPassword")
-		delete(additionalProperties, "defaultTemplateType")
-		delete(additionalProperties, "deployStorageProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableProvisioningSettings struct {
-	value *ProvisioningSettings
-	isSet bool
-}
-
-func (v NullableProvisioningSettings) Get() *ProvisioningSettings {
-	return v.value
-}
-
-func (v *NullableProvisioningSettings) Set(val *ProvisioningSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProvisioningSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProvisioningSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProvisioningSettings(val *ProvisioningSettings) *NullableProvisioningSettings {
-	return &NullableProvisioningSettings{value: val, isSet: true}
-}
-
-func (v NullableProvisioningSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProvisioningSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

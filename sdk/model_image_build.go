@@ -42,7 +42,7 @@ type ImageBuild struct {
 	Config               *AddImageBuild200ResponseAllOfImageBuildConfig                `json:"config,omitempty"`
 	LastResult           *AddImageBuild200ResponseAllOfImageBuildLastResult            `json:"lastResult,omitempty"`
 	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ImageBuild ImageBuild
@@ -918,81 +918,7 @@ func (o ImageBuild) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ImageBuild) UnmarshalJSON(data []byte) (err error) {
-	varImageBuild := _ImageBuild{}
-
-	err = json.Unmarshal(data, &varImageBuild)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImageBuild(varImageBuild)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "bootCommand")
-		delete(additionalProperties, "preseedScript")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "buildOutputName")
-		delete(additionalProperties, "conversionFormats")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "keepResults")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "executionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableImageBuild struct {
-	value *ImageBuild
-	isSet bool
-}
-
-func (v NullableImageBuild) Get() *ImageBuild {
-	return v.value
-}
-
-func (v *NullableImageBuild) Set(val *ImageBuild) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImageBuild) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImageBuild) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImageBuild(val *ImageBuild) *NullableImageBuild {
-	return &NullableImageBuild{value: val, isSet: true}
-}
-
-func (v NullableImageBuild) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImageBuild) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

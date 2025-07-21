@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 )
 
@@ -28,7 +27,7 @@ type AddPolicies200ResponseAllOfPolicyConfigOneOf1 struct {
 	MotdType             *string                                                             `json:"motd.type,omitempty"`
 	MotdFullPage         *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage `json:"motd._fullPage,omitempty"`
 	MotdDate             *time.Time                                                          `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _AddPolicies200ResponseAllOfPolicyConfigOneOf1 AddPolicies200ResponseAllOfPolicyConfigOneOf1
@@ -280,86 +279,7 @@ func (o AddPolicies200ResponseAllOfPolicyConfigOneOf1) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"motd",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddPolicies200ResponseAllOfPolicyConfigOneOf1 := _AddPolicies200ResponseAllOfPolicyConfigOneOf1{}
-
-	err = json.Unmarshal(data, &varAddPolicies200ResponseAllOfPolicyConfigOneOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPolicies200ResponseAllOfPolicyConfigOneOf1(varAddPolicies200ResponseAllOfPolicyConfigOneOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "motd.title")
-		delete(additionalProperties, "motd")
-		delete(additionalProperties, "motd.message")
-		delete(additionalProperties, "motd.type")
-		delete(additionalProperties, "motd._fullPage")
-		delete(additionalProperties, "motd.date")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1 struct {
-	value *AddPolicies200ResponseAllOfPolicyConfigOneOf1
-	isSet bool
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) Get() *AddPolicies200ResponseAllOfPolicyConfigOneOf1 {
-	return v.value
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) Set(val *AddPolicies200ResponseAllOfPolicyConfigOneOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPolicies200ResponseAllOfPolicyConfigOneOf1(val *AddPolicies200ResponseAllOfPolicyConfigOneOf1) *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1 {
-	return &NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1{value: val, isSet: true}
-}
-
-func (v NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPolicies200ResponseAllOfPolicyConfigOneOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

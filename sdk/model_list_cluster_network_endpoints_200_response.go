@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterNetworkEndpoints200Response{}
 type ListClusterNetworkEndpoints200Response struct {
 	Endpoints            []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"endpoints,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                           `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterNetworkEndpoints200Response ListClusterNetworkEndpoints200Response
@@ -132,61 +132,7 @@ func (o ListClusterNetworkEndpoints200Response) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *ListClusterNetworkEndpoints200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusterNetworkEndpoints200Response := _ListClusterNetworkEndpoints200Response{}
-
-	err = json.Unmarshal(data, &varListClusterNetworkEndpoints200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterNetworkEndpoints200Response(varListClusterNetworkEndpoints200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "endpoints")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterNetworkEndpoints200Response struct {
-	value *ListClusterNetworkEndpoints200Response
-	isSet bool
-}
-
-func (v NullableListClusterNetworkEndpoints200Response) Get() *ListClusterNetworkEndpoints200Response {
-	return v.value
-}
-
-func (v *NullableListClusterNetworkEndpoints200Response) Set(val *ListClusterNetworkEndpoints200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterNetworkEndpoints200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterNetworkEndpoints200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterNetworkEndpoints200Response(val *ListClusterNetworkEndpoints200Response) *NullableListClusterNetworkEndpoints200Response {
-	return &NullableListClusterNetworkEndpoints200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusterNetworkEndpoints200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterNetworkEndpoints200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

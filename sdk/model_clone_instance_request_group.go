@@ -21,8 +21,8 @@ var _ MappedNullable = &CloneInstanceRequestGroup{}
 // CloneInstanceRequestGroup The map containing the id of the server group you would like to clone into.
 type CloneInstanceRequestGroup struct {
 	// The id of the server group you would like to clone into.
-	Id                   *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CloneInstanceRequestGroup CloneInstanceRequestGroup
@@ -97,60 +97,7 @@ func (o CloneInstanceRequestGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CloneInstanceRequestGroup) UnmarshalJSON(data []byte) (err error) {
-	varCloneInstanceRequestGroup := _CloneInstanceRequestGroup{}
-
-	err = json.Unmarshal(data, &varCloneInstanceRequestGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CloneInstanceRequestGroup(varCloneInstanceRequestGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCloneInstanceRequestGroup struct {
-	value *CloneInstanceRequestGroup
-	isSet bool
-}
-
-func (v NullableCloneInstanceRequestGroup) Get() *CloneInstanceRequestGroup {
-	return v.value
-}
-
-func (v *NullableCloneInstanceRequestGroup) Set(val *CloneInstanceRequestGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCloneInstanceRequestGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCloneInstanceRequestGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCloneInstanceRequestGroup(val *CloneInstanceRequestGroup) *NullableCloneInstanceRequestGroup {
-	return &NullableCloneInstanceRequestGroup{value: val, isSet: true}
-}
-
-func (v NullableCloneInstanceRequestGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCloneInstanceRequestGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -20,17 +20,17 @@ var _ MappedNullable = &ShutdownPolicyTypeConfiguration{}
 
 // ShutdownPolicyTypeConfiguration Configuration settings for the following policy types: - Shutdown
 type ShutdownPolicyTypeConfiguration struct {
-	ShutdownType                     *string `json:"shutdownType,omitempty"`
-	ShutdownAge                      *string `json:"shutdownAge,omitempty"`
-	ShutdownRenewal                  *string `json:"shutdownRenewal,omitempty"`
-	ShutdownNotify                   *string `json:"shutdownNotify,omitempty"`
-	ShutdownMessage                  *string `json:"shutdownMessage,omitempty"`
-	ShutdownAutoRenew                *string `json:"shutdownAutoRenew,omitempty"`
-	ShutdownAllowExtend              *string `json:"shutdownAllowExtend,omitempty"`
-	ShutdownExtensionsBeforeApproval *string `json:"shutdownExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId             *string `json:"accountIntegrationId,omitempty"`
-	ShutdownHideFixed                *bool   `json:"shutdownHideFixed,omitempty"`
-	AdditionalProperties             map[string]interface{}
+	ShutdownType                     *string                `json:"shutdownType,omitempty"`
+	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
+	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
+	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
+	ShutdownMessage                  *string                `json:"shutdownMessage,omitempty"`
+	ShutdownAutoRenew                *string                `json:"shutdownAutoRenew,omitempty"`
+	ShutdownAllowExtend              *string                `json:"shutdownAllowExtend,omitempty"`
+	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
+	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
+	AdditionalProperties             map[string]interface{} `json:",remain"`
 }
 
 type _ShutdownPolicyTypeConfiguration ShutdownPolicyTypeConfiguration
@@ -428,69 +428,7 @@ func (o ShutdownPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *ShutdownPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varShutdownPolicyTypeConfiguration := _ShutdownPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varShutdownPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ShutdownPolicyTypeConfiguration(varShutdownPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "shutdownType")
-		delete(additionalProperties, "shutdownAge")
-		delete(additionalProperties, "shutdownRenewal")
-		delete(additionalProperties, "shutdownNotify")
-		delete(additionalProperties, "shutdownMessage")
-		delete(additionalProperties, "shutdownAutoRenew")
-		delete(additionalProperties, "shutdownAllowExtend")
-		delete(additionalProperties, "shutdownExtensionsBeforeApproval")
-		delete(additionalProperties, "accountIntegrationId")
-		delete(additionalProperties, "shutdownHideFixed")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableShutdownPolicyTypeConfiguration struct {
-	value *ShutdownPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableShutdownPolicyTypeConfiguration) Get() *ShutdownPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableShutdownPolicyTypeConfiguration) Set(val *ShutdownPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableShutdownPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableShutdownPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableShutdownPolicyTypeConfiguration(val *ShutdownPolicyTypeConfiguration) *NullableShutdownPolicyTypeConfiguration {
-	return &NullableShutdownPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableShutdownPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableShutdownPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddOptionListRequestOptionTypeListConfig{}
 // AddOptionListRequestOptionTypeListConfig Array of source headers to use when requesting data
 type AddOptionListRequestOptionTypeListConfig struct {
 	SourceHeaders        []AddOptionListRequestOptionTypeListConfigSourceHeadersInner `json:"sourceHeaders,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _AddOptionListRequestOptionTypeListConfig AddOptionListRequestOptionTypeListConfig
@@ -96,60 +96,7 @@ func (o AddOptionListRequestOptionTypeListConfig) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *AddOptionListRequestOptionTypeListConfig) UnmarshalJSON(data []byte) (err error) {
-	varAddOptionListRequestOptionTypeListConfig := _AddOptionListRequestOptionTypeListConfig{}
-
-	err = json.Unmarshal(data, &varAddOptionListRequestOptionTypeListConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionListRequestOptionTypeListConfig(varAddOptionListRequestOptionTypeListConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "sourceHeaders")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddOptionListRequestOptionTypeListConfig struct {
-	value *AddOptionListRequestOptionTypeListConfig
-	isSet bool
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfig) Get() *AddOptionListRequestOptionTypeListConfig {
-	return v.value
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfig) Set(val *AddOptionListRequestOptionTypeListConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionListRequestOptionTypeListConfig(val *AddOptionListRequestOptionTypeListConfig) *NullableAddOptionListRequestOptionTypeListConfig {
-	return &NullableAddOptionListRequestOptionTypeListConfig{value: val, isSet: true}
-}
-
-func (v NullableAddOptionListRequestOptionTypeListConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionListRequestOptionTypeListConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

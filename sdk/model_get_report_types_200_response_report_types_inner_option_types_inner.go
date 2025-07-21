@@ -59,7 +59,7 @@ type GetReportTypes200ResponseReportTypesInnerOptionTypesInner struct {
 	DisplayValueOnDetails *bool                  `json:"displayValueOnDetails,omitempty"`
 	ShowOnCreate          *bool                  `json:"showOnCreate,omitempty"`
 	ShowOnEdit            *bool                  `json:"showOnEdit,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _GetReportTypes200ResponseReportTypesInnerOptionTypesInner GetReportTypes200ResponseReportTypesInnerOptionTypesInner
@@ -1663,98 +1663,7 @@ func (o GetReportTypes200ResponseReportTypesInnerOptionTypesInner) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetReportTypes200ResponseReportTypesInnerOptionTypesInner := _GetReportTypes200ResponseReportTypesInnerOptionTypesInner{}
-
-	err = json.Unmarshal(data, &varGetReportTypes200ResponseReportTypesInnerOptionTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetReportTypes200ResponseReportTypesInnerOptionTypesInner(varGetReportTypes200ResponseReportTypesInnerOptionTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionSourceType")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "requireOnCode")
-		delete(additionalProperties, "contextualDefault")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "showOnCreate")
-		delete(additionalProperties, "showOnEdit")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner struct {
-	value *GetReportTypes200ResponseReportTypesInnerOptionTypesInner
-	isSet bool
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Get() *GetReportTypes200ResponseReportTypesInnerOptionTypesInner {
-	return v.value
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Set(val *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner(val *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner {
-	return &NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner{value: val, isSet: true}
-}
-
-func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

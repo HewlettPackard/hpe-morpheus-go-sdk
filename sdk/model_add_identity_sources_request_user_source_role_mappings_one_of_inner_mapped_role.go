@@ -23,8 +23,8 @@ type AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct 
 	// Role ID of the Morpheus role in the identity source tenant
 	Id *int64 `json:"id,omitempty"`
 	// Role authority of the Morpheus role in the identity source tenant
-	Authority            *string `json:"authority,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Authority            *string                `json:"authority,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
@@ -134,61 +134,7 @@ func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) ToM
 	return toSerialize, nil
 }
 func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(data []byte) (err error) {
-	varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole := _AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{}
-
-	err = json.Unmarshal(data, &varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole(varAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "authority")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole struct {
-	value *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole
-	isSet bool
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Get() *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	return v.value
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Set(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole {
-	return &NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole{value: val, isSet: true}
-}
-
-func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -25,6 +25,22 @@ type SaveClusterDatastoreRequestDatastoreConfig struct {
 	SaveClusterDatastoreRequestDatastoreConfigAnyOf1 *SaveClusterDatastoreRequestDatastoreConfigAnyOf1
 }
 
+func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SaveClusterDatastoreRequestDatastoreConfig{}
+	}
+
+	if out, ok := data.(SaveClusterDatastoreRequestDatastoreConfigAnyOf); ok {
+		dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf = &out
+	}
+
+	if out, ok := data.(SaveClusterDatastoreRequestDatastoreConfigAnyOf1); ok {
+		dst.SaveClusterDatastoreRequestDatastoreConfigAnyOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte) error {
 	var err error

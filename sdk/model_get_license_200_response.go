@@ -24,7 +24,7 @@ type GetLicense200Response struct {
 	// List of all the installed licenses
 	InstalledLicenses    []GetLicense200ResponseInstalledLicensesInner `json:"installedLicenses,omitempty"`
 	CurrentUsage         *GetLicense200ResponseCurrentUsage            `json:"currentUsage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetLicense200Response GetLicense200Response
@@ -169,62 +169,7 @@ func (o GetLicense200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetLicense200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetLicense200Response := _GetLicense200Response{}
-
-	err = json.Unmarshal(data, &varGetLicense200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLicense200Response(varGetLicense200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "license")
-		delete(additionalProperties, "installedLicenses")
-		delete(additionalProperties, "currentUsage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetLicense200Response struct {
-	value *GetLicense200Response
-	isSet bool
-}
-
-func (v NullableGetLicense200Response) Get() *GetLicense200Response {
-	return v.value
-}
-
-func (v *NullableGetLicense200Response) Set(val *GetLicense200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLicense200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLicense200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLicense200Response(val *GetLicense200Response) *NullableGetLicense200Response {
-	return &NullableGetLicense200Response{value: val, isSet: true}
-}
-
-func (v NullableGetLicense200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLicense200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

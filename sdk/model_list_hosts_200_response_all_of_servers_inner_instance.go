@@ -20,13 +20,13 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerInstance{}
 
 // ListHosts200ResponseAllOfServersInnerInstance struct for ListHosts200ResponseAllOfServersInnerInstance
 type ListHosts200ResponseAllOfServersInnerInstance struct {
-	Id                   *int64  `json:"id,omitempty"`
-	Name                 *string `json:"name,omitempty"`
-	DisplayName          *string `json:"displayName,omitempty"`
-	IsVpcSelectable      *bool   `json:"isVpcSelectable,omitempty"`
-	AccountId            *int64  `json:"accountId,omitempty"`
-	AccountName          *string `json:"accountName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DisplayName          *string                `json:"displayName,omitempty"`
+	IsVpcSelectable      *bool                  `json:"isVpcSelectable,omitempty"`
+	AccountId            *int64                 `json:"accountId,omitempty"`
+	AccountName          *string                `json:"accountName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerInstance ListHosts200ResponseAllOfServersInnerInstance
@@ -276,65 +276,7 @@ func (o ListHosts200ResponseAllOfServersInnerInstance) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *ListHosts200ResponseAllOfServersInnerInstance) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInnerInstance := _ListHosts200ResponseAllOfServersInnerInstance{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInnerInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInnerInstance(varListHosts200ResponseAllOfServersInnerInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "isVpcSelectable")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "accountName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListHosts200ResponseAllOfServersInnerInstance struct {
-	value *ListHosts200ResponseAllOfServersInnerInstance
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerInstance) Get() *ListHosts200ResponseAllOfServersInnerInstance {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerInstance) Set(val *ListHosts200ResponseAllOfServersInnerInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInnerInstance(val *ListHosts200ResponseAllOfServersInnerInstance) *NullableListHosts200ResponseAllOfServersInnerInstance {
-	return &NullableListHosts200ResponseAllOfServersInnerInstance{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInnerInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInnerInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

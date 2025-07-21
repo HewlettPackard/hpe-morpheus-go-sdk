@@ -21,8 +21,8 @@ var _ MappedNullable = &AddClusterRequestClusterTypeOneOf{}
 // AddClusterRequestClusterTypeOneOf struct for AddClusterRequestClusterTypeOneOf
 type AddClusterRequestClusterTypeOneOf struct {
 	// The type ID of cluster to be created
-	Id                   *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterTypeOneOf AddClusterRequestClusterTypeOneOf
@@ -97,60 +97,7 @@ func (o AddClusterRequestClusterTypeOneOf) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterTypeOneOf) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterTypeOneOf := _AddClusterRequestClusterTypeOneOf{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterTypeOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterTypeOneOf(varAddClusterRequestClusterTypeOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddClusterRequestClusterTypeOneOf struct {
-	value *AddClusterRequestClusterTypeOneOf
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterTypeOneOf) Get() *AddClusterRequestClusterTypeOneOf {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterTypeOneOf) Set(val *AddClusterRequestClusterTypeOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterTypeOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterTypeOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterTypeOneOf(val *AddClusterRequestClusterTypeOneOf) *NullableAddClusterRequestClusterTypeOneOf {
-	return &NullableAddClusterRequestClusterTypeOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterTypeOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterTypeOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -47,7 +47,7 @@ type GetClusterMasters200ResponseMastersInnerInterfacesInner struct {
 	Type                 NullableString                                     `json:"type,omitempty"`
 	IpMode               NullableString                                     `json:"ipMode,omitempty"`
 	MacAddress           NullableString                                     `json:"macAddress,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _GetClusterMasters200ResponseMastersInnerInterfacesInner GetClusterMasters200ResponseMastersInnerInterfacesInner
@@ -1230,86 +1230,7 @@ func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterMasters200ResponseMastersInnerInterfacesInner := _GetClusterMasters200ResponseMastersInnerInterfacesInner{}
-
-	err = json.Unmarshal(data, &varGetClusterMasters200ResponseMastersInnerInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterMasters200ResponseMastersInnerInterfacesInner(varGetClusterMasters200ResponseMastersInnerInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "publicIpAddress")
-		delete(additionalProperties, "publicIpv6Address")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "ipv6Address")
-		delete(additionalProperties, "ipSubnet")
-		delete(additionalProperties, "ipv6Subnet")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "dhcp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "poolAssigned")
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "networkGroup")
-		delete(additionalProperties, "networkPosition")
-		delete(additionalProperties, "networkPool")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "macAddress")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetClusterMasters200ResponseMastersInnerInterfacesInner struct {
-	value *GetClusterMasters200ResponseMastersInnerInterfacesInner
-	isSet bool
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Get() *GetClusterMasters200ResponseMastersInnerInterfacesInner {
-	return v.value
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Set(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterMasters200ResponseMastersInnerInterfacesInner(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner {
-	return &NullableGetClusterMasters200ResponseMastersInnerInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

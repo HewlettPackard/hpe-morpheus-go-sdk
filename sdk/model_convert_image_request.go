@@ -23,7 +23,7 @@ type ConvertImageRequest struct {
 	Name                 *string                                      `json:"name,omitempty"`
 	Format               *string                                      `json:"format,omitempty"`
 	StorageProvider      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageProvider,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _ConvertImageRequest ConvertImageRequest
@@ -168,62 +168,7 @@ func (o ConvertImageRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ConvertImageRequest) UnmarshalJSON(data []byte) (err error) {
-	varConvertImageRequest := _ConvertImageRequest{}
-
-	err = json.Unmarshal(data, &varConvertImageRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ConvertImageRequest(varConvertImageRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "format")
-		delete(additionalProperties, "storageProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableConvertImageRequest struct {
-	value *ConvertImageRequest
-	isSet bool
-}
-
-func (v NullableConvertImageRequest) Get() *ConvertImageRequest {
-	return v.value
-}
-
-func (v *NullableConvertImageRequest) Set(val *ConvertImageRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableConvertImageRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableConvertImageRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableConvertImageRequest(val *ConvertImageRequest) *NullableConvertImageRequest {
-	return &NullableConvertImageRequest{value: val, isSet: true}
-}
-
-func (v NullableConvertImageRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableConvertImageRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

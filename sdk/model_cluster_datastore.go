@@ -45,7 +45,7 @@ type ClusterDatastore struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _ClusterDatastore ClusterDatastore
@@ -993,84 +993,7 @@ func (o ClusterDatastore) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterDatastore) UnmarshalJSON(data []byte) (err error) {
-	varClusterDatastore := _ClusterDatastore{}
-
-	err = json.Unmarshal(data, &varClusterDatastore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterDatastore(varClusterDatastore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "storageSize")
-		delete(additionalProperties, "freeSpace")
-		delete(additionalProperties, "drsEnabled")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "allowWrite")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "online")
-		delete(additionalProperties, "allowRead")
-		delete(additionalProperties, "allowProvision")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterDatastore struct {
-	value *ClusterDatastore
-	isSet bool
-}
-
-func (v NullableClusterDatastore) Get() *ClusterDatastore {
-	return v.value
-}
-
-func (v *NullableClusterDatastore) Set(val *ClusterDatastore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterDatastore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterDatastore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterDatastore(val *ClusterDatastore) *NullableClusterDatastore {
-	return &NullableClusterDatastore{value: val, isSet: true}
-}
-
-func (v NullableClusterDatastore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterDatastore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

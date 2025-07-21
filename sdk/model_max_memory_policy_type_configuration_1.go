@@ -22,8 +22,8 @@ var _ MappedNullable = &MaxMemoryPolicyTypeConfiguration1{}
 type MaxMemoryPolicyTypeConfiguration1 struct {
 	MaxMemory *MaxMemoryPolicyTypeConfigurationMaxMemory `json:"maxMemory,omitempty"`
 	// Set to on to exclude containers
-	ExcludeContainers    *string `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxMemoryPolicyTypeConfiguration1 MaxMemoryPolicyTypeConfiguration1
@@ -137,61 +137,7 @@ func (o MaxMemoryPolicyTypeConfiguration1) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *MaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
-	varMaxMemoryPolicyTypeConfiguration1 := _MaxMemoryPolicyTypeConfiguration1{}
-
-	err = json.Unmarshal(data, &varMaxMemoryPolicyTypeConfiguration1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MaxMemoryPolicyTypeConfiguration1(varMaxMemoryPolicyTypeConfiguration1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "excludeContainers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableMaxMemoryPolicyTypeConfiguration1 struct {
-	value *MaxMemoryPolicyTypeConfiguration1
-	isSet bool
-}
-
-func (v NullableMaxMemoryPolicyTypeConfiguration1) Get() *MaxMemoryPolicyTypeConfiguration1 {
-	return v.value
-}
-
-func (v *NullableMaxMemoryPolicyTypeConfiguration1) Set(val *MaxMemoryPolicyTypeConfiguration1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMaxMemoryPolicyTypeConfiguration1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMaxMemoryPolicyTypeConfiguration1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMaxMemoryPolicyTypeConfiguration1(val *MaxMemoryPolicyTypeConfiguration1) *NullableMaxMemoryPolicyTypeConfiguration1 {
-	return &NullableMaxMemoryPolicyTypeConfiguration1{value: val, isSet: true}
-}
-
-func (v NullableMaxMemoryPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

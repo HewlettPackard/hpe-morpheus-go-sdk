@@ -44,8 +44,8 @@ type ImageBuildCreate struct {
 	BuildOutputName   NullableString `json:"buildOutputName,omitempty"`
 	ConversionFormats NullableString `json:"conversionFormats,omitempty"`
 	// Keep Results - Keep only the most recent builds. Older executions will be deleted along with their associated Virtual Images. The value 0 disables this functionality.
-	KeepResults          *int64 `json:"keepResults,omitempty"`
-	AdditionalProperties map[string]interface{}
+	KeepResults          *int64                 `json:"keepResults,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ImageBuildCreate ImageBuildCreate
@@ -658,74 +658,7 @@ func (o ImageBuildCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ImageBuildCreate) UnmarshalJSON(data []byte) (err error) {
-	varImageBuildCreate := _ImageBuildCreate{}
-
-	err = json.Unmarshal(data, &varImageBuildCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImageBuildCreate(varImageBuildCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "preseedScript")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "buildOutputName")
-		delete(additionalProperties, "conversionFormats")
-		delete(additionalProperties, "keepResults")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableImageBuildCreate struct {
-	value *ImageBuildCreate
-	isSet bool
-}
-
-func (v NullableImageBuildCreate) Get() *ImageBuildCreate {
-	return v.value
-}
-
-func (v *NullableImageBuildCreate) Set(val *ImageBuildCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImageBuildCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImageBuildCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImageBuildCreate(val *ImageBuildCreate) *NullableImageBuildCreate {
-	return &NullableImageBuildCreate{value: val, isSet: true}
-}
-
-func (v NullableImageBuildCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImageBuildCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

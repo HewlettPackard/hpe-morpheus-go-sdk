@@ -37,8 +37,8 @@ type InstanceTypes struct {
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        NullableString `json:"darkImagePath,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DarkImagePath        NullableString         `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstanceTypes InstanceTypes
@@ -683,75 +683,7 @@ func (o InstanceTypes) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceTypes) UnmarshalJSON(data []byte) (err error) {
-	varInstanceTypes := _InstanceTypes{}
-
-	err = json.Unmarshal(data, &varInstanceTypes)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypes(varInstanceTypes)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "versions")
-		delete(additionalProperties, "instanceTypeLayouts")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstanceTypes struct {
-	value *InstanceTypes
-	isSet bool
-}
-
-func (v NullableInstanceTypes) Get() *InstanceTypes {
-	return v.value
-}
-
-func (v *NullableInstanceTypes) Set(val *InstanceTypes) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypes) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypes) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypes(val *InstanceTypes) *NullableInstanceTypes {
-	return &NullableInstanceTypes{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypes) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypes) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -41,7 +41,7 @@ type IdentitySourcesLDAPConfig struct {
 	ProviderSettings     map[string]interface{}                                                      `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _IdentitySourcesLDAPConfig IdentitySourcesLDAPConfig
@@ -781,79 +781,7 @@ func (o IdentitySourcesLDAPConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IdentitySourcesLDAPConfig) UnmarshalJSON(data []byte) (err error) {
-	varIdentitySourcesLDAPConfig := _IdentitySourcesLDAPConfig{}
-
-	err = json.Unmarshal(data, &varIdentitySourcesLDAPConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdentitySourcesLDAPConfig(varIdentitySourcesLDAPConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "deleted")
-		delete(additionalProperties, "autoSyncOnLogin")
-		delete(additionalProperties, "externalLogin")
-		delete(additionalProperties, "allowCustomMappings")
-		delete(additionalProperties, "manualRoleAssignment")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "defaultAccountRole")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "roleMappings")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "loginURL")
-		delete(additionalProperties, "providerSettings")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIdentitySourcesLDAPConfig struct {
-	value *IdentitySourcesLDAPConfig
-	isSet bool
-}
-
-func (v NullableIdentitySourcesLDAPConfig) Get() *IdentitySourcesLDAPConfig {
-	return v.value
-}
-
-func (v *NullableIdentitySourcesLDAPConfig) Set(val *IdentitySourcesLDAPConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentitySourcesLDAPConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentitySourcesLDAPConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentitySourcesLDAPConfig(val *IdentitySourcesLDAPConfig) *NullableIdentitySourcesLDAPConfig {
-	return &NullableIdentitySourcesLDAPConfig{value: val, isSet: true}
-}
-
-func (v NullableIdentitySourcesLDAPConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentitySourcesLDAPConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

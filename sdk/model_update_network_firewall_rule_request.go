@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateNetworkFirewallRuleRequest{}
 // UpdateNetworkFirewallRuleRequest The parameters for update a Network Firewall Rule is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type.
 type UpdateNetworkFirewallRuleRequest struct {
 	Rule                 map[string]interface{} `json:"rule,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateNetworkFirewallRuleRequest UpdateNetworkFirewallRuleRequest
@@ -96,60 +96,7 @@ func (o UpdateNetworkFirewallRuleRequest) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *UpdateNetworkFirewallRuleRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkFirewallRuleRequest := _UpdateNetworkFirewallRuleRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkFirewallRuleRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkFirewallRuleRequest(varUpdateNetworkFirewallRuleRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "rule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateNetworkFirewallRuleRequest struct {
-	value *UpdateNetworkFirewallRuleRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkFirewallRuleRequest) Get() *UpdateNetworkFirewallRuleRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkFirewallRuleRequest) Set(val *UpdateNetworkFirewallRuleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkFirewallRuleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkFirewallRuleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkFirewallRuleRequest(val *UpdateNetworkFirewallRuleRequest) *NullableUpdateNetworkFirewallRuleRequest {
-	return &NullableUpdateNetworkFirewallRuleRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkFirewallRuleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkFirewallRuleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -43,7 +43,7 @@ type BillingServer struct {
 	ServerInternalId     NullableString                                                      `json:"serverInternalId,omitempty"`
 	ResourcePoolId       *int64                                                              `json:"resourcePoolId,omitempty"`
 	ResourcePoolName     *string                                                             `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _BillingServer BillingServer
@@ -886,81 +886,7 @@ func (o BillingServer) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BillingServer) UnmarshalJSON(data []byte) (err error) {
-	varBillingServer := _BillingServer{}
-
-	err = json.Unmarshal(data, &varBillingServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BillingServer(varBillingServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refUUID")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "numUnits")
-		delete(additionalProperties, "unit")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "usages")
-		delete(additionalProperties, "numUsages")
-		delete(additionalProperties, "totalUsages")
-		delete(additionalProperties, "hasMoreUsages")
-		delete(additionalProperties, "foundPricing")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "serverUUID")
-		delete(additionalProperties, "serverUniqueId")
-		delete(additionalProperties, "serverExternalId")
-		delete(additionalProperties, "serverInternalId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "resourcePoolName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableBillingServer struct {
-	value *BillingServer
-	isSet bool
-}
-
-func (v NullableBillingServer) Get() *BillingServer {
-	return v.value
-}
-
-func (v *NullableBillingServer) Set(val *BillingServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBillingServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBillingServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBillingServer(val *BillingServer) *NullableBillingServer {
-	return &NullableBillingServer{value: val, isSet: true}
-}
-
-func (v NullableBillingServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBillingServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

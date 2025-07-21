@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateApplianceSettingsRequest{}
 // UpdateApplianceSettingsRequest struct for UpdateApplianceSettingsRequest
 type UpdateApplianceSettingsRequest struct {
 	ApplianceSettings    *UpdateApplianceSettingsRequestApplianceSettings `json:"applianceSettings,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _UpdateApplianceSettingsRequest UpdateApplianceSettingsRequest
@@ -96,60 +96,7 @@ func (o UpdateApplianceSettingsRequest) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *UpdateApplianceSettingsRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateApplianceSettingsRequest := _UpdateApplianceSettingsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateApplianceSettingsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateApplianceSettingsRequest(varUpdateApplianceSettingsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "applianceSettings")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateApplianceSettingsRequest struct {
-	value *UpdateApplianceSettingsRequest
-	isSet bool
-}
-
-func (v NullableUpdateApplianceSettingsRequest) Get() *UpdateApplianceSettingsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateApplianceSettingsRequest) Set(val *UpdateApplianceSettingsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateApplianceSettingsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateApplianceSettingsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateApplianceSettingsRequest(val *UpdateApplianceSettingsRequest) *NullableUpdateApplianceSettingsRequest {
-	return &NullableUpdateApplianceSettingsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateApplianceSettingsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateApplianceSettingsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

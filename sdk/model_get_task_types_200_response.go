@@ -21,7 +21,7 @@ var _ MappedNullable = &GetTaskTypes200Response{}
 // GetTaskTypes200Response struct for GetTaskTypes200Response
 type GetTaskTypes200Response struct {
 	TaskType             *ListTaskTypes200ResponseTaskTypesInner `json:"taskType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _GetTaskTypes200Response GetTaskTypes200Response
@@ -96,60 +96,7 @@ func (o GetTaskTypes200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetTaskTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetTaskTypes200Response := _GetTaskTypes200Response{}
-
-	err = json.Unmarshal(data, &varGetTaskTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetTaskTypes200Response(varGetTaskTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetTaskTypes200Response struct {
-	value *GetTaskTypes200Response
-	isSet bool
-}
-
-func (v NullableGetTaskTypes200Response) Get() *GetTaskTypes200Response {
-	return v.value
-}
-
-func (v *NullableGetTaskTypes200Response) Set(val *GetTaskTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetTaskTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetTaskTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetTaskTypes200Response(val *GetTaskTypes200Response) *NullableGetTaskTypes200Response {
-	return &NullableGetTaskTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableGetTaskTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetTaskTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

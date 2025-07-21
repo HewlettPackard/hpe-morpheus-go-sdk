@@ -43,7 +43,7 @@ type JobWorkflow struct {
 	Targets              []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner        `json:"targets,omitempty"`
 	CustomConfig         NullableString                                              `json:"customConfig,omitempty"`
 	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions        `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _JobWorkflow JobWorkflow
@@ -932,81 +932,7 @@ func (o JobWorkflow) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *JobWorkflow) UnmarshalJSON(data []byte) (err error) {
-	varJobWorkflow := _JobWorkflow{}
-
-	err = json.Unmarshal(data, &varJobWorkflow)
-
-	if err != nil {
-		return err
-	}
-
-	*o = JobWorkflow(varJobWorkflow)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableJobWorkflow struct {
-	value *JobWorkflow
-	isSet bool
-}
-
-func (v NullableJobWorkflow) Get() *JobWorkflow {
-	return v.value
-}
-
-func (v *NullableJobWorkflow) Set(val *JobWorkflow) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJobWorkflow) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJobWorkflow) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJobWorkflow(val *JobWorkflow) *NullableJobWorkflow {
-	return &NullableJobWorkflow{value: val, isSet: true}
-}
-
-func (v NullableJobWorkflow) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJobWorkflow) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

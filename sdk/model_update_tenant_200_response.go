@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateTenant200Response{}
 // UpdateTenant200Response struct for UpdateTenant200Response
 type UpdateTenant200Response struct {
 	Account              *UpdateTenant200ResponseAccount `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _UpdateTenant200Response UpdateTenant200Response
@@ -96,60 +96,7 @@ func (o UpdateTenant200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateTenant200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateTenant200Response := _UpdateTenant200Response{}
-
-	err = json.Unmarshal(data, &varUpdateTenant200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateTenant200Response(varUpdateTenant200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateTenant200Response struct {
-	value *UpdateTenant200Response
-	isSet bool
-}
-
-func (v NullableUpdateTenant200Response) Get() *UpdateTenant200Response {
-	return v.value
-}
-
-func (v *NullableUpdateTenant200Response) Set(val *UpdateTenant200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateTenant200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateTenant200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateTenant200Response(val *UpdateTenant200Response) *NullableUpdateTenant200Response {
-	return &NullableUpdateTenant200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateTenant200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateTenant200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -35,8 +35,8 @@ type GetGuidanceSettings200ResponseGuidanceSettings struct {
 	// Memory Down-size Maximum Free Memory (%). Upper limit for average free memory
 	MemoryDownAvgStandardCutoffRightSize NullableInt32 `json:"memoryDownAvgStandardCutoffRightSize,omitempty"`
 	// Memory Down-size Maximum Free Memory (%). Upper limit for peak memory usage
-	MemoryDownMaxStandardCutoffRightSize NullableInt32 `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
-	AdditionalProperties                 map[string]interface{}
+	MemoryDownMaxStandardCutoffRightSize NullableInt32          `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
+	AdditionalProperties                 map[string]interface{} `json:",remain"`
 }
 
 type _GetGuidanceSettings200ResponseGuidanceSettings GetGuidanceSettings200ResponseGuidanceSettings
@@ -444,67 +444,7 @@ func (o GetGuidanceSettings200ResponseGuidanceSettings) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *GetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(data []byte) (err error) {
-	varGetGuidanceSettings200ResponseGuidanceSettings := _GetGuidanceSettings200ResponseGuidanceSettings{}
-
-	err = json.Unmarshal(data, &varGetGuidanceSettings200ResponseGuidanceSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetGuidanceSettings200ResponseGuidanceSettings(varGetGuidanceSettings200ResponseGuidanceSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cpuAvgCutoffPower")
-		delete(additionalProperties, "cpuMaxCutoffPower")
-		delete(additionalProperties, "networkCutoffPower")
-		delete(additionalProperties, "cpuUpAvgStandardCutoffRightSize")
-		delete(additionalProperties, "cpuUpMaxStandardCutoffRightSize")
-		delete(additionalProperties, "memoryUpAvgStandardCutoffRightSize")
-		delete(additionalProperties, "memoryDownAvgStandardCutoffRightSize")
-		delete(additionalProperties, "memoryDownMaxStandardCutoffRightSize")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetGuidanceSettings200ResponseGuidanceSettings struct {
-	value *GetGuidanceSettings200ResponseGuidanceSettings
-	isSet bool
-}
-
-func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) Get() *GetGuidanceSettings200ResponseGuidanceSettings {
-	return v.value
-}
-
-func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) Set(val *GetGuidanceSettings200ResponseGuidanceSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetGuidanceSettings200ResponseGuidanceSettings(val *GetGuidanceSettings200ResponseGuidanceSettings) *NullableGetGuidanceSettings200ResponseGuidanceSettings {
-	return &NullableGetGuidanceSettings200ResponseGuidanceSettings{value: val, isSet: true}
-}
-
-func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

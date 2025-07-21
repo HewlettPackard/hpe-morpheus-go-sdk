@@ -59,7 +59,7 @@ type RouteOptionType struct {
 	DisplayValueOnDetails *bool                  `json:"displayValueOnDetails,omitempty"`
 	ShowOnCreate          *bool                  `json:"showOnCreate,omitempty"`
 	ShowOnEdit            *bool                  `json:"showOnEdit,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _RouteOptionType RouteOptionType
@@ -1641,98 +1641,7 @@ func (o RouteOptionType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *RouteOptionType) UnmarshalJSON(data []byte) (err error) {
-	varRouteOptionType := _RouteOptionType{}
-
-	err = json.Unmarshal(data, &varRouteOptionType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RouteOptionType(varRouteOptionType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionSourceType")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "requireOnCode")
-		delete(additionalProperties, "contextualDefault")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "showOnCreate")
-		delete(additionalProperties, "showOnEdit")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableRouteOptionType struct {
-	value *RouteOptionType
-	isSet bool
-}
-
-func (v NullableRouteOptionType) Get() *RouteOptionType {
-	return v.value
-}
-
-func (v *NullableRouteOptionType) Set(val *RouteOptionType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRouteOptionType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRouteOptionType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRouteOptionType(val *RouteOptionType) *NullableRouteOptionType {
-	return &NullableRouteOptionType{value: val, isSet: true}
-}
-
-func (v NullableRouteOptionType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRouteOptionType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &ListCatalogTypes200Response{}
 type ListCatalogTypes200Response struct {
 	CatalogItemTypes     []ListCatalogTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemTypes,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                       `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListCatalogTypes200Response ListCatalogTypes200Response
@@ -132,61 +132,7 @@ func (o ListCatalogTypes200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListCatalogTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varListCatalogTypes200Response := _ListCatalogTypes200Response{}
-
-	err = json.Unmarshal(data, &varListCatalogTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCatalogTypes200Response(varListCatalogTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "catalogItemTypes")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCatalogTypes200Response struct {
-	value *ListCatalogTypes200Response
-	isSet bool
-}
-
-func (v NullableListCatalogTypes200Response) Get() *ListCatalogTypes200Response {
-	return v.value
-}
-
-func (v *NullableListCatalogTypes200Response) Set(val *ListCatalogTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCatalogTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCatalogTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCatalogTypes200Response(val *ListCatalogTypes200Response) *NullableListCatalogTypes200Response {
-	return &NullableListCatalogTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableListCatalogTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCatalogTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

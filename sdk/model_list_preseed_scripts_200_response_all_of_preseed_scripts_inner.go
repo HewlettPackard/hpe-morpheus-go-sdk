@@ -26,7 +26,7 @@ type ListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
 	Description          NullableString                                                  `json:"description,omitempty"`
 	Content              *string                                                         `json:"content,omitempty"`
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListPreseedScripts200ResponseAllOfPreseedScriptsInner ListPreseedScripts200ResponseAllOfPreseedScriptsInner
@@ -287,65 +287,7 @@ func (o ListPreseedScripts200ResponseAllOfPreseedScriptsInner) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(data []byte) (err error) {
-	varListPreseedScripts200ResponseAllOfPreseedScriptsInner := _ListPreseedScripts200ResponseAllOfPreseedScriptsInner{}
-
-	err = json.Unmarshal(data, &varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPreseedScripts200ResponseAllOfPreseedScriptsInner(varListPreseedScripts200ResponseAllOfPreseedScriptsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner struct {
-	value *ListPreseedScripts200ResponseAllOfPreseedScriptsInner
-	isSet bool
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Get() *ListPreseedScripts200ResponseAllOfPreseedScriptsInner {
-	return v.value
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Set(val *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPreseedScripts200ResponseAllOfPreseedScriptsInner(val *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner {
-	return &NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner{value: val, isSet: true}
-}
-
-func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

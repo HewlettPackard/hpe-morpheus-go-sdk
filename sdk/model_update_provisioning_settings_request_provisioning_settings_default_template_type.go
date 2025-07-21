@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateProvisioningSettingsRequestProvisioningSettingsDef
 // UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct for UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
 type UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct {
 	// Default blueprint type ID
-	Id                   *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
@@ -97,60 +97,7 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
 	return toSerialize, nil
 }
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(data []byte) (err error) {
-	varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType := _UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType{}
-
-	err = json.Unmarshal(data, &varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType(varUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct {
-	value *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
-	isSet bool
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Get() *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType {
-	return v.value
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Set(val *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType(val *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType {
-	return &NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType{value: val, isSet: true}
-}
-
-func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

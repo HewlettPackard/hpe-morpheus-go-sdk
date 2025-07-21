@@ -65,7 +65,7 @@ type ListStorageServers200ResponseAllOfStorageServersInner struct {
 	Tenants              []map[string]interface{}                                    `json:"tenants,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
 	Credential           map[string]interface{}                                      `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListStorageServers200ResponseAllOfStorageServersInner ListStorageServers200ResponseAllOfStorageServersInner
@@ -1931,103 +1931,7 @@ func (o ListStorageServers200ResponseAllOfStorageServersInner) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListStorageServers200ResponseAllOfStorageServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListStorageServers200ResponseAllOfStorageServersInner := _ListStorageServers200ResponseAllOfStorageServersInner{}
-
-	err = json.Unmarshal(data, &varListStorageServers200ResponseAllOfStorageServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListStorageServers200ResponseAllOfStorageServersInner(varListStorageServers200ResponseAllOfStorageServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "chassis")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceTokenHash")
-		delete(additionalProperties, "serviceVersion")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "apiPort")
-		delete(additionalProperties, "adminPort")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "serverVendor")
-		delete(additionalProperties, "serverModel")
-		delete(additionalProperties, "serialNumber")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "usedStorage")
-		delete(additionalProperties, "diskCount")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "groups")
-		delete(additionalProperties, "hostGroups")
-		delete(additionalProperties, "hosts")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListStorageServers200ResponseAllOfStorageServersInner struct {
-	value *ListStorageServers200ResponseAllOfStorageServersInner
-	isSet bool
-}
-
-func (v NullableListStorageServers200ResponseAllOfStorageServersInner) Get() *ListStorageServers200ResponseAllOfStorageServersInner {
-	return v.value
-}
-
-func (v *NullableListStorageServers200ResponseAllOfStorageServersInner) Set(val *ListStorageServers200ResponseAllOfStorageServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListStorageServers200ResponseAllOfStorageServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListStorageServers200ResponseAllOfStorageServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListStorageServers200ResponseAllOfStorageServersInner(val *ListStorageServers200ResponseAllOfStorageServersInner) *NullableListStorageServers200ResponseAllOfStorageServersInner {
-	return &NullableListStorageServers200ResponseAllOfStorageServersInner{value: val, isSet: true}
-}
-
-func (v NullableListStorageServers200ResponseAllOfStorageServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListStorageServers200ResponseAllOfStorageServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

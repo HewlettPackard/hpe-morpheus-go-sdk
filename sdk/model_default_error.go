@@ -20,8 +20,8 @@ var _ MappedNullable = &DefaultError{}
 
 // DefaultError struct for DefaultError
 type DefaultError struct {
-	Msg                  *string `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Msg                  *string                `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _DefaultError DefaultError
@@ -96,60 +96,7 @@ func (o DefaultError) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *DefaultError) UnmarshalJSON(data []byte) (err error) {
-	varDefaultError := _DefaultError{}
-
-	err = json.Unmarshal(data, &varDefaultError)
-
-	if err != nil {
-		return err
-	}
-
-	*o = DefaultError(varDefaultError)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "msg")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableDefaultError struct {
-	value *DefaultError
-	isSet bool
-}
-
-func (v NullableDefaultError) Get() *DefaultError {
-	return v.value
-}
-
-func (v *NullableDefaultError) Set(val *DefaultError) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableDefaultError) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableDefaultError) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableDefaultError(val *DefaultError) *NullableDefaultError {
-	return &NullableDefaultError{value: val, isSet: true}
-}
-
-func (v NullableDefaultError) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableDefaultError) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

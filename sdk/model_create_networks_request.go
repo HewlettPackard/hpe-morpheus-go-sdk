@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateNetworksRequest{}
 // CreateNetworksRequest struct for CreateNetworksRequest
 type CreateNetworksRequest struct {
 	Network              *CreateNetworksRequestNetwork `json:"network,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _CreateNetworksRequest CreateNetworksRequest
@@ -96,60 +96,7 @@ func (o CreateNetworksRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateNetworksRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworksRequest := _CreateNetworksRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequest(varCreateNetworksRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "network")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateNetworksRequest struct {
-	value *CreateNetworksRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequest) Get() *CreateNetworksRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequest) Set(val *CreateNetworksRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequest(val *CreateNetworksRequest) *NullableCreateNetworksRequest {
-	return &NullableCreateNetworksRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

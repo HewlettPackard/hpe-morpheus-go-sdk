@@ -39,7 +39,7 @@ type OptionTypeList struct {
 	TranslationScript    *string                                                `json:"translationScript,omitempty"`
 	RequestScript        NullableString                                         `json:"requestScript,omitempty"`
 	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance     `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _OptionTypeList OptionTypeList
@@ -810,78 +810,7 @@ func (o OptionTypeList) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OptionTypeList) UnmarshalJSON(data []byte) (err error) {
-	varOptionTypeList := _OptionTypeList{}
-
-	err = json.Unmarshal(data, &varOptionTypeList)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OptionTypeList(varOptionTypeList)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "sourceUrl")
-		delete(additionalProperties, "sourceMethod")
-		delete(additionalProperties, "apiType")
-		delete(additionalProperties, "ignoreSSLErrors")
-		delete(additionalProperties, "realTime")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "initialDataset")
-		delete(additionalProperties, "translationScript")
-		delete(additionalProperties, "requestScript")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableOptionTypeList struct {
-	value *OptionTypeList
-	isSet bool
-}
-
-func (v NullableOptionTypeList) Get() *OptionTypeList {
-	return v.value
-}
-
-func (v *NullableOptionTypeList) Set(val *OptionTypeList) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOptionTypeList) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOptionTypeList) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOptionTypeList(val *OptionTypeList) *NullableOptionTypeList {
-	return &NullableOptionTypeList{value: val, isSet: true}
-}
-
-func (v NullableOptionTypeList) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOptionTypeList) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

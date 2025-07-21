@@ -39,7 +39,7 @@ type SecurityScan struct {
 	LastUpdated     *time.Time                                          `json:"lastUpdated,omitempty"`
 	// Results Summary (only returned when using query parameter results=true)
 	Results              map[string]interface{} `json:"results,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SecurityScan SecurityScan
@@ -685,76 +685,7 @@ func (o SecurityScan) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SecurityScan) UnmarshalJSON(data []byte) (err error) {
-	varSecurityScan := _SecurityScan{}
-
-	err = json.Unmarshal(data, &varSecurityScan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityScan(varSecurityScan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "securityPackage")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "scanDate")
-		delete(additionalProperties, "scanDuration")
-		delete(additionalProperties, "testCount")
-		delete(additionalProperties, "runCount")
-		delete(additionalProperties, "passCount")
-		delete(additionalProperties, "failCount")
-		delete(additionalProperties, "otherCount")
-		delete(additionalProperties, "scanScore")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "results")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSecurityScan struct {
-	value *SecurityScan
-	isSet bool
-}
-
-func (v NullableSecurityScan) Get() *SecurityScan {
-	return v.value
-}
-
-func (v *NullableSecurityScan) Set(val *SecurityScan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityScan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityScan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityScan(val *SecurityScan) *NullableSecurityScan {
-	return &NullableSecurityScan{value: val, isSet: true}
-}
-
-func (v NullableSecurityScan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityScan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

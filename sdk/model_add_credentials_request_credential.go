@@ -97,6 +97,50 @@ func AddCredentialsRequestCredentialOneOf8AsAddCredentialsRequestCredential(v *A
 	}
 }
 
+func (dst *AddCredentialsRequestCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCredentialsRequestCredential{}
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf); ok {
+		dst.AddCredentialsRequestCredentialOneOf = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf1); ok {
+		dst.AddCredentialsRequestCredentialOneOf1 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf2); ok {
+		dst.AddCredentialsRequestCredentialOneOf2 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf3); ok {
+		dst.AddCredentialsRequestCredentialOneOf3 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf4); ok {
+		dst.AddCredentialsRequestCredentialOneOf4 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf5); ok {
+		dst.AddCredentialsRequestCredentialOneOf5 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf6); ok {
+		dst.AddCredentialsRequestCredentialOneOf6 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf7); ok {
+		dst.AddCredentialsRequestCredentialOneOf7 = &out
+	}
+
+	if out, ok := data.(AddCredentialsRequestCredentialOneOf8); ok {
+		dst.AddCredentialsRequestCredentialOneOf8 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCredentialsRequestCredential) UnmarshalJSON(data []byte) error {
 	var err error

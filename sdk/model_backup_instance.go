@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BackupInstance type satisfies the MappedNullable interface at compile time
@@ -41,7 +40,7 @@ type BackupInstance struct {
 	// Retention Count for new job. By default the backup settings value will be used. Only applies to jobAction `new` and `clone`.
 	RetentionCount       *int64                   `json:"retentionCount,omitempty"`
 	BackupJob            *BackupInstanceBackupJob `json:"backupJob,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _BackupInstance BackupInstance
@@ -412,96 +411,7 @@ func (o BackupInstance) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *BackupInstance) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"locationType",
-		"name",
-		"instanceId",
-		"containerId",
-		"backupType",
-		"jobAction",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varBackupInstance := _BackupInstance{}
-
-	err = json.Unmarshal(data, &varBackupInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = BackupInstance(varBackupInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "locationType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "backupType")
-		delete(additionalProperties, "jobAction")
-		delete(additionalProperties, "jobId")
-		delete(additionalProperties, "jobName")
-		delete(additionalProperties, "jobSchedule")
-		delete(additionalProperties, "retentionCount")
-		delete(additionalProperties, "backupJob")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableBackupInstance struct {
-	value *BackupInstance
-	isSet bool
-}
-
-func (v NullableBackupInstance) Get() *BackupInstance {
-	return v.value
-}
-
-func (v *NullableBackupInstance) Set(val *BackupInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableBackupInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableBackupInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableBackupInstance(val *BackupInstance) *NullableBackupInstance {
-	return &NullableBackupInstance{value: val, isSet: true}
-}
-
-func (v NullableBackupInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableBackupInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

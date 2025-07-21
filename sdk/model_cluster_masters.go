@@ -92,7 +92,7 @@ type ClusterMasters struct {
 	GuestConsolePassword     NullableString                                                                      `json:"guestConsolePassword,omitempty"`
 	GuestConsolePasswordHash NullableString                                                                      `json:"guestConsolePasswordHash,omitempty"`
 	GuestConsolePort         NullableString                                                                      `json:"guestConsolePort,omitempty"`
-	AdditionalProperties     map[string]interface{}
+	AdditionalProperties     map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ClusterMasters ClusterMasters
@@ -2804,130 +2804,7 @@ func (o ClusterMasters) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterMasters) UnmarshalJSON(data []byte) (err error) {
-	varClusterMasters := _ClusterMasters{}
-
-	err = json.Unmarshal(data, &varClusterMasters)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterMasters(varClusterMasters)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalUniqueId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "folderId")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "volumeId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "platformVersion")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshPasswordHash")
-		delete(additionalProperties, "osDevice")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "dataDevice")
-		delete(additionalProperties, "lvmEnabled")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "softwareRaid")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "powerState")
-		delete(additionalProperties, "agentInstalled")
-		delete(additionalProperties, "lastAgentUpdate")
-		delete(additionalProperties, "agentVersion")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "hourlyPrice")
-		delete(additionalProperties, "sourceImage")
-		delete(additionalProperties, "serverOs")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "controllers")
-		delete(additionalProperties, "interfaces")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "tagCompliant")
-		delete(additionalProperties, "containers")
-		delete(additionalProperties, "guestConsolePreferred")
-		delete(additionalProperties, "guestConsoleType")
-		delete(additionalProperties, "guestConsoleUsername")
-		delete(additionalProperties, "guestConsolePassword")
-		delete(additionalProperties, "guestConsolePasswordHash")
-		delete(additionalProperties, "guestConsolePort")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterMasters struct {
-	value *ClusterMasters
-	isSet bool
-}
-
-func (v NullableClusterMasters) Get() *ClusterMasters {
-	return v.value
-}
-
-func (v *NullableClusterMasters) Set(val *ClusterMasters) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterMasters) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterMasters) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterMasters(val *ClusterMasters) *NullableClusterMasters {
-	return &NullableClusterMasters{value: val, isSet: true}
-}
-
-func (v NullableClusterMasters) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterMasters) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

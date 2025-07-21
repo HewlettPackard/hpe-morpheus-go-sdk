@@ -22,7 +22,7 @@ var _ MappedNullable = &ListBillingZone200Response{}
 type ListBillingZone200Response struct {
 	BillingInfo          *ListBillingZone200ResponseAllOfBillingInfo `json:"billingInfo,omitempty"`
 	Success              *bool                                       `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _ListBillingZone200Response ListBillingZone200Response
@@ -132,61 +132,7 @@ func (o ListBillingZone200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListBillingZone200Response) UnmarshalJSON(data []byte) (err error) {
-	varListBillingZone200Response := _ListBillingZone200Response{}
-
-	err = json.Unmarshal(data, &varListBillingZone200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBillingZone200Response(varListBillingZone200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "billingInfo")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListBillingZone200Response struct {
-	value *ListBillingZone200Response
-	isSet bool
-}
-
-func (v NullableListBillingZone200Response) Get() *ListBillingZone200Response {
-	return v.value
-}
-
-func (v *NullableListBillingZone200Response) Set(val *ListBillingZone200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBillingZone200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBillingZone200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBillingZone200Response(val *ListBillingZone200Response) *NullableListBillingZone200Response {
-	return &NullableListBillingZone200Response{value: val, isSet: true}
-}
-
-func (v NullableListBillingZone200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBillingZone200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

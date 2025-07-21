@@ -21,7 +21,7 @@ var _ MappedNullable = &GetUserPermissions200Response{}
 // GetUserPermissions200Response struct for GetUserPermissions200Response
 type GetUserPermissions200Response struct {
 	Access               *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetUserPermissions200Response GetUserPermissions200Response
@@ -96,60 +96,7 @@ func (o GetUserPermissions200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetUserPermissions200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetUserPermissions200Response := _GetUserPermissions200Response{}
-
-	err = json.Unmarshal(data, &varGetUserPermissions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetUserPermissions200Response(varGetUserPermissions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetUserPermissions200Response struct {
-	value *GetUserPermissions200Response
-	isSet bool
-}
-
-func (v NullableGetUserPermissions200Response) Get() *GetUserPermissions200Response {
-	return v.value
-}
-
-func (v *NullableGetUserPermissions200Response) Set(val *GetUserPermissions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetUserPermissions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetUserPermissions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetUserPermissions200Response(val *GetUserPermissions200Response) *NullableGetUserPermissions200Response {
-	return &NullableGetUserPermissions200Response{value: val, isSet: true}
-}
-
-func (v NullableGetUserPermissions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetUserPermissions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

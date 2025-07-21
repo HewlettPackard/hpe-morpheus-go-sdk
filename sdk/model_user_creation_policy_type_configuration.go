@@ -20,9 +20,9 @@ var _ MappedNullable = &UserCreationPolicyTypeConfiguration{}
 
 // UserCreationPolicyTypeConfiguration Configuration settings for the following policy types: - User Creation
 type UserCreationPolicyTypeConfiguration struct {
-	CreateUserType       *string `json:"createUserType,omitempty"`
-	CreateUser           *bool   `json:"createUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUserType       *string                `json:"createUserType,omitempty"`
+	CreateUser           *bool                  `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserCreationPolicyTypeConfiguration UserCreationPolicyTypeConfiguration
@@ -132,61 +132,7 @@ func (o UserCreationPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *UserCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varUserCreationPolicyTypeConfiguration := _UserCreationPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varUserCreationPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserCreationPolicyTypeConfiguration(varUserCreationPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "createUserType")
-		delete(additionalProperties, "createUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUserCreationPolicyTypeConfiguration struct {
-	value *UserCreationPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableUserCreationPolicyTypeConfiguration) Get() *UserCreationPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableUserCreationPolicyTypeConfiguration) Set(val *UserCreationPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserCreationPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserCreationPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserCreationPolicyTypeConfiguration(val *UserCreationPolicyTypeConfiguration) *NullableUserCreationPolicyTypeConfiguration {
-	return &NullableUserCreationPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableUserCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserCreationPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

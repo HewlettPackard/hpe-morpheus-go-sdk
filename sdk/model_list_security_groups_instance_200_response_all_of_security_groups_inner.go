@@ -27,8 +27,8 @@ type ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner struct {
 	// Security group Name
 	Name *string `json:"name,omitempty"`
 	// Security group description
-	Description          *string `json:"description,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Description          *string                `json:"description,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner
@@ -208,63 +208,7 @@ func (o ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) ToMap() (
 	return toSerialize, nil
 }
 func (o *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner := _ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner{}
-
-	err = json.Unmarshal(data, &varListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner(varListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner struct {
-	value *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner
-	isSet bool
-}
-
-func (v NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) Get() *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner {
-	return v.value
-}
-
-func (v *NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) Set(val *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner(val *ListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) *NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner {
-	return &NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListSecurityGroupsInstance200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

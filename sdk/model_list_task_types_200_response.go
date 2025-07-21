@@ -21,7 +21,7 @@ var _ MappedNullable = &ListTaskTypes200Response{}
 // ListTaskTypes200Response struct for ListTaskTypes200Response
 type ListTaskTypes200Response struct {
 	TaskTypes            []ListTaskTypes200ResponseTaskTypesInner `json:"taskTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _ListTaskTypes200Response ListTaskTypes200Response
@@ -96,60 +96,7 @@ func (o ListTaskTypes200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListTaskTypes200Response) UnmarshalJSON(data []byte) (err error) {
-	varListTaskTypes200Response := _ListTaskTypes200Response{}
-
-	err = json.Unmarshal(data, &varListTaskTypes200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTaskTypes200Response(varListTaskTypes200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListTaskTypes200Response struct {
-	value *ListTaskTypes200Response
-	isSet bool
-}
-
-func (v NullableListTaskTypes200Response) Get() *ListTaskTypes200Response {
-	return v.value
-}
-
-func (v *NullableListTaskTypes200Response) Set(val *ListTaskTypes200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTaskTypes200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTaskTypes200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTaskTypes200Response(val *ListTaskTypes200Response) *NullableListTaskTypes200Response {
-	return &NullableListTaskTypes200Response{value: val, isSet: true}
-}
-
-func (v NullableListTaskTypes200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTaskTypes200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

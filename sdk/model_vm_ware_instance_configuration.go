@@ -33,8 +33,8 @@ type VMWareInstanceConfiguration struct {
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
 	// Image ID. This is the ID of a Virtual Image.
-	Template             *int64 `json:"template,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Template             *int64                 `json:"template,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _VMWareInstanceConfiguration VMWareInstanceConfiguration
@@ -338,66 +338,7 @@ func (o VMWareInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *VMWareInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varVMWareInstanceConfiguration := _VMWareInstanceConfiguration{}
-
-	err = json.Unmarshal(data, &varVMWareInstanceConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VMWareInstanceConfiguration(varVMWareInstanceConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "hostId")
-		delete(additionalProperties, "smbiosAssetTag")
-		delete(additionalProperties, "nestedVirtualization")
-		delete(additionalProperties, "vmwareFolderId")
-		delete(additionalProperties, "template")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableVMWareInstanceConfiguration struct {
-	value *VMWareInstanceConfiguration
-	isSet bool
-}
-
-func (v NullableVMWareInstanceConfiguration) Get() *VMWareInstanceConfiguration {
-	return v.value
-}
-
-func (v *NullableVMWareInstanceConfiguration) Set(val *VMWareInstanceConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVMWareInstanceConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVMWareInstanceConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVMWareInstanceConfiguration(val *VMWareInstanceConfiguration) *NullableVMWareInstanceConfiguration {
-	return &NullableVMWareInstanceConfiguration{value: val, isSet: true}
-}
-
-func (v NullableVMWareInstanceConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVMWareInstanceConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

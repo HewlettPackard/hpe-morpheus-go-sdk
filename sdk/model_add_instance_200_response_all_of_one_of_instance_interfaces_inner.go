@@ -25,7 +25,7 @@ type AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct {
 	IpAddress              *string                                                         `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId *int64                                                          `json:"networkInterfaceTypeId,omitempty"`
 	IpMode                 *string                                                         `json:"ipMode,omitempty"`
-	AdditionalProperties   map[string]interface{}
+	AdditionalProperties   map[string]interface{}                                          `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInterfacesInner AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
@@ -240,64 +240,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceInterfacesInner := _AddInstance200ResponseAllOfOneOfInstanceInterfacesInner{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceInterfacesInner(varAddInstance200ResponseAllOfOneOfInstanceInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "networkInterfaceTypeId")
-		delete(additionalProperties, "ipMode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) Get() *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) Set(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

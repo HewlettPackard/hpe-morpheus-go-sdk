@@ -21,7 +21,7 @@ var _ MappedNullable = &GetVdi200Response{}
 // GetVdi200Response struct for GetVdi200Response
 type GetVdi200Response struct {
 	Desktop              *ListVdi200ResponseAllOfDesktopsInner `json:"desktop,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _GetVdi200Response GetVdi200Response
@@ -96,60 +96,7 @@ func (o GetVdi200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetVdi200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetVdi200Response := _GetVdi200Response{}
-
-	err = json.Unmarshal(data, &varGetVdi200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetVdi200Response(varGetVdi200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "desktop")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetVdi200Response struct {
-	value *GetVdi200Response
-	isSet bool
-}
-
-func (v NullableGetVdi200Response) Get() *GetVdi200Response {
-	return v.value
-}
-
-func (v *NullableGetVdi200Response) Set(val *GetVdi200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetVdi200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetVdi200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetVdi200Response(val *GetVdi200Response) *NullableGetVdi200Response {
-	return &NullableGetVdi200Response{value: val, isSet: true}
-}
-
-func (v NullableGetVdi200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetVdi200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCredentialsRequestCredentialOneOfIntegration{}
 // AddCredentialsRequestCredentialOneOfIntegration Credential Store. ID of a Credential Integration. This can be set to store the credential in an external store.
 type AddCredentialsRequestCredentialOneOfIntegration struct {
 	Id                   *AddCredentialsRequestCredentialOneOfIntegrationId `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _AddCredentialsRequestCredentialOneOfIntegration AddCredentialsRequestCredentialOneOfIntegration
@@ -96,60 +96,7 @@ func (o AddCredentialsRequestCredentialOneOfIntegration) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *AddCredentialsRequestCredentialOneOfIntegration) UnmarshalJSON(data []byte) (err error) {
-	varAddCredentialsRequestCredentialOneOfIntegration := _AddCredentialsRequestCredentialOneOfIntegration{}
-
-	err = json.Unmarshal(data, &varAddCredentialsRequestCredentialOneOfIntegration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCredentialsRequestCredentialOneOfIntegration(varAddCredentialsRequestCredentialOneOfIntegration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCredentialsRequestCredentialOneOfIntegration struct {
-	value *AddCredentialsRequestCredentialOneOfIntegration
-	isSet bool
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOfIntegration) Get() *AddCredentialsRequestCredentialOneOfIntegration {
-	return v.value
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) Set(val *AddCredentialsRequestCredentialOneOfIntegration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOfIntegration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCredentialsRequestCredentialOneOfIntegration(val *AddCredentialsRequestCredentialOneOfIntegration) *NullableAddCredentialsRequestCredentialOneOfIntegration {
-	return &NullableAddCredentialsRequestCredentialOneOfIntegration{value: val, isSet: true}
-}
-
-func (v NullableAddCredentialsRequestCredentialOneOfIntegration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

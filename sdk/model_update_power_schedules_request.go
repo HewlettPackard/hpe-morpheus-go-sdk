@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdatePowerSchedulesRequest type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &UpdatePowerSchedulesRequest{}
 // UpdatePowerSchedulesRequest struct for UpdatePowerSchedulesRequest
 type UpdatePowerSchedulesRequest struct {
 	Schedule             UpdatePowerSchedulesRequestSchedule `json:"schedule"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _UpdatePowerSchedulesRequest UpdatePowerSchedulesRequest
@@ -88,81 +87,7 @@ func (o UpdatePowerSchedulesRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdatePowerSchedulesRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"schedule",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdatePowerSchedulesRequest := _UpdatePowerSchedulesRequest{}
-
-	err = json.Unmarshal(data, &varUpdatePowerSchedulesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdatePowerSchedulesRequest(varUpdatePowerSchedulesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "schedule")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdatePowerSchedulesRequest struct {
-	value *UpdatePowerSchedulesRequest
-	isSet bool
-}
-
-func (v NullableUpdatePowerSchedulesRequest) Get() *UpdatePowerSchedulesRequest {
-	return v.value
-}
-
-func (v *NullableUpdatePowerSchedulesRequest) Set(val *UpdatePowerSchedulesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdatePowerSchedulesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdatePowerSchedulesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdatePowerSchedulesRequest(val *UpdatePowerSchedulesRequest) *NullableUpdatePowerSchedulesRequest {
-	return &NullableUpdatePowerSchedulesRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdatePowerSchedulesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdatePowerSchedulesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCertificateRequest{}
 // AddCertificateRequest struct for AddCertificateRequest
 type AddCertificateRequest struct {
 	Certificate          *AddCertificateRequestCertificate `json:"certificate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _AddCertificateRequest AddCertificateRequest
@@ -96,60 +96,7 @@ func (o AddCertificateRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCertificateRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddCertificateRequest := _AddCertificateRequest{}
-
-	err = json.Unmarshal(data, &varAddCertificateRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCertificateRequest(varAddCertificateRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "certificate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCertificateRequest struct {
-	value *AddCertificateRequest
-	isSet bool
-}
-
-func (v NullableAddCertificateRequest) Get() *AddCertificateRequest {
-	return v.value
-}
-
-func (v *NullableAddCertificateRequest) Set(val *AddCertificateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCertificateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCertificateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCertificateRequest(val *AddCertificateRequest) *NullableAddCertificateRequest {
-	return &NullableAddCertificateRequest{value: val, isSet: true}
-}
-
-func (v NullableAddCertificateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCertificateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

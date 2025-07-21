@@ -53,6 +53,134 @@ type UpdatePoliciesRequestPolicyConfig struct {
 	WorkflowPolicyTypeConfiguration                         *WorkflowPolicyTypeConfiguration
 }
 
+func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdatePoliciesRequestPolicyConfig{}
+	}
+
+	if out, ok := data.(ApprovePolicyTypeConfiguration); ok {
+		dst.ApprovePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BackupCreationPolicyTypeConfiguration); ok {
+		dst.BackupCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BackupTargetsPolicyTypeConfiguration); ok {
+		dst.BackupTargetsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(BudgetPolicyTypeConfiguration); ok {
+		dst.BudgetPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ClusterResourceNamePolicyTypeConfiguration); ok {
+		dst.ClusterResourceNamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(CypherAccessPolicyTypeConfiguration); ok {
+		dst.CypherAccessPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(DelayedDeletePolicyTypeConfiguration); ok {
+		dst.DelayedDeletePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ExpirationPolicyTypeConfiguration); ok {
+		dst.ExpirationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(FileShareStorageQuotaPolicyTypeConfiguration); ok {
+		dst.FileShareStorageQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(HostnamePolicyTypeConfiguration); ok {
+		dst.HostnamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(InstanceNamePolicyTypeConfiguration); ok {
+		dst.InstanceNamePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxContainersPolicyTypeConfiguration); ok {
+		dst.MaxContainersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxCoresPolicyTypeConfiguration1); ok {
+		dst.MaxCoresPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxHostsPolicyTypeConfiguration); ok {
+		dst.MaxHostsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxLoadBalancerPoolsPolicyTypeConfiguration); ok {
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxMemoryPolicyTypeConfiguration1); ok {
+		dst.MaxMemoryPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxPoolMembersPolicyTypeConfiguration); ok {
+		dst.MaxPoolMembersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1); ok {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxVMsPolicyTypeConfiguration); ok {
+		dst.MaxVMsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MaxVirtualServersPolicyTypeConfiguration); ok {
+		dst.MaxVirtualServersPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(MessageOfTheDayPolicyTypeConfiguration); ok {
+		dst.MessageOfTheDayPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(NetworkQuotaPolicyTypeConfiguration); ok {
+		dst.NetworkQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(PowerSchedulePolicyTypeConfiguration); ok {
+		dst.PowerSchedulePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(RouterQuotaPolicyTypeConfiguration); ok {
+		dst.RouterQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(ShutdownPolicyTypeConfiguration); ok {
+		dst.ShutdownPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(StorageServerStorageQuotaPolicyTypeConfiguration); ok {
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(TagsPolicyTypeConfiguration); ok {
+		dst.TagsPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(UserCreationPolicyTypeConfiguration); ok {
+		dst.UserCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(UserGroupCreationPolicyTypeConfiguration); ok {
+		dst.UserGroupCreationPolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(WorkflowPolicyTypeConfiguration); ok {
+		dst.WorkflowPolicyTypeConfiguration = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 	var err error

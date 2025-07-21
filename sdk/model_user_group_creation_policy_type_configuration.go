@@ -20,8 +20,8 @@ var _ MappedNullable = &UserGroupCreationPolicyTypeConfiguration{}
 
 // UserGroupCreationPolicyTypeConfiguration Configuration settings for the following policy types: - User Group Creation
 type UserGroupCreationPolicyTypeConfiguration struct {
-	UserGroup            *string `json:"userGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	UserGroup            *string                `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserGroupCreationPolicyTypeConfiguration UserGroupCreationPolicyTypeConfiguration
@@ -96,60 +96,7 @@ func (o UserGroupCreationPolicyTypeConfiguration) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *UserGroupCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varUserGroupCreationPolicyTypeConfiguration := _UserGroupCreationPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varUserGroupCreationPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserGroupCreationPolicyTypeConfiguration(varUserGroupCreationPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "userGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUserGroupCreationPolicyTypeConfiguration struct {
-	value *UserGroupCreationPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableUserGroupCreationPolicyTypeConfiguration) Get() *UserGroupCreationPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableUserGroupCreationPolicyTypeConfiguration) Set(val *UserGroupCreationPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserGroupCreationPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserGroupCreationPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserGroupCreationPolicyTypeConfiguration(val *UserGroupCreationPolicyTypeConfiguration) *NullableUserGroupCreationPolicyTypeConfiguration {
-	return &NullableUserGroupCreationPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableUserGroupCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserGroupCreationPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

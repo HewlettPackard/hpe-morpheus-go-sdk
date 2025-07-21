@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ContainerTypeCreate type satisfies the MappedNullable interface at compile time
@@ -52,7 +51,7 @@ type ContainerTypeCreate struct {
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.
 	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ContainerTypeCreate ContainerTypeCreate
@@ -616,99 +615,7 @@ func (o ContainerTypeCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ContainerTypeCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"shortName",
-		"containerVersion",
-		"provisionTypeCode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varContainerTypeCreate := _ContainerTypeCreate{}
-
-	err = json.Unmarshal(data, &varContainerTypeCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ContainerTypeCreate(varContainerTypeCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "templates")
-		delete(additionalProperties, "virtualImageId")
-		delete(additionalProperties, "osTypeId")
-		delete(additionalProperties, "statTypeCode")
-		delete(additionalProperties, "logTypeCode")
-		delete(additionalProperties, "serverType")
-		delete(additionalProperties, "containerPorts")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableContainerTypeCreate struct {
-	value *ContainerTypeCreate
-	isSet bool
-}
-
-func (v NullableContainerTypeCreate) Get() *ContainerTypeCreate {
-	return v.value
-}
-
-func (v *NullableContainerTypeCreate) Set(val *ContainerTypeCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableContainerTypeCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableContainerTypeCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableContainerTypeCreate(val *ContainerTypeCreate) *NullableContainerTypeCreate {
-	return &NullableContainerTypeCreate{value: val, isSet: true}
-}
-
-func (v NullableContainerTypeCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableContainerTypeCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

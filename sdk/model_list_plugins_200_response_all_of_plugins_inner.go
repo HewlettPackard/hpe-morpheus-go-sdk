@@ -40,7 +40,7 @@ type ListPlugins200ResponseAllOfPluginsInner struct {
 	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DateCreated           *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated           *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListPlugins200ResponseAllOfPluginsInner ListPlugins200ResponseAllOfPluginsInner
@@ -800,78 +800,7 @@ func (o ListPlugins200ResponseAllOfPluginsInner) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *ListPlugins200ResponseAllOfPluginsInner) UnmarshalJSON(data []byte) (err error) {
-	varListPlugins200ResponseAllOfPluginsInner := _ListPlugins200ResponseAllOfPluginsInner{}
-
-	err = json.Unmarshal(data, &varListPlugins200ResponseAllOfPluginsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPlugins200ResponseAllOfPluginsInner(varListPlugins200ResponseAllOfPluginsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "author")
-		delete(additionalProperties, "websiteUrl")
-		delete(additionalProperties, "sourceCodeLocationUrl")
-		delete(additionalProperties, "issueTrackerUrl")
-		delete(additionalProperties, "valid")
-		delete(additionalProperties, "hasValidUpdate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "providers")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPlugins200ResponseAllOfPluginsInner struct {
-	value *ListPlugins200ResponseAllOfPluginsInner
-	isSet bool
-}
-
-func (v NullableListPlugins200ResponseAllOfPluginsInner) Get() *ListPlugins200ResponseAllOfPluginsInner {
-	return v.value
-}
-
-func (v *NullableListPlugins200ResponseAllOfPluginsInner) Set(val *ListPlugins200ResponseAllOfPluginsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPlugins200ResponseAllOfPluginsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPlugins200ResponseAllOfPluginsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPlugins200ResponseAllOfPluginsInner(val *ListPlugins200ResponseAllOfPluginsInner) *NullableListPlugins200ResponseAllOfPluginsInner {
-	return &NullableListPlugins200ResponseAllOfPluginsInner{value: val, isSet: true}
-}
-
-func (v NullableListPlugins200ResponseAllOfPluginsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPlugins200ResponseAllOfPluginsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

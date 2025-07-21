@@ -28,7 +28,7 @@ type GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct 
 	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
 	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	Plans                []map[string]interface{}                                                         `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
@@ -349,67 +349,7 @@ func (o GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) ToM
 	return toSerialize, nil
 }
 func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
-	varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions := _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions{}
-
-	err = json.Unmarshal(data, &varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetServicePlans200ResponseServicePlanPermissionsResourcePermissions(varGetServicePlans200ResponseServicePlanPermissionsResourcePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "defaultTarget")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct {
-	value *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
-	isSet bool
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Get() *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
-	return v.value
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Set(val *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions(val *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions {
-	return &NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions{value: val, isSet: true}
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

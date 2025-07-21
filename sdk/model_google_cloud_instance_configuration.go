@@ -31,8 +31,8 @@ type GoogleCloudInstanceConfiguration struct {
 	// Service Account
 	ServiceAccount *string `json:"serviceAccount,omitempty"`
 	// Access Scope
-	AccessScope          *string `json:"accessScope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccessScope          *string                `json:"accessScope,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GoogleCloudInstanceConfiguration GoogleCloudInstanceConfiguration
@@ -297,65 +297,7 @@ func (o GoogleCloudInstanceConfiguration) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *GoogleCloudInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varGoogleCloudInstanceConfiguration := _GoogleCloudInstanceConfiguration{}
-
-	err = json.Unmarshal(data, &varGoogleCloudInstanceConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GoogleCloudInstanceConfiguration(varGoogleCloudInstanceConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "googleZoneId")
-		delete(additionalProperties, "externalIpType")
-		delete(additionalProperties, "networkTags")
-		delete(additionalProperties, "serviceAccount")
-		delete(additionalProperties, "accessScope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGoogleCloudInstanceConfiguration struct {
-	value *GoogleCloudInstanceConfiguration
-	isSet bool
-}
-
-func (v NullableGoogleCloudInstanceConfiguration) Get() *GoogleCloudInstanceConfiguration {
-	return v.value
-}
-
-func (v *NullableGoogleCloudInstanceConfiguration) Set(val *GoogleCloudInstanceConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGoogleCloudInstanceConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGoogleCloudInstanceConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGoogleCloudInstanceConfiguration(val *GoogleCloudInstanceConfiguration) *NullableGoogleCloudInstanceConfiguration {
-	return &NullableGoogleCloudInstanceConfiguration{value: val, isSet: true}
-}
-
-func (v NullableGoogleCloudInstanceConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGoogleCloudInstanceConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

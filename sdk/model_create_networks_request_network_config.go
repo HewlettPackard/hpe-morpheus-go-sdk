@@ -27,6 +27,30 @@ type CreateNetworksRequestNetworkConfig struct {
 	MapmapOfStringAny                        *map[string]interface{}
 }
 
+func (dst *CreateNetworksRequestNetworkConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &CreateNetworksRequestNetworkConfig{}
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf = &out
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf1); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf2); ok {
+		dst.CreateNetworksRequestNetworkConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CreateNetworksRequestNetworkConfig) UnmarshalJSON(data []byte) error {
 	var err error

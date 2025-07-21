@@ -20,8 +20,8 @@ var _ MappedNullable = &NetworkQuotaPolicyTypeConfiguration{}
 
 // NetworkQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - Network Quota
 type NetworkQuotaPolicyTypeConfiguration struct {
-	MaxNetworks          *string `json:"maxNetworks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxNetworks          *string                `json:"maxNetworks,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkQuotaPolicyTypeConfiguration NetworkQuotaPolicyTypeConfiguration
@@ -96,60 +96,7 @@ func (o NetworkQuotaPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *NetworkQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varNetworkQuotaPolicyTypeConfiguration := _NetworkQuotaPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varNetworkQuotaPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkQuotaPolicyTypeConfiguration(varNetworkQuotaPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxNetworks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkQuotaPolicyTypeConfiguration struct {
-	value *NetworkQuotaPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableNetworkQuotaPolicyTypeConfiguration) Get() *NetworkQuotaPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableNetworkQuotaPolicyTypeConfiguration) Set(val *NetworkQuotaPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkQuotaPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkQuotaPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkQuotaPolicyTypeConfiguration(val *NetworkQuotaPolicyTypeConfiguration) *NullableNetworkQuotaPolicyTypeConfiguration {
-	return &NullableNetworkQuotaPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableNetworkQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkQuotaPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

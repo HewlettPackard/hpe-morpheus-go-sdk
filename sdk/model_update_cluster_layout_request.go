@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateClusterLayoutRequest{}
 // UpdateClusterLayoutRequest struct for UpdateClusterLayoutRequest
 type UpdateClusterLayoutRequest struct {
 	Layout               *UpdateClusterLayoutRequestLayout `json:"layout,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _UpdateClusterLayoutRequest UpdateClusterLayoutRequest
@@ -96,60 +96,7 @@ func (o UpdateClusterLayoutRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateClusterLayoutRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateClusterLayoutRequest := _UpdateClusterLayoutRequest{}
-
-	err = json.Unmarshal(data, &varUpdateClusterLayoutRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClusterLayoutRequest(varUpdateClusterLayoutRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "layout")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateClusterLayoutRequest struct {
-	value *UpdateClusterLayoutRequest
-	isSet bool
-}
-
-func (v NullableUpdateClusterLayoutRequest) Get() *UpdateClusterLayoutRequest {
-	return v.value
-}
-
-func (v *NullableUpdateClusterLayoutRequest) Set(val *UpdateClusterLayoutRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClusterLayoutRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClusterLayoutRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClusterLayoutRequest(val *UpdateClusterLayoutRequest) *NullableUpdateClusterLayoutRequest {
-	return &NullableUpdateClusterLayoutRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateClusterLayoutRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClusterLayoutRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

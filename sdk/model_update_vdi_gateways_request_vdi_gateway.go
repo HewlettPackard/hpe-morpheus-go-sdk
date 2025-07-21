@@ -33,6 +33,18 @@ func UpdateVDIGatewaysRequestVdiGatewayOneOfAsUpdateVDIGatewaysRequestVdiGateway
 	}
 }
 
+func (dst *UpdateVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateVDIGatewaysRequestVdiGateway{}
+	}
+
+	if out, ok := data.(UpdateVDIGatewaysRequestVdiGatewayOneOf); ok {
+		dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateVDIGatewaysRequestVdiGateway) UnmarshalJSON(data []byte) error {
 	var err error

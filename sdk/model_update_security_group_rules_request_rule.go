@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateSecurityGroupRulesRequestRule type satisfies the MappedNullable interface at compile time
@@ -48,8 +47,8 @@ type UpdateSecurityGroupRulesRequestRule struct {
 	// Either `accept` or `deny`.
 	Policy *string `json:"policy,omitempty"`
 	// The id of an Instance Type. If specified, the source CIDR will have access to all ports exposed by the particular instance in the cloud, app, or instance. Required if customRule is false, otherwise ignored.
-	InstanceTypeId       *int64 `json:"instanceTypeId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceTypeId       *int64                 `json:"instanceTypeId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateSecurityGroupRulesRequestRule UpdateSecurityGroupRulesRequestRule
@@ -645,97 +644,7 @@ func (o UpdateSecurityGroupRulesRequestRule) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *UpdateSecurityGroupRulesRequestRule) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"protocol",
-		"ruleType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateSecurityGroupRulesRequestRule := _UpdateSecurityGroupRulesRequestRule{}
-
-	err = json.Unmarshal(data, &varUpdateSecurityGroupRulesRequestRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateSecurityGroupRulesRequestRule(varUpdateSecurityGroupRulesRequestRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationGroup")
-		delete(additionalProperties, "destinationTier")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "instanceTypeId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateSecurityGroupRulesRequestRule struct {
-	value *UpdateSecurityGroupRulesRequestRule
-	isSet bool
-}
-
-func (v NullableUpdateSecurityGroupRulesRequestRule) Get() *UpdateSecurityGroupRulesRequestRule {
-	return v.value
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequestRule) Set(val *UpdateSecurityGroupRulesRequestRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateSecurityGroupRulesRequestRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequestRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateSecurityGroupRulesRequestRule(val *UpdateSecurityGroupRulesRequestRule) *NullableUpdateSecurityGroupRulesRequestRule {
-	return &NullableUpdateSecurityGroupRulesRequestRule{value: val, isSet: true}
-}
-
-func (v NullableUpdateSecurityGroupRulesRequestRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateSecurityGroupRulesRequestRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

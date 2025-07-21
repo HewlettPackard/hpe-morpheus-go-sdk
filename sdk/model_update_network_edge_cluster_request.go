@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateNetworkEdgeClusterRequest{}
 // UpdateNetworkEdgeClusterRequest The parameters for update a network Edge Cluster is type dependent. The following lists the common parameters. See get a specific type to list available options for the network server type.
 type UpdateNetworkEdgeClusterRequest struct {
 	NetworkEdgeCluster   map[string]interface{} `json:"networkEdgeCluster,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateNetworkEdgeClusterRequest UpdateNetworkEdgeClusterRequest
@@ -96,60 +96,7 @@ func (o UpdateNetworkEdgeClusterRequest) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *UpdateNetworkEdgeClusterRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkEdgeClusterRequest := _UpdateNetworkEdgeClusterRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkEdgeClusterRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkEdgeClusterRequest(varUpdateNetworkEdgeClusterRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkEdgeCluster")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateNetworkEdgeClusterRequest struct {
-	value *UpdateNetworkEdgeClusterRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkEdgeClusterRequest) Get() *UpdateNetworkEdgeClusterRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkEdgeClusterRequest) Set(val *UpdateNetworkEdgeClusterRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkEdgeClusterRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkEdgeClusterRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkEdgeClusterRequest(val *UpdateNetworkEdgeClusterRequest) *NullableUpdateNetworkEdgeClusterRequest {
-	return &NullableUpdateNetworkEdgeClusterRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkEdgeClusterRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkEdgeClusterRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

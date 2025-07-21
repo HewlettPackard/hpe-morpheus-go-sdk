@@ -20,8 +20,8 @@ var _ MappedNullable = &ApprovePolicyTypeConfiguration{}
 
 // ApprovePolicyTypeConfiguration Configuration settings for the following policy types: - Approve Delete - Approve Provisiong - Approve Reconfigure
 type ApprovePolicyTypeConfiguration struct {
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ApprovePolicyTypeConfiguration ApprovePolicyTypeConfiguration
@@ -96,60 +96,7 @@ func (o ApprovePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *ApprovePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varApprovePolicyTypeConfiguration := _ApprovePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varApprovePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ApprovePolicyTypeConfiguration(varApprovePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accountIntegrationId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableApprovePolicyTypeConfiguration struct {
-	value *ApprovePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableApprovePolicyTypeConfiguration) Get() *ApprovePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableApprovePolicyTypeConfiguration) Set(val *ApprovePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApprovePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApprovePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApprovePolicyTypeConfiguration(val *ApprovePolicyTypeConfiguration) *NullableApprovePolicyTypeConfiguration {
-	return &NullableApprovePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableApprovePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApprovePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

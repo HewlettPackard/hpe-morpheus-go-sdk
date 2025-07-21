@@ -42,7 +42,7 @@ type AddImageBuild200ResponseAllOfImageBuild struct {
 	Config               *AddImageBuild200ResponseAllOfImageBuildConfig                `json:"config,omitempty"`
 	LastResult           *AddImageBuild200ResponseAllOfImageBuildLastResult            `json:"lastResult,omitempty"`
 	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuild AddImageBuild200ResponseAllOfImageBuild
@@ -918,81 +918,7 @@ func (o AddImageBuild200ResponseAllOfImageBuild) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *AddImageBuild200ResponseAllOfImageBuild) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuild200ResponseAllOfImageBuild := _AddImageBuild200ResponseAllOfImageBuild{}
-
-	err = json.Unmarshal(data, &varAddImageBuild200ResponseAllOfImageBuild)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuild200ResponseAllOfImageBuild(varAddImageBuild200ResponseAllOfImageBuild)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "bootCommand")
-		delete(additionalProperties, "preseedScript")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "buildOutputName")
-		delete(additionalProperties, "conversionFormats")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "keepResults")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "executionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddImageBuild200ResponseAllOfImageBuild struct {
-	value *AddImageBuild200ResponseAllOfImageBuild
-	isSet bool
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuild) Get() *AddImageBuild200ResponseAllOfImageBuild {
-	return v.value
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuild) Set(val *AddImageBuild200ResponseAllOfImageBuild) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuild) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuild) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuild200ResponseAllOfImageBuild(val *AddImageBuild200ResponseAllOfImageBuild) *NullableAddImageBuild200ResponseAllOfImageBuild {
-	return &NullableAddImageBuild200ResponseAllOfImageBuild{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuild200ResponseAllOfImageBuild) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuild200ResponseAllOfImageBuild) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

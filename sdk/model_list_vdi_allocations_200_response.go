@@ -22,7 +22,7 @@ var _ MappedNullable = &ListVDIAllocations200Response{}
 type ListVDIAllocations200Response struct {
 	VdiAllocations       []ListVDIAllocations200ResponseAllOfVdiAllocationsInner `json:"vdiAllocations,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                       `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListVDIAllocations200Response ListVDIAllocations200Response
@@ -132,61 +132,7 @@ func (o ListVDIAllocations200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListVDIAllocations200Response) UnmarshalJSON(data []byte) (err error) {
-	varListVDIAllocations200Response := _ListVDIAllocations200Response{}
-
-	err = json.Unmarshal(data, &varListVDIAllocations200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVDIAllocations200Response(varListVDIAllocations200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "vdiAllocations")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListVDIAllocations200Response struct {
-	value *ListVDIAllocations200Response
-	isSet bool
-}
-
-func (v NullableListVDIAllocations200Response) Get() *ListVDIAllocations200Response {
-	return v.value
-}
-
-func (v *NullableListVDIAllocations200Response) Set(val *ListVDIAllocations200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVDIAllocations200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVDIAllocations200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVDIAllocations200Response(val *ListVDIAllocations200Response) *NullableListVDIAllocations200Response {
-	return &NullableListVDIAllocations200Response{value: val, isSet: true}
-}
-
-func (v NullableListVDIAllocations200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVDIAllocations200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

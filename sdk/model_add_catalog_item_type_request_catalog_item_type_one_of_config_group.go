@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup type satisfies the MappedNullable interface at compile time
@@ -23,8 +22,8 @@ var _ MappedNullable = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup
 type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup struct {
 	Id AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroupId `json:"id"`
 	// The group name
-	Name                 *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup
@@ -125,82 +124,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"id",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

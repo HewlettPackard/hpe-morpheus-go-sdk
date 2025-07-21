@@ -53,7 +53,7 @@ type ZoneAzureConfig struct {
 	AzureCostingMode     *string                                                       `json:"azureCostingMode,omitempty"`
 	ClientSecretHash     *string                                                       `json:"clientSecretHash,omitempty"`
 	CspClientSecretHash  NullableString                                                `json:"cspClientSecretHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ZoneAzureConfig ZoneAzureConfig
@@ -1292,92 +1292,7 @@ func (o ZoneAzureConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneAzureConfig) UnmarshalJSON(data []byte) (err error) {
-	varZoneAzureConfig := _ZoneAzureConfig{}
-
-	err = json.Unmarshal(data, &varZoneAzureConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneAzureConfig(varZoneAzureConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "subscriberId")
-		delete(additionalProperties, "tenantId")
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "clientSecret")
-		delete(additionalProperties, "resourceGroup")
-		delete(additionalProperties, "importExisting")
-		delete(additionalProperties, "inventoryLevel")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "datacenterName")
-		delete(additionalProperties, "networkServer.id")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityMode")
-		delete(additionalProperties, "certificateProvider")
-		delete(additionalProperties, "backupMode")
-		delete(additionalProperties, "replicationMode")
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "configCmdbId")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "accountType")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "cloudType")
-		delete(additionalProperties, "rpcMode")
-		delete(additionalProperties, "diskEncryption")
-		delete(additionalProperties, "encryptionSet")
-		delete(additionalProperties, "cspTenantId")
-		delete(additionalProperties, "cspClientId")
-		delete(additionalProperties, "cspClientSecret")
-		delete(additionalProperties, "cspCustomer")
-		delete(additionalProperties, "configCmdbDiscovery")
-		delete(additionalProperties, "azureCostingMode")
-		delete(additionalProperties, "clientSecretHash")
-		delete(additionalProperties, "cspClientSecretHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableZoneAzureConfig struct {
-	value *ZoneAzureConfig
-	isSet bool
-}
-
-func (v NullableZoneAzureConfig) Get() *ZoneAzureConfig {
-	return v.value
-}
-
-func (v *NullableZoneAzureConfig) Set(val *ZoneAzureConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneAzureConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneAzureConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneAzureConfig(val *ZoneAzureConfig) *NullableZoneAzureConfig {
-	return &NullableZoneAzureConfig{value: val, isSet: true}
-}
-
-func (v NullableZoneAzureConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneAzureConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

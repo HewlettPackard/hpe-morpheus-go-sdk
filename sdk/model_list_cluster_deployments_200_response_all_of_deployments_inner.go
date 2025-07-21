@@ -34,7 +34,7 @@ type ListClusterDeployments200ResponseAllOfDeploymentsInner struct {
 	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount `json:"owner,omitempty"`
 	TotalCpuUsage        *int64                                       `json:"totalCpuUsage,omitempty"`
 	Stats                map[string]interface{}                       `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _ListClusterDeployments200ResponseAllOfDeploymentsInner ListClusterDeployments200ResponseAllOfDeploymentsInner
@@ -540,72 +540,7 @@ func (o ListClusterDeployments200ResponseAllOfDeploymentsInner) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterDeployments200ResponseAllOfDeploymentsInner := _ListClusterDeployments200ResponseAllOfDeploymentsInner{}
-
-	err = json.Unmarshal(data, &varListClusterDeployments200ResponseAllOfDeploymentsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterDeployments200ResponseAllOfDeploymentsInner(varListClusterDeployments200ResponseAllOfDeploymentsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "resourceLevel")
-		delete(additionalProperties, "resourceType")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "totalCpuUsage")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterDeployments200ResponseAllOfDeploymentsInner struct {
-	value *ListClusterDeployments200ResponseAllOfDeploymentsInner
-	isSet bool
-}
-
-func (v NullableListClusterDeployments200ResponseAllOfDeploymentsInner) Get() *ListClusterDeployments200ResponseAllOfDeploymentsInner {
-	return v.value
-}
-
-func (v *NullableListClusterDeployments200ResponseAllOfDeploymentsInner) Set(val *ListClusterDeployments200ResponseAllOfDeploymentsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterDeployments200ResponseAllOfDeploymentsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterDeployments200ResponseAllOfDeploymentsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterDeployments200ResponseAllOfDeploymentsInner(val *ListClusterDeployments200ResponseAllOfDeploymentsInner) *NullableListClusterDeployments200ResponseAllOfDeploymentsInner {
-	return &NullableListClusterDeployments200ResponseAllOfDeploymentsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterDeployments200ResponseAllOfDeploymentsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterDeployments200ResponseAllOfDeploymentsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

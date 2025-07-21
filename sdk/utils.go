@@ -82,7 +82,7 @@ func (v *NullableBool) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableBool) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -127,7 +127,7 @@ func (v *NullableInt) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableInt) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -172,7 +172,7 @@ func (v *NullableInt32) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableInt32) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -217,7 +217,7 @@ func (v *NullableInt64) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableInt64) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -262,7 +262,7 @@ func (v *NullableFloat32) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableFloat32) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -307,7 +307,7 @@ func (v *NullableFloat64) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableFloat64) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -352,7 +352,7 @@ func (v *NullableString) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableString) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true
@@ -397,7 +397,7 @@ func (v *NullableTime) UnmarshalJSON(src []byte) error {
 }
 
 func (v NullableTime) UnmarshalMapstructure(data any) (any, error) {
-	if err := mapstructDecode(data, v.value); err != nil {
+	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
 	v.isSet = true

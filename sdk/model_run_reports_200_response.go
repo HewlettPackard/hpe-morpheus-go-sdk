@@ -22,7 +22,7 @@ var _ MappedNullable = &RunReports200Response{}
 type RunReports200Response struct {
 	ReportResult         *ListReports200ResponseAllOfReportResultsInner `json:"reportResult,omitempty"`
 	Success              *bool                                          `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _RunReports200Response RunReports200Response
@@ -132,61 +132,7 @@ func (o RunReports200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *RunReports200Response) UnmarshalJSON(data []byte) (err error) {
-	varRunReports200Response := _RunReports200Response{}
-
-	err = json.Unmarshal(data, &varRunReports200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = RunReports200Response(varRunReports200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "reportResult")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableRunReports200Response struct {
-	value *RunReports200Response
-	isSet bool
-}
-
-func (v NullableRunReports200Response) Get() *RunReports200Response {
-	return v.value
-}
-
-func (v *NullableRunReports200Response) Set(val *RunReports200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRunReports200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRunReports200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRunReports200Response(val *RunReports200Response) *NullableRunReports200Response {
-	return &NullableRunReports200Response{value: val, isSet: true}
-}
-
-func (v NullableRunReports200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRunReports200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

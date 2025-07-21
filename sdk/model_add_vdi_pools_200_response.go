@@ -25,6 +25,22 @@ type AddVDIPools200Response struct {
 	DeleteAlerts200Response     *DeleteAlerts200Response
 }
 
+func (dst *AddVDIPools200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVDIPools200Response{}
+	}
+
+	if out, ok := data.(AddVDIPools200ResponseAnyOf); ok {
+		dst.AddVDIPools200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(DeleteAlerts200Response); ok {
+		dst.DeleteAlerts200Response = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddVDIPools200Response) UnmarshalJSON(data []byte) error {
 	var err error

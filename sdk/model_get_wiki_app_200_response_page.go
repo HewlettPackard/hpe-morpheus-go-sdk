@@ -33,7 +33,7 @@ type GetWikiApp200ResponsePage struct {
 	UpdatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"updatedBy,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetWikiApp200ResponsePage GetWikiApp200ResponsePage
@@ -515,71 +515,7 @@ func (o GetWikiApp200ResponsePage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetWikiApp200ResponsePage) UnmarshalJSON(data []byte) (err error) {
-	varGetWikiApp200ResponsePage := _GetWikiApp200ResponsePage{}
-
-	err = json.Unmarshal(data, &varGetWikiApp200ResponsePage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetWikiApp200ResponsePage(varGetWikiApp200ResponsePage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "urlName")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "format")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetWikiApp200ResponsePage struct {
-	value *GetWikiApp200ResponsePage
-	isSet bool
-}
-
-func (v NullableGetWikiApp200ResponsePage) Get() *GetWikiApp200ResponsePage {
-	return v.value
-}
-
-func (v *NullableGetWikiApp200ResponsePage) Set(val *GetWikiApp200ResponsePage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetWikiApp200ResponsePage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetWikiApp200ResponsePage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetWikiApp200ResponsePage(val *GetWikiApp200ResponsePage) *NullableGetWikiApp200ResponsePage {
-	return &NullableGetWikiApp200ResponsePage{value: val, isSet: true}
-}
-
-func (v NullableGetWikiApp200ResponsePage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetWikiApp200ResponsePage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

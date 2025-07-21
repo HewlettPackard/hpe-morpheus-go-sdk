@@ -20,17 +20,17 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 - Expiration
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 struct {
-	LifecycleType                     *string `json:"lifecycleType,omitempty"`
-	LifecycleAge                      *string `json:"lifecycleAge,omitempty"`
-	LifecycleRenewal                  *string `json:"lifecycleRenewal,omitempty"`
-	LifecycleNotify                   *string `json:"lifecycleNotify,omitempty"`
-	LifecycleMessage                  *string `json:"lifecycleMessage,omitempty"`
-	LifecycleAutoRenew                *string `json:"lifecycleAutoRenew,omitempty"`
-	LifecycleAllowExtend              *string `json:"lifecycleAllowExtend,omitempty"`
-	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId              *string `json:"accountIntegrationId,omitempty"`
-	LifecycleHideFixed                *bool   `json:"lifecycleHideFixed,omitempty"`
-	AdditionalProperties              map[string]interface{}
+	LifecycleType                     *string                `json:"lifecycleType,omitempty"`
+	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
+	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
+	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
+	LifecycleMessage                  *string                `json:"lifecycleMessage,omitempty"`
+	LifecycleAutoRenew                *string                `json:"lifecycleAutoRenew,omitempty"`
+	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
+	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
+	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties              map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7
@@ -428,69 +428,7 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 := _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7{}
-
-	err = json.Unmarshal(data, &varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7(varAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "lifecycleType")
-		delete(additionalProperties, "lifecycleAge")
-		delete(additionalProperties, "lifecycleRenewal")
-		delete(additionalProperties, "lifecycleNotify")
-		delete(additionalProperties, "lifecycleMessage")
-		delete(additionalProperties, "lifecycleAutoRenew")
-		delete(additionalProperties, "lifecycleAllowExtend")
-		delete(additionalProperties, "lifecycleExtensionsBeforeApproval")
-		delete(additionalProperties, "accountIntegrationId")
-		delete(additionalProperties, "lifecycleHideFixed")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 struct {
-	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7
-	isSet bool
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 {
-	return v.value
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 {
-	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

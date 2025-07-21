@@ -34,7 +34,7 @@ type ListClusterPackages200ResponseAllOfClusterPackagesInner struct {
 	ImagePath            NullableString                                               `json:"imagePath,omitempty"`
 	DarkImagePath        NullableString                                               `json:"darkImagePath,omitempty"`
 	SpecTemplates        []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _ListClusterPackages200ResponseAllOfClusterPackagesInner ListClusterPackages200ResponseAllOfClusterPackagesInner
@@ -619,73 +619,7 @@ func (o ListClusterPackages200ResponseAllOfClusterPackagesInner) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterPackages200ResponseAllOfClusterPackagesInner := _ListClusterPackages200ResponseAllOfClusterPackagesInner{}
-
-	err = json.Unmarshal(data, &varListClusterPackages200ResponseAllOfClusterPackagesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterPackages200ResponseAllOfClusterPackagesInner(varListClusterPackages200ResponseAllOfClusterPackagesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "repeatInstall")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "packageType")
-		delete(additionalProperties, "packageVersion")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "specTemplates")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterPackages200ResponseAllOfClusterPackagesInner struct {
-	value *ListClusterPackages200ResponseAllOfClusterPackagesInner
-	isSet bool
-}
-
-func (v NullableListClusterPackages200ResponseAllOfClusterPackagesInner) Get() *ListClusterPackages200ResponseAllOfClusterPackagesInner {
-	return v.value
-}
-
-func (v *NullableListClusterPackages200ResponseAllOfClusterPackagesInner) Set(val *ListClusterPackages200ResponseAllOfClusterPackagesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterPackages200ResponseAllOfClusterPackagesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterPackages200ResponseAllOfClusterPackagesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterPackages200ResponseAllOfClusterPackagesInner(val *ListClusterPackages200ResponseAllOfClusterPackagesInner) *NullableListClusterPackages200ResponseAllOfClusterPackagesInner {
-	return &NullableListClusterPackages200ResponseAllOfClusterPackagesInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterPackages200ResponseAllOfClusterPackagesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterPackages200ResponseAllOfClusterPackagesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

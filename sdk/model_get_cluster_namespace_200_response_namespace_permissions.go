@@ -21,7 +21,7 @@ var _ MappedNullable = &GetClusterNamespace200ResponseNamespacePermissions{}
 // GetClusterNamespace200ResponseNamespacePermissions struct for GetClusterNamespace200ResponseNamespacePermissions
 type GetClusterNamespace200ResponseNamespacePermissions struct {
 	ResourcePermissions  *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
 type _GetClusterNamespace200ResponseNamespacePermissions GetClusterNamespace200ResponseNamespacePermissions
@@ -96,60 +96,7 @@ func (o GetClusterNamespace200ResponseNamespacePermissions) ToMap() (map[string]
 	return toSerialize, nil
 }
 func (o *GetClusterNamespace200ResponseNamespacePermissions) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterNamespace200ResponseNamespacePermissions := _GetClusterNamespace200ResponseNamespacePermissions{}
-
-	err = json.Unmarshal(data, &varGetClusterNamespace200ResponseNamespacePermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterNamespace200ResponseNamespacePermissions(varGetClusterNamespace200ResponseNamespacePermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetClusterNamespace200ResponseNamespacePermissions struct {
-	value *GetClusterNamespace200ResponseNamespacePermissions
-	isSet bool
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissions) Get() *GetClusterNamespace200ResponseNamespacePermissions {
-	return v.value
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissions) Set(val *GetClusterNamespace200ResponseNamespacePermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterNamespace200ResponseNamespacePermissions(val *GetClusterNamespace200ResponseNamespacePermissions) *NullableGetClusterNamespace200ResponseNamespacePermissions {
-	return &NullableGetClusterNamespace200ResponseNamespacePermissions{value: val, isSet: true}
-}
-
-func (v NullableGetClusterNamespace200ResponseNamespacePermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterNamespace200ResponseNamespacePermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

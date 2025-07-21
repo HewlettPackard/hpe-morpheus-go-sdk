@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterConfigmaps200Response{}
 type ListClusterConfigmaps200Response struct {
 	Configmaps           []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"configmaps,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                           `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterConfigmaps200Response ListClusterConfigmaps200Response
@@ -132,61 +132,7 @@ func (o ListClusterConfigmaps200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *ListClusterConfigmaps200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusterConfigmaps200Response := _ListClusterConfigmaps200Response{}
-
-	err = json.Unmarshal(data, &varListClusterConfigmaps200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterConfigmaps200Response(varListClusterConfigmaps200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "configmaps")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterConfigmaps200Response struct {
-	value *ListClusterConfigmaps200Response
-	isSet bool
-}
-
-func (v NullableListClusterConfigmaps200Response) Get() *ListClusterConfigmaps200Response {
-	return v.value
-}
-
-func (v *NullableListClusterConfigmaps200Response) Set(val *ListClusterConfigmaps200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterConfigmaps200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterConfigmaps200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterConfigmaps200Response(val *ListClusterConfigmaps200Response) *NullableListClusterConfigmaps200Response {
-	return &NullableListClusterConfigmaps200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusterConfigmaps200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterConfigmaps200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

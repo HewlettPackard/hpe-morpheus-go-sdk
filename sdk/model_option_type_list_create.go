@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the OptionTypeListCreate type satisfies the MappedNullable interface at compile time
@@ -53,7 +52,7 @@ type OptionTypeListCreate struct {
 	// Request Script. Create a js script to prepare the request. Return a data object as the body for a post, and return an array containing properties 'name' and 'value' for a get. The input data is provided as data and the result should be put on the global variable results.
 	RequestScript        NullableString                            `json:"requestScript,omitempty"`
 	Config               *AddOptionListRequestOptionTypeListConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _OptionTypeListCreate OptionTypeListCreate
@@ -777,97 +776,7 @@ func (o OptionTypeListCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OptionTypeListCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varOptionTypeListCreate := _OptionTypeListCreate{}
-
-	err = json.Unmarshal(data, &varOptionTypeListCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OptionTypeListCreate(varOptionTypeListCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "sourceUrl")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "sourceMethod")
-		delete(additionalProperties, "apiType")
-		delete(additionalProperties, "ignoreSSLErrors")
-		delete(additionalProperties, "realTime")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "initialDataset")
-		delete(additionalProperties, "translationScript")
-		delete(additionalProperties, "requestScript")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableOptionTypeListCreate struct {
-	value *OptionTypeListCreate
-	isSet bool
-}
-
-func (v NullableOptionTypeListCreate) Get() *OptionTypeListCreate {
-	return v.value
-}
-
-func (v *NullableOptionTypeListCreate) Set(val *OptionTypeListCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOptionTypeListCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOptionTypeListCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOptionTypeListCreate(val *OptionTypeListCreate) *NullableOptionTypeListCreate {
-	return &NullableOptionTypeListCreate{value: val, isSet: true}
-}
-
-func (v NullableOptionTypeListCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOptionTypeListCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -20,12 +20,12 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerComputeSer
 
 // ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType struct for ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType
 type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType struct {
-	Id                   *int64  `json:"id,omitempty"`
-	Code                 *string `json:"code,omitempty"`
-	Name                 *string `json:"name,omitempty"`
-	Managed              *bool   `json:"managed,omitempty"`
-	ExternalDelete       *bool   `json:"externalDelete,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Managed              *bool                  `json:"managed,omitempty"`
+	ExternalDelete       *bool                  `json:"externalDelete,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType
@@ -240,64 +240,7 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerCompute
 	return toSerialize, nil
 }
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
-	varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType := _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType{}
-
-	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType(varListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "externalDelete")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType struct {
-	value *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType
-	isSet bool
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) Get() *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType {
-	return v.value
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType(val *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType {
-	return &NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType{value: val, isSet: true}
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

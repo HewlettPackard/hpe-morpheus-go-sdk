@@ -35,8 +35,8 @@ type GuidanceSettings struct {
 	// Memory Down-size Maximum Free Memory (%). Upper limit for average free memory
 	MemoryDownAvgStandardCutoffRightSize NullableInt32 `json:"memoryDownAvgStandardCutoffRightSize,omitempty"`
 	// Memory Down-size Maximum Free Memory (%). Upper limit for peak memory usage
-	MemoryDownMaxStandardCutoffRightSize NullableInt32 `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
-	AdditionalProperties                 map[string]interface{}
+	MemoryDownMaxStandardCutoffRightSize NullableInt32          `json:"memoryDownMaxStandardCutoffRightSize,omitempty"`
+	AdditionalProperties                 map[string]interface{} `json:",remain"`
 }
 
 type _GuidanceSettings GuidanceSettings
@@ -444,67 +444,7 @@ func (o GuidanceSettings) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GuidanceSettings) UnmarshalJSON(data []byte) (err error) {
-	varGuidanceSettings := _GuidanceSettings{}
-
-	err = json.Unmarshal(data, &varGuidanceSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GuidanceSettings(varGuidanceSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cpuAvgCutoffPower")
-		delete(additionalProperties, "cpuMaxCutoffPower")
-		delete(additionalProperties, "networkCutoffPower")
-		delete(additionalProperties, "cpuUpAvgStandardCutoffRightSize")
-		delete(additionalProperties, "cpuUpMaxStandardCutoffRightSize")
-		delete(additionalProperties, "memoryUpAvgStandardCutoffRightSize")
-		delete(additionalProperties, "memoryDownAvgStandardCutoffRightSize")
-		delete(additionalProperties, "memoryDownMaxStandardCutoffRightSize")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGuidanceSettings struct {
-	value *GuidanceSettings
-	isSet bool
-}
-
-func (v NullableGuidanceSettings) Get() *GuidanceSettings {
-	return v.value
-}
-
-func (v *NullableGuidanceSettings) Set(val *GuidanceSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGuidanceSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGuidanceSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGuidanceSettings(val *GuidanceSettings) *NullableGuidanceSettings {
-	return &NullableGuidanceSettings{value: val, isSet: true}
-}
-
-func (v NullableGuidanceSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGuidanceSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

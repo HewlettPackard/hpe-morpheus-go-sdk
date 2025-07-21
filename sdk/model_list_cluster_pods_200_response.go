@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterPods200Response{}
 type ListClusterPods200Response struct {
 	Pods                 []ListClusterPods200ResponseAllOfPodsInner `json:"pods,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta          `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _ListClusterPods200Response ListClusterPods200Response
@@ -132,61 +132,7 @@ func (o ListClusterPods200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListClusterPods200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusterPods200Response := _ListClusterPods200Response{}
-
-	err = json.Unmarshal(data, &varListClusterPods200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterPods200Response(varListClusterPods200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "pods")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterPods200Response struct {
-	value *ListClusterPods200Response
-	isSet bool
-}
-
-func (v NullableListClusterPods200Response) Get() *ListClusterPods200Response {
-	return v.value
-}
-
-func (v *NullableListClusterPods200Response) Set(val *ListClusterPods200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterPods200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterPods200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterPods200Response(val *ListClusterPods200Response) *NullableListClusterPods200Response {
-	return &NullableListClusterPods200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusterPods200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterPods200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

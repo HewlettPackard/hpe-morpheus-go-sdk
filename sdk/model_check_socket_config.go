@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CheckSocketConfig type satisfies the MappedNullable interface at compile time
@@ -43,8 +42,8 @@ type CheckSocketConfig struct {
 	// SSH user on the proxy host to login as
 	SshUser *string `json:"sshUser,omitempty"`
 	// Password for user, if not using key based authentication
-	SshPassword          *string `json:"sshPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	SshPassword          *string                `json:"sshPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckSocketConfig CheckSocketConfig
@@ -542,97 +541,7 @@ func (o CheckSocketConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckSocketConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"host",
-		"port",
-		"send",
-		"responseMatch",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCheckSocketConfig := _CheckSocketConfig{}
-
-	err = json.Unmarshal(data, &varCheckSocketConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckSocketConfig(varCheckSocketConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "send")
-		delete(additionalProperties, "responseMatch")
-		delete(additionalProperties, "checkUser")
-		delete(additionalProperties, "textCheckOn")
-		delete(additionalProperties, "checkPassword")
-		delete(additionalProperties, "webTextMatch")
-		delete(additionalProperties, "checkPasswordHash")
-		delete(additionalProperties, "tunnelOn")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "sshUser")
-		delete(additionalProperties, "sshPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCheckSocketConfig struct {
-	value *CheckSocketConfig
-	isSet bool
-}
-
-func (v NullableCheckSocketConfig) Get() *CheckSocketConfig {
-	return v.value
-}
-
-func (v *NullableCheckSocketConfig) Set(val *CheckSocketConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckSocketConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckSocketConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckSocketConfig(val *CheckSocketConfig) *NullableCheckSocketConfig {
-	return &NullableCheckSocketConfig{value: val, isSet: true}
-}
-
-func (v NullableCheckSocketConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckSocketConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

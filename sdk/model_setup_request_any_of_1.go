@@ -41,6 +41,22 @@ func SetupRequestAnyOf1OneOf1AsSetupRequestAnyOf1(v *SetupRequestAnyOf1OneOf1) S
 	}
 }
 
+func (dst *SetupRequestAnyOf1) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SetupRequestAnyOf1{}
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1OneOf); ok {
+		dst.SetupRequestAnyOf1OneOf = &out
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1OneOf1); ok {
+		dst.SetupRequestAnyOf1OneOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SetupRequestAnyOf1) UnmarshalJSON(data []byte) error {
 	var err error

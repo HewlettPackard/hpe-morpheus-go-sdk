@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateTenantSubtenantGroupRequest type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &CreateTenantSubtenantGroupRequest{}
 // CreateTenantSubtenantGroupRequest struct for CreateTenantSubtenantGroupRequest
 type CreateTenantSubtenantGroupRequest struct {
 	Group                CreateTenantSubtenantGroupRequestGroup `json:"group"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _CreateTenantSubtenantGroupRequest CreateTenantSubtenantGroupRequest
@@ -88,81 +87,7 @@ func (o CreateTenantSubtenantGroupRequest) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *CreateTenantSubtenantGroupRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"group",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateTenantSubtenantGroupRequest := _CreateTenantSubtenantGroupRequest{}
-
-	err = json.Unmarshal(data, &varCreateTenantSubtenantGroupRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateTenantSubtenantGroupRequest(varCreateTenantSubtenantGroupRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateTenantSubtenantGroupRequest struct {
-	value *CreateTenantSubtenantGroupRequest
-	isSet bool
-}
-
-func (v NullableCreateTenantSubtenantGroupRequest) Get() *CreateTenantSubtenantGroupRequest {
-	return v.value
-}
-
-func (v *NullableCreateTenantSubtenantGroupRequest) Set(val *CreateTenantSubtenantGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateTenantSubtenantGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateTenantSubtenantGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateTenantSubtenantGroupRequest(val *CreateTenantSubtenantGroupRequest) *NullableCreateTenantSubtenantGroupRequest {
-	return &NullableCreateTenantSubtenantGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateTenantSubtenantGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateTenantSubtenantGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

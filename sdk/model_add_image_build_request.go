@@ -21,7 +21,7 @@ var _ MappedNullable = &AddImageBuildRequest{}
 // AddImageBuildRequest struct for AddImageBuildRequest
 type AddImageBuildRequest struct {
 	ImageBuild           *AddImageBuildRequestImageBuild `json:"imageBuild,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _AddImageBuildRequest AddImageBuildRequest
@@ -96,60 +96,7 @@ func (o AddImageBuildRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddImageBuildRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddImageBuildRequest := _AddImageBuildRequest{}
-
-	err = json.Unmarshal(data, &varAddImageBuildRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddImageBuildRequest(varAddImageBuildRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "imageBuild")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddImageBuildRequest struct {
-	value *AddImageBuildRequest
-	isSet bool
-}
-
-func (v NullableAddImageBuildRequest) Get() *AddImageBuildRequest {
-	return v.value
-}
-
-func (v *NullableAddImageBuildRequest) Set(val *AddImageBuildRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddImageBuildRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddImageBuildRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddImageBuildRequest(val *AddImageBuildRequest) *NullableAddImageBuildRequest {
-	return &NullableAddImageBuildRequest{value: val, isSet: true}
-}
-
-func (v NullableAddImageBuildRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddImageBuildRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

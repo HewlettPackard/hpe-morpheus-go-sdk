@@ -21,7 +21,7 @@ var _ MappedNullable = &AddNodeTypeRequest{}
 // AddNodeTypeRequest struct for AddNodeTypeRequest
 type AddNodeTypeRequest struct {
 	ContainerType        *AddNodeTypeRequestContainerType `json:"containerType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _AddNodeTypeRequest AddNodeTypeRequest
@@ -96,60 +96,7 @@ func (o AddNodeTypeRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddNodeTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddNodeTypeRequest := _AddNodeTypeRequest{}
-
-	err = json.Unmarshal(data, &varAddNodeTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddNodeTypeRequest(varAddNodeTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "containerType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddNodeTypeRequest struct {
-	value *AddNodeTypeRequest
-	isSet bool
-}
-
-func (v NullableAddNodeTypeRequest) Get() *AddNodeTypeRequest {
-	return v.value
-}
-
-func (v *NullableAddNodeTypeRequest) Set(val *AddNodeTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddNodeTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddNodeTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddNodeTypeRequest(val *AddNodeTypeRequest) *NullableAddNodeTypeRequest {
-	return &NullableAddNodeTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableAddNodeTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddNodeTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

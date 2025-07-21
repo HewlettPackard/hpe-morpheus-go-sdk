@@ -20,12 +20,12 @@ var _ MappedNullable = &ZoneNetworkOptionsNetworksInner{}
 
 // ZoneNetworkOptionsNetworksInner struct for ZoneNetworkOptionsNetworksInner
 type ZoneNetworkOptionsNetworksInner struct {
-	Id                   *string        `json:"id,omitempty"`
-	Name                 *string        `json:"name,omitempty"`
-	DhcpServer           *bool          `json:"dhcpServer,omitempty"`
-	AllowStaticOverride  *bool          `json:"allowStaticOverride,omitempty"`
-	Pool                 NullableString `json:"pool,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *string                `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	DhcpServer           *bool                  `json:"dhcpServer,omitempty"`
+	AllowStaticOverride  *bool                  `json:"allowStaticOverride,omitempty"`
+	Pool                 NullableString         `json:"pool,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ZoneNetworkOptionsNetworksInner ZoneNetworkOptionsNetworksInner
@@ -251,64 +251,7 @@ func (o ZoneNetworkOptionsNetworksInner) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *ZoneNetworkOptionsNetworksInner) UnmarshalJSON(data []byte) (err error) {
-	varZoneNetworkOptionsNetworksInner := _ZoneNetworkOptionsNetworksInner{}
-
-	err = json.Unmarshal(data, &varZoneNetworkOptionsNetworksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneNetworkOptionsNetworksInner(varZoneNetworkOptionsNetworksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "pool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableZoneNetworkOptionsNetworksInner struct {
-	value *ZoneNetworkOptionsNetworksInner
-	isSet bool
-}
-
-func (v NullableZoneNetworkOptionsNetworksInner) Get() *ZoneNetworkOptionsNetworksInner {
-	return v.value
-}
-
-func (v *NullableZoneNetworkOptionsNetworksInner) Set(val *ZoneNetworkOptionsNetworksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneNetworkOptionsNetworksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneNetworkOptionsNetworksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneNetworkOptionsNetworksInner(val *ZoneNetworkOptionsNetworksInner) *NullableZoneNetworkOptionsNetworksInner {
-	return &NullableZoneNetworkOptionsNetworksInner{value: val, isSet: true}
-}
-
-func (v NullableZoneNetworkOptionsNetworksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneNetworkOptionsNetworksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

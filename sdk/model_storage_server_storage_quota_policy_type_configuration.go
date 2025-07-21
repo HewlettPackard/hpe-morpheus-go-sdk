@@ -20,9 +20,9 @@ var _ MappedNullable = &StorageServerStorageQuotaPolicyTypeConfiguration{}
 
 // StorageServerStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - Storage Server Storage Quota
 type StorageServerStorageQuotaPolicyTypeConfiguration struct {
-	StorageServerId      *string `json:"storageServerId,omitempty"`
-	MaxStorage           *string `json:"maxStorage,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageServerId      *string                `json:"storageServerId,omitempty"`
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _StorageServerStorageQuotaPolicyTypeConfiguration StorageServerStorageQuotaPolicyTypeConfiguration
@@ -132,61 +132,7 @@ func (o StorageServerStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varStorageServerStorageQuotaPolicyTypeConfiguration := _StorageServerStorageQuotaPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varStorageServerStorageQuotaPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = StorageServerStorageQuotaPolicyTypeConfiguration(varStorageServerStorageQuotaPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageServerId")
-		delete(additionalProperties, "maxStorage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableStorageServerStorageQuotaPolicyTypeConfiguration struct {
-	value *StorageServerStorageQuotaPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableStorageServerStorageQuotaPolicyTypeConfiguration) Get() *StorageServerStorageQuotaPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableStorageServerStorageQuotaPolicyTypeConfiguration) Set(val *StorageServerStorageQuotaPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableStorageServerStorageQuotaPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableStorageServerStorageQuotaPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableStorageServerStorageQuotaPolicyTypeConfiguration(val *StorageServerStorageQuotaPolicyTypeConfiguration) *NullableStorageServerStorageQuotaPolicyTypeConfiguration {
-	return &NullableStorageServerStorageQuotaPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableStorageServerStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableStorageServerStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &GetServicePlans200ResponseServicePlanPermissions{}
 type GetServicePlans200ResponseServicePlanPermissions struct {
 	ResourcePermissions  *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions  `json:"resourcePermissions,omitempty"`
 	TenantPermissions    *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _GetServicePlans200ResponseServicePlanPermissions GetServicePlans200ResponseServicePlanPermissions
@@ -132,61 +132,7 @@ func (o GetServicePlans200ResponseServicePlanPermissions) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *GetServicePlans200ResponseServicePlanPermissions) UnmarshalJSON(data []byte) (err error) {
-	varGetServicePlans200ResponseServicePlanPermissions := _GetServicePlans200ResponseServicePlanPermissions{}
-
-	err = json.Unmarshal(data, &varGetServicePlans200ResponseServicePlanPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetServicePlans200ResponseServicePlanPermissions(varGetServicePlans200ResponseServicePlanPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "tenantPermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetServicePlans200ResponseServicePlanPermissions struct {
-	value *GetServicePlans200ResponseServicePlanPermissions
-	isSet bool
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissions) Get() *GetServicePlans200ResponseServicePlanPermissions {
-	return v.value
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissions) Set(val *GetServicePlans200ResponseServicePlanPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetServicePlans200ResponseServicePlanPermissions(val *GetServicePlans200ResponseServicePlanPermissions) *NullableGetServicePlans200ResponseServicePlanPermissions {
-	return &NullableGetServicePlans200ResponseServicePlanPermissions{value: val, isSet: true}
-}
-
-func (v NullableGetServicePlans200ResponseServicePlanPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlanPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

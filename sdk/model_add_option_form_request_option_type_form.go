@@ -31,7 +31,7 @@ type AddOptionFormRequestOptionTypeForm struct {
 	Options []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner `json:"options,omitempty"`
 	// Field Groups
 	FieldGroups          []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _AddOptionFormRequestOptionTypeForm AddOptionFormRequestOptionTypeForm
@@ -293,65 +293,7 @@ func (o AddOptionFormRequestOptionTypeForm) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddOptionFormRequestOptionTypeForm) UnmarshalJSON(data []byte) (err error) {
-	varAddOptionFormRequestOptionTypeForm := _AddOptionFormRequestOptionTypeForm{}
-
-	err = json.Unmarshal(data, &varAddOptionFormRequestOptionTypeForm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddOptionFormRequestOptionTypeForm(varAddOptionFormRequestOptionTypeForm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "options")
-		delete(additionalProperties, "fieldGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddOptionFormRequestOptionTypeForm struct {
-	value *AddOptionFormRequestOptionTypeForm
-	isSet bool
-}
-
-func (v NullableAddOptionFormRequestOptionTypeForm) Get() *AddOptionFormRequestOptionTypeForm {
-	return v.value
-}
-
-func (v *NullableAddOptionFormRequestOptionTypeForm) Set(val *AddOptionFormRequestOptionTypeForm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddOptionFormRequestOptionTypeForm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddOptionFormRequestOptionTypeForm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddOptionFormRequestOptionTypeForm(val *AddOptionFormRequestOptionTypeForm) *NullableAddOptionFormRequestOptionTypeForm {
-	return &NullableAddOptionFormRequestOptionTypeForm{value: val, isSet: true}
-}
-
-func (v NullableAddOptionFormRequestOptionTypeForm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddOptionFormRequestOptionTypeForm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

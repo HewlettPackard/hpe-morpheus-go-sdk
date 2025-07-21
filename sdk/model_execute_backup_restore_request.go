@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ExecuteBackupRestoreRequest type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &ExecuteBackupRestoreRequest{}
 // ExecuteBackupRestoreRequest struct for ExecuteBackupRestoreRequest
 type ExecuteBackupRestoreRequest struct {
 	Restore              ExecuteBackupRestoreRequestRestore `json:"restore"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _ExecuteBackupRestoreRequest ExecuteBackupRestoreRequest
@@ -88,81 +87,7 @@ func (o ExecuteBackupRestoreRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ExecuteBackupRestoreRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"restore",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varExecuteBackupRestoreRequest := _ExecuteBackupRestoreRequest{}
-
-	err = json.Unmarshal(data, &varExecuteBackupRestoreRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ExecuteBackupRestoreRequest(varExecuteBackupRestoreRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "restore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableExecuteBackupRestoreRequest struct {
-	value *ExecuteBackupRestoreRequest
-	isSet bool
-}
-
-func (v NullableExecuteBackupRestoreRequest) Get() *ExecuteBackupRestoreRequest {
-	return v.value
-}
-
-func (v *NullableExecuteBackupRestoreRequest) Set(val *ExecuteBackupRestoreRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableExecuteBackupRestoreRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableExecuteBackupRestoreRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableExecuteBackupRestoreRequest(val *ExecuteBackupRestoreRequest) *NullableExecuteBackupRestoreRequest {
-	return &NullableExecuteBackupRestoreRequest{value: val, isSet: true}
-}
-
-func (v NullableExecuteBackupRestoreRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableExecuteBackupRestoreRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

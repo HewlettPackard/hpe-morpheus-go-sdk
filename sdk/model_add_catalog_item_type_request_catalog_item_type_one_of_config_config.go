@@ -28,6 +28,34 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig struct {
 	MapmapOfStringAny                *map[string]interface{}
 }
 
+func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig{}
+	}
+
+	if out, ok := data.(AmazonInstanceConfiguration); ok {
+		dst.AmazonInstanceConfiguration = &out
+	}
+
+	if out, ok := data.(AzureInstanceConfiguration); ok {
+		dst.AzureInstanceConfiguration = &out
+	}
+
+	if out, ok := data.(GoogleCloudInstanceConfiguration); ok {
+		dst.GoogleCloudInstanceConfiguration = &out
+	}
+
+	if out, ok := data.(VMWareInstanceConfiguration); ok {
+		dst.VMWareInstanceConfiguration = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalJSON(data []byte) error {
 	var err error

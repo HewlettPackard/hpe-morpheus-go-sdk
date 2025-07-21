@@ -28,8 +28,8 @@ type ListEmailTemplates200ResponseAllOfEmailTemplatesInner struct {
 	Owner    *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner `json:"owner,omitempty"`
 	Accounts []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
 	// The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript)
-	Template             *string `json:"template,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Template             *string                `json:"template,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListEmailTemplates200ResponseAllOfEmailTemplatesInner ListEmailTemplates200ResponseAllOfEmailTemplatesInner
@@ -280,65 +280,7 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInner) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListEmailTemplates200ResponseAllOfEmailTemplatesInner := _ListEmailTemplates200ResponseAllOfEmailTemplatesInner{}
-
-	err = json.Unmarshal(data, &varListEmailTemplates200ResponseAllOfEmailTemplatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListEmailTemplates200ResponseAllOfEmailTemplatesInner(varListEmailTemplates200ResponseAllOfEmailTemplatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "template")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner struct {
-	value *ListEmailTemplates200ResponseAllOfEmailTemplatesInner
-	isSet bool
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) Get() *ListEmailTemplates200ResponseAllOfEmailTemplatesInner {
-	return v.value
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) Set(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListEmailTemplates200ResponseAllOfEmailTemplatesInner(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInner) *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner {
-	return &NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner{value: val, isSet: true}
-}
-
-func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

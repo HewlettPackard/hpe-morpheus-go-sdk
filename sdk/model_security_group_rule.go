@@ -41,7 +41,7 @@ type SecurityGroupRule struct {
 	DestinationTier      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"destinationTier,omitempty"`
 	ExternalId           NullableString                                     `json:"externalId,omitempty"`
 	Enabled              NullableString                                     `json:"enabled,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _SecurityGroupRule SecurityGroupRule
@@ -915,80 +915,7 @@ func (o SecurityGroupRule) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SecurityGroupRule) UnmarshalJSON(data []byte) (err error) {
-	varSecurityGroupRule := _SecurityGroupRule{}
-
-	err = json.Unmarshal(data, &varSecurityGroupRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityGroupRule(varSecurityGroupRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "customRule")
-		delete(additionalProperties, "instanceTypeId")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "sourcePortRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationGroup")
-		delete(additionalProperties, "destinationTier")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSecurityGroupRule struct {
-	value *SecurityGroupRule
-	isSet bool
-}
-
-func (v NullableSecurityGroupRule) Get() *SecurityGroupRule {
-	return v.value
-}
-
-func (v *NullableSecurityGroupRule) Set(val *SecurityGroupRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityGroupRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityGroupRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityGroupRule(val *SecurityGroupRule) *NullableSecurityGroupRule {
-	return &NullableSecurityGroupRule{value: val, isSet: true}
-}
-
-func (v NullableSecurityGroupRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityGroupRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

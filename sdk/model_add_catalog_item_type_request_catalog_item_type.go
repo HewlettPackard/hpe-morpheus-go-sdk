@@ -49,6 +49,26 @@ func AddCatalogItemTypeRequestCatalogItemTypeOneOf2AsAddCatalogItemTypeRequestCa
 	}
 }
 
+func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCatalogItemTypeRequestCatalogItemType{}
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf1); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = &out
+	}
+
+	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf2); ok {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) error {
 	var err error

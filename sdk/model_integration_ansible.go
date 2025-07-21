@@ -36,7 +36,7 @@ type IntegrationAnsible struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableInt64                                                     `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationAnsible IntegrationAnsible
@@ -634,74 +634,7 @@ func (o IntegrationAnsible) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationAnsible) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationAnsible := _IntegrationAnsible{}
-
-	err = json.Unmarshal(data, &varIntegrationAnsible)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationAnsible(varIntegrationAnsible)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "serviceKey")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationAnsible struct {
-	value *IntegrationAnsible
-	isSet bool
-}
-
-func (v NullableIntegrationAnsible) Get() *IntegrationAnsible {
-	return v.value
-}
-
-func (v *NullableIntegrationAnsible) Set(val *IntegrationAnsible) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationAnsible) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationAnsible) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationAnsible(val *IntegrationAnsible) *NullableIntegrationAnsible {
-	return &NullableIntegrationAnsible{value: val, isSet: true}
-}
-
-func (v NullableIntegrationAnsible) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationAnsible) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

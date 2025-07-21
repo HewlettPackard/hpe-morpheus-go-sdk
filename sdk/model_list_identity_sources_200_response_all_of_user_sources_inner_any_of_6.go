@@ -41,7 +41,7 @@ type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 struct {
 	ProviderSettings     *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5ProviderSettings   `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
@@ -781,79 +781,7 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "deleted")
-		delete(additionalProperties, "autoSyncOnLogin")
-		delete(additionalProperties, "externalLogin")
-		delete(additionalProperties, "allowCustomMappings")
-		delete(additionalProperties, "manualRoleAssignment")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "defaultAccountRole")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "roleMappings")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "loginURL")
-		delete(additionalProperties, "providerSettings")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

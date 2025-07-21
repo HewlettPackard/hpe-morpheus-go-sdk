@@ -20,33 +20,33 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfServe
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType struct {
-	Id                   *int64         `json:"id,omitempty"`
-	Name                 *string        `json:"name,omitempty"`
-	Code                 *string        `json:"code,omitempty"`
-	Description          *string        `json:"description,omitempty"`
-	Creatable            *bool          `json:"creatable,omitempty"`
-	UserVisible          *bool          `json:"userVisible,omitempty"`
-	HasScopes            *bool          `json:"hasScopes,omitempty"`
-	TitleScopes          NullableString `json:"titleScopes,omitempty"`
-	HasNetworks          *bool          `json:"hasNetworks,omitempty"`
-	TitleNetworks        NullableString `json:"titleNetworks,omitempty"`
-	HasSwitches          *bool          `json:"hasSwitches,omitempty"`
-	TitleSwitches        NullableString `json:"titleSwitches,omitempty"`
-	HasGateways          *bool          `json:"hasGateways,omitempty"`
-	TitleGateways        NullableString `json:"titleGateways,omitempty"`
-	HasRouters           *bool          `json:"hasRouters,omitempty"`
-	TitleRouters         NullableString `json:"titleRouters,omitempty"`
-	HasSecurityGroups    *bool          `json:"hasSecurityGroups,omitempty"`
-	TitleSecurityGroups  NullableString `json:"titleSecurityGroups,omitempty"`
-	HasLoadBalancers     *bool          `json:"hasLoadBalancers,omitempty"`
-	TitleLoadBalancers   NullableString `json:"titleLoadBalancers,omitempty"`
-	HasRouteTables       *bool          `json:"hasRouteTables,omitempty"`
-	TitleRouteTables     NullableString `json:"titleRouteTables,omitempty"`
-	HasFirewall          *bool          `json:"hasFirewall,omitempty"`
-	TitleFirewall        NullableString `json:"titleFirewall,omitempty"`
-	HasFirewallGroups    *bool          `json:"hasFirewallGroups,omitempty"`
-	TitleFirewallGroups  NullableString `json:"titleFirewallGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Code                 *string                `json:"code,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Creatable            *bool                  `json:"creatable,omitempty"`
+	UserVisible          *bool                  `json:"userVisible,omitempty"`
+	HasScopes            *bool                  `json:"hasScopes,omitempty"`
+	TitleScopes          NullableString         `json:"titleScopes,omitempty"`
+	HasNetworks          *bool                  `json:"hasNetworks,omitempty"`
+	TitleNetworks        NullableString         `json:"titleNetworks,omitempty"`
+	HasSwitches          *bool                  `json:"hasSwitches,omitempty"`
+	TitleSwitches        NullableString         `json:"titleSwitches,omitempty"`
+	HasGateways          *bool                  `json:"hasGateways,omitempty"`
+	TitleGateways        NullableString         `json:"titleGateways,omitempty"`
+	HasRouters           *bool                  `json:"hasRouters,omitempty"`
+	TitleRouters         NullableString         `json:"titleRouters,omitempty"`
+	HasSecurityGroups    *bool                  `json:"hasSecurityGroups,omitempty"`
+	TitleSecurityGroups  NullableString         `json:"titleSecurityGroups,omitempty"`
+	HasLoadBalancers     *bool                  `json:"hasLoadBalancers,omitempty"`
+	TitleLoadBalancers   NullableString         `json:"titleLoadBalancers,omitempty"`
+	HasRouteTables       *bool                  `json:"hasRouteTables,omitempty"`
+	TitleRouteTables     NullableString         `json:"titleRouteTables,omitempty"`
+	HasFirewall          *bool                  `json:"hasFirewall,omitempty"`
+	TitleFirewall        NullableString         `json:"titleFirewall,omitempty"`
+	HasFirewallGroups    *bool                  `json:"hasFirewallGroups,omitempty"`
+	TitleFirewallGroups  NullableString         `json:"titleFirewallGroups,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType
@@ -1106,85 +1106,7 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServ
 	return toSerialize, nil
 }
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "userVisible")
-		delete(additionalProperties, "hasScopes")
-		delete(additionalProperties, "titleScopes")
-		delete(additionalProperties, "hasNetworks")
-		delete(additionalProperties, "titleNetworks")
-		delete(additionalProperties, "hasSwitches")
-		delete(additionalProperties, "titleSwitches")
-		delete(additionalProperties, "hasGateways")
-		delete(additionalProperties, "titleGateways")
-		delete(additionalProperties, "hasRouters")
-		delete(additionalProperties, "titleRouters")
-		delete(additionalProperties, "hasSecurityGroups")
-		delete(additionalProperties, "titleSecurityGroups")
-		delete(additionalProperties, "hasLoadBalancers")
-		delete(additionalProperties, "titleLoadBalancers")
-		delete(additionalProperties, "hasRouteTables")
-		delete(additionalProperties, "titleRouteTables")
-		delete(additionalProperties, "hasFirewall")
-		delete(additionalProperties, "titleFirewall")
-		delete(additionalProperties, "hasFirewallGroups")
-		delete(additionalProperties, "titleFirewallGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServerType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

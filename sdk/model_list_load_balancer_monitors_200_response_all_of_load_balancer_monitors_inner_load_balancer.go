@@ -24,7 +24,7 @@ type ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalanc
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	Name                 *string                                                     `json:"name,omitempty"`
 	Ip                   *string                                                     `json:"ip,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer
@@ -204,63 +204,7 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBal
 	return toSerialize, nil
 }
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer := _ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer(varListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ip")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer struct {
-	value *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer
-	isSet bool
-}
-
-func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Get() *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Set(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer {
-	return &NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -27,7 +27,7 @@ type NetworkPoolCreate struct {
 	IpRanges []CreateNetworkPoolRequestNetworkPoolIpRangesInner `json:"ipRanges,omitempty"`
 	// Configuration object with parameters that vary by pool type.
 	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkPoolCreate NetworkPoolCreate
@@ -207,63 +207,7 @@ func (o NetworkPoolCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkPoolCreate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkPoolCreate := _NetworkPoolCreate{}
-
-	err = json.Unmarshal(data, &varNetworkPoolCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkPoolCreate(varNetworkPoolCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipRanges")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkPoolCreate struct {
-	value *NetworkPoolCreate
-	isSet bool
-}
-
-func (v NullableNetworkPoolCreate) Get() *NetworkPoolCreate {
-	return v.value
-}
-
-func (v *NullableNetworkPoolCreate) Set(val *NetworkPoolCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkPoolCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkPoolCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkPoolCreate(val *NetworkPoolCreate) *NullableNetworkPoolCreate {
-	return &NullableNetworkPoolCreate{value: val, isSet: true}
-}
-
-func (v NullableNetworkPoolCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkPoolCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

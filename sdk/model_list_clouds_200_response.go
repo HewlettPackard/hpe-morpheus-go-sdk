@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClouds200Response{}
 type ListClouds200Response struct {
 	Zones                []ListClouds200ResponseAllOfZonesInner `json:"zones,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta      `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _ListClouds200Response ListClouds200Response
@@ -132,61 +132,7 @@ func (o ListClouds200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListClouds200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200Response := _ListClouds200Response{}
-
-	err = json.Unmarshal(data, &varListClouds200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200Response(varListClouds200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClouds200Response struct {
-	value *ListClouds200Response
-	isSet bool
-}
-
-func (v NullableListClouds200Response) Get() *ListClouds200Response {
-	return v.value
-}
-
-func (v *NullableListClouds200Response) Set(val *ListClouds200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200Response(val *ListClouds200Response) *NullableListClouds200Response {
-	return &NullableListClouds200Response{value: val, isSet: true}
-}
-
-func (v NullableListClouds200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &ListLoadBalancerMonitors200Response{}
 type ListLoadBalancerMonitors200Response struct {
 	LoadBalancerMonitors []ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInner `json:"loadBalancerMonitors,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                                   `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListLoadBalancerMonitors200Response ListLoadBalancerMonitors200Response
@@ -132,61 +132,7 @@ func (o ListLoadBalancerMonitors200Response) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *ListLoadBalancerMonitors200Response) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerMonitors200Response := _ListLoadBalancerMonitors200Response{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerMonitors200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerMonitors200Response(varListLoadBalancerMonitors200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerMonitors")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListLoadBalancerMonitors200Response struct {
-	value *ListLoadBalancerMonitors200Response
-	isSet bool
-}
-
-func (v NullableListLoadBalancerMonitors200Response) Get() *ListLoadBalancerMonitors200Response {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerMonitors200Response) Set(val *ListLoadBalancerMonitors200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerMonitors200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerMonitors200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerMonitors200Response(val *ListLoadBalancerMonitors200Response) *NullableListLoadBalancerMonitors200Response {
-	return &NullableListLoadBalancerMonitors200Response{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerMonitors200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerMonitors200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

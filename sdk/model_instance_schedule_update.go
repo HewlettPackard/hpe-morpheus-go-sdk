@@ -37,7 +37,7 @@ type InstanceScheduleUpdate struct {
 	// End Date. Only used and required for scheduleType `exact`
 	EndDate              *time.Time                                              `json:"endDate,omitempty"`
 	Threshold            *UpdateInstanceScheduleRequestInstanceScheduleThreshold `json:"threshold,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _InstanceScheduleUpdate InstanceScheduleUpdate
@@ -400,68 +400,7 @@ func (o InstanceScheduleUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceScheduleUpdate) UnmarshalJSON(data []byte) (err error) {
-	varInstanceScheduleUpdate := _InstanceScheduleUpdate{}
-
-	err = json.Unmarshal(data, &varInstanceScheduleUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceScheduleUpdate(varInstanceScheduleUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "scheduleType")
-		delete(additionalProperties, "scheduleTimezone")
-		delete(additionalProperties, "startDayOfWeek")
-		delete(additionalProperties, "startTime")
-		delete(additionalProperties, "endDayOfWeek")
-		delete(additionalProperties, "endTime")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "threshold")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstanceScheduleUpdate struct {
-	value *InstanceScheduleUpdate
-	isSet bool
-}
-
-func (v NullableInstanceScheduleUpdate) Get() *InstanceScheduleUpdate {
-	return v.value
-}
-
-func (v *NullableInstanceScheduleUpdate) Set(val *InstanceScheduleUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceScheduleUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceScheduleUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceScheduleUpdate(val *InstanceScheduleUpdate) *NullableInstanceScheduleUpdate {
-	return &NullableInstanceScheduleUpdate{value: val, isSet: true}
-}
-
-func (v NullableInstanceScheduleUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceScheduleUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

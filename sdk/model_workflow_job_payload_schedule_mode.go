@@ -41,6 +41,22 @@ func StringAsWorkflowJobPayloadScheduleMode(v *string) WorkflowJobPayloadSchedul
 	}
 }
 
+func (dst *WorkflowJobPayloadScheduleMode) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &WorkflowJobPayloadScheduleMode{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *WorkflowJobPayloadScheduleMode) UnmarshalJSON(data []byte) error {
 	var err error

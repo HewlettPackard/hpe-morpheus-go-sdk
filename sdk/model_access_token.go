@@ -29,8 +29,8 @@ type AccessToken struct {
 	// Token type granted
 	TokenType *string `json:"token_type,omitempty"`
 	// Scope granted
-	Scope                *string `json:"scope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Scope                *string                `json:"scope,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AccessToken AccessToken
@@ -245,64 +245,7 @@ func (o AccessToken) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AccessToken) UnmarshalJSON(data []byte) (err error) {
-	varAccessToken := _AccessToken{}
-
-	err = json.Unmarshal(data, &varAccessToken)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AccessToken(varAccessToken)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "access_token")
-		delete(additionalProperties, "refresh_token")
-		delete(additionalProperties, "expires_in")
-		delete(additionalProperties, "token_type")
-		delete(additionalProperties, "scope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAccessToken struct {
-	value *AccessToken
-	isSet bool
-}
-
-func (v NullableAccessToken) Get() *AccessToken {
-	return v.value
-}
-
-func (v *NullableAccessToken) Set(val *AccessToken) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAccessToken) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAccessToken) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAccessToken(val *AccessToken) *NullableAccessToken {
-	return &NullableAccessToken{value: val, isSet: true}
-}
-
-func (v NullableAccessToken) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAccessToken) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

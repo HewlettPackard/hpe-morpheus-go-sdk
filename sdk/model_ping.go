@@ -20,9 +20,9 @@ var _ MappedNullable = &Ping{}
 
 // Ping struct for Ping
 type Ping struct {
-	Success              *bool   `json:"success,omitempty"`
-	BuildVersion         *string `json:"buildVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Success              *bool                  `json:"success,omitempty"`
+	BuildVersion         *string                `json:"buildVersion,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Ping Ping
@@ -132,61 +132,7 @@ func (o Ping) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Ping) UnmarshalJSON(data []byte) (err error) {
-	varPing := _Ping{}
-
-	err = json.Unmarshal(data, &varPing)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Ping(varPing)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "buildVersion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePing struct {
-	value *Ping
-	isSet bool
-}
-
-func (v NullablePing) Get() *Ping {
-	return v.value
-}
-
-func (v *NullablePing) Set(val *Ping) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePing) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePing) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePing(val *Ping) *NullablePing {
-	return &NullablePing{value: val, isSet: true}
-}
-
-func (v NullablePing) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePing) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

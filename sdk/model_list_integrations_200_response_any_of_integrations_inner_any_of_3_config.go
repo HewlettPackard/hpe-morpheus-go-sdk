@@ -32,7 +32,7 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config struct {
 	WindowsInstallUrl    *string                                                                      `json:"windowsInstallUrl,omitempty"`
 	UserKeyHash          *string                                                                      `json:"userKeyHash,omitempty"`
 	OrgKeyHash           *string                                                                      `json:"orgKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
 type _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config
@@ -492,71 +492,7 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) ToMap() (
 	return toSerialize, nil
 }
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config := _ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config{}
-
-	err = json.Unmarshal(data, &varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config(varListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "databags")
-		delete(additionalProperties, "endpoint")
-		delete(additionalProperties, "org")
-		delete(additionalProperties, "chefUser")
-		delete(additionalProperties, "userKey")
-		delete(additionalProperties, "orgKey")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "chefUseFqdn")
-		delete(additionalProperties, "windowsVersion")
-		delete(additionalProperties, "windowsInstallUrl")
-		delete(additionalProperties, "userKeyHash")
-		delete(additionalProperties, "orgKeyHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config struct {
-	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config
-	isSet bool
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config {
-	return v.value
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config {
-	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config{value: val, isSet: true}
-}
-
-func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

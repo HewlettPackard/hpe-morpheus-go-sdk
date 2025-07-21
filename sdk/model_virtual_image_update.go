@@ -62,7 +62,7 @@ type VirtualImageUpdate struct {
 	AddTags []AddVirtualImageRequestVirtualImageTagsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
 	RemoveTags           []UpdateVirtualImageRequestVirtualImageRemoveTagsInner `json:"removeTags,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _VirtualImageUpdate VirtualImageUpdate
@@ -988,82 +988,7 @@ func (o VirtualImageUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *VirtualImageUpdate) UnmarshalJSON(data []byte) (err error) {
-	varVirtualImageUpdate := _VirtualImageUpdate{}
-
-	err = json.Unmarshal(data, &varVirtualImageUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VirtualImageUpdate(varVirtualImageUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "imageType")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "userData")
-		delete(additionalProperties, "installAgent")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "isAutoJoinDomain")
-		delete(additionalProperties, "virtioSupported")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "isForceCustomization")
-		delete(additionalProperties, "trialVersion")
-		delete(additionalProperties, "isSysprep")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "addTags")
-		delete(additionalProperties, "removeTags")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableVirtualImageUpdate struct {
-	value *VirtualImageUpdate
-	isSet bool
-}
-
-func (v NullableVirtualImageUpdate) Get() *VirtualImageUpdate {
-	return v.value
-}
-
-func (v *NullableVirtualImageUpdate) Set(val *VirtualImageUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVirtualImageUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVirtualImageUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVirtualImageUpdate(val *VirtualImageUpdate) *NullableVirtualImageUpdate {
-	return &NullableVirtualImageUpdate{value: val, isSet: true}
-}
-
-func (v NullableVirtualImageUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVirtualImageUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

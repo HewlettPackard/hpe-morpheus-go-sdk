@@ -161,6 +161,82 @@ func ListTasks200ResponseAllOfTasksInnerAnyOf9AsAddTasks200ResponseAllOfTask(v *
 	}
 }
 
+func (dst *AddTasks200ResponseAllOfTask) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddTasks200ResponseAllOfTask{}
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf1); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf10); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf11); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf12); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf13); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf14); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf15); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf16); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf2); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf3); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf4); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf5); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf6); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf7); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf8); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = &out
+	}
+
+	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf9); ok {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddTasks200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
 	var err error

@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateHostResizeRequestServer{}
 // UpdateHostResizeRequestServer struct for UpdateHostResizeRequestServer
 type UpdateHostResizeRequestServer struct {
 	Plan                 *UpdateHostResizeRequestServerPlan `json:"plan,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _UpdateHostResizeRequestServer UpdateHostResizeRequestServer
@@ -96,60 +96,7 @@ func (o UpdateHostResizeRequestServer) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateHostResizeRequestServer) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostResizeRequestServer := _UpdateHostResizeRequestServer{}
-
-	err = json.Unmarshal(data, &varUpdateHostResizeRequestServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostResizeRequestServer(varUpdateHostResizeRequestServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "plan")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostResizeRequestServer struct {
-	value *UpdateHostResizeRequestServer
-	isSet bool
-}
-
-func (v NullableUpdateHostResizeRequestServer) Get() *UpdateHostResizeRequestServer {
-	return v.value
-}
-
-func (v *NullableUpdateHostResizeRequestServer) Set(val *UpdateHostResizeRequestServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostResizeRequestServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostResizeRequestServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostResizeRequestServer(val *UpdateHostResizeRequestServer) *NullableUpdateHostResizeRequestServer {
-	return &NullableUpdateHostResizeRequestServer{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostResizeRequestServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostResizeRequestServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateBlueprintPermissionsRequest{}
 // UpdateBlueprintPermissionsRequest struct for UpdateBlueprintPermissionsRequest
 type UpdateBlueprintPermissionsRequest struct {
 	ResourcePermission   *UpdateBlueprintPermissionsRequestResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateBlueprintPermissionsRequest UpdateBlueprintPermissionsRequest
@@ -96,60 +96,7 @@ func (o UpdateBlueprintPermissionsRequest) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *UpdateBlueprintPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateBlueprintPermissionsRequest := _UpdateBlueprintPermissionsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateBlueprintPermissionsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateBlueprintPermissionsRequest(varUpdateBlueprintPermissionsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateBlueprintPermissionsRequest struct {
-	value *UpdateBlueprintPermissionsRequest
-	isSet bool
-}
-
-func (v NullableUpdateBlueprintPermissionsRequest) Get() *UpdateBlueprintPermissionsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequest) Set(val *UpdateBlueprintPermissionsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateBlueprintPermissionsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateBlueprintPermissionsRequest(val *UpdateBlueprintPermissionsRequest) *NullableUpdateBlueprintPermissionsRequest {
-	return &NullableUpdateBlueprintPermissionsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateBlueprintPermissionsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateBlueprintPermissionsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

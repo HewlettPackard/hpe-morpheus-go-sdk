@@ -41,7 +41,7 @@ type ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner struct {
 	Datastore            NullableString                                              `json:"datastore,omitempty"`
 	CrossCloudApply      NullableBool                                                `json:"crossCloudApply,omitempty"`
 	Account              NullableString                                              `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner
@@ -948,80 +948,7 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) UnmarshalJSON(data []byte) (err error) {
-	varListPriceSets200ResponseAllOfPriceSetsInnerPricesInner := _ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner{}
-
-	err = json.Unmarshal(data, &varListPriceSets200ResponseAllOfPriceSetsInnerPricesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner(varListPriceSets200ResponseAllOfPriceSetsInnerPricesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "priceType")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "additionalPriceUnit")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "customPrice")
-		delete(additionalProperties, "markupType")
-		delete(additionalProperties, "markup")
-		delete(additionalProperties, "markupPercent")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "incurCharges")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "software")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "crossCloudApply")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner struct {
-	value *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner
-	isSet bool
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) Get() *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner {
-	return v.value
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) Set(val *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner(val *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner {
-	return &NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner{value: val, isSet: true}
-}
-
-func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

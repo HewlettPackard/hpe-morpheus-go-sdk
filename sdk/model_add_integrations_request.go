@@ -81,6 +81,42 @@ func AddIntegrationsRequestOneOf6AsAddIntegrationsRequest(v *AddIntegrationsRequ
 	}
 }
 
+func (dst *AddIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIntegrationsRequest{}
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf); ok {
+		dst.AddIntegrationsRequestOneOf = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf1); ok {
+		dst.AddIntegrationsRequestOneOf1 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf2); ok {
+		dst.AddIntegrationsRequestOneOf2 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf3); ok {
+		dst.AddIntegrationsRequestOneOf3 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf4); ok {
+		dst.AddIntegrationsRequestOneOf4 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf5); ok {
+		dst.AddIntegrationsRequestOneOf5 = &out
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOf6); ok {
+		dst.AddIntegrationsRequestOneOf6 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIntegrationsRequest) UnmarshalJSON(data []byte) error {
 	var err error

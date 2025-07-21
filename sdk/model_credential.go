@@ -45,7 +45,7 @@ type Credential struct {
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	Config               *AddCredentials200ResponseAllOfCredentialConfig             `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _Credential Credential
@@ -1057,83 +1057,7 @@ func (o Credential) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Credential) UnmarshalJSON(data []byte) (err error) {
-	varCredential := _Credential{}
-
-	err = json.Unmarshal(data, &varCredential)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Credential(varCredential)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "authKey")
-		delete(additionalProperties, "authPath")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "scope")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "user")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCredential struct {
-	value *Credential
-	isSet bool
-}
-
-func (v NullableCredential) Get() *Credential {
-	return v.value
-}
-
-func (v *NullableCredential) Set(val *Credential) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCredential) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCredential) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCredential(val *Credential) *NullableCredential {
-	return &NullableCredential{value: val, isSet: true}
-}
-
-func (v NullableCredential) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCredential) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

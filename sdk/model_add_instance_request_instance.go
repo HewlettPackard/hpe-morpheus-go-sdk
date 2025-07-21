@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstanceRequestInstance type satisfies the MappedNullable interface at compile time
@@ -32,8 +31,8 @@ type AddInstanceRequestInstance struct {
 	// Environment
 	InstanceContext *string `json:"instanceContext,omitempty"`
 	// Hostname of the instance to be created.  Can be the same as the instance name.
-	HostName             *string `json:"hostName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	HostName             *string                `json:"hostName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstanceRequestInstance AddInstanceRequestInstance
@@ -308,92 +307,7 @@ func (o AddInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"site",
-		"instanceType",
-		"layout",
-		"plan",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstanceRequestInstance := _AddInstanceRequestInstance{}
-
-	err = json.Unmarshal(data, &varAddInstanceRequestInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceRequestInstance(varAddInstanceRequestInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "layout")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "instanceContext")
-		delete(additionalProperties, "hostName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddInstanceRequestInstance struct {
-	value *AddInstanceRequestInstance
-	isSet bool
-}
-
-func (v NullableAddInstanceRequestInstance) Get() *AddInstanceRequestInstance {
-	return v.value
-}
-
-func (v *NullableAddInstanceRequestInstance) Set(val *AddInstanceRequestInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceRequestInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceRequestInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceRequestInstance(val *AddInstanceRequestInstance) *NullableAddInstanceRequestInstance {
-	return &NullableAddInstanceRequestInstance{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceRequestInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceRequestInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

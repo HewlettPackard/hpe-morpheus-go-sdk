@@ -59,8 +59,8 @@ type VirtualImageCreate struct {
 	// Metadata tags, Array of objects having a name and value
 	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
 	// Image File URL, a virtual image file will be created by fetching the specified URL
-	Url                  *string `json:"url,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Url                  *string                `json:"url,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _VirtualImageCreate VirtualImageCreate
@@ -951,81 +951,7 @@ func (o VirtualImageCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *VirtualImageCreate) UnmarshalJSON(data []byte) (err error) {
-	varVirtualImageCreate := _VirtualImageCreate{}
-
-	err = json.Unmarshal(data, &varVirtualImageCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = VirtualImageCreate(varVirtualImageCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "imageType")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "userData")
-		delete(additionalProperties, "installAgent")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "isAutoJoinDomain")
-		delete(additionalProperties, "virtioSupported")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "isForceCustomization")
-		delete(additionalProperties, "trialVersion")
-		delete(additionalProperties, "isSysprep")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableVirtualImageCreate struct {
-	value *VirtualImageCreate
-	isSet bool
-}
-
-func (v NullableVirtualImageCreate) Get() *VirtualImageCreate {
-	return v.value
-}
-
-func (v *NullableVirtualImageCreate) Set(val *VirtualImageCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableVirtualImageCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableVirtualImageCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableVirtualImageCreate(val *VirtualImageCreate) *NullableVirtualImageCreate {
-	return &NullableVirtualImageCreate{value: val, isSet: true}
-}
-
-func (v NullableVirtualImageCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableVirtualImageCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

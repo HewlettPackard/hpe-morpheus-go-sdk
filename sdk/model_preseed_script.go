@@ -26,7 +26,7 @@ type PreseedScript struct {
 	Description          NullableString                                                  `json:"description,omitempty"`
 	Content              *string                                                         `json:"content,omitempty"`
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _PreseedScript PreseedScript
@@ -287,65 +287,7 @@ func (o PreseedScript) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *PreseedScript) UnmarshalJSON(data []byte) (err error) {
-	varPreseedScript := _PreseedScript{}
-
-	err = json.Unmarshal(data, &varPreseedScript)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PreseedScript(varPreseedScript)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "createdBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePreseedScript struct {
-	value *PreseedScript
-	isSet bool
-}
-
-func (v NullablePreseedScript) Get() *PreseedScript {
-	return v.value
-}
-
-func (v *NullablePreseedScript) Set(val *PreseedScript) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePreseedScript) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePreseedScript) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePreseedScript(val *PreseedScript) *NullablePreseedScript {
-	return &NullablePreseedScript{value: val, isSet: true}
-}
-
-func (v NullablePreseedScript) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePreseedScript) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

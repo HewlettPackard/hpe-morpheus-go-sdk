@@ -25,11 +25,11 @@ type AddDeploymentVersionRequestVersion struct {
 	// Alias for version
 	UserVersion *string `json:"userVersion,omitempty"`
 	// Deploy Type, eg. file, git, fetch
-	DeployType           *string        `json:"deployType,omitempty"`
-	GitUrl               NullableString `json:"gitUrl,omitempty"`
-	GitRef               NullableString `json:"gitRef,omitempty"`
-	FetchUrl             NullableString `json:"fetchUrl,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DeployType           *string                `json:"deployType,omitempty"`
+	GitUrl               NullableString         `json:"gitUrl,omitempty"`
+	GitRef               NullableString         `json:"gitRef,omitempty"`
+	FetchUrl             NullableString         `json:"fetchUrl,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddDeploymentVersionRequestVersion AddDeploymentVersionRequestVersion
@@ -312,65 +312,7 @@ func (o AddDeploymentVersionRequestVersion) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddDeploymentVersionRequestVersion) UnmarshalJSON(data []byte) (err error) {
-	varAddDeploymentVersionRequestVersion := _AddDeploymentVersionRequestVersion{}
-
-	err = json.Unmarshal(data, &varAddDeploymentVersionRequestVersion)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddDeploymentVersionRequestVersion(varAddDeploymentVersionRequestVersion)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "userVersion")
-		delete(additionalProperties, "deployType")
-		delete(additionalProperties, "gitUrl")
-		delete(additionalProperties, "gitRef")
-		delete(additionalProperties, "fetchUrl")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddDeploymentVersionRequestVersion struct {
-	value *AddDeploymentVersionRequestVersion
-	isSet bool
-}
-
-func (v NullableAddDeploymentVersionRequestVersion) Get() *AddDeploymentVersionRequestVersion {
-	return v.value
-}
-
-func (v *NullableAddDeploymentVersionRequestVersion) Set(val *AddDeploymentVersionRequestVersion) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddDeploymentVersionRequestVersion) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddDeploymentVersionRequestVersion) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddDeploymentVersionRequestVersion(val *AddDeploymentVersionRequestVersion) *NullableAddDeploymentVersionRequestVersion {
-	return &NullableAddDeploymentVersionRequestVersion{value: val, isSet: true}
-}
-
-func (v NullableAddDeploymentVersionRequestVersion) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddDeploymentVersionRequestVersion) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

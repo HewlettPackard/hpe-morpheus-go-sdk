@@ -41,6 +41,22 @@ func StringAsListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode(v *string) ListJ
 	}
 }
 
+func (dst *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode{}
+	}
+
+	if out, ok := data.(int64); ok {
+		dst.Int64 = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ListJobs200ResponseAllOfJobsInnerAnyOfScheduleMode) UnmarshalJSON(data []byte) error {
 	var err error

@@ -44,7 +44,7 @@ type ListApps200ResponseAllOfAppsInner struct {
 	AppTiers             []map[string]interface{}                                    `json:"appTiers,omitempty"`
 	Instances            []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"instances,omitempty"`
 	Stats                *ListApps200ResponseAllOfAppsInnerStats                     `json:"stats,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListApps200ResponseAllOfAppsInner ListApps200ResponseAllOfAppsInner
@@ -900,82 +900,7 @@ func (o ListApps200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *ListApps200ResponseAllOfAppsInner) UnmarshalJSON(data []byte) (err error) {
-	varListApps200ResponseAllOfAppsInner := _ListApps200ResponseAllOfAppsInner{}
-
-	err = json.Unmarshal(data, &varListApps200ResponseAllOfAppsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApps200ResponseAllOfAppsInner(varListApps200ResponseAllOfAppsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "environment")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "blueprint")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "removalDate")
-		delete(additionalProperties, "appContext")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "appStatus")
-		delete(additionalProperties, "instanceCount")
-		delete(additionalProperties, "containerCount")
-		delete(additionalProperties, "appTiers")
-		delete(additionalProperties, "instances")
-		delete(additionalProperties, "stats")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListApps200ResponseAllOfAppsInner struct {
-	value *ListApps200ResponseAllOfAppsInner
-	isSet bool
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) Get() *ListApps200ResponseAllOfAppsInner {
-	return v.value
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) Set(val *ListApps200ResponseAllOfAppsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApps200ResponseAllOfAppsInner(val *ListApps200ResponseAllOfAppsInner) *NullableListApps200ResponseAllOfAppsInner {
-	return &NullableListApps200ResponseAllOfAppsInner{value: val, isSet: true}
-}
-
-func (v NullableListApps200ResponseAllOfAppsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApps200ResponseAllOfAppsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

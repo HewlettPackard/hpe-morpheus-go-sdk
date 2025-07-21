@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the OsTypeCreate type satisfies the MappedNullable interface at compile time
@@ -46,8 +45,8 @@ type OsTypeCreate struct {
 	// The version of CloudInit being used.
 	CloudInitVersion *string `json:"cloudInitVersion,omitempty"`
 	// Whether the morpheus agent is installed.
-	InstallAgent         NullableBool `json:"installAgent,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstallAgent         NullableBool           `json:"installAgent,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _OsTypeCreate OsTypeCreate
@@ -594,96 +593,7 @@ func (o OsTypeCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OsTypeCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"platform",
-		"code",
-		"bitCount",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varOsTypeCreate := _OsTypeCreate{}
-
-	err = json.Unmarshal(data, &varOsTypeCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OsTypeCreate(varOsTypeCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "osName")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "osCodename")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "cloudInitVersion")
-		delete(additionalProperties, "installAgent")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableOsTypeCreate struct {
-	value *OsTypeCreate
-	isSet bool
-}
-
-func (v NullableOsTypeCreate) Get() *OsTypeCreate {
-	return v.value
-}
-
-func (v *NullableOsTypeCreate) Set(val *OsTypeCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOsTypeCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOsTypeCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOsTypeCreate(val *OsTypeCreate) *NullableOsTypeCreate {
-	return &NullableOsTypeCreate{value: val, isSet: true}
-}
-
-func (v NullableOsTypeCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOsTypeCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

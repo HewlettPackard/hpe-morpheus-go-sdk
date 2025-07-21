@@ -22,8 +22,8 @@ var _ MappedNullable = &InstanceWorkflow{}
 type InstanceWorkflow struct {
 	TaskSet *RunWorkflowInstanceRequestTaskSet `json:"taskSet,omitempty"`
 	// Task Phase to run for Provisioning workflows. The default is `provision`.
-	TaskPhase            *string `json:"taskPhase,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TaskPhase            *string                `json:"taskPhase,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstanceWorkflow InstanceWorkflow
@@ -137,61 +137,7 @@ func (o InstanceWorkflow) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceWorkflow) UnmarshalJSON(data []byte) (err error) {
-	varInstanceWorkflow := _InstanceWorkflow{}
-
-	err = json.Unmarshal(data, &varInstanceWorkflow)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceWorkflow(varInstanceWorkflow)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "taskSet")
-		delete(additionalProperties, "taskPhase")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstanceWorkflow struct {
-	value *InstanceWorkflow
-	isSet bool
-}
-
-func (v NullableInstanceWorkflow) Get() *InstanceWorkflow {
-	return v.value
-}
-
-func (v *NullableInstanceWorkflow) Set(val *InstanceWorkflow) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceWorkflow) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceWorkflow) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceWorkflow(val *InstanceWorkflow) *NullableInstanceWorkflow {
-	return &NullableInstanceWorkflow{value: val, isSet: true}
-}
-
-func (v NullableInstanceWorkflow) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceWorkflow) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

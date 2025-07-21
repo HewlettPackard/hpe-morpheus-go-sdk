@@ -21,8 +21,8 @@ var _ MappedNullable = &SecurityGroupLocationOpenstackCustomOptions{}
 // SecurityGroupLocationOpenstackCustomOptions struct for SecurityGroupLocationOpenstackCustomOptions
 type SecurityGroupLocationOpenstackCustomOptions struct {
 	// Resource Pool ID (applicable to cloud types Openstack/OpenTelekom/Huawei)
-	ResourcePoolId       *int64 `json:"resourcePoolId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ResourcePoolId       *int64                 `json:"resourcePoolId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _SecurityGroupLocationOpenstackCustomOptions SecurityGroupLocationOpenstackCustomOptions
@@ -97,60 +97,7 @@ func (o SecurityGroupLocationOpenstackCustomOptions) ToMap() (map[string]interfa
 	return toSerialize, nil
 }
 func (o *SecurityGroupLocationOpenstackCustomOptions) UnmarshalJSON(data []byte) (err error) {
-	varSecurityGroupLocationOpenstackCustomOptions := _SecurityGroupLocationOpenstackCustomOptions{}
-
-	err = json.Unmarshal(data, &varSecurityGroupLocationOpenstackCustomOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityGroupLocationOpenstackCustomOptions(varSecurityGroupLocationOpenstackCustomOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSecurityGroupLocationOpenstackCustomOptions struct {
-	value *SecurityGroupLocationOpenstackCustomOptions
-	isSet bool
-}
-
-func (v NullableSecurityGroupLocationOpenstackCustomOptions) Get() *SecurityGroupLocationOpenstackCustomOptions {
-	return v.value
-}
-
-func (v *NullableSecurityGroupLocationOpenstackCustomOptions) Set(val *SecurityGroupLocationOpenstackCustomOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityGroupLocationOpenstackCustomOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityGroupLocationOpenstackCustomOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityGroupLocationOpenstackCustomOptions(val *SecurityGroupLocationOpenstackCustomOptions) *NullableSecurityGroupLocationOpenstackCustomOptions {
-	return &NullableSecurityGroupLocationOpenstackCustomOptions{value: val, isSet: true}
-}
-
-func (v NullableSecurityGroupLocationOpenstackCustomOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityGroupLocationOpenstackCustomOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

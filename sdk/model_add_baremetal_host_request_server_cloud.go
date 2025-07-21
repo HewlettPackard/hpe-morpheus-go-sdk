@@ -20,8 +20,8 @@ var _ MappedNullable = &AddBaremetalHostRequestServerCloud{}
 
 // AddBaremetalHostRequestServerCloud struct for AddBaremetalHostRequestServerCloud
 type AddBaremetalHostRequestServerCloud struct {
-	Id                   *int32 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int32                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBaremetalHostRequestServerCloud AddBaremetalHostRequestServerCloud
@@ -96,60 +96,7 @@ func (o AddBaremetalHostRequestServerCloud) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddBaremetalHostRequestServerCloud) UnmarshalJSON(data []byte) (err error) {
-	varAddBaremetalHostRequestServerCloud := _AddBaremetalHostRequestServerCloud{}
-
-	err = json.Unmarshal(data, &varAddBaremetalHostRequestServerCloud)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBaremetalHostRequestServerCloud(varAddBaremetalHostRequestServerCloud)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBaremetalHostRequestServerCloud struct {
-	value *AddBaremetalHostRequestServerCloud
-	isSet bool
-}
-
-func (v NullableAddBaremetalHostRequestServerCloud) Get() *AddBaremetalHostRequestServerCloud {
-	return v.value
-}
-
-func (v *NullableAddBaremetalHostRequestServerCloud) Set(val *AddBaremetalHostRequestServerCloud) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBaremetalHostRequestServerCloud) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBaremetalHostRequestServerCloud) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBaremetalHostRequestServerCloud(val *AddBaremetalHostRequestServerCloud) *NullableAddBaremetalHostRequestServerCloud {
-	return &NullableAddBaremetalHostRequestServerCloud{value: val, isSet: true}
-}
-
-func (v NullableAddBaremetalHostRequestServerCloud) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBaremetalHostRequestServerCloud) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

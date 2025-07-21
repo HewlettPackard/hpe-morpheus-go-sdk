@@ -30,7 +30,7 @@ type AddBlueprint200ResponseAllOfBlueprint struct {
 	// Category
 	Category             NullableString                               `json:"category,omitempty"`
 	Config               *AddBlueprint200ResponseAllOfBlueprintConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddBlueprint200ResponseAllOfBlueprint AddBlueprint200ResponseAllOfBlueprint
@@ -302,65 +302,7 @@ func (o AddBlueprint200ResponseAllOfBlueprint) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *AddBlueprint200ResponseAllOfBlueprint) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprint200ResponseAllOfBlueprint := _AddBlueprint200ResponseAllOfBlueprint{}
-
-	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprint)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprint200ResponseAllOfBlueprint(varAddBlueprint200ResponseAllOfBlueprint)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBlueprint200ResponseAllOfBlueprint struct {
-	value *AddBlueprint200ResponseAllOfBlueprint
-	isSet bool
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprint) Get() *AddBlueprint200ResponseAllOfBlueprint {
-	return v.value
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprint) Set(val *AddBlueprint200ResponseAllOfBlueprint) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprint) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprint) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprint200ResponseAllOfBlueprint(val *AddBlueprint200ResponseAllOfBlueprint) *NullableAddBlueprint200ResponseAllOfBlueprint {
-	return &NullableAddBlueprint200ResponseAllOfBlueprint{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprint) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprint) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

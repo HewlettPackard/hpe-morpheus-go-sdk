@@ -41,7 +41,7 @@ type Price struct {
 	Datastore            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"datastore,omitempty"`
 	CrossCloudApply      NullableBool                                                `json:"crossCloudApply,omitempty"`
 	Account              NullableString                                              `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _Price Price
@@ -937,80 +937,7 @@ func (o Price) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Price) UnmarshalJSON(data []byte) (err error) {
-	varPrice := _Price{}
-
-	err = json.Unmarshal(data, &varPrice)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Price(varPrice)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "priceType")
-		delete(additionalProperties, "priceUnit")
-		delete(additionalProperties, "additionalPriceUnit")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "customPrice")
-		delete(additionalProperties, "markupType")
-		delete(additionalProperties, "markup")
-		delete(additionalProperties, "markupPercent")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "incurCharges")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "software")
-		delete(additionalProperties, "volumeType")
-		delete(additionalProperties, "datastore")
-		delete(additionalProperties, "crossCloudApply")
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePrice struct {
-	value *Price
-	isSet bool
-}
-
-func (v NullablePrice) Get() *Price {
-	return v.value
-}
-
-func (v *NullablePrice) Set(val *Price) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePrice) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePrice) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePrice(val *Price) *NullablePrice {
-	return &NullablePrice{value: val, isSet: true}
-}
-
-func (v NullablePrice) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePrice) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

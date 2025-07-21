@@ -21,7 +21,7 @@ var _ MappedNullable = &AddBootScriptRequest{}
 // AddBootScriptRequest struct for AddBootScriptRequest
 type AddBootScriptRequest struct {
 	BootScript           *AddBootScriptRequestBootScript `json:"bootScript,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _AddBootScriptRequest AddBootScriptRequest
@@ -96,60 +96,7 @@ func (o AddBootScriptRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBootScriptRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddBootScriptRequest := _AddBootScriptRequest{}
-
-	err = json.Unmarshal(data, &varAddBootScriptRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBootScriptRequest(varAddBootScriptRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "bootScript")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBootScriptRequest struct {
-	value *AddBootScriptRequest
-	isSet bool
-}
-
-func (v NullableAddBootScriptRequest) Get() *AddBootScriptRequest {
-	return v.value
-}
-
-func (v *NullableAddBootScriptRequest) Set(val *AddBootScriptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBootScriptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBootScriptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBootScriptRequest(val *AddBootScriptRequest) *NullableAddBootScriptRequest {
-	return &NullableAddBootScriptRequest{value: val, isSet: true}
-}
-
-func (v NullableAddBootScriptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBootScriptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -37,7 +37,7 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
 	UpdatedBy            NullableString                                                        `json:"updatedBy,omitempty"`
 	DateCreated          *time.Time                                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
@@ -715,75 +715,7 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) ToMap(
 	return toSerialize, nil
 }
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner := _ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{}
-
-	err = json.Unmarshal(data, &varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner(varListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "deploymentId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
-	value *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
-	isSet bool
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Get() *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
-	return v.value
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
-	return &NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

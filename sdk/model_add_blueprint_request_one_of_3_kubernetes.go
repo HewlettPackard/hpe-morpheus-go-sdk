@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf3Kubernetes type satisfies the MappedNullable interface at compile time
@@ -26,7 +25,7 @@ type AddBlueprintRequestOneOf3Kubernetes struct {
 	// Kubernetes Spec in YAML
 	Yaml                 *string                                 `json:"yaml,omitempty"`
 	Git                  *AddBlueprintRequestOneOf3KubernetesGit `json:"git,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf3Kubernetes AddBlueprintRequestOneOf3Kubernetes
@@ -162,83 +161,7 @@ func (o AddBlueprintRequestOneOf3Kubernetes) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *AddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"configType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf3Kubernetes := _AddBlueprintRequestOneOf3Kubernetes{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf3Kubernetes)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf3Kubernetes(varAddBlueprintRequestOneOf3Kubernetes)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "configType")
-		delete(additionalProperties, "yaml")
-		delete(additionalProperties, "git")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBlueprintRequestOneOf3Kubernetes struct {
-	value *AddBlueprintRequestOneOf3Kubernetes
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf3Kubernetes) Get() *AddBlueprintRequestOneOf3Kubernetes {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf3Kubernetes) Set(val *AddBlueprintRequestOneOf3Kubernetes) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf3Kubernetes) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf3Kubernetes) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf3Kubernetes(val *AddBlueprintRequestOneOf3Kubernetes) *NullableAddBlueprintRequestOneOf3Kubernetes {
-	return &NullableAddBlueprintRequestOneOf3Kubernetes{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf3Kubernetes) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

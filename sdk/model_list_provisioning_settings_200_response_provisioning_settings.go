@@ -34,7 +34,7 @@ type ListProvisioningSettings200ResponseProvisioningSettings struct {
 	PxeRootPassword           NullableString                                              `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
 	DeployStorageProvider     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"deployStorageProvider,omitempty"`
-	AdditionalProperties      map[string]interface{}
+	AdditionalProperties      map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListProvisioningSettings200ResponseProvisioningSettings ListProvisioningSettings200ResponseProvisioningSettings
@@ -586,73 +586,7 @@ func (o ListProvisioningSettings200ResponseProvisioningSettings) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
-	varListProvisioningSettings200ResponseProvisioningSettings := _ListProvisioningSettings200ResponseProvisioningSettings{}
-
-	err = json.Unmarshal(data, &varListProvisioningSettings200ResponseProvisioningSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListProvisioningSettings200ResponseProvisioningSettings(varListProvisioningSettings200ResponseProvisioningSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "allowZoneSelection")
-		delete(additionalProperties, "allowServerSelection")
-		delete(additionalProperties, "requireEnvironments")
-		delete(additionalProperties, "showPricing")
-		delete(additionalProperties, "hideDatastoreStats")
-		delete(additionalProperties, "crossTenantNamingPolicies")
-		delete(additionalProperties, "reuseSequence")
-		delete(additionalProperties, "cloudInitUsername")
-		delete(additionalProperties, "cloudInitPassword")
-		delete(additionalProperties, "cloudInitKeyPair")
-		delete(additionalProperties, "windowsPassword")
-		delete(additionalProperties, "pxeRootPassword")
-		delete(additionalProperties, "defaultTemplateType")
-		delete(additionalProperties, "deployStorageProvider")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListProvisioningSettings200ResponseProvisioningSettings struct {
-	value *ListProvisioningSettings200ResponseProvisioningSettings
-	isSet bool
-}
-
-func (v NullableListProvisioningSettings200ResponseProvisioningSettings) Get() *ListProvisioningSettings200ResponseProvisioningSettings {
-	return v.value
-}
-
-func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) Set(val *ListProvisioningSettings200ResponseProvisioningSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListProvisioningSettings200ResponseProvisioningSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListProvisioningSettings200ResponseProvisioningSettings(val *ListProvisioningSettings200ResponseProvisioningSettings) *NullableListProvisioningSettings200ResponseProvisioningSettings {
-	return &NullableListProvisioningSettings200ResponseProvisioningSettings{value: val, isSet: true}
-}
-
-func (v NullableListProvisioningSettings200ResponseProvisioningSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

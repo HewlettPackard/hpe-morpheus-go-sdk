@@ -29,7 +29,7 @@ type MonitoringSettings struct {
 	// Default Check Interval. The number of minutes to use as the default interval to use when creating new checks.
 	DefaultCheckInterval NullableInt32                                                 `json:"defaultCheckInterval,omitempty"`
 	ServiceNow           *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow `json:"serviceNow,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _MonitoringSettings MonitoringSettings
@@ -277,64 +277,7 @@ func (o MonitoringSettings) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *MonitoringSettings) UnmarshalJSON(data []byte) (err error) {
-	varMonitoringSettings := _MonitoringSettings{}
-
-	err = json.Unmarshal(data, &varMonitoringSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = MonitoringSettings(varMonitoringSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "autoManageChecks")
-		delete(additionalProperties, "availabilityTimeFrame")
-		delete(additionalProperties, "availabilityPrecision")
-		delete(additionalProperties, "defaultCheckInterval")
-		delete(additionalProperties, "serviceNow")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableMonitoringSettings struct {
-	value *MonitoringSettings
-	isSet bool
-}
-
-func (v NullableMonitoringSettings) Get() *MonitoringSettings {
-	return v.value
-}
-
-func (v *NullableMonitoringSettings) Set(val *MonitoringSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMonitoringSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMonitoringSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMonitoringSettings(val *MonitoringSettings) *NullableMonitoringSettings {
-	return &NullableMonitoringSettings{value: val, isSet: true}
-}
-
-func (v NullableMonitoringSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMonitoringSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

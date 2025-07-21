@@ -47,7 +47,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner s
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	IpMode               *string                                                     `json:"ipMode,omitempty"`
 	MacAddress           *string                                                     `json:"macAddress,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner
@@ -1153,86 +1153,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInne
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "publicIpAddress")
-		delete(additionalProperties, "publicIpv6Address")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "ipv6Address")
-		delete(additionalProperties, "ipSubnet")
-		delete(additionalProperties, "ipv6Subnet")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "dhcp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "poolAssigned")
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "networkGroup")
-		delete(additionalProperties, "networkPosition")
-		delete(additionalProperties, "networkPool")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "macAddress")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

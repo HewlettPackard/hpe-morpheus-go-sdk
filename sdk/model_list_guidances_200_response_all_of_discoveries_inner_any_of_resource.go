@@ -87,7 +87,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
 	Enabled              *bool                                                                               `json:"enabled,omitempty"`
 	TagCompliant         NullableString                                                                      `json:"tagCompliant,omitempty"`
 	Containers           []int64                                                                             `json:"containers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource
@@ -2536,125 +2536,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) ToMap() (map
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalUniqueId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "parentServer")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "folderId")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "volumeId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "platformVersion")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshPasswordHash")
-		delete(additionalProperties, "osDevice")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "dataDevice")
-		delete(additionalProperties, "lvmEnabled")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "softwareRaid")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "powerState")
-		delete(additionalProperties, "agentInstalled")
-		delete(additionalProperties, "lastAgentUpdate")
-		delete(additionalProperties, "agentVersion")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "hourlyPrice")
-		delete(additionalProperties, "sourceImage")
-		delete(additionalProperties, "serverOs")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "controllers")
-		delete(additionalProperties, "interfaces")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "tagCompliant")
-		delete(additionalProperties, "containers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

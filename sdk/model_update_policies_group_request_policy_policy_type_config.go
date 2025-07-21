@@ -265,6 +265,134 @@ func UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2AsUpdatePoliciesGroup
 	}
 }
 
+func (dst *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdatePoliciesGroupRequestPolicyPolicyTypeConfig{}
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 = &out
+	}
+
+	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9); ok {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 = &out
+	}
+
+	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf); ok {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf = &out
+	}
+
+	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); ok {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); ok {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalJSON(data []byte) error {
 	var err error

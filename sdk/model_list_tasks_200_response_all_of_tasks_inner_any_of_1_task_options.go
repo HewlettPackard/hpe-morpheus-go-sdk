@@ -20,18 +20,18 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions struct {
-	Password                NullableString `json:"password,omitempty"`
-	PasswordHash            NullableString `json:"passwordHash,omitempty"`
-	AnsibleTowerGitRef      NullableString `json:"ansibleTowerGitRef,omitempty"`
-	LocalScriptGitId        NullableString `json:"localScriptGitId,omitempty"`
-	Host                    NullableString `json:"host,omitempty"`
-	Username                NullableString `json:"username,omitempty"`
-	SshKey                  NullableString `json:"sshKey,omitempty"`
-	AnsibleGroup            NullableString `json:"ansibleGroup,omitempty"`
-	AnsibleTowerExecuteMode *string        `json:"ansibleTowerExecuteMode,omitempty"`
-	LocalScriptGitRef       NullableString `json:"localScriptGitRef,omitempty"`
-	Port                    NullableString `json:"port,omitempty"`
-	AdditionalProperties    map[string]interface{}
+	Password                NullableString         `json:"password,omitempty"`
+	PasswordHash            NullableString         `json:"passwordHash,omitempty"`
+	AnsibleTowerGitRef      NullableString         `json:"ansibleTowerGitRef,omitempty"`
+	LocalScriptGitId        NullableString         `json:"localScriptGitId,omitempty"`
+	Host                    NullableString         `json:"host,omitempty"`
+	Username                NullableString         `json:"username,omitempty"`
+	SshKey                  NullableString         `json:"sshKey,omitempty"`
+	AnsibleGroup            NullableString         `json:"ansibleGroup,omitempty"`
+	AnsibleTowerExecuteMode *string                `json:"ansibleTowerExecuteMode,omitempty"`
+	LocalScriptGitRef       NullableString         `json:"localScriptGitRef,omitempty"`
+	Port                    NullableString         `json:"port,omitempty"`
+	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions
@@ -566,70 +566,7 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "ansibleTowerGitRef")
-		delete(additionalProperties, "localScriptGitId")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "sshKey")
-		delete(additionalProperties, "ansibleGroup")
-		delete(additionalProperties, "ansibleTowerExecuteMode")
-		delete(additionalProperties, "localScriptGitRef")
-		delete(additionalProperties, "port")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

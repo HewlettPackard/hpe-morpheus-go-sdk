@@ -21,8 +21,8 @@ var _ MappedNullable = &AddPoliciesRequestPolicyPolicyType{}
 // AddPoliciesRequestPolicyPolicyType struct for AddPoliciesRequestPolicyPolicyType
 type AddPoliciesRequestPolicyPolicyType struct {
 	// The policy type code. See `Retrieves all Policy Types` endpoint for listing.
-	Code                 *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesRequestPolicyPolicyType AddPoliciesRequestPolicyPolicyType
@@ -97,60 +97,7 @@ func (o AddPoliciesRequestPolicyPolicyType) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddPoliciesRequestPolicyPolicyType) UnmarshalJSON(data []byte) (err error) {
-	varAddPoliciesRequestPolicyPolicyType := _AddPoliciesRequestPolicyPolicyType{}
-
-	err = json.Unmarshal(data, &varAddPoliciesRequestPolicyPolicyType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPoliciesRequestPolicyPolicyType(varAddPoliciesRequestPolicyPolicyType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddPoliciesRequestPolicyPolicyType struct {
-	value *AddPoliciesRequestPolicyPolicyType
-	isSet bool
-}
-
-func (v NullableAddPoliciesRequestPolicyPolicyType) Get() *AddPoliciesRequestPolicyPolicyType {
-	return v.value
-}
-
-func (v *NullableAddPoliciesRequestPolicyPolicyType) Set(val *AddPoliciesRequestPolicyPolicyType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPoliciesRequestPolicyPolicyType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPoliciesRequestPolicyPolicyType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPoliciesRequestPolicyPolicyType(val *AddPoliciesRequestPolicyPolicyType) *NullableAddPoliciesRequestPolicyPolicyType {
-	return &NullableAddPoliciesRequestPolicyPolicyType{value: val, isSet: true}
-}
-
-func (v NullableAddPoliciesRequestPolicyPolicyType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPoliciesRequestPolicyPolicyType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

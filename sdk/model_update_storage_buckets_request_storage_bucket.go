@@ -43,7 +43,7 @@ type UpdateStorageBucketsRequestStorageBucket struct {
 	// Create the bucket if it does not exist. Only applies to `Amazon`, `Azure`, `Openstack Swift`, and `Rackspace CDN`.
 	CreateBucket         *bool                                        `json:"createBucket,omitempty"`
 	Config               *AddStorageBucketsRequestStorageBucketConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateStorageBucketsRequestStorageBucket UpdateStorageBucketsRequestStorageBucket
@@ -523,71 +523,7 @@ func (o UpdateStorageBucketsRequestStorageBucket) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *UpdateStorageBucketsRequestStorageBucket) UnmarshalJSON(data []byte) (err error) {
-	varUpdateStorageBucketsRequestStorageBucket := _UpdateStorageBucketsRequestStorageBucket{}
-
-	err = json.Unmarshal(data, &varUpdateStorageBucketsRequestStorageBucket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateStorageBucketsRequestStorageBucket(varUpdateStorageBucketsRequestStorageBucket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "providerType")
-		delete(additionalProperties, "defaultBackupTarget")
-		delete(additionalProperties, "copyToStore")
-		delete(additionalProperties, "defaultDeploymentTarget")
-		delete(additionalProperties, "defaultVirtualImageTarget")
-		delete(additionalProperties, "retentionPolicyType")
-		delete(additionalProperties, "retentionPolicyDays")
-		delete(additionalProperties, "retentionProvider")
-		delete(additionalProperties, "bucketName")
-		delete(additionalProperties, "createBucket")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateStorageBucketsRequestStorageBucket struct {
-	value *UpdateStorageBucketsRequestStorageBucket
-	isSet bool
-}
-
-func (v NullableUpdateStorageBucketsRequestStorageBucket) Get() *UpdateStorageBucketsRequestStorageBucket {
-	return v.value
-}
-
-func (v *NullableUpdateStorageBucketsRequestStorageBucket) Set(val *UpdateStorageBucketsRequestStorageBucket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateStorageBucketsRequestStorageBucket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateStorageBucketsRequestStorageBucket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateStorageBucketsRequestStorageBucket(val *UpdateStorageBucketsRequestStorageBucket) *NullableUpdateStorageBucketsRequestStorageBucket {
-	return &NullableUpdateStorageBucketsRequestStorageBucket{value: val, isSet: true}
-}
-
-func (v NullableUpdateStorageBucketsRequestStorageBucket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateStorageBucketsRequestStorageBucket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

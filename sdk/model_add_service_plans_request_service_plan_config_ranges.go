@@ -43,8 +43,8 @@ type AddServicePlansRequestServicePlanConfigRanges struct {
 	// Custom min cores allowed per socket
 	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
 	// Custom max cores allowed per socket
-	MaxCoresPerSocket    *string `json:"maxCoresPerSocket,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxCoresPerSocket    *string                `json:"maxCoresPerSocket,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddServicePlansRequestServicePlanConfigRanges AddServicePlansRequestServicePlanConfigRanges
@@ -504,71 +504,7 @@ func (o AddServicePlansRequestServicePlanConfigRanges) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *AddServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
-	varAddServicePlansRequestServicePlanConfigRanges := _AddServicePlansRequestServicePlanConfigRanges{}
-
-	err = json.Unmarshal(data, &varAddServicePlansRequestServicePlanConfigRanges)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddServicePlansRequestServicePlanConfigRanges(varAddServicePlansRequestServicePlanConfigRanges)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "minStorage")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "minPerDiskSize")
-		delete(additionalProperties, "maxPerDiskSize")
-		delete(additionalProperties, "minMemory")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "minCores")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "minSockets")
-		delete(additionalProperties, "maxSockets")
-		delete(additionalProperties, "minCoresPerSocket")
-		delete(additionalProperties, "maxCoresPerSocket")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddServicePlansRequestServicePlanConfigRanges struct {
-	value *AddServicePlansRequestServicePlanConfigRanges
-	isSet bool
-}
-
-func (v NullableAddServicePlansRequestServicePlanConfigRanges) Get() *AddServicePlansRequestServicePlanConfigRanges {
-	return v.value
-}
-
-func (v *NullableAddServicePlansRequestServicePlanConfigRanges) Set(val *AddServicePlansRequestServicePlanConfigRanges) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddServicePlansRequestServicePlanConfigRanges) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddServicePlansRequestServicePlanConfigRanges) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddServicePlansRequestServicePlanConfigRanges(val *AddServicePlansRequestServicePlanConfigRanges) *NullableAddServicePlansRequestServicePlanConfigRanges {
-	return &NullableAddServicePlansRequestServicePlanConfigRanges{value: val, isSet: true}
-}
-
-func (v NullableAddServicePlansRequestServicePlanConfigRanges) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

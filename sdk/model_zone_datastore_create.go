@@ -30,7 +30,7 @@ type ZoneDatastoreCreate struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _ZoneDatastoreCreate ZoneDatastoreCreate
@@ -385,68 +385,7 @@ func (o ZoneDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
-	varZoneDatastoreCreate := _ZoneDatastoreCreate{}
-
-	err = json.Unmarshal(data, &varZoneDatastoreCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneDatastoreCreate(varZoneDatastoreCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableZoneDatastoreCreate struct {
-	value *ZoneDatastoreCreate
-	isSet bool
-}
-
-func (v NullableZoneDatastoreCreate) Get() *ZoneDatastoreCreate {
-	return v.value
-}
-
-func (v *NullableZoneDatastoreCreate) Set(val *ZoneDatastoreCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneDatastoreCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneDatastoreCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneDatastoreCreate(val *ZoneDatastoreCreate) *NullableZoneDatastoreCreate {
-	return &NullableZoneDatastoreCreate{value: val, isSet: true}
-}
-
-func (v NullableZoneDatastoreCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneDatastoreCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

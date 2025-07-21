@@ -43,7 +43,7 @@ type ListBillingServers200ResponseAllOfBillingInfoServersInner struct {
 	ServerInternalId     NullableString                                                         `json:"serverInternalId,omitempty"`
 	ResourcePoolId       NullableString                                                         `json:"resourcePoolId,omitempty"`
 	ResourcePoolName     NullableString                                                         `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
 type _ListBillingServers200ResponseAllOfBillingInfoServersInner ListBillingServers200ResponseAllOfBillingInfoServersInner
@@ -908,81 +908,7 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInner) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListBillingServers200ResponseAllOfBillingInfoServersInner := _ListBillingServers200ResponseAllOfBillingInfoServersInner{}
-
-	err = json.Unmarshal(data, &varListBillingServers200ResponseAllOfBillingInfoServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListBillingServers200ResponseAllOfBillingInfoServersInner(varListBillingServers200ResponseAllOfBillingInfoServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refUUID")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "numUnits")
-		delete(additionalProperties, "unit")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "usages")
-		delete(additionalProperties, "numUsages")
-		delete(additionalProperties, "totalUsages")
-		delete(additionalProperties, "hasMoreUsages")
-		delete(additionalProperties, "foundPricing")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "serverUUID")
-		delete(additionalProperties, "serverUniqueId")
-		delete(additionalProperties, "serverExternalId")
-		delete(additionalProperties, "serverInternalId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "resourcePoolName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListBillingServers200ResponseAllOfBillingInfoServersInner struct {
-	value *ListBillingServers200ResponseAllOfBillingInfoServersInner
-	isSet bool
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInner) Get() *ListBillingServers200ResponseAllOfBillingInfoServersInner {
-	return v.value
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInner) Set(val *ListBillingServers200ResponseAllOfBillingInfoServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListBillingServers200ResponseAllOfBillingInfoServersInner(val *ListBillingServers200ResponseAllOfBillingInfoServersInner) *NullableListBillingServers200ResponseAllOfBillingInfoServersInner {
-	return &NullableListBillingServers200ResponseAllOfBillingInfoServersInner{value: val, isSet: true}
-}
-
-func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

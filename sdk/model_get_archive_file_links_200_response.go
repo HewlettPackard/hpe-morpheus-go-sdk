@@ -21,7 +21,7 @@ var _ MappedNullable = &GetArchiveFileLinks200Response{}
 // GetArchiveFileLinks200Response struct for GetArchiveFileLinks200Response
 type GetArchiveFileLinks200Response struct {
 	ArchiveFileLinks     []GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner `json:"archiveFileLinks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _GetArchiveFileLinks200Response GetArchiveFileLinks200Response
@@ -96,60 +96,7 @@ func (o GetArchiveFileLinks200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetArchiveFileLinks200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetArchiveFileLinks200Response := _GetArchiveFileLinks200Response{}
-
-	err = json.Unmarshal(data, &varGetArchiveFileLinks200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetArchiveFileLinks200Response(varGetArchiveFileLinks200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "archiveFileLinks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetArchiveFileLinks200Response struct {
-	value *GetArchiveFileLinks200Response
-	isSet bool
-}
-
-func (v NullableGetArchiveFileLinks200Response) Get() *GetArchiveFileLinks200Response {
-	return v.value
-}
-
-func (v *NullableGetArchiveFileLinks200Response) Set(val *GetArchiveFileLinks200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetArchiveFileLinks200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetArchiveFileLinks200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetArchiveFileLinks200Response(val *GetArchiveFileLinks200Response) *NullableGetArchiveFileLinks200Response {
-	return &NullableGetArchiveFileLinks200Response{value: val, isSet: true}
-}
-
-func (v NullableGetArchiveFileLinks200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetArchiveFileLinks200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

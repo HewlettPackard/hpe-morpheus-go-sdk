@@ -39,7 +39,7 @@ type GetNetworkTransportZone200ResponseNetworkScope struct {
 	NetworkServer        *GetAlerts200ResponseAllOfChecksInnerAccount          `json:"networkServer,omitempty"`
 	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount          `json:"zone,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance   `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _GetNetworkTransportZone200ResponseNetworkScope GetNetworkTransportZone200ResponseNetworkScope
@@ -709,77 +709,7 @@ func (o GetNetworkTransportZone200ResponseNetworkScope) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *GetNetworkTransportZone200ResponseNetworkScope) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkTransportZone200ResponseNetworkScope := _GetNetworkTransportZone200ResponseNetworkScope{}
-
-	err = json.Unmarshal(data, &varGetNetworkTransportZone200ResponseNetworkScope)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkTransportZone200ResponseNetworkScope(varGetNetworkTransportZone200ResponseNetworkScope)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "streamType")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetNetworkTransportZone200ResponseNetworkScope struct {
-	value *GetNetworkTransportZone200ResponseNetworkScope
-	isSet bool
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScope) Get() *GetNetworkTransportZone200ResponseNetworkScope {
-	return v.value
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScope) Set(val *GetNetworkTransportZone200ResponseNetworkScope) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScope) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScope) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkTransportZone200ResponseNetworkScope(val *GetNetworkTransportZone200ResponseNetworkScope) *NullableGetNetworkTransportZone200ResponseNetworkScope {
-	return &NullableGetNetworkTransportZone200ResponseNetworkScope{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkTransportZone200ResponseNetworkScope) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkTransportZone200ResponseNetworkScope) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

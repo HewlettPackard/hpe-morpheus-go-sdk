@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the PolicyCreate type satisfies the MappedNullable interface at compile time
@@ -35,8 +34,8 @@ type PolicyCreate struct {
 	// Array of tenants to scope the policy to
 	Accounts []int64 `json:"accounts,omitempty"`
 	// Apply individually to each user in role.  Only when `refType` equals `Role`
-	EachUser             *bool `json:"eachUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	EachUser             *bool                  `json:"eachUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _PolicyCreate PolicyCreate
@@ -379,91 +378,7 @@ func (o PolicyCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *PolicyCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"policyType",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varPolicyCreate := _PolicyCreate{}
-
-	err = json.Unmarshal(data, &varPolicyCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PolicyCreate(varPolicyCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "policyType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "eachUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePolicyCreate struct {
-	value *PolicyCreate
-	isSet bool
-}
-
-func (v NullablePolicyCreate) Get() *PolicyCreate {
-	return v.value
-}
-
-func (v *NullablePolicyCreate) Set(val *PolicyCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePolicyCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePolicyCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePolicyCreate(val *PolicyCreate) *NullablePolicyCreate {
-	return &NullablePolicyCreate{value: val, isSet: true}
-}
-
-func (v NullablePolicyCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePolicyCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

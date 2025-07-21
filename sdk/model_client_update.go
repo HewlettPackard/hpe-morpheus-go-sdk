@@ -24,8 +24,8 @@ type ClientUpdate struct {
 	AccessTokenValiditySeconds  *int64  `json:"accessTokenValiditySeconds,omitempty"`
 	RefreshTokenValiditySeconds *int64  `json:"refreshTokenValiditySeconds,omitempty"`
 	// List of Redirect URIs for use with the OpenID Authorization Code Flow
-	RedirectUris         []string `json:"redirectUris,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RedirectUris         []string               `json:"redirectUris,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ClientUpdate ClientUpdate
@@ -205,63 +205,7 @@ func (o ClientUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClientUpdate) UnmarshalJSON(data []byte) (err error) {
-	varClientUpdate := _ClientUpdate{}
-
-	err = json.Unmarshal(data, &varClientUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClientUpdate(varClientUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "clientId")
-		delete(additionalProperties, "accessTokenValiditySeconds")
-		delete(additionalProperties, "refreshTokenValiditySeconds")
-		delete(additionalProperties, "redirectUris")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClientUpdate struct {
-	value *ClientUpdate
-	isSet bool
-}
-
-func (v NullableClientUpdate) Get() *ClientUpdate {
-	return v.value
-}
-
-func (v *NullableClientUpdate) Set(val *ClientUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClientUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClientUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClientUpdate(val *ClientUpdate) *NullableClientUpdate {
-	return &NullableClientUpdate{value: val, isSet: true}
-}
-
-func (v NullableClientUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClientUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

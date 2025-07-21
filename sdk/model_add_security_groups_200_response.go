@@ -21,7 +21,7 @@ var _ MappedNullable = &AddSecurityGroups200Response{}
 // AddSecurityGroups200Response struct for AddSecurityGroups200Response
 type AddSecurityGroups200Response struct {
 	SecurityGroup        *AddSecurityGroups200ResponseSecurityGroup `json:"securityGroup,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _AddSecurityGroups200Response AddSecurityGroups200Response
@@ -96,60 +96,7 @@ func (o AddSecurityGroups200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddSecurityGroups200Response := _AddSecurityGroups200Response{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroups200Response(varAddSecurityGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "securityGroup")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddSecurityGroups200Response struct {
-	value *AddSecurityGroups200Response
-	isSet bool
-}
-
-func (v NullableAddSecurityGroups200Response) Get() *AddSecurityGroups200Response {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroups200Response) Set(val *AddSecurityGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroups200Response(val *AddSecurityGroups200Response) *NullableAddSecurityGroups200Response {
-	return &NullableAddSecurityGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -52,7 +52,7 @@ type GetClusterHistoryEventDetail200ResponseProcessEvent struct {
 	LastUpdated          *time.Time                                                                 `json:"lastUpdated,omitempty"`
 	CreatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"createdBy,omitempty"`
 	UpdatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"updatedBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _GetClusterHistoryEventDetail200ResponseProcessEvent GetClusterHistoryEventDetail200ResponseProcessEvent
@@ -1298,90 +1298,7 @@ func (o GetClusterHistoryEventDetail200ResponseProcessEvent) ToMap() (map[string
 	return toSerialize, nil
 }
 func (o *GetClusterHistoryEventDetail200ResponseProcessEvent) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterHistoryEventDetail200ResponseProcessEvent := _GetClusterHistoryEventDetail200ResponseProcessEvent{}
-
-	err = json.Unmarshal(data, &varGetClusterHistoryEventDetail200ResponseProcessEvent)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterHistoryEventDetail200ResponseProcessEvent(varGetClusterHistoryEventDetail200ResponseProcessEvent)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "processId")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "processType")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "subType")
-		delete(additionalProperties, "subId")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "containerName")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "reason")
-		delete(additionalProperties, "percent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "output")
-		delete(additionalProperties, "error")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetClusterHistoryEventDetail200ResponseProcessEvent struct {
-	value *GetClusterHistoryEventDetail200ResponseProcessEvent
-	isSet bool
-}
-
-func (v NullableGetClusterHistoryEventDetail200ResponseProcessEvent) Get() *GetClusterHistoryEventDetail200ResponseProcessEvent {
-	return v.value
-}
-
-func (v *NullableGetClusterHistoryEventDetail200ResponseProcessEvent) Set(val *GetClusterHistoryEventDetail200ResponseProcessEvent) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterHistoryEventDetail200ResponseProcessEvent) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterHistoryEventDetail200ResponseProcessEvent) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterHistoryEventDetail200ResponseProcessEvent(val *GetClusterHistoryEventDetail200ResponseProcessEvent) *NullableGetClusterHistoryEventDetail200ResponseProcessEvent {
-	return &NullableGetClusterHistoryEventDetail200ResponseProcessEvent{value: val, isSet: true}
-}
-
-func (v NullableGetClusterHistoryEventDetail200ResponseProcessEvent) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterHistoryEventDetail200ResponseProcessEvent) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

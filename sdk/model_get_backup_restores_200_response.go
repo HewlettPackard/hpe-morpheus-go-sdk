@@ -21,7 +21,7 @@ var _ MappedNullable = &GetBackupRestores200Response{}
 // GetBackupRestores200Response struct for GetBackupRestores200Response
 type GetBackupRestores200Response struct {
 	Restore              *ListBackupRestores200ResponseAllOfRestoresInner `json:"restore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _GetBackupRestores200Response GetBackupRestores200Response
@@ -96,60 +96,7 @@ func (o GetBackupRestores200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetBackupRestores200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetBackupRestores200Response := _GetBackupRestores200Response{}
-
-	err = json.Unmarshal(data, &varGetBackupRestores200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBackupRestores200Response(varGetBackupRestores200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "restore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetBackupRestores200Response struct {
-	value *GetBackupRestores200Response
-	isSet bool
-}
-
-func (v NullableGetBackupRestores200Response) Get() *GetBackupRestores200Response {
-	return v.value
-}
-
-func (v *NullableGetBackupRestores200Response) Set(val *GetBackupRestores200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBackupRestores200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBackupRestores200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBackupRestores200Response(val *GetBackupRestores200Response) *NullableGetBackupRestores200Response {
-	return &NullableGetBackupRestores200Response{value: val, isSet: true}
-}
-
-func (v NullableGetBackupRestores200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBackupRestores200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

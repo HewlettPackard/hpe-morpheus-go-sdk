@@ -49,7 +49,7 @@ type ListJobs200ResponseAllOfJobsInnerAnyOf struct {
 	SecurityProfile      NullableString                                       `json:"securityProfile,omitempty"`
 	CustomConfig         NullableString                                       `json:"customConfig,omitempty"`
 	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _ListJobs200ResponseAllOfJobsInnerAnyOf ListJobs200ResponseAllOfJobsInnerAnyOf
@@ -1122,85 +1122,7 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOf) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varListJobs200ResponseAllOfJobsInnerAnyOf := _ListJobs200ResponseAllOfJobsInnerAnyOf{}
-
-	err = json.Unmarshal(data, &varListJobs200ResponseAllOfJobsInnerAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobs200ResponseAllOfJobsInnerAnyOf(varListJobs200ResponseAllOfJobsInnerAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "securityPackage")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "scanPath")
-		delete(additionalProperties, "securityProfile")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListJobs200ResponseAllOfJobsInnerAnyOf struct {
-	value *ListJobs200ResponseAllOfJobsInnerAnyOf
-	isSet bool
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf) Get() *ListJobs200ResponseAllOfJobsInnerAnyOf {
-	return v.value
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf) Set(val *ListJobs200ResponseAllOfJobsInnerAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobs200ResponseAllOfJobsInnerAnyOf(val *ListJobs200ResponseAllOfJobsInnerAnyOf) *NullableListJobs200ResponseAllOfJobsInnerAnyOf {
-	return &NullableListJobs200ResponseAllOfJobsInnerAnyOf{value: val, isSet: true}
-}
-
-func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

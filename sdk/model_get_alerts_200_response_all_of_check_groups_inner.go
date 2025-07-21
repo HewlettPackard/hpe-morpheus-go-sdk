@@ -48,7 +48,7 @@ type GetAlerts200ResponseAllOfCheckGroupsInner struct {
 	Availability         NullableFloat32                                             `json:"availability,omitempty"`
 	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType              `json:"checkType,omitempty"`
 	Checks               []int64                                                     `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfCheckGroupsInner GetAlerts200ResponseAllOfCheckGroupsInner
@@ -1143,86 +1143,7 @@ func (o GetAlerts200ResponseAllOfCheckGroupsInner) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *GetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfCheckGroupsInner := _GetAlerts200ResponseAllOfCheckGroupsInner{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfCheckGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfCheckGroupsInner(varGetAlerts200ResponseAllOfCheckGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "lastCheckStatus")
-		delete(additionalProperties, "lastWarningDate")
-		delete(additionalProperties, "lastErrorDate")
-		delete(additionalProperties, "lastSuccessDate")
-		delete(additionalProperties, "lastRunDate")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "outageTime")
-		delete(additionalProperties, "lastTimer")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "history")
-		delete(additionalProperties, "minHappy")
-		delete(additionalProperties, "lastMetric")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "availability")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetAlerts200ResponseAllOfCheckGroupsInner struct {
-	value *GetAlerts200ResponseAllOfCheckGroupsInner
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) Get() *GetAlerts200ResponseAllOfCheckGroupsInner {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) Set(val *GetAlerts200ResponseAllOfCheckGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfCheckGroupsInner(val *GetAlerts200ResponseAllOfCheckGroupsInner) *NullableGetAlerts200ResponseAllOfCheckGroupsInner {
-	return &NullableGetAlerts200ResponseAllOfCheckGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -57,7 +57,7 @@ type GetNetworkSubnets200ResponseAllOfSubnetsInner struct {
 	SecurityGroups       []map[string]interface{}                                         `json:"securityGroups,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"tenants,omitempty"`
 	ResourcePermission   *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _GetNetworkSubnets200ResponseAllOfSubnetsInner GetNetworkSubnets200ResponseAllOfSubnetsInner
@@ -1558,96 +1558,7 @@ func (o GetNetworkSubnets200ResponseAllOfSubnetsInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkSubnets200ResponseAllOfSubnetsInner := _GetNetworkSubnets200ResponseAllOfSubnetsInner{}
-
-	err = json.Unmarshal(data, &varGetNetworkSubnets200ResponseAllOfSubnetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkSubnets200ResponseAllOfSubnetsInner(varGetNetworkSubnets200ResponseAllOfSubnetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "addressPrefix")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "netmask")
-		delete(additionalProperties, "subnetAddress")
-		delete(additionalProperties, "tftpServer")
-		delete(additionalProperties, "bootFile")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "hasFloatingIps")
-		delete(additionalProperties, "dhcpIp")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "dhcpStart")
-		delete(additionalProperties, "dhcpEnd")
-		delete(additionalProperties, "dhcpRange")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "defaultNetwork")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetNetworkSubnets200ResponseAllOfSubnetsInner struct {
-	value *GetNetworkSubnets200ResponseAllOfSubnetsInner
-	isSet bool
-}
-
-func (v NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) Get() *GetNetworkSubnets200ResponseAllOfSubnetsInner {
-	return v.value
-}
-
-func (v *NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) Set(val *GetNetworkSubnets200ResponseAllOfSubnetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkSubnets200ResponseAllOfSubnetsInner(val *GetNetworkSubnets200ResponseAllOfSubnetsInner) *NullableGetNetworkSubnets200ResponseAllOfSubnetsInner {
-	return &NullableGetNetworkSubnets200ResponseAllOfSubnetsInner{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

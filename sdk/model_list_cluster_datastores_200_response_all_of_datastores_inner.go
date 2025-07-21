@@ -46,7 +46,7 @@ type ListClusterDatastores200ResponseAllOfDatastoresInner struct {
 	Datastores           []map[string]interface{}                                                 `json:"datastores,omitempty"`
 	Locations            []ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner     `json:"locations,omitempty"`
 	ResourcePermissions  *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInner ListClusterDatastores200ResponseAllOfDatastoresInner
@@ -1030,85 +1030,7 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInner) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterDatastores200ResponseAllOfDatastoresInner := _ListClusterDatastores200ResponseAllOfDatastoresInner{}
-
-	err = json.Unmarshal(data, &varListClusterDatastores200ResponseAllOfDatastoresInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterDatastores200ResponseAllOfDatastoresInner(varListClusterDatastores200ResponseAllOfDatastoresInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "storageSize")
-		delete(additionalProperties, "freeSpace")
-		delete(additionalProperties, "drsEnabled")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "allowWrite")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "online")
-		delete(additionalProperties, "allowRead")
-		delete(additionalProperties, "allowProvision")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "datastores")
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterDatastores200ResponseAllOfDatastoresInner struct {
-	value *ListClusterDatastores200ResponseAllOfDatastoresInner
-	isSet bool
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) Get() *ListClusterDatastores200ResponseAllOfDatastoresInner {
-	return v.value
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInner) Set(val *ListClusterDatastores200ResponseAllOfDatastoresInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterDatastores200ResponseAllOfDatastoresInner(val *ListClusterDatastores200ResponseAllOfDatastoresInner) *NullableListClusterDatastores200ResponseAllOfDatastoresInner {
-	return &NullableListClusterDatastores200ResponseAllOfDatastoresInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -25,7 +25,7 @@ type ListHealth200ResponseAllOfHealthRabbit struct {
 	ErrorQueues          []map[string]interface{}                            `json:"errorQueues,omitempty"`
 	Status               *string                                             `json:"status,omitempty"`
 	Queues               []ListHealth200ResponseAllOfHealthRabbitQueuesInner `json:"queues,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ListHealth200ResponseAllOfHealthRabbit ListHealth200ResponseAllOfHealthRabbit
@@ -242,64 +242,7 @@ func (o ListHealth200ResponseAllOfHealthRabbit) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *ListHealth200ResponseAllOfHealthRabbit) UnmarshalJSON(data []byte) (err error) {
-	varListHealth200ResponseAllOfHealthRabbit := _ListHealth200ResponseAllOfHealthRabbit{}
-
-	err = json.Unmarshal(data, &varListHealth200ResponseAllOfHealthRabbit)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHealth200ResponseAllOfHealthRabbit(varListHealth200ResponseAllOfHealthRabbit)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "busyQueues")
-		delete(additionalProperties, "errorQueues")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "queues")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListHealth200ResponseAllOfHealthRabbit struct {
-	value *ListHealth200ResponseAllOfHealthRabbit
-	isSet bool
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbit) Get() *ListHealth200ResponseAllOfHealthRabbit {
-	return v.value
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbit) Set(val *ListHealth200ResponseAllOfHealthRabbit) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbit) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbit) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHealth200ResponseAllOfHealthRabbit(val *ListHealth200ResponseAllOfHealthRabbit) *NullableListHealth200ResponseAllOfHealthRabbit {
-	return &NullableListHealth200ResponseAllOfHealthRabbit{value: val, isSet: true}
-}
-
-func (v NullableListHealth200ResponseAllOfHealthRabbit) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHealth200ResponseAllOfHealthRabbit) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

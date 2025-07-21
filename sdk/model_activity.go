@@ -21,7 +21,7 @@ var _ MappedNullable = &Activity{}
 // Activity struct for Activity
 type Activity struct {
 	Activity             []ListActivity200ResponseAllOfActivityInnerActivityInner `json:"activity,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _Activity Activity
@@ -96,60 +96,7 @@ func (o Activity) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Activity) UnmarshalJSON(data []byte) (err error) {
-	varActivity := _Activity{}
-
-	err = json.Unmarshal(data, &varActivity)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Activity(varActivity)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "activity")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableActivity struct {
-	value *Activity
-	isSet bool
-}
-
-func (v NullableActivity) Get() *Activity {
-	return v.value
-}
-
-func (v *NullableActivity) Set(val *Activity) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableActivity) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableActivity) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableActivity(val *Activity) *NullableActivity {
-	return &NullableActivity{value: val, isSet: true}
-}
-
-func (v NullableActivity) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableActivity) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

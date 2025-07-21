@@ -21,8 +21,8 @@ var _ MappedNullable = &AddClusterRequestClusterGroup{}
 // AddClusterRequestClusterGroup struct for AddClusterRequestClusterGroup
 type AddClusterRequestClusterGroup struct {
 	// The Group ID to provision the cluster into
-	Id                   *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterGroup AddClusterRequestClusterGroup
@@ -97,60 +97,7 @@ func (o AddClusterRequestClusterGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterGroup) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterGroup := _AddClusterRequestClusterGroup{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterGroup(varAddClusterRequestClusterGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddClusterRequestClusterGroup struct {
-	value *AddClusterRequestClusterGroup
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterGroup) Get() *AddClusterRequestClusterGroup {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterGroup) Set(val *AddClusterRequestClusterGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterGroup(val *AddClusterRequestClusterGroup) *NullableAddClusterRequestClusterGroup {
-	return &NullableAddClusterRequestClusterGroup{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

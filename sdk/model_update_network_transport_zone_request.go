@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateNetworkTransportZoneRequest{}
 // UpdateNetworkTransportZoneRequest The parameters for update a Network Transport Zone is type dependent. The following lists the common parameters. Get a specific network type to list available options for the network relay type.
 type UpdateNetworkTransportZoneRequest struct {
 	NetworkScope         *CreateNetworkTransportZoneRequestNetworkScope `json:"networkScope,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _UpdateNetworkTransportZoneRequest UpdateNetworkTransportZoneRequest
@@ -96,60 +96,7 @@ func (o UpdateNetworkTransportZoneRequest) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *UpdateNetworkTransportZoneRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateNetworkTransportZoneRequest := _UpdateNetworkTransportZoneRequest{}
-
-	err = json.Unmarshal(data, &varUpdateNetworkTransportZoneRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateNetworkTransportZoneRequest(varUpdateNetworkTransportZoneRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkScope")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateNetworkTransportZoneRequest struct {
-	value *UpdateNetworkTransportZoneRequest
-	isSet bool
-}
-
-func (v NullableUpdateNetworkTransportZoneRequest) Get() *UpdateNetworkTransportZoneRequest {
-	return v.value
-}
-
-func (v *NullableUpdateNetworkTransportZoneRequest) Set(val *UpdateNetworkTransportZoneRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateNetworkTransportZoneRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateNetworkTransportZoneRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateNetworkTransportZoneRequest(val *UpdateNetworkTransportZoneRequest) *NullableUpdateNetworkTransportZoneRequest {
-	return &NullableUpdateNetworkTransportZoneRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateNetworkTransportZoneRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateNetworkTransportZoneRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

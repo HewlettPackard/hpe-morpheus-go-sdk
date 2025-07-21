@@ -28,8 +28,8 @@ type EmailTemplate struct {
 	Owner    *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner `json:"owner,omitempty"`
 	Accounts []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
 	// The email template. This is the actual email template that is sent to the user. This uses handlebars notation (not javascript)
-	Template             *string `json:"template,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Template             *string                `json:"template,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _EmailTemplate EmailTemplate
@@ -280,65 +280,7 @@ func (o EmailTemplate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *EmailTemplate) UnmarshalJSON(data []byte) (err error) {
-	varEmailTemplate := _EmailTemplate{}
-
-	err = json.Unmarshal(data, &varEmailTemplate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = EmailTemplate(varEmailTemplate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "accounts")
-		delete(additionalProperties, "template")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableEmailTemplate struct {
-	value *EmailTemplate
-	isSet bool
-}
-
-func (v NullableEmailTemplate) Get() *EmailTemplate {
-	return v.value
-}
-
-func (v *NullableEmailTemplate) Set(val *EmailTemplate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableEmailTemplate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableEmailTemplate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableEmailTemplate(val *EmailTemplate) *NullableEmailTemplate {
-	return &NullableEmailTemplate{value: val, isSet: true}
-}
-
-func (v NullableEmailTemplate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableEmailTemplate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CatalogItemTypeWorkflowCreate type satisfies the MappedNullable interface at compile time
@@ -56,8 +55,8 @@ type CatalogItemTypeWorkflowCreate struct {
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
-	Content              *string `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Content              *string                `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CatalogItemTypeWorkflowCreate CatalogItemTypeWorkflowCreate
@@ -807,99 +806,7 @@ func (o CatalogItemTypeWorkflowCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CatalogItemTypeWorkflowCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"workflow",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCatalogItemTypeWorkflowCreate := _CatalogItemTypeWorkflowCreate{}
-
-	err = json.Unmarshal(data, &varCatalogItemTypeWorkflowCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItemTypeWorkflowCreate(varCatalogItemTypeWorkflowCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "workflowConfig")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "content")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCatalogItemTypeWorkflowCreate struct {
-	value *CatalogItemTypeWorkflowCreate
-	isSet bool
-}
-
-func (v NullableCatalogItemTypeWorkflowCreate) Get() *CatalogItemTypeWorkflowCreate {
-	return v.value
-}
-
-func (v *NullableCatalogItemTypeWorkflowCreate) Set(val *CatalogItemTypeWorkflowCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItemTypeWorkflowCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItemTypeWorkflowCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItemTypeWorkflowCreate(val *CatalogItemTypeWorkflowCreate) *NullableCatalogItemTypeWorkflowCreate {
-	return &NullableCatalogItemTypeWorkflowCreate{value: val, isSet: true}
-}
-
-func (v NullableCatalogItemTypeWorkflowCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItemTypeWorkflowCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

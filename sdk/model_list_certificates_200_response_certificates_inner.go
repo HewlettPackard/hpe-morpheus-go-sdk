@@ -35,7 +35,7 @@ type ListCertificates200ResponseCertificatesInner struct {
 	CommonName           NullableString                                    `json:"commonName,omitempty"`
 	CertType             NullableString                                    `json:"certType,omitempty"`
 	KeyFileMD5           NullableString                                    `json:"keyFileMD5,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _ListCertificates200ResponseCertificatesInner ListCertificates200ResponseCertificatesInner
@@ -677,74 +677,7 @@ func (o ListCertificates200ResponseCertificatesInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *ListCertificates200ResponseCertificatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCertificates200ResponseCertificatesInner := _ListCertificates200ResponseCertificatesInner{}
-
-	err = json.Unmarshal(data, &varListCertificates200ResponseCertificatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCertificates200ResponseCertificatesInner(varListCertificates200ResponseCertificatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "generated")
-		delete(additionalProperties, "wildcard")
-		delete(additionalProperties, "selfSigned")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "commonName")
-		delete(additionalProperties, "certType")
-		delete(additionalProperties, "keyFileMD5")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCertificates200ResponseCertificatesInner struct {
-	value *ListCertificates200ResponseCertificatesInner
-	isSet bool
-}
-
-func (v NullableListCertificates200ResponseCertificatesInner) Get() *ListCertificates200ResponseCertificatesInner {
-	return v.value
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInner) Set(val *ListCertificates200ResponseCertificatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCertificates200ResponseCertificatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCertificates200ResponseCertificatesInner(val *ListCertificates200ResponseCertificatesInner) *NullableListCertificates200ResponseCertificatesInner {
-	return &NullableListCertificates200ResponseCertificatesInner{value: val, isSet: true}
-}
-
-func (v NullableListCertificates200ResponseCertificatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCertificates200ResponseCertificatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

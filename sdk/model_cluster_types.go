@@ -42,7 +42,7 @@ type ClusterTypes struct {
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	ControllerTypes      []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner     `json:"controllerTypes,omitempty"`
 	WorkerTypes          []ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner     `json:"workerTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ClusterTypes ClusterTypes
@@ -852,81 +852,7 @@ func (o ClusterTypes) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterTypes) UnmarshalJSON(data []byte) (err error) {
-	varClusterTypes := _ClusterTypes{}
-
-	err = json.Unmarshal(data, &varClusterTypes)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterTypes(varClusterTypes)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "deployTargetService")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "providerType")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "hostService")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "hasMasters")
-		delete(additionalProperties, "hasWorkers")
-		delete(additionalProperties, "viewSet")
-		delete(additionalProperties, "imageCode")
-		delete(additionalProperties, "kubeCtlLocal")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "supportsCloudScaling")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "hasDefaultDataDisk")
-		delete(additionalProperties, "canManage")
-		delete(additionalProperties, "hasCluster")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "controllerTypes")
-		delete(additionalProperties, "workerTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterTypes struct {
-	value *ClusterTypes
-	isSet bool
-}
-
-func (v NullableClusterTypes) Get() *ClusterTypes {
-	return v.value
-}
-
-func (v *NullableClusterTypes) Set(val *ClusterTypes) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterTypes) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterTypes) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterTypes(val *ClusterTypes) *NullableClusterTypes {
-	return &NullableClusterTypes{value: val, isSet: true}
-}
-
-func (v NullableClusterTypes) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterTypes) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

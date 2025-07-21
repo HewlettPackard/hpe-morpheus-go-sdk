@@ -20,23 +20,23 @@ var _ MappedNullable = &ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions{}
 
 // ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions struct for ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions
 type ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions struct {
-	WebPassword          NullableString `json:"webPassword,omitempty"`
-	WebPasswordHash      NullableString `json:"webPasswordHash,omitempty"`
-	LocalScriptGitId     NullableString `json:"localScriptGitId,omitempty"`
-	LocalScriptGitRef    NullableString `json:"localScriptGitRef,omitempty"`
-	WebUser              NullableString `json:"webUser,omitempty"`
-	WebBody              NullableString `json:"webBody,omitempty"`
-	WebHeaders           *string        `json:"webHeaders,omitempty"`
-	Password             NullableString `json:"password,omitempty"`
-	PasswordHash         NullableString `json:"passwordHash,omitempty"`
-	Username             NullableString `json:"username,omitempty"`
-	IgnoreSSL            NullableString `json:"ignoreSSL,omitempty"`
-	WebMethod            NullableString `json:"webMethod,omitempty"`
-	WebUrl               NullableString `json:"webUrl,omitempty"`
-	Host                 NullableString `json:"host,omitempty"`
-	Port                 NullableString `json:"port,omitempty"`
-	SshKey               NullableString `json:"sshKey,omitempty"`
-	AdditionalProperties map[string]interface{}
+	WebPassword          NullableString         `json:"webPassword,omitempty"`
+	WebPasswordHash      NullableString         `json:"webPasswordHash,omitempty"`
+	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
+	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
+	WebUser              NullableString         `json:"webUser,omitempty"`
+	WebBody              NullableString         `json:"webBody,omitempty"`
+	WebHeaders           *string                `json:"webHeaders,omitempty"`
+	Password             NullableString         `json:"password,omitempty"`
+	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
+	Username             NullableString         `json:"username,omitempty"`
+	IgnoreSSL            NullableString         `json:"ignoreSSL,omitempty"`
+	WebMethod            NullableString         `json:"webMethod,omitempty"`
+	WebUrl               NullableString         `json:"webUrl,omitempty"`
+	Host                 NullableString         `json:"host,omitempty"`
+	Port                 NullableString         `json:"port,omitempty"`
+	SshKey               NullableString         `json:"sshKey,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions
@@ -801,75 +801,7 @@ func (o ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnmarshalJSON(data []byte) (err error) {
-	varListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions := _ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions{}
-
-	err = json.Unmarshal(data, &varListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions(varListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "webPassword")
-		delete(additionalProperties, "webPasswordHash")
-		delete(additionalProperties, "localScriptGitId")
-		delete(additionalProperties, "localScriptGitRef")
-		delete(additionalProperties, "webUser")
-		delete(additionalProperties, "webBody")
-		delete(additionalProperties, "webHeaders")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "ignoreSSL")
-		delete(additionalProperties, "webMethod")
-		delete(additionalProperties, "webUrl")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "sshKey")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions struct {
-	value *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions
-	isSet bool
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) Get() *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions {
-	return v.value
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) Set(val *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions(val *ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) *NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions {
-	return &NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions{value: val, isSet: true}
-}
-
-func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

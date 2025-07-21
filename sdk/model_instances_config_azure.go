@@ -37,8 +37,8 @@ type InstancesConfigAzure struct {
 	// Diagnostics Storage Account
 	DiagnosticsStorageAccount *string `json:"diagnosticsStorageAccount,omitempty"`
 	// Create User
-	CreateUser           *bool `json:"createUser,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CreateUser           *bool                  `json:"createUser,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstancesConfigAzure InstancesConfigAzure
@@ -397,68 +397,7 @@ func (o InstancesConfigAzure) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstancesConfigAzure) UnmarshalJSON(data []byte) (err error) {
-	varInstancesConfigAzure := _InstancesConfigAzure{}
-
-	err = json.Unmarshal(data, &varInstancesConfigAzure)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstancesConfigAzure(varInstancesConfigAzure)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "availabilityOptions")
-		delete(additionalProperties, "availabilitySet")
-		delete(additionalProperties, "availabilityZone")
-		delete(additionalProperties, "azurefloatingIp")
-		delete(additionalProperties, "bootDiagnostics")
-		delete(additionalProperties, "osGuestDiagnostics")
-		delete(additionalProperties, "diagnosticsStorageAccount")
-		delete(additionalProperties, "createUser")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstancesConfigAzure struct {
-	value *InstancesConfigAzure
-	isSet bool
-}
-
-func (v NullableInstancesConfigAzure) Get() *InstancesConfigAzure {
-	return v.value
-}
-
-func (v *NullableInstancesConfigAzure) Set(val *InstancesConfigAzure) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstancesConfigAzure) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstancesConfigAzure) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstancesConfigAzure(val *InstancesConfigAzure) *NullableInstancesConfigAzure {
-	return &NullableInstancesConfigAzure{value: val, isSet: true}
-}
-
-func (v NullableInstancesConfigAzure) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstancesConfigAzure) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

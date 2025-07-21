@@ -24,7 +24,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config struct {
 	DetailList           []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigDetailListInner                                           `json:"detailList,omitempty"`
 	Services             *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices                                                   `json:"services,omitempty"`
 	Summary              *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValueTermOptionsValueSummary `json:"summary,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                                                               `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config
@@ -204,63 +204,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "detailList")
-		delete(additionalProperties, "services")
-		delete(additionalProperties, "summary")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

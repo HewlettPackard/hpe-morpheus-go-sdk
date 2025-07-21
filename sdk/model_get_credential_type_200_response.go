@@ -21,7 +21,7 @@ var _ MappedNullable = &GetCredentialType200Response{}
 // GetCredentialType200Response struct for GetCredentialType200Response
 type GetCredentialType200Response struct {
 	CredentialType       *ListCredentialTypes200ResponseAllOfCredentialTypesInner `json:"credentialType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _GetCredentialType200Response GetCredentialType200Response
@@ -96,60 +96,7 @@ func (o GetCredentialType200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetCredentialType200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCredentialType200Response := _GetCredentialType200Response{}
-
-	err = json.Unmarshal(data, &varGetCredentialType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCredentialType200Response(varGetCredentialType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "credentialType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetCredentialType200Response struct {
-	value *GetCredentialType200Response
-	isSet bool
-}
-
-func (v NullableGetCredentialType200Response) Get() *GetCredentialType200Response {
-	return v.value
-}
-
-func (v *NullableGetCredentialType200Response) Set(val *GetCredentialType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCredentialType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCredentialType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCredentialType200Response(val *GetCredentialType200Response) *NullableGetCredentialType200Response {
-	return &NullableGetCredentialType200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCredentialType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCredentialType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

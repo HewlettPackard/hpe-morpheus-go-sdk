@@ -41,6 +41,22 @@ func UpdateRoleWorkflowAccessRequestOneOf1AsUpdateRoleWorkflowAccessRequest(v *U
 	}
 }
 
+func (dst *UpdateRoleWorkflowAccessRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateRoleWorkflowAccessRequest{}
+	}
+
+	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf); ok {
+		dst.UpdateRoleWorkflowAccessRequestOneOf = &out
+	}
+
+	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf1); ok {
+		dst.UpdateRoleWorkflowAccessRequestOneOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateRoleWorkflowAccessRequest) UnmarshalJSON(data []byte) error {
 	var err error

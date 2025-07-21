@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the IntegrationGitRepoConfig type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &IntegrationGitRepoConfig{}
 // IntegrationGitRepoConfig struct for IntegrationGitRepoConfig
 type IntegrationGitRepoConfig struct {
 	Integration          AddIntegrationsRequestOneOf5Integration `json:"integration"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _IntegrationGitRepoConfig IntegrationGitRepoConfig
@@ -88,81 +87,7 @@ func (o IntegrationGitRepoConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationGitRepoConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"integration",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varIntegrationGitRepoConfig := _IntegrationGitRepoConfig{}
-
-	err = json.Unmarshal(data, &varIntegrationGitRepoConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationGitRepoConfig(varIntegrationGitRepoConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "integration")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationGitRepoConfig struct {
-	value *IntegrationGitRepoConfig
-	isSet bool
-}
-
-func (v NullableIntegrationGitRepoConfig) Get() *IntegrationGitRepoConfig {
-	return v.value
-}
-
-func (v *NullableIntegrationGitRepoConfig) Set(val *IntegrationGitRepoConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationGitRepoConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationGitRepoConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationGitRepoConfig(val *IntegrationGitRepoConfig) *NullableIntegrationGitRepoConfig {
-	return &NullableIntegrationGitRepoConfig{value: val, isSet: true}
-}
-
-func (v NullableIntegrationGitRepoConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationGitRepoConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -22,7 +22,7 @@ var _ MappedNullable = &UpdateInstanceRequest{}
 type UpdateInstanceRequest struct {
 	Instance             *UpdateInstanceRequestInstance `json:"instance,omitempty"`
 	Config               *UpdateInstanceRequestConfig   `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _UpdateInstanceRequest UpdateInstanceRequest
@@ -132,61 +132,7 @@ func (o UpdateInstanceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceRequest := _UpdateInstanceRequest{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceRequest(varUpdateInstanceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateInstanceRequest struct {
-	value *UpdateInstanceRequest
-	isSet bool
-}
-
-func (v NullableUpdateInstanceRequest) Get() *UpdateInstanceRequest {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceRequest) Set(val *UpdateInstanceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceRequest(val *UpdateInstanceRequest) *NullableUpdateInstanceRequest {
-	return &NullableUpdateInstanceRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

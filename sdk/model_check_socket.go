@@ -34,7 +34,7 @@ type CheckSocket struct {
 	// Severity level threshold for sending notifications.
 	Severity             *string                            `json:"severity,omitempty"`
 	Config               *AddChecksRequestCheckOneOf2Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _CheckSocket CheckSocket
@@ -381,67 +381,7 @@ func (o CheckSocket) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CheckSocket) UnmarshalJSON(data []byte) (err error) {
-	varCheckSocket := _CheckSocket{}
-
-	err = json.Unmarshal(data, &varCheckSocket)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CheckSocket(varCheckSocket)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCheckSocket struct {
-	value *CheckSocket
-	isSet bool
-}
-
-func (v NullableCheckSocket) Get() *CheckSocket {
-	return v.value
-}
-
-func (v *NullableCheckSocket) Set(val *CheckSocket) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCheckSocket) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCheckSocket) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCheckSocket(val *CheckSocket) *NullableCheckSocket {
-	return &NullableCheckSocket{value: val, isSet: true}
-}
-
-func (v NullableCheckSocket) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCheckSocket) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

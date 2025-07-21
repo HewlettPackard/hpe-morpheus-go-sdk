@@ -39,7 +39,7 @@ type TaskEmailConfig struct {
 	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
 	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _TaskEmailConfig TaskEmailConfig
@@ -731,77 +731,7 @@ func (o TaskEmailConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *TaskEmailConfig) UnmarshalJSON(data []byte) (err error) {
-	varTaskEmailConfig := _TaskEmailConfig{}
-
-	err = json.Unmarshal(data, &varTaskEmailConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = TaskEmailConfig(varTaskEmailConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "taskType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "taskOptions")
-		delete(additionalProperties, "file")
-		delete(additionalProperties, "resultType")
-		delete(additionalProperties, "executeTarget")
-		delete(additionalProperties, "retryable")
-		delete(additionalProperties, "retryCount")
-		delete(additionalProperties, "retryDelaySeconds")
-		delete(additionalProperties, "allowCustomConfig")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableTaskEmailConfig struct {
-	value *TaskEmailConfig
-	isSet bool
-}
-
-func (v NullableTaskEmailConfig) Get() *TaskEmailConfig {
-	return v.value
-}
-
-func (v *NullableTaskEmailConfig) Set(val *TaskEmailConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTaskEmailConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTaskEmailConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTaskEmailConfig(val *TaskEmailConfig) *NullableTaskEmailConfig {
-	return &NullableTaskEmailConfig{value: val, isSet: true}
-}
-
-func (v NullableTaskEmailConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTaskEmailConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

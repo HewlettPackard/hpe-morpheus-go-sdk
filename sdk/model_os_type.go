@@ -46,7 +46,7 @@ type OsType struct {
 	// Whether the morpheus agent is installed.
 	InstallAgent         NullableBool                                         `json:"installAgent,omitempty"`
 	Images               []ListOsTypes200ResponseAllOfOsTypesInnerImagesInner `json:"images,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _OsType OsType
@@ -665,73 +665,7 @@ func (o OsType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *OsType) UnmarshalJSON(data []byte) (err error) {
-	varOsType := _OsType{}
-
-	err = json.Unmarshal(data, &varOsType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = OsType(varOsType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "vendor")
-		delete(additionalProperties, "osName")
-		delete(additionalProperties, "osVersion")
-		delete(additionalProperties, "osCodename")
-		delete(additionalProperties, "osFamily")
-		delete(additionalProperties, "bitCount")
-		delete(additionalProperties, "cloudInitVersion")
-		delete(additionalProperties, "installAgent")
-		delete(additionalProperties, "images")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableOsType struct {
-	value *OsType
-	isSet bool
-}
-
-func (v NullableOsType) Get() *OsType {
-	return v.value
-}
-
-func (v *NullableOsType) Set(val *OsType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOsType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOsType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOsType(val *OsType) *NullableOsType {
-	return &NullableOsType{value: val, isSet: true}
-}
-
-func (v NullableOsType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOsType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

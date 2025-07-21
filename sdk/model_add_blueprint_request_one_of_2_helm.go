@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf2Helm type satisfies the MappedNullable interface at compile time
@@ -24,7 +23,7 @@ type AddBlueprintRequestOneOf2Helm struct {
 	// Configuration Type
 	ConfigType           string                            `json:"configType"`
 	Git                  *AddBlueprintRequestOneOf2HelmGit `json:"git,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf2Helm AddBlueprintRequestOneOf2Helm
@@ -125,82 +124,7 @@ func (o AddBlueprintRequestOneOf2Helm) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBlueprintRequestOneOf2Helm) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"configType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf2Helm := _AddBlueprintRequestOneOf2Helm{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf2Helm)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf2Helm(varAddBlueprintRequestOneOf2Helm)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "configType")
-		delete(additionalProperties, "git")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBlueprintRequestOneOf2Helm struct {
-	value *AddBlueprintRequestOneOf2Helm
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf2Helm) Get() *AddBlueprintRequestOneOf2Helm {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf2Helm) Set(val *AddBlueprintRequestOneOf2Helm) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf2Helm) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf2Helm) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf2Helm(val *AddBlueprintRequestOneOf2Helm) *NullableAddBlueprintRequestOneOf2Helm {
-	return &NullableAddBlueprintRequestOneOf2Helm{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf2Helm) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf2Helm) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

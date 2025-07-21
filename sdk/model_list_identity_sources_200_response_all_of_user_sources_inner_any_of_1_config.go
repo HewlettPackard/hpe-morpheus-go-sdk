@@ -20,12 +20,12 @@ var _ MappedNullable = &ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
 
 // ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config struct for ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config
 type ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config struct {
-	OrganizationId       *string `json:"organizationId,omitempty"`
-	BindingUsername      *string `json:"bindingUsername,omitempty"`
-	BindingPassword      *string `json:"bindingPassword,omitempty"`
-	RequiredRole         *string `json:"requiredRole,omitempty"`
-	BindingPasswordHash  *string `json:"bindingPasswordHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	OrganizationId       *string                `json:"organizationId,omitempty"`
+	BindingUsername      *string                `json:"bindingUsername,omitempty"`
+	BindingPassword      *string                `json:"bindingPassword,omitempty"`
+	RequiredRole         *string                `json:"requiredRole,omitempty"`
+	BindingPasswordHash  *string                `json:"bindingPasswordHash,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config
@@ -240,64 +240,7 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) ToMap()
 	return toSerialize, nil
 }
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) UnmarshalJSON(data []byte) (err error) {
-	varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config := _ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config{}
-
-	err = json.Unmarshal(data, &varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config(varListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "organizationId")
-		delete(additionalProperties, "bindingUsername")
-		delete(additionalProperties, "bindingPassword")
-		delete(additionalProperties, "requiredRole")
-		delete(additionalProperties, "bindingPasswordHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config struct {
-	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config
-	isSet bool
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config {
-	return v.value
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config {
-	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config{value: val, isSet: true}
-}
-
-func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1Config) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

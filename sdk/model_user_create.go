@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UserCreate type satisfies the MappedNullable interface at compile time
@@ -44,8 +43,8 @@ type UserCreate struct {
 	// Windows Username, user settings for provisioning
 	WindowsUsername *string `json:"windowsUsername,omitempty"`
 	// Windows Password, user settings for provisioning
-	WindowsPassword      *string `json:"windowsPassword,omitempty"`
-	AdditionalProperties map[string]interface{}
+	WindowsPassword      *string                `json:"windowsPassword,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UserCreate UserCreate
@@ -473,95 +472,7 @@ func (o UserCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UserCreate) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"username",
-		"email",
-		"password",
-		"roles",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUserCreate := _UserCreate{}
-
-	err = json.Unmarshal(data, &varUserCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserCreate(varUserCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "firstName")
-		delete(additionalProperties, "lastName")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "email")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "roles")
-		delete(additionalProperties, "receiveNotifications")
-		delete(additionalProperties, "linuxUsername")
-		delete(additionalProperties, "linuxPassword")
-		delete(additionalProperties, "linuxKeyPairId")
-		delete(additionalProperties, "windowsUsername")
-		delete(additionalProperties, "windowsPassword")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUserCreate struct {
-	value *UserCreate
-	isSet bool
-}
-
-func (v NullableUserCreate) Get() *UserCreate {
-	return v.value
-}
-
-func (v *NullableUserCreate) Set(val *UserCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserCreate(val *UserCreate) *NullableUserCreate {
-	return &NullableUserCreate{value: val, isSet: true}
-}
-
-func (v NullableUserCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

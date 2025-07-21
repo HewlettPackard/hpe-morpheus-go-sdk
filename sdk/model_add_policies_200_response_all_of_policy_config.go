@@ -257,6 +257,130 @@ func ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9AsAddPolicies200Respon
 	}
 }
 
+func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddPolicies200ResponseAllOfPolicyConfig{}
+	}
+
+	if out, ok := data.(AddPolicies200ResponseAllOfPolicyConfigOneOf); ok {
+		dst.AddPolicies200ResponseAllOfPolicyConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddPolicies200ResponseAllOfPolicyConfigOneOf1); ok {
+		dst.AddPolicies200ResponseAllOfPolicyConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 = &out
+	}
+
+	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9); ok {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) error {
 	var err error

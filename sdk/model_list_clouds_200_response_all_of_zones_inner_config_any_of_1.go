@@ -51,7 +51,7 @@ type ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {
 	ConfigCmdbDiscovery  *bool                                                         `json:"configCmdbDiscovery,omitempty"`
 	SecretKeyHash        *string                                                       `json:"secretKeyHash,omitempty"`
 	CostingSecretKeyHash NullableString                                                `json:"costingSecretKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
@@ -1209,90 +1209,7 @@ func (o ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) ToMap() (map[string]in
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerConfigAnyOf1 := _ListClouds200ResponseAllOfZonesInnerConfigAnyOf1{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerConfigAnyOf1(varListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "endpoint")
-		delete(additionalProperties, "accessKey")
-		delete(additionalProperties, "secretKey")
-		delete(additionalProperties, "useHostCredentials")
-		delete(additionalProperties, "stsAssumeRole")
-		delete(additionalProperties, "isVpc")
-		delete(additionalProperties, "vpc")
-		delete(additionalProperties, "imageStoreId")
-		delete(additionalProperties, "ebsEncryption")
-		delete(additionalProperties, "costingReport")
-		delete(additionalProperties, "costingFolder")
-		delete(additionalProperties, "costingBucket")
-		delete(additionalProperties, "costingBucketName")
-		delete(additionalProperties, "costingRegion")
-		delete(additionalProperties, "costingAccessKey")
-		delete(additionalProperties, "costingSecretKey")
-		delete(additionalProperties, "costingReportName")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "datacenterName")
-		delete(additionalProperties, "networkServer.id")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "certificateProvider")
-		delete(additionalProperties, "backupMode")
-		delete(additionalProperties, "replicationMode")
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "configCmdbDiscovery")
-		delete(additionalProperties, "secretKeyHash")
-		delete(additionalProperties, "costingSecretKeyHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1 struct {
-	value *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) Get() *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) Set(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1(val *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1 {
-	return &NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerConfigAnyOf1) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

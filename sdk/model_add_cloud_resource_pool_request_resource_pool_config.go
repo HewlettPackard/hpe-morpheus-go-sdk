@@ -25,6 +25,22 @@ type AddCloudResourcePoolRequestResourcePoolConfig struct {
 	AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
 }
 
+func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddCloudResourcePoolRequestResourcePoolConfig{}
+	}
+
+	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf); ok {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf = &out
+	}
+
+	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf1); ok {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalJSON(data []byte) error {
 	var err error

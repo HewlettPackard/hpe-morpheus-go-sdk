@@ -21,7 +21,7 @@ var _ MappedNullable = &GetCertificate200Response{}
 // GetCertificate200Response struct for GetCertificate200Response
 type GetCertificate200Response struct {
 	Certificate          *ListCertificates200ResponseCertificatesInner `json:"certificate,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetCertificate200Response GetCertificate200Response
@@ -96,60 +96,7 @@ func (o GetCertificate200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetCertificate200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCertificate200Response := _GetCertificate200Response{}
-
-	err = json.Unmarshal(data, &varGetCertificate200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCertificate200Response(varGetCertificate200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "certificate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetCertificate200Response struct {
-	value *GetCertificate200Response
-	isSet bool
-}
-
-func (v NullableGetCertificate200Response) Get() *GetCertificate200Response {
-	return v.value
-}
-
-func (v *NullableGetCertificate200Response) Set(val *GetCertificate200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCertificate200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCertificate200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCertificate200Response(val *GetCertificate200Response) *NullableGetCertificate200Response {
-	return &NullableGetCertificate200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCertificate200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCertificate200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

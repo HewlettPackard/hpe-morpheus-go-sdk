@@ -35,7 +35,7 @@ type IntegrationBindDNS struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationBindDNS IntegrationBindDNS
@@ -598,73 +598,7 @@ func (o IntegrationBindDNS) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationBindDNS) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationBindDNS := _IntegrationBindDNS{}
-
-	err = json.Unmarshal(data, &varIntegrationBindDNS)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationBindDNS(varIntegrationBindDNS)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "host")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationBindDNS struct {
-	value *IntegrationBindDNS
-	isSet bool
-}
-
-func (v NullableIntegrationBindDNS) Get() *IntegrationBindDNS {
-	return v.value
-}
-
-func (v *NullableIntegrationBindDNS) Set(val *IntegrationBindDNS) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationBindDNS) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationBindDNS) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationBindDNS(val *IntegrationBindDNS) *NullableIntegrationBindDNS {
-	return &NullableIntegrationBindDNS{value: val, isSet: true}
-}
-
-func (v NullableIntegrationBindDNS) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationBindDNS) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

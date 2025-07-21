@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateTenantSubtenantGroup200Response{}
 // CreateTenantSubtenantGroup200Response struct for CreateTenantSubtenantGroup200Response
 type CreateTenantSubtenantGroup200Response struct {
 	Account              *CreateTenantSubtenantGroup200ResponseAccount `json:"account,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _CreateTenantSubtenantGroup200Response CreateTenantSubtenantGroup200Response
@@ -96,60 +96,7 @@ func (o CreateTenantSubtenantGroup200Response) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *CreateTenantSubtenantGroup200Response) UnmarshalJSON(data []byte) (err error) {
-	varCreateTenantSubtenantGroup200Response := _CreateTenantSubtenantGroup200Response{}
-
-	err = json.Unmarshal(data, &varCreateTenantSubtenantGroup200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateTenantSubtenantGroup200Response(varCreateTenantSubtenantGroup200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "account")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateTenantSubtenantGroup200Response struct {
-	value *CreateTenantSubtenantGroup200Response
-	isSet bool
-}
-
-func (v NullableCreateTenantSubtenantGroup200Response) Get() *CreateTenantSubtenantGroup200Response {
-	return v.value
-}
-
-func (v *NullableCreateTenantSubtenantGroup200Response) Set(val *CreateTenantSubtenantGroup200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateTenantSubtenantGroup200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateTenantSubtenantGroup200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateTenantSubtenantGroup200Response(val *CreateTenantSubtenantGroup200Response) *NullableCreateTenantSubtenantGroup200Response {
-	return &NullableCreateTenantSubtenantGroup200Response{value: val, isSet: true}
-}
-
-func (v NullableCreateTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateTenantSubtenantGroup200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

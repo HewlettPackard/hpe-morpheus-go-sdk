@@ -36,7 +36,7 @@ type Tenant struct {
 	Stats                *ListTenants200ResponseAllOfAccountsInnerStats `json:"stats,omitempty"`
 	DateCreated          *time.Time                                     `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                     `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _Tenant Tenant
@@ -645,74 +645,7 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
-	varTenant := _Tenant{}
-
-	err = json.Unmarshal(data, &varTenant)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Tenant(varTenant)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "customerNumber")
-		delete(additionalProperties, "accountNumber")
-		delete(additionalProperties, "accountName")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "master")
-		delete(additionalProperties, "role")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableTenant struct {
-	value *Tenant
-	isSet bool
-}
-
-func (v NullableTenant) Get() *Tenant {
-	return v.value
-}
-
-func (v *NullableTenant) Set(val *Tenant) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTenant) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTenant) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTenant(val *Tenant) *NullableTenant {
-	return &NullableTenant{value: val, isSet: true}
-}
-
-func (v NullableTenant) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTenant) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

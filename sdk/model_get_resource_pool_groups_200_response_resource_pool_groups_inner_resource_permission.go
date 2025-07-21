@@ -24,7 +24,7 @@ type GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission s
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
 	Sites                []GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                                `json:",remain"`
 }
 
 type _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission
@@ -138,61 +138,7 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 	return toSerialize, nil
 }
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
-	varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission := _GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission{}
-
-	err = json.Unmarshal(data, &varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission(varGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission struct {
-	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission
-	isSet bool
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission {
-	return v.value
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission {
-	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission{value: val, isSet: true}
-}
-
-func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

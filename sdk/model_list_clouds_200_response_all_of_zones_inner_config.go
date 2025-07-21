@@ -27,6 +27,30 @@ type ListClouds200ResponseAllOfZonesInnerConfig struct {
 	ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf3
 }
 
+func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListClouds200ResponseAllOfZonesInnerConfig{}
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf1); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf2); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf2 = &out
+	}
+
+	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerConfigAnyOf3); ok {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf3 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte) error {
 	var err error

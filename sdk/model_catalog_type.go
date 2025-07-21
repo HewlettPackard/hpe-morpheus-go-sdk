@@ -33,7 +33,7 @@ type CatalogType struct {
 	FormType             *string                                                                     `json:"formType,omitempty"`
 	Form                 *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm                    `json:"form,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _CatalogType CatalogType
@@ -504,71 +504,7 @@ func (o CatalogType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CatalogType) UnmarshalJSON(data []byte) (err error) {
-	varCatalogType := _CatalogType{}
-
-	err = json.Unmarshal(data, &varCatalogType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogType(varCatalogType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCatalogType struct {
-	value *CatalogType
-	isSet bool
-}
-
-func (v NullableCatalogType) Get() *CatalogType {
-	return v.value
-}
-
-func (v *NullableCatalogType) Set(val *CatalogType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogType(val *CatalogType) *NullableCatalogType {
-	return &NullableCatalogType{value: val, isSet: true}
-}
-
-func (v NullableCatalogType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

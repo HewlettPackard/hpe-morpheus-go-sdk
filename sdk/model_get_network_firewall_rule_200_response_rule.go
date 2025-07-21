@@ -37,7 +37,7 @@ type GetNetworkFirewallRule200ResponseRule struct {
 	Scopes               []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"scopes,omitempty"`
 	Profiles             []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner                                            `json:"profiles,omitempty"`
 	AppliedTargets       []map[string]interface{}                                                                                   `json:"appliedTargets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                                                     `json:",remain"`
 }
 
 type _GetNetworkFirewallRule200ResponseRule GetNetworkFirewallRule200ResponseRule
@@ -672,76 +672,7 @@ func (o GetNetworkFirewallRule200ResponseRule) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *GetNetworkFirewallRule200ResponseRule) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkFirewallRule200ResponseRule := _GetNetworkFirewallRule200ResponseRule{}
-
-	err = json.Unmarshal(data, &varGetNetworkFirewallRule200ResponseRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkFirewallRule200ResponseRule(varGetNetworkFirewallRule200ResponseRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "ruleGroup")
-		delete(additionalProperties, "groupName")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "sources")
-		delete(additionalProperties, "destinations")
-		delete(additionalProperties, "applications")
-		delete(additionalProperties, "scopes")
-		delete(additionalProperties, "profiles")
-		delete(additionalProperties, "appliedTargets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetNetworkFirewallRule200ResponseRule struct {
-	value *GetNetworkFirewallRule200ResponseRule
-	isSet bool
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) Get() *GetNetworkFirewallRule200ResponseRule {
-	return v.value
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) Set(val *GetNetworkFirewallRule200ResponseRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkFirewallRule200ResponseRule(val *GetNetworkFirewallRule200ResponseRule) *NullableGetNetworkFirewallRule200ResponseRule {
-	return &NullableGetNetworkFirewallRule200ResponseRule{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkFirewallRule200ResponseRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkFirewallRule200ResponseRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

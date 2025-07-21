@@ -20,9 +20,9 @@ var _ MappedNullable = &AnsibleTowerJobTemplateOptions{}
 
 // AnsibleTowerJobTemplateOptions struct for AnsibleTowerJobTemplateOptions
 type AnsibleTowerJobTemplateOptions struct {
-	Name                 *string `json:"name,omitempty"`
-	Value                *int64  `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	Value                *int64                 `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AnsibleTowerJobTemplateOptions AnsibleTowerJobTemplateOptions
@@ -132,61 +132,7 @@ func (o AnsibleTowerJobTemplateOptions) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *AnsibleTowerJobTemplateOptions) UnmarshalJSON(data []byte) (err error) {
-	varAnsibleTowerJobTemplateOptions := _AnsibleTowerJobTemplateOptions{}
-
-	err = json.Unmarshal(data, &varAnsibleTowerJobTemplateOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AnsibleTowerJobTemplateOptions(varAnsibleTowerJobTemplateOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAnsibleTowerJobTemplateOptions struct {
-	value *AnsibleTowerJobTemplateOptions
-	isSet bool
-}
-
-func (v NullableAnsibleTowerJobTemplateOptions) Get() *AnsibleTowerJobTemplateOptions {
-	return v.value
-}
-
-func (v *NullableAnsibleTowerJobTemplateOptions) Set(val *AnsibleTowerJobTemplateOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAnsibleTowerJobTemplateOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAnsibleTowerJobTemplateOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAnsibleTowerJobTemplateOptions(val *AnsibleTowerJobTemplateOptions) *NullableAnsibleTowerJobTemplateOptions {
-	return &NullableAnsibleTowerJobTemplateOptions{value: val, isSet: true}
-}
-
-func (v NullableAnsibleTowerJobTemplateOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAnsibleTowerJobTemplateOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

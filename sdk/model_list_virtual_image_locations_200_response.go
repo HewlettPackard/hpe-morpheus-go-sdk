@@ -22,7 +22,7 @@ var _ MappedNullable = &ListVirtualImageLocations200Response{}
 type ListVirtualImageLocations200Response struct {
 	Locations            []ListVirtualImageLocations200ResponseAllOfLocationsInner `json:"locations,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                         `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _ListVirtualImageLocations200Response ListVirtualImageLocations200Response
@@ -132,61 +132,7 @@ func (o ListVirtualImageLocations200Response) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *ListVirtualImageLocations200Response) UnmarshalJSON(data []byte) (err error) {
-	varListVirtualImageLocations200Response := _ListVirtualImageLocations200Response{}
-
-	err = json.Unmarshal(data, &varListVirtualImageLocations200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVirtualImageLocations200Response(varListVirtualImageLocations200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListVirtualImageLocations200Response struct {
-	value *ListVirtualImageLocations200Response
-	isSet bool
-}
-
-func (v NullableListVirtualImageLocations200Response) Get() *ListVirtualImageLocations200Response {
-	return v.value
-}
-
-func (v *NullableListVirtualImageLocations200Response) Set(val *ListVirtualImageLocations200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVirtualImageLocations200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVirtualImageLocations200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVirtualImageLocations200Response(val *ListVirtualImageLocations200Response) *NullableListVirtualImageLocations200Response {
-	return &NullableListVirtualImageLocations200Response{value: val, isSet: true}
-}
-
-func (v NullableListVirtualImageLocations200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVirtualImageLocations200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

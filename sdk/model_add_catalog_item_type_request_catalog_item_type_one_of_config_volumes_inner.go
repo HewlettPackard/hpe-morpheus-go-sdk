@@ -34,8 +34,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner struct {
 	StorageType NullableInt64                                                               `json:"storageType,omitempty"`
 	DatastoreId *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
 	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
-	ControllerMountPoint *string `json:"controllerMountPoint,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner
@@ -389,67 +389,7 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) ToMap()
 	return toSerialize, nil
 }
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner := _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner{}
-
-	err = json.Unmarshal(data, &varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner(varAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "rootVolume")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "size")
-		delete(additionalProperties, "sizeId")
-		delete(additionalProperties, "storageType")
-		delete(additionalProperties, "datastoreId")
-		delete(additionalProperties, "controllerMountPoint")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner struct {
-	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner
-	isSet bool
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner {
-	return v.value
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner {
-	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

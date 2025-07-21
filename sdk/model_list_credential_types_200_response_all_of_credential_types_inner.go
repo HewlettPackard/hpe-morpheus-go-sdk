@@ -28,7 +28,7 @@ type ListCredentialTypes200ResponseAllOfCredentialTypesInner struct {
 	Creatable            *bool                                                                       `json:"creatable,omitempty"`
 	Editable             *bool                                                                       `json:"editable,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListCredentialTypes200ResponseAllOfCredentialTypesInner ListCredentialTypes200ResponseAllOfCredentialTypesInner
@@ -359,67 +359,7 @@ func (o ListCredentialTypes200ResponseAllOfCredentialTypesInner) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCredentialTypes200ResponseAllOfCredentialTypesInner := _ListCredentialTypes200ResponseAllOfCredentialTypesInner{}
-
-	err = json.Unmarshal(data, &varListCredentialTypes200ResponseAllOfCredentialTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCredentialTypes200ResponseAllOfCredentialTypesInner(varListCredentialTypes200ResponseAllOfCredentialTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCredentialTypes200ResponseAllOfCredentialTypesInner struct {
-	value *ListCredentialTypes200ResponseAllOfCredentialTypesInner
-	isSet bool
-}
-
-func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Get() *ListCredentialTypes200ResponseAllOfCredentialTypesInner {
-	return v.value
-}
-
-func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Set(val *ListCredentialTypes200ResponseAllOfCredentialTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCredentialTypes200ResponseAllOfCredentialTypesInner(val *ListCredentialTypes200ResponseAllOfCredentialTypesInner) *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner {
-	return &NullableListCredentialTypes200ResponseAllOfCredentialTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

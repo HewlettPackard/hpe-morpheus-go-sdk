@@ -24,7 +24,7 @@ type ListLogSettings200ResponseLogSettings struct {
 	RetentionDays        *string                  `json:"retentionDays,omitempty"`
 	SyslogRules          []map[string]interface{} `json:"syslogRules,omitempty"`
 	Integrations         []map[string]interface{} `json:"integrations,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _ListLogSettings200ResponseLogSettings ListLogSettings200ResponseLogSettings
@@ -206,63 +206,7 @@ func (o ListLogSettings200ResponseLogSettings) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *ListLogSettings200ResponseLogSettings) UnmarshalJSON(data []byte) (err error) {
-	varListLogSettings200ResponseLogSettings := _ListLogSettings200ResponseLogSettings{}
-
-	err = json.Unmarshal(data, &varListLogSettings200ResponseLogSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLogSettings200ResponseLogSettings(varListLogSettings200ResponseLogSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "retentionDays")
-		delete(additionalProperties, "syslogRules")
-		delete(additionalProperties, "integrations")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListLogSettings200ResponseLogSettings struct {
-	value *ListLogSettings200ResponseLogSettings
-	isSet bool
-}
-
-func (v NullableListLogSettings200ResponseLogSettings) Get() *ListLogSettings200ResponseLogSettings {
-	return v.value
-}
-
-func (v *NullableListLogSettings200ResponseLogSettings) Set(val *ListLogSettings200ResponseLogSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLogSettings200ResponseLogSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLogSettings200ResponseLogSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLogSettings200ResponseLogSettings(val *ListLogSettings200ResponseLogSettings) *NullableListLogSettings200ResponseLogSettings {
-	return &NullableListLogSettings200ResponseLogSettings{value: val, isSet: true}
-}
-
-func (v NullableListLogSettings200ResponseLogSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLogSettings200ResponseLogSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

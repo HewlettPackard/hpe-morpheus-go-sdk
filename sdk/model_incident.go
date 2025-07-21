@@ -44,7 +44,7 @@ type Incident struct {
 	StartDate            *time.Time                                          `json:"startDate,omitempty"`
 	Status               *string                                             `json:"status,omitempty"`
 	Visibility           *string                                             `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _Incident Incident
@@ -955,82 +955,7 @@ func (o Incident) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Incident) UnmarshalJSON(data []byte) (err error) {
-	varIncident := _Incident{}
-
-	err = json.Unmarshal(data, &varIncident)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Incident(varIncident)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "app")
-		delete(additionalProperties, "autoClose")
-		delete(additionalProperties, "channelId")
-		delete(additionalProperties, "checkGroups")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "comment")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "lastCheckTime")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "resolution")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "severityId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIncident struct {
-	value *Incident
-	isSet bool
-}
-
-func (v NullableIncident) Get() *Incident {
-	return v.value
-}
-
-func (v *NullableIncident) Set(val *Incident) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIncident) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIncident) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIncident(val *Incident) *NullableIncident {
-	return &NullableIncident{value: val, isSet: true}
-}
-
-func (v NullableIncident) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIncident) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

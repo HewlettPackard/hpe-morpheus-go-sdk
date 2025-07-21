@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateInvoicesRequest{}
 // UpdateInvoicesRequest struct for UpdateInvoicesRequest
 type UpdateInvoicesRequest struct {
 	Invoice              *UpdateInvoicesRequestInvoice `json:"invoice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _UpdateInvoicesRequest UpdateInvoicesRequest
@@ -96,60 +96,7 @@ func (o UpdateInvoicesRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateInvoicesRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInvoicesRequest := _UpdateInvoicesRequest{}
-
-	err = json.Unmarshal(data, &varUpdateInvoicesRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInvoicesRequest(varUpdateInvoicesRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "invoice")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateInvoicesRequest struct {
-	value *UpdateInvoicesRequest
-	isSet bool
-}
-
-func (v NullableUpdateInvoicesRequest) Get() *UpdateInvoicesRequest {
-	return v.value
-}
-
-func (v *NullableUpdateInvoicesRequest) Set(val *UpdateInvoicesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInvoicesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInvoicesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInvoicesRequest(val *UpdateInvoicesRequest) *NullableUpdateInvoicesRequest {
-	return &NullableUpdateInvoicesRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateInvoicesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInvoicesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

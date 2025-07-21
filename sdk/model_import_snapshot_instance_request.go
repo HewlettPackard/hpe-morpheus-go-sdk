@@ -21,8 +21,8 @@ var _ MappedNullable = &ImportSnapshotInstanceRequest{}
 // ImportSnapshotInstanceRequest struct for ImportSnapshotInstanceRequest
 type ImportSnapshotInstanceRequest struct {
 	// Optional storage provider to use.
-	StorageProviderId    NullableInt64 `json:"storageProviderId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageProviderId    NullableInt64          `json:"storageProviderId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ImportSnapshotInstanceRequest ImportSnapshotInstanceRequest
@@ -108,60 +108,7 @@ func (o ImportSnapshotInstanceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ImportSnapshotInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	varImportSnapshotInstanceRequest := _ImportSnapshotInstanceRequest{}
-
-	err = json.Unmarshal(data, &varImportSnapshotInstanceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImportSnapshotInstanceRequest(varImportSnapshotInstanceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageProviderId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableImportSnapshotInstanceRequest struct {
-	value *ImportSnapshotInstanceRequest
-	isSet bool
-}
-
-func (v NullableImportSnapshotInstanceRequest) Get() *ImportSnapshotInstanceRequest {
-	return v.value
-}
-
-func (v *NullableImportSnapshotInstanceRequest) Set(val *ImportSnapshotInstanceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImportSnapshotInstanceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImportSnapshotInstanceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImportSnapshotInstanceRequest(val *ImportSnapshotInstanceRequest) *NullableImportSnapshotInstanceRequest {
-	return &NullableImportSnapshotInstanceRequest{value: val, isSet: true}
-}
-
-func (v NullableImportSnapshotInstanceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImportSnapshotInstanceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -44,7 +44,7 @@ type InstanceTypeLayout struct {
 	SpecTemplates            []map[string]interface{}                                                                             `json:"specTemplates,omitempty"`
 	TfvarSecret              NullableString                                                                                       `json:"tfvarSecret,omitempty"`
 	Permissions              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
-	AdditionalProperties     map[string]interface{}
+	AdditionalProperties     map[string]interface{}                                                                               `json:",remain"`
 }
 
 type _InstanceTypeLayout InstanceTypeLayout
@@ -941,82 +941,7 @@ func (o InstanceTypeLayout) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
-	varInstanceTypeLayout := _InstanceTypeLayout{}
-
-	err = json.Unmarshal(data, &varInstanceTypeLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceTypeLayout(varInstanceTypeLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "instanceType")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "taskSets")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "mounts")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "tfvarSecret")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstanceTypeLayout struct {
-	value *InstanceTypeLayout
-	isSet bool
-}
-
-func (v NullableInstanceTypeLayout) Get() *InstanceTypeLayout {
-	return v.value
-}
-
-func (v *NullableInstanceTypeLayout) Set(val *InstanceTypeLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceTypeLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceTypeLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceTypeLayout(val *InstanceTypeLayout) *NullableInstanceTypeLayout {
-	return &NullableInstanceTypeLayout{value: val, isSet: true}
-}
-
-func (v NullableInstanceTypeLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceTypeLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

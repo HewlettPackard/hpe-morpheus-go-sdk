@@ -21,7 +21,7 @@ var _ MappedNullable = &AddCatalogCartItemRequest{}
 // AddCatalogCartItemRequest struct for AddCatalogCartItemRequest
 type AddCatalogCartItemRequest struct {
 	Item                 *AddCatalogCartItemRequestItem `json:"item,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _AddCatalogCartItemRequest AddCatalogCartItemRequest
@@ -96,60 +96,7 @@ func (o AddCatalogCartItemRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCatalogCartItemRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddCatalogCartItemRequest := _AddCatalogCartItemRequest{}
-
-	err = json.Unmarshal(data, &varAddCatalogCartItemRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogCartItemRequest(varAddCatalogCartItemRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "item")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCatalogCartItemRequest struct {
-	value *AddCatalogCartItemRequest
-	isSet bool
-}
-
-func (v NullableAddCatalogCartItemRequest) Get() *AddCatalogCartItemRequest {
-	return v.value
-}
-
-func (v *NullableAddCatalogCartItemRequest) Set(val *AddCatalogCartItemRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogCartItemRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogCartItemRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogCartItemRequest(val *AddCatalogCartItemRequest) *NullableAddCatalogCartItemRequest {
-	return &NullableAddCatalogCartItemRequest{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogCartItemRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogCartItemRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

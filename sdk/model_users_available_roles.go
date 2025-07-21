@@ -21,7 +21,7 @@ var _ MappedNullable = &UsersAvailableRoles{}
 // UsersAvailableRoles struct for UsersAvailableRoles
 type UsersAvailableRoles struct {
 	Roles                []ListUsersAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _UsersAvailableRoles UsersAvailableRoles
@@ -96,60 +96,7 @@ func (o UsersAvailableRoles) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UsersAvailableRoles) UnmarshalJSON(data []byte) (err error) {
-	varUsersAvailableRoles := _UsersAvailableRoles{}
-
-	err = json.Unmarshal(data, &varUsersAvailableRoles)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UsersAvailableRoles(varUsersAvailableRoles)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "roles")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUsersAvailableRoles struct {
-	value *UsersAvailableRoles
-	isSet bool
-}
-
-func (v NullableUsersAvailableRoles) Get() *UsersAvailableRoles {
-	return v.value
-}
-
-func (v *NullableUsersAvailableRoles) Set(val *UsersAvailableRoles) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUsersAvailableRoles) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUsersAvailableRoles) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUsersAvailableRoles(val *UsersAvailableRoles) *NullableUsersAvailableRoles {
-	return &NullableUsersAvailableRoles{value: val, isSet: true}
-}
-
-func (v NullableUsersAvailableRoles) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUsersAvailableRoles) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

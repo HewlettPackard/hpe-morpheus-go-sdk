@@ -22,8 +22,8 @@ var _ MappedNullable = &AddCypherKeyRequest{}
 type AddCypherKeyRequest struct {
 	Ttl *AddCypherKeyRequestTtl `json:"ttl,omitempty"`
 	// The secret value to be stored. This is only parsed if type is passed as `string`.
-	Value                *string `json:"value,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Value                *string                `json:"value,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCypherKeyRequest AddCypherKeyRequest
@@ -133,61 +133,7 @@ func (o AddCypherKeyRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCypherKeyRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddCypherKeyRequest := _AddCypherKeyRequest{}
-
-	err = json.Unmarshal(data, &varAddCypherKeyRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCypherKeyRequest(varAddCypherKeyRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ttl")
-		delete(additionalProperties, "value")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCypherKeyRequest struct {
-	value *AddCypherKeyRequest
-	isSet bool
-}
-
-func (v NullableAddCypherKeyRequest) Get() *AddCypherKeyRequest {
-	return v.value
-}
-
-func (v *NullableAddCypherKeyRequest) Set(val *AddCypherKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCypherKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCypherKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCypherKeyRequest(val *AddCypherKeyRequest) *NullableAddCypherKeyRequest {
-	return &NullableAddCypherKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableAddCypherKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCypherKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

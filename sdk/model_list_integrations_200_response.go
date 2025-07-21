@@ -25,6 +25,22 @@ type ListIntegrations200Response struct {
 	ListIntegrations200ResponseAnyOf1 *ListIntegrations200ResponseAnyOf1
 }
 
+func (dst *ListIntegrations200Response) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListIntegrations200Response{}
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOf); ok {
+		dst.ListIntegrations200ResponseAnyOf = &out
+	}
+
+	if out, ok := data.(ListIntegrations200ResponseAnyOf1); ok {
+		dst.ListIntegrations200ResponseAnyOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListIntegrations200Response) UnmarshalJSON(data []byte) error {
 	var err error

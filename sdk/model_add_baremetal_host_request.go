@@ -21,7 +21,7 @@ var _ MappedNullable = &AddBaremetalHostRequest{}
 // AddBaremetalHostRequest struct for AddBaremetalHostRequest
 type AddBaremetalHostRequest struct {
 	Server               *AddBaremetalHostRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _AddBaremetalHostRequest AddBaremetalHostRequest
@@ -96,60 +96,7 @@ func (o AddBaremetalHostRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBaremetalHostRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddBaremetalHostRequest := _AddBaremetalHostRequest{}
-
-	err = json.Unmarshal(data, &varAddBaremetalHostRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBaremetalHostRequest(varAddBaremetalHostRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBaremetalHostRequest struct {
-	value *AddBaremetalHostRequest
-	isSet bool
-}
-
-func (v NullableAddBaremetalHostRequest) Get() *AddBaremetalHostRequest {
-	return v.value
-}
-
-func (v *NullableAddBaremetalHostRequest) Set(val *AddBaremetalHostRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBaremetalHostRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBaremetalHostRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBaremetalHostRequest(val *AddBaremetalHostRequest) *NullableAddBaremetalHostRequest {
-	return &NullableAddBaremetalHostRequest{value: val, isSet: true}
-}
-
-func (v NullableAddBaremetalHostRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBaremetalHostRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateNetworkRouterNatRequest{}
 // CreateNetworkRouterNatRequest struct for CreateNetworkRouterNatRequest
 type CreateNetworkRouterNatRequest struct {
 	NetworkRouterNAT     *CreateNetworkRouterNatRequestNetworkRouterNAT `json:"networkRouterNAT,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _CreateNetworkRouterNatRequest CreateNetworkRouterNatRequest
@@ -96,60 +96,7 @@ func (o CreateNetworkRouterNatRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateNetworkRouterNatRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkRouterNatRequest := _CreateNetworkRouterNatRequest{}
-
-	err = json.Unmarshal(data, &varCreateNetworkRouterNatRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkRouterNatRequest(varCreateNetworkRouterNatRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRouterNAT")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateNetworkRouterNatRequest struct {
-	value *CreateNetworkRouterNatRequest
-	isSet bool
-}
-
-func (v NullableCreateNetworkRouterNatRequest) Get() *CreateNetworkRouterNatRequest {
-	return v.value
-}
-
-func (v *NullableCreateNetworkRouterNatRequest) Set(val *CreateNetworkRouterNatRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkRouterNatRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkRouterNatRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkRouterNatRequest(val *CreateNetworkRouterNatRequest) *NullableCreateNetworkRouterNatRequest {
-	return &NullableCreateNetworkRouterNatRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkRouterNatRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkRouterNatRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -57,6 +57,30 @@ func SolarWindsNetworkPoolServerUpdateAsUpdateNetworkPoolServerRequestNetworkPoo
 	}
 }
 
+func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateNetworkPoolServerRequestNetworkPoolServer{}
+	}
+
+	if out, ok := data.(BluecatNetworkPoolServerUpdate); ok {
+		dst.BluecatNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(InfobloxNetworkPoolServerUpdate); ok {
+		dst.InfobloxNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(PhpIPAMNetworkPoolServerUpdate); ok {
+		dst.PhpIPAMNetworkPoolServerUpdate = &out
+	}
+
+	if out, ok := data.(SolarWindsNetworkPoolServerUpdate); ok {
+		dst.SolarWindsNetworkPoolServerUpdate = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalJSON(data []byte) error {
 	var err error

@@ -32,7 +32,7 @@ type SecurityPackage struct {
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
 	Config               map[string]interface{}                                      `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _SecurityPackage SecurityPackage
@@ -458,70 +458,7 @@ func (o SecurityPackage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SecurityPackage) UnmarshalJSON(data []byte) (err error) {
-	varSecurityPackage := _SecurityPackage{}
-
-	err = json.Unmarshal(data, &varSecurityPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityPackage(varSecurityPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSecurityPackage struct {
-	value *SecurityPackage
-	isSet bool
-}
-
-func (v NullableSecurityPackage) Get() *SecurityPackage {
-	return v.value
-}
-
-func (v *NullableSecurityPackage) Set(val *SecurityPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityPackage(val *SecurityPackage) *NullableSecurityPackage {
-	return &NullableSecurityPackage{value: val, isSet: true}
-}
-
-func (v NullableSecurityPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

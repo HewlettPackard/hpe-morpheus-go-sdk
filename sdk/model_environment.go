@@ -31,7 +31,7 @@ type Environment struct {
 	SortOrder            *int64                                             `json:"sortOrder,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _Environment Environment
@@ -421,69 +421,7 @@ func (o Environment) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Environment) UnmarshalJSON(data []byte) (err error) {
-	varEnvironment := _Environment{}
-
-	err = json.Unmarshal(data, &varEnvironment)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Environment(varEnvironment)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableEnvironment struct {
-	value *Environment
-	isSet bool
-}
-
-func (v NullableEnvironment) Get() *Environment {
-	return v.value
-}
-
-func (v *NullableEnvironment) Set(val *Environment) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableEnvironment) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableEnvironment) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableEnvironment(val *Environment) *NullableEnvironment {
-	return &NullableEnvironment{value: val, isSet: true}
-}
-
-func (v NullableEnvironment) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableEnvironment) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

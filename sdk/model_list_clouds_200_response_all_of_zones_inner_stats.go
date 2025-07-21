@@ -21,7 +21,7 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerStats{}
 // ListClouds200ResponseAllOfZonesInnerStats struct for ListClouds200ResponseAllOfZonesInnerStats
 type ListClouds200ResponseAllOfZonesInnerStats struct {
 	ServerCounts         *ListClouds200ResponseAllOfZonesInnerStatsServerCounts `json:"serverCounts,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInnerStats ListClouds200ResponseAllOfZonesInnerStats
@@ -96,60 +96,7 @@ func (o ListClouds200ResponseAllOfZonesInnerStats) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *ListClouds200ResponseAllOfZonesInnerStats) UnmarshalJSON(data []byte) (err error) {
-	varListClouds200ResponseAllOfZonesInnerStats := _ListClouds200ResponseAllOfZonesInnerStats{}
-
-	err = json.Unmarshal(data, &varListClouds200ResponseAllOfZonesInnerStats)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClouds200ResponseAllOfZonesInnerStats(varListClouds200ResponseAllOfZonesInnerStats)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serverCounts")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClouds200ResponseAllOfZonesInnerStats struct {
-	value *ListClouds200ResponseAllOfZonesInnerStats
-	isSet bool
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStats) Get() *ListClouds200ResponseAllOfZonesInnerStats {
-	return v.value
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStats) Set(val *ListClouds200ResponseAllOfZonesInnerStats) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStats) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStats) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClouds200ResponseAllOfZonesInnerStats(val *ListClouds200ResponseAllOfZonesInnerStats) *NullableListClouds200ResponseAllOfZonesInnerStats {
-	return &NullableListClouds200ResponseAllOfZonesInnerStats{value: val, isSet: true}
-}
-
-func (v NullableListClouds200ResponseAllOfZonesInnerStats) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClouds200ResponseAllOfZonesInnerStats) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

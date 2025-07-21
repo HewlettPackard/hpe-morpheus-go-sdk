@@ -50,7 +50,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction struct {
 	Tenants              *string                                                                            `json:"tenants,omitempty"`
 	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
 	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionConfig          `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction
@@ -1171,88 +1171,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) ToMa
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "memoryOptionSource")
-		delete(additionalProperties, "cpuOptionSource")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

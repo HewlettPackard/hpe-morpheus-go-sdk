@@ -37,7 +37,7 @@ type ZoneGcpConfig struct {
 	ServiceRegistryId    NullableString                                                `json:"serviceRegistryId,omitempty"`
 	ConfigManagementId   NullableString                                                `json:"configManagementId,omitempty"`
 	PrivateKeyHash       NullableString                                                `json:"privateKeyHash,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ZoneGcpConfig ZoneGcpConfig
@@ -760,76 +760,7 @@ func (o ZoneGcpConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ZoneGcpConfig) UnmarshalJSON(data []byte) (err error) {
-	varZoneGcpConfig := _ZoneGcpConfig{}
-
-	err = json.Unmarshal(data, &varZoneGcpConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ZoneGcpConfig(varZoneGcpConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "privateKey")
-		delete(additionalProperties, "clientEmail")
-		delete(additionalProperties, "projectId")
-		delete(additionalProperties, "googleRegionId")
-		delete(additionalProperties, "importExisting")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "datacenterName")
-		delete(additionalProperties, "networkServer.id")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "securityServer")
-		delete(additionalProperties, "certificateProvider")
-		delete(additionalProperties, "backupMode")
-		delete(additionalProperties, "replicationMode")
-		delete(additionalProperties, "dnsIntegrationId")
-		delete(additionalProperties, "serviceRegistryId")
-		delete(additionalProperties, "configManagementId")
-		delete(additionalProperties, "privateKeyHash")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableZoneGcpConfig struct {
-	value *ZoneGcpConfig
-	isSet bool
-}
-
-func (v NullableZoneGcpConfig) Get() *ZoneGcpConfig {
-	return v.value
-}
-
-func (v *NullableZoneGcpConfig) Set(val *ZoneGcpConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableZoneGcpConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableZoneGcpConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableZoneGcpConfig(val *ZoneGcpConfig) *NullableZoneGcpConfig {
-	return &NullableZoneGcpConfig{value: val, isSet: true}
-}
-
-func (v NullableZoneGcpConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableZoneGcpConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

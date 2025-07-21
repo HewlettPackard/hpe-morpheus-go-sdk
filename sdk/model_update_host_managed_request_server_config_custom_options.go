@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateHostManagedRequestServerConfigCustomOptions{}
 
 // UpdateHostManagedRequestServerConfigCustomOptions struct for UpdateHostManagedRequestServerConfigCustomOptions
 type UpdateHostManagedRequestServerConfigCustomOptions struct {
-	Dbfoldername         *string `json:"dbfoldername,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Dbfoldername         *string                `json:"dbfoldername,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostManagedRequestServerConfigCustomOptions UpdateHostManagedRequestServerConfigCustomOptions
@@ -96,60 +96,7 @@ func (o UpdateHostManagedRequestServerConfigCustomOptions) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *UpdateHostManagedRequestServerConfigCustomOptions) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostManagedRequestServerConfigCustomOptions := _UpdateHostManagedRequestServerConfigCustomOptions{}
-
-	err = json.Unmarshal(data, &varUpdateHostManagedRequestServerConfigCustomOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostManagedRequestServerConfigCustomOptions(varUpdateHostManagedRequestServerConfigCustomOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "dbfoldername")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostManagedRequestServerConfigCustomOptions struct {
-	value *UpdateHostManagedRequestServerConfigCustomOptions
-	isSet bool
-}
-
-func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) Get() *UpdateHostManagedRequestServerConfigCustomOptions {
-	return v.value
-}
-
-func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) Set(val *UpdateHostManagedRequestServerConfigCustomOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostManagedRequestServerConfigCustomOptions(val *UpdateHostManagedRequestServerConfigCustomOptions) *NullableUpdateHostManagedRequestServerConfigCustomOptions {
-	return &NullableUpdateHostManagedRequestServerConfigCustomOptions{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

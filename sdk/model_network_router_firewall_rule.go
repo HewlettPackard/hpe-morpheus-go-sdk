@@ -43,7 +43,7 @@ type NetworkRouterFirewallRule struct {
 	SourceGroup          NullableString                                      `json:"sourceGroup,omitempty"`
 	SourceTier           NullableString                                      `json:"sourceTier,omitempty"`
 	Applications         []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"applications,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _NetworkRouterFirewallRule NetworkRouterFirewallRule
@@ -976,82 +976,7 @@ func (o NetworkRouterFirewallRule) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkRouterFirewallRule) UnmarshalJSON(data []byte) (err error) {
-	varNetworkRouterFirewallRule := _NetworkRouterFirewallRule{}
-
-	err = json.Unmarshal(data, &varNetworkRouterFirewallRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkRouterFirewallRule(varNetworkRouterFirewallRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "priority")
-		delete(additionalProperties, "groupName")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "profiles")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "application")
-		delete(additionalProperties, "applicationType")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "sourcePortRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "applications")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkRouterFirewallRule struct {
-	value *NetworkRouterFirewallRule
-	isSet bool
-}
-
-func (v NullableNetworkRouterFirewallRule) Get() *NetworkRouterFirewallRule {
-	return v.value
-}
-
-func (v *NullableNetworkRouterFirewallRule) Set(val *NetworkRouterFirewallRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkRouterFirewallRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkRouterFirewallRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkRouterFirewallRule(val *NetworkRouterFirewallRule) *NullableNetworkRouterFirewallRule {
-	return &NullableNetworkRouterFirewallRule{value: val, isSet: true}
-}
-
-func (v NullableNetworkRouterFirewallRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkRouterFirewallRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

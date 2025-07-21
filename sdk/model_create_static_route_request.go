@@ -21,7 +21,7 @@ var _ MappedNullable = &CreateStaticRouteRequest{}
 // CreateStaticRouteRequest struct for CreateStaticRouteRequest
 type CreateStaticRouteRequest struct {
 	NetworkRoute         *CreateStaticRouteRequestNetworkRoute `json:"networkRoute,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _CreateStaticRouteRequest CreateStaticRouteRequest
@@ -96,60 +96,7 @@ func (o CreateStaticRouteRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateStaticRouteRequest) UnmarshalJSON(data []byte) (err error) {
-	varCreateStaticRouteRequest := _CreateStaticRouteRequest{}
-
-	err = json.Unmarshal(data, &varCreateStaticRouteRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateStaticRouteRequest(varCreateStaticRouteRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkRoute")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateStaticRouteRequest struct {
-	value *CreateStaticRouteRequest
-	isSet bool
-}
-
-func (v NullableCreateStaticRouteRequest) Get() *CreateStaticRouteRequest {
-	return v.value
-}
-
-func (v *NullableCreateStaticRouteRequest) Set(val *CreateStaticRouteRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateStaticRouteRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateStaticRouteRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateStaticRouteRequest(val *CreateStaticRouteRequest) *NullableCreateStaticRouteRequest {
-	return &NullableCreateStaticRouteRequest{value: val, isSet: true}
-}
-
-func (v NullableCreateStaticRouteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateStaticRouteRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

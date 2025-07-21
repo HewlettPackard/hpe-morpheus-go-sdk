@@ -35,7 +35,7 @@ type SecurityGroup struct {
 	Rules                []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner        `json:"rules,omitempty"`
 	Tenants              []ListSecurityGroups200ResponseAllOfSecurityGroupsInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermission   *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                   `json:",remain"`
 }
 
 type _SecurityGroup SecurityGroup
@@ -644,74 +644,7 @@ func (o SecurityGroup) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *SecurityGroup) UnmarshalJSON(data []byte) (err error) {
-	varSecurityGroup := _SecurityGroup{}
-
-	err = json.Unmarshal(data, &varSecurityGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SecurityGroup(varSecurityGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "groupSource")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "syncSource")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "locations")
-		delete(additionalProperties, "rules")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSecurityGroup struct {
-	value *SecurityGroup
-	isSet bool
-}
-
-func (v NullableSecurityGroup) Get() *SecurityGroup {
-	return v.value
-}
-
-func (v *NullableSecurityGroup) Set(val *SecurityGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSecurityGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSecurityGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSecurityGroup(val *SecurityGroup) *NullableSecurityGroup {
-	return &NullableSecurityGroup{value: val, isSet: true}
-}
-
-func (v NullableSecurityGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSecurityGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

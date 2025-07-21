@@ -60,7 +60,7 @@ type ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTyp
 	ShowOnCreate          NullableBool           `json:"showOnCreate,omitempty"`
 	ShowOnEdit            NullableBool           `json:"showOnEdit,omitempty"`
 	LocalCredential       NullableBool           `json:"localCredential,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner
@@ -1721,99 +1721,7 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOption
 	return toSerialize, nil
 }
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner := _ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner{}
-
-	err = json.Unmarshal(data, &varListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner(varListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionSourceType")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "requireOnCode")
-		delete(additionalProperties, "contextualDefault")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "showOnCreate")
-		delete(additionalProperties, "showOnEdit")
-		delete(additionalProperties, "localCredential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner struct {
-	value *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner
-	isSet bool
-}
-
-func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) Get() *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner {
-	return v.value
-}
-
-func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) Set(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner {
-	return &NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerGroupOptionTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

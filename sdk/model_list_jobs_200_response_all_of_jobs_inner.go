@@ -26,6 +26,26 @@ type ListJobs200ResponseAllOfJobsInner struct {
 	ListJobs200ResponseAllOfJobsInnerAnyOf2 *ListJobs200ResponseAllOfJobsInnerAnyOf2
 }
 
+func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListJobs200ResponseAllOfJobsInner{}
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf = &out
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf1); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf1 = &out
+	}
+
+	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf2); ok {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf2 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) error {
 	var err error

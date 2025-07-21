@@ -50,8 +50,8 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        NullableString `json:"darkImagePath,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DarkImagePath        NullableString         `json:"darkImagePath,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetInstanceTypeProvisioning200ResponseAllOfInstanceType GetInstanceTypeProvisioning200ResponseAllOfInstanceType
@@ -1198,88 +1198,7 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceType) ToMap() (map[st
 	return toSerialize, nil
 }
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(data []byte) (err error) {
-	varGetInstanceTypeProvisioning200ResponseAllOfInstanceType := _GetInstanceTypeProvisioning200ResponseAllOfInstanceType{}
-
-	err = json.Unmarshal(data, &varGetInstanceTypeProvisioning200ResponseAllOfInstanceType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetInstanceTypeProvisioning200ResponseAllOfInstanceType(varGetInstanceTypeProvisioning200ResponseAllOfInstanceType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "hasProvisioningStep")
-		delete(additionalProperties, "hasDeployment")
-		delete(additionalProperties, "hasConfig")
-		delete(additionalProperties, "hasSettings")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "proxyType")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyProtocol")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "backupType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "versions")
-		delete(additionalProperties, "instanceTypeLayouts")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
-	value *GetInstanceTypeProvisioning200ResponseAllOfInstanceType
-	isSet bool
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Get() *GetInstanceTypeProvisioning200ResponseAllOfInstanceType {
-	return v.value
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Set(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType {
-	return &NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType{value: val, isSet: true}
-}
-
-func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

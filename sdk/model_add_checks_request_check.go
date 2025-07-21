@@ -65,6 +65,34 @@ func AddChecksRequestCheckOneOf4AsAddChecksRequestCheck(v *AddChecksRequestCheck
 	}
 }
 
+func (dst *AddChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddChecksRequestCheck{}
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf); ok {
+		dst.AddChecksRequestCheckOneOf = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf1); ok {
+		dst.AddChecksRequestCheckOneOf1 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf2); ok {
+		dst.AddChecksRequestCheckOneOf2 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf3); ok {
+		dst.AddChecksRequestCheckOneOf3 = &out
+	}
+
+	if out, ok := data.(AddChecksRequestCheckOneOf4); ok {
+		dst.AddChecksRequestCheckOneOf4 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddChecksRequestCheck) UnmarshalJSON(data []byte) error {
 	var err error

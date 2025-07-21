@@ -21,8 +21,8 @@ var _ MappedNullable = &ImportContainerActionRequest{}
 // ImportContainerActionRequest struct for ImportContainerActionRequest
 type ImportContainerActionRequest struct {
 	// Optional storage provider to use.
-	StorageProviderId    *int64 `json:"storageProviderId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	StorageProviderId    *int64                 `json:"storageProviderId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ImportContainerActionRequest ImportContainerActionRequest
@@ -97,60 +97,7 @@ func (o ImportContainerActionRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ImportContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
-	varImportContainerActionRequest := _ImportContainerActionRequest{}
-
-	err = json.Unmarshal(data, &varImportContainerActionRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImportContainerActionRequest(varImportContainerActionRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "storageProviderId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableImportContainerActionRequest struct {
-	value *ImportContainerActionRequest
-	isSet bool
-}
-
-func (v NullableImportContainerActionRequest) Get() *ImportContainerActionRequest {
-	return v.value
-}
-
-func (v *NullableImportContainerActionRequest) Set(val *ImportContainerActionRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImportContainerActionRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImportContainerActionRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImportContainerActionRequest(val *ImportContainerActionRequest) *NullableImportContainerActionRequest {
-	return &NullableImportContainerActionRequest{value: val, isSet: true}
-}
-
-func (v NullableImportContainerActionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImportContainerActionRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

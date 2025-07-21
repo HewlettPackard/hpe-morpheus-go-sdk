@@ -35,7 +35,7 @@ type IntegrationChef struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationChef IntegrationChef
@@ -609,73 +609,7 @@ func (o IntegrationChef) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationChef) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationChef := _IntegrationChef{}
-
-	err = json.Unmarshal(data, &varIntegrationChef)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationChef(varIntegrationChef)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationChef struct {
-	value *IntegrationChef
-	isSet bool
-}
-
-func (v NullableIntegrationChef) Get() *IntegrationChef {
-	return v.value
-}
-
-func (v *NullableIntegrationChef) Set(val *IntegrationChef) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationChef) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationChef) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationChef(val *IntegrationChef) *NullableIntegrationChef {
-	return &NullableIntegrationChef{value: val, isSet: true}
-}
-
-func (v NullableIntegrationChef) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationChef) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

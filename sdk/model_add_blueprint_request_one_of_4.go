@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddBlueprintRequestOneOf4 type satisfies the MappedNullable interface at compile time
@@ -29,7 +28,7 @@ type AddBlueprintRequestOneOf4 struct {
 	Labels []string `json:"labels,omitempty"`
 	// Tier definitions - Create in UI to view a baseline for object
 	Tiers                map[string]interface{} `json:"tiers"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprintRequestOneOf4 AddBlueprintRequestOneOf4
@@ -183,86 +182,7 @@ func (o AddBlueprintRequestOneOf4) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddBlueprintRequestOneOf4) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"type",
-		"tiers",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddBlueprintRequestOneOf4 := _AddBlueprintRequestOneOf4{}
-
-	err = json.Unmarshal(data, &varAddBlueprintRequestOneOf4)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprintRequestOneOf4(varAddBlueprintRequestOneOf4)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tiers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBlueprintRequestOneOf4 struct {
-	value *AddBlueprintRequestOneOf4
-	isSet bool
-}
-
-func (v NullableAddBlueprintRequestOneOf4) Get() *AddBlueprintRequestOneOf4 {
-	return v.value
-}
-
-func (v *NullableAddBlueprintRequestOneOf4) Set(val *AddBlueprintRequestOneOf4) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprintRequestOneOf4) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprintRequestOneOf4) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprintRequestOneOf4(val *AddBlueprintRequestOneOf4) *NullableAddBlueprintRequestOneOf4 {
-	return &NullableAddBlueprintRequestOneOf4{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprintRequestOneOf4) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprintRequestOneOf4) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

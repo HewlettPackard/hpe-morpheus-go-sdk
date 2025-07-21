@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateHostResizeRequestServerPlan{}
 // UpdateHostResizeRequestServerPlan struct for UpdateHostResizeRequestServerPlan
 type UpdateHostResizeRequestServerPlan struct {
 	// The ID of the new plan (optional). See Available Service Plans
-	Id                   *int64 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostResizeRequestServerPlan UpdateHostResizeRequestServerPlan
@@ -97,60 +97,7 @@ func (o UpdateHostResizeRequestServerPlan) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 func (o *UpdateHostResizeRequestServerPlan) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostResizeRequestServerPlan := _UpdateHostResizeRequestServerPlan{}
-
-	err = json.Unmarshal(data, &varUpdateHostResizeRequestServerPlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostResizeRequestServerPlan(varUpdateHostResizeRequestServerPlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostResizeRequestServerPlan struct {
-	value *UpdateHostResizeRequestServerPlan
-	isSet bool
-}
-
-func (v NullableUpdateHostResizeRequestServerPlan) Get() *UpdateHostResizeRequestServerPlan {
-	return v.value
-}
-
-func (v *NullableUpdateHostResizeRequestServerPlan) Set(val *UpdateHostResizeRequestServerPlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostResizeRequestServerPlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostResizeRequestServerPlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostResizeRequestServerPlan(val *UpdateHostResizeRequestServerPlan) *NullableUpdateHostResizeRequestServerPlan {
-	return &NullableUpdateHostResizeRequestServerPlan{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostResizeRequestServerPlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostResizeRequestServerPlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

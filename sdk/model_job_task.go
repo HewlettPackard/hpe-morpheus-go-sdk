@@ -43,7 +43,7 @@ type JobTask struct {
 	Targets              []ListJobs200ResponseAllOfJobsInnerAnyOfTargetsInner        `json:"targets,omitempty"`
 	CustomConfig         NullableString                                              `json:"customConfig,omitempty"`
 	CustomOptions        *ListJobs200ResponseAllOfJobsInnerAnyOfCustomOptions        `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _JobTask JobTask
@@ -932,81 +932,7 @@ func (o JobTask) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *JobTask) UnmarshalJSON(data []byte) (err error) {
-	varJobTask := _JobTask{}
-
-	err = json.Unmarshal(data, &varJobTask)
-
-	if err != nil {
-		return err
-	}
-
-	*o = JobTask(varJobTask)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "task")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableJobTask struct {
-	value *JobTask
-	isSet bool
-}
-
-func (v NullableJobTask) Get() *JobTask {
-	return v.value
-}
-
-func (v *NullableJobTask) Set(val *JobTask) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJobTask) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJobTask) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJobTask(val *JobTask) *NullableJobTask {
-	return &NullableJobTask{value: val, isSet: true}
-}
-
-func (v NullableJobTask) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJobTask) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

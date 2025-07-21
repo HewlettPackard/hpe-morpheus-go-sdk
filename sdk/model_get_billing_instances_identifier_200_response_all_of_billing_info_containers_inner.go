@@ -44,7 +44,7 @@ type GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner str
 	ServerInternalId     NullableString                                                                       `json:"serverInternalId,omitempty"`
 	ResourcePoolId       *int64                                                                               `json:"resourcePoolId,omitempty"`
 	ResourcePoolName     *string                                                                              `json:"resourcePoolName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                               `json:",remain"`
 }
 
 type _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
@@ -911,82 +911,7 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner)
 	return toSerialize, nil
 }
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnmarshalJSON(data []byte) (err error) {
-	varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner := _GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner{}
-
-	err = json.Unmarshal(data, &varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner(varGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refUUID")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "cost")
-		delete(additionalProperties, "price")
-		delete(additionalProperties, "numUnits")
-		delete(additionalProperties, "unit")
-		delete(additionalProperties, "currency")
-		delete(additionalProperties, "usages")
-		delete(additionalProperties, "numUsages")
-		delete(additionalProperties, "totalUsages")
-		delete(additionalProperties, "hasMoreUsages")
-		delete(additionalProperties, "foundPricing")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "serverUUID")
-		delete(additionalProperties, "serverUniqueId")
-		delete(additionalProperties, "serverExternalId")
-		delete(additionalProperties, "serverInternalId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "resourcePoolName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner struct {
-	value *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner
-	isSet bool
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) Get() *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner {
-	return v.value
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) Set(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner {
-	return &NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner{value: val, isSet: true}
-}
-
-func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

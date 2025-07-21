@@ -40,7 +40,7 @@ type Plugin struct {
 	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DateCreated           *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated           *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{}                                                      `json:",remain"`
 }
 
 type _Plugin Plugin
@@ -800,78 +800,7 @@ func (o Plugin) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Plugin) UnmarshalJSON(data []byte) (err error) {
-	varPlugin := _Plugin{}
-
-	err = json.Unmarshal(data, &varPlugin)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Plugin(varPlugin)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "author")
-		delete(additionalProperties, "websiteUrl")
-		delete(additionalProperties, "sourceCodeLocationUrl")
-		delete(additionalProperties, "issueTrackerUrl")
-		delete(additionalProperties, "valid")
-		delete(additionalProperties, "hasValidUpdate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "providers")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePlugin struct {
-	value *Plugin
-	isSet bool
-}
-
-func (v NullablePlugin) Get() *Plugin {
-	return v.value
-}
-
-func (v *NullablePlugin) Set(val *Plugin) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePlugin) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePlugin) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePlugin(val *Plugin) *NullablePlugin {
-	return &NullablePlugin{value: val, isSet: true}
-}
-
-func (v NullablePlugin) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePlugin) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

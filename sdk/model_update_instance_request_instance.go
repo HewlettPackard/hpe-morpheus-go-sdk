@@ -40,8 +40,8 @@ type UpdateInstanceRequestInstance struct {
 	// User ID, can be used to change instance owner.
 	OwnerId *int64 `json:"ownerId,omitempty"`
 	// Name used in the UI for display
-	DisplayName          *string `json:"displayName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DisplayName          *string                `json:"displayName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateInstanceRequestInstance UpdateInstanceRequestInstance
@@ -466,70 +466,7 @@ func (o UpdateInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceRequestInstance := _UpdateInstanceRequestInstance{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceRequestInstance)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceRequestInstance(varUpdateInstanceRequestInstance)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "instanceContext")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "addTags")
-		delete(additionalProperties, "removeTags")
-		delete(additionalProperties, "powerScheduleType")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "ownerId")
-		delete(additionalProperties, "displayName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateInstanceRequestInstance struct {
-	value *UpdateInstanceRequestInstance
-	isSet bool
-}
-
-func (v NullableUpdateInstanceRequestInstance) Get() *UpdateInstanceRequestInstance {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceRequestInstance) Set(val *UpdateInstanceRequestInstance) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceRequestInstance) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceRequestInstance) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceRequestInstance(val *UpdateInstanceRequestInstance) *NullableUpdateInstanceRequestInstance {
-	return &NullableUpdateInstanceRequestInstance{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceRequestInstance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceRequestInstance) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

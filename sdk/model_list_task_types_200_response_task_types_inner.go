@@ -34,7 +34,7 @@ type ListTaskTypes200ResponseTaskTypesInner struct {
 	AllowLocalRepo       NullableBool                                             `json:"allowLocalRepo,omitempty"`
 	AllowRemoteKeyAuth   NullableBool                                             `json:"allowRemoteKeyAuth,omitempty"`
 	OptionTypes          []ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListTaskTypes200ResponseTaskTypesInner ListTaskTypes200ResponseTaskTypesInner
@@ -630,73 +630,7 @@ func (o ListTaskTypes200ResponseTaskTypesInner) ToMap() (map[string]interface{},
 	return toSerialize, nil
 }
 func (o *ListTaskTypes200ResponseTaskTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListTaskTypes200ResponseTaskTypesInner := _ListTaskTypes200ResponseTaskTypesInner{}
-
-	err = json.Unmarshal(data, &varListTaskTypes200ResponseTaskTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListTaskTypes200ResponseTaskTypesInner(varListTaskTypes200ResponseTaskTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "scriptable")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "hasResults")
-		delete(additionalProperties, "allowExecuteLocal")
-		delete(additionalProperties, "allowExecuteRemote")
-		delete(additionalProperties, "allowExecuteResource")
-		delete(additionalProperties, "allowLocalRepo")
-		delete(additionalProperties, "allowRemoteKeyAuth")
-		delete(additionalProperties, "optionTypes")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListTaskTypes200ResponseTaskTypesInner struct {
-	value *ListTaskTypes200ResponseTaskTypesInner
-	isSet bool
-}
-
-func (v NullableListTaskTypes200ResponseTaskTypesInner) Get() *ListTaskTypes200ResponseTaskTypesInner {
-	return v.value
-}
-
-func (v *NullableListTaskTypes200ResponseTaskTypesInner) Set(val *ListTaskTypes200ResponseTaskTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListTaskTypes200ResponseTaskTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListTaskTypes200ResponseTaskTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListTaskTypes200ResponseTaskTypesInner(val *ListTaskTypes200ResponseTaskTypesInner) *NullableListTaskTypes200ResponseTaskTypesInner {
-	return &NullableListTaskTypes200ResponseTaskTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListTaskTypes200ResponseTaskTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListTaskTypes200ResponseTaskTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

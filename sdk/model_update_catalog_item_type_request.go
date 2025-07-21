@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateCatalogItemTypeRequest{}
 // UpdateCatalogItemTypeRequest struct for UpdateCatalogItemTypeRequest
 type UpdateCatalogItemTypeRequest struct {
 	CatalogItemType      *UpdateCatalogItemTypeRequestCatalogItemType `json:"catalogItemType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _UpdateCatalogItemTypeRequest UpdateCatalogItemTypeRequest
@@ -96,60 +96,7 @@ func (o UpdateCatalogItemTypeRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateCatalogItemTypeRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCatalogItemTypeRequest := _UpdateCatalogItemTypeRequest{}
-
-	err = json.Unmarshal(data, &varUpdateCatalogItemTypeRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCatalogItemTypeRequest(varUpdateCatalogItemTypeRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "catalogItemType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateCatalogItemTypeRequest struct {
-	value *UpdateCatalogItemTypeRequest
-	isSet bool
-}
-
-func (v NullableUpdateCatalogItemTypeRequest) Get() *UpdateCatalogItemTypeRequest {
-	return v.value
-}
-
-func (v *NullableUpdateCatalogItemTypeRequest) Set(val *UpdateCatalogItemTypeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCatalogItemTypeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCatalogItemTypeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCatalogItemTypeRequest(val *UpdateCatalogItemTypeRequest) *NullableUpdateCatalogItemTypeRequest {
-	return &NullableUpdateCatalogItemTypeRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateCatalogItemTypeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCatalogItemTypeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

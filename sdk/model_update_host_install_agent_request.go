@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateHostInstallAgentRequest{}
 // UpdateHostInstallAgentRequest struct for UpdateHostInstallAgentRequest
 type UpdateHostInstallAgentRequest struct {
 	Server               *UpdateHostInstallAgentRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _UpdateHostInstallAgentRequest UpdateHostInstallAgentRequest
@@ -96,60 +96,7 @@ func (o UpdateHostInstallAgentRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateHostInstallAgentRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostInstallAgentRequest := _UpdateHostInstallAgentRequest{}
-
-	err = json.Unmarshal(data, &varUpdateHostInstallAgentRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostInstallAgentRequest(varUpdateHostInstallAgentRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostInstallAgentRequest struct {
-	value *UpdateHostInstallAgentRequest
-	isSet bool
-}
-
-func (v NullableUpdateHostInstallAgentRequest) Get() *UpdateHostInstallAgentRequest {
-	return v.value
-}
-
-func (v *NullableUpdateHostInstallAgentRequest) Set(val *UpdateHostInstallAgentRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostInstallAgentRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostInstallAgentRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostInstallAgentRequest(val *UpdateHostInstallAgentRequest) *NullableUpdateHostInstallAgentRequest {
-	return &NullableUpdateHostInstallAgentRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostInstallAgentRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostInstallAgentRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

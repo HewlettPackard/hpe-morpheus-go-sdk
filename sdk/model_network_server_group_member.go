@@ -31,7 +31,7 @@ type NetworkServerGroupMember struct {
 	InternalId           NullableString           `json:"internalId,omitempty"`
 	ExternalId           *string                  `json:"externalId,omitempty"`
 	Members              []map[string]interface{} `json:"members,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _NetworkServerGroupMember NetworkServerGroupMember
@@ -511,70 +511,7 @@ func (o NetworkServerGroupMember) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkServerGroupMember) UnmarshalJSON(data []byte) (err error) {
-	varNetworkServerGroupMember := _NetworkServerGroupMember{}
-
-	err = json.Unmarshal(data, &varNetworkServerGroupMember)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkServerGroupMember(varNetworkServerGroupMember)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "memberName")
-		delete(additionalProperties, "memberType")
-		delete(additionalProperties, "memberValue")
-		delete(additionalProperties, "memberExpression")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "members")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkServerGroupMember struct {
-	value *NetworkServerGroupMember
-	isSet bool
-}
-
-func (v NullableNetworkServerGroupMember) Get() *NetworkServerGroupMember {
-	return v.value
-}
-
-func (v *NullableNetworkServerGroupMember) Set(val *NetworkServerGroupMember) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkServerGroupMember) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkServerGroupMember) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkServerGroupMember(val *NetworkServerGroupMember) *NullableNetworkServerGroupMember {
-	return &NullableNetworkServerGroupMember{value: val, isSet: true}
-}
-
-func (v NullableNetworkServerGroupMember) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkServerGroupMember) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

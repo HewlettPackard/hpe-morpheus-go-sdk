@@ -20,8 +20,8 @@ var _ MappedNullable = &AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
 
 // AddIntegrationsRequestOneOfIntegrationCredentialOneOf struct for AddIntegrationsRequestOneOfIntegrationCredentialOneOf
 type AddIntegrationsRequestOneOfIntegrationCredentialOneOf struct {
-	Type                 *string `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Type                 *string                `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddIntegrationsRequestOneOfIntegrationCredentialOneOf AddIntegrationsRequestOneOfIntegrationCredentialOneOf
@@ -96,60 +96,7 @@ func (o AddIntegrationsRequestOneOfIntegrationCredentialOneOf) ToMap() (map[stri
 	return toSerialize, nil
 }
 func (o *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) UnmarshalJSON(data []byte) (err error) {
-	varAddIntegrationsRequestOneOfIntegrationCredentialOneOf := _AddIntegrationsRequestOneOfIntegrationCredentialOneOf{}
-
-	err = json.Unmarshal(data, &varAddIntegrationsRequestOneOfIntegrationCredentialOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddIntegrationsRequestOneOfIntegrationCredentialOneOf(varAddIntegrationsRequestOneOfIntegrationCredentialOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf struct {
-	value *AddIntegrationsRequestOneOfIntegrationCredentialOneOf
-	isSet bool
-}
-
-func (v NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) Get() *AddIntegrationsRequestOneOfIntegrationCredentialOneOf {
-	return v.value
-}
-
-func (v *NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) Set(val *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf(val *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) *NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf {
-	return &NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf{value: val, isSet: true}
-}
-
-func (v NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddIntegrationsRequestOneOfIntegrationCredentialOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

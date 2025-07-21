@@ -20,8 +20,8 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf{}
 
 // ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf - Approve Delete - Approve Provisiong - Approve Reconfigure
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf struct {
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf
@@ -96,60 +96,7 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) ToMap() (map[strin
 	return toSerialize, nil
 }
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) UnmarshalJSON(data []byte) (err error) {
-	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf{}
-
-	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "accountIntegrationId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf struct {
-	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf
-	isSet bool
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf {
-	return v.value
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf {
-	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf{value: val, isSet: true}
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

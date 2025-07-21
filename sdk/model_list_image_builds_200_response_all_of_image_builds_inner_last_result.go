@@ -34,7 +34,7 @@ type ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct {
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance         NullableString                                                  `json:"tempInstance,omitempty"`
 	VirtualImages        []map[string]interface{}                                        `json:"virtualImages,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
@@ -573,72 +573,7 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) ToMap() (map[
 	return toSerialize, nil
 }
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult := _ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult(varListImageBuilds200ResponseAllOfImageBuildsInnerLastResult)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "imageBuild")
-		delete(additionalProperties, "buildNumber")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "tempInstance")
-		delete(additionalProperties, "virtualImages")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) Get() *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult(val *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) *NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

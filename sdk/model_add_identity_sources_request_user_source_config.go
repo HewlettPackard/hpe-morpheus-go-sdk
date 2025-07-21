@@ -89,6 +89,46 @@ func AddIdentitySourcesRequestUserSourceConfigOneOf7AsAddIdentitySourcesRequestU
 	}
 }
 
+func (dst *AddIdentitySourcesRequestUserSourceConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIdentitySourcesRequestUserSourceConfig{}
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf1); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf1 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf2); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf2 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf3); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf3 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf4); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf4 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf5); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf5 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf6); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf6 = &out
+	}
+
+	if out, ok := data.(AddIdentitySourcesRequestUserSourceConfigOneOf7); ok {
+		dst.AddIdentitySourcesRequestUserSourceConfigOneOf7 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySourcesRequestUserSourceConfig) UnmarshalJSON(data []byte) error {
 	var err error

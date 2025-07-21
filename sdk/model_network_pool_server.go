@@ -63,7 +63,7 @@ type NetworkPoolServer struct {
 	Integration          *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration `json:"integration,omitempty"`
 	Pools                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"pools,omitempty"`
 	Credential           *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential  `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                    `json:",remain"`
 }
 
 type _NetworkPoolServer NetworkPoolServer
@@ -1164,85 +1164,7 @@ func (o NetworkPoolServer) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
-	varNetworkPoolServer := _NetworkPoolServer{}
-
-	err = json.Unmarshal(data, &varNetworkPoolServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkPoolServer(varNetworkPoolServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceThrottleRate")
-		delete(additionalProperties, "ignoreSsl")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "zoneFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "pools")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkPoolServer struct {
-	value *NetworkPoolServer
-	isSet bool
-}
-
-func (v NullableNetworkPoolServer) Get() *NetworkPoolServer {
-	return v.value
-}
-
-func (v *NullableNetworkPoolServer) Set(val *NetworkPoolServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkPoolServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkPoolServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkPoolServer(val *NetworkPoolServer) *NullableNetworkPoolServer {
-	return &NullableNetworkPoolServer{value: val, isSet: true}
-}
-
-func (v NullableNetworkPoolServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkPoolServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -61,7 +61,7 @@ type ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner s
 	ShowOnCreate          NullableBool                                       `json:"showOnCreate,omitempty"`
 	ShowOnEdit            NullableBool                                       `json:"showOnEdit,omitempty"`
 	LocalCredential       NullableBool                                       `json:"localCredential,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{}                             `json:",remain"`
 }
 
 type _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
@@ -1791,100 +1791,7 @@ func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInne
 	return toSerialize, nil
 }
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner := _ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner{}
-
-	err = json.Unmarshal(data, &varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner(varListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "fieldName")
-		delete(additionalProperties, "fieldLabel")
-		delete(additionalProperties, "fieldCode")
-		delete(additionalProperties, "fieldContext")
-		delete(additionalProperties, "fieldGroup")
-		delete(additionalProperties, "fieldClass")
-		delete(additionalProperties, "fieldAddOn")
-		delete(additionalProperties, "fieldComponent")
-		delete(additionalProperties, "fieldInput")
-		delete(additionalProperties, "placeHolder")
-		delete(additionalProperties, "verifyPattern")
-		delete(additionalProperties, "helpBlock")
-		delete(additionalProperties, "helpBlockFieldCode")
-		delete(additionalProperties, "defaultValue")
-		delete(additionalProperties, "optionSource")
-		delete(additionalProperties, "optionSourceType")
-		delete(additionalProperties, "optionList")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "advanced")
-		delete(additionalProperties, "required")
-		delete(additionalProperties, "exportMeta")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "wrapperClass")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "noBlank")
-		delete(additionalProperties, "dependsOnCode")
-		delete(additionalProperties, "visibleOnCode")
-		delete(additionalProperties, "requireOnCode")
-		delete(additionalProperties, "contextualDefault")
-		delete(additionalProperties, "displayValueOnDetails")
-		delete(additionalProperties, "showOnCreate")
-		delete(additionalProperties, "showOnEdit")
-		delete(additionalProperties, "localCredential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner struct {
-	value *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
-	isSet bool
-}
-
-func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Get() *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	return v.value
-}
-
-func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Set(val *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner(val *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
-	return &NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

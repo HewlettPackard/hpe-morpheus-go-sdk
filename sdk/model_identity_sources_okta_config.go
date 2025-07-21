@@ -41,7 +41,7 @@ type IdentitySourcesOktaConfig struct {
 	ProviderSettings     map[string]interface{}                                                       `json:"providerSettings,omitempty"`
 	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
 type _IdentitySourcesOktaConfig IdentitySourcesOktaConfig
@@ -781,79 +781,7 @@ func (o IdentitySourcesOktaConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IdentitySourcesOktaConfig) UnmarshalJSON(data []byte) (err error) {
-	varIdentitySourcesOktaConfig := _IdentitySourcesOktaConfig{}
-
-	err = json.Unmarshal(data, &varIdentitySourcesOktaConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IdentitySourcesOktaConfig(varIdentitySourcesOktaConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "deleted")
-		delete(additionalProperties, "autoSyncOnLogin")
-		delete(additionalProperties, "externalLogin")
-		delete(additionalProperties, "allowCustomMappings")
-		delete(additionalProperties, "manualRoleAssignment")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "defaultAccountRole")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "roleMappings")
-		delete(additionalProperties, "subdomain")
-		delete(additionalProperties, "loginURL")
-		delete(additionalProperties, "providerSettings")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIdentitySourcesOktaConfig struct {
-	value *IdentitySourcesOktaConfig
-	isSet bool
-}
-
-func (v NullableIdentitySourcesOktaConfig) Get() *IdentitySourcesOktaConfig {
-	return v.value
-}
-
-func (v *NullableIdentitySourcesOktaConfig) Set(val *IdentitySourcesOktaConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentitySourcesOktaConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentitySourcesOktaConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentitySourcesOktaConfig(val *IdentitySourcesOktaConfig) *NullableIdentitySourcesOktaConfig {
-	return &NullableIdentitySourcesOktaConfig{value: val, isSet: true}
-}
-
-func (v NullableIdentitySourcesOktaConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentitySourcesOktaConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

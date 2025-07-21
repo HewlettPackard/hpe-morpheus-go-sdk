@@ -22,7 +22,7 @@ var _ MappedNullable = &ListPowerSchedules200Response{}
 type ListPowerSchedules200Response struct {
 	Schedules            []ListPowerSchedules200ResponseAllOfSchedulesInner `json:"schedules,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                  `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListPowerSchedules200Response ListPowerSchedules200Response
@@ -132,61 +132,7 @@ func (o ListPowerSchedules200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListPowerSchedules200Response) UnmarshalJSON(data []byte) (err error) {
-	varListPowerSchedules200Response := _ListPowerSchedules200Response{}
-
-	err = json.Unmarshal(data, &varListPowerSchedules200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPowerSchedules200Response(varListPowerSchedules200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "schedules")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPowerSchedules200Response struct {
-	value *ListPowerSchedules200Response
-	isSet bool
-}
-
-func (v NullableListPowerSchedules200Response) Get() *ListPowerSchedules200Response {
-	return v.value
-}
-
-func (v *NullableListPowerSchedules200Response) Set(val *ListPowerSchedules200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPowerSchedules200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPowerSchedules200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPowerSchedules200Response(val *ListPowerSchedules200Response) *NullableListPowerSchedules200Response {
-	return &NullableListPowerSchedules200Response{value: val, isSet: true}
-}
-
-func (v NullableListPowerSchedules200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPowerSchedules200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

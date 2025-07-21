@@ -23,7 +23,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
 	Id                   *int64                                             `json:"id,omitempty"`
 	Name                 *string                                            `json:"name,omitempty"`
 	ZoneType             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zoneType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
@@ -168,62 +168,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "zoneType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

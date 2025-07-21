@@ -31,7 +31,7 @@ type UserPermissions struct {
 	ReportTypes          []map[string]interface{} `json:"reportTypes,omitempty"`
 	Tasks                []map[string]interface{} `json:"tasks,omitempty"`
 	TaskSets             []map[string]interface{} `json:"taskSets,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UserPermissions UserPermissions
@@ -456,70 +456,7 @@ func (o UserPermissions) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UserPermissions) UnmarshalJSON(data []byte) (err error) {
-	varUserPermissions := _UserPermissions{}
-
-	err = json.Unmarshal(data, &varUserPermissions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UserPermissions(varUserPermissions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "features")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "instanceTypes")
-		delete(additionalProperties, "appTemplates")
-		delete(additionalProperties, "catalogItemTypes")
-		delete(additionalProperties, "personas")
-		delete(additionalProperties, "vdiPools")
-		delete(additionalProperties, "reportTypes")
-		delete(additionalProperties, "tasks")
-		delete(additionalProperties, "taskSets")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUserPermissions struct {
-	value *UserPermissions
-	isSet bool
-}
-
-func (v NullableUserPermissions) Get() *UserPermissions {
-	return v.value
-}
-
-func (v *NullableUserPermissions) Set(val *UserPermissions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserPermissions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserPermissions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserPermissions(val *UserPermissions) *NullableUserPermissions {
-	return &NullableUserPermissions{value: val, isSet: true}
-}
-
-func (v NullableUserPermissions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserPermissions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

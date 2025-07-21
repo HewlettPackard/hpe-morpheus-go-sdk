@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddLayoutRequestInstanceTypeLayout type satisfies the MappedNullable interface at compile time
@@ -51,7 +50,7 @@ type AddLayoutRequestInstanceTypeLayout struct {
 	// Array of price set objects
 	PriceSets            []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	Permissions          *AddLayoutRequestInstanceTypeLayoutPermissions     `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _AddLayoutRequestInstanceTypeLayout AddLayoutRequestInstanceTypeLayout
@@ -637,98 +636,7 @@ func (o AddLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"instanceVersion",
-		"provisionTypeCode",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddLayoutRequestInstanceTypeLayout := _AddLayoutRequestInstanceTypeLayout{}
-
-	err = json.Unmarshal(data, &varAddLayoutRequestInstanceTypeLayout)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddLayoutRequestInstanceTypeLayout(varAddLayoutRequestInstanceTypeLayout)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "instanceVersion")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "memoryRequirement")
-		delete(additionalProperties, "hasAutoScale")
-		delete(additionalProperties, "supportsConvertToManaged")
-		delete(additionalProperties, "containerTypes")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "specTemplates")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddLayoutRequestInstanceTypeLayout struct {
-	value *AddLayoutRequestInstanceTypeLayout
-	isSet bool
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayout) Get() *AddLayoutRequestInstanceTypeLayout {
-	return v.value
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayout) Set(val *AddLayoutRequestInstanceTypeLayout) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayout) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayout) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddLayoutRequestInstanceTypeLayout(val *AddLayoutRequestInstanceTypeLayout) *NullableAddLayoutRequestInstanceTypeLayout {
-	return &NullableAddLayoutRequestInstanceTypeLayout{value: val, isSet: true}
-}
-
-func (v NullableAddLayoutRequestInstanceTypeLayout) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddLayoutRequestInstanceTypeLayout) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

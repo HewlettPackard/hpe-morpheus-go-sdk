@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NetworkTypeGcpConfig type satisfies the MappedNullable interface at compile time
@@ -25,8 +24,8 @@ type NetworkTypeGcpConfig struct {
 	Mtu      string                                           `json:"mtu"`
 	ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool `json:"zonePool"`
 	// Auto create subnets
-	AutoCreate           bool `json:"autoCreate"`
-	AdditionalProperties map[string]interface{}
+	AutoCreate           bool                   `json:"autoCreate"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkTypeGcpConfig NetworkTypeGcpConfig
@@ -148,85 +147,7 @@ func (o NetworkTypeGcpConfig) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkTypeGcpConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"mtu",
-		"zonePool",
-		"autoCreate",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varNetworkTypeGcpConfig := _NetworkTypeGcpConfig{}
-
-	err = json.Unmarshal(data, &varNetworkTypeGcpConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkTypeGcpConfig(varNetworkTypeGcpConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "mtu")
-		delete(additionalProperties, "zonePool")
-		delete(additionalProperties, "autoCreate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkTypeGcpConfig struct {
-	value *NetworkTypeGcpConfig
-	isSet bool
-}
-
-func (v NullableNetworkTypeGcpConfig) Get() *NetworkTypeGcpConfig {
-	return v.value
-}
-
-func (v *NullableNetworkTypeGcpConfig) Set(val *NetworkTypeGcpConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkTypeGcpConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkTypeGcpConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkTypeGcpConfig(val *NetworkTypeGcpConfig) *NullableNetworkTypeGcpConfig {
-	return &NullableNetworkTypeGcpConfig{value: val, isSet: true}
-}
-
-func (v NullableNetworkTypeGcpConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkTypeGcpConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

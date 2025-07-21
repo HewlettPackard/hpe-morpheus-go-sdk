@@ -21,7 +21,7 @@ var _ MappedNullable = &AddLayout200Response{}
 // AddLayout200Response struct for AddLayout200Response
 type AddLayout200Response struct {
 	InstanceTypeLayout   *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayout,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _AddLayout200Response AddLayout200Response
@@ -96,60 +96,7 @@ func (o AddLayout200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddLayout200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddLayout200Response := _AddLayout200Response{}
-
-	err = json.Unmarshal(data, &varAddLayout200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddLayout200Response(varAddLayout200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instanceTypeLayout")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddLayout200Response struct {
-	value *AddLayout200Response
-	isSet bool
-}
-
-func (v NullableAddLayout200Response) Get() *AddLayout200Response {
-	return v.value
-}
-
-func (v *NullableAddLayout200Response) Set(val *AddLayout200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddLayout200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddLayout200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddLayout200Response(val *AddLayout200Response) *NullableAddLayout200Response {
-	return &NullableAddLayout200Response{value: val, isSet: true}
-}
-
-func (v NullableAddLayout200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddLayout200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

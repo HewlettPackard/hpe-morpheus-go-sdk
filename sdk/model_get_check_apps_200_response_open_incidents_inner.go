@@ -44,7 +44,7 @@ type GetCheckApps200ResponseOpenIncidentsInner struct {
 	StartDate            *time.Time                                          `json:"startDate,omitempty"`
 	Status               *string                                             `json:"status,omitempty"`
 	Visibility           *string                                             `json:"visibility,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _GetCheckApps200ResponseOpenIncidentsInner GetCheckApps200ResponseOpenIncidentsInner
@@ -955,82 +955,7 @@ func (o GetCheckApps200ResponseOpenIncidentsInner) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *GetCheckApps200ResponseOpenIncidentsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetCheckApps200ResponseOpenIncidentsInner := _GetCheckApps200ResponseOpenIncidentsInner{}
-
-	err = json.Unmarshal(data, &varGetCheckApps200ResponseOpenIncidentsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCheckApps200ResponseOpenIncidentsInner(varGetCheckApps200ResponseOpenIncidentsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "app")
-		delete(additionalProperties, "autoClose")
-		delete(additionalProperties, "channelId")
-		delete(additionalProperties, "checkGroups")
-		delete(additionalProperties, "checks")
-		delete(additionalProperties, "comment")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "lastCheckTime")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "resolution")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "severityId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "visibility")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetCheckApps200ResponseOpenIncidentsInner struct {
-	value *GetCheckApps200ResponseOpenIncidentsInner
-	isSet bool
-}
-
-func (v NullableGetCheckApps200ResponseOpenIncidentsInner) Get() *GetCheckApps200ResponseOpenIncidentsInner {
-	return v.value
-}
-
-func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) Set(val *GetCheckApps200ResponseOpenIncidentsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCheckApps200ResponseOpenIncidentsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCheckApps200ResponseOpenIncidentsInner(val *GetCheckApps200ResponseOpenIncidentsInner) *NullableGetCheckApps200ResponseOpenIncidentsInner {
-	return &NullableGetCheckApps200ResponseOpenIncidentsInner{value: val, isSet: true}
-}
-
-func (v NullableGetCheckApps200ResponseOpenIncidentsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

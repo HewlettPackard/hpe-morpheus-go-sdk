@@ -55,7 +55,7 @@ type ListInstanceServicePlans200ResponsePlansInner struct {
 	CustomCores           *bool                                                            `json:"customCores,omitempty"`
 	MaxDisks              NullableString                                                   `json:"maxDisks,omitempty"`
 	MemorySizeType        *string                                                          `json:"memorySizeType,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{}                                           `json:",remain"`
 }
 
 type _ListInstanceServicePlans200ResponsePlansInner ListInstanceServicePlans200ResponsePlansInner
@@ -1347,94 +1347,7 @@ func (o ListInstanceServicePlans200ResponsePlansInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *ListInstanceServicePlans200ResponsePlansInner) UnmarshalJSON(data []byte) (err error) {
-	varListInstanceServicePlans200ResponsePlansInner := _ListInstanceServicePlans200ResponsePlansInner{}
-
-	err = json.Unmarshal(data, &varListInstanceServicePlans200ResponsePlansInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstanceServicePlans200ResponsePlansInner(varListInstanceServicePlans200ResponsePlansInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customCoresPerSocket")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "storageTypes")
-		delete(additionalProperties, "rootStorageTypes")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "customizeVolume")
-		delete(additionalProperties, "rootDiskCustomizable")
-		delete(additionalProperties, "noDisks")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "lvmSupported")
-		delete(additionalProperties, "datastores")
-		delete(additionalProperties, "supportsAutoDatastore")
-		delete(additionalProperties, "autoOptions")
-		delete(additionalProperties, "cpuOptions")
-		delete(additionalProperties, "coreOptions")
-		delete(additionalProperties, "memoryOptions")
-		delete(additionalProperties, "rootCustomSizeOptions")
-		delete(additionalProperties, "customSizeOptions")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "memorySizeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListInstanceServicePlans200ResponsePlansInner struct {
-	value *ListInstanceServicePlans200ResponsePlansInner
-	isSet bool
-}
-
-func (v NullableListInstanceServicePlans200ResponsePlansInner) Get() *ListInstanceServicePlans200ResponsePlansInner {
-	return v.value
-}
-
-func (v *NullableListInstanceServicePlans200ResponsePlansInner) Set(val *ListInstanceServicePlans200ResponsePlansInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstanceServicePlans200ResponsePlansInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstanceServicePlans200ResponsePlansInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstanceServicePlans200ResponsePlansInner(val *ListInstanceServicePlans200ResponsePlansInner) *NullableListInstanceServicePlans200ResponsePlansInner {
-	return &NullableListInstanceServicePlans200ResponsePlansInner{value: val, isSet: true}
-}
-
-func (v NullableListInstanceServicePlans200ResponsePlansInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstanceServicePlans200ResponsePlansInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

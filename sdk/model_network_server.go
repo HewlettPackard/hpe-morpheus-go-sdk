@@ -80,7 +80,7 @@ type NetworkServer struct {
 	Visible              *bool                                                             `json:"visible,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance               `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _NetworkServer NetworkServer
@@ -1668,96 +1668,7 @@ func (o NetworkServer) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkServer) UnmarshalJSON(data []byte) (err error) {
-	varNetworkServer := _NetworkServer{}
-
-	err = json.Unmarshal(data, &varNetworkServer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkServer(varNetworkServer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceTokenHash")
-		delete(additionalProperties, "apiPort")
-		delete(additionalProperties, "adminPort")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "networkFilter")
-		delete(additionalProperties, "tenantMatch")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "visible")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkServer struct {
-	value *NetworkServer
-	isSet bool
-}
-
-func (v NullableNetworkServer) Get() *NetworkServer {
-	return v.value
-}
-
-func (v *NullableNetworkServer) Set(val *NetworkServer) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkServer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkServer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkServer(val *NetworkServer) *NullableNetworkServer {
-	return &NullableNetworkServer{value: val, isSet: true}
-}
-
-func (v NullableNetworkServer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkServer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

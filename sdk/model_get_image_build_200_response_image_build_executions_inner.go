@@ -34,7 +34,7 @@ type GetImageBuild200ResponseImageBuildExecutionsInner struct {
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance         NullableString                                                  `json:"tempInstance,omitempty"`
 	VirtualImages        []map[string]interface{}                                        `json:"virtualImages,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _GetImageBuild200ResponseImageBuildExecutionsInner GetImageBuild200ResponseImageBuildExecutionsInner
@@ -585,72 +585,7 @@ func (o GetImageBuild200ResponseImageBuildExecutionsInner) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *GetImageBuild200ResponseImageBuildExecutionsInner) UnmarshalJSON(data []byte) (err error) {
-	varGetImageBuild200ResponseImageBuildExecutionsInner := _GetImageBuild200ResponseImageBuildExecutionsInner{}
-
-	err = json.Unmarshal(data, &varGetImageBuild200ResponseImageBuildExecutionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetImageBuild200ResponseImageBuildExecutionsInner(varGetImageBuild200ResponseImageBuildExecutionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "imageBuild")
-		delete(additionalProperties, "buildNumber")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "tempInstance")
-		delete(additionalProperties, "virtualImages")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetImageBuild200ResponseImageBuildExecutionsInner struct {
-	value *GetImageBuild200ResponseImageBuildExecutionsInner
-	isSet bool
-}
-
-func (v NullableGetImageBuild200ResponseImageBuildExecutionsInner) Get() *GetImageBuild200ResponseImageBuildExecutionsInner {
-	return v.value
-}
-
-func (v *NullableGetImageBuild200ResponseImageBuildExecutionsInner) Set(val *GetImageBuild200ResponseImageBuildExecutionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetImageBuild200ResponseImageBuildExecutionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetImageBuild200ResponseImageBuildExecutionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetImageBuild200ResponseImageBuildExecutionsInner(val *GetImageBuild200ResponseImageBuildExecutionsInner) *NullableGetImageBuild200ResponseImageBuildExecutionsInner {
-	return &NullableGetImageBuild200ResponseImageBuildExecutionsInner{value: val, isSet: true}
-}
-
-func (v NullableGetImageBuild200ResponseImageBuildExecutionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetImageBuild200ResponseImageBuildExecutionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

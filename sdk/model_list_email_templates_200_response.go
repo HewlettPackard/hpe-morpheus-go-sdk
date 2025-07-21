@@ -22,7 +22,7 @@ var _ MappedNullable = &ListEmailTemplates200Response{}
 type ListEmailTemplates200Response struct {
 	EmailTemplates       []ListEmailTemplates200ResponseAllOfEmailTemplatesInner `json:"emailTemplates,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                       `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListEmailTemplates200Response ListEmailTemplates200Response
@@ -132,61 +132,7 @@ func (o ListEmailTemplates200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListEmailTemplates200Response) UnmarshalJSON(data []byte) (err error) {
-	varListEmailTemplates200Response := _ListEmailTemplates200Response{}
-
-	err = json.Unmarshal(data, &varListEmailTemplates200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListEmailTemplates200Response(varListEmailTemplates200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "emailTemplates")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListEmailTemplates200Response struct {
-	value *ListEmailTemplates200Response
-	isSet bool
-}
-
-func (v NullableListEmailTemplates200Response) Get() *ListEmailTemplates200Response {
-	return v.value
-}
-
-func (v *NullableListEmailTemplates200Response) Set(val *ListEmailTemplates200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListEmailTemplates200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListEmailTemplates200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListEmailTemplates200Response(val *ListEmailTemplates200Response) *NullableListEmailTemplates200Response {
-	return &NullableListEmailTemplates200Response{value: val, isSet: true}
-}
-
-func (v NullableListEmailTemplates200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListEmailTemplates200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

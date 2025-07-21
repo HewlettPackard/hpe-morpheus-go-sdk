@@ -52,7 +52,7 @@ type ClusterHistoryEventItem struct {
 	LastUpdated          *time.Time                                                                 `json:"lastUpdated,omitempty"`
 	CreatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"createdBy,omitempty"`
 	UpdatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"updatedBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _ClusterHistoryEventItem ClusterHistoryEventItem
@@ -1298,90 +1298,7 @@ func (o ClusterHistoryEventItem) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterHistoryEventItem) UnmarshalJSON(data []byte) (err error) {
-	varClusterHistoryEventItem := _ClusterHistoryEventItem{}
-
-	err = json.Unmarshal(data, &varClusterHistoryEventItem)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterHistoryEventItem(varClusterHistoryEventItem)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "processId")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "processType")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "subType")
-		delete(additionalProperties, "subId")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "containerName")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "reason")
-		delete(additionalProperties, "percent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "output")
-		delete(additionalProperties, "error")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterHistoryEventItem struct {
-	value *ClusterHistoryEventItem
-	isSet bool
-}
-
-func (v NullableClusterHistoryEventItem) Get() *ClusterHistoryEventItem {
-	return v.value
-}
-
-func (v *NullableClusterHistoryEventItem) Set(val *ClusterHistoryEventItem) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterHistoryEventItem) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterHistoryEventItem) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterHistoryEventItem(val *ClusterHistoryEventItem) *NullableClusterHistoryEventItem {
-	return &NullableClusterHistoryEventItem{value: val, isSet: true}
-}
-
-func (v NullableClusterHistoryEventItem) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterHistoryEventItem) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

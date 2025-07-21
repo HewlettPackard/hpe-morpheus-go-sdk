@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateCloudFolders200Response{}
 // UpdateCloudFolders200Response struct for UpdateCloudFolders200Response
 type UpdateCloudFolders200Response struct {
 	Folder               *UpdateCloudFolders200ResponseFolder `json:"folder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _UpdateCloudFolders200Response UpdateCloudFolders200Response
@@ -96,60 +96,7 @@ func (o UpdateCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudFolders200Response := _UpdateCloudFolders200Response{}
-
-	err = json.Unmarshal(data, &varUpdateCloudFolders200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudFolders200Response(varUpdateCloudFolders200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "folder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateCloudFolders200Response struct {
-	value *UpdateCloudFolders200Response
-	isSet bool
-}
-
-func (v NullableUpdateCloudFolders200Response) Get() *UpdateCloudFolders200Response {
-	return v.value
-}
-
-func (v *NullableUpdateCloudFolders200Response) Set(val *UpdateCloudFolders200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudFolders200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudFolders200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudFolders200Response(val *UpdateCloudFolders200Response) *NullableUpdateCloudFolders200Response {
-	return &NullableUpdateCloudFolders200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudFolders200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudFolders200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

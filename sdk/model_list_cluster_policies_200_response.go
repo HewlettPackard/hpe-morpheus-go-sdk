@@ -22,7 +22,7 @@ var _ MappedNullable = &ListClusterPolicies200Response{}
 type ListClusterPolicies200Response struct {
 	Policies             []ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner `json:"policies,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                           `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterPolicies200Response ListClusterPolicies200Response
@@ -132,61 +132,7 @@ func (o ListClusterPolicies200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *ListClusterPolicies200Response) UnmarshalJSON(data []byte) (err error) {
-	varListClusterPolicies200Response := _ListClusterPolicies200Response{}
-
-	err = json.Unmarshal(data, &varListClusterPolicies200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterPolicies200Response(varListClusterPolicies200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "policies")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterPolicies200Response struct {
-	value *ListClusterPolicies200Response
-	isSet bool
-}
-
-func (v NullableListClusterPolicies200Response) Get() *ListClusterPolicies200Response {
-	return v.value
-}
-
-func (v *NullableListClusterPolicies200Response) Set(val *ListClusterPolicies200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterPolicies200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterPolicies200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterPolicies200Response(val *ListClusterPolicies200Response) *NullableListClusterPolicies200Response {
-	return &NullableListClusterPolicies200Response{value: val, isSet: true}
-}
-
-func (v NullableListClusterPolicies200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterPolicies200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

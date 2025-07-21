@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 type satisfies the MappedNullable interface at compile time
@@ -21,9 +20,9 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16{}
 
 // ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 - Max Storage - Object Storage Quota - File Share Storage Quota
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 struct {
-	MaxStorage           string  `json:"maxStorage"`
-	ExcludeContainers    *string `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxStorage           string                 `json:"maxStorage"`
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16
@@ -128,82 +127,7 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) ToMap() (map[str
 	return toSerialize, nil
 }
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"maxStorage",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 := _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16{}
-
-	err = json.Unmarshal(data, &varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16(varListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "excludeContainers")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 struct {
-	value *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16
-	isSet bool
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) Get() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 {
-	return v.value
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) Set(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16(val *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 {
-	return &NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16{value: val, isSet: true}
-}
-
-func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

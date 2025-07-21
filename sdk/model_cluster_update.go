@@ -42,7 +42,7 @@ type ClusterUpdate struct {
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
 	// Cluster integrations
 	Integrations         []UpdateClusterRequestClusterIntegrationsInner `json:"integrations,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _ClusterUpdate ClusterUpdate
@@ -468,70 +468,7 @@ func (o ClusterUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterUpdate) UnmarshalJSON(data []byte) (err error) {
-	varClusterUpdate := _ClusterUpdate{}
-
-	err = json.Unmarshal(data, &varClusterUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterUpdate(varClusterUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "useAgent")
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "refresh")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "autoRecoverPowerState")
-		delete(additionalProperties, "integrations")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterUpdate struct {
-	value *ClusterUpdate
-	isSet bool
-}
-
-func (v NullableClusterUpdate) Get() *ClusterUpdate {
-	return v.value
-}
-
-func (v *NullableClusterUpdate) Set(val *ClusterUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterUpdate(val *ClusterUpdate) *NullableClusterUpdate {
-	return &NullableClusterUpdate{value: val, isSet: true}
-}
-
-func (v NullableClusterUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

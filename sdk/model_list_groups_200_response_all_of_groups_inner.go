@@ -35,7 +35,7 @@ type ListGroups200ResponseAllOfGroupsInner struct {
 	Zones                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zones,omitempty"`
 	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
 	ServerCount          *int64                                              `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ListGroups200ResponseAllOfGroupsInner ListGroups200ResponseAllOfGroupsInner
@@ -587,73 +587,7 @@ func (o ListGroups200ResponseAllOfGroupsInner) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *ListGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
-	varListGroups200ResponseAllOfGroupsInner := _ListGroups200ResponseAllOfGroupsInner{}
-
-	err = json.Unmarshal(data, &varListGroups200ResponseAllOfGroupsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGroups200ResponseAllOfGroupsInner(varListGroups200ResponseAllOfGroupsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "serverCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGroups200ResponseAllOfGroupsInner struct {
-	value *ListGroups200ResponseAllOfGroupsInner
-	isSet bool
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInner) Get() *ListGroups200ResponseAllOfGroupsInner {
-	return v.value
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInner) Set(val *ListGroups200ResponseAllOfGroupsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGroups200ResponseAllOfGroupsInner(val *ListGroups200ResponseAllOfGroupsInner) *NullableListGroups200ResponseAllOfGroupsInner {
-	return &NullableListGroups200ResponseAllOfGroupsInner{value: val, isSet: true}
-}
-
-func (v NullableListGroups200ResponseAllOfGroupsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGroups200ResponseAllOfGroupsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

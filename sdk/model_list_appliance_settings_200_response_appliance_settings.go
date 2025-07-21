@@ -52,7 +52,7 @@ type ListApplianceSettings200ResponseApplianceSettings struct {
 	CurrencyKey              NullableString                                      `json:"currencyKey,omitempty"`
 	EnabledZoneTypes         []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"enabledZoneTypes,omitempty"`
 	StatsRetainmentPeriod    *int64                                              `json:"statsRetainmentPeriod,omitempty"`
-	AdditionalProperties     map[string]interface{}
+	AdditionalProperties     map[string]interface{}                              `json:",remain"`
 }
 
 type _ListApplianceSettings200ResponseApplianceSettings ListApplianceSettings200ResponseApplianceSettings
@@ -1433,91 +1433,7 @@ func (o ListApplianceSettings200ResponseApplianceSettings) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *ListApplianceSettings200ResponseApplianceSettings) UnmarshalJSON(data []byte) (err error) {
-	varListApplianceSettings200ResponseApplianceSettings := _ListApplianceSettings200ResponseApplianceSettings{}
-
-	err = json.Unmarshal(data, &varListApplianceSettings200ResponseApplianceSettings)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListApplianceSettings200ResponseApplianceSettings(varListApplianceSettings200ResponseApplianceSettings)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "applianceId")
-		delete(additionalProperties, "applianceUrl")
-		delete(additionalProperties, "internalApplianceUrl")
-		delete(additionalProperties, "corsAllowed")
-		delete(additionalProperties, "registrationEnabled")
-		delete(additionalProperties, "defaultRoleId")
-		delete(additionalProperties, "defaultUserRoleId")
-		delete(additionalProperties, "dockerPrivilegedMode")
-		delete(additionalProperties, "expirePwdDays")
-		delete(additionalProperties, "disableAfterAttempts")
-		delete(additionalProperties, "disableAfterDaysInactive")
-		delete(additionalProperties, "warnUserDaysBefore")
-		delete(additionalProperties, "smtpMailFrom")
-		delete(additionalProperties, "smtpServer")
-		delete(additionalProperties, "smtpPort")
-		delete(additionalProperties, "smtpSSL")
-		delete(additionalProperties, "smtpTLS")
-		delete(additionalProperties, "smtpUser")
-		delete(additionalProperties, "smtpPassword")
-		delete(additionalProperties, "smtpPasswordHash")
-		delete(additionalProperties, "proxyHost")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyUser")
-		delete(additionalProperties, "proxyPassword")
-		delete(additionalProperties, "proxyPasswordHash")
-		delete(additionalProperties, "proxyDomain")
-		delete(additionalProperties, "proxyWorkstation")
-		delete(additionalProperties, "currencyProvider")
-		delete(additionalProperties, "currencyKey")
-		delete(additionalProperties, "enabledZoneTypes")
-		delete(additionalProperties, "statsRetainmentPeriod")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListApplianceSettings200ResponseApplianceSettings struct {
-	value *ListApplianceSettings200ResponseApplianceSettings
-	isSet bool
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettings) Get() *ListApplianceSettings200ResponseApplianceSettings {
-	return v.value
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettings) Set(val *ListApplianceSettings200ResponseApplianceSettings) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettings) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettings) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListApplianceSettings200ResponseApplianceSettings(val *ListApplianceSettings200ResponseApplianceSettings) *NullableListApplianceSettings200ResponseApplianceSettings {
-	return &NullableListApplianceSettings200ResponseApplianceSettings{value: val, isSet: true}
-}
-
-func (v NullableListApplianceSettings200ResponseApplianceSettings) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListApplianceSettings200ResponseApplianceSettings) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

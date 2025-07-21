@@ -24,7 +24,7 @@ type ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission struct
 	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
 	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
 type _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission
@@ -206,63 +206,7 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) To
 	return toSerialize, nil
 }
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
-	varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission := _ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission{}
-
-	err = json.Unmarshal(data, &varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission(varListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "all")
-		delete(additionalProperties, "sites")
-		delete(additionalProperties, "allPlans")
-		delete(additionalProperties, "plans")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission struct {
-	value *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission
-	isSet bool
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Get() *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission {
-	return v.value
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Set(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission {
-	return &NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission{value: val, isSet: true}
-}
-
-func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

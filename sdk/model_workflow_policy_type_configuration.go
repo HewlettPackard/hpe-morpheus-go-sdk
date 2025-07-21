@@ -20,8 +20,8 @@ var _ MappedNullable = &WorkflowPolicyTypeConfiguration{}
 
 // WorkflowPolicyTypeConfiguration Configuration settings for the following policy types: - Workflow
 type WorkflowPolicyTypeConfiguration struct {
-	WorkflowId           *string `json:"workflowId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	WorkflowId           *string                `json:"workflowId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _WorkflowPolicyTypeConfiguration WorkflowPolicyTypeConfiguration
@@ -96,60 +96,7 @@ func (o WorkflowPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *WorkflowPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varWorkflowPolicyTypeConfiguration := _WorkflowPolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varWorkflowPolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WorkflowPolicyTypeConfiguration(varWorkflowPolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "workflowId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableWorkflowPolicyTypeConfiguration struct {
-	value *WorkflowPolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullableWorkflowPolicyTypeConfiguration) Get() *WorkflowPolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullableWorkflowPolicyTypeConfiguration) Set(val *WorkflowPolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableWorkflowPolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableWorkflowPolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableWorkflowPolicyTypeConfiguration(val *WorkflowPolicyTypeConfiguration) *NullableWorkflowPolicyTypeConfiguration {
-	return &NullableWorkflowPolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullableWorkflowPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableWorkflowPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

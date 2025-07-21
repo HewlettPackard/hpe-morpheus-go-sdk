@@ -23,7 +23,7 @@ type GetNetworkPools200Response struct {
 	NetworkPools         interface{}                       `json:"networkPools,omitempty"`
 	NetworkPoolCount     *int64                            `json:"networkPoolCount,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _GetNetworkPools200Response GetNetworkPools200Response
@@ -169,62 +169,7 @@ func (o GetNetworkPools200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetNetworkPools200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkPools200Response := _GetNetworkPools200Response{}
-
-	err = json.Unmarshal(data, &varGetNetworkPools200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkPools200Response(varGetNetworkPools200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "networkPools")
-		delete(additionalProperties, "networkPoolCount")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetNetworkPools200Response struct {
-	value *GetNetworkPools200Response
-	isSet bool
-}
-
-func (v NullableGetNetworkPools200Response) Get() *GetNetworkPools200Response {
-	return v.value
-}
-
-func (v *NullableGetNetworkPools200Response) Set(val *GetNetworkPools200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkPools200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkPools200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkPools200Response(val *GetNetworkPools200Response) *NullableGetNetworkPools200Response {
-	return &NullableGetNetworkPools200Response{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkPools200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkPools200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

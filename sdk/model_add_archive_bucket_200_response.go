@@ -22,7 +22,7 @@ var _ MappedNullable = &AddArchiveBucket200Response{}
 type AddArchiveBucket200Response struct {
 	ArchiveBucket        *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
 	Success              *bool                                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _AddArchiveBucket200Response AddArchiveBucket200Response
@@ -132,61 +132,7 @@ func (o AddArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddArchiveBucket200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddArchiveBucket200Response := _AddArchiveBucket200Response{}
-
-	err = json.Unmarshal(data, &varAddArchiveBucket200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddArchiveBucket200Response(varAddArchiveBucket200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "archiveBucket")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddArchiveBucket200Response struct {
-	value *AddArchiveBucket200Response
-	isSet bool
-}
-
-func (v NullableAddArchiveBucket200Response) Get() *AddArchiveBucket200Response {
-	return v.value
-}
-
-func (v *NullableAddArchiveBucket200Response) Set(val *AddArchiveBucket200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddArchiveBucket200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddArchiveBucket200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddArchiveBucket200Response(val *AddArchiveBucket200Response) *NullableAddArchiveBucket200Response {
-	return &NullableAddArchiveBucket200Response{value: val, isSet: true}
-}
-
-func (v NullableAddArchiveBucket200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddArchiveBucket200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -40,7 +40,7 @@ type ListCloudResourcePools200ResponseAllOfResourcePoolsInner struct {
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
 	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListCloudResourcePools200ResponseAllOfResourcePoolsInner ListCloudResourcePools200ResponseAllOfResourcePoolsInner
@@ -824,79 +824,7 @@ func (o ListCloudResourcePools200ResponseAllOfResourcePoolsInner) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnmarshalJSON(data []byte) (err error) {
-	varListCloudResourcePools200ResponseAllOfResourcePoolsInner := _ListCloudResourcePools200ResponseAllOfResourcePoolsInner{}
-
-	err = json.Unmarshal(data, &varListCloudResourcePools200ResponseAllOfResourcePoolsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudResourcePools200ResponseAllOfResourcePoolsInner(varListCloudResourcePools200ResponseAllOfResourcePoolsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "iacId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultPool")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "inventory")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner struct {
-	value *ListCloudResourcePools200ResponseAllOfResourcePoolsInner
-	isSet bool
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) Get() *ListCloudResourcePools200ResponseAllOfResourcePoolsInner {
-	return v.value
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) Set(val *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudResourcePools200ResponseAllOfResourcePoolsInner(val *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner {
-	return &NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner{value: val, isSet: true}
-}
-
-func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

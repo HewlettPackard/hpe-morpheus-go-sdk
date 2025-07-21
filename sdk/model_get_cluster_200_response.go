@@ -21,7 +21,7 @@ var _ MappedNullable = &GetCluster200Response{}
 // GetCluster200Response struct for GetCluster200Response
 type GetCluster200Response struct {
 	Cluster              *AddCluster200ResponseAllOfCluster `json:"cluster,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _GetCluster200Response GetCluster200Response
@@ -96,60 +96,7 @@ func (o GetCluster200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetCluster200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCluster200Response := _GetCluster200Response{}
-
-	err = json.Unmarshal(data, &varGetCluster200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCluster200Response(varGetCluster200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cluster")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetCluster200Response struct {
-	value *GetCluster200Response
-	isSet bool
-}
-
-func (v NullableGetCluster200Response) Get() *GetCluster200Response {
-	return v.value
-}
-
-func (v *NullableGetCluster200Response) Set(val *GetCluster200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCluster200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCluster200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCluster200Response(val *GetCluster200Response) *NullableGetCluster200Response {
-	return &NullableGetCluster200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCluster200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCluster200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

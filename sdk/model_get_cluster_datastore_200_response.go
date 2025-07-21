@@ -21,7 +21,7 @@ var _ MappedNullable = &GetClusterDatastore200Response{}
 // GetClusterDatastore200Response struct for GetClusterDatastore200Response
 type GetClusterDatastore200Response struct {
 	Datastore            *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetClusterDatastore200Response GetClusterDatastore200Response
@@ -96,60 +96,7 @@ func (o GetClusterDatastore200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetClusterDatastore200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterDatastore200Response := _GetClusterDatastore200Response{}
-
-	err = json.Unmarshal(data, &varGetClusterDatastore200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterDatastore200Response(varGetClusterDatastore200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "datastore")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetClusterDatastore200Response struct {
-	value *GetClusterDatastore200Response
-	isSet bool
-}
-
-func (v NullableGetClusterDatastore200Response) Get() *GetClusterDatastore200Response {
-	return v.value
-}
-
-func (v *NullableGetClusterDatastore200Response) Set(val *GetClusterDatastore200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterDatastore200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterDatastore200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterDatastore200Response(val *GetClusterDatastore200Response) *NullableGetClusterDatastore200Response {
-	return &NullableGetClusterDatastore200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClusterDatastore200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterDatastore200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

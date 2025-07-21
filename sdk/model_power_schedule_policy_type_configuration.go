@@ -20,10 +20,10 @@ var _ MappedNullable = &PowerSchedulePolicyTypeConfiguration{}
 
 // PowerSchedulePolicyTypeConfiguration Configuration settings for the following policy types: - Power Schedule
 type PowerSchedulePolicyTypeConfiguration struct {
-	PowerScheduleType      *string `json:"powerScheduleType,omitempty"`
-	PowerSchedule          *string `json:"powerSchedule,omitempty"`
-	PowerScheduleHideFixed *bool   `json:"powerScheduleHideFixed,omitempty"`
-	AdditionalProperties   map[string]interface{}
+	PowerScheduleType      *string                `json:"powerScheduleType,omitempty"`
+	PowerSchedule          *string                `json:"powerSchedule,omitempty"`
+	PowerScheduleHideFixed *bool                  `json:"powerScheduleHideFixed,omitempty"`
+	AdditionalProperties   map[string]interface{} `json:",remain"`
 }
 
 type _PowerSchedulePolicyTypeConfiguration PowerSchedulePolicyTypeConfiguration
@@ -168,62 +168,7 @@ func (o PowerSchedulePolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *PowerSchedulePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varPowerSchedulePolicyTypeConfiguration := _PowerSchedulePolicyTypeConfiguration{}
-
-	err = json.Unmarshal(data, &varPowerSchedulePolicyTypeConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = PowerSchedulePolicyTypeConfiguration(varPowerSchedulePolicyTypeConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "powerScheduleType")
-		delete(additionalProperties, "powerSchedule")
-		delete(additionalProperties, "powerScheduleHideFixed")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullablePowerSchedulePolicyTypeConfiguration struct {
-	value *PowerSchedulePolicyTypeConfiguration
-	isSet bool
-}
-
-func (v NullablePowerSchedulePolicyTypeConfiguration) Get() *PowerSchedulePolicyTypeConfiguration {
-	return v.value
-}
-
-func (v *NullablePowerSchedulePolicyTypeConfiguration) Set(val *PowerSchedulePolicyTypeConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePowerSchedulePolicyTypeConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePowerSchedulePolicyTypeConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePowerSchedulePolicyTypeConfiguration(val *PowerSchedulePolicyTypeConfiguration) *NullablePowerSchedulePolicyTypeConfiguration {
-	return &NullablePowerSchedulePolicyTypeConfiguration{value: val, isSet: true}
-}
-
-func (v NullablePowerSchedulePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePowerSchedulePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

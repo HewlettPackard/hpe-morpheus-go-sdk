@@ -52,7 +52,7 @@ type GetServicePlans200ResponseServicePlan struct {
 	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
 	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
 	Permissions          *GetServicePlans200ResponseServicePlanPermissions                                  `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
 }
 
 type _GetServicePlans200ResponseServicePlan GetServicePlans200ResponseServicePlan
@@ -1288,90 +1288,7 @@ func (o GetServicePlans200ResponseServicePlan) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *GetServicePlans200ResponseServicePlan) UnmarshalJSON(data []byte) (err error) {
-	varGetServicePlans200ResponseServicePlan := _GetServicePlans200ResponseServicePlan{}
-
-	err = json.Unmarshal(data, &varGetServicePlans200ResponseServicePlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetServicePlans200ResponseServicePlan(varGetServicePlans200ResponseServicePlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "sortOrder")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "memoryOptionSource")
-		delete(additionalProperties, "cpuOptionSource")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "regionCode")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "editable")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "priceSets")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "zones")
-		delete(additionalProperties, "permissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetServicePlans200ResponseServicePlan struct {
-	value *GetServicePlans200ResponseServicePlan
-	isSet bool
-}
-
-func (v NullableGetServicePlans200ResponseServicePlan) Get() *GetServicePlans200ResponseServicePlan {
-	return v.value
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlan) Set(val *GetServicePlans200ResponseServicePlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetServicePlans200ResponseServicePlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetServicePlans200ResponseServicePlan(val *GetServicePlans200ResponseServicePlan) *NullableGetServicePlans200ResponseServicePlan {
-	return &NullableGetServicePlans200ResponseServicePlan{value: val, isSet: true}
-}
-
-func (v NullableGetServicePlans200ResponseServicePlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetServicePlans200ResponseServicePlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

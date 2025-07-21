@@ -56,7 +56,7 @@ type UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner st
 	Description          *string                                       `json:"description,omitempty"`
 	ExternalType         NullableString                                `json:"externalType,omitempty"`
 	ExternalId           *string                                       `json:"externalId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner
@@ -1534,95 +1534,7 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner
 	return toSerialize, nil
 }
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner := _UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner{}
-
-	err = json.Unmarshal(data, &varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner(varUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "addresses")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "interfaceId")
-		delete(additionalProperties, "displayOrder")
-		delete(additionalProperties, "networkPool")
-		delete(additionalProperties, "dhcp")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "replaceHostRecord")
-		delete(additionalProperties, "ipMode")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "ipSubnet")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "publicIpAddress")
-		delete(additionalProperties, "fabricId")
-		delete(additionalProperties, "ipv6Subnet")
-		delete(additionalProperties, "macAddress")
-		delete(additionalProperties, "publicIpv6Address")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "networkGroup")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "primaryInterface")
-		delete(additionalProperties, "networkPoolIPv6")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "networkPosition")
-		delete(additionalProperties, "poolAssigned")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalType")
-		delete(additionalProperties, "externalId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner struct {
-	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner
-	isSet bool
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner {
-	return v.value
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner {
-	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

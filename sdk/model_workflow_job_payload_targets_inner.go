@@ -20,8 +20,8 @@ var _ MappedNullable = &WorkflowJobPayloadTargetsInner{}
 
 // WorkflowJobPayloadTargetsInner struct for WorkflowJobPayloadTargetsInner
 type WorkflowJobPayloadTargetsInner struct {
-	RefId                *int64 `json:"refId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	RefId                *int64                 `json:"refId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _WorkflowJobPayloadTargetsInner WorkflowJobPayloadTargetsInner
@@ -96,60 +96,7 @@ func (o WorkflowJobPayloadTargetsInner) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *WorkflowJobPayloadTargetsInner) UnmarshalJSON(data []byte) (err error) {
-	varWorkflowJobPayloadTargetsInner := _WorkflowJobPayloadTargetsInner{}
-
-	err = json.Unmarshal(data, &varWorkflowJobPayloadTargetsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = WorkflowJobPayloadTargetsInner(varWorkflowJobPayloadTargetsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "refId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableWorkflowJobPayloadTargetsInner struct {
-	value *WorkflowJobPayloadTargetsInner
-	isSet bool
-}
-
-func (v NullableWorkflowJobPayloadTargetsInner) Get() *WorkflowJobPayloadTargetsInner {
-	return v.value
-}
-
-func (v *NullableWorkflowJobPayloadTargetsInner) Set(val *WorkflowJobPayloadTargetsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableWorkflowJobPayloadTargetsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableWorkflowJobPayloadTargetsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableWorkflowJobPayloadTargetsInner(val *WorkflowJobPayloadTargetsInner) *NullableWorkflowJobPayloadTargetsInner {
-	return &NullableWorkflowJobPayloadTargetsInner{value: val, isSet: true}
-}
-
-func (v NullableWorkflowJobPayloadTargetsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableWorkflowJobPayloadTargetsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

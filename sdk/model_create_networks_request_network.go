@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the CreateNetworksRequestNetwork type satisfies the MappedNullable interface at compile time
@@ -80,7 +79,7 @@ type CreateNetworksRequestNetwork struct {
 	// Array of tenant account ids that are allowed access
 	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount    `json:"tenants,omitempty"`
 	ResourcePermissions  *CreateNetworksRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _CreateNetworksRequestNetwork CreateNetworksRequestNetwork
@@ -1411,117 +1410,7 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CreateNetworksRequestNetwork) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"site",
-		"zone",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varCreateNetworksRequestNetwork := _CreateNetworksRequestNetwork{}
-
-	err = json.Unmarshal(data, &varCreateNetworksRequestNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworksRequestNetwork(varCreateNetworksRequestNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "ipv4Enabled")
-		delete(additionalProperties, "ipv6Enabled")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "gatewayIPv6")
-		delete(additionalProperties, "netmaskIPv6")
-		delete(additionalProperties, "dnsPrimaryIPv6")
-		delete(additionalProperties, "dnsSecondaryIPv6")
-		delete(additionalProperties, "cidrIPv6")
-		delete(additionalProperties, "vlanId")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "poolIPv6")
-		delete(additionalProperties, "allowStaticOverride")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "dhcpServerIPv6")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "applianceUrlProxyBypass")
-		delete(additionalProperties, "noProxy")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateNetworksRequestNetwork struct {
-	value *CreateNetworksRequestNetwork
-	isSet bool
-}
-
-func (v NullableCreateNetworksRequestNetwork) Get() *CreateNetworksRequestNetwork {
-	return v.value
-}
-
-func (v *NullableCreateNetworksRequestNetwork) Set(val *CreateNetworksRequestNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworksRequestNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworksRequestNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworksRequestNetwork(val *CreateNetworksRequestNetwork) *NullableCreateNetworksRequestNetwork {
-	return &NullableCreateNetworksRequestNetwork{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworksRequestNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworksRequestNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

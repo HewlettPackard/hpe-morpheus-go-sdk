@@ -21,7 +21,7 @@ var _ MappedNullable = &GetLoadBalancerType200Response{}
 // GetLoadBalancerType200Response struct for GetLoadBalancerType200Response
 type GetLoadBalancerType200Response struct {
 	LoadBalancerType     *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner `json:"loadBalancerType,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _GetLoadBalancerType200Response GetLoadBalancerType200Response
@@ -96,60 +96,7 @@ func (o GetLoadBalancerType200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetLoadBalancerType200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetLoadBalancerType200Response := _GetLoadBalancerType200Response{}
-
-	err = json.Unmarshal(data, &varGetLoadBalancerType200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetLoadBalancerType200Response(varGetLoadBalancerType200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "loadBalancerType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetLoadBalancerType200Response struct {
-	value *GetLoadBalancerType200Response
-	isSet bool
-}
-
-func (v NullableGetLoadBalancerType200Response) Get() *GetLoadBalancerType200Response {
-	return v.value
-}
-
-func (v *NullableGetLoadBalancerType200Response) Set(val *GetLoadBalancerType200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetLoadBalancerType200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetLoadBalancerType200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetLoadBalancerType200Response(val *GetLoadBalancerType200Response) *NullableGetLoadBalancerType200Response {
-	return &NullableGetLoadBalancerType200Response{value: val, isSet: true}
-}
-
-func (v NullableGetLoadBalancerType200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetLoadBalancerType200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

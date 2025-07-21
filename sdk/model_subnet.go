@@ -57,7 +57,7 @@ type Subnet struct {
 	SecurityGroups       []map[string]interface{}                                         `json:"securityGroups,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"tenants,omitempty"`
 	ResourcePermission   *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _Subnet Subnet
@@ -1558,96 +1558,7 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Subnet) UnmarshalJSON(data []byte) (err error) {
-	varSubnet := _Subnet{}
-
-	err = json.Unmarshal(data, &varSubnet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Subnet(varSubnet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "addressPrefix")
-		delete(additionalProperties, "cidr")
-		delete(additionalProperties, "gateway")
-		delete(additionalProperties, "netmask")
-		delete(additionalProperties, "subnetAddress")
-		delete(additionalProperties, "tftpServer")
-		delete(additionalProperties, "bootFile")
-		delete(additionalProperties, "pool")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "hasFloatingIps")
-		delete(additionalProperties, "dhcpIp")
-		delete(additionalProperties, "dnsPrimary")
-		delete(additionalProperties, "dnsSecondary")
-		delete(additionalProperties, "dhcpStart")
-		delete(additionalProperties, "dhcpEnd")
-		delete(additionalProperties, "dhcpRange")
-		delete(additionalProperties, "networkProxy")
-		delete(additionalProperties, "networkDomain")
-		delete(additionalProperties, "searchDomains")
-		delete(additionalProperties, "defaultNetwork")
-		delete(additionalProperties, "assignPublicIp")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSubnet struct {
-	value *Subnet
-	isSet bool
-}
-
-func (v NullableSubnet) Get() *Subnet {
-	return v.value
-}
-
-func (v *NullableSubnet) Set(val *Subnet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSubnet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSubnet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSubnet(val *Subnet) *NullableSubnet {
-	return &NullableSubnet{value: val, isSet: true}
-}
-
-func (v NullableSubnet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSubnet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

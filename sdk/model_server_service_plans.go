@@ -55,7 +55,7 @@ type ServerServicePlans struct {
 	CustomCores           *bool                                                           `json:"customCores,omitempty"`
 	MaxDisks              NullableString                                                  `json:"maxDisks,omitempty"`
 	MemorySizeType        *string                                                         `json:"memorySizeType,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	AdditionalProperties  map[string]interface{}                                          `json:",remain"`
 }
 
 type _ServerServicePlans ServerServicePlans
@@ -1401,94 +1401,7 @@ func (o ServerServicePlans) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ServerServicePlans) UnmarshalJSON(data []byte) (err error) {
-	varServerServicePlans := _ServerServicePlans{}
-
-	err = json.Unmarshal(data, &varServerServicePlans)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ServerServicePlans(varServerServicePlans)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "value")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxDataStorage")
-		delete(additionalProperties, "customCpu")
-		delete(additionalProperties, "customMaxMemory")
-		delete(additionalProperties, "customMaxStorage")
-		delete(additionalProperties, "customMaxDataStorage")
-		delete(additionalProperties, "customCoresPerSocket")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "storageTypes")
-		delete(additionalProperties, "rootStorageTypes")
-		delete(additionalProperties, "addVolumes")
-		delete(additionalProperties, "customizeVolume")
-		delete(additionalProperties, "rootDiskCustomizable")
-		delete(additionalProperties, "hostDiskMode")
-		delete(additionalProperties, "hasDatastore")
-		delete(additionalProperties, "lvmSupported")
-		delete(additionalProperties, "minDisk")
-		delete(additionalProperties, "maxDisk")
-		delete(additionalProperties, "datastores")
-		delete(additionalProperties, "supportsAutoDatastore")
-		delete(additionalProperties, "autoOptions")
-		delete(additionalProperties, "cpuOptions")
-		delete(additionalProperties, "memoryOptions")
-		delete(additionalProperties, "rootCustomSizeOptions")
-		delete(additionalProperties, "customSizeOptions")
-		delete(additionalProperties, "customCores")
-		delete(additionalProperties, "maxDisks")
-		delete(additionalProperties, "memorySizeType")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableServerServicePlans struct {
-	value *ServerServicePlans
-	isSet bool
-}
-
-func (v NullableServerServicePlans) Get() *ServerServicePlans {
-	return v.value
-}
-
-func (v *NullableServerServicePlans) Set(val *ServerServicePlans) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableServerServicePlans) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableServerServicePlans) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableServerServicePlans(val *ServerServicePlans) *NullableServerServicePlans {
-	return &NullableServerServicePlans{value: val, isSet: true}
-}
-
-func (v NullableServerServicePlans) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableServerServicePlans) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

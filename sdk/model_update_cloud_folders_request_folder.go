@@ -28,7 +28,7 @@ type UpdateCloudFoldersRequestFolder struct {
 	Visibility           *string                                                   `json:"visibility,omitempty"`
 	TenantPermissions    *UpdateCloudFoldersRequestFolderTenantPermissions         `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _UpdateCloudFoldersRequestFolder UpdateCloudFoldersRequestFolder
@@ -290,65 +290,7 @@ func (o UpdateCloudFoldersRequestFolder) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 func (o *UpdateCloudFoldersRequestFolder) UnmarshalJSON(data []byte) (err error) {
-	varUpdateCloudFoldersRequestFolder := _UpdateCloudFoldersRequestFolder{}
-
-	err = json.Unmarshal(data, &varUpdateCloudFoldersRequestFolder)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateCloudFoldersRequestFolder(varUpdateCloudFoldersRequestFolder)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "defaultFolder")
-		delete(additionalProperties, "defaultImage")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "tenantPermissions")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateCloudFoldersRequestFolder struct {
-	value *UpdateCloudFoldersRequestFolder
-	isSet bool
-}
-
-func (v NullableUpdateCloudFoldersRequestFolder) Get() *UpdateCloudFoldersRequestFolder {
-	return v.value
-}
-
-func (v *NullableUpdateCloudFoldersRequestFolder) Set(val *UpdateCloudFoldersRequestFolder) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateCloudFoldersRequestFolder) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateCloudFoldersRequestFolder) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateCloudFoldersRequestFolder(val *UpdateCloudFoldersRequestFolder) *NullableUpdateCloudFoldersRequestFolder {
-	return &NullableUpdateCloudFoldersRequestFolder{value: val, isSet: true}
-}
-
-func (v NullableUpdateCloudFoldersRequestFolder) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateCloudFoldersRequestFolder) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

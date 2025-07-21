@@ -23,8 +23,8 @@ type InstancesCloneImage struct {
 	// Image Template Name
 	TemplateName *string `json:"templateName,omitempty"`
 	// Zone Folder externalId. This is required for VMware
-	ZoneFolder           *string `json:"zoneFolder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ZoneFolder           *string                `json:"zoneFolder,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _InstancesCloneImage InstancesCloneImage
@@ -138,61 +138,7 @@ func (o InstancesCloneImage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstancesCloneImage) UnmarshalJSON(data []byte) (err error) {
-	varInstancesCloneImage := _InstancesCloneImage{}
-
-	err = json.Unmarshal(data, &varInstancesCloneImage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstancesCloneImage(varInstancesCloneImage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "templateName")
-		delete(additionalProperties, "zoneFolder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstancesCloneImage struct {
-	value *InstancesCloneImage
-	isSet bool
-}
-
-func (v NullableInstancesCloneImage) Get() *InstancesCloneImage {
-	return v.value
-}
-
-func (v *NullableInstancesCloneImage) Set(val *InstancesCloneImage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstancesCloneImage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstancesCloneImage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstancesCloneImage(val *InstancesCloneImage) *NullableInstancesCloneImage {
-	return &NullableInstancesCloneImage{value: val, isSet: true}
-}
-
-func (v NullableInstancesCloneImage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstancesCloneImage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

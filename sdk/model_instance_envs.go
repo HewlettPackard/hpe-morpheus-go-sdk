@@ -23,7 +23,7 @@ type InstanceEnvs struct {
 	Envs                 []GetEnvVariables200ResponseInstanceEnvsInner `json:"envs,omitempty"`
 	ReadOnlyEnvs         []GetEnvVariables200ResponseInstanceEnvsInner `json:"readOnlyEnvs,omitempty"`
 	ImportedEnvs         []GetEnvVariables200ResponseInstanceEnvsInner `json:"importedEnvs,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _InstanceEnvs InstanceEnvs
@@ -171,62 +171,7 @@ func (o InstanceEnvs) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *InstanceEnvs) UnmarshalJSON(data []byte) (err error) {
-	varInstanceEnvs := _InstanceEnvs{}
-
-	err = json.Unmarshal(data, &varInstanceEnvs)
-
-	if err != nil {
-		return err
-	}
-
-	*o = InstanceEnvs(varInstanceEnvs)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "envs")
-		delete(additionalProperties, "readOnlyEnvs")
-		delete(additionalProperties, "importedEnvs")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableInstanceEnvs struct {
-	value *InstanceEnvs
-	isSet bool
-}
-
-func (v NullableInstanceEnvs) Get() *InstanceEnvs {
-	return v.value
-}
-
-func (v *NullableInstanceEnvs) Set(val *InstanceEnvs) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableInstanceEnvs) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableInstanceEnvs) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableInstanceEnvs(val *InstanceEnvs) *NullableInstanceEnvs {
-	return &NullableInstanceEnvs{value: val, isSet: true}
-}
-
-func (v NullableInstanceEnvs) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableInstanceEnvs) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

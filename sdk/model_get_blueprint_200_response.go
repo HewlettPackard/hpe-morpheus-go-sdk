@@ -21,7 +21,7 @@ var _ MappedNullable = &GetBlueprint200Response{}
 // GetBlueprint200Response struct for GetBlueprint200Response
 type GetBlueprint200Response struct {
 	Blueprint            *ListBlueprints200ResponseAllOfBlueprintsInner `json:"blueprint,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _GetBlueprint200Response GetBlueprint200Response
@@ -96,60 +96,7 @@ func (o GetBlueprint200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetBlueprint200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetBlueprint200Response := _GetBlueprint200Response{}
-
-	err = json.Unmarshal(data, &varGetBlueprint200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetBlueprint200Response(varGetBlueprint200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "blueprint")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetBlueprint200Response struct {
-	value *GetBlueprint200Response
-	isSet bool
-}
-
-func (v NullableGetBlueprint200Response) Get() *GetBlueprint200Response {
-	return v.value
-}
-
-func (v *NullableGetBlueprint200Response) Set(val *GetBlueprint200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetBlueprint200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetBlueprint200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetBlueprint200Response(val *GetBlueprint200Response) *NullableGetBlueprint200Response {
-	return &NullableGetBlueprint200Response{value: val, isSet: true}
-}
-
-func (v NullableGetBlueprint200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetBlueprint200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

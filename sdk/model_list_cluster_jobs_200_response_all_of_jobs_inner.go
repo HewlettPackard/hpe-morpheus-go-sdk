@@ -42,7 +42,7 @@ type ListClusterJobs200ResponseAllOfJobsInner struct {
 	Targets              []map[string]interface{}                                    `json:"targets,omitempty"`
 	CustomConfig         map[string]interface{}                                      `json:"customConfig,omitempty"`
 	CustomOptions        map[string]interface{}                                      `json:"customOptions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListClusterJobs200ResponseAllOfJobsInner ListClusterJobs200ResponseAllOfJobsInner
@@ -918,80 +918,7 @@ func (o ListClusterJobs200ResponseAllOfJobsInner) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 func (o *ListClusterJobs200ResponseAllOfJobsInner) UnmarshalJSON(data []byte) (err error) {
-	varListClusterJobs200ResponseAllOfJobsInner := _ListClusterJobs200ResponseAllOfJobsInner{}
-
-	err = json.Unmarshal(data, &varListClusterJobs200ResponseAllOfJobsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListClusterJobs200ResponseAllOfJobsInner(varListClusterJobs200ResponseAllOfJobsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "jobSummary")
-		delete(additionalProperties, "scheduleMode")
-		delete(additionalProperties, "dateTime")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "namespace")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastRun")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "targetType")
-		delete(additionalProperties, "targets")
-		delete(additionalProperties, "customConfig")
-		delete(additionalProperties, "customOptions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListClusterJobs200ResponseAllOfJobsInner struct {
-	value *ListClusterJobs200ResponseAllOfJobsInner
-	isSet bool
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) Get() *ListClusterJobs200ResponseAllOfJobsInner {
-	return v.value
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) Set(val *ListClusterJobs200ResponseAllOfJobsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListClusterJobs200ResponseAllOfJobsInner(val *ListClusterJobs200ResponseAllOfJobsInner) *NullableListClusterJobs200ResponseAllOfJobsInner {
-	return &NullableListClusterJobs200ResponseAllOfJobsInner{value: val, isSet: true}
-}
-
-func (v NullableListClusterJobs200ResponseAllOfJobsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListClusterJobs200ResponseAllOfJobsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -26,7 +26,7 @@ type AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork struct {
 	DhcpServer           *bool                                                               `json:"dhcpServer,omitempty"`
 	Name                 *string                                                             `json:"name,omitempty"`
 	Pool                 *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool `json:"pool,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork
@@ -276,65 +276,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) ToMap() 
 	return toSerialize, nil
 }
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
-	varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork := _AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork{}
-
-	err = json.Unmarshal(data, &varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork(varAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "group")
-		delete(additionalProperties, "subnet")
-		delete(additionalProperties, "dhcpServer")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "pool")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork struct {
-	value *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork
-	isSet bool
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) Get() *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork {
-	return v.value
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) Set(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork {
-	return &NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork{value: val, isSet: true}
-}
-
-func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCloudsRequestZone type satisfies the MappedNullable interface at compile time
@@ -63,7 +62,7 @@ type AddCloudsRequestZone struct {
 	// host firewall. `off` or `internal`. a.k.a. \"local firewall\"
 	SecurityMode         *string                         `json:"securityMode,omitempty"`
 	Credential           *AddCloudsRequestZoneCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _AddCloudsRequestZone AddCloudsRequestZone
@@ -877,104 +876,7 @@ func (o AddCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddCloudsRequestZone) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"zoneType",
-		"groupId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCloudsRequestZone := _AddCloudsRequestZone{}
-
-	err = json.Unmarshal(data, &varAddCloudsRequestZone)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCloudsRequestZone(varAddCloudsRequestZone)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "location")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "zoneType")
-		delete(additionalProperties, "groupId")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "autoRecoverPowerState")
-		delete(additionalProperties, "scalePriority")
-		delete(additionalProperties, "defaultDatastoreSyncActive")
-		delete(additionalProperties, "defaultNetworkSyncActive")
-		delete(additionalProperties, "defaultFolderSyncActive")
-		delete(additionalProperties, "defaultSecurityGroupSyncActive")
-		delete(additionalProperties, "defaultPoolSyncActive")
-		delete(additionalProperties, "defaultPlanSyncActive")
-		delete(additionalProperties, "linkedAccountId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "securityMode")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCloudsRequestZone struct {
-	value *AddCloudsRequestZone
-	isSet bool
-}
-
-func (v NullableAddCloudsRequestZone) Get() *AddCloudsRequestZone {
-	return v.value
-}
-
-func (v *NullableAddCloudsRequestZone) Set(val *AddCloudsRequestZone) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCloudsRequestZone) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCloudsRequestZone) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCloudsRequestZone(val *AddCloudsRequestZone) *NullableAddCloudsRequestZone {
-	return &NullableAddCloudsRequestZone{value: val, isSet: true}
-}
-
-func (v NullableAddCloudsRequestZone) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCloudsRequestZone) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

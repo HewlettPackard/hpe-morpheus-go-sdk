@@ -34,7 +34,7 @@ type ImageBuildExecution struct {
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	TempInstance         NullableString                                                  `json:"tempInstance,omitempty"`
 	VirtualImages        []map[string]interface{}                                        `json:"virtualImages,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ImageBuildExecution ImageBuildExecution
@@ -585,72 +585,7 @@ func (o ImageBuildExecution) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ImageBuildExecution) UnmarshalJSON(data []byte) (err error) {
-	varImageBuildExecution := _ImageBuildExecution{}
-
-	err = json.Unmarshal(data, &varImageBuildExecution)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ImageBuildExecution(varImageBuildExecution)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "imageBuild")
-		delete(additionalProperties, "buildNumber")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "tempInstance")
-		delete(additionalProperties, "virtualImages")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableImageBuildExecution struct {
-	value *ImageBuildExecution
-	isSet bool
-}
-
-func (v NullableImageBuildExecution) Get() *ImageBuildExecution {
-	return v.value
-}
-
-func (v *NullableImageBuildExecution) Set(val *ImageBuildExecution) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableImageBuildExecution) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableImageBuildExecution) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableImageBuildExecution(val *ImageBuildExecution) *NullableImageBuildExecution {
-	return &NullableImageBuildExecution{value: val, isSet: true}
-}
-
-func (v NullableImageBuildExecution) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableImageBuildExecution) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

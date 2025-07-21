@@ -73,32 +73,31 @@ type Network struct {
 	// Secondary IPv6 DNS Server
 	DnsSecondaryIPv6 NullableString `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
-	CidrIPv6                NullableString                                               `json:"cidrIPv6,omitempty"`
-	TftpServer              NullableString                                               `json:"tftpServer,omitempty"`
-	BootFile                NullableString                                               `json:"bootFile,omitempty"`
-	SwitchId                NullableString                                               `json:"switchId,omitempty"`
-	FabricId                NullableString                                               `json:"fabricId,omitempty"`
-	NetworkRole             NullableString                                               `json:"networkRole,omitempty"`
-	Status                  *string                                                      `json:"status,omitempty"`
-	AvailabilityZone        NullableString                                               `json:"availabilityZone,omitempty"`
-	Pool                    map[string]interface{}                                       `json:"pool,omitempty"`
-	PoolIPv6                map[string]interface{}                                       `json:"poolIPv6,omitempty"`
-	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy       `json:"networkProxy,omitempty"`
-	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain      `json:"networkDomain,omitempty"`
-	SearchDomains           NullableString                                               `json:"searchDomains,omitempty"`
-	PrefixLength            NullableString                                               `json:"prefixLength,omitempty"`
-	Visibility              *string                                                      `json:"visibility,omitempty"`
-	EnableAdmin             *bool                                                        `json:"enableAdmin,omitempty"`
-	Active                  *bool                                                        `json:"active,omitempty"`
-	DefaultNetwork          *bool                                                        `json:"defaultNetwork,omitempty"`
-	AssignPublicIp          *bool                                                        `json:"assignPublicIp,omitempty"`
-	NoProxy                 NullableString                                               `json:"noProxy,omitempty"`
-	ApplianceUrlProxyBypass *bool                                                        `json:"applianceUrlProxyBypass,omitempty"`
-	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"zonePool,omitempty"`
-	AllowStaticOverride     *bool                                                        `json:"allowStaticOverride,omitempty"`
-	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig             `json:"config,omitempty"`
-	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenants,omitempty"`
-	ResourcePermission      *ListNetworks200ResponseAllOfNetworksInnerResourcePermission `json:"resourcePermission,omitempty"`
+	CidrIPv6                NullableString                                          `json:"cidrIPv6,omitempty"`
+	TftpServer              NullableString                                          `json:"tftpServer,omitempty"`
+	BootFile                NullableString                                          `json:"bootFile,omitempty"`
+	SwitchId                NullableString                                          `json:"switchId,omitempty"`
+	FabricId                NullableString                                          `json:"fabricId,omitempty"`
+	NetworkRole             NullableString                                          `json:"networkRole,omitempty"`
+	Status                  *string                                                 `json:"status,omitempty"`
+	AvailabilityZone        NullableString                                          `json:"availabilityZone,omitempty"`
+	Pool                    map[string]interface{}                                  `json:"pool,omitempty"`
+	PoolIPv6                map[string]interface{}                                  `json:"poolIPv6,omitempty"`
+	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy  `json:"networkProxy,omitempty"`
+	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
+	SearchDomains           NullableString                                          `json:"searchDomains,omitempty"`
+	PrefixLength            NullableString                                          `json:"prefixLength,omitempty"`
+	Visibility              *string                                                 `json:"visibility,omitempty"`
+	EnableAdmin             *bool                                                   `json:"enableAdmin,omitempty"`
+	Active                  *bool                                                   `json:"active,omitempty"`
+	DefaultNetwork          *bool                                                   `json:"defaultNetwork,omitempty"`
+	AssignPublicIp          *bool                                                   `json:"assignPublicIp,omitempty"`
+	NoProxy                 NullableString                                          `json:"noProxy,omitempty"`
+	ApplianceUrlProxyBypass *bool                                                   `json:"applianceUrlProxyBypass,omitempty"`
+	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance      `json:"zonePool,omitempty"`
+	AllowStaticOverride     *bool                                                   `json:"allowStaticOverride,omitempty"`
+	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig        `json:"config,omitempty"`
+	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance     `json:"tenants,omitempty"`
 	AdditionalProperties    map[string]interface{}
 }
 
@@ -2797,7 +2796,6 @@ func (o *Network) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "displayName")
 		delete(additionalProperties, "labels")
-		delete(additionalProperties, "group")
 		delete(additionalProperties, "zone")
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "owner")
@@ -2857,7 +2855,6 @@ func (o *Network) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "allowStaticOverride")
 		delete(additionalProperties, "config")
 		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
 		o.AdditionalProperties = additionalProperties
 	}
 

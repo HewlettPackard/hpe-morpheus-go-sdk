@@ -23,8 +23,8 @@ type AddClusterRequestClusterServerPlan struct {
 	// The id for the memory and storage option pre-configured within Morpheus.
 	Id *int64 `json:"id,omitempty"`
 	// The code for the memory and storage option pre-configured within Morpheus.
-	Code                 *string `json:"code,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Code                 *string                `json:"code,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddClusterRequestClusterServerPlan AddClusterRequestClusterServerPlan
@@ -134,61 +134,7 @@ func (o AddClusterRequestClusterServerPlan) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *AddClusterRequestClusterServerPlan) UnmarshalJSON(data []byte) (err error) {
-	varAddClusterRequestClusterServerPlan := _AddClusterRequestClusterServerPlan{}
-
-	err = json.Unmarshal(data, &varAddClusterRequestClusterServerPlan)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddClusterRequestClusterServerPlan(varAddClusterRequestClusterServerPlan)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddClusterRequestClusterServerPlan struct {
-	value *AddClusterRequestClusterServerPlan
-	isSet bool
-}
-
-func (v NullableAddClusterRequestClusterServerPlan) Get() *AddClusterRequestClusterServerPlan {
-	return v.value
-}
-
-func (v *NullableAddClusterRequestClusterServerPlan) Set(val *AddClusterRequestClusterServerPlan) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddClusterRequestClusterServerPlan) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddClusterRequestClusterServerPlan) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddClusterRequestClusterServerPlan(val *AddClusterRequestClusterServerPlan) *NullableAddClusterRequestClusterServerPlan {
-	return &NullableAddClusterRequestClusterServerPlan{value: val, isSet: true}
-}
-
-func (v NullableAddClusterRequestClusterServerPlan) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddClusterRequestClusterServerPlan) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddInstanceRequest type satisfies the MappedNullable interface at compile time
@@ -50,8 +49,8 @@ type AddInstanceRequest struct {
 	// The Workflow ID to execute.
 	TaskSetId *int64 `json:"taskSetId,omitempty"`
 	// The Workflow Name to execute.
-	TaskSetName          *string `json:"taskSetName,omitempty"`
-	AdditionalProperties map[string]interface{}
+	TaskSetName          *string                `json:"taskSetName,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddInstanceRequest AddInstanceRequest
@@ -642,97 +641,7 @@ func (o AddInstanceRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddInstanceRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"instance",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddInstanceRequest := _AddInstanceRequest{}
-
-	err = json.Unmarshal(data, &varAddInstanceRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddInstanceRequest(varAddInstanceRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "evars")
-		delete(additionalProperties, "copies")
-		delete(additionalProperties, "layoutSize")
-		delete(additionalProperties, "servicePlanOptions")
-		delete(additionalProperties, "securityGroups")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "networkInterfaces")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "metadata")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "taskSetId")
-		delete(additionalProperties, "taskSetName")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddInstanceRequest struct {
-	value *AddInstanceRequest
-	isSet bool
-}
-
-func (v NullableAddInstanceRequest) Get() *AddInstanceRequest {
-	return v.value
-}
-
-func (v *NullableAddInstanceRequest) Set(val *AddInstanceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddInstanceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddInstanceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddInstanceRequest(val *AddInstanceRequest) *NullableAddInstanceRequest {
-	return &NullableAddInstanceRequest{value: val, isSet: true}
-}
-
-func (v NullableAddInstanceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddInstanceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

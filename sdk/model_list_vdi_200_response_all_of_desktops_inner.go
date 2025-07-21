@@ -27,7 +27,7 @@ type ListVdi200ResponseAllOfDesktopsInner struct {
 	Status               *string                                         `json:"status,omitempty"`
 	AllocationStatus     *string                                         `json:"allocationStatus,omitempty"`
 	Allocation           *ListVdi200ResponseAllOfDesktopsInnerAllocation `json:"allocation,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _ListVdi200ResponseAllOfDesktopsInner ListVdi200ResponseAllOfDesktopsInner
@@ -323,66 +323,7 @@ func (o ListVdi200ResponseAllOfDesktopsInner) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *ListVdi200ResponseAllOfDesktopsInner) UnmarshalJSON(data []byte) (err error) {
-	varListVdi200ResponseAllOfDesktopsInner := _ListVdi200ResponseAllOfDesktopsInner{}
-
-	err = json.Unmarshal(data, &varListVdi200ResponseAllOfDesktopsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListVdi200ResponseAllOfDesktopsInner(varListVdi200ResponseAllOfDesktopsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "logo")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "allocationStatus")
-		delete(additionalProperties, "allocation")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListVdi200ResponseAllOfDesktopsInner struct {
-	value *ListVdi200ResponseAllOfDesktopsInner
-	isSet bool
-}
-
-func (v NullableListVdi200ResponseAllOfDesktopsInner) Get() *ListVdi200ResponseAllOfDesktopsInner {
-	return v.value
-}
-
-func (v *NullableListVdi200ResponseAllOfDesktopsInner) Set(val *ListVdi200ResponseAllOfDesktopsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListVdi200ResponseAllOfDesktopsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListVdi200ResponseAllOfDesktopsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListVdi200ResponseAllOfDesktopsInner(val *ListVdi200ResponseAllOfDesktopsInner) *NullableListVdi200ResponseAllOfDesktopsInner {
-	return &NullableListVdi200ResponseAllOfDesktopsInner{value: val, isSet: true}
-}
-
-func (v NullableListVdi200ResponseAllOfDesktopsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListVdi200ResponseAllOfDesktopsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

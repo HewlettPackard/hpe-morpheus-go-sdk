@@ -52,7 +52,7 @@ type UpdateOptionListRequestOptionTypeList struct {
 	// Request Script. Create a js script to prepare the request. Return a data object as the body for a post, and return an array containing properties 'name' and 'value' for a get. The input data is provided as data and the result should be put on the global variable results.
 	RequestScript        NullableString                            `json:"requestScript,omitempty"`
 	Config               *AddOptionListRequestOptionTypeListConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _UpdateOptionListRequestOptionTypeList UpdateOptionListRequestOptionTypeList
@@ -785,76 +785,7 @@ func (o UpdateOptionListRequestOptionTypeList) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *UpdateOptionListRequestOptionTypeList) UnmarshalJSON(data []byte) (err error) {
-	varUpdateOptionListRequestOptionTypeList := _UpdateOptionListRequestOptionTypeList{}
-
-	err = json.Unmarshal(data, &varUpdateOptionListRequestOptionTypeList)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateOptionListRequestOptionTypeList(varUpdateOptionListRequestOptionTypeList)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "sourceUrl")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "sourceMethod")
-		delete(additionalProperties, "apiType")
-		delete(additionalProperties, "ignoreSSLErrors")
-		delete(additionalProperties, "realTime")
-		delete(additionalProperties, "credential")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "initialDataset")
-		delete(additionalProperties, "translationScript")
-		delete(additionalProperties, "requestScript")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateOptionListRequestOptionTypeList struct {
-	value *UpdateOptionListRequestOptionTypeList
-	isSet bool
-}
-
-func (v NullableUpdateOptionListRequestOptionTypeList) Get() *UpdateOptionListRequestOptionTypeList {
-	return v.value
-}
-
-func (v *NullableUpdateOptionListRequestOptionTypeList) Set(val *UpdateOptionListRequestOptionTypeList) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateOptionListRequestOptionTypeList) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateOptionListRequestOptionTypeList) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateOptionListRequestOptionTypeList(val *UpdateOptionListRequestOptionTypeList) *NullableUpdateOptionListRequestOptionTypeList {
-	return &NullableUpdateOptionListRequestOptionTypeList{value: val, isSet: true}
-}
-
-func (v NullableUpdateOptionListRequestOptionTypeList) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateOptionListRequestOptionTypeList) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

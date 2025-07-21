@@ -44,7 +44,7 @@ type IntegrationSaltMaster struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationSaltMaster IntegrationSaltMaster
@@ -911,82 +911,7 @@ func (o IntegrationSaltMaster) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationSaltMaster) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationSaltMaster := _IntegrationSaltMaster{}
-
-	err = json.Unmarshal(data, &varIntegrationSaltMaster)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationSaltMaster(varIntegrationSaltMaster)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "password")
-		delete(additionalProperties, "passwordHash")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "version")
-		delete(additionalProperties, "windowsVersion")
-		delete(additionalProperties, "repoUrl")
-		delete(additionalProperties, "serviceMode")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationSaltMaster struct {
-	value *IntegrationSaltMaster
-	isSet bool
-}
-
-func (v NullableIntegrationSaltMaster) Get() *IntegrationSaltMaster {
-	return v.value
-}
-
-func (v *NullableIntegrationSaltMaster) Set(val *IntegrationSaltMaster) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationSaltMaster) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationSaltMaster) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationSaltMaster(val *IntegrationSaltMaster) *NullableIntegrationSaltMaster {
-	return &NullableIntegrationSaltMaster{value: val, isSet: true}
-}
-
-func (v NullableIntegrationSaltMaster) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationSaltMaster) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

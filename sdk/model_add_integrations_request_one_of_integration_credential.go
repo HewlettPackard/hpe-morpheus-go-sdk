@@ -41,6 +41,22 @@ func GetAlerts200ResponseAllOfChecksInnerAccountAsAddIntegrationsRequestOneOfInt
 	}
 }
 
+func (dst *AddIntegrationsRequestOneOfIntegrationCredential) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIntegrationsRequestOneOfIntegrationCredential{}
+	}
+
+	if out, ok := data.(AddIntegrationsRequestOneOfIntegrationCredentialOneOf); ok {
+		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = &out
+	}
+
+	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIntegrationsRequestOneOfIntegrationCredential) UnmarshalJSON(data []byte) error {
 	var err error

@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the HubLoginObject type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &HubLoginObject{}
 // HubLoginObject Object for logging in to the [Morpheus Hub](https://morpheushub.com) with existing credentials. This is only required for `hubmode=login`.
 type HubLoginObject struct {
 	Hub                  SetupRequestAnyOf1OneOfHub `json:"hub"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _HubLoginObject HubLoginObject
@@ -88,81 +87,7 @@ func (o HubLoginObject) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *HubLoginObject) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"hub",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varHubLoginObject := _HubLoginObject{}
-
-	err = json.Unmarshal(data, &varHubLoginObject)
-
-	if err != nil {
-		return err
-	}
-
-	*o = HubLoginObject(varHubLoginObject)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "hub")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableHubLoginObject struct {
-	value *HubLoginObject
-	isSet bool
-}
-
-func (v NullableHubLoginObject) Get() *HubLoginObject {
-	return v.value
-}
-
-func (v *NullableHubLoginObject) Set(val *HubLoginObject) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableHubLoginObject) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableHubLoginObject) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableHubLoginObject(val *HubLoginObject) *NullableHubLoginObject {
-	return &NullableHubLoginObject{value: val, isSet: true}
-}
-
-func (v NullableHubLoginObject) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableHubLoginObject) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

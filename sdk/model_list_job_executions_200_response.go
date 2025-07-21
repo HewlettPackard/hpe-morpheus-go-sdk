@@ -22,7 +22,7 @@ var _ MappedNullable = &ListJobExecutions200Response{}
 type ListJobExecutions200Response struct {
 	JobExecutions        []ListJobExecutions200ResponseAllOfJobExecutionsInner `json:"jobExecutions,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                     `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
 type _ListJobExecutions200Response ListJobExecutions200Response
@@ -132,61 +132,7 @@ func (o ListJobExecutions200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ListJobExecutions200Response) UnmarshalJSON(data []byte) (err error) {
-	varListJobExecutions200Response := _ListJobExecutions200Response{}
-
-	err = json.Unmarshal(data, &varListJobExecutions200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListJobExecutions200Response(varListJobExecutions200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "jobExecutions")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListJobExecutions200Response struct {
-	value *ListJobExecutions200Response
-	isSet bool
-}
-
-func (v NullableListJobExecutions200Response) Get() *ListJobExecutions200Response {
-	return v.value
-}
-
-func (v *NullableListJobExecutions200Response) Set(val *ListJobExecutions200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListJobExecutions200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListJobExecutions200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListJobExecutions200Response(val *ListJobExecutions200Response) *NullableListJobExecutions200Response {
-	return &NullableListJobExecutions200Response{value: val, isSet: true}
-}
-
-func (v NullableListJobExecutions200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListJobExecutions200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

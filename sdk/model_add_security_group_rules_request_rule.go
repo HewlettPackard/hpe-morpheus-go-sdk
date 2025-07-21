@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddSecurityGroupRulesRequestRule type satisfies the MappedNullable interface at compile time
@@ -48,8 +47,8 @@ type AddSecurityGroupRulesRequestRule struct {
 	// Either `accept` or `deny`.
 	Policy *string `json:"policy,omitempty"`
 	// The id of an Instance Type. If specified, the source CIDR will have access to all ports exposed by the particular instance in the cloud, app, or instance. Required if customRule is false, otherwise ignored.
-	InstanceTypeId       *int64 `json:"instanceTypeId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	InstanceTypeId       *int64                 `json:"instanceTypeId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddSecurityGroupRulesRequestRule AddSecurityGroupRulesRequestRule
@@ -645,97 +644,7 @@ func (o AddSecurityGroupRulesRequestRule) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 func (o *AddSecurityGroupRulesRequestRule) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"protocol",
-		"ruleType",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddSecurityGroupRulesRequestRule := _AddSecurityGroupRulesRequestRule{}
-
-	err = json.Unmarshal(data, &varAddSecurityGroupRulesRequestRule)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddSecurityGroupRulesRequestRule(varAddSecurityGroupRulesRequestRule)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "direction")
-		delete(additionalProperties, "sourceType")
-		delete(additionalProperties, "source")
-		delete(additionalProperties, "sourceGroup")
-		delete(additionalProperties, "sourceTier")
-		delete(additionalProperties, "portRange")
-		delete(additionalProperties, "destinationPortRange")
-		delete(additionalProperties, "protocol")
-		delete(additionalProperties, "destinationType")
-		delete(additionalProperties, "destination")
-		delete(additionalProperties, "destinationGroup")
-		delete(additionalProperties, "destinationTier")
-		delete(additionalProperties, "ruleType")
-		delete(additionalProperties, "policy")
-		delete(additionalProperties, "instanceTypeId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddSecurityGroupRulesRequestRule struct {
-	value *AddSecurityGroupRulesRequestRule
-	isSet bool
-}
-
-func (v NullableAddSecurityGroupRulesRequestRule) Get() *AddSecurityGroupRulesRequestRule {
-	return v.value
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRule) Set(val *AddSecurityGroupRulesRequestRule) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddSecurityGroupRulesRequestRule) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRule) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddSecurityGroupRulesRequestRule(val *AddSecurityGroupRulesRequestRule) *NullableAddSecurityGroupRulesRequestRule {
-	return &NullableAddSecurityGroupRulesRequestRule{value: val, isSet: true}
-}
-
-func (v NullableAddSecurityGroupRulesRequestRule) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddSecurityGroupRulesRequestRule) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

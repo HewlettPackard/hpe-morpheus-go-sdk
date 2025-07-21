@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ContainersAttachFloatingIpRequestConfig type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type ContainersAttachFloatingIpRequestConfig struct {
 	// The Floating IP identifier in the format: \"ip-ID\" or \"pool-ID\".  The Options API /api/options/openStack/openstackFloatingIpOptions?containerId={{containerId}} can be used to see which options are available.
 	OsExternalNetworkId string `json:"osExternalNetworkId"`
 	// Bandwidth (Mbit/s) Only the following cloud types support this parameter: Huawei, OpenTelekom
-	FloatingIpBandwidth  *float32 `json:"floatingIpBandwidth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	FloatingIpBandwidth  *float32               `json:"floatingIpBandwidth,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ContainersAttachFloatingIpRequestConfig ContainersAttachFloatingIpRequestConfig
@@ -126,82 +125,7 @@ func (o ContainersAttachFloatingIpRequestConfig) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *ContainersAttachFloatingIpRequestConfig) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"osExternalNetworkId",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varContainersAttachFloatingIpRequestConfig := _ContainersAttachFloatingIpRequestConfig{}
-
-	err = json.Unmarshal(data, &varContainersAttachFloatingIpRequestConfig)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ContainersAttachFloatingIpRequestConfig(varContainersAttachFloatingIpRequestConfig)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "osExternalNetworkId")
-		delete(additionalProperties, "floatingIpBandwidth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableContainersAttachFloatingIpRequestConfig struct {
-	value *ContainersAttachFloatingIpRequestConfig
-	isSet bool
-}
-
-func (v NullableContainersAttachFloatingIpRequestConfig) Get() *ContainersAttachFloatingIpRequestConfig {
-	return v.value
-}
-
-func (v *NullableContainersAttachFloatingIpRequestConfig) Set(val *ContainersAttachFloatingIpRequestConfig) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableContainersAttachFloatingIpRequestConfig) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableContainersAttachFloatingIpRequestConfig) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableContainersAttachFloatingIpRequestConfig(val *ContainersAttachFloatingIpRequestConfig) *NullableContainersAttachFloatingIpRequestConfig {
-	return &NullableContainersAttachFloatingIpRequestConfig{value: val, isSet: true}
-}
-
-func (v NullableContainersAttachFloatingIpRequestConfig) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableContainersAttachFloatingIpRequestConfig) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -53,8 +53,8 @@ type HostUpdate struct {
 	// The port the guest console is being accessed from
 	GuestConsolePort *string `json:"guestConsolePort,omitempty"`
 	// Can turn off guest console preferences on server in favor of hypervisor console
-	GuestConsolePreferred *bool `json:"guestConsolePreferred,omitempty"`
-	AdditionalProperties  map[string]interface{}
+	GuestConsolePreferred *bool                  `json:"guestConsolePreferred,omitempty"`
+	AdditionalProperties  map[string]interface{} `json:",remain"`
 }
 
 type _HostUpdate HostUpdate
@@ -751,77 +751,7 @@ func (o HostUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *HostUpdate) UnmarshalJSON(data []byte) (err error) {
-	varHostUpdate := _HostUpdate{}
-
-	err = json.Unmarshal(data, &varHostUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = HostUpdate(varHostUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "manageInternalFirewall")
-		delete(additionalProperties, "enableLogs")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshKeyPair")
-		delete(additionalProperties, "powerScheduleType")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "addTags")
-		delete(additionalProperties, "removeTags")
-		delete(additionalProperties, "guestConsoleType")
-		delete(additionalProperties, "guestConsoleUsername")
-		delete(additionalProperties, "guestConsolePassword")
-		delete(additionalProperties, "guestConsolePort")
-		delete(additionalProperties, "guestConsolePreferred")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableHostUpdate struct {
-	value *HostUpdate
-	isSet bool
-}
-
-func (v NullableHostUpdate) Get() *HostUpdate {
-	return v.value
-}
-
-func (v *NullableHostUpdate) Set(val *HostUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableHostUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableHostUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableHostUpdate(val *HostUpdate) *NullableHostUpdate {
-	return &NullableHostUpdate{value: val, isSet: true}
-}
-
-func (v NullableHostUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableHostUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

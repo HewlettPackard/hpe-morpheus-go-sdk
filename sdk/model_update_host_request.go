@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateHostRequest{}
 // UpdateHostRequest struct for UpdateHostRequest
 type UpdateHostRequest struct {
 	Server               *UpdateHostRequestServer `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _UpdateHostRequest UpdateHostRequest
@@ -96,60 +96,7 @@ func (o UpdateHostRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateHostRequest) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostRequest := _UpdateHostRequest{}
-
-	err = json.Unmarshal(data, &varUpdateHostRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostRequest(varUpdateHostRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "server")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostRequest struct {
-	value *UpdateHostRequest
-	isSet bool
-}
-
-func (v NullableUpdateHostRequest) Get() *UpdateHostRequest {
-	return v.value
-}
-
-func (v *NullableUpdateHostRequest) Set(val *UpdateHostRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostRequest(val *UpdateHostRequest) *NullableUpdateHostRequest {
-	return &NullableUpdateHostRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

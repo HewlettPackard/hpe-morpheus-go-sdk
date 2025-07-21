@@ -22,7 +22,7 @@ var _ MappedNullable = &ScriptSuccessId{}
 type ScriptSuccessId struct {
 	Success              *bool                                        `json:"success,omitempty"`
 	ContainerScript      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"containerScript,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _ScriptSuccessId ScriptSuccessId
@@ -132,61 +132,7 @@ func (o ScriptSuccessId) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ScriptSuccessId) UnmarshalJSON(data []byte) (err error) {
-	varScriptSuccessId := _ScriptSuccessId{}
-
-	err = json.Unmarshal(data, &varScriptSuccessId)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ScriptSuccessId(varScriptSuccessId)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "success")
-		delete(additionalProperties, "containerScript")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableScriptSuccessId struct {
-	value *ScriptSuccessId
-	isSet bool
-}
-
-func (v NullableScriptSuccessId) Get() *ScriptSuccessId {
-	return v.value
-}
-
-func (v *NullableScriptSuccessId) Set(val *ScriptSuccessId) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableScriptSuccessId) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableScriptSuccessId) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableScriptSuccessId(val *ScriptSuccessId) *NullableScriptSuccessId {
-	return &NullableScriptSuccessId{value: val, isSet: true}
-}
-
-func (v NullableScriptSuccessId) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableScriptSuccessId) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

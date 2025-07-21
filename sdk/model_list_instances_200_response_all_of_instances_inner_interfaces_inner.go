@@ -25,7 +25,7 @@ type ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
 	IpAddress              NullableString                                                     `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId NullableInt64                                                      `json:"networkInterfaceTypeId,omitempty"`
 	IpMode                 NullableString                                                     `json:"ipMode,omitempty"`
-	AdditionalProperties   map[string]interface{}
+	AdditionalProperties   map[string]interface{}                                             `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerInterfacesInner ListInstances200ResponseAllOfInstancesInnerInterfacesInner
@@ -284,64 +284,7 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) ToMap() (map
 	return toSerialize, nil
 }
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
-	varListInstances200ResponseAllOfInstancesInnerInterfacesInner := _ListInstances200ResponseAllOfInstancesInnerInterfacesInner{}
-
-	err = json.Unmarshal(data, &varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListInstances200ResponseAllOfInstancesInnerInterfacesInner(varListInstances200ResponseAllOfInstancesInnerInterfacesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "network")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "networkInterfaceTypeId")
-		delete(additionalProperties, "ipMode")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
-	value *ListInstances200ResponseAllOfInstancesInnerInterfacesInner
-	isSet bool
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Get() *ListInstances200ResponseAllOfInstancesInnerInterfacesInner {
-	return v.value
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Set(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListInstances200ResponseAllOfInstancesInnerInterfacesInner(val *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner {
-	return &NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner{value: val, isSet: true}
-}
-
-func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

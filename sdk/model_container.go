@@ -63,7 +63,7 @@ type Container struct {
 	ConfigRole           NullableString                                    `json:"configRole,omitempty"`
 	HourlyCost           *float64                                          `json:"hourlyCost,omitempty"`
 	HourlyPrice          *float64                                          `json:"hourlyPrice,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _Container Container
@@ -1674,101 +1674,7 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Container) UnmarshalJSON(data []byte) (err error) {
-	varContainer := _Container{}
-
-	err = json.Unmarshal(data, &varContainer)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Container(varContainer)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "containerType")
-		delete(additionalProperties, "containerTypeSet")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "cloud")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "ip")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "internalHostname")
-		delete(additionalProperties, "externalHostname")
-		delete(additionalProperties, "externalDomain")
-		delete(additionalProperties, "externalFqdn")
-		delete(additionalProperties, "ports")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "statsEnabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "userStatus")
-		delete(additionalProperties, "environmentPrefix")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "runtimeInfo")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "repositoryImage")
-		delete(additionalProperties, "planCategory")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "domainName")
-		delete(additionalProperties, "volumeCreated")
-		delete(additionalProperties, "containerCreated")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "availableActions")
-		delete(additionalProperties, "configGroup")
-		delete(additionalProperties, "configId")
-		delete(additionalProperties, "configRole")
-		delete(additionalProperties, "hourlyCost")
-		delete(additionalProperties, "hourlyPrice")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableContainer struct {
-	value *Container
-	isSet bool
-}
-
-func (v NullableContainer) Get() *Container {
-	return v.value
-}
-
-func (v *NullableContainer) Set(val *Container) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableContainer) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableContainer) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableContainer(val *Container) *NullableContainer {
-	return &NullableContainer{value: val, isSet: true}
-}
-
-func (v NullableContainer) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableContainer) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

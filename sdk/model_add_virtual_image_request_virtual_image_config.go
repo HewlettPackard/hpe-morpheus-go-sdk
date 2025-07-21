@@ -41,6 +41,22 @@ func MapmapOfStringAnyAsAddVirtualImageRequestVirtualImageConfig(v *map[string]i
 	}
 }
 
+func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddVirtualImageRequestVirtualImageConfig{}
+	}
+
+	if out, ok := data.(AddVirtualImageRequestVirtualImageConfigOneOf); ok {
+		dst.AddVirtualImageRequestVirtualImageConfigOneOf = &out
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) error {
 	var err error

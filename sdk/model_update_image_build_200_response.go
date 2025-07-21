@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateImageBuild200Response{}
 // UpdateImageBuild200Response struct for UpdateImageBuild200Response
 type UpdateImageBuild200Response struct {
 	ImageBuild           *AddImageBuild200ResponseAllOfImageBuild `json:"imageBuild,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _UpdateImageBuild200Response UpdateImageBuild200Response
@@ -96,60 +96,7 @@ func (o UpdateImageBuild200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateImageBuild200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateImageBuild200Response := _UpdateImageBuild200Response{}
-
-	err = json.Unmarshal(data, &varUpdateImageBuild200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateImageBuild200Response(varUpdateImageBuild200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "imageBuild")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateImageBuild200Response struct {
-	value *UpdateImageBuild200Response
-	isSet bool
-}
-
-func (v NullableUpdateImageBuild200Response) Get() *UpdateImageBuild200Response {
-	return v.value
-}
-
-func (v *NullableUpdateImageBuild200Response) Set(val *UpdateImageBuild200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateImageBuild200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateImageBuild200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateImageBuild200Response(val *UpdateImageBuild200Response) *NullableUpdateImageBuild200Response {
-	return &NullableUpdateImageBuild200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateImageBuild200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateImageBuild200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

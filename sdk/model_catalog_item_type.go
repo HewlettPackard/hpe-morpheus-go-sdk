@@ -55,7 +55,7 @@ type CatalogItemType struct {
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"owner,omitempty"`
 	DateCreated          *time.Time                                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _CatalogItemType CatalogItemType
@@ -1203,88 +1203,7 @@ func (o CatalogItemType) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *CatalogItemType) UnmarshalJSON(data []byte) (err error) {
-	varCatalogItemType := _CatalogItemType{}
-
-	err = json.Unmarshal(data, &varCatalogItemType)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CatalogItemType(varCatalogItemType)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "featured")
-		delete(additionalProperties, "allowQuantity")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "layoutCode")
-		delete(additionalProperties, "blueprint")
-		delete(additionalProperties, "appSpec")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "instanceSpec")
-		delete(additionalProperties, "workflow")
-		delete(additionalProperties, "content")
-		delete(additionalProperties, "formType")
-		delete(additionalProperties, "form")
-		delete(additionalProperties, "formConfig")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCatalogItemType struct {
-	value *CatalogItemType
-	isSet bool
-}
-
-func (v NullableCatalogItemType) Get() *CatalogItemType {
-	return v.value
-}
-
-func (v *NullableCatalogItemType) Set(val *CatalogItemType) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCatalogItemType) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCatalogItemType) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCatalogItemType(val *CatalogItemType) *NullableCatalogItemType {
-	return &NullableCatalogItemType{value: val, isSet: true}
-}
-
-func (v NullableCatalogItemType) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCatalogItemType) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

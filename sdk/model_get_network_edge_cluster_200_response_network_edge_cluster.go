@@ -37,7 +37,7 @@ type GetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
 	NetworkServer        *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume                                         `json:"networkServer,omitempty"`
 	Zone                 *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume                                         `json:"zone,omitempty"`
 	Tenants              []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                                                      `json:",remain"`
 }
 
 type _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
@@ -637,75 +637,7 @@ func (o GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) ToMap() (map[string]
 	return toSerialize, nil
 }
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) UnmarshalJSON(data []byte) (err error) {
-	varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster := _GetNetworkEdgeCluster200ResponseNetworkEdgeCluster{}
-
-	err = json.Unmarshal(data, &varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetNetworkEdgeCluster200ResponseNetworkEdgeCluster(varGetNetworkEdgeCluster200ResponseNetworkEdgeCluster)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "providerId")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "networkServer")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "tenants")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster struct {
-	value *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster
-	isSet bool
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Get() *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster {
-	return v.value
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Set(val *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster(val *GetNetworkEdgeCluster200ResponseNetworkEdgeCluster) *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster {
-	return &NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster{value: val, isSet: true}
-}
-
-func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetNetworkEdgeCluster200ResponseNetworkEdgeCluster) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

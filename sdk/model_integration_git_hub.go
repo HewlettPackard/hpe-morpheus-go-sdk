@@ -38,7 +38,7 @@ type IntegrationGitHub struct {
 	LastSync             NullableString                                                    `json:"lastSync,omitempty"`
 	LastSyncDuration     NullableString                                                    `json:"lastSyncDuration,omitempty"`
 	Credential           *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _IntegrationGitHub IntegrationGitHub
@@ -706,76 +706,7 @@ func (o IntegrationGitHub) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *IntegrationGitHub) UnmarshalJSON(data []byte) (err error) {
-	varIntegrationGitHub := _IntegrationGitHub{}
-
-	err = json.Unmarshal(data, &varIntegrationGitHub)
-
-	if err != nil {
-		return err
-	}
-
-	*o = IntegrationGitHub(varIntegrationGitHub)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "integrationType")
-		delete(additionalProperties, "username")
-		delete(additionalProperties, "token")
-		delete(additionalProperties, "tokenHash")
-		delete(additionalProperties, "serviceKey")
-		delete(additionalProperties, "isPlugin")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "lastSync")
-		delete(additionalProperties, "lastSyncDuration")
-		delete(additionalProperties, "credential")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIntegrationGitHub struct {
-	value *IntegrationGitHub
-	isSet bool
-}
-
-func (v NullableIntegrationGitHub) Get() *IntegrationGitHub {
-	return v.value
-}
-
-func (v *NullableIntegrationGitHub) Set(val *IntegrationGitHub) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIntegrationGitHub) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIntegrationGitHub) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIntegrationGitHub(val *IntegrationGitHub) *NullableIntegrationGitHub {
-	return &NullableIntegrationGitHub{value: val, isSet: true}
-}
-
-func (v NullableIntegrationGitHub) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIntegrationGitHub) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

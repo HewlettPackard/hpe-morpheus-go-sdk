@@ -22,7 +22,7 @@ var _ MappedNullable = &ListIntegrationInventory200Response{}
 type ListIntegrationInventory200Response struct {
 	Inventory            []ListIntegrationInventory200ResponseAllOfInventoryInner `json:"inventory,omitempty"`
 	Meta                 *ListActivity200ResponseAllOfMeta                        `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListIntegrationInventory200Response ListIntegrationInventory200Response
@@ -132,61 +132,7 @@ func (o ListIntegrationInventory200Response) ToMap() (map[string]interface{}, er
 	return toSerialize, nil
 }
 func (o *ListIntegrationInventory200Response) UnmarshalJSON(data []byte) (err error) {
-	varListIntegrationInventory200Response := _ListIntegrationInventory200Response{}
-
-	err = json.Unmarshal(data, &varListIntegrationInventory200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListIntegrationInventory200Response(varListIntegrationInventory200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "inventory")
-		delete(additionalProperties, "meta")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListIntegrationInventory200Response struct {
-	value *ListIntegrationInventory200Response
-	isSet bool
-}
-
-func (v NullableListIntegrationInventory200Response) Get() *ListIntegrationInventory200Response {
-	return v.value
-}
-
-func (v *NullableListIntegrationInventory200Response) Set(val *ListIntegrationInventory200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListIntegrationInventory200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListIntegrationInventory200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListIntegrationInventory200Response(val *ListIntegrationInventory200Response) *NullableListIntegrationInventory200Response {
-	return &NullableListIntegrationInventory200Response{value: val, isSet: true}
-}
-
-func (v NullableListIntegrationInventory200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListIntegrationInventory200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

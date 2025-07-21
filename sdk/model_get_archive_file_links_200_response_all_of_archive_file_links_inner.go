@@ -30,7 +30,7 @@ type GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner struct {
 	LastAccessDate       NullableTime                                                         `json:"lastAccessDate,omitempty"`
 	ExpirationDate       NullableTime                                                         `json:"expirationDate,omitempty"`
 	DownloadCount        *int64                                                               `json:"downloadCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner
@@ -407,68 +407,7 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnmarshalJSON(data []byte) (err error) {
-	varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner := _GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner{}
-
-	err = json.Unmarshal(data, &varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner(varGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "secretAccessKey")
-		delete(additionalProperties, "archiveFile")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastAccessDate")
-		delete(additionalProperties, "expirationDate")
-		delete(additionalProperties, "downloadCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner struct {
-	value *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner
-	isSet bool
-}
-
-func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) Get() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner {
-	return v.value
-}
-
-func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) Set(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner {
-	return &NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner{value: val, isSet: true}
-}
-
-func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

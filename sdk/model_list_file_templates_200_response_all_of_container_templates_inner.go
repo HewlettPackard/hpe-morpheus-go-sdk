@@ -42,7 +42,7 @@ type ListFileTemplates200ResponseAllOfContainerTemplatesInner struct {
 	Permissions          NullableString                                     `json:"permissions,omitempty"`
 	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListFileTemplates200ResponseAllOfContainerTemplatesInner ListFileTemplates200ResponseAllOfContainerTemplatesInner
@@ -917,80 +917,7 @@ func (o ListFileTemplates200ResponseAllOfContainerTemplatesInner) ToMap() (map[s
 	return toSerialize, nil
 }
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(data []byte) (err error) {
-	varListFileTemplates200ResponseAllOfContainerTemplatesInner := _ListFileTemplates200ResponseAllOfContainerTemplatesInner{}
-
-	err = json.Unmarshal(data, &varListFileTemplates200ResponseAllOfContainerTemplatesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListFileTemplates200ResponseAllOfContainerTemplatesInner(varListFileTemplates200ResponseAllOfContainerTemplatesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "fileName")
-		delete(additionalProperties, "filePath")
-		delete(additionalProperties, "templateType")
-		delete(additionalProperties, "templatePhase")
-		delete(additionalProperties, "template")
-		delete(additionalProperties, "category")
-		delete(additionalProperties, "settingCategory")
-		delete(additionalProperties, "settingName")
-		delete(additionalProperties, "autoRun")
-		delete(additionalProperties, "runOnScale")
-		delete(additionalProperties, "runOnDeploy")
-		delete(additionalProperties, "fileOwner")
-		delete(additionalProperties, "fileGroup")
-		delete(additionalProperties, "permissions")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListFileTemplates200ResponseAllOfContainerTemplatesInner struct {
-	value *ListFileTemplates200ResponseAllOfContainerTemplatesInner
-	isSet bool
-}
-
-func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Get() *ListFileTemplates200ResponseAllOfContainerTemplatesInner {
-	return v.value
-}
-
-func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Set(val *ListFileTemplates200ResponseAllOfContainerTemplatesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListFileTemplates200ResponseAllOfContainerTemplatesInner(val *ListFileTemplates200ResponseAllOfContainerTemplatesInner) *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner {
-	return &NullableListFileTemplates200ResponseAllOfContainerTemplatesInner{value: val, isSet: true}
-}
-
-func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

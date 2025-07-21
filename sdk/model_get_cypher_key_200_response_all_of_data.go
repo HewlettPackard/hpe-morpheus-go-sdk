@@ -41,6 +41,22 @@ func StringAsGetCypherKey200ResponseAllOfData(v *string) GetCypherKey200Response
 	}
 }
 
+func (dst *GetCypherKey200ResponseAllOfData) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &GetCypherKey200ResponseAllOfData{}
+	}
+
+	if out, ok := data.(map[string]interface{}); ok {
+		dst.MapmapOfStringAny = &out
+	}
+
+	if out, ok := data.(string); ok {
+		dst.String = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetCypherKey200ResponseAllOfData) UnmarshalJSON(data []byte) error {
 	var err error

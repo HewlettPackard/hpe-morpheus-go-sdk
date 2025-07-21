@@ -41,6 +41,22 @@ func MapmapOfStringstringAsAddIdentitySourcesRequestUserSourceRoleMappings(v *ma
 	}
 }
 
+func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddIdentitySourcesRequestUserSourceRoleMappings{}
+	}
+
+	if out, ok := data.([]AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner); ok {
+		dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner = &out
+	}
+
+	if out, ok := data.(map[string]string); ok {
+		dst.MapmapOfStringstring = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalJSON(data []byte) error {
 	var err error

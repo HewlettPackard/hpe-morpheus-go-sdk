@@ -21,8 +21,8 @@ var _ MappedNullable = &NetworkInterfaceUpdate{}
 // NetworkInterfaceUpdate struct for NetworkInterfaceUpdate
 type NetworkInterfaceUpdate struct {
 	// Desired Name for the Network Interface
-	Name                 *string `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 *string                `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _NetworkInterfaceUpdate NetworkInterfaceUpdate
@@ -97,60 +97,7 @@ func (o NetworkInterfaceUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *NetworkInterfaceUpdate) UnmarshalJSON(data []byte) (err error) {
-	varNetworkInterfaceUpdate := _NetworkInterfaceUpdate{}
-
-	err = json.Unmarshal(data, &varNetworkInterfaceUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = NetworkInterfaceUpdate(varNetworkInterfaceUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableNetworkInterfaceUpdate struct {
-	value *NetworkInterfaceUpdate
-	isSet bool
-}
-
-func (v NullableNetworkInterfaceUpdate) Get() *NetworkInterfaceUpdate {
-	return v.value
-}
-
-func (v *NullableNetworkInterfaceUpdate) Set(val *NetworkInterfaceUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNetworkInterfaceUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNetworkInterfaceUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNetworkInterfaceUpdate(val *NetworkInterfaceUpdate) *NullableNetworkInterfaceUpdate {
-	return &NullableNetworkInterfaceUpdate{value: val, isSet: true}
-}
-
-func (v NullableNetworkInterfaceUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNetworkInterfaceUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

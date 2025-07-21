@@ -33,8 +33,8 @@ type AmazonInstanceConfiguration struct {
 	// IAM Profile
 	InstanceProfile *string `json:"instanceProfile,omitempty"`
 	// KMS Key ID
-	KmsKeyId             *string `json:"kmsKeyId,omitempty"`
-	AdditionalProperties map[string]interface{}
+	KmsKeyId             *string                `json:"kmsKeyId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AmazonInstanceConfiguration AmazonInstanceConfiguration
@@ -338,66 +338,7 @@ func (o AmazonInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AmazonInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
-	varAmazonInstanceConfiguration := _AmazonInstanceConfiguration{}
-
-	err = json.Unmarshal(data, &varAmazonInstanceConfiguration)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AmazonInstanceConfiguration(varAmazonInstanceConfiguration)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "noAgent")
-		delete(additionalProperties, "isEC2")
-		delete(additionalProperties, "availabilityId")
-		delete(additionalProperties, "securityId")
-		delete(additionalProperties, "publicIpType")
-		delete(additionalProperties, "instanceProfile")
-		delete(additionalProperties, "kmsKeyId")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAmazonInstanceConfiguration struct {
-	value *AmazonInstanceConfiguration
-	isSet bool
-}
-
-func (v NullableAmazonInstanceConfiguration) Get() *AmazonInstanceConfiguration {
-	return v.value
-}
-
-func (v *NullableAmazonInstanceConfiguration) Set(val *AmazonInstanceConfiguration) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAmazonInstanceConfiguration) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAmazonInstanceConfiguration) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAmazonInstanceConfiguration(val *AmazonInstanceConfiguration) *NullableAmazonInstanceConfiguration {
-	return &NullableAmazonInstanceConfiguration{value: val, isSet: true}
-}
-
-func (v NullableAmazonInstanceConfiguration) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAmazonInstanceConfiguration) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

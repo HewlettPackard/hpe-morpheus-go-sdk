@@ -21,7 +21,7 @@ var _ MappedNullable = &UpdateGroups200Response{}
 // UpdateGroups200Response struct for UpdateGroups200Response
 type UpdateGroups200Response struct {
 	Group                *UpdateGroups200ResponseGroup `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _UpdateGroups200Response UpdateGroups200Response
@@ -96,60 +96,7 @@ func (o UpdateGroups200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateGroups200Response) UnmarshalJSON(data []byte) (err error) {
-	varUpdateGroups200Response := _UpdateGroups200Response{}
-
-	err = json.Unmarshal(data, &varUpdateGroups200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateGroups200Response(varUpdateGroups200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "group")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateGroups200Response struct {
-	value *UpdateGroups200Response
-	isSet bool
-}
-
-func (v NullableUpdateGroups200Response) Get() *UpdateGroups200Response {
-	return v.value
-}
-
-func (v *NullableUpdateGroups200Response) Set(val *UpdateGroups200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateGroups200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateGroups200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateGroups200Response(val *UpdateGroups200Response) *NullableUpdateGroups200Response {
-	return &NullableUpdateGroups200Response{value: val, isSet: true}
-}
-
-func (v NullableUpdateGroups200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateGroups200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

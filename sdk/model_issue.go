@@ -40,7 +40,7 @@ type Issue struct {
 	SeverityId           *int64                                             `json:"severityId,omitempty"`
 	StartDate            *time.Time                                         `json:"startDate,omitempty"`
 	Status               *string                                            `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _Issue Issue
@@ -822,78 +822,7 @@ func (o Issue) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *Issue) UnmarshalJSON(data []byte) (err error) {
-	varIssue := _Issue{}
-
-	err = json.Unmarshal(data, &varIssue)
-
-	if err != nil {
-		return err
-	}
-
-	*o = Issue(varIssue)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "attachmentType")
-		delete(additionalProperties, "app")
-		delete(additionalProperties, "available")
-		delete(additionalProperties, "check")
-		delete(additionalProperties, "checkGroup")
-		delete(additionalProperties, "checkStatus")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "incident")
-		delete(additionalProperties, "lastCheckTime")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "severityId")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "status")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableIssue struct {
-	value *Issue
-	isSet bool
-}
-
-func (v NullableIssue) Get() *Issue {
-	return v.value
-}
-
-func (v *NullableIssue) Set(val *Issue) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIssue) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIssue) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIssue(val *Issue) *NullableIssue {
-	return &NullableIssue{value: val, isSet: true}
-}
-
-func (v NullableIssue) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIssue) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

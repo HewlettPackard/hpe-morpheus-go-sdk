@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddRolesRequestRoleReportTypePermissionsInner type satisfies the MappedNullable interface at compile time
@@ -24,8 +23,8 @@ type AddRolesRequestRoleReportTypePermissionsInner struct {
 	// `code` of the report type
 	Code string `json:"code"`
 	// The new access level.
-	Access               string `json:"access"`
-	AdditionalProperties map[string]interface{}
+	Access               string                 `json:"access"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddRolesRequestRoleReportTypePermissionsInner AddRolesRequestRoleReportTypePermissionsInner
@@ -117,83 +116,7 @@ func (o AddRolesRequestRoleReportTypePermissionsInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *AddRolesRequestRoleReportTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"code",
-		"access",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddRolesRequestRoleReportTypePermissionsInner := _AddRolesRequestRoleReportTypePermissionsInner{}
-
-	err = json.Unmarshal(data, &varAddRolesRequestRoleReportTypePermissionsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddRolesRequestRoleReportTypePermissionsInner(varAddRolesRequestRoleReportTypePermissionsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "access")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddRolesRequestRoleReportTypePermissionsInner struct {
-	value *AddRolesRequestRoleReportTypePermissionsInner
-	isSet bool
-}
-
-func (v NullableAddRolesRequestRoleReportTypePermissionsInner) Get() *AddRolesRequestRoleReportTypePermissionsInner {
-	return v.value
-}
-
-func (v *NullableAddRolesRequestRoleReportTypePermissionsInner) Set(val *AddRolesRequestRoleReportTypePermissionsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddRolesRequestRoleReportTypePermissionsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddRolesRequestRoleReportTypePermissionsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddRolesRequestRoleReportTypePermissionsInner(val *AddRolesRequestRoleReportTypePermissionsInner) *NullableAddRolesRequestRoleReportTypePermissionsInner {
-	return &NullableAddRolesRequestRoleReportTypePermissionsInner{value: val, isSet: true}
-}
-
-func (v NullableAddRolesRequestRoleReportTypePermissionsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddRolesRequestRoleReportTypePermissionsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

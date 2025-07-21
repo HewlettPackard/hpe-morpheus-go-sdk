@@ -42,7 +42,7 @@ type ListHostTypes200ResponseAllOfServerTypesInner struct {
 	ProvisionType        *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerProvisionType  `json:"provisionType,omitempty"`
 	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
 	DisplayOrder         *int64                                                                      `json:"displayOrder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
 }
 
 type _ListHostTypes200ResponseAllOfServerTypesInner ListHostTypes200ResponseAllOfServerTypesInner
@@ -852,81 +852,7 @@ func (o ListHostTypes200ResponseAllOfServerTypesInner) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 func (o *ListHostTypes200ResponseAllOfServerTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListHostTypes200ResponseAllOfServerTypesInner := _ListHostTypes200ResponseAllOfServerTypesInner{}
-
-	err = json.Unmarshal(data, &varListHostTypes200ResponseAllOfServerTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHostTypes200ResponseAllOfServerTypesInner(varListHostTypes200ResponseAllOfServerTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "nodeType")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "selectable")
-		delete(additionalProperties, "externalDelete")
-		delete(additionalProperties, "managed")
-		delete(additionalProperties, "controlPower")
-		delete(additionalProperties, "controlSuspend")
-		delete(additionalProperties, "creatable")
-		delete(additionalProperties, "hasAgent")
-		delete(additionalProperties, "vmHypervisor")
-		delete(additionalProperties, "containerHypervisor")
-		delete(additionalProperties, "bareMetalHost")
-		delete(additionalProperties, "guestVm")
-		delete(additionalProperties, "hasAutomation")
-		delete(additionalProperties, "provisionType")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "displayOrder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListHostTypes200ResponseAllOfServerTypesInner struct {
-	value *ListHostTypes200ResponseAllOfServerTypesInner
-	isSet bool
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) Get() *ListHostTypes200ResponseAllOfServerTypesInner {
-	return v.value
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) Set(val *ListHostTypes200ResponseAllOfServerTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHostTypes200ResponseAllOfServerTypesInner(val *ListHostTypes200ResponseAllOfServerTypesInner) *NullableListHostTypes200ResponseAllOfServerTypesInner {
-	return &NullableListHostTypes200ResponseAllOfServerTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListHostTypes200ResponseAllOfServerTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHostTypes200ResponseAllOfServerTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

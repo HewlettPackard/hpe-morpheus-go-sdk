@@ -29,7 +29,7 @@ type ListOptionForms200ResponseAllOfOptionTypesInner struct {
 	Labels               []string                                                          `json:"labels,omitempty"`
 	Options              []ListOptionForms200ResponseAllOfOptionTypesInnerOptionsInner     `json:"options,omitempty"`
 	FieldGroups          []ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner `json:"fieldGroups,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _ListOptionForms200ResponseAllOfOptionTypesInner ListOptionForms200ResponseAllOfOptionTypesInner
@@ -407,68 +407,7 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInner) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *ListOptionForms200ResponseAllOfOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
-	varListOptionForms200ResponseAllOfOptionTypesInner := _ListOptionForms200ResponseAllOfOptionTypesInner{}
-
-	err = json.Unmarshal(data, &varListOptionForms200ResponseAllOfOptionTypesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListOptionForms200ResponseAllOfOptionTypesInner(varListOptionForms200ResponseAllOfOptionTypesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "locked")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "options")
-		delete(additionalProperties, "fieldGroups")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListOptionForms200ResponseAllOfOptionTypesInner struct {
-	value *ListOptionForms200ResponseAllOfOptionTypesInner
-	isSet bool
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInner) Get() *ListOptionForms200ResponseAllOfOptionTypesInner {
-	return v.value
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInner) Set(val *ListOptionForms200ResponseAllOfOptionTypesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListOptionForms200ResponseAllOfOptionTypesInner(val *ListOptionForms200ResponseAllOfOptionTypesInner) *NullableListOptionForms200ResponseAllOfOptionTypesInner {
-	return &NullableListOptionForms200ResponseAllOfOptionTypesInner{value: val, isSet: true}
-}
-
-func (v NullableListOptionForms200ResponseAllOfOptionTypesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListOptionForms200ResponseAllOfOptionTypesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -49,7 +49,7 @@ type ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner struct {
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner
@@ -1245,87 +1245,7 @@ func (o ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) ToMap()
 	return toSerialize, nil
 }
 func (o *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) UnmarshalJSON(data []byte) (err error) {
-	varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner := _ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner{}
-
-	err = json.Unmarshal(data, &varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner(varListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "ipAddress")
-		delete(additionalProperties, "port")
-		delete(additionalProperties, "portType")
-		delete(additionalProperties, "monitorPort")
-		delete(additionalProperties, "weight")
-		delete(additionalProperties, "nodeState")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "server")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "nodeSource")
-		delete(additionalProperties, "monitor")
-		delete(additionalProperties, "maxConnections")
-		delete(additionalProperties, "externalRefType")
-		delete(additionalProperties, "externalRefId")
-		delete(additionalProperties, "externalRefName")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner struct {
-	value *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner
-	isSet bool
-}
-
-func (v NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) Get() *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner {
-	return v.value
-}
-
-func (v *NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) Set(val *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner(val *ListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) *NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner {
-	return &NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner{value: val, isSet: true}
-}
-
-func (v NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListLoadBalancerPoolNodes200ResponseAllOfLoadBalancerNodesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

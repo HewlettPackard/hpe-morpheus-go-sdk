@@ -50,7 +50,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf struct {
 	PlanBeforeAction     *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction `json:"planBeforeAction,omitempty"`
 	PlanAfterAction      *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction  `json:"planAfterAction,omitempty"`
 	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig           `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf
@@ -1149,88 +1149,7 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) ToMap() (map[string]
 	return toSerialize, nil
 }
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnmarshalJSON(data []byte) (err error) {
-	varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf := _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf{}
-
-	err = json.Unmarshal(data, &varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf(varListGuidances200ResponseAllOfDiscoveriesInnerAnyOf)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "actionCategory")
-		delete(additionalProperties, "actionMessage")
-		delete(additionalProperties, "actionTitle")
-		delete(additionalProperties, "actionType")
-		delete(additionalProperties, "actionValue")
-		delete(additionalProperties, "actionValueType")
-		delete(additionalProperties, "actionPlanId")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "userId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "state")
-		delete(additionalProperties, "stateMessage")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "resolved")
-		delete(additionalProperties, "resolvedMessage")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "refName")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "savings")
-		delete(additionalProperties, "resource")
-		delete(additionalProperties, "planBeforeAction")
-		delete(additionalProperties, "planAfterAction")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf struct {
-	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf
-	isSet bool
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf {
-	return v.value
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf {
-	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf{value: val, isSet: true}
-}
-
-func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -42,7 +42,7 @@ type ListImageBuilds200ResponseAllOfImageBuildsInner struct {
 	Config               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig        `json:"config,omitempty"`
 	LastResult           *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult    `json:"lastResult,omitempty"`
 	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInner ListImageBuilds200ResponseAllOfImageBuildsInner
@@ -885,81 +885,7 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInner) ToMap() (map[string]int
 	return toSerialize, nil
 }
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnmarshalJSON(data []byte) (err error) {
-	varListImageBuilds200ResponseAllOfImageBuildsInner := _ListImageBuilds200ResponseAllOfImageBuildsInner{}
-
-	err = json.Unmarshal(data, &varListImageBuilds200ResponseAllOfImageBuildsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListImageBuilds200ResponseAllOfImageBuildsInner(varListImageBuilds200ResponseAllOfImageBuildsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "site")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "bootScript")
-		delete(additionalProperties, "bootCommand")
-		delete(additionalProperties, "preseedScript")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "storageProvider")
-		delete(additionalProperties, "buildOutputName")
-		delete(additionalProperties, "conversionFormats")
-		delete(additionalProperties, "isCloudInit")
-		delete(additionalProperties, "vmToolsInstalled")
-		delete(additionalProperties, "keepResults")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "lastResult")
-		delete(additionalProperties, "executionCount")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListImageBuilds200ResponseAllOfImageBuildsInner struct {
-	value *ListImageBuilds200ResponseAllOfImageBuildsInner
-	isSet bool
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInner) Get() *ListImageBuilds200ResponseAllOfImageBuildsInner {
-	return v.value
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInner) Set(val *ListImageBuilds200ResponseAllOfImageBuildsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListImageBuilds200ResponseAllOfImageBuildsInner(val *ListImageBuilds200ResponseAllOfImageBuildsInner) *NullableListImageBuilds200ResponseAllOfImageBuildsInner {
-	return &NullableListImageBuilds200ResponseAllOfImageBuildsInner{value: val, isSet: true}
-}
-
-func (v NullableListImageBuilds200ResponseAllOfImageBuildsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListImageBuilds200ResponseAllOfImageBuildsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

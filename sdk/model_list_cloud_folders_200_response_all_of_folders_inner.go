@@ -34,7 +34,7 @@ type ListCloudFolders200ResponseAllOfFoldersInner struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermissions  *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermissions,omitempty"`
 	Depth                *int64                                                                `json:"depth,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                `json:",remain"`
 }
 
 type _ListCloudFolders200ResponseAllOfFoldersInner ListCloudFolders200ResponseAllOfFoldersInner
@@ -564,73 +564,7 @@ func (o ListCloudFolders200ResponseAllOfFoldersInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *ListCloudFolders200ResponseAllOfFoldersInner) UnmarshalJSON(data []byte) (err error) {
-	varListCloudFolders200ResponseAllOfFoldersInner := _ListCloudFolders200ResponseAllOfFoldersInner{}
-
-	err = json.Unmarshal(data, &varListCloudFolders200ResponseAllOfFoldersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListCloudFolders200ResponseAllOfFoldersInner(varListCloudFolders200ResponseAllOfFoldersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "parent")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "readOnly")
-		delete(additionalProperties, "defaultFolder")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "depth")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListCloudFolders200ResponseAllOfFoldersInner struct {
-	value *ListCloudFolders200ResponseAllOfFoldersInner
-	isSet bool
-}
-
-func (v NullableListCloudFolders200ResponseAllOfFoldersInner) Get() *ListCloudFolders200ResponseAllOfFoldersInner {
-	return v.value
-}
-
-func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) Set(val *ListCloudFolders200ResponseAllOfFoldersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListCloudFolders200ResponseAllOfFoldersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListCloudFolders200ResponseAllOfFoldersInner(val *ListCloudFolders200ResponseAllOfFoldersInner) *NullableListCloudFolders200ResponseAllOfFoldersInner {
-	return &NullableListCloudFolders200ResponseAllOfFoldersInner{value: val, isSet: true}
-}
-
-func (v NullableListCloudFolders200ResponseAllOfFoldersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

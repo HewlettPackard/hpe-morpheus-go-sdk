@@ -100,7 +100,7 @@ type ListHosts200ResponseAllOfServersInner struct {
 	GuestConsolePassword     NullableString                                                                      `json:"guestConsolePassword,omitempty"`
 	GuestConsolePasswordHash NullableString                                                                      `json:"guestConsolePasswordHash,omitempty"`
 	GuestConsolePort         NullableString                                                                      `json:"guestConsolePort,omitempty"`
-	AdditionalProperties     map[string]interface{}
+	AdditionalProperties     map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInner ListHosts200ResponseAllOfServersInner
@@ -3248,138 +3248,7 @@ func (o ListHosts200ResponseAllOfServersInner) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *ListHosts200ResponseAllOfServersInner) UnmarshalJSON(data []byte) (err error) {
-	varListHosts200ResponseAllOfServersInner := _ListHosts200ResponseAllOfServersInner{}
-
-	err = json.Unmarshal(data, &varListHosts200ResponseAllOfServersInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListHosts200ResponseAllOfServersInner(varListHosts200ResponseAllOfServersInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "externalId")
-		delete(additionalProperties, "internalId")
-		delete(additionalProperties, "externalUniqueId")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "externalName")
-		delete(additionalProperties, "hostname")
-		delete(additionalProperties, "parentServer")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "zone")
-		delete(additionalProperties, "plan")
-		delete(additionalProperties, "computeServerType")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "siteId")
-		delete(additionalProperties, "resourcePoolId")
-		delete(additionalProperties, "folderId")
-		delete(additionalProperties, "sshHost")
-		delete(additionalProperties, "sshPort")
-		delete(additionalProperties, "externalIp")
-		delete(additionalProperties, "internalIp")
-		delete(additionalProperties, "volumeId")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "platformVersion")
-		delete(additionalProperties, "sshUsername")
-		delete(additionalProperties, "sshPassword")
-		delete(additionalProperties, "sshPasswordHash")
-		delete(additionalProperties, "sshKeyPair")
-		delete(additionalProperties, "osDevice")
-		delete(additionalProperties, "osType")
-		delete(additionalProperties, "dataDevice")
-		delete(additionalProperties, "lvmEnabled")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "softwareRaid")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "stats")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "statusMessage")
-		delete(additionalProperties, "errorMessage")
-		delete(additionalProperties, "statusDate")
-		delete(additionalProperties, "statusPercent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "powerState")
-		delete(additionalProperties, "agentInstalled")
-		delete(additionalProperties, "lastAgentUpdate")
-		delete(additionalProperties, "agentVersion")
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		delete(additionalProperties, "maxStorage")
-		delete(additionalProperties, "maxCpu")
-		delete(additionalProperties, "maxGpus")
-		delete(additionalProperties, "manageInternalFirewall")
-		delete(additionalProperties, "enableLogs")
-		delete(additionalProperties, "hourlyCost")
-		delete(additionalProperties, "hourlyPrice")
-		delete(additionalProperties, "sourceImage")
-		delete(additionalProperties, "serverOs")
-		delete(additionalProperties, "volumes")
-		delete(additionalProperties, "controllers")
-		delete(additionalProperties, "interfaces")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "tags")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "tagCompliant")
-		delete(additionalProperties, "containers")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "instance")
-		delete(additionalProperties, "guestConsolePreferred")
-		delete(additionalProperties, "guestConsoleType")
-		delete(additionalProperties, "guestConsoleUsername")
-		delete(additionalProperties, "guestConsolePassword")
-		delete(additionalProperties, "guestConsolePasswordHash")
-		delete(additionalProperties, "guestConsolePort")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListHosts200ResponseAllOfServersInner struct {
-	value *ListHosts200ResponseAllOfServersInner
-	isSet bool
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) Get() *ListHosts200ResponseAllOfServersInner {
-	return v.value
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) Set(val *ListHosts200ResponseAllOfServersInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListHosts200ResponseAllOfServersInner(val *ListHosts200ResponseAllOfServersInner) *NullableListHosts200ResponseAllOfServersInner {
-	return &NullableListHosts200ResponseAllOfServersInner{value: val, isSet: true}
-}
-
-func (v NullableListHosts200ResponseAllOfServersInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListHosts200ResponseAllOfServersInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

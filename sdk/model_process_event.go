@@ -52,7 +52,7 @@ type ProcessEvent struct {
 	LastUpdated          *time.Time                                                                 `json:"lastUpdated,omitempty"`
 	CreatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"createdBy,omitempty"`
 	UpdatedBy            *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy                  `json:"updatedBy,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _ProcessEvent ProcessEvent
@@ -1265,90 +1265,7 @@ func (o ProcessEvent) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ProcessEvent) UnmarshalJSON(data []byte) (err error) {
-	varProcessEvent := _ProcessEvent{}
-
-	err = json.Unmarshal(data, &varProcessEvent)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ProcessEvent(varProcessEvent)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "processId")
-		delete(additionalProperties, "accountId")
-		delete(additionalProperties, "uniqueId")
-		delete(additionalProperties, "processType")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "refType")
-		delete(additionalProperties, "refId")
-		delete(additionalProperties, "subType")
-		delete(additionalProperties, "subId")
-		delete(additionalProperties, "zoneId")
-		delete(additionalProperties, "integrationId")
-		delete(additionalProperties, "instanceId")
-		delete(additionalProperties, "containerId")
-		delete(additionalProperties, "serverId")
-		delete(additionalProperties, "containerName")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "reason")
-		delete(additionalProperties, "percent")
-		delete(additionalProperties, "statusEta")
-		delete(additionalProperties, "message")
-		delete(additionalProperties, "output")
-		delete(additionalProperties, "error")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "duration")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "updatedBy")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableProcessEvent struct {
-	value *ProcessEvent
-	isSet bool
-}
-
-func (v NullableProcessEvent) Get() *ProcessEvent {
-	return v.value
-}
-
-func (v *NullableProcessEvent) Set(val *ProcessEvent) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableProcessEvent) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableProcessEvent) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableProcessEvent(val *ProcessEvent) *NullableProcessEvent {
-	return &NullableProcessEvent{value: val, isSet: true}
-}
-
-func (v NullableProcessEvent) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableProcessEvent) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

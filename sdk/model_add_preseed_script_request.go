@@ -21,7 +21,7 @@ var _ MappedNullable = &AddPreseedScriptRequest{}
 // AddPreseedScriptRequest struct for AddPreseedScriptRequest
 type AddPreseedScriptRequest struct {
 	PreseedScript        *AddPreseedScriptRequestPreseedScript `json:"preseedScript,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
 type _AddPreseedScriptRequest AddPreseedScriptRequest
@@ -96,60 +96,7 @@ func (o AddPreseedScriptRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddPreseedScriptRequest) UnmarshalJSON(data []byte) (err error) {
-	varAddPreseedScriptRequest := _AddPreseedScriptRequest{}
-
-	err = json.Unmarshal(data, &varAddPreseedScriptRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddPreseedScriptRequest(varAddPreseedScriptRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "preseedScript")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddPreseedScriptRequest struct {
-	value *AddPreseedScriptRequest
-	isSet bool
-}
-
-func (v NullableAddPreseedScriptRequest) Get() *AddPreseedScriptRequest {
-	return v.value
-}
-
-func (v *NullableAddPreseedScriptRequest) Set(val *AddPreseedScriptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddPreseedScriptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddPreseedScriptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddPreseedScriptRequest(val *AddPreseedScriptRequest) *NullableAddPreseedScriptRequest {
-	return &NullableAddPreseedScriptRequest{value: val, isSet: true}
-}
-
-func (v NullableAddPreseedScriptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddPreseedScriptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

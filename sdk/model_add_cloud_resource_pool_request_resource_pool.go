@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCloudResourcePoolRequestResourcePool type satisfies the MappedNullable interface at compile time
@@ -38,7 +37,7 @@ type AddCloudResourcePoolRequestResourcePool struct {
 	Config               AddCloudResourcePoolRequestResourcePoolConfig             `json:"config"`
 	TenantPermissions    *AddCloudResourcePoolRequestResourcePoolTenantPermissions `json:"tenantPermissions,omitempty"`
 	ResourcePermissions  *UpdateCloudDatastoresRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _AddCloudResourcePoolRequestResourcePool AddCloudResourcePoolRequestResourcePool
@@ -430,91 +429,7 @@ func (o AddCloudResourcePoolRequestResourcePool) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 func (o *AddCloudResourcePoolRequestResourcePool) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCloudResourcePoolRequestResourcePool := _AddCloudResourcePoolRequestResourcePool{}
-
-	err = json.Unmarshal(data, &varAddCloudResourcePoolRequestResourcePool)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCloudResourcePoolRequestResourcePool(varAddCloudResourcePoolRequestResourcePool)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "defaultPool")
-		delete(additionalProperties, "defaultImage")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "displayName")
-		delete(additionalProperties, "inventory")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenantPermissions")
-		delete(additionalProperties, "resourcePermissions")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCloudResourcePoolRequestResourcePool struct {
-	value *AddCloudResourcePoolRequestResourcePool
-	isSet bool
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePool) Get() *AddCloudResourcePoolRequestResourcePool {
-	return v.value
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePool) Set(val *AddCloudResourcePoolRequestResourcePool) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePool) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePool) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCloudResourcePoolRequestResourcePool(val *AddCloudResourcePoolRequestResourcePool) *NullableAddCloudResourcePoolRequestResourcePool {
-	return &NullableAddCloudResourcePoolRequestResourcePool{value: val, isSet: true}
-}
-
-func (v NullableAddCloudResourcePoolRequestResourcePool) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCloudResourcePoolRequestResourcePool) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

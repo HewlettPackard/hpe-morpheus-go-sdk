@@ -51,7 +51,7 @@ type ContainerTypeUpdate struct {
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Config object varies with node type.  If using docker, scvmm, ARM, hyperv, or cloudformation, look up provision type details (customOptionTypes) for information.
 	Config               map[string]interface{} `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ContainerTypeUpdate ContainerTypeUpdate
@@ -651,75 +651,7 @@ func (o ContainerTypeUpdate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ContainerTypeUpdate) UnmarshalJSON(data []byte) (err error) {
-	varContainerTypeUpdate := _ContainerTypeUpdate{}
-
-	err = json.Unmarshal(data, &varContainerTypeUpdate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ContainerTypeUpdate(varContainerTypeUpdate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "shortName")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "containerVersion")
-		delete(additionalProperties, "provisionTypeCode")
-		delete(additionalProperties, "scripts")
-		delete(additionalProperties, "templates")
-		delete(additionalProperties, "virtualImageId")
-		delete(additionalProperties, "osTypeId")
-		delete(additionalProperties, "statTypeCode")
-		delete(additionalProperties, "logTypeCode")
-		delete(additionalProperties, "serverType")
-		delete(additionalProperties, "containerPorts")
-		delete(additionalProperties, "environmentVariables")
-		delete(additionalProperties, "config")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableContainerTypeUpdate struct {
-	value *ContainerTypeUpdate
-	isSet bool
-}
-
-func (v NullableContainerTypeUpdate) Get() *ContainerTypeUpdate {
-	return v.value
-}
-
-func (v *NullableContainerTypeUpdate) Set(val *ContainerTypeUpdate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableContainerTypeUpdate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableContainerTypeUpdate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableContainerTypeUpdate(val *ContainerTypeUpdate) *NullableContainerTypeUpdate {
-	return &NullableContainerTypeUpdate{value: val, isSet: true}
-}
-
-func (v NullableContainerTypeUpdate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableContainerTypeUpdate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

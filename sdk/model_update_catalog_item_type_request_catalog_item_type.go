@@ -26,6 +26,26 @@ type UpdateCatalogItemTypeRequestCatalogItemType struct {
 	UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2
 }
 
+func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateCatalogItemTypeRequestCatalogItemType{}
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf = &out
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 = &out
+	}
+
+	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2); ok {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalJSON(data []byte) error {
 	var err error

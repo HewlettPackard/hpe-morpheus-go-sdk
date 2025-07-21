@@ -28,7 +28,7 @@ type ResourcePoolGroupsCreateInput struct {
 	Pools                []int64                                                                    `json:"pools,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                        `json:"tenants,omitempty"`
 	ResourcePermission   *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                                     `json:",remain"`
 }
 
 type _ResourcePoolGroupsCreateInput ResourcePoolGroupsCreateInput
@@ -313,66 +313,7 @@ func (o ResourcePoolGroupsCreateInput) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ResourcePoolGroupsCreateInput) UnmarshalJSON(data []byte) (err error) {
-	varResourcePoolGroupsCreateInput := _ResourcePoolGroupsCreateInput{}
-
-	err = json.Unmarshal(data, &varResourcePoolGroupsCreateInput)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ResourcePoolGroupsCreateInput(varResourcePoolGroupsCreateInput)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "mode")
-		delete(additionalProperties, "pools")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermission")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableResourcePoolGroupsCreateInput struct {
-	value *ResourcePoolGroupsCreateInput
-	isSet bool
-}
-
-func (v NullableResourcePoolGroupsCreateInput) Get() *ResourcePoolGroupsCreateInput {
-	return v.value
-}
-
-func (v *NullableResourcePoolGroupsCreateInput) Set(val *ResourcePoolGroupsCreateInput) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableResourcePoolGroupsCreateInput) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableResourcePoolGroupsCreateInput) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableResourcePoolGroupsCreateInput(val *ResourcePoolGroupsCreateInput) *NullableResourcePoolGroupsCreateInput {
-	return &NullableResourcePoolGroupsCreateInput{value: val, isSet: true}
-}
-
-func (v NullableResourcePoolGroupsCreateInput) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableResourcePoolGroupsCreateInput) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

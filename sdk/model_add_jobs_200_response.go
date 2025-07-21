@@ -22,7 +22,7 @@ var _ MappedNullable = &AddJobs200Response{}
 type AddJobs200Response struct {
 	Job                  *ListJobs200ResponseAllOfJobsInnerAnyOf `json:"job,omitempty"`
 	Success              *bool                                   `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AddJobs200Response AddJobs200Response
@@ -132,61 +132,7 @@ func (o AddJobs200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *AddJobs200Response) UnmarshalJSON(data []byte) (err error) {
-	varAddJobs200Response := _AddJobs200Response{}
-
-	err = json.Unmarshal(data, &varAddJobs200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddJobs200Response(varAddJobs200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "job")
-		delete(additionalProperties, "success")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddJobs200Response struct {
-	value *AddJobs200Response
-	isSet bool
-}
-
-func (v NullableAddJobs200Response) Get() *AddJobs200Response {
-	return v.value
-}
-
-func (v *NullableAddJobs200Response) Set(val *AddJobs200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddJobs200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddJobs200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddJobs200Response(val *AddJobs200Response) *NullableAddJobs200Response {
-	return &NullableAddJobs200Response{value: val, isSet: true}
-}
-
-func (v NullableAddJobs200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddJobs200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

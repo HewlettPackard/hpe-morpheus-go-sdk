@@ -25,6 +25,22 @@ type SetupRequest struct {
 	SetupRequestAnyOf1 *SetupRequestAnyOf1
 }
 
+func (dst *SetupRequest) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &SetupRequest{}
+	}
+
+	if out, ok := data.(SetupRequestAnyOf); ok {
+		dst.SetupRequestAnyOf = &out
+	}
+
+	if out, ok := data.(SetupRequestAnyOf1); ok {
+		dst.SetupRequestAnyOf1 = &out
+	}
+
+	return dst, nil
+}
+
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SetupRequest) UnmarshalJSON(data []byte) error {
 	var err error

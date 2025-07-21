@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the AddCatalogOrderRequestOrderItemsInner type satisfies the MappedNullable interface at compile time
@@ -27,8 +26,8 @@ type AddCatalogOrderRequestOrderItemsInner struct {
 	// Context Type for running the workflow, determines if a target resource must be selected. `instance`, `server`, or `appliance`. This may only be passed if the type allows it, usually the type determines the context for the user. Only applies to type `workflow`.
 	Context *string `json:"context,omitempty"`
 	// Resource (Instance or Server) ID for context when running the `workflow`. Only applies to type `workflow` and only required when context is `instance` or `server`.
-	Target               *int64 `json:"target,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Target               *int64                 `json:"target,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCatalogOrderRequestOrderItemsInner AddCatalogOrderRequestOrderItemsInner
@@ -199,84 +198,7 @@ func (o AddCatalogOrderRequestOrderItemsInner) ToMap() (map[string]interface{}, 
 	return toSerialize, nil
 }
 func (o *AddCatalogOrderRequestOrderItemsInner) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"config",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varAddCatalogOrderRequestOrderItemsInner := _AddCatalogOrderRequestOrderItemsInner{}
-
-	err = json.Unmarshal(data, &varAddCatalogOrderRequestOrderItemsInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddCatalogOrderRequestOrderItemsInner(varAddCatalogOrderRequestOrderItemsInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "context")
-		delete(additionalProperties, "target")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddCatalogOrderRequestOrderItemsInner struct {
-	value *AddCatalogOrderRequestOrderItemsInner
-	isSet bool
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInner) Get() *AddCatalogOrderRequestOrderItemsInner {
-	return v.value
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInner) Set(val *AddCatalogOrderRequestOrderItemsInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddCatalogOrderRequestOrderItemsInner(val *AddCatalogOrderRequestOrderItemsInner) *NullableAddCatalogOrderRequestOrderItemsInner {
-	return &NullableAddCatalogOrderRequestOrderItemsInner{value: val, isSet: true}
-}
-
-func (v NullableAddCatalogOrderRequestOrderItemsInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddCatalogOrderRequestOrderItemsInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

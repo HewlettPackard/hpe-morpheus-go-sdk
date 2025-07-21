@@ -34,7 +34,7 @@ type ClusterPackage struct {
 	ImagePath            NullableString                                               `json:"imagePath,omitempty"`
 	DarkImagePath        NullableString                                               `json:"darkImagePath,omitempty"`
 	SpecTemplates        []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"specTemplates,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                       `json:",remain"`
 }
 
 type _ClusterPackage ClusterPackage
@@ -619,73 +619,7 @@ func (o ClusterPackage) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterPackage) UnmarshalJSON(data []byte) (err error) {
-	varClusterPackage := _ClusterPackage{}
-
-	err = json.Unmarshal(data, &varClusterPackage)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterPackage(varClusterPackage)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "code")
-		delete(additionalProperties, "repeatInstall")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "packageType")
-		delete(additionalProperties, "packageVersion")
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "iconPath")
-		delete(additionalProperties, "imagePath")
-		delete(additionalProperties, "darkImagePath")
-		delete(additionalProperties, "specTemplates")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterPackage struct {
-	value *ClusterPackage
-	isSet bool
-}
-
-func (v NullableClusterPackage) Get() *ClusterPackage {
-	return v.value
-}
-
-func (v *NullableClusterPackage) Set(val *ClusterPackage) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterPackage) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterPackage) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterPackage(val *ClusterPackage) *NullableClusterPackage {
-	return &NullableClusterPackage{value: val, isSet: true}
-}
-
-func (v NullableClusterPackage) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterPackage) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -31,10 +31,10 @@ type GetClusterApiConfig200Response struct {
 	// API Token
 	ServiceToken NullableString `json:"serviceToken,omitempty"`
 	// Kube Config
-	ServiceAccess        NullableString `json:"serviceAccess,omitempty"`
-	ServiceCert          NullableString `json:"serviceCert,omitempty"`
-	ServiceVersion       NullableString `json:"serviceVersion,omitempty"`
-	AdditionalProperties map[string]interface{}
+	ServiceAccess        NullableString         `json:"serviceAccess,omitempty"`
+	ServiceCert          NullableString         `json:"serviceCert,omitempty"`
+	ServiceVersion       NullableString         `json:"serviceVersion,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetClusterApiConfig200Response GetClusterApiConfig200Response
@@ -615,71 +615,7 @@ func (o GetClusterApiConfig200Response) ToMap() (map[string]interface{}, error) 
 	return toSerialize, nil
 }
 func (o *GetClusterApiConfig200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetClusterApiConfig200Response := _GetClusterApiConfig200Response{}
-
-	err = json.Unmarshal(data, &varGetClusterApiConfig200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetClusterApiConfig200Response(varGetClusterApiConfig200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "serviceUrl")
-		delete(additionalProperties, "serviceHost")
-		delete(additionalProperties, "servicePath")
-		delete(additionalProperties, "serviceHostname")
-		delete(additionalProperties, "servicePort")
-		delete(additionalProperties, "serviceUsername")
-		delete(additionalProperties, "servicePassword")
-		delete(additionalProperties, "servicePasswordHash")
-		delete(additionalProperties, "serviceToken")
-		delete(additionalProperties, "serviceAccess")
-		delete(additionalProperties, "serviceCert")
-		delete(additionalProperties, "serviceVersion")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetClusterApiConfig200Response struct {
-	value *GetClusterApiConfig200Response
-	isSet bool
-}
-
-func (v NullableGetClusterApiConfig200Response) Get() *GetClusterApiConfig200Response {
-	return v.value
-}
-
-func (v *NullableGetClusterApiConfig200Response) Set(val *GetClusterApiConfig200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetClusterApiConfig200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetClusterApiConfig200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetClusterApiConfig200Response(val *GetClusterApiConfig200Response) *NullableGetClusterApiConfig200Response {
-	return &NullableGetClusterApiConfig200Response{value: val, isSet: true}
-}
-
-func (v NullableGetClusterApiConfig200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetClusterApiConfig200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

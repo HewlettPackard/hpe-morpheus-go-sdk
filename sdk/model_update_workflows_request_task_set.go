@@ -31,7 +31,7 @@ type UpdateWorkflowsRequestTaskSet struct {
 	// List of option type IDs for use with operational workflow configuration.
 	OptionTypes          []int64                          `json:"optionTypes,omitempty"`
 	Tasks                *AddWorkflowsRequestTaskSetTasks `json:"tasks,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _UpdateWorkflowsRequestTaskSet UpdateWorkflowsRequestTaskSet
@@ -285,65 +285,7 @@ func (o UpdateWorkflowsRequestTaskSet) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateWorkflowsRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
-	varUpdateWorkflowsRequestTaskSet := _UpdateWorkflowsRequestTaskSet{}
-
-	err = json.Unmarshal(data, &varUpdateWorkflowsRequestTaskSet)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateWorkflowsRequestTaskSet(varUpdateWorkflowsRequestTaskSet)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "labels")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "optionTypes")
-		delete(additionalProperties, "tasks")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateWorkflowsRequestTaskSet struct {
-	value *UpdateWorkflowsRequestTaskSet
-	isSet bool
-}
-
-func (v NullableUpdateWorkflowsRequestTaskSet) Get() *UpdateWorkflowsRequestTaskSet {
-	return v.value
-}
-
-func (v *NullableUpdateWorkflowsRequestTaskSet) Set(val *UpdateWorkflowsRequestTaskSet) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateWorkflowsRequestTaskSet) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateWorkflowsRequestTaskSet) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateWorkflowsRequestTaskSet(val *UpdateWorkflowsRequestTaskSet) *NullableUpdateWorkflowsRequestTaskSet {
-	return &NullableUpdateWorkflowsRequestTaskSet{value: val, isSet: true}
-}
-
-func (v NullableUpdateWorkflowsRequestTaskSet) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateWorkflowsRequestTaskSet) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

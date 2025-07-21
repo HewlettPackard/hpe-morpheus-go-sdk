@@ -31,7 +31,7 @@ type CreateNetworkProxy200ResponseNetworkProxy struct {
 	Visibility           *string                                            `json:"visibility,omitempty"`
 	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _CreateNetworkProxy200ResponseNetworkProxy CreateNetworkProxy200ResponseNetworkProxy
@@ -489,70 +489,7 @@ func (o CreateNetworkProxy200ResponseNetworkProxy) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *CreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(data []byte) (err error) {
-	varCreateNetworkProxy200ResponseNetworkProxy := _CreateNetworkProxy200ResponseNetworkProxy{}
-
-	err = json.Unmarshal(data, &varCreateNetworkProxy200ResponseNetworkProxy)
-
-	if err != nil {
-		return err
-	}
-
-	*o = CreateNetworkProxy200ResponseNetworkProxy(varCreateNetworkProxy200ResponseNetworkProxy)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "proxyHost")
-		delete(additionalProperties, "proxyPort")
-		delete(additionalProperties, "proxyUser")
-		delete(additionalProperties, "proxyPassword")
-		delete(additionalProperties, "proxyDomain")
-		delete(additionalProperties, "proxyWorkstation")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableCreateNetworkProxy200ResponseNetworkProxy struct {
-	value *CreateNetworkProxy200ResponseNetworkProxy
-	isSet bool
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) Get() *CreateNetworkProxy200ResponseNetworkProxy {
-	return v.value
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) Set(val *CreateNetworkProxy200ResponseNetworkProxy) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCreateNetworkProxy200ResponseNetworkProxy(val *CreateNetworkProxy200ResponseNetworkProxy) *NullableCreateNetworkProxy200ResponseNetworkProxy {
-	return &NullableCreateNetworkProxy200ResponseNetworkProxy{value: val, isSet: true}
-}
-
-func (v NullableCreateNetworkProxy200ResponseNetworkProxy) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

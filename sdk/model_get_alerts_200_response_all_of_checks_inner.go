@@ -58,7 +58,7 @@ type GetAlerts200ResponseAllOfChecksInner struct {
 	Severity             *string                                                     `json:"severity,omitempty"`
 	StartDate            NullableTime                                                `json:"startDate,omitempty"`
 	Deleted              *bool                                                       `json:"deleted,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfChecksInner GetAlerts200ResponseAllOfChecksInner
@@ -1602,96 +1602,7 @@ func (o GetAlerts200ResponseAllOfChecksInner) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 func (o *GetAlerts200ResponseAllOfChecksInner) UnmarshalJSON(data []byte) (err error) {
-	varGetAlerts200ResponseAllOfChecksInner := _GetAlerts200ResponseAllOfChecksInner{}
-
-	err = json.Unmarshal(data, &varGetAlerts200ResponseAllOfChecksInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetAlerts200ResponseAllOfChecksInner(varGetAlerts200ResponseAllOfChecksInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "account")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "apiKey")
-		delete(additionalProperties, "availability")
-		delete(additionalProperties, "checkAgent")
-		delete(additionalProperties, "checkInterval")
-		delete(additionalProperties, "checkSpec")
-		delete(additionalProperties, "checkType")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "container")
-		delete(additionalProperties, "createIncident")
-		delete(additionalProperties, "muted")
-		delete(additionalProperties, "createdBy")
-		delete(additionalProperties, "dateCreated")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "endDate")
-		delete(additionalProperties, "health")
-		delete(additionalProperties, "inUptime")
-		delete(additionalProperties, "lastBoxStats")
-		delete(additionalProperties, "lastCheckStatus")
-		delete(additionalProperties, "lastError")
-		delete(additionalProperties, "lastErrorDate")
-		delete(additionalProperties, "lastMessage")
-		delete(additionalProperties, "lastMetric")
-		delete(additionalProperties, "lastRunDate")
-		delete(additionalProperties, "lastStats")
-		delete(additionalProperties, "lastSuccessDate")
-		delete(additionalProperties, "lastTimer")
-		delete(additionalProperties, "lastUpdated")
-		delete(additionalProperties, "lastWarningDate")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "nextRunDate")
-		delete(additionalProperties, "outageTime")
-		delete(additionalProperties, "severity")
-		delete(additionalProperties, "startDate")
-		delete(additionalProperties, "deleted")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetAlerts200ResponseAllOfChecksInner struct {
-	value *GetAlerts200ResponseAllOfChecksInner
-	isSet bool
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) Get() *GetAlerts200ResponseAllOfChecksInner {
-	return v.value
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) Set(val *GetAlerts200ResponseAllOfChecksInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetAlerts200ResponseAllOfChecksInner(val *GetAlerts200ResponseAllOfChecksInner) *NullableGetAlerts200ResponseAllOfChecksInner {
-	return &NullableGetAlerts200ResponseAllOfChecksInner{value: val, isSet: true}
-}
-
-func (v NullableGetAlerts200ResponseAllOfChecksInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetAlerts200ResponseAllOfChecksInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

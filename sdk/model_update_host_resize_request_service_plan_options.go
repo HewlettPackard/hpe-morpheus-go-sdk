@@ -25,8 +25,8 @@ type UpdateHostResizeRequestServicePlanOptions struct {
 	// Cores Per Socket
 	CoresPerSocket *int64 `json:"coresPerSocket,omitempty"`
 	// Memory in bytes For backwards compatability, values less than 1048576 are treated as being in MB and will be converted to bytes
-	MaxMemory            *int64 `json:"maxMemory,omitempty"`
-	AdditionalProperties map[string]interface{}
+	MaxMemory            *int64                 `json:"maxMemory,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateHostResizeRequestServicePlanOptions UpdateHostResizeRequestServicePlanOptions
@@ -171,62 +171,7 @@ func (o UpdateHostResizeRequestServicePlanOptions) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 func (o *UpdateHostResizeRequestServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
-	varUpdateHostResizeRequestServicePlanOptions := _UpdateHostResizeRequestServicePlanOptions{}
-
-	err = json.Unmarshal(data, &varUpdateHostResizeRequestServicePlanOptions)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateHostResizeRequestServicePlanOptions(varUpdateHostResizeRequestServicePlanOptions)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "maxCores")
-		delete(additionalProperties, "coresPerSocket")
-		delete(additionalProperties, "maxMemory")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateHostResizeRequestServicePlanOptions struct {
-	value *UpdateHostResizeRequestServicePlanOptions
-	isSet bool
-}
-
-func (v NullableUpdateHostResizeRequestServicePlanOptions) Get() *UpdateHostResizeRequestServicePlanOptions {
-	return v.value
-}
-
-func (v *NullableUpdateHostResizeRequestServicePlanOptions) Set(val *UpdateHostResizeRequestServicePlanOptions) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateHostResizeRequestServicePlanOptions) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateHostResizeRequestServicePlanOptions) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateHostResizeRequestServicePlanOptions(val *UpdateHostResizeRequestServicePlanOptions) *NullableUpdateHostResizeRequestServicePlanOptions {
-	return &NullableUpdateHostResizeRequestServicePlanOptions{value: val, isSet: true}
-}
-
-func (v NullableUpdateHostResizeRequestServicePlanOptions) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateHostResizeRequestServicePlanOptions) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

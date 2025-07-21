@@ -21,7 +21,7 @@ var _ MappedNullable = &GetCloudFolders200Response{}
 // GetCloudFolders200Response struct for GetCloudFolders200Response
 type GetCloudFolders200Response struct {
 	Folder               *ListCloudFolders200ResponseAllOfFoldersInner `json:"folder,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetCloudFolders200Response GetCloudFolders200Response
@@ -96,60 +96,7 @@ func (o GetCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetCloudFolders200Response := _GetCloudFolders200Response{}
-
-	err = json.Unmarshal(data, &varGetCloudFolders200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetCloudFolders200Response(varGetCloudFolders200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "folder")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetCloudFolders200Response struct {
-	value *GetCloudFolders200Response
-	isSet bool
-}
-
-func (v NullableGetCloudFolders200Response) Get() *GetCloudFolders200Response {
-	return v.value
-}
-
-func (v *NullableGetCloudFolders200Response) Set(val *GetCloudFolders200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetCloudFolders200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetCloudFolders200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetCloudFolders200Response(val *GetCloudFolders200Response) *NullableGetCloudFolders200Response {
-	return &NullableGetCloudFolders200Response{value: val, isSet: true}
-}
-
-func (v NullableGetCloudFolders200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetCloudFolders200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

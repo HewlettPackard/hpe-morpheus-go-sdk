@@ -25,7 +25,7 @@ type ListUsersAvailableRoles200ResponseRolesInner struct {
 	Description          NullableString                                     `json:"description,omitempty"`
 	RoleType             *string                                            `json:"roleType,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListUsersAvailableRoles200ResponseRolesInner ListUsersAvailableRoles200ResponseRolesInner
@@ -251,64 +251,7 @@ func (o ListUsersAvailableRoles200ResponseRolesInner) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 func (o *ListUsersAvailableRoles200ResponseRolesInner) UnmarshalJSON(data []byte) (err error) {
-	varListUsersAvailableRoles200ResponseRolesInner := _ListUsersAvailableRoles200ResponseRolesInner{}
-
-	err = json.Unmarshal(data, &varListUsersAvailableRoles200ResponseRolesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListUsersAvailableRoles200ResponseRolesInner(varListUsersAvailableRoles200ResponseRolesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "authority")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "roleType")
-		delete(additionalProperties, "owner")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListUsersAvailableRoles200ResponseRolesInner struct {
-	value *ListUsersAvailableRoles200ResponseRolesInner
-	isSet bool
-}
-
-func (v NullableListUsersAvailableRoles200ResponseRolesInner) Get() *ListUsersAvailableRoles200ResponseRolesInner {
-	return v.value
-}
-
-func (v *NullableListUsersAvailableRoles200ResponseRolesInner) Set(val *ListUsersAvailableRoles200ResponseRolesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListUsersAvailableRoles200ResponseRolesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListUsersAvailableRoles200ResponseRolesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListUsersAvailableRoles200ResponseRolesInner(val *ListUsersAvailableRoles200ResponseRolesInner) *NullableListUsersAvailableRoles200ResponseRolesInner {
-	return &NullableListUsersAvailableRoles200ResponseRolesInner{value: val, isSet: true}
-}
-
-func (v NullableListUsersAvailableRoles200ResponseRolesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListUsersAvailableRoles200ResponseRolesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

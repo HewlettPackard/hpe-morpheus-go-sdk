@@ -32,8 +32,8 @@ type GetMonitoringSettings200ResponseMonitoringSettingsServiceNow struct {
 	// Warning Mapping
 	WarningMapping *string `json:"warningMapping,omitempty"`
 	// Critical Mapping
-	CriticalMapping      *string `json:"criticalMapping,omitempty"`
-	AdditionalProperties map[string]interface{}
+	CriticalMapping      *string                `json:"criticalMapping,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetMonitoringSettings200ResponseMonitoringSettingsServiceNow GetMonitoringSettings200ResponseMonitoringSettingsServiceNow
@@ -318,66 +318,7 @@ func (o GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) ToMap() (m
 	return toSerialize, nil
 }
 func (o *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) UnmarshalJSON(data []byte) (err error) {
-	varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow := _GetMonitoringSettings200ResponseMonitoringSettingsServiceNow{}
-
-	err = json.Unmarshal(data, &varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetMonitoringSettings200ResponseMonitoringSettingsServiceNow(varGetMonitoringSettings200ResponseMonitoringSettingsServiceNow)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "enabled")
-		delete(additionalProperties, "integration")
-		delete(additionalProperties, "newIncidentAction")
-		delete(additionalProperties, "closeIncidentAction")
-		delete(additionalProperties, "infoMapping")
-		delete(additionalProperties, "warningMapping")
-		delete(additionalProperties, "criticalMapping")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow struct {
-	value *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow
-	isSet bool
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Get() *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow {
-	return v.value
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Set(val *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow(val *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow {
-	return &NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow{value: val, isSet: true}
-}
-
-func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

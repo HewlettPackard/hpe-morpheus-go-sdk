@@ -21,7 +21,7 @@ var _ MappedNullable = &GetPlugin200Response{}
 // GetPlugin200Response struct for GetPlugin200Response
 type GetPlugin200Response struct {
 	Plugin               *ListPlugins200ResponseAllOfPluginsInner `json:"plugin,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetPlugin200Response GetPlugin200Response
@@ -96,60 +96,7 @@ func (o GetPlugin200Response) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *GetPlugin200Response) UnmarshalJSON(data []byte) (err error) {
-	varGetPlugin200Response := _GetPlugin200Response{}
-
-	err = json.Unmarshal(data, &varGetPlugin200Response)
-
-	if err != nil {
-		return err
-	}
-
-	*o = GetPlugin200Response(varGetPlugin200Response)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "plugin")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableGetPlugin200Response struct {
-	value *GetPlugin200Response
-	isSet bool
-}
-
-func (v NullableGetPlugin200Response) Get() *GetPlugin200Response {
-	return v.value
-}
-
-func (v *NullableGetPlugin200Response) Set(val *GetPlugin200Response) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGetPlugin200Response) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGetPlugin200Response) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGetPlugin200Response(val *GetPlugin200Response) *NullableGetPlugin200Response {
-	return &NullableGetPlugin200Response{value: val, isSet: true}
-}
-
-func (v NullableGetPlugin200Response) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGetPlugin200Response) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -30,7 +30,7 @@ type SaveCloudDatastoreRequestDatastore struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _SaveCloudDatastoreRequestDatastore SaveCloudDatastoreRequestDatastore
@@ -385,68 +385,7 @@ func (o SaveCloudDatastoreRequestDatastore) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 func (o *SaveCloudDatastoreRequestDatastore) UnmarshalJSON(data []byte) (err error) {
-	varSaveCloudDatastoreRequestDatastore := _SaveCloudDatastoreRequestDatastore{}
-
-	err = json.Unmarshal(data, &varSaveCloudDatastoreRequestDatastore)
-
-	if err != nil {
-		return err
-	}
-
-	*o = SaveCloudDatastoreRequestDatastore(varSaveCloudDatastoreRequestDatastore)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableSaveCloudDatastoreRequestDatastore struct {
-	value *SaveCloudDatastoreRequestDatastore
-	isSet bool
-}
-
-func (v NullableSaveCloudDatastoreRequestDatastore) Get() *SaveCloudDatastoreRequestDatastore {
-	return v.value
-}
-
-func (v *NullableSaveCloudDatastoreRequestDatastore) Set(val *SaveCloudDatastoreRequestDatastore) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSaveCloudDatastoreRequestDatastore) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSaveCloudDatastoreRequestDatastore) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSaveCloudDatastoreRequestDatastore(val *SaveCloudDatastoreRequestDatastore) *NullableSaveCloudDatastoreRequestDatastore {
-	return &NullableSaveCloudDatastoreRequestDatastore{value: val, isSet: true}
-}
-
-func (v NullableSaveCloudDatastoreRequestDatastore) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSaveCloudDatastoreRequestDatastore) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

@@ -30,7 +30,7 @@ type ClusterDatastoreCreate struct {
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _ClusterDatastoreCreate ClusterDatastoreCreate
@@ -420,69 +420,7 @@ func (o ClusterDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *ClusterDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
-	varClusterDatastoreCreate := _ClusterDatastoreCreate{}
-
-	err = json.Unmarshal(data, &varClusterDatastoreCreate)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ClusterDatastoreCreate(varClusterDatastoreCreate)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "datastoreType")
-		delete(additionalProperties, "storageServer")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "active")
-		delete(additionalProperties, "defaultStore")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "tenants")
-		delete(additionalProperties, "resourcePermissions")
-		delete(additionalProperties, "datastores")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableClusterDatastoreCreate struct {
-	value *ClusterDatastoreCreate
-	isSet bool
-}
-
-func (v NullableClusterDatastoreCreate) Get() *ClusterDatastoreCreate {
-	return v.value
-}
-
-func (v *NullableClusterDatastoreCreate) Set(val *ClusterDatastoreCreate) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableClusterDatastoreCreate) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableClusterDatastoreCreate) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableClusterDatastoreCreate(val *ClusterDatastoreCreate) *NullableClusterDatastoreCreate {
-	return &NullableClusterDatastoreCreate{value: val, isSet: true}
-}
-
-func (v NullableClusterDatastoreCreate) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableClusterDatastoreCreate) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

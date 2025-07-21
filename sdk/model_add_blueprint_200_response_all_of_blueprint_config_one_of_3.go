@@ -36,7 +36,7 @@ type AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 struct {
 	Owner map[string]interface{} `json:"owner,omitempty"`
 	// Tenant
 	Tenant               map[string]interface{} `json:"tenant,omitempty"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 AddBlueprint200ResponseAllOfBlueprintConfigOneOf3
@@ -395,68 +395,7 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) ToMap() (map[string]i
 	return toSerialize, nil
 }
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
-	varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 := _AddBlueprint200ResponseAllOfBlueprintConfigOneOf3{}
-
-	err = json.Unmarshal(data, &varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3)
-
-	if err != nil {
-		return err
-	}
-
-	*o = AddBlueprint200ResponseAllOfBlueprintConfigOneOf3(varAddBlueprint200ResponseAllOfBlueprintConfigOneOf3)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "image")
-		delete(additionalProperties, "type")
-		delete(additionalProperties, "kubernetes")
-		delete(additionalProperties, "config")
-		delete(additionalProperties, "visibility")
-		delete(additionalProperties, "resourcePermission")
-		delete(additionalProperties, "owner")
-		delete(additionalProperties, "tenant")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 struct {
-	value *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3
-	isSet bool
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) Get() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 {
-	return v.value
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) Set(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3 {
-	return &NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3{value: val, isSet: true}
-}
-
-func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf3) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

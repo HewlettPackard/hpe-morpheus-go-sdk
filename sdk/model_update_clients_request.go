@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the UpdateClientsRequest type satisfies the MappedNullable interface at compile time
@@ -22,7 +21,7 @@ var _ MappedNullable = &UpdateClientsRequest{}
 // UpdateClientsRequest struct for UpdateClientsRequest
 type UpdateClientsRequest struct {
 	Client               UpdateClientsRequestClient `json:"client"`
-	AdditionalProperties map[string]interface{}
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _UpdateClientsRequest UpdateClientsRequest
@@ -88,81 +87,7 @@ func (o UpdateClientsRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 func (o *UpdateClientsRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"client",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
-	varUpdateClientsRequest := _UpdateClientsRequest{}
-
-	err = json.Unmarshal(data, &varUpdateClientsRequest)
-
-	if err != nil {
-		return err
-	}
-
-	*o = UpdateClientsRequest(varUpdateClientsRequest)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "client")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableUpdateClientsRequest struct {
-	value *UpdateClientsRequest
-	isSet bool
-}
-
-func (v NullableUpdateClientsRequest) Get() *UpdateClientsRequest {
-	return v.value
-}
-
-func (v *NullableUpdateClientsRequest) Set(val *UpdateClientsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUpdateClientsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUpdateClientsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUpdateClientsRequest(val *UpdateClientsRequest) *NullableUpdateClientsRequest {
-	return &NullableUpdateClientsRequest{value: val, isSet: true}
-}
-
-func (v NullableUpdateClientsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUpdateClientsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache
