@@ -23,8 +23,8 @@ type ListNetworks200ResponseAllOfNetworksInnerGroup struct {
 	// Group ID
 	Id *int64 `json:"id,omitempty"`
 	// Group Name
-	Name                 NullableString `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Name                 NullableString         `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworks200ResponseAllOfNetworksInnerGroup ListNetworks200ResponseAllOfNetworksInnerGroup
@@ -145,61 +145,7 @@ func (o ListNetworks200ResponseAllOfNetworksInnerGroup) ToMap() (map[string]inte
 	return toSerialize, nil
 }
 func (o *ListNetworks200ResponseAllOfNetworksInnerGroup) UnmarshalJSON(data []byte) (err error) {
-	varListNetworks200ResponseAllOfNetworksInnerGroup := _ListNetworks200ResponseAllOfNetworksInnerGroup{}
-
-	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerGroup)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworks200ResponseAllOfNetworksInnerGroup(varListNetworks200ResponseAllOfNetworksInnerGroup)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListNetworks200ResponseAllOfNetworksInnerGroup struct {
-	value *ListNetworks200ResponseAllOfNetworksInnerGroup
-	isSet bool
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerGroup) Get() *ListNetworks200ResponseAllOfNetworksInnerGroup {
-	return v.value
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerGroup) Set(val *ListNetworks200ResponseAllOfNetworksInnerGroup) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerGroup) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerGroup) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworks200ResponseAllOfNetworksInnerGroup(val *ListNetworks200ResponseAllOfNetworksInnerGroup) *NullableListNetworks200ResponseAllOfNetworksInnerGroup {
-	return &NullableListNetworks200ResponseAllOfNetworksInnerGroup{value: val, isSet: true}
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerGroup) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerGroup) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache

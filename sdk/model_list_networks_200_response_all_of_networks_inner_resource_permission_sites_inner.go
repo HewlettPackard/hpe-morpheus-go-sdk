@@ -20,9 +20,9 @@ var _ MappedNullable = &ListNetworks200ResponseAllOfNetworksInnerResourcePermiss
 
 // ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner struct for ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner
 type ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner struct {
-	Id                   *int64         `json:"id,omitempty"`
-	Name                 NullableString `json:"name,omitempty"`
-	AdditionalProperties map[string]interface{}
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 NullableString         `json:"name,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner
@@ -143,61 +143,7 @@ func (o ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) T
 	return toSerialize, nil
 }
 func (o *ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
-	varListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner := _ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner{}
-
-	err = json.Unmarshal(data, &varListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner)
-
-	if err != nil {
-		return err
-	}
-
-	*o = ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner(varListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner)
-
-	additionalProperties := make(map[string]interface{})
-
-	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
-}
-
-type NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner struct {
-	value *ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner
-	isSet bool
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) Get() *ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner {
-	return v.value
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) Set(val *ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner(val *ListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) *NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner {
-	return &NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner{value: val, isSet: true}
-}
-
-func (v NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableListNetworks200ResponseAllOfNetworksInnerResourcePermissionSitesInner) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
+	return decode(data, &o)
 }
 
 // - model_simple.mustache
