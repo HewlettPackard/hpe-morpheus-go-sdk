@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Network ID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**DisplayName** | Pointer to **string** | Network Display Name | [optional] 
+**DisplayName** | Pointer to **NullableString** | Network Display Name | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
+**Group** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerGroup**](ListNetworks200ResponseAllOfNetworksInnerGroup.md) |  | [optional] 
 **Zone** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZone**](ListNetworks200ResponseAllOfNetworksInnerZone.md) |  | [optional] 
 **Type** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerType**](ListNetworks200ResponseAllOfNetworksInnerType.md) |  | [optional] 
 **Owner** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerOwner**](ListNetworks200ResponseAllOfNetworksInnerOwner.md) |  | [optional] 
@@ -37,7 +38,7 @@ Name | Type | Description | Notes
 **SubnetAddress** | Pointer to **NullableString** |  | [optional] 
 **DnsPrimary** | Pointer to **NullableString** | Primary DNS Server | [optional] 
 **DnsSecondary** | Pointer to **NullableString** | Secondary DNS Server | [optional] 
-**Cidr** | Pointer to **string** | Network CIDR | [optional] 
+**Cidr** | Pointer to **NullableString** | Network CIDR | [optional] 
 **GatewayIPv6** | Pointer to **NullableString** | IPv6 Network Gateway | [optional] 
 **NetmaskIPv6** | Pointer to **NullableString** |  | [optional] 
 **DnsPrimaryIPv6** | Pointer to **NullableString** | Primary IPv6 DNS Server | [optional] 
@@ -48,7 +49,7 @@ Name | Type | Description | Notes
 **SwitchId** | Pointer to **NullableString** |  | [optional] 
 **FabricId** | Pointer to **NullableString** |  | [optional] 
 **NetworkRole** | Pointer to **NullableString** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
 **AvailabilityZone** | Pointer to **NullableString** |  | [optional] 
 **Pool** | Pointer to **map[string]interface{}** |  | [optional] 
 **PoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -67,6 +68,7 @@ Name | Type | Description | Notes
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerConfig**](ListNetworks200ResponseAllOfNetworksInnerConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ResourcePermission** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerResourcePermission**](ListNetworks200ResponseAllOfNetworksInnerResourcePermission.md) |  | [optional] 
 
 ## Methods
 
@@ -162,6 +164,16 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
+### SetDisplayNameNil
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetDisplayNameNil(b bool)`
+
+ SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+
+### UnsetDisplayName
+`func (o *ListNetworks200ResponseAllOfNetworksInner) UnsetDisplayName()`
+
+UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetLabels
 
 `func (o *ListNetworks200ResponseAllOfNetworksInner) GetLabels() []string`
@@ -197,6 +209,31 @@ HasLabels returns a boolean if a field has been set.
 `func (o *ListNetworks200ResponseAllOfNetworksInner) UnsetLabels()`
 
 UnsetLabels ensures that no value is present for Labels, not even an explicit nil
+### GetGroup
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup`
+
+GetGroup returns the Group field if non-nil, zero value otherwise.
+
+### GetGroupOk
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetGroupOk() (*ListNetworks200ResponseAllOfNetworksInnerGroup, bool)`
+
+GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroup
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetGroup(v ListNetworks200ResponseAllOfNetworksInnerGroup)`
+
+SetGroup sets Group field to given value.
+
+### HasGroup
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
+
 ### GetZone
 
 `func (o *ListNetworks200ResponseAllOfNetworksInner) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone`
@@ -1137,6 +1174,16 @@ SetCidr sets Cidr field to given value.
 
 HasCidr returns a boolean if a field has been set.
 
+### SetCidrNil
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetCidrNil(b bool)`
+
+ SetCidrNil sets the value for Cidr to be an explicit nil
+
+### UnsetCidr
+`func (o *ListNetworks200ResponseAllOfNetworksInner) UnsetCidr()`
+
+UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
 ### GetGatewayIPv6
 
 `func (o *ListNetworks200ResponseAllOfNetworksInner) GetGatewayIPv6() string`
@@ -1512,6 +1559,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *ListNetworks200ResponseAllOfNetworksInner) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetAvailabilityZone
 
 `func (o *ListNetworks200ResponseAllOfNetworksInner) GetAvailabilityZone() string`
@@ -2021,6 +2078,31 @@ SetTenants sets Tenants field to given value.
 `func (o *ListNetworks200ResponseAllOfNetworksInner) HasTenants() bool`
 
 HasTenants returns a boolean if a field has been set.
+
+### GetResourcePermission
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetResourcePermission() ListNetworks200ResponseAllOfNetworksInnerResourcePermission`
+
+GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
+
+### GetResourcePermissionOk
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetResourcePermissionOk() (*ListNetworks200ResponseAllOfNetworksInnerResourcePermission, bool)`
+
+GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePermission
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetResourcePermission(v ListNetworks200ResponseAllOfNetworksInnerResourcePermission)`
+
+SetResourcePermission sets ResourcePermission field to given value.
+
+### HasResourcePermission
+
+`func (o *ListNetworks200ResponseAllOfNetworksInner) HasResourcePermission() bool`
+
+HasResourcePermission returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

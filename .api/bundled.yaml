@@ -102507,7 +102507,9 @@ paths:
                               type: string
                               description: Name
                             displayName:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                               description: Network Display Name
                             labels:
                               type:
@@ -102515,6 +102517,20 @@ paths:
                                 - 'null'
                               items:
                                 type: string
+                            group:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                  description: Group ID
+                                name:
+                                  type:
+                                    - string
+                                    - 'null'
+                                  description: Group Name
                             zone:
                               type: object
                               properties:
@@ -102647,7 +102663,9 @@ paths:
                                 - 'null'
                               description: Secondary DNS Server
                             cidr:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                               description: Network CIDR
                             gatewayIPv6:
                               type:
@@ -102694,7 +102712,9 @@ paths:
                                 - string
                                 - 'null'
                             status:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                             availabilityZone:
                               type:
                                 - string
@@ -102790,6 +102810,25 @@ paths:
                                     format: int64
                                   name:
                                     type: string
+                            resourcePermission:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                all:
+                                  type: boolean
+                                sites:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type:
+                                          - string
+                                          - 'null'
                   - type: object
                     properties: *ref_2
               examples:
@@ -102800,6 +102839,9 @@ paths:
                         name: my-network
                         displayName: my-displayName
                         labels: []
+                        group:
+                          id: 1
+                          name: Group
                         zone:
                           id: 5
                           name: qa-azure
@@ -103635,6 +103677,9 @@ paths:
                       name: my-network
                       displayName: network display name
                       labels: []
+                      group:
+                        id: 1
+                        name: Group
                       zone:
                         id: 31
                         name: qa-azure
@@ -136522,7 +136567,7 @@ paths:
                     multitenantLocked:
                       type: boolean
                       default: false
-                      description: Multitenant Locked, prevents sub-tenant users from modifying their copy of multienant roles. *Only available to master tenant*
+                      description: Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant*
                     defaultPersona:
                       oneOf:
                         - type: string
