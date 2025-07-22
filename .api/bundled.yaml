@@ -102507,7 +102507,9 @@ paths:
                               type: string
                               description: Name
                             displayName:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                               description: Network Display Name
                             labels:
                               type:
@@ -102661,7 +102663,9 @@ paths:
                                 - 'null'
                               description: Secondary DNS Server
                             cidr:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                               description: Network CIDR
                             gatewayIPv6:
                               type:
@@ -102708,7 +102712,9 @@ paths:
                                 - string
                                 - 'null'
                             status:
-                              type: string
+                              type:
+                                - string
+                                - 'null'
                             availabilityZone:
                               type:
                                 - string

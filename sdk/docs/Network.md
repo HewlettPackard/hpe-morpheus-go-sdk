@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** | Network ID | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**DisplayName** | Pointer to **string** | Network Display Name | [optional] 
+**DisplayName** | Pointer to **NullableString** | Network Display Name | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Group** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerGroup**](ListNetworks200ResponseAllOfNetworksInnerGroup.md) |  | [optional] 
 **Zone** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZone**](ListNetworks200ResponseAllOfNetworksInnerZone.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **SubnetAddress** | Pointer to **NullableString** |  | [optional] 
 **DnsPrimary** | Pointer to **NullableString** | Primary DNS Server | [optional] 
 **DnsSecondary** | Pointer to **NullableString** | Secondary DNS Server | [optional] 
-**Cidr** | Pointer to **string** | Network CIDR | [optional] 
+**Cidr** | Pointer to **NullableString** | Network CIDR | [optional] 
 **GatewayIPv6** | Pointer to **NullableString** | IPv6 Network Gateway | [optional] 
 **NetmaskIPv6** | Pointer to **NullableString** |  | [optional] 
 **DnsPrimaryIPv6** | Pointer to **NullableString** | Primary IPv6 DNS Server | [optional] 
@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 **SwitchId** | Pointer to **NullableString** |  | [optional] 
 **FabricId** | Pointer to **NullableString** |  | [optional] 
 **NetworkRole** | Pointer to **NullableString** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **NullableString** |  | [optional] 
 **AvailabilityZone** | Pointer to **NullableString** |  | [optional] 
 **Pool** | Pointer to **map[string]interface{}** |  | [optional] 
 **PoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -164,6 +164,16 @@ SetDisplayName sets DisplayName field to given value.
 
 HasDisplayName returns a boolean if a field has been set.
 
+### SetDisplayNameNil
+
+`func (o *Network) SetDisplayNameNil(b bool)`
+
+ SetDisplayNameNil sets the value for DisplayName to be an explicit nil
+
+### UnsetDisplayName
+`func (o *Network) UnsetDisplayName()`
+
+UnsetDisplayName ensures that no value is present for DisplayName, not even an explicit nil
 ### GetLabels
 
 `func (o *Network) GetLabels() []string`
@@ -1164,6 +1174,16 @@ SetCidr sets Cidr field to given value.
 
 HasCidr returns a boolean if a field has been set.
 
+### SetCidrNil
+
+`func (o *Network) SetCidrNil(b bool)`
+
+ SetCidrNil sets the value for Cidr to be an explicit nil
+
+### UnsetCidr
+`func (o *Network) UnsetCidr()`
+
+UnsetCidr ensures that no value is present for Cidr, not even an explicit nil
 ### GetGatewayIPv6
 
 `func (o *Network) GetGatewayIPv6() string`
@@ -1539,6 +1559,16 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### SetStatusNil
+
+`func (o *Network) SetStatusNil(b bool)`
+
+ SetStatusNil sets the value for Status to be an explicit nil
+
+### UnsetStatus
+`func (o *Network) UnsetStatus()`
+
+UnsetStatus ensures that no value is present for Status, not even an explicit nil
 ### GetAvailabilityZone
 
 `func (o *Network) GetAvailabilityZone() string`
