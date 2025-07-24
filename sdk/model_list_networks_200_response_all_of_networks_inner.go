@@ -81,8 +81,8 @@ type ListNetworks200ResponseAllOfNetworksInner struct {
 	NetworkRole             NullableString                                               `json:"networkRole,omitempty"`
 	Status                  NullableString                                               `json:"status,omitempty"`
 	AvailabilityZone        NullableString                                               `json:"availabilityZone,omitempty"`
-	Pool                    map[string]interface{}                                       `json:"pool,omitempty"`
-	PoolIPv6                map[string]interface{}                                       `json:"poolIPv6,omitempty"`
+	Pool                    *ListNetworks200ResponseAllOfNetworksInnerPool               `json:"pool,omitempty"`
+	PoolIPv6                *ListNetworks200ResponseAllOfNetworksInnerPoolIPv6           `json:"poolIPv6,omitempty"`
 	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy       `json:"networkProxy,omitempty"`
 	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain      `json:"networkDomain,omitempty"`
 	SearchDomains           NullableString                                               `json:"searchDomains,omitempty"`
@@ -1989,21 +1989,20 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) UnsetAvailabilityZone() {
 	o.AvailabilityZone.Unset()
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetPool() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+// GetPool returns the Pool field value if set, zero value otherwise.
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetPool() ListNetworks200ResponseAllOfNetworksInnerPool {
+	if o == nil || IsNil(o.Pool) {
+		var ret ListNetworks200ResponseAllOfNetworksInnerPool
 		return ret
 	}
-	return o.Pool
+	return *o.Pool
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolOk() (map[string]interface{}, bool) {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolOk() (*ListNetworks200ResponseAllOfNetworksInnerPool, bool) {
 	if o == nil || IsNil(o.Pool) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Pool, true
 }
@@ -2017,26 +2016,25 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) IsSetPool() bool {
 	return false
 }
 
-// SetPool gets a reference to the given map[string]interface{} and assigns it to the Pool field.
-func (o *ListNetworks200ResponseAllOfNetworksInner) SetPool(v map[string]interface{}) {
-	o.Pool = v
+// SetPool gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerPool and assigns it to the Pool field.
+func (o *ListNetworks200ResponseAllOfNetworksInner) SetPool(v ListNetworks200ResponseAllOfNetworksInnerPool) {
+	o.Pool = &v
 }
 
-// GetPoolIPv6 returns the PoolIPv6 field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolIPv6() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+// GetPoolIPv6 returns the PoolIPv6 field value if set, zero value otherwise.
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolIPv6() ListNetworks200ResponseAllOfNetworksInnerPoolIPv6 {
+	if o == nil || IsNil(o.PoolIPv6) {
+		var ret ListNetworks200ResponseAllOfNetworksInnerPoolIPv6
 		return ret
 	}
-	return o.PoolIPv6
+	return *o.PoolIPv6
 }
 
 // GetPoolIPv6Ok returns a tuple with the PoolIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolIPv6Ok() (map[string]interface{}, bool) {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetPoolIPv6Ok() (*ListNetworks200ResponseAllOfNetworksInnerPoolIPv6, bool) {
 	if o == nil || IsNil(o.PoolIPv6) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.PoolIPv6, true
 }
@@ -2050,9 +2048,9 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) IsSetPoolIPv6() bool {
 	return false
 }
 
-// SetPoolIPv6 gets a reference to the given map[string]interface{} and assigns it to the PoolIPv6 field.
-func (o *ListNetworks200ResponseAllOfNetworksInner) SetPoolIPv6(v map[string]interface{}) {
-	o.PoolIPv6 = v
+// SetPoolIPv6 gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerPoolIPv6 and assigns it to the PoolIPv6 field.
+func (o *ListNetworks200ResponseAllOfNetworksInner) SetPoolIPv6(v ListNetworks200ResponseAllOfNetworksInnerPoolIPv6) {
+	o.PoolIPv6 = &v
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
@@ -2751,10 +2749,10 @@ func (o ListNetworks200ResponseAllOfNetworksInner) ToMap() (map[string]interface
 	if o.AvailabilityZone.IsSet() {
 		toSerialize["availabilityZone"] = o.AvailabilityZone.Get()
 	}
-	if o.Pool != nil {
+	if !IsNil(o.Pool) {
 		toSerialize["pool"] = o.Pool
 	}
-	if o.PoolIPv6 != nil {
+	if !IsNil(o.PoolIPv6) {
 		toSerialize["poolIPv6"] = o.PoolIPv6
 	}
 	if !IsNil(o.NetworkProxy) {

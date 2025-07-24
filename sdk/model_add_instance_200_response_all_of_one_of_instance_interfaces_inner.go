@@ -20,7 +20,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInterfacesInner{
 
 // AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct for AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
 type AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct {
-	Id                     *string                                                         `json:"id,omitempty"`
+	Id                     *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId   `json:"id,omitempty"`
 	Network                *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork `json:"network,omitempty"`
 	IpAddress              *string                                                         `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId *int64                                                          `json:"networkInterfaceTypeId,omitempty"`
@@ -48,9 +48,9 @@ func NewAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerWithDefaults() *A
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() string {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId {
 	if o == nil || IsNil(o.Id) {
-		var ret string
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId
 		return ret
 	}
 	return *o.Id
@@ -58,7 +58,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() string
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*string, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -74,8 +74,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetId() bool
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v string) {
+// SetId gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId and assigns it to the Id field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) {
 	o.Id = &v
 }
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
-**NoAgent** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent**](AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent.md) |  | [optional] 
+**NoAgent** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState**](ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
 **MemoryDisplay** | Pointer to **string** |  | [optional] 
-**Expose** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Expose** | Pointer to **[]int64** |  | [optional] 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
 **Backup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigBackup**](ListInstances200ResponseAllOfInstancesInnerConfigBackup.md) |  | [optional] 
 **ReplicationGroup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup**](AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup.md) |  | [optional] 
@@ -130,20 +130,20 @@ HasIsVpcSelectable returns a boolean if a field has been set.
 
 ### GetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState)`
 
 SetNoAgent sets NoAgent field to given value.
 
@@ -670,20 +670,20 @@ HasMemoryDisplay returns a boolean if a field has been set.
 
 ### GetExpose
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []map[string]interface{}`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64`
 
 GetExpose returns the Expose field if non-nil, zero value otherwise.
 
 ### GetExposeOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() (*[]map[string]interface{}, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() (*[]int64, bool)`
 
 GetExposeOk returns a tuple with the Expose field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpose
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExpose(v []map[string]interface{})`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExpose(v []int64)`
 
 SetExpose sets Expose field to given value.
 
@@ -693,16 +693,6 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
-### SetExposeNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExposeNil(b bool)`
-
- SetExposeNil sets the value for Expose to be an explicit nil
-
-### UnsetExpose
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetExpose()`
-
-UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetCreateBackup() bool`

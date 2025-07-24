@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId**](AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId.md) |  | [optional] 
 **Network** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork.md) |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
 **NetworkInterfaceTypeId** | Pointer to **int64** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() string`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*string, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v string)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId)`
 
 SetId sets Id field to given value.
 

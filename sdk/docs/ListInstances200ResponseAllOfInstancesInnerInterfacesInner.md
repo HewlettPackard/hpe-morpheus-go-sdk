@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId**](ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId.md) |  | [optional] 
 **Network** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork**](ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork.md) |  | [optional] 
 **IpAddress** | Pointer to **NullableString** |  | [optional] 
 **NetworkInterfaceTypeId** | Pointer to **NullableInt64** |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetId() string`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetId() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (*string, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v string)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId)`
 
 SetId sets Id field to given value.
 
@@ -54,16 +54,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetNetwork
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetwork() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork`

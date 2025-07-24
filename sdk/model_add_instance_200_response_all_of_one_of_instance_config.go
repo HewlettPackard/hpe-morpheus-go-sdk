@@ -20,36 +20,36 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfig{}
 
 // AddInstance200ResponseAllOfOneOfInstanceConfig struct for AddInstance200ResponseAllOfOneOfInstanceConfig
 type AddInstance200ResponseAllOfOneOfInstanceConfig struct {
-	CreateUser           *bool                                                           `json:"createUser,omitempty"`
-	IsEC2                *bool                                                           `json:"isEC2,omitempty"`
-	IsVpcSelectable      *bool                                                           `json:"isVpcSelectable,omitempty"`
-	NoAgent              *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent          `json:"noAgent,omitempty"`
-	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup    `json:"securityGroups,omitempty"`
-	SmbiosAssetTag       NullableString                                                  `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization NullableString                                                  `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                         `json:"vmwareFolderId,omitempty"`
-	CustomOptions        map[string]interface{}                                          `json:"customOptions,omitempty"`
-	ResourcePoolId       *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId   `json:"resourcePoolId,omitempty"`
-	PoolProviderType     NullableString                                                  `json:"poolProviderType,omitempty"`
-	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup     `json:"userGroup,omitempty"`
-	ExpireDays           *string                                                         `json:"expireDays,omitempty"`
-	ShutdownDays         *string                                                         `json:"shutdownDays,omitempty"`
-	Name                 *string                                                         `json:"name,omitempty"`
-	HostName             *string                                                         `json:"hostName,omitempty"`
-	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType     `json:"instanceType,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                    `json:"site,omitempty"`
-	EnvironmentPrefix    NullableString                                                  `json:"environmentPrefix,omitempty"`
-	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan      `json:"layout,omitempty"`
-	Type                 *string                                                         `json:"type,omitempty"`
-	InstanceContext      *string                                                         `json:"instanceContext,omitempty"`
-	MemoryDisplay        *string                                                         `json:"memoryDisplay,omitempty"`
-	Expose               []map[string]interface{}                                        `json:"expose,omitempty"`
-	CreateBackup         *bool                                                           `json:"createBackup,omitempty"`
-	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup        `json:"backup,omitempty"`
-	ReplicationGroup     *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup `json:"replicationGroup,omitempty"`
-	LayoutSize           *int64                                                          `json:"layoutSize,omitempty"`
-	LbInstances          []map[string]interface{}                                        `json:"lbInstances,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	CreateUser           *bool                                                                             `json:"createUser,omitempty"`
+	IsEC2                *bool                                                                             `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                                                                             `json:"isVpcSelectable,omitempty"`
+	NoAgent              *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState `json:"noAgent,omitempty"`
+	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup                      `json:"securityGroups,omitempty"`
+	SmbiosAssetTag       NullableString                                                                    `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString                                                                    `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                                           `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                                            `json:"customOptions,omitempty"`
+	ResourcePoolId       *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId                     `json:"resourcePoolId,omitempty"`
+	PoolProviderType     NullableString                                                                    `json:"poolProviderType,omitempty"`
+	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup                       `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                                           `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                                           `json:"shutdownDays,omitempty"`
+	Name                 *string                                                                           `json:"name,omitempty"`
+	HostName             *string                                                                           `json:"hostName,omitempty"`
+	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType                       `json:"instanceType,omitempty"`
+	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                                      `json:"site,omitempty"`
+	EnvironmentPrefix    NullableString                                                                    `json:"environmentPrefix,omitempty"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan                        `json:"layout,omitempty"`
+	Type                 *string                                                                           `json:"type,omitempty"`
+	InstanceContext      *string                                                                           `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                                           `json:"memoryDisplay,omitempty"`
+	Expose               []int64                                                                           `json:"expose,omitempty"`
+	CreateBackup         *bool                                                                             `json:"createBackup,omitempty"`
+	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup                          `json:"backup,omitempty"`
+	ReplicationGroup     *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup                   `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                                            `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                                          `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}                                                            `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfig AddInstance200ResponseAllOfOneOfInstanceConfig
@@ -168,9 +168,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetIsVpcSelectable(v bo
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState {
 	if o == nil || IsNil(o.NoAgent) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent
+		var ret ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState
 		return ret
 	}
 	return *o.NoAgent
@@ -178,7 +178,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() AddInstanc
 
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState, bool) {
 	if o == nil || IsNil(o.NoAgent) {
 		return nil, false
 	}
@@ -194,8 +194,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetNoAgent() bool {
 	return false
 }
 
-// SetNoAgent gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent and assigns it to the NoAgent field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) {
+// SetNoAgent gets a reference to the given ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState and assigns it to the NoAgent field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState) {
 	o.NoAgent = &v
 }
 
@@ -851,10 +851,10 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetMemoryDisplay(v stri
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
+// GetExpose returns the Expose field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64 {
+	if o == nil || IsNil(o.Expose) {
+		var ret []int64
 		return ret
 	}
 	return o.Expose
@@ -862,8 +862,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []map[strin
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() ([]map[string]interface{}, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
 	}
@@ -879,8 +878,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetExpose() bool {
 	return false
 }
 
-// SetExpose gets a reference to the given []map[string]interface{} and assigns it to the Expose field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExpose(v []map[string]interface{}) {
+// SetExpose gets a reference to the given []int64 and assigns it to the Expose field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExpose(v []int64) {
 	o.Expose = v
 }
 
@@ -1124,7 +1123,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if o.Expose != nil {
+	if !IsNil(o.Expose) {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {

@@ -51,8 +51,8 @@ Name | Type | Description | Notes
 **NetworkRole** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 
 **AvailabilityZone** | Pointer to **NullableString** |  | [optional] 
-**Pool** | Pointer to **map[string]interface{}** |  | [optional] 
-**PoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
+**Pool** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerPool**](ListNetworks200ResponseAllOfNetworksInnerPool.md) |  | [optional] 
+**PoolIPv6** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerPoolIPv6**](ListNetworks200ResponseAllOfNetworksInnerPoolIPv6.md) |  | [optional] 
 **NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
 **NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **NullableString** |  | [optional] 
@@ -1606,20 +1606,20 @@ HasAvailabilityZone returns a boolean if a field has been set.
 UnsetAvailabilityZone ensures that no value is present for AvailabilityZone, not even an explicit nil
 ### GetPool
 
-`func (o *Network) GetPool() map[string]interface{}`
+`func (o *Network) GetPool() ListNetworks200ResponseAllOfNetworksInnerPool`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *Network) GetPoolOk() (*map[string]interface{}, bool)`
+`func (o *Network) GetPoolOk() (*ListNetworks200ResponseAllOfNetworksInnerPool, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *Network) SetPool(v map[string]interface{})`
+`func (o *Network) SetPool(v ListNetworks200ResponseAllOfNetworksInnerPool)`
 
 SetPool sets Pool field to given value.
 
@@ -1629,32 +1629,22 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
-### SetPoolNil
-
-`func (o *Network) SetPoolNil(b bool)`
-
- SetPoolNil sets the value for Pool to be an explicit nil
-
-### UnsetPool
-`func (o *Network) UnsetPool()`
-
-UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetPoolIPv6
 
-`func (o *Network) GetPoolIPv6() map[string]interface{}`
+`func (o *Network) GetPoolIPv6() ListNetworks200ResponseAllOfNetworksInnerPoolIPv6`
 
 GetPoolIPv6 returns the PoolIPv6 field if non-nil, zero value otherwise.
 
 ### GetPoolIPv6Ok
 
-`func (o *Network) GetPoolIPv6Ok() (*map[string]interface{}, bool)`
+`func (o *Network) GetPoolIPv6Ok() (*ListNetworks200ResponseAllOfNetworksInnerPoolIPv6, bool)`
 
 GetPoolIPv6Ok returns a tuple with the PoolIPv6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPoolIPv6
 
-`func (o *Network) SetPoolIPv6(v map[string]interface{})`
+`func (o *Network) SetPoolIPv6(v ListNetworks200ResponseAllOfNetworksInnerPoolIPv6)`
 
 SetPoolIPv6 sets PoolIPv6 field to given value.
 
@@ -1664,16 +1654,6 @@ SetPoolIPv6 sets PoolIPv6 field to given value.
 
 HasPoolIPv6 returns a boolean if a field has been set.
 
-### SetPoolIPv6Nil
-
-`func (o *Network) SetPoolIPv6Nil(b bool)`
-
- SetPoolIPv6Nil sets the value for PoolIPv6 to be an explicit nil
-
-### UnsetPoolIPv6
-`func (o *Network) UnsetPoolIPv6()`
-
-UnsetPoolIPv6 ensures that no value is present for PoolIPv6, not even an explicit nil
 ### GetNetworkProxy
 
 `func (o *Network) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`

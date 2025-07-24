@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
 **MemoryDisplay** | Pointer to **string** |  | [optional] 
-**Expose** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Expose** | Pointer to **[]int64** |  | [optional] 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
 **Backup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigBackup**](ListInstances200ResponseAllOfInstancesInnerConfigBackup.md) |  | [optional] 
 **ReplicationGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup**](ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup.md) |  | [optional] 
@@ -670,20 +670,20 @@ HasMemoryDisplay returns a boolean if a field has been set.
 
 ### GetExpose
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []map[string]interface{}`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []int64`
 
 GetExpose returns the Expose field if non-nil, zero value otherwise.
 
 ### GetExposeOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExposeOk() (*[]map[string]interface{}, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExposeOk() (*[]int64, bool)`
 
 GetExposeOk returns a tuple with the Expose field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpose
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExpose(v []map[string]interface{})`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExpose(v []int64)`
 
 SetExpose sets Expose field to given value.
 
@@ -693,16 +693,6 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
-### SetExposeNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExposeNil(b bool)`
-
- SetExposeNil sets the value for Expose to be an explicit nil
-
-### UnsetExpose
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetExpose()`
-
-UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetCreateBackup() bool`

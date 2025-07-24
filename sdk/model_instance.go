@@ -98,6 +98,7 @@ type Instance struct {
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
 	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
+	ContainerDetails     []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner              `json:"containerDetails,omitempty"`
 	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
@@ -2796,6 +2797,38 @@ func (o *Instance) SetApps(v []map[string]interface{}) {
 	o.Apps = v
 }
 
+// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
+func (o *Instance) GetContainerDetails() []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner {
+	if o == nil || IsNil(o.ContainerDetails) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner
+		return ret
+	}
+	return o.ContainerDetails
+}
+
+// GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Instance) GetContainerDetailsOk() ([]AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner, bool) {
+	if o == nil || IsNil(o.ContainerDetails) {
+		return nil, false
+	}
+	return o.ContainerDetails, true
+}
+
+// IsSetContainerDetails returns a boolean if a field has been set.
+func (o *Instance) IsSetContainerDetails() bool {
+	if o != nil && !IsNil(o.ContainerDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainerDetails gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner and assigns it to the ContainerDetails field.
+func (o *Instance) SetContainerDetails(v []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner) {
+	o.ContainerDetails = v
+}
+
 func (o Instance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3036,6 +3069,9 @@ func (o Instance) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
+	}
+	if !IsNil(o.ContainerDetails) {
+		toSerialize["containerDetails"] = o.ContainerDetails
 	}
 
 	for key, value := range o.AdditionalProperties {

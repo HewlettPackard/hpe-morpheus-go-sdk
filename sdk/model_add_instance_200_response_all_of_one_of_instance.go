@@ -98,6 +98,7 @@ type AddInstance200ResponseAllOfOneOfInstance struct {
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
 	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
+	ContainerDetails     []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner              `json:"containerDetails,omitempty"`
 	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
@@ -2796,6 +2797,38 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetApps(v []map[string]interf
 	o.Apps = v
 }
 
+// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetails() []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner {
+	if o == nil || IsNil(o.ContainerDetails) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner
+		return ret
+	}
+	return o.ContainerDetails
+}
+
+// GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetailsOk() ([]AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner, bool) {
+	if o == nil || IsNil(o.ContainerDetails) {
+		return nil, false
+	}
+	return o.ContainerDetails, true
+}
+
+// IsSetContainerDetails returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetContainerDetails() bool {
+	if o != nil && !IsNil(o.ContainerDetails) {
+		return true
+	}
+
+	return false
+}
+
+// SetContainerDetails gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner and assigns it to the ContainerDetails field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetContainerDetails(v []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner) {
+	o.ContainerDetails = v
+}
+
 func (o AddInstance200ResponseAllOfOneOfInstance) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -3036,6 +3069,9 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	}
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
+	}
+	if !IsNil(o.ContainerDetails) {
+		toSerialize["containerDetails"] = o.ContainerDetails
 	}
 
 	for key, value := range o.AdditionalProperties {

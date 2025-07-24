@@ -20,7 +20,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInner
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
-	Id                     NullableString                                                     `json:"id,omitempty"`
+	Id                     *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId      `json:"id,omitempty"`
 	Network                *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork `json:"network,omitempty"`
 	IpAddress              NullableString                                                     `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId NullableInt64                                                      `json:"networkInterfaceTypeId,omitempty"`
@@ -47,47 +47,36 @@ func NewListInstances200ResponseAllOfInstancesInnerInterfacesInnerWithDefaults()
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetId() string {
-	if o == nil || IsNil(o.Id.Get()) {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetId() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId {
+	if o == nil || IsNil(o.Id) {
+		var ret ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (*string, bool) {
-	if o == nil {
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetIdOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetId() {
-	o.Id.Unset()
+// SetId gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId and assigns it to the Id field.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetId(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerId) {
+	o.Id = &v
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
@@ -261,8 +250,8 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) MarshalJSON(
 
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network

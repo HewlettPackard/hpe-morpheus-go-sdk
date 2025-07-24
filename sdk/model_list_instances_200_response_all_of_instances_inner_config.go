@@ -43,7 +43,7 @@ type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	Type                 *string                                                                `json:"type,omitempty"`
 	InstanceContext      *string                                                                `json:"instanceContext,omitempty"`
 	MemoryDisplay        *string                                                                `json:"memoryDisplay,omitempty"`
-	Expose               []map[string]interface{}                                               `json:"expose,omitempty"`
+	Expose               []int64                                                                `json:"expose,omitempty"`
 	CreateBackup         *bool                                                                  `json:"createBackup,omitempty"`
 	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup               `json:"backup,omitempty"`
 	ReplicationGroup     *ListInstances200ResponseAllOfInstancesInnerConfigReplicationGroup     `json:"replicationGroup,omitempty"`
@@ -851,10 +851,10 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetMemoryDisplay(v s
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []map[string]interface{} {
-	if o == nil {
-		var ret []map[string]interface{}
+// GetExpose returns the Expose field value if set, zero value otherwise.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []int64 {
+	if o == nil || IsNil(o.Expose) {
+		var ret []int64
 		return ret
 	}
 	return o.Expose
@@ -862,8 +862,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []map[st
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExposeOk() ([]map[string]interface{}, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
 	}
@@ -879,8 +878,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetExpose() bool {
 	return false
 }
 
-// SetExpose gets a reference to the given []map[string]interface{} and assigns it to the Expose field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExpose(v []map[string]interface{}) {
+// SetExpose gets a reference to the given []int64 and assigns it to the Expose field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExpose(v []int64) {
 	o.Expose = v
 }
 
@@ -1124,7 +1123,7 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if o.Expose != nil {
+	if !IsNil(o.Expose) {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {
