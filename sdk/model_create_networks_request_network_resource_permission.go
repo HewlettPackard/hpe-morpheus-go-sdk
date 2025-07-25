@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the CreateNetworksRequestNetworkResourcePermissions type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CreateNetworksRequestNetworkResourcePermissions{}
+// checks if the CreateNetworksRequestNetworkResourcePermission type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CreateNetworksRequestNetworkResourcePermission{}
 
-// CreateNetworksRequestNetworkResourcePermissions struct for CreateNetworksRequestNetworkResourcePermissions
-type CreateNetworksRequestNetworkResourcePermissions struct {
+// CreateNetworksRequestNetworkResourcePermission struct for CreateNetworksRequestNetworkResourcePermission
+type CreateNetworksRequestNetworkResourcePermission struct {
 	// Pass true to allow access all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
@@ -27,27 +27,27 @@ type CreateNetworksRequestNetworkResourcePermissions struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _CreateNetworksRequestNetworkResourcePermissions CreateNetworksRequestNetworkResourcePermissions
+type _CreateNetworksRequestNetworkResourcePermission CreateNetworksRequestNetworkResourcePermission
 
-// NewCreateNetworksRequestNetworkResourcePermissions instantiates a new CreateNetworksRequestNetworkResourcePermissions object
+// NewCreateNetworksRequestNetworkResourcePermission instantiates a new CreateNetworksRequestNetworkResourcePermission object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateNetworksRequestNetworkResourcePermissions() *CreateNetworksRequestNetworkResourcePermissions {
-	this := CreateNetworksRequestNetworkResourcePermissions{}
+func NewCreateNetworksRequestNetworkResourcePermission() *CreateNetworksRequestNetworkResourcePermission {
+	this := CreateNetworksRequestNetworkResourcePermission{}
 	return &this
 }
 
-// NewCreateNetworksRequestNetworkResourcePermissionsWithDefaults instantiates a new CreateNetworksRequestNetworkResourcePermissions object
+// NewCreateNetworksRequestNetworkResourcePermissionWithDefaults instantiates a new CreateNetworksRequestNetworkResourcePermission object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateNetworksRequestNetworkResourcePermissionsWithDefaults() *CreateNetworksRequestNetworkResourcePermissions {
-	this := CreateNetworksRequestNetworkResourcePermissions{}
+func NewCreateNetworksRequestNetworkResourcePermissionWithDefaults() *CreateNetworksRequestNetworkResourcePermission {
+	this := CreateNetworksRequestNetworkResourcePermission{}
 	return &this
 }
 
 // GetAll returns the All field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetworkResourcePermissions) GetAll() bool {
+func (o *CreateNetworksRequestNetworkResourcePermission) GetAll() bool {
 	if o == nil || IsNil(o.All) {
 		var ret bool
 		return ret
@@ -57,7 +57,7 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) GetAll() bool {
 
 // GetAllOk returns a tuple with the All field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkResourcePermissions) GetAllOk() (*bool, bool) {
+func (o *CreateNetworksRequestNetworkResourcePermission) GetAllOk() (*bool, bool) {
 	if o == nil || IsNil(o.All) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) GetAllOk() (*bool, boo
 }
 
 // IsSetAll returns a boolean if a field has been set.
-func (o *CreateNetworksRequestNetworkResourcePermissions) IsSetAll() bool {
+func (o *CreateNetworksRequestNetworkResourcePermission) IsSetAll() bool {
 	if o != nil && !IsNil(o.All) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) IsSetAll() bool {
 }
 
 // SetAll gets a reference to the given bool and assigns it to the All field.
-func (o *CreateNetworksRequestNetworkResourcePermissions) SetAll(v bool) {
+func (o *CreateNetworksRequestNetworkResourcePermission) SetAll(v bool) {
 	o.All = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetworkResourcePermissions) GetSites() []int64 {
+func (o *CreateNetworksRequestNetworkResourcePermission) GetSites() []int64 {
 	if o == nil || IsNil(o.Sites) {
 		var ret []int64
 		return ret
@@ -89,7 +89,7 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) GetSites() []int64 {
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkResourcePermissions) GetSitesOk() ([]int64, bool) {
+func (o *CreateNetworksRequestNetworkResourcePermission) GetSitesOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) GetSitesOk() ([]int64,
 }
 
 // IsSetSites returns a boolean if a field has been set.
-func (o *CreateNetworksRequestNetworkResourcePermissions) IsSetSites() bool {
+func (o *CreateNetworksRequestNetworkResourcePermission) IsSetSites() bool {
 	if o != nil && !IsNil(o.Sites) {
 		return true
 	}
@@ -106,11 +106,11 @@ func (o *CreateNetworksRequestNetworkResourcePermissions) IsSetSites() bool {
 }
 
 // SetSites gets a reference to the given []int64 and assigns it to the Sites field.
-func (o *CreateNetworksRequestNetworkResourcePermissions) SetSites(v []int64) {
+func (o *CreateNetworksRequestNetworkResourcePermission) SetSites(v []int64) {
 	o.Sites = v
 }
 
-func (o CreateNetworksRequestNetworkResourcePermissions) MarshalJSON() ([]byte, error) {
+func (o CreateNetworksRequestNetworkResourcePermission) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -118,7 +118,7 @@ func (o CreateNetworksRequestNetworkResourcePermissions) MarshalJSON() ([]byte, 
 	return json.Marshal(toSerialize)
 }
 
-func (o CreateNetworksRequestNetworkResourcePermissions) ToMap() (map[string]interface{}, error) {
+func (o CreateNetworksRequestNetworkResourcePermission) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.All) {
 		toSerialize["all"] = o.All
@@ -133,7 +133,7 @@ func (o CreateNetworksRequestNetworkResourcePermissions) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
-func (o *CreateNetworksRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
+func (o *CreateNetworksRequestNetworkResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

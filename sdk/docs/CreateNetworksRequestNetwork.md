@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
 **Config** | Pointer to [**CreateNetworksRequestNetworkConfig**](CreateNetworksRequestNetworkConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
-**ResourcePermissions** | Pointer to [**CreateNetworksRequestNetworkResourcePermissions**](CreateNetworksRequestNetworkResourcePermissions.md) |  | [optional] 
+**ResourcePermission** | Pointer to [**CreateNetworksRequestNetworkResourcePermission**](CreateNetworksRequestNetworkResourcePermission.md) |  | [optional] 
 
 ## Methods
 
@@ -984,30 +984,30 @@ SetTenants sets Tenants field to given value.
 
 HasTenants returns a boolean if a field has been set.
 
-### GetResourcePermissions
+### GetResourcePermission
 
-`func (o *CreateNetworksRequestNetwork) GetResourcePermissions() CreateNetworksRequestNetworkResourcePermissions`
+`func (o *CreateNetworksRequestNetwork) GetResourcePermission() CreateNetworksRequestNetworkResourcePermission`
 
-GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
+GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
 
-### GetResourcePermissionsOk
+### GetResourcePermissionOk
 
-`func (o *CreateNetworksRequestNetwork) GetResourcePermissionsOk() (*CreateNetworksRequestNetworkResourcePermissions, bool)`
+`func (o *CreateNetworksRequestNetwork) GetResourcePermissionOk() (*CreateNetworksRequestNetworkResourcePermission, bool)`
 
-GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
+GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourcePermissions
+### SetResourcePermission
 
-`func (o *CreateNetworksRequestNetwork) SetResourcePermissions(v CreateNetworksRequestNetworkResourcePermissions)`
+`func (o *CreateNetworksRequestNetwork) SetResourcePermission(v CreateNetworksRequestNetworkResourcePermission)`
 
-SetResourcePermissions sets ResourcePermissions field to given value.
+SetResourcePermission sets ResourcePermission field to given value.
 
-### HasResourcePermissions
+### HasResourcePermission
 
-`func (o *CreateNetworksRequestNetwork) HasResourcePermissions() bool`
+`func (o *CreateNetworksRequestNetwork) HasResourcePermission() bool`
 
-HasResourcePermissions returns a boolean if a field has been set.
+HasResourcePermission returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

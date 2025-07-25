@@ -1890,7 +1890,7 @@ Class | Method | HTTP request | Description
  - [CreateNetworksRequestNetworkConfigAnyOf1ZonePool](docs/CreateNetworksRequestNetworkConfigAnyOf1ZonePool.md)
  - [CreateNetworksRequestNetworkConfigAnyOf2](docs/CreateNetworksRequestNetworkConfigAnyOf2.md)
  - [CreateNetworksRequestNetworkConfigAnyOf2ZonePool](docs/CreateNetworksRequestNetworkConfigAnyOf2ZonePool.md)
- - [CreateNetworksRequestNetworkResourcePermissions](docs/CreateNetworksRequestNetworkResourcePermissions.md)
+ - [CreateNetworksRequestNetworkResourcePermission](docs/CreateNetworksRequestNetworkResourcePermission.md)
  - [CreateNetworksRequestNetworkSite](docs/CreateNetworksRequestNetworkSite.md)
  - [CreateNetworksRequestNetworkType](docs/CreateNetworksRequestNetworkType.md)
  - [CreateNetworksRequestNetworkZone](docs/CreateNetworksRequestNetworkZone.md)

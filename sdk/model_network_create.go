@@ -77,9 +77,9 @@ type NetworkCreate struct {
 	Visibility *string                             `json:"visibility,omitempty"`
 	Config     *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount    `json:"tenants,omitempty"`
-	ResourcePermissions  *CreateNetworksRequestNetworkResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
+	ResourcePermission   *CreateNetworksRequestNetworkResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _NetworkCreate NetworkCreate
@@ -1261,36 +1261,36 @@ func (o *NetworkCreate) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccou
 	o.Tenants = v
 }
 
-// GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *NetworkCreate) GetResourcePermissions() CreateNetworksRequestNetworkResourcePermissions {
-	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret CreateNetworksRequestNetworkResourcePermissions
+// GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
+func (o *NetworkCreate) GetResourcePermission() CreateNetworksRequestNetworkResourcePermission {
+	if o == nil || IsNil(o.ResourcePermission) {
+		var ret CreateNetworksRequestNetworkResourcePermission
 		return ret
 	}
-	return *o.ResourcePermissions
+	return *o.ResourcePermission
 }
 
-// GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
+// GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetResourcePermissionsOk() (*CreateNetworksRequestNetworkResourcePermissions, bool) {
-	if o == nil || IsNil(o.ResourcePermissions) {
+func (o *NetworkCreate) GetResourcePermissionOk() (*CreateNetworksRequestNetworkResourcePermission, bool) {
+	if o == nil || IsNil(o.ResourcePermission) {
 		return nil, false
 	}
-	return o.ResourcePermissions, true
+	return o.ResourcePermission, true
 }
 
-// IsSetResourcePermissions returns a boolean if a field has been set.
-func (o *NetworkCreate) IsSetResourcePermissions() bool {
-	if o != nil && !IsNil(o.ResourcePermissions) {
+// IsSetResourcePermission returns a boolean if a field has been set.
+func (o *NetworkCreate) IsSetResourcePermission() bool {
+	if o != nil && !IsNil(o.ResourcePermission) {
 		return true
 	}
 
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given CreateNetworksRequestNetworkResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *NetworkCreate) SetResourcePermissions(v CreateNetworksRequestNetworkResourcePermissions) {
-	o.ResourcePermissions = &v
+// SetResourcePermission gets a reference to the given CreateNetworksRequestNetworkResourcePermission and assigns it to the ResourcePermission field.
+func (o *NetworkCreate) SetResourcePermission(v CreateNetworksRequestNetworkResourcePermission) {
+	o.ResourcePermission = &v
 }
 
 func (o NetworkCreate) MarshalJSON() ([]byte, error) {
@@ -1399,8 +1399,8 @@ func (o NetworkCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants
 	}
-	if !IsNil(o.ResourcePermissions) {
-		toSerialize["resourcePermissions"] = o.ResourcePermissions
+	if !IsNil(o.ResourcePermission) {
+		toSerialize["resourcePermission"] = o.ResourcePermission
 	}
 
 	for key, value := range o.AdditionalProperties {
