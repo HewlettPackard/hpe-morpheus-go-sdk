@@ -137019,6 +137019,8 @@ paths:
                               - admin-profiles
                               - admin-provisioningSettings
                               - admin-roles
+                              - admin-server-devices
+                              - admin-server-software
                               - admin-servers
                               - admin-servicePlans
                               - admin-users
@@ -137067,6 +137069,8 @@ paths:
                               - infrastructure-router-dhcp-relay
                               - infrastructure-routers
                               - infrastructure-securityGroups
+                              - infrastructure-servers-maintenance
+                              - infrastructure-servers-placement
                               - infrastructure-state
                               - infrastructure-storage
                               - infrastructure-storage-browser
@@ -137075,6 +137079,7 @@ paths:
                               - job-templates
                               - kubernetes-template
                               - library-advanced-node-type-options
+                              - library-operating-systems
                               - library-options
                               - library-templates
                               - logs
@@ -137124,6 +137129,7 @@ paths:
                               - services-cypher
                               - services-image-builder
                               - services-kubernetes
+                              - services-migrations
                               - services-network-registry
                               - services-vdi-copy
                               - services-vdi-pools
@@ -137137,6 +137143,7 @@ paths:
                               - thresholds
                               - trust-services
                               - virtual-images
+                              - workflows
                           access:
                             type: string
                             description: The new access level.
