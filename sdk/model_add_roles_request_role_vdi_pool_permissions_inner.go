@@ -21,7 +21,7 @@ var _ MappedNullable = &AddRolesRequestRoleVdiPoolPermissionsInner{}
 // AddRolesRequestRoleVdiPoolPermissionsInner struct for AddRolesRequestRoleVdiPoolPermissionsInner
 type AddRolesRequestRoleVdiPoolPermissionsInner struct {
 	// `id` of the VDI pool
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	// The new access level.
 	Access               string                 `json:"access"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -33,7 +33,7 @@ type _AddRolesRequestRoleVdiPoolPermissionsInner AddRolesRequestRoleVdiPoolPermi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleVdiPoolPermissionsInner(id int32, access string) *AddRolesRequestRoleVdiPoolPermissionsInner {
+func NewAddRolesRequestRoleVdiPoolPermissionsInner(id int64, access string) *AddRolesRequestRoleVdiPoolPermissionsInner {
 	this := AddRolesRequestRoleVdiPoolPermissionsInner{}
 	this.Id = id
 	this.Access = access
@@ -49,9 +49,9 @@ func NewAddRolesRequestRoleVdiPoolPermissionsInnerWithDefaults() *AddRolesReques
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetId() int32 {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -60,7 +60,7 @@ func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,7 +68,7 @@ func (o *AddRolesRequestRoleVdiPoolPermissionsInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetId(v int32) {
+func (o *AddRolesRequestRoleVdiPoolPermissionsInner) SetId(v int64) {
 	o.Id = v
 }
 

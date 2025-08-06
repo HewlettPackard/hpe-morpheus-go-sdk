@@ -21,7 +21,7 @@ var _ MappedNullable = &AddRolesRequestRoleCatalogItemTypePermissionsInner{}
 // AddRolesRequestRoleCatalogItemTypePermissionsInner struct for AddRolesRequestRoleCatalogItemTypePermissionsInner
 type AddRolesRequestRoleCatalogItemTypePermissionsInner struct {
 	// `id` of the catalog item type
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	// The new access level.
 	Access               string                 `json:"access"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -33,7 +33,7 @@ type _AddRolesRequestRoleCatalogItemTypePermissionsInner AddRolesRequestRoleCata
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleCatalogItemTypePermissionsInner(id int32, access string) *AddRolesRequestRoleCatalogItemTypePermissionsInner {
+func NewAddRolesRequestRoleCatalogItemTypePermissionsInner(id int64, access string) *AddRolesRequestRoleCatalogItemTypePermissionsInner {
 	this := AddRolesRequestRoleCatalogItemTypePermissionsInner{}
 	this.Id = id
 	this.Access = access
@@ -49,9 +49,9 @@ func NewAddRolesRequestRoleCatalogItemTypePermissionsInnerWithDefaults() *AddRol
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetId() int32 {
+func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -60,7 +60,7 @@ func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,7 +68,7 @@ func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) GetIdOk() (*int32, 
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) SetId(v int32) {
+func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) SetId(v int64) {
 	o.Id = v
 }
 

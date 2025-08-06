@@ -21,7 +21,7 @@ var _ MappedNullable = &AddRolesRequestRoleSitesInner{}
 // AddRolesRequestRoleSitesInner struct for AddRolesRequestRoleSitesInner
 type AddRolesRequestRoleSitesInner struct {
 	// `id` of the group (site)
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 	// The new access level.
 	Access               string                 `json:"access"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -33,7 +33,7 @@ type _AddRolesRequestRoleSitesInner AddRolesRequestRoleSitesInner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddRolesRequestRoleSitesInner(id int32, access string) *AddRolesRequestRoleSitesInner {
+func NewAddRolesRequestRoleSitesInner(id int64, access string) *AddRolesRequestRoleSitesInner {
 	this := AddRolesRequestRoleSitesInner{}
 	this.Id = id
 	this.Access = access
@@ -49,9 +49,9 @@ func NewAddRolesRequestRoleSitesInnerWithDefaults() *AddRolesRequestRoleSitesInn
 }
 
 // GetId returns the Id field value
-func (o *AddRolesRequestRoleSitesInner) GetId() int32 {
+func (o *AddRolesRequestRoleSitesInner) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -60,7 +60,7 @@ func (o *AddRolesRequestRoleSitesInner) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddRolesRequestRoleSitesInner) GetIdOk() (*int32, bool) {
+func (o *AddRolesRequestRoleSitesInner) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,7 +68,7 @@ func (o *AddRolesRequestRoleSitesInner) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *AddRolesRequestRoleSitesInner) SetId(v int32) {
+func (o *AddRolesRequestRoleSitesInner) SetId(v int64) {
 	o.Id = v
 }
 

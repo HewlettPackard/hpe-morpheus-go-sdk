@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** | &#x60;id&#x60; of the cloud (zone) | 
+**Id** | **int64** | &#x60;id&#x60; of the cloud (zone) | 
 **Access** | **string** | The new access level. | 
 
 ## Methods
 
 ### NewAddRolesRequestRoleZonesInner
 
-`func NewAddRolesRequestRoleZonesInner(id int32, access string, ) *AddRolesRequestRoleZonesInner`
+`func NewAddRolesRequestRoleZonesInner(id int64, access string, ) *AddRolesRequestRoleZonesInner`
 
 NewAddRolesRequestRoleZonesInner instantiates a new AddRolesRequestRoleZonesInner object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddRolesRequestRoleZonesInner) GetId() int32`
+`func (o *AddRolesRequestRoleZonesInner) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddRolesRequestRoleZonesInner) GetIdOk() (*int32, bool)`
+`func (o *AddRolesRequestRoleZonesInner) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddRolesRequestRoleZonesInner) SetId(v int32)`
+`func (o *AddRolesRequestRoleZonesInner) SetId(v int64)`
 
 SetId sets Id field to given value.
 
