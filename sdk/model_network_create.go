@@ -54,7 +54,8 @@ type NetworkCreate struct {
 	// Network Pool ID
 	Pool NullableInt64 `json:"pool,omitempty"`
 	// IPv6 Network Pool ID
-	PoolIPv6 NullableInt64 `json:"poolIPv6,omitempty"`
+	PoolIPv6 NullableInt64                         `json:"poolIPv6,omitempty"`
+	ZonePool *CreateNetworksRequestNetworkZonePool `json:"zonePool,omitempty"`
 	// Allow IP Override
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	// Assign Public IP
@@ -834,6 +835,38 @@ func (o *NetworkCreate) UnsetPoolIPv6() {
 	o.PoolIPv6.Unset()
 }
 
+// GetZonePool returns the ZonePool field value if set, zero value otherwise.
+func (o *NetworkCreate) GetZonePool() CreateNetworksRequestNetworkZonePool {
+	if o == nil || IsNil(o.ZonePool) {
+		var ret CreateNetworksRequestNetworkZonePool
+		return ret
+	}
+	return *o.ZonePool
+}
+
+// GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NetworkCreate) GetZonePoolOk() (*CreateNetworksRequestNetworkZonePool, bool) {
+	if o == nil || IsNil(o.ZonePool) {
+		return nil, false
+	}
+	return o.ZonePool, true
+}
+
+// IsSetZonePool returns a boolean if a field has been set.
+func (o *NetworkCreate) IsSetZonePool() bool {
+	if o != nil && !IsNil(o.ZonePool) {
+		return true
+	}
+
+	return false
+}
+
+// SetZonePool gets a reference to the given CreateNetworksRequestNetworkZonePool and assigns it to the ZonePool field.
+func (o *NetworkCreate) SetZonePool(v CreateNetworksRequestNetworkZonePool) {
+	o.ZonePool = &v
+}
+
 // GetAllowStaticOverride returns the AllowStaticOverride field value if set, zero value otherwise.
 func (o *NetworkCreate) GetAllowStaticOverride() bool {
 	if o == nil || IsNil(o.AllowStaticOverride) {
@@ -1359,6 +1392,9 @@ func (o NetworkCreate) ToMap() (map[string]interface{}, error) {
 	}
 	if o.PoolIPv6.IsSet() {
 		toSerialize["poolIPv6"] = o.PoolIPv6.Get()
+	}
+	if !IsNil(o.ZonePool) {
+		toSerialize["zonePool"] = o.ZonePool
 	}
 	if !IsNil(o.AllowStaticOverride) {
 		toSerialize["allowStaticOverride"] = o.AllowStaticOverride

@@ -10,12 +10,13 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**MaxStorage** | Pointer to **float32** |  | [optional] 
-**MaxMemory** | Pointer to **float32** |  | [optional] 
-**MaxCpu** | Pointer to **NullableFloat32** |  | [optional] 
-**MaxCores** | Pointer to **NullableFloat32** |  | [optional] 
-**MaxDisks** | Pointer to **NullableFloat32** |  | [optional] 
-**CoresPerSocket** | Pointer to **float32** |  | [optional] 
+**MaxStorage** | Pointer to **int64** |  | [optional] 
+**MaxMemory** | Pointer to **int64** |  | [optional] 
+**MaxCpu** | Pointer to **NullableInt64** |  | [optional] 
+**MaxGpus** | Pointer to **NullableInt64** |  | [optional] 
+**MaxCores** | Pointer to **NullableInt64** |  | [optional] 
+**MaxDisks** | Pointer to **NullableInt64** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
 **CustomCpu** | Pointer to **bool** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
 **CustomMaxStorage** | Pointer to **NullableBool** |  | [optional] 
@@ -207,20 +208,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() int64`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*int64, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v int64)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
@@ -232,20 +233,20 @@ HasMaxStorage returns a boolean if a field has been set.
 
 ### GetMaxMemory
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() int64`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*int64, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v int64)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
@@ -257,20 +258,20 @@ HasMaxMemory returns a boolean if a field has been set.
 
 ### GetMaxCpu
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() int64`
 
 GetMaxCpu returns the MaxCpu field if non-nil, zero value otherwise.
 
 ### GetMaxCpuOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*int64, bool)`
 
 GetMaxCpuOk returns a tuple with the MaxCpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCpu
 
-`func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v int64)`
 
 SetMaxCpu sets MaxCpu field to given value.
 
@@ -290,22 +291,57 @@ HasMaxCpu returns a boolean if a field has been set.
 `func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCpu()`
 
 UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+### GetMaxGpus
+
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxGpus() int64`
+
+GetMaxGpus returns the MaxGpus field if non-nil, zero value otherwise.
+
+### GetMaxGpusOk
+
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxGpusOk() (*int64, bool)`
+
+GetMaxGpusOk returns a tuple with the MaxGpus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxGpus
+
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxGpus(v int64)`
+
+SetMaxGpus sets MaxGpus field to given value.
+
+### HasMaxGpus
+
+`func (o *GetServicePlans200ResponseServicePlan) HasMaxGpus() bool`
+
+HasMaxGpus returns a boolean if a field has been set.
+
+### SetMaxGpusNil
+
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxGpusNil(b bool)`
+
+ SetMaxGpusNil sets the value for MaxGpus to be an explicit nil
+
+### UnsetMaxGpus
+`func (o *GetServicePlans200ResponseServicePlan) UnsetMaxGpus()`
+
+UnsetMaxGpus ensures that no value is present for MaxGpus, not even an explicit nil
 ### GetMaxCores
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() int64`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*int64, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v int64)`
 
 SetMaxCores sets MaxCores field to given value.
 
@@ -327,20 +363,20 @@ HasMaxCores returns a boolean if a field has been set.
 UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMaxDisks
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() int64`
 
 GetMaxDisks returns the MaxDisks field if non-nil, zero value otherwise.
 
 ### GetMaxDisksOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*int64, bool)`
 
 GetMaxDisksOk returns a tuple with the MaxDisks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxDisks
 
-`func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v int64)`
 
 SetMaxDisks sets MaxDisks field to given value.
 
@@ -362,20 +398,20 @@ HasMaxDisks returns a boolean if a field has been set.
 UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetCoresPerSocket
 
-`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() float32`
+`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() int64`
 
 GetCoresPerSocket returns the CoresPerSocket field if non-nil, zero value otherwise.
 
 ### GetCoresPerSocketOk
 
-`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*float32, bool)`
+`func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*int64, bool)`
 
 GetCoresPerSocketOk returns a tuple with the CoresPerSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCoresPerSocket
 
-`func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v float32)`
+`func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v int64)`
 
 SetCoresPerSocket sets CoresPerSocket field to given value.
 
@@ -385,6 +421,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *GetServicePlans200ResponseServicePlan) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetCustomCpu
 
 `func (o *GetServicePlans200ResponseServicePlan) GetCustomCpu() bool`

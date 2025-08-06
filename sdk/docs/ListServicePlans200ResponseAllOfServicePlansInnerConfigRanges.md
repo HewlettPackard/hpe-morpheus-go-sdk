@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MinStorage** | Pointer to **NullableString** |  | [optional] 
-**MaxStorage** | Pointer to **NullableString** |  | [optional] 
-**MinPerDiskSize** | Pointer to **NullableString** |  | [optional] 
-**MaxPerDiskSize** | Pointer to **NullableString** |  | [optional] 
-**MinMemory** | Pointer to **NullableFloat32** |  | [optional] 
-**MaxMemory** | Pointer to **NullableFloat32** |  | [optional] 
-**MinCores** | Pointer to **NullableString** |  | [optional] 
-**MaxCores** | Pointer to **NullableString** |  | [optional] 
-**MinSockets** | Pointer to **NullableString** |  | [optional] 
-**MaxSockets** | Pointer to **NullableString** |  | [optional] 
-**MinCoresPerSocket** | Pointer to **NullableString** |  | [optional] 
-**MaxCoresPerSocket** | Pointer to **NullableString** |  | [optional] 
+**MinStorage** | Pointer to **NullableInt64** |  | [optional] 
+**MaxStorage** | Pointer to **NullableInt64** |  | [optional] 
+**MinPerDiskSize** | Pointer to **NullableInt64** |  | [optional] 
+**MaxPerDiskSize** | Pointer to **NullableInt64** |  | [optional] 
+**MinMemory** | Pointer to **NullableInt64** |  | [optional] 
+**MaxMemory** | Pointer to **NullableInt64** |  | [optional] 
+**MinCores** | Pointer to **NullableInt64** |  | [optional] 
+**MaxCores** | Pointer to **NullableInt64** |  | [optional] 
+**MinSockets** | Pointer to **NullableInt64** |  | [optional] 
+**MaxSockets** | Pointer to **NullableInt64** |  | [optional] 
+**MinCoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
+**MaxCoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMinStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinStorage() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinStorage() int64`
 
 GetMinStorage returns the MinStorage field if non-nil, zero value otherwise.
 
 ### GetMinStorageOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinStorageOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinStorageOk() (*int64, bool)`
 
 GetMinStorageOk returns a tuple with the MinStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinStorage(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinStorage(v int64)`
 
 SetMinStorage sets MinStorage field to given value.
 
@@ -73,20 +73,20 @@ HasMinStorage returns a boolean if a field has been set.
 UnsetMinStorage ensures that no value is present for MinStorage, not even an explicit nil
 ### GetMaxStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxStorage() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxStorage() int64`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxStorageOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxStorageOk() (*int64, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxStorage(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxStorage(v int64)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
@@ -108,20 +108,20 @@ HasMaxStorage returns a boolean if a field has been set.
 UnsetMaxStorage ensures that no value is present for MaxStorage, not even an explicit nil
 ### GetMinPerDiskSize
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinPerDiskSize() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinPerDiskSize() int64`
 
 GetMinPerDiskSize returns the MinPerDiskSize field if non-nil, zero value otherwise.
 
 ### GetMinPerDiskSizeOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinPerDiskSizeOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinPerDiskSizeOk() (*int64, bool)`
 
 GetMinPerDiskSizeOk returns a tuple with the MinPerDiskSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinPerDiskSize
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinPerDiskSize(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinPerDiskSize(v int64)`
 
 SetMinPerDiskSize sets MinPerDiskSize field to given value.
 
@@ -143,20 +143,20 @@ HasMinPerDiskSize returns a boolean if a field has been set.
 UnsetMinPerDiskSize ensures that no value is present for MinPerDiskSize, not even an explicit nil
 ### GetMaxPerDiskSize
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxPerDiskSize() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxPerDiskSize() int64`
 
 GetMaxPerDiskSize returns the MaxPerDiskSize field if non-nil, zero value otherwise.
 
 ### GetMaxPerDiskSizeOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxPerDiskSizeOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxPerDiskSizeOk() (*int64, bool)`
 
 GetMaxPerDiskSizeOk returns a tuple with the MaxPerDiskSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxPerDiskSize
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxPerDiskSize(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxPerDiskSize(v int64)`
 
 SetMaxPerDiskSize sets MaxPerDiskSize field to given value.
 
@@ -178,20 +178,20 @@ HasMaxPerDiskSize returns a boolean if a field has been set.
 UnsetMaxPerDiskSize ensures that no value is present for MaxPerDiskSize, not even an explicit nil
 ### GetMinMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinMemory() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinMemory() int64`
 
 GetMinMemory returns the MinMemory field if non-nil, zero value otherwise.
 
 ### GetMinMemoryOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinMemoryOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinMemoryOk() (*int64, bool)`
 
 GetMinMemoryOk returns a tuple with the MinMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinMemory(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinMemory(v int64)`
 
 SetMinMemory sets MinMemory field to given value.
 
@@ -213,20 +213,20 @@ HasMinMemory returns a boolean if a field has been set.
 UnsetMinMemory ensures that no value is present for MinMemory, not even an explicit nil
 ### GetMaxMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxMemory() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxMemory() int64`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxMemoryOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxMemoryOk() (*int64, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxMemory(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxMemory(v int64)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
@@ -248,20 +248,20 @@ HasMaxMemory returns a boolean if a field has been set.
 UnsetMaxMemory ensures that no value is present for MaxMemory, not even an explicit nil
 ### GetMinCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCores() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCores() int64`
 
 GetMinCores returns the MinCores field if non-nil, zero value otherwise.
 
 ### GetMinCoresOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresOk() (*int64, bool)`
 
 GetMinCoresOk returns a tuple with the MinCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinCores(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinCores(v int64)`
 
 SetMinCores sets MinCores field to given value.
 
@@ -283,20 +283,20 @@ HasMinCores returns a boolean if a field has been set.
 UnsetMinCores ensures that no value is present for MinCores, not even an explicit nil
 ### GetMaxCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCores() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCores() int64`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresOk() (*int64, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxCores(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxCores(v int64)`
 
 SetMaxCores sets MaxCores field to given value.
 
@@ -318,20 +318,20 @@ HasMaxCores returns a boolean if a field has been set.
 UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMinSockets
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinSockets() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinSockets() int64`
 
 GetMinSockets returns the MinSockets field if non-nil, zero value otherwise.
 
 ### GetMinSocketsOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinSocketsOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinSocketsOk() (*int64, bool)`
 
 GetMinSocketsOk returns a tuple with the MinSockets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinSockets
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinSockets(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinSockets(v int64)`
 
 SetMinSockets sets MinSockets field to given value.
 
@@ -353,20 +353,20 @@ HasMinSockets returns a boolean if a field has been set.
 UnsetMinSockets ensures that no value is present for MinSockets, not even an explicit nil
 ### GetMaxSockets
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxSockets() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxSockets() int64`
 
 GetMaxSockets returns the MaxSockets field if non-nil, zero value otherwise.
 
 ### GetMaxSocketsOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxSocketsOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxSocketsOk() (*int64, bool)`
 
 GetMaxSocketsOk returns a tuple with the MaxSockets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxSockets
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxSockets(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxSockets(v int64)`
 
 SetMaxSockets sets MaxSockets field to given value.
 
@@ -388,20 +388,20 @@ HasMaxSockets returns a boolean if a field has been set.
 UnsetMaxSockets ensures that no value is present for MaxSockets, not even an explicit nil
 ### GetMinCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresPerSocket() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresPerSocket() int64`
 
 GetMinCoresPerSocket returns the MinCoresPerSocket field if non-nil, zero value otherwise.
 
 ### GetMinCoresPerSocketOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresPerSocketOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMinCoresPerSocketOk() (*int64, bool)`
 
 GetMinCoresPerSocketOk returns a tuple with the MinCoresPerSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinCoresPerSocket(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMinCoresPerSocket(v int64)`
 
 SetMinCoresPerSocket sets MinCoresPerSocket field to given value.
 
@@ -423,20 +423,20 @@ HasMinCoresPerSocket returns a boolean if a field has been set.
 UnsetMinCoresPerSocket ensures that no value is present for MinCoresPerSocket, not even an explicit nil
 ### GetMaxCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresPerSocket() string`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresPerSocket() int64`
 
 GetMaxCoresPerSocket returns the MaxCoresPerSocket field if non-nil, zero value otherwise.
 
 ### GetMaxCoresPerSocketOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresPerSocketOk() (*string, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) GetMaxCoresPerSocketOk() (*int64, bool)`
 
 GetMaxCoresPerSocketOk returns a tuple with the MaxCoresPerSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxCoresPerSocket(v string)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInnerConfigRanges) SetMaxCoresPerSocket(v int64)`
 
 SetMaxCoresPerSocket sets MaxCoresPerSocket field to given value.
 

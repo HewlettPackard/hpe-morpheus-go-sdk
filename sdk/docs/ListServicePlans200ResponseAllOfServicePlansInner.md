@@ -9,13 +9,15 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
+**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**MaxStorage** | Pointer to **float32** |  | [optional] 
-**MaxMemory** | Pointer to **float32** |  | [optional] 
-**MaxCpu** | Pointer to **NullableFloat32** |  | [optional] 
-**MaxCores** | Pointer to **NullableFloat32** |  | [optional] 
-**MaxDisks** | Pointer to **NullableFloat32** |  | [optional] 
-**CoresPerSocket** | Pointer to **float32** |  | [optional] 
+**MaxStorage** | Pointer to **int64** |  | [optional] 
+**MaxMemory** | Pointer to **int64** |  | [optional] 
+**MaxCpu** | Pointer to **NullableInt64** |  | [optional] 
+**MaxGpus** | Pointer to **NullableInt64** |  | [optional] 
+**MaxCores** | Pointer to **NullableInt64** |  | [optional] 
+**MaxDisks** | Pointer to **NullableInt64** |  | [optional] 
+**CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
 **CustomCpu** | Pointer to **bool** |  | [optional] 
 **CustomCores** | Pointer to **bool** |  | [optional] 
 **CustomMaxStorage** | Pointer to **NullableBool** |  | [optional] 
@@ -26,7 +28,6 @@ Name | Type | Description | Notes
 **CpuOptionSource** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**RegionCode** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
 **ProvisionType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType.md) |  | [optional] 
@@ -179,6 +180,41 @@ SetSortOrder sets SortOrder field to given value.
 
 HasSortOrder returns a boolean if a field has been set.
 
+### GetRegionCode
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetRegionCode() string`
+
+GetRegionCode returns the RegionCode field if non-nil, zero value otherwise.
+
+### GetRegionCodeOk
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetRegionCodeOk() (*string, bool)`
+
+GetRegionCodeOk returns a tuple with the RegionCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegionCode
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetRegionCode(v string)`
+
+SetRegionCode sets RegionCode field to given value.
+
+### HasRegionCode
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) HasRegionCode() bool`
+
+HasRegionCode returns a boolean if a field has been set.
+
+### SetRegionCodeNil
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetRegionCodeNil(b bool)`
+
+ SetRegionCodeNil sets the value for RegionCode to be an explicit nil
+
+### UnsetRegionCode
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnsetRegionCode()`
+
+UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetDescription
 
 `func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetDescription() string`
@@ -206,20 +242,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxStorage() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxStorage() int64`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxStorageOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxStorageOk() (*int64, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxStorage(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxStorage(v int64)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
@@ -231,20 +267,20 @@ HasMaxStorage returns a boolean if a field has been set.
 
 ### GetMaxMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxMemory() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxMemory() int64`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxMemoryOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxMemoryOk() (*int64, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxMemory(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxMemory(v int64)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
@@ -256,20 +292,20 @@ HasMaxMemory returns a boolean if a field has been set.
 
 ### GetMaxCpu
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCpu() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCpu() int64`
 
 GetMaxCpu returns the MaxCpu field if non-nil, zero value otherwise.
 
 ### GetMaxCpuOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCpuOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCpuOk() (*int64, bool)`
 
 GetMaxCpuOk returns a tuple with the MaxCpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCpu
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxCpu(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxCpu(v int64)`
 
 SetMaxCpu sets MaxCpu field to given value.
 
@@ -289,22 +325,57 @@ HasMaxCpu returns a boolean if a field has been set.
 `func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnsetMaxCpu()`
 
 UnsetMaxCpu ensures that no value is present for MaxCpu, not even an explicit nil
+### GetMaxGpus
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxGpus() int64`
+
+GetMaxGpus returns the MaxGpus field if non-nil, zero value otherwise.
+
+### GetMaxGpusOk
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxGpusOk() (*int64, bool)`
+
+GetMaxGpusOk returns a tuple with the MaxGpus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxGpus
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxGpus(v int64)`
+
+SetMaxGpus sets MaxGpus field to given value.
+
+### HasMaxGpus
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) HasMaxGpus() bool`
+
+HasMaxGpus returns a boolean if a field has been set.
+
+### SetMaxGpusNil
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxGpusNil(b bool)`
+
+ SetMaxGpusNil sets the value for MaxGpus to be an explicit nil
+
+### UnsetMaxGpus
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnsetMaxGpus()`
+
+UnsetMaxGpus ensures that no value is present for MaxGpus, not even an explicit nil
 ### GetMaxCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCores() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCores() int64`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCoresOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxCoresOk() (*int64, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxCores(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxCores(v int64)`
 
 SetMaxCores sets MaxCores field to given value.
 
@@ -326,20 +397,20 @@ HasMaxCores returns a boolean if a field has been set.
 UnsetMaxCores ensures that no value is present for MaxCores, not even an explicit nil
 ### GetMaxDisks
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxDisks() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxDisks() int64`
 
 GetMaxDisks returns the MaxDisks field if non-nil, zero value otherwise.
 
 ### GetMaxDisksOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxDisksOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetMaxDisksOk() (*int64, bool)`
 
 GetMaxDisksOk returns a tuple with the MaxDisks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxDisks
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxDisks(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetMaxDisks(v int64)`
 
 SetMaxDisks sets MaxDisks field to given value.
 
@@ -361,20 +432,20 @@ HasMaxDisks returns a boolean if a field has been set.
 UnsetMaxDisks ensures that no value is present for MaxDisks, not even an explicit nil
 ### GetCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetCoresPerSocket() float32`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetCoresPerSocket() int64`
 
 GetCoresPerSocket returns the CoresPerSocket field if non-nil, zero value otherwise.
 
 ### GetCoresPerSocketOk
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetCoresPerSocketOk() (*float32, bool)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetCoresPerSocketOk() (*int64, bool)`
 
 GetCoresPerSocketOk returns a tuple with the CoresPerSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCoresPerSocket
 
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetCoresPerSocket(v float32)`
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetCoresPerSocket(v int64)`
 
 SetCoresPerSocket sets CoresPerSocket field to given value.
 
@@ -384,6 +455,16 @@ SetCoresPerSocket sets CoresPerSocket field to given value.
 
 HasCoresPerSocket returns a boolean if a field has been set.
 
+### SetCoresPerSocketNil
+
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetCoresPerSocketNil(b bool)`
+
+ SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+
+### UnsetCoresPerSocket
+`func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnsetCoresPerSocket()`
+
+UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetCustomCpu
 
 `func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetCustomCpu() bool`
@@ -694,41 +775,6 @@ SetLastUpdated sets LastUpdated field to given value.
 
 HasLastUpdated returns a boolean if a field has been set.
 
-### GetRegionCode
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetRegionCode() string`
-
-GetRegionCode returns the RegionCode field if non-nil, zero value otherwise.
-
-### GetRegionCodeOk
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetRegionCodeOk() (*string, bool)`
-
-GetRegionCodeOk returns a tuple with the RegionCode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRegionCode
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetRegionCode(v string)`
-
-SetRegionCode sets RegionCode field to given value.
-
-### HasRegionCode
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) HasRegionCode() bool`
-
-HasRegionCode returns a boolean if a field has been set.
-
-### SetRegionCodeNil
-
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) SetRegionCodeNil(b bool)`
-
- SetRegionCodeNil sets the value for RegionCode to be an explicit nil
-
-### UnsetRegionCode
-`func (o *ListServicePlans200ResponseAllOfServicePlansInner) UnsetRegionCode()`
-
-UnsetRegionCode ensures that no value is present for RegionCode, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListServicePlans200ResponseAllOfServicePlansInner) GetVisibility() string`

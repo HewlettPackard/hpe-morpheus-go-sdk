@@ -27,12 +27,13 @@ type GetServicePlans200ResponseServicePlan struct {
 	Active               *bool                                                                              `json:"active,omitempty"`
 	SortOrder            *int64                                                                             `json:"sortOrder,omitempty"`
 	Description          *string                                                                            `json:"description,omitempty"`
-	MaxStorage           *float32                                                                           `json:"maxStorage,omitempty"`
-	MaxMemory            *float32                                                                           `json:"maxMemory,omitempty"`
-	MaxCpu               NullableFloat32                                                                    `json:"maxCpu,omitempty"`
-	MaxCores             NullableFloat32                                                                    `json:"maxCores,omitempty"`
-	MaxDisks             NullableFloat32                                                                    `json:"maxDisks,omitempty"`
-	CoresPerSocket       *float32                                                                           `json:"coresPerSocket,omitempty"`
+	MaxStorage           *int64                                                                             `json:"maxStorage,omitempty"`
+	MaxMemory            *int64                                                                             `json:"maxMemory,omitempty"`
+	MaxCpu               NullableInt64                                                                      `json:"maxCpu,omitempty"`
+	MaxGpus              NullableInt64                                                                      `json:"maxGpus,omitempty"`
+	MaxCores             NullableInt64                                                                      `json:"maxCores,omitempty"`
+	MaxDisks             NullableInt64                                                                      `json:"maxDisks,omitempty"`
+	CoresPerSocket       NullableInt64                                                                      `json:"coresPerSocket,omitempty"`
 	CustomCpu            *bool                                                                              `json:"customCpu,omitempty"`
 	CustomCores          *bool                                                                              `json:"customCores,omitempty"`
 	CustomMaxStorage     NullableBool                                                                       `json:"customMaxStorage,omitempty"`
@@ -267,9 +268,9 @@ func (o *GetServicePlans200ResponseServicePlan) SetDescription(v string) {
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() int64 {
 	if o == nil || IsNil(o.MaxStorage) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.MaxStorage
@@ -277,7 +278,7 @@ func (o *GetServicePlans200ResponseServicePlan) GetMaxStorage() float32 {
 
 // GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxStorageOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStorage) {
 		return nil, false
 	}
@@ -293,15 +294,15 @@ func (o *GetServicePlans200ResponseServicePlan) IsSetMaxStorage() bool {
 	return false
 }
 
-// SetMaxStorage gets a reference to the given float32 and assigns it to the MaxStorage field.
-func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v float32) {
+// SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
 }
 
 // GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() int64 {
 	if o == nil || IsNil(o.MaxMemory) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.MaxMemory
@@ -309,7 +310,7 @@ func (o *GetServicePlans200ResponseServicePlan) GetMaxMemory() float32 {
 
 // GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxMemoryOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxMemory) {
 		return nil, false
 	}
@@ -325,15 +326,15 @@ func (o *GetServicePlans200ResponseServicePlan) IsSetMaxMemory() bool {
 	return false
 }
 
-// SetMaxMemory gets a reference to the given float32 and assigns it to the MaxMemory field.
-func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v float32) {
+// SetMaxMemory gets a reference to the given int64 and assigns it to the MaxMemory field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxMemory(v int64) {
 	o.MaxMemory = &v
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() int64 {
 	if o == nil || IsNil(o.MaxCpu.Get()) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.MaxCpu.Get()
@@ -342,7 +343,7 @@ func (o *GetServicePlans200ResponseServicePlan) GetMaxCpu() float32 {
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCpuOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -358,8 +359,8 @@ func (o *GetServicePlans200ResponseServicePlan) IsSetMaxCpu() bool {
 	return false
 }
 
-// SetMaxCpu gets a reference to the given NullableFloat32 and assigns it to the MaxCpu field.
-func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v float32) {
+// SetMaxCpu gets a reference to the given NullableInt64 and assigns it to the MaxCpu field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCpu(v int64) {
 	o.MaxCpu.Set(&v)
 }
 
@@ -373,10 +374,53 @@ func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCpu() {
 	o.MaxCpu.Unset()
 }
 
+// GetMaxGpus returns the MaxGpus field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetServicePlans200ResponseServicePlan) GetMaxGpus() int64 {
+	if o == nil || IsNil(o.MaxGpus.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MaxGpus.Get()
+}
+
+// GetMaxGpusOk returns a tuple with the MaxGpus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetServicePlans200ResponseServicePlan) GetMaxGpusOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MaxGpus.Get(), o.MaxGpus.IsSet()
+}
+
+// IsSetMaxGpus returns a boolean if a field has been set.
+func (o *GetServicePlans200ResponseServicePlan) IsSetMaxGpus() bool {
+	if o != nil && o.MaxGpus.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxGpus gets a reference to the given NullableInt64 and assigns it to the MaxGpus field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxGpus(v int64) {
+	o.MaxGpus.Set(&v)
+}
+
+// SetMaxGpusNil sets the value for MaxGpus to be an explicit nil
+func (o *GetServicePlans200ResponseServicePlan) SetMaxGpusNil() {
+	o.MaxGpus.Set(nil)
+}
+
+// UnsetMaxGpus ensures that no value is present for MaxGpus, not even an explicit nil
+func (o *GetServicePlans200ResponseServicePlan) UnsetMaxGpus() {
+	o.MaxGpus.Unset()
+}
+
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() int64 {
 	if o == nil || IsNil(o.MaxCores.Get()) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.MaxCores.Get()
@@ -385,7 +429,7 @@ func (o *GetServicePlans200ResponseServicePlan) GetMaxCores() float32 {
 // GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxCoresOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -401,8 +445,8 @@ func (o *GetServicePlans200ResponseServicePlan) IsSetMaxCores() bool {
 	return false
 }
 
-// SetMaxCores gets a reference to the given NullableFloat32 and assigns it to the MaxCores field.
-func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v float32) {
+// SetMaxCores gets a reference to the given NullableInt64 and assigns it to the MaxCores field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxCores(v int64) {
 	o.MaxCores.Set(&v)
 }
 
@@ -417,9 +461,9 @@ func (o *GetServicePlans200ResponseServicePlan) UnsetMaxCores() {
 }
 
 // GetMaxDisks returns the MaxDisks field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() float32 {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() int64 {
 	if o == nil || IsNil(o.MaxDisks.Get()) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.MaxDisks.Get()
@@ -428,7 +472,7 @@ func (o *GetServicePlans200ResponseServicePlan) GetMaxDisks() float32 {
 // GetMaxDisksOk returns a tuple with the MaxDisks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*float32, bool) {
+func (o *GetServicePlans200ResponseServicePlan) GetMaxDisksOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -444,8 +488,8 @@ func (o *GetServicePlans200ResponseServicePlan) IsSetMaxDisks() bool {
 	return false
 }
 
-// SetMaxDisks gets a reference to the given NullableFloat32 and assigns it to the MaxDisks field.
-func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v float32) {
+// SetMaxDisks gets a reference to the given NullableInt64 and assigns it to the MaxDisks field.
+func (o *GetServicePlans200ResponseServicePlan) SetMaxDisks(v int64) {
 	o.MaxDisks.Set(&v)
 }
 
@@ -459,36 +503,47 @@ func (o *GetServicePlans200ResponseServicePlan) UnsetMaxDisks() {
 	o.MaxDisks.Unset()
 }
 
-// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() float32 {
-	if o == nil || IsNil(o.CoresPerSocket) {
-		var ret float32
+// GetCoresPerSocket returns the CoresPerSocket field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocket() int64 {
+	if o == nil || IsNil(o.CoresPerSocket.Get()) {
+		var ret int64
 		return ret
 	}
-	return *o.CoresPerSocket
+	return *o.CoresPerSocket.Get()
 }
 
 // GetCoresPerSocketOk returns a tuple with the CoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*float32, bool) {
-	if o == nil || IsNil(o.CoresPerSocket) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetServicePlans200ResponseServicePlan) GetCoresPerSocketOk() (*int64, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CoresPerSocket, true
+	return o.CoresPerSocket.Get(), o.CoresPerSocket.IsSet()
 }
 
 // IsSetCoresPerSocket returns a boolean if a field has been set.
 func (o *GetServicePlans200ResponseServicePlan) IsSetCoresPerSocket() bool {
-	if o != nil && !IsNil(o.CoresPerSocket) {
+	if o != nil && o.CoresPerSocket.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCoresPerSocket gets a reference to the given float32 and assigns it to the CoresPerSocket field.
-func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v float32) {
-	o.CoresPerSocket = &v
+// SetCoresPerSocket gets a reference to the given NullableInt64 and assigns it to the CoresPerSocket field.
+func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocket(v int64) {
+	o.CoresPerSocket.Set(&v)
+}
+
+// SetCoresPerSocketNil sets the value for CoresPerSocket to be an explicit nil
+func (o *GetServicePlans200ResponseServicePlan) SetCoresPerSocketNil() {
+	o.CoresPerSocket.Set(nil)
+}
+
+// UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
+func (o *GetServicePlans200ResponseServicePlan) UnsetCoresPerSocket() {
+	o.CoresPerSocket.Unset()
 }
 
 // GetCustomCpu returns the CustomCpu field value if set, zero value otherwise.
@@ -1214,14 +1269,17 @@ func (o GetServicePlans200ResponseServicePlan) ToMap() (map[string]interface{}, 
 	if o.MaxCpu.IsSet() {
 		toSerialize["maxCpu"] = o.MaxCpu.Get()
 	}
+	if o.MaxGpus.IsSet() {
+		toSerialize["maxGpus"] = o.MaxGpus.Get()
+	}
 	if o.MaxCores.IsSet() {
 		toSerialize["maxCores"] = o.MaxCores.Get()
 	}
 	if o.MaxDisks.IsSet() {
 		toSerialize["maxDisks"] = o.MaxDisks.Get()
 	}
-	if !IsNil(o.CoresPerSocket) {
-		toSerialize["coresPerSocket"] = o.CoresPerSocket
+	if o.CoresPerSocket.IsSet() {
+		toSerialize["coresPerSocket"] = o.CoresPerSocket.Get()
 	}
 	if !IsNil(o.CustomCpu) {
 		toSerialize["customCpu"] = o.CustomCpu

@@ -21,29 +21,29 @@ var _ MappedNullable = &AddServicePlansRequestServicePlanConfigRanges{}
 // AddServicePlansRequestServicePlanConfigRanges struct for AddServicePlansRequestServicePlanConfigRanges
 type AddServicePlansRequestServicePlanConfigRanges struct {
 	// Custom min storage in GB
-	MinStorage *string `json:"minStorage,omitempty"`
+	MinStorage *int64 `json:"minStorage,omitempty"`
 	// Custom max storage in GB
-	MaxStorage *string `json:"maxStorage,omitempty"`
+	MaxStorage *int64 `json:"maxStorage,omitempty"`
 	// Custom min per disk size in GB
-	MinPerDiskSize *string `json:"minPerDiskSize,omitempty"`
+	MinPerDiskSize *int64 `json:"minPerDiskSize,omitempty"`
 	// Custom max per disk size in GB
-	MaxPerDiskSize *string `json:"maxPerDiskSize,omitempty"`
+	MaxPerDiskSize *int64 `json:"maxPerDiskSize,omitempty"`
 	// Custom min memory in bytes
 	MinMemory *int64 `json:"minMemory,omitempty"`
 	// Custom max memory in bytes
 	MaxMemory *int64 `json:"maxMemory,omitempty"`
 	// Custom min cores
-	MinCores *string `json:"minCores,omitempty"`
+	MinCores *int64 `json:"minCores,omitempty"`
 	// Custom max cores
-	MaxCores *string `json:"maxCores,omitempty"`
+	MaxCores *int64 `json:"maxCores,omitempty"`
 	// Custom min sockets
-	MinSockets *string `json:"minSockets,omitempty"`
+	MinSockets *int64 `json:"minSockets,omitempty"`
 	// Custom max sockets
-	MaxSockets *string `json:"maxSockets,omitempty"`
+	MaxSockets *int64 `json:"maxSockets,omitempty"`
 	// Custom min cores allowed per socket
-	MinCoresPerSocket *string `json:"minCoresPerSocket,omitempty"`
+	MinCoresPerSocket *int64 `json:"minCoresPerSocket,omitempty"`
 	// Custom max cores allowed per socket
-	MaxCoresPerSocket    *string                `json:"maxCoresPerSocket,omitempty"`
+	MaxCoresPerSocket    *int64                 `json:"maxCoresPerSocket,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -67,9 +67,9 @@ func NewAddServicePlansRequestServicePlanConfigRangesWithDefaults() *AddServiceP
 }
 
 // GetMinStorage returns the MinStorage field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorage() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorage() int64 {
 	if o == nil || IsNil(o.MinStorage) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinStorage
@@ -77,7 +77,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorage() string {
 
 // GetMinStorageOk returns a tuple with the MinStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorageOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinStorageOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinStorage) {
 		return nil, false
 	}
@@ -93,15 +93,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinStorage() bool {
 	return false
 }
 
-// SetMinStorage gets a reference to the given string and assigns it to the MinStorage field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinStorage(v string) {
+// SetMinStorage gets a reference to the given int64 and assigns it to the MinStorage field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinStorage(v int64) {
 	o.MinStorage = &v
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorage() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorage() int64 {
 	if o == nil || IsNil(o.MaxStorage) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxStorage
@@ -109,7 +109,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorage() string {
 
 // GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorageOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxStorageOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxStorage) {
 		return nil, false
 	}
@@ -125,15 +125,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxStorage() bool {
 	return false
 }
 
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxStorage(v string) {
+// SetMaxStorage gets a reference to the given int64 and assigns it to the MaxStorage field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxStorage(v int64) {
 	o.MaxStorage = &v
 }
 
 // GetMinPerDiskSize returns the MinPerDiskSize field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSize() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSize() int64 {
 	if o == nil || IsNil(o.MinPerDiskSize) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinPerDiskSize
@@ -141,7 +141,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSize() stri
 
 // GetMinPerDiskSizeOk returns a tuple with the MinPerDiskSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSizeOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinPerDiskSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinPerDiskSize) {
 		return nil, false
 	}
@@ -157,15 +157,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinPerDiskSize() bo
 	return false
 }
 
-// SetMinPerDiskSize gets a reference to the given string and assigns it to the MinPerDiskSize field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinPerDiskSize(v string) {
+// SetMinPerDiskSize gets a reference to the given int64 and assigns it to the MinPerDiskSize field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinPerDiskSize(v int64) {
 	o.MinPerDiskSize = &v
 }
 
 // GetMaxPerDiskSize returns the MaxPerDiskSize field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSize() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSize() int64 {
 	if o == nil || IsNil(o.MaxPerDiskSize) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxPerDiskSize
@@ -173,7 +173,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSize() stri
 
 // GetMaxPerDiskSizeOk returns a tuple with the MaxPerDiskSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSizeOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxPerDiskSizeOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxPerDiskSize) {
 		return nil, false
 	}
@@ -189,8 +189,8 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxPerDiskSize() bo
 	return false
 }
 
-// SetMaxPerDiskSize gets a reference to the given string and assigns it to the MaxPerDiskSize field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxPerDiskSize(v string) {
+// SetMaxPerDiskSize gets a reference to the given int64 and assigns it to the MaxPerDiskSize field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxPerDiskSize(v int64) {
 	o.MaxPerDiskSize = &v
 }
 
@@ -259,9 +259,9 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxMemory(v int64) {
 }
 
 // GetMinCores returns the MinCores field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCores() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCores() int64 {
 	if o == nil || IsNil(o.MinCores) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinCores
@@ -269,7 +269,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCores() string {
 
 // GetMinCoresOk returns a tuple with the MinCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinCores) {
 		return nil, false
 	}
@@ -285,15 +285,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinCores() bool {
 	return false
 }
 
-// SetMinCores gets a reference to the given string and assigns it to the MinCores field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCores(v string) {
+// SetMinCores gets a reference to the given int64 and assigns it to the MinCores field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCores(v int64) {
 	o.MinCores = &v
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCores() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCores() int64 {
 	if o == nil || IsNil(o.MaxCores) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxCores
@@ -301,7 +301,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCores() string {
 
 // GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxCores) {
 		return nil, false
 	}
@@ -317,15 +317,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxCores() bool {
 	return false
 }
 
-// SetMaxCores gets a reference to the given string and assigns it to the MaxCores field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxCores(v string) {
+// SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxCores(v int64) {
 	o.MaxCores = &v
 }
 
 // GetMinSockets returns the MinSockets field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSockets() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSockets() int64 {
 	if o == nil || IsNil(o.MinSockets) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinSockets
@@ -333,7 +333,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSockets() string {
 
 // GetMinSocketsOk returns a tuple with the MinSockets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSocketsOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinSocketsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinSockets) {
 		return nil, false
 	}
@@ -349,15 +349,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinSockets() bool {
 	return false
 }
 
-// SetMinSockets gets a reference to the given string and assigns it to the MinSockets field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinSockets(v string) {
+// SetMinSockets gets a reference to the given int64 and assigns it to the MinSockets field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinSockets(v int64) {
 	o.MinSockets = &v
 }
 
 // GetMaxSockets returns the MaxSockets field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSockets() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSockets() int64 {
 	if o == nil || IsNil(o.MaxSockets) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxSockets
@@ -365,7 +365,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSockets() string {
 
 // GetMaxSocketsOk returns a tuple with the MaxSockets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSocketsOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxSocketsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxSockets) {
 		return nil, false
 	}
@@ -381,15 +381,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxSockets() bool {
 	return false
 }
 
-// SetMaxSockets gets a reference to the given string and assigns it to the MaxSockets field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxSockets(v string) {
+// SetMaxSockets gets a reference to the given int64 and assigns it to the MaxSockets field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxSockets(v int64) {
 	o.MaxSockets = &v
 }
 
 // GetMinCoresPerSocket returns the MinCoresPerSocket field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocket() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocket() int64 {
 	if o == nil || IsNil(o.MinCoresPerSocket) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinCoresPerSocket
@@ -397,7 +397,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocket() s
 
 // GetMinCoresPerSocketOk returns a tuple with the MinCoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocketOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMinCoresPerSocketOk() (*int64, bool) {
 	if o == nil || IsNil(o.MinCoresPerSocket) {
 		return nil, false
 	}
@@ -413,15 +413,15 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMinCoresPerSocket()
 	return false
 }
 
-// SetMinCoresPerSocket gets a reference to the given string and assigns it to the MinCoresPerSocket field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCoresPerSocket(v string) {
+// SetMinCoresPerSocket gets a reference to the given int64 and assigns it to the MinCoresPerSocket field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMinCoresPerSocket(v int64) {
 	o.MinCoresPerSocket = &v
 }
 
 // GetMaxCoresPerSocket returns the MaxCoresPerSocket field value if set, zero value otherwise.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocket() string {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocket() int64 {
 	if o == nil || IsNil(o.MaxCoresPerSocket) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxCoresPerSocket
@@ -429,7 +429,7 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocket() s
 
 // GetMaxCoresPerSocketOk returns a tuple with the MaxCoresPerSocket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocketOk() (*string, bool) {
+func (o *AddServicePlansRequestServicePlanConfigRanges) GetMaxCoresPerSocketOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxCoresPerSocket) {
 		return nil, false
 	}
@@ -445,8 +445,8 @@ func (o *AddServicePlansRequestServicePlanConfigRanges) IsSetMaxCoresPerSocket()
 	return false
 }
 
-// SetMaxCoresPerSocket gets a reference to the given string and assigns it to the MaxCoresPerSocket field.
-func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxCoresPerSocket(v string) {
+// SetMaxCoresPerSocket gets a reference to the given int64 and assigns it to the MaxCoresPerSocket field.
+func (o *AddServicePlansRequestServicePlanConfigRanges) SetMaxCoresPerSocket(v int64) {
 	o.MaxCoresPerSocket = &v
 }
 

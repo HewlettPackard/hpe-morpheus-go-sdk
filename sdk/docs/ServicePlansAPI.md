@@ -105,7 +105,7 @@ import (
 )
 
 func main() {
-	addServicePlansRequest := *openapiclient.NewAddServicePlansRequest(*openapiclient.NewAddServicePlansRequestServicePlan("Name_example", "Code_example", float32(123), float32(123), *openapiclient.NewAddClusterLayoutsRequestLayoutProvisionType(int64(123)))) // AddServicePlansRequest |  (optional)
+	addServicePlansRequest := *openapiclient.NewAddServicePlansRequest(*openapiclient.NewAddServicePlansRequestServicePlan("Name_example", "Code_example", int64(123), int64(123), *openapiclient.NewAddClusterLayoutsRequestLayoutProvisionType(int64(123)))) // AddServicePlansRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

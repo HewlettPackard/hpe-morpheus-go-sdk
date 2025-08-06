@@ -7,18 +7,22 @@ Name | Type | Description | Notes
 **Name** | **string** | Service plan name | 
 **Code** | **string** | Service plan code, must be unique | 
 **Description** | Pointer to **string** | Service plan description | [optional] 
+**RegionCode** | Pointer to **string** | Service plan region code | [optional] 
 **Editable** | Pointer to **bool** | Can be used to enable / disable the editability of the service plan. | [optional] [default to true]
-**MaxStorage** | **float32** | Max storage size in bytes | 
-**MaxMemory** | **float32** | Max memory size in bytes | 
-**MaxCores** | Pointer to **float32** | Max cores | [optional] 
-**MaxDisks** | Pointer to **float32** | Max disks allowed | [optional] 
+**MaxStorage** | **int64** | Max storage size in bytes | 
+**MaxMemory** | **int64** | Max memory size in bytes | 
+**MaxCores** | Pointer to **int64** | Max number of cores | [optional] 
+**MaxCpu** | Pointer to **int64** | Max number of CPUs | [optional] 
+**CoresPerSocket** | Pointer to **int64** | Number of cores per CPU | [optional] 
+**MaxGpus** | Pointer to **int64** | Max number of GPUs | [optional] 
+**MaxDisks** | Pointer to **int64** | Max disks allowed | [optional] 
 **ProvisionType** | [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | 
 **CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] [default to false]
 **CustomMaxStorage** | Pointer to **bool** | Can be used to enable / disable customizable storage | [optional] [default to false]
 **CustomMaxDataStorage** | Pointer to **bool** | Can be used to enable / disable customizable extra volumes. | [optional] [default to false]
 **CustomMaxMemory** | Pointer to **bool** | Can be used to enable / disable customizable memory. | [optional] [default to false]
 **AddVolumes** | Pointer to **bool** | Can be used to enable / disable ability to add volumes | [optional] [default to false]
-**SortOrder** | Pointer to **float32** | Sort order | [optional] 
+**SortOrder** | Pointer to **int64** | Sort order | [optional] 
 **PriceSets** | Pointer to [**[]AddServicePlansRequestServicePlanPriceSetsInner**](AddServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan | [optional] 
 **Config** | Pointer to [**AddServicePlansRequestServicePlanConfig**](AddServicePlansRequestServicePlanConfig.md) |  | [optional] 
 
@@ -26,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewAddServicePlansRequestServicePlan
 
-`func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage float32, maxMemory float32, provisionType AddClusterLayoutsRequestLayoutProvisionType, ) *AddServicePlansRequestServicePlan`
+`func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage int64, maxMemory int64, provisionType AddClusterLayoutsRequestLayoutProvisionType, ) *AddServicePlansRequestServicePlan`
 
 NewAddServicePlansRequestServicePlan instantiates a new AddServicePlansRequestServicePlan object
 This constructor will assign default values to properties that have it defined,
@@ -106,6 +110,31 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetRegionCode
+
+`func (o *AddServicePlansRequestServicePlan) GetRegionCode() string`
+
+GetRegionCode returns the RegionCode field if non-nil, zero value otherwise.
+
+### GetRegionCodeOk
+
+`func (o *AddServicePlansRequestServicePlan) GetRegionCodeOk() (*string, bool)`
+
+GetRegionCodeOk returns a tuple with the RegionCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegionCode
+
+`func (o *AddServicePlansRequestServicePlan) SetRegionCode(v string)`
+
+SetRegionCode sets RegionCode field to given value.
+
+### HasRegionCode
+
+`func (o *AddServicePlansRequestServicePlan) HasRegionCode() bool`
+
+HasRegionCode returns a boolean if a field has been set.
+
 ### GetEditable
 
 `func (o *AddServicePlansRequestServicePlan) GetEditable() bool`
@@ -133,60 +162,60 @@ HasEditable returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxStorage() float32`
+`func (o *AddServicePlansRequestServicePlan) GetMaxStorage() int64`
 
 GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
 ### GetMaxStorageOk
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxStorageOk() (*float32, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetMaxStorageOk() (*int64, bool)`
 
 GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxStorage
 
-`func (o *AddServicePlansRequestServicePlan) SetMaxStorage(v float32)`
+`func (o *AddServicePlansRequestServicePlan) SetMaxStorage(v int64)`
 
 SetMaxStorage sets MaxStorage field to given value.
 
 
 ### GetMaxMemory
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxMemory() float32`
+`func (o *AddServicePlansRequestServicePlan) GetMaxMemory() int64`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxMemoryOk() (*float32, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetMaxMemoryOk() (*int64, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *AddServicePlansRequestServicePlan) SetMaxMemory(v float32)`
+`func (o *AddServicePlansRequestServicePlan) SetMaxMemory(v int64)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
 
 ### GetMaxCores
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxCores() float32`
+`func (o *AddServicePlansRequestServicePlan) GetMaxCores() int64`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxCoresOk() (*float32, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetMaxCoresOk() (*int64, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *AddServicePlansRequestServicePlan) SetMaxCores(v float32)`
+`func (o *AddServicePlansRequestServicePlan) SetMaxCores(v int64)`
 
 SetMaxCores sets MaxCores field to given value.
 
@@ -196,22 +225,97 @@ SetMaxCores sets MaxCores field to given value.
 
 HasMaxCores returns a boolean if a field has been set.
 
+### GetMaxCpu
+
+`func (o *AddServicePlansRequestServicePlan) GetMaxCpu() int64`
+
+GetMaxCpu returns the MaxCpu field if non-nil, zero value otherwise.
+
+### GetMaxCpuOk
+
+`func (o *AddServicePlansRequestServicePlan) GetMaxCpuOk() (*int64, bool)`
+
+GetMaxCpuOk returns a tuple with the MaxCpu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxCpu
+
+`func (o *AddServicePlansRequestServicePlan) SetMaxCpu(v int64)`
+
+SetMaxCpu sets MaxCpu field to given value.
+
+### HasMaxCpu
+
+`func (o *AddServicePlansRequestServicePlan) HasMaxCpu() bool`
+
+HasMaxCpu returns a boolean if a field has been set.
+
+### GetCoresPerSocket
+
+`func (o *AddServicePlansRequestServicePlan) GetCoresPerSocket() int64`
+
+GetCoresPerSocket returns the CoresPerSocket field if non-nil, zero value otherwise.
+
+### GetCoresPerSocketOk
+
+`func (o *AddServicePlansRequestServicePlan) GetCoresPerSocketOk() (*int64, bool)`
+
+GetCoresPerSocketOk returns a tuple with the CoresPerSocket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCoresPerSocket
+
+`func (o *AddServicePlansRequestServicePlan) SetCoresPerSocket(v int64)`
+
+SetCoresPerSocket sets CoresPerSocket field to given value.
+
+### HasCoresPerSocket
+
+`func (o *AddServicePlansRequestServicePlan) HasCoresPerSocket() bool`
+
+HasCoresPerSocket returns a boolean if a field has been set.
+
+### GetMaxGpus
+
+`func (o *AddServicePlansRequestServicePlan) GetMaxGpus() int64`
+
+GetMaxGpus returns the MaxGpus field if non-nil, zero value otherwise.
+
+### GetMaxGpusOk
+
+`func (o *AddServicePlansRequestServicePlan) GetMaxGpusOk() (*int64, bool)`
+
+GetMaxGpusOk returns a tuple with the MaxGpus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxGpus
+
+`func (o *AddServicePlansRequestServicePlan) SetMaxGpus(v int64)`
+
+SetMaxGpus sets MaxGpus field to given value.
+
+### HasMaxGpus
+
+`func (o *AddServicePlansRequestServicePlan) HasMaxGpus() bool`
+
+HasMaxGpus returns a boolean if a field has been set.
+
 ### GetMaxDisks
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxDisks() float32`
+`func (o *AddServicePlansRequestServicePlan) GetMaxDisks() int64`
 
 GetMaxDisks returns the MaxDisks field if non-nil, zero value otherwise.
 
 ### GetMaxDisksOk
 
-`func (o *AddServicePlansRequestServicePlan) GetMaxDisksOk() (*float32, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetMaxDisksOk() (*int64, bool)`
 
 GetMaxDisksOk returns a tuple with the MaxDisks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxDisks
 
-`func (o *AddServicePlansRequestServicePlan) SetMaxDisks(v float32)`
+`func (o *AddServicePlansRequestServicePlan) SetMaxDisks(v int64)`
 
 SetMaxDisks sets MaxDisks field to given value.
 
@@ -368,20 +472,20 @@ HasAddVolumes returns a boolean if a field has been set.
 
 ### GetSortOrder
 
-`func (o *AddServicePlansRequestServicePlan) GetSortOrder() float32`
+`func (o *AddServicePlansRequestServicePlan) GetSortOrder() int64`
 
 GetSortOrder returns the SortOrder field if non-nil, zero value otherwise.
 
 ### GetSortOrderOk
 
-`func (o *AddServicePlansRequestServicePlan) GetSortOrderOk() (*float32, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetSortOrderOk() (*int64, bool)`
 
 GetSortOrderOk returns a tuple with the SortOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSortOrder
 
-`func (o *AddServicePlansRequestServicePlan) SetSortOrder(v float32)`
+`func (o *AddServicePlansRequestServicePlan) SetSortOrder(v int64)`
 
 SetSortOrder sets SortOrder field to given value.
 

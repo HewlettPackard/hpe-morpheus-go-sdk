@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **AvailabilityZone** | **string** | Availability Zone Name | 
 **Cidr** | **string** | Network CIDR | 
 **AssignPublicIp** | **bool** | Assign public IPs by default. | 
-**ZonePool** | [**CreateNetworksRequestNetworkConfigAnyOf2ZonePool**](CreateNetworksRequestNetworkConfigAnyOf2ZonePool.md) |  | 
+**ZonePool** | [**CreateNetworksRequestNetworkConfigAnyOf1ZonePool**](CreateNetworksRequestNetworkConfigAnyOf1ZonePool.md) |  | 
 **Mtu** | **string** | GCP MTU | [default to "1460"]
 **AutoCreate** | **bool** | Auto create subnets | [default to true]
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCreateNetworksRequestNetworkConfig
 
-`func NewCreateNetworksRequestNetworkConfig(resourceGroupId string, subnetName string, subnetCidr string, availabilityZone string, cidr string, assignPublicIp bool, zonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool, mtu string, autoCreate bool, ) *CreateNetworksRequestNetworkConfig`
+`func NewCreateNetworksRequestNetworkConfig(resourceGroupId string, subnetName string, subnetCidr string, availabilityZone string, cidr string, assignPublicIp bool, zonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool, mtu string, autoCreate bool, ) *CreateNetworksRequestNetworkConfig`
 
 NewCreateNetworksRequestNetworkConfig instantiates a new CreateNetworksRequestNetworkConfig object
 This constructor will assign default values to properties that have it defined,
@@ -155,20 +155,20 @@ SetAssignPublicIp sets AssignPublicIp field to given value.
 
 ### GetZonePool
 
-`func (o *CreateNetworksRequestNetworkConfig) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf2ZonePool`
+`func (o *CreateNetworksRequestNetworkConfig) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf1ZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *CreateNetworksRequestNetworkConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf2ZonePool, bool)`
+`func (o *CreateNetworksRequestNetworkConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf1ZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *CreateNetworksRequestNetworkConfig) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf2ZonePool)`
+`func (o *CreateNetworksRequestNetworkConfig) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf1ZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 

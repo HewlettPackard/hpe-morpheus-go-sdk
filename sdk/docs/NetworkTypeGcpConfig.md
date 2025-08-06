@@ -5,14 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Mtu** | **string** | GCP MTU | [default to "1460"]
-**ZonePool** | [**CreateNetworksRequestNetworkConfigAnyOf2ZonePool**](CreateNetworksRequestNetworkConfigAnyOf2ZonePool.md) |  | 
 **AutoCreate** | **bool** | Auto create subnets | [default to true]
 
 ## Methods
 
 ### NewNetworkTypeGcpConfig
 
-`func NewNetworkTypeGcpConfig(mtu string, zonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool, autoCreate bool, ) *NetworkTypeGcpConfig`
+`func NewNetworkTypeGcpConfig(mtu string, autoCreate bool, ) *NetworkTypeGcpConfig`
 
 NewNetworkTypeGcpConfig instantiates a new NetworkTypeGcpConfig object
 This constructor will assign default values to properties that have it defined,
@@ -45,26 +44,6 @@ and a boolean to check if the value has been set.
 `func (o *NetworkTypeGcpConfig) SetMtu(v string)`
 
 SetMtu sets Mtu field to given value.
-
-
-### GetZonePool
-
-`func (o *NetworkTypeGcpConfig) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf2ZonePool`
-
-GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
-
-### GetZonePoolOk
-
-`func (o *NetworkTypeGcpConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf2ZonePool, bool)`
-
-GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZonePool
-
-`func (o *NetworkTypeGcpConfig) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf2ZonePool)`
-
-SetZonePool sets ZonePool field to given value.
 
 
 ### GetAutoCreate

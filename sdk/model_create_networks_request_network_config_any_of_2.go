@@ -21,8 +21,7 @@ var _ MappedNullable = &CreateNetworksRequestNetworkConfigAnyOf2{}
 // CreateNetworksRequestNetworkConfigAnyOf2 struct for CreateNetworksRequestNetworkConfigAnyOf2
 type CreateNetworksRequestNetworkConfigAnyOf2 struct {
 	// GCP MTU
-	Mtu      string                                           `json:"mtu"`
-	ZonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool `json:"zonePool"`
+	Mtu string `json:"mtu"`
 	// Auto create subnets
 	AutoCreate           bool                   `json:"autoCreate"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -34,10 +33,9 @@ type _CreateNetworksRequestNetworkConfigAnyOf2 CreateNetworksRequestNetworkConfi
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateNetworksRequestNetworkConfigAnyOf2(mtu string, zonePool CreateNetworksRequestNetworkConfigAnyOf2ZonePool, autoCreate bool) *CreateNetworksRequestNetworkConfigAnyOf2 {
+func NewCreateNetworksRequestNetworkConfigAnyOf2(mtu string, autoCreate bool) *CreateNetworksRequestNetworkConfigAnyOf2 {
 	this := CreateNetworksRequestNetworkConfigAnyOf2{}
 	this.Mtu = mtu
-	this.ZonePool = zonePool
 	this.AutoCreate = autoCreate
 	return &this
 }
@@ -78,30 +76,6 @@ func (o *CreateNetworksRequestNetworkConfigAnyOf2) SetMtu(v string) {
 	o.Mtu = v
 }
 
-// GetZonePool returns the ZonePool field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf2) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf2ZonePool {
-	if o == nil {
-		var ret CreateNetworksRequestNetworkConfigAnyOf2ZonePool
-		return ret
-	}
-
-	return o.ZonePool
-}
-
-// GetZonePoolOk returns a tuple with the ZonePool field value
-// and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetworkConfigAnyOf2) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf2ZonePool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZonePool, true
-}
-
-// SetZonePool sets field value
-func (o *CreateNetworksRequestNetworkConfigAnyOf2) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf2ZonePool) {
-	o.ZonePool = v
-}
-
 // GetAutoCreate returns the AutoCreate field value
 func (o *CreateNetworksRequestNetworkConfigAnyOf2) GetAutoCreate() bool {
 	if o == nil {
@@ -137,7 +111,6 @@ func (o CreateNetworksRequestNetworkConfigAnyOf2) MarshalJSON() ([]byte, error) 
 func (o CreateNetworksRequestNetworkConfigAnyOf2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mtu"] = o.Mtu
-	toSerialize["zonePool"] = o.ZonePool
 	toSerialize["autoCreate"] = o.AutoCreate
 
 	for key, value := range o.AdditionalProperties {

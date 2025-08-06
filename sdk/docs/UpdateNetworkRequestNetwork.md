@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **DnsSecondary** | Pointer to **string** | Secondary DNS Server | [optional] 
 **VlanId** | Pointer to **int64** |  | [optional] 
 **Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
+**ZonePool** | Pointer to [**CreateNetworksRequestNetworkZonePool**](CreateNetworksRequestNetworkZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
 **AssignPublicIp** | Pointer to **bool** | Assign Public IP | [optional] 
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
@@ -301,6 +302,31 @@ HasPool returns a boolean if a field has been set.
 `func (o *UpdateNetworkRequestNetwork) UnsetPool()`
 
 UnsetPool ensures that no value is present for Pool, not even an explicit nil
+### GetZonePool
+
+`func (o *UpdateNetworkRequestNetwork) GetZonePool() CreateNetworksRequestNetworkZonePool`
+
+GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
+
+### GetZonePoolOk
+
+`func (o *UpdateNetworkRequestNetwork) GetZonePoolOk() (*CreateNetworksRequestNetworkZonePool, bool)`
+
+GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZonePool
+
+`func (o *UpdateNetworkRequestNetwork) SetZonePool(v CreateNetworksRequestNetworkZonePool)`
+
+SetZonePool sets ZonePool field to given value.
+
+### HasZonePool
+
+`func (o *UpdateNetworkRequestNetwork) HasZonePool() bool`
+
+HasZonePool returns a boolean if a field has been set.
+
 ### GetAllowStaticOverride
 
 `func (o *UpdateNetworkRequestNetwork) GetAllowStaticOverride() bool`
