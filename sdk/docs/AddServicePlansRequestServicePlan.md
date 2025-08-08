@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MaxGpus** | Pointer to **int64** | Max number of GPUs | [optional] 
 **MaxDisks** | Pointer to **int64** | Max disks allowed | [optional] 
 **ProvisionType** | [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | 
+**CustomCpu** | Pointer to **bool** | Can be used to enable / disable customizable cpu | [optional] [default to false]
 **CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] [default to false]
 **CustomMaxStorage** | Pointer to **bool** | Can be used to enable / disable customizable storage | [optional] [default to false]
 **CustomMaxDataStorage** | Pointer to **bool** | Can be used to enable / disable customizable extra volumes. | [optional] [default to false]
@@ -344,6 +345,31 @@ and a boolean to check if the value has been set.
 
 SetProvisionType sets ProvisionType field to given value.
 
+
+### GetCustomCpu
+
+`func (o *AddServicePlansRequestServicePlan) GetCustomCpu() bool`
+
+GetCustomCpu returns the CustomCpu field if non-nil, zero value otherwise.
+
+### GetCustomCpuOk
+
+`func (o *AddServicePlansRequestServicePlan) GetCustomCpuOk() (*bool, bool)`
+
+GetCustomCpuOk returns a tuple with the CustomCpu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomCpu
+
+`func (o *AddServicePlansRequestServicePlan) SetCustomCpu(v bool)`
+
+SetCustomCpu sets CustomCpu field to given value.
+
+### HasCustomCpu
+
+`func (o *AddServicePlansRequestServicePlan) HasCustomCpu() bool`
+
+HasCustomCpu returns a boolean if a field has been set.
 
 ### GetCustomCores
 

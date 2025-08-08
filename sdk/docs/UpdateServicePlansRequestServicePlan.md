@@ -13,11 +13,12 @@ Name | Type | Description | Notes
 **MaxCores** | Pointer to **float32** | Max cores | [optional] 
 **MaxDisks** | Pointer to **float32** | Max disks allowed | [optional] 
 **ProvisionType** | Pointer to [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | [optional] 
-**CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] [default to false]
-**CustomMaxStorage** | Pointer to **bool** | Can be used to enable / disable customizable storage | [optional] [default to false]
-**CustomMaxDataStorage** | Pointer to **bool** | Can be used to enable / disable customizable extra volumes. | [optional] [default to false]
-**CustomMaxMemory** | Pointer to **bool** | Can be used to enable / disable customizable memory. | [optional] [default to false]
-**AddVolumes** | Pointer to **bool** | Can be used to enable / disable ability to add volumes | [optional] [default to false]
+**CustomCpu** | Pointer to **bool** | Can be used to enable / disable customizable cpu | [optional] 
+**CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] 
+**CustomMaxStorage** | Pointer to **bool** | Can be used to enable / disable customizable storage | [optional] 
+**CustomMaxDataStorage** | Pointer to **bool** | Can be used to enable / disable customizable extra volumes. | [optional] 
+**CustomMaxMemory** | Pointer to **bool** | Can be used to enable / disable customizable memory. | [optional] 
+**AddVolumes** | Pointer to **bool** | Can be used to enable / disable ability to add volumes | [optional] 
 **SortOrder** | Pointer to **float32** | Sort order | [optional] 
 **PriceSets** | Pointer to [**[]AddServicePlansRequestServicePlanPriceSetsInner**](AddServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan | [optional] 
 **Config** | Pointer to [**UpdateServicePlansRequestServicePlanConfig**](UpdateServicePlansRequestServicePlanConfig.md) |  | [optional] 
@@ -265,6 +266,31 @@ SetProvisionType sets ProvisionType field to given value.
 `func (o *UpdateServicePlansRequestServicePlan) HasProvisionType() bool`
 
 HasProvisionType returns a boolean if a field has been set.
+
+### GetCustomCpu
+
+`func (o *UpdateServicePlansRequestServicePlan) GetCustomCpu() bool`
+
+GetCustomCpu returns the CustomCpu field if non-nil, zero value otherwise.
+
+### GetCustomCpuOk
+
+`func (o *UpdateServicePlansRequestServicePlan) GetCustomCpuOk() (*bool, bool)`
+
+GetCustomCpuOk returns a tuple with the CustomCpu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomCpu
+
+`func (o *UpdateServicePlansRequestServicePlan) SetCustomCpu(v bool)`
+
+SetCustomCpu sets CustomCpu field to given value.
+
+### HasCustomCpu
+
+`func (o *UpdateServicePlansRequestServicePlan) HasCustomCpu() bool`
+
+HasCustomCpu returns a boolean if a field has been set.
 
 ### GetCustomCores
 
