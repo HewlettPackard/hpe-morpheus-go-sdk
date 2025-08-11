@@ -52,7 +52,7 @@ type UpdateRoleRequestRole struct {
 	// Set the default access level for personas
 	GlobalPersonaAccess *string `json:"globalPersonaAccess,omitempty"`
 	// Set the access level for the specified personas
-	PersonaPermissions []UpdateRoleRequestRolePersonaPermissionsInner `json:"personaPermissions,omitempty"`
+	PersonaPermissions []AddRolesRequestRolePersonaPermissionsInner `json:"personaPermissions,omitempty"`
 	// Set the default access level for VDI pools
 	GlobalVdiPoolAccess *string `json:"globalVdiPoolAccess,omitempty"`
 	// Set the access level for the specified VDI pools
@@ -637,9 +637,9 @@ func (o *UpdateRoleRequestRole) SetGlobalPersonaAccess(v string) {
 }
 
 // GetPersonaPermissions returns the PersonaPermissions field value if set, zero value otherwise.
-func (o *UpdateRoleRequestRole) GetPersonaPermissions() []UpdateRoleRequestRolePersonaPermissionsInner {
+func (o *UpdateRoleRequestRole) GetPersonaPermissions() []AddRolesRequestRolePersonaPermissionsInner {
 	if o == nil || IsNil(o.PersonaPermissions) {
-		var ret []UpdateRoleRequestRolePersonaPermissionsInner
+		var ret []AddRolesRequestRolePersonaPermissionsInner
 		return ret
 	}
 	return o.PersonaPermissions
@@ -647,7 +647,7 @@ func (o *UpdateRoleRequestRole) GetPersonaPermissions() []UpdateRoleRequestRoleP
 
 // GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() ([]UpdateRoleRequestRolePersonaPermissionsInner, bool) {
+func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() ([]AddRolesRequestRolePersonaPermissionsInner, bool) {
 	if o == nil || IsNil(o.PersonaPermissions) {
 		return nil, false
 	}
@@ -663,8 +663,8 @@ func (o *UpdateRoleRequestRole) IsSetPersonaPermissions() bool {
 	return false
 }
 
-// SetPersonaPermissions gets a reference to the given []UpdateRoleRequestRolePersonaPermissionsInner and assigns it to the PersonaPermissions field.
-func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []UpdateRoleRequestRolePersonaPermissionsInner) {
+// SetPersonaPermissions gets a reference to the given []AddRolesRequestRolePersonaPermissionsInner and assigns it to the PersonaPermissions field.
+func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []AddRolesRequestRolePersonaPermissionsInner) {
 	o.PersonaPermissions = v
 }
 

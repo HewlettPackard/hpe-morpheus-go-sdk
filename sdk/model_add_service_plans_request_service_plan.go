@@ -45,6 +45,8 @@ type AddServicePlansRequestServicePlan struct {
 	// Max disks allowed
 	MaxDisks      *int64                                      `json:"maxDisks,omitempty"`
 	ProvisionType AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType"`
+	// Can be used to enable / disable customizable cpu
+	CustomCpu *bool `json:"customCpu,omitempty"`
 	// Can be used to enable / disable customizable cores
 	CustomCores *bool `json:"customCores,omitempty"`
 	// Can be used to enable / disable customizable storage
@@ -78,6 +80,8 @@ func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage i
 	this.MaxStorage = maxStorage
 	this.MaxMemory = maxMemory
 	this.ProvisionType = provisionType
+	var customCpu bool = false
+	this.CustomCpu = &customCpu
 	var customCores bool = false
 	this.CustomCores = &customCores
 	var customMaxStorage bool = false
@@ -98,6 +102,8 @@ func NewAddServicePlansRequestServicePlanWithDefaults() *AddServicePlansRequestS
 	this := AddServicePlansRequestServicePlan{}
 	var editable bool = true
 	this.Editable = &editable
+	var customCpu bool = false
+	this.CustomCpu = &customCpu
 	var customCores bool = false
 	this.CustomCores = &customCores
 	var customMaxStorage bool = false
@@ -487,6 +493,38 @@ func (o *AddServicePlansRequestServicePlan) SetProvisionType(v AddClusterLayouts
 	o.ProvisionType = v
 }
 
+// GetCustomCpu returns the CustomCpu field value if set, zero value otherwise.
+func (o *AddServicePlansRequestServicePlan) GetCustomCpu() bool {
+	if o == nil || IsNil(o.CustomCpu) {
+		var ret bool
+		return ret
+	}
+	return *o.CustomCpu
+}
+
+// GetCustomCpuOk returns a tuple with the CustomCpu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddServicePlansRequestServicePlan) GetCustomCpuOk() (*bool, bool) {
+	if o == nil || IsNil(o.CustomCpu) {
+		return nil, false
+	}
+	return o.CustomCpu, true
+}
+
+// IsSetCustomCpu returns a boolean if a field has been set.
+func (o *AddServicePlansRequestServicePlan) IsSetCustomCpu() bool {
+	if o != nil && !IsNil(o.CustomCpu) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomCpu gets a reference to the given bool and assigns it to the CustomCpu field.
+func (o *AddServicePlansRequestServicePlan) SetCustomCpu(v bool) {
+	o.CustomCpu = &v
+}
+
 // GetCustomCores returns the CustomCores field value if set, zero value otherwise.
 func (o *AddServicePlansRequestServicePlan) GetCustomCores() bool {
 	if o == nil || IsNil(o.CustomCores) {
@@ -782,6 +820,9 @@ func (o AddServicePlansRequestServicePlan) ToMap() (map[string]interface{}, erro
 		toSerialize["maxDisks"] = o.MaxDisks
 	}
 	toSerialize["provisionType"] = o.ProvisionType
+	if !IsNil(o.CustomCpu) {
+		toSerialize["customCpu"] = o.CustomCpu
+	}
 	if !IsNil(o.CustomCores) {
 		toSerialize["customCores"] = o.CustomCores
 	}

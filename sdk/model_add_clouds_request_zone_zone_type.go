@@ -19,7 +19,7 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// AddCloudsRequestZoneZoneType struct for AddCloudsRequestZoneZoneType
+// AddCloudsRequestZoneZoneType Map containing the Cloud (zone) type ID. See the zone-types API to fetch a list of all available Cloud (zone) types and their IDs.
 type AddCloudsRequestZoneZoneType struct {
 	AddCloudsRequestZoneZoneTypeAnyOf  *AddCloudsRequestZoneZoneTypeAnyOf
 	AddCloudsRequestZoneZoneTypeAnyOf1 *AddCloudsRequestZoneZoneTypeAnyOf1

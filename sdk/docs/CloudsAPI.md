@@ -123,7 +123,7 @@ import (
 )
 
 func main() {
-	addCloudsRequest := *openapiclient.NewAddCloudsRequest(*openapiclient.NewAddCloudsRequestZone("My Cloud", *openapiclient.NewAddCloudsRequestZoneZoneType(), int64(3))) // AddCloudsRequest |  (optional)
+	addCloudsRequest := *openapiclient.NewAddCloudsRequest(*openapiclient.NewAddCloudsRequestZone("My Cloud", int64(3), *openapiclient.NewAddCloudsRequestZoneZoneType(), *openapiclient.NewAddCloudsRequestZoneConfig("https://vcenter.morpheus.local/sdk", "ApiVersion_example", "Datacenter_example"))) // AddCloudsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

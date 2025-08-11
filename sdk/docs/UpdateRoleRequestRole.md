@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **GlobalCatalogItemTypeAccess** | Pointer to **string** | Set the default access level for catalog item types | [optional] 
 **CatalogItemTypePermissions** | Pointer to [**[]AddRolesRequestRoleCatalogItemTypePermissionsInner**](AddRolesRequestRoleCatalogItemTypePermissionsInner.md) | Set the access level for the specified catalog item types | [optional] 
 **GlobalPersonaAccess** | Pointer to **string** | Set the default access level for personas | [optional] 
-**PersonaPermissions** | Pointer to [**[]UpdateRoleRequestRolePersonaPermissionsInner**](UpdateRoleRequestRolePersonaPermissionsInner.md) | Set the access level for the specified personas | [optional] 
+**PersonaPermissions** | Pointer to [**[]AddRolesRequestRolePersonaPermissionsInner**](AddRolesRequestRolePersonaPermissionsInner.md) | Set the access level for the specified personas | [optional] 
 **GlobalVdiPoolAccess** | Pointer to **string** | Set the default access level for VDI pools | [optional] 
 **VdiPoolPermissions** | Pointer to [**[]AddRolesRequestRoleVdiPoolPermissionsInner**](AddRolesRequestRoleVdiPoolPermissionsInner.md) | Set the access level for the specified VDI pools | [optional] 
 **GlobalReportTypeAccess** | Pointer to **string** | Set the default access level for report types | [optional] 
@@ -481,20 +481,20 @@ HasGlobalPersonaAccess returns a boolean if a field has been set.
 
 ### GetPersonaPermissions
 
-`func (o *UpdateRoleRequestRole) GetPersonaPermissions() []UpdateRoleRequestRolePersonaPermissionsInner`
+`func (o *UpdateRoleRequestRole) GetPersonaPermissions() []AddRolesRequestRolePersonaPermissionsInner`
 
 GetPersonaPermissions returns the PersonaPermissions field if non-nil, zero value otherwise.
 
 ### GetPersonaPermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() (*[]UpdateRoleRequestRolePersonaPermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() (*[]AddRolesRequestRolePersonaPermissionsInner, bool)`
 
 GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersonaPermissions
 
-`func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []UpdateRoleRequestRolePersonaPermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []AddRolesRequestRolePersonaPermissionsInner)`
 
 SetPersonaPermissions sets PersonaPermissions field to given value.
 

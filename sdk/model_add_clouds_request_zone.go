@@ -22,6 +22,10 @@ var _ MappedNullable = &AddCloudsRequestZone{}
 type AddCloudsRequestZone struct {
 	// A unique name scoped to your account for the cloud
 	Name string `json:"name"`
+	// Specifies which Server group this cloud should be assigned to
+	GroupId  int64                        `json:"groupId"`
+	ZoneType AddCloudsRequestZoneZoneType `json:"zoneType"`
+	Config   AddCloudsRequestZoneConfig   `json:"config"`
 	// Optional description field if you want to put more info there
 	Description *string `json:"description,omitempty"`
 	// Optional code for use with policies
@@ -31,10 +35,7 @@ type AddCloudsRequestZone struct {
 	// Optional location for your cloud
 	Location NullableString `json:"location,omitempty"`
 	// private or public
-	Visibility *string                      `json:"visibility,omitempty"`
-	ZoneType   AddCloudsRequestZoneZoneType `json:"zoneType"`
-	// Specifies which Server group this cloud should be assigned to
-	GroupId int64 `json:"groupId"`
+	Visibility *string `json:"visibility,omitempty"`
 	// Specifies which Tenant this cloud should be assigned to
 	AccountId *int64 `json:"accountId,omitempty"`
 	// Can be used to disable the cloud
@@ -57,8 +58,6 @@ type AddCloudsRequestZone struct {
 	DefaultPlanSyncActive *bool `json:"defaultPlanSyncActive,omitempty"`
 	// Linked Account ID (enter commercial ID to get costing for AWS Govcloud)
 	LinkedAccountId *int64 `json:"linkedAccountId,omitempty"`
-	// Map containing zone configuration settings. See the section on specific zone types for details.
-	Config map[string]interface{} `json:"config,omitempty"`
 	// host firewall. `off` or `internal`. a.k.a. \"local firewall\"
 	SecurityMode         *string                         `json:"securityMode,omitempty"`
 	Credential           *AddCloudsRequestZoneCredential `json:"credential,omitempty"`
@@ -71,13 +70,14 @@ type _AddCloudsRequestZone AddCloudsRequestZone
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCloudsRequestZone(name string, zoneType AddCloudsRequestZoneZoneType, groupId int64) *AddCloudsRequestZone {
+func NewAddCloudsRequestZone(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config AddCloudsRequestZoneConfig) *AddCloudsRequestZone {
 	this := AddCloudsRequestZone{}
 	this.Name = name
+	this.GroupId = groupId
+	this.ZoneType = zoneType
+	this.Config = config
 	var visibility string = "private"
 	this.Visibility = &visibility
-	this.ZoneType = zoneType
-	this.GroupId = groupId
 	var enabled bool = true
 	this.Enabled = &enabled
 	var autoRecoverPowerState bool = false
@@ -129,6 +129,78 @@ func (o *AddCloudsRequestZone) GetNameOk() (*string, bool) {
 // SetName sets field value
 func (o *AddCloudsRequestZone) SetName(v string) {
 	o.Name = v
+}
+
+// GetGroupId returns the GroupId field value
+func (o *AddCloudsRequestZone) GetGroupId() int64 {
+	if o == nil {
+		var ret int64
+		return ret
+	}
+
+	return o.GroupId
+}
+
+// GetGroupIdOk returns a tuple with the GroupId field value
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZone) GetGroupIdOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.GroupId, true
+}
+
+// SetGroupId sets field value
+func (o *AddCloudsRequestZone) SetGroupId(v int64) {
+	o.GroupId = v
+}
+
+// GetZoneType returns the ZoneType field value
+func (o *AddCloudsRequestZone) GetZoneType() AddCloudsRequestZoneZoneType {
+	if o == nil {
+		var ret AddCloudsRequestZoneZoneType
+		return ret
+	}
+
+	return o.ZoneType
+}
+
+// GetZoneTypeOk returns a tuple with the ZoneType field value
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZone) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ZoneType, true
+}
+
+// SetZoneType sets field value
+func (o *AddCloudsRequestZone) SetZoneType(v AddCloudsRequestZoneZoneType) {
+	o.ZoneType = v
+}
+
+// GetConfig returns the Config field value
+func (o *AddCloudsRequestZone) GetConfig() AddCloudsRequestZoneConfig {
+	if o == nil {
+		var ret AddCloudsRequestZoneConfig
+		return ret
+	}
+
+	return o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZone) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Config, true
+}
+
+// SetConfig sets field value
+func (o *AddCloudsRequestZone) SetConfig(v AddCloudsRequestZoneConfig) {
+	o.Config = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -300,54 +372,6 @@ func (o *AddCloudsRequestZone) IsSetVisibility() bool {
 // SetVisibility gets a reference to the given string and assigns it to the Visibility field.
 func (o *AddCloudsRequestZone) SetVisibility(v string) {
 	o.Visibility = &v
-}
-
-// GetZoneType returns the ZoneType field value
-func (o *AddCloudsRequestZone) GetZoneType() AddCloudsRequestZoneZoneType {
-	if o == nil {
-		var ret AddCloudsRequestZoneZoneType
-		return ret
-	}
-
-	return o.ZoneType
-}
-
-// GetZoneTypeOk returns a tuple with the ZoneType field value
-// and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZone) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ZoneType, true
-}
-
-// SetZoneType sets field value
-func (o *AddCloudsRequestZone) SetZoneType(v AddCloudsRequestZoneZoneType) {
-	o.ZoneType = v
-}
-
-// GetGroupId returns the GroupId field value
-func (o *AddCloudsRequestZone) GetGroupId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.GroupId
-}
-
-// GetGroupIdOk returns a tuple with the GroupId field value
-// and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZone) GetGroupIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.GroupId, true
-}
-
-// SetGroupId sets field value
-func (o *AddCloudsRequestZone) SetGroupId(v int64) {
-	o.GroupId = v
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -702,38 +726,6 @@ func (o *AddCloudsRequestZone) SetLinkedAccountId(v int64) {
 	o.LinkedAccountId = &v
 }
 
-// GetConfig returns the Config field value if set, zero value otherwise.
-func (o *AddCloudsRequestZone) GetConfig() map[string]interface{} {
-	if o == nil || IsNil(o.Config) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Config
-}
-
-// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZone) GetConfigOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Config) {
-		return map[string]interface{}{}, false
-	}
-	return o.Config, true
-}
-
-// IsSetConfig returns a boolean if a field has been set.
-func (o *AddCloudsRequestZone) IsSetConfig() bool {
-	if o != nil && !IsNil(o.Config) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfig gets a reference to the given map[string]interface{} and assigns it to the Config field.
-func (o *AddCloudsRequestZone) SetConfig(v map[string]interface{}) {
-	o.Config = v
-}
-
 // GetSecurityMode returns the SecurityMode field value if set, zero value otherwise.
 func (o *AddCloudsRequestZone) GetSecurityMode() string {
 	if o == nil || IsNil(o.SecurityMode) {
@@ -809,6 +801,9 @@ func (o AddCloudsRequestZone) MarshalJSON() ([]byte, error) {
 func (o AddCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
+	toSerialize["groupId"] = o.GroupId
+	toSerialize["zoneType"] = o.ZoneType
+	toSerialize["config"] = o.Config
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -824,8 +819,6 @@ func (o AddCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
 	}
-	toSerialize["zoneType"] = o.ZoneType
-	toSerialize["groupId"] = o.GroupId
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
@@ -858,9 +851,6 @@ func (o AddCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LinkedAccountId) {
 		toSerialize["linkedAccountId"] = o.LinkedAccountId
-	}
-	if !IsNil(o.Config) {
-		toSerialize["config"] = o.Config
 	}
 	if !IsNil(o.SecurityMode) {
 		toSerialize["securityMode"] = o.SecurityMode

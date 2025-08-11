@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A unique name scoped to your account for the cloud | 
+**GroupId** | **int64** | Specifies which Server group this cloud should be assigned to | 
+**ZoneType** | [**AddCloudsRequestZoneZoneType**](AddCloudsRequestZoneZoneType.md) |  | 
+**Config** | [**ZoneCreateConfig**](ZoneCreateConfig.md) |  | 
 **Description** | Pointer to **string** | Optional description field if you want to put more info there | [optional] 
 **Code** | Pointer to **string** | Optional code for use with policies | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Location** | Pointer to **NullableString** | Optional location for your cloud | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
-**ZoneType** | [**AddCloudsRequestZoneZoneType**](AddCloudsRequestZoneZoneType.md) |  | 
-**GroupId** | **int64** | Specifies which Server group this cloud should be assigned to | 
 **AccountId** | Pointer to **int64** | Specifies which Tenant this cloud should be assigned to | [optional] 
 **Enabled** | Pointer to **bool** | Can be used to disable the cloud | [optional] [default to true]
 **AutoRecoverPowerState** | Pointer to **bool** | Automatically Power on VMs | [optional] [default to false]
@@ -23,7 +24,6 @@ Name | Type | Description | Notes
 **DefaultPoolSyncActive** | Pointer to **bool** | Sets the default active state during discovery of new resource pools. | [optional] 
 **DefaultPlanSyncActive** | Pointer to **bool** | Sets the default active state during discovery of new plans. | [optional] 
 **LinkedAccountId** | Pointer to **int64** | Linked Account ID (enter commercial ID to get costing for AWS Govcloud) | [optional] 
-**Config** | Pointer to **map[string]interface{}** | Map containing zone configuration settings. See the section on specific zone types for details. | [optional] 
 **SecurityMode** | Pointer to **string** | host firewall. &#x60;off&#x60; or &#x60;internal&#x60;. a.k.a. \&quot;local firewall\&quot; | [optional] [default to "off"]
 **Credential** | Pointer to [**AddCloudsRequestZoneCredential**](AddCloudsRequestZoneCredential.md) |  | [optional] 
 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewZoneCreate
 
-`func NewZoneCreate(name string, zoneType AddCloudsRequestZoneZoneType, groupId int64, ) *ZoneCreate`
+`func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config ZoneCreateConfig, ) *ZoneCreate`
 
 NewZoneCreate instantiates a new ZoneCreate object
 This constructor will assign default values to properties that have it defined,
@@ -64,6 +64,66 @@ and a boolean to check if the value has been set.
 `func (o *ZoneCreate) SetName(v string)`
 
 SetName sets Name field to given value.
+
+
+### GetGroupId
+
+`func (o *ZoneCreate) GetGroupId() int64`
+
+GetGroupId returns the GroupId field if non-nil, zero value otherwise.
+
+### GetGroupIdOk
+
+`func (o *ZoneCreate) GetGroupIdOk() (*int64, bool)`
+
+GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupId
+
+`func (o *ZoneCreate) SetGroupId(v int64)`
+
+SetGroupId sets GroupId field to given value.
+
+
+### GetZoneType
+
+`func (o *ZoneCreate) GetZoneType() AddCloudsRequestZoneZoneType`
+
+GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
+
+### GetZoneTypeOk
+
+`func (o *ZoneCreate) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool)`
+
+GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZoneType
+
+`func (o *ZoneCreate) SetZoneType(v AddCloudsRequestZoneZoneType)`
+
+SetZoneType sets ZoneType field to given value.
+
+
+### GetConfig
+
+`func (o *ZoneCreate) GetConfig() ZoneCreateConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *ZoneCreate) SetConfig(v ZoneCreateConfig)`
+
+SetConfig sets Config field to given value.
 
 
 ### GetDescription
@@ -200,46 +260,6 @@ SetVisibility sets Visibility field to given value.
 `func (o *ZoneCreate) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
-
-### GetZoneType
-
-`func (o *ZoneCreate) GetZoneType() AddCloudsRequestZoneZoneType`
-
-GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
-
-### GetZoneTypeOk
-
-`func (o *ZoneCreate) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool)`
-
-GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetZoneType
-
-`func (o *ZoneCreate) SetZoneType(v AddCloudsRequestZoneZoneType)`
-
-SetZoneType sets ZoneType field to given value.
-
-
-### GetGroupId
-
-`func (o *ZoneCreate) GetGroupId() int64`
-
-GetGroupId returns the GroupId field if non-nil, zero value otherwise.
-
-### GetGroupIdOk
-
-`func (o *ZoneCreate) GetGroupIdOk() (*int64, bool)`
-
-GetGroupIdOk returns a tuple with the GroupId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGroupId
-
-`func (o *ZoneCreate) SetGroupId(v int64)`
-
-SetGroupId sets GroupId field to given value.
-
 
 ### GetAccountId
 
@@ -515,31 +535,6 @@ SetLinkedAccountId sets LinkedAccountId field to given value.
 `func (o *ZoneCreate) HasLinkedAccountId() bool`
 
 HasLinkedAccountId returns a boolean if a field has been set.
-
-### GetConfig
-
-`func (o *ZoneCreate) GetConfig() map[string]interface{}`
-
-GetConfig returns the Config field if non-nil, zero value otherwise.
-
-### GetConfigOk
-
-`func (o *ZoneCreate) GetConfigOk() (*map[string]interface{}, bool)`
-
-GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfig
-
-`func (o *ZoneCreate) SetConfig(v map[string]interface{})`
-
-SetConfig sets Config field to given value.
-
-### HasConfig
-
-`func (o *ZoneCreate) HasConfig() bool`
-
-HasConfig returns a boolean if a field has been set.
 
 ### GetSecurityMode
 

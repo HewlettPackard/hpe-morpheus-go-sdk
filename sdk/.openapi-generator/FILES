@@ -241,6 +241,12 @@ docs/AddCloudResourcePoolRequestResourcePoolTenantPermissions.md
 docs/AddClouds200Response.md
 docs/AddCloudsRequest.md
 docs/AddCloudsRequestZone.md
+docs/AddCloudsRequestZoneConfig.md
+docs/AddCloudsRequestZoneConfigAnyOf.md
+docs/AddCloudsRequestZoneConfigAnyOfOneOf.md
+docs/AddCloudsRequestZoneConfigAnyOfOneOf1.md
+docs/AddCloudsRequestZoneConfigAnyOfOneOf2.md
+docs/AddCloudsRequestZoneConfigAnyOfOneOf3.md
 docs/AddCloudsRequestZoneCredential.md
 docs/AddCloudsRequestZoneZoneType.md
 docs/AddCloudsRequestZoneZoneTypeAnyOf.md
@@ -800,6 +806,10 @@ docs/ClientsAPI.md
 docs/CloneImageContainerActionRequest.md
 docs/CloneInstanceRequest.md
 docs/CloneInstanceRequestGroup.md
+docs/CloudCreateConfigAWS.md
+docs/CloudCreateConfigAzure.md
+docs/CloudCreateConfigStandard.md
+docs/CloudCreateConfigVsphere.md
 docs/CloudFoundryResourcePoolConfig.md
 docs/CloudsAPI.md
 docs/Cluster.md
@@ -2828,7 +2838,6 @@ docs/UpdateRoleReportTypeAccessRequestOneOf.md
 docs/UpdateRoleReportTypeAccessRequestOneOf1.md
 docs/UpdateRoleRequest.md
 docs/UpdateRoleRequestRole.md
-docs/UpdateRoleRequestRolePersonaPermissionsInner.md
 docs/UpdateRoleTaskAccessRequest.md
 docs/UpdateRoleTaskAccessRequestOneOf.md
 docs/UpdateRoleTaskAccessRequestOneOf1.md
@@ -2960,6 +2969,7 @@ docs/Zone.md
 docs/ZoneAwsConfig.md
 docs/ZoneAzureConfig.md
 docs/ZoneCreate.md
+docs/ZoneCreateConfig.md
 docs/ZoneDatastore.md
 docs/ZoneDatastoreCreate.md
 docs/ZoneFolder.md
@@ -3147,6 +3157,12 @@ model_add_cloud_resource_pool_request_resource_pool_tenant_permissions.go
 model_add_clouds_200_response.go
 model_add_clouds_request.go
 model_add_clouds_request_zone.go
+model_add_clouds_request_zone_config.go
+model_add_clouds_request_zone_config_any_of.go
+model_add_clouds_request_zone_config_any_of_one_of.go
+model_add_clouds_request_zone_config_any_of_one_of_1.go
+model_add_clouds_request_zone_config_any_of_one_of_2.go
+model_add_clouds_request_zone_config_any_of_one_of_3.go
 model_add_clouds_request_zone_credential.go
 model_add_clouds_request_zone_zone_type.go
 model_add_clouds_request_zone_zone_type_any_of.go
@@ -3691,6 +3707,10 @@ model_client_update.go
 model_clone_image_container_action_request.go
 model_clone_instance_request.go
 model_clone_instance_request_group.go
+model_cloud_create_config_aws.go
+model_cloud_create_config_azure.go
+model_cloud_create_config_standard.go
+model_cloud_create_config_vsphere.go
 model_cloud_foundry_resource_pool_config.go
 model_cluster.go
 model_cluster_api_config.go
@@ -5651,7 +5671,6 @@ model_update_role_report_type_access_request_one_of.go
 model_update_role_report_type_access_request_one_of_1.go
 model_update_role_request.go
 model_update_role_request_role.go
-model_update_role_request_role_persona_permissions_inner.go
 model_update_role_task_access_request.go
 model_update_role_task_access_request_one_of.go
 model_update_role_task_access_request_one_of_1.go
@@ -5778,6 +5797,7 @@ model_zone.go
 model_zone_aws_config.go
 model_zone_azure_config.go
 model_zone_create.go
+model_zone_create_config.go
 model_zone_datastore.go
 model_zone_datastore_create.go
 model_zone_folder.go
