@@ -30,9 +30,9 @@ type AddRolesRequestRole struct {
 	RoleType *string `json:"roleType,omitempty"`
 	// Base Role ID. Create the new role with the same permissions and access levels that the specified base role has. If this is not passed, the role is create without any permissions.
 	BaseRoleId *int64 `json:"baseRoleId,omitempty"`
-	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant*
+	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant, only applies to user roles*
 	Multitenant *bool `json:"multitenant,omitempty"`
-	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant*
+	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant, only applies to user roles*
 	MultitenantLocked *bool          `json:"multitenantLocked,omitempty"`
 	DefaultPersona    NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.

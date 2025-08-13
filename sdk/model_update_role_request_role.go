@@ -25,8 +25,12 @@ type UpdateRoleRequestRole struct {
 	// Description
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl     NullableString `json:"landingUrl,omitempty"`
-	DefaultPersona NullableString `json:"defaultPersona,omitempty"`
+	LandingUrl NullableString `json:"landingUrl,omitempty"`
+	// Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant, only applies to user roles*
+	Multitenant *bool `json:"multitenant,omitempty"`
+	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant, only applies to user roles*
+	MultitenantLocked *bool          `json:"multitenantLocked,omitempty"`
+	DefaultPersona    NullableString `json:"defaultPersona,omitempty"`
 	// Set the access level for the specified permissions.
 	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
@@ -207,6 +211,70 @@ func (o *UpdateRoleRequestRole) SetLandingUrlNil() {
 // UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
 func (o *UpdateRoleRequestRole) UnsetLandingUrl() {
 	o.LandingUrl.Unset()
+}
+
+// GetMultitenant returns the Multitenant field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetMultitenant() bool {
+	if o == nil || IsNil(o.Multitenant) {
+		var ret bool
+		return ret
+	}
+	return *o.Multitenant
+}
+
+// GetMultitenantOk returns a tuple with the Multitenant field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRoleRequestRole) GetMultitenantOk() (*bool, bool) {
+	if o == nil || IsNil(o.Multitenant) {
+		return nil, false
+	}
+	return o.Multitenant, true
+}
+
+// IsSetMultitenant returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetMultitenant() bool {
+	if o != nil && !IsNil(o.Multitenant) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultitenant gets a reference to the given bool and assigns it to the Multitenant field.
+func (o *UpdateRoleRequestRole) SetMultitenant(v bool) {
+	o.Multitenant = &v
+}
+
+// GetMultitenantLocked returns the MultitenantLocked field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetMultitenantLocked() bool {
+	if o == nil || IsNil(o.MultitenantLocked) {
+		var ret bool
+		return ret
+	}
+	return *o.MultitenantLocked
+}
+
+// GetMultitenantLockedOk returns a tuple with the MultitenantLocked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRoleRequestRole) GetMultitenantLockedOk() (*bool, bool) {
+	if o == nil || IsNil(o.MultitenantLocked) {
+		return nil, false
+	}
+	return o.MultitenantLocked, true
+}
+
+// IsSetMultitenantLocked returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetMultitenantLocked() bool {
+	if o != nil && !IsNil(o.MultitenantLocked) {
+		return true
+	}
+
+	return false
+}
+
+// SetMultitenantLocked gets a reference to the given bool and assigns it to the MultitenantLocked field.
+func (o *UpdateRoleRequestRole) SetMultitenantLocked(v bool) {
+	o.MultitenantLocked = &v
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -942,6 +1010,12 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	}
 	if o.LandingUrl.IsSet() {
 		toSerialize["landingUrl"] = o.LandingUrl.Get()
+	}
+	if !IsNil(o.Multitenant) {
+		toSerialize["multitenant"] = o.Multitenant
+	}
+	if !IsNil(o.MultitenantLocked) {
+		toSerialize["multitenantLocked"] = o.MultitenantLocked
 	}
 	if o.DefaultPersona.IsSet() {
 		toSerialize["defaultPersona"] = o.DefaultPersona.Get()

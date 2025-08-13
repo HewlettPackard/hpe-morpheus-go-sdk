@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Authority** | Pointer to **string** | Authority (Name) | [optional] 
 **Description** | Pointer to **NullableString** | Description | [optional] 
 **LandingUrl** | Pointer to **NullableString** | An optional override for the default landing page after login for a user. | [optional] 
+**Multitenant** | Pointer to **bool** | Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant, only applies to user roles* | [optional] 
+**MultitenantLocked** | Pointer to **bool** | Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant, only applies to user roles* | [optional] 
 **DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **FeaturePermissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
@@ -144,6 +146,56 @@ HasLandingUrl returns a boolean if a field has been set.
 `func (o *UpdateRoleRequestRole) UnsetLandingUrl()`
 
 UnsetLandingUrl ensures that no value is present for LandingUrl, not even an explicit nil
+### GetMultitenant
+
+`func (o *UpdateRoleRequestRole) GetMultitenant() bool`
+
+GetMultitenant returns the Multitenant field if non-nil, zero value otherwise.
+
+### GetMultitenantOk
+
+`func (o *UpdateRoleRequestRole) GetMultitenantOk() (*bool, bool)`
+
+GetMultitenantOk returns a tuple with the Multitenant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultitenant
+
+`func (o *UpdateRoleRequestRole) SetMultitenant(v bool)`
+
+SetMultitenant sets Multitenant field to given value.
+
+### HasMultitenant
+
+`func (o *UpdateRoleRequestRole) HasMultitenant() bool`
+
+HasMultitenant returns a boolean if a field has been set.
+
+### GetMultitenantLocked
+
+`func (o *UpdateRoleRequestRole) GetMultitenantLocked() bool`
+
+GetMultitenantLocked returns the MultitenantLocked field if non-nil, zero value otherwise.
+
+### GetMultitenantLockedOk
+
+`func (o *UpdateRoleRequestRole) GetMultitenantLockedOk() (*bool, bool)`
+
+GetMultitenantLockedOk returns a tuple with the MultitenantLocked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultitenantLocked
+
+`func (o *UpdateRoleRequestRole) SetMultitenantLocked(v bool)`
+
+SetMultitenantLocked sets MultitenantLocked field to given value.
+
+### HasMultitenantLocked
+
+`func (o *UpdateRoleRequestRole) HasMultitenantLocked() bool`
+
+HasMultitenantLocked returns a boolean if a field has been set.
+
 ### GetDefaultPersona
 
 `func (o *UpdateRoleRequestRole) GetDefaultPersona() string`
