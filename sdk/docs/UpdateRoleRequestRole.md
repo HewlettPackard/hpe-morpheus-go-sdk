@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **Multitenant** | Pointer to **bool** | Multitenant roles are copied to all tenant accounts and kept in sync until a sub-tenant user modifies their copy of the role. *Only available to master tenant, only applies to user roles* | [optional] 
 **MultitenantLocked** | Pointer to **bool** | Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant, only applies to user roles* | [optional] 
 **DefaultPersona** | Pointer to **NullableString** |  | [optional] 
+**ResetPermissions** | Pointer to **bool** | Resets access levels for all feature permissions to their default values. | [optional] 
+**ResetAllAccess** | Pointer to **bool** | Resets access levels for all permissions (including feature, non-feature, and default access levels) to their default values. | [optional] 
 **FeaturePermissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
 **Sites** | Pointer to [**[]AddRolesRequestRoleSitesInner**](AddRolesRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
@@ -231,6 +233,56 @@ HasDefaultPersona returns a boolean if a field has been set.
 `func (o *UpdateRoleRequestRole) UnsetDefaultPersona()`
 
 UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
+### GetResetPermissions
+
+`func (o *UpdateRoleRequestRole) GetResetPermissions() bool`
+
+GetResetPermissions returns the ResetPermissions field if non-nil, zero value otherwise.
+
+### GetResetPermissionsOk
+
+`func (o *UpdateRoleRequestRole) GetResetPermissionsOk() (*bool, bool)`
+
+GetResetPermissionsOk returns a tuple with the ResetPermissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResetPermissions
+
+`func (o *UpdateRoleRequestRole) SetResetPermissions(v bool)`
+
+SetResetPermissions sets ResetPermissions field to given value.
+
+### HasResetPermissions
+
+`func (o *UpdateRoleRequestRole) HasResetPermissions() bool`
+
+HasResetPermissions returns a boolean if a field has been set.
+
+### GetResetAllAccess
+
+`func (o *UpdateRoleRequestRole) GetResetAllAccess() bool`
+
+GetResetAllAccess returns the ResetAllAccess field if non-nil, zero value otherwise.
+
+### GetResetAllAccessOk
+
+`func (o *UpdateRoleRequestRole) GetResetAllAccessOk() (*bool, bool)`
+
+GetResetAllAccessOk returns a tuple with the ResetAllAccess field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResetAllAccess
+
+`func (o *UpdateRoleRequestRole) SetResetAllAccess(v bool)`
+
+SetResetAllAccess sets ResetAllAccess field to given value.
+
+### HasResetAllAccess
+
+`func (o *UpdateRoleRequestRole) HasResetAllAccess() bool`
+
+HasResetAllAccess returns a boolean if a field has been set.
+
 ### GetFeaturePermissions
 
 `func (o *UpdateRoleRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner`

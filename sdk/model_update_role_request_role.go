@@ -31,6 +31,10 @@ type UpdateRoleRequestRole struct {
 	// Multitenant Locked, prevents sub-tenant users from modifying their copy of multitenant roles. *Only available to master tenant, only applies to user roles*
 	MultitenantLocked *bool          `json:"multitenantLocked,omitempty"`
 	DefaultPersona    NullableString `json:"defaultPersona,omitempty"`
+	// Resets access levels for all feature permissions to their default values.
+	ResetPermissions *bool `json:"resetPermissions,omitempty"`
+	// Resets access levels for all permissions (including feature, non-feature, and default access levels) to their default values.
+	ResetAllAccess *bool `json:"resetAllAccess,omitempty"`
 	// Set the access level for the specified permissions.
 	FeaturePermissions []AddRolesRequestRoleFeaturePermissionsInner `json:"featurePermissions,omitempty"`
 	// Set the default access level for for groups (sites). Only applies to user roles.
@@ -318,6 +322,70 @@ func (o *UpdateRoleRequestRole) SetDefaultPersonaNil() {
 // UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 func (o *UpdateRoleRequestRole) UnsetDefaultPersona() {
 	o.DefaultPersona.Unset()
+}
+
+// GetResetPermissions returns the ResetPermissions field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetResetPermissions() bool {
+	if o == nil || IsNil(o.ResetPermissions) {
+		var ret bool
+		return ret
+	}
+	return *o.ResetPermissions
+}
+
+// GetResetPermissionsOk returns a tuple with the ResetPermissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRoleRequestRole) GetResetPermissionsOk() (*bool, bool) {
+	if o == nil || IsNil(o.ResetPermissions) {
+		return nil, false
+	}
+	return o.ResetPermissions, true
+}
+
+// IsSetResetPermissions returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetResetPermissions() bool {
+	if o != nil && !IsNil(o.ResetPermissions) {
+		return true
+	}
+
+	return false
+}
+
+// SetResetPermissions gets a reference to the given bool and assigns it to the ResetPermissions field.
+func (o *UpdateRoleRequestRole) SetResetPermissions(v bool) {
+	o.ResetPermissions = &v
+}
+
+// GetResetAllAccess returns the ResetAllAccess field value if set, zero value otherwise.
+func (o *UpdateRoleRequestRole) GetResetAllAccess() bool {
+	if o == nil || IsNil(o.ResetAllAccess) {
+		var ret bool
+		return ret
+	}
+	return *o.ResetAllAccess
+}
+
+// GetResetAllAccessOk returns a tuple with the ResetAllAccess field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateRoleRequestRole) GetResetAllAccessOk() (*bool, bool) {
+	if o == nil || IsNil(o.ResetAllAccess) {
+		return nil, false
+	}
+	return o.ResetAllAccess, true
+}
+
+// IsSetResetAllAccess returns a boolean if a field has been set.
+func (o *UpdateRoleRequestRole) IsSetResetAllAccess() bool {
+	if o != nil && !IsNil(o.ResetAllAccess) {
+		return true
+	}
+
+	return false
+}
+
+// SetResetAllAccess gets a reference to the given bool and assigns it to the ResetAllAccess field.
+func (o *UpdateRoleRequestRole) SetResetAllAccess(v bool) {
+	o.ResetAllAccess = &v
 }
 
 // GetFeaturePermissions returns the FeaturePermissions field value if set, zero value otherwise.
@@ -1019,6 +1087,12 @@ func (o UpdateRoleRequestRole) ToMap() (map[string]interface{}, error) {
 	}
 	if o.DefaultPersona.IsSet() {
 		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
+	}
+	if !IsNil(o.ResetPermissions) {
+		toSerialize["resetPermissions"] = o.ResetPermissions
+	}
+	if !IsNil(o.ResetAllAccess) {
+		toSerialize["resetAllAccess"] = o.ResetAllAccess
 	}
 	if !IsNil(o.FeaturePermissions) {
 		toSerialize["featurePermissions"] = o.FeaturePermissions
