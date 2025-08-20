@@ -78894,70 +78894,73 @@ paths:
             application/json:
               schema:
                 type: object
-                properties:
-                  instance:
-                    type: object
-                    properties: &ref_1518
-                      envs:
-                        type:
-                          - array
-                          - 'null'
-                        items:
-                          type: object
-                          properties:
-                            export:
-                              type: boolean
-                            masked:
-                              type: boolean
-                            name:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                            - export
-                            - masked
-                            - name
-                            - value
-                      readOnlyEnvs:
-                        type:
-                          - array
-                          - 'null'
-                        items:
-                          type: object
-                          properties:
-                            export:
-                              type: boolean
-                            masked:
-                              type: boolean
-                            name:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                            - export
-                            - masked
-                            - name
-                            - value
-                      importedEnvs:
-                        type:
-                          - array
-                          - 'null'
-                        items:
-                          type: object
-                          properties:
-                            export:
-                              type: boolean
-                            masked:
-                              type: boolean
-                            name:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                            - export
-                            - masked
-                            - name
-                            - value
+                properties: &ref_1518
+                  envs:
+                    type:
+                      - array
+                      - 'null'
+                    items:
+                      type: object
+                      properties:
+                        export:
+                          type: boolean
+                        masked:
+                          type: boolean
+                        name:
+                          type: string
+                        value:
+                          type: string
+                      required:
+                        - export
+                        - masked
+                        - name
+                        - value
+                  readOnlyEnvs:
+                    type:
+                      - object
+                      - 'null'
+                    additionalProperties:
+                      type: object
+                      properties:
+                        export:
+                          type: boolean
+                        masked:
+                          type: boolean
+                        name:
+                          type: string
+                        value:
+                          type:
+                            - string
+                            - number
+                      required:
+                        - export
+                        - masked
+                        - name
+                        - value
+                  importedEnvs:
+                    type:
+                      - object
+                      - 'null'
+                    additionalProperties:
+                      type:
+                        - object
+                        - string
+                      properties:
+                        export:
+                          type: boolean
+                        masked:
+                          type: boolean
+                        name:
+                          type: string
+                        value:
+                          type:
+                            - string
+                            - number
+                      required:
+                        - export
+                        - masked
+                        - name
+                        - value
               examples:
                 Instance Env Response:
                   value:

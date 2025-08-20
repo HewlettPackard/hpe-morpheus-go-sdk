@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the GetEnvVariables200ResponseInstanceEnvsInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GetEnvVariables200ResponseInstanceEnvsInner{}
+// checks if the GetEnvVariables200ResponseEnvsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GetEnvVariables200ResponseEnvsInner{}
 
-// GetEnvVariables200ResponseInstanceEnvsInner struct for GetEnvVariables200ResponseInstanceEnvsInner
-type GetEnvVariables200ResponseInstanceEnvsInner struct {
+// GetEnvVariables200ResponseEnvsInner struct for GetEnvVariables200ResponseEnvsInner
+type GetEnvVariables200ResponseEnvsInner struct {
 	Export               bool                   `json:"export"`
 	Masked               bool                   `json:"masked"`
 	Name                 string                 `json:"name"`
@@ -27,14 +27,14 @@ type GetEnvVariables200ResponseInstanceEnvsInner struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _GetEnvVariables200ResponseInstanceEnvsInner GetEnvVariables200ResponseInstanceEnvsInner
+type _GetEnvVariables200ResponseEnvsInner GetEnvVariables200ResponseEnvsInner
 
-// NewGetEnvVariables200ResponseInstanceEnvsInner instantiates a new GetEnvVariables200ResponseInstanceEnvsInner object
+// NewGetEnvVariables200ResponseEnvsInner instantiates a new GetEnvVariables200ResponseEnvsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetEnvVariables200ResponseInstanceEnvsInner(export bool, masked bool, name string, value string) *GetEnvVariables200ResponseInstanceEnvsInner {
-	this := GetEnvVariables200ResponseInstanceEnvsInner{}
+func NewGetEnvVariables200ResponseEnvsInner(export bool, masked bool, name string, value string) *GetEnvVariables200ResponseEnvsInner {
+	this := GetEnvVariables200ResponseEnvsInner{}
 	this.Export = export
 	this.Masked = masked
 	this.Name = name
@@ -42,16 +42,16 @@ func NewGetEnvVariables200ResponseInstanceEnvsInner(export bool, masked bool, na
 	return &this
 }
 
-// NewGetEnvVariables200ResponseInstanceEnvsInnerWithDefaults instantiates a new GetEnvVariables200ResponseInstanceEnvsInner object
+// NewGetEnvVariables200ResponseEnvsInnerWithDefaults instantiates a new GetEnvVariables200ResponseEnvsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetEnvVariables200ResponseInstanceEnvsInnerWithDefaults() *GetEnvVariables200ResponseInstanceEnvsInner {
-	this := GetEnvVariables200ResponseInstanceEnvsInner{}
+func NewGetEnvVariables200ResponseEnvsInnerWithDefaults() *GetEnvVariables200ResponseEnvsInner {
+	this := GetEnvVariables200ResponseEnvsInner{}
 	return &this
 }
 
 // GetExport returns the Export field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetExport() bool {
+func (o *GetEnvVariables200ResponseEnvsInner) GetExport() bool {
 	if o == nil {
 		var ret bool
 		return ret
@@ -62,7 +62,7 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetExport() bool {
 
 // GetExportOk returns a tuple with the Export field value
 // and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetExportOk() (*bool, bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) GetExportOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,12 +70,12 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetExportOk() (*bool, bool
 }
 
 // SetExport sets field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) SetExport(v bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) SetExport(v bool) {
 	o.Export = v
 }
 
 // GetMasked returns the Masked field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetMasked() bool {
+func (o *GetEnvVariables200ResponseEnvsInner) GetMasked() bool {
 	if o == nil {
 		var ret bool
 		return ret
@@ -86,7 +86,7 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetMasked() bool {
 
 // GetMaskedOk returns a tuple with the Masked field value
 // and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetMaskedOk() (*bool, bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) GetMaskedOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -94,12 +94,12 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetMaskedOk() (*bool, bool
 }
 
 // SetMasked sets field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) SetMasked(v bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) SetMasked(v bool) {
 	o.Masked = v
 }
 
 // GetName returns the Name field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetName() string {
+func (o *GetEnvVariables200ResponseEnvsInner) GetName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -110,7 +110,7 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetNameOk() (*string, bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -118,12 +118,12 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetNameOk() (*string, bool
 }
 
 // SetName sets field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) SetName(v string) {
+func (o *GetEnvVariables200ResponseEnvsInner) SetName(v string) {
 	o.Name = v
 }
 
 // GetValue returns the Value field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetValue() string {
+func (o *GetEnvVariables200ResponseEnvsInner) GetValue() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -134,7 +134,7 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value
 // and a boolean to check if the value has been set.
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetValueOk() (*string, bool) {
+func (o *GetEnvVariables200ResponseEnvsInner) GetValueOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -142,11 +142,11 @@ func (o *GetEnvVariables200ResponseInstanceEnvsInner) GetValueOk() (*string, boo
 }
 
 // SetValue sets field value
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) SetValue(v string) {
+func (o *GetEnvVariables200ResponseEnvsInner) SetValue(v string) {
 	o.Value = v
 }
 
-func (o GetEnvVariables200ResponseInstanceEnvsInner) MarshalJSON() ([]byte, error) {
+func (o GetEnvVariables200ResponseEnvsInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -154,7 +154,7 @@ func (o GetEnvVariables200ResponseInstanceEnvsInner) MarshalJSON() ([]byte, erro
 	return json.Marshal(toSerialize)
 }
 
-func (o GetEnvVariables200ResponseInstanceEnvsInner) ToMap() (map[string]interface{}, error) {
+func (o GetEnvVariables200ResponseEnvsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["export"] = o.Export
 	toSerialize["masked"] = o.Masked
@@ -167,7 +167,7 @@ func (o GetEnvVariables200ResponseInstanceEnvsInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
-func (o *GetEnvVariables200ResponseInstanceEnvsInner) UnmarshalJSON(data []byte) (err error) {
+func (o *GetEnvVariables200ResponseEnvsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 
