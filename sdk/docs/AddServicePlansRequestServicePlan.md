@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Service plan description | [optional] 
 **RegionCode** | Pointer to **string** | Service plan region code | [optional] 
 **Editable** | Pointer to **bool** | Can be used to enable / disable the editability of the service plan. | [optional] [default to true]
+**Visibility** | Pointer to **string** | Can be used to enable / disable the visibility of the service plan, defaults to \&quot;public\&quot; unless the account is not a masterAccount in which the default is \&quot;private\&quot; | [optional] 
 **MaxStorage** | **int64** | Max storage size in bytes | 
 **MaxMemory** | **int64** | Max memory size in bytes | 
 **MaxCores** | Pointer to **int64** | Max number of cores | [optional] 
@@ -24,7 +25,8 @@ Name | Type | Description | Notes
 **CustomMaxMemory** | Pointer to **bool** | Can be used to enable / disable customizable memory. | [optional] [default to false]
 **AddVolumes** | Pointer to **bool** | Can be used to enable / disable ability to add volumes | [optional] [default to false]
 **SortOrder** | Pointer to **int64** | Sort order | [optional] 
-**PriceSets** | Pointer to [**[]AddServicePlansRequestServicePlanPriceSetsInner**](AddServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan | [optional] 
+**PriceSets** | Pointer to [**[]AddServicePlansRequestServicePlanPriceSetsInner**](AddServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan. | [optional] 
+**Permissions** | Pointer to [**AddServicePlansRequestServicePlanPermissions**](AddServicePlansRequestServicePlanPermissions.md) |  | [optional] 
 **Config** | Pointer to [**AddServicePlansRequestServicePlanConfig**](AddServicePlansRequestServicePlanConfig.md) |  | [optional] 
 
 ## Methods
@@ -160,6 +162,31 @@ SetEditable sets Editable field to given value.
 `func (o *AddServicePlansRequestServicePlan) HasEditable() bool`
 
 HasEditable returns a boolean if a field has been set.
+
+### GetVisibility
+
+`func (o *AddServicePlansRequestServicePlan) GetVisibility() string`
+
+GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+
+### GetVisibilityOk
+
+`func (o *AddServicePlansRequestServicePlan) GetVisibilityOk() (*string, bool)`
+
+GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibility
+
+`func (o *AddServicePlansRequestServicePlan) SetVisibility(v string)`
+
+SetVisibility sets Visibility field to given value.
+
+### HasVisibility
+
+`func (o *AddServicePlansRequestServicePlan) HasVisibility() bool`
+
+HasVisibility returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
@@ -545,6 +572,31 @@ SetPriceSets sets PriceSets field to given value.
 `func (o *AddServicePlansRequestServicePlan) HasPriceSets() bool`
 
 HasPriceSets returns a boolean if a field has been set.
+
+### GetPermissions
+
+`func (o *AddServicePlansRequestServicePlan) GetPermissions() AddServicePlansRequestServicePlanPermissions`
+
+GetPermissions returns the Permissions field if non-nil, zero value otherwise.
+
+### GetPermissionsOk
+
+`func (o *AddServicePlansRequestServicePlan) GetPermissionsOk() (*AddServicePlansRequestServicePlanPermissions, bool)`
+
+GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPermissions
+
+`func (o *AddServicePlansRequestServicePlan) SetPermissions(v AddServicePlansRequestServicePlanPermissions)`
+
+SetPermissions sets Permissions field to given value.
+
+### HasPermissions
+
+`func (o *AddServicePlansRequestServicePlan) HasPermissions() bool`
+
+HasPermissions returns a boolean if a field has been set.
 
 ### GetConfig
 

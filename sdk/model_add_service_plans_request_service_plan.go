@@ -30,6 +30,8 @@ type AddServicePlansRequestServicePlan struct {
 	RegionCode *string `json:"regionCode,omitempty"`
 	// Can be used to enable / disable the editability of the service plan.
 	Editable *bool `json:"editable,omitempty"`
+	// Can be used to enable / disable the visibility of the service plan, defaults to \"public\" unless the account is not a masterAccount in which the default is \"private\"
+	Visibility *string `json:"visibility,omitempty"`
 	// Max storage size in bytes
 	MaxStorage int64 `json:"maxStorage"`
 	// Max memory size in bytes
@@ -59,8 +61,9 @@ type AddServicePlansRequestServicePlan struct {
 	AddVolumes *bool `json:"addVolumes,omitempty"`
 	// Sort order
 	SortOrder *int64 `json:"sortOrder,omitempty"`
-	// List of price sets to include in service plan
+	// List of price sets to include in service plan.
 	PriceSets            []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
+	Permissions          *AddServicePlansRequestServicePlanPermissions     `json:"permissions,omitempty"`
 	Config               *AddServicePlansRequestServicePlanConfig          `json:"config,omitempty"`
 	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
@@ -259,6 +262,38 @@ func (o *AddServicePlansRequestServicePlan) IsSetEditable() bool {
 // SetEditable gets a reference to the given bool and assigns it to the Editable field.
 func (o *AddServicePlansRequestServicePlan) SetEditable(v bool) {
 	o.Editable = &v
+}
+
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
+func (o *AddServicePlansRequestServicePlan) GetVisibility() string {
+	if o == nil || IsNil(o.Visibility) {
+		var ret string
+		return ret
+	}
+	return *o.Visibility
+}
+
+// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddServicePlansRequestServicePlan) GetVisibilityOk() (*string, bool) {
+	if o == nil || IsNil(o.Visibility) {
+		return nil, false
+	}
+	return o.Visibility, true
+}
+
+// IsSetVisibility returns a boolean if a field has been set.
+func (o *AddServicePlansRequestServicePlan) IsSetVisibility() bool {
+	if o != nil && !IsNil(o.Visibility) {
+		return true
+	}
+
+	return false
+}
+
+// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
+func (o *AddServicePlansRequestServicePlan) SetVisibility(v string) {
+	o.Visibility = &v
 }
 
 // GetMaxStorage returns the MaxStorage field value
@@ -749,6 +784,38 @@ func (o *AddServicePlansRequestServicePlan) SetPriceSets(v []AddServicePlansRequ
 	o.PriceSets = v
 }
 
+// GetPermissions returns the Permissions field value if set, zero value otherwise.
+func (o *AddServicePlansRequestServicePlan) GetPermissions() AddServicePlansRequestServicePlanPermissions {
+	if o == nil || IsNil(o.Permissions) {
+		var ret AddServicePlansRequestServicePlanPermissions
+		return ret
+	}
+	return *o.Permissions
+}
+
+// GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddServicePlansRequestServicePlan) GetPermissionsOk() (*AddServicePlansRequestServicePlanPermissions, bool) {
+	if o == nil || IsNil(o.Permissions) {
+		return nil, false
+	}
+	return o.Permissions, true
+}
+
+// IsSetPermissions returns a boolean if a field has been set.
+func (o *AddServicePlansRequestServicePlan) IsSetPermissions() bool {
+	if o != nil && !IsNil(o.Permissions) {
+		return true
+	}
+
+	return false
+}
+
+// SetPermissions gets a reference to the given AddServicePlansRequestServicePlanPermissions and assigns it to the Permissions field.
+func (o *AddServicePlansRequestServicePlan) SetPermissions(v AddServicePlansRequestServicePlanPermissions) {
+	o.Permissions = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
 func (o *AddServicePlansRequestServicePlan) GetConfig() AddServicePlansRequestServicePlanConfig {
 	if o == nil || IsNil(o.Config) {
@@ -802,6 +869,9 @@ func (o AddServicePlansRequestServicePlan) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Editable) {
 		toSerialize["editable"] = o.Editable
 	}
+	if !IsNil(o.Visibility) {
+		toSerialize["visibility"] = o.Visibility
+	}
 	toSerialize["maxStorage"] = o.MaxStorage
 	toSerialize["maxMemory"] = o.MaxMemory
 	if !IsNil(o.MaxCores) {
@@ -843,6 +913,9 @@ func (o AddServicePlansRequestServicePlan) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.PriceSets) {
 		toSerialize["priceSets"] = o.PriceSets
+	}
+	if !IsNil(o.Permissions) {
+		toSerialize["permissions"] = o.Permissions
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

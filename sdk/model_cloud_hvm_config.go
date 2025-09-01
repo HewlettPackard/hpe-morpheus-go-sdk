@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ListClouds200ResponseAllOfZonesInnerConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerConfig{}
+// checks if the CloudHVMConfig type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CloudHVMConfig{}
 
-// ListClouds200ResponseAllOfZonesInnerConfig struct for ListClouds200ResponseAllOfZonesInnerConfig
-type ListClouds200ResponseAllOfZonesInnerConfig struct {
+// CloudHVMConfig struct for CloudHVMConfig
+type CloudHVMConfig struct {
 	ApplianceUrl               NullableString         `json:"applianceUrl,omitempty"`
 	CertificateProvider        NullableString         `json:"certificateProvider,omitempty"`
 	ConfigCmdbDiscovery        *bool                  `json:"configCmdbDiscovery,omitempty"`
@@ -31,27 +31,27 @@ type ListClouds200ResponseAllOfZonesInnerConfig struct {
 	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
-type _ListClouds200ResponseAllOfZonesInnerConfig ListClouds200ResponseAllOfZonesInnerConfig
+type _CloudHVMConfig CloudHVMConfig
 
-// NewListClouds200ResponseAllOfZonesInnerConfig instantiates a new ListClouds200ResponseAllOfZonesInnerConfig object
+// NewCloudHVMConfig instantiates a new CloudHVMConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListClouds200ResponseAllOfZonesInnerConfig() *ListClouds200ResponseAllOfZonesInnerConfig {
-	this := ListClouds200ResponseAllOfZonesInnerConfig{}
+func NewCloudHVMConfig() *CloudHVMConfig {
+	this := CloudHVMConfig{}
 	return &this
 }
 
-// NewListClouds200ResponseAllOfZonesInnerConfigWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerConfig object
+// NewCloudHVMConfigWithDefaults instantiates a new CloudHVMConfig object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListClouds200ResponseAllOfZonesInnerConfigWithDefaults() *ListClouds200ResponseAllOfZonesInnerConfig {
-	this := ListClouds200ResponseAllOfZonesInnerConfig{}
+func NewCloudHVMConfigWithDefaults() *CloudHVMConfig {
+	this := CloudHVMConfig{}
 	return &this
 }
 
 // GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrl() string {
+func (o *CloudHVMConfig) GetApplianceUrl() string {
 	if o == nil || IsNil(o.ApplianceUrl.Get()) {
 		var ret string
 		return ret
@@ -62,7 +62,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrl() string {
 // GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrlOk() (*string, bool) {
+func (o *CloudHVMConfig) GetApplianceUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,7 +70,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrlOk() (*strin
 }
 
 // IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetApplianceUrl() bool {
+func (o *CloudHVMConfig) IsSetApplianceUrl() bool {
 	if o != nil && o.ApplianceUrl.IsSet() {
 		return true
 	}
@@ -79,22 +79,22 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetApplianceUrl() bool {
 }
 
 // SetApplianceUrl gets a reference to the given NullableString and assigns it to the ApplianceUrl field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetApplianceUrl(v string) {
+func (o *CloudHVMConfig) SetApplianceUrl(v string) {
 	o.ApplianceUrl.Set(&v)
 }
 
 // SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetApplianceUrlNil() {
+func (o *CloudHVMConfig) SetApplianceUrlNil() {
 	o.ApplianceUrl.Set(nil)
 }
 
 // UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetApplianceUrl() {
+func (o *CloudHVMConfig) UnsetApplianceUrl() {
 	o.ApplianceUrl.Unset()
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProvider() string {
+func (o *CloudHVMConfig) GetCertificateProvider() string {
 	if o == nil || IsNil(o.CertificateProvider.Get()) {
 		var ret string
 		return ret
@@ -105,7 +105,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProvider() st
 // GetCertificateProviderOk returns a tuple with the CertificateProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProviderOk() (*string, bool) {
+func (o *CloudHVMConfig) GetCertificateProviderOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProviderOk() 
 }
 
 // IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetCertificateProvider() bool {
+func (o *CloudHVMConfig) IsSetCertificateProvider() bool {
 	if o != nil && o.CertificateProvider.IsSet() {
 		return true
 	}
@@ -122,22 +122,22 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetCertificateProvider() 
 }
 
 // SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetCertificateProvider(v string) {
+func (o *CloudHVMConfig) SetCertificateProvider(v string) {
 	o.CertificateProvider.Set(&v)
 }
 
 // SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetCertificateProviderNil() {
+func (o *CloudHVMConfig) SetCertificateProviderNil() {
 	o.CertificateProvider.Set(nil)
 }
 
 // UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetCertificateProvider() {
+func (o *CloudHVMConfig) UnsetCertificateProvider() {
 	o.CertificateProvider.Unset()
 }
 
 // GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscovery() bool {
+func (o *CloudHVMConfig) GetConfigCmdbDiscovery() bool {
 	if o == nil || IsNil(o.ConfigCmdbDiscovery) {
 		var ret bool
 		return ret
@@ -147,7 +147,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscovery() bo
 
 // GetConfigCmdbDiscoveryOk returns a tuple with the ConfigCmdbDiscovery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscoveryOk() (*bool, bool) {
+func (o *CloudHVMConfig) GetConfigCmdbDiscoveryOk() (*bool, bool) {
 	if o == nil || IsNil(o.ConfigCmdbDiscovery) {
 		return nil, false
 	}
@@ -155,7 +155,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscoveryOk() 
 }
 
 // IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConfigCmdbDiscovery() bool {
+func (o *CloudHVMConfig) IsSetConfigCmdbDiscovery() bool {
 	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
 		return true
 	}
@@ -164,12 +164,12 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConfigCmdbDiscovery() 
 }
 
 // SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConfigCmdbDiscovery(v bool) {
+func (o *CloudHVMConfig) SetConfigCmdbDiscovery(v bool) {
 	o.ConfigCmdbDiscovery = &v
 }
 
 // GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymap() string {
+func (o *CloudHVMConfig) GetConsoleKeymap() string {
 	if o == nil || IsNil(o.ConsoleKeymap.Get()) {
 		var ret string
 		return ret
@@ -180,7 +180,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymap() string {
 // GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymapOk() (*string, bool) {
+func (o *CloudHVMConfig) GetConsoleKeymapOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -188,7 +188,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymapOk() (*stri
 }
 
 // IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConsoleKeymap() bool {
+func (o *CloudHVMConfig) IsSetConsoleKeymap() bool {
 	if o != nil && o.ConsoleKeymap.IsSet() {
 		return true
 	}
@@ -197,22 +197,22 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConsoleKeymap() bool {
 }
 
 // SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConsoleKeymap(v string) {
+func (o *CloudHVMConfig) SetConsoleKeymap(v string) {
 	o.ConsoleKeymap.Set(&v)
 }
 
 // SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConsoleKeymapNil() {
+func (o *CloudHVMConfig) SetConsoleKeymapNil() {
 	o.ConsoleKeymap.Set(nil)
 }
 
 // UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetConsoleKeymap() {
+func (o *CloudHVMConfig) UnsetConsoleKeymap() {
 	o.ConsoleKeymap.Unset()
 }
 
 // GetDatacenterName returns the DatacenterName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterName() string {
+func (o *CloudHVMConfig) GetDatacenterName() string {
 	if o == nil || IsNil(o.DatacenterName.Get()) {
 		var ret string
 		return ret
@@ -223,7 +223,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterName() string 
 // GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterNameOk() (*string, bool) {
+func (o *CloudHVMConfig) GetDatacenterNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterNameOk() (*str
 }
 
 // IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetDatacenterName() bool {
+func (o *CloudHVMConfig) IsSetDatacenterName() bool {
 	if o != nil && o.DatacenterName.IsSet() {
 		return true
 	}
@@ -240,22 +240,22 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetDatacenterName() bool 
 }
 
 // SetDatacenterName gets a reference to the given NullableString and assigns it to the DatacenterName field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetDatacenterName(v string) {
+func (o *CloudHVMConfig) SetDatacenterName(v string) {
 	o.DatacenterName.Set(&v)
 }
 
 // SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetDatacenterNameNil() {
+func (o *CloudHVMConfig) SetDatacenterNameNil() {
 	o.DatacenterName.Set(nil)
 }
 
 // UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetDatacenterName() {
+func (o *CloudHVMConfig) UnsetDatacenterName() {
 	o.DatacenterName.Unset()
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelection() bool {
+func (o *CloudHVMConfig) GetEnableNetworkTypeSelection() bool {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
 		var ret bool
 		return ret
@@ -265,7 +265,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelecti
 
 // GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelectionOk() (*bool, bool) {
+func (o *CloudHVMConfig) GetEnableNetworkTypeSelectionOk() (*bool, bool) {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
 		return nil, false
 	}
@@ -273,7 +273,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelecti
 }
 
 // IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetEnableNetworkTypeSelection() bool {
+func (o *CloudHVMConfig) IsSetEnableNetworkTypeSelection() bool {
 	if o != nil && !IsNil(o.EnableNetworkTypeSelection) {
 		return true
 	}
@@ -282,12 +282,12 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetEnableNetworkTypeSelec
 }
 
 // SetEnableNetworkTypeSelection gets a reference to the given bool and assigns it to the EnableNetworkTypeSelection field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetEnableNetworkTypeSelection(v bool) {
+func (o *CloudHVMConfig) SetEnableNetworkTypeSelection(v bool) {
 	o.EnableNetworkTypeSelection = &v
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalId() string {
+func (o *CloudHVMConfig) GetExternalId() string {
 	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
@@ -298,7 +298,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalId() string {
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalIdOk() (*string, bool) {
+func (o *CloudHVMConfig) GetExternalIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -306,7 +306,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalIdOk() (*string,
 }
 
 // IsSetExternalId returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetExternalId() bool {
+func (o *CloudHVMConfig) IsSetExternalId() bool {
 	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
@@ -315,22 +315,22 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetExternalId() bool {
 }
 
 // SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetExternalId(v string) {
+func (o *CloudHVMConfig) SetExternalId(v string) {
 	o.ExternalId.Set(&v)
 }
 
 // SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetExternalIdNil() {
+func (o *CloudHVMConfig) SetExternalIdNil() {
 	o.ExternalId.Set(nil)
 }
 
 // UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetExternalId() {
+func (o *CloudHVMConfig) UnsetExternalId() {
 	o.ExternalId.Unset()
 }
 
 // GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevel() string {
+func (o *CloudHVMConfig) GetInventoryLevel() string {
 	if o == nil || IsNil(o.InventoryLevel.Get()) {
 		var ret string
 		return ret
@@ -341,7 +341,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevel() string 
 // GetInventoryLevelOk returns a tuple with the InventoryLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevelOk() (*string, bool) {
+func (o *CloudHVMConfig) GetInventoryLevelOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -349,7 +349,7 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevelOk() (*str
 }
 
 // IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetInventoryLevel() bool {
+func (o *CloudHVMConfig) IsSetInventoryLevel() bool {
 	if o != nil && o.InventoryLevel.IsSet() {
 		return true
 	}
@@ -358,21 +358,21 @@ func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetInventoryLevel() bool 
 }
 
 // SetInventoryLevel gets a reference to the given NullableString and assigns it to the InventoryLevel field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetInventoryLevel(v string) {
+func (o *CloudHVMConfig) SetInventoryLevel(v string) {
 	o.InventoryLevel.Set(&v)
 }
 
 // SetInventoryLevelNil sets the value for InventoryLevel to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetInventoryLevelNil() {
+func (o *CloudHVMConfig) SetInventoryLevelNil() {
 	o.InventoryLevel.Set(nil)
 }
 
 // UnsetInventoryLevel ensures that no value is present for InventoryLevel, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetInventoryLevel() {
+func (o *CloudHVMConfig) UnsetInventoryLevel() {
 	o.InventoryLevel.Unset()
 }
 
-func (o ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, error) {
+func (o CloudHVMConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -380,7 +380,7 @@ func (o ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, error
 	return json.Marshal(toSerialize)
 }
 
-func (o ListClouds200ResponseAllOfZonesInnerConfig) ToMap() (map[string]interface{}, error) {
+func (o CloudHVMConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ApplianceUrl.IsSet() {
 		toSerialize["applianceUrl"] = o.ApplianceUrl.Get()
@@ -413,7 +413,7 @@ func (o ListClouds200ResponseAllOfZonesInnerConfig) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte) (err error) {
+func (o *CloudHVMConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

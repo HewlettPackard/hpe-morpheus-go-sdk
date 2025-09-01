@@ -1,91 +1,81 @@
-# CloudCreateConfigStandard
+# CloudCreateConfigHVM
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
-**EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
+**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] 
+**EnableNetworkTypeSelection** | Pointer to **bool** | Enable network type selection | [optional] 
 
 ## Methods
 
-### NewCloudCreateConfigStandard
+### NewCloudCreateConfigHVM
 
-`func NewCloudCreateConfigStandard() *CloudCreateConfigStandard`
+`func NewCloudCreateConfigHVM() *CloudCreateConfigHVM`
 
-NewCloudCreateConfigStandard instantiates a new CloudCreateConfigStandard object
+NewCloudCreateConfigHVM instantiates a new CloudCreateConfigHVM object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCloudCreateConfigStandardWithDefaults
+### NewCloudCreateConfigHVMWithDefaults
 
-`func NewCloudCreateConfigStandardWithDefaults() *CloudCreateConfigStandard`
+`func NewCloudCreateConfigHVMWithDefaults() *CloudCreateConfigHVM`
 
-NewCloudCreateConfigStandardWithDefaults instantiates a new CloudCreateConfigStandard object
+NewCloudCreateConfigHVMWithDefaults instantiates a new CloudCreateConfigHVM object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCertificateProvider
 
-`func (o *CloudCreateConfigStandard) GetCertificateProvider() string`
+`func (o *CloudCreateConfigHVM) GetCertificateProvider() string`
 
 GetCertificateProvider returns the CertificateProvider field if non-nil, zero value otherwise.
 
 ### GetCertificateProviderOk
 
-`func (o *CloudCreateConfigStandard) GetCertificateProviderOk() (*string, bool)`
+`func (o *CloudCreateConfigHVM) GetCertificateProviderOk() (*string, bool)`
 
 GetCertificateProviderOk returns a tuple with the CertificateProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificateProvider
 
-`func (o *CloudCreateConfigStandard) SetCertificateProvider(v string)`
+`func (o *CloudCreateConfigHVM) SetCertificateProvider(v string)`
 
 SetCertificateProvider sets CertificateProvider field to given value.
 
 ### HasCertificateProvider
 
-`func (o *CloudCreateConfigStandard) HasCertificateProvider() bool`
+`func (o *CloudCreateConfigHVM) HasCertificateProvider() bool`
 
 HasCertificateProvider returns a boolean if a field has been set.
 
 ### GetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigStandard) GetEnableNetworkTypeSelection() string`
+`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelection() bool`
 
 GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field if non-nil, zero value otherwise.
 
 ### GetEnableNetworkTypeSelectionOk
 
-`func (o *CloudCreateConfigStandard) GetEnableNetworkTypeSelectionOk() (*string, bool)`
+`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelectionOk() (*bool, bool)`
 
 GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigStandard) SetEnableNetworkTypeSelection(v string)`
+`func (o *CloudCreateConfigHVM) SetEnableNetworkTypeSelection(v bool)`
 
 SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given value.
 
 ### HasEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigStandard) HasEnableNetworkTypeSelection() bool`
+`func (o *CloudCreateConfigHVM) HasEnableNetworkTypeSelection() bool`
 
 HasEnableNetworkTypeSelection returns a boolean if a field has been set.
 
-### SetEnableNetworkTypeSelectionNil
-
-`func (o *CloudCreateConfigStandard) SetEnableNetworkTypeSelectionNil(b bool)`
-
- SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-
-### UnsetEnableNetworkTypeSelection
-`func (o *CloudCreateConfigStandard) UnsetEnableNetworkTypeSelection()`
-
-UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

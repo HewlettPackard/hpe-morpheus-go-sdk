@@ -8,11 +8,12 @@ Name | Type | Description | Notes
 **GroupId** | **int64** | Specifies which Server group this cloud should be assigned to | 
 **ZoneType** | [**AddCloudsRequestZoneZoneType**](AddCloudsRequestZoneZoneType.md) |  | 
 **Config** | [**AddCloudsRequestZoneConfig**](AddCloudsRequestZoneConfig.md) |  | 
+**AgentMode** | Pointer to **string** | The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit). | [optional] [default to "cloudInit"]
 **Description** | Pointer to **string** | Optional description field if you want to put more info there | [optional] 
 **Code** | Pointer to **string** | Optional code for use with policies | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Location** | Pointer to **NullableString** | Optional location for your cloud | [optional] 
-**Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
+**Visibility** | Pointer to **string** | The visibility of the cloud (private or public) | [optional] [default to "private"]
 **AccountId** | Pointer to **int64** | Specifies which Tenant this cloud should be assigned to | [optional] 
 **Enabled** | Pointer to **bool** | Can be used to disable the cloud | [optional] [default to true]
 **AutoRecoverPowerState** | Pointer to **bool** | Automatically Power on VMs | [optional] [default to false]
@@ -125,6 +126,31 @@ and a boolean to check if the value has been set.
 
 SetConfig sets Config field to given value.
 
+
+### GetAgentMode
+
+`func (o *AddCloudsRequestZone) GetAgentMode() string`
+
+GetAgentMode returns the AgentMode field if non-nil, zero value otherwise.
+
+### GetAgentModeOk
+
+`func (o *AddCloudsRequestZone) GetAgentModeOk() (*string, bool)`
+
+GetAgentModeOk returns a tuple with the AgentMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAgentMode
+
+`func (o *AddCloudsRequestZone) SetAgentMode(v string)`
+
+SetAgentMode sets AgentMode field to given value.
+
+### HasAgentMode
+
+`func (o *AddCloudsRequestZone) HasAgentMode() bool`
+
+HasAgentMode returns a boolean if a field has been set.
 
 ### GetDescription
 

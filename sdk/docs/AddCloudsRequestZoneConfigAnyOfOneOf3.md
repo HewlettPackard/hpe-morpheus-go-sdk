@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the vSphere cloud. | [optional] 
 **ResourcePool** | Pointer to **string** | The name of the vSphere resource pool | [optional] 
 **RpcMode** | Pointer to **NullableString** |  | [optional] 
-**ConsoleKeymap** | Pointer to **string** | The keyboard layout | [optional] [default to "us"]
 **StorageType** | Pointer to **string** | The default vSphere VMDK type for virtual machines | [optional] [default to "thin"]
 **CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
 **EnableVnc** | Pointer to **NullableString** |  | [optional] 
@@ -19,6 +18,8 @@ Name | Type | Description | Notes
 **EnableDiskTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **EnableStorageTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **string** | Username. | [optional] 
+**Password** | Pointer to **string** | Password to apply to the user | [optional] 
 
 ## Methods
 
@@ -209,31 +210,6 @@ HasRpcMode returns a boolean if a field has been set.
 `func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) UnsetRpcMode()`
 
 UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
-### GetConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetConsoleKeymap() string`
-
-GetConsoleKeymap returns the ConsoleKeymap field if non-nil, zero value otherwise.
-
-### GetConsoleKeymapOk
-
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetConsoleKeymapOk() (*string, bool)`
-
-GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetConsoleKeymap(v string)`
-
-SetConsoleKeymap sets ConsoleKeymap field to given value.
-
-### HasConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) HasConsoleKeymap() bool`
-
-HasConsoleKeymap returns a boolean if a field has been set.
-
 ### GetStorageType
 
 `func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetStorageType() string`
@@ -459,6 +435,56 @@ HasEnableNetworkTypeSelection returns a boolean if a field has been set.
 `func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) UnsetEnableNetworkTypeSelection()`
 
 UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
+### GetUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetUsername(v string)`
+
+SetUsername sets Username field to given value.
+
+### HasUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) HasUsername() bool`
+
+HasUsername returns a boolean if a field has been set.
+
+### GetPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetPassword(v string)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

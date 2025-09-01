@@ -4,16 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Endpoint** | Pointer to **string** | AWS endpoint | [optional] 
+**Endpoint** | **string** | AWS endpoint | 
 **AccessKey** | Pointer to **string** | AWS access key | [optional] 
 **SecretKey** | Pointer to **string** | AWS secret key | [optional] 
-**IsVpc** | Pointer to **NullableString** |  | [optional] 
+**UseHostCredentials** | Pointer to **string** | Whether to use the IAM profile associated with the Morpheus server or not | [optional] [default to "on"]
+**EbsEncryption** | Pointer to **string** | Determines whether to configure default EBS volume encryption or not | [optional] [default to "on"]
+**StsAssumeRole** | Pointer to **string** | The AWS IAM role ARN to assume for authentication | [optional] 
+**ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the AWS cloud | [optional] 
+**Vpc** | Pointer to **string** | The VPC ID for a specific VPC | [optional] 
 
 ## Methods
 
 ### NewCloudCreateConfigAWS
 
-`func NewCloudCreateConfigAWS() *CloudCreateConfigAWS`
+`func NewCloudCreateConfigAWS(endpoint string, ) *CloudCreateConfigAWS`
 
 NewCloudCreateConfigAWS instantiates a new CloudCreateConfigAWS object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
-### HasEndpoint
-
-`func (o *CloudCreateConfigAWS) HasEndpoint() bool`
-
-HasEndpoint returns a boolean if a field has been set.
 
 ### GetAccessKey
 
@@ -103,41 +102,131 @@ SetSecretKey sets SecretKey field to given value.
 
 HasSecretKey returns a boolean if a field has been set.
 
-### GetIsVpc
+### GetUseHostCredentials
 
-`func (o *CloudCreateConfigAWS) GetIsVpc() string`
+`func (o *CloudCreateConfigAWS) GetUseHostCredentials() string`
 
-GetIsVpc returns the IsVpc field if non-nil, zero value otherwise.
+GetUseHostCredentials returns the UseHostCredentials field if non-nil, zero value otherwise.
 
-### GetIsVpcOk
+### GetUseHostCredentialsOk
 
-`func (o *CloudCreateConfigAWS) GetIsVpcOk() (*string, bool)`
+`func (o *CloudCreateConfigAWS) GetUseHostCredentialsOk() (*string, bool)`
 
-GetIsVpcOk returns a tuple with the IsVpc field if it's non-nil, zero value otherwise
+GetUseHostCredentialsOk returns a tuple with the UseHostCredentials field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsVpc
+### SetUseHostCredentials
 
-`func (o *CloudCreateConfigAWS) SetIsVpc(v string)`
+`func (o *CloudCreateConfigAWS) SetUseHostCredentials(v string)`
 
-SetIsVpc sets IsVpc field to given value.
+SetUseHostCredentials sets UseHostCredentials field to given value.
 
-### HasIsVpc
+### HasUseHostCredentials
 
-`func (o *CloudCreateConfigAWS) HasIsVpc() bool`
+`func (o *CloudCreateConfigAWS) HasUseHostCredentials() bool`
 
-HasIsVpc returns a boolean if a field has been set.
+HasUseHostCredentials returns a boolean if a field has been set.
 
-### SetIsVpcNil
+### GetEbsEncryption
 
-`func (o *CloudCreateConfigAWS) SetIsVpcNil(b bool)`
+`func (o *CloudCreateConfigAWS) GetEbsEncryption() string`
 
- SetIsVpcNil sets the value for IsVpc to be an explicit nil
+GetEbsEncryption returns the EbsEncryption field if non-nil, zero value otherwise.
 
-### UnsetIsVpc
-`func (o *CloudCreateConfigAWS) UnsetIsVpc()`
+### GetEbsEncryptionOk
 
-UnsetIsVpc ensures that no value is present for IsVpc, not even an explicit nil
+`func (o *CloudCreateConfigAWS) GetEbsEncryptionOk() (*string, bool)`
+
+GetEbsEncryptionOk returns a tuple with the EbsEncryption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEbsEncryption
+
+`func (o *CloudCreateConfigAWS) SetEbsEncryption(v string)`
+
+SetEbsEncryption sets EbsEncryption field to given value.
+
+### HasEbsEncryption
+
+`func (o *CloudCreateConfigAWS) HasEbsEncryption() bool`
+
+HasEbsEncryption returns a boolean if a field has been set.
+
+### GetStsAssumeRole
+
+`func (o *CloudCreateConfigAWS) GetStsAssumeRole() string`
+
+GetStsAssumeRole returns the StsAssumeRole field if non-nil, zero value otherwise.
+
+### GetStsAssumeRoleOk
+
+`func (o *CloudCreateConfigAWS) GetStsAssumeRoleOk() (*string, bool)`
+
+GetStsAssumeRoleOk returns a tuple with the StsAssumeRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStsAssumeRole
+
+`func (o *CloudCreateConfigAWS) SetStsAssumeRole(v string)`
+
+SetStsAssumeRole sets StsAssumeRole field to given value.
+
+### HasStsAssumeRole
+
+`func (o *CloudCreateConfigAWS) HasStsAssumeRole() bool`
+
+HasStsAssumeRole returns a boolean if a field has been set.
+
+### GetConfigManagementId
+
+`func (o *CloudCreateConfigAWS) GetConfigManagementId() string`
+
+GetConfigManagementId returns the ConfigManagementId field if non-nil, zero value otherwise.
+
+### GetConfigManagementIdOk
+
+`func (o *CloudCreateConfigAWS) GetConfigManagementIdOk() (*string, bool)`
+
+GetConfigManagementIdOk returns a tuple with the ConfigManagementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigManagementId
+
+`func (o *CloudCreateConfigAWS) SetConfigManagementId(v string)`
+
+SetConfigManagementId sets ConfigManagementId field to given value.
+
+### HasConfigManagementId
+
+`func (o *CloudCreateConfigAWS) HasConfigManagementId() bool`
+
+HasConfigManagementId returns a boolean if a field has been set.
+
+### GetVpc
+
+`func (o *CloudCreateConfigAWS) GetVpc() string`
+
+GetVpc returns the Vpc field if non-nil, zero value otherwise.
+
+### GetVpcOk
+
+`func (o *CloudCreateConfigAWS) GetVpcOk() (*string, bool)`
+
+GetVpcOk returns a tuple with the Vpc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpc
+
+`func (o *CloudCreateConfigAWS) SetVpc(v string)`
+
+SetVpc sets Vpc field to given value.
+
+### HasVpc
+
+`func (o *CloudCreateConfigAWS) HasVpc() bool`
+
+HasVpc returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

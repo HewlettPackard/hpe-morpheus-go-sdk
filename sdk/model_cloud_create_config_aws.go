@@ -21,12 +21,21 @@ var _ MappedNullable = &CloudCreateConfigAWS{}
 // CloudCreateConfigAWS Amazon Cloud
 type CloudCreateConfigAWS struct {
 	// AWS endpoint
-	Endpoint *string `json:"endpoint,omitempty"`
+	Endpoint string `json:"endpoint"`
 	// AWS access key
 	AccessKey *string `json:"accessKey,omitempty"`
 	// AWS secret key
-	SecretKey            *string                `json:"secretKey,omitempty"`
-	IsVpc                NullableString         `json:"isVpc,omitempty"`
+	SecretKey *string `json:"secretKey,omitempty"`
+	// Whether to use the IAM profile associated with the Morpheus server or not
+	UseHostCredentials *string `json:"useHostCredentials,omitempty"`
+	// Determines whether to configure default EBS volume encryption or not
+	EbsEncryption *string `json:"ebsEncryption,omitempty"`
+	// The AWS IAM role ARN to assume for authentication
+	StsAssumeRole *string `json:"stsAssumeRole,omitempty"`
+	// The id of the configuration management integration associated with the AWS cloud
+	ConfigManagementId *string `json:"configManagementId,omitempty"`
+	// The VPC ID for a specific VPC
+	Vpc                  *string                `json:"vpc,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -36,8 +45,13 @@ type _CloudCreateConfigAWS CloudCreateConfigAWS
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCloudCreateConfigAWS() *CloudCreateConfigAWS {
+func NewCloudCreateConfigAWS(endpoint string) *CloudCreateConfigAWS {
 	this := CloudCreateConfigAWS{}
+	this.Endpoint = endpoint
+	var useHostCredentials string = "on"
+	this.UseHostCredentials = &useHostCredentials
+	var ebsEncryption string = "on"
+	this.EbsEncryption = &ebsEncryption
 	return &this
 }
 
@@ -46,39 +60,35 @@ func NewCloudCreateConfigAWS() *CloudCreateConfigAWS {
 // but it doesn't guarantee that properties required by API are set
 func NewCloudCreateConfigAWSWithDefaults() *CloudCreateConfigAWS {
 	this := CloudCreateConfigAWS{}
+	var useHostCredentials string = "on"
+	this.UseHostCredentials = &useHostCredentials
+	var ebsEncryption string = "on"
+	this.EbsEncryption = &ebsEncryption
 	return &this
 }
 
-// GetEndpoint returns the Endpoint field value if set, zero value otherwise.
+// GetEndpoint returns the Endpoint field value
 func (o *CloudCreateConfigAWS) GetEndpoint() string {
-	if o == nil || IsNil(o.Endpoint) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Endpoint
+
+	return o.Endpoint
 }
 
-// GetEndpointOk returns a tuple with the Endpoint field value if set, nil otherwise
+// GetEndpointOk returns a tuple with the Endpoint field value
 // and a boolean to check if the value has been set.
 func (o *CloudCreateConfigAWS) GetEndpointOk() (*string, bool) {
-	if o == nil || IsNil(o.Endpoint) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Endpoint, true
+	return &o.Endpoint, true
 }
 
-// IsSetEndpoint returns a boolean if a field has been set.
-func (o *CloudCreateConfigAWS) IsSetEndpoint() bool {
-	if o != nil && !IsNil(o.Endpoint) {
-		return true
-	}
-
-	return false
-}
-
-// SetEndpoint gets a reference to the given string and assigns it to the Endpoint field.
+// SetEndpoint sets field value
 func (o *CloudCreateConfigAWS) SetEndpoint(v string) {
-	o.Endpoint = &v
+	o.Endpoint = v
 }
 
 // GetAccessKey returns the AccessKey field value if set, zero value otherwise.
@@ -145,47 +155,164 @@ func (o *CloudCreateConfigAWS) SetSecretKey(v string) {
 	o.SecretKey = &v
 }
 
-// GetIsVpc returns the IsVpc field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CloudCreateConfigAWS) GetIsVpc() string {
-	if o == nil || IsNil(o.IsVpc.Get()) {
+// GetUseHostCredentials returns the UseHostCredentials field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetUseHostCredentials() string {
+	if o == nil || IsNil(o.UseHostCredentials) {
 		var ret string
 		return ret
 	}
-	return *o.IsVpc.Get()
+	return *o.UseHostCredentials
 }
 
-// GetIsVpcOk returns a tuple with the IsVpc field value if set, nil otherwise
+// GetUseHostCredentialsOk returns a tuple with the UseHostCredentials field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CloudCreateConfigAWS) GetIsVpcOk() (*string, bool) {
-	if o == nil {
+func (o *CloudCreateConfigAWS) GetUseHostCredentialsOk() (*string, bool) {
+	if o == nil || IsNil(o.UseHostCredentials) {
 		return nil, false
 	}
-	return o.IsVpc.Get(), o.IsVpc.IsSet()
+	return o.UseHostCredentials, true
 }
 
-// IsSetIsVpc returns a boolean if a field has been set.
-func (o *CloudCreateConfigAWS) IsSetIsVpc() bool {
-	if o != nil && o.IsVpc.IsSet() {
+// IsSetUseHostCredentials returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetUseHostCredentials() bool {
+	if o != nil && !IsNil(o.UseHostCredentials) {
 		return true
 	}
 
 	return false
 }
 
-// SetIsVpc gets a reference to the given NullableString and assigns it to the IsVpc field.
-func (o *CloudCreateConfigAWS) SetIsVpc(v string) {
-	o.IsVpc.Set(&v)
+// SetUseHostCredentials gets a reference to the given string and assigns it to the UseHostCredentials field.
+func (o *CloudCreateConfigAWS) SetUseHostCredentials(v string) {
+	o.UseHostCredentials = &v
 }
 
-// SetIsVpcNil sets the value for IsVpc to be an explicit nil
-func (o *CloudCreateConfigAWS) SetIsVpcNil() {
-	o.IsVpc.Set(nil)
+// GetEbsEncryption returns the EbsEncryption field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetEbsEncryption() string {
+	if o == nil || IsNil(o.EbsEncryption) {
+		var ret string
+		return ret
+	}
+	return *o.EbsEncryption
 }
 
-// UnsetIsVpc ensures that no value is present for IsVpc, not even an explicit nil
-func (o *CloudCreateConfigAWS) UnsetIsVpc() {
-	o.IsVpc.Unset()
+// GetEbsEncryptionOk returns a tuple with the EbsEncryption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetEbsEncryptionOk() (*string, bool) {
+	if o == nil || IsNil(o.EbsEncryption) {
+		return nil, false
+	}
+	return o.EbsEncryption, true
+}
+
+// IsSetEbsEncryption returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetEbsEncryption() bool {
+	if o != nil && !IsNil(o.EbsEncryption) {
+		return true
+	}
+
+	return false
+}
+
+// SetEbsEncryption gets a reference to the given string and assigns it to the EbsEncryption field.
+func (o *CloudCreateConfigAWS) SetEbsEncryption(v string) {
+	o.EbsEncryption = &v
+}
+
+// GetStsAssumeRole returns the StsAssumeRole field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetStsAssumeRole() string {
+	if o == nil || IsNil(o.StsAssumeRole) {
+		var ret string
+		return ret
+	}
+	return *o.StsAssumeRole
+}
+
+// GetStsAssumeRoleOk returns a tuple with the StsAssumeRole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetStsAssumeRoleOk() (*string, bool) {
+	if o == nil || IsNil(o.StsAssumeRole) {
+		return nil, false
+	}
+	return o.StsAssumeRole, true
+}
+
+// IsSetStsAssumeRole returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetStsAssumeRole() bool {
+	if o != nil && !IsNil(o.StsAssumeRole) {
+		return true
+	}
+
+	return false
+}
+
+// SetStsAssumeRole gets a reference to the given string and assigns it to the StsAssumeRole field.
+func (o *CloudCreateConfigAWS) SetStsAssumeRole(v string) {
+	o.StsAssumeRole = &v
+}
+
+// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetConfigManagementId() string {
+	if o == nil || IsNil(o.ConfigManagementId) {
+		var ret string
+		return ret
+	}
+	return *o.ConfigManagementId
+}
+
+// GetConfigManagementIdOk returns a tuple with the ConfigManagementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetConfigManagementIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ConfigManagementId) {
+		return nil, false
+	}
+	return o.ConfigManagementId, true
+}
+
+// IsSetConfigManagementId returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetConfigManagementId() bool {
+	if o != nil && !IsNil(o.ConfigManagementId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
+func (o *CloudCreateConfigAWS) SetConfigManagementId(v string) {
+	o.ConfigManagementId = &v
+}
+
+// GetVpc returns the Vpc field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetVpc() string {
+	if o == nil || IsNil(o.Vpc) {
+		var ret string
+		return ret
+	}
+	return *o.Vpc
+}
+
+// GetVpcOk returns a tuple with the Vpc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetVpcOk() (*string, bool) {
+	if o == nil || IsNil(o.Vpc) {
+		return nil, false
+	}
+	return o.Vpc, true
+}
+
+// IsSetVpc returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetVpc() bool {
+	if o != nil && !IsNil(o.Vpc) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpc gets a reference to the given string and assigns it to the Vpc field.
+func (o *CloudCreateConfigAWS) SetVpc(v string) {
+	o.Vpc = &v
 }
 
 func (o CloudCreateConfigAWS) MarshalJSON() ([]byte, error) {
@@ -198,17 +325,27 @@ func (o CloudCreateConfigAWS) MarshalJSON() ([]byte, error) {
 
 func (o CloudCreateConfigAWS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Endpoint) {
-		toSerialize["endpoint"] = o.Endpoint
-	}
+	toSerialize["endpoint"] = o.Endpoint
 	if !IsNil(o.AccessKey) {
 		toSerialize["accessKey"] = o.AccessKey
 	}
 	if !IsNil(o.SecretKey) {
 		toSerialize["secretKey"] = o.SecretKey
 	}
-	if o.IsVpc.IsSet() {
-		toSerialize["isVpc"] = o.IsVpc.Get()
+	if !IsNil(o.UseHostCredentials) {
+		toSerialize["useHostCredentials"] = o.UseHostCredentials
+	}
+	if !IsNil(o.EbsEncryption) {
+		toSerialize["ebsEncryption"] = o.EbsEncryption
+	}
+	if !IsNil(o.StsAssumeRole) {
+		toSerialize["stsAssumeRole"] = o.StsAssumeRole
+	}
+	if !IsNil(o.ConfigManagementId) {
+		toSerialize["configManagementId"] = o.ConfigManagementId
+	}
+	if !IsNil(o.Vpc) {
+		toSerialize["vpc"] = o.Vpc
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
-**EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
+**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] 
+**EnableNetworkTypeSelection** | Pointer to **bool** | Enable network type selection | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCertificateProvider returns a boolean if a field has been set.
 
 ### GetEnableNetworkTypeSelection
 
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelection() string`
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelection() bool`
 
 GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field if non-nil, zero value otherwise.
 
 ### GetEnableNetworkTypeSelectionOk
 
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelectionOk() (*string, bool)`
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelectionOk() (*bool, bool)`
 
 GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableNetworkTypeSelection
 
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) SetEnableNetworkTypeSelection(v string)`
+`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) SetEnableNetworkTypeSelection(v bool)`
 
 SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given value.
 
@@ -76,16 +76,6 @@ SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given val
 
 HasEnableNetworkTypeSelection returns a boolean if a field has been set.
 
-### SetEnableNetworkTypeSelectionNil
-
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) SetEnableNetworkTypeSelectionNil(b bool)`
-
- SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
-
-### UnsetEnableNetworkTypeSelection
-`func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) UnsetEnableNetworkTypeSelection()`
-
-UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

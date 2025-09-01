@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Layout** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**UserGroup** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
+**UserGroup** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup**](AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetUserGroup
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer, bool)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup)`
 
 SetUserGroup sets UserGroup field to given value.
 

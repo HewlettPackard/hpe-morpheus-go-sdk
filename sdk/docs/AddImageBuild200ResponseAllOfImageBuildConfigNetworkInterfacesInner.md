@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
+**Network** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup**](AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetwork() ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetwork() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer, bool)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetNetwork(v ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetNetwork(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup)`
 
 SetNetwork sets Network field to given value.
 

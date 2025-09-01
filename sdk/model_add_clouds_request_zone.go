@@ -26,6 +26,8 @@ type AddCloudsRequestZone struct {
 	GroupId  int64                        `json:"groupId"`
 	ZoneType AddCloudsRequestZoneZoneType `json:"zoneType"`
 	Config   AddCloudsRequestZoneConfig   `json:"config"`
+	// The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit).
+	AgentMode *string `json:"agentMode,omitempty"`
 	// Optional description field if you want to put more info there
 	Description *string `json:"description,omitempty"`
 	// Optional code for use with policies
@@ -34,7 +36,7 @@ type AddCloudsRequestZone struct {
 	Labels []string `json:"labels,omitempty"`
 	// Optional location for your cloud
 	Location NullableString `json:"location,omitempty"`
-	// private or public
+	// The visibility of the cloud (private or public)
 	Visibility *string `json:"visibility,omitempty"`
 	// Specifies which Tenant this cloud should be assigned to
 	AccountId *int64 `json:"accountId,omitempty"`
@@ -76,6 +78,8 @@ func NewAddCloudsRequestZone(name string, groupId int64, zoneType AddCloudsReque
 	this.GroupId = groupId
 	this.ZoneType = zoneType
 	this.Config = config
+	var agentMode string = "cloudInit"
+	this.AgentMode = &agentMode
 	var visibility string = "private"
 	this.Visibility = &visibility
 	var enabled bool = true
@@ -94,6 +98,8 @@ func NewAddCloudsRequestZone(name string, groupId int64, zoneType AddCloudsReque
 // but it doesn't guarantee that properties required by API are set
 func NewAddCloudsRequestZoneWithDefaults() *AddCloudsRequestZone {
 	this := AddCloudsRequestZone{}
+	var agentMode string = "cloudInit"
+	this.AgentMode = &agentMode
 	var visibility string = "private"
 	this.Visibility = &visibility
 	var enabled bool = true
@@ -201,6 +207,38 @@ func (o *AddCloudsRequestZone) GetConfigOk() (*AddCloudsRequestZoneConfig, bool)
 // SetConfig sets field value
 func (o *AddCloudsRequestZone) SetConfig(v AddCloudsRequestZoneConfig) {
 	o.Config = v
+}
+
+// GetAgentMode returns the AgentMode field value if set, zero value otherwise.
+func (o *AddCloudsRequestZone) GetAgentMode() string {
+	if o == nil || IsNil(o.AgentMode) {
+		var ret string
+		return ret
+	}
+	return *o.AgentMode
+}
+
+// GetAgentModeOk returns a tuple with the AgentMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZone) GetAgentModeOk() (*string, bool) {
+	if o == nil || IsNil(o.AgentMode) {
+		return nil, false
+	}
+	return o.AgentMode, true
+}
+
+// IsSetAgentMode returns a boolean if a field has been set.
+func (o *AddCloudsRequestZone) IsSetAgentMode() bool {
+	if o != nil && !IsNil(o.AgentMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgentMode gets a reference to the given string and assigns it to the AgentMode field.
+func (o *AddCloudsRequestZone) SetAgentMode(v string) {
+	o.AgentMode = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -804,6 +842,9 @@ func (o AddCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 	toSerialize["groupId"] = o.GroupId
 	toSerialize["zoneType"] = o.ZoneType
 	toSerialize["config"] = o.Config
+	if !IsNil(o.AgentMode) {
+		toSerialize["agentMode"] = o.AgentMode
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}

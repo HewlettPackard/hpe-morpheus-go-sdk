@@ -33,18 +33,20 @@ type AddCloudsRequestZoneConfigAnyOfOneOf3 struct {
 	// The name of the vSphere resource pool
 	ResourcePool *string        `json:"resourcePool,omitempty"`
 	RpcMode      NullableString `json:"rpcMode,omitempty"`
-	// The keyboard layout
-	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
 	// The default vSphere VMDK type for virtual machines
 	StorageType *string `json:"storageType,omitempty"`
 	// Certificate provider
-	CertificateProvider        *string                `json:"certificateProvider,omitempty"`
-	EnableVnc                  NullableString         `json:"enableVnc,omitempty"`
-	HideHostSelection          NullableString         `json:"hideHostSelection,omitempty"`
-	EnableDiskTypeSelection    NullableString         `json:"enableDiskTypeSelection,omitempty"`
-	EnableStorageTypeSelection NullableString         `json:"enableStorageTypeSelection,omitempty"`
-	EnableNetworkTypeSelection NullableString         `json:"enableNetworkTypeSelection,omitempty"`
-	AdditionalProperties       map[string]interface{} `json:",remain"`
+	CertificateProvider        *string        `json:"certificateProvider,omitempty"`
+	EnableVnc                  NullableString `json:"enableVnc,omitempty"`
+	HideHostSelection          NullableString `json:"hideHostSelection,omitempty"`
+	EnableDiskTypeSelection    NullableString `json:"enableDiskTypeSelection,omitempty"`
+	EnableStorageTypeSelection NullableString `json:"enableStorageTypeSelection,omitempty"`
+	EnableNetworkTypeSelection NullableString `json:"enableNetworkTypeSelection,omitempty"`
+	// Username.
+	Username *string `json:"username,omitempty"`
+	// Password to apply to the user
+	Password             *string                `json:"password,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddCloudsRequestZoneConfigAnyOfOneOf3 AddCloudsRequestZoneConfigAnyOfOneOf3
@@ -60,8 +62,6 @@ func NewAddCloudsRequestZoneConfigAnyOfOneOf3(apiUrl string, apiVersion string, 
 	this.Datacenter = datacenter
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var consoleKeymap string = "us"
-	this.ConsoleKeymap = &consoleKeymap
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -76,8 +76,6 @@ func NewAddCloudsRequestZoneConfigAnyOfOneOf3WithDefaults() *AddCloudsRequestZon
 	this := AddCloudsRequestZoneConfigAnyOfOneOf3{}
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var consoleKeymap string = "us"
-	this.ConsoleKeymap = &consoleKeymap
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -294,38 +292,6 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetRpcModeNil() {
 // UnsetRpcMode ensures that no value is present for RpcMode, not even an explicit nil
 func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) UnsetRpcMode() {
 	o.RpcMode.Unset()
-}
-
-// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetConsoleKeymap() string {
-	if o == nil || IsNil(o.ConsoleKeymap) {
-		var ret string
-		return ret
-	}
-	return *o.ConsoleKeymap
-}
-
-// GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetConsoleKeymapOk() (*string, bool) {
-	if o == nil || IsNil(o.ConsoleKeymap) {
-		return nil, false
-	}
-	return o.ConsoleKeymap, true
-}
-
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) IsSetConsoleKeymap() bool {
-	if o != nil && !IsNil(o.ConsoleKeymap) {
-		return true
-	}
-
-	return false
-}
-
-// SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetConsoleKeymap(v string) {
-	o.ConsoleKeymap = &v
 }
 
 // GetStorageType returns the StorageType field value if set, zero value otherwise.
@@ -607,6 +573,70 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) UnsetEnableNetworkTypeSelection(
 	o.EnableNetworkTypeSelection.Unset()
 }
 
+// GetUsername returns the Username field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetUsername() string {
+	if o == nil || IsNil(o.Username) {
+		var ret string
+		return ret
+	}
+	return *o.Username
+}
+
+// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetUsernameOk() (*string, bool) {
+	if o == nil || IsNil(o.Username) {
+		return nil, false
+	}
+	return o.Username, true
+}
+
+// IsSetUsername returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) IsSetUsername() bool {
+	if o != nil && !IsNil(o.Username) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsername gets a reference to the given string and assigns it to the Username field.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetUsername(v string) {
+	o.Username = &v
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetPassword() string {
+	if o == nil || IsNil(o.Password) {
+		var ret string
+		return ret
+	}
+	return *o.Password
+}
+
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) GetPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.Password) {
+		return nil, false
+	}
+	return o.Password, true
+}
+
+// IsSetPassword returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) IsSetPassword() bool {
+	if o != nil && !IsNil(o.Password) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassword gets a reference to the given string and assigns it to the Password field.
+func (o *AddCloudsRequestZoneConfigAnyOfOneOf3) SetPassword(v string) {
+	o.Password = &v
+}
+
 func (o AddCloudsRequestZoneConfigAnyOfOneOf3) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -632,9 +662,6 @@ func (o AddCloudsRequestZoneConfigAnyOfOneOf3) ToMap() (map[string]interface{}, 
 	if o.RpcMode.IsSet() {
 		toSerialize["rpcMode"] = o.RpcMode.Get()
 	}
-	if !IsNil(o.ConsoleKeymap) {
-		toSerialize["consoleKeymap"] = o.ConsoleKeymap
-	}
 	if !IsNil(o.StorageType) {
 		toSerialize["storageType"] = o.StorageType
 	}
@@ -655,6 +682,12 @@ func (o AddCloudsRequestZoneConfigAnyOfOneOf3) ToMap() (map[string]interface{}, 
 	}
 	if o.EnableNetworkTypeSelection.IsSet() {
 		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection.Get()
+	}
+	if !IsNil(o.Username) {
+		toSerialize["username"] = o.Username
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
 	}
 
 	for key, value := range o.AdditionalProperties {

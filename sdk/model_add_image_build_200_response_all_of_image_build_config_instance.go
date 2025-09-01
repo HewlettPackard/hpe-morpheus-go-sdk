@@ -20,10 +20,10 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigInstance{}
 
 // AddImageBuild200ResponseAllOfImageBuildConfigInstance struct for AddImageBuild200ResponseAllOfImageBuildConfigInstance
 type AddImageBuild200ResponseAllOfImageBuildConfigInstance struct {
-	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan    `json:"layout,omitempty"`
-	Type                 *string                                                       `json:"type,omitempty"`
-	UserGroup            *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer `json:"userGroup,omitempty"`
-	AdditionalProperties map[string]interface{}                                        `json:",remain"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan      `json:"layout,omitempty"`
+	Type                 *string                                                         `json:"type,omitempty"`
+	UserGroup            *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigInstance AddImageBuild200ResponseAllOfImageBuildConfigInstance
@@ -110,9 +110,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetType(v string
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
+		var ret AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup
 		return ret
 	}
 	return *o.UserGroup
@@ -120,7 +120,7 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() L
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer, bool) {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) IsSetUserGroup()
 	return false
 }
 
-// SetUserGroup gets a reference to the given ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer and assigns it to the UserGroup field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) {
+// SetUserGroup gets a reference to the given AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup and assigns it to the UserGroup field.
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) {
 	o.UserGroup = &v
 }
 

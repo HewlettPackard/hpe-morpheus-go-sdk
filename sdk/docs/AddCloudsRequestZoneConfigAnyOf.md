@@ -4,10 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Endpoint** | Pointer to **string** | AWS endpoint | [optional] 
+**Endpoint** | **string** | AWS endpoint | 
 **AccessKey** | Pointer to **string** | AWS access key | [optional] 
 **SecretKey** | Pointer to **string** | AWS secret key | [optional] 
-**IsVpc** | Pointer to **string** |  | [optional] 
+**UseHostCredentials** | Pointer to **string** | Whether to use the IAM profile associated with the Morpheus server or not | [optional] [default to "on"]
+**EbsEncryption** | Pointer to **string** | Determines whether to configure default EBS volume encryption or not | [optional] [default to "on"]
+**StsAssumeRole** | Pointer to **string** | The AWS IAM role ARN to assume for authentication | [optional] 
+**ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the vSphere cloud. | [optional] 
+**Vpc** | Pointer to **string** | The VPC ID for a specific VPC | [optional] 
 **SubscriberId** | Pointer to **string** | Azure subscriber id | [optional] 
 **TenantId** | Pointer to **string** | Azure tenant id | [optional] 
 **ClientId** | Pointer to **string** | Azure client id | [optional] 
@@ -20,20 +24,20 @@ Name | Type | Description | Notes
 **ApiVersion** | **string** | The SDK version of the vCenter server. | 
 **Datacenter** | **string** | The vSphere datacenter to add. | 
 **Cluster** | Pointer to **string** | The name of the vSphere cluster | [optional] [default to "all"]
-**ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the vSphere cloud. | [optional] 
 **ResourcePool** | Pointer to **string** | The name of the vSphere resource pool | [optional] 
-**ConsoleKeymap** | Pointer to **string** | The keyboard layout | [optional] [default to "us"]
 **StorageType** | Pointer to **string** | The default vSphere VMDK type for virtual machines | [optional] [default to "thin"]
 **EnableVnc** | Pointer to **string** |  | [optional] 
 **HideHostSelection** | Pointer to **string** |  | [optional] 
 **EnableDiskTypeSelection** | Pointer to **string** |  | [optional] 
 **EnableStorageTypeSelection** | Pointer to **string** |  | [optional] 
+**Username** | Pointer to **string** | Username. | [optional] 
+**Password** | Pointer to **string** | Password to apply to the user | [optional] 
 
 ## Methods
 
 ### NewAddCloudsRequestZoneConfigAnyOf
 
-`func NewAddCloudsRequestZoneConfigAnyOf(apiUrl string, apiVersion string, datacenter string, ) *AddCloudsRequestZoneConfigAnyOf`
+`func NewAddCloudsRequestZoneConfigAnyOf(endpoint string, apiUrl string, apiVersion string, datacenter string, ) *AddCloudsRequestZoneConfigAnyOf`
 
 NewAddCloudsRequestZoneConfigAnyOf instantiates a new AddCloudsRequestZoneConfigAnyOf object
 This constructor will assign default values to properties that have it defined,
@@ -67,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetEndpoint sets Endpoint field to given value.
 
-### HasEndpoint
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) HasEndpoint() bool`
-
-HasEndpoint returns a boolean if a field has been set.
 
 ### GetAccessKey
 
@@ -123,30 +122,130 @@ SetSecretKey sets SecretKey field to given value.
 
 HasSecretKey returns a boolean if a field has been set.
 
-### GetIsVpc
+### GetUseHostCredentials
 
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetIsVpc() string`
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUseHostCredentials() string`
 
-GetIsVpc returns the IsVpc field if non-nil, zero value otherwise.
+GetUseHostCredentials returns the UseHostCredentials field if non-nil, zero value otherwise.
 
-### GetIsVpcOk
+### GetUseHostCredentialsOk
 
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetIsVpcOk() (*string, bool)`
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUseHostCredentialsOk() (*string, bool)`
 
-GetIsVpcOk returns a tuple with the IsVpc field if it's non-nil, zero value otherwise
+GetUseHostCredentialsOk returns a tuple with the UseHostCredentials field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsVpc
+### SetUseHostCredentials
 
-`func (o *AddCloudsRequestZoneConfigAnyOf) SetIsVpc(v string)`
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetUseHostCredentials(v string)`
 
-SetIsVpc sets IsVpc field to given value.
+SetUseHostCredentials sets UseHostCredentials field to given value.
 
-### HasIsVpc
+### HasUseHostCredentials
 
-`func (o *AddCloudsRequestZoneConfigAnyOf) HasIsVpc() bool`
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasUseHostCredentials() bool`
 
-HasIsVpc returns a boolean if a field has been set.
+HasUseHostCredentials returns a boolean if a field has been set.
+
+### GetEbsEncryption
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetEbsEncryption() string`
+
+GetEbsEncryption returns the EbsEncryption field if non-nil, zero value otherwise.
+
+### GetEbsEncryptionOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetEbsEncryptionOk() (*string, bool)`
+
+GetEbsEncryptionOk returns a tuple with the EbsEncryption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEbsEncryption
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetEbsEncryption(v string)`
+
+SetEbsEncryption sets EbsEncryption field to given value.
+
+### HasEbsEncryption
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasEbsEncryption() bool`
+
+HasEbsEncryption returns a boolean if a field has been set.
+
+### GetStsAssumeRole
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetStsAssumeRole() string`
+
+GetStsAssumeRole returns the StsAssumeRole field if non-nil, zero value otherwise.
+
+### GetStsAssumeRoleOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetStsAssumeRoleOk() (*string, bool)`
+
+GetStsAssumeRoleOk returns a tuple with the StsAssumeRole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStsAssumeRole
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetStsAssumeRole(v string)`
+
+SetStsAssumeRole sets StsAssumeRole field to given value.
+
+### HasStsAssumeRole
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasStsAssumeRole() bool`
+
+HasStsAssumeRole returns a boolean if a field has been set.
+
+### GetConfigManagementId
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementId() string`
+
+GetConfigManagementId returns the ConfigManagementId field if non-nil, zero value otherwise.
+
+### GetConfigManagementIdOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementIdOk() (*string, bool)`
+
+GetConfigManagementIdOk returns a tuple with the ConfigManagementId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigManagementId
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetConfigManagementId(v string)`
+
+SetConfigManagementId sets ConfigManagementId field to given value.
+
+### HasConfigManagementId
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasConfigManagementId() bool`
+
+HasConfigManagementId returns a boolean if a field has been set.
+
+### GetVpc
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetVpc() string`
+
+GetVpc returns the Vpc field if non-nil, zero value otherwise.
+
+### GetVpcOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetVpcOk() (*string, bool)`
+
+GetVpcOk returns a tuple with the Vpc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpc
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetVpc(v string)`
+
+SetVpc sets Vpc field to given value.
+
+### HasVpc
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasVpc() bool`
+
+HasVpc returns a boolean if a field has been set.
 
 ### GetSubscriberId
 
@@ -433,31 +532,6 @@ SetCluster sets Cluster field to given value.
 
 HasCluster returns a boolean if a field has been set.
 
-### GetConfigManagementId
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementId() string`
-
-GetConfigManagementId returns the ConfigManagementId field if non-nil, zero value otherwise.
-
-### GetConfigManagementIdOk
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementIdOk() (*string, bool)`
-
-GetConfigManagementIdOk returns a tuple with the ConfigManagementId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfigManagementId
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) SetConfigManagementId(v string)`
-
-SetConfigManagementId sets ConfigManagementId field to given value.
-
-### HasConfigManagementId
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) HasConfigManagementId() bool`
-
-HasConfigManagementId returns a boolean if a field has been set.
-
 ### GetResourcePool
 
 `func (o *AddCloudsRequestZoneConfigAnyOf) GetResourcePool() string`
@@ -482,31 +556,6 @@ SetResourcePool sets ResourcePool field to given value.
 `func (o *AddCloudsRequestZoneConfigAnyOf) HasResourcePool() bool`
 
 HasResourcePool returns a boolean if a field has been set.
-
-### GetConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetConsoleKeymap() string`
-
-GetConsoleKeymap returns the ConsoleKeymap field if non-nil, zero value otherwise.
-
-### GetConsoleKeymapOk
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) GetConsoleKeymapOk() (*string, bool)`
-
-GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) SetConsoleKeymap(v string)`
-
-SetConsoleKeymap sets ConsoleKeymap field to given value.
-
-### HasConsoleKeymap
-
-`func (o *AddCloudsRequestZoneConfigAnyOf) HasConsoleKeymap() bool`
-
-HasConsoleKeymap returns a boolean if a field has been set.
 
 ### GetStorageType
 
@@ -632,6 +681,56 @@ SetEnableStorageTypeSelection sets EnableStorageTypeSelection field to given val
 `func (o *AddCloudsRequestZoneConfigAnyOf) HasEnableStorageTypeSelection() bool`
 
 HasEnableStorageTypeSelection returns a boolean if a field has been set.
+
+### GetUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetUsername(v string)`
+
+SetUsername sets Username field to given value.
+
+### HasUsername
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasUsername() bool`
+
+HasUsername returns a boolean if a field has been set.
+
+### GetPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) SetPassword(v string)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *AddCloudsRequestZoneConfigAnyOf) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

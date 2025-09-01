@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddCloudsRequestZoneConfigAnyOfOneOf2 type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddCloudsRequestZoneConfigAnyOfOneOf2{}
+// checks if the CloudCreateConfigHVM type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CloudCreateConfigHVM{}
 
-// AddCloudsRequestZoneConfigAnyOfOneOf2 HVM Cloud
-type AddCloudsRequestZoneConfigAnyOfOneOf2 struct {
+// CloudCreateConfigHVM HVM Cloud
+type CloudCreateConfigHVM struct {
 	// Certificate provider
 	CertificateProvider *string `json:"certificateProvider,omitempty"`
 	// Enable network type selection
@@ -27,27 +27,27 @@ type AddCloudsRequestZoneConfigAnyOfOneOf2 struct {
 	AdditionalProperties       map[string]interface{} `json:",remain"`
 }
 
-type _AddCloudsRequestZoneConfigAnyOfOneOf2 AddCloudsRequestZoneConfigAnyOfOneOf2
+type _CloudCreateConfigHVM CloudCreateConfigHVM
 
-// NewAddCloudsRequestZoneConfigAnyOfOneOf2 instantiates a new AddCloudsRequestZoneConfigAnyOfOneOf2 object
+// NewCloudCreateConfigHVM instantiates a new CloudCreateConfigHVM object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCloudsRequestZoneConfigAnyOfOneOf2() *AddCloudsRequestZoneConfigAnyOfOneOf2 {
-	this := AddCloudsRequestZoneConfigAnyOfOneOf2{}
+func NewCloudCreateConfigHVM() *CloudCreateConfigHVM {
+	this := CloudCreateConfigHVM{}
 	return &this
 }
 
-// NewAddCloudsRequestZoneConfigAnyOfOneOf2WithDefaults instantiates a new AddCloudsRequestZoneConfigAnyOfOneOf2 object
+// NewCloudCreateConfigHVMWithDefaults instantiates a new CloudCreateConfigHVM object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddCloudsRequestZoneConfigAnyOfOneOf2WithDefaults() *AddCloudsRequestZoneConfigAnyOfOneOf2 {
-	this := AddCloudsRequestZoneConfigAnyOfOneOf2{}
+func NewCloudCreateConfigHVMWithDefaults() *CloudCreateConfigHVM {
+	this := CloudCreateConfigHVM{}
 	return &this
 }
 
 // GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetCertificateProvider() string {
+func (o *CloudCreateConfigHVM) GetCertificateProvider() string {
 	if o == nil || IsNil(o.CertificateProvider) {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetCertificateProvider() string 
 
 // GetCertificateProviderOk returns a tuple with the CertificateProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetCertificateProviderOk() (*string, bool) {
+func (o *CloudCreateConfigHVM) GetCertificateProviderOk() (*string, bool) {
 	if o == nil || IsNil(o.CertificateProvider) {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetCertificateProviderOk() (*str
 }
 
 // IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) IsSetCertificateProvider() bool {
+func (o *CloudCreateConfigHVM) IsSetCertificateProvider() bool {
 	if o != nil && !IsNil(o.CertificateProvider) {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) IsSetCertificateProvider() bool 
 }
 
 // SetCertificateProvider gets a reference to the given string and assigns it to the CertificateProvider field.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) SetCertificateProvider(v string) {
+func (o *CloudCreateConfigHVM) SetCertificateProvider(v string) {
 	o.CertificateProvider = &v
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelection() bool {
+func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelection() bool {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
 		var ret bool
 		return ret
@@ -89,7 +89,7 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelection() 
 
 // GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelectionOk() (*bool, bool) {
+func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelectionOk() (*bool, bool) {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) GetEnableNetworkTypeSelectionOk(
 }
 
 // IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) IsSetEnableNetworkTypeSelection() bool {
+func (o *CloudCreateConfigHVM) IsSetEnableNetworkTypeSelection() bool {
 	if o != nil && !IsNil(o.EnableNetworkTypeSelection) {
 		return true
 	}
@@ -106,11 +106,11 @@ func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) IsSetEnableNetworkTypeSelection(
 }
 
 // SetEnableNetworkTypeSelection gets a reference to the given bool and assigns it to the EnableNetworkTypeSelection field.
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) SetEnableNetworkTypeSelection(v bool) {
+func (o *CloudCreateConfigHVM) SetEnableNetworkTypeSelection(v bool) {
 	o.EnableNetworkTypeSelection = &v
 }
 
-func (o AddCloudsRequestZoneConfigAnyOfOneOf2) MarshalJSON() ([]byte, error) {
+func (o CloudCreateConfigHVM) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -118,7 +118,7 @@ func (o AddCloudsRequestZoneConfigAnyOfOneOf2) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o AddCloudsRequestZoneConfigAnyOfOneOf2) ToMap() (map[string]interface{}, error) {
+func (o CloudCreateConfigHVM) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.CertificateProvider) {
 		toSerialize["certificateProvider"] = o.CertificateProvider
@@ -133,7 +133,7 @@ func (o AddCloudsRequestZoneConfigAnyOfOneOf2) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
-func (o *AddCloudsRequestZoneConfigAnyOfOneOf2) UnmarshalJSON(data []byte) (err error) {
+func (o *CloudCreateConfigHVM) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

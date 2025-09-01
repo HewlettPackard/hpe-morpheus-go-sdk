@@ -25,7 +25,9 @@ type ZoneCreate struct {
 	// Specifies which Server group this cloud should be assigned to
 	GroupId  int64                        `json:"groupId"`
 	ZoneType AddCloudsRequestZoneZoneType `json:"zoneType"`
-	Config   ZoneCreateConfig             `json:"config"`
+	Config   AddCloudsRequestZoneConfig   `json:"config"`
+	// The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit).
+	AgentMode *string `json:"agentMode,omitempty"`
 	// Optional description field if you want to put more info there
 	Description *string `json:"description,omitempty"`
 	// Optional code for use with policies
@@ -34,7 +36,7 @@ type ZoneCreate struct {
 	Labels []string `json:"labels,omitempty"`
 	// Optional location for your cloud
 	Location NullableString `json:"location,omitempty"`
-	// private or public
+	// The visibility of the cloud (private or public)
 	Visibility *string `json:"visibility,omitempty"`
 	// Specifies which Tenant this cloud should be assigned to
 	AccountId *int64 `json:"accountId,omitempty"`
@@ -70,12 +72,14 @@ type _ZoneCreate ZoneCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config ZoneCreateConfig) *ZoneCreate {
+func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config AddCloudsRequestZoneConfig) *ZoneCreate {
 	this := ZoneCreate{}
 	this.Name = name
 	this.GroupId = groupId
 	this.ZoneType = zoneType
 	this.Config = config
+	var agentMode string = "cloudInit"
+	this.AgentMode = &agentMode
 	var visibility string = "private"
 	this.Visibility = &visibility
 	var enabled bool = true
@@ -94,6 +98,8 @@ func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZone
 // but it doesn't guarantee that properties required by API are set
 func NewZoneCreateWithDefaults() *ZoneCreate {
 	this := ZoneCreate{}
+	var agentMode string = "cloudInit"
+	this.AgentMode = &agentMode
 	var visibility string = "private"
 	this.Visibility = &visibility
 	var enabled bool = true
@@ -180,9 +186,9 @@ func (o *ZoneCreate) SetZoneType(v AddCloudsRequestZoneZoneType) {
 }
 
 // GetConfig returns the Config field value
-func (o *ZoneCreate) GetConfig() ZoneCreateConfig {
+func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig {
 	if o == nil {
-		var ret ZoneCreateConfig
+		var ret AddCloudsRequestZoneConfig
 		return ret
 	}
 
@@ -191,7 +197,7 @@ func (o *ZoneCreate) GetConfig() ZoneCreateConfig {
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool) {
+func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -199,8 +205,40 @@ func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool) {
 }
 
 // SetConfig sets field value
-func (o *ZoneCreate) SetConfig(v ZoneCreateConfig) {
+func (o *ZoneCreate) SetConfig(v AddCloudsRequestZoneConfig) {
 	o.Config = v
+}
+
+// GetAgentMode returns the AgentMode field value if set, zero value otherwise.
+func (o *ZoneCreate) GetAgentMode() string {
+	if o == nil || IsNil(o.AgentMode) {
+		var ret string
+		return ret
+	}
+	return *o.AgentMode
+}
+
+// GetAgentModeOk returns a tuple with the AgentMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ZoneCreate) GetAgentModeOk() (*string, bool) {
+	if o == nil || IsNil(o.AgentMode) {
+		return nil, false
+	}
+	return o.AgentMode, true
+}
+
+// IsSetAgentMode returns a boolean if a field has been set.
+func (o *ZoneCreate) IsSetAgentMode() bool {
+	if o != nil && !IsNil(o.AgentMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgentMode gets a reference to the given string and assigns it to the AgentMode field.
+func (o *ZoneCreate) SetAgentMode(v string) {
+	o.AgentMode = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -804,6 +842,9 @@ func (o ZoneCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize["groupId"] = o.GroupId
 	toSerialize["zoneType"] = o.ZoneType
 	toSerialize["config"] = o.Config
+	if !IsNil(o.AgentMode) {
+		toSerialize["agentMode"] = o.AgentMode
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
