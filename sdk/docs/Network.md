@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **CidrIPv6** | Pointer to **NullableString** | IPv6 Network CIDR | [optional] 
 **TftpServer** | Pointer to **NullableString** |  | [optional] 
 **BootFile** | Pointer to **NullableString** |  | [optional] 
-**SwitchId** | Pointer to **NullableString** |  | [optional] 
+**SwitchId** | Pointer to **NullableString** | Network switch identifier | [optional] 
 **FabricId** | Pointer to **NullableString** |  | [optional] 
 **NetworkRole** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 

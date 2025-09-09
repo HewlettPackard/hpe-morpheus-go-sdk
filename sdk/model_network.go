@@ -73,9 +73,10 @@ type Network struct {
 	// Secondary IPv6 DNS Server
 	DnsSecondaryIPv6 NullableString `json:"dnsSecondaryIPv6,omitempty"`
 	// IPv6 Network CIDR
-	CidrIPv6                NullableString                                               `json:"cidrIPv6,omitempty"`
-	TftpServer              NullableString                                               `json:"tftpServer,omitempty"`
-	BootFile                NullableString                                               `json:"bootFile,omitempty"`
+	CidrIPv6   NullableString `json:"cidrIPv6,omitempty"`
+	TftpServer NullableString `json:"tftpServer,omitempty"`
+	BootFile   NullableString `json:"bootFile,omitempty"`
+	// Network switch identifier
 	SwitchId                NullableString                                               `json:"switchId,omitempty"`
 	FabricId                NullableString                                               `json:"fabricId,omitempty"`
 	NetworkRole             NullableString                                               `json:"networkRole,omitempty"`
