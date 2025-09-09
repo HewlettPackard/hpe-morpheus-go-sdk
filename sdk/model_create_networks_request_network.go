@@ -51,6 +51,8 @@ type CreateNetworksRequestNetwork struct {
 	// IPv6 Network CIDR
 	CidrIPv6 *string `json:"cidrIPv6,omitempty"`
 	VlanId   *int64  `json:"vlanId,omitempty"`
+	// Network switch identifier
+	SwitchId *string `json:"switchId,omitempty"`
 	// Network Pool ID
 	Pool NullableInt64 `json:"pool,omitempty"`
 	// IPv6 Network Pool ID
@@ -749,6 +751,38 @@ func (o *CreateNetworksRequestNetwork) SetVlanId(v int64) {
 	o.VlanId = &v
 }
 
+// GetSwitchId returns the SwitchId field value if set, zero value otherwise.
+func (o *CreateNetworksRequestNetwork) GetSwitchId() string {
+	if o == nil || IsNil(o.SwitchId) {
+		var ret string
+		return ret
+	}
+	return *o.SwitchId
+}
+
+// GetSwitchIdOk returns a tuple with the SwitchId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateNetworksRequestNetwork) GetSwitchIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SwitchId) {
+		return nil, false
+	}
+	return o.SwitchId, true
+}
+
+// IsSetSwitchId returns a boolean if a field has been set.
+func (o *CreateNetworksRequestNetwork) IsSetSwitchId() bool {
+	if o != nil && !IsNil(o.SwitchId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSwitchId gets a reference to the given string and assigns it to the SwitchId field.
+func (o *CreateNetworksRequestNetwork) SetSwitchId(v string) {
+	o.SwitchId = &v
+}
+
 // GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreateNetworksRequestNetwork) GetPool() int64 {
 	if o == nil || IsNil(o.Pool.Get()) {
@@ -1386,6 +1420,9 @@ func (o CreateNetworksRequestNetwork) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VlanId) {
 		toSerialize["vlanId"] = o.VlanId
+	}
+	if !IsNil(o.SwitchId) {
+		toSerialize["switchId"] = o.SwitchId
 	}
 	if o.Pool.IsSet() {
 		toSerialize["pool"] = o.Pool.Get()

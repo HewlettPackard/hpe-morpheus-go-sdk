@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DnsPrimary** | Pointer to **string** | Primary DNS Server | [optional] 
 **DnsSecondary** | Pointer to **string** | Secondary DNS Server | [optional] 
 **VlanId** | Pointer to **int64** |  | [optional] 
+**SwitchId** | Pointer to **string** | Network switch identifier | [optional] 
 **Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
 **ZonePool** | Pointer to [**CreateNetworksRequestNetworkZonePool**](CreateNetworksRequestNetworkZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
@@ -266,6 +267,31 @@ SetVlanId sets VlanId field to given value.
 `func (o *NetworkUpdate) HasVlanId() bool`
 
 HasVlanId returns a boolean if a field has been set.
+
+### GetSwitchId
+
+`func (o *NetworkUpdate) GetSwitchId() string`
+
+GetSwitchId returns the SwitchId field if non-nil, zero value otherwise.
+
+### GetSwitchIdOk
+
+`func (o *NetworkUpdate) GetSwitchIdOk() (*string, bool)`
+
+GetSwitchIdOk returns a tuple with the SwitchId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwitchId
+
+`func (o *NetworkUpdate) SetSwitchId(v string)`
+
+SetSwitchId sets SwitchId field to given value.
+
+### HasSwitchId
+
+`func (o *NetworkUpdate) HasSwitchId() bool`
+
+HasSwitchId returns a boolean if a field has been set.
 
 ### GetPool
 

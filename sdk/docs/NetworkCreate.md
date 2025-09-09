@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **DnsSecondaryIPv6** | Pointer to **NullableString** | Secondary IPv6 DNS Server | [optional] 
 **CidrIPv6** | Pointer to **string** | IPv6 Network CIDR | [optional] 
 **VlanId** | Pointer to **int64** |  | [optional] 
+**SwitchId** | Pointer to **string** | Network switch identifier | [optional] 
 **Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
 **PoolIPv6** | Pointer to **NullableInt64** | IPv6 Network Pool ID | [optional] 
 **ZonePool** | Pointer to [**CreateNetworksRequestNetworkZonePool**](CreateNetworksRequestNetworkZonePool.md) |  | [optional] 
@@ -579,6 +580,31 @@ SetVlanId sets VlanId field to given value.
 `func (o *NetworkCreate) HasVlanId() bool`
 
 HasVlanId returns a boolean if a field has been set.
+
+### GetSwitchId
+
+`func (o *NetworkCreate) GetSwitchId() string`
+
+GetSwitchId returns the SwitchId field if non-nil, zero value otherwise.
+
+### GetSwitchIdOk
+
+`func (o *NetworkCreate) GetSwitchIdOk() (*string, bool)`
+
+GetSwitchIdOk returns a tuple with the SwitchId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwitchId
+
+`func (o *NetworkCreate) SetSwitchId(v string)`
+
+SetSwitchId sets SwitchId field to given value.
+
+### HasSwitchId
+
+`func (o *NetworkCreate) HasSwitchId() bool`
+
+HasSwitchId returns a boolean if a field has been set.
 
 ### GetPool
 

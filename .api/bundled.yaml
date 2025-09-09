@@ -103366,6 +103366,10 @@ paths:
                     vlanId:
                       type: integer
                       format: int64
+                    switchId:
+                      type: string
+                      description: Network switch identifier
+                      example: Compute
                     pool:
                       type:
                         - integer
@@ -104141,6 +104145,10 @@ paths:
                     vlanId:
                       type: integer
                       format: int64
+                    switchId:
+                      type: string
+                      description: Network switch identifier
+                      example: Compute
                     pool:
                       type:
                         - integer
