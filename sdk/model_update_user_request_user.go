@@ -36,8 +36,10 @@ type UpdateUserRequestUser struct {
 	// Password
 	Password *string `json:"password,omitempty"`
 	// List of Roles
-	Roles                []UpdateUserRequestUserRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	Roles []UpdateUserRequestUserRolesInner `json:"roles,omitempty"`
+	// Receive Notifications?
+	ReceiveNotifications *bool                  `json:"receiveNotifications,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _UpdateUserRequestUser UpdateUserRequestUser
@@ -488,6 +490,38 @@ func (o *UpdateUserRequestUser) SetRoles(v []UpdateUserRequestUserRolesInner) {
 	o.Roles = v
 }
 
+// GetReceiveNotifications returns the ReceiveNotifications field value if set, zero value otherwise.
+func (o *UpdateUserRequestUser) GetReceiveNotifications() bool {
+	if o == nil || IsNil(o.ReceiveNotifications) {
+		var ret bool
+		return ret
+	}
+	return *o.ReceiveNotifications
+}
+
+// GetReceiveNotificationsOk returns a tuple with the ReceiveNotifications field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateUserRequestUser) GetReceiveNotificationsOk() (*bool, bool) {
+	if o == nil || IsNil(o.ReceiveNotifications) {
+		return nil, false
+	}
+	return o.ReceiveNotifications, true
+}
+
+// IsSetReceiveNotifications returns a boolean if a field has been set.
+func (o *UpdateUserRequestUser) IsSetReceiveNotifications() bool {
+	if o != nil && !IsNil(o.ReceiveNotifications) {
+		return true
+	}
+
+	return false
+}
+
+// SetReceiveNotifications gets a reference to the given bool and assigns it to the ReceiveNotifications field.
+func (o *UpdateUserRequestUser) SetReceiveNotifications(v bool) {
+	o.ReceiveNotifications = &v
+}
+
 func (o UpdateUserRequestUser) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -530,6 +564,9 @@ func (o UpdateUserRequestUser) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
+	}
+	if !IsNil(o.ReceiveNotifications) {
+		toSerialize["receiveNotifications"] = o.ReceiveNotifications
 	}
 
 	for key, value := range o.AdditionalProperties {

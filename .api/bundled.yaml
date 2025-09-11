@@ -172416,6 +172416,9 @@ paths:
                             description: Resource code
                         required: &ref_1734
                           - id
+                    receiveNotifications:
+                      type: boolean
+                      description: Receive Notifications?
       responses:
         '200':
           description: User Object

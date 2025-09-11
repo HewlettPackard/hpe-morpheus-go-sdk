@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | Email address | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
 **Roles** | Pointer to [**[]UpdateUserRequestUserRolesInner**](UpdateUserRequestUserRolesInner.md) | List of Roles | [optional] 
+**ReceiveNotifications** | Pointer to **bool** | Receive Notifications? | [optional] 
 
 ## Methods
 
@@ -379,6 +380,31 @@ SetRoles sets Roles field to given value.
 `func (o *UpdateUserRequestUser) HasRoles() bool`
 
 HasRoles returns a boolean if a field has been set.
+
+### GetReceiveNotifications
+
+`func (o *UpdateUserRequestUser) GetReceiveNotifications() bool`
+
+GetReceiveNotifications returns the ReceiveNotifications field if non-nil, zero value otherwise.
+
+### GetReceiveNotificationsOk
+
+`func (o *UpdateUserRequestUser) GetReceiveNotificationsOk() (*bool, bool)`
+
+GetReceiveNotificationsOk returns a tuple with the ReceiveNotifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReceiveNotifications
+
+`func (o *UpdateUserRequestUser) SetReceiveNotifications(v bool)`
+
+SetReceiveNotifications sets ReceiveNotifications field to given value.
+
+### HasReceiveNotifications
+
+`func (o *UpdateUserRequestUser) HasReceiveNotifications() bool`
+
+HasReceiveNotifications returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
