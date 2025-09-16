@@ -95,6 +95,43 @@ func (o AddOptionListRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddOptionListRequest struct {
+	value *AddOptionListRequest
+	isSet bool
+}
+
+func (v NullableAddOptionListRequest) Get() *AddOptionListRequest {
+	return v.value
+}
+
+func (v *NullableAddOptionListRequest) Set(val *AddOptionListRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOptionListRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOptionListRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOptionListRequest(val *AddOptionListRequest) *NullableAddOptionListRequest {
+	return &NullableAddOptionListRequest{value: val, isSet: true}
+}
+
+func (v NullableAddOptionListRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOptionListRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOptionListRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

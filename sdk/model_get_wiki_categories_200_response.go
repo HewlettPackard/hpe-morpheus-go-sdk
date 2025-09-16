@@ -95,6 +95,43 @@ func (o GetWikiCategories200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetWikiCategories200Response struct {
+	value *GetWikiCategories200Response
+	isSet bool
+}
+
+func (v NullableGetWikiCategories200Response) Get() *GetWikiCategories200Response {
+	return v.value
+}
+
+func (v *NullableGetWikiCategories200Response) Set(val *GetWikiCategories200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetWikiCategories200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetWikiCategories200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetWikiCategories200Response(val *GetWikiCategories200Response) *NullableGetWikiCategories200Response {
+	return &NullableGetWikiCategories200Response{value: val, isSet: true}
+}
+
+func (v NullableGetWikiCategories200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetWikiCategories200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetWikiCategories200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

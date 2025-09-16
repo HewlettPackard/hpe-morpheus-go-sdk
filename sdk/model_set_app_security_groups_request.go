@@ -95,6 +95,43 @@ func (o SetAppSecurityGroupsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSetAppSecurityGroupsRequest struct {
+	value *SetAppSecurityGroupsRequest
+	isSet bool
+}
+
+func (v NullableSetAppSecurityGroupsRequest) Get() *SetAppSecurityGroupsRequest {
+	return v.value
+}
+
+func (v *NullableSetAppSecurityGroupsRequest) Set(val *SetAppSecurityGroupsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSetAppSecurityGroupsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSetAppSecurityGroupsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSetAppSecurityGroupsRequest(val *SetAppSecurityGroupsRequest) *NullableSetAppSecurityGroupsRequest {
+	return &NullableSetAppSecurityGroupsRequest{value: val, isSet: true}
+}
+
+func (v NullableSetAppSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSetAppSecurityGroupsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SetAppSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1309,6 +1309,43 @@ func (o ServicePlanRow) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableServicePlanRow struct {
+	value *ServicePlanRow
+	isSet bool
+}
+
+func (v NullableServicePlanRow) Get() *ServicePlanRow {
+	return v.value
+}
+
+func (v *NullableServicePlanRow) Set(val *ServicePlanRow) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServicePlanRow) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServicePlanRow) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServicePlanRow(val *ServicePlanRow) *NullableServicePlanRow {
+	return &NullableServicePlanRow{value: val, isSet: true}
+}
+
+func (v NullableServicePlanRow) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServicePlanRow) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ServicePlanRow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

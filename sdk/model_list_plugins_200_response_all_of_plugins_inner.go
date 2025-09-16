@@ -799,6 +799,43 @@ func (o ListPlugins200ResponseAllOfPluginsInner) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableListPlugins200ResponseAllOfPluginsInner struct {
+	value *ListPlugins200ResponseAllOfPluginsInner
+	isSet bool
+}
+
+func (v NullableListPlugins200ResponseAllOfPluginsInner) Get() *ListPlugins200ResponseAllOfPluginsInner {
+	return v.value
+}
+
+func (v *NullableListPlugins200ResponseAllOfPluginsInner) Set(val *ListPlugins200ResponseAllOfPluginsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPlugins200ResponseAllOfPluginsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPlugins200ResponseAllOfPluginsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPlugins200ResponseAllOfPluginsInner(val *ListPlugins200ResponseAllOfPluginsInner) *NullableListPlugins200ResponseAllOfPluginsInner {
+	return &NullableListPlugins200ResponseAllOfPluginsInner{value: val, isSet: true}
+}
+
+func (v NullableListPlugins200ResponseAllOfPluginsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPlugins200ResponseAllOfPluginsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListPlugins200ResponseAllOfPluginsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -635,6 +635,43 @@ func (o InstanceTypeLayoutCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceTypeLayoutCreate struct {
+	value *InstanceTypeLayoutCreate
+	isSet bool
+}
+
+func (v NullableInstanceTypeLayoutCreate) Get() *InstanceTypeLayoutCreate {
+	return v.value
+}
+
+func (v *NullableInstanceTypeLayoutCreate) Set(val *InstanceTypeLayoutCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceTypeLayoutCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceTypeLayoutCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceTypeLayoutCreate(val *InstanceTypeLayoutCreate) *NullableInstanceTypeLayoutCreate {
+	return &NullableInstanceTypeLayoutCreate{value: val, isSet: true}
+}
+
+func (v NullableInstanceTypeLayoutCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceTypeLayoutCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceTypeLayoutCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

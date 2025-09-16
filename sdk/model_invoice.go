@@ -3794,6 +3794,43 @@ func (o Invoice) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInvoice struct {
+	value *Invoice
+	isSet bool
+}
+
+func (v NullableInvoice) Get() *Invoice {
+	return v.value
+}
+
+func (v *NullableInvoice) Set(val *Invoice) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInvoice) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInvoice) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInvoice(val *Invoice) *NullableInvoice {
+	return &NullableInvoice{value: val, isSet: true}
+}
+
+func (v NullableInvoice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInvoice) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Invoice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

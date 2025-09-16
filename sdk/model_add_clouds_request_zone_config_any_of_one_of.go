@@ -354,6 +354,43 @@ func (o AddCloudsRequestZoneConfigAnyOfOneOf) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddCloudsRequestZoneConfigAnyOfOneOf struct {
+	value *AddCloudsRequestZoneConfigAnyOfOneOf
+	isSet bool
+}
+
+func (v NullableAddCloudsRequestZoneConfigAnyOfOneOf) Get() *AddCloudsRequestZoneConfigAnyOfOneOf {
+	return v.value
+}
+
+func (v *NullableAddCloudsRequestZoneConfigAnyOfOneOf) Set(val *AddCloudsRequestZoneConfigAnyOfOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudsRequestZoneConfigAnyOfOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudsRequestZoneConfigAnyOfOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudsRequestZoneConfigAnyOfOneOf(val *AddCloudsRequestZoneConfigAnyOfOneOf) *NullableAddCloudsRequestZoneConfigAnyOfOneOf {
+	return &NullableAddCloudsRequestZoneConfigAnyOfOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddCloudsRequestZoneConfigAnyOfOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudsRequestZoneConfigAnyOfOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCloudsRequestZoneConfigAnyOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

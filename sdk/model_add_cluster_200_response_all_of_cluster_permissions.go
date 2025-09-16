@@ -131,6 +131,43 @@ func (o AddCluster200ResponseAllOfClusterPermissions) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableAddCluster200ResponseAllOfClusterPermissions struct {
+	value *AddCluster200ResponseAllOfClusterPermissions
+	isSet bool
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) Get() *AddCluster200ResponseAllOfClusterPermissions {
+	return v.value
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) Set(val *AddCluster200ResponseAllOfClusterPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCluster200ResponseAllOfClusterPermissions(val *AddCluster200ResponseAllOfClusterPermissions) *NullableAddCluster200ResponseAllOfClusterPermissions {
+	return &NullableAddCluster200ResponseAllOfClusterPermissions{value: val, isSet: true}
+}
+
+func (v NullableAddCluster200ResponseAllOfClusterPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCluster200ResponseAllOfClusterPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCluster200ResponseAllOfClusterPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

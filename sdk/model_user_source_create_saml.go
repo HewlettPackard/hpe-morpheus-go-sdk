@@ -552,6 +552,43 @@ func (o UserSourceCreateSaml) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateSaml struct {
+	value *UserSourceCreateSaml
+	isSet bool
+}
+
+func (v NullableUserSourceCreateSaml) Get() *UserSourceCreateSaml {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateSaml) Set(val *UserSourceCreateSaml) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateSaml) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateSaml) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateSaml(val *UserSourceCreateSaml) *NullableUserSourceCreateSaml {
+	return &NullableUserSourceCreateSaml{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateSaml) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateSaml) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateSaml) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

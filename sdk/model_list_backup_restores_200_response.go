@@ -131,6 +131,43 @@ func (o ListBackupRestores200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListBackupRestores200Response struct {
+	value *ListBackupRestores200Response
+	isSet bool
+}
+
+func (v NullableListBackupRestores200Response) Get() *ListBackupRestores200Response {
+	return v.value
+}
+
+func (v *NullableListBackupRestores200Response) Set(val *ListBackupRestores200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackupRestores200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackupRestores200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackupRestores200Response(val *ListBackupRestores200Response) *NullableListBackupRestores200Response {
+	return &NullableListBackupRestores200Response{value: val, isSet: true}
+}
+
+func (v NullableListBackupRestores200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackupRestores200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBackupRestores200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

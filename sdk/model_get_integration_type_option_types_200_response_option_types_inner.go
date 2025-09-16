@@ -1799,6 +1799,43 @@ func (o GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner struct {
+	value *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner
+	isSet bool
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Get() *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Set(val *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner(val *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner {
+	return &NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

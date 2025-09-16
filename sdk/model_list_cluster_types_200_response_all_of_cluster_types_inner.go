@@ -851,6 +851,43 @@ func (o ListClusterTypes200ResponseAllOfClusterTypesInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableListClusterTypes200ResponseAllOfClusterTypesInner struct {
+	value *ListClusterTypes200ResponseAllOfClusterTypesInner
+	isSet bool
+}
+
+func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) Get() *ListClusterTypes200ResponseAllOfClusterTypesInner {
+	return v.value
+}
+
+func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) Set(val *ListClusterTypes200ResponseAllOfClusterTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterTypes200ResponseAllOfClusterTypesInner(val *ListClusterTypes200ResponseAllOfClusterTypesInner) *NullableListClusterTypes200ResponseAllOfClusterTypesInner {
+	return &NullableListClusterTypes200ResponseAllOfClusterTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListClusterTypes200ResponseAllOfClusterTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterTypes200ResponseAllOfClusterTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterTypes200ResponseAllOfClusterTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

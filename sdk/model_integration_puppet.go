@@ -572,6 +572,43 @@ func (o IntegrationPuppet) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationPuppet struct {
+	value *IntegrationPuppet
+	isSet bool
+}
+
+func (v NullableIntegrationPuppet) Get() *IntegrationPuppet {
+	return v.value
+}
+
+func (v *NullableIntegrationPuppet) Set(val *IntegrationPuppet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationPuppet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationPuppet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationPuppet(val *IntegrationPuppet) *NullableIntegrationPuppet {
+	return &NullableIntegrationPuppet{value: val, isSet: true}
+}
+
+func (v NullableIntegrationPuppet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationPuppet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationPuppet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

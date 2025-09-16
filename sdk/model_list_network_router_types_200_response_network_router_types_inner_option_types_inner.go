@@ -1202,6 +1202,43 @@ func (o ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
 
 	return toSerialize, nil
 }
+
+type NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner struct {
+	value *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Get() *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Set(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner(val *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner {
+	return &NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListNetworkRouterTypes200ResponseNetworkRouterTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

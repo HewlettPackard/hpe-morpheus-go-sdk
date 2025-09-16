@@ -86,6 +86,43 @@ func (o AcknowledgeHealthAlarmRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAcknowledgeHealthAlarmRequest struct {
+	value *AcknowledgeHealthAlarmRequest
+	isSet bool
+}
+
+func (v NullableAcknowledgeHealthAlarmRequest) Get() *AcknowledgeHealthAlarmRequest {
+	return v.value
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequest) Set(val *AcknowledgeHealthAlarmRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAcknowledgeHealthAlarmRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAcknowledgeHealthAlarmRequest(val *AcknowledgeHealthAlarmRequest) *NullableAcknowledgeHealthAlarmRequest {
+	return &NullableAcknowledgeHealthAlarmRequest{value: val, isSet: true}
+}
+
+func (v NullableAcknowledgeHealthAlarmRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AcknowledgeHealthAlarmRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

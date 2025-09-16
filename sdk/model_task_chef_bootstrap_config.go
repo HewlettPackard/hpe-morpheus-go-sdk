@@ -730,6 +730,43 @@ func (o TaskChefBootstrapConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskChefBootstrapConfig struct {
+	value *TaskChefBootstrapConfig
+	isSet bool
+}
+
+func (v NullableTaskChefBootstrapConfig) Get() *TaskChefBootstrapConfig {
+	return v.value
+}
+
+func (v *NullableTaskChefBootstrapConfig) Set(val *TaskChefBootstrapConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskChefBootstrapConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskChefBootstrapConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskChefBootstrapConfig(val *TaskChefBootstrapConfig) *NullableTaskChefBootstrapConfig {
+	return &NullableTaskChefBootstrapConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskChefBootstrapConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskChefBootstrapConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskChefBootstrapConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

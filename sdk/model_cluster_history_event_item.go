@@ -1297,6 +1297,43 @@ func (o ClusterHistoryEventItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterHistoryEventItem struct {
+	value *ClusterHistoryEventItem
+	isSet bool
+}
+
+func (v NullableClusterHistoryEventItem) Get() *ClusterHistoryEventItem {
+	return v.value
+}
+
+func (v *NullableClusterHistoryEventItem) Set(val *ClusterHistoryEventItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterHistoryEventItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterHistoryEventItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterHistoryEventItem(val *ClusterHistoryEventItem) *NullableClusterHistoryEventItem {
+	return &NullableClusterHistoryEventItem{value: val, isSet: true}
+}
+
+func (v NullableClusterHistoryEventItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterHistoryEventItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterHistoryEventItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

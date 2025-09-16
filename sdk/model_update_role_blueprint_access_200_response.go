@@ -131,6 +131,43 @@ func (o UpdateRoleBlueprintAccess200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableUpdateRoleBlueprintAccess200Response struct {
+	value *UpdateRoleBlueprintAccess200Response
+	isSet bool
+}
+
+func (v NullableUpdateRoleBlueprintAccess200Response) Get() *UpdateRoleBlueprintAccess200Response {
+	return v.value
+}
+
+func (v *NullableUpdateRoleBlueprintAccess200Response) Set(val *UpdateRoleBlueprintAccess200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleBlueprintAccess200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleBlueprintAccess200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleBlueprintAccess200Response(val *UpdateRoleBlueprintAccess200Response) *NullableUpdateRoleBlueprintAccess200Response {
+	return &NullableUpdateRoleBlueprintAccess200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleBlueprintAccess200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleBlueprintAccess200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateRoleBlueprintAccess200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

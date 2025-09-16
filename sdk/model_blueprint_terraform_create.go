@@ -253,6 +253,43 @@ func (o BlueprintTerraformCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintTerraformCreate struct {
+	value *BlueprintTerraformCreate
+	isSet bool
+}
+
+func (v NullableBlueprintTerraformCreate) Get() *BlueprintTerraformCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintTerraformCreate) Set(val *BlueprintTerraformCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintTerraformCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintTerraformCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintTerraformCreate(val *BlueprintTerraformCreate) *NullableBlueprintTerraformCreate {
+	return &NullableBlueprintTerraformCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintTerraformCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintTerraformCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintTerraformCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

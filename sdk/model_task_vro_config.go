@@ -730,6 +730,43 @@ func (o TaskVroConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskVroConfig struct {
+	value *TaskVroConfig
+	isSet bool
+}
+
+func (v NullableTaskVroConfig) Get() *TaskVroConfig {
+	return v.value
+}
+
+func (v *NullableTaskVroConfig) Set(val *TaskVroConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskVroConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskVroConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskVroConfig(val *TaskVroConfig) *NullableTaskVroConfig {
+	return &NullableTaskVroConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskVroConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskVroConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskVroConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

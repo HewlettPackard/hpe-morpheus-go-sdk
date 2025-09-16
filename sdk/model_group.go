@@ -586,6 +586,43 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGroup struct {
+	value *Group
+	isSet bool
+}
+
+func (v NullableGroup) Get() *Group {
+	return v.value
+}
+
+func (v *NullableGroup) Set(val *Group) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGroup(val *Group) *NullableGroup {
+	return &NullableGroup{value: val, isSet: true}
+}
+
+func (v NullableGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Group) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -2522,6 +2522,43 @@ func (o AddClouds200ResponseAllOfZone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddClouds200ResponseAllOfZone struct {
+	value *AddClouds200ResponseAllOfZone
+	isSet bool
+}
+
+func (v NullableAddClouds200ResponseAllOfZone) Get() *AddClouds200ResponseAllOfZone {
+	return v.value
+}
+
+func (v *NullableAddClouds200ResponseAllOfZone) Set(val *AddClouds200ResponseAllOfZone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClouds200ResponseAllOfZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClouds200ResponseAllOfZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClouds200ResponseAllOfZone(val *AddClouds200ResponseAllOfZone) *NullableAddClouds200ResponseAllOfZone {
+	return &NullableAddClouds200ResponseAllOfZone{value: val, isSet: true}
+}
+
+func (v NullableAddClouds200ResponseAllOfZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClouds200ResponseAllOfZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClouds200ResponseAllOfZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

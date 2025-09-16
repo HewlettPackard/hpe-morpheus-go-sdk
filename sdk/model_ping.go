@@ -131,6 +131,43 @@ func (o Ping) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePing struct {
+	value *Ping
+	isSet bool
+}
+
+func (v NullablePing) Get() *Ping {
+	return v.value
+}
+
+func (v *NullablePing) Set(val *Ping) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePing) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePing) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePing(val *Ping) *NullablePing {
+	return &NullablePing{value: val, isSet: true}
+}
+
+func (v NullablePing) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePing) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Ping) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

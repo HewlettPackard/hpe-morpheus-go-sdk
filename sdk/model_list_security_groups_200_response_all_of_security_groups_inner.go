@@ -643,6 +643,43 @@ func (o ListSecurityGroups200ResponseAllOfSecurityGroupsInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner struct {
+	value *ListSecurityGroups200ResponseAllOfSecurityGroupsInner
+	isSet bool
+}
+
+func (v NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) Get() *ListSecurityGroups200ResponseAllOfSecurityGroupsInner {
+	return v.value
+}
+
+func (v *NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) Set(val *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListSecurityGroups200ResponseAllOfSecurityGroupsInner(val *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) *NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner {
+	return &NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner{value: val, isSet: true}
+}
+
+func (v NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o UpdateSpecTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateSpecTemplateRequest struct {
+	value *UpdateSpecTemplateRequest
+	isSet bool
+}
+
+func (v NullableUpdateSpecTemplateRequest) Get() *UpdateSpecTemplateRequest {
+	return v.value
+}
+
+func (v *NullableUpdateSpecTemplateRequest) Set(val *UpdateSpecTemplateRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateSpecTemplateRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateSpecTemplateRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateSpecTemplateRequest(val *UpdateSpecTemplateRequest) *NullableUpdateSpecTemplateRequest {
+	return &NullableUpdateSpecTemplateRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateSpecTemplateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateSpecTemplateRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateSpecTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

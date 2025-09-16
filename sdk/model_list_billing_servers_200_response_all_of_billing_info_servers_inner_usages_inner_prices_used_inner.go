@@ -203,6 +203,43 @@ func (o ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPric
 
 	return toSerialize, nil
 }
+
+type NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner struct {
+	value *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner
+	isSet bool
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) Get() *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner {
+	return v.value
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) Set(val *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner(val *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner {
+	return &NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner{value: val, isSet: true}
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerPricesUsedInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

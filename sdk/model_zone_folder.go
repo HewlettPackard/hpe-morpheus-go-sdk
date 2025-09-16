@@ -563,6 +563,43 @@ func (o ZoneFolder) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZoneFolder struct {
+	value *ZoneFolder
+	isSet bool
+}
+
+func (v NullableZoneFolder) Get() *ZoneFolder {
+	return v.value
+}
+
+func (v *NullableZoneFolder) Set(val *ZoneFolder) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneFolder) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneFolder) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneFolder(val *ZoneFolder) *NullableZoneFolder {
+	return &NullableZoneFolder{value: val, isSet: true}
+}
+
+func (v NullableZoneFolder) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneFolder) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ZoneFolder) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

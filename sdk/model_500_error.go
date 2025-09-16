@@ -95,6 +95,43 @@ func (o Model500Error) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableModel500Error struct {
+	value *Model500Error
+	isSet bool
+}
+
+func (v NullableModel500Error) Get() *Model500Error {
+	return v.value
+}
+
+func (v *NullableModel500Error) Set(val *Model500Error) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableModel500Error) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableModel500Error) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableModel500Error(val *Model500Error) *NullableModel500Error {
+	return &NullableModel500Error{value: val, isSet: true}
+}
+
+func (v NullableModel500Error) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableModel500Error) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Model500Error) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

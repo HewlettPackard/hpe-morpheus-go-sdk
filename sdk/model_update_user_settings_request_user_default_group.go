@@ -96,6 +96,43 @@ func (o UpdateUserSettingsRequestUserDefaultGroup) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateUserSettingsRequestUserDefaultGroup struct {
+	value *UpdateUserSettingsRequestUserDefaultGroup
+	isSet bool
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) Get() *UpdateUserSettingsRequestUserDefaultGroup {
+	return v.value
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) Set(val *UpdateUserSettingsRequestUserDefaultGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserSettingsRequestUserDefaultGroup(val *UpdateUserSettingsRequestUserDefaultGroup) *NullableUpdateUserSettingsRequestUserDefaultGroup {
+	return &NullableUpdateUserSettingsRequestUserDefaultGroup{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateUserSettingsRequestUserDefaultGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

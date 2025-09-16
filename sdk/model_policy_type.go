@@ -546,6 +546,43 @@ func (o PolicyType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePolicyType struct {
+	value *PolicyType
+	isSet bool
+}
+
+func (v NullablePolicyType) Get() *PolicyType {
+	return v.value
+}
+
+func (v *NullablePolicyType) Set(val *PolicyType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePolicyType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePolicyType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePolicyType(val *PolicyType) *NullablePolicyType {
+	return &NullablePolicyType{value: val, isSet: true}
+}
+
+func (v NullablePolicyType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePolicyType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PolicyType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

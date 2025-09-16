@@ -311,6 +311,43 @@ func (o DeploymentVersionCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDeploymentVersionCreate struct {
+	value *DeploymentVersionCreate
+	isSet bool
+}
+
+func (v NullableDeploymentVersionCreate) Get() *DeploymentVersionCreate {
+	return v.value
+}
+
+func (v *NullableDeploymentVersionCreate) Set(val *DeploymentVersionCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDeploymentVersionCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDeploymentVersionCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDeploymentVersionCreate(val *DeploymentVersionCreate) *NullableDeploymentVersionCreate {
+	return &NullableDeploymentVersionCreate{value: val, isSet: true}
+}
+
+func (v NullableDeploymentVersionCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDeploymentVersionCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DeploymentVersionCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -296,6 +296,43 @@ func (o GoogleCloudInstanceConfiguration) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableGoogleCloudInstanceConfiguration struct {
+	value *GoogleCloudInstanceConfiguration
+	isSet bool
+}
+
+func (v NullableGoogleCloudInstanceConfiguration) Get() *GoogleCloudInstanceConfiguration {
+	return v.value
+}
+
+func (v *NullableGoogleCloudInstanceConfiguration) Set(val *GoogleCloudInstanceConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGoogleCloudInstanceConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGoogleCloudInstanceConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGoogleCloudInstanceConfiguration(val *GoogleCloudInstanceConfiguration) *NullableGoogleCloudInstanceConfiguration {
+	return &NullableGoogleCloudInstanceConfiguration{value: val, isSet: true}
+}
+
+func (v NullableGoogleCloudInstanceConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGoogleCloudInstanceConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GoogleCloudInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

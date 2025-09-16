@@ -170,6 +170,43 @@ func (o AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 struct {
+	value *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1
+	isSet bool
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Get() *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
+	return v.value
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Set(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1(val *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1 {
+	return &NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1{value: val, isSet: true}
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

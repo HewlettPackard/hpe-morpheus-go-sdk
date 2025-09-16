@@ -170,6 +170,43 @@ func (o ServicePlanOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableServicePlanOptions struct {
+	value *ServicePlanOptions
+	isSet bool
+}
+
+func (v NullableServicePlanOptions) Get() *ServicePlanOptions {
+	return v.value
+}
+
+func (v *NullableServicePlanOptions) Set(val *ServicePlanOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServicePlanOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServicePlanOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServicePlanOptions(val *ServicePlanOptions) *NullableServicePlanOptions {
+	return &NullableServicePlanOptions{value: val, isSet: true}
+}
+
+func (v NullableServicePlanOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServicePlanOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

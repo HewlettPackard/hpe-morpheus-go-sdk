@@ -204,6 +204,43 @@ func (o ListHealthAlarms200ResponseAllOfAlarmInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableListHealthAlarms200ResponseAllOfAlarmInner struct {
+	value *ListHealthAlarms200ResponseAllOfAlarmInner
+	isSet bool
+}
+
+func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) Get() *ListHealthAlarms200ResponseAllOfAlarmInner {
+	return v.value
+}
+
+func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) Set(val *ListHealthAlarms200ResponseAllOfAlarmInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHealthAlarms200ResponseAllOfAlarmInner(val *ListHealthAlarms200ResponseAllOfAlarmInner) *NullableListHealthAlarms200ResponseAllOfAlarmInner {
+	return &NullableListHealthAlarms200ResponseAllOfAlarmInner{value: val, isSet: true}
+}
+
+func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

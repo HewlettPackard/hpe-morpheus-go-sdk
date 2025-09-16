@@ -2738,6 +2738,43 @@ func (o GetCluster200ResponseCluster) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetCluster200ResponseCluster struct {
+	value *GetCluster200ResponseCluster
+	isSet bool
+}
+
+func (v NullableGetCluster200ResponseCluster) Get() *GetCluster200ResponseCluster {
+	return v.value
+}
+
+func (v *NullableGetCluster200ResponseCluster) Set(val *GetCluster200ResponseCluster) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCluster200ResponseCluster) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCluster200ResponseCluster) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCluster200ResponseCluster(val *GetCluster200ResponseCluster) *NullableGetCluster200ResponseCluster {
+	return &NullableGetCluster200ResponseCluster{value: val, isSet: true}
+}
+
+func (v NullableGetCluster200ResponseCluster) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCluster200ResponseCluster) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetCluster200ResponseCluster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -629,6 +629,43 @@ func (o TaskType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskType struct {
+	value *TaskType
+	isSet bool
+}
+
+func (v NullableTaskType) Get() *TaskType {
+	return v.value
+}
+
+func (v *NullableTaskType) Set(val *TaskType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskType(val *TaskType) *NullableTaskType {
+	return &NullableTaskType{value: val, isSet: true}
+}
+
+func (v NullableTaskType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

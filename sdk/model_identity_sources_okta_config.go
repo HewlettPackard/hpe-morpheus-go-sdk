@@ -780,6 +780,43 @@ func (o IdentitySourcesOktaConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesOktaConfig struct {
+	value *IdentitySourcesOktaConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesOktaConfig) Get() *IdentitySourcesOktaConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesOktaConfig) Set(val *IdentitySourcesOktaConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesOktaConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesOktaConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesOktaConfig(val *IdentitySourcesOktaConfig) *NullableIdentitySourcesOktaConfig {
+	return &NullableIdentitySourcesOktaConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesOktaConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesOktaConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesOktaConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

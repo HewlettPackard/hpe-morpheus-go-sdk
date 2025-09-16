@@ -95,6 +95,43 @@ func (o GetCredentials200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetCredentials200Response struct {
+	value *GetCredentials200Response
+	isSet bool
+}
+
+func (v NullableGetCredentials200Response) Get() *GetCredentials200Response {
+	return v.value
+}
+
+func (v *NullableGetCredentials200Response) Set(val *GetCredentials200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCredentials200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCredentials200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCredentials200Response(val *GetCredentials200Response) *NullableGetCredentials200Response {
+	return &NullableGetCredentials200Response{value: val, isSet: true}
+}
+
+func (v NullableGetCredentials200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCredentials200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetCredentials200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

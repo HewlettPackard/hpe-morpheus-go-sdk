@@ -87,6 +87,43 @@ func (o AddInstanceTypeRequestInstanceTypePriceSetsInner) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
+
+type NullableAddInstanceTypeRequestInstanceTypePriceSetsInner struct {
+	value *AddInstanceTypeRequestInstanceTypePriceSetsInner
+	isSet bool
+}
+
+func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Get() *AddInstanceTypeRequestInstanceTypePriceSetsInner {
+	return v.value
+}
+
+func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Set(val *AddInstanceTypeRequestInstanceTypePriceSetsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstanceTypeRequestInstanceTypePriceSetsInner(val *AddInstanceTypeRequestInstanceTypePriceSetsInner) *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner {
+	return &NullableAddInstanceTypeRequestInstanceTypePriceSetsInner{value: val, isSet: true}
+}
+
+func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

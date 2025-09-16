@@ -95,6 +95,43 @@ func (o UpdateNetworkRouterRequestNetworkRouterSite) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableUpdateNetworkRouterRequestNetworkRouterSite struct {
+	value *UpdateNetworkRouterRequestNetworkRouterSite
+	isSet bool
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouterSite) Get() *UpdateNetworkRouterRequestNetworkRouterSite {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouterSite) Set(val *UpdateNetworkRouterRequestNetworkRouterSite) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouterSite) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouterSite) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkRouterRequestNetworkRouterSite(val *UpdateNetworkRouterRequestNetworkRouterSite) *NullableUpdateNetworkRouterRequestNetworkRouterSite {
+	return &NullableUpdateNetworkRouterRequestNetworkRouterSite{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkRouterRequestNetworkRouterSite) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkRouterRequestNetworkRouterSite) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateNetworkRouterRequestNetworkRouterSite) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

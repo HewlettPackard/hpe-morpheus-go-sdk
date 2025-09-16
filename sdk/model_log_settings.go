@@ -205,6 +205,43 @@ func (o LogSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableLogSettings struct {
+	value *LogSettings
+	isSet bool
+}
+
+func (v NullableLogSettings) Get() *LogSettings {
+	return v.value
+}
+
+func (v *NullableLogSettings) Set(val *LogSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLogSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLogSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLogSettings(val *LogSettings) *NullableLogSettings {
+	return &NullableLogSettings{value: val, isSet: true}
+}
+
+func (v NullableLogSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLogSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *LogSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

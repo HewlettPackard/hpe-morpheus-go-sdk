@@ -171,6 +171,43 @@ func (o AddBlueprintRequestOneOf5TerraformGit) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf5TerraformGit struct {
+	value *AddBlueprintRequestOneOf5TerraformGit
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf5TerraformGit) Get() *AddBlueprintRequestOneOf5TerraformGit {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf5TerraformGit) Set(val *AddBlueprintRequestOneOf5TerraformGit) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf5TerraformGit) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf5TerraformGit) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf5TerraformGit(val *AddBlueprintRequestOneOf5TerraformGit) *NullableAddBlueprintRequestOneOf5TerraformGit {
+	return &NullableAddBlueprintRequestOneOf5TerraformGit{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf5TerraformGit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf5TerraformGit) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf5TerraformGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

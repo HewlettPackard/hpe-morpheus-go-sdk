@@ -114,6 +114,43 @@ func (o AttachServerVolumeRequestMountPoint) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableAttachServerVolumeRequestMountPoint struct {
+	value *AttachServerVolumeRequestMountPoint
+	isSet bool
+}
+
+func (v NullableAttachServerVolumeRequestMountPoint) Get() *AttachServerVolumeRequestMountPoint {
+	return v.value
+}
+
+func (v *NullableAttachServerVolumeRequestMountPoint) Set(val *AttachServerVolumeRequestMountPoint) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAttachServerVolumeRequestMountPoint) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAttachServerVolumeRequestMountPoint) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAttachServerVolumeRequestMountPoint(val *AttachServerVolumeRequestMountPoint) *NullableAttachServerVolumeRequestMountPoint {
+	return &NullableAttachServerVolumeRequestMountPoint{value: val, isSet: true}
+}
+
+func (v NullableAttachServerVolumeRequestMountPoint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAttachServerVolumeRequestMountPoint) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AttachServerVolumeRequestMountPoint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

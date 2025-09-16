@@ -284,6 +284,43 @@ func (o CredentialUsernameKeypairConfig) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableCredentialUsernameKeypairConfig struct {
+	value *CredentialUsernameKeypairConfig
+	isSet bool
+}
+
+func (v NullableCredentialUsernameKeypairConfig) Get() *CredentialUsernameKeypairConfig {
+	return v.value
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) Set(val *CredentialUsernameKeypairConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialUsernameKeypairConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialUsernameKeypairConfig(val *CredentialUsernameKeypairConfig) *NullableCredentialUsernameKeypairConfig {
+	return &NullableCredentialUsernameKeypairConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialUsernameKeypairConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialUsernameKeypairConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialUsernameKeypairConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

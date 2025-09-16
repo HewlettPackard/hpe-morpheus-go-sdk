@@ -96,6 +96,43 @@ func (o UpdateIntegrationInventoryRequestInventory) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableUpdateIntegrationInventoryRequestInventory struct {
+	value *UpdateIntegrationInventoryRequestInventory
+	isSet bool
+}
+
+func (v NullableUpdateIntegrationInventoryRequestInventory) Get() *UpdateIntegrationInventoryRequestInventory {
+	return v.value
+}
+
+func (v *NullableUpdateIntegrationInventoryRequestInventory) Set(val *UpdateIntegrationInventoryRequestInventory) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateIntegrationInventoryRequestInventory) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateIntegrationInventoryRequestInventory) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateIntegrationInventoryRequestInventory(val *UpdateIntegrationInventoryRequestInventory) *NullableUpdateIntegrationInventoryRequestInventory {
+	return &NullableUpdateIntegrationInventoryRequestInventory{value: val, isSet: true}
+}
+
+func (v NullableUpdateIntegrationInventoryRequestInventory) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateIntegrationInventoryRequestInventory) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateIntegrationInventoryRequestInventory) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o GetMonitoringSettings200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableGetMonitoringSettings200Response struct {
+	value *GetMonitoringSettings200Response
+	isSet bool
+}
+
+func (v NullableGetMonitoringSettings200Response) Get() *GetMonitoringSettings200Response {
+	return v.value
+}
+
+func (v *NullableGetMonitoringSettings200Response) Set(val *GetMonitoringSettings200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetMonitoringSettings200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetMonitoringSettings200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetMonitoringSettings200Response(val *GetMonitoringSettings200Response) *NullableGetMonitoringSettings200Response {
+	return &NullableGetMonitoringSettings200Response{value: val, isSet: true}
+}
+
+func (v NullableGetMonitoringSettings200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetMonitoringSettings200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetMonitoringSettings200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

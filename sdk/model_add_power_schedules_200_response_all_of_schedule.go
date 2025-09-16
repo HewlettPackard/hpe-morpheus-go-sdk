@@ -1439,6 +1439,43 @@ func (o AddPowerSchedules200ResponseAllOfSchedule) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableAddPowerSchedules200ResponseAllOfSchedule struct {
+	value *AddPowerSchedules200ResponseAllOfSchedule
+	isSet bool
+}
+
+func (v NullableAddPowerSchedules200ResponseAllOfSchedule) Get() *AddPowerSchedules200ResponseAllOfSchedule {
+	return v.value
+}
+
+func (v *NullableAddPowerSchedules200ResponseAllOfSchedule) Set(val *AddPowerSchedules200ResponseAllOfSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPowerSchedules200ResponseAllOfSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPowerSchedules200ResponseAllOfSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPowerSchedules200ResponseAllOfSchedule(val *AddPowerSchedules200ResponseAllOfSchedule) *NullableAddPowerSchedules200ResponseAllOfSchedule {
+	return &NullableAddPowerSchedules200ResponseAllOfSchedule{value: val, isSet: true}
+}
+
+func (v NullableAddPowerSchedules200ResponseAllOfSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPowerSchedules200ResponseAllOfSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPowerSchedules200ResponseAllOfSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

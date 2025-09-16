@@ -1930,6 +1930,43 @@ func (o StorageServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableStorageServer struct {
+	value *StorageServer
+	isSet bool
+}
+
+func (v NullableStorageServer) Get() *StorageServer {
+	return v.value
+}
+
+func (v *NullableStorageServer) Set(val *StorageServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageServer(val *StorageServer) *NullableStorageServer {
+	return &NullableStorageServer{value: val, isSet: true}
+}
+
+func (v NullableStorageServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *StorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

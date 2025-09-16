@@ -167,6 +167,43 @@ func (o AddRoles200ResponseAllOfSitesInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddRoles200ResponseAllOfSitesInner struct {
+	value *AddRoles200ResponseAllOfSitesInner
+	isSet bool
+}
+
+func (v NullableAddRoles200ResponseAllOfSitesInner) Get() *AddRoles200ResponseAllOfSitesInner {
+	return v.value
+}
+
+func (v *NullableAddRoles200ResponseAllOfSitesInner) Set(val *AddRoles200ResponseAllOfSitesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRoles200ResponseAllOfSitesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRoles200ResponseAllOfSitesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRoles200ResponseAllOfSitesInner(val *AddRoles200ResponseAllOfSitesInner) *NullableAddRoles200ResponseAllOfSitesInner {
+	return &NullableAddRoles200ResponseAllOfSitesInner{value: val, isSet: true}
+}
+
+func (v NullableAddRoles200ResponseAllOfSitesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRoles200ResponseAllOfSitesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddRoles200ResponseAllOfSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

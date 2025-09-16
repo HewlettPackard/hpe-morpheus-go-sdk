@@ -96,6 +96,43 @@ func (o SetInstanceSecurityGroupsRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableSetInstanceSecurityGroupsRequest struct {
+	value *SetInstanceSecurityGroupsRequest
+	isSet bool
+}
+
+func (v NullableSetInstanceSecurityGroupsRequest) Get() *SetInstanceSecurityGroupsRequest {
+	return v.value
+}
+
+func (v *NullableSetInstanceSecurityGroupsRequest) Set(val *SetInstanceSecurityGroupsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSetInstanceSecurityGroupsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSetInstanceSecurityGroupsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSetInstanceSecurityGroupsRequest(val *SetInstanceSecurityGroupsRequest) *NullableSetInstanceSecurityGroupsRequest {
+	return &NullableSetInstanceSecurityGroupsRequest{value: val, isSet: true}
+}
+
+func (v NullableSetInstanceSecurityGroupsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSetInstanceSecurityGroupsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SetInstanceSecurityGroupsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

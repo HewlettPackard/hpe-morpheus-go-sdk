@@ -251,6 +251,43 @@ func (o UpdateArchiveBucketRequestArchiveBucket) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableUpdateArchiveBucketRequestArchiveBucket struct {
+	value *UpdateArchiveBucketRequestArchiveBucket
+	isSet bool
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) Get() *UpdateArchiveBucketRequestArchiveBucket {
+	return v.value
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) Set(val *UpdateArchiveBucketRequestArchiveBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateArchiveBucketRequestArchiveBucket(val *UpdateArchiveBucketRequestArchiveBucket) *NullableUpdateArchiveBucketRequestArchiveBucket {
+	return &NullableUpdateArchiveBucketRequestArchiveBucket{value: val, isSet: true}
+}
+
+func (v NullableUpdateArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

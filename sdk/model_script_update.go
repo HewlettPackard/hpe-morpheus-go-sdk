@@ -405,6 +405,43 @@ func (o ScriptUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableScriptUpdate struct {
+	value *ScriptUpdate
+	isSet bool
+}
+
+func (v NullableScriptUpdate) Get() *ScriptUpdate {
+	return v.value
+}
+
+func (v *NullableScriptUpdate) Set(val *ScriptUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableScriptUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableScriptUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableScriptUpdate(val *ScriptUpdate) *NullableScriptUpdate {
+	return &NullableScriptUpdate{value: val, isSet: true}
+}
+
+func (v NullableScriptUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableScriptUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ScriptUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

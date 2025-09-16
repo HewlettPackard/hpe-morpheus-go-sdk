@@ -117,6 +117,43 @@ func (o DefaultGroupPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultGroupPermission struct {
+	value *DefaultGroupPermission
+	isSet bool
+}
+
+func (v NullableDefaultGroupPermission) Get() *DefaultGroupPermission {
+	return v.value
+}
+
+func (v *NullableDefaultGroupPermission) Set(val *DefaultGroupPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultGroupPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultGroupPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultGroupPermission(val *DefaultGroupPermission) *NullableDefaultGroupPermission {
+	return &NullableDefaultGroupPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultGroupPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultGroupPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultGroupPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

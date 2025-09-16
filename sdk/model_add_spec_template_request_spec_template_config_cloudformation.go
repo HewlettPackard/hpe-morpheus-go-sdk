@@ -140,6 +140,43 @@ func (o AddSpecTemplateRequestSpecTemplateConfigCloudformation) ToMap() (map[str
 
 	return toSerialize, nil
 }
+
+type NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation struct {
+	value *AddSpecTemplateRequestSpecTemplateConfigCloudformation
+	isSet bool
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) Get() *AddSpecTemplateRequestSpecTemplateConfigCloudformation {
+	return v.value
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) Set(val *AddSpecTemplateRequestSpecTemplateConfigCloudformation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSpecTemplateRequestSpecTemplateConfigCloudformation(val *AddSpecTemplateRequestSpecTemplateConfigCloudformation) *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation {
+	return &NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation{value: val, isSet: true}
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

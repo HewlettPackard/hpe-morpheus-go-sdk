@@ -572,6 +572,43 @@ func (o ImageBuildsLastResult) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableImageBuildsLastResult struct {
+	value *ImageBuildsLastResult
+	isSet bool
+}
+
+func (v NullableImageBuildsLastResult) Get() *ImageBuildsLastResult {
+	return v.value
+}
+
+func (v *NullableImageBuildsLastResult) Set(val *ImageBuildsLastResult) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableImageBuildsLastResult) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableImageBuildsLastResult) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableImageBuildsLastResult(val *ImageBuildsLastResult) *NullableImageBuildsLastResult {
+	return &NullableImageBuildsLastResult{value: val, isSet: true}
+}
+
+func (v NullableImageBuildsLastResult) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableImageBuildsLastResult) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ImageBuildsLastResult) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

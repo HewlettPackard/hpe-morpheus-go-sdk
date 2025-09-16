@@ -96,6 +96,43 @@ func (o SecurityGroupLocationOpenstackCustomOptions) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableSecurityGroupLocationOpenstackCustomOptions struct {
+	value *SecurityGroupLocationOpenstackCustomOptions
+	isSet bool
+}
+
+func (v NullableSecurityGroupLocationOpenstackCustomOptions) Get() *SecurityGroupLocationOpenstackCustomOptions {
+	return v.value
+}
+
+func (v *NullableSecurityGroupLocationOpenstackCustomOptions) Set(val *SecurityGroupLocationOpenstackCustomOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupLocationOpenstackCustomOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupLocationOpenstackCustomOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupLocationOpenstackCustomOptions(val *SecurityGroupLocationOpenstackCustomOptions) *NullableSecurityGroupLocationOpenstackCustomOptions {
+	return &NullableSecurityGroupLocationOpenstackCustomOptions{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupLocationOpenstackCustomOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupLocationOpenstackCustomOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityGroupLocationOpenstackCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

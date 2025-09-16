@@ -86,6 +86,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) ToMap() (map[
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

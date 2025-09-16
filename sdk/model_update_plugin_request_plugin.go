@@ -133,6 +133,43 @@ func (o UpdatePluginRequestPlugin) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdatePluginRequestPlugin struct {
+	value *UpdatePluginRequestPlugin
+	isSet bool
+}
+
+func (v NullableUpdatePluginRequestPlugin) Get() *UpdatePluginRequestPlugin {
+	return v.value
+}
+
+func (v *NullableUpdatePluginRequestPlugin) Set(val *UpdatePluginRequestPlugin) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePluginRequestPlugin) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePluginRequestPlugin) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePluginRequestPlugin(val *UpdatePluginRequestPlugin) *NullableUpdatePluginRequestPlugin {
+	return &NullableUpdatePluginRequestPlugin{value: val, isSet: true}
+}
+
+func (v NullableUpdatePluginRequestPlugin) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePluginRequestPlugin) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdatePluginRequestPlugin) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

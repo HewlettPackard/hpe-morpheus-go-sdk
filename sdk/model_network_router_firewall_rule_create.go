@@ -165,6 +165,43 @@ func (o NetworkRouterFirewallRuleCreate) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRouterFirewallRuleCreate struct {
+	value *NetworkRouterFirewallRuleCreate
+	isSet bool
+}
+
+func (v NullableNetworkRouterFirewallRuleCreate) Get() *NetworkRouterFirewallRuleCreate {
+	return v.value
+}
+
+func (v *NullableNetworkRouterFirewallRuleCreate) Set(val *NetworkRouterFirewallRuleCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterFirewallRuleCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterFirewallRuleCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterFirewallRuleCreate(val *NetworkRouterFirewallRuleCreate) *NullableNetworkRouterFirewallRuleCreate {
+	return &NullableNetworkRouterFirewallRuleCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterFirewallRuleCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterFirewallRuleCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRouterFirewallRuleCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

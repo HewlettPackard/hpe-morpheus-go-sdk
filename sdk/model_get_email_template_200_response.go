@@ -131,6 +131,43 @@ func (o GetEmailTemplate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetEmailTemplate200Response struct {
+	value *GetEmailTemplate200Response
+	isSet bool
+}
+
+func (v NullableGetEmailTemplate200Response) Get() *GetEmailTemplate200Response {
+	return v.value
+}
+
+func (v *NullableGetEmailTemplate200Response) Set(val *GetEmailTemplate200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetEmailTemplate200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetEmailTemplate200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetEmailTemplate200Response(val *GetEmailTemplate200Response) *NullableGetEmailTemplate200Response {
+	return &NullableGetEmailTemplate200Response{value: val, isSet: true}
+}
+
+func (v NullableGetEmailTemplate200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetEmailTemplate200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetEmailTemplate200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

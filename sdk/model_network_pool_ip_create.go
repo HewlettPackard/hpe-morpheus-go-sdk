@@ -207,6 +207,43 @@ func (o NetworkPoolIpCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolIpCreate struct {
+	value *NetworkPoolIpCreate
+	isSet bool
+}
+
+func (v NullableNetworkPoolIpCreate) Get() *NetworkPoolIpCreate {
+	return v.value
+}
+
+func (v *NullableNetworkPoolIpCreate) Set(val *NetworkPoolIpCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolIpCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolIpCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolIpCreate(val *NetworkPoolIpCreate) *NullableNetworkPoolIpCreate {
+	return &NullableNetworkPoolIpCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolIpCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolIpCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolIpCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

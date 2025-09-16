@@ -123,6 +123,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

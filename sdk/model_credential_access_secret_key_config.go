@@ -285,6 +285,43 @@ func (o CredentialAccessSecretKeyConfig) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableCredentialAccessSecretKeyConfig struct {
+	value *CredentialAccessSecretKeyConfig
+	isSet bool
+}
+
+func (v NullableCredentialAccessSecretKeyConfig) Get() *CredentialAccessSecretKeyConfig {
+	return v.value
+}
+
+func (v *NullableCredentialAccessSecretKeyConfig) Set(val *CredentialAccessSecretKeyConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialAccessSecretKeyConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialAccessSecretKeyConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialAccessSecretKeyConfig(val *CredentialAccessSecretKeyConfig) *NullableCredentialAccessSecretKeyConfig {
+	return &NullableCredentialAccessSecretKeyConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialAccessSecretKeyConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialAccessSecretKeyConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialAccessSecretKeyConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

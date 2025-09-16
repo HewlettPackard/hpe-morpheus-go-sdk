@@ -374,6 +374,43 @@ func (o CheckSNMP) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckSNMP struct {
+	value *CheckSNMP
+	isSet bool
+}
+
+func (v NullableCheckSNMP) Get() *CheckSNMP {
+	return v.value
+}
+
+func (v *NullableCheckSNMP) Set(val *CheckSNMP) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckSNMP) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckSNMP) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckSNMP(val *CheckSNMP) *NullableCheckSNMP {
+	return &NullableCheckSNMP{value: val, isSet: true}
+}
+
+func (v NullableCheckSNMP) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckSNMP) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckSNMP) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

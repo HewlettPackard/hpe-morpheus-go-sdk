@@ -730,6 +730,43 @@ func (o TaskHttpConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskHttpConfig struct {
+	value *TaskHttpConfig
+	isSet bool
+}
+
+func (v NullableTaskHttpConfig) Get() *TaskHttpConfig {
+	return v.value
+}
+
+func (v *NullableTaskHttpConfig) Set(val *TaskHttpConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskHttpConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskHttpConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskHttpConfig(val *TaskHttpConfig) *NullableTaskHttpConfig {
+	return &NullableTaskHttpConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskHttpConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskHttpConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskHttpConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

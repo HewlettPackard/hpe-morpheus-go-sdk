@@ -742,6 +742,43 @@ func (o IntegrationvRO) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationvRO struct {
+	value *IntegrationvRO
+	isSet bool
+}
+
+func (v NullableIntegrationvRO) Get() *IntegrationvRO {
+	return v.value
+}
+
+func (v *NullableIntegrationvRO) Set(val *IntegrationvRO) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationvRO) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationvRO) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationvRO(val *IntegrationvRO) *NullableIntegrationvRO {
+	return &NullableIntegrationvRO{value: val, isSet: true}
+}
+
+func (v NullableIntegrationvRO) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationvRO) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationvRO) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -153,6 +153,43 @@ func (o ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) ToMap() (map
 
 	return toSerialize, nil
 }
+
+type NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner struct {
+	value *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner
+	isSet bool
+}
+
+func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Get() *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner {
+	return v.value
+}
+
+func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Set(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner(val *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner {
+	return &NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner{value: val, isSet: true}
+}
+
+func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

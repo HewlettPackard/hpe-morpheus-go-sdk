@@ -495,6 +495,43 @@ func (o NetworkPoolServerCreateBluecat) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerCreateBluecat struct {
+	value *NetworkPoolServerCreateBluecat
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerCreateBluecat) Get() *NetworkPoolServerCreateBluecat {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerCreateBluecat) Set(val *NetworkPoolServerCreateBluecat) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerCreateBluecat) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerCreateBluecat) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerCreateBluecat(val *NetworkPoolServerCreateBluecat) *NullableNetworkPoolServerCreateBluecat {
+	return &NullableNetworkPoolServerCreateBluecat{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerCreateBluecat) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerCreateBluecat) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerCreateBluecat) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

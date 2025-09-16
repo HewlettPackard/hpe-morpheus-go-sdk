@@ -1218,6 +1218,43 @@ func (o ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner struct {
+	value *ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner
+	isSet bool
+}
+
+func (v NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) Get() *ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner {
+	return v.value
+}
+
+func (v *NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) Set(val *ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner(val *ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) *NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner {
+	return &NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

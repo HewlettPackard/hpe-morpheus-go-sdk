@@ -87,6 +87,43 @@ func (o AttachServerVolumeRequestMountPointController) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableAttachServerVolumeRequestMountPointController struct {
+	value *AttachServerVolumeRequestMountPointController
+	isSet bool
+}
+
+func (v NullableAttachServerVolumeRequestMountPointController) Get() *AttachServerVolumeRequestMountPointController {
+	return v.value
+}
+
+func (v *NullableAttachServerVolumeRequestMountPointController) Set(val *AttachServerVolumeRequestMountPointController) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAttachServerVolumeRequestMountPointController) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAttachServerVolumeRequestMountPointController) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAttachServerVolumeRequestMountPointController(val *AttachServerVolumeRequestMountPointController) *NullableAttachServerVolumeRequestMountPointController {
+	return &NullableAttachServerVolumeRequestMountPointController{value: val, isSet: true}
+}
+
+func (v NullableAttachServerVolumeRequestMountPointController) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAttachServerVolumeRequestMountPointController) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AttachServerVolumeRequestMountPointController) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

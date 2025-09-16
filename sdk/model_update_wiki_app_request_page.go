@@ -167,6 +167,43 @@ func (o UpdateWikiAppRequestPage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateWikiAppRequestPage struct {
+	value *UpdateWikiAppRequestPage
+	isSet bool
+}
+
+func (v NullableUpdateWikiAppRequestPage) Get() *UpdateWikiAppRequestPage {
+	return v.value
+}
+
+func (v *NullableUpdateWikiAppRequestPage) Set(val *UpdateWikiAppRequestPage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateWikiAppRequestPage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateWikiAppRequestPage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateWikiAppRequestPage(val *UpdateWikiAppRequestPage) *NullableUpdateWikiAppRequestPage {
+	return &NullableUpdateWikiAppRequestPage{value: val, isSet: true}
+}
+
+func (v NullableUpdateWikiAppRequestPage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateWikiAppRequestPage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateWikiAppRequestPage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

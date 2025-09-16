@@ -1477,6 +1477,43 @@ func (o AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) ToM
 
 	return toSerialize, nil
 }
+
+type NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer struct {
+	value *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer
+	isSet bool
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) Get() *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer {
+	return v.value
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) Set(val *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer(val *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer {
+	return &NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer{value: val, isSet: true}
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

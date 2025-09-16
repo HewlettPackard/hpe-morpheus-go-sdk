@@ -1701,6 +1701,43 @@ func (o ClusterContainers) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterContainers struct {
+	value *ClusterContainers
+	isSet bool
+}
+
+func (v NullableClusterContainers) Get() *ClusterContainers {
+	return v.value
+}
+
+func (v *NullableClusterContainers) Set(val *ClusterContainers) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterContainers) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterContainers) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterContainers(val *ClusterContainers) *NullableClusterContainers {
+	return &NullableClusterContainers{value: val, isSet: true}
+}
+
+func (v NullableClusterContainers) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterContainers) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterContainers) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

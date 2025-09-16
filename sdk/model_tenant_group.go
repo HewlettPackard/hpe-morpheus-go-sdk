@@ -514,6 +514,43 @@ func (o TenantGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTenantGroup struct {
+	value *TenantGroup
+	isSet bool
+}
+
+func (v NullableTenantGroup) Get() *TenantGroup {
+	return v.value
+}
+
+func (v *NullableTenantGroup) Set(val *TenantGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTenantGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTenantGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTenantGroup(val *TenantGroup) *NullableTenantGroup {
+	return &NullableTenantGroup{value: val, isSet: true}
+}
+
+func (v NullableTenantGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTenantGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TenantGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

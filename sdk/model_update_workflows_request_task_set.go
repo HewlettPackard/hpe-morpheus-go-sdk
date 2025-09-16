@@ -284,6 +284,43 @@ func (o UpdateWorkflowsRequestTaskSet) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateWorkflowsRequestTaskSet struct {
+	value *UpdateWorkflowsRequestTaskSet
+	isSet bool
+}
+
+func (v NullableUpdateWorkflowsRequestTaskSet) Get() *UpdateWorkflowsRequestTaskSet {
+	return v.value
+}
+
+func (v *NullableUpdateWorkflowsRequestTaskSet) Set(val *UpdateWorkflowsRequestTaskSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateWorkflowsRequestTaskSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateWorkflowsRequestTaskSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateWorkflowsRequestTaskSet(val *UpdateWorkflowsRequestTaskSet) *NullableUpdateWorkflowsRequestTaskSet {
+	return &NullableUpdateWorkflowsRequestTaskSet{value: val, isSet: true}
+}
+
+func (v NullableUpdateWorkflowsRequestTaskSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateWorkflowsRequestTaskSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateWorkflowsRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

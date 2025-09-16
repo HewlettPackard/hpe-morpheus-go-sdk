@@ -207,6 +207,43 @@ func (o UpdateTenantSubtenantGroupRequestGroup) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableUpdateTenantSubtenantGroupRequestGroup struct {
+	value *UpdateTenantSubtenantGroupRequestGroup
+	isSet bool
+}
+
+func (v NullableUpdateTenantSubtenantGroupRequestGroup) Get() *UpdateTenantSubtenantGroupRequestGroup {
+	return v.value
+}
+
+func (v *NullableUpdateTenantSubtenantGroupRequestGroup) Set(val *UpdateTenantSubtenantGroupRequestGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateTenantSubtenantGroupRequestGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateTenantSubtenantGroupRequestGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateTenantSubtenantGroupRequestGroup(val *UpdateTenantSubtenantGroupRequestGroup) *NullableUpdateTenantSubtenantGroupRequestGroup {
+	return &NullableUpdateTenantSubtenantGroupRequestGroup{value: val, isSet: true}
+}
+
+func (v NullableUpdateTenantSubtenantGroupRequestGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateTenantSubtenantGroupRequestGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateTenantSubtenantGroupRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

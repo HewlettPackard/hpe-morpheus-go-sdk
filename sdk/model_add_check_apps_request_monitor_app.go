@@ -319,6 +319,43 @@ func (o AddCheckAppsRequestMonitorApp) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCheckAppsRequestMonitorApp struct {
+	value *AddCheckAppsRequestMonitorApp
+	isSet bool
+}
+
+func (v NullableAddCheckAppsRequestMonitorApp) Get() *AddCheckAppsRequestMonitorApp {
+	return v.value
+}
+
+func (v *NullableAddCheckAppsRequestMonitorApp) Set(val *AddCheckAppsRequestMonitorApp) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCheckAppsRequestMonitorApp) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCheckAppsRequestMonitorApp) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCheckAppsRequestMonitorApp(val *AddCheckAppsRequestMonitorApp) *NullableAddCheckAppsRequestMonitorApp {
+	return &NullableAddCheckAppsRequestMonitorApp{value: val, isSet: true}
+}
+
+func (v NullableAddCheckAppsRequestMonitorApp) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCheckAppsRequestMonitorApp) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

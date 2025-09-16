@@ -416,6 +416,43 @@ func (o ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) ToMap()
 
 	return toSerialize, nil
 }
+
+type NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner struct {
+	value *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner
+	isSet bool
+}
+
+func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Get() *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner {
+	return v.value
+}
+
+func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Set(val *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner(val *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner {
+	return &NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner{value: val, isSet: true}
+}
+
+func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

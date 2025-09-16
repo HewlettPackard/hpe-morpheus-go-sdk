@@ -86,6 +86,43 @@ func (o ExecuteBackupRestoreRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableExecuteBackupRestoreRequest struct {
+	value *ExecuteBackupRestoreRequest
+	isSet bool
+}
+
+func (v NullableExecuteBackupRestoreRequest) Get() *ExecuteBackupRestoreRequest {
+	return v.value
+}
+
+func (v *NullableExecuteBackupRestoreRequest) Set(val *ExecuteBackupRestoreRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecuteBackupRestoreRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecuteBackupRestoreRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecuteBackupRestoreRequest(val *ExecuteBackupRestoreRequest) *NullableExecuteBackupRestoreRequest {
+	return &NullableExecuteBackupRestoreRequest{value: val, isSet: true}
+}
+
+func (v NullableExecuteBackupRestoreRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecuteBackupRestoreRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecuteBackupRestoreRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

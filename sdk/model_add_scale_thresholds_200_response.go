@@ -131,6 +131,43 @@ func (o AddScaleThresholds200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddScaleThresholds200Response struct {
+	value *AddScaleThresholds200Response
+	isSet bool
+}
+
+func (v NullableAddScaleThresholds200Response) Get() *AddScaleThresholds200Response {
+	return v.value
+}
+
+func (v *NullableAddScaleThresholds200Response) Set(val *AddScaleThresholds200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddScaleThresholds200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddScaleThresholds200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddScaleThresholds200Response(val *AddScaleThresholds200Response) *NullableAddScaleThresholds200Response {
+	return &NullableAddScaleThresholds200Response{value: val, isSet: true}
+}
+
+func (v NullableAddScaleThresholds200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddScaleThresholds200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddScaleThresholds200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

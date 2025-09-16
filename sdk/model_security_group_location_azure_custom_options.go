@@ -96,6 +96,43 @@ func (o SecurityGroupLocationAzureCustomOptions) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableSecurityGroupLocationAzureCustomOptions struct {
+	value *SecurityGroupLocationAzureCustomOptions
+	isSet bool
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) Get() *SecurityGroupLocationAzureCustomOptions {
+	return v.value
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) Set(val *SecurityGroupLocationAzureCustomOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupLocationAzureCustomOptions(val *SecurityGroupLocationAzureCustomOptions) *NullableSecurityGroupLocationAzureCustomOptions {
+	return &NullableSecurityGroupLocationAzureCustomOptions{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupLocationAzureCustomOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupLocationAzureCustomOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityGroupLocationAzureCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

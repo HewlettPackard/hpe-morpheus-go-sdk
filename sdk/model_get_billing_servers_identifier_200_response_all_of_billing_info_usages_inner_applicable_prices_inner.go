@@ -312,6 +312,43 @@ func (o GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplica
 
 	return toSerialize, nil
 }
+
+type NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner struct {
+	value *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner
+	isSet bool
+}
+
+func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Get() *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner {
+	return v.value
+}
+
+func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Set(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner(val *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner {
+	return &NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner{value: val, isSet: true}
+}
+
+func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInnerApplicablePricesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

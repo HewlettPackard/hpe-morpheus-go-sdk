@@ -131,6 +131,43 @@ func (o GetArchiveFileDetail200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableGetArchiveFileDetail200Response struct {
+	value *GetArchiveFileDetail200Response
+	isSet bool
+}
+
+func (v NullableGetArchiveFileDetail200Response) Get() *GetArchiveFileDetail200Response {
+	return v.value
+}
+
+func (v *NullableGetArchiveFileDetail200Response) Set(val *GetArchiveFileDetail200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetArchiveFileDetail200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetArchiveFileDetail200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetArchiveFileDetail200Response(val *GetArchiveFileDetail200Response) *NullableGetArchiveFileDetail200Response {
+	return &NullableGetArchiveFileDetail200Response{value: val, isSet: true}
+}
+
+func (v NullableGetArchiveFileDetail200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetArchiveFileDetail200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetArchiveFileDetail200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

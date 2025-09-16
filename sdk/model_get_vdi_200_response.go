@@ -95,6 +95,43 @@ func (o GetVdi200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetVdi200Response struct {
+	value *GetVdi200Response
+	isSet bool
+}
+
+func (v NullableGetVdi200Response) Get() *GetVdi200Response {
+	return v.value
+}
+
+func (v *NullableGetVdi200Response) Set(val *GetVdi200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetVdi200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetVdi200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetVdi200Response(val *GetVdi200Response) *NullableGetVdi200Response {
+	return &NullableGetVdi200Response{value: val, isSet: true}
+}
+
+func (v NullableGetVdi200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetVdi200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetVdi200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

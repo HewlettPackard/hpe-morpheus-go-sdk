@@ -618,6 +618,43 @@ func (o ClusterPackage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterPackage struct {
+	value *ClusterPackage
+	isSet bool
+}
+
+func (v NullableClusterPackage) Get() *ClusterPackage {
+	return v.value
+}
+
+func (v *NullableClusterPackage) Set(val *ClusterPackage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterPackage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterPackage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterPackage(val *ClusterPackage) *NullableClusterPackage {
+	return &NullableClusterPackage{value: val, isSet: true}
+}
+
+func (v NullableClusterPackage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterPackage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterPackage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

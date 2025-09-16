@@ -167,6 +167,43 @@ func (o UpdateMuteAllCheckApps200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUpdateMuteAllCheckApps200Response struct {
+	value *UpdateMuteAllCheckApps200Response
+	isSet bool
+}
+
+func (v NullableUpdateMuteAllCheckApps200Response) Get() *UpdateMuteAllCheckApps200Response {
+	return v.value
+}
+
+func (v *NullableUpdateMuteAllCheckApps200Response) Set(val *UpdateMuteAllCheckApps200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateMuteAllCheckApps200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateMuteAllCheckApps200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateMuteAllCheckApps200Response(val *UpdateMuteAllCheckApps200Response) *NullableUpdateMuteAllCheckApps200Response {
+	return &NullableUpdateMuteAllCheckApps200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateMuteAllCheckApps200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateMuteAllCheckApps200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateMuteAllCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

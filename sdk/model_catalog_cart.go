@@ -214,6 +214,43 @@ func (o CatalogCart) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogCart struct {
+	value *CatalogCart
+	isSet bool
+}
+
+func (v NullableCatalogCart) Get() *CatalogCart {
+	return v.value
+}
+
+func (v *NullableCatalogCart) Set(val *CatalogCart) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogCart) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogCart) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogCart(val *CatalogCart) *NullableCatalogCart {
+	return &NullableCatalogCart{value: val, isSet: true}
+}
+
+func (v NullableCatalogCart) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogCart) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogCart) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -622,6 +622,43 @@ func (o ArchiveBucket) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableArchiveBucket struct {
+	value *ArchiveBucket
+	isSet bool
+}
+
+func (v NullableArchiveBucket) Get() *ArchiveBucket {
+	return v.value
+}
+
+func (v *NullableArchiveBucket) Set(val *ArchiveBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableArchiveBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableArchiveBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableArchiveBucket(val *ArchiveBucket) *NullableArchiveBucket {
+	return &NullableArchiveBucket{value: val, isSet: true}
+}
+
+func (v NullableArchiveBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableArchiveBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

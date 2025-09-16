@@ -95,6 +95,43 @@ func (o GetKeyPairs200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetKeyPairs200Response struct {
+	value *GetKeyPairs200Response
+	isSet bool
+}
+
+func (v NullableGetKeyPairs200Response) Get() *GetKeyPairs200Response {
+	return v.value
+}
+
+func (v *NullableGetKeyPairs200Response) Set(val *GetKeyPairs200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetKeyPairs200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetKeyPairs200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetKeyPairs200Response(val *GetKeyPairs200Response) *NullableGetKeyPairs200Response {
+	return &NullableGetKeyPairs200Response{value: val, isSet: true}
+}
+
+func (v NullableGetKeyPairs200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetKeyPairs200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetKeyPairs200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

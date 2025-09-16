@@ -95,6 +95,43 @@ func (o ServerBaremetalCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableServerBaremetalCreate struct {
+	value *ServerBaremetalCreate
+	isSet bool
+}
+
+func (v NullableServerBaremetalCreate) Get() *ServerBaremetalCreate {
+	return v.value
+}
+
+func (v *NullableServerBaremetalCreate) Set(val *ServerBaremetalCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServerBaremetalCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServerBaremetalCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServerBaremetalCreate(val *ServerBaremetalCreate) *NullableServerBaremetalCreate {
+	return &NullableServerBaremetalCreate{value: val, isSet: true}
+}
+
+func (v NullableServerBaremetalCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServerBaremetalCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ServerBaremetalCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

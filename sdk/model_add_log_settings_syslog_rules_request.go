@@ -86,6 +86,43 @@ func (o AddLogSettingsSyslogRulesRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableAddLogSettingsSyslogRulesRequest struct {
+	value *AddLogSettingsSyslogRulesRequest
+	isSet bool
+}
+
+func (v NullableAddLogSettingsSyslogRulesRequest) Get() *AddLogSettingsSyslogRulesRequest {
+	return v.value
+}
+
+func (v *NullableAddLogSettingsSyslogRulesRequest) Set(val *AddLogSettingsSyslogRulesRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddLogSettingsSyslogRulesRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddLogSettingsSyslogRulesRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddLogSettingsSyslogRulesRequest(val *AddLogSettingsSyslogRulesRequest) *NullableAddLogSettingsSyslogRulesRequest {
+	return &NullableAddLogSettingsSyslogRulesRequest{value: val, isSet: true}
+}
+
+func (v NullableAddLogSettingsSyslogRulesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddLogSettingsSyslogRulesRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddLogSettingsSyslogRulesRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

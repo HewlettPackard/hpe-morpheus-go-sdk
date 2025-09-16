@@ -597,6 +597,43 @@ func (o IntegrationBindDNS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationBindDNS struct {
+	value *IntegrationBindDNS
+	isSet bool
+}
+
+func (v NullableIntegrationBindDNS) Get() *IntegrationBindDNS {
+	return v.value
+}
+
+func (v *NullableIntegrationBindDNS) Set(val *IntegrationBindDNS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationBindDNS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationBindDNS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationBindDNS(val *IntegrationBindDNS) *NullableIntegrationBindDNS {
+	return &NullableIntegrationBindDNS{value: val, isSet: true}
+}
+
+func (v NullableIntegrationBindDNS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationBindDNS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationBindDNS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

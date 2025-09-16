@@ -86,6 +86,43 @@ func (o AddIdentitySourcesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddIdentitySourcesRequest struct {
+	value *AddIdentitySourcesRequest
+	isSet bool
+}
+
+func (v NullableAddIdentitySourcesRequest) Get() *AddIdentitySourcesRequest {
+	return v.value
+}
+
+func (v *NullableAddIdentitySourcesRequest) Set(val *AddIdentitySourcesRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySourcesRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySourcesRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySourcesRequest(val *AddIdentitySourcesRequest) *NullableAddIdentitySourcesRequest {
+	return &NullableAddIdentitySourcesRequest{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySourcesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySourcesRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIdentitySourcesRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

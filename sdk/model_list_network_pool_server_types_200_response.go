@@ -131,6 +131,43 @@ func (o ListNetworkPoolServerTypes200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableListNetworkPoolServerTypes200Response struct {
+	value *ListNetworkPoolServerTypes200Response
+	isSet bool
+}
+
+func (v NullableListNetworkPoolServerTypes200Response) Get() *ListNetworkPoolServerTypes200Response {
+	return v.value
+}
+
+func (v *NullableListNetworkPoolServerTypes200Response) Set(val *ListNetworkPoolServerTypes200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkPoolServerTypes200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkPoolServerTypes200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkPoolServerTypes200Response(val *ListNetworkPoolServerTypes200Response) *NullableListNetworkPoolServerTypes200Response {
+	return &NullableListNetworkPoolServerTypes200Response{value: val, isSet: true}
+}
+
+func (v NullableListNetworkPoolServerTypes200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkPoolServerTypes200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListNetworkPoolServerTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

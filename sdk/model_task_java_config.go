@@ -730,6 +730,43 @@ func (o TaskJavaConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskJavaConfig struct {
+	value *TaskJavaConfig
+	isSet bool
+}
+
+func (v NullableTaskJavaConfig) Get() *TaskJavaConfig {
+	return v.value
+}
+
+func (v *NullableTaskJavaConfig) Set(val *TaskJavaConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskJavaConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskJavaConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskJavaConfig(val *TaskJavaConfig) *NullableTaskJavaConfig {
+	return &NullableTaskJavaConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskJavaConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskJavaConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskJavaConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

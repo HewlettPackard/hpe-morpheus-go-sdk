@@ -203,6 +203,43 @@ func (o NetworkGroupsCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkGroupsCreate struct {
+	value *NetworkGroupsCreate
+	isSet bool
+}
+
+func (v NullableNetworkGroupsCreate) Get() *NetworkGroupsCreate {
+	return v.value
+}
+
+func (v *NullableNetworkGroupsCreate) Set(val *NetworkGroupsCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkGroupsCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkGroupsCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkGroupsCreate(val *NetworkGroupsCreate) *NullableNetworkGroupsCreate {
+	return &NullableNetworkGroupsCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkGroupsCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkGroupsCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkGroupsCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

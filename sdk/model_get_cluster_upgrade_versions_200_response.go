@@ -131,6 +131,43 @@ func (o GetClusterUpgradeVersions200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterUpgradeVersions200Response struct {
+	value *GetClusterUpgradeVersions200Response
+	isSet bool
+}
+
+func (v NullableGetClusterUpgradeVersions200Response) Get() *GetClusterUpgradeVersions200Response {
+	return v.value
+}
+
+func (v *NullableGetClusterUpgradeVersions200Response) Set(val *GetClusterUpgradeVersions200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterUpgradeVersions200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterUpgradeVersions200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterUpgradeVersions200Response(val *GetClusterUpgradeVersions200Response) *NullableGetClusterUpgradeVersions200Response {
+	return &NullableGetClusterUpgradeVersions200Response{value: val, isSet: true}
+}
+
+func (v NullableGetClusterUpgradeVersions200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterUpgradeVersions200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterUpgradeVersions200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -142,6 +142,43 @@ func (o ListInstances200ResponseAllOfInstancesInnerTagsInner) ToMap() (map[strin
 
 	return toSerialize, nil
 }
+
+type NullableListInstances200ResponseAllOfInstancesInnerTagsInner struct {
+	value *ListInstances200ResponseAllOfInstancesInnerTagsInner
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Get() *ListInstances200ResponseAllOfInstancesInnerTagsInner {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Set(val *ListInstances200ResponseAllOfInstancesInnerTagsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerTagsInner(val *ListInstances200ResponseAllOfInstancesInnerTagsInner) *NullableListInstances200ResponseAllOfInstancesInnerTagsInner {
+	return &NullableListInstances200ResponseAllOfInstancesInnerTagsInner{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerTagsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerTagsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInstances200ResponseAllOfInstancesInnerTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

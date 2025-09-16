@@ -186,6 +186,43 @@ func (o Model200SuccessExpanded) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableModel200SuccessExpanded struct {
+	value *Model200SuccessExpanded
+	isSet bool
+}
+
+func (v NullableModel200SuccessExpanded) Get() *Model200SuccessExpanded {
+	return v.value
+}
+
+func (v *NullableModel200SuccessExpanded) Set(val *Model200SuccessExpanded) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableModel200SuccessExpanded) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableModel200SuccessExpanded) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableModel200SuccessExpanded(val *Model200SuccessExpanded) *NullableModel200SuccessExpanded {
+	return &NullableModel200SuccessExpanded{value: val, isSet: true}
+}
+
+func (v NullableModel200SuccessExpanded) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableModel200SuccessExpanded) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Model200SuccessExpanded) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

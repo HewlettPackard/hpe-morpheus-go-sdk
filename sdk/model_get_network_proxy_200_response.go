@@ -95,6 +95,43 @@ func (o GetNetworkProxy200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetNetworkProxy200Response struct {
+	value *GetNetworkProxy200Response
+	isSet bool
+}
+
+func (v NullableGetNetworkProxy200Response) Get() *GetNetworkProxy200Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkProxy200Response) Set(val *GetNetworkProxy200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkProxy200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkProxy200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkProxy200Response(val *GetNetworkProxy200Response) *NullableGetNetworkProxy200Response {
+	return &NullableGetNetworkProxy200Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkProxy200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkProxy200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetNetworkProxy200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o ExecuteExecutionRequest200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableExecuteExecutionRequest200Response struct {
+	value *ExecuteExecutionRequest200Response
+	isSet bool
+}
+
+func (v NullableExecuteExecutionRequest200Response) Get() *ExecuteExecutionRequest200Response {
+	return v.value
+}
+
+func (v *NullableExecuteExecutionRequest200Response) Set(val *ExecuteExecutionRequest200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecuteExecutionRequest200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecuteExecutionRequest200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecuteExecutionRequest200Response(val *ExecuteExecutionRequest200Response) *NullableExecuteExecutionRequest200Response {
+	return &NullableExecuteExecutionRequest200Response{value: val, isSet: true}
+}
+
+func (v NullableExecuteExecutionRequest200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecuteExecutionRequest200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecuteExecutionRequest200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

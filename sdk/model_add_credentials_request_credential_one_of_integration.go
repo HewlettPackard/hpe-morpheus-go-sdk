@@ -95,6 +95,43 @@ func (o AddCredentialsRequestCredentialOneOfIntegration) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableAddCredentialsRequestCredentialOneOfIntegration struct {
+	value *AddCredentialsRequestCredentialOneOfIntegration
+	isSet bool
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOfIntegration) Get() *AddCredentialsRequestCredentialOneOfIntegration {
+	return v.value
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) Set(val *AddCredentialsRequestCredentialOneOfIntegration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOfIntegration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentialsRequestCredentialOneOfIntegration(val *AddCredentialsRequestCredentialOneOfIntegration) *NullableAddCredentialsRequestCredentialOneOfIntegration {
+	return &NullableAddCredentialsRequestCredentialOneOfIntegration{value: val, isSet: true}
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOfIntegration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOfIntegration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCredentialsRequestCredentialOneOfIntegration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

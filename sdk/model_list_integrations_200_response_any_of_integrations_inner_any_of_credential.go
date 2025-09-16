@@ -226,6 +226,43 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) ToMap(
 
 	return toSerialize, nil
 }
+
+type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential struct {
+	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential {
+	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

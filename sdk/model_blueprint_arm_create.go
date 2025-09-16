@@ -217,6 +217,43 @@ func (o BlueprintARMCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintARMCreate struct {
+	value *BlueprintARMCreate
+	isSet bool
+}
+
+func (v NullableBlueprintARMCreate) Get() *BlueprintARMCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintARMCreate) Set(val *BlueprintARMCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintARMCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintARMCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintARMCreate(val *BlueprintARMCreate) *NullableBlueprintARMCreate {
+	return &NullableBlueprintARMCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintARMCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintARMCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintARMCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1640,6 +1640,43 @@ func (o RouteOptionType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRouteOptionType struct {
+	value *RouteOptionType
+	isSet bool
+}
+
+func (v NullableRouteOptionType) Get() *RouteOptionType {
+	return v.value
+}
+
+func (v *NullableRouteOptionType) Set(val *RouteOptionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRouteOptionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRouteOptionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRouteOptionType(val *RouteOptionType) *NullableRouteOptionType {
+	return &NullableRouteOptionType{value: val, isSet: true}
+}
+
+func (v NullableRouteOptionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRouteOptionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RouteOptionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

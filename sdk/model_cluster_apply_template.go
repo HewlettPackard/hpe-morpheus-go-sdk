@@ -131,6 +131,43 @@ func (o ClusterApplyTemplate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterApplyTemplate struct {
+	value *ClusterApplyTemplate
+	isSet bool
+}
+
+func (v NullableClusterApplyTemplate) Get() *ClusterApplyTemplate {
+	return v.value
+}
+
+func (v *NullableClusterApplyTemplate) Set(val *ClusterApplyTemplate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterApplyTemplate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterApplyTemplate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterApplyTemplate(val *ClusterApplyTemplate) *NullableClusterApplyTemplate {
+	return &NullableClusterApplyTemplate{value: val, isSet: true}
+}
+
+func (v NullableClusterApplyTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterApplyTemplate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterApplyTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -167,6 +167,43 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVm
 
 	return toSerialize, nil
 }
+
+type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms struct {
+	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms
+	isSet bool
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms {
+	return v.value
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms {
+	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms{value: val, isSet: true}
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVms) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

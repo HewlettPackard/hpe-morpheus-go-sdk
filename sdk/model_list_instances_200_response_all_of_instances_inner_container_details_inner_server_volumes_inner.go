@@ -676,6 +676,43 @@ func (o ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVo
 
 	return toSerialize, nil
 }
+
+type NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner struct {
+	value *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) Get() *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) Set(val *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner(val *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner {
+	return &NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

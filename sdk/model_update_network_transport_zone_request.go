@@ -95,6 +95,43 @@ func (o UpdateNetworkTransportZoneRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUpdateNetworkTransportZoneRequest struct {
+	value *UpdateNetworkTransportZoneRequest
+	isSet bool
+}
+
+func (v NullableUpdateNetworkTransportZoneRequest) Get() *UpdateNetworkTransportZoneRequest {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkTransportZoneRequest) Set(val *UpdateNetworkTransportZoneRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkTransportZoneRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkTransportZoneRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkTransportZoneRequest(val *UpdateNetworkTransportZoneRequest) *NullableUpdateNetworkTransportZoneRequest {
+	return &NullableUpdateNetworkTransportZoneRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkTransportZoneRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkTransportZoneRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateNetworkTransportZoneRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

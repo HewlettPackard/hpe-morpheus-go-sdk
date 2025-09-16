@@ -730,6 +730,43 @@ func (o TaskLibraryScriptConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskLibraryScriptConfig struct {
+	value *TaskLibraryScriptConfig
+	isSet bool
+}
+
+func (v NullableTaskLibraryScriptConfig) Get() *TaskLibraryScriptConfig {
+	return v.value
+}
+
+func (v *NullableTaskLibraryScriptConfig) Set(val *TaskLibraryScriptConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskLibraryScriptConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskLibraryScriptConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskLibraryScriptConfig(val *TaskLibraryScriptConfig) *NullableTaskLibraryScriptConfig {
+	return &NullableTaskLibraryScriptConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskLibraryScriptConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskLibraryScriptConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskLibraryScriptConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

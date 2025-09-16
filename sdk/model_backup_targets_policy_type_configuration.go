@@ -95,6 +95,43 @@ func (o BackupTargetsPolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableBackupTargetsPolicyTypeConfiguration struct {
+	value *BackupTargetsPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableBackupTargetsPolicyTypeConfiguration) Get() *BackupTargetsPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableBackupTargetsPolicyTypeConfiguration) Set(val *BackupTargetsPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupTargetsPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupTargetsPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupTargetsPolicyTypeConfiguration(val *BackupTargetsPolicyTypeConfiguration) *NullableBackupTargetsPolicyTypeConfiguration {
+	return &NullableBackupTargetsPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableBackupTargetsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupTargetsPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BackupTargetsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

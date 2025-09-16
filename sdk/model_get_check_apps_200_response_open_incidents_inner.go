@@ -954,6 +954,43 @@ func (o GetCheckApps200ResponseOpenIncidentsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableGetCheckApps200ResponseOpenIncidentsInner struct {
+	value *GetCheckApps200ResponseOpenIncidentsInner
+	isSet bool
+}
+
+func (v NullableGetCheckApps200ResponseOpenIncidentsInner) Get() *GetCheckApps200ResponseOpenIncidentsInner {
+	return v.value
+}
+
+func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) Set(val *GetCheckApps200ResponseOpenIncidentsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCheckApps200ResponseOpenIncidentsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCheckApps200ResponseOpenIncidentsInner(val *GetCheckApps200ResponseOpenIncidentsInner) *NullableGetCheckApps200ResponseOpenIncidentsInner {
+	return &NullableGetCheckApps200ResponseOpenIncidentsInner{value: val, isSet: true}
+}
+
+func (v NullableGetCheckApps200ResponseOpenIncidentsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCheckApps200ResponseOpenIncidentsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetCheckApps200ResponseOpenIncidentsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

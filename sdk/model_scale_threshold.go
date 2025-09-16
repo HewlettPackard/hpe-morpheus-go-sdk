@@ -744,6 +744,43 @@ func (o ScaleThreshold) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableScaleThreshold struct {
+	value *ScaleThreshold
+	isSet bool
+}
+
+func (v NullableScaleThreshold) Get() *ScaleThreshold {
+	return v.value
+}
+
+func (v *NullableScaleThreshold) Set(val *ScaleThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableScaleThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableScaleThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableScaleThreshold(val *ScaleThreshold) *NullableScaleThreshold {
+	return &NullableScaleThreshold{value: val, isSet: true}
+}
+
+func (v NullableScaleThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableScaleThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ScaleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -730,6 +730,43 @@ func (o TaskShellConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskShellConfig struct {
+	value *TaskShellConfig
+	isSet bool
+}
+
+func (v NullableTaskShellConfig) Get() *TaskShellConfig {
+	return v.value
+}
+
+func (v *NullableTaskShellConfig) Set(val *TaskShellConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskShellConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskShellConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskShellConfig(val *TaskShellConfig) *NullableTaskShellConfig {
+	return &NullableTaskShellConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskShellConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskShellConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskShellConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

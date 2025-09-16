@@ -171,6 +171,43 @@ func (o AddBlueprintRequestOneOf1CloudFormationGit) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf1CloudFormationGit struct {
+	value *AddBlueprintRequestOneOf1CloudFormationGit
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) Get() *AddBlueprintRequestOneOf1CloudFormationGit {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) Set(val *AddBlueprintRequestOneOf1CloudFormationGit) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf1CloudFormationGit(val *AddBlueprintRequestOneOf1CloudFormationGit) *NullableAddBlueprintRequestOneOf1CloudFormationGit {
+	return &NullableAddBlueprintRequestOneOf1CloudFormationGit{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

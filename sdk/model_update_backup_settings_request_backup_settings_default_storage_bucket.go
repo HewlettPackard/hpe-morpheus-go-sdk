@@ -96,6 +96,43 @@ func (o UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket struct {
+	value *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
+	isSet bool
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Get() *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
+	return v.value
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Set(val *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket(val *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
+	return &NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket{value: val, isSet: true}
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -115,6 +115,43 @@ func (o DefaultPersonaPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultPersonaPermission struct {
+	value *DefaultPersonaPermission
+	isSet bool
+}
+
+func (v NullableDefaultPersonaPermission) Get() *DefaultPersonaPermission {
+	return v.value
+}
+
+func (v *NullableDefaultPersonaPermission) Set(val *DefaultPersonaPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultPersonaPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultPersonaPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultPersonaPermission(val *DefaultPersonaPermission) *NullableDefaultPersonaPermission {
+	return &NullableDefaultPersonaPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultPersonaPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultPersonaPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultPersonaPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

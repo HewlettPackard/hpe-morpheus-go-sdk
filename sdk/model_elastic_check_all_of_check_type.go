@@ -95,6 +95,43 @@ func (o ElasticCheckAllOfCheckType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableElasticCheckAllOfCheckType struct {
+	value *ElasticCheckAllOfCheckType
+	isSet bool
+}
+
+func (v NullableElasticCheckAllOfCheckType) Get() *ElasticCheckAllOfCheckType {
+	return v.value
+}
+
+func (v *NullableElasticCheckAllOfCheckType) Set(val *ElasticCheckAllOfCheckType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableElasticCheckAllOfCheckType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableElasticCheckAllOfCheckType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableElasticCheckAllOfCheckType(val *ElasticCheckAllOfCheckType) *NullableElasticCheckAllOfCheckType {
+	return &NullableElasticCheckAllOfCheckType{value: val, isSet: true}
+}
+
+func (v NullableElasticCheckAllOfCheckType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableElasticCheckAllOfCheckType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ElasticCheckAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

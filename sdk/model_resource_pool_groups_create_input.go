@@ -312,6 +312,43 @@ func (o ResourcePoolGroupsCreateInput) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableResourcePoolGroupsCreateInput struct {
+	value *ResourcePoolGroupsCreateInput
+	isSet bool
+}
+
+func (v NullableResourcePoolGroupsCreateInput) Get() *ResourcePoolGroupsCreateInput {
+	return v.value
+}
+
+func (v *NullableResourcePoolGroupsCreateInput) Set(val *ResourcePoolGroupsCreateInput) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResourcePoolGroupsCreateInput) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResourcePoolGroupsCreateInput) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResourcePoolGroupsCreateInput(val *ResourcePoolGroupsCreateInput) *NullableResourcePoolGroupsCreateInput {
+	return &NullableResourcePoolGroupsCreateInput{value: val, isSet: true}
+}
+
+func (v NullableResourcePoolGroupsCreateInput) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResourcePoolGroupsCreateInput) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResourcePoolGroupsCreateInput) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -115,6 +115,43 @@ func (o ResetPasswordRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableResetPasswordRequest struct {
+	value *ResetPasswordRequest
+	isSet bool
+}
+
+func (v NullableResetPasswordRequest) Get() *ResetPasswordRequest {
+	return v.value
+}
+
+func (v *NullableResetPasswordRequest) Set(val *ResetPasswordRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResetPasswordRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResetPasswordRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResetPasswordRequest(val *ResetPasswordRequest) *NullableResetPasswordRequest {
+	return &NullableResetPasswordRequest{value: val, isSet: true}
+}
+
+func (v NullableResetPasswordRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResetPasswordRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResetPasswordRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

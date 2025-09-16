@@ -86,6 +86,43 @@ func (o HubRegisterObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableHubRegisterObject struct {
+	value *HubRegisterObject
+	isSet bool
+}
+
+func (v NullableHubRegisterObject) Get() *HubRegisterObject {
+	return v.value
+}
+
+func (v *NullableHubRegisterObject) Set(val *HubRegisterObject) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableHubRegisterObject) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableHubRegisterObject) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableHubRegisterObject(val *HubRegisterObject) *NullableHubRegisterObject {
+	return &NullableHubRegisterObject{value: val, isSet: true}
+}
+
+func (v NullableHubRegisterObject) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableHubRegisterObject) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *HubRegisterObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

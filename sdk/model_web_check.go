@@ -371,6 +371,43 @@ func (o WebCheck) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWebCheck struct {
+	value *WebCheck
+	isSet bool
+}
+
+func (v NullableWebCheck) Get() *WebCheck {
+	return v.value
+}
+
+func (v *NullableWebCheck) Set(val *WebCheck) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWebCheck) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWebCheck) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWebCheck(val *WebCheck) *NullableWebCheck {
+	return &NullableWebCheck{value: val, isSet: true}
+}
+
+func (v NullableWebCheck) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWebCheck) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WebCheck) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

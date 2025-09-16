@@ -815,6 +815,43 @@ func (o ServerDevice) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableServerDevice struct {
+	value *ServerDevice
+	isSet bool
+}
+
+func (v NullableServerDevice) Get() *ServerDevice {
+	return v.value
+}
+
+func (v *NullableServerDevice) Set(val *ServerDevice) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServerDevice) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServerDevice) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServerDevice(val *ServerDevice) *NullableServerDevice {
+	return &NullableServerDevice{value: val, isSet: true}
+}
+
+func (v NullableServerDevice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServerDevice) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ServerDevice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

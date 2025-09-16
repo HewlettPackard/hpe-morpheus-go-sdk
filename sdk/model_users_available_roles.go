@@ -95,6 +95,43 @@ func (o UsersAvailableRoles) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUsersAvailableRoles struct {
+	value *UsersAvailableRoles
+	isSet bool
+}
+
+func (v NullableUsersAvailableRoles) Get() *UsersAvailableRoles {
+	return v.value
+}
+
+func (v *NullableUsersAvailableRoles) Set(val *UsersAvailableRoles) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUsersAvailableRoles) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUsersAvailableRoles) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUsersAvailableRoles(val *UsersAvailableRoles) *NullableUsersAvailableRoles {
+	return &NullableUsersAvailableRoles{value: val, isSet: true}
+}
+
+func (v NullableUsersAvailableRoles) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUsersAvailableRoles) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UsersAvailableRoles) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

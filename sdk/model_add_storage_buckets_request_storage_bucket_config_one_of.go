@@ -207,6 +207,43 @@ func (o AddStorageBucketsRequestStorageBucketConfigOneOf) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
+
+type NullableAddStorageBucketsRequestStorageBucketConfigOneOf struct {
+	value *AddStorageBucketsRequestStorageBucketConfigOneOf
+	isSet bool
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf) Get() *AddStorageBucketsRequestStorageBucketConfigOneOf {
+	return v.value
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf) Set(val *AddStorageBucketsRequestStorageBucketConfigOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageBucketsRequestStorageBucketConfigOneOf(val *AddStorageBucketsRequestStorageBucketConfigOneOf) *NullableAddStorageBucketsRequestStorageBucketConfigOneOf {
+	return &NullableAddStorageBucketsRequestStorageBucketConfigOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

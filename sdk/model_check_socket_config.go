@@ -540,6 +540,43 @@ func (o CheckSocketConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckSocketConfig struct {
+	value *CheckSocketConfig
+	isSet bool
+}
+
+func (v NullableCheckSocketConfig) Get() *CheckSocketConfig {
+	return v.value
+}
+
+func (v *NullableCheckSocketConfig) Set(val *CheckSocketConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckSocketConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckSocketConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckSocketConfig(val *CheckSocketConfig) *NullableCheckSocketConfig {
+	return &NullableCheckSocketConfig{value: val, isSet: true}
+}
+
+func (v NullableCheckSocketConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckSocketConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckSocketConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

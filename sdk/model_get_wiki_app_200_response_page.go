@@ -514,6 +514,43 @@ func (o GetWikiApp200ResponsePage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetWikiApp200ResponsePage struct {
+	value *GetWikiApp200ResponsePage
+	isSet bool
+}
+
+func (v NullableGetWikiApp200ResponsePage) Get() *GetWikiApp200ResponsePage {
+	return v.value
+}
+
+func (v *NullableGetWikiApp200ResponsePage) Set(val *GetWikiApp200ResponsePage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetWikiApp200ResponsePage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetWikiApp200ResponsePage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetWikiApp200ResponsePage(val *GetWikiApp200ResponsePage) *NullableGetWikiApp200ResponsePage {
+	return &NullableGetWikiApp200ResponsePage{value: val, isSet: true}
+}
+
+func (v NullableGetWikiApp200ResponsePage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetWikiApp200ResponsePage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetWikiApp200ResponsePage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

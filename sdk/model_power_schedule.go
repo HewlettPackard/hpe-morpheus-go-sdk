@@ -1439,6 +1439,43 @@ func (o PowerSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePowerSchedule struct {
+	value *PowerSchedule
+	isSet bool
+}
+
+func (v NullablePowerSchedule) Get() *PowerSchedule {
+	return v.value
+}
+
+func (v *NullablePowerSchedule) Set(val *PowerSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePowerSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePowerSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePowerSchedule(val *PowerSchedule) *NullablePowerSchedule {
+	return &NullablePowerSchedule{value: val, isSet: true}
+}
+
+func (v NullablePowerSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePowerSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PowerSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

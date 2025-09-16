@@ -361,6 +361,43 @@ func (o OsTypeImage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableOsTypeImage struct {
+	value *OsTypeImage
+	isSet bool
+}
+
+func (v NullableOsTypeImage) Get() *OsTypeImage {
+	return v.value
+}
+
+func (v *NullableOsTypeImage) Set(val *OsTypeImage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOsTypeImage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOsTypeImage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOsTypeImage(val *OsTypeImage) *NullableOsTypeImage {
+	return &NullableOsTypeImage{value: val, isSet: true}
+}
+
+func (v NullableOsTypeImage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOsTypeImage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *OsTypeImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

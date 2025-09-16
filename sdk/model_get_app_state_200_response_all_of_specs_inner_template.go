@@ -131,6 +131,43 @@ func (o GetAppState200ResponseAllOfSpecsInnerTemplate) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableGetAppState200ResponseAllOfSpecsInnerTemplate struct {
+	value *GetAppState200ResponseAllOfSpecsInnerTemplate
+	isSet bool
+}
+
+func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Get() *GetAppState200ResponseAllOfSpecsInnerTemplate {
+	return v.value
+}
+
+func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Set(val *GetAppState200ResponseAllOfSpecsInnerTemplate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAppState200ResponseAllOfSpecsInnerTemplate(val *GetAppState200ResponseAllOfSpecsInnerTemplate) *NullableGetAppState200ResponseAllOfSpecsInnerTemplate {
+	return &NullableGetAppState200ResponseAllOfSpecsInnerTemplate{value: val, isSet: true}
+}
+
+func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

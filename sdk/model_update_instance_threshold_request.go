@@ -86,6 +86,43 @@ func (o UpdateInstanceThresholdRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateInstanceThresholdRequest struct {
+	value *UpdateInstanceThresholdRequest
+	isSet bool
+}
+
+func (v NullableUpdateInstanceThresholdRequest) Get() *UpdateInstanceThresholdRequest {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceThresholdRequest) Set(val *UpdateInstanceThresholdRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceThresholdRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceThresholdRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceThresholdRequest(val *UpdateInstanceThresholdRequest) *NullableUpdateInstanceThresholdRequest {
+	return &NullableUpdateInstanceThresholdRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceThresholdRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceThresholdRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateInstanceThresholdRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

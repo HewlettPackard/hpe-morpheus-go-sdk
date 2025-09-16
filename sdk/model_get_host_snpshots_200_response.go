@@ -95,6 +95,43 @@ func (o GetHostSnpshots200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetHostSnpshots200Response struct {
+	value *GetHostSnpshots200Response
+	isSet bool
+}
+
+func (v NullableGetHostSnpshots200Response) Get() *GetHostSnpshots200Response {
+	return v.value
+}
+
+func (v *NullableGetHostSnpshots200Response) Set(val *GetHostSnpshots200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetHostSnpshots200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetHostSnpshots200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetHostSnpshots200Response(val *GetHostSnpshots200Response) *NullableGetHostSnpshots200Response {
+	return &NullableGetHostSnpshots200Response{value: val, isSet: true}
+}
+
+func (v NullableGetHostSnpshots200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetHostSnpshots200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetHostSnpshots200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

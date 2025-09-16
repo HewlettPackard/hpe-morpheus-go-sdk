@@ -95,6 +95,43 @@ func (o AddImageBuildRequestImageBuildZone) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddImageBuildRequestImageBuildZone struct {
+	value *AddImageBuildRequestImageBuildZone
+	isSet bool
+}
+
+func (v NullableAddImageBuildRequestImageBuildZone) Get() *AddImageBuildRequestImageBuildZone {
+	return v.value
+}
+
+func (v *NullableAddImageBuildRequestImageBuildZone) Set(val *AddImageBuildRequestImageBuildZone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddImageBuildRequestImageBuildZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddImageBuildRequestImageBuildZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddImageBuildRequestImageBuildZone(val *AddImageBuildRequestImageBuildZone) *NullableAddImageBuildRequestImageBuildZone {
+	return &NullableAddImageBuildRequestImageBuildZone{value: val, isSet: true}
+}
+
+func (v NullableAddImageBuildRequestImageBuildZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddImageBuildRequestImageBuildZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddImageBuildRequestImageBuildZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -169,6 +169,43 @@ func (o PolicyGroupUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePolicyGroupUpdate struct {
+	value *PolicyGroupUpdate
+	isSet bool
+}
+
+func (v NullablePolicyGroupUpdate) Get() *PolicyGroupUpdate {
+	return v.value
+}
+
+func (v *NullablePolicyGroupUpdate) Set(val *PolicyGroupUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePolicyGroupUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePolicyGroupUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePolicyGroupUpdate(val *PolicyGroupUpdate) *NullablePolicyGroupUpdate {
+	return &NullablePolicyGroupUpdate{value: val, isSet: true}
+}
+
+func (v NullablePolicyGroupUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePolicyGroupUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PolicyGroupUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -574,6 +574,43 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettings) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableUpdateProvisioningSettingsRequestProvisioningSettings struct {
+	value *UpdateProvisioningSettingsRequestProvisioningSettings
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) Get() *UpdateProvisioningSettingsRequestProvisioningSettings {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) Set(val *UpdateProvisioningSettingsRequestProvisioningSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningSettingsRequestProvisioningSettings(val *UpdateProvisioningSettingsRequestProvisioningSettings) *NullableUpdateProvisioningSettingsRequestProvisioningSettings {
+	return &NullableUpdateProvisioningSettingsRequestProvisioningSettings{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

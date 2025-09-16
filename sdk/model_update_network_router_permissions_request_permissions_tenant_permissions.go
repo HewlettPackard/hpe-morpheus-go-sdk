@@ -96,6 +96,43 @@ func (o UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) ToMap
 
 	return toSerialize, nil
 }
+
+type NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions struct {
+	value *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions
+	isSet bool
+}
+
+func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Get() *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Set(val *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions(val *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions {
+	return &NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateNetworkRouterPermissionsRequestPermissionsTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

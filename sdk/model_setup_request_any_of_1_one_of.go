@@ -86,6 +86,43 @@ func (o SetupRequestAnyOf1OneOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSetupRequestAnyOf1OneOf struct {
+	value *SetupRequestAnyOf1OneOf
+	isSet bool
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) Get() *SetupRequestAnyOf1OneOf {
+	return v.value
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) Set(val *SetupRequestAnyOf1OneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSetupRequestAnyOf1OneOf(val *SetupRequestAnyOf1OneOf) *NullableSetupRequestAnyOf1OneOf {
+	return &NullableSetupRequestAnyOf1OneOf{value: val, isSet: true}
+}
+
+func (v NullableSetupRequestAnyOf1OneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSetupRequestAnyOf1OneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SetupRequestAnyOf1OneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

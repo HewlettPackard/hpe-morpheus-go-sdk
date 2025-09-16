@@ -131,6 +131,43 @@ func (o ApplyTemplate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableApplyTemplate200Response struct {
+	value *ApplyTemplate200Response
+	isSet bool
+}
+
+func (v NullableApplyTemplate200Response) Get() *ApplyTemplate200Response {
+	return v.value
+}
+
+func (v *NullableApplyTemplate200Response) Set(val *ApplyTemplate200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableApplyTemplate200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableApplyTemplate200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableApplyTemplate200Response(val *ApplyTemplate200Response) *NullableApplyTemplate200Response {
+	return &NullableApplyTemplate200Response{value: val, isSet: true}
+}
+
+func (v NullableApplyTemplate200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableApplyTemplate200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ApplyTemplate200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

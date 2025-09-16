@@ -284,6 +284,43 @@ func (o CredentialEmailPrivateKeyConfig) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableCredentialEmailPrivateKeyConfig struct {
+	value *CredentialEmailPrivateKeyConfig
+	isSet bool
+}
+
+func (v NullableCredentialEmailPrivateKeyConfig) Get() *CredentialEmailPrivateKeyConfig {
+	return v.value
+}
+
+func (v *NullableCredentialEmailPrivateKeyConfig) Set(val *CredentialEmailPrivateKeyConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialEmailPrivateKeyConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialEmailPrivateKeyConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialEmailPrivateKeyConfig(val *CredentialEmailPrivateKeyConfig) *NullableCredentialEmailPrivateKeyConfig {
+	return &NullableCredentialEmailPrivateKeyConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialEmailPrivateKeyConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialEmailPrivateKeyConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialEmailPrivateKeyConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

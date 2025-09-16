@@ -131,6 +131,43 @@ func (o ListIdentitySources200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableListIdentitySources200Response struct {
+	value *ListIdentitySources200Response
+	isSet bool
+}
+
+func (v NullableListIdentitySources200Response) Get() *ListIdentitySources200Response {
+	return v.value
+}
+
+func (v *NullableListIdentitySources200Response) Set(val *ListIdentitySources200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIdentitySources200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIdentitySources200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIdentitySources200Response(val *ListIdentitySources200Response) *NullableListIdentitySources200Response {
+	return &NullableListIdentitySources200Response{value: val, isSet: true}
+}
+
+func (v NullableListIdentitySources200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIdentitySources200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

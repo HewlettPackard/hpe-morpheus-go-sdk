@@ -1167,6 +1167,43 @@ func (o InstanceServicePlanStorageType) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableInstanceServicePlanStorageType struct {
+	value *InstanceServicePlanStorageType
+	isSet bool
+}
+
+func (v NullableInstanceServicePlanStorageType) Get() *InstanceServicePlanStorageType {
+	return v.value
+}
+
+func (v *NullableInstanceServicePlanStorageType) Set(val *InstanceServicePlanStorageType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceServicePlanStorageType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceServicePlanStorageType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceServicePlanStorageType(val *InstanceServicePlanStorageType) *NullableInstanceServicePlanStorageType {
+	return &NullableInstanceServicePlanStorageType{value: val, isSet: true}
+}
+
+func (v NullableInstanceServicePlanStorageType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceServicePlanStorageType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceServicePlanStorageType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1790,6 +1790,43 @@ func (o ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInne
 
 	return toSerialize, nil
 }
+
+type NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner struct {
+	value *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Get() *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Set(val *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner(val *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+	return &NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

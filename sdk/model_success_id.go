@@ -142,6 +142,43 @@ func (o SuccessId) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSuccessId struct {
+	value *SuccessId
+	isSet bool
+}
+
+func (v NullableSuccessId) Get() *SuccessId {
+	return v.value
+}
+
+func (v *NullableSuccessId) Set(val *SuccessId) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSuccessId) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSuccessId) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSuccessId(val *SuccessId) *NullableSuccessId {
+	return &NullableSuccessId{value: val, isSet: true}
+}
+
+func (v NullableSuccessId) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSuccessId) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SuccessId) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

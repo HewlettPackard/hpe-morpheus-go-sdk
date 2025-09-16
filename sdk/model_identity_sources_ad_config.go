@@ -791,6 +791,43 @@ func (o IdentitySourcesADConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesADConfig struct {
+	value *IdentitySourcesADConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesADConfig) Get() *IdentitySourcesADConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesADConfig) Set(val *IdentitySourcesADConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesADConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesADConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesADConfig(val *IdentitySourcesADConfig) *NullableIdentitySourcesADConfig {
+	return &NullableIdentitySourcesADConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesADConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesADConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesADConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -574,6 +574,43 @@ func (o ListCloudFolders200ResponseAllOfFoldersInner) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableListCloudFolders200ResponseAllOfFoldersInner struct {
+	value *ListCloudFolders200ResponseAllOfFoldersInner
+	isSet bool
+}
+
+func (v NullableListCloudFolders200ResponseAllOfFoldersInner) Get() *ListCloudFolders200ResponseAllOfFoldersInner {
+	return v.value
+}
+
+func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) Set(val *ListCloudFolders200ResponseAllOfFoldersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudFolders200ResponseAllOfFoldersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudFolders200ResponseAllOfFoldersInner(val *ListCloudFolders200ResponseAllOfFoldersInner) *NullableListCloudFolders200ResponseAllOfFoldersInner {
+	return &NullableListCloudFolders200ResponseAllOfFoldersInner{value: val, isSet: true}
+}
+
+func (v NullableListCloudFolders200ResponseAllOfFoldersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudFolders200ResponseAllOfFoldersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCloudFolders200ResponseAllOfFoldersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

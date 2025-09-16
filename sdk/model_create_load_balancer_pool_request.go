@@ -95,6 +95,43 @@ func (o CreateLoadBalancerPoolRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCreateLoadBalancerPoolRequest struct {
+	value *CreateLoadBalancerPoolRequest
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) Get() *CreateLoadBalancerPoolRequest {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) Set(val *CreateLoadBalancerPoolRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerPoolRequest(val *CreateLoadBalancerPoolRequest) *NullableCreateLoadBalancerPoolRequest {
+	return &NullableCreateLoadBalancerPoolRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerPoolRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerPoolRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateLoadBalancerPoolRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

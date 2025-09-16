@@ -86,6 +86,43 @@ func (o GenerateKeyPairsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGenerateKeyPairsRequest struct {
+	value *GenerateKeyPairsRequest
+	isSet bool
+}
+
+func (v NullableGenerateKeyPairsRequest) Get() *GenerateKeyPairsRequest {
+	return v.value
+}
+
+func (v *NullableGenerateKeyPairsRequest) Set(val *GenerateKeyPairsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGenerateKeyPairsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGenerateKeyPairsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGenerateKeyPairsRequest(val *GenerateKeyPairsRequest) *NullableGenerateKeyPairsRequest {
+	return &NullableGenerateKeyPairsRequest{value: val, isSet: true}
+}
+
+func (v NullableGenerateKeyPairsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGenerateKeyPairsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GenerateKeyPairsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

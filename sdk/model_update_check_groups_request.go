@@ -86,6 +86,43 @@ func (o UpdateCheckGroupsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCheckGroupsRequest struct {
+	value *UpdateCheckGroupsRequest
+	isSet bool
+}
+
+func (v NullableUpdateCheckGroupsRequest) Get() *UpdateCheckGroupsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateCheckGroupsRequest) Set(val *UpdateCheckGroupsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCheckGroupsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCheckGroupsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCheckGroupsRequest(val *UpdateCheckGroupsRequest) *NullableUpdateCheckGroupsRequest {
+	return &NullableUpdateCheckGroupsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateCheckGroupsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCheckGroupsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCheckGroupsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

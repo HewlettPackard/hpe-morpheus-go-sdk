@@ -131,6 +131,43 @@ func (o ListVDIAllocations200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListVDIAllocations200Response struct {
+	value *ListVDIAllocations200Response
+	isSet bool
+}
+
+func (v NullableListVDIAllocations200Response) Get() *ListVDIAllocations200Response {
+	return v.value
+}
+
+func (v *NullableListVDIAllocations200Response) Set(val *ListVDIAllocations200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVDIAllocations200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVDIAllocations200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVDIAllocations200Response(val *ListVDIAllocations200Response) *NullableListVDIAllocations200Response {
+	return &NullableListVDIAllocations200Response{value: val, isSet: true}
+}
+
+func (v NullableListVDIAllocations200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVDIAllocations200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListVDIAllocations200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

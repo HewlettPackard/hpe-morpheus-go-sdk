@@ -308,6 +308,43 @@ func (o ListIntegrationInventory200ResponseAllOfInventoryInner) ToMap() (map[str
 
 	return toSerialize, nil
 }
+
+type NullableListIntegrationInventory200ResponseAllOfInventoryInner struct {
+	value *ListIntegrationInventory200ResponseAllOfInventoryInner
+	isSet bool
+}
+
+func (v NullableListIntegrationInventory200ResponseAllOfInventoryInner) Get() *ListIntegrationInventory200ResponseAllOfInventoryInner {
+	return v.value
+}
+
+func (v *NullableListIntegrationInventory200ResponseAllOfInventoryInner) Set(val *ListIntegrationInventory200ResponseAllOfInventoryInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrationInventory200ResponseAllOfInventoryInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrationInventory200ResponseAllOfInventoryInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrationInventory200ResponseAllOfInventoryInner(val *ListIntegrationInventory200ResponseAllOfInventoryInner) *NullableListIntegrationInventory200ResponseAllOfInventoryInner {
+	return &NullableListIntegrationInventory200ResponseAllOfInventoryInner{value: val, isSet: true}
+}
+
+func (v NullableListIntegrationInventory200ResponseAllOfInventoryInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrationInventory200ResponseAllOfInventoryInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

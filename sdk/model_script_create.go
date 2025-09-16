@@ -396,6 +396,43 @@ func (o ScriptCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableScriptCreate struct {
+	value *ScriptCreate
+	isSet bool
+}
+
+func (v NullableScriptCreate) Get() *ScriptCreate {
+	return v.value
+}
+
+func (v *NullableScriptCreate) Set(val *ScriptCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableScriptCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableScriptCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableScriptCreate(val *ScriptCreate) *NullableScriptCreate {
+	return &NullableScriptCreate{value: val, isSet: true}
+}
+
+func (v NullableScriptCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableScriptCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ScriptCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

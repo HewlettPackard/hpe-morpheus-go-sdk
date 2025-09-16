@@ -491,6 +491,43 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config struct {
+	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config {
+	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

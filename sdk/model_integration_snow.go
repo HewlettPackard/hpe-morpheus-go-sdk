@@ -597,6 +597,43 @@ func (o IntegrationSNOW) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationSNOW struct {
+	value *IntegrationSNOW
+	isSet bool
+}
+
+func (v NullableIntegrationSNOW) Get() *IntegrationSNOW {
+	return v.value
+}
+
+func (v *NullableIntegrationSNOW) Set(val *IntegrationSNOW) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationSNOW) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationSNOW) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationSNOW(val *IntegrationSNOW) *NullableIntegrationSNOW {
+	return &NullableIntegrationSNOW{value: val, isSet: true}
+}
+
+func (v NullableIntegrationSNOW) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationSNOW) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationSNOW) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

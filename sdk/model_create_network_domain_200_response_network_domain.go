@@ -958,6 +958,43 @@ func (o CreateNetworkDomain200ResponseNetworkDomain) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkDomain200ResponseNetworkDomain struct {
+	value *CreateNetworkDomain200ResponseNetworkDomain
+	isSet bool
+}
+
+func (v NullableCreateNetworkDomain200ResponseNetworkDomain) Get() *CreateNetworkDomain200ResponseNetworkDomain {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) Set(val *CreateNetworkDomain200ResponseNetworkDomain) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDomain200ResponseNetworkDomain) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDomain200ResponseNetworkDomain(val *CreateNetworkDomain200ResponseNetworkDomain) *NullableCreateNetworkDomain200ResponseNetworkDomain {
+	return &NullableCreateNetworkDomain200ResponseNetworkDomain{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDomain200ResponseNetworkDomain) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDomain200ResponseNetworkDomain) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkDomain200ResponseNetworkDomain) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -407,6 +407,43 @@ func (o UpdateClusterPackageRequestClusterPackage) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateClusterPackageRequestClusterPackage struct {
+	value *UpdateClusterPackageRequestClusterPackage
+	isSet bool
+}
+
+func (v NullableUpdateClusterPackageRequestClusterPackage) Get() *UpdateClusterPackageRequestClusterPackage {
+	return v.value
+}
+
+func (v *NullableUpdateClusterPackageRequestClusterPackage) Set(val *UpdateClusterPackageRequestClusterPackage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterPackageRequestClusterPackage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterPackageRequestClusterPackage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterPackageRequestClusterPackage(val *UpdateClusterPackageRequestClusterPackage) *NullableUpdateClusterPackageRequestClusterPackage {
+	return &NullableUpdateClusterPackageRequestClusterPackage{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterPackageRequestClusterPackage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterPackageRequestClusterPackage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateClusterPackageRequestClusterPackage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

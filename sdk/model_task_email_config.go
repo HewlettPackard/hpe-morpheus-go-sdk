@@ -730,6 +730,43 @@ func (o TaskEmailConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskEmailConfig struct {
+	value *TaskEmailConfig
+	isSet bool
+}
+
+func (v NullableTaskEmailConfig) Get() *TaskEmailConfig {
+	return v.value
+}
+
+func (v *NullableTaskEmailConfig) Set(val *TaskEmailConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskEmailConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskEmailConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskEmailConfig(val *TaskEmailConfig) *NullableTaskEmailConfig {
+	return &NullableTaskEmailConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskEmailConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskEmailConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskEmailConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

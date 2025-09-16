@@ -180,6 +180,43 @@ func (o BlueprintCFTCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintCFTCreate struct {
+	value *BlueprintCFTCreate
+	isSet bool
+}
+
+func (v NullableBlueprintCFTCreate) Get() *BlueprintCFTCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintCFTCreate) Set(val *BlueprintCFTCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintCFTCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintCFTCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintCFTCreate(val *BlueprintCFTCreate) *NullableBlueprintCFTCreate {
+	return &NullableBlueprintCFTCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintCFTCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintCFTCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintCFTCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

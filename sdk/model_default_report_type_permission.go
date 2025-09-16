@@ -115,6 +115,43 @@ func (o DefaultReportTypePermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultReportTypePermission struct {
+	value *DefaultReportTypePermission
+	isSet bool
+}
+
+func (v NullableDefaultReportTypePermission) Get() *DefaultReportTypePermission {
+	return v.value
+}
+
+func (v *NullableDefaultReportTypePermission) Set(val *DefaultReportTypePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultReportTypePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultReportTypePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultReportTypePermission(val *DefaultReportTypePermission) *NullableDefaultReportTypePermission {
+	return &NullableDefaultReportTypePermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultReportTypePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultReportTypePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultReportTypePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

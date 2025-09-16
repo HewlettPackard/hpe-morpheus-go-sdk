@@ -133,6 +133,43 @@ func (o AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) ToMap(
 
 	return toSerialize, nil
 }
+
+type NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer struct {
+	value *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer
+	isSet bool
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) Get() *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer {
+	return v.value
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) Set(val *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer(val *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer {
+	return &NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer{value: val, isSet: true}
+}
+
+func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

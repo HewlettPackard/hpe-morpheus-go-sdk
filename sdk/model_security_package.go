@@ -457,6 +457,43 @@ func (o SecurityPackage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSecurityPackage struct {
+	value *SecurityPackage
+	isSet bool
+}
+
+func (v NullableSecurityPackage) Get() *SecurityPackage {
+	return v.value
+}
+
+func (v *NullableSecurityPackage) Set(val *SecurityPackage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityPackage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityPackage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityPackage(val *SecurityPackage) *NullableSecurityPackage {
+	return &NullableSecurityPackage{value: val, isSet: true}
+}
+
+func (v NullableSecurityPackage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityPackage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityPackage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

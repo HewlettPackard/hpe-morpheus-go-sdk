@@ -86,6 +86,43 @@ func (o AddCredentialsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCredentialsRequest struct {
+	value *AddCredentialsRequest
+	isSet bool
+}
+
+func (v NullableAddCredentialsRequest) Get() *AddCredentialsRequest {
+	return v.value
+}
+
+func (v *NullableAddCredentialsRequest) Set(val *AddCredentialsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentialsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentialsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentialsRequest(val *AddCredentialsRequest) *NullableAddCredentialsRequest {
+	return &NullableAddCredentialsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddCredentialsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentialsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCredentialsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

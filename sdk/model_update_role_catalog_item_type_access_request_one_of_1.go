@@ -115,6 +115,43 @@ func (o UpdateRoleCatalogItemTypeAccessRequestOneOf1) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1 struct {
+	value *UpdateRoleCatalogItemTypeAccessRequestOneOf1
+	isSet bool
+}
+
+func (v NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) Get() *UpdateRoleCatalogItemTypeAccessRequestOneOf1 {
+	return v.value
+}
+
+func (v *NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) Set(val *UpdateRoleCatalogItemTypeAccessRequestOneOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleCatalogItemTypeAccessRequestOneOf1(val *UpdateRoleCatalogItemTypeAccessRequestOneOf1) *NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1 {
+	return &NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

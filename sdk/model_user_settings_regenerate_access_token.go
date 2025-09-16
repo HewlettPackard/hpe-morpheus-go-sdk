@@ -95,6 +95,43 @@ func (o UserSettingsRegenerateAccessToken) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUserSettingsRegenerateAccessToken struct {
+	value *UserSettingsRegenerateAccessToken
+	isSet bool
+}
+
+func (v NullableUserSettingsRegenerateAccessToken) Get() *UserSettingsRegenerateAccessToken {
+	return v.value
+}
+
+func (v *NullableUserSettingsRegenerateAccessToken) Set(val *UserSettingsRegenerateAccessToken) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSettingsRegenerateAccessToken) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSettingsRegenerateAccessToken) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSettingsRegenerateAccessToken(val *UserSettingsRegenerateAccessToken) *NullableUserSettingsRegenerateAccessToken {
+	return &NullableUserSettingsRegenerateAccessToken{value: val, isSet: true}
+}
+
+func (v NullableUserSettingsRegenerateAccessToken) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSettingsRegenerateAccessToken) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSettingsRegenerateAccessToken) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

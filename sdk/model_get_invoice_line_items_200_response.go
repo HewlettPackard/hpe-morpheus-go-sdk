@@ -131,6 +131,43 @@ func (o GetInvoiceLineItems200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableGetInvoiceLineItems200Response struct {
+	value *GetInvoiceLineItems200Response
+	isSet bool
+}
+
+func (v NullableGetInvoiceLineItems200Response) Get() *GetInvoiceLineItems200Response {
+	return v.value
+}
+
+func (v *NullableGetInvoiceLineItems200Response) Set(val *GetInvoiceLineItems200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInvoiceLineItems200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInvoiceLineItems200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInvoiceLineItems200Response(val *GetInvoiceLineItems200Response) *NullableGetInvoiceLineItems200Response {
+	return &NullableGetInvoiceLineItems200Response{value: val, isSet: true}
+}
+
+func (v NullableGetInvoiceLineItems200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInvoiceLineItems200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetInvoiceLineItems200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

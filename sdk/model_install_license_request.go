@@ -128,6 +128,43 @@ func (o InstallLicenseRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstallLicenseRequest struct {
+	value *InstallLicenseRequest
+	isSet bool
+}
+
+func (v NullableInstallLicenseRequest) Get() *InstallLicenseRequest {
+	return v.value
+}
+
+func (v *NullableInstallLicenseRequest) Set(val *InstallLicenseRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstallLicenseRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstallLicenseRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstallLicenseRequest(val *InstallLicenseRequest) *NullableInstallLicenseRequest {
+	return &NullableInstallLicenseRequest{value: val, isSet: true}
+}
+
+func (v NullableInstallLicenseRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstallLicenseRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstallLicenseRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

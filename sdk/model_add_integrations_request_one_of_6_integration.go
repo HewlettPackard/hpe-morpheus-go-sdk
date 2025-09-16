@@ -290,6 +290,43 @@ func (o AddIntegrationsRequestOneOf6Integration) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableAddIntegrationsRequestOneOf6Integration struct {
+	value *AddIntegrationsRequestOneOf6Integration
+	isSet bool
+}
+
+func (v NullableAddIntegrationsRequestOneOf6Integration) Get() *AddIntegrationsRequestOneOf6Integration {
+	return v.value
+}
+
+func (v *NullableAddIntegrationsRequestOneOf6Integration) Set(val *AddIntegrationsRequestOneOf6Integration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIntegrationsRequestOneOf6Integration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIntegrationsRequestOneOf6Integration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIntegrationsRequestOneOf6Integration(val *AddIntegrationsRequestOneOf6Integration) *NullableAddIntegrationsRequestOneOf6Integration {
+	return &NullableAddIntegrationsRequestOneOf6Integration{value: val, isSet: true}
+}
+
+func (v NullableAddIntegrationsRequestOneOf6Integration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIntegrationsRequestOneOf6Integration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIntegrationsRequestOneOf6Integration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

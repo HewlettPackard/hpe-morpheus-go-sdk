@@ -292,6 +292,43 @@ func (o OptionTypeFormUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableOptionTypeFormUpdate struct {
+	value *OptionTypeFormUpdate
+	isSet bool
+}
+
+func (v NullableOptionTypeFormUpdate) Get() *OptionTypeFormUpdate {
+	return v.value
+}
+
+func (v *NullableOptionTypeFormUpdate) Set(val *OptionTypeFormUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionTypeFormUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionTypeFormUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionTypeFormUpdate(val *OptionTypeFormUpdate) *NullableOptionTypeFormUpdate {
+	return &NullableOptionTypeFormUpdate{value: val, isSet: true}
+}
+
+func (v NullableOptionTypeFormUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionTypeFormUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *OptionTypeFormUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

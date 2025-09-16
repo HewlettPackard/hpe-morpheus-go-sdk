@@ -87,6 +87,43 @@ func (o RemoveAppInstanceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRemoveAppInstanceRequest struct {
+	value *RemoveAppInstanceRequest
+	isSet bool
+}
+
+func (v NullableRemoveAppInstanceRequest) Get() *RemoveAppInstanceRequest {
+	return v.value
+}
+
+func (v *NullableRemoveAppInstanceRequest) Set(val *RemoveAppInstanceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRemoveAppInstanceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRemoveAppInstanceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRemoveAppInstanceRequest(val *RemoveAppInstanceRequest) *NullableRemoveAppInstanceRequest {
+	return &NullableRemoveAppInstanceRequest{value: val, isSet: true}
+}
+
+func (v NullableRemoveAppInstanceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRemoveAppInstanceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RemoveAppInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

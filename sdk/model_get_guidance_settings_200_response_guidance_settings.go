@@ -443,6 +443,43 @@ func (o GetGuidanceSettings200ResponseGuidanceSettings) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableGetGuidanceSettings200ResponseGuidanceSettings struct {
+	value *GetGuidanceSettings200ResponseGuidanceSettings
+	isSet bool
+}
+
+func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) Get() *GetGuidanceSettings200ResponseGuidanceSettings {
+	return v.value
+}
+
+func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) Set(val *GetGuidanceSettings200ResponseGuidanceSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetGuidanceSettings200ResponseGuidanceSettings(val *GetGuidanceSettings200ResponseGuidanceSettings) *NullableGetGuidanceSettings200ResponseGuidanceSettings {
+	return &NullableGetGuidanceSettings200ResponseGuidanceSettings{value: val, isSet: true}
+}
+
+func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

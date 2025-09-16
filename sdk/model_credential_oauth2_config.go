@@ -330,6 +330,43 @@ func (o CredentialOauth2Config) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCredentialOauth2Config struct {
+	value *CredentialOauth2Config
+	isSet bool
+}
+
+func (v NullableCredentialOauth2Config) Get() *CredentialOauth2Config {
+	return v.value
+}
+
+func (v *NullableCredentialOauth2Config) Set(val *CredentialOauth2Config) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialOauth2Config) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialOauth2Config) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialOauth2Config(val *CredentialOauth2Config) *NullableCredentialOauth2Config {
+	return &NullableCredentialOauth2Config{value: val, isSet: true}
+}
+
+func (v NullableCredentialOauth2Config) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialOauth2Config) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialOauth2Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

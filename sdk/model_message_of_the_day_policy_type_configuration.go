@@ -287,6 +287,43 @@ func (o MessageOfTheDayPolicyTypeConfiguration) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableMessageOfTheDayPolicyTypeConfiguration struct {
+	value *MessageOfTheDayPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) Get() *MessageOfTheDayPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) Set(val *MessageOfTheDayPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMessageOfTheDayPolicyTypeConfiguration(val *MessageOfTheDayPolicyTypeConfiguration) *NullableMessageOfTheDayPolicyTypeConfiguration {
+	return &NullableMessageOfTheDayPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMessageOfTheDayPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMessageOfTheDayPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *MessageOfTheDayPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

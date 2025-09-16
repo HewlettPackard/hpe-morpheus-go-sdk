@@ -115,6 +115,43 @@ func (o UpdateRoleInstanceTypeAccessRequestOneOf) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableUpdateRoleInstanceTypeAccessRequestOneOf struct {
+	value *UpdateRoleInstanceTypeAccessRequestOneOf
+	isSet bool
+}
+
+func (v NullableUpdateRoleInstanceTypeAccessRequestOneOf) Get() *UpdateRoleInstanceTypeAccessRequestOneOf {
+	return v.value
+}
+
+func (v *NullableUpdateRoleInstanceTypeAccessRequestOneOf) Set(val *UpdateRoleInstanceTypeAccessRequestOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleInstanceTypeAccessRequestOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleInstanceTypeAccessRequestOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleInstanceTypeAccessRequestOneOf(val *UpdateRoleInstanceTypeAccessRequestOneOf) *NullableUpdateRoleInstanceTypeAccessRequestOneOf {
+	return &NullableUpdateRoleInstanceTypeAccessRequestOneOf{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleInstanceTypeAccessRequestOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleInstanceTypeAccessRequestOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateRoleInstanceTypeAccessRequestOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

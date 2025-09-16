@@ -1346,6 +1346,43 @@ func (o InstanceServicePlan) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceServicePlan struct {
+	value *InstanceServicePlan
+	isSet bool
+}
+
+func (v NullableInstanceServicePlan) Get() *InstanceServicePlan {
+	return v.value
+}
+
+func (v *NullableInstanceServicePlan) Set(val *InstanceServicePlan) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceServicePlan) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceServicePlan) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceServicePlan(val *InstanceServicePlan) *NullableInstanceServicePlan {
+	return &NullableInstanceServicePlan{value: val, isSet: true}
+}
+
+func (v NullableInstanceServicePlan) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceServicePlan) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

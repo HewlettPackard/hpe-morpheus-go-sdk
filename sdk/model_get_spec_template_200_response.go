@@ -95,6 +95,43 @@ func (o GetSpecTemplate200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetSpecTemplate200Response struct {
+	value *GetSpecTemplate200Response
+	isSet bool
+}
+
+func (v NullableGetSpecTemplate200Response) Get() *GetSpecTemplate200Response {
+	return v.value
+}
+
+func (v *NullableGetSpecTemplate200Response) Set(val *GetSpecTemplate200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetSpecTemplate200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetSpecTemplate200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetSpecTemplate200Response(val *GetSpecTemplate200Response) *NullableGetSpecTemplate200Response {
+	return &NullableGetSpecTemplate200Response{value: val, isSet: true}
+}
+
+func (v NullableGetSpecTemplate200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetSpecTemplate200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetSpecTemplate200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

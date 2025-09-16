@@ -137,6 +137,43 @@ func (o AwsResourcePoolConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAwsResourcePoolConfig struct {
+	value *AwsResourcePoolConfig
+	isSet bool
+}
+
+func (v NullableAwsResourcePoolConfig) Get() *AwsResourcePoolConfig {
+	return v.value
+}
+
+func (v *NullableAwsResourcePoolConfig) Set(val *AwsResourcePoolConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAwsResourcePoolConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAwsResourcePoolConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAwsResourcePoolConfig(val *AwsResourcePoolConfig) *NullableAwsResourcePoolConfig {
+	return &NullableAwsResourcePoolConfig{value: val, isSet: true}
+}
+
+func (v NullableAwsResourcePoolConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAwsResourcePoolConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AwsResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

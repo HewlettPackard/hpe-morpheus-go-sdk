@@ -131,6 +131,43 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 
 	return toSerialize, nil
 }
+
+type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner struct {
+	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner
+	isSet bool
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
+	return v.value
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner {
+	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner{value: val, isSet: true}
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

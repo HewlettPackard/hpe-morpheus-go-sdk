@@ -215,6 +215,43 @@ func (o SpecTemplateCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSpecTemplateCreate struct {
+	value *SpecTemplateCreate
+	isSet bool
+}
+
+func (v NullableSpecTemplateCreate) Get() *SpecTemplateCreate {
+	return v.value
+}
+
+func (v *NullableSpecTemplateCreate) Set(val *SpecTemplateCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSpecTemplateCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSpecTemplateCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSpecTemplateCreate(val *SpecTemplateCreate) *NullableSpecTemplateCreate {
+	return &NullableSpecTemplateCreate{value: val, isSet: true}
+}
+
+func (v NullableSpecTemplateCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSpecTemplateCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SpecTemplateCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -252,6 +252,43 @@ func (o UpdateEnvironmentsRequestEnvironment) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableUpdateEnvironmentsRequestEnvironment struct {
+	value *UpdateEnvironmentsRequestEnvironment
+	isSet bool
+}
+
+func (v NullableUpdateEnvironmentsRequestEnvironment) Get() *UpdateEnvironmentsRequestEnvironment {
+	return v.value
+}
+
+func (v *NullableUpdateEnvironmentsRequestEnvironment) Set(val *UpdateEnvironmentsRequestEnvironment) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateEnvironmentsRequestEnvironment) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateEnvironmentsRequestEnvironment) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateEnvironmentsRequestEnvironment(val *UpdateEnvironmentsRequestEnvironment) *NullableUpdateEnvironmentsRequestEnvironment {
+	return &NullableUpdateEnvironmentsRequestEnvironment{value: val, isSet: true}
+}
+
+func (v NullableUpdateEnvironmentsRequestEnvironment) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateEnvironmentsRequestEnvironment) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateEnvironmentsRequestEnvironment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

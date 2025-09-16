@@ -345,6 +345,43 @@ func (o VdiGateway) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableVdiGateway struct {
+	value *VdiGateway
+	isSet bool
+}
+
+func (v NullableVdiGateway) Get() *VdiGateway {
+	return v.value
+}
+
+func (v *NullableVdiGateway) Set(val *VdiGateway) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableVdiGateway) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableVdiGateway) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableVdiGateway(val *VdiGateway) *NullableVdiGateway {
+	return &NullableVdiGateway{value: val, isSet: true}
+}
+
+func (v NullableVdiGateway) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableVdiGateway) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *VdiGateway) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

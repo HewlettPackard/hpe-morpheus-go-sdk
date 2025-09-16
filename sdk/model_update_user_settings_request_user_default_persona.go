@@ -96,6 +96,43 @@ func (o UpdateUserSettingsRequestUserDefaultPersona) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableUpdateUserSettingsRequestUserDefaultPersona struct {
+	value *UpdateUserSettingsRequestUserDefaultPersona
+	isSet bool
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultPersona) Get() *UpdateUserSettingsRequestUserDefaultPersona {
+	return v.value
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) Set(val *UpdateUserSettingsRequestUserDefaultPersona) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultPersona) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserSettingsRequestUserDefaultPersona(val *UpdateUserSettingsRequestUserDefaultPersona) *NullableUpdateUserSettingsRequestUserDefaultPersona {
+	return &NullableUpdateUserSettingsRequestUserDefaultPersona{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultPersona) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultPersona) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateUserSettingsRequestUserDefaultPersona) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

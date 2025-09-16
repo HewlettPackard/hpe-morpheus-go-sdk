@@ -2803,6 +2803,43 @@ func (o ClusterMasters) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterMasters struct {
+	value *ClusterMasters
+	isSet bool
+}
+
+func (v NullableClusterMasters) Get() *ClusterMasters {
+	return v.value
+}
+
+func (v *NullableClusterMasters) Set(val *ClusterMasters) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterMasters) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterMasters) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterMasters(val *ClusterMasters) *NullableClusterMasters {
+	return &NullableClusterMasters{value: val, isSet: true}
+}
+
+func (v NullableClusterMasters) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterMasters) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterMasters) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

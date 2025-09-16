@@ -86,6 +86,43 @@ func (o UpdateTenantRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateTenantRequest struct {
+	value *UpdateTenantRequest
+	isSet bool
+}
+
+func (v NullableUpdateTenantRequest) Get() *UpdateTenantRequest {
+	return v.value
+}
+
+func (v *NullableUpdateTenantRequest) Set(val *UpdateTenantRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateTenantRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateTenantRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateTenantRequest(val *UpdateTenantRequest) *NullableUpdateTenantRequest {
+	return &NullableUpdateTenantRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateTenantRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateTenantRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateTenantRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

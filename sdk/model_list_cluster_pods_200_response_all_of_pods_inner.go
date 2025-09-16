@@ -550,6 +550,43 @@ func (o ListClusterPods200ResponseAllOfPodsInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableListClusterPods200ResponseAllOfPodsInner struct {
+	value *ListClusterPods200ResponseAllOfPodsInner
+	isSet bool
+}
+
+func (v NullableListClusterPods200ResponseAllOfPodsInner) Get() *ListClusterPods200ResponseAllOfPodsInner {
+	return v.value
+}
+
+func (v *NullableListClusterPods200ResponseAllOfPodsInner) Set(val *ListClusterPods200ResponseAllOfPodsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterPods200ResponseAllOfPodsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterPods200ResponseAllOfPodsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterPods200ResponseAllOfPodsInner(val *ListClusterPods200ResponseAllOfPodsInner) *NullableListClusterPods200ResponseAllOfPodsInner {
+	return &NullableListClusterPods200ResponseAllOfPodsInner{value: val, isSet: true}
+}
+
+func (v NullableListClusterPods200ResponseAllOfPodsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

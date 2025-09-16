@@ -96,6 +96,43 @@ func (o AddPriceSetsRequestPriceSetZone) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableAddPriceSetsRequestPriceSetZone struct {
+	value *AddPriceSetsRequestPriceSetZone
+	isSet bool
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZone) Get() *AddPriceSetsRequestPriceSetZone {
+	return v.value
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZone) Set(val *AddPriceSetsRequestPriceSetZone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPriceSetsRequestPriceSetZone(val *AddPriceSetsRequestPriceSetZone) *NullableAddPriceSetsRequestPriceSetZone {
+	return &NullableAddPriceSetsRequestPriceSetZone{value: val, isSet: true}
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPriceSetsRequestPriceSetZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

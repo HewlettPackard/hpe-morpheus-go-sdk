@@ -371,6 +371,43 @@ func (o CheckSql) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckSql struct {
+	value *CheckSql
+	isSet bool
+}
+
+func (v NullableCheckSql) Get() *CheckSql {
+	return v.value
+}
+
+func (v *NullableCheckSql) Set(val *CheckSql) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckSql) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckSql) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckSql(val *CheckSql) *NullableCheckSql {
+	return &NullableCheckSql{value: val, isSet: true}
+}
+
+func (v NullableCheckSql) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckSql) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckSql) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

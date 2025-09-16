@@ -633,6 +633,43 @@ func (o IntegrationAnsible) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationAnsible struct {
+	value *IntegrationAnsible
+	isSet bool
+}
+
+func (v NullableIntegrationAnsible) Get() *IntegrationAnsible {
+	return v.value
+}
+
+func (v *NullableIntegrationAnsible) Set(val *IntegrationAnsible) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationAnsible) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationAnsible) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationAnsible(val *IntegrationAnsible) *NullableIntegrationAnsible {
+	return &NullableIntegrationAnsible{value: val, isSet: true}
+}
+
+func (v NullableIntegrationAnsible) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationAnsible) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationAnsible) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

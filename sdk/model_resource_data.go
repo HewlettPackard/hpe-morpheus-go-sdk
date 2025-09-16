@@ -203,6 +203,43 @@ func (o ResourceData) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableResourceData struct {
+	value *ResourceData
+	isSet bool
+}
+
+func (v NullableResourceData) Get() *ResourceData {
+	return v.value
+}
+
+func (v *NullableResourceData) Set(val *ResourceData) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResourceData) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResourceData) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResourceData(val *ResourceData) *NullableResourceData {
+	return &NullableResourceData{value: val, isSet: true}
+}
+
+func (v NullableResourceData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResourceData) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResourceData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

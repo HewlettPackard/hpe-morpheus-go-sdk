@@ -670,6 +670,43 @@ func (o IntegrationCypher) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationCypher struct {
+	value *IntegrationCypher
+	isSet bool
+}
+
+func (v NullableIntegrationCypher) Get() *IntegrationCypher {
+	return v.value
+}
+
+func (v *NullableIntegrationCypher) Set(val *IntegrationCypher) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationCypher) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationCypher) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationCypher(val *IntegrationCypher) *NullableIntegrationCypher {
+	return &NullableIntegrationCypher{value: val, isSet: true}
+}
+
+func (v NullableIntegrationCypher) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationCypher) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationCypher) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

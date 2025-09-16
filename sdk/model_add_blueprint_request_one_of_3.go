@@ -253,6 +253,43 @@ func (o AddBlueprintRequestOneOf3) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf3 struct {
+	value *AddBlueprintRequestOneOf3
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf3) Get() *AddBlueprintRequestOneOf3 {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf3) Set(val *AddBlueprintRequestOneOf3) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf3) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf3) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf3(val *AddBlueprintRequestOneOf3) *NullableAddBlueprintRequestOneOf3 {
+	return &NullableAddBlueprintRequestOneOf3{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf3) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf3) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

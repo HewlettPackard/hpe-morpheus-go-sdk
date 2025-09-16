@@ -427,6 +427,43 @@ func (o LoadBalancerInstanceUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableLoadBalancerInstanceUpdate struct {
+	value *LoadBalancerInstanceUpdate
+	isSet bool
+}
+
+func (v NullableLoadBalancerInstanceUpdate) Get() *LoadBalancerInstanceUpdate {
+	return v.value
+}
+
+func (v *NullableLoadBalancerInstanceUpdate) Set(val *LoadBalancerInstanceUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLoadBalancerInstanceUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLoadBalancerInstanceUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLoadBalancerInstanceUpdate(val *LoadBalancerInstanceUpdate) *NullableLoadBalancerInstanceUpdate {
+	return &NullableLoadBalancerInstanceUpdate{value: val, isSet: true}
+}
+
+func (v NullableLoadBalancerInstanceUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLoadBalancerInstanceUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *LoadBalancerInstanceUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

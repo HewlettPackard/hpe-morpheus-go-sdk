@@ -923,6 +923,43 @@ func (o WhitelabelSettings) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWhitelabelSettings struct {
+	value *WhitelabelSettings
+	isSet bool
+}
+
+func (v NullableWhitelabelSettings) Get() *WhitelabelSettings {
+	return v.value
+}
+
+func (v *NullableWhitelabelSettings) Set(val *WhitelabelSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWhitelabelSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWhitelabelSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWhitelabelSettings(val *WhitelabelSettings) *NullableWhitelabelSettings {
+	return &NullableWhitelabelSettings{value: val, isSet: true}
+}
+
+func (v NullableWhitelabelSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWhitelabelSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

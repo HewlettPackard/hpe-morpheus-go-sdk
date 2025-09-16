@@ -186,6 +186,43 @@ func (o ListActivity4XXResponse) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListActivity4XXResponse struct {
+	value *ListActivity4XXResponse
+	isSet bool
+}
+
+func (v NullableListActivity4XXResponse) Get() *ListActivity4XXResponse {
+	return v.value
+}
+
+func (v *NullableListActivity4XXResponse) Set(val *ListActivity4XXResponse) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListActivity4XXResponse) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListActivity4XXResponse) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListActivity4XXResponse(val *ListActivity4XXResponse) *NullableListActivity4XXResponse {
+	return &NullableListActivity4XXResponse{value: val, isSet: true}
+}
+
+func (v NullableListActivity4XXResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListActivity4XXResponse) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListActivity4XXResponse) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -457,6 +457,43 @@ func (o SaveCloudDatastoreRequestDatastoreResourcePermissions) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableSaveCloudDatastoreRequestDatastoreResourcePermissions struct {
+	value *SaveCloudDatastoreRequestDatastoreResourcePermissions
+	isSet bool
+}
+
+func (v NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) Get() *SaveCloudDatastoreRequestDatastoreResourcePermissions {
+	return v.value
+}
+
+func (v *NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) Set(val *SaveCloudDatastoreRequestDatastoreResourcePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveCloudDatastoreRequestDatastoreResourcePermissions(val *SaveCloudDatastoreRequestDatastoreResourcePermissions) *NullableSaveCloudDatastoreRequestDatastoreResourcePermissions {
+	return &NullableSaveCloudDatastoreRequestDatastoreResourcePermissions{value: val, isSet: true}
+}
+
+func (v NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

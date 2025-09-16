@@ -95,6 +95,43 @@ func (o WebCheckAllOfCheckType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWebCheckAllOfCheckType struct {
+	value *WebCheckAllOfCheckType
+	isSet bool
+}
+
+func (v NullableWebCheckAllOfCheckType) Get() *WebCheckAllOfCheckType {
+	return v.value
+}
+
+func (v *NullableWebCheckAllOfCheckType) Set(val *WebCheckAllOfCheckType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWebCheckAllOfCheckType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWebCheckAllOfCheckType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWebCheckAllOfCheckType(val *WebCheckAllOfCheckType) *NullableWebCheckAllOfCheckType {
+	return &NullableWebCheckAllOfCheckType{value: val, isSet: true}
+}
+
+func (v NullableWebCheckAllOfCheckType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWebCheckAllOfCheckType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WebCheckAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

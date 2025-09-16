@@ -167,6 +167,43 @@ func (o AddBlueprintRequestOneOf3ConfigSpecsInner) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf3ConfigSpecsInner struct {
+	value *AddBlueprintRequestOneOf3ConfigSpecsInner
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Get() *AddBlueprintRequestOneOf3ConfigSpecsInner {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Set(val *AddBlueprintRequestOneOf3ConfigSpecsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf3ConfigSpecsInner(val *AddBlueprintRequestOneOf3ConfigSpecsInner) *NullableAddBlueprintRequestOneOf3ConfigSpecsInner {
+	return &NullableAddBlueprintRequestOneOf3ConfigSpecsInner{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf3ConfigSpecsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf3ConfigSpecsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf3ConfigSpecsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

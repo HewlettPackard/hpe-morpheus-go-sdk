@@ -383,6 +383,43 @@ func (o SubnetType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSubnetType struct {
+	value *SubnetType
+	isSet bool
+}
+
+func (v NullableSubnetType) Get() *SubnetType {
+	return v.value
+}
+
+func (v *NullableSubnetType) Set(val *SubnetType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSubnetType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSubnetType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSubnetType(val *SubnetType) *NullableSubnetType {
+	return &NullableSubnetType{value: val, isSet: true}
+}
+
+func (v NullableSubnetType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSubnetType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SubnetType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

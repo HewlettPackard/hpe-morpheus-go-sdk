@@ -95,6 +95,43 @@ func (o AddClusterWorkerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterWorkerRequest struct {
+	value *AddClusterWorkerRequest
+	isSet bool
+}
+
+func (v NullableAddClusterWorkerRequest) Get() *AddClusterWorkerRequest {
+	return v.value
+}
+
+func (v *NullableAddClusterWorkerRequest) Set(val *AddClusterWorkerRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterWorkerRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterWorkerRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterWorkerRequest(val *AddClusterWorkerRequest) *NullableAddClusterWorkerRequest {
+	return &NullableAddClusterWorkerRequest{value: val, isSet: true}
+}
+
+func (v NullableAddClusterWorkerRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterWorkerRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterWorkerRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

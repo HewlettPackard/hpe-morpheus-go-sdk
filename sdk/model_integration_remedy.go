@@ -705,6 +705,43 @@ func (o IntegrationRemedy) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationRemedy struct {
+	value *IntegrationRemedy
+	isSet bool
+}
+
+func (v NullableIntegrationRemedy) Get() *IntegrationRemedy {
+	return v.value
+}
+
+func (v *NullableIntegrationRemedy) Set(val *IntegrationRemedy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationRemedy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationRemedy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationRemedy(val *IntegrationRemedy) *NullableIntegrationRemedy {
+	return &NullableIntegrationRemedy{value: val, isSet: true}
+}
+
+func (v NullableIntegrationRemedy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationRemedy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationRemedy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

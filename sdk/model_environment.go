@@ -420,6 +420,43 @@ func (o Environment) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableEnvironment struct {
+	value *Environment
+	isSet bool
+}
+
+func (v NullableEnvironment) Get() *Environment {
+	return v.value
+}
+
+func (v *NullableEnvironment) Set(val *Environment) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableEnvironment) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableEnvironment) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableEnvironment(val *Environment) *NullableEnvironment {
+	return &NullableEnvironment{value: val, isSet: true}
+}
+
+func (v NullableEnvironment) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableEnvironment) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Environment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

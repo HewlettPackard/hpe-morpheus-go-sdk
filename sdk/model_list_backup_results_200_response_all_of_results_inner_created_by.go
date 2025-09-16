@@ -133,6 +133,43 @@ func (o ListBackupResults200ResponseAllOfResultsInnerCreatedBy) ToMap() (map[str
 
 	return toSerialize, nil
 }
+
+type NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy struct {
+	value *ListBackupResults200ResponseAllOfResultsInnerCreatedBy
+	isSet bool
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) Get() *ListBackupResults200ResponseAllOfResultsInnerCreatedBy {
+	return v.value
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) Set(val *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackupResults200ResponseAllOfResultsInnerCreatedBy(val *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) *NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy {
+	return &NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy{value: val, isSet: true}
+}
+
+func (v NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

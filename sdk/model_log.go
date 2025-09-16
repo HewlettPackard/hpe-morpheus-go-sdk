@@ -420,6 +420,43 @@ func (o Log) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableLog struct {
+	value *Log
+	isSet bool
+}
+
+func (v NullableLog) Get() *Log {
+	return v.value
+}
+
+func (v *NullableLog) Set(val *Log) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLog) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLog) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLog(val *Log) *NullableLog {
+	return &NullableLog{value: val, isSet: true}
+}
+
+func (v NullableLog) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLog) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Log) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

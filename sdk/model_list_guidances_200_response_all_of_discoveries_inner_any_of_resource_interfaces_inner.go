@@ -1163,6 +1163,43 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInne
 
 	return toSerialize, nil
 }
+
+type NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner struct {
+	value *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner
+	isSet bool
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Get() *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner {
+	return v.value
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Set(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner(val *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner {
+	return &NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

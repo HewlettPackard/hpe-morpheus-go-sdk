@@ -95,6 +95,43 @@ func (o AddOptionListRequestOptionTypeListConfig) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableAddOptionListRequestOptionTypeListConfig struct {
+	value *AddOptionListRequestOptionTypeListConfig
+	isSet bool
+}
+
+func (v NullableAddOptionListRequestOptionTypeListConfig) Get() *AddOptionListRequestOptionTypeListConfig {
+	return v.value
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListConfig) Set(val *AddOptionListRequestOptionTypeListConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOptionListRequestOptionTypeListConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOptionListRequestOptionTypeListConfig(val *AddOptionListRequestOptionTypeListConfig) *NullableAddOptionListRequestOptionTypeListConfig {
+	return &NullableAddOptionListRequestOptionTypeListConfig{value: val, isSet: true}
+}
+
+func (v NullableAddOptionListRequestOptionTypeListConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOptionListRequestOptionTypeListConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

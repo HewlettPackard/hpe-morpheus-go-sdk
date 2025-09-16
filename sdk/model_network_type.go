@@ -992,6 +992,43 @@ func (o NetworkType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkType struct {
+	value *NetworkType
+	isSet bool
+}
+
+func (v NullableNetworkType) Get() *NetworkType {
+	return v.value
+}
+
+func (v *NullableNetworkType) Set(val *NetworkType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkType(val *NetworkType) *NullableNetworkType {
+	return &NullableNetworkType{value: val, isSet: true}
+}
+
+func (v NullableNetworkType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

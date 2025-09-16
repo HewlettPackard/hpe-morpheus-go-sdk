@@ -392,6 +392,43 @@ func (o BackupTypeProvider) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBackupTypeProvider struct {
+	value *BackupTypeProvider
+	isSet bool
+}
+
+func (v NullableBackupTypeProvider) Get() *BackupTypeProvider {
+	return v.value
+}
+
+func (v *NullableBackupTypeProvider) Set(val *BackupTypeProvider) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupTypeProvider) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupTypeProvider) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupTypeProvider(val *BackupTypeProvider) *NullableBackupTypeProvider {
+	return &NullableBackupTypeProvider{value: val, isSet: true}
+}
+
+func (v NullableBackupTypeProvider) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupTypeProvider) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BackupTypeProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

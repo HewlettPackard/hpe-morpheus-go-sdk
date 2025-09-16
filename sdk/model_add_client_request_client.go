@@ -221,6 +221,43 @@ func (o AddClientRequestClient) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddClientRequestClient struct {
+	value *AddClientRequestClient
+	isSet bool
+}
+
+func (v NullableAddClientRequestClient) Get() *AddClientRequestClient {
+	return v.value
+}
+
+func (v *NullableAddClientRequestClient) Set(val *AddClientRequestClient) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClientRequestClient) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClientRequestClient) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClientRequestClient(val *AddClientRequestClient) *NullableAddClientRequestClient {
+	return &NullableAddClientRequestClient{value: val, isSet: true}
+}
+
+func (v NullableAddClientRequestClient) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClientRequestClient) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClientRequestClient) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

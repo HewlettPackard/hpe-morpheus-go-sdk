@@ -246,6 +246,43 @@ func (o InstanceResize) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceResize struct {
+	value *InstanceResize
+	isSet bool
+}
+
+func (v NullableInstanceResize) Get() *InstanceResize {
+	return v.value
+}
+
+func (v *NullableInstanceResize) Set(val *InstanceResize) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceResize) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceResize) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceResize(val *InstanceResize) *NullableInstanceResize {
+	return &NullableInstanceResize{value: val, isSet: true}
+}
+
+func (v NullableInstanceResize) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceResize) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceResize) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

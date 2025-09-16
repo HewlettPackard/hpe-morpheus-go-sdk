@@ -203,6 +203,43 @@ func (o GetAlerts200ResponseAllOfChecksInnerCheckType) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableGetAlerts200ResponseAllOfChecksInnerCheckType struct {
+	value *GetAlerts200ResponseAllOfChecksInnerCheckType
+	isSet bool
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerCheckType) Get() *GetAlerts200ResponseAllOfChecksInnerCheckType {
+	return v.value
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerCheckType) Set(val *GetAlerts200ResponseAllOfChecksInnerCheckType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerCheckType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerCheckType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAlerts200ResponseAllOfChecksInnerCheckType(val *GetAlerts200ResponseAllOfChecksInnerCheckType) *NullableGetAlerts200ResponseAllOfChecksInnerCheckType {
+	return &NullableGetAlerts200ResponseAllOfChecksInnerCheckType{value: val, isSet: true}
+}
+
+func (v NullableGetAlerts200ResponseAllOfChecksInnerCheckType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAlerts200ResponseAllOfChecksInnerCheckType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetAlerts200ResponseAllOfChecksInnerCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

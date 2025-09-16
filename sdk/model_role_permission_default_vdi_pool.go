@@ -115,6 +115,43 @@ func (o RolePermissionDefaultVDIPool) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRolePermissionDefaultVDIPool struct {
+	value *RolePermissionDefaultVDIPool
+	isSet bool
+}
+
+func (v NullableRolePermissionDefaultVDIPool) Get() *RolePermissionDefaultVDIPool {
+	return v.value
+}
+
+func (v *NullableRolePermissionDefaultVDIPool) Set(val *RolePermissionDefaultVDIPool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionDefaultVDIPool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionDefaultVDIPool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionDefaultVDIPool(val *RolePermissionDefaultVDIPool) *NullableRolePermissionDefaultVDIPool {
+	return &NullableRolePermissionDefaultVDIPool{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionDefaultVDIPool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionDefaultVDIPool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RolePermissionDefaultVDIPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

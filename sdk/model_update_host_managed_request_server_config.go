@@ -95,6 +95,43 @@ func (o UpdateHostManagedRequestServerConfig) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostManagedRequestServerConfig struct {
+	value *UpdateHostManagedRequestServerConfig
+	isSet bool
+}
+
+func (v NullableUpdateHostManagedRequestServerConfig) Get() *UpdateHostManagedRequestServerConfig {
+	return v.value
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfig) Set(val *UpdateHostManagedRequestServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostManagedRequestServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostManagedRequestServerConfig(val *UpdateHostManagedRequestServerConfig) *NullableUpdateHostManagedRequestServerConfig {
+	return &NullableUpdateHostManagedRequestServerConfig{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostManagedRequestServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostManagedRequestServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -87,6 +87,43 @@ func (o AddSpecTemplateRequestSpecTemplateType) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableAddSpecTemplateRequestSpecTemplateType struct {
+	value *AddSpecTemplateRequestSpecTemplateType
+	isSet bool
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateType) Get() *AddSpecTemplateRequestSpecTemplateType {
+	return v.value
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateType) Set(val *AddSpecTemplateRequestSpecTemplateType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSpecTemplateRequestSpecTemplateType(val *AddSpecTemplateRequestSpecTemplateType) *NullableAddSpecTemplateRequestSpecTemplateType {
+	return &NullableAddSpecTemplateRequestSpecTemplateType{value: val, isSet: true}
+}
+
+func (v NullableAddSpecTemplateRequestSpecTemplateType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSpecTemplateRequestSpecTemplateType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddSpecTemplateRequestSpecTemplateType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

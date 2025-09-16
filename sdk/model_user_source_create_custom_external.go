@@ -248,6 +248,43 @@ func (o UserSourceCreateCustomExternal) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateCustomExternal struct {
+	value *UserSourceCreateCustomExternal
+	isSet bool
+}
+
+func (v NullableUserSourceCreateCustomExternal) Get() *UserSourceCreateCustomExternal {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateCustomExternal) Set(val *UserSourceCreateCustomExternal) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateCustomExternal) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateCustomExternal) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateCustomExternal(val *UserSourceCreateCustomExternal) *NullableUserSourceCreateCustomExternal {
+	return &NullableUserSourceCreateCustomExternal{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateCustomExternal) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateCustomExternal) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateCustomExternal) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -455,6 +455,43 @@ func (o AddUserTenant200ResponseAllOfUserAccess) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableAddUserTenant200ResponseAllOfUserAccess struct {
+	value *AddUserTenant200ResponseAllOfUserAccess
+	isSet bool
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserAccess) Get() *AddUserTenant200ResponseAllOfUserAccess {
+	return v.value
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserAccess) Set(val *AddUserTenant200ResponseAllOfUserAccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserAccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserAccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddUserTenant200ResponseAllOfUserAccess(val *AddUserTenant200ResponseAllOfUserAccess) *NullableAddUserTenant200ResponseAllOfUserAccess {
+	return &NullableAddUserTenant200ResponseAllOfUserAccess{value: val, isSet: true}
+}
+
+func (v NullableAddUserTenant200ResponseAllOfUserAccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

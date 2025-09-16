@@ -95,6 +95,43 @@ func (o UpdateTenantRequestAccountRole) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateTenantRequestAccountRole struct {
+	value *UpdateTenantRequestAccountRole
+	isSet bool
+}
+
+func (v NullableUpdateTenantRequestAccountRole) Get() *UpdateTenantRequestAccountRole {
+	return v.value
+}
+
+func (v *NullableUpdateTenantRequestAccountRole) Set(val *UpdateTenantRequestAccountRole) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateTenantRequestAccountRole) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateTenantRequestAccountRole) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateTenantRequestAccountRole(val *UpdateTenantRequestAccountRole) *NullableUpdateTenantRequestAccountRole {
+	return &NullableUpdateTenantRequestAccountRole{value: val, isSet: true}
+}
+
+func (v NullableUpdateTenantRequestAccountRole) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateTenantRequestAccountRole) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateTenantRequestAccountRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

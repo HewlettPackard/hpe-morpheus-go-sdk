@@ -203,6 +203,43 @@ func (o ListOptionZoneTypesOptions200ResponseAllOfDataInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableListOptionZoneTypesOptions200ResponseAllOfDataInner struct {
+	value *ListOptionZoneTypesOptions200ResponseAllOfDataInner
+	isSet bool
+}
+
+func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Get() *ListOptionZoneTypesOptions200ResponseAllOfDataInner {
+	return v.value
+}
+
+func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Set(val *ListOptionZoneTypesOptions200ResponseAllOfDataInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListOptionZoneTypesOptions200ResponseAllOfDataInner(val *ListOptionZoneTypesOptions200ResponseAllOfDataInner) *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner {
+	return &NullableListOptionZoneTypesOptions200ResponseAllOfDataInner{value: val, isSet: true}
+}
+
+func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

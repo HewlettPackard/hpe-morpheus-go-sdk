@@ -563,6 +563,43 @@ func (o GetContainer200ResponseContainerStats) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableGetContainer200ResponseContainerStats struct {
+	value *GetContainer200ResponseContainerStats
+	isSet bool
+}
+
+func (v NullableGetContainer200ResponseContainerStats) Get() *GetContainer200ResponseContainerStats {
+	return v.value
+}
+
+func (v *NullableGetContainer200ResponseContainerStats) Set(val *GetContainer200ResponseContainerStats) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetContainer200ResponseContainerStats) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetContainer200ResponseContainerStats) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetContainer200ResponseContainerStats(val *GetContainer200ResponseContainerStats) *NullableGetContainer200ResponseContainerStats {
+	return &NullableGetContainer200ResponseContainerStats{value: val, isSet: true}
+}
+
+func (v NullableGetContainer200ResponseContainerStats) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetContainer200ResponseContainerStats) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetContainer200ResponseContainerStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

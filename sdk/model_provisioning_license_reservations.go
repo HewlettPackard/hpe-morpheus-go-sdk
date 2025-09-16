@@ -131,6 +131,43 @@ func (o ProvisioningLicenseReservations) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableProvisioningLicenseReservations struct {
+	value *ProvisioningLicenseReservations
+	isSet bool
+}
+
+func (v NullableProvisioningLicenseReservations) Get() *ProvisioningLicenseReservations {
+	return v.value
+}
+
+func (v *NullableProvisioningLicenseReservations) Set(val *ProvisioningLicenseReservations) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableProvisioningLicenseReservations) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableProvisioningLicenseReservations) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableProvisioningLicenseReservations(val *ProvisioningLicenseReservations) *NullableProvisioningLicenseReservations {
+	return &NullableProvisioningLicenseReservations{value: val, isSet: true}
+}
+
+func (v NullableProvisioningLicenseReservations) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableProvisioningLicenseReservations) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ProvisioningLicenseReservations) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

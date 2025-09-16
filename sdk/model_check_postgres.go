@@ -371,6 +371,43 @@ func (o CheckPostgres) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckPostgres struct {
+	value *CheckPostgres
+	isSet bool
+}
+
+func (v NullableCheckPostgres) Get() *CheckPostgres {
+	return v.value
+}
+
+func (v *NullableCheckPostgres) Set(val *CheckPostgres) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckPostgres) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckPostgres) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckPostgres(val *CheckPostgres) *NullableCheckPostgres {
+	return &NullableCheckPostgres{value: val, isSet: true}
+}
+
+func (v NullableCheckPostgres) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckPostgres) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckPostgres) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

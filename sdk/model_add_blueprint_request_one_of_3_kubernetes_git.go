@@ -207,6 +207,43 @@ func (o AddBlueprintRequestOneOf3KubernetesGit) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf3KubernetesGit struct {
+	value *AddBlueprintRequestOneOf3KubernetesGit
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf3KubernetesGit) Get() *AddBlueprintRequestOneOf3KubernetesGit {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) Set(val *AddBlueprintRequestOneOf3KubernetesGit) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf3KubernetesGit) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf3KubernetesGit(val *AddBlueprintRequestOneOf3KubernetesGit) *NullableAddBlueprintRequestOneOf3KubernetesGit {
+	return &NullableAddBlueprintRequestOneOf3KubernetesGit{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf3KubernetesGit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf3KubernetesGit) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf3KubernetesGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

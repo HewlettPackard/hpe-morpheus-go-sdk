@@ -133,6 +133,43 @@ func (o ListBackups200ResponseAllOfBackupsInnerBackupRespository) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableListBackups200ResponseAllOfBackupsInnerBackupRespository struct {
+	value *ListBackups200ResponseAllOfBackupsInnerBackupRespository
+	isSet bool
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) Get() *ListBackups200ResponseAllOfBackupsInnerBackupRespository {
+	return v.value
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) Set(val *ListBackups200ResponseAllOfBackupsInnerBackupRespository) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBackups200ResponseAllOfBackupsInnerBackupRespository(val *ListBackups200ResponseAllOfBackupsInnerBackupRespository) *NullableListBackups200ResponseAllOfBackupsInnerBackupRespository {
+	return &NullableListBackups200ResponseAllOfBackupsInnerBackupRespository{value: val, isSet: true}
+}
+
+func (v NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBackups200ResponseAllOfBackupsInnerBackupRespository) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBackups200ResponseAllOfBackupsInnerBackupRespository) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

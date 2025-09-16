@@ -167,6 +167,43 @@ func (o ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions struct {
+	value *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions
+	isSet bool
+}
+
+func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Get() *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions {
+	return v.value
+}
+
+func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Set(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions(val *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions {
+	return &NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions{value: val, isSet: true}
+}
+
+func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

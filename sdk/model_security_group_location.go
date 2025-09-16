@@ -463,6 +463,43 @@ func (o SecurityGroupLocation) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSecurityGroupLocation struct {
+	value *SecurityGroupLocation
+	isSet bool
+}
+
+func (v NullableSecurityGroupLocation) Get() *SecurityGroupLocation {
+	return v.value
+}
+
+func (v *NullableSecurityGroupLocation) Set(val *SecurityGroupLocation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupLocation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupLocation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupLocation(val *SecurityGroupLocation) *NullableSecurityGroupLocation {
+	return &NullableSecurityGroupLocation{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupLocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupLocation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

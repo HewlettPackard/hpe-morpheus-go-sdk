@@ -205,6 +205,43 @@ func (o ResourcePermissions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableResourcePermissions struct {
+	value *ResourcePermissions
+	isSet bool
+}
+
+func (v NullableResourcePermissions) Get() *ResourcePermissions {
+	return v.value
+}
+
+func (v *NullableResourcePermissions) Set(val *ResourcePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResourcePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResourcePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResourcePermissions(val *ResourcePermissions) *NullableResourcePermissions {
+	return &NullableResourcePermissions{value: val, isSet: true}
+}
+
+func (v NullableResourcePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResourcePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -114,6 +114,43 @@ func (o AddSecurityGroupLocationsRequestSecurityGroupLocation) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableAddSecurityGroupLocationsRequestSecurityGroupLocation struct {
+	value *AddSecurityGroupLocationsRequestSecurityGroupLocation
+	isSet bool
+}
+
+func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Get() *AddSecurityGroupLocationsRequestSecurityGroupLocation {
+	return v.value
+}
+
+func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Set(val *AddSecurityGroupLocationsRequestSecurityGroupLocation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityGroupLocationsRequestSecurityGroupLocation(val *AddSecurityGroupLocationsRequestSecurityGroupLocation) *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation {
+	return &NullableAddSecurityGroupLocationsRequestSecurityGroupLocation{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

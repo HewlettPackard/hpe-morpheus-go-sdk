@@ -242,6 +242,43 @@ func (o UpdateSpecTemplateRequestSpecTemplate) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateSpecTemplateRequestSpecTemplate struct {
+	value *UpdateSpecTemplateRequestSpecTemplate
+	isSet bool
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplate) Get() *UpdateSpecTemplateRequestSpecTemplate {
+	return v.value
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplate) Set(val *UpdateSpecTemplateRequestSpecTemplate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateSpecTemplateRequestSpecTemplate(val *UpdateSpecTemplateRequestSpecTemplate) *NullableUpdateSpecTemplateRequestSpecTemplate {
+	return &NullableUpdateSpecTemplateRequestSpecTemplate{value: val, isSet: true}
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateSpecTemplateRequestSpecTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

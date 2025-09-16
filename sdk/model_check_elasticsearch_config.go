@@ -484,6 +484,43 @@ func (o CheckElasticsearchConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckElasticsearchConfig struct {
+	value *CheckElasticsearchConfig
+	isSet bool
+}
+
+func (v NullableCheckElasticsearchConfig) Get() *CheckElasticsearchConfig {
+	return v.value
+}
+
+func (v *NullableCheckElasticsearchConfig) Set(val *CheckElasticsearchConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckElasticsearchConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckElasticsearchConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckElasticsearchConfig(val *CheckElasticsearchConfig) *NullableCheckElasticsearchConfig {
+	return &NullableCheckElasticsearchConfig{value: val, isSet: true}
+}
+
+func (v NullableCheckElasticsearchConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckElasticsearchConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckElasticsearchConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

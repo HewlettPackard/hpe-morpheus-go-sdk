@@ -87,6 +87,43 @@ func (o AcknowledgeHealthAlarmRequestAlarm) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAcknowledgeHealthAlarmRequestAlarm struct {
+	value *AcknowledgeHealthAlarmRequestAlarm
+	isSet bool
+}
+
+func (v NullableAcknowledgeHealthAlarmRequestAlarm) Get() *AcknowledgeHealthAlarmRequestAlarm {
+	return v.value
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequestAlarm) Set(val *AcknowledgeHealthAlarmRequestAlarm) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAcknowledgeHealthAlarmRequestAlarm) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequestAlarm) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAcknowledgeHealthAlarmRequestAlarm(val *AcknowledgeHealthAlarmRequestAlarm) *NullableAcknowledgeHealthAlarmRequestAlarm {
+	return &NullableAcknowledgeHealthAlarmRequestAlarm{value: val, isSet: true}
+}
+
+func (v NullableAcknowledgeHealthAlarmRequestAlarm) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAcknowledgeHealthAlarmRequestAlarm) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AcknowledgeHealthAlarmRequestAlarm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

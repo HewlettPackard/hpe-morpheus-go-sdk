@@ -167,6 +167,43 @@ func (o ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) ToMap() (ma
 
 	return toSerialize, nil
 }
+
+type NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion struct {
+	value *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion
+	isSet bool
+}
+
+func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Get() *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion {
+	return v.value
+}
+
+func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Set(val *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion(val *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion {
+	return &NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion{value: val, isSet: true}
+}
+
+func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

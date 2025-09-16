@@ -2522,6 +2522,43 @@ func (o Zone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZone struct {
+	value *Zone
+	isSet bool
+}
+
+func (v NullableZone) Get() *Zone {
+	return v.value
+}
+
+func (v *NullableZone) Set(val *Zone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZone(val *Zone) *NullableZone {
+	return &NullableZone{value: val, isSet: true}
+}
+
+func (v NullableZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Zone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

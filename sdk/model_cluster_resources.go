@@ -584,6 +584,43 @@ func (o ClusterResources) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterResources struct {
+	value *ClusterResources
+	isSet bool
+}
+
+func (v NullableClusterResources) Get() *ClusterResources {
+	return v.value
+}
+
+func (v *NullableClusterResources) Set(val *ClusterResources) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterResources) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterResources) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterResources(val *ClusterResources) *NullableClusterResources {
+	return &NullableClusterResources{value: val, isSet: true}
+}
+
+func (v NullableClusterResources) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterResources) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterResources) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

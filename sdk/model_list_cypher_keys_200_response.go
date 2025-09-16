@@ -203,6 +203,43 @@ func (o ListCypherKeys200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListCypherKeys200Response struct {
+	value *ListCypherKeys200Response
+	isSet bool
+}
+
+func (v NullableListCypherKeys200Response) Get() *ListCypherKeys200Response {
+	return v.value
+}
+
+func (v *NullableListCypherKeys200Response) Set(val *ListCypherKeys200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCypherKeys200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCypherKeys200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCypherKeys200Response(val *ListCypherKeys200Response) *NullableListCypherKeys200Response {
+	return &NullableListCypherKeys200Response{value: val, isSet: true}
+}
+
+func (v NullableListCypherKeys200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCypherKeys200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCypherKeys200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

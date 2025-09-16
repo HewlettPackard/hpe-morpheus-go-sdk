@@ -1052,6 +1052,43 @@ func (o UpdateVDIPoolsRequestVdiPool) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateVDIPoolsRequestVdiPool struct {
+	value *UpdateVDIPoolsRequestVdiPool
+	isSet bool
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) Get() *UpdateVDIPoolsRequestVdiPool {
+	return v.value
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) Set(val *UpdateVDIPoolsRequestVdiPool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVDIPoolsRequestVdiPool(val *UpdateVDIPoolsRequestVdiPool) *NullableUpdateVDIPoolsRequestVdiPool {
+	return &NullableUpdateVDIPoolsRequestVdiPool{value: val, isSet: true}
+}
+
+func (v NullableUpdateVDIPoolsRequestVdiPool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVDIPoolsRequestVdiPool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateVDIPoolsRequestVdiPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

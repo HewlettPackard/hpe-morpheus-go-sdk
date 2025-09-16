@@ -131,6 +131,43 @@ func (o ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow struct {
+	value *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow
+	isSet bool
+}
+
+func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) Get() *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow {
+	return v.value
+}
+
+func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) Set(val *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow(val *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) *NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow {
+	return &NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow{value: val, isSet: true}
+}
+
+func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

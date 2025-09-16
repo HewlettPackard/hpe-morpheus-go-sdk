@@ -262,6 +262,43 @@ func (o UserGroupCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserGroupCreate struct {
+	value *UserGroupCreate
+	isSet bool
+}
+
+func (v NullableUserGroupCreate) Get() *UserGroupCreate {
+	return v.value
+}
+
+func (v *NullableUserGroupCreate) Set(val *UserGroupCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserGroupCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserGroupCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserGroupCreate(val *UserGroupCreate) *NullableUserGroupCreate {
+	return &NullableUserGroupCreate{value: val, isSet: true}
+}
+
+func (v NullableUserGroupCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserGroupCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserGroupCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

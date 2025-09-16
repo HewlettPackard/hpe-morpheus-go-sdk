@@ -524,6 +524,43 @@ func (o ListPriceSets200ResponseAllOfPriceSetsInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableListPriceSets200ResponseAllOfPriceSetsInner struct {
+	value *ListPriceSets200ResponseAllOfPriceSetsInner
+	isSet bool
+}
+
+func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) Get() *ListPriceSets200ResponseAllOfPriceSetsInner {
+	return v.value
+}
+
+func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) Set(val *ListPriceSets200ResponseAllOfPriceSetsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPriceSets200ResponseAllOfPriceSetsInner(val *ListPriceSets200ResponseAllOfPriceSetsInner) *NullableListPriceSets200ResponseAllOfPriceSetsInner {
+	return &NullableListPriceSets200ResponseAllOfPriceSetsInner{value: val, isSet: true}
+}
+
+func (v NullableListPriceSets200ResponseAllOfPriceSetsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPriceSets200ResponseAllOfPriceSetsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListPriceSets200ResponseAllOfPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

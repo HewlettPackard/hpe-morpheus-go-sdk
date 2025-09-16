@@ -95,6 +95,43 @@ func (o CreateLoadBalancerMonitorRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableCreateLoadBalancerMonitorRequest struct {
+	value *CreateLoadBalancerMonitorRequest
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerMonitorRequest) Get() *CreateLoadBalancerMonitorRequest {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerMonitorRequest) Set(val *CreateLoadBalancerMonitorRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerMonitorRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerMonitorRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerMonitorRequest(val *CreateLoadBalancerMonitorRequest) *NullableCreateLoadBalancerMonitorRequest {
+	return &NullableCreateLoadBalancerMonitorRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerMonitorRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerMonitorRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateLoadBalancerMonitorRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

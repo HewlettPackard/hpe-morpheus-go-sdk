@@ -453,6 +453,43 @@ func (o ExecuteSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableExecuteSchedule struct {
+	value *ExecuteSchedule
+	isSet bool
+}
+
+func (v NullableExecuteSchedule) Get() *ExecuteSchedule {
+	return v.value
+}
+
+func (v *NullableExecuteSchedule) Set(val *ExecuteSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecuteSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecuteSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecuteSchedule(val *ExecuteSchedule) *NullableExecuteSchedule {
+	return &NullableExecuteSchedule{value: val, isSet: true}
+}
+
+func (v NullableExecuteSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecuteSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecuteSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

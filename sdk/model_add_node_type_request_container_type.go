@@ -614,6 +614,43 @@ func (o AddNodeTypeRequestContainerType) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableAddNodeTypeRequestContainerType struct {
+	value *AddNodeTypeRequestContainerType
+	isSet bool
+}
+
+func (v NullableAddNodeTypeRequestContainerType) Get() *AddNodeTypeRequestContainerType {
+	return v.value
+}
+
+func (v *NullableAddNodeTypeRequestContainerType) Set(val *AddNodeTypeRequestContainerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddNodeTypeRequestContainerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddNodeTypeRequestContainerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddNodeTypeRequestContainerType(val *AddNodeTypeRequestContainerType) *NullableAddNodeTypeRequestContainerType {
+	return &NullableAddNodeTypeRequestContainerType{value: val, isSet: true}
+}
+
+func (v NullableAddNodeTypeRequestContainerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddNodeTypeRequestContainerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddNodeTypeRequestContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

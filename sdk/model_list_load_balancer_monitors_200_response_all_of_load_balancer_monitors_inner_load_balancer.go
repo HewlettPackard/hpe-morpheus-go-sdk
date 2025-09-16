@@ -203,6 +203,43 @@ func (o ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBal
 
 	return toSerialize, nil
 }
+
+type NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer struct {
+	value *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer
+	isSet bool
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Get() *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer {
+	return v.value
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Set(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer(val *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer {
+	return &NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer{value: val, isSet: true}
+}
+
+func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

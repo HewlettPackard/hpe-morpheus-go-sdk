@@ -380,6 +380,43 @@ func (o ClusterNamespaces) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterNamespaces struct {
+	value *ClusterNamespaces
+	isSet bool
+}
+
+func (v NullableClusterNamespaces) Get() *ClusterNamespaces {
+	return v.value
+}
+
+func (v *NullableClusterNamespaces) Set(val *ClusterNamespaces) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterNamespaces) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterNamespaces) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterNamespaces(val *ClusterNamespaces) *NullableClusterNamespaces {
+	return &NullableClusterNamespaces{value: val, isSet: true}
+}
+
+func (v NullableClusterNamespaces) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterNamespaces) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterNamespaces) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

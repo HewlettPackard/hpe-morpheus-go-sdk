@@ -131,6 +131,43 @@ func (o NSXNetworkServerCredential) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNSXNetworkServerCredential struct {
+	value *NSXNetworkServerCredential
+	isSet bool
+}
+
+func (v NullableNSXNetworkServerCredential) Get() *NSXNetworkServerCredential {
+	return v.value
+}
+
+func (v *NullableNSXNetworkServerCredential) Set(val *NSXNetworkServerCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNSXNetworkServerCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNSXNetworkServerCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNSXNetworkServerCredential(val *NSXNetworkServerCredential) *NullableNSXNetworkServerCredential {
+	return &NullableNSXNetworkServerCredential{value: val, isSet: true}
+}
+
+func (v NullableNSXNetworkServerCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNSXNetworkServerCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NSXNetworkServerCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -780,6 +780,43 @@ func (o IdentitySourcesAzureADConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesAzureADConfig struct {
+	value *IdentitySourcesAzureADConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesAzureADConfig) Get() *IdentitySourcesAzureADConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesAzureADConfig) Set(val *IdentitySourcesAzureADConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesAzureADConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesAzureADConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesAzureADConfig(val *IdentitySourcesAzureADConfig) *NullableIdentitySourcesAzureADConfig {
+	return &NullableIdentitySourcesAzureADConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesAzureADConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesAzureADConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesAzureADConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -137,6 +137,43 @@ func (o PhpIPAMNetworkPoolServerUpdateConfig) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullablePhpIPAMNetworkPoolServerUpdateConfig struct {
+	value *PhpIPAMNetworkPoolServerUpdateConfig
+	isSet bool
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) Get() *PhpIPAMNetworkPoolServerUpdateConfig {
+	return v.value
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) Set(val *PhpIPAMNetworkPoolServerUpdateConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePhpIPAMNetworkPoolServerUpdateConfig(val *PhpIPAMNetworkPoolServerUpdateConfig) *NullablePhpIPAMNetworkPoolServerUpdateConfig {
+	return &NullablePhpIPAMNetworkPoolServerUpdateConfig{value: val, isSet: true}
+}
+
+func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

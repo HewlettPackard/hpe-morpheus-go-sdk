@@ -131,6 +131,43 @@ func (o ListApprovals200ResponseAllOfApprovalsInnerAccount) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableListApprovals200ResponseAllOfApprovalsInnerAccount struct {
+	value *ListApprovals200ResponseAllOfApprovalsInnerAccount
+	isSet bool
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInnerAccount) Get() *ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	return v.value
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInnerAccount) Set(val *ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInnerAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInnerAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListApprovals200ResponseAllOfApprovalsInnerAccount(val *ListApprovals200ResponseAllOfApprovalsInnerAccount) *NullableListApprovals200ResponseAllOfApprovalsInnerAccount {
+	return &NullableListApprovals200ResponseAllOfApprovalsInnerAccount{value: val, isSet: true}
+}
+
+func (v NullableListApprovals200ResponseAllOfApprovalsInnerAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListApprovals200ResponseAllOfApprovalsInnerAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListApprovals200ResponseAllOfApprovalsInnerAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

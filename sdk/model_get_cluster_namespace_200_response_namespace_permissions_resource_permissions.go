@@ -455,6 +455,43 @@ func (o GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) T
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions struct {
+	value *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
+	isSet bool
+}
+
+func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Get() *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions {
+	return v.value
+}
+
+func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Set(val *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions(val *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions {
+	return &NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions{value: val, isSet: true}
+}
+
+func (v NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

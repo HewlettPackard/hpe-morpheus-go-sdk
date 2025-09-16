@@ -610,6 +610,43 @@ func (o IntegrationType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationType struct {
+	value *IntegrationType
+	isSet bool
+}
+
+func (v NullableIntegrationType) Get() *IntegrationType {
+	return v.value
+}
+
+func (v *NullableIntegrationType) Set(val *IntegrationType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationType(val *IntegrationType) *NullableIntegrationType {
+	return &NullableIntegrationType{value: val, isSet: true}
+}
+
+func (v NullableIntegrationType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

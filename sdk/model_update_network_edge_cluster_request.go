@@ -95,6 +95,43 @@ func (o UpdateNetworkEdgeClusterRequest) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableUpdateNetworkEdgeClusterRequest struct {
+	value *UpdateNetworkEdgeClusterRequest
+	isSet bool
+}
+
+func (v NullableUpdateNetworkEdgeClusterRequest) Get() *UpdateNetworkEdgeClusterRequest {
+	return v.value
+}
+
+func (v *NullableUpdateNetworkEdgeClusterRequest) Set(val *UpdateNetworkEdgeClusterRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateNetworkEdgeClusterRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateNetworkEdgeClusterRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateNetworkEdgeClusterRequest(val *UpdateNetworkEdgeClusterRequest) *NullableUpdateNetworkEdgeClusterRequest {
+	return &NullableUpdateNetworkEdgeClusterRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateNetworkEdgeClusterRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateNetworkEdgeClusterRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateNetworkEdgeClusterRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o UpdateLayoutRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateLayoutRequest struct {
+	value *UpdateLayoutRequest
+	isSet bool
+}
+
+func (v NullableUpdateLayoutRequest) Get() *UpdateLayoutRequest {
+	return v.value
+}
+
+func (v *NullableUpdateLayoutRequest) Set(val *UpdateLayoutRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateLayoutRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateLayoutRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateLayoutRequest(val *UpdateLayoutRequest) *NullableUpdateLayoutRequest {
+	return &NullableUpdateLayoutRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateLayoutRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateLayoutRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateLayoutRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

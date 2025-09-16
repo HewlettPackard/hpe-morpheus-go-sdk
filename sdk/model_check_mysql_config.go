@@ -329,6 +329,43 @@ func (o CheckMysqlConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckMysqlConfig struct {
+	value *CheckMysqlConfig
+	isSet bool
+}
+
+func (v NullableCheckMysqlConfig) Get() *CheckMysqlConfig {
+	return v.value
+}
+
+func (v *NullableCheckMysqlConfig) Set(val *CheckMysqlConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckMysqlConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckMysqlConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckMysqlConfig(val *CheckMysqlConfig) *NullableCheckMysqlConfig {
+	return &NullableCheckMysqlConfig{value: val, isSet: true}
+}
+
+func (v NullableCheckMysqlConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckMysqlConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckMysqlConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

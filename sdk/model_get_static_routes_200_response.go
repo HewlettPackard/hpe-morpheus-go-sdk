@@ -95,6 +95,43 @@ func (o GetStaticRoutes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetStaticRoutes200Response struct {
+	value *GetStaticRoutes200Response
+	isSet bool
+}
+
+func (v NullableGetStaticRoutes200Response) Get() *GetStaticRoutes200Response {
+	return v.value
+}
+
+func (v *NullableGetStaticRoutes200Response) Set(val *GetStaticRoutes200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetStaticRoutes200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetStaticRoutes200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetStaticRoutes200Response(val *GetStaticRoutes200Response) *NullableGetStaticRoutes200Response {
+	return &NullableGetStaticRoutes200Response{value: val, isSet: true}
+}
+
+func (v NullableGetStaticRoutes200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetStaticRoutes200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetStaticRoutes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

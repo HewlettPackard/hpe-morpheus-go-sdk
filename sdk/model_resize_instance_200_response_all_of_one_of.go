@@ -114,6 +114,43 @@ func (o ResizeInstance200ResponseAllOfOneOf) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableResizeInstance200ResponseAllOfOneOf struct {
+	value *ResizeInstance200ResponseAllOfOneOf
+	isSet bool
+}
+
+func (v NullableResizeInstance200ResponseAllOfOneOf) Get() *ResizeInstance200ResponseAllOfOneOf {
+	return v.value
+}
+
+func (v *NullableResizeInstance200ResponseAllOfOneOf) Set(val *ResizeInstance200ResponseAllOfOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResizeInstance200ResponseAllOfOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResizeInstance200ResponseAllOfOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResizeInstance200ResponseAllOfOneOf(val *ResizeInstance200ResponseAllOfOneOf) *NullableResizeInstance200ResponseAllOfOneOf {
+	return &NullableResizeInstance200ResponseAllOfOneOf{value: val, isSet: true}
+}
+
+func (v NullableResizeInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResizeInstance200ResponseAllOfOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResizeInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

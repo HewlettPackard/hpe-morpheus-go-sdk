@@ -205,6 +205,43 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) To
 
 	return toSerialize, nil
 }
+
+type NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission struct {
+	value *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission
+	isSet bool
+}
+
+func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Get() *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission {
+	return v.value
+}
+
+func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Set(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission(val *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission {
+	return &NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission{value: val, isSet: true}
+}
+
+func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -115,6 +115,43 @@ func (o AddRolesRequestRoleVdiPoolPermissionsInner) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableAddRolesRequestRoleVdiPoolPermissionsInner struct {
+	value *AddRolesRequestRoleVdiPoolPermissionsInner
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) Get() *AddRolesRequestRoleVdiPoolPermissionsInner {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) Set(val *AddRolesRequestRoleVdiPoolPermissionsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRoleVdiPoolPermissionsInner(val *AddRolesRequestRoleVdiPoolPermissionsInner) *NullableAddRolesRequestRoleVdiPoolPermissionsInner {
+	return &NullableAddRolesRequestRoleVdiPoolPermissionsInner{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

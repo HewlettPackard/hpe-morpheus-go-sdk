@@ -465,6 +465,43 @@ func (o AddKeyPairs200ResponseAllOfAccount) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddKeyPairs200ResponseAllOfAccount struct {
+	value *AddKeyPairs200ResponseAllOfAccount
+	isSet bool
+}
+
+func (v NullableAddKeyPairs200ResponseAllOfAccount) Get() *AddKeyPairs200ResponseAllOfAccount {
+	return v.value
+}
+
+func (v *NullableAddKeyPairs200ResponseAllOfAccount) Set(val *AddKeyPairs200ResponseAllOfAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddKeyPairs200ResponseAllOfAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddKeyPairs200ResponseAllOfAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddKeyPairs200ResponseAllOfAccount(val *AddKeyPairs200ResponseAllOfAccount) *NullableAddKeyPairs200ResponseAllOfAccount {
+	return &NullableAddKeyPairs200ResponseAllOfAccount{value: val, isSet: true}
+}
+
+func (v NullableAddKeyPairs200ResponseAllOfAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

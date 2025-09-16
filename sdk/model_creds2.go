@@ -189,6 +189,43 @@ func (o Creds2) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCreds2 struct {
+	value *Creds2
+	isSet bool
+}
+
+func (v NullableCreds2) Get() *Creds2 {
+	return v.value
+}
+
+func (v *NullableCreds2) Set(val *Creds2) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreds2) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreds2) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreds2(val *Creds2) *NullableCreds2 {
+	return &NullableCreds2{value: val, isSet: true}
+}
+
+func (v NullableCreds2) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreds2) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Creds2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

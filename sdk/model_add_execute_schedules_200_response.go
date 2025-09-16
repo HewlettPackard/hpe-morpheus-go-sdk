@@ -131,6 +131,43 @@ func (o AddExecuteSchedules200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableAddExecuteSchedules200Response struct {
+	value *AddExecuteSchedules200Response
+	isSet bool
+}
+
+func (v NullableAddExecuteSchedules200Response) Get() *AddExecuteSchedules200Response {
+	return v.value
+}
+
+func (v *NullableAddExecuteSchedules200Response) Set(val *AddExecuteSchedules200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddExecuteSchedules200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddExecuteSchedules200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddExecuteSchedules200Response(val *AddExecuteSchedules200Response) *NullableAddExecuteSchedules200Response {
+	return &NullableAddExecuteSchedules200Response{value: val, isSet: true}
+}
+
+func (v NullableAddExecuteSchedules200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddExecuteSchedules200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddExecuteSchedules200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

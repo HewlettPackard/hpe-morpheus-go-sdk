@@ -306,6 +306,43 @@ func (o AddInstanceRequestInstance) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddInstanceRequestInstance struct {
+	value *AddInstanceRequestInstance
+	isSet bool
+}
+
+func (v NullableAddInstanceRequestInstance) Get() *AddInstanceRequestInstance {
+	return v.value
+}
+
+func (v *NullableAddInstanceRequestInstance) Set(val *AddInstanceRequestInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstanceRequestInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstanceRequestInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstanceRequestInstance(val *AddInstanceRequestInstance) *NullableAddInstanceRequestInstance {
+	return &NullableAddInstanceRequestInstance{value: val, isSet: true}
+}
+
+func (v NullableAddInstanceRequestInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstanceRequestInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

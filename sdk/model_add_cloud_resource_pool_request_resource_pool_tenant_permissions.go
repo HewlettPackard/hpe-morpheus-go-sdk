@@ -96,6 +96,43 @@ func (o AddCloudResourcePoolRequestResourcePoolTenantPermissions) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions struct {
+	value *AddCloudResourcePoolRequestResourcePoolTenantPermissions
+	isSet bool
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Get() *AddCloudResourcePoolRequestResourcePoolTenantPermissions {
+	return v.value
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Set(val *AddCloudResourcePoolRequestResourcePoolTenantPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudResourcePoolRequestResourcePoolTenantPermissions(val *AddCloudResourcePoolRequestResourcePoolTenantPermissions) *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions {
+	return &NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions{value: val, isSet: true}
+}
+
+func (v NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudResourcePoolRequestResourcePoolTenantPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCloudResourcePoolRequestResourcePoolTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o CreateTenantSubtenantGroup200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableCreateTenantSubtenantGroup200Response struct {
+	value *CreateTenantSubtenantGroup200Response
+	isSet bool
+}
+
+func (v NullableCreateTenantSubtenantGroup200Response) Get() *CreateTenantSubtenantGroup200Response {
+	return v.value
+}
+
+func (v *NullableCreateTenantSubtenantGroup200Response) Set(val *CreateTenantSubtenantGroup200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateTenantSubtenantGroup200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateTenantSubtenantGroup200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateTenantSubtenantGroup200Response(val *CreateTenantSubtenantGroup200Response) *NullableCreateTenantSubtenantGroup200Response {
+	return &NullableCreateTenantSubtenantGroup200Response{value: val, isSet: true}
+}
+
+func (v NullableCreateTenantSubtenantGroup200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateTenantSubtenantGroup200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateTenantSubtenantGroup200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o UserCreationPolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableUserCreationPolicyTypeConfiguration struct {
+	value *UserCreationPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableUserCreationPolicyTypeConfiguration) Get() *UserCreationPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableUserCreationPolicyTypeConfiguration) Set(val *UserCreationPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserCreationPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserCreationPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserCreationPolicyTypeConfiguration(val *UserCreationPolicyTypeConfiguration) *NullableUserCreationPolicyTypeConfiguration {
+	return &NullableUserCreationPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableUserCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserCreationPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserCreationPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -299,6 +299,43 @@ func (o NetworkRouterRouteCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRouterRouteCreate struct {
+	value *NetworkRouterRouteCreate
+	isSet bool
+}
+
+func (v NullableNetworkRouterRouteCreate) Get() *NetworkRouterRouteCreate {
+	return v.value
+}
+
+func (v *NullableNetworkRouterRouteCreate) Set(val *NetworkRouterRouteCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterRouteCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterRouteCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterRouteCreate(val *NetworkRouterRouteCreate) *NullableNetworkRouterRouteCreate {
+	return &NullableNetworkRouterRouteCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterRouteCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterRouteCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRouterRouteCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -287,6 +287,43 @@ func (o AddArchiveBucketRequestArchiveBucket) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddArchiveBucketRequestArchiveBucket struct {
+	value *AddArchiveBucketRequestArchiveBucket
+	isSet bool
+}
+
+func (v NullableAddArchiveBucketRequestArchiveBucket) Get() *AddArchiveBucketRequestArchiveBucket {
+	return v.value
+}
+
+func (v *NullableAddArchiveBucketRequestArchiveBucket) Set(val *AddArchiveBucketRequestArchiveBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddArchiveBucketRequestArchiveBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddArchiveBucketRequestArchiveBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddArchiveBucketRequestArchiveBucket(val *AddArchiveBucketRequestArchiveBucket) *NullableAddArchiveBucketRequestArchiveBucket {
+	return &NullableAddArchiveBucketRequestArchiveBucket{value: val, isSet: true}
+}
+
+func (v NullableAddArchiveBucketRequestArchiveBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddArchiveBucketRequestArchiveBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

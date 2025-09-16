@@ -131,6 +131,43 @@ func (o ListClusterDeployments200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableListClusterDeployments200Response struct {
+	value *ListClusterDeployments200Response
+	isSet bool
+}
+
+func (v NullableListClusterDeployments200Response) Get() *ListClusterDeployments200Response {
+	return v.value
+}
+
+func (v *NullableListClusterDeployments200Response) Set(val *ListClusterDeployments200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterDeployments200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterDeployments200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterDeployments200Response(val *ListClusterDeployments200Response) *NullableListClusterDeployments200Response {
+	return &NullableListClusterDeployments200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterDeployments200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterDeployments200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterDeployments200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

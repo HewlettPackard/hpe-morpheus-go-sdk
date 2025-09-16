@@ -987,6 +987,43 @@ func (o UpdateVirtualImageRequestVirtualImage) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateVirtualImageRequestVirtualImage struct {
+	value *UpdateVirtualImageRequestVirtualImage
+	isSet bool
+}
+
+func (v NullableUpdateVirtualImageRequestVirtualImage) Get() *UpdateVirtualImageRequestVirtualImage {
+	return v.value
+}
+
+func (v *NullableUpdateVirtualImageRequestVirtualImage) Set(val *UpdateVirtualImageRequestVirtualImage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVirtualImageRequestVirtualImage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVirtualImageRequestVirtualImage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVirtualImageRequestVirtualImage(val *UpdateVirtualImageRequestVirtualImage) *NullableUpdateVirtualImageRequestVirtualImage {
+	return &NullableUpdateVirtualImageRequestVirtualImage{value: val, isSet: true}
+}
+
+func (v NullableUpdateVirtualImageRequestVirtualImage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVirtualImageRequestVirtualImage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateVirtualImageRequestVirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

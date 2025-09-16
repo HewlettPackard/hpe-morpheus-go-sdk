@@ -550,6 +550,43 @@ func (o CreateTenantSubtenantGroup200ResponseAccount) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableCreateTenantSubtenantGroup200ResponseAccount struct {
+	value *CreateTenantSubtenantGroup200ResponseAccount
+	isSet bool
+}
+
+func (v NullableCreateTenantSubtenantGroup200ResponseAccount) Get() *CreateTenantSubtenantGroup200ResponseAccount {
+	return v.value
+}
+
+func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) Set(val *CreateTenantSubtenantGroup200ResponseAccount) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateTenantSubtenantGroup200ResponseAccount) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateTenantSubtenantGroup200ResponseAccount(val *CreateTenantSubtenantGroup200ResponseAccount) *NullableCreateTenantSubtenantGroup200ResponseAccount {
+	return &NullableCreateTenantSubtenantGroup200ResponseAccount{value: val, isSet: true}
+}
+
+func (v NullableCreateTenantSubtenantGroup200ResponseAccount) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

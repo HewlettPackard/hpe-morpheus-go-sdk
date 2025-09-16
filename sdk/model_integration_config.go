@@ -86,6 +86,43 @@ func (o IntegrationConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationConfig struct {
+	value *IntegrationConfig
+	isSet bool
+}
+
+func (v NullableIntegrationConfig) Get() *IntegrationConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationConfig) Set(val *IntegrationConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationConfig(val *IntegrationConfig) *NullableIntegrationConfig {
+	return &NullableIntegrationConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

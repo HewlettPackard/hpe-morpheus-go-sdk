@@ -749,6 +749,43 @@ func (o ExecutionRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableExecutionRequest struct {
+	value *ExecutionRequest
+	isSet bool
+}
+
+func (v NullableExecutionRequest) Get() *ExecutionRequest {
+	return v.value
+}
+
+func (v *NullableExecutionRequest) Set(val *ExecutionRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecutionRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecutionRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecutionRequest(val *ExecutionRequest) *NullableExecutionRequest {
+	return &NullableExecutionRequest{value: val, isSet: true}
+}
+
+func (v NullableExecutionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecutionRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecutionRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

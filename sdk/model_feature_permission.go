@@ -115,6 +115,43 @@ func (o FeaturePermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableFeaturePermission struct {
+	value *FeaturePermission
+	isSet bool
+}
+
+func (v NullableFeaturePermission) Get() *FeaturePermission {
+	return v.value
+}
+
+func (v *NullableFeaturePermission) Set(val *FeaturePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFeaturePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFeaturePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFeaturePermission(val *FeaturePermission) *NullableFeaturePermission {
+	return &NullableFeaturePermission{value: val, isSet: true}
+}
+
+func (v NullableFeaturePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFeaturePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *FeaturePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

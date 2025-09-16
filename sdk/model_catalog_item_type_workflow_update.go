@@ -814,6 +814,43 @@ func (o CatalogItemTypeWorkflowUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogItemTypeWorkflowUpdate struct {
+	value *CatalogItemTypeWorkflowUpdate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeWorkflowUpdate) Get() *CatalogItemTypeWorkflowUpdate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeWorkflowUpdate) Set(val *CatalogItemTypeWorkflowUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeWorkflowUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeWorkflowUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeWorkflowUpdate(val *CatalogItemTypeWorkflowUpdate) *NullableCatalogItemTypeWorkflowUpdate {
+	return &NullableCatalogItemTypeWorkflowUpdate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeWorkflowUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeWorkflowUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogItemTypeWorkflowUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

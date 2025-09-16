@@ -95,6 +95,43 @@ func (o TenantsAvailableRoles) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTenantsAvailableRoles struct {
+	value *TenantsAvailableRoles
+	isSet bool
+}
+
+func (v NullableTenantsAvailableRoles) Get() *TenantsAvailableRoles {
+	return v.value
+}
+
+func (v *NullableTenantsAvailableRoles) Set(val *TenantsAvailableRoles) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTenantsAvailableRoles) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTenantsAvailableRoles) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTenantsAvailableRoles(val *TenantsAvailableRoles) *NullableTenantsAvailableRoles {
+	return &NullableTenantsAvailableRoles{value: val, isSet: true}
+}
+
+func (v NullableTenantsAvailableRoles) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTenantsAvailableRoles) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TenantsAvailableRoles) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

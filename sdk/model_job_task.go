@@ -931,6 +931,43 @@ func (o JobTask) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableJobTask struct {
+	value *JobTask
+	isSet bool
+}
+
+func (v NullableJobTask) Get() *JobTask {
+	return v.value
+}
+
+func (v *NullableJobTask) Set(val *JobTask) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableJobTask) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableJobTask) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableJobTask(val *JobTask) *NullableJobTask {
+	return &NullableJobTask{value: val, isSet: true}
+}
+
+func (v NullableJobTask) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableJobTask) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *JobTask) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

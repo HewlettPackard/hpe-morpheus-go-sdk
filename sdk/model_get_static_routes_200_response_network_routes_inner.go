@@ -795,6 +795,43 @@ func (o GetStaticRoutes200ResponseNetworkRoutesInner) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableGetStaticRoutes200ResponseNetworkRoutesInner struct {
+	value *GetStaticRoutes200ResponseNetworkRoutesInner
+	isSet bool
+}
+
+func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) Get() *GetStaticRoutes200ResponseNetworkRoutesInner {
+	return v.value
+}
+
+func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) Set(val *GetStaticRoutes200ResponseNetworkRoutesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetStaticRoutes200ResponseNetworkRoutesInner(val *GetStaticRoutes200ResponseNetworkRoutesInner) *NullableGetStaticRoutes200ResponseNetworkRoutesInner {
+	return &NullableGetStaticRoutes200ResponseNetworkRoutesInner{value: val, isSet: true}
+}
+
+func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

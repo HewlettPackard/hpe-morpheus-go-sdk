@@ -584,6 +584,43 @@ func (o GetImageBuild200ResponseImageBuildLastResult) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableGetImageBuild200ResponseImageBuildLastResult struct {
+	value *GetImageBuild200ResponseImageBuildLastResult
+	isSet bool
+}
+
+func (v NullableGetImageBuild200ResponseImageBuildLastResult) Get() *GetImageBuild200ResponseImageBuildLastResult {
+	return v.value
+}
+
+func (v *NullableGetImageBuild200ResponseImageBuildLastResult) Set(val *GetImageBuild200ResponseImageBuildLastResult) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetImageBuild200ResponseImageBuildLastResult) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetImageBuild200ResponseImageBuildLastResult) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetImageBuild200ResponseImageBuildLastResult(val *GetImageBuild200ResponseImageBuildLastResult) *NullableGetImageBuild200ResponseImageBuildLastResult {
+	return &NullableGetImageBuild200ResponseImageBuildLastResult{value: val, isSet: true}
+}
+
+func (v NullableGetImageBuild200ResponseImageBuildLastResult) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetImageBuild200ResponseImageBuildLastResult) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetImageBuild200ResponseImageBuildLastResult) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -167,6 +167,43 @@ func (o ClusterResourceNamePolicyTypeConfiguration) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableClusterResourceNamePolicyTypeConfiguration struct {
+	value *ClusterResourceNamePolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableClusterResourceNamePolicyTypeConfiguration) Get() *ClusterResourceNamePolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableClusterResourceNamePolicyTypeConfiguration) Set(val *ClusterResourceNamePolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterResourceNamePolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterResourceNamePolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterResourceNamePolicyTypeConfiguration(val *ClusterResourceNamePolicyTypeConfiguration) *NullableClusterResourceNamePolicyTypeConfiguration {
+	return &NullableClusterResourceNamePolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableClusterResourceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterResourceNamePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterResourceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

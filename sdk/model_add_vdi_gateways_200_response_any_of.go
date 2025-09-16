@@ -95,6 +95,43 @@ func (o AddVDIGateways200ResponseAnyOf) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableAddVDIGateways200ResponseAnyOf struct {
+	value *AddVDIGateways200ResponseAnyOf
+	isSet bool
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) Get() *AddVDIGateways200ResponseAnyOf {
+	return v.value
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) Set(val *AddVDIGateways200ResponseAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVDIGateways200ResponseAnyOf(val *AddVDIGateways200ResponseAnyOf) *NullableAddVDIGateways200ResponseAnyOf {
+	return &NullableAddVDIGateways200ResponseAnyOf{value: val, isSet: true}
+}
+
+func (v NullableAddVDIGateways200ResponseAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVDIGateways200ResponseAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddVDIGateways200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

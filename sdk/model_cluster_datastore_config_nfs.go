@@ -133,6 +133,43 @@ func (o ClusterDatastoreConfigNFS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterDatastoreConfigNFS struct {
+	value *ClusterDatastoreConfigNFS
+	isSet bool
+}
+
+func (v NullableClusterDatastoreConfigNFS) Get() *ClusterDatastoreConfigNFS {
+	return v.value
+}
+
+func (v *NullableClusterDatastoreConfigNFS) Set(val *ClusterDatastoreConfigNFS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterDatastoreConfigNFS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterDatastoreConfigNFS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterDatastoreConfigNFS(val *ClusterDatastoreConfigNFS) *NullableClusterDatastoreConfigNFS {
+	return &NullableClusterDatastoreConfigNFS{value: val, isSet: true}
+}
+
+func (v NullableClusterDatastoreConfigNFS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterDatastoreConfigNFS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterDatastoreConfigNFS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

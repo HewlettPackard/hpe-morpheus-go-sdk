@@ -354,6 +354,43 @@ func (o CloudCreateConfigAWS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCloudCreateConfigAWS struct {
+	value *CloudCreateConfigAWS
+	isSet bool
+}
+
+func (v NullableCloudCreateConfigAWS) Get() *CloudCreateConfigAWS {
+	return v.value
+}
+
+func (v *NullableCloudCreateConfigAWS) Set(val *CloudCreateConfigAWS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCloudCreateConfigAWS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCloudCreateConfigAWS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCloudCreateConfigAWS(val *CloudCreateConfigAWS) *NullableCloudCreateConfigAWS {
+	return &NullableCloudCreateConfigAWS{value: val, isSet: true}
+}
+
+func (v NullableCloudCreateConfigAWS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCloudCreateConfigAWS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CloudCreateConfigAWS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

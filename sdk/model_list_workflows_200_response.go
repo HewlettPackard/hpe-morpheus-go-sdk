@@ -131,6 +131,43 @@ func (o ListWorkflows200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListWorkflows200Response struct {
+	value *ListWorkflows200Response
+	isSet bool
+}
+
+func (v NullableListWorkflows200Response) Get() *ListWorkflows200Response {
+	return v.value
+}
+
+func (v *NullableListWorkflows200Response) Set(val *ListWorkflows200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWorkflows200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWorkflows200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWorkflows200Response(val *ListWorkflows200Response) *NullableListWorkflows200Response {
+	return &NullableListWorkflows200Response{value: val, isSet: true}
+}
+
+func (v NullableListWorkflows200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWorkflows200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListWorkflows200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o AddCatalogCartItem200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogCartItem200Response struct {
+	value *AddCatalogCartItem200Response
+	isSet bool
+}
+
+func (v NullableAddCatalogCartItem200Response) Get() *AddCatalogCartItem200Response {
+	return v.value
+}
+
+func (v *NullableAddCatalogCartItem200Response) Set(val *AddCatalogCartItem200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogCartItem200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogCartItem200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogCartItem200Response(val *AddCatalogCartItem200Response) *NullableAddCatalogCartItem200Response {
+	return &NullableAddCatalogCartItem200Response{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogCartItem200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogCartItem200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogCartItem200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

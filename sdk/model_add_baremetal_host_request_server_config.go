@@ -203,6 +203,43 @@ func (o AddBaremetalHostRequestServerConfig) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableAddBaremetalHostRequestServerConfig struct {
+	value *AddBaremetalHostRequestServerConfig
+	isSet bool
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) Get() *AddBaremetalHostRequestServerConfig {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) Set(val *AddBaremetalHostRequestServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHostRequestServerConfig(val *AddBaremetalHostRequestServerConfig) *NullableAddBaremetalHostRequestServerConfig {
+	return &NullableAddBaremetalHostRequestServerConfig{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHostRequestServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHostRequestServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBaremetalHostRequestServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

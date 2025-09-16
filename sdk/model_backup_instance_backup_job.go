@@ -133,6 +133,43 @@ func (o BackupInstanceBackupJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBackupInstanceBackupJob struct {
+	value *BackupInstanceBackupJob
+	isSet bool
+}
+
+func (v NullableBackupInstanceBackupJob) Get() *BackupInstanceBackupJob {
+	return v.value
+}
+
+func (v *NullableBackupInstanceBackupJob) Set(val *BackupInstanceBackupJob) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupInstanceBackupJob) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupInstanceBackupJob) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupInstanceBackupJob(val *BackupInstanceBackupJob) *NullableBackupInstanceBackupJob {
+	return &NullableBackupInstanceBackupJob{value: val, isSet: true}
+}
+
+func (v NullableBackupInstanceBackupJob) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupInstanceBackupJob) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BackupInstanceBackupJob) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o ListClusterNetworkEndpoints200Response) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableListClusterNetworkEndpoints200Response struct {
+	value *ListClusterNetworkEndpoints200Response
+	isSet bool
+}
+
+func (v NullableListClusterNetworkEndpoints200Response) Get() *ListClusterNetworkEndpoints200Response {
+	return v.value
+}
+
+func (v *NullableListClusterNetworkEndpoints200Response) Set(val *ListClusterNetworkEndpoints200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterNetworkEndpoints200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterNetworkEndpoints200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterNetworkEndpoints200Response(val *ListClusterNetworkEndpoints200Response) *NullableListClusterNetworkEndpoints200Response {
+	return &NullableListClusterNetworkEndpoints200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterNetworkEndpoints200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterNetworkEndpoints200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterNetworkEndpoints200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

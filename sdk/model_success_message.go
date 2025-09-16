@@ -142,6 +142,43 @@ func (o SuccessMessage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSuccessMessage struct {
+	value *SuccessMessage
+	isSet bool
+}
+
+func (v NullableSuccessMessage) Get() *SuccessMessage {
+	return v.value
+}
+
+func (v *NullableSuccessMessage) Set(val *SuccessMessage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSuccessMessage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSuccessMessage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSuccessMessage(val *SuccessMessage) *NullableSuccessMessage {
+	return &NullableSuccessMessage{value: val, isSet: true}
+}
+
+func (v NullableSuccessMessage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSuccessMessage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SuccessMessage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

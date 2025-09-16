@@ -598,6 +598,43 @@ func (o IntegrationRoute53) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationRoute53 struct {
+	value *IntegrationRoute53
+	isSet bool
+}
+
+func (v NullableIntegrationRoute53) Get() *IntegrationRoute53 {
+	return v.value
+}
+
+func (v *NullableIntegrationRoute53) Set(val *IntegrationRoute53) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationRoute53) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationRoute53) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationRoute53(val *IntegrationRoute53) *NullableIntegrationRoute53 {
+	return &NullableIntegrationRoute53{value: val, isSet: true}
+}
+
+func (v NullableIntegrationRoute53) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationRoute53) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationRoute53) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

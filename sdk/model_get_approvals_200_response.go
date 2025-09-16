@@ -95,6 +95,43 @@ func (o GetApprovals200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetApprovals200Response struct {
+	value *GetApprovals200Response
+	isSet bool
+}
+
+func (v NullableGetApprovals200Response) Get() *GetApprovals200Response {
+	return v.value
+}
+
+func (v *NullableGetApprovals200Response) Set(val *GetApprovals200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetApprovals200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetApprovals200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetApprovals200Response(val *GetApprovals200Response) *NullableGetApprovals200Response {
+	return &NullableGetApprovals200Response{value: val, isSet: true}
+}
+
+func (v NullableGetApprovals200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetApprovals200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetApprovals200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

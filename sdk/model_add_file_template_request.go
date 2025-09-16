@@ -95,6 +95,43 @@ func (o AddFileTemplateRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddFileTemplateRequest struct {
+	value *AddFileTemplateRequest
+	isSet bool
+}
+
+func (v NullableAddFileTemplateRequest) Get() *AddFileTemplateRequest {
+	return v.value
+}
+
+func (v *NullableAddFileTemplateRequest) Set(val *AddFileTemplateRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddFileTemplateRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddFileTemplateRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddFileTemplateRequest(val *AddFileTemplateRequest) *NullableAddFileTemplateRequest {
+	return &NullableAddFileTemplateRequest{value: val, isSet: true}
+}
+
+func (v NullableAddFileTemplateRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddFileTemplateRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddFileTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

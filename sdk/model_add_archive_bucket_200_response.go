@@ -131,6 +131,43 @@ func (o AddArchiveBucket200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddArchiveBucket200Response struct {
+	value *AddArchiveBucket200Response
+	isSet bool
+}
+
+func (v NullableAddArchiveBucket200Response) Get() *AddArchiveBucket200Response {
+	return v.value
+}
+
+func (v *NullableAddArchiveBucket200Response) Set(val *AddArchiveBucket200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddArchiveBucket200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddArchiveBucket200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddArchiveBucket200Response(val *AddArchiveBucket200Response) *NullableAddArchiveBucket200Response {
+	return &NullableAddArchiveBucket200Response{value: val, isSet: true}
+}
+
+func (v NullableAddArchiveBucket200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddArchiveBucket200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddArchiveBucket200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

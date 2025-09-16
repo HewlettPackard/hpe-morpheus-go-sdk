@@ -730,6 +730,43 @@ func (o TaskRestartConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskRestartConfig struct {
+	value *TaskRestartConfig
+	isSet bool
+}
+
+func (v NullableTaskRestartConfig) Get() *TaskRestartConfig {
+	return v.value
+}
+
+func (v *NullableTaskRestartConfig) Set(val *TaskRestartConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskRestartConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskRestartConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskRestartConfig(val *TaskRestartConfig) *NullableTaskRestartConfig {
+	return &NullableTaskRestartConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskRestartConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskRestartConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskRestartConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

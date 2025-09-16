@@ -284,6 +284,43 @@ func (o AddCredentialsRequestCredentialOneOf5) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableAddCredentialsRequestCredentialOneOf5 struct {
+	value *AddCredentialsRequestCredentialOneOf5
+	isSet bool
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) Get() *AddCredentialsRequestCredentialOneOf5 {
+	return v.value
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) Set(val *AddCredentialsRequestCredentialOneOf5) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentialsRequestCredentialOneOf5(val *AddCredentialsRequestCredentialOneOf5) *NullableAddCredentialsRequestCredentialOneOf5 {
+	return &NullableAddCredentialsRequestCredentialOneOf5{value: val, isSet: true}
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf5) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf5) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCredentialsRequestCredentialOneOf5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -555,6 +555,43 @@ func (o ClusterServices) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterServices struct {
+	value *ClusterServices
+	isSet bool
+}
+
+func (v NullableClusterServices) Get() *ClusterServices {
+	return v.value
+}
+
+func (v *NullableClusterServices) Set(val *ClusterServices) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterServices) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterServices) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterServices(val *ClusterServices) *NullableClusterServices {
+	return &NullableClusterServices{value: val, isSet: true}
+}
+
+func (v NullableClusterServices) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterServices) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterServices) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

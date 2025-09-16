@@ -1264,6 +1264,43 @@ func (o ProcessEvent) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableProcessEvent struct {
+	value *ProcessEvent
+	isSet bool
+}
+
+func (v NullableProcessEvent) Get() *ProcessEvent {
+	return v.value
+}
+
+func (v *NullableProcessEvent) Set(val *ProcessEvent) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableProcessEvent) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableProcessEvent) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableProcessEvent(val *ProcessEvent) *NullableProcessEvent {
+	return &NullableProcessEvent{value: val, isSet: true}
+}
+
+func (v NullableProcessEvent) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableProcessEvent) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ProcessEvent) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

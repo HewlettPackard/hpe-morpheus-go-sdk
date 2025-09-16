@@ -95,6 +95,43 @@ func (o ApprovalItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableApprovalItem struct {
+	value *ApprovalItem
+	isSet bool
+}
+
+func (v NullableApprovalItem) Get() *ApprovalItem {
+	return v.value
+}
+
+func (v *NullableApprovalItem) Set(val *ApprovalItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableApprovalItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableApprovalItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableApprovalItem(val *ApprovalItem) *NullableApprovalItem {
+	return &NullableApprovalItem{value: val, isSet: true}
+}
+
+func (v NullableApprovalItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableApprovalItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ApprovalItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

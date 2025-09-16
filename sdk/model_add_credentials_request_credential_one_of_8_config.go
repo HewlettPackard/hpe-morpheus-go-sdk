@@ -254,6 +254,43 @@ func (o AddCredentialsRequestCredentialOneOf8Config) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableAddCredentialsRequestCredentialOneOf8Config struct {
+	value *AddCredentialsRequestCredentialOneOf8Config
+	isSet bool
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf8Config) Get() *AddCredentialsRequestCredentialOneOf8Config {
+	return v.value
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf8Config) Set(val *AddCredentialsRequestCredentialOneOf8Config) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf8Config) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf8Config) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCredentialsRequestCredentialOneOf8Config(val *AddCredentialsRequestCredentialOneOf8Config) *NullableAddCredentialsRequestCredentialOneOf8Config {
+	return &NullableAddCredentialsRequestCredentialOneOf8Config{value: val, isSet: true}
+}
+
+func (v NullableAddCredentialsRequestCredentialOneOf8Config) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCredentialsRequestCredentialOneOf8Config) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCredentialsRequestCredentialOneOf8Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

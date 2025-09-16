@@ -1731,6 +1731,43 @@ func (o ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypes
 
 	return toSerialize, nil
 }
+
+type NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner struct {
+	value *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) Get() *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) Set(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner(val *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner {
+	return &NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListStorageServerTypes200ResponseAllOfStorageServerTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

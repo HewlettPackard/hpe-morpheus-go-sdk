@@ -800,6 +800,43 @@ func (o IntegrationDockerRepo) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationDockerRepo struct {
+	value *IntegrationDockerRepo
+	isSet bool
+}
+
+func (v NullableIntegrationDockerRepo) Get() *IntegrationDockerRepo {
+	return v.value
+}
+
+func (v *NullableIntegrationDockerRepo) Set(val *IntegrationDockerRepo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationDockerRepo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationDockerRepo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationDockerRepo(val *IntegrationDockerRepo) *NullableIntegrationDockerRepo {
+	return &NullableIntegrationDockerRepo{value: val, isSet: true}
+}
+
+func (v NullableIntegrationDockerRepo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationDockerRepo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationDockerRepo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

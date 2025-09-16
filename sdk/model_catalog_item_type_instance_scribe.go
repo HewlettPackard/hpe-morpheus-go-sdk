@@ -759,6 +759,43 @@ func (o CatalogItemTypeInstanceScribe) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogItemTypeInstanceScribe struct {
+	value *CatalogItemTypeInstanceScribe
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeInstanceScribe) Get() *CatalogItemTypeInstanceScribe {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeInstanceScribe) Set(val *CatalogItemTypeInstanceScribe) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeInstanceScribe) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeInstanceScribe) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeInstanceScribe(val *CatalogItemTypeInstanceScribe) *NullableCatalogItemTypeInstanceScribe {
+	return &NullableCatalogItemTypeInstanceScribe{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeInstanceScribe) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeInstanceScribe) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogItemTypeInstanceScribe) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

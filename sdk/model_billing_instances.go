@@ -240,6 +240,43 @@ func (o BillingInstances) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBillingInstances struct {
+	value *BillingInstances
+	isSet bool
+}
+
+func (v NullableBillingInstances) Get() *BillingInstances {
+	return v.value
+}
+
+func (v *NullableBillingInstances) Set(val *BillingInstances) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBillingInstances) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBillingInstances) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBillingInstances(val *BillingInstances) *NullableBillingInstances {
+	return &NullableBillingInstances{value: val, isSet: true}
+}
+
+func (v NullableBillingInstances) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBillingInstances) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BillingInstances) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

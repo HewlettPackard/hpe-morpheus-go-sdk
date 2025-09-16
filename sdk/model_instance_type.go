@@ -1197,6 +1197,43 @@ func (o InstanceType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceType struct {
+	value *InstanceType
+	isSet bool
+}
+
+func (v NullableInstanceType) Get() *InstanceType {
+	return v.value
+}
+
+func (v *NullableInstanceType) Set(val *InstanceType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceType(val *InstanceType) *NullableInstanceType {
+	return &NullableInstanceType{value: val, isSet: true}
+}
+
+func (v NullableInstanceType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

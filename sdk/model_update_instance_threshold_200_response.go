@@ -167,6 +167,43 @@ func (o UpdateInstanceThreshold200Response) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableUpdateInstanceThreshold200Response struct {
+	value *UpdateInstanceThreshold200Response
+	isSet bool
+}
+
+func (v NullableUpdateInstanceThreshold200Response) Get() *UpdateInstanceThreshold200Response {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceThreshold200Response) Set(val *UpdateInstanceThreshold200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceThreshold200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceThreshold200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceThreshold200Response(val *UpdateInstanceThreshold200Response) *NullableUpdateInstanceThreshold200Response {
+	return &NullableUpdateInstanceThreshold200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceThreshold200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceThreshold200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateInstanceThreshold200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

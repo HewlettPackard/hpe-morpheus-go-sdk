@@ -514,6 +514,43 @@ func (o WikiPage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWikiPage struct {
+	value *WikiPage
+	isSet bool
+}
+
+func (v NullableWikiPage) Get() *WikiPage {
+	return v.value
+}
+
+func (v *NullableWikiPage) Set(val *WikiPage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWikiPage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWikiPage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWikiPage(val *WikiPage) *NullableWikiPage {
+	return &NullableWikiPage{value: val, isSet: true}
+}
+
+func (v NullableWikiPage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWikiPage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WikiPage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

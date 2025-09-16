@@ -131,6 +131,43 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) ToMa
 
 	return toSerialize, nil
 }
+
+type NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool struct {
+	value *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool
+	isSet bool
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Get() *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool {
+	return v.value
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Set(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool(val *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool {
+	return &NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool{value: val, isSet: true}
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

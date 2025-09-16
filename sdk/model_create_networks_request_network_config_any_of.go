@@ -143,6 +143,43 @@ func (o CreateNetworksRequestNetworkConfigAnyOf) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworksRequestNetworkConfigAnyOf struct {
+	value *CreateNetworksRequestNetworkConfigAnyOf
+	isSet bool
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf) Get() *CreateNetworksRequestNetworkConfigAnyOf {
+	return v.value
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) Set(val *CreateNetworksRequestNetworkConfigAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworksRequestNetworkConfigAnyOf(val *CreateNetworksRequestNetworkConfigAnyOf) *NullableCreateNetworksRequestNetworkConfigAnyOf {
+	return &NullableCreateNetworksRequestNetworkConfigAnyOf{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworksRequestNetworkConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

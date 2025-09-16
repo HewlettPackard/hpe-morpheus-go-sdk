@@ -489,6 +489,43 @@ func (o ListBlueprints200ResponseAllOfBlueprintsInner) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableListBlueprints200ResponseAllOfBlueprintsInner struct {
+	value *ListBlueprints200ResponseAllOfBlueprintsInner
+	isSet bool
+}
+
+func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) Get() *ListBlueprints200ResponseAllOfBlueprintsInner {
+	return v.value
+}
+
+func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) Set(val *ListBlueprints200ResponseAllOfBlueprintsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBlueprints200ResponseAllOfBlueprintsInner(val *ListBlueprints200ResponseAllOfBlueprintsInner) *NullableListBlueprints200ResponseAllOfBlueprintsInner {
+	return &NullableListBlueprints200ResponseAllOfBlueprintsInner{value: val, isSet: true}
+}
+
+func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

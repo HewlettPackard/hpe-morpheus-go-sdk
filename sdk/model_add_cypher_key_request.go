@@ -132,6 +132,43 @@ func (o AddCypherKeyRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCypherKeyRequest struct {
+	value *AddCypherKeyRequest
+	isSet bool
+}
+
+func (v NullableAddCypherKeyRequest) Get() *AddCypherKeyRequest {
+	return v.value
+}
+
+func (v *NullableAddCypherKeyRequest) Set(val *AddCypherKeyRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCypherKeyRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCypherKeyRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCypherKeyRequest(val *AddCypherKeyRequest) *NullableAddCypherKeyRequest {
+	return &NullableAddCypherKeyRequest{value: val, isSet: true}
+}
+
+func (v NullableAddCypherKeyRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCypherKeyRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCypherKeyRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -569,6 +569,43 @@ func (o CreateNetworkPool200ResponseNetworkPoolIpRangesInner) ToMap() (map[strin
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner struct {
+	value *CreateNetworkPool200ResponseNetworkPoolIpRangesInner
+	isSet bool
+}
+
+func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Get() *CreateNetworkPool200ResponseNetworkPoolIpRangesInner {
+	return v.value
+}
+
+func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Set(val *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner(val *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner {
+	return &NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

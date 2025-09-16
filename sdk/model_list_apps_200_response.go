@@ -167,6 +167,43 @@ func (o ListApps200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListApps200Response struct {
+	value *ListApps200Response
+	isSet bool
+}
+
+func (v NullableListApps200Response) Get() *ListApps200Response {
+	return v.value
+}
+
+func (v *NullableListApps200Response) Set(val *ListApps200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListApps200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListApps200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListApps200Response(val *ListApps200Response) *NullableListApps200Response {
+	return &NullableListApps200Response{value: val, isSet: true}
+}
+
+func (v NullableListApps200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListApps200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListApps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

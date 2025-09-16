@@ -133,6 +133,43 @@ func (o AddPreseedScriptRequestPreseedScript) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddPreseedScriptRequestPreseedScript struct {
+	value *AddPreseedScriptRequestPreseedScript
+	isSet bool
+}
+
+func (v NullableAddPreseedScriptRequestPreseedScript) Get() *AddPreseedScriptRequestPreseedScript {
+	return v.value
+}
+
+func (v *NullableAddPreseedScriptRequestPreseedScript) Set(val *AddPreseedScriptRequestPreseedScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPreseedScriptRequestPreseedScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPreseedScriptRequestPreseedScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPreseedScriptRequestPreseedScript(val *AddPreseedScriptRequestPreseedScript) *NullableAddPreseedScriptRequestPreseedScript {
+	return &NullableAddPreseedScriptRequestPreseedScript{value: val, isSet: true}
+}
+
+func (v NullableAddPreseedScriptRequestPreseedScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPreseedScriptRequestPreseedScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPreseedScriptRequestPreseedScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

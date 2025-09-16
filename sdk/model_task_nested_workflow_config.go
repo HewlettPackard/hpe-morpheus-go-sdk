@@ -694,6 +694,43 @@ func (o TaskNestedWorkflowConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskNestedWorkflowConfig struct {
+	value *TaskNestedWorkflowConfig
+	isSet bool
+}
+
+func (v NullableTaskNestedWorkflowConfig) Get() *TaskNestedWorkflowConfig {
+	return v.value
+}
+
+func (v *NullableTaskNestedWorkflowConfig) Set(val *TaskNestedWorkflowConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskNestedWorkflowConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskNestedWorkflowConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskNestedWorkflowConfig(val *TaskNestedWorkflowConfig) *NullableTaskNestedWorkflowConfig {
+	return &NullableTaskNestedWorkflowConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskNestedWorkflowConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskNestedWorkflowConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskNestedWorkflowConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

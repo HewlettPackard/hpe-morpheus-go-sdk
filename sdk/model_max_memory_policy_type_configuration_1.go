@@ -136,6 +136,43 @@ func (o MaxMemoryPolicyTypeConfiguration1) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableMaxMemoryPolicyTypeConfiguration1 struct {
+	value *MaxMemoryPolicyTypeConfiguration1
+	isSet bool
+}
+
+func (v NullableMaxMemoryPolicyTypeConfiguration1) Get() *MaxMemoryPolicyTypeConfiguration1 {
+	return v.value
+}
+
+func (v *NullableMaxMemoryPolicyTypeConfiguration1) Set(val *MaxMemoryPolicyTypeConfiguration1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxMemoryPolicyTypeConfiguration1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxMemoryPolicyTypeConfiguration1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxMemoryPolicyTypeConfiguration1(val *MaxMemoryPolicyTypeConfiguration1) *NullableMaxMemoryPolicyTypeConfiguration1 {
+	return &NullableMaxMemoryPolicyTypeConfiguration1{value: val, isSet: true}
+}
+
+func (v NullableMaxMemoryPolicyTypeConfiguration1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *MaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

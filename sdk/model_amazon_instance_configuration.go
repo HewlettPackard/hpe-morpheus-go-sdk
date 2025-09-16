@@ -337,6 +337,43 @@ func (o AmazonInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAmazonInstanceConfiguration struct {
+	value *AmazonInstanceConfiguration
+	isSet bool
+}
+
+func (v NullableAmazonInstanceConfiguration) Get() *AmazonInstanceConfiguration {
+	return v.value
+}
+
+func (v *NullableAmazonInstanceConfiguration) Set(val *AmazonInstanceConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAmazonInstanceConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAmazonInstanceConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAmazonInstanceConfiguration(val *AmazonInstanceConfiguration) *NullableAmazonInstanceConfiguration {
+	return &NullableAmazonInstanceConfiguration{value: val, isSet: true}
+}
+
+func (v NullableAmazonInstanceConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAmazonInstanceConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AmazonInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -119,6 +119,43 @@ func (o NetworkTypeGcpConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkTypeGcpConfig struct {
+	value *NetworkTypeGcpConfig
+	isSet bool
+}
+
+func (v NullableNetworkTypeGcpConfig) Get() *NetworkTypeGcpConfig {
+	return v.value
+}
+
+func (v *NullableNetworkTypeGcpConfig) Set(val *NetworkTypeGcpConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkTypeGcpConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkTypeGcpConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkTypeGcpConfig(val *NetworkTypeGcpConfig) *NullableNetworkTypeGcpConfig {
+	return &NullableNetworkTypeGcpConfig{value: val, isSet: true}
+}
+
+func (v NullableNetworkTypeGcpConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkTypeGcpConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkTypeGcpConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

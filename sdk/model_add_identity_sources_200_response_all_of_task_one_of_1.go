@@ -780,6 +780,43 @@ func (o AddIdentitySources200ResponseAllOfTaskOneOf1) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableAddIdentitySources200ResponseAllOfTaskOneOf1 struct {
+	value *AddIdentitySources200ResponseAllOfTaskOneOf1
+	isSet bool
+}
+
+func (v NullableAddIdentitySources200ResponseAllOfTaskOneOf1) Get() *AddIdentitySources200ResponseAllOfTaskOneOf1 {
+	return v.value
+}
+
+func (v *NullableAddIdentitySources200ResponseAllOfTaskOneOf1) Set(val *AddIdentitySources200ResponseAllOfTaskOneOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySources200ResponseAllOfTaskOneOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySources200ResponseAllOfTaskOneOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySources200ResponseAllOfTaskOneOf1(val *AddIdentitySources200ResponseAllOfTaskOneOf1) *NullableAddIdentitySources200ResponseAllOfTaskOneOf1 {
+	return &NullableAddIdentitySources200ResponseAllOfTaskOneOf1{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySources200ResponseAllOfTaskOneOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySources200ResponseAllOfTaskOneOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

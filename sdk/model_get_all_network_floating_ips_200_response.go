@@ -132,6 +132,43 @@ func (o GetAllNetworkFloatingIps200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableGetAllNetworkFloatingIps200Response struct {
+	value *GetAllNetworkFloatingIps200Response
+	isSet bool
+}
+
+func (v NullableGetAllNetworkFloatingIps200Response) Get() *GetAllNetworkFloatingIps200Response {
+	return v.value
+}
+
+func (v *NullableGetAllNetworkFloatingIps200Response) Set(val *GetAllNetworkFloatingIps200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAllNetworkFloatingIps200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAllNetworkFloatingIps200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAllNetworkFloatingIps200Response(val *GetAllNetworkFloatingIps200Response) *NullableGetAllNetworkFloatingIps200Response {
+	return &NullableGetAllNetworkFloatingIps200Response{value: val, isSet: true}
+}
+
+func (v NullableGetAllNetworkFloatingIps200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAllNetworkFloatingIps200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetAllNetworkFloatingIps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

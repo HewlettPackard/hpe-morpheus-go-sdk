@@ -394,6 +394,43 @@ func (o BlueprintKubernetesCreateSuccess) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintKubernetesCreateSuccess struct {
+	value *BlueprintKubernetesCreateSuccess
+	isSet bool
+}
+
+func (v NullableBlueprintKubernetesCreateSuccess) Get() *BlueprintKubernetesCreateSuccess {
+	return v.value
+}
+
+func (v *NullableBlueprintKubernetesCreateSuccess) Set(val *BlueprintKubernetesCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintKubernetesCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintKubernetesCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintKubernetesCreateSuccess(val *BlueprintKubernetesCreateSuccess) *NullableBlueprintKubernetesCreateSuccess {
+	return &NullableBlueprintKubernetesCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableBlueprintKubernetesCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintKubernetesCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintKubernetesCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

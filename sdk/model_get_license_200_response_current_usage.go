@@ -503,6 +503,43 @@ func (o GetLicense200ResponseCurrentUsage) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableGetLicense200ResponseCurrentUsage struct {
+	value *GetLicense200ResponseCurrentUsage
+	isSet bool
+}
+
+func (v NullableGetLicense200ResponseCurrentUsage) Get() *GetLicense200ResponseCurrentUsage {
+	return v.value
+}
+
+func (v *NullableGetLicense200ResponseCurrentUsage) Set(val *GetLicense200ResponseCurrentUsage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetLicense200ResponseCurrentUsage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetLicense200ResponseCurrentUsage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetLicense200ResponseCurrentUsage(val *GetLicense200ResponseCurrentUsage) *NullableGetLicense200ResponseCurrentUsage {
+	return &NullableGetLicense200ResponseCurrentUsage{value: val, isSet: true}
+}
+
+func (v NullableGetLicense200ResponseCurrentUsage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetLicense200ResponseCurrentUsage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetLicense200ResponseCurrentUsage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

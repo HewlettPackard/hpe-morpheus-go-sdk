@@ -86,6 +86,43 @@ func (o InstanceCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceCreateSuccess struct {
+	value *InstanceCreateSuccess
+	isSet bool
+}
+
+func (v NullableInstanceCreateSuccess) Get() *InstanceCreateSuccess {
+	return v.value
+}
+
+func (v *NullableInstanceCreateSuccess) Set(val *InstanceCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceCreateSuccess(val *InstanceCreateSuccess) *NullableInstanceCreateSuccess {
+	return &NullableInstanceCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableInstanceCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

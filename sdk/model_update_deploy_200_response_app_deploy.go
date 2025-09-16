@@ -456,6 +456,43 @@ func (o UpdateDeploy200ResponseAppDeploy) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableUpdateDeploy200ResponseAppDeploy struct {
+	value *UpdateDeploy200ResponseAppDeploy
+	isSet bool
+}
+
+func (v NullableUpdateDeploy200ResponseAppDeploy) Get() *UpdateDeploy200ResponseAppDeploy {
+	return v.value
+}
+
+func (v *NullableUpdateDeploy200ResponseAppDeploy) Set(val *UpdateDeploy200ResponseAppDeploy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateDeploy200ResponseAppDeploy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateDeploy200ResponseAppDeploy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateDeploy200ResponseAppDeploy(val *UpdateDeploy200ResponseAppDeploy) *NullableUpdateDeploy200ResponseAppDeploy {
+	return &NullableUpdateDeploy200ResponseAppDeploy{value: val, isSet: true}
+}
+
+func (v NullableUpdateDeploy200ResponseAppDeploy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateDeploy200ResponseAppDeploy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateDeploy200ResponseAppDeploy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

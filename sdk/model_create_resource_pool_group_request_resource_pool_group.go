@@ -312,6 +312,43 @@ func (o CreateResourcePoolGroupRequestResourcePoolGroup) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableCreateResourcePoolGroupRequestResourcePoolGroup struct {
+	value *CreateResourcePoolGroupRequestResourcePoolGroup
+	isSet bool
+}
+
+func (v NullableCreateResourcePoolGroupRequestResourcePoolGroup) Get() *CreateResourcePoolGroupRequestResourcePoolGroup {
+	return v.value
+}
+
+func (v *NullableCreateResourcePoolGroupRequestResourcePoolGroup) Set(val *CreateResourcePoolGroupRequestResourcePoolGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateResourcePoolGroupRequestResourcePoolGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateResourcePoolGroupRequestResourcePoolGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateResourcePoolGroupRequestResourcePoolGroup(val *CreateResourcePoolGroupRequestResourcePoolGroup) *NullableCreateResourcePoolGroupRequestResourcePoolGroup {
+	return &NullableCreateResourcePoolGroupRequestResourcePoolGroup{value: val, isSet: true}
+}
+
+func (v NullableCreateResourcePoolGroupRequestResourcePoolGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateResourcePoolGroupRequestResourcePoolGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

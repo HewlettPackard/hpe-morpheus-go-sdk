@@ -341,6 +341,43 @@ func (o ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerCo
 
 	return toSerialize, nil
 }
+
+type NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType struct {
+	value *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) Get() *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) Set(val *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType(val *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType {
+	return &NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerComputeServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

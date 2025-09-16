@@ -311,6 +311,43 @@ func (o ControllerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableControllerType struct {
+	value *ControllerType
+	isSet bool
+}
+
+func (v NullableControllerType) Get() *ControllerType {
+	return v.value
+}
+
+func (v *NullableControllerType) Set(val *ControllerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableControllerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableControllerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableControllerType(val *ControllerType) *NullableControllerType {
+	return &NullableControllerType{value: val, isSet: true}
+}
+
+func (v NullableControllerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableControllerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ControllerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

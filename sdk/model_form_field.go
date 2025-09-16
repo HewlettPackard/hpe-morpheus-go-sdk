@@ -1037,6 +1037,43 @@ func (o FormField) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableFormField struct {
+	value *FormField
+	isSet bool
+}
+
+func (v NullableFormField) Get() *FormField {
+	return v.value
+}
+
+func (v *NullableFormField) Set(val *FormField) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFormField) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFormField) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFormField(val *FormField) *NullableFormField {
+	return &NullableFormField{value: val, isSet: true}
+}
+
+func (v NullableFormField) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFormField) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *FormField) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -133,6 +133,43 @@ func (o UpdateHostCloudRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostCloudRequest struct {
+	value *UpdateHostCloudRequest
+	isSet bool
+}
+
+func (v NullableUpdateHostCloudRequest) Get() *UpdateHostCloudRequest {
+	return v.value
+}
+
+func (v *NullableUpdateHostCloudRequest) Set(val *UpdateHostCloudRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostCloudRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostCloudRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostCloudRequest(val *UpdateHostCloudRequest) *NullableUpdateHostCloudRequest {
+	return &NullableUpdateHostCloudRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostCloudRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostCloudRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostCloudRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

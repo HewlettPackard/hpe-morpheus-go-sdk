@@ -427,6 +427,43 @@ func (o ShutdownPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableShutdownPolicyTypeConfiguration struct {
+	value *ShutdownPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableShutdownPolicyTypeConfiguration) Get() *ShutdownPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableShutdownPolicyTypeConfiguration) Set(val *ShutdownPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableShutdownPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableShutdownPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableShutdownPolicyTypeConfiguration(val *ShutdownPolicyTypeConfiguration) *NullableShutdownPolicyTypeConfiguration {
+	return &NullableShutdownPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableShutdownPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableShutdownPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ShutdownPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

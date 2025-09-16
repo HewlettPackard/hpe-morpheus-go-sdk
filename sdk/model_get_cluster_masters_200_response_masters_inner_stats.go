@@ -311,6 +311,43 @@ func (o GetClusterMasters200ResponseMastersInnerStats) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterMasters200ResponseMastersInnerStats struct {
+	value *GetClusterMasters200ResponseMastersInnerStats
+	isSet bool
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerStats) Get() *GetClusterMasters200ResponseMastersInnerStats {
+	return v.value
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerStats) Set(val *GetClusterMasters200ResponseMastersInnerStats) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerStats) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerStats) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterMasters200ResponseMastersInnerStats(val *GetClusterMasters200ResponseMastersInnerStats) *NullableGetClusterMasters200ResponseMastersInnerStats {
+	return &NullableGetClusterMasters200ResponseMastersInnerStats{value: val, isSet: true}
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerStats) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerStats) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterMasters200ResponseMastersInnerStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

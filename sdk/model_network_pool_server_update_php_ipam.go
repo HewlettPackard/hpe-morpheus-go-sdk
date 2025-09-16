@@ -490,6 +490,43 @@ func (o NetworkPoolServerUpdatePhpIpam) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerUpdatePhpIpam struct {
+	value *NetworkPoolServerUpdatePhpIpam
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerUpdatePhpIpam) Get() *NetworkPoolServerUpdatePhpIpam {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerUpdatePhpIpam) Set(val *NetworkPoolServerUpdatePhpIpam) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerUpdatePhpIpam) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerUpdatePhpIpam) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerUpdatePhpIpam(val *NetworkPoolServerUpdatePhpIpam) *NullableNetworkPoolServerUpdatePhpIpam {
+	return &NullableNetworkPoolServerUpdatePhpIpam{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerUpdatePhpIpam) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerUpdatePhpIpam) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerUpdatePhpIpam) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

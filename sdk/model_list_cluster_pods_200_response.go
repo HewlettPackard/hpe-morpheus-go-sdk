@@ -131,6 +131,43 @@ func (o ListClusterPods200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListClusterPods200Response struct {
+	value *ListClusterPods200Response
+	isSet bool
+}
+
+func (v NullableListClusterPods200Response) Get() *ListClusterPods200Response {
+	return v.value
+}
+
+func (v *NullableListClusterPods200Response) Set(val *ListClusterPods200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterPods200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterPods200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterPods200Response(val *ListClusterPods200Response) *NullableListClusterPods200Response {
+	return &NullableListClusterPods200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterPods200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterPods200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterPods200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

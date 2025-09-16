@@ -115,6 +115,43 @@ func (o AddRolesRequestRoleInstanceTypePermissionsInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableAddRolesRequestRoleInstanceTypePermissionsInner struct {
+	value *AddRolesRequestRoleInstanceTypePermissionsInner
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) Get() *AddRolesRequestRoleInstanceTypePermissionsInner {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) Set(val *AddRolesRequestRoleInstanceTypePermissionsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRoleInstanceTypePermissionsInner(val *AddRolesRequestRoleInstanceTypePermissionsInner) *NullableAddRolesRequestRoleInstanceTypePermissionsInner {
+	return &NullableAddRolesRequestRoleInstanceTypePermissionsInner{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRoleInstanceTypePermissionsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRoleInstanceTypePermissionsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddRolesRequestRoleInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

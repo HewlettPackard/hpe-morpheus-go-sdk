@@ -86,6 +86,43 @@ func (o AddIntegrationsRequestOneOf2) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddIntegrationsRequestOneOf2 struct {
+	value *AddIntegrationsRequestOneOf2
+	isSet bool
+}
+
+func (v NullableAddIntegrationsRequestOneOf2) Get() *AddIntegrationsRequestOneOf2 {
+	return v.value
+}
+
+func (v *NullableAddIntegrationsRequestOneOf2) Set(val *AddIntegrationsRequestOneOf2) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIntegrationsRequestOneOf2) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIntegrationsRequestOneOf2) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIntegrationsRequestOneOf2(val *AddIntegrationsRequestOneOf2) *NullableAddIntegrationsRequestOneOf2 {
+	return &NullableAddIntegrationsRequestOneOf2{value: val, isSet: true}
+}
+
+func (v NullableAddIntegrationsRequestOneOf2) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIntegrationsRequestOneOf2) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIntegrationsRequestOneOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

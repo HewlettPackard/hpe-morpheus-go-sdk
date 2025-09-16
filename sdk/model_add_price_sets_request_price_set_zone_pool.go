@@ -96,6 +96,43 @@ func (o AddPriceSetsRequestPriceSetZonePool) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableAddPriceSetsRequestPriceSetZonePool struct {
+	value *AddPriceSetsRequestPriceSetZonePool
+	isSet bool
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) Get() *AddPriceSetsRequestPriceSetZonePool {
+	return v.value
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) Set(val *AddPriceSetsRequestPriceSetZonePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPriceSetsRequestPriceSetZonePool(val *AddPriceSetsRequestPriceSetZonePool) *NullableAddPriceSetsRequestPriceSetZonePool {
+	return &NullableAddPriceSetsRequestPriceSetZonePool{value: val, isSet: true}
+}
+
+func (v NullableAddPriceSetsRequestPriceSetZonePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -223,6 +223,43 @@ func (o ListActivity200ResponseAllOfMeta) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableListActivity200ResponseAllOfMeta struct {
+	value *ListActivity200ResponseAllOfMeta
+	isSet bool
+}
+
+func (v NullableListActivity200ResponseAllOfMeta) Get() *ListActivity200ResponseAllOfMeta {
+	return v.value
+}
+
+func (v *NullableListActivity200ResponseAllOfMeta) Set(val *ListActivity200ResponseAllOfMeta) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListActivity200ResponseAllOfMeta) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListActivity200ResponseAllOfMeta) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListActivity200ResponseAllOfMeta(val *ListActivity200ResponseAllOfMeta) *NullableListActivity200ResponseAllOfMeta {
+	return &NullableListActivity200ResponseAllOfMeta{value: val, isSet: true}
+}
+
+func (v NullableListActivity200ResponseAllOfMeta) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListActivity200ResponseAllOfMeta) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListActivity200ResponseAllOfMeta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

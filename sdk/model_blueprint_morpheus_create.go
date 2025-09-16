@@ -181,6 +181,43 @@ func (o BlueprintMorpheusCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintMorpheusCreate struct {
+	value *BlueprintMorpheusCreate
+	isSet bool
+}
+
+func (v NullableBlueprintMorpheusCreate) Get() *BlueprintMorpheusCreate {
+	return v.value
+}
+
+func (v *NullableBlueprintMorpheusCreate) Set(val *BlueprintMorpheusCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintMorpheusCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintMorpheusCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintMorpheusCreate(val *BlueprintMorpheusCreate) *NullableBlueprintMorpheusCreate {
+	return &NullableBlueprintMorpheusCreate{value: val, isSet: true}
+}
+
+func (v NullableBlueprintMorpheusCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintMorpheusCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintMorpheusCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

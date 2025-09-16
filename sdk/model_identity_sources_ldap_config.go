@@ -780,6 +780,43 @@ func (o IdentitySourcesLDAPConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesLDAPConfig struct {
+	value *IdentitySourcesLDAPConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesLDAPConfig) Get() *IdentitySourcesLDAPConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesLDAPConfig) Set(val *IdentitySourcesLDAPConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesLDAPConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesLDAPConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesLDAPConfig(val *IdentitySourcesLDAPConfig) *NullableIdentitySourcesLDAPConfig {
+	return &NullableIdentitySourcesLDAPConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesLDAPConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesLDAPConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesLDAPConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

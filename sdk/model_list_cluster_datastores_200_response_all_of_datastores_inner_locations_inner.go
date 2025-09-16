@@ -203,6 +203,43 @@ func (o ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) ToMa
 
 	return toSerialize, nil
 }
+
+type NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner struct {
+	value *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner
+	isSet bool
+}
+
+func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Get() *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner {
+	return v.value
+}
+
+func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Set(val *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner(val *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner {
+	return &NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner{value: val, isSet: true}
+}
+
+func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -115,6 +115,43 @@ func (o DefaultCloudPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultCloudPermission struct {
+	value *DefaultCloudPermission
+	isSet bool
+}
+
+func (v NullableDefaultCloudPermission) Get() *DefaultCloudPermission {
+	return v.value
+}
+
+func (v *NullableDefaultCloudPermission) Set(val *DefaultCloudPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultCloudPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultCloudPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultCloudPermission(val *DefaultCloudPermission) *NullableDefaultCloudPermission {
+	return &NullableDefaultCloudPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultCloudPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultCloudPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultCloudPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

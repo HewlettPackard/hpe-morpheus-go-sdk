@@ -86,6 +86,43 @@ func (o AddScaleThresholdsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddScaleThresholdsRequest struct {
+	value *AddScaleThresholdsRequest
+	isSet bool
+}
+
+func (v NullableAddScaleThresholdsRequest) Get() *AddScaleThresholdsRequest {
+	return v.value
+}
+
+func (v *NullableAddScaleThresholdsRequest) Set(val *AddScaleThresholdsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddScaleThresholdsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddScaleThresholdsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddScaleThresholdsRequest(val *AddScaleThresholdsRequest) *NullableAddScaleThresholdsRequest {
+	return &NullableAddScaleThresholdsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddScaleThresholdsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddScaleThresholdsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddScaleThresholdsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

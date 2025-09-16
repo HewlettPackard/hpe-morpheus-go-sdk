@@ -115,6 +115,43 @@ func (o DefaultBlueprintPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultBlueprintPermission struct {
+	value *DefaultBlueprintPermission
+	isSet bool
+}
+
+func (v NullableDefaultBlueprintPermission) Get() *DefaultBlueprintPermission {
+	return v.value
+}
+
+func (v *NullableDefaultBlueprintPermission) Set(val *DefaultBlueprintPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultBlueprintPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultBlueprintPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultBlueprintPermission(val *DefaultBlueprintPermission) *NullableDefaultBlueprintPermission {
+	return &NullableDefaultBlueprintPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultBlueprintPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultBlueprintPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultBlueprintPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

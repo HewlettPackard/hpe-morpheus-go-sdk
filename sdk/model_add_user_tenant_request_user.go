@@ -471,6 +471,43 @@ func (o AddUserTenantRequestUser) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddUserTenantRequestUser struct {
+	value *AddUserTenantRequestUser
+	isSet bool
+}
+
+func (v NullableAddUserTenantRequestUser) Get() *AddUserTenantRequestUser {
+	return v.value
+}
+
+func (v *NullableAddUserTenantRequestUser) Set(val *AddUserTenantRequestUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddUserTenantRequestUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddUserTenantRequestUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddUserTenantRequestUser(val *AddUserTenantRequestUser) *NullableAddUserTenantRequestUser {
+	return &NullableAddUserTenantRequestUser{value: val, isSet: true}
+}
+
+func (v NullableAddUserTenantRequestUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddUserTenantRequestUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddUserTenantRequestUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

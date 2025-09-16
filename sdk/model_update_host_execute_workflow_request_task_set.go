@@ -96,6 +96,43 @@ func (o UpdateHostExecuteWorkflowRequestTaskSet) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostExecuteWorkflowRequestTaskSet struct {
+	value *UpdateHostExecuteWorkflowRequestTaskSet
+	isSet bool
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequestTaskSet) Get() *UpdateHostExecuteWorkflowRequestTaskSet {
+	return v.value
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequestTaskSet) Set(val *UpdateHostExecuteWorkflowRequestTaskSet) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequestTaskSet) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequestTaskSet) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostExecuteWorkflowRequestTaskSet(val *UpdateHostExecuteWorkflowRequestTaskSet) *NullableUpdateHostExecuteWorkflowRequestTaskSet {
+	return &NullableUpdateHostExecuteWorkflowRequestTaskSet{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequestTaskSet) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequestTaskSet) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostExecuteWorkflowRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

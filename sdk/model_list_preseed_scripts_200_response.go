@@ -167,6 +167,43 @@ func (o ListPreseedScripts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListPreseedScripts200Response struct {
+	value *ListPreseedScripts200Response
+	isSet bool
+}
+
+func (v NullableListPreseedScripts200Response) Get() *ListPreseedScripts200Response {
+	return v.value
+}
+
+func (v *NullableListPreseedScripts200Response) Set(val *ListPreseedScripts200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListPreseedScripts200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListPreseedScripts200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListPreseedScripts200Response(val *ListPreseedScripts200Response) *NullableListPreseedScripts200Response {
+	return &NullableListPreseedScripts200Response{value: val, isSet: true}
+}
+
+func (v NullableListPreseedScripts200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListPreseedScripts200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListPreseedScripts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

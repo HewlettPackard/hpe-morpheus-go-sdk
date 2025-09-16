@@ -96,6 +96,43 @@ func (o AddSecurityGroupRulesRequestRuleDestinationGroup) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
+
+type NullableAddSecurityGroupRulesRequestRuleDestinationGroup struct {
+	value *AddSecurityGroupRulesRequestRuleDestinationGroup
+	isSet bool
+}
+
+func (v NullableAddSecurityGroupRulesRequestRuleDestinationGroup) Get() *AddSecurityGroupRulesRequestRuleDestinationGroup {
+	return v.value
+}
+
+func (v *NullableAddSecurityGroupRulesRequestRuleDestinationGroup) Set(val *AddSecurityGroupRulesRequestRuleDestinationGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityGroupRulesRequestRuleDestinationGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityGroupRulesRequestRuleDestinationGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityGroupRulesRequestRuleDestinationGroup(val *AddSecurityGroupRulesRequestRuleDestinationGroup) *NullableAddSecurityGroupRulesRequestRuleDestinationGroup {
+	return &NullableAddSecurityGroupRulesRequestRuleDestinationGroup{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityGroupRulesRequestRuleDestinationGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityGroupRulesRequestRuleDestinationGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddSecurityGroupRulesRequestRuleDestinationGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

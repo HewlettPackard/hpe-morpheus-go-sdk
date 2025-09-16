@@ -416,6 +416,43 @@ func (o OptionTypeFieldGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableOptionTypeFieldGroup struct {
+	value *OptionTypeFieldGroup
+	isSet bool
+}
+
+func (v NullableOptionTypeFieldGroup) Get() *OptionTypeFieldGroup {
+	return v.value
+}
+
+func (v *NullableOptionTypeFieldGroup) Set(val *OptionTypeFieldGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionTypeFieldGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionTypeFieldGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionTypeFieldGroup(val *OptionTypeFieldGroup) *NullableOptionTypeFieldGroup {
+	return &NullableOptionTypeFieldGroup{value: val, isSet: true}
+}
+
+func (v NullableOptionTypeFieldGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionTypeFieldGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *OptionTypeFieldGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

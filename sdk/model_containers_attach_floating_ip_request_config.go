@@ -124,6 +124,43 @@ func (o ContainersAttachFloatingIpRequestConfig) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableContainersAttachFloatingIpRequestConfig struct {
+	value *ContainersAttachFloatingIpRequestConfig
+	isSet bool
+}
+
+func (v NullableContainersAttachFloatingIpRequestConfig) Get() *ContainersAttachFloatingIpRequestConfig {
+	return v.value
+}
+
+func (v *NullableContainersAttachFloatingIpRequestConfig) Set(val *ContainersAttachFloatingIpRequestConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableContainersAttachFloatingIpRequestConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableContainersAttachFloatingIpRequestConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableContainersAttachFloatingIpRequestConfig(val *ContainersAttachFloatingIpRequestConfig) *NullableContainersAttachFloatingIpRequestConfig {
+	return &NullableContainersAttachFloatingIpRequestConfig{value: val, isSet: true}
+}
+
+func (v NullableContainersAttachFloatingIpRequestConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableContainersAttachFloatingIpRequestConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ContainersAttachFloatingIpRequestConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

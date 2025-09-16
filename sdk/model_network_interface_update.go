@@ -96,6 +96,43 @@ func (o NetworkInterfaceUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkInterfaceUpdate struct {
+	value *NetworkInterfaceUpdate
+	isSet bool
+}
+
+func (v NullableNetworkInterfaceUpdate) Get() *NetworkInterfaceUpdate {
+	return v.value
+}
+
+func (v *NullableNetworkInterfaceUpdate) Set(val *NetworkInterfaceUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkInterfaceUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkInterfaceUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkInterfaceUpdate(val *NetworkInterfaceUpdate) *NullableNetworkInterfaceUpdate {
+	return &NullableNetworkInterfaceUpdate{value: val, isSet: true}
+}
+
+func (v NullableNetworkInterfaceUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkInterfaceUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkInterfaceUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

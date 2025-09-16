@@ -89,6 +89,43 @@ func (o UpdateMuteAllCheckAppsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateMuteAllCheckAppsRequest struct {
+	value *UpdateMuteAllCheckAppsRequest
+	isSet bool
+}
+
+func (v NullableUpdateMuteAllCheckAppsRequest) Get() *UpdateMuteAllCheckAppsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateMuteAllCheckAppsRequest) Set(val *UpdateMuteAllCheckAppsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateMuteAllCheckAppsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateMuteAllCheckAppsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateMuteAllCheckAppsRequest(val *UpdateMuteAllCheckAppsRequest) *NullableUpdateMuteAllCheckAppsRequest {
+	return &NullableUpdateMuteAllCheckAppsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateMuteAllCheckAppsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateMuteAllCheckAppsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateMuteAllCheckAppsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

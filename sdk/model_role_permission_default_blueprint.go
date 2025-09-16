@@ -115,6 +115,43 @@ func (o RolePermissionDefaultBlueprint) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableRolePermissionDefaultBlueprint struct {
+	value *RolePermissionDefaultBlueprint
+	isSet bool
+}
+
+func (v NullableRolePermissionDefaultBlueprint) Get() *RolePermissionDefaultBlueprint {
+	return v.value
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) Set(val *RolePermissionDefaultBlueprint) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionDefaultBlueprint) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionDefaultBlueprint(val *RolePermissionDefaultBlueprint) *NullableRolePermissionDefaultBlueprint {
+	return &NullableRolePermissionDefaultBlueprint{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionDefaultBlueprint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionDefaultBlueprint) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RolePermissionDefaultBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

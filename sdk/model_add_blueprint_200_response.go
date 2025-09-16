@@ -308,6 +308,43 @@ func (o AddBlueprint200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprint200Response struct {
+	value *AddBlueprint200Response
+	isSet bool
+}
+
+func (v NullableAddBlueprint200Response) Get() *AddBlueprint200Response {
+	return v.value
+}
+
+func (v *NullableAddBlueprint200Response) Set(val *AddBlueprint200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprint200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprint200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprint200Response(val *AddBlueprint200Response) *NullableAddBlueprint200Response {
+	return &NullableAddBlueprint200Response{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprint200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprint200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprint200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

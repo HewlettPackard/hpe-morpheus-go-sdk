@@ -442,6 +442,43 @@ func (o NetworkPoolServerUpdateSolarWinds) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerUpdateSolarWinds struct {
+	value *NetworkPoolServerUpdateSolarWinds
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerUpdateSolarWinds) Get() *NetworkPoolServerUpdateSolarWinds {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerUpdateSolarWinds) Set(val *NetworkPoolServerUpdateSolarWinds) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerUpdateSolarWinds) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerUpdateSolarWinds) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerUpdateSolarWinds(val *NetworkPoolServerUpdateSolarWinds) *NullableNetworkPoolServerUpdateSolarWinds {
+	return &NullableNetworkPoolServerUpdateSolarWinds{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerUpdateSolarWinds) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerUpdateSolarWinds) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerUpdateSolarWinds) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -412,6 +412,43 @@ func (o FileTemplateCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableFileTemplateCreate struct {
+	value *FileTemplateCreate
+	isSet bool
+}
+
+func (v NullableFileTemplateCreate) Get() *FileTemplateCreate {
+	return v.value
+}
+
+func (v *NullableFileTemplateCreate) Set(val *FileTemplateCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFileTemplateCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFileTemplateCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFileTemplateCreate(val *FileTemplateCreate) *NullableFileTemplateCreate {
+	return &NullableFileTemplateCreate{value: val, isSet: true}
+}
+
+func (v NullableFileTemplateCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFileTemplateCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *FileTemplateCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

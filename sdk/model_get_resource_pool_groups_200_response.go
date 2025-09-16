@@ -95,6 +95,43 @@ func (o GetResourcePoolGroups200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableGetResourcePoolGroups200Response struct {
+	value *GetResourcePoolGroups200Response
+	isSet bool
+}
+
+func (v NullableGetResourcePoolGroups200Response) Get() *GetResourcePoolGroups200Response {
+	return v.value
+}
+
+func (v *NullableGetResourcePoolGroups200Response) Set(val *GetResourcePoolGroups200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetResourcePoolGroups200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetResourcePoolGroups200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetResourcePoolGroups200Response(val *GetResourcePoolGroups200Response) *NullableGetResourcePoolGroups200Response {
+	return &NullableGetResourcePoolGroups200Response{value: val, isSet: true}
+}
+
+func (v NullableGetResourcePoolGroups200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetResourcePoolGroups200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetResourcePoolGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

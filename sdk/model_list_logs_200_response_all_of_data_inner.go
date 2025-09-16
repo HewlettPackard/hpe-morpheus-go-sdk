@@ -456,6 +456,43 @@ func (o ListLogs200ResponseAllOfDataInner) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableListLogs200ResponseAllOfDataInner struct {
+	value *ListLogs200ResponseAllOfDataInner
+	isSet bool
+}
+
+func (v NullableListLogs200ResponseAllOfDataInner) Get() *ListLogs200ResponseAllOfDataInner {
+	return v.value
+}
+
+func (v *NullableListLogs200ResponseAllOfDataInner) Set(val *ListLogs200ResponseAllOfDataInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLogs200ResponseAllOfDataInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLogs200ResponseAllOfDataInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLogs200ResponseAllOfDataInner(val *ListLogs200ResponseAllOfDataInner) *NullableListLogs200ResponseAllOfDataInner {
+	return &NullableListLogs200ResponseAllOfDataInner{value: val, isSet: true}
+}
+
+func (v NullableListLogs200ResponseAllOfDataInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLogs200ResponseAllOfDataInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListLogs200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

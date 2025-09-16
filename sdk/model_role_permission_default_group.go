@@ -117,6 +117,43 @@ func (o RolePermissionDefaultGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRolePermissionDefaultGroup struct {
+	value *RolePermissionDefaultGroup
+	isSet bool
+}
+
+func (v NullableRolePermissionDefaultGroup) Get() *RolePermissionDefaultGroup {
+	return v.value
+}
+
+func (v *NullableRolePermissionDefaultGroup) Set(val *RolePermissionDefaultGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionDefaultGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionDefaultGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionDefaultGroup(val *RolePermissionDefaultGroup) *NullableRolePermissionDefaultGroup {
+	return &NullableRolePermissionDefaultGroup{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionDefaultGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionDefaultGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RolePermissionDefaultGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -906,6 +906,43 @@ func (o ZoneCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZoneCreate struct {
+	value *ZoneCreate
+	isSet bool
+}
+
+func (v NullableZoneCreate) Get() *ZoneCreate {
+	return v.value
+}
+
+func (v *NullableZoneCreate) Set(val *ZoneCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneCreate(val *ZoneCreate) *NullableZoneCreate {
+	return &NullableZoneCreate{value: val, isSet: true}
+}
+
+func (v NullableZoneCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ZoneCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

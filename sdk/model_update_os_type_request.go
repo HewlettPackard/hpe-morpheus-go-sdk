@@ -95,6 +95,43 @@ func (o UpdateOsTypeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateOsTypeRequest struct {
+	value *UpdateOsTypeRequest
+	isSet bool
+}
+
+func (v NullableUpdateOsTypeRequest) Get() *UpdateOsTypeRequest {
+	return v.value
+}
+
+func (v *NullableUpdateOsTypeRequest) Set(val *UpdateOsTypeRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateOsTypeRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateOsTypeRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateOsTypeRequest(val *UpdateOsTypeRequest) *NullableUpdateOsTypeRequest {
+	return &NullableUpdateOsTypeRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateOsTypeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateOsTypeRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateOsTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

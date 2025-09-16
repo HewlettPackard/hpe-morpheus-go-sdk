@@ -95,6 +95,43 @@ func (o AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) ToMap() 
 
 	return toSerialize, nil
 }
+
+type NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup struct {
+	value *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup
+	isSet bool
+}
+
+func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) Get() *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
+	return v.value
+}
+
+func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) Set(val *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup(val *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) *NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
+	return &NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup{value: val, isSet: true}
+}
+
+func (v NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

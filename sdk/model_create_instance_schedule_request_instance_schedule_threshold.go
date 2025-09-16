@@ -621,6 +621,43 @@ func (o CreateInstanceScheduleRequestInstanceScheduleThreshold) ToMap() (map[str
 
 	return toSerialize, nil
 }
+
+type NullableCreateInstanceScheduleRequestInstanceScheduleThreshold struct {
+	value *CreateInstanceScheduleRequestInstanceScheduleThreshold
+	isSet bool
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Get() *CreateInstanceScheduleRequestInstanceScheduleThreshold {
+	return v.value
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Set(val *CreateInstanceScheduleRequestInstanceScheduleThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateInstanceScheduleRequestInstanceScheduleThreshold(val *CreateInstanceScheduleRequestInstanceScheduleThreshold) *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold {
+	return &NullableCreateInstanceScheduleRequestInstanceScheduleThreshold{value: val, isSet: true}
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

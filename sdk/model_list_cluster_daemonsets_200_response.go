@@ -131,6 +131,43 @@ func (o ListClusterDaemonsets200Response) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableListClusterDaemonsets200Response struct {
+	value *ListClusterDaemonsets200Response
+	isSet bool
+}
+
+func (v NullableListClusterDaemonsets200Response) Get() *ListClusterDaemonsets200Response {
+	return v.value
+}
+
+func (v *NullableListClusterDaemonsets200Response) Set(val *ListClusterDaemonsets200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterDaemonsets200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterDaemonsets200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterDaemonsets200Response(val *ListClusterDaemonsets200Response) *NullableListClusterDaemonsets200Response {
+	return &NullableListClusterDaemonsets200Response{value: val, isSet: true}
+}
+
+func (v NullableListClusterDaemonsets200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterDaemonsets200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterDaemonsets200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

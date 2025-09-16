@@ -96,6 +96,43 @@ func (o AddPricesRequestPriceVolumeType) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableAddPricesRequestPriceVolumeType struct {
+	value *AddPricesRequestPriceVolumeType
+	isSet bool
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) Get() *AddPricesRequestPriceVolumeType {
+	return v.value
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) Set(val *AddPricesRequestPriceVolumeType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPricesRequestPriceVolumeType(val *AddPricesRequestPriceVolumeType) *NullableAddPricesRequestPriceVolumeType {
+	return &NullableAddPricesRequestPriceVolumeType{value: val, isSet: true}
+}
+
+func (v NullableAddPricesRequestPriceVolumeType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPricesRequestPriceVolumeType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPricesRequestPriceVolumeType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

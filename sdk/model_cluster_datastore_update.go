@@ -177,6 +177,43 @@ func (o ClusterDatastoreUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterDatastoreUpdate struct {
+	value *ClusterDatastoreUpdate
+	isSet bool
+}
+
+func (v NullableClusterDatastoreUpdate) Get() *ClusterDatastoreUpdate {
+	return v.value
+}
+
+func (v *NullableClusterDatastoreUpdate) Set(val *ClusterDatastoreUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterDatastoreUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterDatastoreUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterDatastoreUpdate(val *ClusterDatastoreUpdate) *NullableClusterDatastoreUpdate {
+	return &NullableClusterDatastoreUpdate{value: val, isSet: true}
+}
+
+func (v NullableClusterDatastoreUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterDatastoreUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterDatastoreUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

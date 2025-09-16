@@ -1812,6 +1812,43 @@ func (o ProvisionType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableProvisionType struct {
+	value *ProvisionType
+	isSet bool
+}
+
+func (v NullableProvisionType) Get() *ProvisionType {
+	return v.value
+}
+
+func (v *NullableProvisionType) Set(val *ProvisionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableProvisionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableProvisionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableProvisionType(val *ProvisionType) *NullableProvisionType {
+	return &NullableProvisionType{value: val, isSet: true}
+}
+
+func (v NullableProvisionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableProvisionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

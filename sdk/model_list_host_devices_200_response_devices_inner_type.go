@@ -391,6 +391,43 @@ func (o ListHostDevices200ResponseDevicesInnerType) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableListHostDevices200ResponseDevicesInnerType struct {
+	value *ListHostDevices200ResponseDevicesInnerType
+	isSet bool
+}
+
+func (v NullableListHostDevices200ResponseDevicesInnerType) Get() *ListHostDevices200ResponseDevicesInnerType {
+	return v.value
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInnerType) Set(val *ListHostDevices200ResponseDevicesInnerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHostDevices200ResponseDevicesInnerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInnerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHostDevices200ResponseDevicesInnerType(val *ListHostDevices200ResponseDevicesInnerType) *NullableListHostDevices200ResponseDevicesInnerType {
+	return &NullableListHostDevices200ResponseDevicesInnerType{value: val, isSet: true}
+}
+
+func (v NullableListHostDevices200ResponseDevicesInnerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

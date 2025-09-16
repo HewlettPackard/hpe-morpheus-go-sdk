@@ -133,6 +133,43 @@ func (o BootScriptsCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBootScriptsCreate struct {
+	value *BootScriptsCreate
+	isSet bool
+}
+
+func (v NullableBootScriptsCreate) Get() *BootScriptsCreate {
+	return v.value
+}
+
+func (v *NullableBootScriptsCreate) Set(val *BootScriptsCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBootScriptsCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBootScriptsCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBootScriptsCreate(val *BootScriptsCreate) *NullableBootScriptsCreate {
+	return &NullableBootScriptsCreate{value: val, isSet: true}
+}
+
+func (v NullableBootScriptsCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBootScriptsCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BootScriptsCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

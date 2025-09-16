@@ -115,6 +115,43 @@ func (o AddRolesRequestRoleCatalogItemTypePermissionsInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableAddRolesRequestRoleCatalogItemTypePermissionsInner struct {
+	value *AddRolesRequestRoleCatalogItemTypePermissionsInner
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) Get() *AddRolesRequestRoleCatalogItemTypePermissionsInner {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) Set(val *AddRolesRequestRoleCatalogItemTypePermissionsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRoleCatalogItemTypePermissionsInner(val *AddRolesRequestRoleCatalogItemTypePermissionsInner) *NullableAddRolesRequestRoleCatalogItemTypePermissionsInner {
+	return &NullableAddRolesRequestRoleCatalogItemTypePermissionsInner{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRoleCatalogItemTypePermissionsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddRolesRequestRoleCatalogItemTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

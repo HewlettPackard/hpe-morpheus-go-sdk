@@ -383,6 +383,43 @@ func (o WebCheckAllOfConfigAllOfAnyOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWebCheckAllOfConfigAllOfAnyOf struct {
+	value *WebCheckAllOfConfigAllOfAnyOf
+	isSet bool
+}
+
+func (v NullableWebCheckAllOfConfigAllOfAnyOf) Get() *WebCheckAllOfConfigAllOfAnyOf {
+	return v.value
+}
+
+func (v *NullableWebCheckAllOfConfigAllOfAnyOf) Set(val *WebCheckAllOfConfigAllOfAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWebCheckAllOfConfigAllOfAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWebCheckAllOfConfigAllOfAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWebCheckAllOfConfigAllOfAnyOf(val *WebCheckAllOfConfigAllOfAnyOf) *NullableWebCheckAllOfConfigAllOfAnyOf {
+	return &NullableWebCheckAllOfConfigAllOfAnyOf{value: val, isSet: true}
+}
+
+func (v NullableWebCheckAllOfConfigAllOfAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWebCheckAllOfConfigAllOfAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WebCheckAllOfConfigAllOfAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

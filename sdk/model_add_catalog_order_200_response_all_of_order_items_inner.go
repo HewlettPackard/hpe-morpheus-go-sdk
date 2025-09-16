@@ -420,6 +420,43 @@ func (o AddCatalogOrder200ResponseAllOfOrderItemsInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogOrder200ResponseAllOfOrderItemsInner struct {
+	value *AddCatalogOrder200ResponseAllOfOrderItemsInner
+	isSet bool
+}
+
+func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Get() *AddCatalogOrder200ResponseAllOfOrderItemsInner {
+	return v.value
+}
+
+func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Set(val *AddCatalogOrder200ResponseAllOfOrderItemsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogOrder200ResponseAllOfOrderItemsInner(val *AddCatalogOrder200ResponseAllOfOrderItemsInner) *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner {
+	return &NullableAddCatalogOrder200ResponseAllOfOrderItemsInner{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

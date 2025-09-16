@@ -203,6 +203,43 @@ func (o Search) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSearch struct {
+	value *Search
+	isSet bool
+}
+
+func (v NullableSearch) Get() *Search {
+	return v.value
+}
+
+func (v *NullableSearch) Set(val *Search) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSearch) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSearch) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSearch(val *Search) *NullableSearch {
+	return &NullableSearch{value: val, isSet: true}
+}
+
+func (v NullableSearch) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSearch) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Search) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

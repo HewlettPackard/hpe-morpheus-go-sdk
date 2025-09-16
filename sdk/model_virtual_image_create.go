@@ -950,6 +950,43 @@ func (o VirtualImageCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableVirtualImageCreate struct {
+	value *VirtualImageCreate
+	isSet bool
+}
+
+func (v NullableVirtualImageCreate) Get() *VirtualImageCreate {
+	return v.value
+}
+
+func (v *NullableVirtualImageCreate) Set(val *VirtualImageCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableVirtualImageCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableVirtualImageCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableVirtualImageCreate(val *VirtualImageCreate) *NullableVirtualImageCreate {
+	return &NullableVirtualImageCreate{value: val, isSet: true}
+}
+
+func (v NullableVirtualImageCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableVirtualImageCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *VirtualImageCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

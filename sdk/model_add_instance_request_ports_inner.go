@@ -172,6 +172,43 @@ func (o AddInstanceRequestPortsInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddInstanceRequestPortsInner struct {
+	value *AddInstanceRequestPortsInner
+	isSet bool
+}
+
+func (v NullableAddInstanceRequestPortsInner) Get() *AddInstanceRequestPortsInner {
+	return v.value
+}
+
+func (v *NullableAddInstanceRequestPortsInner) Set(val *AddInstanceRequestPortsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstanceRequestPortsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstanceRequestPortsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstanceRequestPortsInner(val *AddInstanceRequestPortsInner) *NullableAddInstanceRequestPortsInner {
+	return &NullableAddInstanceRequestPortsInner{value: val, isSet: true}
+}
+
+func (v NullableAddInstanceRequestPortsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstanceRequestPortsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstanceRequestPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

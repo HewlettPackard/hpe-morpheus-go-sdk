@@ -86,6 +86,43 @@ func (o AddPowerScheduleServersRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableAddPowerScheduleServersRequest struct {
+	value *AddPowerScheduleServersRequest
+	isSet bool
+}
+
+func (v NullableAddPowerScheduleServersRequest) Get() *AddPowerScheduleServersRequest {
+	return v.value
+}
+
+func (v *NullableAddPowerScheduleServersRequest) Set(val *AddPowerScheduleServersRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPowerScheduleServersRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPowerScheduleServersRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPowerScheduleServersRequest(val *AddPowerScheduleServersRequest) *NullableAddPowerScheduleServersRequest {
+	return &NullableAddPowerScheduleServersRequest{value: val, isSet: true}
+}
+
+func (v NullableAddPowerScheduleServersRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPowerScheduleServersRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPowerScheduleServersRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

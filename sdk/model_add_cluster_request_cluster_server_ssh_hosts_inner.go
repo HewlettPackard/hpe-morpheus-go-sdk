@@ -133,6 +133,43 @@ func (o AddClusterRequestClusterServerSshHostsInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterRequestClusterServerSshHostsInner struct {
+	value *AddClusterRequestClusterServerSshHostsInner
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) Get() *AddClusterRequestClusterServerSshHostsInner {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) Set(val *AddClusterRequestClusterServerSshHostsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerSshHostsInner(val *AddClusterRequestClusterServerSshHostsInner) *NullableAddClusterRequestClusterServerSshHostsInner {
+	return &NullableAddClusterRequestClusterServerSshHostsInner{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerSshHostsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

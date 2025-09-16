@@ -1662,6 +1662,43 @@ func (o GetReportTypes200ResponseReportTypesInnerOptionTypesInner) ToMap() (map[
 
 	return toSerialize, nil
 }
+
+type NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner struct {
+	value *GetReportTypes200ResponseReportTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Get() *GetReportTypes200ResponseReportTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Set(val *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner(val *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner {
+	return &NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

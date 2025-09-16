@@ -805,6 +805,43 @@ func (o CatalogItemTypeWorkflowCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogItemTypeWorkflowCreate struct {
+	value *CatalogItemTypeWorkflowCreate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeWorkflowCreate) Get() *CatalogItemTypeWorkflowCreate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeWorkflowCreate) Set(val *CatalogItemTypeWorkflowCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeWorkflowCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeWorkflowCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeWorkflowCreate(val *CatalogItemTypeWorkflowCreate) *NullableCatalogItemTypeWorkflowCreate {
+	return &NullableCatalogItemTypeWorkflowCreate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeWorkflowCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeWorkflowCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogItemTypeWorkflowCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

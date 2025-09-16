@@ -128,6 +128,43 @@ func (o PhpIPAMNetworkPoolServerConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullablePhpIPAMNetworkPoolServerConfig struct {
+	value *PhpIPAMNetworkPoolServerConfig
+	isSet bool
+}
+
+func (v NullablePhpIPAMNetworkPoolServerConfig) Get() *PhpIPAMNetworkPoolServerConfig {
+	return v.value
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerConfig) Set(val *PhpIPAMNetworkPoolServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePhpIPAMNetworkPoolServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePhpIPAMNetworkPoolServerConfig(val *PhpIPAMNetworkPoolServerConfig) *NullablePhpIPAMNetworkPoolServerConfig {
+	return &NullablePhpIPAMNetworkPoolServerConfig{value: val, isSet: true}
+}
+
+func (v NullablePhpIPAMNetworkPoolServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePhpIPAMNetworkPoolServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PhpIPAMNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

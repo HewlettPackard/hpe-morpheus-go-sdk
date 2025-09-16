@@ -730,6 +730,43 @@ func (o TaskLibraryTemplateConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskLibraryTemplateConfig struct {
+	value *TaskLibraryTemplateConfig
+	isSet bool
+}
+
+func (v NullableTaskLibraryTemplateConfig) Get() *TaskLibraryTemplateConfig {
+	return v.value
+}
+
+func (v *NullableTaskLibraryTemplateConfig) Set(val *TaskLibraryTemplateConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskLibraryTemplateConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskLibraryTemplateConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskLibraryTemplateConfig(val *TaskLibraryTemplateConfig) *NullableTaskLibraryTemplateConfig {
+	return &NullableTaskLibraryTemplateConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskLibraryTemplateConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskLibraryTemplateConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskLibraryTemplateConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

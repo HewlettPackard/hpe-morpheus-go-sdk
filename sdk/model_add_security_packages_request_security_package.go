@@ -272,6 +272,43 @@ func (o AddSecurityPackagesRequestSecurityPackage) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableAddSecurityPackagesRequestSecurityPackage struct {
+	value *AddSecurityPackagesRequestSecurityPackage
+	isSet bool
+}
+
+func (v NullableAddSecurityPackagesRequestSecurityPackage) Get() *AddSecurityPackagesRequestSecurityPackage {
+	return v.value
+}
+
+func (v *NullableAddSecurityPackagesRequestSecurityPackage) Set(val *AddSecurityPackagesRequestSecurityPackage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddSecurityPackagesRequestSecurityPackage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddSecurityPackagesRequestSecurityPackage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddSecurityPackagesRequestSecurityPackage(val *AddSecurityPackagesRequestSecurityPackage) *NullableAddSecurityPackagesRequestSecurityPackage {
+	return &NullableAddSecurityPackagesRequestSecurityPackage{value: val, isSet: true}
+}
+
+func (v NullableAddSecurityPackagesRequestSecurityPackage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

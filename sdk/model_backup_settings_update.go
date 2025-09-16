@@ -390,6 +390,43 @@ func (o BackupSettingsUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBackupSettingsUpdate struct {
+	value *BackupSettingsUpdate
+	isSet bool
+}
+
+func (v NullableBackupSettingsUpdate) Get() *BackupSettingsUpdate {
+	return v.value
+}
+
+func (v *NullableBackupSettingsUpdate) Set(val *BackupSettingsUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBackupSettingsUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBackupSettingsUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBackupSettingsUpdate(val *BackupSettingsUpdate) *NullableBackupSettingsUpdate {
+	return &NullableBackupSettingsUpdate{value: val, isSet: true}
+}
+
+func (v NullableBackupSettingsUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBackupSettingsUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BackupSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -178,6 +178,43 @@ func (o ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) ToMap() 
 
 	return toSerialize, nil
 }
+
+type NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct {
+	value *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Get() *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Set(val *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner(val *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner {
+	return &NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o AddBaremetalHostRequestServerGroup) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddBaremetalHostRequestServerGroup struct {
+	value *AddBaremetalHostRequestServerGroup
+	isSet bool
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) Get() *AddBaremetalHostRequestServerGroup {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) Set(val *AddBaremetalHostRequestServerGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHostRequestServerGroup(val *AddBaremetalHostRequestServerGroup) *NullableAddBaremetalHostRequestServerGroup {
+	return &NullableAddBaremetalHostRequestServerGroup{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHostRequestServerGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHostRequestServerGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBaremetalHostRequestServerGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

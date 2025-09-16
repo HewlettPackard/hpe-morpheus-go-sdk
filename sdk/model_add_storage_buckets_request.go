@@ -86,6 +86,43 @@ func (o AddStorageBucketsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddStorageBucketsRequest struct {
+	value *AddStorageBucketsRequest
+	isSet bool
+}
+
+func (v NullableAddStorageBucketsRequest) Get() *AddStorageBucketsRequest {
+	return v.value
+}
+
+func (v *NullableAddStorageBucketsRequest) Set(val *AddStorageBucketsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageBucketsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageBucketsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageBucketsRequest(val *AddStorageBucketsRequest) *NullableAddStorageBucketsRequest {
+	return &NullableAddStorageBucketsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddStorageBucketsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageBucketsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddStorageBucketsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

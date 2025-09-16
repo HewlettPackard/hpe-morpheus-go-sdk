@@ -95,6 +95,43 @@ func (o AddClusterLayoutsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterLayoutsRequest struct {
+	value *AddClusterLayoutsRequest
+	isSet bool
+}
+
+func (v NullableAddClusterLayoutsRequest) Get() *AddClusterLayoutsRequest {
+	return v.value
+}
+
+func (v *NullableAddClusterLayoutsRequest) Set(val *AddClusterLayoutsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterLayoutsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterLayoutsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterLayoutsRequest(val *AddClusterLayoutsRequest) *NullableAddClusterLayoutsRequest {
+	return &NullableAddClusterLayoutsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddClusterLayoutsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterLayoutsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterLayoutsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

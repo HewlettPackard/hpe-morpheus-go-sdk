@@ -149,6 +149,43 @@ func (o AddNodeTypeRequestContainerTypeContainerPortsInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableAddNodeTypeRequestContainerTypeContainerPortsInner struct {
+	value *AddNodeTypeRequestContainerTypeContainerPortsInner
+	isSet bool
+}
+
+func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Get() *AddNodeTypeRequestContainerTypeContainerPortsInner {
+	return v.value
+}
+
+func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Set(val *AddNodeTypeRequestContainerTypeContainerPortsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddNodeTypeRequestContainerTypeContainerPortsInner(val *AddNodeTypeRequestContainerTypeContainerPortsInner) *NullableAddNodeTypeRequestContainerTypeContainerPortsInner {
+	return &NullableAddNodeTypeRequestContainerTypeContainerPortsInner{value: val, isSet: true}
+}
+
+func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

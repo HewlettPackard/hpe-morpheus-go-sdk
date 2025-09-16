@@ -95,6 +95,43 @@ func (o AddImageBuildRequestImageBuildBootScript) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableAddImageBuildRequestImageBuildBootScript struct {
+	value *AddImageBuildRequestImageBuildBootScript
+	isSet bool
+}
+
+func (v NullableAddImageBuildRequestImageBuildBootScript) Get() *AddImageBuildRequestImageBuildBootScript {
+	return v.value
+}
+
+func (v *NullableAddImageBuildRequestImageBuildBootScript) Set(val *AddImageBuildRequestImageBuildBootScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddImageBuildRequestImageBuildBootScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddImageBuildRequestImageBuildBootScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddImageBuildRequestImageBuildBootScript(val *AddImageBuildRequestImageBuildBootScript) *NullableAddImageBuildRequestImageBuildBootScript {
+	return &NullableAddImageBuildRequestImageBuildBootScript{value: val, isSet: true}
+}
+
+func (v NullableAddImageBuildRequestImageBuildBootScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddImageBuildRequestImageBuildBootScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddImageBuildRequestImageBuildBootScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

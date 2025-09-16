@@ -143,6 +143,43 @@ func (o NetworkTypeAzureConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkTypeAzureConfig struct {
+	value *NetworkTypeAzureConfig
+	isSet bool
+}
+
+func (v NullableNetworkTypeAzureConfig) Get() *NetworkTypeAzureConfig {
+	return v.value
+}
+
+func (v *NullableNetworkTypeAzureConfig) Set(val *NetworkTypeAzureConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkTypeAzureConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkTypeAzureConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkTypeAzureConfig(val *NetworkTypeAzureConfig) *NullableNetworkTypeAzureConfig {
+	return &NullableNetworkTypeAzureConfig{value: val, isSet: true}
+}
+
+func (v NullableNetworkTypeAzureConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkTypeAzureConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkTypeAzureConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

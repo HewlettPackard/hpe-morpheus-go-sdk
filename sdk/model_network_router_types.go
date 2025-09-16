@@ -599,6 +599,43 @@ func (o NetworkRouterTypes) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRouterTypes struct {
+	value *NetworkRouterTypes
+	isSet bool
+}
+
+func (v NullableNetworkRouterTypes) Get() *NetworkRouterTypes {
+	return v.value
+}
+
+func (v *NullableNetworkRouterTypes) Set(val *NetworkRouterTypes) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterTypes) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterTypes) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterTypes(val *NetworkRouterTypes) *NullableNetworkRouterTypes {
+	return &NullableNetworkRouterTypes{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterTypes) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterTypes) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRouterTypes) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

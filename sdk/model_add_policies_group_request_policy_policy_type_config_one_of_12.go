@@ -135,6 +135,43 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) ToMap() (map[strin
 
 	return toSerialize, nil
 }
+
+type NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 struct {
+	value *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12
+	isSet bool
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Get() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 {
+	return v.value
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Set(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12(val *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12 {
+	return &NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12{value: val, isSet: true}
+}
+
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf12) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

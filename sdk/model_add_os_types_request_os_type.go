@@ -592,6 +592,43 @@ func (o AddOsTypesRequestOsType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddOsTypesRequestOsType struct {
+	value *AddOsTypesRequestOsType
+	isSet bool
+}
+
+func (v NullableAddOsTypesRequestOsType) Get() *AddOsTypesRequestOsType {
+	return v.value
+}
+
+func (v *NullableAddOsTypesRequestOsType) Set(val *AddOsTypesRequestOsType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOsTypesRequestOsType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOsTypesRequestOsType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOsTypesRequestOsType(val *AddOsTypesRequestOsType) *NullableAddOsTypesRequestOsType {
+	return &NullableAddOsTypesRequestOsType{value: val, isSet: true}
+}
+
+func (v NullableAddOsTypesRequestOsType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOsTypesRequestOsType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOsTypesRequestOsType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

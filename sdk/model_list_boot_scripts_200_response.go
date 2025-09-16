@@ -167,6 +167,43 @@ func (o ListBootScripts200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListBootScripts200Response struct {
+	value *ListBootScripts200Response
+	isSet bool
+}
+
+func (v NullableListBootScripts200Response) Get() *ListBootScripts200Response {
+	return v.value
+}
+
+func (v *NullableListBootScripts200Response) Set(val *ListBootScripts200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBootScripts200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBootScripts200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBootScripts200Response(val *ListBootScripts200Response) *NullableListBootScripts200Response {
+	return &NullableListBootScripts200Response{value: val, isSet: true}
+}
+
+func (v NullableListBootScripts200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBootScripts200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBootScripts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

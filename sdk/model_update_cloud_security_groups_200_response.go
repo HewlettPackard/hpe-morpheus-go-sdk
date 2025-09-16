@@ -131,6 +131,43 @@ func (o UpdateCloudSecurityGroups200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudSecurityGroups200Response struct {
+	value *UpdateCloudSecurityGroups200Response
+	isSet bool
+}
+
+func (v NullableUpdateCloudSecurityGroups200Response) Get() *UpdateCloudSecurityGroups200Response {
+	return v.value
+}
+
+func (v *NullableUpdateCloudSecurityGroups200Response) Set(val *UpdateCloudSecurityGroups200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudSecurityGroups200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudSecurityGroups200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudSecurityGroups200Response(val *UpdateCloudSecurityGroups200Response) *NullableUpdateCloudSecurityGroups200Response {
+	return &NullableUpdateCloudSecurityGroups200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudSecurityGroups200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudSecurityGroups200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

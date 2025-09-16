@@ -634,6 +634,43 @@ func (o IntegrationMicrosoftDNS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationMicrosoftDNS struct {
+	value *IntegrationMicrosoftDNS
+	isSet bool
+}
+
+func (v NullableIntegrationMicrosoftDNS) Get() *IntegrationMicrosoftDNS {
+	return v.value
+}
+
+func (v *NullableIntegrationMicrosoftDNS) Set(val *IntegrationMicrosoftDNS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationMicrosoftDNS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationMicrosoftDNS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationMicrosoftDNS(val *IntegrationMicrosoftDNS) *NullableIntegrationMicrosoftDNS {
+	return &NullableIntegrationMicrosoftDNS{value: val, isSet: true}
+}
+
+func (v NullableIntegrationMicrosoftDNS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationMicrosoftDNS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationMicrosoftDNS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

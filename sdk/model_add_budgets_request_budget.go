@@ -611,6 +611,43 @@ func (o AddBudgetsRequestBudget) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddBudgetsRequestBudget struct {
+	value *AddBudgetsRequestBudget
+	isSet bool
+}
+
+func (v NullableAddBudgetsRequestBudget) Get() *AddBudgetsRequestBudget {
+	return v.value
+}
+
+func (v *NullableAddBudgetsRequestBudget) Set(val *AddBudgetsRequestBudget) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBudgetsRequestBudget) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBudgetsRequestBudget) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBudgetsRequestBudget(val *AddBudgetsRequestBudget) *NullableAddBudgetsRequestBudget {
+	return &NullableAddBudgetsRequestBudget{value: val, isSet: true}
+}
+
+func (v NullableAddBudgetsRequestBudget) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBudgetsRequestBudget) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBudgetsRequestBudget) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

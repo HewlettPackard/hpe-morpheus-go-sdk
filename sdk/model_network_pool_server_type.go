@@ -416,6 +416,43 @@ func (o NetworkPoolServerType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerType struct {
+	value *NetworkPoolServerType
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerType) Get() *NetworkPoolServerType {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerType) Set(val *NetworkPoolServerType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerType(val *NetworkPoolServerType) *NullableNetworkPoolServerType {
+	return &NullableNetworkPoolServerType{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

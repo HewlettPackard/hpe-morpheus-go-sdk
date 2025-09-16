@@ -167,6 +167,43 @@ func (o InstanceNamePolicyTypeConfiguration) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableInstanceNamePolicyTypeConfiguration struct {
+	value *InstanceNamePolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableInstanceNamePolicyTypeConfiguration) Get() *InstanceNamePolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableInstanceNamePolicyTypeConfiguration) Set(val *InstanceNamePolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceNamePolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceNamePolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceNamePolicyTypeConfiguration(val *InstanceNamePolicyTypeConfiguration) *NullableInstanceNamePolicyTypeConfiguration {
+	return &NullableInstanceNamePolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableInstanceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceNamePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceNamePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

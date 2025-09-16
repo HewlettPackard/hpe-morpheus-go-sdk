@@ -131,6 +131,43 @@ func (o UpdateIdentitySourceSubdomains200Response) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateIdentitySourceSubdomains200Response struct {
+	value *UpdateIdentitySourceSubdomains200Response
+	isSet bool
+}
+
+func (v NullableUpdateIdentitySourceSubdomains200Response) Get() *UpdateIdentitySourceSubdomains200Response {
+	return v.value
+}
+
+func (v *NullableUpdateIdentitySourceSubdomains200Response) Set(val *UpdateIdentitySourceSubdomains200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateIdentitySourceSubdomains200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateIdentitySourceSubdomains200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateIdentitySourceSubdomains200Response(val *UpdateIdentitySourceSubdomains200Response) *NullableUpdateIdentitySourceSubdomains200Response {
+	return &NullableUpdateIdentitySourceSubdomains200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateIdentitySourceSubdomains200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateIdentitySourceSubdomains200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateIdentitySourceSubdomains200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

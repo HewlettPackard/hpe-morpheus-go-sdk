@@ -115,6 +115,43 @@ func (o DefaultCatalogItemTypePermission) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableDefaultCatalogItemTypePermission struct {
+	value *DefaultCatalogItemTypePermission
+	isSet bool
+}
+
+func (v NullableDefaultCatalogItemTypePermission) Get() *DefaultCatalogItemTypePermission {
+	return v.value
+}
+
+func (v *NullableDefaultCatalogItemTypePermission) Set(val *DefaultCatalogItemTypePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultCatalogItemTypePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultCatalogItemTypePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultCatalogItemTypePermission(val *DefaultCatalogItemTypePermission) *NullableDefaultCatalogItemTypePermission {
+	return &NullableDefaultCatalogItemTypePermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultCatalogItemTypePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultCatalogItemTypePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultCatalogItemTypePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

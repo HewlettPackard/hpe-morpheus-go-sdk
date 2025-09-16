@@ -333,6 +333,43 @@ func (o ListBootScripts200ResponseAllOfBootScriptsInner) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableListBootScripts200ResponseAllOfBootScriptsInner struct {
+	value *ListBootScripts200ResponseAllOfBootScriptsInner
+	isSet bool
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) Get() *ListBootScripts200ResponseAllOfBootScriptsInner {
+	return v.value
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) Set(val *ListBootScripts200ResponseAllOfBootScriptsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBootScripts200ResponseAllOfBootScriptsInner(val *ListBootScripts200ResponseAllOfBootScriptsInner) *NullableListBootScripts200ResponseAllOfBootScriptsInner {
+	return &NullableListBootScripts200ResponseAllOfBootScriptsInner{value: val, isSet: true}
+}
+
+func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

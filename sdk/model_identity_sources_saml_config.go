@@ -780,6 +780,43 @@ func (o IdentitySourcesSAMLConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesSAMLConfig struct {
+	value *IdentitySourcesSAMLConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesSAMLConfig) Get() *IdentitySourcesSAMLConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) Set(val *IdentitySourcesSAMLConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesSAMLConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesSAMLConfig(val *IdentitySourcesSAMLConfig) *NullableIdentitySourcesSAMLConfig {
+	return &NullableIdentitySourcesSAMLConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesSAMLConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesSAMLConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesSAMLConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

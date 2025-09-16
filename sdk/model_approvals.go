@@ -619,6 +619,43 @@ func (o Approvals) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableApprovals struct {
+	value *Approvals
+	isSet bool
+}
+
+func (v NullableApprovals) Get() *Approvals {
+	return v.value
+}
+
+func (v *NullableApprovals) Set(val *Approvals) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableApprovals) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableApprovals) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableApprovals(val *Approvals) *NullableApprovals {
+	return &NullableApprovals{value: val, isSet: true}
+}
+
+func (v NullableApprovals) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableApprovals) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Approvals) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

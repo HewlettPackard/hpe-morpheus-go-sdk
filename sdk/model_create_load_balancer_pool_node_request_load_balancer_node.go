@@ -281,6 +281,43 @@ func (o CreateLoadBalancerPoolNodeRequestLoadBalancerNode) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode struct {
+	value *CreateLoadBalancerPoolNodeRequestLoadBalancerNode
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) Get() *CreateLoadBalancerPoolNodeRequestLoadBalancerNode {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) Set(val *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode(val *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) *NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode {
+	return &NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerPoolNodeRequestLoadBalancerNode) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateLoadBalancerPoolNodeRequestLoadBalancerNode) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

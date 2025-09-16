@@ -241,6 +241,43 @@ func (o ListHealth200ResponseAllOfHealthRabbit) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableListHealth200ResponseAllOfHealthRabbit struct {
+	value *ListHealth200ResponseAllOfHealthRabbit
+	isSet bool
+}
+
+func (v NullableListHealth200ResponseAllOfHealthRabbit) Get() *ListHealth200ResponseAllOfHealthRabbit {
+	return v.value
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthRabbit) Set(val *ListHealth200ResponseAllOfHealthRabbit) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHealth200ResponseAllOfHealthRabbit) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthRabbit) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHealth200ResponseAllOfHealthRabbit(val *ListHealth200ResponseAllOfHealthRabbit) *NullableListHealth200ResponseAllOfHealthRabbit {
+	return &NullableListHealth200ResponseAllOfHealthRabbit{value: val, isSet: true}
+}
+
+func (v NullableListHealth200ResponseAllOfHealthRabbit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthRabbit) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListHealth200ResponseAllOfHealthRabbit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

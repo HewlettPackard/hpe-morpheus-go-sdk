@@ -308,6 +308,43 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) To
 
 	return toSerialize, nil
 }
+
+type NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile struct {
+	value *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile
+	isSet bool
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) Get() *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile {
+	return v.value
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile(val *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile {
+	return &NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile{value: val, isSet: true}
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerFile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

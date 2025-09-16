@@ -86,6 +86,43 @@ func (o AddInstance200ResponseAllOfOneOf) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableAddInstance200ResponseAllOfOneOf struct {
+	value *AddInstance200ResponseAllOfOneOf
+	isSet bool
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOf) Get() *AddInstance200ResponseAllOfOneOf {
+	return v.value
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOf) Set(val *AddInstance200ResponseAllOfOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstance200ResponseAllOfOneOf(val *AddInstance200ResponseAllOfOneOf) *NullableAddInstance200ResponseAllOfOneOf {
+	return &NullableAddInstance200ResponseAllOfOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

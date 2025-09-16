@@ -292,6 +292,43 @@ func (o AddOptionFormRequestOptionTypeForm) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddOptionFormRequestOptionTypeForm struct {
+	value *AddOptionFormRequestOptionTypeForm
+	isSet bool
+}
+
+func (v NullableAddOptionFormRequestOptionTypeForm) Get() *AddOptionFormRequestOptionTypeForm {
+	return v.value
+}
+
+func (v *NullableAddOptionFormRequestOptionTypeForm) Set(val *AddOptionFormRequestOptionTypeForm) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOptionFormRequestOptionTypeForm) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOptionFormRequestOptionTypeForm) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOptionFormRequestOptionTypeForm(val *AddOptionFormRequestOptionTypeForm) *NullableAddOptionFormRequestOptionTypeForm {
+	return &NullableAddOptionFormRequestOptionTypeForm{value: val, isSet: true}
+}
+
+func (v NullableAddOptionFormRequestOptionTypeForm) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOptionFormRequestOptionTypeForm) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOptionFormRequestOptionTypeForm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

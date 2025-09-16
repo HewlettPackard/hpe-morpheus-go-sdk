@@ -151,6 +151,43 @@ func (o AddPoliciesCloudRequestPolicy) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddPoliciesCloudRequestPolicy struct {
+	value *AddPoliciesCloudRequestPolicy
+	isSet bool
+}
+
+func (v NullableAddPoliciesCloudRequestPolicy) Get() *AddPoliciesCloudRequestPolicy {
+	return v.value
+}
+
+func (v *NullableAddPoliciesCloudRequestPolicy) Set(val *AddPoliciesCloudRequestPolicy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPoliciesCloudRequestPolicy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPoliciesCloudRequestPolicy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPoliciesCloudRequestPolicy(val *AddPoliciesCloudRequestPolicy) *NullableAddPoliciesCloudRequestPolicy {
+	return &NullableAddPoliciesCloudRequestPolicy{value: val, isSet: true}
+}
+
+func (v NullableAddPoliciesCloudRequestPolicy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPoliciesCloudRequestPolicy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPoliciesCloudRequestPolicy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

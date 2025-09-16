@@ -377,6 +377,43 @@ func (o AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) ToMap()
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation struct {
+	value *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation
+	isSet bool
+}
+
+func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Get() *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation {
+	return v.value
+}
+
+func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Set(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation(val *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation {
+	return &NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

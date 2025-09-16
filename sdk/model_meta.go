@@ -95,6 +95,43 @@ func (o Meta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableMeta struct {
+	value *Meta
+	isSet bool
+}
+
+func (v NullableMeta) Get() *Meta {
+	return v.value
+}
+
+func (v *NullableMeta) Set(val *Meta) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMeta) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMeta) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMeta(val *Meta) *NullableMeta {
+	return &NullableMeta{value: val, isSet: true}
+}
+
+func (v NullableMeta) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMeta) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Meta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

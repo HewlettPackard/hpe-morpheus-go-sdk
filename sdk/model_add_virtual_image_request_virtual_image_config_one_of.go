@@ -171,6 +171,43 @@ func (o AddVirtualImageRequestVirtualImageConfigOneOf) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableAddVirtualImageRequestVirtualImageConfigOneOf struct {
+	value *AddVirtualImageRequestVirtualImageConfigOneOf
+	isSet bool
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) Get() *AddVirtualImageRequestVirtualImageConfigOneOf {
+	return v.value
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Set(val *AddVirtualImageRequestVirtualImageConfigOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVirtualImageRequestVirtualImageConfigOneOf(val *AddVirtualImageRequestVirtualImageConfigOneOf) *NullableAddVirtualImageRequestVirtualImageConfigOneOf {
+	return &NullableAddVirtualImageRequestVirtualImageConfigOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

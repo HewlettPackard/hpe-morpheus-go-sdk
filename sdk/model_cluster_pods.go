@@ -550,6 +550,43 @@ func (o ClusterPods) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterPods struct {
+	value *ClusterPods
+	isSet bool
+}
+
+func (v NullableClusterPods) Get() *ClusterPods {
+	return v.value
+}
+
+func (v *NullableClusterPods) Set(val *ClusterPods) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterPods) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterPods) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterPods(val *ClusterPods) *NullableClusterPods {
+	return &NullableClusterPods{value: val, isSet: true}
+}
+
+func (v NullableClusterPods) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterPods) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterPods) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

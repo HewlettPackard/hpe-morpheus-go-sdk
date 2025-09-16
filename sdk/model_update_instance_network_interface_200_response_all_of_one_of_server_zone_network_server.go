@@ -322,6 +322,43 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServ
 
 	return toSerialize, nil
 }
+
+type NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer struct {
+	value *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer
+	isSet bool
+}
+
+func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) Get() *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) Set(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer(val *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer {
+	return &NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerZoneNetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

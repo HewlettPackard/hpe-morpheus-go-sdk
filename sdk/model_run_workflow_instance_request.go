@@ -136,6 +136,43 @@ func (o RunWorkflowInstanceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRunWorkflowInstanceRequest struct {
+	value *RunWorkflowInstanceRequest
+	isSet bool
+}
+
+func (v NullableRunWorkflowInstanceRequest) Get() *RunWorkflowInstanceRequest {
+	return v.value
+}
+
+func (v *NullableRunWorkflowInstanceRequest) Set(val *RunWorkflowInstanceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRunWorkflowInstanceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRunWorkflowInstanceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRunWorkflowInstanceRequest(val *RunWorkflowInstanceRequest) *NullableRunWorkflowInstanceRequest {
+	return &NullableRunWorkflowInstanceRequest{value: val, isSet: true}
+}
+
+func (v NullableRunWorkflowInstanceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRunWorkflowInstanceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RunWorkflowInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -453,6 +453,43 @@ func (o ListExecuteSchedules200ResponseAllOfSchedulesInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableListExecuteSchedules200ResponseAllOfSchedulesInner struct {
+	value *ListExecuteSchedules200ResponseAllOfSchedulesInner
+	isSet bool
+}
+
+func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Get() *ListExecuteSchedules200ResponseAllOfSchedulesInner {
+	return v.value
+}
+
+func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Set(val *ListExecuteSchedules200ResponseAllOfSchedulesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListExecuteSchedules200ResponseAllOfSchedulesInner(val *ListExecuteSchedules200ResponseAllOfSchedulesInner) *NullableListExecuteSchedules200ResponseAllOfSchedulesInner {
+	return &NullableListExecuteSchedules200ResponseAllOfSchedulesInner{value: val, isSet: true}
+}
+
+func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

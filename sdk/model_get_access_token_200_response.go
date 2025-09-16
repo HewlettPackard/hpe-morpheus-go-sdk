@@ -244,6 +244,43 @@ func (o GetAccessToken200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetAccessToken200Response struct {
+	value *GetAccessToken200Response
+	isSet bool
+}
+
+func (v NullableGetAccessToken200Response) Get() *GetAccessToken200Response {
+	return v.value
+}
+
+func (v *NullableGetAccessToken200Response) Set(val *GetAccessToken200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetAccessToken200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetAccessToken200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetAccessToken200Response(val *GetAccessToken200Response) *NullableGetAccessToken200Response {
+	return &NullableGetAccessToken200Response{value: val, isSet: true}
+}
+
+func (v NullableGetAccessToken200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetAccessToken200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

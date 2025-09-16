@@ -95,6 +95,43 @@ func (o UpdateBlueprintPermissionsRequest) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUpdateBlueprintPermissionsRequest struct {
+	value *UpdateBlueprintPermissionsRequest
+	isSet bool
+}
+
+func (v NullableUpdateBlueprintPermissionsRequest) Get() *UpdateBlueprintPermissionsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateBlueprintPermissionsRequest) Set(val *UpdateBlueprintPermissionsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBlueprintPermissionsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBlueprintPermissionsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBlueprintPermissionsRequest(val *UpdateBlueprintPermissionsRequest) *NullableUpdateBlueprintPermissionsRequest {
+	return &NullableUpdateBlueprintPermissionsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateBlueprintPermissionsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBlueprintPermissionsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateBlueprintPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -749,6 +749,43 @@ func (o ExecuteExecutionRequest200ResponseExecutionRequest) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableExecuteExecutionRequest200ResponseExecutionRequest struct {
+	value *ExecuteExecutionRequest200ResponseExecutionRequest
+	isSet bool
+}
+
+func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) Get() *ExecuteExecutionRequest200ResponseExecutionRequest {
+	return v.value
+}
+
+func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) Set(val *ExecuteExecutionRequest200ResponseExecutionRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecuteExecutionRequest200ResponseExecutionRequest(val *ExecuteExecutionRequest200ResponseExecutionRequest) *NullableExecuteExecutionRequest200ResponseExecutionRequest {
+	return &NullableExecuteExecutionRequest200ResponseExecutionRequest{value: val, isSet: true}
+}
+
+func (v NullableExecuteExecutionRequest200ResponseExecutionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecuteExecutionRequest200ResponseExecutionRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecuteExecutionRequest200ResponseExecutionRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

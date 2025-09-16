@@ -277,6 +277,43 @@ func (o NetworkRoutersUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRoutersUpdate struct {
+	value *NetworkRoutersUpdate
+	isSet bool
+}
+
+func (v NullableNetworkRoutersUpdate) Get() *NetworkRoutersUpdate {
+	return v.value
+}
+
+func (v *NullableNetworkRoutersUpdate) Set(val *NetworkRoutersUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRoutersUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRoutersUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRoutersUpdate(val *NetworkRoutersUpdate) *NullableNetworkRoutersUpdate {
+	return &NullableNetworkRoutersUpdate{value: val, isSet: true}
+}
+
+func (v NullableNetworkRoutersUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRoutersUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRoutersUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -744,6 +744,43 @@ func (o ListScaleThresholds200ResponseAllOfScaleThresholdsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner struct {
+	value *ListScaleThresholds200ResponseAllOfScaleThresholdsInner
+	isSet bool
+}
+
+func (v NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) Get() *ListScaleThresholds200ResponseAllOfScaleThresholdsInner {
+	return v.value
+}
+
+func (v *NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) Set(val *ListScaleThresholds200ResponseAllOfScaleThresholdsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListScaleThresholds200ResponseAllOfScaleThresholdsInner(val *ListScaleThresholds200ResponseAllOfScaleThresholdsInner) *NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner {
+	return &NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner{value: val, isSet: true}
+}
+
+func (v NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListScaleThresholds200ResponseAllOfScaleThresholdsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -286,6 +286,43 @@ func (o AddPreseedScript200ResponseAllOfPreseedScript) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableAddPreseedScript200ResponseAllOfPreseedScript struct {
+	value *AddPreseedScript200ResponseAllOfPreseedScript
+	isSet bool
+}
+
+func (v NullableAddPreseedScript200ResponseAllOfPreseedScript) Get() *AddPreseedScript200ResponseAllOfPreseedScript {
+	return v.value
+}
+
+func (v *NullableAddPreseedScript200ResponseAllOfPreseedScript) Set(val *AddPreseedScript200ResponseAllOfPreseedScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPreseedScript200ResponseAllOfPreseedScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPreseedScript200ResponseAllOfPreseedScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPreseedScript200ResponseAllOfPreseedScript(val *AddPreseedScript200ResponseAllOfPreseedScript) *NullableAddPreseedScript200ResponseAllOfPreseedScript {
+	return &NullableAddPreseedScript200ResponseAllOfPreseedScript{value: val, isSet: true}
+}
+
+func (v NullableAddPreseedScript200ResponseAllOfPreseedScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPreseedScript200ResponseAllOfPreseedScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPreseedScript200ResponseAllOfPreseedScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

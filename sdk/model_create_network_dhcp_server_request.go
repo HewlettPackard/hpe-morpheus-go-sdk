@@ -95,6 +95,43 @@ func (o CreateNetworkDhcpServerRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkDhcpServerRequest struct {
+	value *CreateNetworkDhcpServerRequest
+	isSet bool
+}
+
+func (v NullableCreateNetworkDhcpServerRequest) Get() *CreateNetworkDhcpServerRequest {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDhcpServerRequest) Set(val *CreateNetworkDhcpServerRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDhcpServerRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDhcpServerRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDhcpServerRequest(val *CreateNetworkDhcpServerRequest) *NullableCreateNetworkDhcpServerRequest {
+	return &NullableCreateNetworkDhcpServerRequest{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDhcpServerRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDhcpServerRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkDhcpServerRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

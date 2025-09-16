@@ -1673,6 +1673,43 @@ func (o Container) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableContainer struct {
+	value *Container
+	isSet bool
+}
+
+func (v NullableContainer) Get() *Container {
+	return v.value
+}
+
+func (v *NullableContainer) Set(val *Container) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableContainer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableContainer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableContainer(val *Container) *NullableContainer {
+	return &NullableContainer{value: val, isSet: true}
+}
+
+func (v NullableContainer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableContainer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Container) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

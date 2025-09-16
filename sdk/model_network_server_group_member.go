@@ -510,6 +510,43 @@ func (o NetworkServerGroupMember) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkServerGroupMember struct {
+	value *NetworkServerGroupMember
+	isSet bool
+}
+
+func (v NullableNetworkServerGroupMember) Get() *NetworkServerGroupMember {
+	return v.value
+}
+
+func (v *NullableNetworkServerGroupMember) Set(val *NetworkServerGroupMember) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkServerGroupMember) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkServerGroupMember) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkServerGroupMember(val *NetworkServerGroupMember) *NullableNetworkServerGroupMember {
+	return &NullableNetworkServerGroupMember{value: val, isSet: true}
+}
+
+func (v NullableNetworkServerGroupMember) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkServerGroupMember) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkServerGroupMember) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

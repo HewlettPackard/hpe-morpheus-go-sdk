@@ -86,6 +86,43 @@ func (o IntegrationGitHubConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationGitHubConfig struct {
+	value *IntegrationGitHubConfig
+	isSet bool
+}
+
+func (v NullableIntegrationGitHubConfig) Get() *IntegrationGitHubConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationGitHubConfig) Set(val *IntegrationGitHubConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationGitHubConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationGitHubConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationGitHubConfig(val *IntegrationGitHubConfig) *NullableIntegrationGitHubConfig {
+	return &NullableIntegrationGitHubConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationGitHubConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationGitHubConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationGitHubConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

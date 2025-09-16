@@ -666,6 +666,43 @@ func (o GetApprovalsItem200ResponseApprovalItem) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableGetApprovalsItem200ResponseApprovalItem struct {
+	value *GetApprovalsItem200ResponseApprovalItem
+	isSet bool
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) Get() *GetApprovalsItem200ResponseApprovalItem {
+	return v.value
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) Set(val *GetApprovalsItem200ResponseApprovalItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetApprovalsItem200ResponseApprovalItem(val *GetApprovalsItem200ResponseApprovalItem) *NullableGetApprovalsItem200ResponseApprovalItem {
+	return &NullableGetApprovalsItem200ResponseApprovalItem{value: val, isSet: true}
+}
+
+func (v NullableGetApprovalsItem200ResponseApprovalItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

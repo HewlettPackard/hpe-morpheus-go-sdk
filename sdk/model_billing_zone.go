@@ -611,6 +611,43 @@ func (o BillingZone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBillingZone struct {
+	value *BillingZone
+	isSet bool
+}
+
+func (v NullableBillingZone) Get() *BillingZone {
+	return v.value
+}
+
+func (v *NullableBillingZone) Set(val *BillingZone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBillingZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBillingZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBillingZone(val *BillingZone) *NullableBillingZone {
+	return &NullableBillingZone{value: val, isSet: true}
+}
+
+func (v NullableBillingZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBillingZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BillingZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

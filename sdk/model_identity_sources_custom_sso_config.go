@@ -780,6 +780,43 @@ func (o IdentitySourcesCustomSSOConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableIdentitySourcesCustomSSOConfig struct {
+	value *IdentitySourcesCustomSSOConfig
+	isSet bool
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) Get() *IdentitySourcesCustomSSOConfig {
+	return v.value
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) Set(val *IdentitySourcesCustomSSOConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIdentitySourcesCustomSSOConfig(val *IdentitySourcesCustomSSOConfig) *NullableIdentitySourcesCustomSSOConfig {
+	return &NullableIdentitySourcesCustomSSOConfig{value: val, isSet: true}
+}
+
+func (v NullableIdentitySourcesCustomSSOConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIdentitySourcesCustomSSOConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IdentitySourcesCustomSSOConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

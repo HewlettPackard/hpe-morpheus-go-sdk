@@ -86,6 +86,43 @@ func (o HubLoginObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableHubLoginObject struct {
+	value *HubLoginObject
+	isSet bool
+}
+
+func (v NullableHubLoginObject) Get() *HubLoginObject {
+	return v.value
+}
+
+func (v *NullableHubLoginObject) Set(val *HubLoginObject) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableHubLoginObject) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableHubLoginObject) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableHubLoginObject(val *HubLoginObject) *NullableHubLoginObject {
+	return &NullableHubLoginObject{value: val, isSet: true}
+}
+
+func (v NullableHubLoginObject) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableHubLoginObject) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *HubLoginObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

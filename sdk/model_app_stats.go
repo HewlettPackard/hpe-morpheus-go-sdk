@@ -95,6 +95,43 @@ func (o AppStats) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAppStats struct {
+	value *AppStats
+	isSet bool
+}
+
+func (v NullableAppStats) Get() *AppStats {
+	return v.value
+}
+
+func (v *NullableAppStats) Set(val *AppStats) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppStats) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppStats) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppStats(val *AppStats) *NullableAppStats {
+	return &NullableAppStats{value: val, isSet: true}
+}
+
+func (v NullableAppStats) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppStats) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AppStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

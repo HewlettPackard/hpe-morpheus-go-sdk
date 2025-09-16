@@ -540,6 +540,43 @@ func (o SocketConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSocketConfig struct {
+	value *SocketConfig
+	isSet bool
+}
+
+func (v NullableSocketConfig) Get() *SocketConfig {
+	return v.value
+}
+
+func (v *NullableSocketConfig) Set(val *SocketConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSocketConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSocketConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSocketConfig(val *SocketConfig) *NullableSocketConfig {
+	return &NullableSocketConfig{value: val, isSet: true}
+}
+
+func (v NullableSocketConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSocketConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SocketConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

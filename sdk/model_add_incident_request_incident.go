@@ -347,6 +347,43 @@ func (o AddIncidentRequestIncident) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddIncidentRequestIncident struct {
+	value *AddIncidentRequestIncident
+	isSet bool
+}
+
+func (v NullableAddIncidentRequestIncident) Get() *AddIncidentRequestIncident {
+	return v.value
+}
+
+func (v *NullableAddIncidentRequestIncident) Set(val *AddIncidentRequestIncident) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIncidentRequestIncident) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIncidentRequestIncident) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIncidentRequestIncident(val *AddIncidentRequestIncident) *NullableAddIncidentRequestIncident {
+	return &NullableAddIncidentRequestIncident{value: val, isSet: true}
+}
+
+func (v NullableAddIncidentRequestIncident) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIncidentRequestIncident) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIncidentRequestIncident) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

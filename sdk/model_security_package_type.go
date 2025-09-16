@@ -286,6 +286,43 @@ func (o SecurityPackageType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSecurityPackageType struct {
+	value *SecurityPackageType
+	isSet bool
+}
+
+func (v NullableSecurityPackageType) Get() *SecurityPackageType {
+	return v.value
+}
+
+func (v *NullableSecurityPackageType) Set(val *SecurityPackageType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityPackageType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityPackageType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityPackageType(val *SecurityPackageType) *NullableSecurityPackageType {
+	return &NullableSecurityPackageType{value: val, isSet: true}
+}
+
+func (v NullableSecurityPackageType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityPackageType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityPackageType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

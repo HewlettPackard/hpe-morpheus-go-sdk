@@ -86,6 +86,43 @@ func (o UserSourceCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreate struct {
+	value *UserSourceCreate
+	isSet bool
+}
+
+func (v NullableUserSourceCreate) Get() *UserSourceCreate {
+	return v.value
+}
+
+func (v *NullableUserSourceCreate) Set(val *UserSourceCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreate(val *UserSourceCreate) *NullableUserSourceCreate {
+	return &NullableUserSourceCreate{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

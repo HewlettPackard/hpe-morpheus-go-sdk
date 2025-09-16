@@ -95,6 +95,43 @@ func (o MySqlCheckAllOfCheckType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableMySqlCheckAllOfCheckType struct {
+	value *MySqlCheckAllOfCheckType
+	isSet bool
+}
+
+func (v NullableMySqlCheckAllOfCheckType) Get() *MySqlCheckAllOfCheckType {
+	return v.value
+}
+
+func (v *NullableMySqlCheckAllOfCheckType) Set(val *MySqlCheckAllOfCheckType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMySqlCheckAllOfCheckType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMySqlCheckAllOfCheckType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMySqlCheckAllOfCheckType(val *MySqlCheckAllOfCheckType) *NullableMySqlCheckAllOfCheckType {
+	return &NullableMySqlCheckAllOfCheckType{value: val, isSet: true}
+}
+
+func (v NullableMySqlCheckAllOfCheckType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMySqlCheckAllOfCheckType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *MySqlCheckAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

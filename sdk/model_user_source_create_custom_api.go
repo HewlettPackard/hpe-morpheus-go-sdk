@@ -207,6 +207,43 @@ func (o UserSourceCreateCustomApi) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateCustomApi struct {
+	value *UserSourceCreateCustomApi
+	isSet bool
+}
+
+func (v NullableUserSourceCreateCustomApi) Get() *UserSourceCreateCustomApi {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateCustomApi) Set(val *UserSourceCreateCustomApi) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateCustomApi) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateCustomApi) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateCustomApi(val *UserSourceCreateCustomApi) *NullableUserSourceCreateCustomApi {
+	return &NullableUserSourceCreateCustomApi{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateCustomApi) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateCustomApi) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateCustomApi) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

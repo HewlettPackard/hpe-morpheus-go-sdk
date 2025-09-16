@@ -1148,6 +1148,43 @@ func (o GuidanceVmwareSizing) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGuidanceVmwareSizing struct {
+	value *GuidanceVmwareSizing
+	isSet bool
+}
+
+func (v NullableGuidanceVmwareSizing) Get() *GuidanceVmwareSizing {
+	return v.value
+}
+
+func (v *NullableGuidanceVmwareSizing) Set(val *GuidanceVmwareSizing) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGuidanceVmwareSizing) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGuidanceVmwareSizing) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGuidanceVmwareSizing(val *GuidanceVmwareSizing) *NullableGuidanceVmwareSizing {
+	return &NullableGuidanceVmwareSizing{value: val, isSet: true}
+}
+
+func (v NullableGuidanceVmwareSizing) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGuidanceVmwareSizing) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GuidanceVmwareSizing) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -269,6 +269,43 @@ func (o AddImageBuild200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddImageBuild200Response struct {
+	value *AddImageBuild200Response
+	isSet bool
+}
+
+func (v NullableAddImageBuild200Response) Get() *AddImageBuild200Response {
+	return v.value
+}
+
+func (v *NullableAddImageBuild200Response) Set(val *AddImageBuild200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddImageBuild200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddImageBuild200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddImageBuild200Response(val *AddImageBuild200Response) *NullableAddImageBuild200Response {
+	return &NullableAddImageBuild200Response{value: val, isSet: true}
+}
+
+func (v NullableAddImageBuild200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddImageBuild200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddImageBuild200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

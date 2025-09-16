@@ -791,6 +791,43 @@ func (o ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) ToMap() (map[
 
 	return toSerialize, nil
 }
+
+type NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 struct {
+	value *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
+	isSet bool
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) Get() *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 {
+	return v.value
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) Set(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3(val *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 {
+	return &NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3{value: val, isSet: true}
+}
+
+func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

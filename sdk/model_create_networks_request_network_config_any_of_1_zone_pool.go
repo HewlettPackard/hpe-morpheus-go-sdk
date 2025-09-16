@@ -87,6 +87,43 @@ func (o CreateNetworksRequestNetworkConfigAnyOf1ZonePool) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool struct {
+	value *CreateNetworksRequestNetworkConfigAnyOf1ZonePool
+	isSet bool
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) Get() *CreateNetworksRequestNetworkConfigAnyOf1ZonePool {
+	return v.value
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) Set(val *CreateNetworksRequestNetworkConfigAnyOf1ZonePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool(val *CreateNetworksRequestNetworkConfigAnyOf1ZonePool) *NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool {
+	return &NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworksRequestNetworkConfigAnyOf1ZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

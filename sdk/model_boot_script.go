@@ -322,6 +322,43 @@ func (o BootScript) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBootScript struct {
+	value *BootScript
+	isSet bool
+}
+
+func (v NullableBootScript) Get() *BootScript {
+	return v.value
+}
+
+func (v *NullableBootScript) Set(val *BootScript) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBootScript) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBootScript) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBootScript(val *BootScript) *NullableBootScript {
+	return &NullableBootScript{value: val, isSet: true}
+}
+
+func (v NullableBootScript) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBootScript) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BootScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

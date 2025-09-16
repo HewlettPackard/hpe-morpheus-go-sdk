@@ -86,6 +86,43 @@ func (o UpdatePriceSetsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdatePriceSetsRequest struct {
+	value *UpdatePriceSetsRequest
+	isSet bool
+}
+
+func (v NullableUpdatePriceSetsRequest) Get() *UpdatePriceSetsRequest {
+	return v.value
+}
+
+func (v *NullableUpdatePriceSetsRequest) Set(val *UpdatePriceSetsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdatePriceSetsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdatePriceSetsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdatePriceSetsRequest(val *UpdatePriceSetsRequest) *NullableUpdatePriceSetsRequest {
+	return &NullableUpdatePriceSetsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdatePriceSetsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdatePriceSetsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdatePriceSetsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

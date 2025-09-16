@@ -96,6 +96,43 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvid
 
 	return toSerialize, nil
 }
+
+type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider struct {
+	value *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Get() *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Set(val *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider(val *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider {
+	return &NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -115,6 +115,43 @@ func (o DefaultTaskPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultTaskPermission struct {
+	value *DefaultTaskPermission
+	isSet bool
+}
+
+func (v NullableDefaultTaskPermission) Get() *DefaultTaskPermission {
+	return v.value
+}
+
+func (v *NullableDefaultTaskPermission) Set(val *DefaultTaskPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultTaskPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultTaskPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultTaskPermission(val *DefaultTaskPermission) *NullableDefaultTaskPermission {
+	return &NullableDefaultTaskPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultTaskPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultTaskPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultTaskPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

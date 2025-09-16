@@ -167,6 +167,43 @@ func (o Tag) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTag struct {
+	value *Tag
+	isSet bool
+}
+
+func (v NullableTag) Get() *Tag {
+	return v.value
+}
+
+func (v *NullableTag) Set(val *Tag) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTag) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTag) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTag(val *Tag) *NullableTag {
+	return &NullableTag{value: val, isSet: true}
+}
+
+func (v NullableTag) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTag) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Tag) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

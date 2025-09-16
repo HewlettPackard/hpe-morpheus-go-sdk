@@ -86,6 +86,43 @@ func (o AddContactsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddContactsRequest struct {
+	value *AddContactsRequest
+	isSet bool
+}
+
+func (v NullableAddContactsRequest) Get() *AddContactsRequest {
+	return v.value
+}
+
+func (v *NullableAddContactsRequest) Set(val *AddContactsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddContactsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddContactsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddContactsRequest(val *AddContactsRequest) *NullableAddContactsRequest {
+	return &NullableAddContactsRequest{value: val, isSet: true}
+}
+
+func (v NullableAddContactsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddContactsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddContactsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

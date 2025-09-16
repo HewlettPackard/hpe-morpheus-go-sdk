@@ -131,6 +131,43 @@ func (o NetworkDhcpRelayCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkDhcpRelayCreate struct {
+	value *NetworkDhcpRelayCreate
+	isSet bool
+}
+
+func (v NullableNetworkDhcpRelayCreate) Get() *NetworkDhcpRelayCreate {
+	return v.value
+}
+
+func (v *NullableNetworkDhcpRelayCreate) Set(val *NetworkDhcpRelayCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkDhcpRelayCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkDhcpRelayCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkDhcpRelayCreate(val *NetworkDhcpRelayCreate) *NullableNetworkDhcpRelayCreate {
+	return &NullableNetworkDhcpRelayCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkDhcpRelayCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkDhcpRelayCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkDhcpRelayCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o ServiceNowWorkflowsOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableServiceNowWorkflowsOptions struct {
+	value *ServiceNowWorkflowsOptions
+	isSet bool
+}
+
+func (v NullableServiceNowWorkflowsOptions) Get() *ServiceNowWorkflowsOptions {
+	return v.value
+}
+
+func (v *NullableServiceNowWorkflowsOptions) Set(val *ServiceNowWorkflowsOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableServiceNowWorkflowsOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableServiceNowWorkflowsOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableServiceNowWorkflowsOptions(val *ServiceNowWorkflowsOptions) *NullableServiceNowWorkflowsOptions {
+	return &NullableServiceNowWorkflowsOptions{value: val, isSet: true}
+}
+
+func (v NullableServiceNowWorkflowsOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableServiceNowWorkflowsOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ServiceNowWorkflowsOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

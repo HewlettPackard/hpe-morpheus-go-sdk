@@ -95,6 +95,43 @@ func (o GetCloudFolders200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetCloudFolders200Response struct {
+	value *GetCloudFolders200Response
+	isSet bool
+}
+
+func (v NullableGetCloudFolders200Response) Get() *GetCloudFolders200Response {
+	return v.value
+}
+
+func (v *NullableGetCloudFolders200Response) Set(val *GetCloudFolders200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCloudFolders200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCloudFolders200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCloudFolders200Response(val *GetCloudFolders200Response) *NullableGetCloudFolders200Response {
+	return &NullableGetCloudFolders200Response{value: val, isSet: true}
+}
+
+func (v NullableGetCloudFolders200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCloudFolders200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -107,6 +107,43 @@ func (o LoadBalancerInstanceNSXTConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableLoadBalancerInstanceNSXTConfig struct {
+	value *LoadBalancerInstanceNSXTConfig
+	isSet bool
+}
+
+func (v NullableLoadBalancerInstanceNSXTConfig) Get() *LoadBalancerInstanceNSXTConfig {
+	return v.value
+}
+
+func (v *NullableLoadBalancerInstanceNSXTConfig) Set(val *LoadBalancerInstanceNSXTConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLoadBalancerInstanceNSXTConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLoadBalancerInstanceNSXTConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLoadBalancerInstanceNSXTConfig(val *LoadBalancerInstanceNSXTConfig) *NullableLoadBalancerInstanceNSXTConfig {
+	return &NullableLoadBalancerInstanceNSXTConfig{value: val, isSet: true}
+}
+
+func (v NullableLoadBalancerInstanceNSXTConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLoadBalancerInstanceNSXTConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *LoadBalancerInstanceNSXTConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

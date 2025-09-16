@@ -283,6 +283,43 @@ func (o UpdateCloudResourcePoolRequestResourcePool) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudResourcePoolRequestResourcePool struct {
+	value *UpdateCloudResourcePoolRequestResourcePool
+	isSet bool
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) Get() *UpdateCloudResourcePoolRequestResourcePool {
+	return v.value
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) Set(val *UpdateCloudResourcePoolRequestResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudResourcePoolRequestResourcePool(val *UpdateCloudResourcePoolRequestResourcePool) *NullableUpdateCloudResourcePoolRequestResourcePool {
+	return &NullableUpdateCloudResourcePoolRequestResourcePool{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudResourcePoolRequestResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudResourcePoolRequestResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudResourcePoolRequestResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

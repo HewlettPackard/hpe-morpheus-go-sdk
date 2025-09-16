@@ -312,6 +312,43 @@ func (o CredentialUsernamePasswordKeypairConfig) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableCredentialUsernamePasswordKeypairConfig struct {
+	value *CredentialUsernamePasswordKeypairConfig
+	isSet bool
+}
+
+func (v NullableCredentialUsernamePasswordKeypairConfig) Get() *CredentialUsernamePasswordKeypairConfig {
+	return v.value
+}
+
+func (v *NullableCredentialUsernamePasswordKeypairConfig) Set(val *CredentialUsernamePasswordKeypairConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialUsernamePasswordKeypairConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialUsernamePasswordKeypairConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialUsernamePasswordKeypairConfig(val *CredentialUsernamePasswordKeypairConfig) *NullableCredentialUsernamePasswordKeypairConfig {
+	return &NullableCredentialUsernamePasswordKeypairConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialUsernamePasswordKeypairConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialUsernamePasswordKeypairConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialUsernamePasswordKeypairConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

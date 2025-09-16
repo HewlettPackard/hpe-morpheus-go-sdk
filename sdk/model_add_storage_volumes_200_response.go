@@ -131,6 +131,43 @@ func (o AddStorageVolumes200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddStorageVolumes200Response struct {
+	value *AddStorageVolumes200Response
+	isSet bool
+}
+
+func (v NullableAddStorageVolumes200Response) Get() *AddStorageVolumes200Response {
+	return v.value
+}
+
+func (v *NullableAddStorageVolumes200Response) Set(val *AddStorageVolumes200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageVolumes200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageVolumes200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageVolumes200Response(val *AddStorageVolumes200Response) *NullableAddStorageVolumes200Response {
+	return &NullableAddStorageVolumes200Response{value: val, isSet: true}
+}
+
+func (v NullableAddStorageVolumes200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageVolumes200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddStorageVolumes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

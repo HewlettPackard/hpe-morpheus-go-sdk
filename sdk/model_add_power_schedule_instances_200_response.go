@@ -186,6 +186,43 @@ func (o AddPowerScheduleInstances200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddPowerScheduleInstances200Response struct {
+	value *AddPowerScheduleInstances200Response
+	isSet bool
+}
+
+func (v NullableAddPowerScheduleInstances200Response) Get() *AddPowerScheduleInstances200Response {
+	return v.value
+}
+
+func (v *NullableAddPowerScheduleInstances200Response) Set(val *AddPowerScheduleInstances200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPowerScheduleInstances200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPowerScheduleInstances200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPowerScheduleInstances200Response(val *AddPowerScheduleInstances200Response) *NullableAddPowerScheduleInstances200Response {
+	return &NullableAddPowerScheduleInstances200Response{value: val, isSet: true}
+}
+
+func (v NullableAddPowerScheduleInstances200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPowerScheduleInstances200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPowerScheduleInstances200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

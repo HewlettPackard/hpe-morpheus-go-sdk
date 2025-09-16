@@ -115,6 +115,43 @@ func (o UpdateRoleReportTypeAccessRequestOneOf) ToMap() (map[string]interface{},
 
 	return toSerialize, nil
 }
+
+type NullableUpdateRoleReportTypeAccessRequestOneOf struct {
+	value *UpdateRoleReportTypeAccessRequestOneOf
+	isSet bool
+}
+
+func (v NullableUpdateRoleReportTypeAccessRequestOneOf) Get() *UpdateRoleReportTypeAccessRequestOneOf {
+	return v.value
+}
+
+func (v *NullableUpdateRoleReportTypeAccessRequestOneOf) Set(val *UpdateRoleReportTypeAccessRequestOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleReportTypeAccessRequestOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleReportTypeAccessRequestOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleReportTypeAccessRequestOneOf(val *UpdateRoleReportTypeAccessRequestOneOf) *NullableUpdateRoleReportTypeAccessRequestOneOf {
+	return &NullableUpdateRoleReportTypeAccessRequestOneOf{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleReportTypeAccessRequestOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleReportTypeAccessRequestOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateRoleReportTypeAccessRequestOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

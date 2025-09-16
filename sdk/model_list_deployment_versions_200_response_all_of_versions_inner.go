@@ -489,6 +489,43 @@ func (o ListDeploymentVersions200ResponseAllOfVersionsInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableListDeploymentVersions200ResponseAllOfVersionsInner struct {
+	value *ListDeploymentVersions200ResponseAllOfVersionsInner
+	isSet bool
+}
+
+func (v NullableListDeploymentVersions200ResponseAllOfVersionsInner) Get() *ListDeploymentVersions200ResponseAllOfVersionsInner {
+	return v.value
+}
+
+func (v *NullableListDeploymentVersions200ResponseAllOfVersionsInner) Set(val *ListDeploymentVersions200ResponseAllOfVersionsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListDeploymentVersions200ResponseAllOfVersionsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListDeploymentVersions200ResponseAllOfVersionsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListDeploymentVersions200ResponseAllOfVersionsInner(val *ListDeploymentVersions200ResponseAllOfVersionsInner) *NullableListDeploymentVersions200ResponseAllOfVersionsInner {
+	return &NullableListDeploymentVersions200ResponseAllOfVersionsInner{value: val, isSet: true}
+}
+
+func (v NullableListDeploymentVersions200ResponseAllOfVersionsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListDeploymentVersions200ResponseAllOfVersionsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

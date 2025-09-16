@@ -2811,6 +2811,43 @@ func (o Network) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetwork struct {
+	value *Network
+	isSet bool
+}
+
+func (v NullableNetwork) Get() *Network {
+	return v.value
+}
+
+func (v *NullableNetwork) Set(val *Network) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetwork) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetwork) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetwork(val *Network) *NullableNetwork {
+	return &NullableNetwork{value: val, isSet: true}
+}
+
+func (v NullableNetwork) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetwork) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Network) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

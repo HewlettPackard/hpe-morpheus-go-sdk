@@ -115,6 +115,43 @@ func (o NetworkStaticRouteCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkStaticRouteCreate struct {
+	value *NetworkStaticRouteCreate
+	isSet bool
+}
+
+func (v NullableNetworkStaticRouteCreate) Get() *NetworkStaticRouteCreate {
+	return v.value
+}
+
+func (v *NullableNetworkStaticRouteCreate) Set(val *NetworkStaticRouteCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkStaticRouteCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkStaticRouteCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkStaticRouteCreate(val *NetworkStaticRouteCreate) *NullableNetworkStaticRouteCreate {
+	return &NullableNetworkStaticRouteCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkStaticRouteCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkStaticRouteCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkStaticRouteCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

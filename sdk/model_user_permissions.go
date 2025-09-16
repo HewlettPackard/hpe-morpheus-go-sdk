@@ -455,6 +455,43 @@ func (o UserPermissions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserPermissions struct {
+	value *UserPermissions
+	isSet bool
+}
+
+func (v NullableUserPermissions) Get() *UserPermissions {
+	return v.value
+}
+
+func (v *NullableUserPermissions) Set(val *UserPermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserPermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserPermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserPermissions(val *UserPermissions) *NullableUserPermissions {
+	return &NullableUserPermissions{value: val, isSet: true}
+}
+
+func (v NullableUserPermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserPermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

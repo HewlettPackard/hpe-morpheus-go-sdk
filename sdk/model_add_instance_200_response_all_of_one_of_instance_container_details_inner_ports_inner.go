@@ -563,6 +563,43 @@ func (o AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner)
 
 	return toSerialize, nil
 }
+
+type NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner struct {
+	value *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner
+	isSet bool
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) Get() *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner {
+	return v.value
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) Set(val *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner(val *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner {
+	return &NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner{value: val, isSet: true}
+}
+
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

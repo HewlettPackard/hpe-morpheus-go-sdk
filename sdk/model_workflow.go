@@ -588,6 +588,43 @@ func (o Workflow) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWorkflow struct {
+	value *Workflow
+	isSet bool
+}
+
+func (v NullableWorkflow) Get() *Workflow {
+	return v.value
+}
+
+func (v *NullableWorkflow) Set(val *Workflow) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWorkflow) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWorkflow) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWorkflow(val *Workflow) *NullableWorkflow {
+	return &NullableWorkflow{value: val, isSet: true}
+}
+
+func (v NullableWorkflow) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWorkflow) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Workflow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

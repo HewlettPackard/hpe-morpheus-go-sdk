@@ -447,6 +447,43 @@ func (o NetworkPoolServerCreateSolarWinds) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerCreateSolarWinds struct {
+	value *NetworkPoolServerCreateSolarWinds
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerCreateSolarWinds) Get() *NetworkPoolServerCreateSolarWinds {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerCreateSolarWinds) Set(val *NetworkPoolServerCreateSolarWinds) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerCreateSolarWinds) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerCreateSolarWinds) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerCreateSolarWinds(val *NetworkPoolServerCreateSolarWinds) *NullableNetworkPoolServerCreateSolarWinds {
+	return &NullableNetworkPoolServerCreateSolarWinds{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerCreateSolarWinds) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerCreateSolarWinds) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerCreateSolarWinds) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

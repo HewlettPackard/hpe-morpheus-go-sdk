@@ -1541,6 +1541,43 @@ func (o GetLicense200ResponseInstalledLicensesInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableGetLicense200ResponseInstalledLicensesInner struct {
+	value *GetLicense200ResponseInstalledLicensesInner
+	isSet bool
+}
+
+func (v NullableGetLicense200ResponseInstalledLicensesInner) Get() *GetLicense200ResponseInstalledLicensesInner {
+	return v.value
+}
+
+func (v *NullableGetLicense200ResponseInstalledLicensesInner) Set(val *GetLicense200ResponseInstalledLicensesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetLicense200ResponseInstalledLicensesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetLicense200ResponseInstalledLicensesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetLicense200ResponseInstalledLicensesInner(val *GetLicense200ResponseInstalledLicensesInner) *NullableGetLicense200ResponseInstalledLicensesInner {
+	return &NullableGetLicense200ResponseInstalledLicensesInner{value: val, isSet: true}
+}
+
+func (v NullableGetLicense200ResponseInstalledLicensesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

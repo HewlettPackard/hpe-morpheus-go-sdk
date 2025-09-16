@@ -95,6 +95,43 @@ func (o AddOsTypeImageRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddOsTypeImageRequest struct {
+	value *AddOsTypeImageRequest
+	isSet bool
+}
+
+func (v NullableAddOsTypeImageRequest) Get() *AddOsTypeImageRequest {
+	return v.value
+}
+
+func (v *NullableAddOsTypeImageRequest) Set(val *AddOsTypeImageRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOsTypeImageRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOsTypeImageRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOsTypeImageRequest(val *AddOsTypeImageRequest) *NullableAddOsTypeImageRequest {
+	return &NullableAddOsTypeImageRequest{value: val, isSet: true}
+}
+
+func (v NullableAddOsTypeImageRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOsTypeImageRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOsTypeImageRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

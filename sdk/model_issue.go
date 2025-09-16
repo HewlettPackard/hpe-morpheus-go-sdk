@@ -821,6 +821,43 @@ func (o Issue) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIssue struct {
+	value *Issue
+	isSet bool
+}
+
+func (v NullableIssue) Get() *Issue {
+	return v.value
+}
+
+func (v *NullableIssue) Set(val *Issue) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIssue) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIssue) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIssue(val *Issue) *NullableIssue {
+	return &NullableIssue{value: val, isSet: true}
+}
+
+func (v NullableIssue) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIssue) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Issue) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

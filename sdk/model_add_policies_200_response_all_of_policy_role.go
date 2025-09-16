@@ -131,6 +131,43 @@ func (o AddPolicies200ResponseAllOfPolicyRole) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableAddPolicies200ResponseAllOfPolicyRole struct {
+	value *AddPolicies200ResponseAllOfPolicyRole
+	isSet bool
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyRole) Get() *AddPolicies200ResponseAllOfPolicyRole {
+	return v.value
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyRole) Set(val *AddPolicies200ResponseAllOfPolicyRole) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyRole) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyRole) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddPolicies200ResponseAllOfPolicyRole(val *AddPolicies200ResponseAllOfPolicyRole) *NullableAddPolicies200ResponseAllOfPolicyRole {
+	return &NullableAddPolicies200ResponseAllOfPolicyRole{value: val, isSet: true}
+}
+
+func (v NullableAddPolicies200ResponseAllOfPolicyRole) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddPolicies200ResponseAllOfPolicyRole) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddPolicies200ResponseAllOfPolicyRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

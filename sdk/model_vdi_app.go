@@ -381,6 +381,43 @@ func (o VdiApp) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableVdiApp struct {
+	value *VdiApp
+	isSet bool
+}
+
+func (v NullableVdiApp) Get() *VdiApp {
+	return v.value
+}
+
+func (v *NullableVdiApp) Set(val *VdiApp) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableVdiApp) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableVdiApp) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableVdiApp(val *VdiApp) *NullableVdiApp {
+	return &NullableVdiApp{value: val, isSet: true}
+}
+
+func (v NullableVdiApp) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableVdiApp) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *VdiApp) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o UpdateWhitelabelSettingsRequest) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableUpdateWhitelabelSettingsRequest struct {
+	value *UpdateWhitelabelSettingsRequest
+	isSet bool
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) Get() *UpdateWhitelabelSettingsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) Set(val *UpdateWhitelabelSettingsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateWhitelabelSettingsRequest(val *UpdateWhitelabelSettingsRequest) *NullableUpdateWhitelabelSettingsRequest {
+	return &NullableUpdateWhitelabelSettingsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateWhitelabelSettingsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateWhitelabelSettingsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateWhitelabelSettingsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

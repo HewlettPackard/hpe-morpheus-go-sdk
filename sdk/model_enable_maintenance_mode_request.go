@@ -95,6 +95,43 @@ func (o EnableMaintenanceModeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableEnableMaintenanceModeRequest struct {
+	value *EnableMaintenanceModeRequest
+	isSet bool
+}
+
+func (v NullableEnableMaintenanceModeRequest) Get() *EnableMaintenanceModeRequest {
+	return v.value
+}
+
+func (v *NullableEnableMaintenanceModeRequest) Set(val *EnableMaintenanceModeRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableEnableMaintenanceModeRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableEnableMaintenanceModeRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableEnableMaintenanceModeRequest(val *EnableMaintenanceModeRequest) *NullableEnableMaintenanceModeRequest {
+	return &NullableEnableMaintenanceModeRequest{value: val, isSet: true}
+}
+
+func (v NullableEnableMaintenanceModeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableEnableMaintenanceModeRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *EnableMaintenanceModeRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

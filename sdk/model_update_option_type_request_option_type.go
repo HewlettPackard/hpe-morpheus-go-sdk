@@ -567,6 +567,43 @@ func (o UpdateOptionTypeRequestOptionType) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUpdateOptionTypeRequestOptionType struct {
+	value *UpdateOptionTypeRequestOptionType
+	isSet bool
+}
+
+func (v NullableUpdateOptionTypeRequestOptionType) Get() *UpdateOptionTypeRequestOptionType {
+	return v.value
+}
+
+func (v *NullableUpdateOptionTypeRequestOptionType) Set(val *UpdateOptionTypeRequestOptionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateOptionTypeRequestOptionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateOptionTypeRequestOptionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateOptionTypeRequestOptionType(val *UpdateOptionTypeRequestOptionType) *NullableUpdateOptionTypeRequestOptionType {
+	return &NullableUpdateOptionTypeRequestOptionType{value: val, isSet: true}
+}
+
+func (v NullableUpdateOptionTypeRequestOptionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateOptionTypeRequestOptionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateOptionTypeRequestOptionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

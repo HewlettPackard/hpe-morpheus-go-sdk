@@ -644,6 +644,43 @@ func (o IntegrationGitRepo) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationGitRepo struct {
+	value *IntegrationGitRepo
+	isSet bool
+}
+
+func (v NullableIntegrationGitRepo) Get() *IntegrationGitRepo {
+	return v.value
+}
+
+func (v *NullableIntegrationGitRepo) Set(val *IntegrationGitRepo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationGitRepo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationGitRepo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationGitRepo(val *IntegrationGitRepo) *NullableIntegrationGitRepo {
+	return &NullableIntegrationGitRepo{value: val, isSet: true}
+}
+
+func (v NullableIntegrationGitRepo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationGitRepo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationGitRepo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

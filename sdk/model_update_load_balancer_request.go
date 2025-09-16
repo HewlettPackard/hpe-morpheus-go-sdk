@@ -95,6 +95,43 @@ func (o UpdateLoadBalancerRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateLoadBalancerRequest struct {
+	value *UpdateLoadBalancerRequest
+	isSet bool
+}
+
+func (v NullableUpdateLoadBalancerRequest) Get() *UpdateLoadBalancerRequest {
+	return v.value
+}
+
+func (v *NullableUpdateLoadBalancerRequest) Set(val *UpdateLoadBalancerRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateLoadBalancerRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateLoadBalancerRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateLoadBalancerRequest(val *UpdateLoadBalancerRequest) *NullableUpdateLoadBalancerRequest {
+	return &NullableUpdateLoadBalancerRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateLoadBalancerRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateLoadBalancerRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateLoadBalancerRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

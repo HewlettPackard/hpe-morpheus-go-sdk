@@ -456,6 +456,43 @@ func (o UpdateCloudDatastores200ResponseDatastore) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudDatastores200ResponseDatastore struct {
+	value *UpdateCloudDatastores200ResponseDatastore
+	isSet bool
+}
+
+func (v NullableUpdateCloudDatastores200ResponseDatastore) Get() *UpdateCloudDatastores200ResponseDatastore {
+	return v.value
+}
+
+func (v *NullableUpdateCloudDatastores200ResponseDatastore) Set(val *UpdateCloudDatastores200ResponseDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudDatastores200ResponseDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudDatastores200ResponseDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudDatastores200ResponseDatastore(val *UpdateCloudDatastores200ResponseDatastore) *NullableUpdateCloudDatastores200ResponseDatastore {
+	return &NullableUpdateCloudDatastores200ResponseDatastore{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudDatastores200ResponseDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudDatastores200ResponseDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudDatastores200ResponseDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

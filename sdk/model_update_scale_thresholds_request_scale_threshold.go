@@ -621,6 +621,43 @@ func (o UpdateScaleThresholdsRequestScaleThreshold) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableUpdateScaleThresholdsRequestScaleThreshold struct {
+	value *UpdateScaleThresholdsRequestScaleThreshold
+	isSet bool
+}
+
+func (v NullableUpdateScaleThresholdsRequestScaleThreshold) Get() *UpdateScaleThresholdsRequestScaleThreshold {
+	return v.value
+}
+
+func (v *NullableUpdateScaleThresholdsRequestScaleThreshold) Set(val *UpdateScaleThresholdsRequestScaleThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateScaleThresholdsRequestScaleThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateScaleThresholdsRequestScaleThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateScaleThresholdsRequestScaleThreshold(val *UpdateScaleThresholdsRequestScaleThreshold) *NullableUpdateScaleThresholdsRequestScaleThreshold {
+	return &NullableUpdateScaleThresholdsRequestScaleThreshold{value: val, isSet: true}
+}
+
+func (v NullableUpdateScaleThresholdsRequestScaleThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateScaleThresholdsRequestScaleThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateScaleThresholdsRequestScaleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

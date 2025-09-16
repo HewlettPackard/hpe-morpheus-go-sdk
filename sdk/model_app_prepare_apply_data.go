@@ -466,6 +466,43 @@ func (o AppPrepareApplyData) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAppPrepareApplyData struct {
+	value *AppPrepareApplyData
+	isSet bool
+}
+
+func (v NullableAppPrepareApplyData) Get() *AppPrepareApplyData {
+	return v.value
+}
+
+func (v *NullableAppPrepareApplyData) Set(val *AppPrepareApplyData) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppPrepareApplyData) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppPrepareApplyData) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppPrepareApplyData(val *AppPrepareApplyData) *NullableAppPrepareApplyData {
+	return &NullableAppPrepareApplyData{value: val, isSet: true}
+}
+
+func (v NullableAppPrepareApplyData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppPrepareApplyData) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AppPrepareApplyData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

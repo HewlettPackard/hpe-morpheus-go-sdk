@@ -335,6 +335,43 @@ func (o PushCheck) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePushCheck struct {
+	value *PushCheck
+	isSet bool
+}
+
+func (v NullablePushCheck) Get() *PushCheck {
+	return v.value
+}
+
+func (v *NullablePushCheck) Set(val *PushCheck) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePushCheck) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePushCheck) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePushCheck(val *PushCheck) *NullablePushCheck {
+	return &NullablePushCheck{value: val, isSet: true}
+}
+
+func (v NullablePushCheck) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePushCheck) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PushCheck) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -86,6 +86,43 @@ func (o UpdateClusterPermissionsRequest) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableUpdateClusterPermissionsRequest struct {
+	value *UpdateClusterPermissionsRequest
+	isSet bool
+}
+
+func (v NullableUpdateClusterPermissionsRequest) Get() *UpdateClusterPermissionsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateClusterPermissionsRequest) Set(val *UpdateClusterPermissionsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterPermissionsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterPermissionsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterPermissionsRequest(val *UpdateClusterPermissionsRequest) *NullableUpdateClusterPermissionsRequest {
+	return &NullableUpdateClusterPermissionsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterPermissionsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterPermissionsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateClusterPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

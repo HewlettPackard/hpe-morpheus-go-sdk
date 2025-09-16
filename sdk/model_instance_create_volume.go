@@ -388,6 +388,43 @@ func (o InstanceCreateVolume) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceCreateVolume struct {
+	value *InstanceCreateVolume
+	isSet bool
+}
+
+func (v NullableInstanceCreateVolume) Get() *InstanceCreateVolume {
+	return v.value
+}
+
+func (v *NullableInstanceCreateVolume) Set(val *InstanceCreateVolume) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceCreateVolume) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceCreateVolume) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceCreateVolume(val *InstanceCreateVolume) *NullableInstanceCreateVolume {
+	return &NullableInstanceCreateVolume{value: val, isSet: true}
+}
+
+func (v NullableInstanceCreateVolume) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceCreateVolume) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceCreateVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

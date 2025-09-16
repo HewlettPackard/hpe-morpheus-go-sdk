@@ -299,6 +299,43 @@ func (o CheckCreateCommon) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckCreateCommon struct {
+	value *CheckCreateCommon
+	isSet bool
+}
+
+func (v NullableCheckCreateCommon) Get() *CheckCreateCommon {
+	return v.value
+}
+
+func (v *NullableCheckCreateCommon) Set(val *CheckCreateCommon) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckCreateCommon) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckCreateCommon) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckCreateCommon(val *CheckCreateCommon) *NullableCheckCreateCommon {
+	return &NullableCheckCreateCommon{value: val, isSet: true}
+}
+
+func (v NullableCheckCreateCommon) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckCreateCommon) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckCreateCommon) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

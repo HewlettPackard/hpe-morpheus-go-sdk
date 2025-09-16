@@ -178,6 +178,43 @@ func (o CreateLoadBalancerPoolNode200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableCreateLoadBalancerPoolNode200Response struct {
+	value *CreateLoadBalancerPoolNode200Response
+	isSet bool
+}
+
+func (v NullableCreateLoadBalancerPoolNode200Response) Get() *CreateLoadBalancerPoolNode200Response {
+	return v.value
+}
+
+func (v *NullableCreateLoadBalancerPoolNode200Response) Set(val *CreateLoadBalancerPoolNode200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateLoadBalancerPoolNode200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateLoadBalancerPoolNode200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateLoadBalancerPoolNode200Response(val *CreateLoadBalancerPoolNode200Response) *NullableCreateLoadBalancerPoolNode200Response {
+	return &NullableCreateLoadBalancerPoolNode200Response{value: val, isSet: true}
+}
+
+func (v NullableCreateLoadBalancerPoolNode200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateLoadBalancerPoolNode200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateLoadBalancerPoolNode200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

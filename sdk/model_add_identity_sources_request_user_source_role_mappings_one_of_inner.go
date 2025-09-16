@@ -169,6 +169,43 @@ func (o AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) ToMap() (map[
 
 	return toSerialize, nil
 }
+
+type NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner struct {
+	value *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner
+	isSet bool
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) Get() *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner {
+	return v.value
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) Set(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner(val *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner {
+	return &NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

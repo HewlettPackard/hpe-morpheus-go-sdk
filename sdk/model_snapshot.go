@@ -738,6 +738,43 @@ func (o Snapshot) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSnapshot struct {
+	value *Snapshot
+	isSet bool
+}
+
+func (v NullableSnapshot) Get() *Snapshot {
+	return v.value
+}
+
+func (v *NullableSnapshot) Set(val *Snapshot) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSnapshot) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSnapshot) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSnapshot(val *Snapshot) *NullableSnapshot {
+	return &NullableSnapshot{value: val, isSet: true}
+}
+
+func (v NullableSnapshot) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSnapshot) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Snapshot) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

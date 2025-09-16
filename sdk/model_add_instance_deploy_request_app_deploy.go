@@ -248,6 +248,43 @@ func (o AddInstanceDeployRequestAppDeploy) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableAddInstanceDeployRequestAppDeploy struct {
+	value *AddInstanceDeployRequestAppDeploy
+	isSet bool
+}
+
+func (v NullableAddInstanceDeployRequestAppDeploy) Get() *AddInstanceDeployRequestAppDeploy {
+	return v.value
+}
+
+func (v *NullableAddInstanceDeployRequestAppDeploy) Set(val *AddInstanceDeployRequestAppDeploy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddInstanceDeployRequestAppDeploy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddInstanceDeployRequestAppDeploy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddInstanceDeployRequestAppDeploy(val *AddInstanceDeployRequestAppDeploy) *NullableAddInstanceDeployRequestAppDeploy {
+	return &NullableAddInstanceDeployRequestAppDeploy{value: val, isSet: true}
+}
+
+func (v NullableAddInstanceDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddInstanceDeployRequestAppDeploy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddInstanceDeployRequestAppDeploy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

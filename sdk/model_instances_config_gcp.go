@@ -296,6 +296,43 @@ func (o InstancesConfigGCP) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstancesConfigGCP struct {
+	value *InstancesConfigGCP
+	isSet bool
+}
+
+func (v NullableInstancesConfigGCP) Get() *InstancesConfigGCP {
+	return v.value
+}
+
+func (v *NullableInstancesConfigGCP) Set(val *InstancesConfigGCP) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstancesConfigGCP) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstancesConfigGCP) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstancesConfigGCP(val *InstancesConfigGCP) *NullableInstancesConfigGCP {
+	return &NullableInstancesConfigGCP{value: val, isSet: true}
+}
+
+func (v NullableInstancesConfigGCP) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstancesConfigGCP) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstancesConfigGCP) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

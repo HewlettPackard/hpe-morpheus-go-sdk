@@ -137,6 +137,43 @@ func (o InstancesCloneImage) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstancesCloneImage struct {
+	value *InstancesCloneImage
+	isSet bool
+}
+
+func (v NullableInstancesCloneImage) Get() *InstancesCloneImage {
+	return v.value
+}
+
+func (v *NullableInstancesCloneImage) Set(val *InstancesCloneImage) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstancesCloneImage) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstancesCloneImage) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstancesCloneImage(val *InstancesCloneImage) *NullableInstancesCloneImage {
+	return &NullableInstancesCloneImage{value: val, isSet: true}
+}
+
+func (v NullableInstancesCloneImage) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstancesCloneImage) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstancesCloneImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

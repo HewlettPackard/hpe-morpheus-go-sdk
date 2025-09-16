@@ -131,6 +131,43 @@ func (o ListLoadBalancerMonitors200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableListLoadBalancerMonitors200Response struct {
+	value *ListLoadBalancerMonitors200Response
+	isSet bool
+}
+
+func (v NullableListLoadBalancerMonitors200Response) Get() *ListLoadBalancerMonitors200Response {
+	return v.value
+}
+
+func (v *NullableListLoadBalancerMonitors200Response) Set(val *ListLoadBalancerMonitors200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLoadBalancerMonitors200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLoadBalancerMonitors200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLoadBalancerMonitors200Response(val *ListLoadBalancerMonitors200Response) *NullableListLoadBalancerMonitors200Response {
+	return &NullableListLoadBalancerMonitors200Response{value: val, isSet: true}
+}
+
+func (v NullableListLoadBalancerMonitors200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLoadBalancerMonitors200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListLoadBalancerMonitors200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

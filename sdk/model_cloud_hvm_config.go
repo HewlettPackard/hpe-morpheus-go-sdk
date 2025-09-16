@@ -413,6 +413,43 @@ func (o CloudHVMConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCloudHVMConfig struct {
+	value *CloudHVMConfig
+	isSet bool
+}
+
+func (v NullableCloudHVMConfig) Get() *CloudHVMConfig {
+	return v.value
+}
+
+func (v *NullableCloudHVMConfig) Set(val *CloudHVMConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCloudHVMConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCloudHVMConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCloudHVMConfig(val *CloudHVMConfig) *NullableCloudHVMConfig {
+	return &NullableCloudHVMConfig{value: val, isSet: true}
+}
+
+func (v NullableCloudHVMConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCloudHVMConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CloudHVMConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

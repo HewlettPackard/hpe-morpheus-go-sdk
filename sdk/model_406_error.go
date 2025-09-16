@@ -95,6 +95,43 @@ func (o Model406Error) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableModel406Error struct {
+	value *Model406Error
+	isSet bool
+}
+
+func (v NullableModel406Error) Get() *Model406Error {
+	return v.value
+}
+
+func (v *NullableModel406Error) Set(val *Model406Error) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableModel406Error) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableModel406Error) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableModel406Error(val *Model406Error) *NullableModel406Error {
+	return &NullableModel406Error{value: val, isSet: true}
+}
+
+func (v NullableModel406Error) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableModel406Error) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Model406Error) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

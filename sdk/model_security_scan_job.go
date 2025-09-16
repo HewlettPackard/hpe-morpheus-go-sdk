@@ -524,6 +524,43 @@ func (o SecurityScanJob) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSecurityScanJob struct {
+	value *SecurityScanJob
+	isSet bool
+}
+
+func (v NullableSecurityScanJob) Get() *SecurityScanJob {
+	return v.value
+}
+
+func (v *NullableSecurityScanJob) Set(val *SecurityScanJob) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityScanJob) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityScanJob) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityScanJob(val *SecurityScanJob) *NullableSecurityScanJob {
+	return &NullableSecurityScanJob{value: val, isSet: true}
+}
+
+func (v NullableSecurityScanJob) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityScanJob) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityScanJob) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

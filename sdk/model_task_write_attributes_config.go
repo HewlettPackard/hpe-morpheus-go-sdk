@@ -730,6 +730,43 @@ func (o TaskWriteAttributesConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskWriteAttributesConfig struct {
+	value *TaskWriteAttributesConfig
+	isSet bool
+}
+
+func (v NullableTaskWriteAttributesConfig) Get() *TaskWriteAttributesConfig {
+	return v.value
+}
+
+func (v *NullableTaskWriteAttributesConfig) Set(val *TaskWriteAttributesConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskWriteAttributesConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskWriteAttributesConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskWriteAttributesConfig(val *TaskWriteAttributesConfig) *NullableTaskWriteAttributesConfig {
+	return &NullableTaskWriteAttributesConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskWriteAttributesConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskWriteAttributesConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskWriteAttributesConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

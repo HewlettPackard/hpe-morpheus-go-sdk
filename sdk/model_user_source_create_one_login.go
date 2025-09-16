@@ -244,6 +244,43 @@ func (o UserSourceCreateOneLogin) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateOneLogin struct {
+	value *UserSourceCreateOneLogin
+	isSet bool
+}
+
+func (v NullableUserSourceCreateOneLogin) Get() *UserSourceCreateOneLogin {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateOneLogin) Set(val *UserSourceCreateOneLogin) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateOneLogin) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateOneLogin) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateOneLogin(val *UserSourceCreateOneLogin) *NullableUserSourceCreateOneLogin {
+	return &NullableUserSourceCreateOneLogin{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateOneLogin) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateOneLogin) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateOneLogin) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

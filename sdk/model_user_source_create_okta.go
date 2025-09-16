@@ -170,6 +170,43 @@ func (o UserSourceCreateOkta) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateOkta struct {
+	value *UserSourceCreateOkta
+	isSet bool
+}
+
+func (v NullableUserSourceCreateOkta) Get() *UserSourceCreateOkta {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateOkta) Set(val *UserSourceCreateOkta) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateOkta) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateOkta) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateOkta(val *UserSourceCreateOkta) *NullableUserSourceCreateOkta {
+	return &NullableUserSourceCreateOkta{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateOkta) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateOkta) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateOkta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

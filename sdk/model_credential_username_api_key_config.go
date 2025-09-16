@@ -285,6 +285,43 @@ func (o CredentialUsernameAPIKeyConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableCredentialUsernameAPIKeyConfig struct {
+	value *CredentialUsernameAPIKeyConfig
+	isSet bool
+}
+
+func (v NullableCredentialUsernameAPIKeyConfig) Get() *CredentialUsernameAPIKeyConfig {
+	return v.value
+}
+
+func (v *NullableCredentialUsernameAPIKeyConfig) Set(val *CredentialUsernameAPIKeyConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialUsernameAPIKeyConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialUsernameAPIKeyConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialUsernameAPIKeyConfig(val *CredentialUsernameAPIKeyConfig) *NullableCredentialUsernameAPIKeyConfig {
+	return &NullableCredentialUsernameAPIKeyConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialUsernameAPIKeyConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialUsernameAPIKeyConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialUsernameAPIKeyConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

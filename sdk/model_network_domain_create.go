@@ -548,6 +548,43 @@ func (o NetworkDomainCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkDomainCreate struct {
+	value *NetworkDomainCreate
+	isSet bool
+}
+
+func (v NullableNetworkDomainCreate) Get() *NetworkDomainCreate {
+	return v.value
+}
+
+func (v *NullableNetworkDomainCreate) Set(val *NetworkDomainCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkDomainCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkDomainCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkDomainCreate(val *NetworkDomainCreate) *NullableNetworkDomainCreate {
+	return &NullableNetworkDomainCreate{value: val, isSet: true}
+}
+
+func (v NullableNetworkDomainCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkDomainCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkDomainCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

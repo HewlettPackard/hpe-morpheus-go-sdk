@@ -240,6 +240,43 @@ func (o ListBillingServers200ResponseAllOfBillingInfo) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableListBillingServers200ResponseAllOfBillingInfo struct {
+	value *ListBillingServers200ResponseAllOfBillingInfo
+	isSet bool
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfo) Get() *ListBillingServers200ResponseAllOfBillingInfo {
+	return v.value
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfo) Set(val *ListBillingServers200ResponseAllOfBillingInfo) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfo) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfo) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListBillingServers200ResponseAllOfBillingInfo(val *ListBillingServers200ResponseAllOfBillingInfo) *NullableListBillingServers200ResponseAllOfBillingInfo {
+	return &NullableListBillingServers200ResponseAllOfBillingInfo{value: val, isSet: true}
+}
+
+func (v NullableListBillingServers200ResponseAllOfBillingInfo) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListBillingServers200ResponseAllOfBillingInfo) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListBillingServers200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

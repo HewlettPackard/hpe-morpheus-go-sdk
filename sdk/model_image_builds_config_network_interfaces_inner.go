@@ -311,6 +311,43 @@ func (o ImageBuildsConfigNetworkInterfacesInner) ToMap() (map[string]interface{}
 
 	return toSerialize, nil
 }
+
+type NullableImageBuildsConfigNetworkInterfacesInner struct {
+	value *ImageBuildsConfigNetworkInterfacesInner
+	isSet bool
+}
+
+func (v NullableImageBuildsConfigNetworkInterfacesInner) Get() *ImageBuildsConfigNetworkInterfacesInner {
+	return v.value
+}
+
+func (v *NullableImageBuildsConfigNetworkInterfacesInner) Set(val *ImageBuildsConfigNetworkInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableImageBuildsConfigNetworkInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableImageBuildsConfigNetworkInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableImageBuildsConfigNetworkInterfacesInner(val *ImageBuildsConfigNetworkInterfacesInner) *NullableImageBuildsConfigNetworkInterfacesInner {
+	return &NullableImageBuildsConfigNetworkInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableImageBuildsConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableImageBuildsConfigNetworkInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ImageBuildsConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

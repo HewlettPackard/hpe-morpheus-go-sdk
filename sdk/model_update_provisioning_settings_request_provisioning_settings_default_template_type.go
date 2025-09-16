@@ -96,6 +96,43 @@ func (o UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
 
 	return toSerialize, nil
 }
+
+type NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType struct {
+	value *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Get() *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Set(val *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType(val *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType {
+	return &NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

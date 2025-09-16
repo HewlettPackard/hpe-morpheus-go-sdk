@@ -131,6 +131,43 @@ func (o AddOptionListRequestOptionTypeListCredential) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableAddOptionListRequestOptionTypeListCredential struct {
+	value *AddOptionListRequestOptionTypeListCredential
+	isSet bool
+}
+
+func (v NullableAddOptionListRequestOptionTypeListCredential) Get() *AddOptionListRequestOptionTypeListCredential {
+	return v.value
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListCredential) Set(val *AddOptionListRequestOptionTypeListCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddOptionListRequestOptionTypeListCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddOptionListRequestOptionTypeListCredential(val *AddOptionListRequestOptionTypeListCredential) *NullableAddOptionListRequestOptionTypeListCredential {
+	return &NullableAddOptionListRequestOptionTypeListCredential{value: val, isSet: true}
+}
+
+func (v NullableAddOptionListRequestOptionTypeListCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddOptionListRequestOptionTypeListCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddOptionListRequestOptionTypeListCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

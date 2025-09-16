@@ -358,6 +358,43 @@ func (o CredentialType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCredentialType struct {
+	value *CredentialType
+	isSet bool
+}
+
+func (v NullableCredentialType) Get() *CredentialType {
+	return v.value
+}
+
+func (v *NullableCredentialType) Set(val *CredentialType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialType(val *CredentialType) *NullableCredentialType {
+	return &NullableCredentialType{value: val, isSet: true}
+}
+
+func (v NullableCredentialType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

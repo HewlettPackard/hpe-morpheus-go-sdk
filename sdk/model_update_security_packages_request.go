@@ -86,6 +86,43 @@ func (o UpdateSecurityPackagesRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateSecurityPackagesRequest struct {
+	value *UpdateSecurityPackagesRequest
+	isSet bool
+}
+
+func (v NullableUpdateSecurityPackagesRequest) Get() *UpdateSecurityPackagesRequest {
+	return v.value
+}
+
+func (v *NullableUpdateSecurityPackagesRequest) Set(val *UpdateSecurityPackagesRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateSecurityPackagesRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateSecurityPackagesRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateSecurityPackagesRequest(val *UpdateSecurityPackagesRequest) *NullableUpdateSecurityPackagesRequest {
+	return &NullableUpdateSecurityPackagesRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateSecurityPackagesRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateSecurityPackagesRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateSecurityPackagesRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

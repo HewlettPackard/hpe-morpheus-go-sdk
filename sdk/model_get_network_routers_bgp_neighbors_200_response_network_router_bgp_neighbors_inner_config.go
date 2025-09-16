@@ -95,6 +95,43 @@ func (o GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerCo
 
 	return toSerialize, nil
 }
+
+type NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig struct {
+	value *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig
+	isSet bool
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) Get() *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig {
+	return v.value
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) Set(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig(val *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig {
+	return &NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetNetworkRoutersBgpNeighbors200ResponseNetworkRouterBgpNeighborsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

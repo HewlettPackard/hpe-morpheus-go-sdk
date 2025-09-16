@@ -86,6 +86,43 @@ func (o AddClientRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddClientRequest struct {
+	value *AddClientRequest
+	isSet bool
+}
+
+func (v NullableAddClientRequest) Get() *AddClientRequest {
+	return v.value
+}
+
+func (v *NullableAddClientRequest) Set(val *AddClientRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClientRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClientRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClientRequest(val *AddClientRequest) *NullableAddClientRequest {
+	return &NullableAddClientRequest{value: val, isSet: true}
+}
+
+func (v NullableAddClientRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClientRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClientRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

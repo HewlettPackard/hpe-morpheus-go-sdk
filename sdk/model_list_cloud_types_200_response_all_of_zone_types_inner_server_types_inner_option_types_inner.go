@@ -1785,6 +1785,43 @@ func (o ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesI
 
 	return toSerialize, nil
 }
+
+type NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner struct {
+	value *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) Get() *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) Set(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner(val *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner {
+	return &NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

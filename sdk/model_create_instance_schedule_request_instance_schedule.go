@@ -399,6 +399,43 @@ func (o CreateInstanceScheduleRequestInstanceSchedule) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableCreateInstanceScheduleRequestInstanceSchedule struct {
+	value *CreateInstanceScheduleRequestInstanceSchedule
+	isSet bool
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceSchedule) Get() *CreateInstanceScheduleRequestInstanceSchedule {
+	return v.value
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) Set(val *CreateInstanceScheduleRequestInstanceSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateInstanceScheduleRequestInstanceSchedule(val *CreateInstanceScheduleRequestInstanceSchedule) *NullableCreateInstanceScheduleRequestInstanceSchedule {
+	return &NullableCreateInstanceScheduleRequestInstanceSchedule{value: val, isSet: true}
+}
+
+func (v NullableCreateInstanceScheduleRequestInstanceSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

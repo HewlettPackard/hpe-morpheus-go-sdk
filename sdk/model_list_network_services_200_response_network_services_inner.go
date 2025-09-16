@@ -311,6 +311,43 @@ func (o ListNetworkServices200ResponseNetworkServicesInner) ToMap() (map[string]
 
 	return toSerialize, nil
 }
+
+type NullableListNetworkServices200ResponseNetworkServicesInner struct {
+	value *ListNetworkServices200ResponseNetworkServicesInner
+	isSet bool
+}
+
+func (v NullableListNetworkServices200ResponseNetworkServicesInner) Get() *ListNetworkServices200ResponseNetworkServicesInner {
+	return v.value
+}
+
+func (v *NullableListNetworkServices200ResponseNetworkServicesInner) Set(val *ListNetworkServices200ResponseNetworkServicesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListNetworkServices200ResponseNetworkServicesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListNetworkServices200ResponseNetworkServicesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListNetworkServices200ResponseNetworkServicesInner(val *ListNetworkServices200ResponseNetworkServicesInner) *NullableListNetworkServices200ResponseNetworkServicesInner {
+	return &NullableListNetworkServices200ResponseNetworkServicesInner{value: val, isSet: true}
+}
+
+func (v NullableListNetworkServices200ResponseNetworkServicesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListNetworkServices200ResponseNetworkServicesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListNetworkServices200ResponseNetworkServicesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

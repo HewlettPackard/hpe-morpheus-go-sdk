@@ -96,6 +96,43 @@ func (o UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule struct {
+	value *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule
+	isSet bool
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) Get() *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule {
+	return v.value
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) Set(val *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule(val *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) *NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule {
+	return &NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule{value: val, isSet: true}
+}
+
+func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -716,6 +716,43 @@ func (o IntegrationCherwell) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationCherwell struct {
+	value *IntegrationCherwell
+	isSet bool
+}
+
+func (v NullableIntegrationCherwell) Get() *IntegrationCherwell {
+	return v.value
+}
+
+func (v *NullableIntegrationCherwell) Set(val *IntegrationCherwell) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationCherwell) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationCherwell) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationCherwell(val *IntegrationCherwell) *NullableIntegrationCherwell {
+	return &NullableIntegrationCherwell{value: val, isSet: true}
+}
+
+func (v NullableIntegrationCherwell) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationCherwell) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationCherwell) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

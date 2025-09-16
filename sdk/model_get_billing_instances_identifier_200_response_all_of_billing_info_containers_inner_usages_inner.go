@@ -1235,6 +1235,43 @@ func (o GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerU
 
 	return toSerialize, nil
 }
+
+type NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner struct {
+	value *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner
+	isSet bool
+}
+
+func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) Get() *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner {
+	return v.value
+}
+
+func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) Set(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner(val *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner {
+	return &NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner{value: val, isSet: true}
+}
+
+func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1208,6 +1208,43 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceType) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
+	value *GetInstanceTypeProvisioning200ResponseAllOfInstanceType
+	isSet bool
+}
+
+func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Get() *GetInstanceTypeProvisioning200ResponseAllOfInstanceType {
+	return v.value
+}
+
+func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Set(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType(val *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType {
+	return &NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType{value: val, isSet: true}
+}
+
+func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

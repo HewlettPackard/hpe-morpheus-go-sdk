@@ -115,6 +115,43 @@ func (o UpdateRoleVDIPoolAccessRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateRoleVDIPoolAccessRequest struct {
+	value *UpdateRoleVDIPoolAccessRequest
+	isSet bool
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) Get() *UpdateRoleVDIPoolAccessRequest {
+	return v.value
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) Set(val *UpdateRoleVDIPoolAccessRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateRoleVDIPoolAccessRequest(val *UpdateRoleVDIPoolAccessRequest) *NullableUpdateRoleVDIPoolAccessRequest {
+	return &NullableUpdateRoleVDIPoolAccessRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateRoleVDIPoolAccessRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateRoleVDIPoolAccessRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateRoleVDIPoolAccessRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

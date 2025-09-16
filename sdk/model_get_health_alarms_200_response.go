@@ -131,6 +131,43 @@ func (o GetHealthAlarms200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetHealthAlarms200Response struct {
+	value *GetHealthAlarms200Response
+	isSet bool
+}
+
+func (v NullableGetHealthAlarms200Response) Get() *GetHealthAlarms200Response {
+	return v.value
+}
+
+func (v *NullableGetHealthAlarms200Response) Set(val *GetHealthAlarms200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetHealthAlarms200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetHealthAlarms200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetHealthAlarms200Response(val *GetHealthAlarms200Response) *NullableGetHealthAlarms200Response {
+	return &NullableGetHealthAlarms200Response{value: val, isSet: true}
+}
+
+func (v NullableGetHealthAlarms200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetHealthAlarms200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetHealthAlarms200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

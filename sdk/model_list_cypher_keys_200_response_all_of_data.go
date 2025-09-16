@@ -95,6 +95,43 @@ func (o ListCypherKeys200ResponseAllOfData) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableListCypherKeys200ResponseAllOfData struct {
+	value *ListCypherKeys200ResponseAllOfData
+	isSet bool
+}
+
+func (v NullableListCypherKeys200ResponseAllOfData) Get() *ListCypherKeys200ResponseAllOfData {
+	return v.value
+}
+
+func (v *NullableListCypherKeys200ResponseAllOfData) Set(val *ListCypherKeys200ResponseAllOfData) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCypherKeys200ResponseAllOfData) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCypherKeys200ResponseAllOfData) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCypherKeys200ResponseAllOfData(val *ListCypherKeys200ResponseAllOfData) *NullableListCypherKeys200ResponseAllOfData {
+	return &NullableListCypherKeys200ResponseAllOfData{value: val, isSet: true}
+}
+
+func (v NullableListCypherKeys200ResponseAllOfData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCypherKeys200ResponseAllOfData) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCypherKeys200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

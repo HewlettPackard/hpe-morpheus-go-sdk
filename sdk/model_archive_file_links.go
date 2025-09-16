@@ -406,6 +406,43 @@ func (o ArchiveFileLinks) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableArchiveFileLinks struct {
+	value *ArchiveFileLinks
+	isSet bool
+}
+
+func (v NullableArchiveFileLinks) Get() *ArchiveFileLinks {
+	return v.value
+}
+
+func (v *NullableArchiveFileLinks) Set(val *ArchiveFileLinks) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableArchiveFileLinks) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableArchiveFileLinks) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableArchiveFileLinks(val *ArchiveFileLinks) *NullableArchiveFileLinks {
+	return &NullableArchiveFileLinks{value: val, isSet: true}
+}
+
+func (v NullableArchiveFileLinks) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableArchiveFileLinks) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ArchiveFileLinks) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

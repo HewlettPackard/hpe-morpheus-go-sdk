@@ -262,6 +262,43 @@ func (o ListTenantsAvailableRoles200ResponseRolesInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableListTenantsAvailableRoles200ResponseRolesInner struct {
+	value *ListTenantsAvailableRoles200ResponseRolesInner
+	isSet bool
+}
+
+func (v NullableListTenantsAvailableRoles200ResponseRolesInner) Get() *ListTenantsAvailableRoles200ResponseRolesInner {
+	return v.value
+}
+
+func (v *NullableListTenantsAvailableRoles200ResponseRolesInner) Set(val *ListTenantsAvailableRoles200ResponseRolesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListTenantsAvailableRoles200ResponseRolesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListTenantsAvailableRoles200ResponseRolesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListTenantsAvailableRoles200ResponseRolesInner(val *ListTenantsAvailableRoles200ResponseRolesInner) *NullableListTenantsAvailableRoles200ResponseRolesInner {
+	return &NullableListTenantsAvailableRoles200ResponseRolesInner{value: val, isSet: true}
+}
+
+func (v NullableListTenantsAvailableRoles200ResponseRolesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListTenantsAvailableRoles200ResponseRolesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListTenantsAvailableRoles200ResponseRolesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

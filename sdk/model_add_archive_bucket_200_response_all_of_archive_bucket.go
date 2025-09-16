@@ -622,6 +622,43 @@ func (o AddArchiveBucket200ResponseAllOfArchiveBucket) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableAddArchiveBucket200ResponseAllOfArchiveBucket struct {
+	value *AddArchiveBucket200ResponseAllOfArchiveBucket
+	isSet bool
+}
+
+func (v NullableAddArchiveBucket200ResponseAllOfArchiveBucket) Get() *AddArchiveBucket200ResponseAllOfArchiveBucket {
+	return v.value
+}
+
+func (v *NullableAddArchiveBucket200ResponseAllOfArchiveBucket) Set(val *AddArchiveBucket200ResponseAllOfArchiveBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddArchiveBucket200ResponseAllOfArchiveBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddArchiveBucket200ResponseAllOfArchiveBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddArchiveBucket200ResponseAllOfArchiveBucket(val *AddArchiveBucket200ResponseAllOfArchiveBucket) *NullableAddArchiveBucket200ResponseAllOfArchiveBucket {
+	return &NullableAddArchiveBucket200ResponseAllOfArchiveBucket{value: val, isSet: true}
+}
+
+func (v NullableAddArchiveBucket200ResponseAllOfArchiveBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddArchiveBucket200ResponseAllOfArchiveBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

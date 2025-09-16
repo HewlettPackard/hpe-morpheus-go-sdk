@@ -347,6 +347,43 @@ func (o GetStateInstance200ResponseAllOfInstance) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableGetStateInstance200ResponseAllOfInstance struct {
+	value *GetStateInstance200ResponseAllOfInstance
+	isSet bool
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) Get() *GetStateInstance200ResponseAllOfInstance {
+	return v.value
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) Set(val *GetStateInstance200ResponseAllOfInstance) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetStateInstance200ResponseAllOfInstance(val *GetStateInstance200ResponseAllOfInstance) *NullableGetStateInstance200ResponseAllOfInstance {
+	return &NullableGetStateInstance200ResponseAllOfInstance{value: val, isSet: true}
+}
+
+func (v NullableGetStateInstance200ResponseAllOfInstance) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetStateInstance200ResponseAllOfInstance) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetStateInstance200ResponseAllOfInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

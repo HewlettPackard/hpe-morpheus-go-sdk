@@ -131,6 +131,43 @@ func (o AddBaremetalHost200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddBaremetalHost200Response struct {
+	value *AddBaremetalHost200Response
+	isSet bool
+}
+
+func (v NullableAddBaremetalHost200Response) Get() *AddBaremetalHost200Response {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHost200Response) Set(val *AddBaremetalHost200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHost200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHost200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHost200Response(val *AddBaremetalHost200Response) *NullableAddBaremetalHost200Response {
+	return &NullableAddBaremetalHost200Response{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHost200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHost200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBaremetalHost200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -979,6 +979,43 @@ func (o InstanceThreshold) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceThreshold struct {
+	value *InstanceThreshold
+	isSet bool
+}
+
+func (v NullableInstanceThreshold) Get() *InstanceThreshold {
+	return v.value
+}
+
+func (v *NullableInstanceThreshold) Set(val *InstanceThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceThreshold(val *InstanceThreshold) *NullableInstanceThreshold {
+	return &NullableInstanceThreshold{value: val, isSet: true}
+}
+
+func (v NullableInstanceThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

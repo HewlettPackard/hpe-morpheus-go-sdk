@@ -1204,6 +1204,43 @@ func (o AddRolesRequestRole) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddRolesRequestRole struct {
+	value *AddRolesRequestRole
+	isSet bool
+}
+
+func (v NullableAddRolesRequestRole) Get() *AddRolesRequestRole {
+	return v.value
+}
+
+func (v *NullableAddRolesRequestRole) Set(val *AddRolesRequestRole) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddRolesRequestRole) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddRolesRequestRole) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddRolesRequestRole(val *AddRolesRequestRole) *NullableAddRolesRequestRole {
+	return &NullableAddRolesRequestRole{value: val, isSet: true}
+}
+
+func (v NullableAddRolesRequestRole) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddRolesRequestRole) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddRolesRequestRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

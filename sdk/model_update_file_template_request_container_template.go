@@ -430,6 +430,43 @@ func (o UpdateFileTemplateRequestContainerTemplate) ToMap() (map[string]interfac
 
 	return toSerialize, nil
 }
+
+type NullableUpdateFileTemplateRequestContainerTemplate struct {
+	value *UpdateFileTemplateRequestContainerTemplate
+	isSet bool
+}
+
+func (v NullableUpdateFileTemplateRequestContainerTemplate) Get() *UpdateFileTemplateRequestContainerTemplate {
+	return v.value
+}
+
+func (v *NullableUpdateFileTemplateRequestContainerTemplate) Set(val *UpdateFileTemplateRequestContainerTemplate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateFileTemplateRequestContainerTemplate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateFileTemplateRequestContainerTemplate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateFileTemplateRequestContainerTemplate(val *UpdateFileTemplateRequestContainerTemplate) *NullableUpdateFileTemplateRequestContainerTemplate {
+	return &NullableUpdateFileTemplateRequestContainerTemplate{value: val, isSet: true}
+}
+
+func (v NullableUpdateFileTemplateRequestContainerTemplate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateFileTemplateRequestContainerTemplate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

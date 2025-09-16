@@ -115,6 +115,43 @@ func (o DefaultInstanceTypePermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultInstanceTypePermission struct {
+	value *DefaultInstanceTypePermission
+	isSet bool
+}
+
+func (v NullableDefaultInstanceTypePermission) Get() *DefaultInstanceTypePermission {
+	return v.value
+}
+
+func (v *NullableDefaultInstanceTypePermission) Set(val *DefaultInstanceTypePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultInstanceTypePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultInstanceTypePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultInstanceTypePermission(val *DefaultInstanceTypePermission) *NullableDefaultInstanceTypePermission {
+	return &NullableDefaultInstanceTypePermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultInstanceTypePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultInstanceTypePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultInstanceTypePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

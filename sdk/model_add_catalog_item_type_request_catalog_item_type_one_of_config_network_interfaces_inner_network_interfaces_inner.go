@@ -275,6 +275,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInne
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

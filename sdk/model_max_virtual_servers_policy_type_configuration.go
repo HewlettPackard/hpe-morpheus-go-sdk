@@ -95,6 +95,43 @@ func (o MaxVirtualServersPolicyTypeConfiguration) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableMaxVirtualServersPolicyTypeConfiguration struct {
+	value *MaxVirtualServersPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableMaxVirtualServersPolicyTypeConfiguration) Get() *MaxVirtualServersPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableMaxVirtualServersPolicyTypeConfiguration) Set(val *MaxVirtualServersPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMaxVirtualServersPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMaxVirtualServersPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMaxVirtualServersPolicyTypeConfiguration(val *MaxVirtualServersPolicyTypeConfiguration) *NullableMaxVirtualServersPolicyTypeConfiguration {
+	return &NullableMaxVirtualServersPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableMaxVirtualServersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMaxVirtualServersPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *MaxVirtualServersPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

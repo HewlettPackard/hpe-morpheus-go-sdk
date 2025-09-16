@@ -1568,6 +1568,43 @@ func (o LineItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableLineItem struct {
+	value *LineItem
+	isSet bool
+}
+
+func (v NullableLineItem) Get() *LineItem {
+	return v.value
+}
+
+func (v *NullableLineItem) Set(val *LineItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLineItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLineItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLineItem(val *LineItem) *NullableLineItem {
+	return &NullableLineItem{value: val, isSet: true}
+}
+
+func (v NullableLineItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLineItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *LineItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

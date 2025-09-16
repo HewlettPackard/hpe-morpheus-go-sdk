@@ -706,6 +706,43 @@ func (o CheckSqlConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckSqlConfig struct {
+	value *CheckSqlConfig
+	isSet bool
+}
+
+func (v NullableCheckSqlConfig) Get() *CheckSqlConfig {
+	return v.value
+}
+
+func (v *NullableCheckSqlConfig) Set(val *CheckSqlConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckSqlConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckSqlConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckSqlConfig(val *CheckSqlConfig) *NullableCheckSqlConfig {
+	return &NullableCheckSqlConfig{value: val, isSet: true}
+}
+
+func (v NullableCheckSqlConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckSqlConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckSqlConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

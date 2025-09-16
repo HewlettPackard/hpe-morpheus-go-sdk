@@ -276,6 +276,43 @@ func (o UpdateInstanceNetworkInterface200Response) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateInstanceNetworkInterface200Response struct {
+	value *UpdateInstanceNetworkInterface200Response
+	isSet bool
+}
+
+func (v NullableUpdateInstanceNetworkInterface200Response) Get() *UpdateInstanceNetworkInterface200Response {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200Response) Set(val *UpdateInstanceNetworkInterface200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceNetworkInterface200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceNetworkInterface200Response(val *UpdateInstanceNetworkInterface200Response) *NullableUpdateInstanceNetworkInterface200Response {
+	return &NullableUpdateInstanceNetworkInterface200Response{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceNetworkInterface200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceNetworkInterface200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateInstanceNetworkInterface200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

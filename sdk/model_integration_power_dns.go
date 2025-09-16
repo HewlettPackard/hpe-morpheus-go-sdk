@@ -670,6 +670,43 @@ func (o IntegrationPowerDNS) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationPowerDNS struct {
+	value *IntegrationPowerDNS
+	isSet bool
+}
+
+func (v NullableIntegrationPowerDNS) Get() *IntegrationPowerDNS {
+	return v.value
+}
+
+func (v *NullableIntegrationPowerDNS) Set(val *IntegrationPowerDNS) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationPowerDNS) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationPowerDNS) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationPowerDNS(val *IntegrationPowerDNS) *NullableIntegrationPowerDNS {
+	return &NullableIntegrationPowerDNS{value: val, isSet: true}
+}
+
+func (v NullableIntegrationPowerDNS) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationPowerDNS) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationPowerDNS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

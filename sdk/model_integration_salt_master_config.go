@@ -86,6 +86,43 @@ func (o IntegrationSaltMasterConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationSaltMasterConfig struct {
+	value *IntegrationSaltMasterConfig
+	isSet bool
+}
+
+func (v NullableIntegrationSaltMasterConfig) Get() *IntegrationSaltMasterConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationSaltMasterConfig) Set(val *IntegrationSaltMasterConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationSaltMasterConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationSaltMasterConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationSaltMasterConfig(val *IntegrationSaltMasterConfig) *NullableIntegrationSaltMasterConfig {
+	return &NullableIntegrationSaltMasterConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationSaltMasterConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationSaltMasterConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationSaltMasterConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

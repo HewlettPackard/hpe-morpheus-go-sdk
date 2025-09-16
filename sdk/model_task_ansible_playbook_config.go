@@ -730,6 +730,43 @@ func (o TaskAnsiblePlaybookConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskAnsiblePlaybookConfig struct {
+	value *TaskAnsiblePlaybookConfig
+	isSet bool
+}
+
+func (v NullableTaskAnsiblePlaybookConfig) Get() *TaskAnsiblePlaybookConfig {
+	return v.value
+}
+
+func (v *NullableTaskAnsiblePlaybookConfig) Set(val *TaskAnsiblePlaybookConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskAnsiblePlaybookConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskAnsiblePlaybookConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskAnsiblePlaybookConfig(val *TaskAnsiblePlaybookConfig) *NullableTaskAnsiblePlaybookConfig {
+	return &NullableTaskAnsiblePlaybookConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskAnsiblePlaybookConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskAnsiblePlaybookConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskAnsiblePlaybookConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

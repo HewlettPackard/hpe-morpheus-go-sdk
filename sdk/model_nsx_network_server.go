@@ -460,6 +460,43 @@ func (o NSXNetworkServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNSXNetworkServer struct {
+	value *NSXNetworkServer
+	isSet bool
+}
+
+func (v NullableNSXNetworkServer) Get() *NSXNetworkServer {
+	return v.value
+}
+
+func (v *NullableNSXNetworkServer) Set(val *NSXNetworkServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNSXNetworkServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNSXNetworkServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNSXNetworkServer(val *NSXNetworkServer) *NullableNSXNetworkServer {
+	return &NullableNSXNetworkServer{value: val, isSet: true}
+}
+
+func (v NullableNSXNetworkServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNSXNetworkServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NSXNetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

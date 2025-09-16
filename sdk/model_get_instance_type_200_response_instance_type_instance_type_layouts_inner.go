@@ -940,6 +940,43 @@ func (o GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) ToMap() 
 
 	return toSerialize, nil
 }
+
+type NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner struct {
+	value *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
+	isSet bool
+}
+
+func (v NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) Get() *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+	return v.value
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) Set(val *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner(val *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) *NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+	return &NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner{value: val, isSet: true}
+}
+
+func (v NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

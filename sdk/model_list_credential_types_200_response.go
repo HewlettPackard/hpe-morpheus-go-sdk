@@ -131,6 +131,43 @@ func (o ListCredentialTypes200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableListCredentialTypes200Response struct {
+	value *ListCredentialTypes200Response
+	isSet bool
+}
+
+func (v NullableListCredentialTypes200Response) Get() *ListCredentialTypes200Response {
+	return v.value
+}
+
+func (v *NullableListCredentialTypes200Response) Set(val *ListCredentialTypes200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCredentialTypes200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCredentialTypes200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCredentialTypes200Response(val *ListCredentialTypes200Response) *NullableListCredentialTypes200Response {
+	return &NullableListCredentialTypes200Response{value: val, isSet: true}
+}
+
+func (v NullableListCredentialTypes200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCredentialTypes200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCredentialTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

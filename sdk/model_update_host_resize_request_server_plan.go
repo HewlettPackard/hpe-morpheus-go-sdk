@@ -96,6 +96,43 @@ func (o UpdateHostResizeRequestServerPlan) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostResizeRequestServerPlan struct {
+	value *UpdateHostResizeRequestServerPlan
+	isSet bool
+}
+
+func (v NullableUpdateHostResizeRequestServerPlan) Get() *UpdateHostResizeRequestServerPlan {
+	return v.value
+}
+
+func (v *NullableUpdateHostResizeRequestServerPlan) Set(val *UpdateHostResizeRequestServerPlan) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostResizeRequestServerPlan) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostResizeRequestServerPlan) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostResizeRequestServerPlan(val *UpdateHostResizeRequestServerPlan) *NullableUpdateHostResizeRequestServerPlan {
+	return &NullableUpdateHostResizeRequestServerPlan{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostResizeRequestServerPlan) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostResizeRequestServerPlan) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostResizeRequestServerPlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

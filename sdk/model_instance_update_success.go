@@ -114,6 +114,43 @@ func (o InstanceUpdateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceUpdateSuccess struct {
+	value *InstanceUpdateSuccess
+	isSet bool
+}
+
+func (v NullableInstanceUpdateSuccess) Get() *InstanceUpdateSuccess {
+	return v.value
+}
+
+func (v *NullableInstanceUpdateSuccess) Set(val *InstanceUpdateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceUpdateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceUpdateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceUpdateSuccess(val *InstanceUpdateSuccess) *NullableInstanceUpdateSuccess {
+	return &NullableInstanceUpdateSuccess{value: val, isSet: true}
+}
+
+func (v NullableInstanceUpdateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceUpdateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceUpdateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

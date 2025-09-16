@@ -96,6 +96,43 @@ func (o ImportContainerActionRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableImportContainerActionRequest struct {
+	value *ImportContainerActionRequest
+	isSet bool
+}
+
+func (v NullableImportContainerActionRequest) Get() *ImportContainerActionRequest {
+	return v.value
+}
+
+func (v *NullableImportContainerActionRequest) Set(val *ImportContainerActionRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableImportContainerActionRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableImportContainerActionRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableImportContainerActionRequest(val *ImportContainerActionRequest) *NullableImportContainerActionRequest {
+	return &NullableImportContainerActionRequest{value: val, isSet: true}
+}
+
+func (v NullableImportContainerActionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableImportContainerActionRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ImportContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

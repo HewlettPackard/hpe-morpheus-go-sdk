@@ -713,6 +713,43 @@ func (o ListSpecTemplates200ResponseAllOfSpecTemplatesInner) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner struct {
+	value *ListSpecTemplates200ResponseAllOfSpecTemplatesInner
+	isSet bool
+}
+
+func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Get() *ListSpecTemplates200ResponseAllOfSpecTemplatesInner {
+	return v.value
+}
+
+func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Set(val *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListSpecTemplates200ResponseAllOfSpecTemplatesInner(val *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner {
+	return &NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner{value: val, isSet: true}
+}
+
+func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

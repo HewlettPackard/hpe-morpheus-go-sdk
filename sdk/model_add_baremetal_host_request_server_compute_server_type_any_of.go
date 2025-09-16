@@ -96,6 +96,43 @@ func (o AddBaremetalHostRequestServerComputeServerTypeAnyOf) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf struct {
+	value *AddBaremetalHostRequestServerComputeServerTypeAnyOf
+	isSet bool
+}
+
+func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Get() *AddBaremetalHostRequestServerComputeServerTypeAnyOf {
+	return v.value
+}
+
+func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Set(val *AddBaremetalHostRequestServerComputeServerTypeAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBaremetalHostRequestServerComputeServerTypeAnyOf(val *AddBaremetalHostRequestServerComputeServerTypeAnyOf) *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf {
+	return &NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf{value: val, isSet: true}
+}
+
+func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

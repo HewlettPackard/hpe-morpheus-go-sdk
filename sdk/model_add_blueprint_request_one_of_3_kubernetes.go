@@ -160,6 +160,43 @@ func (o AddBlueprintRequestOneOf3Kubernetes) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf3Kubernetes struct {
+	value *AddBlueprintRequestOneOf3Kubernetes
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf3Kubernetes) Get() *AddBlueprintRequestOneOf3Kubernetes {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf3Kubernetes) Set(val *AddBlueprintRequestOneOf3Kubernetes) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf3Kubernetes) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf3Kubernetes) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf3Kubernetes(val *AddBlueprintRequestOneOf3Kubernetes) *NullableAddBlueprintRequestOneOf3Kubernetes {
+	return &NullableAddBlueprintRequestOneOf3Kubernetes{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf3Kubernetes) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

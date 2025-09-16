@@ -203,6 +203,43 @@ func (o PrepareAppApply200ResponseAllOfDataTerraform) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullablePrepareAppApply200ResponseAllOfDataTerraform struct {
+	value *PrepareAppApply200ResponseAllOfDataTerraform
+	isSet bool
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) Get() *PrepareAppApply200ResponseAllOfDataTerraform {
+	return v.value
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) Set(val *PrepareAppApply200ResponseAllOfDataTerraform) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePrepareAppApply200ResponseAllOfDataTerraform(val *PrepareAppApply200ResponseAllOfDataTerraform) *NullablePrepareAppApply200ResponseAllOfDataTerraform {
+	return &NullablePrepareAppApply200ResponseAllOfDataTerraform{value: val, isSet: true}
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

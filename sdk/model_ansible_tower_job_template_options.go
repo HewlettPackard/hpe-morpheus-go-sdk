@@ -131,6 +131,43 @@ func (o AnsibleTowerJobTemplateOptions) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableAnsibleTowerJobTemplateOptions struct {
+	value *AnsibleTowerJobTemplateOptions
+	isSet bool
+}
+
+func (v NullableAnsibleTowerJobTemplateOptions) Get() *AnsibleTowerJobTemplateOptions {
+	return v.value
+}
+
+func (v *NullableAnsibleTowerJobTemplateOptions) Set(val *AnsibleTowerJobTemplateOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAnsibleTowerJobTemplateOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAnsibleTowerJobTemplateOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAnsibleTowerJobTemplateOptions(val *AnsibleTowerJobTemplateOptions) *NullableAnsibleTowerJobTemplateOptions {
+	return &NullableAnsibleTowerJobTemplateOptions{value: val, isSet: true}
+}
+
+func (v NullableAnsibleTowerJobTemplateOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAnsibleTowerJobTemplateOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AnsibleTowerJobTemplateOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

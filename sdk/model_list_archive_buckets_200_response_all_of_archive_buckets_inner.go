@@ -644,6 +644,43 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {
+	value *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
+	isSet bool
+}
+
+func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) Get() *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner {
+	return v.value
+}
+
+func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) Set(val *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner(val *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner {
+	return &NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner{value: val, isSet: true}
+}
+
+func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

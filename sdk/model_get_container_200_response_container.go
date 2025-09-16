@@ -1673,6 +1673,43 @@ func (o GetContainer200ResponseContainer) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableGetContainer200ResponseContainer struct {
+	value *GetContainer200ResponseContainer
+	isSet bool
+}
+
+func (v NullableGetContainer200ResponseContainer) Get() *GetContainer200ResponseContainer {
+	return v.value
+}
+
+func (v *NullableGetContainer200ResponseContainer) Set(val *GetContainer200ResponseContainer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetContainer200ResponseContainer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetContainer200ResponseContainer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetContainer200ResponseContainer(val *GetContainer200ResponseContainer) *NullableGetContainer200ResponseContainer {
+	return &NullableGetContainer200ResponseContainer{value: val, isSet: true}
+}
+
+func (v NullableGetContainer200ResponseContainer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetContainer200ResponseContainer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetContainer200ResponseContainer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

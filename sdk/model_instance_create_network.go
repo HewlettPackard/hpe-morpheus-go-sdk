@@ -312,6 +312,43 @@ func (o InstanceCreateNetwork) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceCreateNetwork struct {
+	value *InstanceCreateNetwork
+	isSet bool
+}
+
+func (v NullableInstanceCreateNetwork) Get() *InstanceCreateNetwork {
+	return v.value
+}
+
+func (v *NullableInstanceCreateNetwork) Set(val *InstanceCreateNetwork) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceCreateNetwork) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceCreateNetwork) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceCreateNetwork(val *InstanceCreateNetwork) *NullableInstanceCreateNetwork {
+	return &NullableInstanceCreateNetwork{value: val, isSet: true}
+}
+
+func (v NullableInstanceCreateNetwork) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceCreateNetwork) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceCreateNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

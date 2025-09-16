@@ -289,6 +289,43 @@ func (o UpdateCloudFoldersRequestFolder) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudFoldersRequestFolder struct {
+	value *UpdateCloudFoldersRequestFolder
+	isSet bool
+}
+
+func (v NullableUpdateCloudFoldersRequestFolder) Get() *UpdateCloudFoldersRequestFolder {
+	return v.value
+}
+
+func (v *NullableUpdateCloudFoldersRequestFolder) Set(val *UpdateCloudFoldersRequestFolder) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudFoldersRequestFolder) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudFoldersRequestFolder) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudFoldersRequestFolder(val *UpdateCloudFoldersRequestFolder) *NullableUpdateCloudFoldersRequestFolder {
+	return &NullableUpdateCloudFoldersRequestFolder{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudFoldersRequestFolder) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudFoldersRequestFolder) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudFoldersRequestFolder) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

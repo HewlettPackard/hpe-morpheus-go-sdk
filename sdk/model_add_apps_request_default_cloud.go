@@ -95,6 +95,43 @@ func (o AddAppsRequestDefaultCloud) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddAppsRequestDefaultCloud struct {
+	value *AddAppsRequestDefaultCloud
+	isSet bool
+}
+
+func (v NullableAddAppsRequestDefaultCloud) Get() *AddAppsRequestDefaultCloud {
+	return v.value
+}
+
+func (v *NullableAddAppsRequestDefaultCloud) Set(val *AddAppsRequestDefaultCloud) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddAppsRequestDefaultCloud) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddAppsRequestDefaultCloud) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddAppsRequestDefaultCloud(val *AddAppsRequestDefaultCloud) *NullableAddAppsRequestDefaultCloud {
+	return &NullableAddAppsRequestDefaultCloud{value: val, isSet: true}
+}
+
+func (v NullableAddAppsRequestDefaultCloud) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddAppsRequestDefaultCloud) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddAppsRequestDefaultCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

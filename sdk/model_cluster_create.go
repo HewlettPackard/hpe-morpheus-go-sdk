@@ -374,6 +374,43 @@ func (o ClusterCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterCreate struct {
+	value *ClusterCreate
+	isSet bool
+}
+
+func (v NullableClusterCreate) Get() *ClusterCreate {
+	return v.value
+}
+
+func (v *NullableClusterCreate) Set(val *ClusterCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterCreate(val *ClusterCreate) *NullableClusterCreate {
+	return &NullableClusterCreate{value: val, isSet: true}
+}
+
+func (v NullableClusterCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

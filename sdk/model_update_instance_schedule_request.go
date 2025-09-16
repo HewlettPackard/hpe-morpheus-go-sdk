@@ -86,6 +86,43 @@ func (o UpdateInstanceScheduleRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateInstanceScheduleRequest struct {
+	value *UpdateInstanceScheduleRequest
+	isSet bool
+}
+
+func (v NullableUpdateInstanceScheduleRequest) Get() *UpdateInstanceScheduleRequest {
+	return v.value
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) Set(val *UpdateInstanceScheduleRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateInstanceScheduleRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateInstanceScheduleRequest(val *UpdateInstanceScheduleRequest) *NullableUpdateInstanceScheduleRequest {
+	return &NullableUpdateInstanceScheduleRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateInstanceScheduleRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateInstanceScheduleRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateInstanceScheduleRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

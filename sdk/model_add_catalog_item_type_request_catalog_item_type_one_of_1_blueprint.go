@@ -131,6 +131,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint(val *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

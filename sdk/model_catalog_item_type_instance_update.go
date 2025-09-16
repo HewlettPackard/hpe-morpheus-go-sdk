@@ -777,6 +777,43 @@ func (o CatalogItemTypeInstanceUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogItemTypeInstanceUpdate struct {
+	value *CatalogItemTypeInstanceUpdate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) Get() *CatalogItemTypeInstanceUpdate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) Set(val *CatalogItemTypeInstanceUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeInstanceUpdate(val *CatalogItemTypeInstanceUpdate) *NullableCatalogItemTypeInstanceUpdate {
+	return &NullableCatalogItemTypeInstanceUpdate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeInstanceUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeInstanceUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogItemTypeInstanceUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

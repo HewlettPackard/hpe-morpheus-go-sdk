@@ -95,6 +95,43 @@ func (o AddScriptRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddScriptRequest struct {
+	value *AddScriptRequest
+	isSet bool
+}
+
+func (v NullableAddScriptRequest) Get() *AddScriptRequest {
+	return v.value
+}
+
+func (v *NullableAddScriptRequest) Set(val *AddScriptRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddScriptRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddScriptRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddScriptRequest(val *AddScriptRequest) *NullableAddScriptRequest {
+	return &NullableAddScriptRequest{value: val, isSet: true}
+}
+
+func (v NullableAddScriptRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddScriptRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddScriptRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o ManageHostPlacementRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableManageHostPlacementRequest struct {
+	value *ManageHostPlacementRequest
+	isSet bool
+}
+
+func (v NullableManageHostPlacementRequest) Get() *ManageHostPlacementRequest {
+	return v.value
+}
+
+func (v *NullableManageHostPlacementRequest) Set(val *ManageHostPlacementRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableManageHostPlacementRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableManageHostPlacementRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableManageHostPlacementRequest(val *ManageHostPlacementRequest) *NullableManageHostPlacementRequest {
+	return &NullableManageHostPlacementRequest{value: val, isSet: true}
+}
+
+func (v NullableManageHostPlacementRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableManageHostPlacementRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ManageHostPlacementRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

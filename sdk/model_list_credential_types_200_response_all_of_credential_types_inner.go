@@ -358,6 +358,43 @@ func (o ListCredentialTypes200ResponseAllOfCredentialTypesInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableListCredentialTypes200ResponseAllOfCredentialTypesInner struct {
+	value *ListCredentialTypes200ResponseAllOfCredentialTypesInner
+	isSet bool
+}
+
+func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Get() *ListCredentialTypes200ResponseAllOfCredentialTypesInner {
+	return v.value
+}
+
+func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Set(val *ListCredentialTypes200ResponseAllOfCredentialTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCredentialTypes200ResponseAllOfCredentialTypesInner(val *ListCredentialTypes200ResponseAllOfCredentialTypesInner) *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner {
+	return &NullableListCredentialTypes200ResponseAllOfCredentialTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

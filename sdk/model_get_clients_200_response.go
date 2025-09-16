@@ -95,6 +95,43 @@ func (o GetClients200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetClients200Response struct {
+	value *GetClients200Response
+	isSet bool
+}
+
+func (v NullableGetClients200Response) Get() *GetClients200Response {
+	return v.value
+}
+
+func (v *NullableGetClients200Response) Set(val *GetClients200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClients200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClients200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClients200Response(val *GetClients200Response) *NullableGetClients200Response {
+	return &NullableGetClients200Response{value: val, isSet: true}
+}
+
+func (v NullableGetClients200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClients200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClients200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

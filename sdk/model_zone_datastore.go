@@ -420,6 +420,43 @@ func (o ZoneDatastore) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZoneDatastore struct {
+	value *ZoneDatastore
+	isSet bool
+}
+
+func (v NullableZoneDatastore) Get() *ZoneDatastore {
+	return v.value
+}
+
+func (v *NullableZoneDatastore) Set(val *ZoneDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneDatastore(val *ZoneDatastore) *NullableZoneDatastore {
+	return &NullableZoneDatastore{value: val, isSet: true}
+}
+
+func (v NullableZoneDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ZoneDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o UpdateProvisioningLicenseRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableUpdateProvisioningLicenseRequest struct {
+	value *UpdateProvisioningLicenseRequest
+	isSet bool
+}
+
+func (v NullableUpdateProvisioningLicenseRequest) Get() *UpdateProvisioningLicenseRequest {
+	return v.value
+}
+
+func (v *NullableUpdateProvisioningLicenseRequest) Set(val *UpdateProvisioningLicenseRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateProvisioningLicenseRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateProvisioningLicenseRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateProvisioningLicenseRequest(val *UpdateProvisioningLicenseRequest) *NullableUpdateProvisioningLicenseRequest {
+	return &NullableUpdateProvisioningLicenseRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateProvisioningLicenseRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateProvisioningLicenseRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateProvisioningLicenseRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -489,6 +489,43 @@ func (o VdiAllocation) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableVdiAllocation struct {
+	value *VdiAllocation
+	isSet bool
+}
+
+func (v NullableVdiAllocation) Get() *VdiAllocation {
+	return v.value
+}
+
+func (v *NullableVdiAllocation) Set(val *VdiAllocation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableVdiAllocation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableVdiAllocation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableVdiAllocation(val *VdiAllocation) *NullableVdiAllocation {
+	return &NullableVdiAllocation{value: val, isSet: true}
+}
+
+func (v NullableVdiAllocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableVdiAllocation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *VdiAllocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

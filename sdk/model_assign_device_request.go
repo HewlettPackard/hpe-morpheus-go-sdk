@@ -87,6 +87,43 @@ func (o AssignDeviceRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAssignDeviceRequest struct {
+	value *AssignDeviceRequest
+	isSet bool
+}
+
+func (v NullableAssignDeviceRequest) Get() *AssignDeviceRequest {
+	return v.value
+}
+
+func (v *NullableAssignDeviceRequest) Set(val *AssignDeviceRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAssignDeviceRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAssignDeviceRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAssignDeviceRequest(val *AssignDeviceRequest) *NullableAssignDeviceRequest {
+	return &NullableAssignDeviceRequest{value: val, isSet: true}
+}
+
+func (v NullableAssignDeviceRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAssignDeviceRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AssignDeviceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

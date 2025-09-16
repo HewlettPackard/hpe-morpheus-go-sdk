@@ -131,6 +131,43 @@ func (o Ping200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePing200Response struct {
+	value *Ping200Response
+	isSet bool
+}
+
+func (v NullablePing200Response) Get() *Ping200Response {
+	return v.value
+}
+
+func (v *NullablePing200Response) Set(val *Ping200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePing200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePing200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePing200Response(val *Ping200Response) *NullablePing200Response {
+	return &NullablePing200Response{value: val, isSet: true}
+}
+
+func (v NullablePing200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePing200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Ping200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -209,6 +209,43 @@ func (o CreateNetworkTransportZoneRequestNetworkScope) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkTransportZoneRequestNetworkScope struct {
+	value *CreateNetworkTransportZoneRequestNetworkScope
+	isSet bool
+}
+
+func (v NullableCreateNetworkTransportZoneRequestNetworkScope) Get() *CreateNetworkTransportZoneRequestNetworkScope {
+	return v.value
+}
+
+func (v *NullableCreateNetworkTransportZoneRequestNetworkScope) Set(val *CreateNetworkTransportZoneRequestNetworkScope) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkTransportZoneRequestNetworkScope) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkTransportZoneRequestNetworkScope) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkTransportZoneRequestNetworkScope(val *CreateNetworkTransportZoneRequestNetworkScope) *NullableCreateNetworkTransportZoneRequestNetworkScope {
+	return &NullableCreateNetworkTransportZoneRequestNetworkScope{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkTransportZoneRequestNetworkScope) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkTransportZoneRequestNetworkScope) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkTransportZoneRequestNetworkScope) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

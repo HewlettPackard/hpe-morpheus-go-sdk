@@ -95,6 +95,43 @@ func (o ListLogs200ResponseAllOfSort) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListLogs200ResponseAllOfSort struct {
+	value *ListLogs200ResponseAllOfSort
+	isSet bool
+}
+
+func (v NullableListLogs200ResponseAllOfSort) Get() *ListLogs200ResponseAllOfSort {
+	return v.value
+}
+
+func (v *NullableListLogs200ResponseAllOfSort) Set(val *ListLogs200ResponseAllOfSort) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListLogs200ResponseAllOfSort) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListLogs200ResponseAllOfSort) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListLogs200ResponseAllOfSort(val *ListLogs200ResponseAllOfSort) *NullableListLogs200ResponseAllOfSort {
+	return &NullableListLogs200ResponseAllOfSort{value: val, isSet: true}
+}
+
+func (v NullableListLogs200ResponseAllOfSort) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListLogs200ResponseAllOfSort) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListLogs200ResponseAllOfSort) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

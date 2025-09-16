@@ -96,6 +96,43 @@ func (o UpdateDeployRequestAppDeploy) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateDeployRequestAppDeploy struct {
+	value *UpdateDeployRequestAppDeploy
+	isSet bool
+}
+
+func (v NullableUpdateDeployRequestAppDeploy) Get() *UpdateDeployRequestAppDeploy {
+	return v.value
+}
+
+func (v *NullableUpdateDeployRequestAppDeploy) Set(val *UpdateDeployRequestAppDeploy) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateDeployRequestAppDeploy) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateDeployRequestAppDeploy) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateDeployRequestAppDeploy(val *UpdateDeployRequestAppDeploy) *NullableUpdateDeployRequestAppDeploy {
+	return &NullableUpdateDeployRequestAppDeploy{value: val, isSet: true}
+}
+
+func (v NullableUpdateDeployRequestAppDeploy) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateDeployRequestAppDeploy) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateDeployRequestAppDeploy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

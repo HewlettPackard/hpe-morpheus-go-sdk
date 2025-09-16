@@ -131,6 +131,43 @@ func (o CreateInstanceSchedule200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableCreateInstanceSchedule200Response struct {
+	value *CreateInstanceSchedule200Response
+	isSet bool
+}
+
+func (v NullableCreateInstanceSchedule200Response) Get() *CreateInstanceSchedule200Response {
+	return v.value
+}
+
+func (v *NullableCreateInstanceSchedule200Response) Set(val *CreateInstanceSchedule200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateInstanceSchedule200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateInstanceSchedule200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateInstanceSchedule200Response(val *CreateInstanceSchedule200Response) *NullableCreateInstanceSchedule200Response {
+	return &NullableCreateInstanceSchedule200Response{value: val, isSet: true}
+}
+
+func (v NullableCreateInstanceSchedule200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateInstanceSchedule200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateInstanceSchedule200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

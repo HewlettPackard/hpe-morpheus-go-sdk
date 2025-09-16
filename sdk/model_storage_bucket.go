@@ -632,6 +632,43 @@ func (o StorageBucket) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableStorageBucket struct {
+	value *StorageBucket
+	isSet bool
+}
+
+func (v NullableStorageBucket) Get() *StorageBucket {
+	return v.value
+}
+
+func (v *NullableStorageBucket) Set(val *StorageBucket) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageBucket) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageBucket) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageBucket(val *StorageBucket) *NullableStorageBucket {
+	return &NullableStorageBucket{value: val, isSet: true}
+}
+
+func (v NullableStorageBucket) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageBucket) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *StorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

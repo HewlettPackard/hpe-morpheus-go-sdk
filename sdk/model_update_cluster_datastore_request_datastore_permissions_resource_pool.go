@@ -96,6 +96,43 @@ func (o UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool struct {
+	value *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool
+	isSet bool
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) Get() *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool {
+	return v.value
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) Set(val *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool(val *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) *NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool {
+	return &NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissionsResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

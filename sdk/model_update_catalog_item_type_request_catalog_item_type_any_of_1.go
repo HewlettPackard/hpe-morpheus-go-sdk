@@ -740,6 +740,43 @@ func (o UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 struct {
+	value *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1
+	isSet bool
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Get() *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 {
+	return v.value
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Set(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1(val *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 {
+	return &NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1{value: val, isSet: true}
+}
+
+func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

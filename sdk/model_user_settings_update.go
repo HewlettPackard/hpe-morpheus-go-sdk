@@ -574,6 +574,43 @@ func (o UserSettingsUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSettingsUpdate struct {
+	value *UserSettingsUpdate
+	isSet bool
+}
+
+func (v NullableUserSettingsUpdate) Get() *UserSettingsUpdate {
+	return v.value
+}
+
+func (v *NullableUserSettingsUpdate) Set(val *UserSettingsUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSettingsUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSettingsUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSettingsUpdate(val *UserSettingsUpdate) *NullableUserSettingsUpdate {
+	return &NullableUserSettingsUpdate{value: val, isSet: true}
+}
+
+func (v NullableUserSettingsUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSettingsUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

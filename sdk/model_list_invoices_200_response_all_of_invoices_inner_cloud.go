@@ -167,6 +167,43 @@ func (o ListInvoices200ResponseAllOfInvoicesInnerCloud) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableListInvoices200ResponseAllOfInvoicesInnerCloud struct {
+	value *ListInvoices200ResponseAllOfInvoicesInnerCloud
+	isSet bool
+}
+
+func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Get() *ListInvoices200ResponseAllOfInvoicesInnerCloud {
+	return v.value
+}
+
+func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Set(val *ListInvoices200ResponseAllOfInvoicesInnerCloud) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInvoices200ResponseAllOfInvoicesInnerCloud(val *ListInvoices200ResponseAllOfInvoicesInnerCloud) *NullableListInvoices200ResponseAllOfInvoicesInnerCloud {
+	return &NullableListInvoices200ResponseAllOfInvoicesInnerCloud{value: val, isSet: true}
+}
+
+func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

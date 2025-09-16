@@ -823,6 +823,43 @@ func (o GetCloudResourcePools200ResponseAllOfResourcePool) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableGetCloudResourcePools200ResponseAllOfResourcePool struct {
+	value *GetCloudResourcePools200ResponseAllOfResourcePool
+	isSet bool
+}
+
+func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) Get() *GetCloudResourcePools200ResponseAllOfResourcePool {
+	return v.value
+}
+
+func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) Set(val *GetCloudResourcePools200ResponseAllOfResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetCloudResourcePools200ResponseAllOfResourcePool(val *GetCloudResourcePools200ResponseAllOfResourcePool) *NullableGetCloudResourcePools200ResponseAllOfResourcePool {
+	return &NullableGetCloudResourcePools200ResponseAllOfResourcePool{value: val, isSet: true}
+}
+
+func (v NullableGetCloudResourcePools200ResponseAllOfResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetCloudResourcePools200ResponseAllOfResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetCloudResourcePools200ResponseAllOfResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

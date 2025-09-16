@@ -1068,6 +1068,43 @@ func (o ListClusterLayouts200ResponseAllOfLayoutsInner) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableListClusterLayouts200ResponseAllOfLayoutsInner struct {
+	value *ListClusterLayouts200ResponseAllOfLayoutsInner
+	isSet bool
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) Get() *ListClusterLayouts200ResponseAllOfLayoutsInner {
+	return v.value
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) Set(val *ListClusterLayouts200ResponseAllOfLayoutsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListClusterLayouts200ResponseAllOfLayoutsInner(val *ListClusterLayouts200ResponseAllOfLayoutsInner) *NullableListClusterLayouts200ResponseAllOfLayoutsInner {
+	return &NullableListClusterLayouts200ResponseAllOfLayoutsInner{value: val, isSet: true}
+}
+
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

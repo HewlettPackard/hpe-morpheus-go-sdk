@@ -317,6 +317,43 @@ func (o GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) ToMap() (m
 
 	return toSerialize, nil
 }
+
+type NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow struct {
+	value *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow
+	isSet bool
+}
+
+func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Get() *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow {
+	return v.value
+}
+
+func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Set(val *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow(val *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow {
+	return &NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow{value: val, isSet: true}
+}
+
+func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNow) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetMonitoringSettings200ResponseMonitoringSettingsServiceNow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

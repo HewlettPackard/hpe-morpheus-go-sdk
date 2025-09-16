@@ -2803,6 +2803,43 @@ func (o ClusterWorkers) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterWorkers struct {
+	value *ClusterWorkers
+	isSet bool
+}
+
+func (v NullableClusterWorkers) Get() *ClusterWorkers {
+	return v.value
+}
+
+func (v *NullableClusterWorkers) Set(val *ClusterWorkers) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterWorkers) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterWorkers) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterWorkers(val *ClusterWorkers) *NullableClusterWorkers {
+	return &NullableClusterWorkers{value: val, isSet: true}
+}
+
+func (v NullableClusterWorkers) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterWorkers) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterWorkers) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

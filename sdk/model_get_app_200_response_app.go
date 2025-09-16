@@ -899,6 +899,43 @@ func (o GetApp200ResponseApp) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetApp200ResponseApp struct {
+	value *GetApp200ResponseApp
+	isSet bool
+}
+
+func (v NullableGetApp200ResponseApp) Get() *GetApp200ResponseApp {
+	return v.value
+}
+
+func (v *NullableGetApp200ResponseApp) Set(val *GetApp200ResponseApp) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetApp200ResponseApp) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetApp200ResponseApp) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetApp200ResponseApp(val *GetApp200ResponseApp) *NullableGetApp200ResponseApp {
+	return &NullableGetApp200ResponseApp{value: val, isSet: true}
+}
+
+func (v NullableGetApp200ResponseApp) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetApp200ResponseApp) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetApp200ResponseApp) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

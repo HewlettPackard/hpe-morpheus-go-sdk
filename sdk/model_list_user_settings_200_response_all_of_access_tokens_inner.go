@@ -276,6 +276,43 @@ func (o ListUserSettings200ResponseAllOfAccessTokensInner) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableListUserSettings200ResponseAllOfAccessTokensInner struct {
+	value *ListUserSettings200ResponseAllOfAccessTokensInner
+	isSet bool
+}
+
+func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) Get() *ListUserSettings200ResponseAllOfAccessTokensInner {
+	return v.value
+}
+
+func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) Set(val *ListUserSettings200ResponseAllOfAccessTokensInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListUserSettings200ResponseAllOfAccessTokensInner(val *ListUserSettings200ResponseAllOfAccessTokensInner) *NullableListUserSettings200ResponseAllOfAccessTokensInner {
+	return &NullableListUserSettings200ResponseAllOfAccessTokensInner{value: val, isSet: true}
+}
+
+func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

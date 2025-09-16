@@ -131,6 +131,43 @@ func (o ListFileTemplates200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListFileTemplates200Response struct {
+	value *ListFileTemplates200Response
+	isSet bool
+}
+
+func (v NullableListFileTemplates200Response) Get() *ListFileTemplates200Response {
+	return v.value
+}
+
+func (v *NullableListFileTemplates200Response) Set(val *ListFileTemplates200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListFileTemplates200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListFileTemplates200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListFileTemplates200Response(val *ListFileTemplates200Response) *NullableListFileTemplates200Response {
+	return &NullableListFileTemplates200Response{value: val, isSet: true}
+}
+
+func (v NullableListFileTemplates200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListFileTemplates200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListFileTemplates200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

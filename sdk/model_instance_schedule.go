@@ -581,6 +581,43 @@ func (o InstanceSchedule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceSchedule struct {
+	value *InstanceSchedule
+	isSet bool
+}
+
+func (v NullableInstanceSchedule) Get() *InstanceSchedule {
+	return v.value
+}
+
+func (v *NullableInstanceSchedule) Set(val *InstanceSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceSchedule(val *InstanceSchedule) *NullableInstanceSchedule {
+	return &NullableInstanceSchedule{value: val, isSet: true}
+}
+
+func (v NullableInstanceSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

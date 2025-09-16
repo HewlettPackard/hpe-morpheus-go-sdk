@@ -430,6 +430,43 @@ func (o FileTemplateUpdate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableFileTemplateUpdate struct {
+	value *FileTemplateUpdate
+	isSet bool
+}
+
+func (v NullableFileTemplateUpdate) Get() *FileTemplateUpdate {
+	return v.value
+}
+
+func (v *NullableFileTemplateUpdate) Set(val *FileTemplateUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFileTemplateUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFileTemplateUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFileTemplateUpdate(val *FileTemplateUpdate) *NullableFileTemplateUpdate {
+	return &NullableFileTemplateUpdate{value: val, isSet: true}
+}
+
+func (v NullableFileTemplateUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFileTemplateUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *FileTemplateUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

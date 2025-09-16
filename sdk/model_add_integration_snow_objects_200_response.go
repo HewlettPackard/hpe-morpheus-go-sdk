@@ -131,6 +131,43 @@ func (o AddIntegrationSnowObjects200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddIntegrationSnowObjects200Response struct {
+	value *AddIntegrationSnowObjects200Response
+	isSet bool
+}
+
+func (v NullableAddIntegrationSnowObjects200Response) Get() *AddIntegrationSnowObjects200Response {
+	return v.value
+}
+
+func (v *NullableAddIntegrationSnowObjects200Response) Set(val *AddIntegrationSnowObjects200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIntegrationSnowObjects200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIntegrationSnowObjects200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIntegrationSnowObjects200Response(val *AddIntegrationSnowObjects200Response) *NullableAddIntegrationSnowObjects200Response {
+	return &NullableAddIntegrationSnowObjects200Response{value: val, isSet: true}
+}
+
+func (v NullableAddIntegrationSnowObjects200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIntegrationSnowObjects200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIntegrationSnowObjects200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

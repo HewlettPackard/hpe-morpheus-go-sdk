@@ -144,6 +144,43 @@ func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterRequestClusterServerConfig struct {
+	value *AddClusterRequestClusterServerConfig
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerConfig) Get() *AddClusterRequestClusterServerConfig {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerConfig) Set(val *AddClusterRequestClusterServerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerConfig(val *AddClusterRequestClusterServerConfig) *NullableAddClusterRequestClusterServerConfig {
+	return &NullableAddClusterRequestClusterServerConfig{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterRequestClusterServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

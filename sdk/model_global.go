@@ -100,6 +100,43 @@ func (o Global) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGlobal struct {
+	value *Global
+	isSet bool
+}
+
+func (v NullableGlobal) Get() *Global {
+	return v.value
+}
+
+func (v *NullableGlobal) Set(val *Global) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGlobal) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGlobal) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGlobal(val *Global) *NullableGlobal {
+	return &NullableGlobal{value: val, isSet: true}
+}
+
+func (v NullableGlobal) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGlobal) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Global) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -962,6 +962,43 @@ func (o NetworkRouterNat) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRouterNat struct {
+	value *NetworkRouterNat
+	isSet bool
+}
+
+func (v NullableNetworkRouterNat) Get() *NetworkRouterNat {
+	return v.value
+}
+
+func (v *NullableNetworkRouterNat) Set(val *NetworkRouterNat) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterNat) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterNat) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterNat(val *NetworkRouterNat) *NullableNetworkRouterNat {
+	return &NullableNetworkRouterNat{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterNat) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterNat) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRouterNat) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

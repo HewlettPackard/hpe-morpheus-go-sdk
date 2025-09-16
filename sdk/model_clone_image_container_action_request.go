@@ -137,6 +137,43 @@ func (o CloneImageContainerActionRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableCloneImageContainerActionRequest struct {
+	value *CloneImageContainerActionRequest
+	isSet bool
+}
+
+func (v NullableCloneImageContainerActionRequest) Get() *CloneImageContainerActionRequest {
+	return v.value
+}
+
+func (v *NullableCloneImageContainerActionRequest) Set(val *CloneImageContainerActionRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCloneImageContainerActionRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCloneImageContainerActionRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCloneImageContainerActionRequest(val *CloneImageContainerActionRequest) *NullableCloneImageContainerActionRequest {
+	return &NullableCloneImageContainerActionRequest{value: val, isSet: true}
+}
+
+func (v NullableCloneImageContainerActionRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCloneImageContainerActionRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CloneImageContainerActionRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

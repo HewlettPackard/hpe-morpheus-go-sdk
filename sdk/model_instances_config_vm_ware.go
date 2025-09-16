@@ -337,6 +337,43 @@ func (o InstancesConfigVMWare) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstancesConfigVMWare struct {
+	value *InstancesConfigVMWare
+	isSet bool
+}
+
+func (v NullableInstancesConfigVMWare) Get() *InstancesConfigVMWare {
+	return v.value
+}
+
+func (v *NullableInstancesConfigVMWare) Set(val *InstancesConfigVMWare) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstancesConfigVMWare) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstancesConfigVMWare) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstancesConfigVMWare(val *InstancesConfigVMWare) *NullableInstancesConfigVMWare {
+	return &NullableInstancesConfigVMWare{value: val, isSet: true}
+}
+
+func (v NullableInstancesConfigVMWare) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstancesConfigVMWare) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstancesConfigVMWare) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

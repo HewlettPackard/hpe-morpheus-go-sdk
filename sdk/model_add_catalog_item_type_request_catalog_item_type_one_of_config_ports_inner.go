@@ -181,6 +181,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) ToMap() (
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o DelayedDeletePolicyTypeConfiguration) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableDelayedDeletePolicyTypeConfiguration struct {
+	value *DelayedDeletePolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableDelayedDeletePolicyTypeConfiguration) Get() *DelayedDeletePolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableDelayedDeletePolicyTypeConfiguration) Set(val *DelayedDeletePolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDelayedDeletePolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDelayedDeletePolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDelayedDeletePolicyTypeConfiguration(val *DelayedDeletePolicyTypeConfiguration) *NullableDelayedDeletePolicyTypeConfiguration {
+	return &NullableDelayedDeletePolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableDelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDelayedDeletePolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DelayedDeletePolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

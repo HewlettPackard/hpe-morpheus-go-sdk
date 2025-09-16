@@ -95,6 +95,43 @@ func (o ResizeInstanceRequestInstancePlan) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableResizeInstanceRequestInstancePlan struct {
+	value *ResizeInstanceRequestInstancePlan
+	isSet bool
+}
+
+func (v NullableResizeInstanceRequestInstancePlan) Get() *ResizeInstanceRequestInstancePlan {
+	return v.value
+}
+
+func (v *NullableResizeInstanceRequestInstancePlan) Set(val *ResizeInstanceRequestInstancePlan) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableResizeInstanceRequestInstancePlan) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableResizeInstanceRequestInstancePlan) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableResizeInstanceRequestInstancePlan(val *ResizeInstanceRequestInstancePlan) *NullableResizeInstanceRequestInstancePlan {
+	return &NullableResizeInstanceRequestInstancePlan{value: val, isSet: true}
+}
+
+func (v NullableResizeInstanceRequestInstancePlan) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableResizeInstanceRequestInstancePlan) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ResizeInstanceRequestInstancePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

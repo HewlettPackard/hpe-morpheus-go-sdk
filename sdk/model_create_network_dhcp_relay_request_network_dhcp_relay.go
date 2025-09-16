@@ -131,6 +131,43 @@ func (o CreateNetworkDhcpRelayRequestNetworkDhcpRelay) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay struct {
+	value *CreateNetworkDhcpRelayRequestNetworkDhcpRelay
+	isSet bool
+}
+
+func (v NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) Get() *CreateNetworkDhcpRelayRequestNetworkDhcpRelay {
+	return v.value
+}
+
+func (v *NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) Set(val *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay(val *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) *NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay {
+	return &NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

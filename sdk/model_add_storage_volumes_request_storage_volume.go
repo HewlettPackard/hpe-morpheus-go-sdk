@@ -215,6 +215,43 @@ func (o AddStorageVolumesRequestStorageVolume) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableAddStorageVolumesRequestStorageVolume struct {
+	value *AddStorageVolumesRequestStorageVolume
+	isSet bool
+}
+
+func (v NullableAddStorageVolumesRequestStorageVolume) Get() *AddStorageVolumesRequestStorageVolume {
+	return v.value
+}
+
+func (v *NullableAddStorageVolumesRequestStorageVolume) Set(val *AddStorageVolumesRequestStorageVolume) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddStorageVolumesRequestStorageVolume) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddStorageVolumesRequestStorageVolume) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddStorageVolumesRequestStorageVolume(val *AddStorageVolumesRequestStorageVolume) *NullableAddStorageVolumesRequestStorageVolume {
+	return &NullableAddStorageVolumesRequestStorageVolume{value: val, isSet: true}
+}
+
+func (v NullableAddStorageVolumesRequestStorageVolume) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddStorageVolumesRequestStorageVolume) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

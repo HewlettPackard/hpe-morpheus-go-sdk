@@ -167,6 +167,43 @@ func (o UpdateClusterDatastoreRequestDatastorePermissions) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableUpdateClusterDatastoreRequestDatastorePermissions struct {
+	value *UpdateClusterDatastoreRequestDatastorePermissions
+	isSet bool
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissions) Get() *UpdateClusterDatastoreRequestDatastorePermissions {
+	return v.value
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissions) Set(val *UpdateClusterDatastoreRequestDatastorePermissions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateClusterDatastoreRequestDatastorePermissions(val *UpdateClusterDatastoreRequestDatastorePermissions) *NullableUpdateClusterDatastoreRequestDatastorePermissions {
+	return &NullableUpdateClusterDatastoreRequestDatastorePermissions{value: val, isSet: true}
+}
+
+func (v NullableUpdateClusterDatastoreRequestDatastorePermissions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateClusterDatastoreRequestDatastorePermissions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateClusterDatastoreRequestDatastorePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

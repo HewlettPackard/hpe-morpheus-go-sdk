@@ -550,6 +550,43 @@ func (o ClusterStatefulSets) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterStatefulSets struct {
+	value *ClusterStatefulSets
+	isSet bool
+}
+
+func (v NullableClusterStatefulSets) Get() *ClusterStatefulSets {
+	return v.value
+}
+
+func (v *NullableClusterStatefulSets) Set(val *ClusterStatefulSets) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterStatefulSets) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterStatefulSets) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterStatefulSets(val *ClusterStatefulSets) *NullableClusterStatefulSets {
+	return &NullableClusterStatefulSets{value: val, isSet: true}
+}
+
+func (v NullableClusterStatefulSets) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterStatefulSets) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterStatefulSets) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

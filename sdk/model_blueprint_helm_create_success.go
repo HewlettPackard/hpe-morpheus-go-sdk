@@ -358,6 +358,43 @@ func (o BlueprintHelmCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableBlueprintHelmCreateSuccess struct {
+	value *BlueprintHelmCreateSuccess
+	isSet bool
+}
+
+func (v NullableBlueprintHelmCreateSuccess) Get() *BlueprintHelmCreateSuccess {
+	return v.value
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) Set(val *BlueprintHelmCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableBlueprintHelmCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableBlueprintHelmCreateSuccess(val *BlueprintHelmCreateSuccess) *NullableBlueprintHelmCreateSuccess {
+	return &NullableBlueprintHelmCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableBlueprintHelmCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableBlueprintHelmCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *BlueprintHelmCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

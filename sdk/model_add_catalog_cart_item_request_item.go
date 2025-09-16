@@ -243,6 +243,43 @@ func (o AddCatalogCartItemRequestItem) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogCartItemRequestItem struct {
+	value *AddCatalogCartItemRequestItem
+	isSet bool
+}
+
+func (v NullableAddCatalogCartItemRequestItem) Get() *AddCatalogCartItemRequestItem {
+	return v.value
+}
+
+func (v *NullableAddCatalogCartItemRequestItem) Set(val *AddCatalogCartItemRequestItem) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogCartItemRequestItem) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogCartItemRequestItem) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogCartItemRequestItem(val *AddCatalogCartItemRequestItem) *NullableAddCatalogCartItemRequestItem {
+	return &NullableAddCatalogCartItemRequestItem{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogCartItemRequestItem) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogCartItemRequestItem) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogCartItemRequestItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

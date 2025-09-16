@@ -133,6 +133,43 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
+	value *SaveClusterDatastoreRequestDatastoreConfigAnyOf
+	isSet bool
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Get() *SaveClusterDatastoreRequestDatastoreConfigAnyOf {
+	return v.value
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Set(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveClusterDatastoreRequestDatastoreConfigAnyOf(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf {
+	return &NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf{value: val, isSet: true}
+}
+
+func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

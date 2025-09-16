@@ -207,6 +207,43 @@ func (o AddIdentitySourcesRequestUserSourceConfigOneOf7) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableAddIdentitySourcesRequestUserSourceConfigOneOf7 struct {
+	value *AddIdentitySourcesRequestUserSourceConfigOneOf7
+	isSet bool
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Get() *AddIdentitySourcesRequestUserSourceConfigOneOf7 {
+	return v.value
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Set(val *AddIdentitySourcesRequestUserSourceConfigOneOf7) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddIdentitySourcesRequestUserSourceConfigOneOf7(val *AddIdentitySourcesRequestUserSourceConfigOneOf7) *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7 {
+	return &NullableAddIdentitySourcesRequestUserSourceConfigOneOf7{value: val, isSet: true}
+}
+
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf7) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -992,6 +992,43 @@ func (o SaveCloudDatastore200ResponseAllOfDatastore) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableSaveCloudDatastore200ResponseAllOfDatastore struct {
+	value *SaveCloudDatastore200ResponseAllOfDatastore
+	isSet bool
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) Get() *SaveCloudDatastore200ResponseAllOfDatastore {
+	return v.value
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Set(val *SaveCloudDatastore200ResponseAllOfDatastore) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSaveCloudDatastore200ResponseAllOfDatastore(val *SaveCloudDatastore200ResponseAllOfDatastore) *NullableSaveCloudDatastore200ResponseAllOfDatastore {
+	return &NullableSaveCloudDatastore200ResponseAllOfDatastore{value: val, isSet: true}
+}
+
+func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

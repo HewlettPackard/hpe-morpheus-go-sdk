@@ -171,6 +171,43 @@ func (o AddBlueprintRequestOneOf2HelmGit) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableAddBlueprintRequestOneOf2HelmGit struct {
+	value *AddBlueprintRequestOneOf2HelmGit
+	isSet bool
+}
+
+func (v NullableAddBlueprintRequestOneOf2HelmGit) Get() *AddBlueprintRequestOneOf2HelmGit {
+	return v.value
+}
+
+func (v *NullableAddBlueprintRequestOneOf2HelmGit) Set(val *AddBlueprintRequestOneOf2HelmGit) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddBlueprintRequestOneOf2HelmGit) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddBlueprintRequestOneOf2HelmGit) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddBlueprintRequestOneOf2HelmGit(val *AddBlueprintRequestOneOf2HelmGit) *NullableAddBlueprintRequestOneOf2HelmGit {
+	return &NullableAddBlueprintRequestOneOf2HelmGit{value: val, isSet: true}
+}
+
+func (v NullableAddBlueprintRequestOneOf2HelmGit) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddBlueprintRequestOneOf2HelmGit) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddBlueprintRequestOneOf2HelmGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -214,6 +214,43 @@ func (o CatalogOrderCreateSuccess) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCatalogOrderCreateSuccess struct {
+	value *CatalogOrderCreateSuccess
+	isSet bool
+}
+
+func (v NullableCatalogOrderCreateSuccess) Get() *CatalogOrderCreateSuccess {
+	return v.value
+}
+
+func (v *NullableCatalogOrderCreateSuccess) Set(val *CatalogOrderCreateSuccess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogOrderCreateSuccess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogOrderCreateSuccess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogOrderCreateSuccess(val *CatalogOrderCreateSuccess) *NullableCatalogOrderCreateSuccess {
+	return &NullableCatalogOrderCreateSuccess{value: val, isSet: true}
+}
+
+func (v NullableCatalogOrderCreateSuccess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogOrderCreateSuccess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogOrderCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

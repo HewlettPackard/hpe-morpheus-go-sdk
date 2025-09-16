@@ -614,6 +614,43 @@ func (o GetClusterApiConfig200Response) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterApiConfig200Response struct {
+	value *GetClusterApiConfig200Response
+	isSet bool
+}
+
+func (v NullableGetClusterApiConfig200Response) Get() *GetClusterApiConfig200Response {
+	return v.value
+}
+
+func (v *NullableGetClusterApiConfig200Response) Set(val *GetClusterApiConfig200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterApiConfig200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterApiConfig200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterApiConfig200Response(val *GetClusterApiConfig200Response) *NullableGetClusterApiConfig200Response {
+	return &NullableGetClusterApiConfig200Response{value: val, isSet: true}
+}
+
+func (v NullableGetClusterApiConfig200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterApiConfig200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterApiConfig200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

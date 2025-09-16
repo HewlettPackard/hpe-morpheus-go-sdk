@@ -132,6 +132,43 @@ func (o NetworkRouterPermissionsUpdate) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableNetworkRouterPermissionsUpdate struct {
+	value *NetworkRouterPermissionsUpdate
+	isSet bool
+}
+
+func (v NullableNetworkRouterPermissionsUpdate) Get() *NetworkRouterPermissionsUpdate {
+	return v.value
+}
+
+func (v *NullableNetworkRouterPermissionsUpdate) Set(val *NetworkRouterPermissionsUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkRouterPermissionsUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkRouterPermissionsUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkRouterPermissionsUpdate(val *NetworkRouterPermissionsUpdate) *NullableNetworkRouterPermissionsUpdate {
+	return &NullableNetworkRouterPermissionsUpdate{value: val, isSet: true}
+}
+
+func (v NullableNetworkRouterPermissionsUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkRouterPermissionsUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkRouterPermissionsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -96,6 +96,43 @@ func (o ManageHostPlacementRequestServerPreferredParentServer) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableManageHostPlacementRequestServerPreferredParentServer struct {
+	value *ManageHostPlacementRequestServerPreferredParentServer
+	isSet bool
+}
+
+func (v NullableManageHostPlacementRequestServerPreferredParentServer) Get() *ManageHostPlacementRequestServerPreferredParentServer {
+	return v.value
+}
+
+func (v *NullableManageHostPlacementRequestServerPreferredParentServer) Set(val *ManageHostPlacementRequestServerPreferredParentServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableManageHostPlacementRequestServerPreferredParentServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableManageHostPlacementRequestServerPreferredParentServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableManageHostPlacementRequestServerPreferredParentServer(val *ManageHostPlacementRequestServerPreferredParentServer) *NullableManageHostPlacementRequestServerPreferredParentServer {
+	return &NullableManageHostPlacementRequestServerPreferredParentServer{value: val, isSet: true}
+}
+
+func (v NullableManageHostPlacementRequestServerPreferredParentServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableManageHostPlacementRequestServerPreferredParentServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ManageHostPlacementRequestServerPreferredParentServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

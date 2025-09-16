@@ -214,6 +214,43 @@ func (o ListInstances200ResponseAllOfInstancesInnerInstancePrice) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableListInstances200ResponseAllOfInstancesInnerInstancePrice struct {
+	value *ListInstances200ResponseAllOfInstancesInnerInstancePrice
+	isSet bool
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Get() *ListInstances200ResponseAllOfInstancesInnerInstancePrice {
+	return v.value
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Set(val *ListInstances200ResponseAllOfInstancesInnerInstancePrice) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListInstances200ResponseAllOfInstancesInnerInstancePrice(val *ListInstances200ResponseAllOfInstancesInnerInstancePrice) *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice {
+	return &NullableListInstances200ResponseAllOfInstancesInnerInstancePrice{value: val, isSet: true}
+}
+
+func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

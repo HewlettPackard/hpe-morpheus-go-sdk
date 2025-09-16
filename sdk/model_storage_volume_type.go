@@ -575,6 +575,43 @@ func (o StorageVolumeType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableStorageVolumeType struct {
+	value *StorageVolumeType
+	isSet bool
+}
+
+func (v NullableStorageVolumeType) Get() *StorageVolumeType {
+	return v.value
+}
+
+func (v *NullableStorageVolumeType) Set(val *StorageVolumeType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableStorageVolumeType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableStorageVolumeType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableStorageVolumeType(val *StorageVolumeType) *NullableStorageVolumeType {
+	return &NullableStorageVolumeType{value: val, isSet: true}
+}
+
+func (v NullableStorageVolumeType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableStorageVolumeType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *StorageVolumeType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

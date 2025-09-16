@@ -86,6 +86,43 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan struct {
+	value *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan
+	isSet bool
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) Get() *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan {
+	return v.value
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) Set(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan(val *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan {
+	return &NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

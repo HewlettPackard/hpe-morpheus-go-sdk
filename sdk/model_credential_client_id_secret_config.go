@@ -285,6 +285,43 @@ func (o CredentialClientIDSecretConfig) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableCredentialClientIDSecretConfig struct {
+	value *CredentialClientIDSecretConfig
+	isSet bool
+}
+
+func (v NullableCredentialClientIDSecretConfig) Get() *CredentialClientIDSecretConfig {
+	return v.value
+}
+
+func (v *NullableCredentialClientIDSecretConfig) Set(val *CredentialClientIDSecretConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCredentialClientIDSecretConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCredentialClientIDSecretConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCredentialClientIDSecretConfig(val *CredentialClientIDSecretConfig) *NullableCredentialClientIDSecretConfig {
+	return &NullableCredentialClientIDSecretConfig{value: val, isSet: true}
+}
+
+func (v NullableCredentialClientIDSecretConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCredentialClientIDSecretConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CredentialClientIDSecretConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

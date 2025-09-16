@@ -135,6 +135,43 @@ func (o AddCloudsRequestZoneCredential) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableAddCloudsRequestZoneCredential struct {
+	value *AddCloudsRequestZoneCredential
+	isSet bool
+}
+
+func (v NullableAddCloudsRequestZoneCredential) Get() *AddCloudsRequestZoneCredential {
+	return v.value
+}
+
+func (v *NullableAddCloudsRequestZoneCredential) Set(val *AddCloudsRequestZoneCredential) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCloudsRequestZoneCredential) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCloudsRequestZoneCredential) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCloudsRequestZoneCredential(val *AddCloudsRequestZoneCredential) *NullableAddCloudsRequestZoneCredential {
+	return &NullableAddCloudsRequestZoneCredential{value: val, isSet: true}
+}
+
+func (v NullableAddCloudsRequestZoneCredential) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCloudsRequestZoneCredential) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCloudsRequestZoneCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

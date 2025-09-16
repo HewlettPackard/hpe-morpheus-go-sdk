@@ -115,6 +115,43 @@ func (o DefaultVDIPoolPermission) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableDefaultVDIPoolPermission struct {
+	value *DefaultVDIPoolPermission
+	isSet bool
+}
+
+func (v NullableDefaultVDIPoolPermission) Get() *DefaultVDIPoolPermission {
+	return v.value
+}
+
+func (v *NullableDefaultVDIPoolPermission) Set(val *DefaultVDIPoolPermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableDefaultVDIPoolPermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableDefaultVDIPoolPermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableDefaultVDIPoolPermission(val *DefaultVDIPoolPermission) *NullableDefaultVDIPoolPermission {
+	return &NullableDefaultVDIPoolPermission{value: val, isSet: true}
+}
+
+func (v NullableDefaultVDIPoolPermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableDefaultVDIPoolPermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *DefaultVDIPoolPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

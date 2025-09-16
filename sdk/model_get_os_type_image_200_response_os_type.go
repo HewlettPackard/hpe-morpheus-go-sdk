@@ -361,6 +361,43 @@ func (o GetOsTypeImage200ResponseOsType) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableGetOsTypeImage200ResponseOsType struct {
+	value *GetOsTypeImage200ResponseOsType
+	isSet bool
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) Get() *GetOsTypeImage200ResponseOsType {
+	return v.value
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) Set(val *GetOsTypeImage200ResponseOsType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetOsTypeImage200ResponseOsType(val *GetOsTypeImage200ResponseOsType) *NullableGetOsTypeImage200ResponseOsType {
+	return &NullableGetOsTypeImage200ResponseOsType{value: val, isSet: true}
+}
+
+func (v NullableGetOsTypeImage200ResponseOsType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetOsTypeImage200ResponseOsType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetOsTypeImage200ResponseOsType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

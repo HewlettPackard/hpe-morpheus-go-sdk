@@ -185,6 +185,43 @@ func (o AddKeyPairsRequestKeyPair) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddKeyPairsRequestKeyPair struct {
+	value *AddKeyPairsRequestKeyPair
+	isSet bool
+}
+
+func (v NullableAddKeyPairsRequestKeyPair) Get() *AddKeyPairsRequestKeyPair {
+	return v.value
+}
+
+func (v *NullableAddKeyPairsRequestKeyPair) Set(val *AddKeyPairsRequestKeyPair) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddKeyPairsRequestKeyPair) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddKeyPairsRequestKeyPair) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddKeyPairsRequestKeyPair(val *AddKeyPairsRequestKeyPair) *NullableAddKeyPairsRequestKeyPair {
+	return &NullableAddKeyPairsRequestKeyPair{value: val, isSet: true}
+}
+
+func (v NullableAddKeyPairsRequestKeyPair) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddKeyPairsRequestKeyPair) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddKeyPairsRequestKeyPair) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

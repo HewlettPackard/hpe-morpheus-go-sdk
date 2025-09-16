@@ -131,6 +131,43 @@ func (o ListVirtualImages200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListVirtualImages200Response struct {
+	value *ListVirtualImages200Response
+	isSet bool
+}
+
+func (v NullableListVirtualImages200Response) Get() *ListVirtualImages200Response {
+	return v.value
+}
+
+func (v *NullableListVirtualImages200Response) Set(val *ListVirtualImages200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVirtualImages200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVirtualImages200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVirtualImages200Response(val *ListVirtualImages200Response) *NullableListVirtualImages200Response {
+	return &NullableListVirtualImages200Response{value: val, isSet: true}
+}
+
+func (v NullableListVirtualImages200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVirtualImages200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListVirtualImages200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

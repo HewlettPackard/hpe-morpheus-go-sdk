@@ -95,6 +95,43 @@ func (o ExecutionId) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableExecutionId struct {
+	value *ExecutionId
+	isSet bool
+}
+
+func (v NullableExecutionId) Get() *ExecutionId {
+	return v.value
+}
+
+func (v *NullableExecutionId) Set(val *ExecutionId) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableExecutionId) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableExecutionId) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableExecutionId(val *ExecutionId) *NullableExecutionId {
+	return &NullableExecutionId{value: val, isSet: true}
+}
+
+func (v NullableExecutionId) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableExecutionId) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ExecutionId) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

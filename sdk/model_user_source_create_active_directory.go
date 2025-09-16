@@ -322,6 +322,43 @@ func (o UserSourceCreateActiveDirectory) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateActiveDirectory struct {
+	value *UserSourceCreateActiveDirectory
+	isSet bool
+}
+
+func (v NullableUserSourceCreateActiveDirectory) Get() *UserSourceCreateActiveDirectory {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateActiveDirectory) Set(val *UserSourceCreateActiveDirectory) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateActiveDirectory) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateActiveDirectory) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateActiveDirectory(val *UserSourceCreateActiveDirectory) *NullableUserSourceCreateActiveDirectory {
+	return &NullableUserSourceCreateActiveDirectory{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateActiveDirectory) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateActiveDirectory) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateActiveDirectory) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

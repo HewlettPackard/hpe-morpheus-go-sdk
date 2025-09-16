@@ -96,6 +96,43 @@ func (o InstancesConfigCustomOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstancesConfigCustomOptions struct {
+	value *InstancesConfigCustomOptions
+	isSet bool
+}
+
+func (v NullableInstancesConfigCustomOptions) Get() *InstancesConfigCustomOptions {
+	return v.value
+}
+
+func (v *NullableInstancesConfigCustomOptions) Set(val *InstancesConfigCustomOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstancesConfigCustomOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstancesConfigCustomOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstancesConfigCustomOptions(val *InstancesConfigCustomOptions) *NullableInstancesConfigCustomOptions {
+	return &NullableInstancesConfigCustomOptions{value: val, isSet: true}
+}
+
+func (v NullableInstancesConfigCustomOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstancesConfigCustomOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstancesConfigCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

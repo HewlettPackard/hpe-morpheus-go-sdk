@@ -131,6 +131,43 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner)
 
 	return toSerialize, nil
 }
+
+type NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner struct {
+	value *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner
+	isSet bool
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) Get() *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner {
+	return v.value
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) Set(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner(val *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner {
+	return &NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner{value: val, isSet: true}
+}
+
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2ConfigZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

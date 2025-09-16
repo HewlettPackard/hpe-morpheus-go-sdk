@@ -740,6 +740,43 @@ func (o CatalogItemTypeBlueprintUpdate) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableCatalogItemTypeBlueprintUpdate struct {
+	value *CatalogItemTypeBlueprintUpdate
+	isSet bool
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) Get() *CatalogItemTypeBlueprintUpdate {
+	return v.value
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) Set(val *CatalogItemTypeBlueprintUpdate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCatalogItemTypeBlueprintUpdate(val *CatalogItemTypeBlueprintUpdate) *NullableCatalogItemTypeBlueprintUpdate {
+	return &NullableCatalogItemTypeBlueprintUpdate{value: val, isSet: true}
+}
+
+func (v NullableCatalogItemTypeBlueprintUpdate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCatalogItemTypeBlueprintUpdate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CatalogItemTypeBlueprintUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

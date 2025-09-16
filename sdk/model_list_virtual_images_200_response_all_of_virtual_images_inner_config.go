@@ -95,6 +95,43 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) ToMap() (map[
 
 	return toSerialize, nil
 }
+
+type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
+	value *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
+	isSet bool
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Get() *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
+	return v.value
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Set(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(val *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
+	return &NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{value: val, isSet: true}
+}
+
+func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

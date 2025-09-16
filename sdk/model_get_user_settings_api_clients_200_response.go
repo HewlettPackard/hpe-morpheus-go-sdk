@@ -95,6 +95,43 @@ func (o GetUserSettingsApiClients200Response) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableGetUserSettingsApiClients200Response struct {
+	value *GetUserSettingsApiClients200Response
+	isSet bool
+}
+
+func (v NullableGetUserSettingsApiClients200Response) Get() *GetUserSettingsApiClients200Response {
+	return v.value
+}
+
+func (v *NullableGetUserSettingsApiClients200Response) Set(val *GetUserSettingsApiClients200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetUserSettingsApiClients200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetUserSettingsApiClients200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetUserSettingsApiClients200Response(val *GetUserSettingsApiClients200Response) *NullableGetUserSettingsApiClients200Response {
+	return &NullableGetUserSettingsApiClients200Response{value: val, isSet: true}
+}
+
+func (v NullableGetUserSettingsApiClients200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetUserSettingsApiClients200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetUserSettingsApiClients200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

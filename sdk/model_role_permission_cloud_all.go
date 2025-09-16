@@ -115,6 +115,43 @@ func (o RolePermissionCloudAll) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRolePermissionCloudAll struct {
+	value *RolePermissionCloudAll
+	isSet bool
+}
+
+func (v NullableRolePermissionCloudAll) Get() *RolePermissionCloudAll {
+	return v.value
+}
+
+func (v *NullableRolePermissionCloudAll) Set(val *RolePermissionCloudAll) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRolePermissionCloudAll) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRolePermissionCloudAll) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRolePermissionCloudAll(val *RolePermissionCloudAll) *NullableRolePermissionCloudAll {
+	return &NullableRolePermissionCloudAll{value: val, isSet: true}
+}
+
+func (v NullableRolePermissionCloudAll) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRolePermissionCloudAll) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RolePermissionCloudAll) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

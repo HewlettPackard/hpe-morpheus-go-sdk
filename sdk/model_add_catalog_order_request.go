@@ -95,6 +95,43 @@ func (o AddCatalogOrderRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddCatalogOrderRequest struct {
+	value *AddCatalogOrderRequest
+	isSet bool
+}
+
+func (v NullableAddCatalogOrderRequest) Get() *AddCatalogOrderRequest {
+	return v.value
+}
+
+func (v *NullableAddCatalogOrderRequest) Set(val *AddCatalogOrderRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddCatalogOrderRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddCatalogOrderRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddCatalogOrderRequest(val *AddCatalogOrderRequest) *NullableAddCatalogOrderRequest {
+	return &NullableAddCatalogOrderRequest{value: val, isSet: true}
+}
+
+func (v NullableAddCatalogOrderRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddCatalogOrderRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddCatalogOrderRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -96,6 +96,43 @@ func (o CloneInstanceRequestGroup) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCloneInstanceRequestGroup struct {
+	value *CloneInstanceRequestGroup
+	isSet bool
+}
+
+func (v NullableCloneInstanceRequestGroup) Get() *CloneInstanceRequestGroup {
+	return v.value
+}
+
+func (v *NullableCloneInstanceRequestGroup) Set(val *CloneInstanceRequestGroup) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCloneInstanceRequestGroup) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCloneInstanceRequestGroup) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCloneInstanceRequestGroup(val *CloneInstanceRequestGroup) *NullableCloneInstanceRequestGroup {
+	return &NullableCloneInstanceRequestGroup{value: val, isSet: true}
+}
+
+func (v NullableCloneInstanceRequestGroup) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCloneInstanceRequestGroup) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CloneInstanceRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

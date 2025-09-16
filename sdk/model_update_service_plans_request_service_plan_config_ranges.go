@@ -429,6 +429,43 @@ func (o UpdateServicePlansRequestServicePlanConfigRanges) ToMap() (map[string]in
 
 	return toSerialize, nil
 }
+
+type NullableUpdateServicePlansRequestServicePlanConfigRanges struct {
+	value *UpdateServicePlansRequestServicePlanConfigRanges
+	isSet bool
+}
+
+func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) Get() *UpdateServicePlansRequestServicePlanConfigRanges {
+	return v.value
+}
+
+func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) Set(val *UpdateServicePlansRequestServicePlanConfigRanges) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateServicePlansRequestServicePlanConfigRanges(val *UpdateServicePlansRequestServicePlanConfigRanges) *NullableUpdateServicePlansRequestServicePlanConfigRanges {
+	return &NullableUpdateServicePlansRequestServicePlanConfigRanges{value: val, isSet: true}
+}
+
+func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

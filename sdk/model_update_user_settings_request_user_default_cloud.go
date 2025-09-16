@@ -96,6 +96,43 @@ func (o UpdateUserSettingsRequestUserDefaultCloud) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableUpdateUserSettingsRequestUserDefaultCloud struct {
+	value *UpdateUserSettingsRequestUserDefaultCloud
+	isSet bool
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultCloud) Get() *UpdateUserSettingsRequestUserDefaultCloud {
+	return v.value
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) Set(val *UpdateUserSettingsRequestUserDefaultCloud) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultCloud) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateUserSettingsRequestUserDefaultCloud(val *UpdateUserSettingsRequestUserDefaultCloud) *NullableUpdateUserSettingsRequestUserDefaultCloud {
+	return &NullableUpdateUserSettingsRequestUserDefaultCloud{value: val, isSet: true}
+}
+
+func (v NullableUpdateUserSettingsRequestUserDefaultCloud) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateUserSettingsRequestUserDefaultCloud) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateUserSettingsRequestUserDefaultCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

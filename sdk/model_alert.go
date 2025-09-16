@@ -567,6 +567,43 @@ func (o Alert) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAlert struct {
+	value *Alert
+	isSet bool
+}
+
+func (v NullableAlert) Get() *Alert {
+	return v.value
+}
+
+func (v *NullableAlert) Set(val *Alert) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAlert) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAlert) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAlert(val *Alert) *NullableAlert {
+	return &NullableAlert{value: val, isSet: true}
+}
+
+func (v NullableAlert) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAlert) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Alert) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

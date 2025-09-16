@@ -396,6 +396,43 @@ func (o AzureInstanceConfiguration) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAzureInstanceConfiguration struct {
+	value *AzureInstanceConfiguration
+	isSet bool
+}
+
+func (v NullableAzureInstanceConfiguration) Get() *AzureInstanceConfiguration {
+	return v.value
+}
+
+func (v *NullableAzureInstanceConfiguration) Set(val *AzureInstanceConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAzureInstanceConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAzureInstanceConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAzureInstanceConfiguration(val *AzureInstanceConfiguration) *NullableAzureInstanceConfiguration {
+	return &NullableAzureInstanceConfiguration{value: val, isSet: true}
+}
+
+func (v NullableAzureInstanceConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAzureInstanceConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AzureInstanceConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -371,6 +371,43 @@ func (o CheckWeb) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckWeb struct {
+	value *CheckWeb
+	isSet bool
+}
+
+func (v NullableCheckWeb) Get() *CheckWeb {
+	return v.value
+}
+
+func (v *NullableCheckWeb) Set(val *CheckWeb) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckWeb) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckWeb) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckWeb(val *CheckWeb) *NullableCheckWeb {
+	return &NullableCheckWeb{value: val, isSet: true}
+}
+
+func (v NullableCheckWeb) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckWeb) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckWeb) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

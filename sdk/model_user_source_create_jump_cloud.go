@@ -211,6 +211,43 @@ func (o UserSourceCreateJumpCloud) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUserSourceCreateJumpCloud struct {
+	value *UserSourceCreateJumpCloud
+	isSet bool
+}
+
+func (v NullableUserSourceCreateJumpCloud) Get() *UserSourceCreateJumpCloud {
+	return v.value
+}
+
+func (v *NullableUserSourceCreateJumpCloud) Set(val *UserSourceCreateJumpCloud) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUserSourceCreateJumpCloud) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUserSourceCreateJumpCloud) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUserSourceCreateJumpCloud(val *UserSourceCreateJumpCloud) *NullableUserSourceCreateJumpCloud {
+	return &NullableUserSourceCreateJumpCloud{value: val, isSet: true}
+}
+
+func (v NullableUserSourceCreateJumpCloud) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUserSourceCreateJumpCloud) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UserSourceCreateJumpCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

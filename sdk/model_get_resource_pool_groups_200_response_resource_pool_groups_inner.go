@@ -349,6 +349,43 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner struct {
+	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInner
+	isSet bool
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInner {
+	return v.value
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner {
+	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner{value: val, isSet: true}
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -199,6 +199,43 @@ func (o AddVDIAppsRequestVdiAppOneOf) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAddVDIAppsRequestVdiAppOneOf struct {
+	value *AddVDIAppsRequestVdiAppOneOf
+	isSet bool
+}
+
+func (v NullableAddVDIAppsRequestVdiAppOneOf) Get() *AddVDIAppsRequestVdiAppOneOf {
+	return v.value
+}
+
+func (v *NullableAddVDIAppsRequestVdiAppOneOf) Set(val *AddVDIAppsRequestVdiAppOneOf) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVDIAppsRequestVdiAppOneOf) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVDIAppsRequestVdiAppOneOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVDIAppsRequestVdiAppOneOf(val *AddVDIAppsRequestVdiAppOneOf) *NullableAddVDIAppsRequestVdiAppOneOf {
+	return &NullableAddVDIAppsRequestVdiAppOneOf{value: val, isSet: true}
+}
+
+func (v NullableAddVDIAppsRequestVdiAppOneOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVDIAppsRequestVdiAppOneOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddVDIAppsRequestVdiAppOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

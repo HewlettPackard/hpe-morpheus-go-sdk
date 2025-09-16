@@ -95,6 +95,43 @@ func (o GetNetworkPoolIps410Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetNetworkPoolIps410Response struct {
+	value *GetNetworkPoolIps410Response
+	isSet bool
+}
+
+func (v NullableGetNetworkPoolIps410Response) Get() *GetNetworkPoolIps410Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkPoolIps410Response) Set(val *GetNetworkPoolIps410Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkPoolIps410Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkPoolIps410Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkPoolIps410Response(val *GetNetworkPoolIps410Response) *NullableGetNetworkPoolIps410Response {
+	return &NullableGetNetworkPoolIps410Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkPoolIps410Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkPoolIps410Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetNetworkPoolIps410Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

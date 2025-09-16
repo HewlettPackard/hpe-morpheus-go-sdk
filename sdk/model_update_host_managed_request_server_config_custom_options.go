@@ -95,6 +95,43 @@ func (o UpdateHostManagedRequestServerConfigCustomOptions) ToMap() (map[string]i
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostManagedRequestServerConfigCustomOptions struct {
+	value *UpdateHostManagedRequestServerConfigCustomOptions
+	isSet bool
+}
+
+func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) Get() *UpdateHostManagedRequestServerConfigCustomOptions {
+	return v.value
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) Set(val *UpdateHostManagedRequestServerConfigCustomOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostManagedRequestServerConfigCustomOptions(val *UpdateHostManagedRequestServerConfigCustomOptions) *NullableUpdateHostManagedRequestServerConfigCustomOptions {
+	return &NullableUpdateHostManagedRequestServerConfigCustomOptions{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostManagedRequestServerConfigCustomOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostManagedRequestServerConfigCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

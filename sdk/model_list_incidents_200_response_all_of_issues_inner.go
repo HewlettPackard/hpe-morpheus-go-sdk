@@ -832,6 +832,43 @@ func (o ListIncidents200ResponseAllOfIssuesInner) ToMap() (map[string]interface{
 
 	return toSerialize, nil
 }
+
+type NullableListIncidents200ResponseAllOfIssuesInner struct {
+	value *ListIncidents200ResponseAllOfIssuesInner
+	isSet bool
+}
+
+func (v NullableListIncidents200ResponseAllOfIssuesInner) Get() *ListIncidents200ResponseAllOfIssuesInner {
+	return v.value
+}
+
+func (v *NullableListIncidents200ResponseAllOfIssuesInner) Set(val *ListIncidents200ResponseAllOfIssuesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIncidents200ResponseAllOfIssuesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIncidents200ResponseAllOfIssuesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIncidents200ResponseAllOfIssuesInner(val *ListIncidents200ResponseAllOfIssuesInner) *NullableListIncidents200ResponseAllOfIssuesInner {
+	return &NullableListIncidents200ResponseAllOfIssuesInner{value: val, isSet: true}
+}
+
+func (v NullableListIncidents200ResponseAllOfIssuesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIncidents200ResponseAllOfIssuesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIncidents200ResponseAllOfIssuesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

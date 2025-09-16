@@ -914,6 +914,43 @@ func (o SecurityGroupRule) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSecurityGroupRule struct {
+	value *SecurityGroupRule
+	isSet bool
+}
+
+func (v NullableSecurityGroupRule) Get() *SecurityGroupRule {
+	return v.value
+}
+
+func (v *NullableSecurityGroupRule) Set(val *SecurityGroupRule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSecurityGroupRule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSecurityGroupRule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSecurityGroupRule(val *SecurityGroupRule) *NullableSecurityGroupRule {
+	return &NullableSecurityGroupRule{value: val, isSet: true}
+}
+
+func (v NullableSecurityGroupRule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSecurityGroupRule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *SecurityGroupRule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

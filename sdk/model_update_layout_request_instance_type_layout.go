@@ -662,6 +662,43 @@ func (o UpdateLayoutRequestInstanceTypeLayout) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateLayoutRequestInstanceTypeLayout struct {
+	value *UpdateLayoutRequestInstanceTypeLayout
+	isSet bool
+}
+
+func (v NullableUpdateLayoutRequestInstanceTypeLayout) Get() *UpdateLayoutRequestInstanceTypeLayout {
+	return v.value
+}
+
+func (v *NullableUpdateLayoutRequestInstanceTypeLayout) Set(val *UpdateLayoutRequestInstanceTypeLayout) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateLayoutRequestInstanceTypeLayout) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateLayoutRequestInstanceTypeLayout) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateLayoutRequestInstanceTypeLayout(val *UpdateLayoutRequestInstanceTypeLayout) *NullableUpdateLayoutRequestInstanceTypeLayout {
+	return &NullableUpdateLayoutRequestInstanceTypeLayout{value: val, isSet: true}
+}
+
+func (v NullableUpdateLayoutRequestInstanceTypeLayout) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

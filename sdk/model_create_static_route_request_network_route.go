@@ -115,6 +115,43 @@ func (o CreateStaticRouteRequestNetworkRoute) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableCreateStaticRouteRequestNetworkRoute struct {
+	value *CreateStaticRouteRequestNetworkRoute
+	isSet bool
+}
+
+func (v NullableCreateStaticRouteRequestNetworkRoute) Get() *CreateStaticRouteRequestNetworkRoute {
+	return v.value
+}
+
+func (v *NullableCreateStaticRouteRequestNetworkRoute) Set(val *CreateStaticRouteRequestNetworkRoute) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateStaticRouteRequestNetworkRoute) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateStaticRouteRequestNetworkRoute) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateStaticRouteRequestNetworkRoute(val *CreateStaticRouteRequestNetworkRoute) *NullableCreateStaticRouteRequestNetworkRoute {
+	return &NullableCreateStaticRouteRequestNetworkRoute{value: val, isSet: true}
+}
+
+func (v NullableCreateStaticRouteRequestNetworkRoute) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateStaticRouteRequestNetworkRoute) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateStaticRouteRequestNetworkRoute) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -95,6 +95,43 @@ func (o UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) ToMa
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner struct {
+	value *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
+	isSet bool
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Get() *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner {
+	return v.value
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Set(val *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner(val *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner {
+	return &NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

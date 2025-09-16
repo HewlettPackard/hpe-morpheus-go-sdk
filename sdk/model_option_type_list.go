@@ -809,6 +809,43 @@ func (o OptionTypeList) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableOptionTypeList struct {
+	value *OptionTypeList
+	isSet bool
+}
+
+func (v NullableOptionTypeList) Get() *OptionTypeList {
+	return v.value
+}
+
+func (v *NullableOptionTypeList) Set(val *OptionTypeList) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableOptionTypeList) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableOptionTypeList) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableOptionTypeList(val *OptionTypeList) *NullableOptionTypeList {
+	return &NullableOptionTypeList{value: val, isSet: true}
+}
+
+func (v NullableOptionTypeList) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableOptionTypeList) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *OptionTypeList) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

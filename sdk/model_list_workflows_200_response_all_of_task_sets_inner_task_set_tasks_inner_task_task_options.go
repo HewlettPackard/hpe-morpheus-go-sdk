@@ -482,6 +482,43 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptio
 
 	return toSerialize, nil
 }
+
+type NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions struct {
+	value *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions
+	isSet bool
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Get() *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions {
+	return v.value
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Set(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions(val *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions {
+	return &NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions{value: val, isSet: true}
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

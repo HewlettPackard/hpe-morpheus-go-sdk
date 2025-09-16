@@ -489,6 +489,43 @@ func (o CheckWebConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckWebConfig struct {
+	value *CheckWebConfig
+	isSet bool
+}
+
+func (v NullableCheckWebConfig) Get() *CheckWebConfig {
+	return v.value
+}
+
+func (v *NullableCheckWebConfig) Set(val *CheckWebConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckWebConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckWebConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckWebConfig(val *CheckWebConfig) *NullableCheckWebConfig {
+	return &NullableCheckWebConfig{value: val, isSet: true}
+}
+
+func (v NullableCheckWebConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckWebConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckWebConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

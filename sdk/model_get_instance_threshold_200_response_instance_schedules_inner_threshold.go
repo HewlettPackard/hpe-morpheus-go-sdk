@@ -625,6 +625,43 @@ func (o GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) ToMap() 
 
 	return toSerialize, nil
 }
+
+type NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold struct {
+	value *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold
+	isSet bool
+}
+
+func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Get() *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold {
+	return v.value
+}
+
+func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Set(val *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold(val *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold {
+	return &NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold{value: val, isSet: true}
+}
+
+func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInnerThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

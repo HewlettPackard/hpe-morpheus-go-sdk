@@ -607,6 +607,43 @@ func (o ListProvisioningSettings200ResponseProvisioningSettings) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableListProvisioningSettings200ResponseProvisioningSettings struct {
+	value *ListProvisioningSettings200ResponseProvisioningSettings
+	isSet bool
+}
+
+func (v NullableListProvisioningSettings200ResponseProvisioningSettings) Get() *ListProvisioningSettings200ResponseProvisioningSettings {
+	return v.value
+}
+
+func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) Set(val *ListProvisioningSettings200ResponseProvisioningSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListProvisioningSettings200ResponseProvisioningSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListProvisioningSettings200ResponseProvisioningSettings(val *ListProvisioningSettings200ResponseProvisioningSettings) *NullableListProvisioningSettings200ResponseProvisioningSettings {
+	return &NullableListProvisioningSettings200ResponseProvisioningSettings{value: val, isSet: true}
+}
+
+func (v NullableListProvisioningSettings200ResponseProvisioningSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

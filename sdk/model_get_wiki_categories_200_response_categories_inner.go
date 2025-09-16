@@ -131,6 +131,43 @@ func (o GetWikiCategories200ResponseCategoriesInner) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableGetWikiCategories200ResponseCategoriesInner struct {
+	value *GetWikiCategories200ResponseCategoriesInner
+	isSet bool
+}
+
+func (v NullableGetWikiCategories200ResponseCategoriesInner) Get() *GetWikiCategories200ResponseCategoriesInner {
+	return v.value
+}
+
+func (v *NullableGetWikiCategories200ResponseCategoriesInner) Set(val *GetWikiCategories200ResponseCategoriesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetWikiCategories200ResponseCategoriesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetWikiCategories200ResponseCategoriesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetWikiCategories200ResponseCategoriesInner(val *GetWikiCategories200ResponseCategoriesInner) *NullableGetWikiCategories200ResponseCategoriesInner {
+	return &NullableGetWikiCategories200ResponseCategoriesInner{value: val, isSet: true}
+}
+
+func (v NullableGetWikiCategories200ResponseCategoriesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

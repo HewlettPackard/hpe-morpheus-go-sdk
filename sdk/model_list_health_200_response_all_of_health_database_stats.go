@@ -17879,6 +17879,43 @@ func (o ListHealth200ResponseAllOfHealthDatabaseStats) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableListHealth200ResponseAllOfHealthDatabaseStats struct {
+	value *ListHealth200ResponseAllOfHealthDatabaseStats
+	isSet bool
+}
+
+func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) Get() *ListHealth200ResponseAllOfHealthDatabaseStats {
+	return v.value
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) Set(val *ListHealth200ResponseAllOfHealthDatabaseStats) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListHealth200ResponseAllOfHealthDatabaseStats(val *ListHealth200ResponseAllOfHealthDatabaseStats) *NullableListHealth200ResponseAllOfHealthDatabaseStats {
+	return &NullableListHealth200ResponseAllOfHealthDatabaseStats{value: val, isSet: true}
+}
+
+func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

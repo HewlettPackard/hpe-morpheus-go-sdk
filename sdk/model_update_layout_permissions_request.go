@@ -95,6 +95,43 @@ func (o UpdateLayoutPermissionsRequest) ToMap() (map[string]interface{}, error) 
 
 	return toSerialize, nil
 }
+
+type NullableUpdateLayoutPermissionsRequest struct {
+	value *UpdateLayoutPermissionsRequest
+	isSet bool
+}
+
+func (v NullableUpdateLayoutPermissionsRequest) Get() *UpdateLayoutPermissionsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateLayoutPermissionsRequest) Set(val *UpdateLayoutPermissionsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateLayoutPermissionsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateLayoutPermissionsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateLayoutPermissionsRequest(val *UpdateLayoutPermissionsRequest) *NullableUpdateLayoutPermissionsRequest {
+	return &NullableUpdateLayoutPermissionsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateLayoutPermissionsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateLayoutPermissionsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateLayoutPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

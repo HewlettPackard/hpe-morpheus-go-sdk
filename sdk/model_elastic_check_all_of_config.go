@@ -476,6 +476,43 @@ func (o ElasticCheckAllOfConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableElasticCheckAllOfConfig struct {
+	value *ElasticCheckAllOfConfig
+	isSet bool
+}
+
+func (v NullableElasticCheckAllOfConfig) Get() *ElasticCheckAllOfConfig {
+	return v.value
+}
+
+func (v *NullableElasticCheckAllOfConfig) Set(val *ElasticCheckAllOfConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableElasticCheckAllOfConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableElasticCheckAllOfConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableElasticCheckAllOfConfig(val *ElasticCheckAllOfConfig) *NullableElasticCheckAllOfConfig {
+	return &NullableElasticCheckAllOfConfig{value: val, isSet: true}
+}
+
+func (v NullableElasticCheckAllOfConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableElasticCheckAllOfConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ElasticCheckAllOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

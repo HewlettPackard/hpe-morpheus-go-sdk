@@ -383,6 +383,43 @@ func (o CheckType) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableCheckType struct {
+	value *CheckType
+	isSet bool
+}
+
+func (v NullableCheckType) Get() *CheckType {
+	return v.value
+}
+
+func (v *NullableCheckType) Set(val *CheckType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCheckType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCheckType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCheckType(val *CheckType) *NullableCheckType {
+	return &NullableCheckType{value: val, isSet: true}
+}
+
+func (v NullableCheckType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCheckType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o ListOptionForms200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableListOptionForms200Response struct {
+	value *ListOptionForms200Response
+	isSet bool
+}
+
+func (v NullableListOptionForms200Response) Get() *ListOptionForms200Response {
+	return v.value
+}
+
+func (v *NullableListOptionForms200Response) Set(val *ListOptionForms200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListOptionForms200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListOptionForms200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListOptionForms200Response(val *ListOptionForms200Response) *NullableListOptionForms200Response {
+	return &NullableListOptionForms200Response{value: val, isSet: true}
+}
+
+func (v NullableListOptionForms200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListOptionForms200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListOptionForms200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

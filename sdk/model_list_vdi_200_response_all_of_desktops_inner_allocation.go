@@ -550,6 +550,43 @@ func (o ListVdi200ResponseAllOfDesktopsInnerAllocation) ToMap() (map[string]inte
 
 	return toSerialize, nil
 }
+
+type NullableListVdi200ResponseAllOfDesktopsInnerAllocation struct {
+	value *ListVdi200ResponseAllOfDesktopsInnerAllocation
+	isSet bool
+}
+
+func (v NullableListVdi200ResponseAllOfDesktopsInnerAllocation) Get() *ListVdi200ResponseAllOfDesktopsInnerAllocation {
+	return v.value
+}
+
+func (v *NullableListVdi200ResponseAllOfDesktopsInnerAllocation) Set(val *ListVdi200ResponseAllOfDesktopsInnerAllocation) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVdi200ResponseAllOfDesktopsInnerAllocation) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVdi200ResponseAllOfDesktopsInnerAllocation) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVdi200ResponseAllOfDesktopsInnerAllocation(val *ListVdi200ResponseAllOfDesktopsInnerAllocation) *NullableListVdi200ResponseAllOfDesktopsInnerAllocation {
+	return &NullableListVdi200ResponseAllOfDesktopsInnerAllocation{value: val, isSet: true}
+}
+
+func (v NullableListVdi200ResponseAllOfDesktopsInnerAllocation) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVdi200ResponseAllOfDesktopsInnerAllocation) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

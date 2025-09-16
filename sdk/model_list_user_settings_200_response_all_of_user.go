@@ -751,6 +751,43 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 
 	return toSerialize, nil
 }
+
+type NullableListUserSettings200ResponseAllOfUser struct {
+	value *ListUserSettings200ResponseAllOfUser
+	isSet bool
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) Get() *ListUserSettings200ResponseAllOfUser {
+	return v.value
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) Set(val *ListUserSettings200ResponseAllOfUser) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListUserSettings200ResponseAllOfUser(val *ListUserSettings200ResponseAllOfUser) *NullableListUserSettings200ResponseAllOfUser {
+	return &NullableListUserSettings200ResponseAllOfUser{value: val, isSet: true}
+}
+
+func (v NullableListUserSettings200ResponseAllOfUser) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListUserSettings200ResponseAllOfUser) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListUserSettings200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -96,6 +96,43 @@ func (o AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInne
 
 	return toSerialize, nil
 }
+
+type NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner struct {
+	value *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner
+	isSet bool
+}
+
+func (v NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) Get() *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner {
+	return v.value
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) Set(val *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner(val *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) *NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner {
+	return &NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner{value: val, isSet: true}
+}
+
+func (v NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

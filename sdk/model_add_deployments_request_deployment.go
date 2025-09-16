@@ -133,6 +133,43 @@ func (o AddDeploymentsRequestDeployment) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableAddDeploymentsRequestDeployment struct {
+	value *AddDeploymentsRequestDeployment
+	isSet bool
+}
+
+func (v NullableAddDeploymentsRequestDeployment) Get() *AddDeploymentsRequestDeployment {
+	return v.value
+}
+
+func (v *NullableAddDeploymentsRequestDeployment) Set(val *AddDeploymentsRequestDeployment) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddDeploymentsRequestDeployment) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddDeploymentsRequestDeployment) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddDeploymentsRequestDeployment(val *AddDeploymentsRequestDeployment) *NullableAddDeploymentsRequestDeployment {
+	return &NullableAddDeploymentsRequestDeployment{value: val, isSet: true}
+}
+
+func (v NullableAddDeploymentsRequestDeployment) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddDeploymentsRequestDeployment) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddDeploymentsRequestDeployment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

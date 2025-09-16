@@ -244,6 +244,43 @@ func (o AccessToken) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAccessToken struct {
+	value *AccessToken
+	isSet bool
+}
+
+func (v NullableAccessToken) Get() *AccessToken {
+	return v.value
+}
+
+func (v *NullableAccessToken) Set(val *AccessToken) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAccessToken) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAccessToken) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAccessToken(val *AccessToken) *NullableAccessToken {
+	return &NullableAccessToken{value: val, isSet: true}
+}
+
+func (v NullableAccessToken) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAccessToken) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AccessToken) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

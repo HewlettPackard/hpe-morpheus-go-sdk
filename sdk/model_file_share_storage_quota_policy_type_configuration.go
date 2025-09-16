@@ -95,6 +95,43 @@ func (o FileShareStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]interf
 
 	return toSerialize, nil
 }
+
+type NullableFileShareStorageQuotaPolicyTypeConfiguration struct {
+	value *FileShareStorageQuotaPolicyTypeConfiguration
+	isSet bool
+}
+
+func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) Get() *FileShareStorageQuotaPolicyTypeConfiguration {
+	return v.value
+}
+
+func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) Set(val *FileShareStorageQuotaPolicyTypeConfiguration) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableFileShareStorageQuotaPolicyTypeConfiguration(val *FileShareStorageQuotaPolicyTypeConfiguration) *NullableFileShareStorageQuotaPolicyTypeConfiguration {
+	return &NullableFileShareStorageQuotaPolicyTypeConfiguration{value: val, isSet: true}
+}
+
+func (v NullableFileShareStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableFileShareStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *FileShareStorageQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

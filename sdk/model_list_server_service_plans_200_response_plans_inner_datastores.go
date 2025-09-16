@@ -131,6 +131,43 @@ func (o ListServerServicePlans200ResponsePlansInnerDatastores) ToMap() (map[stri
 
 	return toSerialize, nil
 }
+
+type NullableListServerServicePlans200ResponsePlansInnerDatastores struct {
+	value *ListServerServicePlans200ResponsePlansInnerDatastores
+	isSet bool
+}
+
+func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) Get() *ListServerServicePlans200ResponsePlansInnerDatastores {
+	return v.value
+}
+
+func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) Set(val *ListServerServicePlans200ResponsePlansInnerDatastores) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListServerServicePlans200ResponsePlansInnerDatastores(val *ListServerServicePlans200ResponsePlansInnerDatastores) *NullableListServerServicePlans200ResponsePlansInnerDatastores {
+	return &NullableListServerServicePlans200ResponsePlansInnerDatastores{value: val, isSet: true}
+}
+
+func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListServerServicePlans200ResponsePlansInnerDatastores) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListServerServicePlans200ResponsePlansInnerDatastores) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

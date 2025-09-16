@@ -731,6 +731,43 @@ func (o TaskAnsibleTowerConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableTaskAnsibleTowerConfig struct {
+	value *TaskAnsibleTowerConfig
+	isSet bool
+}
+
+func (v NullableTaskAnsibleTowerConfig) Get() *TaskAnsibleTowerConfig {
+	return v.value
+}
+
+func (v *NullableTaskAnsibleTowerConfig) Set(val *TaskAnsibleTowerConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableTaskAnsibleTowerConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableTaskAnsibleTowerConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableTaskAnsibleTowerConfig(val *TaskAnsibleTowerConfig) *NullableTaskAnsibleTowerConfig {
+	return &NullableTaskAnsibleTowerConfig{value: val, isSet: true}
+}
+
+func (v NullableTaskAnsibleTowerConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableTaskAnsibleTowerConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *TaskAnsibleTowerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

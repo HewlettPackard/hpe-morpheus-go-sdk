@@ -2171,6 +2171,43 @@ func (o UpdateApplianceSettingsRequestApplianceSettings) ToMap() (map[string]int
 
 	return toSerialize, nil
 }
+
+type NullableUpdateApplianceSettingsRequestApplianceSettings struct {
+	value *UpdateApplianceSettingsRequestApplianceSettings
+	isSet bool
+}
+
+func (v NullableUpdateApplianceSettingsRequestApplianceSettings) Get() *UpdateApplianceSettingsRequestApplianceSettings {
+	return v.value
+}
+
+func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) Set(val *UpdateApplianceSettingsRequestApplianceSettings) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateApplianceSettingsRequestApplianceSettings) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateApplianceSettingsRequestApplianceSettings(val *UpdateApplianceSettingsRequestApplianceSettings) *NullableUpdateApplianceSettingsRequestApplianceSettings {
+	return &NullableUpdateApplianceSettingsRequestApplianceSettings{value: val, isSet: true}
+}
+
+func (v NullableUpdateApplianceSettingsRequestApplianceSettings) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateApplianceSettingsRequestApplianceSettings) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateApplianceSettingsRequestApplianceSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

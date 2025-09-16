@@ -284,6 +284,43 @@ func (o AddExecuteSchedulesRequestSchedule) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableAddExecuteSchedulesRequestSchedule struct {
+	value *AddExecuteSchedulesRequestSchedule
+	isSet bool
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) Get() *AddExecuteSchedulesRequestSchedule {
+	return v.value
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) Set(val *AddExecuteSchedulesRequestSchedule) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddExecuteSchedulesRequestSchedule(val *AddExecuteSchedulesRequestSchedule) *NullableAddExecuteSchedulesRequestSchedule {
+	return &NullableAddExecuteSchedulesRequestSchedule{value: val, isSet: true}
+}
+
+func (v NullableAddExecuteSchedulesRequestSchedule) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddExecuteSchedulesRequestSchedule) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddExecuteSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

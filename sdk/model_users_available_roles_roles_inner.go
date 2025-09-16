@@ -250,6 +250,43 @@ func (o UsersAvailableRolesRolesInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUsersAvailableRolesRolesInner struct {
+	value *UsersAvailableRolesRolesInner
+	isSet bool
+}
+
+func (v NullableUsersAvailableRolesRolesInner) Get() *UsersAvailableRolesRolesInner {
+	return v.value
+}
+
+func (v *NullableUsersAvailableRolesRolesInner) Set(val *UsersAvailableRolesRolesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUsersAvailableRolesRolesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUsersAvailableRolesRolesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUsersAvailableRolesRolesInner(val *UsersAvailableRolesRolesInner) *NullableUsersAvailableRolesRolesInner {
+	return &NullableUsersAvailableRolesRolesInner{value: val, isSet: true}
+}
+
+func (v NullableUsersAvailableRolesRolesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUsersAvailableRolesRolesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UsersAvailableRolesRolesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

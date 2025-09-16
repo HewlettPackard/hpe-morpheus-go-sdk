@@ -1741,6 +1741,43 @@ func (o ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) ToMap() (map
 
 	return toSerialize, nil
 }
+
+type NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner struct {
+	value *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner
+	isSet bool
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) Get() *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner {
+	return v.value
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) Set(val *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner(val *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) *NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner {
+	return &NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner{value: val, isSet: true}
+}
+
+func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

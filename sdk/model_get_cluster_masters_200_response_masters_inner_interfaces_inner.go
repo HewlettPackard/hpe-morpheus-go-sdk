@@ -1229,6 +1229,43 @@ func (o GetClusterMasters200ResponseMastersInnerInterfacesInner) ToMap() (map[st
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterMasters200ResponseMastersInnerInterfacesInner struct {
+	value *GetClusterMasters200ResponseMastersInnerInterfacesInner
+	isSet bool
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Get() *GetClusterMasters200ResponseMastersInnerInterfacesInner {
+	return v.value
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Set(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterMasters200ResponseMastersInnerInterfacesInner(val *GetClusterMasters200ResponseMastersInnerInterfacesInner) *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner {
+	return &NullableGetClusterMasters200ResponseMastersInnerInterfacesInner{value: val, isSet: true}
+}
+
+func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -477,6 +477,43 @@ func (o PrepareAppApply200ResponseAllOfData) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullablePrepareAppApply200ResponseAllOfData struct {
+	value *PrepareAppApply200ResponseAllOfData
+	isSet bool
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfData) Get() *PrepareAppApply200ResponseAllOfData {
+	return v.value
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfData) Set(val *PrepareAppApply200ResponseAllOfData) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfData) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfData) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePrepareAppApply200ResponseAllOfData(val *PrepareAppApply200ResponseAllOfData) *NullablePrepareAppApply200ResponseAllOfData {
+	return &NullablePrepareAppApply200ResponseAllOfData{value: val, isSet: true}
+}
+
+func (v NullablePrepareAppApply200ResponseAllOfData) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePrepareAppApply200ResponseAllOfData) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PrepareAppApply200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

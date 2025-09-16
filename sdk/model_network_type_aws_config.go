@@ -170,6 +170,43 @@ func (o NetworkTypeAwsConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkTypeAwsConfig struct {
+	value *NetworkTypeAwsConfig
+	isSet bool
+}
+
+func (v NullableNetworkTypeAwsConfig) Get() *NetworkTypeAwsConfig {
+	return v.value
+}
+
+func (v *NullableNetworkTypeAwsConfig) Set(val *NetworkTypeAwsConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkTypeAwsConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkTypeAwsConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkTypeAwsConfig(val *NetworkTypeAwsConfig) *NullableNetworkTypeAwsConfig {
+	return &NullableNetworkTypeAwsConfig{value: val, isSet: true}
+}
+
+func (v NullableNetworkTypeAwsConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkTypeAwsConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkTypeAwsConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

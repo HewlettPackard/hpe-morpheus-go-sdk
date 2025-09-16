@@ -131,6 +131,43 @@ func (o ListOptionZoneTypesOptions200Response) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableListOptionZoneTypesOptions200Response struct {
+	value *ListOptionZoneTypesOptions200Response
+	isSet bool
+}
+
+func (v NullableListOptionZoneTypesOptions200Response) Get() *ListOptionZoneTypesOptions200Response {
+	return v.value
+}
+
+func (v *NullableListOptionZoneTypesOptions200Response) Set(val *ListOptionZoneTypesOptions200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListOptionZoneTypesOptions200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListOptionZoneTypesOptions200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListOptionZoneTypesOptions200Response(val *ListOptionZoneTypesOptions200Response) *NullableListOptionZoneTypesOptions200Response {
+	return &NullableListOptionZoneTypesOptions200Response{value: val, isSet: true}
+}
+
+func (v NullableListOptionZoneTypesOptions200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListOptionZoneTypesOptions200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListOptionZoneTypesOptions200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

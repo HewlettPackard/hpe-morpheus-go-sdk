@@ -1667,6 +1667,43 @@ func (o NetworkServer) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableNetworkServer struct {
+	value *NetworkServer
+	isSet bool
+}
+
+func (v NullableNetworkServer) Get() *NetworkServer {
+	return v.value
+}
+
+func (v *NullableNetworkServer) Set(val *NetworkServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkServer(val *NetworkServer) *NullableNetworkServer {
+	return &NullableNetworkServer{value: val, isSet: true}
+}
+
+func (v NullableNetworkServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

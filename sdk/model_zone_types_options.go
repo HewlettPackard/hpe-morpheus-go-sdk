@@ -203,6 +203,43 @@ func (o ZoneTypesOptions) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZoneTypesOptions struct {
+	value *ZoneTypesOptions
+	isSet bool
+}
+
+func (v NullableZoneTypesOptions) Get() *ZoneTypesOptions {
+	return v.value
+}
+
+func (v *NullableZoneTypesOptions) Set(val *ZoneTypesOptions) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneTypesOptions) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneTypesOptions) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneTypesOptions(val *ZoneTypesOptions) *NullableZoneTypesOptions {
+	return &NullableZoneTypesOptions{value: val, isSet: true}
+}
+
+func (v NullableZoneTypesOptions) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneTypesOptions) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ZoneTypesOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

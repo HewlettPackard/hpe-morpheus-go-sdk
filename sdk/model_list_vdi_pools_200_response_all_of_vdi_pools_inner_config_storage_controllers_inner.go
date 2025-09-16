@@ -549,6 +549,43 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) 
 
 	return toSerialize, nil
 }
+
+type NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner struct {
+	value *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner
+	isSet bool
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Get() *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner {
+	return v.value
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Set(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner(val *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner {
+	return &NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner{value: val, isSet: true}
+}
+
+func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigStorageControllersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

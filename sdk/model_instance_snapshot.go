@@ -95,6 +95,43 @@ func (o InstanceSnapshot) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableInstanceSnapshot struct {
+	value *InstanceSnapshot
+	isSet bool
+}
+
+func (v NullableInstanceSnapshot) Get() *InstanceSnapshot {
+	return v.value
+}
+
+func (v *NullableInstanceSnapshot) Set(val *InstanceSnapshot) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableInstanceSnapshot) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableInstanceSnapshot) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableInstanceSnapshot(val *InstanceSnapshot) *NullableInstanceSnapshot {
+	return &NullableInstanceSnapshot{value: val, isSet: true}
+}
+
+func (v NullableInstanceSnapshot) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableInstanceSnapshot) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *InstanceSnapshot) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

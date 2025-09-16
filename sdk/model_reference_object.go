@@ -161,6 +161,43 @@ func (o ReferenceObject) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableReferenceObject struct {
+	value *ReferenceObject
+	isSet bool
+}
+
+func (v NullableReferenceObject) Get() *ReferenceObject {
+	return v.value
+}
+
+func (v *NullableReferenceObject) Set(val *ReferenceObject) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableReferenceObject) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableReferenceObject) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableReferenceObject(val *ReferenceObject) *NullableReferenceObject {
+	return &NullableReferenceObject{value: val, isSet: true}
+}
+
+func (v NullableReferenceObject) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableReferenceObject) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ReferenceObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

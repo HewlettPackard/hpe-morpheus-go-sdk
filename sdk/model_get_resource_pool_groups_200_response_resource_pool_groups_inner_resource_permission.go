@@ -137,6 +137,43 @@ func (o GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermissio
 
 	return toSerialize, nil
 }
+
+type NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission struct {
+	value *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission
+	isSet bool
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Get() *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission {
+	return v.value
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Set(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission(val *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission {
+	return &NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission{value: val, isSet: true}
+}
+
+func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

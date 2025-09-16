@@ -95,6 +95,43 @@ func (o GetWorkflows200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetWorkflows200Response struct {
+	value *GetWorkflows200Response
+	isSet bool
+}
+
+func (v NullableGetWorkflows200Response) Get() *GetWorkflows200Response {
+	return v.value
+}
+
+func (v *NullableGetWorkflows200Response) Set(val *GetWorkflows200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetWorkflows200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetWorkflows200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetWorkflows200Response(val *GetWorkflows200Response) *NullableGetWorkflows200Response {
+	return &NullableGetWorkflows200Response{value: val, isSet: true}
+}
+
+func (v NullableGetWorkflows200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetWorkflows200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetWorkflows200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

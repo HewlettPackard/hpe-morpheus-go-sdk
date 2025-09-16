@@ -348,6 +348,43 @@ func (o Search200ResponseHitsInner) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableSearch200ResponseHitsInner struct {
+	value *Search200ResponseHitsInner
+	isSet bool
+}
+
+func (v NullableSearch200ResponseHitsInner) Get() *Search200ResponseHitsInner {
+	return v.value
+}
+
+func (v *NullableSearch200ResponseHitsInner) Set(val *Search200ResponseHitsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableSearch200ResponseHitsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableSearch200ResponseHitsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableSearch200ResponseHitsInner(val *Search200ResponseHitsInner) *NullableSearch200ResponseHitsInner {
+	return &NullableSearch200ResponseHitsInner{value: val, isSet: true}
+}
+
+func (v NullableSearch200ResponseHitsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableSearch200ResponseHitsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Search200ResponseHitsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

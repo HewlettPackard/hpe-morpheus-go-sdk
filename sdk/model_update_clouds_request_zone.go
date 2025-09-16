@@ -896,6 +896,43 @@ func (o UpdateCloudsRequestZone) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateCloudsRequestZone struct {
+	value *UpdateCloudsRequestZone
+	isSet bool
+}
+
+func (v NullableUpdateCloudsRequestZone) Get() *UpdateCloudsRequestZone {
+	return v.value
+}
+
+func (v *NullableUpdateCloudsRequestZone) Set(val *UpdateCloudsRequestZone) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateCloudsRequestZone) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateCloudsRequestZone) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateCloudsRequestZone(val *UpdateCloudsRequestZone) *NullableUpdateCloudsRequestZone {
+	return &NullableUpdateCloudsRequestZone{value: val, isSet: true}
+}
+
+func (v NullableUpdateCloudsRequestZone) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateCloudsRequestZone) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateCloudsRequestZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

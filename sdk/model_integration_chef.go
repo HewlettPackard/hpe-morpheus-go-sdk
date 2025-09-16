@@ -608,6 +608,43 @@ func (o IntegrationChef) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationChef struct {
+	value *IntegrationChef
+	isSet bool
+}
+
+func (v NullableIntegrationChef) Get() *IntegrationChef {
+	return v.value
+}
+
+func (v *NullableIntegrationChef) Set(val *IntegrationChef) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationChef) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationChef) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationChef(val *IntegrationChef) *NullableIntegrationChef {
+	return &NullableIntegrationChef{value: val, isSet: true}
+}
+
+func (v NullableIntegrationChef) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationChef) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationChef) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

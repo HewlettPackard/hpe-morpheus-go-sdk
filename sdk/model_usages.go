@@ -131,6 +131,43 @@ func (o Usages) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUsages struct {
+	value *Usages
+	isSet bool
+}
+
+func (v NullableUsages) Get() *Usages {
+	return v.value
+}
+
+func (v *NullableUsages) Set(val *Usages) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUsages) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUsages) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUsages(val *Usages) *NullableUsages {
+	return &NullableUsages{value: val, isSet: true}
+}
+
+func (v NullableUsages) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUsages) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *Usages) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

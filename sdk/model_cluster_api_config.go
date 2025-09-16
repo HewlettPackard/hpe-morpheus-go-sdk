@@ -614,6 +614,43 @@ func (o ClusterApiConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableClusterApiConfig struct {
+	value *ClusterApiConfig
+	isSet bool
+}
+
+func (v NullableClusterApiConfig) Get() *ClusterApiConfig {
+	return v.value
+}
+
+func (v *NullableClusterApiConfig) Set(val *ClusterApiConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableClusterApiConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableClusterApiConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableClusterApiConfig(val *ClusterApiConfig) *NullableClusterApiConfig {
+	return &NullableClusterApiConfig{value: val, isSet: true}
+}
+
+func (v NullableClusterApiConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableClusterApiConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ClusterApiConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

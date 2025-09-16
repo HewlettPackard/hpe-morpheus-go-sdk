@@ -96,6 +96,43 @@ func (o UpdateSpecTemplateRequestSpecTemplateFileRepository) ToMap() (map[string
 
 	return toSerialize, nil
 }
+
+type NullableUpdateSpecTemplateRequestSpecTemplateFileRepository struct {
+	value *UpdateSpecTemplateRequestSpecTemplateFileRepository
+	isSet bool
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Get() *UpdateSpecTemplateRequestSpecTemplateFileRepository {
+	return v.value
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Set(val *UpdateSpecTemplateRequestSpecTemplateFileRepository) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateSpecTemplateRequestSpecTemplateFileRepository(val *UpdateSpecTemplateRequestSpecTemplateFileRepository) *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository {
+	return &NullableUpdateSpecTemplateRequestSpecTemplateFileRepository{value: val, isSet: true}
+}
+
+func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -133,6 +133,43 @@ func (o PreseedScriptsCreate) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullablePreseedScriptsCreate struct {
+	value *PreseedScriptsCreate
+	isSet bool
+}
+
+func (v NullablePreseedScriptsCreate) Get() *PreseedScriptsCreate {
+	return v.value
+}
+
+func (v *NullablePreseedScriptsCreate) Set(val *PreseedScriptsCreate) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullablePreseedScriptsCreate) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullablePreseedScriptsCreate) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullablePreseedScriptsCreate(val *PreseedScriptsCreate) *NullablePreseedScriptsCreate {
+	return &NullablePreseedScriptsCreate{value: val, isSet: true}
+}
+
+func (v NullablePreseedScriptsCreate) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullablePreseedScriptsCreate) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *PreseedScriptsCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -86,6 +86,43 @@ func (o IntegrationDockerRepoConfig) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationDockerRepoConfig struct {
+	value *IntegrationDockerRepoConfig
+	isSet bool
+}
+
+func (v NullableIntegrationDockerRepoConfig) Get() *IntegrationDockerRepoConfig {
+	return v.value
+}
+
+func (v *NullableIntegrationDockerRepoConfig) Set(val *IntegrationDockerRepoConfig) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationDockerRepoConfig) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationDockerRepoConfig) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationDockerRepoConfig(val *IntegrationDockerRepoConfig) *NullableIntegrationDockerRepoConfig {
+	return &NullableIntegrationDockerRepoConfig{value: val, isSet: true}
+}
+
+func (v NullableIntegrationDockerRepoConfig) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationDockerRepoConfig) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationDockerRepoConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

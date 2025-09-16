@@ -567,6 +567,43 @@ func (o ListAlerts200ResponseAllOfAlertsInner) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableListAlerts200ResponseAllOfAlertsInner struct {
+	value *ListAlerts200ResponseAllOfAlertsInner
+	isSet bool
+}
+
+func (v NullableListAlerts200ResponseAllOfAlertsInner) Get() *ListAlerts200ResponseAllOfAlertsInner {
+	return v.value
+}
+
+func (v *NullableListAlerts200ResponseAllOfAlertsInner) Set(val *ListAlerts200ResponseAllOfAlertsInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListAlerts200ResponseAllOfAlertsInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListAlerts200ResponseAllOfAlertsInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListAlerts200ResponseAllOfAlertsInner(val *ListAlerts200ResponseAllOfAlertsInner) *NullableListAlerts200ResponseAllOfAlertsInner {
+	return &NullableListAlerts200ResponseAllOfAlertsInner{value: val, isSet: true}
+}
+
+func (v NullableListAlerts200ResponseAllOfAlertsInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListAlerts200ResponseAllOfAlertsInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListAlerts200ResponseAllOfAlertsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

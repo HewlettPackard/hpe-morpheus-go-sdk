@@ -1283,6 +1283,43 @@ func (o GetClusterHistoryDetail200ResponseProcess) ToMap() (map[string]interface
 
 	return toSerialize, nil
 }
+
+type NullableGetClusterHistoryDetail200ResponseProcess struct {
+	value *GetClusterHistoryDetail200ResponseProcess
+	isSet bool
+}
+
+func (v NullableGetClusterHistoryDetail200ResponseProcess) Get() *GetClusterHistoryDetail200ResponseProcess {
+	return v.value
+}
+
+func (v *NullableGetClusterHistoryDetail200ResponseProcess) Set(val *GetClusterHistoryDetail200ResponseProcess) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetClusterHistoryDetail200ResponseProcess) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetClusterHistoryDetail200ResponseProcess) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetClusterHistoryDetail200ResponseProcess(val *GetClusterHistoryDetail200ResponseProcess) *NullableGetClusterHistoryDetail200ResponseProcess {
+	return &NullableGetClusterHistoryDetail200ResponseProcess{value: val, isSet: true}
+}
+
+func (v NullableGetClusterHistoryDetail200ResponseProcess) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetClusterHistoryDetail200ResponseProcess) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetClusterHistoryDetail200ResponseProcess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

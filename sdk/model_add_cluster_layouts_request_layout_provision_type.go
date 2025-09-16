@@ -87,6 +87,43 @@ func (o AddClusterLayoutsRequestLayoutProvisionType) ToMap() (map[string]interfa
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterLayoutsRequestLayoutProvisionType struct {
+	value *AddClusterLayoutsRequestLayoutProvisionType
+	isSet bool
+}
+
+func (v NullableAddClusterLayoutsRequestLayoutProvisionType) Get() *AddClusterLayoutsRequestLayoutProvisionType {
+	return v.value
+}
+
+func (v *NullableAddClusterLayoutsRequestLayoutProvisionType) Set(val *AddClusterLayoutsRequestLayoutProvisionType) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterLayoutsRequestLayoutProvisionType) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterLayoutsRequestLayoutProvisionType) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterLayoutsRequestLayoutProvisionType(val *AddClusterLayoutsRequestLayoutProvisionType) *NullableAddClusterLayoutsRequestLayoutProvisionType {
+	return &NullableAddClusterLayoutsRequestLayoutProvisionType{value: val, isSet: true}
+}
+
+func (v NullableAddClusterLayoutsRequestLayoutProvisionType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterLayoutsRequestLayoutProvisionType) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterLayoutsRequestLayoutProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

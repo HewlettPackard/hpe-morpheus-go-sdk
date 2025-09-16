@@ -167,6 +167,43 @@ func (o GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) ToM
 
 	return toSerialize, nil
 }
+
+type NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile struct {
+	value *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile
+	isSet bool
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Get() *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
+	return v.value
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Set(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile(val *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile {
+	return &NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile{value: val, isSet: true}
+}
+
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

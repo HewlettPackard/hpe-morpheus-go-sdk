@@ -95,6 +95,43 @@ func (o GetProvisioningLicenseReservations200Response) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableGetProvisioningLicenseReservations200Response struct {
+	value *GetProvisioningLicenseReservations200Response
+	isSet bool
+}
+
+func (v NullableGetProvisioningLicenseReservations200Response) Get() *GetProvisioningLicenseReservations200Response {
+	return v.value
+}
+
+func (v *NullableGetProvisioningLicenseReservations200Response) Set(val *GetProvisioningLicenseReservations200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetProvisioningLicenseReservations200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetProvisioningLicenseReservations200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetProvisioningLicenseReservations200Response(val *GetProvisioningLicenseReservations200Response) *NullableGetProvisioningLicenseReservations200Response {
+	return &NullableGetProvisioningLicenseReservations200Response{value: val, isSet: true}
+}
+
+func (v NullableGetProvisioningLicenseReservations200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetProvisioningLicenseReservations200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetProvisioningLicenseReservations200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

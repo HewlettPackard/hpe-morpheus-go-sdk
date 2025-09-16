@@ -131,6 +131,43 @@ func (o ListIntegrationInventory200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableListIntegrationInventory200Response struct {
+	value *ListIntegrationInventory200Response
+	isSet bool
+}
+
+func (v NullableListIntegrationInventory200Response) Get() *ListIntegrationInventory200Response {
+	return v.value
+}
+
+func (v *NullableListIntegrationInventory200Response) Set(val *ListIntegrationInventory200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListIntegrationInventory200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListIntegrationInventory200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListIntegrationInventory200Response(val *ListIntegrationInventory200Response) *NullableListIntegrationInventory200Response {
+	return &NullableListIntegrationInventory200Response{value: val, isSet: true}
+}
+
+func (v NullableListIntegrationInventory200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListIntegrationInventory200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListIntegrationInventory200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

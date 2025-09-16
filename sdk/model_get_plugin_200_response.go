@@ -95,6 +95,43 @@ func (o GetPlugin200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetPlugin200Response struct {
+	value *GetPlugin200Response
+	isSet bool
+}
+
+func (v NullableGetPlugin200Response) Get() *GetPlugin200Response {
+	return v.value
+}
+
+func (v *NullableGetPlugin200Response) Set(val *GetPlugin200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetPlugin200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetPlugin200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetPlugin200Response(val *GetPlugin200Response) *NullableGetPlugin200Response {
+	return &NullableGetPlugin200Response{value: val, isSet: true}
+}
+
+func (v NullableGetPlugin200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetPlugin200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetPlugin200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

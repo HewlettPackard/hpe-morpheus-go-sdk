@@ -627,6 +627,43 @@ func (o NetworkPoolServerUpdateInfoblox) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableNetworkPoolServerUpdateInfoblox struct {
+	value *NetworkPoolServerUpdateInfoblox
+	isSet bool
+}
+
+func (v NullableNetworkPoolServerUpdateInfoblox) Get() *NetworkPoolServerUpdateInfoblox {
+	return v.value
+}
+
+func (v *NullableNetworkPoolServerUpdateInfoblox) Set(val *NetworkPoolServerUpdateInfoblox) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableNetworkPoolServerUpdateInfoblox) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableNetworkPoolServerUpdateInfoblox) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableNetworkPoolServerUpdateInfoblox(val *NetworkPoolServerUpdateInfoblox) *NullableNetworkPoolServerUpdateInfoblox {
+	return &NullableNetworkPoolServerUpdateInfoblox{value: val, isSet: true}
+}
+
+func (v NullableNetworkPoolServerUpdateInfoblox) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableNetworkPoolServerUpdateInfoblox) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *NetworkPoolServerUpdateInfoblox) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

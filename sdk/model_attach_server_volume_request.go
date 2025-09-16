@@ -123,6 +123,43 @@ func (o AttachServerVolumeRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAttachServerVolumeRequest struct {
+	value *AttachServerVolumeRequest
+	isSet bool
+}
+
+func (v NullableAttachServerVolumeRequest) Get() *AttachServerVolumeRequest {
+	return v.value
+}
+
+func (v *NullableAttachServerVolumeRequest) Set(val *AttachServerVolumeRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAttachServerVolumeRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAttachServerVolumeRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAttachServerVolumeRequest(val *AttachServerVolumeRequest) *NullableAttachServerVolumeRequest {
+	return &NullableAttachServerVolumeRequest{value: val, isSet: true}
+}
+
+func (v NullableAttachServerVolumeRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAttachServerVolumeRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AttachServerVolumeRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

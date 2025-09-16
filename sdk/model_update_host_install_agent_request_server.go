@@ -169,6 +169,43 @@ func (o UpdateHostInstallAgentRequestServer) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostInstallAgentRequestServer struct {
+	value *UpdateHostInstallAgentRequestServer
+	isSet bool
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) Get() *UpdateHostInstallAgentRequestServer {
+	return v.value
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) Set(val *UpdateHostInstallAgentRequestServer) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostInstallAgentRequestServer(val *UpdateHostInstallAgentRequestServer) *NullableUpdateHostInstallAgentRequestServer {
+	return &NullableUpdateHostInstallAgentRequestServer{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostInstallAgentRequestServer) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostInstallAgentRequestServer) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostInstallAgentRequestServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

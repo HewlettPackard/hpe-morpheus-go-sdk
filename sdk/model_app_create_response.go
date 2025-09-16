@@ -863,6 +863,43 @@ func (o AppCreateResponse) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableAppCreateResponse struct {
+	value *AppCreateResponse
+	isSet bool
+}
+
+func (v NullableAppCreateResponse) Get() *AppCreateResponse {
+	return v.value
+}
+
+func (v *NullableAppCreateResponse) Set(val *AppCreateResponse) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAppCreateResponse) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAppCreateResponse) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAppCreateResponse(val *AppCreateResponse) *NullableAppCreateResponse {
+	return &NullableAppCreateResponse{value: val, isSet: true}
+}
+
+func (v NullableAppCreateResponse) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAppCreateResponse) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AppCreateResponse) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

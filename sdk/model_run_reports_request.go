@@ -86,6 +86,43 @@ func (o RunReportsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableRunReportsRequest struct {
+	value *RunReportsRequest
+	isSet bool
+}
+
+func (v NullableRunReportsRequest) Get() *RunReportsRequest {
+	return v.value
+}
+
+func (v *NullableRunReportsRequest) Set(val *RunReportsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableRunReportsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableRunReportsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableRunReportsRequest(val *RunReportsRequest) *NullableRunReportsRequest {
+	return &NullableRunReportsRequest{value: val, isSet: true}
+}
+
+func (v NullableRunReportsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableRunReportsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *RunReportsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

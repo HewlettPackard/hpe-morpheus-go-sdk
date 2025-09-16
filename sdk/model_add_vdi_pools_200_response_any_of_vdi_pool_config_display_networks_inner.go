@@ -203,6 +203,43 @@ func (o AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) ToMap() (m
 
 	return toSerialize, nil
 }
+
+type NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner struct {
+	value *AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner
+	isSet bool
+}
+
+func (v NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) Get() *AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner {
+	return v.value
+}
+
+func (v *NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) Set(val *AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner(val *AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) *NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner {
+	return &NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner{value: val, isSet: true}
+}
+
+func (v NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddVDIPools200ResponseAnyOfVdiPoolConfigDisplayNetworksInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

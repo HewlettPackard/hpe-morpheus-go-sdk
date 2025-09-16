@@ -86,6 +86,43 @@ func (o UpdateVirtualImageRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateVirtualImageRequest struct {
+	value *UpdateVirtualImageRequest
+	isSet bool
+}
+
+func (v NullableUpdateVirtualImageRequest) Get() *UpdateVirtualImageRequest {
+	return v.value
+}
+
+func (v *NullableUpdateVirtualImageRequest) Set(val *UpdateVirtualImageRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVirtualImageRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVirtualImageRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVirtualImageRequest(val *UpdateVirtualImageRequest) *NullableUpdateVirtualImageRequest {
+	return &NullableUpdateVirtualImageRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateVirtualImageRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVirtualImageRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateVirtualImageRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,43 @@ func (o UpdateHostCloudRequestServersInner) ToMap() (map[string]interface{}, err
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostCloudRequestServersInner struct {
+	value *UpdateHostCloudRequestServersInner
+	isSet bool
+}
+
+func (v NullableUpdateHostCloudRequestServersInner) Get() *UpdateHostCloudRequestServersInner {
+	return v.value
+}
+
+func (v *NullableUpdateHostCloudRequestServersInner) Set(val *UpdateHostCloudRequestServersInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostCloudRequestServersInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostCloudRequestServersInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostCloudRequestServersInner(val *UpdateHostCloudRequestServersInner) *NullableUpdateHostCloudRequestServersInner {
+	return &NullableUpdateHostCloudRequestServersInner{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostCloudRequestServersInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostCloudRequestServersInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostCloudRequestServersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

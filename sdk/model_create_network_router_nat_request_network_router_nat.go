@@ -90,6 +90,43 @@ func (o CreateNetworkRouterNatRequestNetworkRouterNAT) ToMap() (map[string]inter
 
 	return toSerialize, nil
 }
+
+type NullableCreateNetworkRouterNatRequestNetworkRouterNAT struct {
+	value *CreateNetworkRouterNatRequestNetworkRouterNAT
+	isSet bool
+}
+
+func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Get() *CreateNetworkRouterNatRequestNetworkRouterNAT {
+	return v.value
+}
+
+func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Set(val *CreateNetworkRouterNatRequestNetworkRouterNAT) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateNetworkRouterNatRequestNetworkRouterNAT(val *CreateNetworkRouterNatRequestNetworkRouterNAT) *NullableCreateNetworkRouterNatRequestNetworkRouterNAT {
+	return &NullableCreateNetworkRouterNatRequestNetworkRouterNAT{value: val, isSet: true}
+}
+
+func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

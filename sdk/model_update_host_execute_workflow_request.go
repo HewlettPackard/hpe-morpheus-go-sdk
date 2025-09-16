@@ -136,6 +136,43 @@ func (o UpdateHostExecuteWorkflowRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableUpdateHostExecuteWorkflowRequest struct {
+	value *UpdateHostExecuteWorkflowRequest
+	isSet bool
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) Get() *UpdateHostExecuteWorkflowRequest {
+	return v.value
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) Set(val *UpdateHostExecuteWorkflowRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateHostExecuteWorkflowRequest(val *UpdateHostExecuteWorkflowRequest) *NullableUpdateHostExecuteWorkflowRequest {
+	return &NullableUpdateHostExecuteWorkflowRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateHostExecuteWorkflowRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateHostExecuteWorkflowRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateHostExecuteWorkflowRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

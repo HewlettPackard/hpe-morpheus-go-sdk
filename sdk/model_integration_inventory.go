@@ -297,6 +297,43 @@ func (o IntegrationInventory) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableIntegrationInventory struct {
+	value *IntegrationInventory
+	isSet bool
+}
+
+func (v NullableIntegrationInventory) Get() *IntegrationInventory {
+	return v.value
+}
+
+func (v *NullableIntegrationInventory) Set(val *IntegrationInventory) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableIntegrationInventory) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableIntegrationInventory) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableIntegrationInventory(val *IntegrationInventory) *NullableIntegrationInventory {
+	return &NullableIntegrationInventory{value: val, isSet: true}
+}
+
+func (v NullableIntegrationInventory) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableIntegrationInventory) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *IntegrationInventory) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

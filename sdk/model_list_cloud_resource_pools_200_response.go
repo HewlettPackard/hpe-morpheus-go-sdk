@@ -131,6 +131,43 @@ func (o ListCloudResourcePools200Response) ToMap() (map[string]interface{}, erro
 
 	return toSerialize, nil
 }
+
+type NullableListCloudResourcePools200Response struct {
+	value *ListCloudResourcePools200Response
+	isSet bool
+}
+
+func (v NullableListCloudResourcePools200Response) Get() *ListCloudResourcePools200Response {
+	return v.value
+}
+
+func (v *NullableListCloudResourcePools200Response) Set(val *ListCloudResourcePools200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListCloudResourcePools200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListCloudResourcePools200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListCloudResourcePools200Response(val *ListCloudResourcePools200Response) *NullableListCloudResourcePools200Response {
+	return &NullableListCloudResourcePools200Response{value: val, isSet: true}
+}
+
+func (v NullableListCloudResourcePools200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListCloudResourcePools200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListCloudResourcePools200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1931,6 +1931,43 @@ func (o LicenseFeatures) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableLicenseFeatures struct {
+	value *LicenseFeatures
+	isSet bool
+}
+
+func (v NullableLicenseFeatures) Get() *LicenseFeatures {
+	return v.value
+}
+
+func (v *NullableLicenseFeatures) Set(val *LicenseFeatures) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableLicenseFeatures) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableLicenseFeatures) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableLicenseFeatures(val *LicenseFeatures) *NullableLicenseFeatures {
+	return &NullableLicenseFeatures{value: val, isSet: true}
+}
+
+func (v NullableLicenseFeatures) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableLicenseFeatures) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *LicenseFeatures) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

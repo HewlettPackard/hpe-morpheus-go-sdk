@@ -168,6 +168,43 @@ func (o GetLicense200Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetLicense200Response struct {
+	value *GetLicense200Response
+	isSet bool
+}
+
+func (v NullableGetLicense200Response) Get() *GetLicense200Response {
+	return v.value
+}
+
+func (v *NullableGetLicense200Response) Set(val *GetLicense200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetLicense200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetLicense200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetLicense200Response(val *GetLicense200Response) *NullableGetLicense200Response {
+	return &NullableGetLicense200Response{value: val, isSet: true}
+}
+
+func (v NullableGetLicense200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetLicense200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetLicense200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -492,6 +492,43 @@ func (o HealthLogs) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableHealthLogs struct {
+	value *HealthLogs
+	isSet bool
+}
+
+func (v NullableHealthLogs) Get() *HealthLogs {
+	return v.value
+}
+
+func (v *NullableHealthLogs) Set(val *HealthLogs) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableHealthLogs) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableHealthLogs) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableHealthLogs(val *HealthLogs) *NullableHealthLogs {
+	return &NullableHealthLogs{value: val, isSet: true}
+}
+
+func (v NullableHealthLogs) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableHealthLogs) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *HealthLogs) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

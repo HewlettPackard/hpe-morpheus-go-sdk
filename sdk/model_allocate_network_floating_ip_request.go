@@ -133,6 +133,43 @@ func (o AllocateNetworkFloatingIpRequest) ToMap() (map[string]interface{}, error
 
 	return toSerialize, nil
 }
+
+type NullableAllocateNetworkFloatingIpRequest struct {
+	value *AllocateNetworkFloatingIpRequest
+	isSet bool
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) Get() *AllocateNetworkFloatingIpRequest {
+	return v.value
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) Set(val *AllocateNetworkFloatingIpRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAllocateNetworkFloatingIpRequest(val *AllocateNetworkFloatingIpRequest) *NullableAllocateNetworkFloatingIpRequest {
+	return &NullableAllocateNetworkFloatingIpRequest{value: val, isSet: true}
+}
+
+func (v NullableAllocateNetworkFloatingIpRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAllocateNetworkFloatingIpRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AllocateNetworkFloatingIpRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

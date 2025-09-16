@@ -916,6 +916,43 @@ func (o ListFileTemplates200ResponseAllOfContainerTemplatesInner) ToMap() (map[s
 
 	return toSerialize, nil
 }
+
+type NullableListFileTemplates200ResponseAllOfContainerTemplatesInner struct {
+	value *ListFileTemplates200ResponseAllOfContainerTemplatesInner
+	isSet bool
+}
+
+func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Get() *ListFileTemplates200ResponseAllOfContainerTemplatesInner {
+	return v.value
+}
+
+func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Set(val *ListFileTemplates200ResponseAllOfContainerTemplatesInner) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableListFileTemplates200ResponseAllOfContainerTemplatesInner(val *ListFileTemplates200ResponseAllOfContainerTemplatesInner) *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner {
+	return &NullableListFileTemplates200ResponseAllOfContainerTemplatesInner{value: val, isSet: true}
+}
+
+func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

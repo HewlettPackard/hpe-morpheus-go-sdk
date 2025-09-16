@@ -95,6 +95,43 @@ func (o GetNetworkFloatingIp200Response) ToMap() (map[string]interface{}, error)
 
 	return toSerialize, nil
 }
+
+type NullableGetNetworkFloatingIp200Response struct {
+	value *GetNetworkFloatingIp200Response
+	isSet bool
+}
+
+func (v NullableGetNetworkFloatingIp200Response) Get() *GetNetworkFloatingIp200Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkFloatingIp200Response) Set(val *GetNetworkFloatingIp200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkFloatingIp200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkFloatingIp200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkFloatingIp200Response(val *GetNetworkFloatingIp200Response) *NullableGetNetworkFloatingIp200Response {
+	return &NullableGetNetworkFloatingIp200Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkFloatingIp200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkFloatingIp200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetNetworkFloatingIp200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

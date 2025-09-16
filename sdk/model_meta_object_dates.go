@@ -132,6 +132,43 @@ func (o MetaObjectDates) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableMetaObjectDates struct {
+	value *MetaObjectDates
+	isSet bool
+}
+
+func (v NullableMetaObjectDates) Get() *MetaObjectDates {
+	return v.value
+}
+
+func (v *NullableMetaObjectDates) Set(val *MetaObjectDates) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableMetaObjectDates) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableMetaObjectDates) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableMetaObjectDates(val *MetaObjectDates) *NullableMetaObjectDates {
+	return &NullableMetaObjectDates{value: val, isSet: true}
+}
+
+func (v NullableMetaObjectDates) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableMetaObjectDates) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *MetaObjectDates) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

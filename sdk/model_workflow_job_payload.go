@@ -544,6 +544,43 @@ func (o WorkflowJobPayload) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableWorkflowJobPayload struct {
+	value *WorkflowJobPayload
+	isSet bool
+}
+
+func (v NullableWorkflowJobPayload) Get() *WorkflowJobPayload {
+	return v.value
+}
+
+func (v *NullableWorkflowJobPayload) Set(val *WorkflowJobPayload) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableWorkflowJobPayload) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableWorkflowJobPayload) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableWorkflowJobPayload(val *WorkflowJobPayload) *NullableWorkflowJobPayload {
+	return &NullableWorkflowJobPayload{value: val, isSet: true}
+}
+
+func (v NullableWorkflowJobPayload) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableWorkflowJobPayload) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *WorkflowJobPayload) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

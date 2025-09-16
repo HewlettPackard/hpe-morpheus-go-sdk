@@ -86,6 +86,43 @@ func (o UpdateContactsRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateContactsRequest struct {
+	value *UpdateContactsRequest
+	isSet bool
+}
+
+func (v NullableUpdateContactsRequest) Get() *UpdateContactsRequest {
+	return v.value
+}
+
+func (v *NullableUpdateContactsRequest) Set(val *UpdateContactsRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateContactsRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateContactsRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateContactsRequest(val *UpdateContactsRequest) *NullableUpdateContactsRequest {
+	return &NullableUpdateContactsRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateContactsRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateContactsRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateContactsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

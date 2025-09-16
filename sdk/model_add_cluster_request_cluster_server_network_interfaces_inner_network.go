@@ -86,6 +86,43 @@ func (o AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) ToMap() (ma
 
 	return toSerialize, nil
 }
+
+type NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork struct {
+	value *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork
+	isSet bool
+}
+
+func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Get() *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork {
+	return v.value
+}
+
+func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Set(val *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork(val *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork {
+	return &NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork{value: val, isSet: true}
+}
+
+func (v NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableAddClusterRequestClusterServerNetworkInterfacesInnerNetwork) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *AddClusterRequestClusterServerNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

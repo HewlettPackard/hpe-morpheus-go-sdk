@@ -205,6 +205,43 @@ func (o CreateSubnetRequestResourcePermission) ToMap() (map[string]interface{}, 
 
 	return toSerialize, nil
 }
+
+type NullableCreateSubnetRequestResourcePermission struct {
+	value *CreateSubnetRequestResourcePermission
+	isSet bool
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) Get() *CreateSubnetRequestResourcePermission {
+	return v.value
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) Set(val *CreateSubnetRequestResourcePermission) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableCreateSubnetRequestResourcePermission(val *CreateSubnetRequestResourcePermission) *NullableCreateSubnetRequestResourcePermission {
+	return &NullableCreateSubnetRequestResourcePermission{value: val, isSet: true}
+}
+
+func (v NullableCreateSubnetRequestResourcePermission) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableCreateSubnetRequestResourcePermission) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *CreateSubnetRequestResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

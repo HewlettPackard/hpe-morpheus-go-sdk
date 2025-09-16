@@ -131,6 +131,43 @@ func (o GetBillingZoneIdentifier200Response) ToMap() (map[string]interface{}, er
 
 	return toSerialize, nil
 }
+
+type NullableGetBillingZoneIdentifier200Response struct {
+	value *GetBillingZoneIdentifier200Response
+	isSet bool
+}
+
+func (v NullableGetBillingZoneIdentifier200Response) Get() *GetBillingZoneIdentifier200Response {
+	return v.value
+}
+
+func (v *NullableGetBillingZoneIdentifier200Response) Set(val *GetBillingZoneIdentifier200Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetBillingZoneIdentifier200Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetBillingZoneIdentifier200Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetBillingZoneIdentifier200Response(val *GetBillingZoneIdentifier200Response) *NullableGetBillingZoneIdentifier200Response {
+	return &NullableGetBillingZoneIdentifier200Response{value: val, isSet: true}
+}
+
+func (v NullableGetBillingZoneIdentifier200Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetBillingZoneIdentifier200Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetBillingZoneIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

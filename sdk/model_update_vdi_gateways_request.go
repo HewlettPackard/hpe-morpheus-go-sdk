@@ -86,6 +86,43 @@ func (o UpdateVDIGatewaysRequest) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableUpdateVDIGatewaysRequest struct {
+	value *UpdateVDIGatewaysRequest
+	isSet bool
+}
+
+func (v NullableUpdateVDIGatewaysRequest) Get() *UpdateVDIGatewaysRequest {
+	return v.value
+}
+
+func (v *NullableUpdateVDIGatewaysRequest) Set(val *UpdateVDIGatewaysRequest) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableUpdateVDIGatewaysRequest) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableUpdateVDIGatewaysRequest) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableUpdateVDIGatewaysRequest(val *UpdateVDIGatewaysRequest) *NullableUpdateVDIGatewaysRequest {
+	return &NullableUpdateVDIGatewaysRequest{value: val, isSet: true}
+}
+
+func (v NullableUpdateVDIGatewaysRequest) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableUpdateVDIGatewaysRequest) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *UpdateVDIGatewaysRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

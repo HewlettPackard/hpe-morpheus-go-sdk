@@ -823,6 +823,43 @@ func (o ZoneResourcePool) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableZoneResourcePool struct {
+	value *ZoneResourcePool
+	isSet bool
+}
+
+func (v NullableZoneResourcePool) Get() *ZoneResourcePool {
+	return v.value
+}
+
+func (v *NullableZoneResourcePool) Set(val *ZoneResourcePool) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableZoneResourcePool) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableZoneResourcePool) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableZoneResourcePool(val *ZoneResourcePool) *NullableZoneResourcePool {
+	return &NullableZoneResourcePool{value: val, isSet: true}
+}
+
+func (v NullableZoneResourcePool) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableZoneResourcePool) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *ZoneResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

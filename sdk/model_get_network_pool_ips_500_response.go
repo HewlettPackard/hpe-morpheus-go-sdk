@@ -95,6 +95,43 @@ func (o GetNetworkPoolIps500Response) ToMap() (map[string]interface{}, error) {
 
 	return toSerialize, nil
 }
+
+type NullableGetNetworkPoolIps500Response struct {
+	value *GetNetworkPoolIps500Response
+	isSet bool
+}
+
+func (v NullableGetNetworkPoolIps500Response) Get() *GetNetworkPoolIps500Response {
+	return v.value
+}
+
+func (v *NullableGetNetworkPoolIps500Response) Set(val *GetNetworkPoolIps500Response) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v NullableGetNetworkPoolIps500Response) IsSet() bool {
+	return v.isSet
+}
+
+func (v *NullableGetNetworkPoolIps500Response) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullableGetNetworkPoolIps500Response(val *GetNetworkPoolIps500Response) *NullableGetNetworkPoolIps500Response {
+	return &NullableGetNetworkPoolIps500Response{value: val, isSet: true}
+}
+
+func (v NullableGetNetworkPoolIps500Response) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *NullableGetNetworkPoolIps500Response) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+
 func (o *GetNetworkPoolIps500Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
