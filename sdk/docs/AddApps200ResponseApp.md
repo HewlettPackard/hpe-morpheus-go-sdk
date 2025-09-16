@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Environment** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
-**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Group** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Blueprint** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -198,20 +198,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *AddApps200ResponseApp) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddApps200ResponseApp) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *AddApps200ResponseApp) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddApps200ResponseApp) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *AddApps200ResponseApp) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddApps200ResponseApp) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -221,6 +221,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *AddApps200ResponseApp) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *AddApps200ResponseApp) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetOwner
 
 `func (o *AddApps200ResponseApp) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -273,20 +283,20 @@ HasSiteId returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *AddApps200ResponseApp) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddApps200ResponseApp) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *AddApps200ResponseApp) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddApps200ResponseApp) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *AddApps200ResponseApp) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddApps200ResponseApp) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetGroup sets Group field to given value.
 
@@ -296,6 +306,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *AddApps200ResponseApp) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *AddApps200ResponseApp) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetBlueprint
 
 `func (o *AddApps200ResponseApp) GetBlueprint() ListApps200ResponseAllOfAppsInnerBlueprint`

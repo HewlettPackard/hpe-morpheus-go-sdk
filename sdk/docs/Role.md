@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Role** | Pointer to [**ListRoles200ResponseAllOfRolesInner**](ListRoles200ResponseAllOfRolesInner.md) |  | [optional] 
+**Role** | Pointer to [**AddRoles200ResponseAllOfRole**](AddRoles200ResponseAllOfRole.md) |  | [optional] 
 **FeaturePermissions** | Pointer to [**[]AddRoles200ResponseAllOfFeaturePermissionsInner**](AddRoles200ResponseAllOfFeaturePermissionsInner.md) |  | [optional] 
 **GlobalSiteAccess** | Pointer to **string** |  | [optional] 
 **Sites** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
@@ -48,20 +48,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRole
 
-`func (o *Role) GetRole() ListRoles200ResponseAllOfRolesInner`
+`func (o *Role) GetRole() AddRoles200ResponseAllOfRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *Role) GetRoleOk() (*ListRoles200ResponseAllOfRolesInner, bool)`
+`func (o *Role) GetRoleOk() (*AddRoles200ResponseAllOfRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *Role) SetRole(v ListRoles200ResponseAllOfRolesInner)`
+`func (o *Role) SetRole(v AddRoles200ResponseAllOfRole)`
 
 SetRole sets Role field to given value.
 

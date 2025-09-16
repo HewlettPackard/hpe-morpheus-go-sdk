@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GetInvoices200Response{}
 
 // GetInvoices200Response struct for GetInvoices200Response
 type GetInvoices200Response struct {
-	Invoice              *ListInvoices200ResponseAllOfInvoicesInner `json:"invoice,omitempty"`
-	MasterAccount        *bool                                      `json:"masterAccount,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	Invoice              *GetInvoices200ResponseAllOfInvoice `json:"invoice,omitempty"`
+	MasterAccount        *bool                               `json:"masterAccount,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _GetInvoices200Response GetInvoices200Response
@@ -45,9 +45,9 @@ func NewGetInvoices200ResponseWithDefaults() *GetInvoices200Response {
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *GetInvoices200Response) GetInvoice() ListInvoices200ResponseAllOfInvoicesInner {
+func (o *GetInvoices200Response) GetInvoice() GetInvoices200ResponseAllOfInvoice {
 	if o == nil || IsNil(o.Invoice) {
-		var ret ListInvoices200ResponseAllOfInvoicesInner
+		var ret GetInvoices200ResponseAllOfInvoice
 		return ret
 	}
 	return *o.Invoice
@@ -55,7 +55,7 @@ func (o *GetInvoices200Response) GetInvoice() ListInvoices200ResponseAllOfInvoic
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInvoices200Response) GetInvoiceOk() (*ListInvoices200ResponseAllOfInvoicesInner, bool) {
+func (o *GetInvoices200Response) GetInvoiceOk() (*GetInvoices200ResponseAllOfInvoice, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *GetInvoices200Response) IsSetInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given ListInvoices200ResponseAllOfInvoicesInner and assigns it to the Invoice field.
-func (o *GetInvoices200Response) SetInvoice(v ListInvoices200ResponseAllOfInvoicesInner) {
+// SetInvoice gets a reference to the given GetInvoices200ResponseAllOfInvoice and assigns it to the Invoice field.
+func (o *GetInvoices200Response) SetInvoice(v GetInvoices200ResponseAllOfInvoice) {
 	o.Invoice = &v
 }
 

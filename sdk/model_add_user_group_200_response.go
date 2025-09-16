@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddUserGroup200Response{}
 
 // AddUserGroup200Response struct for AddUserGroup200Response
 type AddUserGroup200Response struct {
-	UserGroup            *ListUserGroups200ResponseAllOfUserGroupsInner `json:"userGroup,omitempty"`
-	Success              *bool                                          `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	UserGroup            *AddUserGroup200ResponseAllOfUserGroup `json:"userGroup,omitempty"`
+	Success              *bool                                  `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _AddUserGroup200Response AddUserGroup200Response
@@ -45,9 +45,9 @@ func NewAddUserGroup200ResponseWithDefaults() *AddUserGroup200Response {
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddUserGroup200Response) GetUserGroup() ListUserGroups200ResponseAllOfUserGroupsInner {
+func (o *AddUserGroup200Response) GetUserGroup() AddUserGroup200ResponseAllOfUserGroup {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret ListUserGroups200ResponseAllOfUserGroupsInner
+		var ret AddUserGroup200ResponseAllOfUserGroup
 		return ret
 	}
 	return *o.UserGroup
@@ -55,7 +55,7 @@ func (o *AddUserGroup200Response) GetUserGroup() ListUserGroups200ResponseAllOfU
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserGroup200Response) GetUserGroupOk() (*ListUserGroups200ResponseAllOfUserGroupsInner, bool) {
+func (o *AddUserGroup200Response) GetUserGroupOk() (*AddUserGroup200ResponseAllOfUserGroup, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddUserGroup200Response) IsSetUserGroup() bool {
 	return false
 }
 
-// SetUserGroup gets a reference to the given ListUserGroups200ResponseAllOfUserGroupsInner and assigns it to the UserGroup field.
-func (o *AddUserGroup200Response) SetUserGroup(v ListUserGroups200ResponseAllOfUserGroupsInner) {
+// SetUserGroup gets a reference to the given AddUserGroup200ResponseAllOfUserGroup and assigns it to the UserGroup field.
+func (o *AddUserGroup200Response) SetUserGroup(v AddUserGroup200ResponseAllOfUserGroup) {
 	o.UserGroup = &v
 }
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,9 +23,9 @@ type UpdateHostInstallAgentRequestServer struct {
 	// SSH username to use when provisioning
 	SshUsername *string `json:"sshUsername,omitempty"`
 	// SSH password to use, if not specified the account public key can be used
-	SshPassword          *string                                      `json:"sshPassword,omitempty"`
-	ServerOs             *UpdateHostInstallAgentRequestServerServerOs `json:"serverOs,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	SshPassword          *string                          `json:"sshPassword,omitempty"`
+	ServerOs             *UpdateHostRequestServerServerOs `json:"serverOs,omitempty"`
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _UpdateHostInstallAgentRequestServer UpdateHostInstallAgentRequestServer
@@ -112,9 +112,9 @@ func (o *UpdateHostInstallAgentRequestServer) SetSshPassword(v string) {
 }
 
 // GetServerOs returns the ServerOs field value if set, zero value otherwise.
-func (o *UpdateHostInstallAgentRequestServer) GetServerOs() UpdateHostInstallAgentRequestServerServerOs {
+func (o *UpdateHostInstallAgentRequestServer) GetServerOs() UpdateHostRequestServerServerOs {
 	if o == nil || IsNil(o.ServerOs) {
-		var ret UpdateHostInstallAgentRequestServerServerOs
+		var ret UpdateHostRequestServerServerOs
 		return ret
 	}
 	return *o.ServerOs
@@ -122,7 +122,7 @@ func (o *UpdateHostInstallAgentRequestServer) GetServerOs() UpdateHostInstallAge
 
 // GetServerOsOk returns a tuple with the ServerOs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateHostInstallAgentRequestServer) GetServerOsOk() (*UpdateHostInstallAgentRequestServerServerOs, bool) {
+func (o *UpdateHostInstallAgentRequestServer) GetServerOsOk() (*UpdateHostRequestServerServerOs, bool) {
 	if o == nil || IsNil(o.ServerOs) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *UpdateHostInstallAgentRequestServer) IsSetServerOs() bool {
 	return false
 }
 
-// SetServerOs gets a reference to the given UpdateHostInstallAgentRequestServerServerOs and assigns it to the ServerOs field.
-func (o *UpdateHostInstallAgentRequestServer) SetServerOs(v UpdateHostInstallAgentRequestServerServerOs) {
+// SetServerOs gets a reference to the given UpdateHostRequestServerServerOs and assigns it to the ServerOs field.
+func (o *UpdateHostInstallAgentRequestServer) SetServerOs(v UpdateHostRequestServerServerOs) {
 	o.ServerOs = &v
 }
 

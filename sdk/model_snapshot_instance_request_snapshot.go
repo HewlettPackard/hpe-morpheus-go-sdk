@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -25,7 +25,9 @@ type SnapshotInstanceRequestSnapshot struct {
 	// Optional description for the snapshot
 	Description *string `json:"description,omitempty"`
 	// Whether to include the memory state in the snapshot. Only supported by certain provision types such as VMware
-	MemorySnapshot       *bool                  `json:"memorySnapshot,omitempty"`
+	MemorySnapshot *bool `json:"memorySnapshot,omitempty"`
+	// For Export? Indicates the snapshot is intended for export to storage.
+	ForExport            *bool                  `json:"forExport,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -41,6 +43,8 @@ func NewSnapshotInstanceRequestSnapshot() *SnapshotInstanceRequestSnapshot {
 	this.Name = &name
 	var memorySnapshot bool = false
 	this.MemorySnapshot = &memorySnapshot
+	var forExport bool = false
+	this.ForExport = &forExport
 	return &this
 }
 
@@ -53,6 +57,8 @@ func NewSnapshotInstanceRequestSnapshotWithDefaults() *SnapshotInstanceRequestSn
 	this.Name = &name
 	var memorySnapshot bool = false
 	this.MemorySnapshot = &memorySnapshot
+	var forExport bool = false
+	this.ForExport = &forExport
 	return &this
 }
 
@@ -152,6 +158,38 @@ func (o *SnapshotInstanceRequestSnapshot) SetMemorySnapshot(v bool) {
 	o.MemorySnapshot = &v
 }
 
+// GetForExport returns the ForExport field value if set, zero value otherwise.
+func (o *SnapshotInstanceRequestSnapshot) GetForExport() bool {
+	if o == nil || IsNil(o.ForExport) {
+		var ret bool
+		return ret
+	}
+	return *o.ForExport
+}
+
+// GetForExportOk returns a tuple with the ForExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnapshotInstanceRequestSnapshot) GetForExportOk() (*bool, bool) {
+	if o == nil || IsNil(o.ForExport) {
+		return nil, false
+	}
+	return o.ForExport, true
+}
+
+// IsSetForExport returns a boolean if a field has been set.
+func (o *SnapshotInstanceRequestSnapshot) IsSetForExport() bool {
+	if o != nil && !IsNil(o.ForExport) {
+		return true
+	}
+
+	return false
+}
+
+// SetForExport gets a reference to the given bool and assigns it to the ForExport field.
+func (o *SnapshotInstanceRequestSnapshot) SetForExport(v bool) {
+	o.ForExport = &v
+}
+
 func (o SnapshotInstanceRequestSnapshot) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -170,6 +208,9 @@ func (o SnapshotInstanceRequestSnapshot) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.MemorySnapshot) {
 		toSerialize["memorySnapshot"] = o.MemorySnapshot
+	}
+	if !IsNil(o.ForExport) {
+		toSerialize["forExport"] = o.ForExport
 	}
 
 	for key, value := range o.AdditionalProperties {

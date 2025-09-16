@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &ListVDIAllocations200ResponseAllOfVdiAllocationsInner{}
 // ListVDIAllocations200ResponseAllOfVdiAllocationsInner struct for ListVDIAllocations200ResponseAllOfVdiAllocationsInner
 type ListVDIAllocations200ResponseAllOfVdiAllocationsInner struct {
 	Id                   *int64                                                         `json:"id,omitempty"`
-	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"pool,omitempty"`
+	Pool                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount     `json:"pool,omitempty"`
 	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance `json:"instance,omitempty"`
 	User                 *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                `json:"user,omitempty"`
 	LocalUserCreated     *bool                                                          `json:"localUserCreated,omitempty"`
@@ -86,36 +86,47 @@ func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Pool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Pool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Pool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
-func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Pool = &v
+// SetPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Pool field.
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
@@ -452,8 +463,8 @@ func (o ListVDIAllocations200ResponseAllOfVdiAllocationsInner) ToMap() (map[stri
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance

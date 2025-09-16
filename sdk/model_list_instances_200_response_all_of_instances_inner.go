@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -24,9 +24,9 @@ type ListInstances200ResponseAllOfInstancesInner struct {
 	Id                   *int64                                                                       `json:"id,omitempty"`
 	Uuid                 *string                                                                      `json:"uuid,omitempty"`
 	AccountId            *int64                                                                       `json:"accountId,omitempty"`
-	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"tenant,omitempty"`
+	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount                   `json:"tenant,omitempty"`
 	InstanceType         *ListInstances200ResponseAllOfInstancesInnerInstanceType                     `json:"instanceType,omitempty"`
-	Group                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                           `json:"group,omitempty"`
+	Group                NullableListApprovals200ResponseAllOfApprovalsInnerAccount                   `json:"group,omitempty"`
 	Cloud                *ListApps200ResponseAllOfAppsInnerBlueprint                                  `json:"cloud,omitempty"`
 	Cluster              *ListInstances200ResponseAllOfInstancesInnerCluster                          `json:"cluster,omitempty"`
 	Containers           []int64                                                                      `json:"containers,omitempty"`
@@ -217,36 +217,47 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Tenant) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Tenant.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Tenant) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInner) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
-func (o *ListInstances200ResponseAllOfInstancesInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Tenant = &v
+// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
+func (o *ListInstances200ResponseAllOfInstancesInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -281,36 +292,47 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceType(v ListInst
 	o.InstanceType = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Group) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInstances200ResponseAllOfInstancesInner) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Group.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Group
+	return *o.Group.Get()
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Group) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInstances200ResponseAllOfInstancesInner) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Group, true
+	return o.Group.Get(), o.Group.IsSet()
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *ListInstances200ResponseAllOfInstancesInner) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
+	if o != nil && o.Group.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Group field.
-func (o *ListInstances200ResponseAllOfInstancesInner) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Group = &v
+// SetGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Group field.
+func (o *ListInstances200ResponseAllOfInstancesInner) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Group.Set(&v)
+}
+
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *ListInstances200ResponseAllOfInstancesInner) UnsetGroup() {
+	o.Group.Unset()
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
@@ -2848,14 +2870,14 @@ func (o ListInstances200ResponseAllOfInstancesInner) ToMap() (map[string]interfa
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 	if !IsNil(o.InstanceType) {
 		toSerialize["instanceType"] = o.InstanceType
 	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud

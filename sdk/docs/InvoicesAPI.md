@@ -184,8 +184,8 @@ func main() {
 	period := "201901" // string | Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM.  (optional)
 	refType := "ComputeSite" // string | If specified will return an exact match on refType.  (optional)
 	refId := int64(3) // int64 | If specified will return an exact match on refId (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	instanceId := int64(94) // int64 | The Instance ID for Filtering (optional)
 	containerId := int64(135) // int64 | The Container ID for Filtering (optional)
 	serverId := int64(97) // int64 | The Server ID for Filtering (optional)
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
  **period** | **string** | Only return records for period that matches with the specified value. This is an alternative to using startDate/endDate. Format is YYYY or YYYYMM.  | 
  **refType** | **string** | If specified will return an exact match on refType.  | 
  **refId** | **int64** | If specified will return an exact match on refId | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **instanceId** | **int64** | The Instance ID for Filtering | 
  **containerId** | **int64** | The Container ID for Filtering | 
  **serverId** | **int64** | The Server ID for Filtering | 
@@ -291,8 +291,8 @@ func main() {
 	refType := "ComputeSite" // string | If specified will return an exact match on refType.  (optional)
 	refId := int64(3) // int64 | If specified will return an exact match on refId (optional)
 	refStatus := "provisioned" // string | If specified, will filter on the associated StorageVolume status. This is only applicable whn `refType=StorageVolume`.  (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	instanceId := int64(94) // int64 | The Instance ID for Filtering (optional)
 	containerId := int64(135) // int64 | The Container ID for Filtering (optional)
 	serverId := int64(97) // int64 | The Server ID for Filtering (optional)
@@ -339,8 +339,8 @@ Name | Type | Description  | Notes
  **refType** | **string** | If specified will return an exact match on refType.  | 
  **refId** | **int64** | If specified will return an exact match on refId | 
  **refStatus** | **string** | If specified, will filter on the associated StorageVolume status. This is only applicable whn &#x60;refType&#x3D;StorageVolume&#x60;.  | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **instanceId** | **int64** | The Instance ID for Filtering | 
  **containerId** | **int64** | The Container ID for Filtering | 
  **serverId** | **int64** | The Server ID for Filtering | 

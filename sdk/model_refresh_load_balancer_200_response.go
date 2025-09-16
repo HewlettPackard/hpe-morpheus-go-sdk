@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &RefreshLoadBalancer200Response{}
 
 // RefreshLoadBalancer200Response struct for RefreshLoadBalancer200Response
 type RefreshLoadBalancer200Response struct {
-	LoadBalancer         *ListLoadBalancers200ResponseAllOfLoadBalancersInner `json:"loadBalancer,omitempty"`
-	Success              *bool                                                `json:"success,omitempty"`
-	Msg                  NullableString                                       `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	LoadBalancer         *CreateLoadBalancer200ResponseLoadBalancer `json:"loadBalancer,omitempty"`
+	Success              *bool                                      `json:"success,omitempty"`
+	Msg                  NullableString                             `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _RefreshLoadBalancer200Response RefreshLoadBalancer200Response
@@ -46,9 +46,9 @@ func NewRefreshLoadBalancer200ResponseWithDefaults() *RefreshLoadBalancer200Resp
 }
 
 // GetLoadBalancer returns the LoadBalancer field value if set, zero value otherwise.
-func (o *RefreshLoadBalancer200Response) GetLoadBalancer() ListLoadBalancers200ResponseAllOfLoadBalancersInner {
+func (o *RefreshLoadBalancer200Response) GetLoadBalancer() CreateLoadBalancer200ResponseLoadBalancer {
 	if o == nil || IsNil(o.LoadBalancer) {
-		var ret ListLoadBalancers200ResponseAllOfLoadBalancersInner
+		var ret CreateLoadBalancer200ResponseLoadBalancer
 		return ret
 	}
 	return *o.LoadBalancer
@@ -56,7 +56,7 @@ func (o *RefreshLoadBalancer200Response) GetLoadBalancer() ListLoadBalancers200R
 
 // GetLoadBalancerOk returns a tuple with the LoadBalancer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RefreshLoadBalancer200Response) GetLoadBalancerOk() (*ListLoadBalancers200ResponseAllOfLoadBalancersInner, bool) {
+func (o *RefreshLoadBalancer200Response) GetLoadBalancerOk() (*CreateLoadBalancer200ResponseLoadBalancer, bool) {
 	if o == nil || IsNil(o.LoadBalancer) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *RefreshLoadBalancer200Response) IsSetLoadBalancer() bool {
 	return false
 }
 
-// SetLoadBalancer gets a reference to the given ListLoadBalancers200ResponseAllOfLoadBalancersInner and assigns it to the LoadBalancer field.
-func (o *RefreshLoadBalancer200Response) SetLoadBalancer(v ListLoadBalancers200ResponseAllOfLoadBalancersInner) {
+// SetLoadBalancer gets a reference to the given CreateLoadBalancer200ResponseLoadBalancer and assigns it to the LoadBalancer field.
+func (o *RefreshLoadBalancer200Response) SetLoadBalancer(v CreateLoadBalancer200ResponseLoadBalancer) {
 	o.LoadBalancer = &v
 }
 

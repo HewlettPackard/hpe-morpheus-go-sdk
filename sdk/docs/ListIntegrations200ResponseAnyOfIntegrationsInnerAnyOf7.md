@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** |  | [optional] 
 **IntegrationType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
-**ServiceKey** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ServiceKey** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **IsPlugin** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config**](ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config.md) |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -191,20 +191,20 @@ HasUrl returns a boolean if a field has been set.
 
 ### GetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) GetServiceKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) GetServiceKey() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetServiceKey returns the ServiceKey field if non-nil, zero value otherwise.
 
 ### GetServiceKeyOk
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) GetServiceKeyOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) GetServiceKeyOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetServiceKeyOk returns a tuple with the ServiceKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceKey
 
-`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) SetServiceKey(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) SetServiceKey(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetServiceKey sets ServiceKey field to given value.
 
@@ -214,6 +214,16 @@ SetServiceKey sets ServiceKey field to given value.
 
 HasServiceKey returns a boolean if a field has been set.
 
+### SetServiceKeyNil
+
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) SetServiceKeyNil(b bool)`
+
+ SetServiceKeyNil sets the value for ServiceKey to be an explicit nil
+
+### UnsetServiceKey
+`func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) UnsetServiceKey()`
+
+UnsetServiceKey ensures that no value is present for ServiceKey, not even an explicit nil
 ### GetIsPlugin
 
 `func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) GetIsPlugin() bool`

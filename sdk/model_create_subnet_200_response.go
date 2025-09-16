@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &CreateSubnet200Response{}
 
 // CreateSubnet200Response struct for CreateSubnet200Response
 type CreateSubnet200Response struct {
-	Subnet               *GetNetworkSubnets200ResponseAllOfSubnetsInner `json:"subnet,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Subnet               *ListSubnets200ResponseAllOfSubnetsInner `json:"subnet,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _CreateSubnet200Response CreateSubnet200Response
@@ -44,9 +44,9 @@ func NewCreateSubnet200ResponseWithDefaults() *CreateSubnet200Response {
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise.
-func (o *CreateSubnet200Response) GetSubnet() GetNetworkSubnets200ResponseAllOfSubnetsInner {
+func (o *CreateSubnet200Response) GetSubnet() ListSubnets200ResponseAllOfSubnetsInner {
 	if o == nil || IsNil(o.Subnet) {
-		var ret GetNetworkSubnets200ResponseAllOfSubnetsInner
+		var ret ListSubnets200ResponseAllOfSubnetsInner
 		return ret
 	}
 	return *o.Subnet
@@ -54,7 +54,7 @@ func (o *CreateSubnet200Response) GetSubnet() GetNetworkSubnets200ResponseAllOfS
 
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateSubnet200Response) GetSubnetOk() (*GetNetworkSubnets200ResponseAllOfSubnetsInner, bool) {
+func (o *CreateSubnet200Response) GetSubnetOk() (*ListSubnets200ResponseAllOfSubnetsInner, bool) {
 	if o == nil || IsNil(o.Subnet) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *CreateSubnet200Response) IsSetSubnet() bool {
 	return false
 }
 
-// SetSubnet gets a reference to the given GetNetworkSubnets200ResponseAllOfSubnetsInner and assigns it to the Subnet field.
-func (o *CreateSubnet200Response) SetSubnet(v GetNetworkSubnets200ResponseAllOfSubnetsInner) {
+// SetSubnet gets a reference to the given ListSubnets200ResponseAllOfSubnetsInner and assigns it to the Subnet field.
+func (o *CreateSubnet200Response) SetSubnet(v ListSubnets200ResponseAllOfSubnetsInner) {
 	o.Subnet = &v
 }
 

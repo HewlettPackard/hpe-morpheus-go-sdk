@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **int64** |  | [optional] 
 **UserId** | Pointer to **NullableString** |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
-**Zone** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone.md) |  | [optional] 
+**Zone** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone.md) |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **StateMessage** | Pointer to **NullableString** |  | [optional] 
 **Severity** | Pointer to **string** |  | [optional] 
@@ -422,20 +422,20 @@ HasSiteId returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *GuidanceAzureReservations) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone`
+`func (o *GuidanceAzureReservations) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *GuidanceAzureReservations) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone, bool)`
+`func (o *GuidanceAzureReservations) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *GuidanceAzureReservations) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone)`
+`func (o *GuidanceAzureReservations) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone)`
 
 SetZone sets Zone field to given value.
 

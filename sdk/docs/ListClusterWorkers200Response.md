@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Workers** | Pointer to [**[]GetClusterMasters200ResponseMastersInner**](GetClusterMasters200ResponseMastersInner.md) |  | [optional] 
+**Workers** | Pointer to [**[]ListClusterWorkers200ResponseAllOfWorkersInner**](ListClusterWorkers200ResponseAllOfWorkersInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetWorkers
 
-`func (o *ListClusterWorkers200Response) GetWorkers() []GetClusterMasters200ResponseMastersInner`
+`func (o *ListClusterWorkers200Response) GetWorkers() []ListClusterWorkers200ResponseAllOfWorkersInner`
 
 GetWorkers returns the Workers field if non-nil, zero value otherwise.
 
 ### GetWorkersOk
 
-`func (o *ListClusterWorkers200Response) GetWorkersOk() (*[]GetClusterMasters200ResponseMastersInner, bool)`
+`func (o *ListClusterWorkers200Response) GetWorkersOk() (*[]ListClusterWorkers200ResponseAllOfWorkersInner, bool)`
 
 GetWorkersOk returns a tuple with the Workers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkers
 
-`func (o *ListClusterWorkers200Response) SetWorkers(v []GetClusterMasters200ResponseMastersInner)`
+`func (o *ListClusterWorkers200Response) SetWorkers(v []ListClusterWorkers200ResponseAllOfWorkersInner)`
 
 SetWorkers sets Workers field to given value.
 

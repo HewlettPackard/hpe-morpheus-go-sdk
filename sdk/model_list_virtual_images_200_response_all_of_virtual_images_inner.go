@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -26,7 +26,7 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	Description          NullableString                                                      `json:"description,omitempty"`
 	Labels               []string                                                            `json:"labels,omitempty"`
 	OwnerId              *int64                                                              `json:"ownerId,omitempty"`
-	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                  `json:"tenant,omitempty"`
+	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount          `json:"tenant,omitempty"`
 	ImageType            *string                                                             `json:"imageType,omitempty"`
 	UserUploaded         *bool                                                               `json:"userUploaded,omitempty"`
 	UserDefined          *bool                                                               `json:"userDefined,omitempty"`
@@ -260,36 +260,47 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOwnerId(v int64
 	o.OwnerId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Tenant) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Tenant.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Tenant) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Tenant = &v
+// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 // GetImageType returns the ImageType field value if set, zero value otherwise.
@@ -1762,8 +1773,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 	if !IsNil(o.ImageType) {
 		toSerialize["imageType"] = o.ImageType

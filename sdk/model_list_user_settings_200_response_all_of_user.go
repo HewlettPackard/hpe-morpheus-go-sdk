@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -33,11 +33,11 @@ type ListUserSettings200ResponseAllOfUser struct {
 	Avatar               *string                                                     `json:"avatar,omitempty"`
 	DesktopBackground    *string                                                     `json:"desktopBackground,omitempty"`
 	ReceiveNotifications *bool                                                       `json:"receiveNotifications,omitempty"`
-	DefaultGroup         *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultGroup,omitempty"`
-	DefaultCloud         *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultCloud,omitempty"`
+	DefaultGroup         NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"defaultGroup,omitempty"`
+	DefaultCloud         NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"defaultCloud,omitempty"`
 	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
 	IsUsing2FA           *bool                                                       `json:"isUsing2FA,omitempty"`
-	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenant,omitempty"`
+	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"tenant,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
@@ -487,68 +487,90 @@ func (o *ListUserSettings200ResponseAllOfUser) SetReceiveNotifications(v bool) {
 	o.ReceiveNotifications = &v
 }
 
-// GetDefaultGroup returns the DefaultGroup field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.DefaultGroup) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetDefaultGroup returns the DefaultGroup field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.DefaultGroup.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.DefaultGroup
+	return *o.DefaultGroup.Get()
 }
 
 // GetDefaultGroupOk returns a tuple with the DefaultGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.DefaultGroup) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultGroup, true
+	return o.DefaultGroup.Get(), o.DefaultGroup.IsSet()
 }
 
 // IsSetDefaultGroup returns a boolean if a field has been set.
 func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultGroup() bool {
-	if o != nil && !IsNil(o.DefaultGroup) {
+	if o != nil && o.DefaultGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultGroup field.
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.DefaultGroup = &v
+// SetDefaultGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the DefaultGroup field.
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.DefaultGroup.Set(&v)
 }
 
-// GetDefaultCloud returns the DefaultCloud field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.DefaultCloud) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetDefaultGroupNil sets the value for DefaultGroup to be an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroupNil() {
+	o.DefaultGroup.Set(nil)
+}
+
+// UnsetDefaultGroup ensures that no value is present for DefaultGroup, not even an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultGroup() {
+	o.DefaultGroup.Unset()
+}
+
+// GetDefaultCloud returns the DefaultCloud field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.DefaultCloud.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.DefaultCloud
+	return *o.DefaultCloud.Get()
 }
 
 // GetDefaultCloudOk returns a tuple with the DefaultCloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.DefaultCloud) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultCloud, true
+	return o.DefaultCloud.Get(), o.DefaultCloud.IsSet()
 }
 
 // IsSetDefaultCloud returns a boolean if a field has been set.
 func (o *ListUserSettings200ResponseAllOfUser) IsSetDefaultCloud() bool {
-	if o != nil && !IsNil(o.DefaultCloud) {
+	if o != nil && o.DefaultCloud.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultCloud field.
-func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.DefaultCloud = &v
+// SetDefaultCloud gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the DefaultCloud field.
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.DefaultCloud.Set(&v)
+}
+
+// SetDefaultCloudNil sets the value for DefaultCloud to be an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloudNil() {
+	o.DefaultCloud.Set(nil)
+}
+
+// UnsetDefaultCloud ensures that no value is present for DefaultCloud, not even an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultCloud() {
+	o.DefaultCloud.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
@@ -615,36 +637,47 @@ func (o *ListUserSettings200ResponseAllOfUser) SetIsUsing2FA(v bool) {
 	o.IsUsing2FA = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListUserSettings200ResponseAllOfUser) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Tenant) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListUserSettings200ResponseAllOfUser) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Tenant.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Tenant) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListUserSettings200ResponseAllOfUser) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
-func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Tenant = &v
+// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
+func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListUserSettings200ResponseAllOfUser) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 func (o ListUserSettings200ResponseAllOfUser) MarshalJSON() ([]byte, error) {
@@ -696,11 +729,11 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 	if !IsNil(o.ReceiveNotifications) {
 		toSerialize["receiveNotifications"] = o.ReceiveNotifications
 	}
-	if !IsNil(o.DefaultGroup) {
-		toSerialize["defaultGroup"] = o.DefaultGroup
+	if o.DefaultGroup.IsSet() {
+		toSerialize["defaultGroup"] = o.DefaultGroup.Get()
 	}
-	if !IsNil(o.DefaultCloud) {
-		toSerialize["defaultCloud"] = o.DefaultCloud
+	if o.DefaultCloud.IsSet() {
+		toSerialize["defaultCloud"] = o.DefaultCloud.Get()
 	}
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona
@@ -708,8 +741,8 @@ func (o ListUserSettings200ResponseAllOfUser) ToMap() (map[string]interface{}, e
 	if !IsNil(o.IsUsing2FA) {
 		toSerialize["isUsing2FA"] = o.IsUsing2FA
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

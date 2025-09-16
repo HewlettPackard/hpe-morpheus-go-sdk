@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &ListArchiveFiles200Response{}
 
 // ListArchiveFiles200Response struct for ListArchiveFiles200Response
 type ListArchiveFiles200Response struct {
-	ArchiveBucket        *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
-	IsOwner              *bool                                                  `json:"isOwner,omitempty"`
-	ParentDirectory      NullableString                                         `json:"parentDirectory,omitempty"`
-	ArchiveFiles         []GetArchiveBucket200ResponseArchiveFilesInner         `json:"archiveFiles,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                      `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	ArchiveBucket        *AddArchiveBucket200ResponseAllOfArchiveBucket `json:"archiveBucket,omitempty"`
+	IsOwner              *bool                                          `json:"isOwner,omitempty"`
+	ParentDirectory      NullableString                                 `json:"parentDirectory,omitempty"`
+	ArchiveFiles         []GetArchiveBucket200ResponseArchiveFilesInner `json:"archiveFiles,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta              `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _ListArchiveFiles200Response ListArchiveFiles200Response
@@ -48,9 +48,9 @@ func NewListArchiveFiles200ResponseWithDefaults() *ListArchiveFiles200Response {
 }
 
 // GetArchiveBucket returns the ArchiveBucket field value if set, zero value otherwise.
-func (o *ListArchiveFiles200Response) GetArchiveBucket() ListArchiveBuckets200ResponseAllOfArchiveBucketsInner {
+func (o *ListArchiveFiles200Response) GetArchiveBucket() AddArchiveBucket200ResponseAllOfArchiveBucket {
 	if o == nil || IsNil(o.ArchiveBucket) {
-		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
+		var ret AddArchiveBucket200ResponseAllOfArchiveBucket
 		return ret
 	}
 	return *o.ArchiveBucket
@@ -58,7 +58,7 @@ func (o *ListArchiveFiles200Response) GetArchiveBucket() ListArchiveBuckets200Re
 
 // GetArchiveBucketOk returns a tuple with the ArchiveBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveFiles200Response) GetArchiveBucketOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInner, bool) {
+func (o *ListArchiveFiles200Response) GetArchiveBucketOk() (*AddArchiveBucket200ResponseAllOfArchiveBucket, bool) {
 	if o == nil || IsNil(o.ArchiveBucket) {
 		return nil, false
 	}
@@ -74,8 +74,8 @@ func (o *ListArchiveFiles200Response) IsSetArchiveBucket() bool {
 	return false
 }
 
-// SetArchiveBucket gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInner and assigns it to the ArchiveBucket field.
-func (o *ListArchiveFiles200Response) SetArchiveBucket(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) {
+// SetArchiveBucket gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucket and assigns it to the ArchiveBucket field.
+func (o *ListArchiveFiles200Response) SetArchiveBucket(v AddArchiveBucket200ResponseAllOfArchiveBucket) {
 	o.ArchiveBucket = &v
 }
 

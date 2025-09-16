@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,20 +21,20 @@ var _ MappedNullable = &CheckWeb{}
 // CheckWeb Web check type allows you to perform a standard web request and validate the response came back successfully.  Additionally, you can check for matching text within the result.
 type CheckWeb struct {
 	// Unique name scoped to your account for the check
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Optional description field
-	Description NullableString                       `json:"description,omitempty"`
-	CheckType   *AddChecksRequestCheckOneOfCheckType `json:"checkType,omitempty"`
-	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+	Description NullableString `json:"description,omitempty"`
+	// Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
 	InUptime *bool `json:"inUptime,omitempty"`
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity             *string                           `json:"severity,omitempty"`
-	Config               *AddChecksRequestCheckOneOfConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}            `json:",remain"`
+	Severity             *string                 `json:"severity,omitempty"`
+	CheckType            *WebCheckAllOfCheckType `json:"checkType,omitempty"`
+	Config               *WebCheckAllOfConfig    `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}  `json:",remain"`
 }
 
 type _CheckWeb CheckWeb
@@ -43,9 +43,10 @@ type _CheckWeb CheckWeb
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckWeb() *CheckWeb {
+func NewCheckWeb(name string) *CheckWeb {
 	this := CheckWeb{}
-	var checkInterval int32 = 300
+	this.Name = name
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -61,7 +62,7 @@ func NewCheckWeb() *CheckWeb {
 // but it doesn't guarantee that properties required by API are set
 func NewCheckWebWithDefaults() *CheckWeb {
 	this := CheckWeb{}
-	var checkInterval int32 = 300
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -72,36 +73,28 @@ func NewCheckWebWithDefaults() *CheckWeb {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *CheckWeb) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *CheckWeb) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *CheckWeb) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -145,38 +138,6 @@ func (o *CheckWeb) SetDescriptionNil() {
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
 func (o *CheckWeb) UnsetDescription() {
 	o.Description.Unset()
-}
-
-// GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *CheckWeb) GetCheckType() AddChecksRequestCheckOneOfCheckType {
-	if o == nil || IsNil(o.CheckType) {
-		var ret AddChecksRequestCheckOneOfCheckType
-		return ret
-	}
-	return *o.CheckType
-}
-
-// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckWeb) GetCheckTypeOk() (*AddChecksRequestCheckOneOfCheckType, bool) {
-	if o == nil || IsNil(o.CheckType) {
-		return nil, false
-	}
-	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *CheckWeb) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckType gets a reference to the given AddChecksRequestCheckOneOfCheckType and assigns it to the CheckType field.
-func (o *CheckWeb) SetCheckType(v AddChecksRequestCheckOneOfCheckType) {
-	o.CheckType = &v
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -307,10 +268,42 @@ func (o *CheckWeb) SetSeverity(v string) {
 	o.Severity = &v
 }
 
+// GetCheckType returns the CheckType field value if set, zero value otherwise.
+func (o *CheckWeb) GetCheckType() WebCheckAllOfCheckType {
+	if o == nil || IsNil(o.CheckType) {
+		var ret WebCheckAllOfCheckType
+		return ret
+	}
+	return *o.CheckType
+}
+
+// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CheckWeb) GetCheckTypeOk() (*WebCheckAllOfCheckType, bool) {
+	if o == nil || IsNil(o.CheckType) {
+		return nil, false
+	}
+	return o.CheckType, true
+}
+
+// IsSetCheckType returns a boolean if a field has been set.
+func (o *CheckWeb) IsSetCheckType() bool {
+	if o != nil && !IsNil(o.CheckType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCheckType gets a reference to the given WebCheckAllOfCheckType and assigns it to the CheckType field.
+func (o *CheckWeb) SetCheckType(v WebCheckAllOfCheckType) {
+	o.CheckType = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CheckWeb) GetConfig() AddChecksRequestCheckOneOfConfig {
+func (o *CheckWeb) GetConfig() WebCheckAllOfConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddChecksRequestCheckOneOfConfig
+		var ret WebCheckAllOfConfig
 		return ret
 	}
 	return *o.Config
@@ -318,7 +311,7 @@ func (o *CheckWeb) GetConfig() AddChecksRequestCheckOneOfConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckWeb) GetConfigOk() (*AddChecksRequestCheckOneOfConfig, bool) {
+func (o *CheckWeb) GetConfigOk() (*WebCheckAllOfConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -334,8 +327,8 @@ func (o *CheckWeb) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddChecksRequestCheckOneOfConfig and assigns it to the Config field.
-func (o *CheckWeb) SetConfig(v AddChecksRequestCheckOneOfConfig) {
+// SetConfig gets a reference to the given WebCheckAllOfConfig and assigns it to the Config field.
+func (o *CheckWeb) SetConfig(v WebCheckAllOfConfig) {
 	o.Config = &v
 }
 
@@ -349,14 +342,9 @@ func (o CheckWeb) MarshalJSON() ([]byte, error) {
 
 func (o CheckWeb) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
-	}
-	if !IsNil(o.CheckType) {
-		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.CheckInterval) {
 		toSerialize["checkInterval"] = o.CheckInterval
@@ -369,6 +357,9 @@ func (o CheckWeb) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
+	}
+	if !IsNil(o.CheckType) {
+		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -8071,7 +8071,7 @@ func (r ApiListClustersRequest) Name(name string) ApiListClustersRequest {
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListClustersRequest) ZoneId(zoneId int64) ApiListClustersRequest {
 	r.zoneId = &zoneId
 	return r
@@ -9032,7 +9032,7 @@ func (r ApiUpdateClusterRequest) UpdateClusterRequest(updateClusterRequest Updat
 	return r
 }
 
-func (r ApiUpdateClusterRequest) Execute() (*AddCluster200Response, *http.Response, error) {
+func (r ApiUpdateClusterRequest) Execute() (*UpdateCluster200Response, *http.Response, error) {
 	return r.ApiService.UpdateClusterExecute(r)
 }
 
@@ -9055,13 +9055,13 @@ func (a *ClustersAPIService) UpdateCluster(ctx context.Context, clusterId int32)
 
 // Execute executes the request
 //
-//	@return AddCluster200Response
-func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*AddCluster200Response, *http.Response, error) {
+//	@return UpdateCluster200Response
+func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*UpdateCluster200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddCluster200Response
+		localVarReturnValue *UpdateCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateCluster")
@@ -9436,7 +9436,7 @@ func (r ApiUpdateClusterPermissionsRequest) UpdateClusterPermissionsRequest(upda
 	return r
 }
 
-func (r ApiUpdateClusterPermissionsRequest) Execute() (*AddCluster200Response, *http.Response, error) {
+func (r ApiUpdateClusterPermissionsRequest) Execute() (*UpdateCluster200Response, *http.Response, error) {
 	return r.ApiService.UpdateClusterPermissionsExecute(r)
 }
 
@@ -9459,13 +9459,13 @@ func (a *ClustersAPIService) UpdateClusterPermissions(ctx context.Context, clust
 
 // Execute executes the request
 //
-//	@return AddCluster200Response
-func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterPermissionsRequest) (*AddCluster200Response, *http.Response, error) {
+//	@return UpdateCluster200Response
+func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterPermissionsRequest) (*UpdateCluster200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddCluster200Response
+		localVarReturnValue *UpdateCluster200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClustersAPIService.UpdateClusterPermissions")

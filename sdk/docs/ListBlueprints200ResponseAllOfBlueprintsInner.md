@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **ResourcePermission** | Pointer to **map[string]interface{}** |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -317,20 +317,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetTenant sets Tenant field to given value.
 
@@ -340,6 +340,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

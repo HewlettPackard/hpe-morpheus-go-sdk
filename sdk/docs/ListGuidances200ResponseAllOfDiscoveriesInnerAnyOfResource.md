@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **ExternalName** | Pointer to **string** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
-**ParentServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ParentServer** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Plan** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -292,20 +292,20 @@ HasHostname returns a boolean if a field has been set.
 
 ### GetParentServer
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServer() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetParentServer returns the ParentServer field if non-nil, zero value otherwise.
 
 ### GetParentServerOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetParentServerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetParentServerOk returns a tuple with the ParentServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentServer
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServer(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetParentServer sets ParentServer field to given value.
 
@@ -315,6 +315,16 @@ SetParentServer sets ParentServer field to given value.
 
 HasParentServer returns a boolean if a field has been set.
 
+### SetParentServerNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetParentServerNil(b bool)`
+
+ SetParentServerNil sets the value for ParentServer to be an explicit nil
+
+### UnsetParentServer
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetParentServer()`
+
+UnsetParentServer ensures that no value is present for ParentServer, not even an explicit nil
 ### GetAccountId
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountId() int64`
@@ -342,20 +352,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -365,6 +375,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetOwner
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -392,20 +412,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -415,6 +435,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetPlan
 
 `func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) GetPlan() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

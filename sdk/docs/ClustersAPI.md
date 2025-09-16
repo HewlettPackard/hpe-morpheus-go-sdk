@@ -4304,7 +4304,7 @@ func main() {
 	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	name := "example" // string | Filter by name (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	typeId := int64(3) // int64 | Type filter, restricts query to only load clusters of a specified cluster type (optional)
 	labels := "labels_example" // string | Filter by label(s), matches records that contain any of the specified labels (optional)
 	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
@@ -4338,7 +4338,7 @@ Name | Type | Description  | Notes
  **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **name** | **string** | Filter by name | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **typeId** | **int64** | Type filter, restricts query to only load clusters of a specified cluster type | 
  **labels** | **string** | Filter by label(s), matches records that contain any of the specified labels | 
  **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
@@ -4797,7 +4797,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCluster
 
-> AddCluster200Response UpdateCluster(ctx, clusterId).UpdateClusterRequest(updateClusterRequest).Execute()
+> UpdateCluster200Response UpdateCluster(ctx, clusterId).UpdateClusterRequest(updateClusterRequest).Execute()
 
 Update Cluster
 
@@ -4826,7 +4826,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.UpdateCluster``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateCluster`: AddCluster200Response
+	// response from `UpdateCluster`: UpdateCluster200Response
 	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.UpdateCluster`: %v\n", resp)
 }
 ```
@@ -4851,7 +4851,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddCluster200Response**](AddCluster200Response.md)
+[**UpdateCluster200Response**](UpdateCluster200Response.md)
 
 ### Authorization
 
@@ -5019,7 +5019,7 @@ Name | Type | Description  | Notes
 
 ## UpdateClusterPermissions
 
-> AddCluster200Response UpdateClusterPermissions(ctx, clusterId).UpdateClusterPermissionsRequest(updateClusterPermissionsRequest).Execute()
+> UpdateCluster200Response UpdateClusterPermissions(ctx, clusterId).UpdateClusterPermissionsRequest(updateClusterPermissionsRequest).Execute()
 
 Update Cluster Permissions
 
@@ -5048,7 +5048,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClustersAPI.UpdateClusterPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateClusterPermissions`: AddCluster200Response
+	// response from `UpdateClusterPermissions`: UpdateCluster200Response
 	fmt.Fprintf(os.Stdout, "Response from `ClustersAPI.UpdateClusterPermissions`: %v\n", resp)
 }
 ```
@@ -5073,7 +5073,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddCluster200Response**](AddCluster200Response.md)
+[**UpdateCluster200Response**](UpdateCluster200Response.md)
 
 ### Authorization
 

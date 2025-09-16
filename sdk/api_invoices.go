@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -364,13 +364,13 @@ func (r ApiListInvoiceLineItemsRequest) RefId(refId int64) ApiListInvoiceLineIte
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListInvoiceLineItemsRequest) ZoneId(zoneId int64) ApiListInvoiceLineItemsRequest {
 	r.zoneId = &zoneId
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListInvoiceLineItemsRequest) SiteId(siteId int64) ApiListInvoiceLineItemsRequest {
 	r.siteId = &siteId
 	return r
@@ -718,13 +718,13 @@ func (r ApiListInvoicesRequest) RefStatus(refStatus string) ApiListInvoicesReque
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListInvoicesRequest) ZoneId(zoneId int64) ApiListInvoicesRequest {
 	r.zoneId = &zoneId
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListInvoicesRequest) SiteId(siteId int64) ApiListInvoicesRequest {
 	r.siteId = &siteId
 	return r

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetGuidances200Response{}
 
 // GetGuidances200Response struct for GetGuidances200Response
 type GetGuidances200Response struct {
-	Discovery            *ListGuidances200ResponseAllOfDiscoveriesInner `json:"discovery,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Discovery            *GetGuidances200ResponseDiscovery `json:"discovery,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _GetGuidances200Response GetGuidances200Response
@@ -44,9 +44,9 @@ func NewGetGuidances200ResponseWithDefaults() *GetGuidances200Response {
 }
 
 // GetDiscovery returns the Discovery field value if set, zero value otherwise.
-func (o *GetGuidances200Response) GetDiscovery() ListGuidances200ResponseAllOfDiscoveriesInner {
+func (o *GetGuidances200Response) GetDiscovery() GetGuidances200ResponseDiscovery {
 	if o == nil || IsNil(o.Discovery) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInner
+		var ret GetGuidances200ResponseDiscovery
 		return ret
 	}
 	return *o.Discovery
@@ -54,7 +54,7 @@ func (o *GetGuidances200Response) GetDiscovery() ListGuidances200ResponseAllOfDi
 
 // GetDiscoveryOk returns a tuple with the Discovery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetGuidances200Response) GetDiscoveryOk() (*ListGuidances200ResponseAllOfDiscoveriesInner, bool) {
+func (o *GetGuidances200Response) GetDiscoveryOk() (*GetGuidances200ResponseDiscovery, bool) {
 	if o == nil || IsNil(o.Discovery) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetGuidances200Response) IsSetDiscovery() bool {
 	return false
 }
 
-// SetDiscovery gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInner and assigns it to the Discovery field.
-func (o *GetGuidances200Response) SetDiscovery(v ListGuidances200ResponseAllOfDiscoveriesInner) {
+// SetDiscovery gets a reference to the given GetGuidances200ResponseDiscovery and assigns it to the Discovery field.
+func (o *GetGuidances200Response) SetDiscovery(v GetGuidances200ResponseDiscovery) {
 	o.Discovery = &v
 }
 

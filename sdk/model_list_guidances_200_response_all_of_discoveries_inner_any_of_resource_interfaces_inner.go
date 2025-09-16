@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -38,12 +38,12 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner s
 	Active               *bool                                                       `json:"active,omitempty"`
 	PoolAssigned         *bool                                                       `json:"poolAssigned,omitempty"`
 	PrimaryInterface     *bool                                                       `json:"primaryInterface,omitempty"`
-	Network              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"network,omitempty"`
+	Network              NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"network,omitempty"`
 	Subnet               NullableString                                              `json:"subnet,omitempty"`
 	NetworkGroup         NullableString                                              `json:"networkGroup,omitempty"`
 	NetworkPosition      NullableString                                              `json:"networkPosition,omitempty"`
-	NetworkPool          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"networkPool,omitempty"`
-	NetworkDomain        NullableString                                              `json:"networkDomain,omitempty"`
+	NetworkPool          NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"networkPool,omitempty"`
+	NetworkDomain        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"networkDomain,omitempty"`
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
 	IpMode               *string                                                     `json:"ipMode,omitempty"`
 	MacAddress           *string                                                     `json:"macAddress,omitempty"`
@@ -722,36 +722,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInn
 	o.PrimaryInterface = &v
 }
 
-// GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetwork() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Network) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetNetwork returns the Network field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetwork() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Network.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Network
+	return *o.Network.Get()
 }
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Network) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Network, true
+	return o.Network.Get(), o.Network.IsSet()
 }
 
 // IsSetNetwork returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) IsSetNetwork() bool {
-	if o != nil && !IsNil(o.Network) {
+	if o != nil && o.Network.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetwork gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Network field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetwork(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Network = &v
+// SetNetwork gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Network field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetwork(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Network.Set(&v)
+}
+
+// SetNetworkNil sets the value for Network to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkNil() {
+	o.Network.Set(nil)
+}
+
+// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnsetNetwork() {
+	o.Network.Unset()
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -883,79 +894,79 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInn
 	o.NetworkPosition.Unset()
 }
 
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.NetworkPool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.NetworkPool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.NetworkPool
+	return *o.NetworkPool.Get()
 }
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.NetworkPool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkPool, true
+	return o.NetworkPool.Get(), o.NetworkPool.IsSet()
 }
 
 // IsSetNetworkPool returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
+	if o != nil && o.NetworkPool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkPool field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.NetworkPool = &v
+// SetNetworkPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the NetworkPool field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.NetworkPool.Set(&v)
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain.Get()) {
-		var ret string
+// SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkPoolNil() {
+	o.NetworkPool.Set(nil)
+}
+
+// UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnsetNetworkPool() {
+	o.NetworkPool.Unset()
+}
+
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
-	return *o.NetworkDomain.Get()
+	return *o.NetworkDomain
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkDomainOk() (*string, bool) {
-	if o == nil {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
-	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
+	return o.NetworkDomain, true
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) IsSetNetworkDomain() bool {
-	if o != nil && o.NetworkDomain.IsSet() {
+	if o != nil && !IsNil(o.NetworkDomain) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkDomain(v string) {
-	o.NetworkDomain.Set(&v)
-}
-
-// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkDomainNil() {
-	o.NetworkDomain.Set(nil)
-}
-
-// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnsetNetworkDomain() {
-	o.NetworkDomain.Unset()
+// SetNetworkDomain gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkDomain field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+	o.NetworkDomain = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -1118,8 +1129,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInne
 	if !IsNil(o.PrimaryInterface) {
 		toSerialize["primaryInterface"] = o.PrimaryInterface
 	}
-	if !IsNil(o.Network) {
-		toSerialize["network"] = o.Network
+	if o.Network.IsSet() {
+		toSerialize["network"] = o.Network.Get()
 	}
 	if o.Subnet.IsSet() {
 		toSerialize["subnet"] = o.Subnet.Get()
@@ -1130,11 +1141,11 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInne
 	if o.NetworkPosition.IsSet() {
 		toSerialize["networkPosition"] = o.NetworkPosition.Get()
 	}
-	if !IsNil(o.NetworkPool) {
-		toSerialize["networkPool"] = o.NetworkPool
+	if o.NetworkPool.IsSet() {
+		toSerialize["networkPool"] = o.NetworkPool.Get()
 	}
-	if o.NetworkDomain.IsSet() {
-		toSerialize["networkDomain"] = o.NetworkDomain.Get()
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

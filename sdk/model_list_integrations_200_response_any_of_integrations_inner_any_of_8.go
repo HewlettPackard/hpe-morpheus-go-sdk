@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -29,7 +29,7 @@ type ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 struct {
 	Username             *string                                                           `json:"username,omitempty"`
 	Token                *string                                                           `json:"token,omitempty"`
 	TokenHash            *string                                                           `json:"tokenHash,omitempty"`
-	ServiceKey           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                `json:"serviceKey,omitempty"`
+	ServiceKey           NullableListApprovals200ResponseAllOfApprovalsInnerAccount        `json:"serviceKey,omitempty"`
 	IsPlugin             *bool                                                             `json:"isPlugin,omitempty"`
 	Config               *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7Config    `json:"config,omitempty"`
 	Status               *string                                                           `json:"status,omitempty"`
@@ -316,36 +316,47 @@ func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetTokenHash(v
 	o.TokenHash = &v
 }
 
-// GetServiceKey returns the ServiceKey field value if set, zero value otherwise.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKey() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.ServiceKey) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetServiceKey returns the ServiceKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKey() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.ServiceKey.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.ServiceKey
+	return *o.ServiceKey.Get()
 }
 
 // GetServiceKeyOk returns a tuple with the ServiceKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKeyOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.ServiceKey) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) GetServiceKeyOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceKey, true
+	return o.ServiceKey.Get(), o.ServiceKey.IsSet()
 }
 
 // IsSetServiceKey returns a boolean if a field has been set.
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) IsSetServiceKey() bool {
-	if o != nil && !IsNil(o.ServiceKey) {
+	if o != nil && o.ServiceKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceKey gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ServiceKey field.
-func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKey(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.ServiceKey = &v
+// SetServiceKey gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the ServiceKey field.
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKey(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.ServiceKey.Set(&v)
+}
+
+// SetServiceKeyNil sets the value for ServiceKey to be an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) SetServiceKeyNil() {
+	o.ServiceKey.Set(nil)
+}
+
+// UnsetServiceKey ensures that no value is present for ServiceKey, not even an explicit nil
+func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) UnsetServiceKey() {
+	o.ServiceKey.Unset()
 }
 
 // GetIsPlugin returns the IsPlugin field value if set, zero value otherwise.
@@ -671,8 +682,8 @@ func (o ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) ToMap() (map[st
 	if !IsNil(o.TokenHash) {
 		toSerialize["tokenHash"] = o.TokenHash
 	}
-	if !IsNil(o.ServiceKey) {
-		toSerialize["serviceKey"] = o.ServiceKey
+	if o.ServiceKey.IsSet() {
+		toSerialize["serviceKey"] = o.ServiceKey.Get()
 	}
 	if !IsNil(o.IsPlugin) {
 		toSerialize["isPlugin"] = o.IsPlugin

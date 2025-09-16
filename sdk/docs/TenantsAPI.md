@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ## ListTenantSubtenantIdentitySources
 
-> ListIdentitySources200Response ListTenantSubtenantIdentitySources(ctx, accountId).Max(max).Offset(offset).Direction(direction).Phrase(phrase).Name(name).Execute()
+> ListTenantSubtenantIdentitySources200Response ListTenantSubtenantIdentitySources(ctx, accountId).Max(max).Offset(offset).Direction(direction).Phrase(phrase).Name(name).Execute()
 
 Get Subtenant Identity Sources
 
@@ -559,7 +559,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TenantsAPI.ListTenantSubtenantIdentitySources``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListTenantSubtenantIdentitySources`: ListIdentitySources200Response
+	// response from `ListTenantSubtenantIdentitySources`: ListTenantSubtenantIdentitySources200Response
 	fmt.Fprintf(os.Stdout, "Response from `TenantsAPI.ListTenantSubtenantIdentitySources`: %v\n", resp)
 }
 ```
@@ -588,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListIdentitySources200Response**](ListIdentitySources200Response.md)
+[**ListTenantSubtenantIdentitySources200Response**](ListTenantSubtenantIdentitySources200Response.md)
 
 ### Authorization
 

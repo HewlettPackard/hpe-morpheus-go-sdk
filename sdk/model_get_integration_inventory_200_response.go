@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetIntegrationInventory200Response{}
 
 // GetIntegrationInventory200Response struct for GetIntegrationInventory200Response
 type GetIntegrationInventory200Response struct {
-	Inventory            *ListIntegrationInventory200ResponseAllOfInventoryInner `json:"inventory,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	Inventory            *GetIntegrationInventory200ResponseInventory `json:"inventory,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetIntegrationInventory200Response GetIntegrationInventory200Response
@@ -44,9 +44,9 @@ func NewGetIntegrationInventory200ResponseWithDefaults() *GetIntegrationInventor
 }
 
 // GetInventory returns the Inventory field value if set, zero value otherwise.
-func (o *GetIntegrationInventory200Response) GetInventory() ListIntegrationInventory200ResponseAllOfInventoryInner {
+func (o *GetIntegrationInventory200Response) GetInventory() GetIntegrationInventory200ResponseInventory {
 	if o == nil || IsNil(o.Inventory) {
-		var ret ListIntegrationInventory200ResponseAllOfInventoryInner
+		var ret GetIntegrationInventory200ResponseInventory
 		return ret
 	}
 	return *o.Inventory
@@ -54,7 +54,7 @@ func (o *GetIntegrationInventory200Response) GetInventory() ListIntegrationInven
 
 // GetInventoryOk returns a tuple with the Inventory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetIntegrationInventory200Response) GetInventoryOk() (*ListIntegrationInventory200ResponseAllOfInventoryInner, bool) {
+func (o *GetIntegrationInventory200Response) GetInventoryOk() (*GetIntegrationInventory200ResponseInventory, bool) {
 	if o == nil || IsNil(o.Inventory) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetIntegrationInventory200Response) IsSetInventory() bool {
 	return false
 }
 
-// SetInventory gets a reference to the given ListIntegrationInventory200ResponseAllOfInventoryInner and assigns it to the Inventory field.
-func (o *GetIntegrationInventory200Response) SetInventory(v ListIntegrationInventory200ResponseAllOfInventoryInner) {
+// SetInventory gets a reference to the given GetIntegrationInventory200ResponseInventory and assigns it to the Inventory field.
+func (o *GetIntegrationInventory200Response) SetInventory(v GetIntegrationInventory200ResponseInventory) {
 	o.Inventory = &v
 }
 

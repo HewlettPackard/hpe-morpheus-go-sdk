@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddSecurityGroupLocations200Response{}
 
 // AddSecurityGroupLocations200Response struct for AddSecurityGroupLocations200Response
 type AddSecurityGroupLocations200Response struct {
-	SecurityGroupLocation *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner `json:"securityGroupLocation,omitempty"`
-	Success               *bool                                                                `json:"success,omitempty"`
-	AdditionalProperties  map[string]interface{}                                               `json:",remain"`
+	SecurityGroupLocation *AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation `json:"securityGroupLocation,omitempty"`
+	Success               *bool                                                           `json:"success,omitempty"`
+	AdditionalProperties  map[string]interface{}                                          `json:",remain"`
 }
 
 type _AddSecurityGroupLocations200Response AddSecurityGroupLocations200Response
@@ -45,9 +45,9 @@ func NewAddSecurityGroupLocations200ResponseWithDefaults() *AddSecurityGroupLoca
 }
 
 // GetSecurityGroupLocation returns the SecurityGroupLocation field value if set, zero value otherwise.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner {
+func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation {
 	if o == nil || IsNil(o.SecurityGroupLocation) {
-		var ret ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner
+		var ret AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation
 		return ret
 	}
 	return *o.SecurityGroupLocation
@@ -55,7 +55,7 @@ func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocation() ListSe
 
 // GetSecurityGroupLocationOk returns a tuple with the SecurityGroupLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner, bool) {
+func (o *AddSecurityGroupLocations200Response) GetSecurityGroupLocationOk() (*AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation, bool) {
 	if o == nil || IsNil(o.SecurityGroupLocation) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddSecurityGroupLocations200Response) IsSetSecurityGroupLocation() bool
 	return false
 }
 
-// SetSecurityGroupLocation gets a reference to the given ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner and assigns it to the SecurityGroupLocation field.
-func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v ListSecurityGroups200ResponseAllOfSecurityGroupsInnerLocationsInner) {
+// SetSecurityGroupLocation gets a reference to the given AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation and assigns it to the SecurityGroupLocation field.
+func (o *AddSecurityGroupLocations200Response) SetSecurityGroupLocation(v AddSecurityGroupLocations200ResponseAllOfSecurityGroupLocation) {
 	o.SecurityGroupLocation = &v
 }
 

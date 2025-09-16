@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -40,7 +40,7 @@ type ImageBuild struct {
 	VmToolsInstalled     *bool                                                         `json:"vmToolsInstalled,omitempty"`
 	KeepResults          NullableInt64                                                 `json:"keepResults,omitempty"`
 	Config               *AddImageBuild200ResponseAllOfImageBuildConfig                `json:"config,omitempty"`
-	LastResult           *AddImageBuild200ResponseAllOfImageBuildLastResult            `json:"lastResult,omitempty"`
+	LastResult           *GetImageBuild200ResponseImageBuildLastResult                 `json:"lastResult,omitempty"`
 	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
@@ -771,9 +771,9 @@ func (o *ImageBuild) SetConfig(v AddImageBuild200ResponseAllOfImageBuildConfig) 
 }
 
 // GetLastResult returns the LastResult field value if set, zero value otherwise.
-func (o *ImageBuild) GetLastResult() AddImageBuild200ResponseAllOfImageBuildLastResult {
+func (o *ImageBuild) GetLastResult() GetImageBuild200ResponseImageBuildLastResult {
 	if o == nil || IsNil(o.LastResult) {
-		var ret AddImageBuild200ResponseAllOfImageBuildLastResult
+		var ret GetImageBuild200ResponseImageBuildLastResult
 		return ret
 	}
 	return *o.LastResult
@@ -781,7 +781,7 @@ func (o *ImageBuild) GetLastResult() AddImageBuild200ResponseAllOfImageBuildLast
 
 // GetLastResultOk returns a tuple with the LastResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuild) GetLastResultOk() (*AddImageBuild200ResponseAllOfImageBuildLastResult, bool) {
+func (o *ImageBuild) GetLastResultOk() (*GetImageBuild200ResponseImageBuildLastResult, bool) {
 	if o == nil || IsNil(o.LastResult) {
 		return nil, false
 	}
@@ -797,8 +797,8 @@ func (o *ImageBuild) IsSetLastResult() bool {
 	return false
 }
 
-// SetLastResult gets a reference to the given AddImageBuild200ResponseAllOfImageBuildLastResult and assigns it to the LastResult field.
-func (o *ImageBuild) SetLastResult(v AddImageBuild200ResponseAllOfImageBuildLastResult) {
+// SetLastResult gets a reference to the given GetImageBuild200ResponseImageBuildLastResult and assigns it to the LastResult field.
+func (o *ImageBuild) SetLastResult(v GetImageBuild200ResponseImageBuildLastResult) {
 	o.LastResult = &v
 }
 

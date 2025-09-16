@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &AddPreseedScript200Response{}
 
 // AddPreseedScript200Response struct for AddPreseedScript200Response
 type AddPreseedScript200Response struct {
-	PreseedScript *ListPreseedScripts200ResponseAllOfPreseedScriptsInner `json:"preseedScript,omitempty"`
-	ErrorCode     NullableString                                         `json:"errorCode,omitempty"`
+	PreseedScript *AddPreseedScript200ResponseAllOfPreseedScript `json:"preseedScript,omitempty"`
+	ErrorCode     NullableString                                 `json:"errorCode,omitempty"`
 	// Success indicator, true when the request succeeded and false when an error occurred
 	Success *bool `json:"success,omitempty"`
 	// Message containing a description of the result, usually a message about the error that occurred
@@ -55,9 +55,9 @@ func NewAddPreseedScript200ResponseWithDefaults() *AddPreseedScript200Response {
 }
 
 // GetPreseedScript returns the PreseedScript field value if set, zero value otherwise.
-func (o *AddPreseedScript200Response) GetPreseedScript() ListPreseedScripts200ResponseAllOfPreseedScriptsInner {
+func (o *AddPreseedScript200Response) GetPreseedScript() AddPreseedScript200ResponseAllOfPreseedScript {
 	if o == nil || IsNil(o.PreseedScript) {
-		var ret ListPreseedScripts200ResponseAllOfPreseedScriptsInner
+		var ret AddPreseedScript200ResponseAllOfPreseedScript
 		return ret
 	}
 	return *o.PreseedScript
@@ -65,7 +65,7 @@ func (o *AddPreseedScript200Response) GetPreseedScript() ListPreseedScripts200Re
 
 // GetPreseedScriptOk returns a tuple with the PreseedScript field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPreseedScript200Response) GetPreseedScriptOk() (*ListPreseedScripts200ResponseAllOfPreseedScriptsInner, bool) {
+func (o *AddPreseedScript200Response) GetPreseedScriptOk() (*AddPreseedScript200ResponseAllOfPreseedScript, bool) {
 	if o == nil || IsNil(o.PreseedScript) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *AddPreseedScript200Response) IsSetPreseedScript() bool {
 	return false
 }
 
-// SetPreseedScript gets a reference to the given ListPreseedScripts200ResponseAllOfPreseedScriptsInner and assigns it to the PreseedScript field.
-func (o *AddPreseedScript200Response) SetPreseedScript(v ListPreseedScripts200ResponseAllOfPreseedScriptsInner) {
+// SetPreseedScript gets a reference to the given AddPreseedScript200ResponseAllOfPreseedScript and assigns it to the PreseedScript field.
+func (o *AddPreseedScript200Response) SetPreseedScript(v AddPreseedScript200ResponseAllOfPreseedScript) {
 	o.PreseedScript = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Inventory** | Pointer to [**ListIntegrationInventory200ResponseAllOfInventoryInner**](ListIntegrationInventory200ResponseAllOfInventoryInner.md) |  | [optional] 
+**Inventory** | Pointer to [**GetIntegrationInventory200ResponseInventory**](GetIntegrationInventory200ResponseInventory.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInventory
 
-`func (o *UpdateIntegrationInventory200Response) GetInventory() ListIntegrationInventory200ResponseAllOfInventoryInner`
+`func (o *UpdateIntegrationInventory200Response) GetInventory() GetIntegrationInventory200ResponseInventory`
 
 GetInventory returns the Inventory field if non-nil, zero value otherwise.
 
 ### GetInventoryOk
 
-`func (o *UpdateIntegrationInventory200Response) GetInventoryOk() (*ListIntegrationInventory200ResponseAllOfInventoryInner, bool)`
+`func (o *UpdateIntegrationInventory200Response) GetInventoryOk() (*GetIntegrationInventory200ResponseInventory, bool)`
 
 GetInventoryOk returns a tuple with the Inventory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventory
 
-`func (o *UpdateIntegrationInventory200Response) SetInventory(v ListIntegrationInventory200ResponseAllOfInventoryInner)`
+`func (o *UpdateIntegrationInventory200Response) SetInventory(v GetIntegrationInventory200ResponseInventory)`
 
 SetInventory sets Inventory field to given value.
 

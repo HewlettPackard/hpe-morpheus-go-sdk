@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **InstanceType** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstanceType**](AddInstance200ResponseAllOfOneOfInstanceInstanceType.md) |  | [optional] 
-**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Group** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Cloud** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Cluster** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerCluster**](ListInstances200ResponseAllOfInstancesInnerCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
@@ -179,20 +179,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetTenant sets Tenant field to given value.
 
@@ -202,6 +202,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetInstanceType
 
 `func (o *AddInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInstance200ResponseAllOfOneOfInstanceInstanceType`
@@ -229,20 +239,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetGroup sets Group field to given value.
 
@@ -252,6 +262,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetCloud
 
 `func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloud() ListApps200ResponseAllOfAppsInnerBlueprint`

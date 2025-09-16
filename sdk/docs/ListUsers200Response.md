@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Users** | Pointer to [**[]AddUserTenant200ResponseAllOfUser**](AddUserTenant200ResponseAllOfUser.md) |  | [optional] 
+**Users** | Pointer to [**[]ListUsers200ResponseAllOfUsersInner**](ListUsers200ResponseAllOfUsersInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 **Global** | Pointer to **bool** | Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users. | [optional] [default to false]
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUsers
 
-`func (o *ListUsers200Response) GetUsers() []AddUserTenant200ResponseAllOfUser`
+`func (o *ListUsers200Response) GetUsers() []ListUsers200ResponseAllOfUsersInner`
 
 GetUsers returns the Users field if non-nil, zero value otherwise.
 
 ### GetUsersOk
 
-`func (o *ListUsers200Response) GetUsersOk() (*[]AddUserTenant200ResponseAllOfUser, bool)`
+`func (o *ListUsers200Response) GetUsersOk() (*[]ListUsers200ResponseAllOfUsersInner, bool)`
 
 GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsers
 
-`func (o *ListUsers200Response) SetUsers(v []AddUserTenant200ResponseAllOfUser)`
+`func (o *ListUsers200Response) SetUsers(v []ListUsers200ResponseAllOfUsersInner)`
 
 SetUsers sets Users field to given value.
 

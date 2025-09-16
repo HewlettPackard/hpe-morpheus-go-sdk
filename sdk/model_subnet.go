@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -45,7 +45,7 @@ type Subnet struct {
 	DhcpEnd              *string                                                          `json:"dhcpEnd,omitempty"`
 	DhcpRange            NullableString                                                   `json:"dhcpRange,omitempty"`
 	NetworkProxy         NullableString                                                   `json:"networkProxy,omitempty"`
-	NetworkDomain        NullableString                                                   `json:"networkDomain,omitempty"`
+	NetworkDomain        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance               `json:"networkDomain,omitempty"`
 	SearchDomains        NullableString                                                   `json:"searchDomains,omitempty"`
 	DefaultNetwork       *bool                                                            `json:"defaultNetwork,omitempty"`
 	AssignPublicIp       *bool                                                            `json:"assignPublicIp,omitempty"`
@@ -1023,47 +1023,36 @@ func (o *Subnet) UnsetNetworkProxy() {
 	o.NetworkProxy.Unset()
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Subnet) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain.Get()) {
-		var ret string
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *Subnet) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
-	return *o.NetworkDomain.Get()
+	return *o.NetworkDomain
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Subnet) GetNetworkDomainOk() (*string, bool) {
-	if o == nil {
+func (o *Subnet) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
-	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
+	return o.NetworkDomain, true
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *Subnet) IsSetNetworkDomain() bool {
-	if o != nil && o.NetworkDomain.IsSet() {
+	if o != nil && !IsNil(o.NetworkDomain) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
-func (o *Subnet) SetNetworkDomain(v string) {
-	o.NetworkDomain.Set(&v)
-}
-
-// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-func (o *Subnet) SetNetworkDomainNil() {
-	o.NetworkDomain.Set(nil)
-}
-
-// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
-func (o *Subnet) UnsetNetworkDomain() {
-	o.NetworkDomain.Unset()
+// SetNetworkDomain gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkDomain field.
+func (o *Subnet) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+	o.NetworkDomain = &v
 }
 
 // GetSearchDomains returns the SearchDomains field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1514,8 +1503,8 @@ func (o Subnet) ToMap() (map[string]interface{}, error) {
 	if o.NetworkProxy.IsSet() {
 		toSerialize["networkProxy"] = o.NetworkProxy.Get()
 	}
-	if o.NetworkDomain.IsSet() {
-		toSerialize["networkDomain"] = o.NetworkDomain.Get()
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 	if o.SearchDomains.IsSet() {
 		toSerialize["searchDomains"] = o.SearchDomains.Get()

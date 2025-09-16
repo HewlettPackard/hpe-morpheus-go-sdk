@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Pool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Pool** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Instance** | Pointer to [**ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance**](ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance.md) |  | [optional] 
 **User** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerOwner**](ListVDIPools200ResponseAllOfVdiPoolsInnerOwner.md) |  | [optional] 
 **LocalUserCreated** | Pointer to **bool** |  | [optional] 
@@ -62,20 +62,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetPool
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetPool sets Pool field to given value.
 
@@ -85,6 +85,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetInstance
 
 `func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) GetInstance() ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance`

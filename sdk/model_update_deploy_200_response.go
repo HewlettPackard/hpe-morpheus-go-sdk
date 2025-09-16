@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateDeploy200Response{}
 
 // UpdateDeploy200Response struct for UpdateDeploy200Response
 type UpdateDeploy200Response struct {
-	AppDeploy            *ListDeploys200ResponseAllOfAppDeploysInner `json:"appDeploy,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	AppDeploy            *UpdateDeploy200ResponseAppDeploy `json:"appDeploy,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _UpdateDeploy200Response UpdateDeploy200Response
@@ -44,9 +44,9 @@ func NewUpdateDeploy200ResponseWithDefaults() *UpdateDeploy200Response {
 }
 
 // GetAppDeploy returns the AppDeploy field value if set, zero value otherwise.
-func (o *UpdateDeploy200Response) GetAppDeploy() ListDeploys200ResponseAllOfAppDeploysInner {
+func (o *UpdateDeploy200Response) GetAppDeploy() UpdateDeploy200ResponseAppDeploy {
 	if o == nil || IsNil(o.AppDeploy) {
-		var ret ListDeploys200ResponseAllOfAppDeploysInner
+		var ret UpdateDeploy200ResponseAppDeploy
 		return ret
 	}
 	return *o.AppDeploy
@@ -54,7 +54,7 @@ func (o *UpdateDeploy200Response) GetAppDeploy() ListDeploys200ResponseAllOfAppD
 
 // GetAppDeployOk returns a tuple with the AppDeploy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateDeploy200Response) GetAppDeployOk() (*ListDeploys200ResponseAllOfAppDeploysInner, bool) {
+func (o *UpdateDeploy200Response) GetAppDeployOk() (*UpdateDeploy200ResponseAppDeploy, bool) {
 	if o == nil || IsNil(o.AppDeploy) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *UpdateDeploy200Response) IsSetAppDeploy() bool {
 	return false
 }
 
-// SetAppDeploy gets a reference to the given ListDeploys200ResponseAllOfAppDeploysInner and assigns it to the AppDeploy field.
-func (o *UpdateDeploy200Response) SetAppDeploy(v ListDeploys200ResponseAllOfAppDeploysInner) {
+// SetAppDeploy gets a reference to the given UpdateDeploy200ResponseAppDeploy and assigns it to the AppDeploy field.
+func (o *UpdateDeploy200Response) SetAppDeploy(v UpdateDeploy200ResponseAppDeploy) {
 	o.AppDeploy = &v
 }
 

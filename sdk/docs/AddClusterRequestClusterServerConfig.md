@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**DefaultRepoAccount** | Pointer to **NullableInt32** | Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos. | [optional] 
+**ImageServer** | Pointer to **string** | Act as Image Server. Set to on to use the Default Repo Account to pull images. | [optional] 
 
 ## Methods
 
@@ -60,6 +61,31 @@ HasDefaultRepoAccount returns a boolean if a field has been set.
 `func (o *AddClusterRequestClusterServerConfig) UnsetDefaultRepoAccount()`
 
 UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
+### GetImageServer
+
+`func (o *AddClusterRequestClusterServerConfig) GetImageServer() string`
+
+GetImageServer returns the ImageServer field if non-nil, zero value otherwise.
+
+### GetImageServerOk
+
+`func (o *AddClusterRequestClusterServerConfig) GetImageServerOk() (*string, bool)`
+
+GetImageServerOk returns a tuple with the ImageServer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageServer
+
+`func (o *AddClusterRequestClusterServerConfig) SetImageServer(v string)`
+
+SetImageServer sets ImageServer field to given value.
+
+### HasImageServer
+
+`func (o *AddClusterRequestClusterServerConfig) HasImageServer() bool`
+
+HasImageServer returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

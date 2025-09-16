@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -1570,13 +1570,13 @@ func (r ApiListHostsRequest) Phrase(phrase string) ApiListHostsRequest {
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListHostsRequest) ZoneId(zoneId int64) ApiListHostsRequest {
 	r.zoneId = &zoneId
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListHostsRequest) SiteId(siteId int64) ApiListHostsRequest {
 	r.siteId = &siteId
 	return r
@@ -1678,7 +1678,7 @@ func (r ApiListHostsRequest) Metadata(metadata string) ApiListHostsRequest {
 	return r
 }
 
-// Filter by UUID
+// Filter by UUID, accepts multiple values
 func (r ApiListHostsRequest) Uuid(uuid string) ApiListHostsRequest {
 	r.uuid = &uuid
 	return r
@@ -1915,7 +1915,7 @@ func (r ApiListServerServicePlansRequest) ServerTypeId(serverTypeId int64) ApiLi
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListServerServicePlansRequest) SiteId(siteId int64) ApiListServerServicePlansRequest {
 	r.siteId = &siteId
 	return r
@@ -2447,6 +2447,138 @@ func (a *HostsAPIService) RestartHostExecute(r ApiRestartHostRequest) (*UpdateHo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v ListActivity4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v ListActivity5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiSnapshotHostRequest struct {
+	ctx                     context.Context
+	ApiService              *HostsAPIService
+	id                      int64
+	snapshotInstanceRequest *SnapshotInstanceRequest
+}
+
+func (r ApiSnapshotHostRequest) SnapshotInstanceRequest(snapshotInstanceRequest SnapshotInstanceRequest) ApiSnapshotHostRequest {
+	r.snapshotInstanceRequest = &snapshotInstanceRequest
+	return r
+}
+
+func (r ApiSnapshotHostRequest) Execute() (*SnapshotHost200Response, *http.Response, error) {
+	return r.ApiService.SnapshotHostExecute(r)
+}
+
+/*
+SnapshotHost Snapshot a Host
+
+This endpoint will create a snapshot of a host. This is done asychronously, so the ID of the snapshot is not returned.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id Morpheus ID of the Object being referenced
+	@return ApiSnapshotHostRequest
+*/
+func (a *HostsAPIService) SnapshotHost(ctx context.Context, id int64) ApiSnapshotHostRequest {
+	return ApiSnapshotHostRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return SnapshotHost200Response
+func (a *HostsAPIService) SnapshotHostExecute(r ApiSnapshotHostRequest) (*SnapshotHost200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SnapshotHost200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.SnapshotHost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/servers/{id}/snapshot"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.snapshotInstanceRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -3710,7 +3842,7 @@ type ApiUpdateHostUpgradeAgentRequest struct {
 	id         int64
 }
 
-func (r ApiUpdateHostUpgradeAgentRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
+func (r ApiUpdateHostUpgradeAgentRequest) Execute() (*SnapshotHost200Response, *http.Response, error) {
 	return r.ApiService.UpdateHostUpgradeAgentExecute(r)
 }
 
@@ -3733,13 +3865,13 @@ func (a *HostsAPIService) UpdateHostUpgradeAgent(ctx context.Context, id int64) 
 
 // Execute executes the request
 //
-//	@return DeleteAlerts200Response
-func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAgentRequest) (*DeleteAlerts200Response, *http.Response, error) {
+//	@return SnapshotHost200Response
+func (a *HostsAPIService) UpdateHostUpgradeAgentExecute(r ApiUpdateHostUpgradeAgentRequest) (*SnapshotHost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DeleteAlerts200Response
+		localVarReturnValue *SnapshotHost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HostsAPIService.UpdateHostUpgradeAgent")

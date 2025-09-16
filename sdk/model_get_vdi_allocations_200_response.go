@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetVDIAllocations200Response{}
 
 // GetVDIAllocations200Response struct for GetVDIAllocations200Response
 type GetVDIAllocations200Response struct {
-	VdiAllocation        *ListVDIAllocations200ResponseAllOfVdiAllocationsInner `json:"vdiAllocation,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	VdiAllocation        *GetVDIAllocations200ResponseVdiAllocation `json:"vdiAllocation,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _GetVDIAllocations200Response GetVDIAllocations200Response
@@ -44,9 +44,9 @@ func NewGetVDIAllocations200ResponseWithDefaults() *GetVDIAllocations200Response
 }
 
 // GetVdiAllocation returns the VdiAllocation field value if set, zero value otherwise.
-func (o *GetVDIAllocations200Response) GetVdiAllocation() ListVDIAllocations200ResponseAllOfVdiAllocationsInner {
+func (o *GetVDIAllocations200Response) GetVdiAllocation() GetVDIAllocations200ResponseVdiAllocation {
 	if o == nil || IsNil(o.VdiAllocation) {
-		var ret ListVDIAllocations200ResponseAllOfVdiAllocationsInner
+		var ret GetVDIAllocations200ResponseVdiAllocation
 		return ret
 	}
 	return *o.VdiAllocation
@@ -54,7 +54,7 @@ func (o *GetVDIAllocations200Response) GetVdiAllocation() ListVDIAllocations200R
 
 // GetVdiAllocationOk returns a tuple with the VdiAllocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*ListVDIAllocations200ResponseAllOfVdiAllocationsInner, bool) {
+func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*GetVDIAllocations200ResponseVdiAllocation, bool) {
 	if o == nil || IsNil(o.VdiAllocation) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetVDIAllocations200Response) IsSetVdiAllocation() bool {
 	return false
 }
 
-// SetVdiAllocation gets a reference to the given ListVDIAllocations200ResponseAllOfVdiAllocationsInner and assigns it to the VdiAllocation field.
-func (o *GetVDIAllocations200Response) SetVdiAllocation(v ListVDIAllocations200ResponseAllOfVdiAllocationsInner) {
+// SetVdiAllocation gets a reference to the given GetVDIAllocations200ResponseVdiAllocation and assigns it to the VdiAllocation field.
+func (o *GetVDIAllocations200Response) SetVdiAllocation(v GetVDIAllocations200ResponseVdiAllocation) {
 	o.VdiAllocation = &v
 }
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -40,7 +40,7 @@ type ListCredentials200ResponseAllOfCredentialsInner struct {
 	StatusMessage        NullableString                                              `json:"statusMessage,omitempty"`
 	StatusDate           NullableTime                                                `json:"statusDate,omitempty"`
 	Enabled              *bool                                                       `json:"enabled,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"account,omitempty"`
 	User                 *ListCredentials200ResponseAllOfCredentialsInnerUser        `json:"user,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
@@ -807,36 +807,47 @@ func (o *ListCredentials200ResponseAllOfCredentialsInner) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListCredentials200ResponseAllOfCredentialsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListCredentials200ResponseAllOfCredentialsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListCredentials200ResponseAllOfCredentialsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListCredentials200ResponseAllOfCredentialsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -1034,8 +1045,8 @@ func (o ListCredentials200ResponseAllOfCredentialsInner) ToMap() (map[string]int
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User

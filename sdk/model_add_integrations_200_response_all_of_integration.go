@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,7 +23,9 @@ var _ fmt.Stringer
 
 // AddIntegrations200ResponseAllOfIntegration - struct for AddIntegrations200ResponseAllOfIntegration
 type AddIntegrations200ResponseAllOfIntegration struct {
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf   *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
+	AddIntegrations200ResponseAllOfIntegrationOneOf          *AddIntegrations200ResponseAllOfIntegrationOneOf
+	AddIntegrations200ResponseAllOfIntegrationOneOf1         *AddIntegrations200ResponseAllOfIntegrationOneOf1
+	AddIntegrations200ResponseAllOfIntegrationOneOf2         *AddIntegrations200ResponseAllOfIntegrationOneOf2
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11
@@ -37,15 +39,27 @@ type AddIntegrations200ResponseAllOfIntegration struct {
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
-	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
 	ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9  *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9
 }
 
-// ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfAsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf wrapped in AddIntegrations200ResponseAllOfIntegration
-func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOfAsAddIntegrations200ResponseAllOfIntegration(v *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) AddIntegrations200ResponseAllOfIntegration {
+// AddIntegrations200ResponseAllOfIntegrationOneOfAsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns AddIntegrations200ResponseAllOfIntegrationOneOf wrapped in AddIntegrations200ResponseAllOfIntegration
+func AddIntegrations200ResponseAllOfIntegrationOneOfAsAddIntegrations200ResponseAllOfIntegration(v *AddIntegrations200ResponseAllOfIntegrationOneOf) AddIntegrations200ResponseAllOfIntegration {
 	return AddIntegrations200ResponseAllOfIntegration{
-		ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf: v,
+		AddIntegrations200ResponseAllOfIntegrationOneOf: v,
+	}
+}
+
+// AddIntegrations200ResponseAllOfIntegrationOneOf1AsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns AddIntegrations200ResponseAllOfIntegrationOneOf1 wrapped in AddIntegrations200ResponseAllOfIntegration
+func AddIntegrations200ResponseAllOfIntegrationOneOf1AsAddIntegrations200ResponseAllOfIntegration(v *AddIntegrations200ResponseAllOfIntegrationOneOf1) AddIntegrations200ResponseAllOfIntegration {
+	return AddIntegrations200ResponseAllOfIntegration{
+		AddIntegrations200ResponseAllOfIntegrationOneOf1: v,
+	}
+}
+
+// AddIntegrations200ResponseAllOfIntegrationOneOf2AsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns AddIntegrations200ResponseAllOfIntegrationOneOf2 wrapped in AddIntegrations200ResponseAllOfIntegration
+func AddIntegrations200ResponseAllOfIntegrationOneOf2AsAddIntegrations200ResponseAllOfIntegration(v *AddIntegrations200ResponseAllOfIntegrationOneOf2) AddIntegrations200ResponseAllOfIntegration {
+	return AddIntegrations200ResponseAllOfIntegration{
+		AddIntegrations200ResponseAllOfIntegrationOneOf2: v,
 	}
 }
 
@@ -140,20 +154,6 @@ func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6AsAddIntegrations200
 	}
 }
 
-// ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7AsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 wrapped in AddIntegrations200ResponseAllOfIntegration
-func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7AsAddIntegrations200ResponseAllOfIntegration(v *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) AddIntegrations200ResponseAllOfIntegration {
-	return AddIntegrations200ResponseAllOfIntegration{
-		ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7: v,
-	}
-}
-
-// ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8AsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 wrapped in AddIntegrations200ResponseAllOfIntegration
-func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8AsAddIntegrations200ResponseAllOfIntegration(v *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) AddIntegrations200ResponseAllOfIntegration {
-	return AddIntegrations200ResponseAllOfIntegration{
-		ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8: v,
-	}
-}
-
 // ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9AsAddIntegrations200ResponseAllOfIntegration is a convenience function that returns ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 wrapped in AddIntegrations200ResponseAllOfIntegration
 func ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9AsAddIntegrations200ResponseAllOfIntegration(v *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9) AddIntegrations200ResponseAllOfIntegration {
 	return AddIntegrations200ResponseAllOfIntegration{
@@ -166,8 +166,16 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalMapstructure(dat
 		dst = &AddIntegrations200ResponseAllOfIntegration{}
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = &out
+	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf); ok {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf = &out
+	}
+
+	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf1); ok {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = &out
+	}
+
+	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf2); ok {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = &out
 	}
 
 	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1); ok {
@@ -222,14 +230,6 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalMapstructure(dat
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = &out
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = &out
-	}
-
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = &out
-	}
-
 	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9); ok {
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 = &out
 	}
@@ -241,21 +241,55 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalMapstructure(dat
 func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
-	err = newStrictDecoder(data).Decode(&dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf)
+	// try to unmarshal data into AddIntegrations200ResponseAllOfIntegrationOneOf
+	err = newStrictDecoder(data).Decode(&dst.AddIntegrations200ResponseAllOfIntegrationOneOf)
 	if err == nil {
-		jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf, _ := json.Marshal(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf)
-		if string(jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf) == "{}" { // empty struct
-			dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = nil
+		jsonAddIntegrations200ResponseAllOfIntegrationOneOf, _ := json.Marshal(dst.AddIntegrations200ResponseAllOfIntegrationOneOf)
+		if string(jsonAddIntegrations200ResponseAllOfIntegrationOneOf) == "{}" { // empty struct
+			dst.AddIntegrations200ResponseAllOfIntegrationOneOf = nil
 		} else {
-			if err = validator.Validate(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf); err != nil {
-				dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = nil
+			if err = validator.Validate(dst.AddIntegrations200ResponseAllOfIntegrationOneOf); err != nil {
+				dst.AddIntegrations200ResponseAllOfIntegrationOneOf = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = nil
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf = nil
+	}
+
+	// try to unmarshal data into AddIntegrations200ResponseAllOfIntegrationOneOf1
+	err = newStrictDecoder(data).Decode(&dst.AddIntegrations200ResponseAllOfIntegrationOneOf1)
+	if err == nil {
+		jsonAddIntegrations200ResponseAllOfIntegrationOneOf1, _ := json.Marshal(dst.AddIntegrations200ResponseAllOfIntegrationOneOf1)
+		if string(jsonAddIntegrations200ResponseAllOfIntegrationOneOf1) == "{}" { // empty struct
+			dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = nil
+		} else {
+			if err = validator.Validate(dst.AddIntegrations200ResponseAllOfIntegrationOneOf1); err != nil {
+				dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = nil
+	}
+
+	// try to unmarshal data into AddIntegrations200ResponseAllOfIntegrationOneOf2
+	err = newStrictDecoder(data).Decode(&dst.AddIntegrations200ResponseAllOfIntegrationOneOf2)
+	if err == nil {
+		jsonAddIntegrations200ResponseAllOfIntegrationOneOf2, _ := json.Marshal(dst.AddIntegrations200ResponseAllOfIntegrationOneOf2)
+		if string(jsonAddIntegrations200ResponseAllOfIntegrationOneOf2) == "{}" { // empty struct
+			dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = nil
+		} else {
+			if err = validator.Validate(dst.AddIntegrations200ResponseAllOfIntegrationOneOf2); err != nil {
+				dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = nil
 	}
 
 	// try to unmarshal data into ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1
@@ -479,40 +513,6 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = nil
 	}
 
-	// try to unmarshal data into ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
-	err = newStrictDecoder(data).Decode(&dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7)
-	if err == nil {
-		jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7, _ := json.Marshal(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7)
-		if string(jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7) == "{}" { // empty struct
-			dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = nil
-		} else {
-			if err = validator.Validate(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7); err != nil {
-				dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = nil
-	}
-
-	// try to unmarshal data into ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
-	err = newStrictDecoder(data).Decode(&dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8)
-	if err == nil {
-		jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8, _ := json.Marshal(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8)
-		if string(jsonListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8) == "{}" { // empty struct
-			dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = nil
-		} else {
-			if err = validator.Validate(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8); err != nil {
-				dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = nil
-	}
-
 	// try to unmarshal data into ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9
 	err = newStrictDecoder(data).Decode(&dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9)
 	if err == nil {
@@ -532,7 +532,9 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf = nil
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf = nil
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = nil
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 = nil
@@ -546,8 +548,6 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = nil
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 = nil
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 = nil
 		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddIntegrations200ResponseAllOfIntegration)")
@@ -560,8 +560,16 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalJSON(data []byte
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddIntegrations200ResponseAllOfIntegration) MarshalJSON() ([]byte, error) {
-	if src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf != nil {
-		return json.Marshal(&src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf)
+	if src.AddIntegrations200ResponseAllOfIntegrationOneOf != nil {
+		return json.Marshal(&src.AddIntegrations200ResponseAllOfIntegrationOneOf)
+	}
+
+	if src.AddIntegrations200ResponseAllOfIntegrationOneOf1 != nil {
+		return json.Marshal(&src.AddIntegrations200ResponseAllOfIntegrationOneOf1)
+	}
+
+	if src.AddIntegrations200ResponseAllOfIntegrationOneOf2 != nil {
+		return json.Marshal(&src.AddIntegrations200ResponseAllOfIntegrationOneOf2)
 	}
 
 	if src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 != nil {
@@ -616,14 +624,6 @@ func (src AddIntegrations200ResponseAllOfIntegration) MarshalJSON() ([]byte, err
 		return json.Marshal(&src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6)
 	}
 
-	if src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 != nil {
-		return json.Marshal(&src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7)
-	}
-
-	if src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 != nil {
-		return json.Marshal(&src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8)
-	}
-
 	if src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 != nil {
 		return json.Marshal(&src.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9)
 	}
@@ -636,8 +636,16 @@ func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() inter
 	if obj == nil {
 		return nil
 	}
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf != nil {
-		return obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf != nil {
+		return obj.AddIntegrations200ResponseAllOfIntegrationOneOf
+	}
+
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf1 != nil {
+		return obj.AddIntegrations200ResponseAllOfIntegrationOneOf1
+	}
+
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf2 != nil {
+		return obj.AddIntegrations200ResponseAllOfIntegrationOneOf2
 	}
 
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 != nil {
@@ -692,14 +700,6 @@ func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() inter
 		return obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6
 	}
 
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 != nil {
-		return obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
-	}
-
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 != nil {
-		return obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
-	}
-
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 != nil {
 		return obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9
 	}
@@ -710,8 +710,16 @@ func (obj *AddIntegrations200ResponseAllOfIntegration) GetActualInstance() inter
 
 // Get the actual instance value
 func (obj AddIntegrations200ResponseAllOfIntegration) GetActualInstanceValue() interface{} {
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf != nil {
-		return *obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf != nil {
+		return *obj.AddIntegrations200ResponseAllOfIntegrationOneOf
+	}
+
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf1 != nil {
+		return *obj.AddIntegrations200ResponseAllOfIntegrationOneOf1
+	}
+
+	if obj.AddIntegrations200ResponseAllOfIntegrationOneOf2 != nil {
+		return *obj.AddIntegrations200ResponseAllOfIntegrationOneOf2
 	}
 
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 != nil {
@@ -764,14 +772,6 @@ func (obj AddIntegrations200ResponseAllOfIntegration) GetActualInstanceValue() i
 
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 != nil {
 		return *obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6
-	}
-
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7 != nil {
-		return *obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf7
-	}
-
-	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8 != nil {
-		return *obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf8
 	}
 
 	if obj.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 != nil {

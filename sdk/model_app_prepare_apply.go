@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &AppPrepareApply{}
 
 // AppPrepareApply struct for AppPrepareApply
 type AppPrepareApply struct {
-	Data                 *PrepareAppApply200ResponseAllOfData `json:"data,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	Data                 *AppPrepareApplyData   `json:"data,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AppPrepareApply AppPrepareApply
@@ -44,9 +44,9 @@ func NewAppPrepareApplyWithDefaults() *AppPrepareApply {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AppPrepareApply) GetData() PrepareAppApply200ResponseAllOfData {
+func (o *AppPrepareApply) GetData() AppPrepareApplyData {
 	if o == nil || IsNil(o.Data) {
-		var ret PrepareAppApply200ResponseAllOfData
+		var ret AppPrepareApplyData
 		return ret
 	}
 	return *o.Data
@@ -54,7 +54,7 @@ func (o *AppPrepareApply) GetData() PrepareAppApply200ResponseAllOfData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AppPrepareApply) GetDataOk() (*PrepareAppApply200ResponseAllOfData, bool) {
+func (o *AppPrepareApply) GetDataOk() (*AppPrepareApplyData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *AppPrepareApply) IsSetData() bool {
 	return false
 }
 
-// SetData gets a reference to the given PrepareAppApply200ResponseAllOfData and assigns it to the Data field.
-func (o *AppPrepareApply) SetData(v PrepareAppApply200ResponseAllOfData) {
+// SetData gets a reference to the given AppPrepareApplyData and assigns it to the Data field.
+func (o *AppPrepareApply) SetData(v AppPrepareApplyData) {
 	o.Data = &v
 }
 

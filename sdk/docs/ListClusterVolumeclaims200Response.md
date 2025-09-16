@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Volumeclaims** | Pointer to [**[]ListClusterVolumes200ResponseAllOfVolumesInner**](ListClusterVolumes200ResponseAllOfVolumesInner.md) |  | [optional] 
+**Volumeclaims** | Pointer to [**[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner**](ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVolumeclaims
 
-`func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumes200ResponseAllOfVolumesInner`
+`func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner`
 
 GetVolumeclaims returns the Volumeclaims field if non-nil, zero value otherwise.
 
 ### GetVolumeclaimsOk
 
-`func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() (*[]ListClusterVolumes200ResponseAllOfVolumesInner, bool)`
+`func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() (*[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool)`
 
 GetVolumeclaimsOk returns a tuple with the Volumeclaims field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumeclaims
 
-`func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumes200ResponseAllOfVolumesInner)`
+`func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner)`
 
 SetVolumeclaims sets Volumeclaims field to given value.
 

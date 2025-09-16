@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ListClusterWorkers200Response{}
 
 // ListClusterWorkers200Response struct for ListClusterWorkers200Response
 type ListClusterWorkers200Response struct {
-	Workers              []GetClusterMasters200ResponseMastersInner `json:"workers,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta          `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	Workers              []ListClusterWorkers200ResponseAllOfWorkersInner `json:"workers,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _ListClusterWorkers200Response ListClusterWorkers200Response
@@ -45,9 +45,9 @@ func NewListClusterWorkers200ResponseWithDefaults() *ListClusterWorkers200Respon
 }
 
 // GetWorkers returns the Workers field value if set, zero value otherwise.
-func (o *ListClusterWorkers200Response) GetWorkers() []GetClusterMasters200ResponseMastersInner {
+func (o *ListClusterWorkers200Response) GetWorkers() []ListClusterWorkers200ResponseAllOfWorkersInner {
 	if o == nil || IsNil(o.Workers) {
-		var ret []GetClusterMasters200ResponseMastersInner
+		var ret []ListClusterWorkers200ResponseAllOfWorkersInner
 		return ret
 	}
 	return o.Workers
@@ -55,7 +55,7 @@ func (o *ListClusterWorkers200Response) GetWorkers() []GetClusterMasters200Respo
 
 // GetWorkersOk returns a tuple with the Workers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterWorkers200Response) GetWorkersOk() ([]GetClusterMasters200ResponseMastersInner, bool) {
+func (o *ListClusterWorkers200Response) GetWorkersOk() ([]ListClusterWorkers200ResponseAllOfWorkersInner, bool) {
 	if o == nil || IsNil(o.Workers) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListClusterWorkers200Response) IsSetWorkers() bool {
 	return false
 }
 
-// SetWorkers gets a reference to the given []GetClusterMasters200ResponseMastersInner and assigns it to the Workers field.
-func (o *ListClusterWorkers200Response) SetWorkers(v []GetClusterMasters200ResponseMastersInner) {
+// SetWorkers gets a reference to the given []ListClusterWorkers200ResponseAllOfWorkersInner and assigns it to the Workers field.
+func (o *ListClusterWorkers200Response) SetWorkers(v []ListClusterWorkers200ResponseAllOfWorkersInner) {
 	o.Workers = v
 }
 

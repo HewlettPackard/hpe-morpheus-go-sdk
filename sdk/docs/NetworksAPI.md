@@ -5053,7 +5053,7 @@ Name | Type | Description  | Notes
 
 ## GetNetworkProxy
 
-> CreateNetworkProxy200Response GetNetworkProxy(ctx, id).Execute()
+> GetNetworkProxy200Response GetNetworkProxy(ctx, id).Execute()
 
 Get a Specific Network Proxy
 
@@ -5081,7 +5081,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.GetNetworkProxy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNetworkProxy`: CreateNetworkProxy200Response
+	// response from `GetNetworkProxy`: GetNetworkProxy200Response
 	fmt.Fprintf(os.Stdout, "Response from `NetworksAPI.GetNetworkProxy`: %v\n", resp)
 }
 ```
@@ -5105,7 +5105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateNetworkProxy200Response**](CreateNetworkProxy200Response.md)
+[**GetNetworkProxy200Response**](GetNetworkProxy200Response.md)
 
 ### Authorization
 
@@ -7220,7 +7220,7 @@ func main() {
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	labels := "labels_example" // string | Filter by label(s), matches records that contain any of the specified labels (optional)
 	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	cidr := "cidr_example" // string | Filter by cidr, matches beginning of value. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -7250,7 +7250,7 @@ Name | Type | Description  | Notes
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **labels** | **string** | Filter by label(s), matches records that contain any of the specified labels | 
  **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **cidr** | **string** | Filter by cidr, matches beginning of value. | 
 
 ### Return type
@@ -7341,7 +7341,7 @@ Name | Type | Description  | Notes
 
 ## ListSubnets
 
-> GetNetworkSubnets200Response ListSubnets(ctx).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).Execute()
+> ListSubnets200Response ListSubnets(ctx).Name(name).Phrase(phrase).Labels(labels).AllLabels(allLabels).Execute()
 
 Get All Subnets
 
@@ -7372,7 +7372,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.ListSubnets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListSubnets`: GetNetworkSubnets200Response
+	// response from `ListSubnets`: ListSubnets200Response
 	fmt.Fprintf(os.Stdout, "Response from `NetworksAPI.ListSubnets`: %v\n", resp)
 }
 ```
@@ -7395,7 +7395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetNetworkSubnets200Response**](GetNetworkSubnets200Response.md)
+[**ListSubnets200Response**](ListSubnets200Response.md)
 
 ### Authorization
 

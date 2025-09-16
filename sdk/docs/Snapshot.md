@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **SnapshotFiles** | Pointer to [**[]SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner**](SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner.md) |  | [optional] 
 **CurrentlyActive** | Pointer to **bool** |  | [optional] 
 **MemorySnapshot** | Pointer to **bool** |  | [optional] 
+**ForExport** | Pointer to **bool** |  | [optional] 
+**ForBackup** | Pointer to **bool** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 
 ## Methods
@@ -448,6 +450,56 @@ SetMemorySnapshot sets MemorySnapshot field to given value.
 `func (o *Snapshot) HasMemorySnapshot() bool`
 
 HasMemorySnapshot returns a boolean if a field has been set.
+
+### GetForExport
+
+`func (o *Snapshot) GetForExport() bool`
+
+GetForExport returns the ForExport field if non-nil, zero value otherwise.
+
+### GetForExportOk
+
+`func (o *Snapshot) GetForExportOk() (*bool, bool)`
+
+GetForExportOk returns a tuple with the ForExport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForExport
+
+`func (o *Snapshot) SetForExport(v bool)`
+
+SetForExport sets ForExport field to given value.
+
+### HasForExport
+
+`func (o *Snapshot) HasForExport() bool`
+
+HasForExport returns a boolean if a field has been set.
+
+### GetForBackup
+
+`func (o *Snapshot) GetForBackup() bool`
+
+GetForBackup returns the ForBackup field if non-nil, zero value otherwise.
+
+### GetForBackupOk
+
+`func (o *Snapshot) GetForBackupOk() (*bool, bool)`
+
+GetForBackupOk returns a tuple with the ForBackup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForBackup
+
+`func (o *Snapshot) SetForBackup(v bool)`
+
+SetForBackup sets ForBackup field to given value.
+
+### HasForBackup
+
+`func (o *Snapshot) HasForBackup() bool`
+
+HasForBackup returns a boolean if a field has been set.
 
 ### GetDateCreated
 

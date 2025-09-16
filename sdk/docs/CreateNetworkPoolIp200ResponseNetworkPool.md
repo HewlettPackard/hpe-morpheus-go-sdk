@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **RefType** | Pointer to **NullableString** |  | [optional] 
 **RefId** | Pointer to **NullableInt64** |  | [optional] 
 **SubRefId** | Pointer to **NullableInt64** |  | [optional] 
-**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 
 ## Methods
@@ -772,20 +772,20 @@ HasSubRefId returns a boolean if a field has been set.
 UnsetSubRefId ensures that no value is present for SubRefId, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomain() string`
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomainOk() (*string, bool)`
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomain(v string)`
+`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -795,16 +795,6 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
-### SetNetworkDomainNil
-
-`func (o *CreateNetworkPoolIp200ResponseNetworkPool) SetNetworkDomainNil(b bool)`
-
- SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-
-### UnsetNetworkDomain
-`func (o *CreateNetworkPoolIp200ResponseNetworkPool) UnsetNetworkDomain()`
-
-UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *CreateNetworkPoolIp200ResponseNetworkPool) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`

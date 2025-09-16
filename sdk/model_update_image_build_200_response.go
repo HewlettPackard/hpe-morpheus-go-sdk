@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateImageBuild200Response{}
 
 // UpdateImageBuild200Response struct for UpdateImageBuild200Response
 type UpdateImageBuild200Response struct {
-	ImageBuild           *AddImageBuild200ResponseAllOfImageBuild `json:"imageBuild,omitempty"`
-	AdditionalProperties map[string]interface{}                   `json:",remain"`
+	ImageBuild           *GetImageBuild200ResponseImageBuild `json:"imageBuild,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _UpdateImageBuild200Response UpdateImageBuild200Response
@@ -44,9 +44,9 @@ func NewUpdateImageBuild200ResponseWithDefaults() *UpdateImageBuild200Response {
 }
 
 // GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *UpdateImageBuild200Response) GetImageBuild() AddImageBuild200ResponseAllOfImageBuild {
+func (o *UpdateImageBuild200Response) GetImageBuild() GetImageBuild200ResponseImageBuild {
 	if o == nil || IsNil(o.ImageBuild) {
-		var ret AddImageBuild200ResponseAllOfImageBuild
+		var ret GetImageBuild200ResponseImageBuild
 		return ret
 	}
 	return *o.ImageBuild
@@ -54,7 +54,7 @@ func (o *UpdateImageBuild200Response) GetImageBuild() AddImageBuild200ResponseAl
 
 // GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateImageBuild200Response) GetImageBuildOk() (*AddImageBuild200ResponseAllOfImageBuild, bool) {
+func (o *UpdateImageBuild200Response) GetImageBuildOk() (*GetImageBuild200ResponseImageBuild, bool) {
 	if o == nil || IsNil(o.ImageBuild) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *UpdateImageBuild200Response) IsSetImageBuild() bool {
 	return false
 }
 
-// SetImageBuild gets a reference to the given AddImageBuild200ResponseAllOfImageBuild and assigns it to the ImageBuild field.
-func (o *UpdateImageBuild200Response) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuild) {
+// SetImageBuild gets a reference to the given GetImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
+func (o *UpdateImageBuild200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild) {
 	o.ImageBuild = &v
 }
 

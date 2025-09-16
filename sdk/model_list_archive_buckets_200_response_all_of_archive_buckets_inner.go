@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -24,8 +24,8 @@ type ListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {
 	Id                   *int64                                                          `json:"id,omitempty"`
 	Name                 *string                                                         `json:"name,omitempty"`
 	Description          NullableString                                                  `json:"description,omitempty"`
-	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"storageProvider,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"owner,omitempty"`
+	StorageProvider      NullableListApprovals200ResponseAllOfApprovalsInnerAccount      `json:"storageProvider,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount      `json:"owner,omitempty"`
 	CreatedBy            *ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy `json:"createdBy,omitempty"`
 	IsPublic             *bool                                                           `json:"isPublic,omitempty"`
 	Visibility           *string                                                         `json:"visibility,omitempty"`
@@ -33,7 +33,7 @@ type ListArchiveBuckets200ResponseAllOfArchiveBucketsInner struct {
 	FilePath             *string                                                         `json:"filePath,omitempty"`
 	RawSize              NullableInt64                                                   `json:"rawSize,omitempty"`
 	FileCount            *int64                                                          `json:"fileCount,omitempty"`
-	Accounts             []map[string]interface{}                                        `json:"accounts,omitempty"`
+	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"accounts,omitempty"`
 	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                          `json:",remain"`
@@ -165,68 +165,90 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetDescription
 	o.Description.Unset()
 }
 
-// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.StorageProvider) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.StorageProvider.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.StorageProvider
+	return *o.StorageProvider.Get()
 }
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.StorageProvider) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageProvider, true
+	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
 }
 
 // IsSetStorageProvider returns a boolean if a field has been set.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetStorageProvider() bool {
-	if o != nil && !IsNil(o.StorageProvider) {
+	if o != nil && o.StorageProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the StorageProvider field.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.StorageProvider = &v
+// SetStorageProvider gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the StorageProvider field.
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.StorageProvider.Set(&v)
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProviderNil() {
+	o.StorageProvider.Set(nil)
+}
+
+// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetStorageProvider() {
+	o.StorageProvider.Unset()
+}
+
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -465,9 +487,9 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetFileCount(v i
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccounts() []map[string]interface{} {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []map[string]interface{}
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Accounts
@@ -475,7 +497,7 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccounts() []
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccountsOk() ([]map[string]interface{}, bool) {
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -491,8 +513,8 @@ func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) IsSetAccounts() 
 	return false
 }
 
-// SetAccounts gets a reference to the given []map[string]interface{} and assigns it to the Accounts field.
-func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetAccounts(v []map[string]interface{}) {
+// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
+func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Accounts = v
 }
 
@@ -579,11 +601,11 @@ func (o ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) ToMap() (map[stri
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.StorageProvider) {
-		toSerialize["storageProvider"] = o.StorageProvider
+	if o.StorageProvider.IsSet() {
+		toSerialize["storageProvider"] = o.StorageProvider.Get()
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.CreatedBy) {
 		toSerialize["createdBy"] = o.CreatedBy

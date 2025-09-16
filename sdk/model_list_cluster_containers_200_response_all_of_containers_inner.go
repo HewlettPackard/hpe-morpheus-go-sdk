@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -27,8 +27,8 @@ type ListClusterContainers200ResponseAllOfContainersInner struct {
 	Instance             NullableString                                                              `json:"instance,omitempty"`
 	ContainerType        *ListClusterContainers200ResponseAllOfContainersInnerContainerType          `json:"containerType,omitempty"`
 	ContainerTypeSet     *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet       `json:"containerTypeSet,omitempty"`
-	Server               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"server,omitempty"`
-	Cloud                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"cloud,omitempty"`
+	Server               NullableListApprovals200ResponseAllOfApprovalsInnerAccount                  `json:"server,omitempty"`
+	Cloud                NullableListApprovals200ResponseAllOfApprovalsInnerAccount                  `json:"cloud,omitempty"`
 	Name                 *string                                                                     `json:"name,omitempty"`
 	Ip                   *string                                                                     `json:"ip,omitempty"`
 	InternalIp           *string                                                                     `json:"internalIp,omitempty"`
@@ -287,68 +287,90 @@ func (o *ListClusterContainers200ResponseAllOfContainersInner) SetContainerTypeS
 	o.ContainerTypeSet = &v
 }
 
-// GetServer returns the Server field value if set, zero value otherwise.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Server) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetServer returns the Server field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServer() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Server.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Server
+	return *o.Server.Get()
 }
 
 // GetServerOk returns a tuple with the Server field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Server) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Server, true
+	return o.Server.Get(), o.Server.IsSet()
 }
 
 // IsSetServer returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInner) IsSetServer() bool {
-	if o != nil && !IsNil(o.Server) {
+	if o != nil && o.Server.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServer gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Server field.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Server = &v
+// SetServer gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Server field.
+func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServer(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Server.Set(&v)
 }
 
-// GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Cloud) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetServerNil sets the value for Server to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServerNil() {
+	o.Server.Set(nil)
+}
+
+// UnsetServer ensures that no value is present for Server, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInner) UnsetServer() {
+	o.Server.Unset()
+}
+
+// GetCloud returns the Cloud field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Cloud.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Cloud
+	return *o.Cloud.Get()
 }
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Cloud) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cloud, true
+	return o.Cloud.Get(), o.Cloud.IsSet()
 }
 
 // IsSetCloud returns a boolean if a field has been set.
 func (o *ListClusterContainers200ResponseAllOfContainersInner) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
+	if o != nil && o.Cloud.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Cloud field.
-func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Cloud = &v
+// SetCloud gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Cloud field.
+func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Cloud.Set(&v)
+}
+
+// SetCloudNil sets the value for Cloud to be an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloudNil() {
+	o.Cloud.Set(nil)
+}
+
+// UnsetCloud ensures that no value is present for Cloud, not even an explicit nil
+func (o *ListClusterContainers200ResponseAllOfContainersInner) UnsetCloud() {
+	o.Cloud.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1589,11 +1611,11 @@ func (o ListClusterContainers200ResponseAllOfContainersInner) ToMap() (map[strin
 	if !IsNil(o.ContainerTypeSet) {
 		toSerialize["containerTypeSet"] = o.ContainerTypeSet
 	}
-	if !IsNil(o.Server) {
-		toSerialize["server"] = o.Server
+	if o.Server.IsSet() {
+		toSerialize["server"] = o.Server.Get()
 	}
-	if !IsNil(o.Cloud) {
-		toSerialize["cloud"] = o.Cloud
+	if o.Cloud.IsSet() {
+		toSerialize["cloud"] = o.Cloud.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

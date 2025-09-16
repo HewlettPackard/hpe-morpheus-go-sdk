@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**DeleteOsTypeImage**](LibraryAPI.md#DeleteOsTypeImage) | **Delete** /api/library/operating-systems/os-types/images/{id} | Delete an OsTypeImage
 [**DeleteScript**](LibraryAPI.md#DeleteScript) | **Delete** /api/library/container-scripts/{id} | Delete a Script
 [**DeleteSpecTemplate**](LibraryAPI.md#DeleteSpecTemplate) | **Delete** /api/library/spec-templates/{id} | Delete a Spec Template
+[**DownloadVirtualImage**](LibraryAPI.md#DownloadVirtualImage) | **Get** /api/virtual-images/{virtualImageId}/download | Download Virtual Image
 [**GetFileTemplate**](LibraryAPI.md#GetFileTemplate) | **Get** /api/library/container-templates/{id} | Get a Specific File Template
 [**GetInput**](LibraryAPI.md#GetInput) | **Get** /api/library/option-types/{id} | Get A Specific Input
 [**GetInstanceType**](LibraryAPI.md#GetInstanceType) | **Get** /api/library/instance-types/{instanceTypeId} | Get a Specific Instance Type
@@ -1777,6 +1778,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteAlerts200Response**](DeleteAlerts200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DownloadVirtualImage
+
+> DownloadVirtualImage(ctx, virtualImageId).Execute()
+
+Download Virtual Image
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	virtualImageId := float32(4) // float32 | Virtual Image ID
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.LibraryAPI.DownloadVirtualImage(context.Background(), virtualImageId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.DownloadVirtualImage``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**virtualImageId** | **float32** | Virtual Image ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDownloadVirtualImageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 

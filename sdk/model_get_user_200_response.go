@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetUser200Response{}
 
 // GetUser200Response struct for GetUser200Response
 type GetUser200Response struct {
-	User                 *AddUserTenant200ResponseAllOfUser `json:"user,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	User                 *ListUsers200ResponseAllOfUsersInner `json:"user,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _GetUser200Response GetUser200Response
@@ -44,9 +44,9 @@ func NewGetUser200ResponseWithDefaults() *GetUser200Response {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *GetUser200Response) GetUser() AddUserTenant200ResponseAllOfUser {
+func (o *GetUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner {
 	if o == nil || IsNil(o.User) {
-		var ret AddUserTenant200ResponseAllOfUser
+		var ret ListUsers200ResponseAllOfUsersInner
 		return ret
 	}
 	return *o.User
@@ -54,7 +54,7 @@ func (o *GetUser200Response) GetUser() AddUserTenant200ResponseAllOfUser {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetUser200Response) GetUserOk() (*AddUserTenant200ResponseAllOfUser, bool) {
+func (o *GetUser200Response) GetUserOk() (*ListUsers200ResponseAllOfUsersInner, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetUser200Response) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given AddUserTenant200ResponseAllOfUser and assigns it to the User field.
-func (o *GetUser200Response) SetUser(v AddUserTenant200ResponseAllOfUser) {
+// SetUser gets a reference to the given ListUsers200ResponseAllOfUsersInner and assigns it to the User field.
+func (o *GetUser200Response) SetUser(v ListUsers200ResponseAllOfUsersInner) {
 	o.User = &v
 }
 

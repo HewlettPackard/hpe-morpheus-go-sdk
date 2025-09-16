@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -9590,7 +9590,7 @@ type ApiGetNetworkProxyRequest struct {
 	id         int64
 }
 
-func (r ApiGetNetworkProxyRequest) Execute() (*CreateNetworkProxy200Response, *http.Response, error) {
+func (r ApiGetNetworkProxyRequest) Execute() (*GetNetworkProxy200Response, *http.Response, error) {
 	return r.ApiService.GetNetworkProxyExecute(r)
 }
 
@@ -9613,13 +9613,13 @@ func (a *NetworksAPIService) GetNetworkProxy(ctx context.Context, id int64) ApiG
 
 // Execute executes the request
 //
-//	@return CreateNetworkProxy200Response
-func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest) (*CreateNetworkProxy200Response, *http.Response, error) {
+//	@return GetNetworkProxy200Response
+func (a *NetworksAPIService) GetNetworkProxyExecute(r ApiGetNetworkProxyRequest) (*GetNetworkProxy200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CreateNetworkProxy200Response
+		localVarReturnValue *GetNetworkProxy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.GetNetworkProxy")
@@ -13747,7 +13747,7 @@ func (r ApiListNetworksRequest) AllLabels(allLabels string) ApiListNetworksReque
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListNetworksRequest) ZoneId(zoneId int64) ApiListNetworksRequest {
 	r.zoneId = &zoneId
 	return r
@@ -14067,7 +14067,7 @@ func (r ApiListSubnetsRequest) AllLabels(allLabels string) ApiListSubnetsRequest
 	return r
 }
 
-func (r ApiListSubnetsRequest) Execute() (*GetNetworkSubnets200Response, *http.Response, error) {
+func (r ApiListSubnetsRequest) Execute() (*ListSubnets200Response, *http.Response, error) {
 	return r.ApiService.ListSubnetsExecute(r)
 }
 
@@ -14088,13 +14088,13 @@ func (a *NetworksAPIService) ListSubnets(ctx context.Context) ApiListSubnetsRequ
 
 // Execute executes the request
 //
-//	@return GetNetworkSubnets200Response
-func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*GetNetworkSubnets200Response, *http.Response, error) {
+//	@return ListSubnets200Response
+func (a *NetworksAPIService) ListSubnetsExecute(r ApiListSubnetsRequest) (*ListSubnets200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GetNetworkSubnets200Response
+		localVarReturnValue *ListSubnets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.ListSubnets")

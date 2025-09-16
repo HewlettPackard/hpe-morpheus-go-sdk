@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Authority** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **RoleType** | Pointer to **string** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -141,20 +141,20 @@ HasRoleType returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -164,6 +164,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListUsersAvailableRoles200ResponseRolesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

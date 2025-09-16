@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ExternalLogin** | Pointer to **bool** |  | [optional] 
 **AllowCustomMappings** | Pointer to **bool** |  | [optional] 
 **ManualRoleAssignment** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **DefaultAccountRole** | Pointer to [**ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole**](ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole.md) |  | [optional] 
 **Config** | Pointer to [**ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config**](ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config.md) |  | [optional] 
 **RoleMappings** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -321,20 +321,20 @@ HasManualRoleAssignment returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -344,6 +344,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetDefaultAccountRole
 
 `func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) GetDefaultAccountRole() ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfDefaultAccountRole`

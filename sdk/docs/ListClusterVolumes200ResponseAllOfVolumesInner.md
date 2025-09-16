@@ -37,9 +37,9 @@ Name | Type | Description | Notes
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **Removable** | Pointer to **bool** |  | [optional] 
 **PoolName** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
-**Datastore** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Datastore** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **DatastoreId** | Pointer to **NullableInt64** |  | [optional] 
 **DatastoreOption** | Pointer to **string** |  | [optional] 
 **StorageGroup** | Pointer to **NullableString** |  | [optional] 
@@ -60,8 +60,8 @@ Name | Type | Description | Notes
 **ImageType** | Pointer to **string** |  | [optional] 
 **Online** | Pointer to **bool** |  | [optional] 
 **RawData** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -979,20 +979,20 @@ HasPoolName returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -1002,6 +1002,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetZoneId
 
 `func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneId() int64`
@@ -1029,20 +1039,20 @@ HasZoneId returns a boolean if a field has been set.
 
 ### GetDatastore
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
 ### GetDatastoreOk
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastore
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetDatastore sets Datastore field to given value.
 
@@ -1052,6 +1062,16 @@ SetDatastore sets Datastore field to given value.
 
 HasDatastore returns a boolean if a field has been set.
 
+### SetDatastoreNil
+
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastoreNil(b bool)`
+
+ SetDatastoreNil sets the value for Datastore to be an explicit nil
+
+### UnsetDatastore
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetDatastore()`
+
+UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
 ### GetDatastoreId
 
 `func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreId() int64`
@@ -1674,20 +1694,20 @@ HasRawData returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -1697,22 +1717,32 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetOwner
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -1722,6 +1752,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

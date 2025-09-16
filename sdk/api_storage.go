@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -2091,6 +2091,7 @@ type ApiListStorageVolumesRequest struct {
 	direction  *string
 	phrase     *string
 	name       *string
+	uuid       *string
 }
 
 // Maximum number of records to return
@@ -2126,6 +2127,12 @@ func (r ApiListStorageVolumesRequest) Phrase(phrase string) ApiListStorageVolume
 // Filter by name
 func (r ApiListStorageVolumesRequest) Name(name string) ApiListStorageVolumesRequest {
 	r.name = &name
+	return r
+}
+
+// Filter by UUID
+func (r ApiListStorageVolumesRequest) Uuid(uuid string) ApiListStorageVolumesRequest {
+	r.uuid = &uuid
 	return r
 }
 
@@ -2199,6 +2206,9 @@ func (a *StorageAPIService) ListStorageVolumesExecute(r ApiListStorageVolumesReq
 	}
 	if r.name != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
+	}
+	if r.uuid != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "uuid", r.uuid, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

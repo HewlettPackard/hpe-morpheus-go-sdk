@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
-**Pool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Pool** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **UsePool** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasIpMode returns a boolean if a field has been set.
 
 ### GetPool
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetPool sets Pool field to given value.
 
@@ -103,6 +103,16 @@ SetPool sets Pool field to given value.
 
 HasPool returns a boolean if a field has been set.
 
+### SetPoolNil
+
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPoolNil(b bool)`
+
+ SetPoolNil sets the value for Pool to be an explicit nil
+
+### UnsetPool
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) UnsetPool()`
+
+UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetUsePool
 
 `func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetUsePool() bool`

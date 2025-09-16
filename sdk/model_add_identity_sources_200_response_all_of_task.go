@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,69 +23,69 @@ var _ fmt.Stringer
 
 // AddIdentitySources200ResponseAllOfTask - struct for AddIdentitySources200ResponseAllOfTask
 type AddIdentitySources200ResponseAllOfTask struct {
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf  *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
-	ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
+	AddIdentitySources200ResponseAllOfTaskOneOf  *AddIdentitySources200ResponseAllOfTaskOneOf
+	AddIdentitySources200ResponseAllOfTaskOneOf1 *AddIdentitySources200ResponseAllOfTaskOneOf1
+	AddIdentitySources200ResponseAllOfTaskOneOf2 *AddIdentitySources200ResponseAllOfTaskOneOf2
+	AddIdentitySources200ResponseAllOfTaskOneOf3 *AddIdentitySources200ResponseAllOfTaskOneOf3
+	AddIdentitySources200ResponseAllOfTaskOneOf4 *AddIdentitySources200ResponseAllOfTaskOneOf4
+	AddIdentitySources200ResponseAllOfTaskOneOf5 *AddIdentitySources200ResponseAllOfTaskOneOf5
+	AddIdentitySources200ResponseAllOfTaskOneOf6 *AddIdentitySources200ResponseAllOfTaskOneOf6
+	AddIdentitySources200ResponseAllOfTaskOneOf7 *AddIdentitySources200ResponseAllOfTaskOneOf7
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfAsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfAsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOfAsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOfAsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf1AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf1 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf1AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf1) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf1: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf2AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf2 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf2AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf2) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf2: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf3AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf3 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf3AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf3) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf3: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf4AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf4 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf4AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf4) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf4: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf5AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf5 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf5AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf5) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf5: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf6AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf6 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf6AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf6) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf6: v,
 	}
 }
 
-// ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 wrapped in AddIdentitySources200ResponseAllOfTask
-func ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7AsAddIdentitySources200ResponseAllOfTask(v *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) AddIdentitySources200ResponseAllOfTask {
+// AddIdentitySources200ResponseAllOfTaskOneOf7AsAddIdentitySources200ResponseAllOfTask is a convenience function that returns AddIdentitySources200ResponseAllOfTaskOneOf7 wrapped in AddIdentitySources200ResponseAllOfTask
+func AddIdentitySources200ResponseAllOfTaskOneOf7AsAddIdentitySources200ResponseAllOfTask(v *AddIdentitySources200ResponseAllOfTaskOneOf7) AddIdentitySources200ResponseAllOfTask {
 	return AddIdentitySources200ResponseAllOfTask{
-		ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7: v,
+		AddIdentitySources200ResponseAllOfTaskOneOf7: v,
 	}
 }
 
@@ -94,36 +94,36 @@ func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalMapstructure(data an
 		dst = &AddIdentitySources200ResponseAllOfTask{}
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf1); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf2); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf3); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf4); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf5); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf6); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = &out
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = &out
+	if out, ok := data.(AddIdentitySources200ResponseAllOfTaskOneOf7); ok {
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = &out
 	}
 
 	return dst, nil
@@ -133,152 +133,152 @@ func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalMapstructure(data an
 func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf1
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf1)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf1, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf1)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf1) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf1); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf2
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf2)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf2, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf2)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf2) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf2); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf3
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf3)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf3, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf3)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf3) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf3); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf4
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf4)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf4, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf4)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf4) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf4); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf5
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf5)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf5, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf5)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf5) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf5); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf6
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf6)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf6, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf6)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf6) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf6); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = nil
 	}
 
-	// try to unmarshal data into ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
-	err = newStrictDecoder(data).Decode(&dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
+	// try to unmarshal data into AddIdentitySources200ResponseAllOfTaskOneOf7
+	err = newStrictDecoder(data).Decode(&dst.AddIdentitySources200ResponseAllOfTaskOneOf7)
 	if err == nil {
-		jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7, _ := json.Marshal(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
-		if string(jsonListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) == "{}" { // empty struct
-			dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
+		jsonAddIdentitySources200ResponseAllOfTaskOneOf7, _ := json.Marshal(dst.AddIdentitySources200ResponseAllOfTaskOneOf7)
+		if string(jsonAddIdentitySources200ResponseAllOfTaskOneOf7) == "{}" { // empty struct
+			dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = nil
 		} else {
-			if err = validator.Validate(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); err != nil {
-				dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
+			if err = validator.Validate(dst.AddIdentitySources200ResponseAllOfTaskOneOf7); err != nil {
+				dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = nil
+		dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddIdentitySources200ResponseAllOfTask)")
 	} else if match == 1 {
@@ -290,36 +290,36 @@ func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalJSON(data []byte) er
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddIdentitySources200ResponseAllOfTask) MarshalJSON() ([]byte, error) {
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf1 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf1)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf2 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf2)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf3 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf3)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf4 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf4)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf5 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf5)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf6 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf6)
 	}
 
-	if src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 != nil {
-		return json.Marshal(&src.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
+	if src.AddIdentitySources200ResponseAllOfTaskOneOf7 != nil {
+		return json.Marshal(&src.AddIdentitySources200ResponseAllOfTaskOneOf7)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -330,36 +330,36 @@ func (obj *AddIdentitySources200ResponseAllOfTask) GetActualInstance() interface
 	if obj == nil {
 		return nil
 	}
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf1 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf1
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf2 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf2
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf3 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf3
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf4 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf4
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf5 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf5
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf6 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf6
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 != nil {
-		return obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf7 != nil {
+		return obj.AddIdentitySources200ResponseAllOfTaskOneOf7
 	}
 
 	// all schemas are nil
@@ -368,36 +368,36 @@ func (obj *AddIdentitySources200ResponseAllOfTask) GetActualInstance() interface
 
 // Get the actual instance value
 func (obj AddIdentitySources200ResponseAllOfTask) GetActualInstanceValue() interface{} {
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf1 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf1
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf2 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf2
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf3 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf3
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf4 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf4
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf5 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf5
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf6 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf6
 	}
 
-	if obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 != nil {
-		return *obj.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7
+	if obj.AddIdentitySources200ResponseAllOfTaskOneOf7 != nil {
+		return *obj.AddIdentitySources200ResponseAllOfTaskOneOf7
 	}
 
 	// all schemas are nil

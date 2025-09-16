@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Unique name scoped to your account for the check | [optional] 
+**Name** | **string** | Unique name scoped to your account for the check | 
 **Description** | Pointer to **NullableString** | Optional description field | [optional] 
-**CheckType** | Pointer to [**AddChecksRequestCheckOneOf1CheckType**](AddChecksRequestCheckOneOf1CheckType.md) |  | [optional] 
-**CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
+**CheckInterval** | Pointer to **int32** | Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan) | [optional] [default to 300000]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
 **Active** | Pointer to **bool** | Used to determine if check should be scheduled to execute | [optional] [default to true]
 **Severity** | Pointer to **string** | Severity level threshold for sending notifications. | [optional] [default to "critical"]
-**Config** | Pointer to [**AddChecksRequestCheckOneOf1Config**](AddChecksRequestCheckOneOf1Config.md) |  | [optional] 
+**CheckType** | Pointer to [**SqlCheckAllOfCheckType**](SqlCheckAllOfCheckType.md) |  | [optional] 
+**Config** | Pointer to [**SqlCheckAllOfConfig**](SqlCheckAllOfConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckSql
 
-`func NewCheckSql() *CheckSql`
+`func NewCheckSql(name string, ) *CheckSql`
 
 NewCheckSql instantiates a new CheckSql object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *CheckSql) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -92,31 +87,6 @@ HasDescription returns a boolean if a field has been set.
 `func (o *CheckSql) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetCheckType
-
-`func (o *CheckSql) GetCheckType() AddChecksRequestCheckOneOf1CheckType`
-
-GetCheckType returns the CheckType field if non-nil, zero value otherwise.
-
-### GetCheckTypeOk
-
-`func (o *CheckSql) GetCheckTypeOk() (*AddChecksRequestCheckOneOf1CheckType, bool)`
-
-GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckType
-
-`func (o *CheckSql) SetCheckType(v AddChecksRequestCheckOneOf1CheckType)`
-
-SetCheckType sets CheckType field to given value.
-
-### HasCheckType
-
-`func (o *CheckSql) HasCheckType() bool`
-
-HasCheckType returns a boolean if a field has been set.
-
 ### GetCheckInterval
 
 `func (o *CheckSql) GetCheckInterval() int32`
@@ -217,22 +187,47 @@ SetSeverity sets Severity field to given value.
 
 HasSeverity returns a boolean if a field has been set.
 
+### GetCheckType
+
+`func (o *CheckSql) GetCheckType() SqlCheckAllOfCheckType`
+
+GetCheckType returns the CheckType field if non-nil, zero value otherwise.
+
+### GetCheckTypeOk
+
+`func (o *CheckSql) GetCheckTypeOk() (*SqlCheckAllOfCheckType, bool)`
+
+GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckType
+
+`func (o *CheckSql) SetCheckType(v SqlCheckAllOfCheckType)`
+
+SetCheckType sets CheckType field to given value.
+
+### HasCheckType
+
+`func (o *CheckSql) HasCheckType() bool`
+
+HasCheckType returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *CheckSql) GetConfig() AddChecksRequestCheckOneOf1Config`
+`func (o *CheckSql) GetConfig() SqlCheckAllOfConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CheckSql) GetConfigOk() (*AddChecksRequestCheckOneOf1Config, bool)`
+`func (o *CheckSql) GetConfigOk() (*SqlCheckAllOfConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CheckSql) SetConfig(v AddChecksRequestCheckOneOf1Config)`
+`func (o *CheckSql) SetConfig(v SqlCheckAllOfConfig)`
 
 SetConfig sets Config field to given value.
 

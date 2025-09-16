@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Unique name scoped to your account for the check | [optional] 
+**Name** | **string** | Unique name scoped to your account for the check | 
 **Description** | Pointer to **NullableString** | Optional description field | [optional] 
-**CheckType** | Pointer to [**AddChecksRequestCheckOneOf4CheckType**](AddChecksRequestCheckOneOf4CheckType.md) |  | [optional] 
-**CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
+**CheckInterval** | Pointer to **int32** | Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan) | [optional] [default to 300000]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
 **Active** | Pointer to **bool** | Used to determine if check should be scheduled to execute | [optional] [default to true]
 **Severity** | Pointer to **string** | Severity level threshold for sending notifications. | [optional] [default to "critical"]
+**CheckType** | Pointer to [**PushCheckAllOfCheckType**](PushCheckAllOfCheckType.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckPush
 
-`func NewCheckPush() *CheckPush`
+`func NewCheckPush(name string, ) *CheckPush`
 
 NewCheckPush instantiates a new CheckPush object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *CheckPush) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -91,31 +86,6 @@ HasDescription returns a boolean if a field has been set.
 `func (o *CheckPush) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetCheckType
-
-`func (o *CheckPush) GetCheckType() AddChecksRequestCheckOneOf4CheckType`
-
-GetCheckType returns the CheckType field if non-nil, zero value otherwise.
-
-### GetCheckTypeOk
-
-`func (o *CheckPush) GetCheckTypeOk() (*AddChecksRequestCheckOneOf4CheckType, bool)`
-
-GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckType
-
-`func (o *CheckPush) SetCheckType(v AddChecksRequestCheckOneOf4CheckType)`
-
-SetCheckType sets CheckType field to given value.
-
-### HasCheckType
-
-`func (o *CheckPush) HasCheckType() bool`
-
-HasCheckType returns a boolean if a field has been set.
-
 ### GetCheckInterval
 
 `func (o *CheckPush) GetCheckInterval() int32`
@@ -215,6 +185,31 @@ SetSeverity sets Severity field to given value.
 `func (o *CheckPush) HasSeverity() bool`
 
 HasSeverity returns a boolean if a field has been set.
+
+### GetCheckType
+
+`func (o *CheckPush) GetCheckType() PushCheckAllOfCheckType`
+
+GetCheckType returns the CheckType field if non-nil, zero value otherwise.
+
+### GetCheckTypeOk
+
+`func (o *CheckPush) GetCheckTypeOk() (*PushCheckAllOfCheckType, bool)`
+
+GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckType
+
+`func (o *CheckPush) SetCheckType(v PushCheckAllOfCheckType)`
+
+SetCheckType sets CheckType field to given value.
+
+### HasCheckType
+
+`func (o *CheckPush) HasCheckType() bool`
+
+HasCheckType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

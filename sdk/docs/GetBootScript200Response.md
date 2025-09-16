@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BootScript** | Pointer to [**ListBootScripts200ResponseAllOfBootScriptsInner**](ListBootScripts200ResponseAllOfBootScriptsInner.md) |  | [optional] 
+**BootScript** | Pointer to [**AddBootScript200ResponseAllOfBootScript**](AddBootScript200ResponseAllOfBootScript.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBootScript
 
-`func (o *GetBootScript200Response) GetBootScript() ListBootScripts200ResponseAllOfBootScriptsInner`
+`func (o *GetBootScript200Response) GetBootScript() AddBootScript200ResponseAllOfBootScript`
 
 GetBootScript returns the BootScript field if non-nil, zero value otherwise.
 
 ### GetBootScriptOk
 
-`func (o *GetBootScript200Response) GetBootScriptOk() (*ListBootScripts200ResponseAllOfBootScriptsInner, bool)`
+`func (o *GetBootScript200Response) GetBootScriptOk() (*AddBootScript200ResponseAllOfBootScript, bool)`
 
 GetBootScriptOk returns a tuple with the BootScript field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBootScript
 
-`func (o *GetBootScript200Response) SetBootScript(v ListBootScripts200ResponseAllOfBootScriptsInner)`
+`func (o *GetBootScript200Response) SetBootScript(v AddBootScript200ResponseAllOfBootScript)`
 
 SetBootScript sets BootScript field to given value.
 

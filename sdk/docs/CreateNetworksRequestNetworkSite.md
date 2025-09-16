@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int64** | Group ID | 
+**Id** | Pointer to **int64** | Group ID | [optional] 
 
 ## Methods
 
 ### NewCreateNetworksRequestNetworkSite
 
-`func NewCreateNetworksRequestNetworkSite(id int64, ) *CreateNetworksRequestNetworkSite`
+`func NewCreateNetworksRequestNetworkSite() *CreateNetworksRequestNetworkSite`
 
 NewCreateNetworksRequestNetworkSite instantiates a new CreateNetworksRequestNetworkSite object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *CreateNetworksRequestNetworkSite) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

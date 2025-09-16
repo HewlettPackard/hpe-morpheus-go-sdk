@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## AddUser
 
-> AddUserTenant200Response AddUser(ctx).AccountId(accountId).AddUserTenantRequest(addUserTenantRequest).Execute()
+> AddUser200Response AddUser(ctx).AccountId(accountId).AddUserTenantRequest(addUserTenantRequest).Execute()
 
 Create a New User
 
@@ -59,7 +59,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AddUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddUser`: AddUserTenant200Response
+	// response from `AddUser`: AddUser200Response
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.AddUser`: %v\n", resp)
 }
 ```
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddUserTenant200Response**](AddUserTenant200Response.md)
+[**AddUser200Response**](AddUser200Response.md)
 
 ### Authorization
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUser
 
-> AddUserTenant200Response UpdateUser(ctx, id).UpdateUserRequest(updateUserRequest).Execute()
+> AddUser200Response UpdateUser(ctx, id).UpdateUserRequest(updateUserRequest).Execute()
 
 Update user
 
@@ -1106,7 +1106,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UpdateUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateUser`: AddUserTenant200Response
+	// response from `UpdateUser`: AddUser200Response
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UpdateUser`: %v\n", resp)
 }
 ```
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddUserTenant200Response**](AddUserTenant200Response.md)
+[**AddUser200Response**](AddUser200Response.md)
 
 ### Authorization
 

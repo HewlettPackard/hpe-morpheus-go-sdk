@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,20 +21,20 @@ var _ MappedNullable = &CheckSocket{}
 // CheckSocket Socket check confirms a certain TCP port is up and responding in your environment.  It can be configured do an initial send upon connect and compare and expected response of the service.
 type CheckSocket struct {
 	// Unique name scoped to your account for the check
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Optional description field
-	Description NullableString                        `json:"description,omitempty"`
-	CheckType   *AddChecksRequestCheckOneOf2CheckType `json:"checkType,omitempty"`
-	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+	Description NullableString `json:"description,omitempty"`
+	// Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
 	InUptime *bool `json:"inUptime,omitempty"`
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity             *string                            `json:"severity,omitempty"`
-	Config               *AddChecksRequestCheckOneOf2Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	Severity             *string                    `json:"severity,omitempty"`
+	CheckType            *CheckSocketAllOfCheckType `json:"checkType,omitempty"`
+	Config               *CheckSocketAllOfConfig    `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _CheckSocket CheckSocket
@@ -43,9 +43,10 @@ type _CheckSocket CheckSocket
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckSocket() *CheckSocket {
+func NewCheckSocket(name string) *CheckSocket {
 	this := CheckSocket{}
-	var checkInterval int32 = 300
+	this.Name = name
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -61,7 +62,7 @@ func NewCheckSocket() *CheckSocket {
 // but it doesn't guarantee that properties required by API are set
 func NewCheckSocketWithDefaults() *CheckSocket {
 	this := CheckSocket{}
-	var checkInterval int32 = 300
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -72,36 +73,28 @@ func NewCheckSocketWithDefaults() *CheckSocket {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *CheckSocket) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *CheckSocket) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CheckSocket) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *CheckSocket) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -145,38 +138,6 @@ func (o *CheckSocket) SetDescriptionNil() {
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
 func (o *CheckSocket) UnsetDescription() {
 	o.Description.Unset()
-}
-
-// GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *CheckSocket) GetCheckType() AddChecksRequestCheckOneOf2CheckType {
-	if o == nil || IsNil(o.CheckType) {
-		var ret AddChecksRequestCheckOneOf2CheckType
-		return ret
-	}
-	return *o.CheckType
-}
-
-// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckSocket) GetCheckTypeOk() (*AddChecksRequestCheckOneOf2CheckType, bool) {
-	if o == nil || IsNil(o.CheckType) {
-		return nil, false
-	}
-	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *CheckSocket) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckType gets a reference to the given AddChecksRequestCheckOneOf2CheckType and assigns it to the CheckType field.
-func (o *CheckSocket) SetCheckType(v AddChecksRequestCheckOneOf2CheckType) {
-	o.CheckType = &v
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -307,10 +268,42 @@ func (o *CheckSocket) SetSeverity(v string) {
 	o.Severity = &v
 }
 
+// GetCheckType returns the CheckType field value if set, zero value otherwise.
+func (o *CheckSocket) GetCheckType() CheckSocketAllOfCheckType {
+	if o == nil || IsNil(o.CheckType) {
+		var ret CheckSocketAllOfCheckType
+		return ret
+	}
+	return *o.CheckType
+}
+
+// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CheckSocket) GetCheckTypeOk() (*CheckSocketAllOfCheckType, bool) {
+	if o == nil || IsNil(o.CheckType) {
+		return nil, false
+	}
+	return o.CheckType, true
+}
+
+// IsSetCheckType returns a boolean if a field has been set.
+func (o *CheckSocket) IsSetCheckType() bool {
+	if o != nil && !IsNil(o.CheckType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCheckType gets a reference to the given CheckSocketAllOfCheckType and assigns it to the CheckType field.
+func (o *CheckSocket) SetCheckType(v CheckSocketAllOfCheckType) {
+	o.CheckType = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CheckSocket) GetConfig() AddChecksRequestCheckOneOf2Config {
+func (o *CheckSocket) GetConfig() CheckSocketAllOfConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddChecksRequestCheckOneOf2Config
+		var ret CheckSocketAllOfConfig
 		return ret
 	}
 	return *o.Config
@@ -318,7 +311,7 @@ func (o *CheckSocket) GetConfig() AddChecksRequestCheckOneOf2Config {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckSocket) GetConfigOk() (*AddChecksRequestCheckOneOf2Config, bool) {
+func (o *CheckSocket) GetConfigOk() (*CheckSocketAllOfConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -334,8 +327,8 @@ func (o *CheckSocket) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddChecksRequestCheckOneOf2Config and assigns it to the Config field.
-func (o *CheckSocket) SetConfig(v AddChecksRequestCheckOneOf2Config) {
+// SetConfig gets a reference to the given CheckSocketAllOfConfig and assigns it to the Config field.
+func (o *CheckSocket) SetConfig(v CheckSocketAllOfConfig) {
 	o.Config = &v
 }
 
@@ -349,14 +342,9 @@ func (o CheckSocket) MarshalJSON() ([]byte, error) {
 
 func (o CheckSocket) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
-	}
-	if !IsNil(o.CheckType) {
-		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.CheckInterval) {
 		toSerialize["checkInterval"] = o.CheckInterval
@@ -369,6 +357,9 @@ func (o CheckSocket) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
+	}
+	if !IsNil(o.CheckType) {
+		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

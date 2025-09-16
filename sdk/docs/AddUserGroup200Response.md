@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | Pointer to [**ListUserGroups200ResponseAllOfUserGroupsInner**](ListUserGroups200ResponseAllOfUserGroupsInner.md) |  | [optional] 
+**UserGroup** | Pointer to [**AddUserGroup200ResponseAllOfUserGroup**](AddUserGroup200ResponseAllOfUserGroup.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUserGroup
 
-`func (o *AddUserGroup200Response) GetUserGroup() ListUserGroups200ResponseAllOfUserGroupsInner`
+`func (o *AddUserGroup200Response) GetUserGroup() AddUserGroup200ResponseAllOfUserGroup`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *AddUserGroup200Response) GetUserGroupOk() (*ListUserGroups200ResponseAllOfUserGroupsInner, bool)`
+`func (o *AddUserGroup200Response) GetUserGroupOk() (*AddUserGroup200ResponseAllOfUserGroup, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *AddUserGroup200Response) SetUserGroup(v ListUserGroups200ResponseAllOfUserGroupsInner)`
+`func (o *AddUserGroup200Response) SetUserGroup(v AddUserGroup200ResponseAllOfUserGroup)`
 
 SetUserGroup sets UserGroup field to given value.
 

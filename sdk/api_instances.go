@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -2908,7 +2908,7 @@ func (r ApiGetInstanceHistoryRequest) ServerId(serverId int64) ApiGetInstanceHis
 	return r
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiGetInstanceHistoryRequest) ZoneId(zoneId int64) ApiGetInstanceHistoryRequest {
 	r.zoneId = &zoneId
 	return r
@@ -4446,7 +4446,7 @@ type ApiListInstanceServicePlansRequest struct {
 	siteId     *int64
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListInstanceServicePlansRequest) ZoneId(zoneId int64) ApiListInstanceServicePlansRequest {
 	r.zoneId = &zoneId
 	return r
@@ -4458,7 +4458,7 @@ func (r ApiListInstanceServicePlansRequest) LayoutId(layoutId int64) ApiListInst
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListInstanceServicePlansRequest) SiteId(siteId int64) ApiListInstanceServicePlansRequest {
 	r.siteId = &siteId
 	return r
@@ -4817,6 +4817,9 @@ type ApiListInstancesRequest struct {
 	offset          *int64
 	name            *string
 	phrase          *string
+	zoneId          *int64
+	siteId          *int64
+	planId          *int64
 	instanceType    *string
 	lastUpdated     *time.Time
 	createdBy       *int64
@@ -4860,6 +4863,24 @@ func (r ApiListInstancesRequest) Name(name string) ApiListInstancesRequest {
 // Search phrase for partial matches on name or description
 func (r ApiListInstancesRequest) Phrase(phrase string) ApiListInstancesRequest {
 	r.phrase = &phrase
+	return r
+}
+
+// The Cloud ID (Zone ID) for Filtering
+func (r ApiListInstancesRequest) ZoneId(zoneId int64) ApiListInstancesRequest {
+	r.zoneId = &zoneId
+	return r
+}
+
+// The Group ID (Site ID) for Filtering
+func (r ApiListInstancesRequest) SiteId(siteId int64) ApiListInstancesRequest {
+	r.siteId = &siteId
+	return r
+}
+
+// The Plan ID for Filtering
+func (r ApiListInstancesRequest) PlanId(planId int64) ApiListInstancesRequest {
+	r.planId = &planId
 	return r
 }
 
@@ -5041,6 +5062,15 @@ func (a *InstancesAPIService) ListInstancesExecute(r ApiListInstancesRequest) (*
 	}
 	if r.phrase != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "phrase", r.phrase, "form", "")
+	}
+	if r.zoneId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "zoneId", r.zoneId, "form", "")
+	}
+	if r.siteId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "siteId", r.siteId, "form", "")
+	}
+	if r.planId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "planId", r.planId, "form", "")
 	}
 	if r.instanceType != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "instanceType", r.instanceType, "form", "")
@@ -5818,6 +5848,13 @@ type ApiRestartInstanceRequest struct {
 	ctx        context.Context
 	ApiService *InstancesAPIService
 	id         int64
+	server     *bool
+}
+
+// Restart the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be restarted.
+func (r ApiRestartInstanceRequest) Server(server bool) ApiRestartInstanceRequest {
+	r.server = &server
+	return r
 }
 
 func (r ApiRestartInstanceRequest) Execute() (*RestartInstance200Response, *http.Response, error) {
@@ -5827,7 +5864,7 @@ func (r ApiRestartInstanceRequest) Execute() (*RestartInstance200Response, *http
 /*
 RestartInstance Restart an instance
 
-This will restart all containers running within an instance. This includes rebuilding the environment variables and applying settings to the docker containers.
+This will restart the service for all containers within an instance. To restart the underlying server(s) as well you must include the query parameter `server=true`. This includes rebuilding the environment variables and applying settings to the docker containers.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Morpheus ID of the Object being referenced
@@ -5864,6 +5901,12 @@ func (a *InstancesAPIService) RestartInstanceExecute(r ApiRestartInstanceRequest
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.server != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "form", "")
+	} else {
+		var defaultValue bool = true
+		r.server = &defaultValue
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6742,6 +6785,13 @@ type ApiStartInstanceRequest struct {
 	ctx        context.Context
 	ApiService *InstancesAPIService
 	id         int64
+	server     *bool
+}
+
+// Start the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be started.
+func (r ApiStartInstanceRequest) Server(server bool) ApiStartInstanceRequest {
+	r.server = &server
+	return r
 }
 
 func (r ApiStartInstanceRequest) Execute() (*RestartInstance200Response, *http.Response, error) {
@@ -6751,7 +6801,7 @@ func (r ApiStartInstanceRequest) Execute() (*RestartInstance200Response, *http.R
 /*
 StartInstance Start an instance
 
-This will start all containers running within an instance.
+This will start the service for all containers within an instance. To start the underlying server(s) as well you must include the query parameter `server=true`.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Morpheus ID of the Object being referenced
@@ -6788,6 +6838,12 @@ func (a *InstancesAPIService) StartInstanceExecute(r ApiStartInstanceRequest) (*
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.server != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "form", "")
+	} else {
+		var defaultValue bool = true
+		r.server = &defaultValue
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6863,9 +6919,23 @@ func (a *InstancesAPIService) StartInstanceExecute(r ApiStartInstanceRequest) (*
 }
 
 type ApiStopInstanceRequest struct {
-	ctx        context.Context
-	ApiService *InstancesAPIService
-	id         int64
+	ctx            context.Context
+	ApiService     *InstancesAPIService
+	id             int64
+	server         *bool
+	muteMonitoring *bool
+}
+
+// Stop the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be stopped.
+func (r ApiStopInstanceRequest) Server(server bool) ApiStopInstanceRequest {
+	r.server = &server
+	return r
+}
+
+// Mute monitoring checks for the instance by passing &#x60;true&#x60;.
+func (r ApiStopInstanceRequest) MuteMonitoring(muteMonitoring bool) ApiStopInstanceRequest {
+	r.muteMonitoring = &muteMonitoring
+	return r
 }
 
 func (r ApiStopInstanceRequest) Execute() (*RestartInstance200Response, *http.Response, error) {
@@ -6875,7 +6945,7 @@ func (r ApiStopInstanceRequest) Execute() (*RestartInstance200Response, *http.Re
 /*
 StopInstance Stop an instance
 
-This will stop all containers running within an instance.
+This will stop the service for all containers within an instance. To stop the underlying server(s) as well you must include the query parameter `server=true`.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param id Morpheus ID of the Object being referenced
@@ -6912,6 +6982,18 @@ func (a *InstancesAPIService) StopInstanceExecute(r ApiStopInstanceRequest) (*Re
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.server != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "server", r.server, "form", "")
+	} else {
+		var defaultValue bool = true
+		r.server = &defaultValue
+	}
+	if r.muteMonitoring != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "muteMonitoring", r.muteMonitoring, "form", "")
+	} else {
+		var defaultValue bool = false
+		r.muteMonitoring = &defaultValue
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

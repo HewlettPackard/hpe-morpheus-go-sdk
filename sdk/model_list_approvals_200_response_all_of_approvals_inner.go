@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,21 +21,21 @@ var _ MappedNullable = &ListApprovals200ResponseAllOfApprovalsInner{}
 
 // ListApprovals200ResponseAllOfApprovalsInner struct for ListApprovals200ResponseAllOfApprovalsInner
 type ListApprovals200ResponseAllOfApprovalsInner struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	InternalId           NullableString                                     `json:"internalId,omitempty"`
-	ExternalId           NullableString                                     `json:"externalId,omitempty"`
-	ExternalName         NullableString                                     `json:"externalName,omitempty"`
-	RequestType          *string                                            `json:"requestType,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Approver             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"approver,omitempty"`
-	AccountIntegration   NullableString                                     `json:"accountIntegration,omitempty"`
-	Status               *string                                            `json:"status,omitempty"`
-	ErrorMessage         NullableString                                     `json:"errorMessage,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	RequestBy            *string                                            `json:"requestBy,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	InternalId           NullableString                                             `json:"internalId,omitempty"`
+	ExternalId           NullableString                                             `json:"externalId,omitempty"`
+	ExternalName         NullableString                                             `json:"externalName,omitempty"`
+	RequestType          *string                                                    `json:"requestType,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"account,omitempty"`
+	Approver             NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"approver,omitempty"`
+	AccountIntegration   NullableString                                             `json:"accountIntegration,omitempty"`
+	Status               *string                                                    `json:"status,omitempty"`
+	ErrorMessage         NullableString                                             `json:"errorMessage,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	RequestBy            *string                                                    `json:"requestBy,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListApprovals200ResponseAllOfApprovalsInner ListApprovals200ResponseAllOfApprovalsInner
@@ -282,68 +282,90 @@ func (o *ListApprovals200ResponseAllOfApprovalsInner) SetRequestType(v string) {
 	o.RequestType = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
 }
 
-// GetApprover returns the Approver field value if set, zero value otherwise.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApprover() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Approver) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetAccount() {
+	o.Account.Unset()
+}
+
+// GetApprover returns the Approver field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApprover() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Approver.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Approver
+	return *o.Approver.Get()
 }
 
 // GetApproverOk returns a tuple with the Approver field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApproverOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Approver) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApproverOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Approver, true
+	return o.Approver.Get(), o.Approver.IsSet()
 }
 
 // IsSetApprover returns a boolean if a field has been set.
 func (o *ListApprovals200ResponseAllOfApprovalsInner) IsSetApprover() bool {
-	if o != nil && !IsNil(o.Approver) {
+	if o != nil && o.Approver.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetApprover gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Approver field.
-func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApprover(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Approver = &v
+// SetApprover gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Approver field.
+func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApprover(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Approver.Set(&v)
+}
+
+// SetApproverNil sets the value for Approver to be an explicit nil
+func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApproverNil() {
+	o.Approver.Set(nil)
+}
+
+// UnsetApprover ensures that no value is present for Approver, not even an explicit nil
+func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetApprover() {
+	o.Approver.Unset()
 }
 
 // GetAccountIntegration returns the AccountIntegration field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -588,11 +610,11 @@ func (o ListApprovals200ResponseAllOfApprovalsInner) ToMap() (map[string]interfa
 	if !IsNil(o.RequestType) {
 		toSerialize["requestType"] = o.RequestType
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
-	if !IsNil(o.Approver) {
-		toSerialize["approver"] = o.Approver
+	if o.Approver.IsSet() {
+		toSerialize["approver"] = o.Approver.Get()
 	}
 	if o.AccountIntegration.IsSet() {
 		toSerialize["accountIntegration"] = o.AccountIntegration.Get()

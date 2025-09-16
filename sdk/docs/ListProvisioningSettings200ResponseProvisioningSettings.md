@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **ReuseSequence** | Pointer to **bool** |  | [optional] 
 **CloudInitUsername** | Pointer to **string** |  | [optional] 
 **CloudInitPassword** | Pointer to **string** |  | [optional] 
-**CloudInitKeyPair** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**CloudInitKeyPair** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **WindowsPassword** | Pointer to **NullableString** |  | [optional] 
 **PxeRootPassword** | Pointer to **NullableString** |  | [optional] 
 **DefaultTemplateType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**DeployStorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**DeployStorageProvider** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -265,20 +265,20 @@ HasCloudInitPassword returns a boolean if a field has been set.
 
 ### GetCloudInitKeyPair
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetCloudInitKeyPair returns the CloudInitKeyPair field if non-nil, zero value otherwise.
 
 ### GetCloudInitKeyPairOk
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetCloudInitKeyPairOk returns a tuple with the CloudInitKeyPair field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloudInitKeyPair
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetCloudInitKeyPair sets CloudInitKeyPair field to given value.
 
@@ -288,6 +288,16 @@ SetCloudInitKeyPair sets CloudInitKeyPair field to given value.
 
 HasCloudInitKeyPair returns a boolean if a field has been set.
 
+### SetCloudInitKeyPairNil
+
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPairNil(b bool)`
+
+ SetCloudInitKeyPairNil sets the value for CloudInitKeyPair to be an explicit nil
+
+### UnsetCloudInitKeyPair
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetCloudInitKeyPair()`
+
+UnsetCloudInitKeyPair ensures that no value is present for CloudInitKeyPair, not even an explicit nil
 ### GetWindowsPassword
 
 `func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetWindowsPassword() string`
@@ -385,20 +395,20 @@ HasDefaultTemplateType returns a boolean if a field has been set.
 
 ### GetDeployStorageProvider
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetDeployStorageProvider returns the DeployStorageProvider field if non-nil, zero value otherwise.
 
 ### GetDeployStorageProviderOk
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetDeployStorageProviderOk returns a tuple with the DeployStorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeployStorageProvider
 
-`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetDeployStorageProvider sets DeployStorageProvider field to given value.
 
@@ -408,6 +418,16 @@ SetDeployStorageProvider sets DeployStorageProvider field to given value.
 
 HasDeployStorageProvider returns a boolean if a field has been set.
 
+### SetDeployStorageProviderNil
+
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProviderNil(b bool)`
+
+ SetDeployStorageProviderNil sets the value for DeployStorageProvider to be an explicit nil
+
+### UnsetDeployStorageProvider
+`func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetDeployStorageProvider()`
+
+UnsetDeployStorageProvider ensures that no value is present for DeployStorageProvider, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

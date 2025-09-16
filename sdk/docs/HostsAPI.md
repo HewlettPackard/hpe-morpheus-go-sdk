@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**ManageHostPlacement**](HostsAPI.md#ManageHostPlacement) | **Put** /api/servers/{id}/placement | Manage Host Placement
 [**RemoveHost**](HostsAPI.md#RemoveHost) | **Delete** /api/servers/{id} | Delete a Host
 [**RestartHost**](HostsAPI.md#RestartHost) | **Put** /api/servers/{id}/restart | Restart a Host
+[**SnapshotHost**](HostsAPI.md#SnapshotHost) | **Put** /api/servers/{id}/snapshot | Snapshot a Host
 [**StartHost**](HostsAPI.md#StartHost) | **Put** /api/servers/{id}/start | Start a Host
 [**StopHost**](HostsAPI.md#StopHost) | **Put** /api/servers/{id}/stop | Stop a Host
 [**UpdateHost**](HostsAPI.md#UpdateHost) | **Put** /api/servers/{id} | Updating a Host
@@ -851,8 +852,8 @@ import (
 func main() {
 	name := "example" // string | Filter by name (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	clusterId := int64(135) // int64 | The Cluster ID(s) for filtering. Accepts multiple values. (optional)
 	managed := false // bool | Filter by managed (true) or unmanaged (false) (optional)
 	serverType := "vmwareHypervisor" // string | Filter by server type code (optional)
@@ -869,7 +870,7 @@ func main() {
 	createdBy := int64(63) // int64 | The User ID for Filtering (optional)
 	tagsName := "value" // string | Filter by tags (metadata). This allows filtering by a tag name and value(s)  (optional)
 	metadata := "tags.env=qa&tags.env=test" // string | Alias for tags (optional)
-	uuid := "uuid_example" // string | Filter by UUID (optional)
+	uuid := "uuid_example" // string | Filter by UUID, accepts multiple values (optional)
 	externalId := "externalId_example" // string | Filter by External ID (optional)
 	internalId := "internalId_example" // string | Filter by Internal ID (optional)
 	externalUniquelId := "externalUniquelId_example" // string | Filter by External Unique ID (optional)
@@ -899,8 +900,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string** | Filter by name | 
  **phrase** | **string** | Search phrase for partial matches on name or description | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **clusterId** | **int64** | The Cluster ID(s) for filtering. Accepts multiple values. | 
  **managed** | **bool** | Filter by managed (true) or unmanaged (false) | 
  **serverType** | **string** | Filter by server type code | 
@@ -917,7 +918,7 @@ Name | Type | Description  | Notes
  **createdBy** | **int64** | The User ID for Filtering | 
  **tagsName** | **string** | Filter by tags (metadata). This allows filtering by a tag name and value(s)  | 
  **metadata** | **string** | Alias for tags | 
- **uuid** | **string** | Filter by UUID | 
+ **uuid** | **string** | Filter by UUID, accepts multiple values | 
  **externalId** | **string** | Filter by External ID | 
  **internalId** | **string** | Filter by Internal ID | 
  **externalUniquelId** | **string** | Filter by External Unique ID | 
@@ -963,7 +964,7 @@ import (
 func main() {
 	zoneId := int64(3) // int64 | The Zone ID for Filtering
 	serverTypeId := int64(5) // int64 | The ID of the Host Type (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -990,7 +991,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **zoneId** | **int64** | The Zone ID for Filtering | 
  **serverTypeId** | **int64** | The ID of the Host Type | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
 
 ### Return type
 
@@ -1227,6 +1228,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SnapshotHost
+
+> SnapshotHost200Response SnapshotHost(ctx, id).SnapshotInstanceRequest(snapshotInstanceRequest).Execute()
+
+Snapshot a Host
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	snapshotInstanceRequest := *openapiclient.NewSnapshotInstanceRequest() // SnapshotInstanceRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HostsAPI.SnapshotHost(context.Background(), id).SnapshotInstanceRequest(snapshotInstanceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.SnapshotHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SnapshotHost`: SnapshotHost200Response
+	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.SnapshotHost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSnapshotHostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **snapshotInstanceRequest** | [**SnapshotInstanceRequest**](SnapshotInstanceRequest.md) |  | 
+
+### Return type
+
+[**SnapshotHost200Response**](SnapshotHost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1880,7 +1953,7 @@ Name | Type | Description  | Notes
 
 ## UpdateHostUpgradeAgent
 
-> DeleteAlerts200Response UpdateHostUpgradeAgent(ctx, id).Execute()
+> SnapshotHost200Response UpdateHostUpgradeAgent(ctx, id).Execute()
 
 Upgrade Agent
 
@@ -1908,7 +1981,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.UpdateHostUpgradeAgent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateHostUpgradeAgent`: DeleteAlerts200Response
+	// response from `UpdateHostUpgradeAgent`: SnapshotHost200Response
 	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.UpdateHostUpgradeAgent`: %v\n", resp)
 }
 ```
@@ -1932,7 +2005,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteAlerts200Response**](DeleteAlerts200Response.md)
+[**SnapshotHost200Response**](SnapshotHost200Response.md)
 
 ### Authorization
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **ImageType** | Pointer to **string** |  | [optional] 
 **UserUploaded** | Pointer to **bool** |  | [optional] 
 **UserDefined** | Pointer to **bool** |  | [optional] 
@@ -207,20 +207,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetTenant sets Tenant field to given value.
 
@@ -230,6 +230,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetImageType
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetImageType() string`

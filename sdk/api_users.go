@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -43,7 +43,7 @@ func (r ApiAddUserRequest) AddUserTenantRequest(addUserTenantRequest AddUserTena
 	return r
 }
 
-func (r ApiAddUserRequest) Execute() (*AddUserTenant200Response, *http.Response, error) {
+func (r ApiAddUserRequest) Execute() (*AddUser200Response, *http.Response, error) {
 	return r.ApiService.AddUserExecute(r)
 }
 
@@ -64,13 +64,13 @@ func (a *UsersAPIService) AddUser(ctx context.Context) ApiAddUserRequest {
 
 // Execute executes the request
 //
-//	@return AddUserTenant200Response
-func (a *UsersAPIService) AddUserExecute(r ApiAddUserRequest) (*AddUserTenant200Response, *http.Response, error) {
+//	@return AddUser200Response
+func (a *UsersAPIService) AddUserExecute(r ApiAddUserRequest) (*AddUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddUserTenant200Response
+		localVarReturnValue *AddUser200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.AddUser")
@@ -2159,7 +2159,7 @@ func (r ApiUpdateUserRequest) UpdateUserRequest(updateUserRequest UpdateUserRequ
 	return r
 }
 
-func (r ApiUpdateUserRequest) Execute() (*AddUserTenant200Response, *http.Response, error) {
+func (r ApiUpdateUserRequest) Execute() (*AddUser200Response, *http.Response, error) {
 	return r.ApiService.UpdateUserExecute(r)
 }
 
@@ -2182,13 +2182,13 @@ func (a *UsersAPIService) UpdateUser(ctx context.Context, id int64) ApiUpdateUse
 
 // Execute executes the request
 //
-//	@return AddUserTenant200Response
-func (a *UsersAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*AddUserTenant200Response, *http.Response, error) {
+//	@return AddUser200Response
+func (a *UsersAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*AddUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddUserTenant200Response
+		localVarReturnValue *AddUser200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UpdateUser")

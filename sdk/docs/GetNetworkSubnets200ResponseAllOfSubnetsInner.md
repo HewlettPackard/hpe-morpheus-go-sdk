@@ -29,15 +29,15 @@ Name | Type | Description | Notes
 **DhcpEnd** | Pointer to **string** |  | [optional] 
 **DhcpRange** | Pointer to **NullableString** |  | [optional] 
 **NetworkProxy** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **SearchDomains** | Pointer to **NullableString** |  | [optional] 
 **DefaultNetwork** | Pointer to **bool** |  | [optional] 
 **AssignPublicIp** | Pointer to **bool** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**GetAppState200ResponseAllOfInputProvidersInner**](GetAppState200ResponseAllOfInputProvidersInner.md) |  | [optional] 
-**Network** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Network** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **SecurityGroups** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission**](GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission.md) |  | [optional] 
@@ -828,20 +828,20 @@ HasNetworkProxy returns a boolean if a field has been set.
 UnsetNetworkProxy ensures that no value is present for NetworkProxy, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomain() string`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomainOk() (*string, bool)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkDomain(v string)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -851,16 +851,6 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
-### SetNetworkDomainNil
-
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkDomainNil(b bool)`
-
- SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-
-### UnsetNetworkDomain
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetNetworkDomain()`
-
-UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetSearchDomains
 
 `func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSearchDomains() string`
@@ -998,20 +988,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetwork() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetwork() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetNetworkOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetwork(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetwork(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetNetwork sets Network field to given value.
 
@@ -1021,6 +1011,16 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
+### SetNetworkNil
+
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetNetworkNil(b bool)`
+
+ SetNetworkNil sets the value for Network to be an explicit nil
+
+### UnsetNetwork
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetNetwork()`
+
+UnsetNetwork ensures that no value is present for Network, not even an explicit nil
 ### GetType
 
 `func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -1048,20 +1048,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -1071,6 +1071,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetSecurityGroups
 
 `func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) GetSecurityGroups() []map[string]interface{}`

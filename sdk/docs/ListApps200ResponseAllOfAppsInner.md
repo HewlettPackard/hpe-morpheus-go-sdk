@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Environment** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **SiteId** | Pointer to **int64** |  | [optional] 
-**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Group** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Blueprint** | Pointer to [**ListApps200ResponseAllOfAppsInnerBlueprint**](ListApps200ResponseAllOfAppsInnerBlueprint.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **InstanceCount** | Pointer to **int64** |  | [optional] 
 **ContainerCount** | Pointer to **int64** |  | [optional] 
 **AppTiers** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Instances** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Instances** | Pointer to [**[]ListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Stats** | Pointer to [**ListApps200ResponseAllOfAppsInnerStats**](ListApps200ResponseAllOfAppsInnerStats.md) |  | [optional] 
 
 ## Methods
@@ -199,20 +199,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListApps200ResponseAllOfAppsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListApps200ResponseAllOfAppsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListApps200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListApps200ResponseAllOfAppsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -222,6 +222,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListApps200ResponseAllOfAppsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListApps200ResponseAllOfAppsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetOwner
 
 `func (o *ListApps200ResponseAllOfAppsInner) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
@@ -274,20 +284,20 @@ HasSiteId returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListApps200ResponseAllOfAppsInner) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListApps200ResponseAllOfAppsInner) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *ListApps200ResponseAllOfAppsInner) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListApps200ResponseAllOfAppsInner) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetGroup sets Group field to given value.
 
@@ -297,6 +307,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *ListApps200ResponseAllOfAppsInner) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *ListApps200ResponseAllOfAppsInner) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetBlueprint
 
 `func (o *ListApps200ResponseAllOfAppsInner) GetBlueprint() ListApps200ResponseAllOfAppsInnerBlueprint`
@@ -584,20 +604,20 @@ HasAppTiers returns a boolean if a field has been set.
 
 ### GetInstances
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetInstances() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListApps200ResponseAllOfAppsInner) GetInstances() []ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetInstances returns the Instances field if non-nil, zero value otherwise.
 
 ### GetInstancesOk
 
-`func (o *ListApps200ResponseAllOfAppsInner) GetInstancesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListApps200ResponseAllOfAppsInner) GetInstancesOk() (*[]ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetInstancesOk returns a tuple with the Instances field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstances
 
-`func (o *ListApps200ResponseAllOfAppsInner) SetInstances(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListApps200ResponseAllOfAppsInner) SetInstances(v []ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetInstances sets Instances field to given value.
 

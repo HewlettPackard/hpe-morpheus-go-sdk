@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,106 +21,106 @@ var _ MappedNullable = &ListInvoices200ResponseAllOfInvoicesInner{}
 
 // ListInvoices200ResponseAllOfInvoicesInner struct for ListInvoices200ResponseAllOfInvoicesInner
 type ListInvoices200ResponseAllOfInvoicesInner struct {
-	Id                      *int64                                                    `json:"id,omitempty"`
-	OwnerId                 *int64                                                    `json:"ownerId,omitempty"`
-	Account                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance        `json:"account,omitempty"`
-	Group                   map[string]interface{}                                    `json:"group,omitempty"`
-	Cloud                   *ListInvoices200ResponseAllOfInvoicesInnerCloud           `json:"cloud,omitempty"`
-	Instance                map[string]interface{}                                    `json:"instance,omitempty"`
-	Server                  NullableString                                            `json:"server,omitempty"`
-	Cluster                 NullableString                                            `json:"cluster,omitempty"`
-	User                    map[string]interface{}                                    `json:"user,omitempty"`
-	Plan                    map[string]interface{}                                    `json:"plan,omitempty"`
-	Tags                    []map[string]interface{}                                  `json:"tags,omitempty"`
-	Project                 NullableString                                            `json:"project,omitempty"`
-	RefType                 *string                                                   `json:"refType,omitempty"`
-	RefId                   *int64                                                    `json:"refId,omitempty"`
-	RefUuid                 NullableString                                            `json:"refUuid,omitempty"`
-	RefName                 *string                                                   `json:"refName,omitempty"`
-	RefCategory             *string                                                   `json:"refCategory,omitempty"`
-	ResourceId              NullableString                                            `json:"resourceId,omitempty"`
-	ResourceUuid            NullableString                                            `json:"resourceUuid,omitempty"`
-	ResourceType            NullableString                                            `json:"resourceType,omitempty"`
-	ResourceName            NullableString                                            `json:"resourceName,omitempty"`
-	ResourceExternalId      NullableString                                            `json:"resourceExternalId,omitempty"`
-	ResourceInternalId      NullableString                                            `json:"resourceInternalId,omitempty"`
-	Interval                *string                                                   `json:"interval,omitempty"`
-	Period                  *string                                                   `json:"period,omitempty"`
-	Estimate                *bool                                                     `json:"estimate,omitempty"`
-	SummaryInvoice          *bool                                                     `json:"summaryInvoice,omitempty"`
-	Active                  *bool                                                     `json:"active,omitempty"`
-	StartDate               *time.Time                                                `json:"startDate,omitempty"`
-	EndDate                 *time.Time                                                `json:"endDate,omitempty"`
-	RefStart                *time.Time                                                `json:"refStart,omitempty"`
-	RefEnd                  *time.Time                                                `json:"refEnd,omitempty"`
-	EstimatedComputePrice   *float32                                                  `json:"estimatedComputePrice,omitempty"`
-	EstimatedComputeCost    *float32                                                  `json:"estimatedComputeCost,omitempty"`
-	EstimatedMemoryPrice    *float32                                                  `json:"estimatedMemoryPrice,omitempty"`
-	EstimatedMemoryCost     *float32                                                  `json:"estimatedMemoryCost,omitempty"`
-	EstimatedStoragePrice   *float32                                                  `json:"estimatedStoragePrice,omitempty"`
-	EstimatedStorageCost    *float32                                                  `json:"estimatedStorageCost,omitempty"`
-	EstimatedNetworkPrice   *float32                                                  `json:"estimatedNetworkPrice,omitempty"`
-	EstimatedNetworkCost    *float32                                                  `json:"estimatedNetworkCost,omitempty"`
-	EstimatedLicensePrice   *float32                                                  `json:"estimatedLicensePrice,omitempty"`
-	EstimatedLicenseCost    *float32                                                  `json:"estimatedLicenseCost,omitempty"`
-	EstimatedExtraPrice     *float32                                                  `json:"estimatedExtraPrice,omitempty"`
-	EstimatedExtraCost      *float32                                                  `json:"estimatedExtraCost,omitempty"`
-	EstimatedTotalPrice     *float32                                                  `json:"estimatedTotalPrice,omitempty"`
-	EstimatedTotalCost      *float32                                                  `json:"estimatedTotalCost,omitempty"`
-	EstimatedRunningPrice   *float32                                                  `json:"estimatedRunningPrice,omitempty"`
-	EstimatedRunningCost    *float32                                                  `json:"estimatedRunningCost,omitempty"`
-	EstimatedCurrency       *string                                                   `json:"estimatedCurrency,omitempty"`
-	EstimatedConversionRate *float32                                                  `json:"estimatedConversionRate,omitempty"`
-	ActualComputePrice      *float32                                                  `json:"actualComputePrice,omitempty"`
-	ActualComputeCost       *float32                                                  `json:"actualComputeCost,omitempty"`
-	ActualMemoryPrice       *float32                                                  `json:"actualMemoryPrice,omitempty"`
-	ActualMemoryCost        *float32                                                  `json:"actualMemoryCost,omitempty"`
-	ActualStoragePrice      *float32                                                  `json:"actualStoragePrice,omitempty"`
-	ActualStorageCost       *float32                                                  `json:"actualStorageCost,omitempty"`
-	ActualNetworkPrice      *float32                                                  `json:"actualNetworkPrice,omitempty"`
-	ActualNetworkCost       *float32                                                  `json:"actualNetworkCost,omitempty"`
-	ActualLicensePrice      *float32                                                  `json:"actualLicensePrice,omitempty"`
-	ActualLicenseCost       *float32                                                  `json:"actualLicenseCost,omitempty"`
-	ActualExtraPrice        *float32                                                  `json:"actualExtraPrice,omitempty"`
-	ActualExtraCost         *float32                                                  `json:"actualExtraCost,omitempty"`
-	ActualTotalPrice        *float32                                                  `json:"actualTotalPrice,omitempty"`
-	ActualTotalCost         *float32                                                  `json:"actualTotalCost,omitempty"`
-	ActualRunningPrice      *float32                                                  `json:"actualRunningPrice,omitempty"`
-	ActualRunningCost       *float32                                                  `json:"actualRunningCost,omitempty"`
-	ActualCurrency          *string                                                   `json:"actualCurrency,omitempty"`
-	ActualConversionRate    *float32                                                  `json:"actualConversionRate,omitempty"`
-	ComputePrice            *float32                                                  `json:"computePrice,omitempty"`
-	ComputeCost             *float32                                                  `json:"computeCost,omitempty"`
-	MemoryPrice             *float32                                                  `json:"memoryPrice,omitempty"`
-	MemoryCost              *float32                                                  `json:"memoryCost,omitempty"`
-	StoragePrice            *float32                                                  `json:"storagePrice,omitempty"`
-	StorageCost             *float32                                                  `json:"storageCost,omitempty"`
-	NetworkPrice            *float32                                                  `json:"networkPrice,omitempty"`
-	NetworkCost             *float32                                                  `json:"networkCost,omitempty"`
-	LicensePrice            *float32                                                  `json:"licensePrice,omitempty"`
-	LicenseCost             *float32                                                  `json:"licenseCost,omitempty"`
-	ExtraPrice              *float32                                                  `json:"extraPrice,omitempty"`
-	ExtraCost               *float32                                                  `json:"extraCost,omitempty"`
-	TotalPrice              *float32                                                  `json:"totalPrice,omitempty"`
-	TotalCost               *float32                                                  `json:"totalCost,omitempty"`
-	RunningPrice            *float32                                                  `json:"runningPrice,omitempty"`
-	RunningCost             *float32                                                  `json:"runningCost,omitempty"`
-	Currency                *string                                                   `json:"currency,omitempty"`
-	ConversionRate          *float32                                                  `json:"conversionRate,omitempty"`
-	CostType                *string                                                   `json:"costType,omitempty"`
-	OffTime                 *int64                                                    `json:"offTime,omitempty"`
-	PowerState              NullableString                                            `json:"powerState,omitempty"`
-	PowerDate               *time.Time                                                `json:"powerDate,omitempty"`
-	RunningMultiplier       *float32                                                  `json:"runningMultiplier,omitempty"`
-	UsageType               NullableString                                            `json:"usageType,omitempty"`
-	UsageCategory           NullableString                                            `json:"usageCategory,omitempty"`
-	LastCostDate            NullableTime                                              `json:"lastCostDate,omitempty"`
-	LastActualDate          NullableTime                                              `json:"lastActualDate,omitempty"`
-	DateCreated             *time.Time                                                `json:"dateCreated,omitempty"`
-	LastUpdated             *time.Time                                                `json:"lastUpdated,omitempty"`
-	LineItemCount           *int64                                                    `json:"lineItemCount,omitempty"`
-	LineItems               []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner `json:"lineItems,omitempty"`
-	AdditionalProperties    map[string]interface{}                                    `json:",remain"`
+	Id                      *int64                                                     `json:"id,omitempty"`
+	OwnerId                 *int64                                                     `json:"ownerId,omitempty"`
+	Account                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"account,omitempty"`
+	Group                   map[string]interface{}                                     `json:"group,omitempty"`
+	Cloud                   *ListInvoices200ResponseAllOfInvoicesInnerCloud            `json:"cloud,omitempty"`
+	Instance                map[string]interface{}                                     `json:"instance,omitempty"`
+	Server                  NullableString                                             `json:"server,omitempty"`
+	Cluster                 NullableString                                             `json:"cluster,omitempty"`
+	User                    map[string]interface{}                                     `json:"user,omitempty"`
+	Plan                    map[string]interface{}                                     `json:"plan,omitempty"`
+	Tags                    []map[string]interface{}                                   `json:"tags,omitempty"`
+	Project                 NullableString                                             `json:"project,omitempty"`
+	RefType                 *string                                                    `json:"refType,omitempty"`
+	RefId                   *int64                                                     `json:"refId,omitempty"`
+	RefUuid                 NullableString                                             `json:"refUuid,omitempty"`
+	RefName                 *string                                                    `json:"refName,omitempty"`
+	RefCategory             *string                                                    `json:"refCategory,omitempty"`
+	ResourceId              NullableString                                             `json:"resourceId,omitempty"`
+	ResourceUuid            NullableString                                             `json:"resourceUuid,omitempty"`
+	ResourceType            NullableString                                             `json:"resourceType,omitempty"`
+	ResourceName            NullableString                                             `json:"resourceName,omitempty"`
+	ResourceExternalId      NullableString                                             `json:"resourceExternalId,omitempty"`
+	ResourceInternalId      NullableString                                             `json:"resourceInternalId,omitempty"`
+	Interval                *string                                                    `json:"interval,omitempty"`
+	Period                  *string                                                    `json:"period,omitempty"`
+	Estimate                *bool                                                      `json:"estimate,omitempty"`
+	SummaryInvoice          *bool                                                      `json:"summaryInvoice,omitempty"`
+	Active                  *bool                                                      `json:"active,omitempty"`
+	StartDate               *time.Time                                                 `json:"startDate,omitempty"`
+	EndDate                 *time.Time                                                 `json:"endDate,omitempty"`
+	RefStart                *time.Time                                                 `json:"refStart,omitempty"`
+	RefEnd                  *time.Time                                                 `json:"refEnd,omitempty"`
+	EstimatedComputePrice   *float32                                                   `json:"estimatedComputePrice,omitempty"`
+	EstimatedComputeCost    *float32                                                   `json:"estimatedComputeCost,omitempty"`
+	EstimatedMemoryPrice    *float32                                                   `json:"estimatedMemoryPrice,omitempty"`
+	EstimatedMemoryCost     *float32                                                   `json:"estimatedMemoryCost,omitempty"`
+	EstimatedStoragePrice   *float32                                                   `json:"estimatedStoragePrice,omitempty"`
+	EstimatedStorageCost    *float32                                                   `json:"estimatedStorageCost,omitempty"`
+	EstimatedNetworkPrice   *float32                                                   `json:"estimatedNetworkPrice,omitempty"`
+	EstimatedNetworkCost    *float32                                                   `json:"estimatedNetworkCost,omitempty"`
+	EstimatedLicensePrice   *float32                                                   `json:"estimatedLicensePrice,omitempty"`
+	EstimatedLicenseCost    *float32                                                   `json:"estimatedLicenseCost,omitempty"`
+	EstimatedExtraPrice     *float32                                                   `json:"estimatedExtraPrice,omitempty"`
+	EstimatedExtraCost      *float32                                                   `json:"estimatedExtraCost,omitempty"`
+	EstimatedTotalPrice     *float32                                                   `json:"estimatedTotalPrice,omitempty"`
+	EstimatedTotalCost      *float32                                                   `json:"estimatedTotalCost,omitempty"`
+	EstimatedRunningPrice   *float32                                                   `json:"estimatedRunningPrice,omitempty"`
+	EstimatedRunningCost    *float32                                                   `json:"estimatedRunningCost,omitempty"`
+	EstimatedCurrency       *string                                                    `json:"estimatedCurrency,omitempty"`
+	EstimatedConversionRate *float32                                                   `json:"estimatedConversionRate,omitempty"`
+	ActualComputePrice      *float32                                                   `json:"actualComputePrice,omitempty"`
+	ActualComputeCost       *float32                                                   `json:"actualComputeCost,omitempty"`
+	ActualMemoryPrice       *float32                                                   `json:"actualMemoryPrice,omitempty"`
+	ActualMemoryCost        *float32                                                   `json:"actualMemoryCost,omitempty"`
+	ActualStoragePrice      *float32                                                   `json:"actualStoragePrice,omitempty"`
+	ActualStorageCost       *float32                                                   `json:"actualStorageCost,omitempty"`
+	ActualNetworkPrice      *float32                                                   `json:"actualNetworkPrice,omitempty"`
+	ActualNetworkCost       *float32                                                   `json:"actualNetworkCost,omitempty"`
+	ActualLicensePrice      *float32                                                   `json:"actualLicensePrice,omitempty"`
+	ActualLicenseCost       *float32                                                   `json:"actualLicenseCost,omitempty"`
+	ActualExtraPrice        *float32                                                   `json:"actualExtraPrice,omitempty"`
+	ActualExtraCost         *float32                                                   `json:"actualExtraCost,omitempty"`
+	ActualTotalPrice        *float32                                                   `json:"actualTotalPrice,omitempty"`
+	ActualTotalCost         *float32                                                   `json:"actualTotalCost,omitempty"`
+	ActualRunningPrice      *float32                                                   `json:"actualRunningPrice,omitempty"`
+	ActualRunningCost       *float32                                                   `json:"actualRunningCost,omitempty"`
+	ActualCurrency          *string                                                    `json:"actualCurrency,omitempty"`
+	ActualConversionRate    *float32                                                   `json:"actualConversionRate,omitempty"`
+	ComputePrice            *float32                                                   `json:"computePrice,omitempty"`
+	ComputeCost             *float32                                                   `json:"computeCost,omitempty"`
+	MemoryPrice             *float32                                                   `json:"memoryPrice,omitempty"`
+	MemoryCost              *float32                                                   `json:"memoryCost,omitempty"`
+	StoragePrice            *float32                                                   `json:"storagePrice,omitempty"`
+	StorageCost             *float32                                                   `json:"storageCost,omitempty"`
+	NetworkPrice            *float32                                                   `json:"networkPrice,omitempty"`
+	NetworkCost             *float32                                                   `json:"networkCost,omitempty"`
+	LicensePrice            *float32                                                   `json:"licensePrice,omitempty"`
+	LicenseCost             *float32                                                   `json:"licenseCost,omitempty"`
+	ExtraPrice              *float32                                                   `json:"extraPrice,omitempty"`
+	ExtraCost               *float32                                                   `json:"extraCost,omitempty"`
+	TotalPrice              *float32                                                   `json:"totalPrice,omitempty"`
+	TotalCost               *float32                                                   `json:"totalCost,omitempty"`
+	RunningPrice            *float32                                                   `json:"runningPrice,omitempty"`
+	RunningCost             *float32                                                   `json:"runningCost,omitempty"`
+	Currency                *string                                                    `json:"currency,omitempty"`
+	ConversionRate          *float32                                                   `json:"conversionRate,omitempty"`
+	CostType                *string                                                    `json:"costType,omitempty"`
+	OffTime                 *int64                                                     `json:"offTime,omitempty"`
+	PowerState              NullableString                                             `json:"powerState,omitempty"`
+	PowerDate               *time.Time                                                 `json:"powerDate,omitempty"`
+	RunningMultiplier       *float32                                                   `json:"runningMultiplier,omitempty"`
+	UsageType               NullableString                                             `json:"usageType,omitempty"`
+	UsageCategory           NullableString                                             `json:"usageCategory,omitempty"`
+	LastCostDate            NullableTime                                               `json:"lastCostDate,omitempty"`
+	LastActualDate          NullableTime                                               `json:"lastActualDate,omitempty"`
+	DateCreated             *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated             *time.Time                                                 `json:"lastUpdated,omitempty"`
+	LineItemCount           *int64                                                     `json:"lineItemCount,omitempty"`
+	LineItems               []ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner  `json:"lineItems,omitempty"`
+	AdditionalProperties    map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListInvoices200ResponseAllOfInvoicesInner ListInvoices200ResponseAllOfInvoicesInner
@@ -206,36 +206,47 @@ func (o *ListInvoices200ResponseAllOfInvoicesInner) SetOwnerId(v int64) {
 	o.OwnerId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListInvoices200ResponseAllOfInvoicesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -3496,8 +3507,8 @@ func (o ListInvoices200ResponseAllOfInvoicesInner) ToMap() (map[string]interface
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if o.Group != nil {
 		toSerialize["group"] = o.Group

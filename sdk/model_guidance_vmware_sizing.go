@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -35,7 +35,7 @@ type GuidanceVmwareSizing struct {
 	AccountId            *int64                                                              `json:"accountId,omitempty"`
 	UserId               NullableString                                                      `json:"userId,omitempty"`
 	SiteId               NullableInt64                                                       `json:"siteId,omitempty"`
-	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone             `json:"zone,omitempty"`
+	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone            `json:"zone,omitempty"`
 	State                *string                                                             `json:"state,omitempty"`
 	StateMessage         NullableString                                                      `json:"stateMessage,omitempty"`
 	Severity             *string                                                             `json:"severity,omitempty"`
@@ -46,7 +46,7 @@ type GuidanceVmwareSizing struct {
 	RefName              *string                                                             `json:"refName,omitempty"`
 	Type                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfType             `json:"type,omitempty"`
 	Savings              *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfSavings          `json:"savings,omitempty"`
-	Resource             *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource         `json:"resource,omitempty"`
+	Resource             *GetGuidances200ResponseDiscoveryAnyOfResource                      `json:"resource,omitempty"`
 	PlanBeforeAction     *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeAction `json:"planBeforeAction,omitempty"`
 	PlanAfterAction      *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction  `json:"planAfterAction,omitempty"`
 	Config               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfConfig           `json:"config,omitempty"`
@@ -543,9 +543,9 @@ func (o *GuidanceVmwareSizing) UnsetSiteId() {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GuidanceVmwareSizing) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
+func (o *GuidanceVmwareSizing) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
+		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone
 		return ret
 	}
 	return *o.Zone
@@ -553,7 +553,7 @@ func (o *GuidanceVmwareSizing) GetZone() ListGuidances200ResponseAllOfDiscoverie
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GuidanceVmwareSizing) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone, bool) {
+func (o *GuidanceVmwareSizing) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -569,8 +569,8 @@ func (o *GuidanceVmwareSizing) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone and assigns it to the Zone field.
-func (o *GuidanceVmwareSizing) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) {
+// SetZone gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone and assigns it to the Zone field.
+func (o *GuidanceVmwareSizing) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) {
 	o.Zone = &v
 }
 
@@ -917,9 +917,9 @@ func (o *GuidanceVmwareSizing) SetSavings(v ListGuidances200ResponseAllOfDiscove
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *GuidanceVmwareSizing) GetResource() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource {
+func (o *GuidanceVmwareSizing) GetResource() GetGuidances200ResponseDiscoveryAnyOfResource {
 	if o == nil || IsNil(o.Resource) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource
+		var ret GetGuidances200ResponseDiscoveryAnyOfResource
 		return ret
 	}
 	return *o.Resource
@@ -927,7 +927,7 @@ func (o *GuidanceVmwareSizing) GetResource() ListGuidances200ResponseAllOfDiscov
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GuidanceVmwareSizing) GetResourceOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource, bool) {
+func (o *GuidanceVmwareSizing) GetResourceOk() (*GetGuidances200ResponseDiscoveryAnyOfResource, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -943,8 +943,8 @@ func (o *GuidanceVmwareSizing) IsSetResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource and assigns it to the Resource field.
-func (o *GuidanceVmwareSizing) SetResource(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResource) {
+// SetResource gets a reference to the given GetGuidances200ResponseDiscoveryAnyOfResource and assigns it to the Resource field.
+func (o *GuidanceVmwareSizing) SetResource(v GetGuidances200ResponseDiscoveryAnyOfResource) {
 	o.Resource = &v
 }
 

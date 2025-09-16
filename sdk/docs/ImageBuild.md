@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **VmToolsInstalled** | Pointer to **bool** |  | [optional] 
 **KeepResults** | Pointer to **NullableInt64** |  | [optional] 
 **Config** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfig**](AddImageBuild200ResponseAllOfImageBuildConfig.md) |  | [optional] 
-**LastResult** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildLastResult**](AddImageBuild200ResponseAllOfImageBuildLastResult.md) |  | [optional] 
+**LastResult** | Pointer to [**GetImageBuild200ResponseImageBuildLastResult**](GetImageBuild200ResponseImageBuildLastResult.md) |  | [optional] 
 **ExecutionCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -608,20 +608,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetLastResult
 
-`func (o *ImageBuild) GetLastResult() AddImageBuild200ResponseAllOfImageBuildLastResult`
+`func (o *ImageBuild) GetLastResult() GetImageBuild200ResponseImageBuildLastResult`
 
 GetLastResult returns the LastResult field if non-nil, zero value otherwise.
 
 ### GetLastResultOk
 
-`func (o *ImageBuild) GetLastResultOk() (*AddImageBuild200ResponseAllOfImageBuildLastResult, bool)`
+`func (o *ImageBuild) GetLastResultOk() (*GetImageBuild200ResponseImageBuildLastResult, bool)`
 
 GetLastResultOk returns a tuple with the LastResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastResult
 
-`func (o *ImageBuild) SetLastResult(v AddImageBuild200ResponseAllOfImageBuildLastResult)`
+`func (o *ImageBuild) SetLastResult(v GetImageBuild200ResponseImageBuildLastResult)`
 
 SetLastResult sets LastResult field to given value.
 

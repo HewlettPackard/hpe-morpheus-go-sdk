@@ -23,17 +23,27 @@ Name | Type | Description | Notes
 **DbPasswordHash** | Pointer to **string** | Database password hash | [optional] 
 **DbName** | **string** | Database name you would like to connect to | 
 **DbQuery** | **string** | Query to test | 
-**CheckOperator** | Pointer to **string** | Can be set to &#x60;lt&#x60; (less than), &#x60;gt&#x60; (greater than), &#x60;equal&#x60; (Equal to) for comparison | [optional] 
+**CheckOperator** | Pointer to **string** | Operator to use when comparing returned value with the expected check response value. One of &#39;lt&#39;, &#39;equal&#39;, or &#39;gt&#39;. | [optional] 
 **CheckResult** | Pointer to **float32** |  | [optional] 
 **CheckPasswordHash** | Pointer to **string** |  | [optional] 
 **EsHost** | **string** | Hostname or IP address of the Elasticsearch server | 
 **EsPort** | **string** | Port to connect to the HTTP service | 
-**Host** | **string** | Hostname or IP address of the socket server | 
-**Port** | **string** | TCP port | 
+**Host** | **string** | Hostname or IP address of the SNMP network entity | 
+**Port** | **string** | Port to connect to the SNMP entity | 
 **Send** | **string** | Connection string you might want to send to the service | 
 **ResponseMatch** | **string** | Response from the service to match against | 
 **ContainerName** | **string** |  | 
 **ExternalId** | Pointer to **string** |  | [optional] 
+**Oid** | Pointer to **string** | Object ID to get from the network entity | [optional] 
+**CheckResponse** | Pointer to **string** | Value to use with the check operator | [optional] 
+**Version** | Pointer to **string** | SNMP Version 1/2c/3 of snmp get command | [optional] 
+**Community** | Pointer to **string** | Community string acts as simple user or ID password (only valid for v1/2c) | [optional] 
+**Username** | Pointer to **string** | Username used with SNMPv3 auth/privacy protocol passwords | [optional] 
+**SecurityLevel** | Pointer to **string** | Level of security for authentication and privacty | [optional] 
+**Auth** | Pointer to **string** | Authentication protocol | [optional] 
+**Authpassword** | Pointer to **string** |  | [optional] 
+**Priv** | Pointer to **string** | Privacy protocol | [optional] 
+**Privpassword** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -728,6 +738,256 @@ SetExternalId sets ExternalId field to given value.
 `func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasExternalId() bool`
 
 HasExternalId returns a boolean if a field has been set.
+
+### GetOid
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetOid() string`
+
+GetOid returns the Oid field if non-nil, zero value otherwise.
+
+### GetOidOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetOidOk() (*string, bool)`
+
+GetOidOk returns a tuple with the Oid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOid
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetOid(v string)`
+
+SetOid sets Oid field to given value.
+
+### HasOid
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasOid() bool`
+
+HasOid returns a boolean if a field has been set.
+
+### GetCheckResponse
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetCheckResponse() string`
+
+GetCheckResponse returns the CheckResponse field if non-nil, zero value otherwise.
+
+### GetCheckResponseOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetCheckResponseOk() (*string, bool)`
+
+GetCheckResponseOk returns a tuple with the CheckResponse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckResponse
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetCheckResponse(v string)`
+
+SetCheckResponse sets CheckResponse field to given value.
+
+### HasCheckResponse
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasCheckResponse() bool`
+
+HasCheckResponse returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
+
+### GetCommunity
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetCommunity() string`
+
+GetCommunity returns the Community field if non-nil, zero value otherwise.
+
+### GetCommunityOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetCommunityOk() (*string, bool)`
+
+GetCommunityOk returns a tuple with the Community field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCommunity
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetCommunity(v string)`
+
+SetCommunity sets Community field to given value.
+
+### HasCommunity
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasCommunity() bool`
+
+HasCommunity returns a boolean if a field has been set.
+
+### GetUsername
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsername
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetUsername(v string)`
+
+SetUsername sets Username field to given value.
+
+### HasUsername
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasUsername() bool`
+
+HasUsername returns a boolean if a field has been set.
+
+### GetSecurityLevel
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetSecurityLevel() string`
+
+GetSecurityLevel returns the SecurityLevel field if non-nil, zero value otherwise.
+
+### GetSecurityLevelOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetSecurityLevelOk() (*string, bool)`
+
+GetSecurityLevelOk returns a tuple with the SecurityLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityLevel
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetSecurityLevel(v string)`
+
+SetSecurityLevel sets SecurityLevel field to given value.
+
+### HasSecurityLevel
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasSecurityLevel() bool`
+
+HasSecurityLevel returns a boolean if a field has been set.
+
+### GetAuth
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetAuth() string`
+
+GetAuth returns the Auth field if non-nil, zero value otherwise.
+
+### GetAuthOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetAuthOk() (*string, bool)`
+
+GetAuthOk returns a tuple with the Auth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuth
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetAuth(v string)`
+
+SetAuth sets Auth field to given value.
+
+### HasAuth
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasAuth() bool`
+
+HasAuth returns a boolean if a field has been set.
+
+### GetAuthpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetAuthpassword() string`
+
+GetAuthpassword returns the Authpassword field if non-nil, zero value otherwise.
+
+### GetAuthpasswordOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetAuthpasswordOk() (*string, bool)`
+
+GetAuthpasswordOk returns a tuple with the Authpassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetAuthpassword(v string)`
+
+SetAuthpassword sets Authpassword field to given value.
+
+### HasAuthpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasAuthpassword() bool`
+
+HasAuthpassword returns a boolean if a field has been set.
+
+### GetPriv
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetPriv() string`
+
+GetPriv returns the Priv field if non-nil, zero value otherwise.
+
+### GetPrivOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetPrivOk() (*string, bool)`
+
+GetPrivOk returns a tuple with the Priv field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriv
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetPriv(v string)`
+
+SetPriv sets Priv field to given value.
+
+### HasPriv
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasPriv() bool`
+
+HasPriv returns a boolean if a field has been set.
+
+### GetPrivpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetPrivpassword() string`
+
+GetPrivpassword returns the Privpassword field if non-nil, zero value otherwise.
+
+### GetPrivpasswordOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) GetPrivpasswordOk() (*string, bool)`
+
+GetPrivpasswordOk returns a tuple with the Privpassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) SetPrivpassword(v string)`
+
+SetPrivpassword sets Privpassword field to given value.
+
+### HasPrivpassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfig) HasPrivpassword() bool`
+
+HasPrivpassword returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

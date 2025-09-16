@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNe
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner struct {
-	Name                 *string                                            `json:"name,omitempty"`
-	IpMode               *string                                            `json:"ipMode,omitempty"`
-	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
-	UsePool              *bool                                              `json:"usePool,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	IpMode               *string                                                    `json:"ipMode,omitempty"`
+	Pool                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"pool,omitempty"`
+	UsePool              *bool                                                      `json:"usePool,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner
@@ -110,36 +110,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) Se
 	o.IpMode = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Pool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Pool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Pool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Pool = &v
+// SetPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Pool field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetUsePool returns the UsePool field value if set, zero value otherwise.
@@ -190,8 +201,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfigDisplayNetworksInner) ToM
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.UsePool) {
 		toSerialize["usePool"] = o.UsePool

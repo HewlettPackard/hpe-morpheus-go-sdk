@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,45 +23,69 @@ var _ fmt.Stringer
 
 // AddChecksRequestCheck - Payload for creating a new monitoring check
 type AddChecksRequestCheck struct {
-	AddChecksRequestCheckOneOf  *AddChecksRequestCheckOneOf
-	AddChecksRequestCheckOneOf1 *AddChecksRequestCheckOneOf1
-	AddChecksRequestCheckOneOf2 *AddChecksRequestCheckOneOf2
-	AddChecksRequestCheckOneOf3 *AddChecksRequestCheckOneOf3
-	AddChecksRequestCheckOneOf4 *AddChecksRequestCheckOneOf4
+	CheckSocket   *CheckSocket
+	ElasticCheck  *ElasticCheck
+	MySqlCheck    *MySqlCheck
+	PostgresCheck *PostgresCheck
+	PushCheck     *PushCheck
+	SNMPCheck     *SNMPCheck
+	SqlCheck      *SqlCheck
+	WebCheck      *WebCheck
 }
 
-// AddChecksRequestCheckOneOfAsAddChecksRequestCheck is a convenience function that returns AddChecksRequestCheckOneOf wrapped in AddChecksRequestCheck
-func AddChecksRequestCheckOneOfAsAddChecksRequestCheck(v *AddChecksRequestCheckOneOf) AddChecksRequestCheck {
+// CheckSocketAsAddChecksRequestCheck is a convenience function that returns CheckSocket wrapped in AddChecksRequestCheck
+func CheckSocketAsAddChecksRequestCheck(v *CheckSocket) AddChecksRequestCheck {
 	return AddChecksRequestCheck{
-		AddChecksRequestCheckOneOf: v,
+		CheckSocket: v,
 	}
 }
 
-// AddChecksRequestCheckOneOf1AsAddChecksRequestCheck is a convenience function that returns AddChecksRequestCheckOneOf1 wrapped in AddChecksRequestCheck
-func AddChecksRequestCheckOneOf1AsAddChecksRequestCheck(v *AddChecksRequestCheckOneOf1) AddChecksRequestCheck {
+// ElasticCheckAsAddChecksRequestCheck is a convenience function that returns ElasticCheck wrapped in AddChecksRequestCheck
+func ElasticCheckAsAddChecksRequestCheck(v *ElasticCheck) AddChecksRequestCheck {
 	return AddChecksRequestCheck{
-		AddChecksRequestCheckOneOf1: v,
+		ElasticCheck: v,
 	}
 }
 
-// AddChecksRequestCheckOneOf2AsAddChecksRequestCheck is a convenience function that returns AddChecksRequestCheckOneOf2 wrapped in AddChecksRequestCheck
-func AddChecksRequestCheckOneOf2AsAddChecksRequestCheck(v *AddChecksRequestCheckOneOf2) AddChecksRequestCheck {
+// MySqlCheckAsAddChecksRequestCheck is a convenience function that returns MySqlCheck wrapped in AddChecksRequestCheck
+func MySqlCheckAsAddChecksRequestCheck(v *MySqlCheck) AddChecksRequestCheck {
 	return AddChecksRequestCheck{
-		AddChecksRequestCheckOneOf2: v,
+		MySqlCheck: v,
 	}
 }
 
-// AddChecksRequestCheckOneOf3AsAddChecksRequestCheck is a convenience function that returns AddChecksRequestCheckOneOf3 wrapped in AddChecksRequestCheck
-func AddChecksRequestCheckOneOf3AsAddChecksRequestCheck(v *AddChecksRequestCheckOneOf3) AddChecksRequestCheck {
+// PostgresCheckAsAddChecksRequestCheck is a convenience function that returns PostgresCheck wrapped in AddChecksRequestCheck
+func PostgresCheckAsAddChecksRequestCheck(v *PostgresCheck) AddChecksRequestCheck {
 	return AddChecksRequestCheck{
-		AddChecksRequestCheckOneOf3: v,
+		PostgresCheck: v,
 	}
 }
 
-// AddChecksRequestCheckOneOf4AsAddChecksRequestCheck is a convenience function that returns AddChecksRequestCheckOneOf4 wrapped in AddChecksRequestCheck
-func AddChecksRequestCheckOneOf4AsAddChecksRequestCheck(v *AddChecksRequestCheckOneOf4) AddChecksRequestCheck {
+// PushCheckAsAddChecksRequestCheck is a convenience function that returns PushCheck wrapped in AddChecksRequestCheck
+func PushCheckAsAddChecksRequestCheck(v *PushCheck) AddChecksRequestCheck {
 	return AddChecksRequestCheck{
-		AddChecksRequestCheckOneOf4: v,
+		PushCheck: v,
+	}
+}
+
+// SNMPCheckAsAddChecksRequestCheck is a convenience function that returns SNMPCheck wrapped in AddChecksRequestCheck
+func SNMPCheckAsAddChecksRequestCheck(v *SNMPCheck) AddChecksRequestCheck {
+	return AddChecksRequestCheck{
+		SNMPCheck: v,
+	}
+}
+
+// SqlCheckAsAddChecksRequestCheck is a convenience function that returns SqlCheck wrapped in AddChecksRequestCheck
+func SqlCheckAsAddChecksRequestCheck(v *SqlCheck) AddChecksRequestCheck {
+	return AddChecksRequestCheck{
+		SqlCheck: v,
+	}
+}
+
+// WebCheckAsAddChecksRequestCheck is a convenience function that returns WebCheck wrapped in AddChecksRequestCheck
+func WebCheckAsAddChecksRequestCheck(v *WebCheck) AddChecksRequestCheck {
+	return AddChecksRequestCheck{
+		WebCheck: v,
 	}
 }
 
@@ -70,24 +94,36 @@ func (dst *AddChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
 		dst = &AddChecksRequestCheck{}
 	}
 
-	if out, ok := data.(AddChecksRequestCheckOneOf); ok {
-		dst.AddChecksRequestCheckOneOf = &out
+	if out, ok := data.(CheckSocket); ok {
+		dst.CheckSocket = &out
 	}
 
-	if out, ok := data.(AddChecksRequestCheckOneOf1); ok {
-		dst.AddChecksRequestCheckOneOf1 = &out
+	if out, ok := data.(ElasticCheck); ok {
+		dst.ElasticCheck = &out
 	}
 
-	if out, ok := data.(AddChecksRequestCheckOneOf2); ok {
-		dst.AddChecksRequestCheckOneOf2 = &out
+	if out, ok := data.(MySqlCheck); ok {
+		dst.MySqlCheck = &out
 	}
 
-	if out, ok := data.(AddChecksRequestCheckOneOf3); ok {
-		dst.AddChecksRequestCheckOneOf3 = &out
+	if out, ok := data.(PostgresCheck); ok {
+		dst.PostgresCheck = &out
 	}
 
-	if out, ok := data.(AddChecksRequestCheckOneOf4); ok {
-		dst.AddChecksRequestCheckOneOf4 = &out
+	if out, ok := data.(PushCheck); ok {
+		dst.PushCheck = &out
+	}
+
+	if out, ok := data.(SNMPCheck); ok {
+		dst.SNMPCheck = &out
+	}
+
+	if out, ok := data.(SqlCheck); ok {
+		dst.SqlCheck = &out
+	}
+
+	if out, ok := data.(WebCheck); ok {
+		dst.WebCheck = &out
 	}
 
 	return dst, nil
@@ -97,98 +133,152 @@ func (dst *AddChecksRequestCheck) UnmarshalMapstructure(data any) (any, error) {
 func (dst *AddChecksRequestCheck) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AddChecksRequestCheckOneOf
-	err = newStrictDecoder(data).Decode(&dst.AddChecksRequestCheckOneOf)
+	// try to unmarshal data into CheckSocket
+	err = newStrictDecoder(data).Decode(&dst.CheckSocket)
 	if err == nil {
-		jsonAddChecksRequestCheckOneOf, _ := json.Marshal(dst.AddChecksRequestCheckOneOf)
-		if string(jsonAddChecksRequestCheckOneOf) == "{}" { // empty struct
-			dst.AddChecksRequestCheckOneOf = nil
+		jsonCheckSocket, _ := json.Marshal(dst.CheckSocket)
+		if string(jsonCheckSocket) == "{}" { // empty struct
+			dst.CheckSocket = nil
 		} else {
-			if err = validator.Validate(dst.AddChecksRequestCheckOneOf); err != nil {
-				dst.AddChecksRequestCheckOneOf = nil
+			if err = validator.Validate(dst.CheckSocket); err != nil {
+				dst.CheckSocket = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddChecksRequestCheckOneOf = nil
+		dst.CheckSocket = nil
 	}
 
-	// try to unmarshal data into AddChecksRequestCheckOneOf1
-	err = newStrictDecoder(data).Decode(&dst.AddChecksRequestCheckOneOf1)
+	// try to unmarshal data into ElasticCheck
+	err = newStrictDecoder(data).Decode(&dst.ElasticCheck)
 	if err == nil {
-		jsonAddChecksRequestCheckOneOf1, _ := json.Marshal(dst.AddChecksRequestCheckOneOf1)
-		if string(jsonAddChecksRequestCheckOneOf1) == "{}" { // empty struct
-			dst.AddChecksRequestCheckOneOf1 = nil
+		jsonElasticCheck, _ := json.Marshal(dst.ElasticCheck)
+		if string(jsonElasticCheck) == "{}" { // empty struct
+			dst.ElasticCheck = nil
 		} else {
-			if err = validator.Validate(dst.AddChecksRequestCheckOneOf1); err != nil {
-				dst.AddChecksRequestCheckOneOf1 = nil
+			if err = validator.Validate(dst.ElasticCheck); err != nil {
+				dst.ElasticCheck = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddChecksRequestCheckOneOf1 = nil
+		dst.ElasticCheck = nil
 	}
 
-	// try to unmarshal data into AddChecksRequestCheckOneOf2
-	err = newStrictDecoder(data).Decode(&dst.AddChecksRequestCheckOneOf2)
+	// try to unmarshal data into MySqlCheck
+	err = newStrictDecoder(data).Decode(&dst.MySqlCheck)
 	if err == nil {
-		jsonAddChecksRequestCheckOneOf2, _ := json.Marshal(dst.AddChecksRequestCheckOneOf2)
-		if string(jsonAddChecksRequestCheckOneOf2) == "{}" { // empty struct
-			dst.AddChecksRequestCheckOneOf2 = nil
+		jsonMySqlCheck, _ := json.Marshal(dst.MySqlCheck)
+		if string(jsonMySqlCheck) == "{}" { // empty struct
+			dst.MySqlCheck = nil
 		} else {
-			if err = validator.Validate(dst.AddChecksRequestCheckOneOf2); err != nil {
-				dst.AddChecksRequestCheckOneOf2 = nil
+			if err = validator.Validate(dst.MySqlCheck); err != nil {
+				dst.MySqlCheck = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddChecksRequestCheckOneOf2 = nil
+		dst.MySqlCheck = nil
 	}
 
-	// try to unmarshal data into AddChecksRequestCheckOneOf3
-	err = newStrictDecoder(data).Decode(&dst.AddChecksRequestCheckOneOf3)
+	// try to unmarshal data into PostgresCheck
+	err = newStrictDecoder(data).Decode(&dst.PostgresCheck)
 	if err == nil {
-		jsonAddChecksRequestCheckOneOf3, _ := json.Marshal(dst.AddChecksRequestCheckOneOf3)
-		if string(jsonAddChecksRequestCheckOneOf3) == "{}" { // empty struct
-			dst.AddChecksRequestCheckOneOf3 = nil
+		jsonPostgresCheck, _ := json.Marshal(dst.PostgresCheck)
+		if string(jsonPostgresCheck) == "{}" { // empty struct
+			dst.PostgresCheck = nil
 		} else {
-			if err = validator.Validate(dst.AddChecksRequestCheckOneOf3); err != nil {
-				dst.AddChecksRequestCheckOneOf3 = nil
+			if err = validator.Validate(dst.PostgresCheck); err != nil {
+				dst.PostgresCheck = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddChecksRequestCheckOneOf3 = nil
+		dst.PostgresCheck = nil
 	}
 
-	// try to unmarshal data into AddChecksRequestCheckOneOf4
-	err = newStrictDecoder(data).Decode(&dst.AddChecksRequestCheckOneOf4)
+	// try to unmarshal data into PushCheck
+	err = newStrictDecoder(data).Decode(&dst.PushCheck)
 	if err == nil {
-		jsonAddChecksRequestCheckOneOf4, _ := json.Marshal(dst.AddChecksRequestCheckOneOf4)
-		if string(jsonAddChecksRequestCheckOneOf4) == "{}" { // empty struct
-			dst.AddChecksRequestCheckOneOf4 = nil
+		jsonPushCheck, _ := json.Marshal(dst.PushCheck)
+		if string(jsonPushCheck) == "{}" { // empty struct
+			dst.PushCheck = nil
 		} else {
-			if err = validator.Validate(dst.AddChecksRequestCheckOneOf4); err != nil {
-				dst.AddChecksRequestCheckOneOf4 = nil
+			if err = validator.Validate(dst.PushCheck); err != nil {
+				dst.PushCheck = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddChecksRequestCheckOneOf4 = nil
+		dst.PushCheck = nil
+	}
+
+	// try to unmarshal data into SNMPCheck
+	err = newStrictDecoder(data).Decode(&dst.SNMPCheck)
+	if err == nil {
+		jsonSNMPCheck, _ := json.Marshal(dst.SNMPCheck)
+		if string(jsonSNMPCheck) == "{}" { // empty struct
+			dst.SNMPCheck = nil
+		} else {
+			if err = validator.Validate(dst.SNMPCheck); err != nil {
+				dst.SNMPCheck = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SNMPCheck = nil
+	}
+
+	// try to unmarshal data into SqlCheck
+	err = newStrictDecoder(data).Decode(&dst.SqlCheck)
+	if err == nil {
+		jsonSqlCheck, _ := json.Marshal(dst.SqlCheck)
+		if string(jsonSqlCheck) == "{}" { // empty struct
+			dst.SqlCheck = nil
+		} else {
+			if err = validator.Validate(dst.SqlCheck); err != nil {
+				dst.SqlCheck = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.SqlCheck = nil
+	}
+
+	// try to unmarshal data into WebCheck
+	err = newStrictDecoder(data).Decode(&dst.WebCheck)
+	if err == nil {
+		jsonWebCheck, _ := json.Marshal(dst.WebCheck)
+		if string(jsonWebCheck) == "{}" { // empty struct
+			dst.WebCheck = nil
+		} else {
+			if err = validator.Validate(dst.WebCheck); err != nil {
+				dst.WebCheck = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.WebCheck = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AddChecksRequestCheckOneOf = nil
-		dst.AddChecksRequestCheckOneOf1 = nil
-		dst.AddChecksRequestCheckOneOf2 = nil
-		dst.AddChecksRequestCheckOneOf3 = nil
-		dst.AddChecksRequestCheckOneOf4 = nil
+		dst.CheckSocket = nil
+		dst.ElasticCheck = nil
+		dst.MySqlCheck = nil
+		dst.PostgresCheck = nil
+		dst.PushCheck = nil
+		dst.SNMPCheck = nil
+		dst.SqlCheck = nil
+		dst.WebCheck = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddChecksRequestCheck)")
 	} else if match == 1 {
@@ -200,24 +290,36 @@ func (dst *AddChecksRequestCheck) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddChecksRequestCheck) MarshalJSON() ([]byte, error) {
-	if src.AddChecksRequestCheckOneOf != nil {
-		return json.Marshal(&src.AddChecksRequestCheckOneOf)
+	if src.CheckSocket != nil {
+		return json.Marshal(&src.CheckSocket)
 	}
 
-	if src.AddChecksRequestCheckOneOf1 != nil {
-		return json.Marshal(&src.AddChecksRequestCheckOneOf1)
+	if src.ElasticCheck != nil {
+		return json.Marshal(&src.ElasticCheck)
 	}
 
-	if src.AddChecksRequestCheckOneOf2 != nil {
-		return json.Marshal(&src.AddChecksRequestCheckOneOf2)
+	if src.MySqlCheck != nil {
+		return json.Marshal(&src.MySqlCheck)
 	}
 
-	if src.AddChecksRequestCheckOneOf3 != nil {
-		return json.Marshal(&src.AddChecksRequestCheckOneOf3)
+	if src.PostgresCheck != nil {
+		return json.Marshal(&src.PostgresCheck)
 	}
 
-	if src.AddChecksRequestCheckOneOf4 != nil {
-		return json.Marshal(&src.AddChecksRequestCheckOneOf4)
+	if src.PushCheck != nil {
+		return json.Marshal(&src.PushCheck)
+	}
+
+	if src.SNMPCheck != nil {
+		return json.Marshal(&src.SNMPCheck)
+	}
+
+	if src.SqlCheck != nil {
+		return json.Marshal(&src.SqlCheck)
+	}
+
+	if src.WebCheck != nil {
+		return json.Marshal(&src.WebCheck)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -228,24 +330,36 @@ func (obj *AddChecksRequestCheck) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.AddChecksRequestCheckOneOf != nil {
-		return obj.AddChecksRequestCheckOneOf
+	if obj.CheckSocket != nil {
+		return obj.CheckSocket
 	}
 
-	if obj.AddChecksRequestCheckOneOf1 != nil {
-		return obj.AddChecksRequestCheckOneOf1
+	if obj.ElasticCheck != nil {
+		return obj.ElasticCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf2 != nil {
-		return obj.AddChecksRequestCheckOneOf2
+	if obj.MySqlCheck != nil {
+		return obj.MySqlCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf3 != nil {
-		return obj.AddChecksRequestCheckOneOf3
+	if obj.PostgresCheck != nil {
+		return obj.PostgresCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf4 != nil {
-		return obj.AddChecksRequestCheckOneOf4
+	if obj.PushCheck != nil {
+		return obj.PushCheck
+	}
+
+	if obj.SNMPCheck != nil {
+		return obj.SNMPCheck
+	}
+
+	if obj.SqlCheck != nil {
+		return obj.SqlCheck
+	}
+
+	if obj.WebCheck != nil {
+		return obj.WebCheck
 	}
 
 	// all schemas are nil
@@ -254,24 +368,36 @@ func (obj *AddChecksRequestCheck) GetActualInstance() interface{} {
 
 // Get the actual instance value
 func (obj AddChecksRequestCheck) GetActualInstanceValue() interface{} {
-	if obj.AddChecksRequestCheckOneOf != nil {
-		return *obj.AddChecksRequestCheckOneOf
+	if obj.CheckSocket != nil {
+		return *obj.CheckSocket
 	}
 
-	if obj.AddChecksRequestCheckOneOf1 != nil {
-		return *obj.AddChecksRequestCheckOneOf1
+	if obj.ElasticCheck != nil {
+		return *obj.ElasticCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf2 != nil {
-		return *obj.AddChecksRequestCheckOneOf2
+	if obj.MySqlCheck != nil {
+		return *obj.MySqlCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf3 != nil {
-		return *obj.AddChecksRequestCheckOneOf3
+	if obj.PostgresCheck != nil {
+		return *obj.PostgresCheck
 	}
 
-	if obj.AddChecksRequestCheckOneOf4 != nil {
-		return *obj.AddChecksRequestCheckOneOf4
+	if obj.PushCheck != nil {
+		return *obj.PushCheck
+	}
+
+	if obj.SNMPCheck != nil {
+		return *obj.SNMPCheck
+	}
+
+	if obj.SqlCheck != nil {
+		return *obj.SqlCheck
+	}
+
+	if obj.WebCheck != nil {
+		return *obj.WebCheck
 	}
 
 	// all schemas are nil

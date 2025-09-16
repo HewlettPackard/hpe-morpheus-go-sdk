@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Instance** | Pointer to **NullableString** |  | [optional] 
 **ContainerType** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerContainerType**](ListClusterContainers200ResponseAllOfContainersInnerContainerType.md) |  | [optional] 
 **ContainerTypeSet** | Pointer to [**ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet**](ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet.md) |  | [optional] 
-**Server** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Server** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Cloud** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Ip** | Pointer to **string** |  | [optional] 
 **InternalIp** | Pointer to **string** |  | [optional] 
@@ -227,20 +227,20 @@ HasContainerTypeSet returns a boolean if a field has been set.
 
 ### GetServer
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServer() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetServer returns the Server field if non-nil, zero value otherwise.
 
 ### GetServerOk
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetServerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServer
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServer(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetServer sets Server field to given value.
 
@@ -250,22 +250,32 @@ SetServer sets Server field to given value.
 
 HasServer returns a boolean if a field has been set.
 
+### SetServerNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetServerNil(b bool)`
+
+ SetServerNil sets the value for Server to be an explicit nil
+
+### UnsetServer
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) UnsetServer()`
+
+UnsetServer ensures that no value is present for Server, not even an explicit nil
 ### GetCloud
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) GetCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetCloud sets Cloud field to given value.
 
@@ -275,6 +285,16 @@ SetCloud sets Cloud field to given value.
 
 HasCloud returns a boolean if a field has been set.
 
+### SetCloudNil
+
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) SetCloudNil(b bool)`
+
+ SetCloudNil sets the value for Cloud to be an explicit nil
+
+### UnsetCloud
+`func (o *ListClusterContainers200ResponseAllOfContainersInner) UnsetCloud()`
+
+UnsetCloud ensures that no value is present for Cloud, not even an explicit nil
 ### GetName
 
 `func (o *ListClusterContainers200ResponseAllOfContainersInner) GetName() string`

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,20 +20,13 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfChecksInnerConfigAnyOf{}
 
 // GetAlerts200ResponseAllOfChecksInnerConfigAnyOf struct for GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
 type GetAlerts200ResponseAllOfChecksInnerConfigAnyOf struct {
-	// HTTP method to use for testing
-	WebMethod string `json:"webMethod"`
-	// Web URL you wish to use to run a check on
-	WebUrl string `json:"webUrl"`
-	// Ignore SSL Errors
-	IgnoreSSL *bool `json:"ignoreSSL,omitempty"`
-	// If you want to use HTTP Basic Authentication, populate this field with the username
-	CheckUser *string `json:"checkUser,omitempty"`
-	// If you want to use HTTP basic Authentication, populate this field with the password
-	CheckPassword *string `json:"checkPassword,omitempty"`
-	// Set value to `on` if you want to turn on text matching
-	TextCheckOn *string `json:"textCheckOn,omitempty"`
-	// Set the string you want to look for in the page source
-	WebTextMatch *string `json:"webTextMatch,omitempty"`
+	ContainerName     string         `json:"containerName"`
+	ExternalId        NullableString `json:"externalId,omitempty"`
+	CheckUser         *string        `json:"checkUser,omitempty"`
+	TextCheckOn       *string        `json:"textCheckOn,omitempty"`
+	CheckPassword     *string        `json:"checkPassword,omitempty"`
+	WebTextMatch      *string        `json:"webTextMatch,omitempty"`
+	CheckPasswordHash *string        `json:"checkPasswordHash,omitempty"`
 	// Set to on to turn on tunneling
 	TunnelOn *string `json:"tunnelOn,omitempty"`
 	// Hostname or IP address of the proxy host
@@ -53,12 +46,11 @@ type _GetAlerts200ResponseAllOfChecksInnerConfigAnyOf GetAlerts200ResponseAllOfC
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf(webMethod string, webUrl string) *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf {
+func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf(containerName string) *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf {
 	this := GetAlerts200ResponseAllOfChecksInnerConfigAnyOf{}
-	this.WebMethod = webMethod
-	this.WebUrl = webUrl
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
+	this.ContainerName = containerName
+	var tunnelOn string = "off"
+	this.TunnelOn = &tunnelOn
 	return &this
 }
 
@@ -67,89 +59,76 @@ func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf(webMethod string, webUrl
 // but it doesn't guarantee that properties required by API are set
 func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOfWithDefaults() *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf {
 	this := GetAlerts200ResponseAllOfChecksInnerConfigAnyOf{}
-	var ignoreSSL bool = false
-	this.IgnoreSSL = &ignoreSSL
+	var tunnelOn string = "off"
+	this.TunnelOn = &tunnelOn
 	return &this
 }
 
-// GetWebMethod returns the WebMethod field value
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebMethod() string {
+// GetContainerName returns the ContainerName field value
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetContainerName() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.WebMethod
+	return o.ContainerName
 }
 
-// GetWebMethodOk returns a tuple with the WebMethod field value
+// GetContainerNameOk returns a tuple with the ContainerName field value
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebMethodOk() (*string, bool) {
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetContainerNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WebMethod, true
+	return &o.ContainerName, true
 }
 
-// SetWebMethod sets field value
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetWebMethod(v string) {
-	o.WebMethod = v
+// SetContainerName sets field value
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetContainerName(v string) {
+	o.ContainerName = v
 }
 
-// GetWebUrl returns the WebUrl field value
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebUrl() string {
-	if o == nil {
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId.Get()) {
 		var ret string
 		return ret
 	}
-
-	return o.WebUrl
+	return *o.ExternalId.Get()
 }
 
-// GetWebUrlOk returns a tuple with the WebUrl field value
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebUrlOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetExternalIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WebUrl, true
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
 }
 
-// SetWebUrl sets field value
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetWebUrl(v string) {
-	o.WebUrl = v
-}
-
-// GetIgnoreSSL returns the IgnoreSSL field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetIgnoreSSL() bool {
-	if o == nil || IsNil(o.IgnoreSSL) {
-		var ret bool
-		return ret
-	}
-	return *o.IgnoreSSL
-}
-
-// GetIgnoreSSLOk returns a tuple with the IgnoreSSL field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetIgnoreSSLOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreSSL) {
-		return nil, false
-	}
-	return o.IgnoreSSL, true
-}
-
-// IsSetIgnoreSSL returns a boolean if a field has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetIgnoreSSL() bool {
-	if o != nil && !IsNil(o.IgnoreSSL) {
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetExternalId() bool {
+	if o != nil && o.ExternalId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetIgnoreSSL gets a reference to the given bool and assigns it to the IgnoreSSL field.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetIgnoreSSL(v bool) {
-	o.IgnoreSSL = &v
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetExternalId(v string) {
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) UnsetExternalId() {
+	o.ExternalId.Unset()
 }
 
 // GetCheckUser returns the CheckUser field value if set, zero value otherwise.
@@ -184,38 +163,6 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckUser(v string)
 	o.CheckUser = &v
 }
 
-// GetCheckPassword returns the CheckPassword field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPassword() string {
-	if o == nil || IsNil(o.CheckPassword) {
-		var ret string
-		return ret
-	}
-	return *o.CheckPassword
-}
-
-// GetCheckPasswordOk returns a tuple with the CheckPassword field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordOk() (*string, bool) {
-	if o == nil || IsNil(o.CheckPassword) {
-		return nil, false
-	}
-	return o.CheckPassword, true
-}
-
-// IsSetCheckPassword returns a boolean if a field has been set.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckPassword() bool {
-	if o != nil && !IsNil(o.CheckPassword) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
-func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPassword(v string) {
-	o.CheckPassword = &v
-}
-
 // GetTextCheckOn returns the TextCheckOn field value if set, zero value otherwise.
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetTextCheckOn() string {
 	if o == nil || IsNil(o.TextCheckOn) {
@@ -248,6 +195,38 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetTextCheckOn(v strin
 	o.TextCheckOn = &v
 }
 
+// GetCheckPassword returns the CheckPassword field value if set, zero value otherwise.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPassword() string {
+	if o == nil || IsNil(o.CheckPassword) {
+		var ret string
+		return ret
+	}
+	return *o.CheckPassword
+}
+
+// GetCheckPasswordOk returns a tuple with the CheckPassword field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordOk() (*string, bool) {
+	if o == nil || IsNil(o.CheckPassword) {
+		return nil, false
+	}
+	return o.CheckPassword, true
+}
+
+// IsSetCheckPassword returns a boolean if a field has been set.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckPassword() bool {
+	if o != nil && !IsNil(o.CheckPassword) {
+		return true
+	}
+
+	return false
+}
+
+// SetCheckPassword gets a reference to the given string and assigns it to the CheckPassword field.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPassword(v string) {
+	o.CheckPassword = &v
+}
+
 // GetWebTextMatch returns the WebTextMatch field value if set, zero value otherwise.
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebTextMatch() string {
 	if o == nil || IsNil(o.WebTextMatch) {
@@ -278,6 +257,38 @@ func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetWebTextMatch() bo
 // SetWebTextMatch gets a reference to the given string and assigns it to the WebTextMatch field.
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetWebTextMatch(v string) {
 	o.WebTextMatch = &v
+}
+
+// GetCheckPasswordHash returns the CheckPasswordHash field value if set, zero value otherwise.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordHash() string {
+	if o == nil || IsNil(o.CheckPasswordHash) {
+		var ret string
+		return ret
+	}
+	return *o.CheckPasswordHash
+}
+
+// GetCheckPasswordHashOk returns a tuple with the CheckPasswordHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordHashOk() (*string, bool) {
+	if o == nil || IsNil(o.CheckPasswordHash) {
+		return nil, false
+	}
+	return o.CheckPasswordHash, true
+}
+
+// IsSetCheckPasswordHash returns a boolean if a field has been set.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) IsSetCheckPasswordHash() bool {
+	if o != nil && !IsNil(o.CheckPasswordHash) {
+		return true
+	}
+
+	return false
+}
+
+// SetCheckPasswordHash gets a reference to the given string and assigns it to the CheckPasswordHash field.
+func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPasswordHash(v string) {
+	o.CheckPasswordHash = &v
 }
 
 // GetTunnelOn returns the TunnelOn field value if set, zero value otherwise.
@@ -450,22 +461,24 @@ func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) MarshalJSON() ([]byte, 
 
 func (o GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["webMethod"] = o.WebMethod
-	toSerialize["webUrl"] = o.WebUrl
-	if !IsNil(o.IgnoreSSL) {
-		toSerialize["ignoreSSL"] = o.IgnoreSSL
+	toSerialize["containerName"] = o.ContainerName
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
 	}
 	if !IsNil(o.CheckUser) {
 		toSerialize["checkUser"] = o.CheckUser
 	}
-	if !IsNil(o.CheckPassword) {
-		toSerialize["checkPassword"] = o.CheckPassword
-	}
 	if !IsNil(o.TextCheckOn) {
 		toSerialize["textCheckOn"] = o.TextCheckOn
 	}
+	if !IsNil(o.CheckPassword) {
+		toSerialize["checkPassword"] = o.CheckPassword
+	}
 	if !IsNil(o.WebTextMatch) {
 		toSerialize["webTextMatch"] = o.WebTextMatch
+	}
+	if !IsNil(o.CheckPasswordHash) {
+		toSerialize["checkPasswordHash"] = o.CheckPasswordHash
 	}
 	if !IsNil(o.TunnelOn) {
 		toSerialize["tunnelOn"] = o.TunnelOn

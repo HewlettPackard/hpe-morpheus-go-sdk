@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ParentRoleId** | Pointer to **NullableString** |  | [optional] 
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -372,20 +372,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -395,6 +395,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDefaultPersona
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() string`

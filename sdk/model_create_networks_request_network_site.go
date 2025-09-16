@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -18,10 +18,10 @@ import (
 // checks if the CreateNetworksRequestNetworkSite type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CreateNetworksRequestNetworkSite{}
 
-// CreateNetworksRequestNetworkSite struct for CreateNetworksRequestNetworkSite
+// CreateNetworksRequestNetworkSite Group to assign the network to. Omit this parameter to allow all groups (Shared).
 type CreateNetworksRequestNetworkSite struct {
 	// Group ID
-	Id                   int64                  `json:"id"`
+	Id                   *int64                 `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -31,9 +31,8 @@ type _CreateNetworksRequestNetworkSite CreateNetworksRequestNetworkSite
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateNetworksRequestNetworkSite(id int64) *CreateNetworksRequestNetworkSite {
+func NewCreateNetworksRequestNetworkSite() *CreateNetworksRequestNetworkSite {
 	this := CreateNetworksRequestNetworkSite{}
-	this.Id = id
 	return &this
 }
 
@@ -45,28 +44,36 @@ func NewCreateNetworksRequestNetworkSiteWithDefaults() *CreateNetworksRequestNet
 	return &this
 }
 
-// GetId returns the Id field value
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *CreateNetworksRequestNetworkSite) GetId() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
 	}
-
-	return o.Id
+	return *o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateNetworksRequestNetworkSite) GetIdOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Id, true
 }
 
-// SetId sets field value
+// IsSetId returns a boolean if a field has been set.
+func (o *CreateNetworksRequestNetworkSite) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int64 and assigns it to the Id field.
 func (o *CreateNetworksRequestNetworkSite) SetId(v int64) {
-	o.Id = v
+	o.Id = &v
 }
 
 func (o CreateNetworksRequestNetworkSite) MarshalJSON() ([]byte, error) {
@@ -79,7 +86,9 @@ func (o CreateNetworksRequestNetworkSite) MarshalJSON() ([]byte, error) {
 
 func (o CreateNetworksRequestNetworkSite) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["id"] = o.Id
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

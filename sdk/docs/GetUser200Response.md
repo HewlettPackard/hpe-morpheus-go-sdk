@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**AddUserTenant200ResponseAllOfUser**](AddUserTenant200ResponseAllOfUser.md) |  | [optional] 
+**User** | Pointer to [**ListUsers200ResponseAllOfUsersInner**](ListUsers200ResponseAllOfUsersInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *GetUser200Response) GetUser() AddUserTenant200ResponseAllOfUser`
+`func (o *GetUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *GetUser200Response) GetUserOk() (*AddUserTenant200ResponseAllOfUser, bool)`
+`func (o *GetUser200Response) GetUserOk() (*ListUsers200ResponseAllOfUsersInner, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *GetUser200Response) SetUser(v AddUserTenant200ResponseAllOfUser)`
+`func (o *GetUser200Response) SetUser(v ListUsers200ResponseAllOfUsersInner)`
 
 SetUser sets User field to given value.
 

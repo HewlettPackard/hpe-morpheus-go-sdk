@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -30,7 +30,7 @@ type ListBlueprints200ResponseAllOfBlueprintsInner struct {
 	Visibility           *string                                                     `json:"visibility,omitempty"`
 	ResourcePermission   map[string]interface{}                                      `json:"resourcePermission,omitempty"`
 	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
-	Tenant               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenant,omitempty"`
+	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"tenant,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
@@ -396,36 +396,47 @@ func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetOwner(v ListActivity2
 	o.Owner = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Tenant) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Tenant.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Tenant
+	return *o.Tenant.Get()
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Tenant) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Tenant, true
+	return o.Tenant.Get(), o.Tenant.IsSet()
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) IsSetTenant() bool {
-	if o != nil && !IsNil(o.Tenant) {
+	if o != nil && o.Tenant.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
-func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Tenant = &v
+// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnsetTenant() {
+	o.Tenant.Unset()
 }
 
 func (o ListBlueprints200ResponseAllOfBlueprintsInner) MarshalJSON() ([]byte, error) {
@@ -468,8 +479,8 @@ func (o ListBlueprints200ResponseAllOfBlueprintsInner) ToMap() (map[string]inter
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Tenant) {
-		toSerialize["tenant"] = o.Tenant
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

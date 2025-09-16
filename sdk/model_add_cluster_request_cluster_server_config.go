@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfig{}
 
 // AddClusterRequestClusterServerConfig Key for specific host type configuration  The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available.
 type AddClusterRequestClusterServerConfig struct {
-	// Default Git Account to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount   NullableInt32          `json:"defaultRepoAccount,omitempty"`
+	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
+	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
+	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
+	ImageServer          *string                `json:"imageServer,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -87,6 +89,38 @@ func (o *AddClusterRequestClusterServerConfig) UnsetDefaultRepoAccount() {
 	o.DefaultRepoAccount.Unset()
 }
 
+// GetImageServer returns the ImageServer field value if set, zero value otherwise.
+func (o *AddClusterRequestClusterServerConfig) GetImageServer() string {
+	if o == nil || IsNil(o.ImageServer) {
+		var ret string
+		return ret
+	}
+	return *o.ImageServer
+}
+
+// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddClusterRequestClusterServerConfig) GetImageServerOk() (*string, bool) {
+	if o == nil || IsNil(o.ImageServer) {
+		return nil, false
+	}
+	return o.ImageServer, true
+}
+
+// IsSetImageServer returns a boolean if a field has been set.
+func (o *AddClusterRequestClusterServerConfig) IsSetImageServer() bool {
+	if o != nil && !IsNil(o.ImageServer) {
+		return true
+	}
+
+	return false
+}
+
+// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
+func (o *AddClusterRequestClusterServerConfig) SetImageServer(v string) {
+	o.ImageServer = &v
+}
+
 func (o AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -99,6 +133,9 @@ func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, e
 	toSerialize := map[string]interface{}{}
 	if o.DefaultRepoAccount.IsSet() {
 		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
+	}
+	if !IsNil(o.ImageServer) {
+		toSerialize["imageServer"] = o.ImageServer
 	}
 
 	for key, value := range o.AdditionalProperties {

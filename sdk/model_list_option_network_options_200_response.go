@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ListOptionNetworkOptions200Response{}
 
 // ListOptionNetworkOptions200Response struct for ListOptionNetworkOptions200Response
 type ListOptionNetworkOptions200Response struct {
-	Data                 map[string]interface{} `json:"data,omitempty"`
-	Success              *bool                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Success              *bool                       `json:"success,omitempty"`
+	Data                 *ZoneNetworkOptionsResponse `json:"data,omitempty"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _ListOptionNetworkOptions200Response ListOptionNetworkOptions200Response
@@ -42,38 +42,6 @@ func NewListOptionNetworkOptions200Response() *ListOptionNetworkOptions200Respon
 func NewListOptionNetworkOptions200ResponseWithDefaults() *ListOptionNetworkOptions200Response {
 	this := ListOptionNetworkOptions200Response{}
 	return &this
-}
-
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *ListOptionNetworkOptions200Response) GetData() map[string]interface{} {
-	if o == nil || IsNil(o.Data) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListOptionNetworkOptions200Response) GetDataOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Data) {
-		return map[string]interface{}{}, false
-	}
-	return o.Data, true
-}
-
-// IsSetData returns a boolean if a field has been set.
-func (o *ListOptionNetworkOptions200Response) IsSetData() bool {
-	if o != nil && !IsNil(o.Data) {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given map[string]interface{} and assigns it to the Data field.
-func (o *ListOptionNetworkOptions200Response) SetData(v map[string]interface{}) {
-	o.Data = v
 }
 
 // GetSuccess returns the Success field value if set, zero value otherwise.
@@ -108,6 +76,38 @@ func (o *ListOptionNetworkOptions200Response) SetSuccess(v bool) {
 	o.Success = &v
 }
 
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *ListOptionNetworkOptions200Response) GetData() ZoneNetworkOptionsResponse {
+	if o == nil || IsNil(o.Data) {
+		var ret ZoneNetworkOptionsResponse
+		return ret
+	}
+	return *o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListOptionNetworkOptions200Response) GetDataOk() (*ZoneNetworkOptionsResponse, bool) {
+	if o == nil || IsNil(o.Data) {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// IsSetData returns a boolean if a field has been set.
+func (o *ListOptionNetworkOptions200Response) IsSetData() bool {
+	if o != nil && !IsNil(o.Data) {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given ZoneNetworkOptionsResponse and assigns it to the Data field.
+func (o *ListOptionNetworkOptions200Response) SetData(v ZoneNetworkOptionsResponse) {
+	o.Data = &v
+}
+
 func (o ListOptionNetworkOptions200Response) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o ListOptionNetworkOptions200Response) MarshalJSON() ([]byte, error) {
 
 func (o ListOptionNetworkOptions200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
-		toSerialize["data"] = o.Data
-	}
 	if !IsNil(o.Success) {
 		toSerialize["success"] = o.Success
+	}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
 
 	for key, value := range o.AdditionalProperties {

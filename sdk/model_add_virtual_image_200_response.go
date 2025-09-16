@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddVirtualImage200Response{}
 
 // AddVirtualImage200Response struct for AddVirtualImage200Response
 type AddVirtualImage200Response struct {
-	VirtualImage         *ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImage,omitempty"`
-	Success              *bool                                                `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	VirtualImage         *AddVirtualImage200ResponseAllOfVirtualImage `json:"virtualImage,omitempty"`
+	Success              *bool                                        `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddVirtualImage200Response AddVirtualImage200Response
@@ -45,9 +45,9 @@ func NewAddVirtualImage200ResponseWithDefaults() *AddVirtualImage200Response {
 }
 
 // GetVirtualImage returns the VirtualImage field value if set, zero value otherwise.
-func (o *AddVirtualImage200Response) GetVirtualImage() ListVirtualImages200ResponseAllOfVirtualImagesInner {
+func (o *AddVirtualImage200Response) GetVirtualImage() AddVirtualImage200ResponseAllOfVirtualImage {
 	if o == nil || IsNil(o.VirtualImage) {
-		var ret ListVirtualImages200ResponseAllOfVirtualImagesInner
+		var ret AddVirtualImage200ResponseAllOfVirtualImage
 		return ret
 	}
 	return *o.VirtualImage
@@ -55,7 +55,7 @@ func (o *AddVirtualImage200Response) GetVirtualImage() ListVirtualImages200Respo
 
 // GetVirtualImageOk returns a tuple with the VirtualImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImage200Response) GetVirtualImageOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInner, bool) {
+func (o *AddVirtualImage200Response) GetVirtualImageOk() (*AddVirtualImage200ResponseAllOfVirtualImage, bool) {
 	if o == nil || IsNil(o.VirtualImage) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddVirtualImage200Response) IsSetVirtualImage() bool {
 	return false
 }
 
-// SetVirtualImage gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInner and assigns it to the VirtualImage field.
-func (o *AddVirtualImage200Response) SetVirtualImage(v ListVirtualImages200ResponseAllOfVirtualImagesInner) {
+// SetVirtualImage gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImage and assigns it to the VirtualImage field.
+func (o *AddVirtualImage200Response) SetVirtualImage(v AddVirtualImage200ResponseAllOfVirtualImage) {
 	o.VirtualImage = &v
 }
 

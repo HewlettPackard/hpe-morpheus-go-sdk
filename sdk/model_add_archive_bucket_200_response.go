@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddArchiveBucket200Response{}
 
 // AddArchiveBucket200Response struct for AddArchiveBucket200Response
 type AddArchiveBucket200Response struct {
-	ArchiveBucket        *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner `json:"archiveBucket,omitempty"`
-	Success              *bool                                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	ArchiveBucket        *AddArchiveBucket200ResponseAllOfArchiveBucket `json:"archiveBucket,omitempty"`
+	Success              *bool                                          `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _AddArchiveBucket200Response AddArchiveBucket200Response
@@ -45,9 +45,9 @@ func NewAddArchiveBucket200ResponseWithDefaults() *AddArchiveBucket200Response {
 }
 
 // GetArchiveBucket returns the ArchiveBucket field value if set, zero value otherwise.
-func (o *AddArchiveBucket200Response) GetArchiveBucket() ListArchiveBuckets200ResponseAllOfArchiveBucketsInner {
+func (o *AddArchiveBucket200Response) GetArchiveBucket() AddArchiveBucket200ResponseAllOfArchiveBucket {
 	if o == nil || IsNil(o.ArchiveBucket) {
-		var ret ListArchiveBuckets200ResponseAllOfArchiveBucketsInner
+		var ret AddArchiveBucket200ResponseAllOfArchiveBucket
 		return ret
 	}
 	return *o.ArchiveBucket
@@ -55,7 +55,7 @@ func (o *AddArchiveBucket200Response) GetArchiveBucket() ListArchiveBuckets200Re
 
 // GetArchiveBucketOk returns a tuple with the ArchiveBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddArchiveBucket200Response) GetArchiveBucketOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInner, bool) {
+func (o *AddArchiveBucket200Response) GetArchiveBucketOk() (*AddArchiveBucket200ResponseAllOfArchiveBucket, bool) {
 	if o == nil || IsNil(o.ArchiveBucket) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddArchiveBucket200Response) IsSetArchiveBucket() bool {
 	return false
 }
 
-// SetArchiveBucket gets a reference to the given ListArchiveBuckets200ResponseAllOfArchiveBucketsInner and assigns it to the ArchiveBucket field.
-func (o *AddArchiveBucket200Response) SetArchiveBucket(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) {
+// SetArchiveBucket gets a reference to the given AddArchiveBucket200ResponseAllOfArchiveBucket and assigns it to the ArchiveBucket field.
+func (o *AddArchiveBucket200Response) SetArchiveBucket(v AddArchiveBucket200ResponseAllOfArchiveBucket) {
 	o.ArchiveBucket = &v
 }
 

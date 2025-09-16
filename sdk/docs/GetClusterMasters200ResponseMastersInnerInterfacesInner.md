@@ -22,12 +22,12 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Network** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Subnet** | Pointer to **NullableString** |  | [optional] 
 **NetworkGroup** | Pointer to **NullableString** |  | [optional] 
 **NetworkPosition** | Pointer to **NullableString** |  | [optional] 
 **NetworkPool** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **NullableString** |  | [optional] 
 **IpMode** | Pointer to **NullableString** |  | [optional] 
 **MacAddress** | Pointer to **NullableString** |  | [optional] 
@@ -603,20 +603,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetwork() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetwork() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetwork(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetwork(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetNetwork sets Network field to given value.
 
@@ -626,6 +626,16 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
+### SetNetworkNil
+
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkNil(b bool)`
+
+ SetNetworkNil sets the value for Network to be an explicit nil
+
+### UnsetNetwork
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetwork()`
+
+UnsetNetwork ensures that no value is present for Network, not even an explicit nil
 ### GetSubnet
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetSubnet() string`
@@ -768,20 +778,20 @@ HasNetworkPool returns a boolean if a field has been set.
 UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDomain() string`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDomainOk() (*string, bool)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkDomain(v string)`
+`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -791,16 +801,6 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
-### SetNetworkDomainNil
-
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) SetNetworkDomainNil(b bool)`
-
- SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-
-### UnsetNetworkDomain
-`func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnsetNetworkDomain()`
-
-UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetType
 
 `func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) GetType() string`

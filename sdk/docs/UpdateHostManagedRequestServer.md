@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SshUsername** | Pointer to **string** | SSH username to use when provisioning | [optional] 
 **SshPassword** | Pointer to **string** | SSH password to use, if not specified the account public key can be used | [optional] 
-**ServerOs** | Pointer to [**UpdateHostInstallAgentRequestServerServerOs**](UpdateHostInstallAgentRequestServerServerOs.md) |  | [optional] 
+**ServerOs** | Pointer to [**UpdateHostRequestServerServerOs**](UpdateHostRequestServerServerOs.md) |  | [optional] 
 **Plan** | Pointer to [**UpdateHostManagedRequestServerPlan**](UpdateHostManagedRequestServerPlan.md) |  | [optional] 
 **Account** | Pointer to [**UpdateHostManagedRequestServerAccount**](UpdateHostManagedRequestServerAccount.md) |  | [optional] 
 **ProvisionSiteId** | Pointer to **int64** | Specific group to assign the server | [optional] 
@@ -84,20 +84,20 @@ HasSshPassword returns a boolean if a field has been set.
 
 ### GetServerOs
 
-`func (o *UpdateHostManagedRequestServer) GetServerOs() UpdateHostInstallAgentRequestServerServerOs`
+`func (o *UpdateHostManagedRequestServer) GetServerOs() UpdateHostRequestServerServerOs`
 
 GetServerOs returns the ServerOs field if non-nil, zero value otherwise.
 
 ### GetServerOsOk
 
-`func (o *UpdateHostManagedRequestServer) GetServerOsOk() (*UpdateHostInstallAgentRequestServerServerOs, bool)`
+`func (o *UpdateHostManagedRequestServer) GetServerOsOk() (*UpdateHostRequestServerServerOs, bool)`
 
 GetServerOsOk returns a tuple with the ServerOs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerOs
 
-`func (o *UpdateHostManagedRequestServer) SetServerOs(v UpdateHostInstallAgentRequestServerServerOs)`
+`func (o *UpdateHostManagedRequestServer) SetServerOs(v UpdateHostRequestServerServerOs)`
 
 SetServerOs sets ServerOs field to given value.
 

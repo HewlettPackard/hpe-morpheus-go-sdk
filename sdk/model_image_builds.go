@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -39,8 +39,8 @@ type ImageBuilds struct {
 	IsCloudInit          *bool                                                         `json:"isCloudInit,omitempty"`
 	VmToolsInstalled     *bool                                                         `json:"vmToolsInstalled,omitempty"`
 	KeepResults          *int64                                                        `json:"keepResults,omitempty"`
-	Config               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig        `json:"config,omitempty"`
-	LastResult           *ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult    `json:"lastResult,omitempty"`
+	Config               *ImageBuildsConfig                                            `json:"config,omitempty"`
+	LastResult           *ImageBuildsLastResult                                        `json:"lastResult,omitempty"`
 	ExecutionCount       *int64                                                        `json:"executionCount,omitempty"`
 	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
@@ -706,9 +706,9 @@ func (o *ImageBuilds) SetKeepResults(v int64) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ImageBuilds) GetConfig() ListImageBuilds200ResponseAllOfImageBuildsInnerConfig {
+func (o *ImageBuilds) GetConfig() ImageBuildsConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListImageBuilds200ResponseAllOfImageBuildsInnerConfig
+		var ret ImageBuildsConfig
 		return ret
 	}
 	return *o.Config
@@ -716,7 +716,7 @@ func (o *ImageBuilds) GetConfig() ListImageBuilds200ResponseAllOfImageBuildsInne
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuilds) GetConfigOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfig, bool) {
+func (o *ImageBuilds) GetConfigOk() (*ImageBuildsConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -732,15 +732,15 @@ func (o *ImageBuilds) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfig and assigns it to the Config field.
-func (o *ImageBuilds) SetConfig(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) {
+// SetConfig gets a reference to the given ImageBuildsConfig and assigns it to the Config field.
+func (o *ImageBuilds) SetConfig(v ImageBuildsConfig) {
 	o.Config = &v
 }
 
 // GetLastResult returns the LastResult field value if set, zero value otherwise.
-func (o *ImageBuilds) GetLastResult() ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult {
+func (o *ImageBuilds) GetLastResult() ImageBuildsLastResult {
 	if o == nil || IsNil(o.LastResult) {
-		var ret ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult
+		var ret ImageBuildsLastResult
 		return ret
 	}
 	return *o.LastResult
@@ -748,7 +748,7 @@ func (o *ImageBuilds) GetLastResult() ListImageBuilds200ResponseAllOfImageBuilds
 
 // GetLastResultOk returns a tuple with the LastResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageBuilds) GetLastResultOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult, bool) {
+func (o *ImageBuilds) GetLastResultOk() (*ImageBuildsLastResult, bool) {
 	if o == nil || IsNil(o.LastResult) {
 		return nil, false
 	}
@@ -764,8 +764,8 @@ func (o *ImageBuilds) IsSetLastResult() bool {
 	return false
 }
 
-// SetLastResult gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult and assigns it to the LastResult field.
-func (o *ImageBuilds) SetLastResult(v ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult) {
+// SetLastResult gets a reference to the given ImageBuildsLastResult and assigns it to the LastResult field.
+func (o *ImageBuilds) SetLastResult(v ImageBuildsLastResult) {
 	o.LastResult = &v
 }
 

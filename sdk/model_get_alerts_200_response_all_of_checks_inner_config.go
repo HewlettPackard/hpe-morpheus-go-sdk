@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,12 +21,13 @@ var _ fmt.Stringer
 
 // GetAlerts200ResponseAllOfChecksInnerConfig struct for GetAlerts200ResponseAllOfChecksInnerConfig
 type GetAlerts200ResponseAllOfChecksInnerConfig struct {
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf  *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
-	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4
-	MapmapOfStringAny                                *map[string]interface{}
+	ElasticSearchConfig                             *ElasticSearchConfig
+	GetAlerts200ResponseAllOfChecksInnerConfigAnyOf *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
+	SNMPConfig                                      *SNMPConfig
+	SQLConfig                                       *SQLConfig
+	SocketConfig                                    *SocketConfig
+	WebGetConfig                                    *WebGetConfig
+	MapmapOfStringAny                               *map[string]interface{}
 }
 
 func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -34,24 +35,28 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(dat
 		dst = &GetAlerts200ResponseAllOfChecksInnerConfig{}
 	}
 
+	if out, ok := data.(ElasticSearchConfig); ok {
+		dst.ElasticSearchConfig = &out
+	}
+
 	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf); ok {
 		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = &out
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 = &out
+	if out, ok := data.(SNMPConfig); ok {
+		dst.SNMPConfig = &out
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 = &out
+	if out, ok := data.(SQLConfig); ok {
+		dst.SQLConfig = &out
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 = &out
+	if out, ok := data.(SocketConfig); ok {
+		dst.SocketConfig = &out
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 = &out
+	if out, ok := data.(WebGetConfig); ok {
+		dst.WebGetConfig = &out
 	}
 
 	if out, ok := data.(map[string]interface{}); ok {
@@ -64,6 +69,19 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(dat
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte) error {
 	var err error
+	// try to unmarshal JSON data into ElasticSearchConfig
+	err = json.Unmarshal(data, &dst.ElasticSearchConfig)
+	if err == nil {
+		jsonElasticSearchConfig, _ := json.Marshal(dst.ElasticSearchConfig)
+		if string(jsonElasticSearchConfig) == "{}" { // empty struct
+			dst.ElasticSearchConfig = nil
+		} else {
+			return nil // data stored in dst.ElasticSearchConfig, return on the first match
+		}
+	} else {
+		dst.ElasticSearchConfig = nil
+	}
+
 	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf
 	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
 	if err == nil {
@@ -77,56 +95,56 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = nil
 	}
 
-	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
+	// try to unmarshal JSON data into SNMPConfig
+	err = json.Unmarshal(data, &dst.SNMPConfig)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf1) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 = nil
+		jsonSNMPConfig, _ := json.Marshal(dst.SNMPConfig)
+		if string(jsonSNMPConfig) == "{}" { // empty struct
+			dst.SNMPConfig = nil
 		} else {
-			return nil // data stored in dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1, return on the first match
+			return nil // data stored in dst.SNMPConfig, return on the first match
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 = nil
+		dst.SNMPConfig = nil
 	}
 
-	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
+	// try to unmarshal JSON data into SQLConfig
+	err = json.Unmarshal(data, &dst.SQLConfig)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf2) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 = nil
+		jsonSQLConfig, _ := json.Marshal(dst.SQLConfig)
+		if string(jsonSQLConfig) == "{}" { // empty struct
+			dst.SQLConfig = nil
 		} else {
-			return nil // data stored in dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2, return on the first match
+			return nil // data stored in dst.SQLConfig, return on the first match
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 = nil
+		dst.SQLConfig = nil
 	}
 
-	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
+	// try to unmarshal JSON data into SocketConfig
+	err = json.Unmarshal(data, &dst.SocketConfig)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf3) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 = nil
+		jsonSocketConfig, _ := json.Marshal(dst.SocketConfig)
+		if string(jsonSocketConfig) == "{}" { // empty struct
+			dst.SocketConfig = nil
 		} else {
-			return nil // data stored in dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3, return on the first match
+			return nil // data stored in dst.SocketConfig, return on the first match
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 = nil
+		dst.SocketConfig = nil
 	}
 
-	// try to unmarshal JSON data into GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4
-	err = json.Unmarshal(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4)
+	// try to unmarshal JSON data into WebGetConfig
+	err = json.Unmarshal(data, &dst.WebGetConfig)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf4, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerConfigAnyOf4) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 = nil
+		jsonWebGetConfig, _ := json.Marshal(dst.WebGetConfig)
+		if string(jsonWebGetConfig) == "{}" { // empty struct
+			dst.WebGetConfig = nil
 		} else {
-			return nil // data stored in dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4, return on the first match
+			return nil // data stored in dst.WebGetConfig, return on the first match
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 = nil
+		dst.WebGetConfig = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -147,24 +165,28 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalJSON(data []byte
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src GetAlerts200ResponseAllOfChecksInnerConfig) MarshalJSON() ([]byte, error) {
+	if src.ElasticSearchConfig != nil {
+		return json.Marshal(&src.ElasticSearchConfig)
+	}
+
 	if src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf != nil {
 		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
 	}
 
-	if src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1 != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf1)
+	if src.SNMPConfig != nil {
+		return json.Marshal(&src.SNMPConfig)
 	}
 
-	if src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2 != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf2)
+	if src.SQLConfig != nil {
+		return json.Marshal(&src.SQLConfig)
 	}
 
-	if src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3 != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf3)
+	if src.SocketConfig != nil {
+		return json.Marshal(&src.SocketConfig)
 	}
 
-	if src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4 != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf4)
+	if src.WebGetConfig != nil {
+		return json.Marshal(&src.WebGetConfig)
 	}
 
 	if src.MapmapOfStringAny != nil {

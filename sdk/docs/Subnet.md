@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **DhcpEnd** | Pointer to **string** |  | [optional] 
 **DhcpRange** | Pointer to **NullableString** |  | [optional] 
 **NetworkProxy** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **SearchDomains** | Pointer to **NullableString** |  | [optional] 
 **DefaultNetwork** | Pointer to **bool** |  | [optional] 
 **AssignPublicIp** | Pointer to **bool** |  | [optional] 
@@ -828,20 +828,20 @@ HasNetworkProxy returns a boolean if a field has been set.
 UnsetNetworkProxy ensures that no value is present for NetworkProxy, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *Subnet) GetNetworkDomain() string`
+`func (o *Subnet) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *Subnet) GetNetworkDomainOk() (*string, bool)`
+`func (o *Subnet) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *Subnet) SetNetworkDomain(v string)`
+`func (o *Subnet) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -851,16 +851,6 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
-### SetNetworkDomainNil
-
-`func (o *Subnet) SetNetworkDomainNil(b bool)`
-
- SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-
-### UnsetNetworkDomain
-`func (o *Subnet) UnsetNetworkDomain()`
-
-UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetSearchDomains
 
 `func (o *Subnet) GetSearchDomains() string`

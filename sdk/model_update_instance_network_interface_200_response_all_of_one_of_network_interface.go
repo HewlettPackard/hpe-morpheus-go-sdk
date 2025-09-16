@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,43 +20,43 @@ var _ MappedNullable = &UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetwo
 
 // UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct for UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
 type UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface struct {
-	Id                   *int64                                       `json:"id,omitempty"`
-	Addresses            []map[string]interface{}                     `json:"addresses,omitempty"`
-	InternalId           NullableString                               `json:"internalId,omitempty"`
-	InterfaceId          NullableString                               `json:"interfaceId,omitempty"`
-	DisplayOrder         *int64                                       `json:"displayOrder,omitempty"`
-	NetworkPool          map[string]interface{}                       `json:"networkPool,omitempty"`
-	Dhcp                 *bool                                        `json:"dhcp,omitempty"`
-	Uuid                 *string                                      `json:"uuid,omitempty"`
-	Active               *bool                                        `json:"active,omitempty"`
-	UniqueId             *string                                      `json:"uniqueId,omitempty"`
-	Subnet               NullableString                               `json:"subnet,omitempty"`
-	ReplaceHostRecord    *bool                                        `json:"replaceHostRecord,omitempty"`
-	IpMode               *string                                      `json:"ipMode,omitempty"`
-	Version              NullableString                               `json:"version,omitempty"`
-	IpSubnet             NullableString                               `json:"ipSubnet,omitempty"`
-	Config               NullableString                               `json:"config,omitempty"`
-	PublicIpAddress      *string                                      `json:"publicIpAddress,omitempty"`
-	FabricId             NullableString                               `json:"fabricId,omitempty"`
-	Ipv6Subnet           NullableString                               `json:"ipv6Subnet,omitempty"`
-	MacAddress           *string                                      `json:"macAddress,omitempty"`
-	PublicIpv6Address    NullableString                               `json:"publicIpv6Address,omitempty"`
-	RefType              NullableString                               `json:"refType,omitempty"`
-	NetworkGroup         NullableString                               `json:"networkGroup,omitempty"`
-	RefId                NullableString                               `json:"refId,omitempty"`
-	NetworkDomain        NullableString                               `json:"networkDomain,omitempty"`
-	Name                 *string                                      `json:"name,omitempty"`
-	PrimaryInterface     *bool                                        `json:"primaryInterface,omitempty"`
-	NetworkPoolIPv6      map[string]interface{}                       `json:"networkPoolIPv6,omitempty"`
-	Network              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"network,omitempty"`
-	VlanId               NullableString                               `json:"vlanId,omitempty"`
-	Type                 *GetAlerts200ResponseAllOfChecksInnerAccount `json:"type,omitempty"`
-	NetworkPosition      NullableString                               `json:"networkPosition,omitempty"`
-	PoolAssigned         *bool                                        `json:"poolAssigned,omitempty"`
-	Description          *string                                      `json:"description,omitempty"`
-	ExternalType         NullableString                               `json:"externalType,omitempty"`
-	ExternalId           *string                                      `json:"externalId,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	Id                   *int64                                             `json:"id,omitempty"`
+	Addresses            []map[string]interface{}                           `json:"addresses,omitempty"`
+	InternalId           NullableString                                     `json:"internalId,omitempty"`
+	InterfaceId          NullableString                                     `json:"interfaceId,omitempty"`
+	DisplayOrder         *int64                                             `json:"displayOrder,omitempty"`
+	NetworkPool          map[string]interface{}                             `json:"networkPool,omitempty"`
+	Dhcp                 *bool                                              `json:"dhcp,omitempty"`
+	Uuid                 *string                                            `json:"uuid,omitempty"`
+	Active               *bool                                              `json:"active,omitempty"`
+	UniqueId             *string                                            `json:"uniqueId,omitempty"`
+	Subnet               NullableString                                     `json:"subnet,omitempty"`
+	ReplaceHostRecord    *bool                                              `json:"replaceHostRecord,omitempty"`
+	IpMode               *string                                            `json:"ipMode,omitempty"`
+	Version              NullableString                                     `json:"version,omitempty"`
+	IpSubnet             NullableString                                     `json:"ipSubnet,omitempty"`
+	Config               NullableString                                     `json:"config,omitempty"`
+	PublicIpAddress      *string                                            `json:"publicIpAddress,omitempty"`
+	FabricId             NullableString                                     `json:"fabricId,omitempty"`
+	Ipv6Subnet           NullableString                                     `json:"ipv6Subnet,omitempty"`
+	MacAddress           *string                                            `json:"macAddress,omitempty"`
+	PublicIpv6Address    NullableString                                     `json:"publicIpv6Address,omitempty"`
+	RefType              NullableString                                     `json:"refType,omitempty"`
+	NetworkGroup         NullableString                                     `json:"networkGroup,omitempty"`
+	RefId                NullableString                                     `json:"refId,omitempty"`
+	NetworkDomain        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkDomain,omitempty"`
+	Name                 *string                                            `json:"name,omitempty"`
+	PrimaryInterface     *bool                                              `json:"primaryInterface,omitempty"`
+	NetworkPoolIPv6      map[string]interface{}                             `json:"networkPoolIPv6,omitempty"`
+	Network              *GetAlerts200ResponseAllOfChecksInnerAccount       `json:"network,omitempty"`
+	VlanId               NullableString                                     `json:"vlanId,omitempty"`
+	Type                 *GetAlerts200ResponseAllOfChecksInnerAccount       `json:"type,omitempty"`
+	NetworkPosition      NullableString                                     `json:"networkPosition,omitempty"`
+	PoolAssigned         *bool                                              `json:"poolAssigned,omitempty"`
+	Description          *string                                            `json:"description,omitempty"`
+	ExternalType         NullableString                                     `json:"externalType,omitempty"`
+	ExternalId           *string                                            `json:"externalId,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface
@@ -979,47 +979,36 @@ func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) Un
 	o.RefId.Unset()
 }
 
-// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomain() string {
-	if o == nil || IsNil(o.NetworkDomain.Get()) {
-		var ret string
+// GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil || IsNil(o.NetworkDomain) {
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
-	return *o.NetworkDomain.Get()
+	return *o.NetworkDomain
 }
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomainOk() (*string, bool) {
-	if o == nil {
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
-	return o.NetworkDomain.Get(), o.NetworkDomain.IsSet()
+	return o.NetworkDomain, true
 }
 
 // IsSetNetworkDomain returns a boolean if a field has been set.
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) IsSetNetworkDomain() bool {
-	if o != nil && o.NetworkDomain.IsSet() {
+	if o != nil && !IsNil(o.NetworkDomain) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given NullableString and assigns it to the NetworkDomain field.
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomain(v string) {
-	o.NetworkDomain.Set(&v)
-}
-
-// SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomainNil() {
-	o.NetworkDomain.Set(nil)
-}
-
-// UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
-func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) UnsetNetworkDomain() {
-	o.NetworkDomain.Unset()
+// SetNetworkDomain gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkDomain field.
+func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+	o.NetworkDomain = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1490,8 +1479,8 @@ func (o UpdateInstanceNetworkInterface200ResponseAllOfOneOfNetworkInterface) ToM
 	if o.RefId.IsSet() {
 		toSerialize["refId"] = o.RefId.Get()
 	}
-	if o.NetworkDomain.IsSet() {
-		toSerialize["networkDomain"] = o.NetworkDomain.Get()
+	if !IsNil(o.NetworkDomain) {
+		toSerialize["networkDomain"] = o.NetworkDomain
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

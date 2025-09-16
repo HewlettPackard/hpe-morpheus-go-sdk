@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &ListCloudFolders200ResponseAllOfFoldersInner{}
 type ListCloudFolders200ResponseAllOfFoldersInner struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
 	Name                 *string                                                               `json:"name,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount            `json:"zone,omitempty"`
 	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"parent,omitempty"`
 	Type                 *string                                                               `json:"type,omitempty"`
 	ExternalId           *string                                                               `json:"externalId,omitempty"`
@@ -120,36 +120,47 @@ func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListCloudFolders200ResponseAllOfFoldersInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListCloudFolders200ResponseAllOfFoldersInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetParent returns the Parent field value if set, zero value otherwise.
@@ -520,8 +531,8 @@ func (o ListCloudFolders200ResponseAllOfFoldersInner) ToMap() (map[string]interf
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Parent) {
 		toSerialize["parent"] = o.Parent

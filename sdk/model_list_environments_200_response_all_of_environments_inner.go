@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,17 +21,17 @@ var _ MappedNullable = &ListEnvironments200ResponseAllOfEnvironmentsInner{}
 
 // ListEnvironments200ResponseAllOfEnvironmentsInner struct for ListEnvironments200ResponseAllOfEnvironmentsInner
 type ListEnvironments200ResponseAllOfEnvironmentsInner struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Code                 *string                                            `json:"code,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	Description          *string                                            `json:"description,omitempty"`
-	Visibility           *string                                            `json:"visibility,omitempty"`
-	Active               *bool                                              `json:"active,omitempty"`
-	SortOrder            *int64                                             `json:"sortOrder,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"account,omitempty"`
+	Code                 *string                                                    `json:"code,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	Description          *string                                                    `json:"description,omitempty"`
+	Visibility           *string                                                    `json:"visibility,omitempty"`
+	Active               *bool                                                      `json:"active,omitempty"`
+	SortOrder            *int64                                                     `json:"sortOrder,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListEnvironments200ResponseAllOfEnvironmentsInner ListEnvironments200ResponseAllOfEnvironmentsInner
@@ -85,36 +85,47 @@ func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
@@ -386,8 +397,8 @@ func (o ListEnvironments200ResponseAllOfEnvironmentsInner) ToMap() (map[string]i
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code

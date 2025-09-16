@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Unique name scoped to your account for the check | [optional] 
+**Name** | **string** | Unique name scoped to your account for the check | 
 **Description** | Pointer to **NullableString** | Optional description field | [optional] 
-**CheckType** | Pointer to [**AddChecksRequestCheckOneOf2CheckType**](AddChecksRequestCheckOneOf2CheckType.md) |  | [optional] 
-**CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
+**CheckInterval** | Pointer to **int32** | Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan) | [optional] [default to 300000]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
 **Active** | Pointer to **bool** | Used to determine if check should be scheduled to execute | [optional] [default to true]
 **Severity** | Pointer to **string** | Severity level threshold for sending notifications. | [optional] [default to "critical"]
-**Config** | Pointer to [**AddChecksRequestCheckOneOf2Config**](AddChecksRequestCheckOneOf2Config.md) |  | [optional] 
+**CheckType** | Pointer to [**CheckSocketAllOfCheckType**](CheckSocketAllOfCheckType.md) |  | [optional] 
+**Config** | Pointer to [**CheckSocketAllOfConfig**](CheckSocketAllOfConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckSocket
 
-`func NewCheckSocket() *CheckSocket`
+`func NewCheckSocket(name string, ) *CheckSocket`
 
 NewCheckSocket instantiates a new CheckSocket object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *CheckSocket) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -92,31 +87,6 @@ HasDescription returns a boolean if a field has been set.
 `func (o *CheckSocket) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetCheckType
-
-`func (o *CheckSocket) GetCheckType() AddChecksRequestCheckOneOf2CheckType`
-
-GetCheckType returns the CheckType field if non-nil, zero value otherwise.
-
-### GetCheckTypeOk
-
-`func (o *CheckSocket) GetCheckTypeOk() (*AddChecksRequestCheckOneOf2CheckType, bool)`
-
-GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckType
-
-`func (o *CheckSocket) SetCheckType(v AddChecksRequestCheckOneOf2CheckType)`
-
-SetCheckType sets CheckType field to given value.
-
-### HasCheckType
-
-`func (o *CheckSocket) HasCheckType() bool`
-
-HasCheckType returns a boolean if a field has been set.
-
 ### GetCheckInterval
 
 `func (o *CheckSocket) GetCheckInterval() int32`
@@ -217,22 +187,47 @@ SetSeverity sets Severity field to given value.
 
 HasSeverity returns a boolean if a field has been set.
 
+### GetCheckType
+
+`func (o *CheckSocket) GetCheckType() CheckSocketAllOfCheckType`
+
+GetCheckType returns the CheckType field if non-nil, zero value otherwise.
+
+### GetCheckTypeOk
+
+`func (o *CheckSocket) GetCheckTypeOk() (*CheckSocketAllOfCheckType, bool)`
+
+GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckType
+
+`func (o *CheckSocket) SetCheckType(v CheckSocketAllOfCheckType)`
+
+SetCheckType sets CheckType field to given value.
+
+### HasCheckType
+
+`func (o *CheckSocket) HasCheckType() bool`
+
+HasCheckType returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *CheckSocket) GetConfig() AddChecksRequestCheckOneOf2Config`
+`func (o *CheckSocket) GetConfig() CheckSocketAllOfConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CheckSocket) GetConfigOk() (*AddChecksRequestCheckOneOf2Config, bool)`
+`func (o *CheckSocket) GetConfigOk() (*CheckSocketAllOfConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CheckSocket) SetConfig(v AddChecksRequestCheckOneOf2Config)`
+`func (o *CheckSocket) SetConfig(v CheckSocketAllOfConfig)`
 
 SetConfig sets Config field to given value.
 

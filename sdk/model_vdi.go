@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &Vdi{}
 
 // Vdi struct for Vdi
 type Vdi struct {
-	Id                   *int64                                          `json:"id,omitempty"`
-	Logo                 *string                                         `json:"logo,omitempty"`
-	Name                 *string                                         `json:"name,omitempty"`
-	Description          NullableString                                  `json:"description,omitempty"`
-	Status               *string                                         `json:"status,omitempty"`
-	AllocationStatus     *string                                         `json:"allocationStatus,omitempty"`
-	Allocation           *ListVdi200ResponseAllOfDesktopsInnerAllocation `json:"allocation,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	Id                   *int64                              `json:"id,omitempty"`
+	Logo                 *string                             `json:"logo,omitempty"`
+	Name                 *string                             `json:"name,omitempty"`
+	Description          NullableString                      `json:"description,omitempty"`
+	Status               *string                             `json:"status,omitempty"`
+	AllocationStatus     *string                             `json:"allocationStatus,omitempty"`
+	Allocation           *GetVdi200ResponseDesktopAllocation `json:"allocation,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _Vdi Vdi
@@ -253,9 +253,9 @@ func (o *Vdi) SetAllocationStatus(v string) {
 }
 
 // GetAllocation returns the Allocation field value if set, zero value otherwise.
-func (o *Vdi) GetAllocation() ListVdi200ResponseAllOfDesktopsInnerAllocation {
+func (o *Vdi) GetAllocation() GetVdi200ResponseDesktopAllocation {
 	if o == nil || IsNil(o.Allocation) {
-		var ret ListVdi200ResponseAllOfDesktopsInnerAllocation
+		var ret GetVdi200ResponseDesktopAllocation
 		return ret
 	}
 	return *o.Allocation
@@ -263,7 +263,7 @@ func (o *Vdi) GetAllocation() ListVdi200ResponseAllOfDesktopsInnerAllocation {
 
 // GetAllocationOk returns a tuple with the Allocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Vdi) GetAllocationOk() (*ListVdi200ResponseAllOfDesktopsInnerAllocation, bool) {
+func (o *Vdi) GetAllocationOk() (*GetVdi200ResponseDesktopAllocation, bool) {
 	if o == nil || IsNil(o.Allocation) {
 		return nil, false
 	}
@@ -279,8 +279,8 @@ func (o *Vdi) IsSetAllocation() bool {
 	return false
 }
 
-// SetAllocation gets a reference to the given ListVdi200ResponseAllOfDesktopsInnerAllocation and assigns it to the Allocation field.
-func (o *Vdi) SetAllocation(v ListVdi200ResponseAllOfDesktopsInnerAllocation) {
+// SetAllocation gets a reference to the given GetVdi200ResponseDesktopAllocation and assigns it to the Allocation field.
+func (o *Vdi) SetAllocation(v GetVdi200ResponseDesktopAllocation) {
 	o.Allocation = &v
 }
 

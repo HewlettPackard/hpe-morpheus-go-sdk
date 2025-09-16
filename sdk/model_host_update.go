@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -36,8 +36,9 @@ type HostUpdate struct {
 	SshPassword NullableString                            `json:"sshPassword,omitempty"`
 	SshKeyPair  *AddClusterRequestClusterServerSshKeyPair `json:"sshKeyPair,omitempty"`
 	// Power schedule ID.
-	PowerScheduleType *int64   `json:"powerScheduleType,omitempty"`
-	Labels            []string `json:"labels,omitempty"`
+	PowerScheduleType *int64                           `json:"powerScheduleType,omitempty"`
+	Labels            []string                         `json:"labels,omitempty"`
+	ServerOs          *UpdateHostRequestServerServerOs `json:"serverOs,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
 	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
 	// Add or update value of Metadata tags, Array of objects having a name and value.
@@ -423,6 +424,38 @@ func (o *HostUpdate) SetLabels(v []string) {
 	o.Labels = v
 }
 
+// GetServerOs returns the ServerOs field value if set, zero value otherwise.
+func (o *HostUpdate) GetServerOs() UpdateHostRequestServerServerOs {
+	if o == nil || IsNil(o.ServerOs) {
+		var ret UpdateHostRequestServerServerOs
+		return ret
+	}
+	return *o.ServerOs
+}
+
+// GetServerOsOk returns a tuple with the ServerOs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HostUpdate) GetServerOsOk() (*UpdateHostRequestServerServerOs, bool) {
+	if o == nil || IsNil(o.ServerOs) {
+		return nil, false
+	}
+	return o.ServerOs, true
+}
+
+// IsSetServerOs returns a boolean if a field has been set.
+func (o *HostUpdate) IsSetServerOs() bool {
+	if o != nil && !IsNil(o.ServerOs) {
+		return true
+	}
+
+	return false
+}
+
+// SetServerOs gets a reference to the given UpdateHostRequestServerServerOs and assigns it to the ServerOs field.
+func (o *HostUpdate) SetServerOs(v UpdateHostRequestServerServerOs) {
+	o.ServerOs = &v
+}
+
 // GetTags returns the Tags field value if set, zero value otherwise.
 func (o *HostUpdate) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
 	if o == nil || IsNil(o.Tags) {
@@ -718,6 +751,9 @@ func (o HostUpdate) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Labels) {
 		toSerialize["labels"] = o.Labels
+	}
+	if !IsNil(o.ServerOs) {
+		toSerialize["serverOs"] = o.ServerOs
 	}
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags

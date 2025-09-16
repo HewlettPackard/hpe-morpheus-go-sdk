@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Parent** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -90,20 +90,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -113,6 +113,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListCloudFolders200ResponseAllOfFoldersInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListCloudFolders200ResponseAllOfFoldersInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetParent
 
 `func (o *ListCloudFolders200ResponseAllOfFoldersInner) GetParent() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`

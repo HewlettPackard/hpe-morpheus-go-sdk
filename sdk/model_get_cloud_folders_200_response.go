@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetCloudFolders200Response{}
 
 // GetCloudFolders200Response struct for GetCloudFolders200Response
 type GetCloudFolders200Response struct {
-	Folder               *ListCloudFolders200ResponseAllOfFoldersInner `json:"folder,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	Folder               *GetCloudFolders200ResponseAllOfFolder `json:"folder,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _GetCloudFolders200Response GetCloudFolders200Response
@@ -44,9 +44,9 @@ func NewGetCloudFolders200ResponseWithDefaults() *GetCloudFolders200Response {
 }
 
 // GetFolder returns the Folder field value if set, zero value otherwise.
-func (o *GetCloudFolders200Response) GetFolder() ListCloudFolders200ResponseAllOfFoldersInner {
+func (o *GetCloudFolders200Response) GetFolder() GetCloudFolders200ResponseAllOfFolder {
 	if o == nil || IsNil(o.Folder) {
-		var ret ListCloudFolders200ResponseAllOfFoldersInner
+		var ret GetCloudFolders200ResponseAllOfFolder
 		return ret
 	}
 	return *o.Folder
@@ -54,7 +54,7 @@ func (o *GetCloudFolders200Response) GetFolder() ListCloudFolders200ResponseAllO
 
 // GetFolderOk returns a tuple with the Folder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetCloudFolders200Response) GetFolderOk() (*ListCloudFolders200ResponseAllOfFoldersInner, bool) {
+func (o *GetCloudFolders200Response) GetFolderOk() (*GetCloudFolders200ResponseAllOfFolder, bool) {
 	if o == nil || IsNil(o.Folder) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetCloudFolders200Response) IsSetFolder() bool {
 	return false
 }
 
-// SetFolder gets a reference to the given ListCloudFolders200ResponseAllOfFoldersInner and assigns it to the Folder field.
-func (o *GetCloudFolders200Response) SetFolder(v ListCloudFolders200ResponseAllOfFoldersInner) {
+// SetFolder gets a reference to the given GetCloudFolders200ResponseAllOfFolder and assigns it to the Folder field.
+func (o *GetCloudFolders200Response) SetFolder(v GetCloudFolders200ResponseAllOfFolder) {
 	o.Folder = &v
 }
 

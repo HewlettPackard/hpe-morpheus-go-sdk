@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Unique name scoped to your account for the check | 
+**Name** | **string** | Name of the check | 
+**CheckType** | **map[string]interface{}** | Check type you want to create | 
 **Description** | Pointer to **string** | Optional description field | [optional] 
-**CheckType** | [**AddChecksRequestCheckOneOf4CheckType**](AddChecksRequestCheckOneOf4CheckType.md) |  | 
-**CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
+**CheckInterval** | Pointer to **int32** | Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan) | [optional] [default to 300000]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
 **Active** | Pointer to **bool** | Used to determine if check should be scheduled to execute | [optional] [default to true]
 **Severity** | Pointer to **string** | Severity level threshold for sending notifications. | [optional] [default to "critical"]
-**Config** | Pointer to [**AddChecksRequestCheckOneOf3Config**](AddChecksRequestCheckOneOf3Config.md) |  | [optional] 
+**Config** | Pointer to [**SNMPCheckAllOfConfig**](SNMPCheckAllOfConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewAddChecksRequestCheck
 
-`func NewAddChecksRequestCheck(name string, checkType AddChecksRequestCheckOneOf4CheckType, ) *AddChecksRequestCheck`
+`func NewAddChecksRequestCheck(name string, checkType map[string]interface{}, ) *AddChecksRequestCheck`
 
 NewAddChecksRequestCheck instantiates a new AddChecksRequestCheck object
 This constructor will assign default values to properties that have it defined,
@@ -52,6 +52,26 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
+### GetCheckType
+
+`func (o *AddChecksRequestCheck) GetCheckType() map[string]interface{}`
+
+GetCheckType returns the CheckType field if non-nil, zero value otherwise.
+
+### GetCheckTypeOk
+
+`func (o *AddChecksRequestCheck) GetCheckTypeOk() (*map[string]interface{}, bool)`
+
+GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckType
+
+`func (o *AddChecksRequestCheck) SetCheckType(v map[string]interface{})`
+
+SetCheckType sets CheckType field to given value.
+
+
 ### GetDescription
 
 `func (o *AddChecksRequestCheck) GetDescription() string`
@@ -76,26 +96,6 @@ SetDescription sets Description field to given value.
 `func (o *AddChecksRequestCheck) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetCheckType
-
-`func (o *AddChecksRequestCheck) GetCheckType() AddChecksRequestCheckOneOf4CheckType`
-
-GetCheckType returns the CheckType field if non-nil, zero value otherwise.
-
-### GetCheckTypeOk
-
-`func (o *AddChecksRequestCheck) GetCheckTypeOk() (*AddChecksRequestCheckOneOf4CheckType, bool)`
-
-GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckType
-
-`func (o *AddChecksRequestCheck) SetCheckType(v AddChecksRequestCheckOneOf4CheckType)`
-
-SetCheckType sets CheckType field to given value.
-
 
 ### GetCheckInterval
 
@@ -199,20 +199,20 @@ HasSeverity returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *AddChecksRequestCheck) GetConfig() AddChecksRequestCheckOneOf3Config`
+`func (o *AddChecksRequestCheck) GetConfig() SNMPCheckAllOfConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *AddChecksRequestCheck) GetConfigOk() (*AddChecksRequestCheckOneOf3Config, bool)`
+`func (o *AddChecksRequestCheck) GetConfigOk() (*SNMPCheckAllOfConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *AddChecksRequestCheck) SetConfig(v AddChecksRequestCheckOneOf3Config)`
+`func (o *AddChecksRequestCheck) SetConfig(v SNMPCheckAllOfConfig)`
 
 SetConfig sets Config field to given value.
 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **EachUser** | Pointer to **NullableBool** |  | [optional] 
 **Config** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfig**](ListPolicies200ResponseAllOfPoliciesInnerConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 
 ## Methods
@@ -406,20 +406,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -429,6 +429,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccounts
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`

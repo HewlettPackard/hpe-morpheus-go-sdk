@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SpecTemplate** | Pointer to [**ListSpecTemplates200ResponseAllOfSpecTemplatesInner**](ListSpecTemplates200ResponseAllOfSpecTemplatesInner.md) |  | [optional] 
+**SpecTemplate** | Pointer to [**GetSpecTemplate200ResponseSpecTemplate**](GetSpecTemplate200ResponseSpecTemplate.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSpecTemplate
 
-`func (o *GetSpecTemplate200Response) GetSpecTemplate() ListSpecTemplates200ResponseAllOfSpecTemplatesInner`
+`func (o *GetSpecTemplate200Response) GetSpecTemplate() GetSpecTemplate200ResponseSpecTemplate`
 
 GetSpecTemplate returns the SpecTemplate field if non-nil, zero value otherwise.
 
 ### GetSpecTemplateOk
 
-`func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*ListSpecTemplates200ResponseAllOfSpecTemplatesInner, bool)`
+`func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*GetSpecTemplate200ResponseSpecTemplate, bool)`
 
 GetSpecTemplateOk returns a tuple with the SpecTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSpecTemplate
 
-`func (o *GetSpecTemplate200Response) SetSpecTemplate(v ListSpecTemplates200ResponseAllOfSpecTemplatesInner)`
+`func (o *GetSpecTemplate200Response) SetSpecTemplate(v GetSpecTemplate200ResponseSpecTemplate)`
 
 SetSpecTemplate sets SpecTemplate field to given value.
 

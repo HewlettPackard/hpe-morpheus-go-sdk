@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,20 +21,20 @@ var _ MappedNullable = &CheckElastic{}
 // CheckElastic Elasticsearch check is capable of connecting to your Elasticsearch, cluster or node, verifying its health. In addition, Morpheus will also pull statistical information such as: document size, capacity, and cpu usage.
 type CheckElastic struct {
 	// Unique name scoped to your account for the check
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Optional description field
-	Description NullableString                        `json:"description,omitempty"`
-	CheckType   *AddChecksRequestCheckOneOf3CheckType `json:"checkType,omitempty"`
-	// Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan)
+	Description NullableString `json:"description,omitempty"`
+	// Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan)
 	CheckInterval *int32 `json:"checkInterval,omitempty"`
 	// Used to determine if check should affect account wide availability calculations
 	InUptime *bool `json:"inUptime,omitempty"`
 	// Used to determine if check should be scheduled to execute
 	Active *bool `json:"active,omitempty"`
 	// Severity level threshold for sending notifications.
-	Severity             *string                            `json:"severity,omitempty"`
-	Config               *AddChecksRequestCheckOneOf3Config `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	Severity             *string                     `json:"severity,omitempty"`
+	CheckType            *ElasticCheckAllOfCheckType `json:"checkType,omitempty"`
+	Config               *ElasticCheckAllOfConfig    `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _CheckElastic CheckElastic
@@ -43,9 +43,10 @@ type _CheckElastic CheckElastic
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckElastic() *CheckElastic {
+func NewCheckElastic(name string) *CheckElastic {
 	this := CheckElastic{}
-	var checkInterval int32 = 300
+	this.Name = name
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -61,7 +62,7 @@ func NewCheckElastic() *CheckElastic {
 // but it doesn't guarantee that properties required by API are set
 func NewCheckElasticWithDefaults() *CheckElastic {
 	this := CheckElastic{}
-	var checkInterval int32 = 300
+	var checkInterval int32 = 300000
 	this.CheckInterval = &checkInterval
 	var inUptime bool = true
 	this.InUptime = &inUptime
@@ -72,36 +73,28 @@ func NewCheckElasticWithDefaults() *CheckElastic {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *CheckElastic) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *CheckElastic) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *CheckElastic) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *CheckElastic) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -145,38 +138,6 @@ func (o *CheckElastic) SetDescriptionNil() {
 // UnsetDescription ensures that no value is present for Description, not even an explicit nil
 func (o *CheckElastic) UnsetDescription() {
 	o.Description.Unset()
-}
-
-// GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *CheckElastic) GetCheckType() AddChecksRequestCheckOneOf3CheckType {
-	if o == nil || IsNil(o.CheckType) {
-		var ret AddChecksRequestCheckOneOf3CheckType
-		return ret
-	}
-	return *o.CheckType
-}
-
-// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CheckElastic) GetCheckTypeOk() (*AddChecksRequestCheckOneOf3CheckType, bool) {
-	if o == nil || IsNil(o.CheckType) {
-		return nil, false
-	}
-	return o.CheckType, true
-}
-
-// IsSetCheckType returns a boolean if a field has been set.
-func (o *CheckElastic) IsSetCheckType() bool {
-	if o != nil && !IsNil(o.CheckType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCheckType gets a reference to the given AddChecksRequestCheckOneOf3CheckType and assigns it to the CheckType field.
-func (o *CheckElastic) SetCheckType(v AddChecksRequestCheckOneOf3CheckType) {
-	o.CheckType = &v
 }
 
 // GetCheckInterval returns the CheckInterval field value if set, zero value otherwise.
@@ -307,10 +268,42 @@ func (o *CheckElastic) SetSeverity(v string) {
 	o.Severity = &v
 }
 
+// GetCheckType returns the CheckType field value if set, zero value otherwise.
+func (o *CheckElastic) GetCheckType() ElasticCheckAllOfCheckType {
+	if o == nil || IsNil(o.CheckType) {
+		var ret ElasticCheckAllOfCheckType
+		return ret
+	}
+	return *o.CheckType
+}
+
+// GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CheckElastic) GetCheckTypeOk() (*ElasticCheckAllOfCheckType, bool) {
+	if o == nil || IsNil(o.CheckType) {
+		return nil, false
+	}
+	return o.CheckType, true
+}
+
+// IsSetCheckType returns a boolean if a field has been set.
+func (o *CheckElastic) IsSetCheckType() bool {
+	if o != nil && !IsNil(o.CheckType) {
+		return true
+	}
+
+	return false
+}
+
+// SetCheckType gets a reference to the given ElasticCheckAllOfCheckType and assigns it to the CheckType field.
+func (o *CheckElastic) SetCheckType(v ElasticCheckAllOfCheckType) {
+	o.CheckType = &v
+}
+
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *CheckElastic) GetConfig() AddChecksRequestCheckOneOf3Config {
+func (o *CheckElastic) GetConfig() ElasticCheckAllOfConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddChecksRequestCheckOneOf3Config
+		var ret ElasticCheckAllOfConfig
 		return ret
 	}
 	return *o.Config
@@ -318,7 +311,7 @@ func (o *CheckElastic) GetConfig() AddChecksRequestCheckOneOf3Config {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckElastic) GetConfigOk() (*AddChecksRequestCheckOneOf3Config, bool) {
+func (o *CheckElastic) GetConfigOk() (*ElasticCheckAllOfConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -334,8 +327,8 @@ func (o *CheckElastic) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddChecksRequestCheckOneOf3Config and assigns it to the Config field.
-func (o *CheckElastic) SetConfig(v AddChecksRequestCheckOneOf3Config) {
+// SetConfig gets a reference to the given ElasticCheckAllOfConfig and assigns it to the Config field.
+func (o *CheckElastic) SetConfig(v ElasticCheckAllOfConfig) {
 	o.Config = &v
 }
 
@@ -349,14 +342,9 @@ func (o CheckElastic) MarshalJSON() ([]byte, error) {
 
 func (o CheckElastic) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
+	toSerialize["name"] = o.Name
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
-	}
-	if !IsNil(o.CheckType) {
-		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.CheckInterval) {
 		toSerialize["checkInterval"] = o.CheckInterval
@@ -369,6 +357,9 @@ func (o CheckElastic) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Severity) {
 		toSerialize["severity"] = o.Severity
+	}
+	if !IsNil(o.CheckType) {
+		toSerialize["checkType"] = o.CheckType
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

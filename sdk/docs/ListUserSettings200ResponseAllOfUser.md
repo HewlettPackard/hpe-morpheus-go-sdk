@@ -17,11 +17,11 @@ Name | Type | Description | Notes
 **Avatar** | Pointer to **string** |  | [optional] 
 **DesktopBackground** | Pointer to **string** |  | [optional] 
 **ReceiveNotifications** | Pointer to **bool** |  | [optional] 
-**DefaultGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**DefaultCloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**DefaultGroup** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**DefaultCloud** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **IsUsing2FA** | Pointer to **bool** |  | [optional] 
-**Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -379,20 +379,20 @@ HasReceiveNotifications returns a boolean if a field has been set.
 
 ### GetDefaultGroup
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetDefaultGroup returns the DefaultGroup field if non-nil, zero value otherwise.
 
 ### GetDefaultGroupOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetDefaultGroupOk returns a tuple with the DefaultGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultGroup
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetDefaultGroup sets DefaultGroup field to given value.
 
@@ -402,22 +402,32 @@ SetDefaultGroup sets DefaultGroup field to given value.
 
 HasDefaultGroup returns a boolean if a field has been set.
 
+### SetDefaultGroupNil
+
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultGroupNil(b bool)`
+
+ SetDefaultGroupNil sets the value for DefaultGroup to be an explicit nil
+
+### UnsetDefaultGroup
+`func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultGroup()`
+
+UnsetDefaultGroup ensures that no value is present for DefaultGroup, not even an explicit nil
 ### GetDefaultCloud
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetDefaultCloud returns the DefaultCloud field if non-nil, zero value otherwise.
 
 ### GetDefaultCloudOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetDefaultCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetDefaultCloudOk returns a tuple with the DefaultCloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultCloud
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetDefaultCloud sets DefaultCloud field to given value.
 
@@ -427,6 +437,16 @@ SetDefaultCloud sets DefaultCloud field to given value.
 
 HasDefaultCloud returns a boolean if a field has been set.
 
+### SetDefaultCloudNil
+
+`func (o *ListUserSettings200ResponseAllOfUser) SetDefaultCloudNil(b bool)`
+
+ SetDefaultCloudNil sets the value for DefaultCloud to be an explicit nil
+
+### UnsetDefaultCloud
+`func (o *ListUserSettings200ResponseAllOfUser) UnsetDefaultCloud()`
+
+UnsetDefaultCloud ensures that no value is present for DefaultCloud, not even an explicit nil
 ### GetDefaultPersona
 
 `func (o *ListUserSettings200ResponseAllOfUser) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -479,20 +499,20 @@ HasIsUsing2FA returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListUserSettings200ResponseAllOfUser) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListUserSettings200ResponseAllOfUser) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListUserSettings200ResponseAllOfUser) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetTenant sets Tenant field to given value.
 
@@ -502,6 +522,16 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
+### SetTenantNil
+
+`func (o *ListUserSettings200ResponseAllOfUser) SetTenantNil(b bool)`
+
+ SetTenantNil sets the value for Tenant to be an explicit nil
+
+### UnsetTenant
+`func (o *ListUserSettings200ResponseAllOfUser) UnsetTenant()`
+
+UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

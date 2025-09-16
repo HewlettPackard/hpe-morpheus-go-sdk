@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetVdi200Response{}
 
 // GetVdi200Response struct for GetVdi200Response
 type GetVdi200Response struct {
-	Desktop              *ListVdi200ResponseAllOfDesktopsInner `json:"desktop,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	Desktop              *GetVdi200ResponseDesktop `json:"desktop,omitempty"`
+	AdditionalProperties map[string]interface{}    `json:",remain"`
 }
 
 type _GetVdi200Response GetVdi200Response
@@ -44,9 +44,9 @@ func NewGetVdi200ResponseWithDefaults() *GetVdi200Response {
 }
 
 // GetDesktop returns the Desktop field value if set, zero value otherwise.
-func (o *GetVdi200Response) GetDesktop() ListVdi200ResponseAllOfDesktopsInner {
+func (o *GetVdi200Response) GetDesktop() GetVdi200ResponseDesktop {
 	if o == nil || IsNil(o.Desktop) {
-		var ret ListVdi200ResponseAllOfDesktopsInner
+		var ret GetVdi200ResponseDesktop
 		return ret
 	}
 	return *o.Desktop
@@ -54,7 +54,7 @@ func (o *GetVdi200Response) GetDesktop() ListVdi200ResponseAllOfDesktopsInner {
 
 // GetDesktopOk returns a tuple with the Desktop field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetVdi200Response) GetDesktopOk() (*ListVdi200ResponseAllOfDesktopsInner, bool) {
+func (o *GetVdi200Response) GetDesktopOk() (*GetVdi200ResponseDesktop, bool) {
 	if o == nil || IsNil(o.Desktop) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetVdi200Response) IsSetDesktop() bool {
 	return false
 }
 
-// SetDesktop gets a reference to the given ListVdi200ResponseAllOfDesktopsInner and assigns it to the Desktop field.
-func (o *GetVdi200Response) SetDesktop(v ListVdi200ResponseAllOfDesktopsInner) {
+// SetDesktop gets a reference to the given GetVdi200ResponseDesktop and assigns it to the Desktop field.
+func (o *GetVdi200Response) SetDesktop(v GetVdi200ResponseDesktop) {
 	o.Desktop = &v
 }
 

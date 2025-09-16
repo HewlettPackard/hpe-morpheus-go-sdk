@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddBootScript200Response{}
 
 // AddBootScript200Response struct for AddBootScript200Response
 type AddBootScript200Response struct {
-	BootScript *ListBootScripts200ResponseAllOfBootScriptsInner `json:"bootScript,omitempty"`
-	ErrorCode  NullableString                                   `json:"errorCode,omitempty"`
-	InProgress *bool                                            `json:"inProgress,omitempty"`
+	BootScript *AddBootScript200ResponseAllOfBootScript `json:"bootScript,omitempty"`
+	ErrorCode  NullableString                           `json:"errorCode,omitempty"`
+	InProgress *bool                                    `json:"inProgress,omitempty"`
 	// Success indicator, true when the request succeeded and false when an error occurred
 	Success *bool `json:"success,omitempty"`
 	// Message containing a description of the result, usually a message about the error that occurred
@@ -56,9 +56,9 @@ func NewAddBootScript200ResponseWithDefaults() *AddBootScript200Response {
 }
 
 // GetBootScript returns the BootScript field value if set, zero value otherwise.
-func (o *AddBootScript200Response) GetBootScript() ListBootScripts200ResponseAllOfBootScriptsInner {
+func (o *AddBootScript200Response) GetBootScript() AddBootScript200ResponseAllOfBootScript {
 	if o == nil || IsNil(o.BootScript) {
-		var ret ListBootScripts200ResponseAllOfBootScriptsInner
+		var ret AddBootScript200ResponseAllOfBootScript
 		return ret
 	}
 	return *o.BootScript
@@ -66,7 +66,7 @@ func (o *AddBootScript200Response) GetBootScript() ListBootScripts200ResponseAll
 
 // GetBootScriptOk returns a tuple with the BootScript field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBootScript200Response) GetBootScriptOk() (*ListBootScripts200ResponseAllOfBootScriptsInner, bool) {
+func (o *AddBootScript200Response) GetBootScriptOk() (*AddBootScript200ResponseAllOfBootScript, bool) {
 	if o == nil || IsNil(o.BootScript) {
 		return nil, false
 	}
@@ -82,8 +82,8 @@ func (o *AddBootScript200Response) IsSetBootScript() bool {
 	return false
 }
 
-// SetBootScript gets a reference to the given ListBootScripts200ResponseAllOfBootScriptsInner and assigns it to the BootScript field.
-func (o *AddBootScript200Response) SetBootScript(v ListBootScripts200ResponseAllOfBootScriptsInner) {
+// SetBootScript gets a reference to the given AddBootScript200ResponseAllOfBootScript and assigns it to the BootScript field.
+func (o *AddBootScript200Response) SetBootScript(v AddBootScript200ResponseAllOfBootScript) {
 	o.BootScript = &v
 }
 

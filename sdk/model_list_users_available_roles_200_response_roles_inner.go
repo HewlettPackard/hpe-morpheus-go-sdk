@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &ListUsersAvailableRoles200ResponseRolesInner{}
 
 // ListUsersAvailableRoles200ResponseRolesInner struct for ListUsersAvailableRoles200ResponseRolesInner
 type ListUsersAvailableRoles200ResponseRolesInner struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Authority            *string                                            `json:"authority,omitempty"`
-	Description          NullableString                                     `json:"description,omitempty"`
-	RoleType             *string                                            `json:"roleType,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Authority            *string                                                    `json:"authority,omitempty"`
+	Description          NullableString                                             `json:"description,omitempty"`
+	RoleType             *string                                                    `json:"roleType,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"owner,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListUsersAvailableRoles200ResponseRolesInner ListUsersAvailableRoles200ResponseRolesInner
@@ -186,36 +186,47 @@ func (o *ListUsersAvailableRoles200ResponseRolesInner) SetRoleType(v string) {
 	o.RoleType = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListUsersAvailableRoles200ResponseRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListUsersAvailableRoles200ResponseRolesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListUsersAvailableRoles200ResponseRolesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListUsersAvailableRoles200ResponseRolesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 func (o ListUsersAvailableRoles200ResponseRolesInner) MarshalJSON() ([]byte, error) {
@@ -240,8 +251,8 @@ func (o ListUsersAvailableRoles200ResponseRolesInner) ToMap() (map[string]interf
 	if !IsNil(o.RoleType) {
 		toSerialize["roleType"] = o.RoleType
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WebMethod** | **string** | HTTP method to use for testing | 
-**WebUrl** | **string** | Web URL you wish to use to run a check on | 
-**IgnoreSSL** | Pointer to **bool** | Ignore SSL Errors | [optional] [default to false]
-**CheckUser** | Pointer to **string** | If you want to use HTTP Basic Authentication, populate this field with the username | [optional] 
-**CheckPassword** | Pointer to **string** | If you want to use HTTP basic Authentication, populate this field with the password | [optional] 
-**TextCheckOn** | Pointer to **string** | Set value to &#x60;on&#x60; if you want to turn on text matching | [optional] 
-**WebTextMatch** | Pointer to **string** | Set the string you want to look for in the page source | [optional] 
-**TunnelOn** | Pointer to **string** | Set to on to turn on tunneling | [optional] 
+**ContainerName** | **string** |  | 
+**ExternalId** | Pointer to **NullableString** |  | [optional] 
+**CheckUser** | Pointer to **string** |  | [optional] 
+**TextCheckOn** | Pointer to **string** |  | [optional] 
+**CheckPassword** | Pointer to **string** |  | [optional] 
+**WebTextMatch** | Pointer to **string** |  | [optional] 
+**CheckPasswordHash** | Pointer to **string** |  | [optional] 
+**TunnelOn** | Pointer to **string** | Set to on to turn on tunneling | [optional] [default to "off"]
 **SshHost** | Pointer to **string** | Hostname or IP address of the proxy host | [optional] 
 **SshPort** | Pointer to **int64** | Port for SSH on the proxy host, defaults to 22 | [optional] 
 **SshUser** | Pointer to **string** | SSH user on the proxy host to login as | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf
 
-`func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf(webMethod string, webUrl string, ) *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf`
+`func NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf(containerName string, ) *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf`
 
 NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOf instantiates a new GetAlerts200ResponseAllOfChecksInnerConfigAnyOf object
 This constructor will assign default values to properties that have it defined,
@@ -36,71 +36,61 @@ NewGetAlerts200ResponseAllOfChecksInnerConfigAnyOfWithDefaults instantiates a ne
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWebMethod
+### GetContainerName
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebMethod() string`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetContainerName() string`
 
-GetWebMethod returns the WebMethod field if non-nil, zero value otherwise.
+GetContainerName returns the ContainerName field if non-nil, zero value otherwise.
 
-### GetWebMethodOk
+### GetContainerNameOk
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebMethodOk() (*string, bool)`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetContainerNameOk() (*string, bool)`
 
-GetWebMethodOk returns a tuple with the WebMethod field if it's non-nil, zero value otherwise
+GetContainerNameOk returns a tuple with the ContainerName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWebMethod
+### SetContainerName
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetWebMethod(v string)`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetContainerName(v string)`
 
-SetWebMethod sets WebMethod field to given value.
+SetContainerName sets ContainerName field to given value.
 
 
-### GetWebUrl
+### GetExternalId
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebUrl() string`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetExternalId() string`
 
-GetWebUrl returns the WebUrl field if non-nil, zero value otherwise.
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
 
-### GetWebUrlOk
+### GetExternalIdOk
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebUrlOk() (*string, bool)`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetExternalIdOk() (*string, bool)`
 
-GetWebUrlOk returns a tuple with the WebUrl field if it's non-nil, zero value otherwise
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWebUrl
+### SetExternalId
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetWebUrl(v string)`
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetExternalId(v string)`
 
-SetWebUrl sets WebUrl field to given value.
+SetExternalId sets ExternalId field to given value.
 
+### HasExternalId
 
-### GetIgnoreSSL
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasExternalId() bool`
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetIgnoreSSL() bool`
+HasExternalId returns a boolean if a field has been set.
 
-GetIgnoreSSL returns the IgnoreSSL field if non-nil, zero value otherwise.
+### SetExternalIdNil
 
-### GetIgnoreSSLOk
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetExternalIdNil(b bool)`
 
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetIgnoreSSLOk() (*bool, bool)`
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
 
-GetIgnoreSSLOk returns a tuple with the IgnoreSSL field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
+### UnsetExternalId
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) UnsetExternalId()`
 
-### SetIgnoreSSL
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetIgnoreSSL(v bool)`
-
-SetIgnoreSSL sets IgnoreSSL field to given value.
-
-### HasIgnoreSSL
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasIgnoreSSL() bool`
-
-HasIgnoreSSL returns a boolean if a field has been set.
-
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetCheckUser
 
 `func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckUser() string`
@@ -125,31 +115,6 @@ SetCheckUser sets CheckUser field to given value.
 `func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasCheckUser() bool`
 
 HasCheckUser returns a boolean if a field has been set.
-
-### GetCheckPassword
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPassword() string`
-
-GetCheckPassword returns the CheckPassword field if non-nil, zero value otherwise.
-
-### GetCheckPasswordOk
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordOk() (*string, bool)`
-
-GetCheckPasswordOk returns a tuple with the CheckPassword field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckPassword
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPassword(v string)`
-
-SetCheckPassword sets CheckPassword field to given value.
-
-### HasCheckPassword
-
-`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasCheckPassword() bool`
-
-HasCheckPassword returns a boolean if a field has been set.
 
 ### GetTextCheckOn
 
@@ -176,6 +141,31 @@ SetTextCheckOn sets TextCheckOn field to given value.
 
 HasTextCheckOn returns a boolean if a field has been set.
 
+### GetCheckPassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPassword() string`
+
+GetCheckPassword returns the CheckPassword field if non-nil, zero value otherwise.
+
+### GetCheckPasswordOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordOk() (*string, bool)`
+
+GetCheckPasswordOk returns a tuple with the CheckPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckPassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPassword(v string)`
+
+SetCheckPassword sets CheckPassword field to given value.
+
+### HasCheckPassword
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasCheckPassword() bool`
+
+HasCheckPassword returns a boolean if a field has been set.
+
 ### GetWebTextMatch
 
 `func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetWebTextMatch() string`
@@ -200,6 +190,31 @@ SetWebTextMatch sets WebTextMatch field to given value.
 `func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasWebTextMatch() bool`
 
 HasWebTextMatch returns a boolean if a field has been set.
+
+### GetCheckPasswordHash
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordHash() string`
+
+GetCheckPasswordHash returns the CheckPasswordHash field if non-nil, zero value otherwise.
+
+### GetCheckPasswordHashOk
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) GetCheckPasswordHashOk() (*string, bool)`
+
+GetCheckPasswordHashOk returns a tuple with the CheckPasswordHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckPasswordHash
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) SetCheckPasswordHash(v string)`
+
+SetCheckPasswordHash sets CheckPasswordHash field to given value.
+
+### HasCheckPasswordHash
+
+`func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) HasCheckPasswordHash() bool`
+
+HasCheckPasswordHash returns a boolean if a field has been set.
 
 ### GetTunnelOn
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetCatalogItemType200Response{}
 
 // GetCatalogItemType200Response struct for GetCatalogItemType200Response
 type GetCatalogItemType200Response struct {
-	CatalogItemType      *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner `json:"catalogItemType,omitempty"`
-	AdditionalProperties map[string]interface{}                                     `json:",remain"`
+	CatalogItemType      *GetCatalogItemType200ResponseCatalogItemType `json:"catalogItemType,omitempty"`
+	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
 type _GetCatalogItemType200Response GetCatalogItemType200Response
@@ -44,9 +44,9 @@ func NewGetCatalogItemType200ResponseWithDefaults() *GetCatalogItemType200Respon
 }
 
 // GetCatalogItemType returns the CatalogItemType field value if set, zero value otherwise.
-func (o *GetCatalogItemType200Response) GetCatalogItemType() ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner {
+func (o *GetCatalogItemType200Response) GetCatalogItemType() GetCatalogItemType200ResponseCatalogItemType {
 	if o == nil || IsNil(o.CatalogItemType) {
-		var ret ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner
+		var ret GetCatalogItemType200ResponseCatalogItemType
 		return ret
 	}
 	return *o.CatalogItemType
@@ -54,7 +54,7 @@ func (o *GetCatalogItemType200Response) GetCatalogItemType() ListCatalogItemType
 
 // GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetCatalogItemType200Response) GetCatalogItemTypeOk() (*ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner, bool) {
+func (o *GetCatalogItemType200Response) GetCatalogItemTypeOk() (*GetCatalogItemType200ResponseCatalogItemType, bool) {
 	if o == nil || IsNil(o.CatalogItemType) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetCatalogItemType200Response) IsSetCatalogItemType() bool {
 	return false
 }
 
-// SetCatalogItemType gets a reference to the given ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner and assigns it to the CatalogItemType field.
-func (o *GetCatalogItemType200Response) SetCatalogItemType(v ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) {
+// SetCatalogItemType gets a reference to the given GetCatalogItemType200ResponseCatalogItemType and assigns it to the CatalogItemType field.
+func (o *GetCatalogItemType200Response) SetCatalogItemType(v GetCatalogItemType200ResponseCatalogItemType) {
 	o.CatalogItemType = &v
 }
 

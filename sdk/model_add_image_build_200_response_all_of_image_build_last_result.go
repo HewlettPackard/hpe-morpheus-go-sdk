@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildLastResult{}
 // AddImageBuild200ResponseAllOfImageBuildLastResult struct for AddImageBuild200ResponseAllOfImageBuildLastResult
 type AddImageBuild200ResponseAllOfImageBuildLastResult struct {
 	Id                   *int64                                                          `json:"id,omitempty"`
-	ImageBuild           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"imageBuild,omitempty"`
+	ImageBuild           NullableListApprovals200ResponseAllOfApprovalsInnerAccount      `json:"imageBuild,omitempty"`
 	BuildNumber          *int64                                                          `json:"buildNumber,omitempty"`
 	StartDate            *time.Time                                                      `json:"startDate,omitempty"`
 	EndDate              NullableTime                                                    `json:"endDate,omitempty"`
@@ -88,36 +88,47 @@ func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuild() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.ImageBuild) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetImageBuild returns the ImageBuild field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuild() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.ImageBuild.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.ImageBuild
+	return *o.ImageBuild.Get()
 }
 
 // GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuildOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.ImageBuild) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuildOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ImageBuild, true
+	return o.ImageBuild.Get(), o.ImageBuild.IsSet()
 }
 
 // IsSetImageBuild returns a boolean if a field has been set.
 func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) IsSetImageBuild() bool {
-	if o != nil && !IsNil(o.ImageBuild) {
+	if o != nil && o.ImageBuild.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetImageBuild gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ImageBuild field.
-func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuild(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.ImageBuild = &v
+// SetImageBuild gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the ImageBuild field.
+func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuild(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.ImageBuild.Set(&v)
+}
+
+// SetImageBuildNil sets the value for ImageBuild to be an explicit nil
+func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuildNil() {
+	o.ImageBuild.Set(nil)
+}
+
+// UnsetImageBuild ensures that no value is present for ImageBuild, not even an explicit nil
+func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetImageBuild() {
+	o.ImageBuild.Unset()
 }
 
 // GetBuildNumber returns the BuildNumber field value if set, zero value otherwise.
@@ -541,8 +552,8 @@ func (o AddImageBuild200ResponseAllOfImageBuildLastResult) ToMap() (map[string]i
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.ImageBuild) {
-		toSerialize["imageBuild"] = o.ImageBuild
+	if o.ImageBuild.IsSet() {
+		toSerialize["imageBuild"] = o.ImageBuild.Get()
 	}
 	if !IsNil(o.BuildNumber) {
 		toSerialize["buildNumber"] = o.BuildNumber

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ZoneType** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ZoneType** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetZoneType
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
 
 ### GetZoneTypeOk
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZoneType
 
-`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZoneType sets ZoneType field to given value.
 
@@ -102,6 +102,16 @@ SetZoneType sets ZoneType field to given value.
 
 HasZoneType returns a boolean if a field has been set.
 
+### SetZoneTypeNil
+
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneTypeNil(b bool)`
+
+ SetZoneTypeNil sets the value for ZoneType to be an explicit nil
+
+### UnsetZoneType
+`func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnsetZoneType()`
+
+UnsetZoneType ensures that no value is present for ZoneType, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

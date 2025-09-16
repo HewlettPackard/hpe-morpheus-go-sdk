@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Parent** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -106,20 +106,20 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZone
 
-`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -129,6 +129,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetParent
 
 `func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) GetParent() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`

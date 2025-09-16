@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &Role{}
 
 // Role struct for Role
 type Role struct {
-	Role                        *ListRoles200ResponseAllOfRolesInner                   `json:"role,omitempty"`
+	Role                        *AddRoles200ResponseAllOfRole                          `json:"role,omitempty"`
 	FeaturePermissions          []AddRoles200ResponseAllOfFeaturePermissionsInner      `json:"featurePermissions,omitempty"`
 	GlobalSiteAccess            *string                                                `json:"globalSiteAccess,omitempty"`
 	Sites                       []AddRoles200ResponseAllOfSitesInner                   `json:"sites,omitempty"`
@@ -65,9 +65,9 @@ func NewRoleWithDefaults() *Role {
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *Role) GetRole() ListRoles200ResponseAllOfRolesInner {
+func (o *Role) GetRole() AddRoles200ResponseAllOfRole {
 	if o == nil || IsNil(o.Role) {
-		var ret ListRoles200ResponseAllOfRolesInner
+		var ret AddRoles200ResponseAllOfRole
 		return ret
 	}
 	return *o.Role
@@ -75,7 +75,7 @@ func (o *Role) GetRole() ListRoles200ResponseAllOfRolesInner {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Role) GetRoleOk() (*ListRoles200ResponseAllOfRolesInner, bool) {
+func (o *Role) GetRoleOk() (*AddRoles200ResponseAllOfRole, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -91,8 +91,8 @@ func (o *Role) IsSetRole() bool {
 	return false
 }
 
-// SetRole gets a reference to the given ListRoles200ResponseAllOfRolesInner and assigns it to the Role field.
-func (o *Role) SetRole(v ListRoles200ResponseAllOfRolesInner) {
+// SetRole gets a reference to the given AddRoles200ResponseAllOfRole and assigns it to the Role field.
+func (o *Role) SetRole(v AddRoles200ResponseAllOfRole) {
 	o.Role = &v
 }
 

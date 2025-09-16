@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalName** | Pointer to **NullableString** |  | [optional] 
 **RequestType** | Pointer to **string** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Approver** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Approver** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **AccountIntegration** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **ErrorMessage** | Pointer to **NullableString** |  | [optional] 
@@ -220,20 +220,20 @@ HasRequestType returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -243,22 +243,32 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetApprover
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApprover() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApprover() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetApprover returns the Approver field if non-nil, zero value otherwise.
 
 ### GetApproverOk
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApproverOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) GetApproverOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetApproverOk returns a tuple with the Approver field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApprover
 
-`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApprover(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApprover(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetApprover sets Approver field to given value.
 
@@ -268,6 +278,16 @@ SetApprover sets Approver field to given value.
 
 HasApprover returns a boolean if a field has been set.
 
+### SetApproverNil
+
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) SetApproverNil(b bool)`
+
+ SetApproverNil sets the value for Approver to be an explicit nil
+
+### UnsetApprover
+`func (o *ListApprovals200ResponseAllOfApprovalsInner) UnsetApprover()`
+
+UnsetApprover ensures that no value is present for Approver, not even an explicit nil
 ### GetAccountIntegration
 
 `func (o *ListApprovals200ResponseAllOfApprovalsInner) GetAccountIntegration() string`

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetIdentitySources200Response{}
 
 // GetIdentitySources200Response struct for GetIdentitySources200Response
 type GetIdentitySources200Response struct {
-	UserSource           *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	UserSource           *GetIdentitySources200ResponseUserSource `json:"userSource,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetIdentitySources200Response GetIdentitySources200Response
@@ -44,9 +44,9 @@ func NewGetIdentitySources200ResponseWithDefaults() *GetIdentitySources200Respon
 }
 
 // GetUserSource returns the UserSource field value if set, zero value otherwise.
-func (o *GetIdentitySources200Response) GetUserSource() ListIdentitySources200ResponseAllOfUserSourcesInner {
+func (o *GetIdentitySources200Response) GetUserSource() GetIdentitySources200ResponseUserSource {
 	if o == nil || IsNil(o.UserSource) {
-		var ret ListIdentitySources200ResponseAllOfUserSourcesInner
+		var ret GetIdentitySources200ResponseUserSource
 		return ret
 	}
 	return *o.UserSource
@@ -54,7 +54,7 @@ func (o *GetIdentitySources200Response) GetUserSource() ListIdentitySources200Re
 
 // GetUserSourceOk returns a tuple with the UserSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetIdentitySources200Response) GetUserSourceOk() (*ListIdentitySources200ResponseAllOfUserSourcesInner, bool) {
+func (o *GetIdentitySources200Response) GetUserSourceOk() (*GetIdentitySources200ResponseUserSource, bool) {
 	if o == nil || IsNil(o.UserSource) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetIdentitySources200Response) IsSetUserSource() bool {
 	return false
 }
 
-// SetUserSource gets a reference to the given ListIdentitySources200ResponseAllOfUserSourcesInner and assigns it to the UserSource field.
-func (o *GetIdentitySources200Response) SetUserSource(v ListIdentitySources200ResponseAllOfUserSourcesInner) {
+// SetUserSource gets a reference to the given GetIdentitySources200ResponseUserSource and assigns it to the UserSource field.
+func (o *GetIdentitySources200Response) SetUserSource(v GetIdentitySources200ResponseUserSource) {
 	o.UserSource = &v
 }
 

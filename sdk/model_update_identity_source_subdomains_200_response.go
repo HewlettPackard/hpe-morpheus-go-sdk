@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateIdentitySourceSubdomains200Response{}
 
 // UpdateIdentitySourceSubdomains200Response struct for UpdateIdentitySourceSubdomains200Response
 type UpdateIdentitySourceSubdomains200Response struct {
-	UserSource           *ListIdentitySources200ResponseAllOfUserSourcesInner `json:"userSource,omitempty"`
-	Success              *bool                                                `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	UserSource           *GetIdentitySources200ResponseUserSource `json:"userSource,omitempty"`
+	Success              *bool                                    `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _UpdateIdentitySourceSubdomains200Response UpdateIdentitySourceSubdomains200Response
@@ -45,9 +45,9 @@ func NewUpdateIdentitySourceSubdomains200ResponseWithDefaults() *UpdateIdentityS
 }
 
 // GetUserSource returns the UserSource field value if set, zero value otherwise.
-func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() ListIdentitySources200ResponseAllOfUserSourcesInner {
+func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() GetIdentitySources200ResponseUserSource {
 	if o == nil || IsNil(o.UserSource) {
-		var ret ListIdentitySources200ResponseAllOfUserSourcesInner
+		var ret GetIdentitySources200ResponseUserSource
 		return ret
 	}
 	return *o.UserSource
@@ -55,7 +55,7 @@ func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() ListIdentity
 
 // GetUserSourceOk returns a tuple with the UserSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*ListIdentitySources200ResponseAllOfUserSourcesInner, bool) {
+func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*GetIdentitySources200ResponseUserSource, bool) {
 	if o == nil || IsNil(o.UserSource) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *UpdateIdentitySourceSubdomains200Response) IsSetUserSource() bool {
 	return false
 }
 
-// SetUserSource gets a reference to the given ListIdentitySources200ResponseAllOfUserSourcesInner and assigns it to the UserSource field.
-func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v ListIdentitySources200ResponseAllOfUserSourcesInner) {
+// SetUserSource gets a reference to the given GetIdentitySources200ResponseUserSource and assigns it to the UserSource field.
+func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v GetIdentitySources200ResponseUserSource) {
 	o.UserSource = &v
 }
 

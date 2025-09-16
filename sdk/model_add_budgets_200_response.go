@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddBudgets200Response{}
 
 // AddBudgets200Response struct for AddBudgets200Response
 type AddBudgets200Response struct {
-	Budget               *ListBudgets200ResponseAllOfBudgetsInner `json:"budget,omitempty"`
-	Success              *bool                                    `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                   `json:",remain"`
+	Budget               *AddBudgets200ResponseAllOfBudget `json:"budget,omitempty"`
+	Success              *bool                             `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _AddBudgets200Response AddBudgets200Response
@@ -45,9 +45,9 @@ func NewAddBudgets200ResponseWithDefaults() *AddBudgets200Response {
 }
 
 // GetBudget returns the Budget field value if set, zero value otherwise.
-func (o *AddBudgets200Response) GetBudget() ListBudgets200ResponseAllOfBudgetsInner {
+func (o *AddBudgets200Response) GetBudget() AddBudgets200ResponseAllOfBudget {
 	if o == nil || IsNil(o.Budget) {
-		var ret ListBudgets200ResponseAllOfBudgetsInner
+		var ret AddBudgets200ResponseAllOfBudget
 		return ret
 	}
 	return *o.Budget
@@ -55,7 +55,7 @@ func (o *AddBudgets200Response) GetBudget() ListBudgets200ResponseAllOfBudgetsIn
 
 // GetBudgetOk returns a tuple with the Budget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBudgets200Response) GetBudgetOk() (*ListBudgets200ResponseAllOfBudgetsInner, bool) {
+func (o *AddBudgets200Response) GetBudgetOk() (*AddBudgets200ResponseAllOfBudget, bool) {
 	if o == nil || IsNil(o.Budget) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddBudgets200Response) IsSetBudget() bool {
 	return false
 }
 
-// SetBudget gets a reference to the given ListBudgets200ResponseAllOfBudgetsInner and assigns it to the Budget field.
-func (o *AddBudgets200Response) SetBudget(v ListBudgets200ResponseAllOfBudgetsInner) {
+// SetBudget gets a reference to the given AddBudgets200ResponseAllOfBudget and assigns it to the Budget field.
+func (o *AddBudgets200Response) SetBudget(v AddBudgets200ResponseAllOfBudget) {
 	o.Budget = &v
 }
 

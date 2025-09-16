@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PreseedScript** | Pointer to [**ListPreseedScripts200ResponseAllOfPreseedScriptsInner**](ListPreseedScripts200ResponseAllOfPreseedScriptsInner.md) |  | [optional] 
+**PreseedScript** | Pointer to [**AddPreseedScript200ResponseAllOfPreseedScript**](AddPreseedScript200ResponseAllOfPreseedScript.md) |  | [optional] 
 **ErrorCode** | Pointer to **NullableString** |  | [optional] 
 **Success** | Pointer to **bool** | Success indicator, true when the request succeeded and false when an error occurred | [optional] [default to true]
 **Msg** | Pointer to **NullableString** | Message containing a description of the result, usually a message about the error that occurred | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPreseedScript
 
-`func (o *AddPreseedScript200Response) GetPreseedScript() ListPreseedScripts200ResponseAllOfPreseedScriptsInner`
+`func (o *AddPreseedScript200Response) GetPreseedScript() AddPreseedScript200ResponseAllOfPreseedScript`
 
 GetPreseedScript returns the PreseedScript field if non-nil, zero value otherwise.
 
 ### GetPreseedScriptOk
 
-`func (o *AddPreseedScript200Response) GetPreseedScriptOk() (*ListPreseedScripts200ResponseAllOfPreseedScriptsInner, bool)`
+`func (o *AddPreseedScript200Response) GetPreseedScriptOk() (*AddPreseedScript200ResponseAllOfPreseedScript, bool)`
 
 GetPreseedScriptOk returns a tuple with the PreseedScript field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreseedScript
 
-`func (o *AddPreseedScript200Response) SetPreseedScript(v ListPreseedScripts200ResponseAllOfPreseedScriptsInner)`
+`func (o *AddPreseedScript200Response) SetPreseedScript(v AddPreseedScript200ResponseAllOfPreseedScript)`
 
 SetPreseedScript sets PreseedScript field to given value.
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -33,7 +33,7 @@ type Policy struct {
 	EachUser             NullableBool                                                `json:"eachUser,omitempty"`
 	Config               *AddPolicies200ResponseAllOfPolicyConfig                    `json:"config,omitempty"`
 	Enabled              *bool                                                       `json:"enabled,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
 	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
@@ -517,36 +517,47 @@ func (o *Policy) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Policy) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Policy) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Policy) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Policy) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *Policy) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *Policy) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *Policy) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *Policy) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *Policy) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -631,8 +642,8 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts

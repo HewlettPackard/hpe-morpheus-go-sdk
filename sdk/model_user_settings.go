@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &UserSettings{}
 
 // UserSettings struct for UserSettings
 type UserSettings struct {
-	User                 *ListUserSettings200ResponseAllOfUser               `json:"user,omitempty"`
+	User                 *UserSettingsUser                                   `json:"user,omitempty"`
 	AccessTokens         []ListUserSettings200ResponseAllOfAccessTokensInner `json:"accessTokens,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
@@ -45,9 +45,9 @@ func NewUserSettingsWithDefaults() *UserSettings {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UserSettings) GetUser() ListUserSettings200ResponseAllOfUser {
+func (o *UserSettings) GetUser() UserSettingsUser {
 	if o == nil || IsNil(o.User) {
-		var ret ListUserSettings200ResponseAllOfUser
+		var ret UserSettingsUser
 		return ret
 	}
 	return *o.User
@@ -55,7 +55,7 @@ func (o *UserSettings) GetUser() ListUserSettings200ResponseAllOfUser {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserSettings) GetUserOk() (*ListUserSettings200ResponseAllOfUser, bool) {
+func (o *UserSettings) GetUserOk() (*UserSettingsUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *UserSettings) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given ListUserSettings200ResponseAllOfUser and assigns it to the User field.
-func (o *UserSettings) SetUser(v ListUserSettings200ResponseAllOfUser) {
+// SetUser gets a reference to the given UserSettingsUser and assigns it to the User field.
+func (o *UserSettings) SetUser(v UserSettingsUser) {
 	o.User = &v
 }
 

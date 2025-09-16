@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,18 +21,18 @@ var _ MappedNullable = &ListUserGroups200ResponseAllOfUserGroupsInner{}
 
 // ListUserGroups200ResponseAllOfUserGroupsInner struct for ListUserGroups200ResponseAllOfUserGroupsInner
 type ListUserGroups200ResponseAllOfUserGroupsInner struct {
-	Id                   *int64                                                `json:"id,omitempty"`
-	AccountId            *int64                                                `json:"accountId,omitempty"`
-	Name                 *string                                               `json:"name,omitempty"`
-	Description          NullableString                                        `json:"description,omitempty"`
-	Enabled              *bool                                                 `json:"enabled,omitempty"`
-	SudoUser             *bool                                                 `json:"sudoUser,omitempty"`
-	ServerGroup          NullableString                                        `json:"serverGroup,omitempty"`
-	Users                []ListCredentials200ResponseAllOfCredentialsInnerUser `json:"users,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance    `json:"account,omitempty"`
-	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	AccountId            *int64                                                     `json:"accountId,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	Description          NullableString                                             `json:"description,omitempty"`
+	Enabled              *bool                                                      `json:"enabled,omitempty"`
+	SudoUser             *bool                                                      `json:"sudoUser,omitempty"`
+	ServerGroup          NullableString                                             `json:"serverGroup,omitempty"`
+	Users                []ListCredentials200ResponseAllOfCredentialsInnerUser      `json:"users,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"account,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListUserGroups200ResponseAllOfUserGroupsInner ListUserGroups200ResponseAllOfUserGroupsInner
@@ -332,36 +332,47 @@ func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetUsers(v []ListCredent
 	o.Users = v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListUserGroups200ResponseAllOfUserGroupsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListUserGroups200ResponseAllOfUserGroupsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -462,8 +473,8 @@ func (o ListUserGroups200ResponseAllOfUserGroupsInner) ToMap() (map[string]inter
 	if !IsNil(o.Users) {
 		toSerialize["users"] = o.Users
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

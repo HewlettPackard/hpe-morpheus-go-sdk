@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNet
 
 // ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork struct for ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
 type ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork struct {
-	IdName               *string                                            `json:"idName,omitempty"`
-	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
-	Id                   *string                                            `json:"id,omitempty"`
-	HasPool              *bool                                              `json:"hasPool,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	IdName               *string                                                    `json:"idName,omitempty"`
+	Pool                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"pool,omitempty"`
+	Id                   *string                                                    `json:"id,omitempty"`
+	HasPool              *bool                                                      `json:"hasPool,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
@@ -78,36 +78,47 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesI
 	o.IdName = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Pool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Pool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Pool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Pool = &v
+// SetPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Pool field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -187,8 +198,8 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesIn
 	if !IsNil(o.IdName) {
 		toSerialize["idName"] = o.IdName
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

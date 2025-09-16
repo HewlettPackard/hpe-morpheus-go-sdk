@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 **ServerOs** | Pointer to **NullableString** |  | [optional] 
 **Volumes** | Pointer to [**[]GetClusterMasters200ResponseMastersInnerVolumesInner**](GetClusterMasters200ResponseMastersInnerVolumesInner.md) |  | [optional] 
 **Controllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Interfaces** | Pointer to [**[]GetClusterMasters200ResponseMastersInnerInterfacesInner**](GetClusterMasters200ResponseMastersInnerInterfacesInner.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner**](ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -1682,20 +1682,20 @@ HasControllers returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *ClusterMasters) GetInterfaces() []GetClusterMasters200ResponseMastersInnerInterfacesInner`
+`func (o *ClusterMasters) GetInterfaces() []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *ClusterMasters) GetInterfacesOk() (*[]GetClusterMasters200ResponseMastersInnerInterfacesInner, bool)`
+`func (o *ClusterMasters) GetInterfacesOk() (*[]ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *ClusterMasters) SetInterfaces(v []GetClusterMasters200ResponseMastersInnerInterfacesInner)`
+`func (o *ClusterMasters) SetInterfaces(v []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner)`
 
 SetInterfaces sets Interfaces field to given value.
 

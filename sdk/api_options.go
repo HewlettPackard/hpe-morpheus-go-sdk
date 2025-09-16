@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -288,13 +288,13 @@ type ApiListOptionAnsibleTowerInventoryOptionsRequest struct {
 	ansibleTowerIntegrationId *int64
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListOptionAnsibleTowerInventoryOptionsRequest) ZoneId(zoneId int64) ApiListOptionAnsibleTowerInventoryOptionsRequest {
 	r.zoneId = &zoneId
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListOptionAnsibleTowerInventoryOptionsRequest) SiteId(siteId int64) ApiListOptionAnsibleTowerInventoryOptionsRequest {
 	r.siteId = &siteId
 	return r
@@ -458,13 +458,13 @@ type ApiListOptionAnsibleTowerJobTemplateOptionsRequest struct {
 	ansibleTowerIntegrationId *int64
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListOptionAnsibleTowerJobTemplateOptionsRequest) ZoneId(zoneId int64) ApiListOptionAnsibleTowerJobTemplateOptionsRequest {
 	r.zoneId = &zoneId
 	return r
 }
 
-// The Site ID for Filtering
+// The Group ID (Site ID) for Filtering
 func (r ApiListOptionAnsibleTowerJobTemplateOptionsRequest) SiteId(siteId int64) ApiListOptionAnsibleTowerJobTemplateOptionsRequest {
 	r.siteId = &siteId
 	return r
@@ -755,7 +755,7 @@ type ApiListOptionNetworkOptionsRequest struct {
 	provisionTypeId *int64
 }
 
-// The Zone ID for Filtering
+// The Cloud ID (Zone ID) for Filtering
 func (r ApiListOptionNetworkOptionsRequest) ZoneId(zoneId int64) ApiListOptionNetworkOptionsRequest {
 	r.zoneId = &zoneId
 	return r

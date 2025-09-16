@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddEnvironments200Response{}
 
 // AddEnvironments200Response struct for AddEnvironments200Response
 type AddEnvironments200Response struct {
-	Environment          *ListEnvironments200ResponseAllOfEnvironmentsInner `json:"environment,omitempty"`
-	Success              *bool                                              `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Environment          *AddEnvironments200ResponseAllOfEnvironment `json:"environment,omitempty"`
+	Success              *bool                                       `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddEnvironments200Response AddEnvironments200Response
@@ -45,9 +45,9 @@ func NewAddEnvironments200ResponseWithDefaults() *AddEnvironments200Response {
 }
 
 // GetEnvironment returns the Environment field value if set, zero value otherwise.
-func (o *AddEnvironments200Response) GetEnvironment() ListEnvironments200ResponseAllOfEnvironmentsInner {
+func (o *AddEnvironments200Response) GetEnvironment() AddEnvironments200ResponseAllOfEnvironment {
 	if o == nil || IsNil(o.Environment) {
-		var ret ListEnvironments200ResponseAllOfEnvironmentsInner
+		var ret AddEnvironments200ResponseAllOfEnvironment
 		return ret
 	}
 	return *o.Environment
@@ -55,7 +55,7 @@ func (o *AddEnvironments200Response) GetEnvironment() ListEnvironments200Respons
 
 // GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddEnvironments200Response) GetEnvironmentOk() (*ListEnvironments200ResponseAllOfEnvironmentsInner, bool) {
+func (o *AddEnvironments200Response) GetEnvironmentOk() (*AddEnvironments200ResponseAllOfEnvironment, bool) {
 	if o == nil || IsNil(o.Environment) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddEnvironments200Response) IsSetEnvironment() bool {
 	return false
 }
 
-// SetEnvironment gets a reference to the given ListEnvironments200ResponseAllOfEnvironmentsInner and assigns it to the Environment field.
-func (o *AddEnvironments200Response) SetEnvironment(v ListEnvironments200ResponseAllOfEnvironmentsInner) {
+// SetEnvironment gets a reference to the given AddEnvironments200ResponseAllOfEnvironment and assigns it to the Environment field.
+func (o *AddEnvironments200Response) SetEnvironment(v AddEnvironments200ResponseAllOfEnvironment) {
 	o.Environment = &v
 }
 

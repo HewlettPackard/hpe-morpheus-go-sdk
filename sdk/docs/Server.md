@@ -67,9 +67,9 @@ Name | Type | Description | Notes
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **SourceImage** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **ServerOs** | Pointer to [**ListHosts200ResponseAllOfServersInnerServerOs**](ListHosts200ResponseAllOfServersInnerServerOs.md) |  | [optional] 
-**Volumes** | Pointer to [**[]ListClusterVolumes200ResponseAllOfVolumesInner**](ListClusterVolumes200ResponseAllOfVolumesInner.md) |  | [optional] 
+**Volumes** | Pointer to [**[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner**](ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner.md) |  | [optional] 
 **Controllers** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner.md) |  | [optional] 
-**Interfaces** | Pointer to [**[]ListHosts200ResponseAllOfServersInnerInterfacesInner**](ListHosts200ResponseAllOfServersInnerInterfacesInner.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]AddBaremetalHost200ResponseServerInterfacesInner**](AddBaremetalHost200ResponseServerInterfacesInner.md) |  | [optional] 
 **Labels** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -1930,20 +1930,20 @@ HasServerOs returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *Server) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner`
+`func (o *Server) GetVolumes() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *Server) GetVolumesOk() (*[]ListClusterVolumes200ResponseAllOfVolumesInner, bool)`
+`func (o *Server) GetVolumesOk() (*[]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *Server) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner)`
+`func (o *Server) SetVolumes(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -1980,20 +1980,20 @@ HasControllers returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *Server) GetInterfaces() []ListHosts200ResponseAllOfServersInnerInterfacesInner`
+`func (o *Server) GetInterfaces() []AddBaremetalHost200ResponseServerInterfacesInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *Server) GetInterfacesOk() (*[]ListHosts200ResponseAllOfServersInnerInterfacesInner, bool)`
+`func (o *Server) GetInterfacesOk() (*[]AddBaremetalHost200ResponseServerInterfacesInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *Server) SetInterfaces(v []ListHosts200ResponseAllOfServersInnerInterfacesInner)`
+`func (o *Server) SetInterfaces(v []AddBaremetalHost200ResponseServerInterfacesInner)`
 
 SetInterfaces sets Interfaces field to given value.
 

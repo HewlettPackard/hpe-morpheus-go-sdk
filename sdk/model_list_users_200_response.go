@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &ListUsers200Response{}
 
 // ListUsers200Response struct for ListUsers200Response
 type ListUsers200Response struct {
-	Users []AddUserTenant200ResponseAllOfUser `json:"users,omitempty"`
-	Meta  *ListActivity200ResponseAllOfMeta   `json:"meta,omitempty"`
+	Users []ListUsers200ResponseAllOfUsersInner `json:"users,omitempty"`
+	Meta  *ListActivity200ResponseAllOfMeta     `json:"meta,omitempty"`
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
 	Global               *bool                  `json:"global,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -51,9 +51,9 @@ func NewListUsers200ResponseWithDefaults() *ListUsers200Response {
 }
 
 // GetUsers returns the Users field value if set, zero value otherwise.
-func (o *ListUsers200Response) GetUsers() []AddUserTenant200ResponseAllOfUser {
+func (o *ListUsers200Response) GetUsers() []ListUsers200ResponseAllOfUsersInner {
 	if o == nil || IsNil(o.Users) {
-		var ret []AddUserTenant200ResponseAllOfUser
+		var ret []ListUsers200ResponseAllOfUsersInner
 		return ret
 	}
 	return o.Users
@@ -61,7 +61,7 @@ func (o *ListUsers200Response) GetUsers() []AddUserTenant200ResponseAllOfUser {
 
 // GetUsersOk returns a tuple with the Users field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUsers200Response) GetUsersOk() ([]AddUserTenant200ResponseAllOfUser, bool) {
+func (o *ListUsers200Response) GetUsersOk() ([]ListUsers200ResponseAllOfUsersInner, bool) {
 	if o == nil || IsNil(o.Users) {
 		return nil, false
 	}
@@ -77,8 +77,8 @@ func (o *ListUsers200Response) IsSetUsers() bool {
 	return false
 }
 
-// SetUsers gets a reference to the given []AddUserTenant200ResponseAllOfUser and assigns it to the Users field.
-func (o *ListUsers200Response) SetUsers(v []AddUserTenant200ResponseAllOfUser) {
+// SetUsers gets a reference to the given []ListUsers200ResponseAllOfUsersInner and assigns it to the Users field.
+func (o *ListUsers200Response) SetUsers(v []ListUsers200ResponseAllOfUsersInner) {
 	o.Users = v
 }
 

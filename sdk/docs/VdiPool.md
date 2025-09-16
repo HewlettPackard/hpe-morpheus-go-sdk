@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **Logo** | Pointer to **string** |  | [optional] 
 **Apps** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Owner** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerOwner**](ListVDIPools200ResponseAllOfVdiPoolsInnerOwner.md) |  | [optional] 
-**Config** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfig**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfig.md) |  | [optional] 
+**Config** | Pointer to [**AddVDIPools200ResponseAnyOfVdiPoolConfig**](AddVDIPools200ResponseAnyOfVdiPoolConfig.md) |  | [optional] 
 **Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **UsedCount** | Pointer to **int64** |  | [optional] 
@@ -832,20 +832,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *VdiPool) GetConfig() ListVDIPools200ResponseAllOfVdiPoolsInnerConfig`
+`func (o *VdiPool) GetConfig() AddVDIPools200ResponseAnyOfVdiPoolConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *VdiPool) GetConfigOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfig, bool)`
+`func (o *VdiPool) GetConfigOk() (*AddVDIPools200ResponseAnyOfVdiPoolConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *VdiPool) SetConfig(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfig)`
+`func (o *VdiPool) SetConfig(v AddVDIPools200ResponseAnyOfVdiPoolConfig)`
 
 SetConfig sets Config field to given value.
 

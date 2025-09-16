@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Roles** | Pointer to [**[]ListUsersAvailableRoles200ResponseRolesInner**](ListUsersAvailableRoles200ResponseRolesInner.md) |  | [optional] 
+**Roles** | Pointer to [**[]UsersAvailableRolesRolesInner**](UsersAvailableRolesRolesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRoles
 
-`func (o *UsersAvailableRoles) GetRoles() []ListUsersAvailableRoles200ResponseRolesInner`
+`func (o *UsersAvailableRoles) GetRoles() []UsersAvailableRolesRolesInner`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *UsersAvailableRoles) GetRolesOk() (*[]ListUsersAvailableRoles200ResponseRolesInner, bool)`
+`func (o *UsersAvailableRoles) GetRolesOk() (*[]UsersAvailableRolesRolesInner, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *UsersAvailableRoles) SetRoles(v []ListUsersAvailableRoles200ResponseRolesInner)`
+`func (o *UsersAvailableRoles) SetRoles(v []UsersAvailableRolesRolesInner)`
 
 SetRoles sets Roles field to given value.
 

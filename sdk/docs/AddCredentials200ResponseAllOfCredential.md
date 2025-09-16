@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **StatusDate** | Pointer to **NullableTime** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **User** | Pointer to [**ListCredentials200ResponseAllOfCredentialsInnerUser**](ListCredentials200ResponseAllOfCredentialsInnerUser.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -645,20 +645,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *AddCredentials200ResponseAllOfCredential) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddCredentials200ResponseAllOfCredential) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *AddCredentials200ResponseAllOfCredential) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddCredentials200ResponseAllOfCredential) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *AddCredentials200ResponseAllOfCredential) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddCredentials200ResponseAllOfCredential) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -668,6 +668,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *AddCredentials200ResponseAllOfCredential) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *AddCredentials200ResponseAllOfCredential) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetUser
 
 `func (o *AddCredentials200ResponseAllOfCredential) GetUser() ListCredentials200ResponseAllOfCredentialsInnerUser`

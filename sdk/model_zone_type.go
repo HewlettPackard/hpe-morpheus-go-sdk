@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -27,6 +27,7 @@ type ZoneType struct {
 	Provision                     *bool                                                          `json:"provision,omitempty"`
 	AutoCapacity                  *bool                                                          `json:"autoCapacity,omitempty"`
 	MigrationTarget               *bool                                                          `json:"migrationTarget,omitempty"`
+	HasAffinityGroups             *bool                                                          `json:"hasAffinityGroups,omitempty"`
 	HasDatastores                 *bool                                                          `json:"hasDatastores,omitempty"`
 	HasNetworks                   *bool                                                          `json:"hasNetworks,omitempty"`
 	HasResourcePools              *bool                                                          `json:"hasResourcePools,omitempty"`
@@ -297,6 +298,38 @@ func (o *ZoneType) IsSetMigrationTarget() bool {
 // SetMigrationTarget gets a reference to the given bool and assigns it to the MigrationTarget field.
 func (o *ZoneType) SetMigrationTarget(v bool) {
 	o.MigrationTarget = &v
+}
+
+// GetHasAffinityGroups returns the HasAffinityGroups field value if set, zero value otherwise.
+func (o *ZoneType) GetHasAffinityGroups() bool {
+	if o == nil || IsNil(o.HasAffinityGroups) {
+		var ret bool
+		return ret
+	}
+	return *o.HasAffinityGroups
+}
+
+// GetHasAffinityGroupsOk returns a tuple with the HasAffinityGroups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ZoneType) GetHasAffinityGroupsOk() (*bool, bool) {
+	if o == nil || IsNil(o.HasAffinityGroups) {
+		return nil, false
+	}
+	return o.HasAffinityGroups, true
+}
+
+// IsSetHasAffinityGroups returns a boolean if a field has been set.
+func (o *ZoneType) IsSetHasAffinityGroups() bool {
+	if o != nil && !IsNil(o.HasAffinityGroups) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasAffinityGroups gets a reference to the given bool and assigns it to the HasAffinityGroups field.
+func (o *ZoneType) SetHasAffinityGroups(v bool) {
+	o.HasAffinityGroups = &v
 }
 
 // GetHasDatastores returns the HasDatastores field value if set, zero value otherwise.
@@ -1161,6 +1194,9 @@ func (o ZoneType) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MigrationTarget) {
 		toSerialize["migrationTarget"] = o.MigrationTarget
+	}
+	if !IsNil(o.HasAffinityGroups) {
+		toSerialize["hasAffinityGroups"] = o.HasAffinityGroups
 	}
 	if !IsNil(o.HasDatastores) {
 		toSerialize["hasDatastores"] = o.HasDatastores

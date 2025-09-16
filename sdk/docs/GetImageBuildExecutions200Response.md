@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ImageBuildExecutions** | Pointer to [**[]GetImageBuild200ResponseImageBuildExecutionsInner**](GetImageBuild200ResponseImageBuildExecutionsInner.md) |  | [optional] 
+**ImageBuildExecutions** | Pointer to [**[]GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner**](GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner.md) |  | [optional] 
 **ImageBuildExecutionCount** | Pointer to **int64** |  | [optional] 
-**ImageBuild** | Pointer to [**AddImageBuild200ResponseAllOfImageBuild**](AddImageBuild200ResponseAllOfImageBuild.md) |  | [optional] 
+**ImageBuild** | Pointer to [**GetImageBuild200ResponseImageBuild**](GetImageBuild200ResponseImageBuild.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetImageBuildExecutions
 
-`func (o *GetImageBuildExecutions200Response) GetImageBuildExecutions() []GetImageBuild200ResponseImageBuildExecutionsInner`
+`func (o *GetImageBuildExecutions200Response) GetImageBuildExecutions() []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner`
 
 GetImageBuildExecutions returns the ImageBuildExecutions field if non-nil, zero value otherwise.
 
 ### GetImageBuildExecutionsOk
 
-`func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionsOk() (*[]GetImageBuild200ResponseImageBuildExecutionsInner, bool)`
+`func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionsOk() (*[]GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner, bool)`
 
 GetImageBuildExecutionsOk returns a tuple with the ImageBuildExecutions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageBuildExecutions
 
-`func (o *GetImageBuildExecutions200Response) SetImageBuildExecutions(v []GetImageBuild200ResponseImageBuildExecutionsInner)`
+`func (o *GetImageBuildExecutions200Response) SetImageBuildExecutions(v []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner)`
 
 SetImageBuildExecutions sets ImageBuildExecutions field to given value.
 
@@ -80,20 +80,20 @@ HasImageBuildExecutionCount returns a boolean if a field has been set.
 
 ### GetImageBuild
 
-`func (o *GetImageBuildExecutions200Response) GetImageBuild() AddImageBuild200ResponseAllOfImageBuild`
+`func (o *GetImageBuildExecutions200Response) GetImageBuild() GetImageBuild200ResponseImageBuild`
 
 GetImageBuild returns the ImageBuild field if non-nil, zero value otherwise.
 
 ### GetImageBuildOk
 
-`func (o *GetImageBuildExecutions200Response) GetImageBuildOk() (*AddImageBuild200ResponseAllOfImageBuild, bool)`
+`func (o *GetImageBuildExecutions200Response) GetImageBuildOk() (*GetImageBuild200ResponseImageBuild, bool)`
 
 GetImageBuildOk returns a tuple with the ImageBuild field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageBuild
 
-`func (o *GetImageBuildExecutions200Response) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuild)`
+`func (o *GetImageBuildExecutions200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild)`
 
 SetImageBuild sets ImageBuild field to given value.
 

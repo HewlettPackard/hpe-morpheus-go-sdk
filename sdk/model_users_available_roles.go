@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &UsersAvailableRoles{}
 
 // UsersAvailableRoles struct for UsersAvailableRoles
 type UsersAvailableRoles struct {
-	Roles                []ListUsersAvailableRoles200ResponseRolesInner `json:"roles,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Roles                []UsersAvailableRolesRolesInner `json:"roles,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _UsersAvailableRoles UsersAvailableRoles
@@ -44,9 +44,9 @@ func NewUsersAvailableRolesWithDefaults() *UsersAvailableRoles {
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
-func (o *UsersAvailableRoles) GetRoles() []ListUsersAvailableRoles200ResponseRolesInner {
+func (o *UsersAvailableRoles) GetRoles() []UsersAvailableRolesRolesInner {
 	if o == nil || IsNil(o.Roles) {
-		var ret []ListUsersAvailableRoles200ResponseRolesInner
+		var ret []UsersAvailableRolesRolesInner
 		return ret
 	}
 	return o.Roles
@@ -54,7 +54,7 @@ func (o *UsersAvailableRoles) GetRoles() []ListUsersAvailableRoles200ResponseRol
 
 // GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UsersAvailableRoles) GetRolesOk() ([]ListUsersAvailableRoles200ResponseRolesInner, bool) {
+func (o *UsersAvailableRoles) GetRolesOk() ([]UsersAvailableRolesRolesInner, bool) {
 	if o == nil || IsNil(o.Roles) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *UsersAvailableRoles) IsSetRoles() bool {
 	return false
 }
 
-// SetRoles gets a reference to the given []ListUsersAvailableRoles200ResponseRolesInner and assigns it to the Roles field.
-func (o *UsersAvailableRoles) SetRoles(v []ListUsersAvailableRoles200ResponseRolesInner) {
+// SetRoles gets a reference to the given []UsersAvailableRolesRolesInner and assigns it to the Roles field.
+func (o *UsersAvailableRoles) SetRoles(v []UsersAvailableRolesRolesInner) {
 	o.Roles = v
 }
 

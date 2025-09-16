@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,26 +21,26 @@ var _ MappedNullable = &ListIncidents200ResponseAllOfIssuesInner{}
 
 // ListIncidents200ResponseAllOfIssuesInner struct for ListIncidents200ResponseAllOfIssuesInner
 type ListIncidents200ResponseAllOfIssuesInner struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	AttachmentType       *string                                            `json:"attachmentType,omitempty"`
-	App                  NullableString                                     `json:"app,omitempty"`
-	Available            *bool                                              `json:"available,omitempty"`
-	Check                NullableString                                     `json:"check,omitempty"`
-	CheckGroup           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"checkGroup,omitempty"`
-	CheckStatus          NullableString                                     `json:"checkStatus,omitempty"`
-	EndDate              NullableTime                                       `json:"endDate,omitempty"`
-	Health               *int64                                             `json:"health,omitempty"`
-	InUptime             *bool                                              `json:"inUptime,omitempty"`
-	Incident             *GetAlerts200ResponseAllOfChecksInnerAccount       `json:"incident,omitempty"`
-	LastCheckTime        NullableTime                                       `json:"lastCheckTime,omitempty"`
-	LastError            NullableString                                     `json:"lastError,omitempty"`
-	LastMessage          NullableString                                     `json:"lastMessage,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	Severity             *string                                            `json:"severity,omitempty"`
-	SeverityId           *int64                                             `json:"severityId,omitempty"`
-	StartDate            *time.Time                                         `json:"startDate,omitempty"`
-	Status               *string                                            `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	AttachmentType       *string                                                    `json:"attachmentType,omitempty"`
+	App                  NullableString                                             `json:"app,omitempty"`
+	Available            *bool                                                      `json:"available,omitempty"`
+	Check                NullableString                                             `json:"check,omitempty"`
+	CheckGroup           NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"checkGroup,omitempty"`
+	CheckStatus          NullableString                                             `json:"checkStatus,omitempty"`
+	EndDate              NullableTime                                               `json:"endDate,omitempty"`
+	Health               *int64                                                     `json:"health,omitempty"`
+	InUptime             *bool                                                      `json:"inUptime,omitempty"`
+	Incident             *GetAlerts200ResponseAllOfChecksInnerAccount               `json:"incident,omitempty"`
+	LastCheckTime        NullableTime                                               `json:"lastCheckTime,omitempty"`
+	LastError            NullableString                                             `json:"lastError,omitempty"`
+	LastMessage          NullableString                                             `json:"lastMessage,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	Severity             *string                                                    `json:"severity,omitempty"`
+	SeverityId           *int64                                                     `json:"severityId,omitempty"`
+	StartDate            *time.Time                                                 `json:"startDate,omitempty"`
+	Status               *string                                                    `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListIncidents200ResponseAllOfIssuesInner ListIncidents200ResponseAllOfIssuesInner
@@ -244,36 +244,47 @@ func (o *ListIncidents200ResponseAllOfIssuesInner) UnsetCheck() {
 	o.Check.Unset()
 }
 
-// GetCheckGroup returns the CheckGroup field value if set, zero value otherwise.
-func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.CheckGroup) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetCheckGroup returns the CheckGroup field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.CheckGroup.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.CheckGroup
+	return *o.CheckGroup.Get()
 }
 
 // GetCheckGroupOk returns a tuple with the CheckGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.CheckGroup) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CheckGroup, true
+	return o.CheckGroup.Get(), o.CheckGroup.IsSet()
 }
 
 // IsSetCheckGroup returns a boolean if a field has been set.
 func (o *ListIncidents200ResponseAllOfIssuesInner) IsSetCheckGroup() bool {
-	if o != nil && !IsNil(o.CheckGroup) {
+	if o != nil && o.CheckGroup.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCheckGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the CheckGroup field.
-func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.CheckGroup = &v
+// SetCheckGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the CheckGroup field.
+func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.CheckGroup.Set(&v)
+}
+
+// SetCheckGroupNil sets the value for CheckGroup to be an explicit nil
+func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroupNil() {
+	o.CheckGroup.Set(nil)
+}
+
+// UnsetCheckGroup ensures that no value is present for CheckGroup, not even an explicit nil
+func (o *ListIncidents200ResponseAllOfIssuesInner) UnsetCheckGroup() {
+	o.CheckGroup.Unset()
 }
 
 // GetCheckStatus returns the CheckStatus field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -772,8 +783,8 @@ func (o ListIncidents200ResponseAllOfIssuesInner) ToMap() (map[string]interface{
 	if o.Check.IsSet() {
 		toSerialize["check"] = o.Check.Get()
 	}
-	if !IsNil(o.CheckGroup) {
-		toSerialize["checkGroup"] = o.CheckGroup
+	if o.CheckGroup.IsSet() {
+		toSerialize["checkGroup"] = o.CheckGroup.Get()
 	}
 	if o.CheckStatus.IsSet() {
 		toSerialize["checkStatus"] = o.CheckStatus.Get()

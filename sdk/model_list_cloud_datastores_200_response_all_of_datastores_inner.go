@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &ListCloudDatastores200ResponseAllOfDatastoresInner{}
 type ListCloudDatastores200ResponseAllOfDatastoresInner struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
 	Name                 *string                                                               `json:"name,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount            `json:"zone,omitempty"`
 	Type                 *string                                                               `json:"type,omitempty"`
 	FreeSpace            *int64                                                                `json:"freeSpace,omitempty"`
 	Online               *bool                                                                 `json:"online,omitempty"`
@@ -116,36 +116,47 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -389,8 +400,8 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInner) ToMap() (map[string]
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

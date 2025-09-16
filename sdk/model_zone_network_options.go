@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &ZoneNetworkOptions{}
 
 // ZoneNetworkOptions struct for ZoneNetworkOptions
 type ZoneNetworkOptions struct {
-	Networks                   []ZoneNetworkOptionsNetworksInner                               `json:"networks,omitempty"`
+	Networks                   []ZoneNetworkOptionsResponseNetworksInner                       `json:"networks,omitempty"`
 	NetworkGroups              []ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner `json:"networkGroups,omitempty"`
-	NetworkTypes               []ZoneNetworkOptionsNetworkTypesInner                           `json:"networkTypes,omitempty"`
-	NetworkSubnets             []ZoneNetworkOptionsNetworkSubnetsInner                         `json:"networkSubnets,omitempty"`
+	NetworkTypes               []ZoneNetworkOptionsResponseNetworkTypesInner                   `json:"networkTypes,omitempty"`
+	NetworkSubnets             []ZoneNetworkOptionsResponseNetworkSubnetsInner                 `json:"networkSubnets,omitempty"`
 	HasNetworks                NullableBool                                                    `json:"hasNetworks,omitempty"`
 	MaxNetworks                NullableInt64                                                   `json:"maxNetworks,omitempty"`
 	EnableNetworkTypeSelection NullableString                                                  `json:"enableNetworkTypeSelection,omitempty"`
@@ -51,9 +51,9 @@ func NewZoneNetworkOptionsWithDefaults() *ZoneNetworkOptions {
 }
 
 // GetNetworks returns the Networks field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworks() []ZoneNetworkOptionsNetworksInner {
+func (o *ZoneNetworkOptions) GetNetworks() []ZoneNetworkOptionsResponseNetworksInner {
 	if o == nil || IsNil(o.Networks) {
-		var ret []ZoneNetworkOptionsNetworksInner
+		var ret []ZoneNetworkOptionsResponseNetworksInner
 		return ret
 	}
 	return o.Networks
@@ -61,7 +61,7 @@ func (o *ZoneNetworkOptions) GetNetworks() []ZoneNetworkOptionsNetworksInner {
 
 // GetNetworksOk returns a tuple with the Networks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworksOk() ([]ZoneNetworkOptionsNetworksInner, bool) {
+func (o *ZoneNetworkOptions) GetNetworksOk() ([]ZoneNetworkOptionsResponseNetworksInner, bool) {
 	if o == nil || IsNil(o.Networks) {
 		return nil, false
 	}
@@ -77,8 +77,8 @@ func (o *ZoneNetworkOptions) IsSetNetworks() bool {
 	return false
 }
 
-// SetNetworks gets a reference to the given []ZoneNetworkOptionsNetworksInner and assigns it to the Networks field.
-func (o *ZoneNetworkOptions) SetNetworks(v []ZoneNetworkOptionsNetworksInner) {
+// SetNetworks gets a reference to the given []ZoneNetworkOptionsResponseNetworksInner and assigns it to the Networks field.
+func (o *ZoneNetworkOptions) SetNetworks(v []ZoneNetworkOptionsResponseNetworksInner) {
 	o.Networks = v
 }
 
@@ -115,9 +115,9 @@ func (o *ZoneNetworkOptions) SetNetworkGroups(v []ListInstanceServicePlans200Res
 }
 
 // GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworkTypes() []ZoneNetworkOptionsNetworkTypesInner {
+func (o *ZoneNetworkOptions) GetNetworkTypes() []ZoneNetworkOptionsResponseNetworkTypesInner {
 	if o == nil || IsNil(o.NetworkTypes) {
-		var ret []ZoneNetworkOptionsNetworkTypesInner
+		var ret []ZoneNetworkOptionsResponseNetworkTypesInner
 		return ret
 	}
 	return o.NetworkTypes
@@ -125,7 +125,7 @@ func (o *ZoneNetworkOptions) GetNetworkTypes() []ZoneNetworkOptionsNetworkTypesI
 
 // GetNetworkTypesOk returns a tuple with the NetworkTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworkTypesOk() ([]ZoneNetworkOptionsNetworkTypesInner, bool) {
+func (o *ZoneNetworkOptions) GetNetworkTypesOk() ([]ZoneNetworkOptionsResponseNetworkTypesInner, bool) {
 	if o == nil || IsNil(o.NetworkTypes) {
 		return nil, false
 	}
@@ -141,15 +141,15 @@ func (o *ZoneNetworkOptions) IsSetNetworkTypes() bool {
 	return false
 }
 
-// SetNetworkTypes gets a reference to the given []ZoneNetworkOptionsNetworkTypesInner and assigns it to the NetworkTypes field.
-func (o *ZoneNetworkOptions) SetNetworkTypes(v []ZoneNetworkOptionsNetworkTypesInner) {
+// SetNetworkTypes gets a reference to the given []ZoneNetworkOptionsResponseNetworkTypesInner and assigns it to the NetworkTypes field.
+func (o *ZoneNetworkOptions) SetNetworkTypes(v []ZoneNetworkOptionsResponseNetworkTypesInner) {
 	o.NetworkTypes = v
 }
 
 // GetNetworkSubnets returns the NetworkSubnets field value if set, zero value otherwise.
-func (o *ZoneNetworkOptions) GetNetworkSubnets() []ZoneNetworkOptionsNetworkSubnetsInner {
+func (o *ZoneNetworkOptions) GetNetworkSubnets() []ZoneNetworkOptionsResponseNetworkSubnetsInner {
 	if o == nil || IsNil(o.NetworkSubnets) {
-		var ret []ZoneNetworkOptionsNetworkSubnetsInner
+		var ret []ZoneNetworkOptionsResponseNetworkSubnetsInner
 		return ret
 	}
 	return o.NetworkSubnets
@@ -157,7 +157,7 @@ func (o *ZoneNetworkOptions) GetNetworkSubnets() []ZoneNetworkOptionsNetworkSubn
 
 // GetNetworkSubnetsOk returns a tuple with the NetworkSubnets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() ([]ZoneNetworkOptionsNetworkSubnetsInner, bool) {
+func (o *ZoneNetworkOptions) GetNetworkSubnetsOk() ([]ZoneNetworkOptionsResponseNetworkSubnetsInner, bool) {
 	if o == nil || IsNil(o.NetworkSubnets) {
 		return nil, false
 	}
@@ -173,8 +173,8 @@ func (o *ZoneNetworkOptions) IsSetNetworkSubnets() bool {
 	return false
 }
 
-// SetNetworkSubnets gets a reference to the given []ZoneNetworkOptionsNetworkSubnetsInner and assigns it to the NetworkSubnets field.
-func (o *ZoneNetworkOptions) SetNetworkSubnets(v []ZoneNetworkOptionsNetworkSubnetsInner) {
+// SetNetworkSubnets gets a reference to the given []ZoneNetworkOptionsResponseNetworkSubnetsInner and assigns it to the NetworkSubnets field.
+func (o *ZoneNetworkOptions) SetNetworkSubnets(v []ZoneNetworkOptionsResponseNetworkSubnetsInner) {
 	o.NetworkSubnets = v
 }
 

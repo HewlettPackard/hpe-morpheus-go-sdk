@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone{}
 
 // ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct for ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
 type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	ZoneType             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zoneType,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	ZoneType             NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"zoneType,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
@@ -109,36 +109,47 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetName(v strin
 	o.Name = &v
 }
 
-// GetZoneType returns the ZoneType field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.ZoneType) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZoneType returns the ZoneType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneType() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.ZoneType.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.ZoneType
+	return *o.ZoneType.Get()
 }
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.ZoneType) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) GetZoneTypeOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ZoneType, true
+	return o.ZoneType.Get(), o.ZoneType.IsSet()
 }
 
 // IsSetZoneType returns a boolean if a field has been set.
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) IsSetZoneType() bool {
-	if o != nil && !IsNil(o.ZoneType) {
+	if o != nil && o.ZoneType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZoneType gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ZoneType field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.ZoneType = &v
+// SetZoneType gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the ZoneType field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneType(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.ZoneType.Set(&v)
+}
+
+// SetZoneTypeNil sets the value for ZoneType to be an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) SetZoneTypeNil() {
+	o.ZoneType.Set(nil)
+}
+
+// UnsetZoneType ensures that no value is present for ZoneType, not even an explicit nil
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) UnsetZoneType() {
+	o.ZoneType.Unset()
 }
 
 func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) MarshalJSON() ([]byte, error) {
@@ -157,8 +168,8 @@ func (o ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) ToMap() (map[str
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.ZoneType) {
-		toSerialize["zoneType"] = o.ZoneType
+	if o.ZoneType.IsSet() {
+		toSerialize["zoneType"] = o.ZoneType.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

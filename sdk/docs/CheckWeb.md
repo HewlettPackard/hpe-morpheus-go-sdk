@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Unique name scoped to your account for the check | [optional] 
+**Name** | **string** | Unique name scoped to your account for the check | 
 **Description** | Pointer to **NullableString** | Optional description field | [optional] 
-**CheckType** | Pointer to [**AddChecksRequestCheckOneOfCheckType**](AddChecksRequestCheckOneOfCheckType.md) |  | [optional] 
-**CheckInterval** | Pointer to **int32** | Number of seconds you want between check executions (minimum value is 60, depending on your subscription plan) | [optional] [default to 300]
+**CheckInterval** | Pointer to **int32** | Number of milliseconds you want between check executions (minimum is 1 minute, depending on your subscription plan) | [optional] [default to 300000]
 **InUptime** | Pointer to **bool** | Used to determine if check should affect account wide availability calculations | [optional] [default to true]
 **Active** | Pointer to **bool** | Used to determine if check should be scheduled to execute | [optional] [default to true]
 **Severity** | Pointer to **string** | Severity level threshold for sending notifications. | [optional] [default to "critical"]
-**Config** | Pointer to [**AddChecksRequestCheckOneOfConfig**](AddChecksRequestCheckOneOfConfig.md) |  | [optional] 
+**CheckType** | Pointer to [**WebCheckAllOfCheckType**](WebCheckAllOfCheckType.md) |  | [optional] 
+**Config** | Pointer to [**WebCheckAllOfConfig**](WebCheckAllOfConfig.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckWeb
 
-`func NewCheckWeb() *CheckWeb`
+`func NewCheckWeb(name string, ) *CheckWeb`
 
 NewCheckWeb instantiates a new CheckWeb object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *CheckWeb) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -92,31 +87,6 @@ HasDescription returns a boolean if a field has been set.
 `func (o *CheckWeb) UnsetDescription()`
 
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
-### GetCheckType
-
-`func (o *CheckWeb) GetCheckType() AddChecksRequestCheckOneOfCheckType`
-
-GetCheckType returns the CheckType field if non-nil, zero value otherwise.
-
-### GetCheckTypeOk
-
-`func (o *CheckWeb) GetCheckTypeOk() (*AddChecksRequestCheckOneOfCheckType, bool)`
-
-GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCheckType
-
-`func (o *CheckWeb) SetCheckType(v AddChecksRequestCheckOneOfCheckType)`
-
-SetCheckType sets CheckType field to given value.
-
-### HasCheckType
-
-`func (o *CheckWeb) HasCheckType() bool`
-
-HasCheckType returns a boolean if a field has been set.
-
 ### GetCheckInterval
 
 `func (o *CheckWeb) GetCheckInterval() int32`
@@ -217,22 +187,47 @@ SetSeverity sets Severity field to given value.
 
 HasSeverity returns a boolean if a field has been set.
 
+### GetCheckType
+
+`func (o *CheckWeb) GetCheckType() WebCheckAllOfCheckType`
+
+GetCheckType returns the CheckType field if non-nil, zero value otherwise.
+
+### GetCheckTypeOk
+
+`func (o *CheckWeb) GetCheckTypeOk() (*WebCheckAllOfCheckType, bool)`
+
+GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckType
+
+`func (o *CheckWeb) SetCheckType(v WebCheckAllOfCheckType)`
+
+SetCheckType sets CheckType field to given value.
+
+### HasCheckType
+
+`func (o *CheckWeb) HasCheckType() bool`
+
+HasCheckType returns a boolean if a field has been set.
+
 ### GetConfig
 
-`func (o *CheckWeb) GetConfig() AddChecksRequestCheckOneOfConfig`
+`func (o *CheckWeb) GetConfig() WebCheckAllOfConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CheckWeb) GetConfigOk() (*AddChecksRequestCheckOneOfConfig, bool)`
+`func (o *CheckWeb) GetConfigOk() (*WebCheckAllOfConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CheckWeb) SetConfig(v AddChecksRequestCheckOneOfConfig)`
+`func (o *CheckWeb) SetConfig(v WebCheckAllOfConfig)`
 
 SetConfig sets Config field to given value.
 

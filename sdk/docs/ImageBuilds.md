@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **IsCloudInit** | Pointer to **bool** |  | [optional] 
 **VmToolsInstalled** | Pointer to **bool** |  | [optional] 
 **KeepResults** | Pointer to **int64** |  | [optional] 
-**Config** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfig**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfig.md) |  | [optional] 
-**LastResult** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult**](ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult.md) |  | [optional] 
+**Config** | Pointer to [**ImageBuildsConfig**](ImageBuildsConfig.md) |  | [optional] 
+**LastResult** | Pointer to [**ImageBuildsLastResult**](ImageBuildsLastResult.md) |  | [optional] 
 **ExecutionCount** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -553,20 +553,20 @@ HasKeepResults returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ImageBuilds) GetConfig() ListImageBuilds200ResponseAllOfImageBuildsInnerConfig`
+`func (o *ImageBuilds) GetConfig() ImageBuildsConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ImageBuilds) GetConfigOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfig, bool)`
+`func (o *ImageBuilds) GetConfigOk() (*ImageBuildsConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ImageBuilds) SetConfig(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfig)`
+`func (o *ImageBuilds) SetConfig(v ImageBuildsConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -578,20 +578,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetLastResult
 
-`func (o *ImageBuilds) GetLastResult() ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult`
+`func (o *ImageBuilds) GetLastResult() ImageBuildsLastResult`
 
 GetLastResult returns the LastResult field if non-nil, zero value otherwise.
 
 ### GetLastResultOk
 
-`func (o *ImageBuilds) GetLastResultOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult, bool)`
+`func (o *ImageBuilds) GetLastResultOk() (*ImageBuildsLastResult, bool)`
 
 GetLastResultOk returns a tuple with the LastResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastResult
 
-`func (o *ImageBuilds) SetLastResult(v ListImageBuilds200ResponseAllOfImageBuildsInnerLastResult)`
+`func (o *ImageBuilds) SetLastResult(v ImageBuildsLastResult)`
 
 SetLastResult sets LastResult field to given value.
 

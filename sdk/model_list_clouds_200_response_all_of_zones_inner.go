@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -28,9 +28,9 @@ type ListClouds200ResponseAllOfZonesInner struct {
 	Code                           *string                                                     `json:"code,omitempty"`
 	Labels                         []string                                                    `json:"labels,omitempty"`
 	Location                       NullableString                                              `json:"location,omitempty"`
-	Owner                          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	Owner                          NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
 	AccountId                      *int64                                                      `json:"accountId,omitempty"`
-	Account                        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Account                        NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"account,omitempty"`
 	Visibility                     *string                                                     `json:"visibility,omitempty"`
 	Enabled                        *bool                                                       `json:"enabled,omitempty"`
 	Status                         *string                                                     `json:"status,omitempty"`
@@ -352,36 +352,47 @@ func (o *ListClouds200ResponseAllOfZonesInner) UnsetLocation() {
 	o.Location.Unset()
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -416,36 +427,47 @@ func (o *ListClouds200ResponseAllOfZonesInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListClouds200ResponseAllOfZonesInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -2353,14 +2375,14 @@ func (o ListClouds200ResponseAllOfZonesInner) ToMap() (map[string]interface{}, e
 	if o.Location.IsSet() {
 		toSerialize["location"] = o.Location.Get()
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

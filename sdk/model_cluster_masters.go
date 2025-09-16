@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -80,7 +80,7 @@ type ClusterMasters struct {
 	ServerOs                 NullableString                                                                      `json:"serverOs,omitempty"`
 	Volumes                  []GetClusterMasters200ResponseMastersInnerVolumesInner                              `json:"volumes,omitempty"`
 	Controllers              []map[string]interface{}                                                            `json:"controllers,omitempty"`
-	Interfaces               []GetClusterMasters200ResponseMastersInnerInterfacesInner                           `json:"interfaces,omitempty"`
+	Interfaces               []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner                     `json:"interfaces,omitempty"`
 	Labels                   []string                                                                            `json:"labels,omitempty"`
 	Tags                     []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner                     `json:"tags,omitempty"`
 	Enabled                  *bool                                                                               `json:"enabled,omitempty"`
@@ -2124,9 +2124,9 @@ func (o *ClusterMasters) SetControllers(v []map[string]interface{}) {
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *ClusterMasters) GetInterfaces() []GetClusterMasters200ResponseMastersInnerInterfacesInner {
+func (o *ClusterMasters) GetInterfaces() []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []GetClusterMasters200ResponseMastersInnerInterfacesInner
+		var ret []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner
 		return ret
 	}
 	return o.Interfaces
@@ -2134,7 +2134,7 @@ func (o *ClusterMasters) GetInterfaces() []GetClusterMasters200ResponseMastersIn
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterMasters) GetInterfacesOk() ([]GetClusterMasters200ResponseMastersInnerInterfacesInner, bool) {
+func (o *ClusterMasters) GetInterfacesOk() ([]ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -2150,8 +2150,8 @@ func (o *ClusterMasters) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []GetClusterMasters200ResponseMastersInnerInterfacesInner and assigns it to the Interfaces field.
-func (o *ClusterMasters) SetInterfaces(v []GetClusterMasters200ResponseMastersInnerInterfacesInner) {
+// SetInterfaces gets a reference to the given []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner and assigns it to the Interfaces field.
+func (o *ClusterMasters) SetInterfaces(v []ListClusterWorkers200ResponseAllOfWorkersInnerInterfacesInner) {
 	o.Interfaces = v
 }
 

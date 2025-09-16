@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **SshKeyPair** | Pointer to [**AddClusterRequestClusterServerSshKeyPair**](AddClusterRequestClusterServerSshKeyPair.md) |  | [optional] 
 **PowerScheduleType** | Pointer to **int64** | Power schedule ID. | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
+**ServerOs** | Pointer to [**UpdateHostRequestServerServerOs**](UpdateHostRequestServerServerOs.md) |  | [optional] 
 **Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
 **AddTags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
 **RemoveTags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
@@ -301,6 +302,31 @@ SetLabels sets Labels field to given value.
 `func (o *HostUpdate) HasLabels() bool`
 
 HasLabels returns a boolean if a field has been set.
+
+### GetServerOs
+
+`func (o *HostUpdate) GetServerOs() UpdateHostRequestServerServerOs`
+
+GetServerOs returns the ServerOs field if non-nil, zero value otherwise.
+
+### GetServerOsOk
+
+`func (o *HostUpdate) GetServerOsOk() (*UpdateHostRequestServerServerOs, bool)`
+
+GetServerOsOk returns a tuple with the ServerOs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServerOs
+
+`func (o *HostUpdate) SetServerOs(v UpdateHostRequestServerServerOs)`
+
+SetServerOs sets ServerOs field to given value.
+
+### HasServerOs
+
+`func (o *HostUpdate) HasServerOs() bool`
+
+HasServerOs returns a boolean if a field has been set.
 
 ### GetTags
 

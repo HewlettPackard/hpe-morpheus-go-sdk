@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &GetInstanceThreshold200Response{}
 
 // GetInstanceThreshold200Response struct for GetInstanceThreshold200Response
 type GetInstanceThreshold200Response struct {
-	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance      `json:"instance,omitempty"`
-	InstanceThreshold    *GetInstanceThreshold200ResponseInstanceThreshold       `json:"instanceThreshold,omitempty"`
-	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner `json:"instanceSchedules,omitempty"`
-	AdditionalProperties map[string]interface{}                                  `json:",remain"`
+	Instance             NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"instance,omitempty"`
+	InstanceThreshold    *GetInstanceThreshold200ResponseInstanceThreshold          `json:"instanceThreshold,omitempty"`
+	InstanceSchedules    []GetInstanceThreshold200ResponseInstanceSchedulesInner    `json:"instanceSchedules,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _GetInstanceThreshold200Response GetInstanceThreshold200Response
@@ -45,36 +45,47 @@ func NewGetInstanceThreshold200ResponseWithDefaults() *GetInstanceThreshold200Re
 	return &this
 }
 
-// GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *GetInstanceThreshold200Response) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Instance) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetInstance returns the Instance field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetInstanceThreshold200Response) GetInstance() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Instance.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Instance
+	return *o.Instance.Get()
 }
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Instance) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetInstanceThreshold200Response) GetInstanceOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Instance, true
+	return o.Instance.Get(), o.Instance.IsSet()
 }
 
 // IsSetInstance returns a boolean if a field has been set.
 func (o *GetInstanceThreshold200Response) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && o.Instance.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstance gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instance field.
-func (o *GetInstanceThreshold200Response) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Instance = &v
+// SetInstance gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Instance field.
+func (o *GetInstanceThreshold200Response) SetInstance(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Instance.Set(&v)
+}
+
+// SetInstanceNil sets the value for Instance to be an explicit nil
+func (o *GetInstanceThreshold200Response) SetInstanceNil() {
+	o.Instance.Set(nil)
+}
+
+// UnsetInstance ensures that no value is present for Instance, not even an explicit nil
+func (o *GetInstanceThreshold200Response) UnsetInstance() {
+	o.Instance.Unset()
 }
 
 // GetInstanceThreshold returns the InstanceThreshold field value if set, zero value otherwise.
@@ -151,8 +162,8 @@ func (o GetInstanceThreshold200Response) MarshalJSON() ([]byte, error) {
 
 func (o GetInstanceThreshold200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Instance) {
-		toSerialize["instance"] = o.Instance
+	if o.Instance.IsSet() {
+		toSerialize["instance"] = o.Instance.Get()
 	}
 	if !IsNil(o.InstanceThreshold) {
 		toSerialize["instanceThreshold"] = o.InstanceThreshold

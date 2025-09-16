@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -53,9 +53,9 @@ type ListClusterVolumes200ResponseAllOfVolumesInner struct {
 	ReadOnly             *bool                                                       `json:"readOnly,omitempty"`
 	Removable            *bool                                                       `json:"removable,omitempty"`
 	PoolName             *string                                                     `json:"poolName,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"zone,omitempty"`
+	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"zone,omitempty"`
 	ZoneId               *int64                                                      `json:"zoneId,omitempty"`
-	Datastore            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"datastore,omitempty"`
+	Datastore            NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"datastore,omitempty"`
 	DatastoreId          NullableInt64                                               `json:"datastoreId,omitempty"`
 	DatastoreOption      *string                                                     `json:"datastoreOption,omitempty"`
 	StorageGroup         NullableString                                              `json:"storageGroup,omitempty"`
@@ -76,8 +76,8 @@ type ListClusterVolumes200ResponseAllOfVolumesInner struct {
 	ImageType            *string                                                     `json:"imageType,omitempty"`
 	Online               *bool                                                       `json:"online,omitempty"`
 	RawData              *string                                                     `json:"rawData,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"account,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
@@ -1233,36 +1233,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetPoolName(v string) {
 	o.PoolName = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetZoneId returns the ZoneId field value if set, zero value otherwise.
@@ -1297,36 +1308,47 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetZoneId(v int64) {
 	o.ZoneId = &v
 }
 
-// GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Datastore) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetDatastore returns the Datastore field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastore() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Datastore.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Datastore
+	return *o.Datastore.Get()
 }
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Datastore) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetDatastoreOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Datastore, true
+	return o.Datastore.Get(), o.Datastore.IsSet()
 }
 
 // IsSetDatastore returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetDatastore() bool {
-	if o != nil && !IsNil(o.Datastore) {
+	if o != nil && o.Datastore.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDatastore gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Datastore field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Datastore = &v
+// SetDatastore gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Datastore field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastore(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Datastore.Set(&v)
+}
+
+// SetDatastoreNil sets the value for Datastore to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetDatastoreNil() {
+	o.Datastore.Set(nil)
+}
+
+// UnsetDatastore ensures that no value is present for Datastore, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetDatastore() {
+	o.Datastore.Unset()
 }
 
 // GetDatastoreId returns the DatastoreId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -2101,68 +2123,90 @@ func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetRawData(v string) {
 	o.RawData = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetAccount() {
+	o.Account.Unset()
+}
+
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 func (o ListClusterVolumes200ResponseAllOfVolumesInner) MarshalJSON() ([]byte, error) {
@@ -2274,14 +2318,14 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.PoolName) {
 		toSerialize["poolName"] = o.PoolName
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.ZoneId) {
 		toSerialize["zoneId"] = o.ZoneId
 	}
-	if !IsNil(o.Datastore) {
-		toSerialize["datastore"] = o.Datastore
+	if o.Datastore.IsSet() {
+		toSerialize["datastore"] = o.Datastore.Get()
 	}
 	if o.DatastoreId.IsSet() {
 		toSerialize["datastoreId"] = o.DatastoreId.Get()
@@ -2343,11 +2387,11 @@ func (o ListClusterVolumes200ResponseAllOfVolumesInner) ToMap() (map[string]inte
 	if !IsNil(o.RawData) {
 		toSerialize["rawData"] = o.RawData
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

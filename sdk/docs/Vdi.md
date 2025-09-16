@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **AllocationStatus** | Pointer to **string** |  | [optional] 
-**Allocation** | Pointer to [**ListVdi200ResponseAllOfDesktopsInnerAllocation**](ListVdi200ResponseAllOfDesktopsInnerAllocation.md) |  | [optional] 
+**Allocation** | Pointer to [**GetVdi200ResponseDesktopAllocation**](GetVdi200ResponseDesktopAllocation.md) |  | [optional] 
 
 ## Methods
 
@@ -193,20 +193,20 @@ HasAllocationStatus returns a boolean if a field has been set.
 
 ### GetAllocation
 
-`func (o *Vdi) GetAllocation() ListVdi200ResponseAllOfDesktopsInnerAllocation`
+`func (o *Vdi) GetAllocation() GetVdi200ResponseDesktopAllocation`
 
 GetAllocation returns the Allocation field if non-nil, zero value otherwise.
 
 ### GetAllocationOk
 
-`func (o *Vdi) GetAllocationOk() (*ListVdi200ResponseAllOfDesktopsInnerAllocation, bool)`
+`func (o *Vdi) GetAllocationOk() (*GetVdi200ResponseDesktopAllocation, bool)`
 
 GetAllocationOk returns a tuple with the Allocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllocation
 
-`func (o *Vdi) SetAllocation(v ListVdi200ResponseAllOfDesktopsInnerAllocation)`
+`func (o *Vdi) SetAllocation(v GetVdi200ResponseDesktopAllocation)`
 
 SetAllocation sets Allocation field to given value.
 

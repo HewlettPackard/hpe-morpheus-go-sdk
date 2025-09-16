@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Site** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Site** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **BootScript** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript**](ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript.md) |  | [optional] 
@@ -73,20 +73,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -96,6 +96,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetType
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
@@ -123,20 +133,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSite() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSiteOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSite(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetSite sets Site field to given value.
 
@@ -146,22 +156,32 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetZone
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -171,6 +191,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetName
 
 `func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetName() string`

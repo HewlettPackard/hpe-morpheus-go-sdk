@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Discovery** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInner**](ListGuidances200ResponseAllOfDiscoveriesInner.md) |  | [optional] 
+**Discovery** | Pointer to [**GetGuidances200ResponseDiscovery**](GetGuidances200ResponseDiscovery.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDiscovery
 
-`func (o *GetGuidances200Response) GetDiscovery() ListGuidances200ResponseAllOfDiscoveriesInner`
+`func (o *GetGuidances200Response) GetDiscovery() GetGuidances200ResponseDiscovery`
 
 GetDiscovery returns the Discovery field if non-nil, zero value otherwise.
 
 ### GetDiscoveryOk
 
-`func (o *GetGuidances200Response) GetDiscoveryOk() (*ListGuidances200ResponseAllOfDiscoveriesInner, bool)`
+`func (o *GetGuidances200Response) GetDiscoveryOk() (*GetGuidances200ResponseDiscovery, bool)`
 
 GetDiscoveryOk returns a tuple with the Discovery field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscovery
 
-`func (o *GetGuidances200Response) SetDiscovery(v ListGuidances200ResponseAllOfDiscoveriesInner)`
+`func (o *GetGuidances200Response) SetDiscovery(v GetGuidances200ResponseDiscovery)`
 
 SetDiscovery sets Discovery field to given value.
 

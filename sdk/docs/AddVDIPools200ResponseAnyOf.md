@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VdiPool** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInner**](ListVDIPools200ResponseAllOfVdiPoolsInner.md) |  | [optional] 
+**VdiPool** | Pointer to [**AddVDIPools200ResponseAnyOfVdiPool**](AddVDIPools200ResponseAnyOfVdiPool.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVdiPool
 
-`func (o *AddVDIPools200ResponseAnyOf) GetVdiPool() ListVDIPools200ResponseAllOfVdiPoolsInner`
+`func (o *AddVDIPools200ResponseAnyOf) GetVdiPool() AddVDIPools200ResponseAnyOfVdiPool`
 
 GetVdiPool returns the VdiPool field if non-nil, zero value otherwise.
 
 ### GetVdiPoolOk
 
-`func (o *AddVDIPools200ResponseAnyOf) GetVdiPoolOk() (*ListVDIPools200ResponseAllOfVdiPoolsInner, bool)`
+`func (o *AddVDIPools200ResponseAnyOf) GetVdiPoolOk() (*AddVDIPools200ResponseAnyOfVdiPool, bool)`
 
 GetVdiPoolOk returns a tuple with the VdiPool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdiPool
 
-`func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v ListVDIPools200ResponseAllOfVdiPoolsInner)`
+`func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v AddVDIPools200ResponseAnyOfVdiPool)`
 
 SetVdiPool sets VdiPool field to given value.
 

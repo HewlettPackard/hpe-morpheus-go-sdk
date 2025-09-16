@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subnet** | Pointer to [**GetNetworkSubnets200ResponseAllOfSubnetsInner**](GetNetworkSubnets200ResponseAllOfSubnetsInner.md) |  | [optional] 
+**Subnet** | Pointer to [**ListSubnets200ResponseAllOfSubnetsInner**](ListSubnets200ResponseAllOfSubnetsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSubnet
 
-`func (o *CreateSubnet200Response) GetSubnet() GetNetworkSubnets200ResponseAllOfSubnetsInner`
+`func (o *CreateSubnet200Response) GetSubnet() ListSubnets200ResponseAllOfSubnetsInner`
 
 GetSubnet returns the Subnet field if non-nil, zero value otherwise.
 
 ### GetSubnetOk
 
-`func (o *CreateSubnet200Response) GetSubnetOk() (*GetNetworkSubnets200ResponseAllOfSubnetsInner, bool)`
+`func (o *CreateSubnet200Response) GetSubnetOk() (*ListSubnets200ResponseAllOfSubnetsInner, bool)`
 
 GetSubnetOk returns a tuple with the Subnet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubnet
 
-`func (o *CreateSubnet200Response) SetSubnet(v GetNetworkSubnets200ResponseAllOfSubnetsInner)`
+`func (o *CreateSubnet200Response) SetSubnet(v ListSubnets200ResponseAllOfSubnetsInner)`
 
 SetSubnet sets Subnet field to given value.
 

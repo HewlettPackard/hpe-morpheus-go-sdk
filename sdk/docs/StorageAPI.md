@@ -1034,7 +1034,7 @@ Name | Type | Description  | Notes
 
 ## ListStorageVolumes
 
-> ListStorageVolumes200Response ListStorageVolumes(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Execute()
+> ListStorageVolumes200Response ListStorageVolumes(ctx).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Uuid(uuid).Execute()
 
 Retrieves all Storage Volumes
 
@@ -1059,10 +1059,11 @@ func main() {
 	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	name := "example" // string | Filter by name (optional)
+	uuid := "uuid_example" // string | Filter by UUID (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.StorageAPI.ListStorageVolumes(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Execute()
+	resp, r, err := apiClient.StorageAPI.ListStorageVolumes(context.Background()).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Uuid(uuid).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StorageAPI.ListStorageVolumes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1089,6 +1090,7 @@ Name | Type | Description  | Notes
  **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **name** | **string** | Filter by name | 
+ **uuid** | **string** | Filter by UUID | 
 
 ### Return type
 

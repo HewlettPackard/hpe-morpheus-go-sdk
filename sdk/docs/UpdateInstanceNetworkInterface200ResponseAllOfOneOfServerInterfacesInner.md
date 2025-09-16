@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **RefType** | Pointer to **NullableString** |  | [optional] 
 **NetworkGroup** | Pointer to **NullableString** |  | [optional] 
 **RefId** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to **NullableString** |  | [optional] 
+**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **NetworkPoolIPv6** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -792,20 +792,20 @@ HasRefId returns a boolean if a field has been set.
 UnsetRefId ensures that no value is present for RefId, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetNetworkDomain() string`
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetNetworkDomainOk() (*string, bool)`
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) SetNetworkDomain(v string)`
+`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -815,16 +815,6 @@ SetNetworkDomain sets NetworkDomain field to given value.
 
 HasNetworkDomain returns a boolean if a field has been set.
 
-### SetNetworkDomainNil
-
-`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) SetNetworkDomainNil(b bool)`
-
- SetNetworkDomainNil sets the value for NetworkDomain to be an explicit nil
-
-### UnsetNetworkDomain
-`func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) UnsetNetworkDomain()`
-
-UnsetNetworkDomain ensures that no value is present for NetworkDomain, not even an explicit nil
 ### GetName
 
 `func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerInterfacesInner) GetName() string`

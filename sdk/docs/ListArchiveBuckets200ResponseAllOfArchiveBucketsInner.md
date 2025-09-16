@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**StorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**StorageProvider** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **CreatedBy** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy.md) |  | [optional] 
 **IsPublic** | Pointer to **bool** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **FilePath** | Pointer to **string** |  | [optional] 
 **RawSize** | Pointer to **NullableInt64** |  | [optional] 
 **FileCount** | Pointer to **int64** |  | [optional] 
-**Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -126,20 +126,20 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetStorageProvider
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProvider() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetStorageProviderOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProvider(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -149,22 +149,32 @@ SetStorageProvider sets StorageProvider field to given value.
 
 HasStorageProvider returns a boolean if a field has been set.
 
+### SetStorageProviderNil
+
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetStorageProviderNil(b bool)`
+
+ SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
+
+### UnsetStorageProvider
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetStorageProvider()`
+
+UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
 ### GetOwner
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -174,6 +184,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetCreatedBy
 
 `func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetCreatedBy() ListArchiveBuckets200ResponseAllOfArchiveBucketsInnerCreatedBy`
@@ -361,20 +381,20 @@ HasFileCount returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccounts() []map[string]interface{}`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccountsOk() (*[]map[string]interface{}, bool)`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetAccounts(v []map[string]interface{})`
+`func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccounts sets Accounts field to given value.
 

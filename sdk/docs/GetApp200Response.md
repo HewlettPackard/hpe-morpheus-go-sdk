@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**ListApps200ResponseAllOfAppsInner**](ListApps200ResponseAllOfAppsInner.md) |  | [optional] 
+**App** | Pointer to [**GetApp200ResponseApp**](GetApp200ResponseApp.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *GetApp200Response) GetApp() ListApps200ResponseAllOfAppsInner`
+`func (o *GetApp200Response) GetApp() GetApp200ResponseApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *GetApp200Response) GetAppOk() (*ListApps200ResponseAllOfAppsInner, bool)`
+`func (o *GetApp200Response) GetAppOk() (*GetApp200ResponseApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *GetApp200Response) SetApp(v ListApps200ResponseAllOfAppsInner)`
+`func (o *GetApp200Response) SetApp(v GetApp200ResponseApp)`
 
 SetApp sets App field to given value.
 

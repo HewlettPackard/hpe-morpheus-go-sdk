@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **InstanceId** | Pointer to **int64** |  | [optional] 
-**Instance** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Instance** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Deployment** | Pointer to [**ListDeploys200ResponseAllOfAppDeploysInnerDeployment**](ListDeploys200ResponseAllOfAppDeploysInnerDeployment.md) |  | [optional] 
 **DeploymentVersionId** | Pointer to **int64** |  | [optional] 
 **DeploymentVersion** | Pointer to [**ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion**](ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion.md) |  | [optional] 
@@ -87,20 +87,20 @@ HasInstanceId returns a boolean if a field has been set.
 
 ### GetInstance
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetInstance sets Instance field to given value.
 
@@ -110,6 +110,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *ListDeploys200ResponseAllOfAppDeploysInner) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetDeployment
 
 `func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetDeployment() ListDeploys200ResponseAllOfAppDeploysInnerDeployment`

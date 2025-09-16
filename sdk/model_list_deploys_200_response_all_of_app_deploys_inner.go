@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &ListDeploys200ResponseAllOfAppDeploysInner{}
 type ListDeploys200ResponseAllOfAppDeploysInner struct {
 	Id                   *int64                                                       `json:"id,omitempty"`
 	InstanceId           *int64                                                       `json:"instanceId,omitempty"`
-	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"instance,omitempty"`
+	Instance             NullableListApprovals200ResponseAllOfApprovalsInnerAccount   `json:"instance,omitempty"`
 	Deployment           *ListDeploys200ResponseAllOfAppDeploysInnerDeployment        `json:"deployment,omitempty"`
 	DeploymentVersionId  *int64                                                       `json:"deploymentVersionId,omitempty"`
 	DeploymentVersion    *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion `json:"deploymentVersion,omitempty"`
@@ -118,36 +118,47 @@ func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstanceId(v int64) {
 	o.InstanceId = &v
 }
 
-// GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Instance) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetInstance returns the Instance field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstance() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Instance.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Instance
+	return *o.Instance.Get()
 }
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Instance) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) GetInstanceOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Instance, true
+	return o.Instance.Get(), o.Instance.IsSet()
 }
 
 // IsSetInstance returns a boolean if a field has been set.
 func (o *ListDeploys200ResponseAllOfAppDeploysInner) IsSetInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && o.Instance.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetInstance gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instance field.
-func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Instance = &v
+// SetInstance gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Instance field.
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstance(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Instance.Set(&v)
+}
+
+// SetInstanceNil sets the value for Instance to be an explicit nil
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) SetInstanceNil() {
+	o.Instance.Set(nil)
+}
+
+// UnsetInstance ensures that no value is present for Instance, not even an explicit nil
+func (o *ListDeploys200ResponseAllOfAppDeploysInner) UnsetInstance() {
+	o.Instance.Unset()
 }
 
 // GetDeployment returns the Deployment field value if set, zero value otherwise.
@@ -422,8 +433,8 @@ func (o ListDeploys200ResponseAllOfAppDeploysInner) ToMap() (map[string]interfac
 	if !IsNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
-	if !IsNil(o.Instance) {
-		toSerialize["instance"] = o.Instance
+	if o.Instance.IsSet() {
+		toSerialize["instance"] = o.Instance.Get()
 	}
 	if !IsNil(o.Deployment) {
 		toSerialize["deployment"] = o.Deployment

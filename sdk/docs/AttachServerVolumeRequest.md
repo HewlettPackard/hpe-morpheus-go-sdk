@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MountPoint** | [**AttachServerVolumeRequestMountPoint**](AttachServerVolumeRequestMountPoint.md) |  | 
+**RootVolume** | Pointer to **bool** | Attach as root volume | [optional] 
 
 ## Methods
 
@@ -44,6 +45,31 @@ and a boolean to check if the value has been set.
 
 SetMountPoint sets MountPoint field to given value.
 
+
+### GetRootVolume
+
+`func (o *AttachServerVolumeRequest) GetRootVolume() bool`
+
+GetRootVolume returns the RootVolume field if non-nil, zero value otherwise.
+
+### GetRootVolumeOk
+
+`func (o *AttachServerVolumeRequest) GetRootVolumeOk() (*bool, bool)`
+
+GetRootVolumeOk returns a tuple with the RootVolume field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRootVolume
+
+`func (o *AttachServerVolumeRequest) SetRootVolume(v bool)`
+
+SetRootVolume sets RootVolume field to given value.
+
+### HasRootVolume
+
+`func (o *AttachServerVolumeRequest) HasRootVolume() bool`
+
+HasRootVolume returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

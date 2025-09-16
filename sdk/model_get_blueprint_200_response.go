@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetBlueprint200Response{}
 
 // GetBlueprint200Response struct for GetBlueprint200Response
 type GetBlueprint200Response struct {
-	Blueprint            *ListBlueprints200ResponseAllOfBlueprintsInner `json:"blueprint,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Blueprint            *GetBlueprint200ResponseBlueprint `json:"blueprint,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _GetBlueprint200Response GetBlueprint200Response
@@ -44,9 +44,9 @@ func NewGetBlueprint200ResponseWithDefaults() *GetBlueprint200Response {
 }
 
 // GetBlueprint returns the Blueprint field value if set, zero value otherwise.
-func (o *GetBlueprint200Response) GetBlueprint() ListBlueprints200ResponseAllOfBlueprintsInner {
+func (o *GetBlueprint200Response) GetBlueprint() GetBlueprint200ResponseBlueprint {
 	if o == nil || IsNil(o.Blueprint) {
-		var ret ListBlueprints200ResponseAllOfBlueprintsInner
+		var ret GetBlueprint200ResponseBlueprint
 		return ret
 	}
 	return *o.Blueprint
@@ -54,7 +54,7 @@ func (o *GetBlueprint200Response) GetBlueprint() ListBlueprints200ResponseAllOfB
 
 // GetBlueprintOk returns a tuple with the Blueprint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetBlueprint200Response) GetBlueprintOk() (*ListBlueprints200ResponseAllOfBlueprintsInner, bool) {
+func (o *GetBlueprint200Response) GetBlueprintOk() (*GetBlueprint200ResponseBlueprint, bool) {
 	if o == nil || IsNil(o.Blueprint) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetBlueprint200Response) IsSetBlueprint() bool {
 	return false
 }
 
-// SetBlueprint gets a reference to the given ListBlueprints200ResponseAllOfBlueprintsInner and assigns it to the Blueprint field.
-func (o *GetBlueprint200Response) SetBlueprint(v ListBlueprints200ResponseAllOfBlueprintsInner) {
+// SetBlueprint gets a reference to the given GetBlueprint200ResponseBlueprint and assigns it to the Blueprint field.
+func (o *GetBlueprint200Response) SetBlueprint(v GetBlueprint200ResponseBlueprint) {
 	o.Blueprint = &v
 }
 

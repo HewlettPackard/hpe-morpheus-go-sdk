@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AppDeploy** | Pointer to [**ListDeploys200ResponseAllOfAppDeploysInner**](ListDeploys200ResponseAllOfAppDeploysInner.md) |  | [optional] 
+**AppDeploy** | Pointer to [**UpdateDeploy200ResponseAppDeploy**](UpdateDeploy200ResponseAppDeploy.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAppDeploy
 
-`func (o *UpdateDeploy200Response) GetAppDeploy() ListDeploys200ResponseAllOfAppDeploysInner`
+`func (o *UpdateDeploy200Response) GetAppDeploy() UpdateDeploy200ResponseAppDeploy`
 
 GetAppDeploy returns the AppDeploy field if non-nil, zero value otherwise.
 
 ### GetAppDeployOk
 
-`func (o *UpdateDeploy200Response) GetAppDeployOk() (*ListDeploys200ResponseAllOfAppDeploysInner, bool)`
+`func (o *UpdateDeploy200Response) GetAppDeployOk() (*UpdateDeploy200ResponseAppDeploy, bool)`
 
 GetAppDeployOk returns a tuple with the AppDeploy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppDeploy
 
-`func (o *UpdateDeploy200Response) SetAppDeploy(v ListDeploys200ResponseAllOfAppDeploysInner)`
+`func (o *UpdateDeploy200Response) SetAppDeploy(v UpdateDeploy200ResponseAppDeploy)`
 
 SetAppDeploy sets AppDeploy field to given value.
 

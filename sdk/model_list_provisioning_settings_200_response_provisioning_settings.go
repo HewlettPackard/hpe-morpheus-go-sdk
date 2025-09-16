@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -29,11 +29,11 @@ type ListProvisioningSettings200ResponseProvisioningSettings struct {
 	ReuseSequence             *bool                                                       `json:"reuseSequence,omitempty"`
 	CloudInitUsername         *string                                                     `json:"cloudInitUsername,omitempty"`
 	CloudInitPassword         *string                                                     `json:"cloudInitPassword,omitempty"`
-	CloudInitKeyPair          *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"cloudInitKeyPair,omitempty"`
+	CloudInitKeyPair          NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"cloudInitKeyPair,omitempty"`
 	WindowsPassword           NullableString                                              `json:"windowsPassword,omitempty"`
 	PxeRootPassword           NullableString                                              `json:"pxeRootPassword,omitempty"`
 	DefaultTemplateType       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultTemplateType,omitempty"`
-	DeployStorageProvider     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"deployStorageProvider,omitempty"`
+	DeployStorageProvider     NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"deployStorageProvider,omitempty"`
 	AdditionalProperties      map[string]interface{}                                      `json:",remain"`
 }
 
@@ -344,36 +344,47 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitPa
 	o.CloudInitPassword = &v
 }
 
-// GetCloudInitKeyPair returns the CloudInitKeyPair field value if set, zero value otherwise.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.CloudInitKeyPair) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetCloudInitKeyPair returns the CloudInitKeyPair field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPair() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.CloudInitKeyPair.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.CloudInitKeyPair
+	return *o.CloudInitKeyPair.Get()
 }
 
 // GetCloudInitKeyPairOk returns a tuple with the CloudInitKeyPair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.CloudInitKeyPair) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetCloudInitKeyPairOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CloudInitKeyPair, true
+	return o.CloudInitKeyPair.Get(), o.CloudInitKeyPair.IsSet()
 }
 
 // IsSetCloudInitKeyPair returns a boolean if a field has been set.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetCloudInitKeyPair() bool {
-	if o != nil && !IsNil(o.CloudInitKeyPair) {
+	if o != nil && o.CloudInitKeyPair.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCloudInitKeyPair gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the CloudInitKeyPair field.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.CloudInitKeyPair = &v
+// SetCloudInitKeyPair gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the CloudInitKeyPair field.
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPair(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.CloudInitKeyPair.Set(&v)
+}
+
+// SetCloudInitKeyPairNil sets the value for CloudInitKeyPair to be an explicit nil
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetCloudInitKeyPairNil() {
+	o.CloudInitKeyPair.Set(nil)
+}
+
+// UnsetCloudInitKeyPair ensures that no value is present for CloudInitKeyPair, not even an explicit nil
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetCloudInitKeyPair() {
+	o.CloudInitKeyPair.Unset()
 }
 
 // GetWindowsPassword returns the WindowsPassword field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -494,36 +505,47 @@ func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDefaultTemp
 	o.DefaultTemplateType = &v
 }
 
-// GetDeployStorageProvider returns the DeployStorageProvider field value if set, zero value otherwise.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.DeployStorageProvider) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetDeployStorageProvider returns the DeployStorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProvider() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.DeployStorageProvider.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.DeployStorageProvider
+	return *o.DeployStorageProvider.Get()
 }
 
 // GetDeployStorageProviderOk returns a tuple with the DeployStorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.DeployStorageProvider) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) GetDeployStorageProviderOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DeployStorageProvider, true
+	return o.DeployStorageProvider.Get(), o.DeployStorageProvider.IsSet()
 }
 
 // IsSetDeployStorageProvider returns a boolean if a field has been set.
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) IsSetDeployStorageProvider() bool {
-	if o != nil && !IsNil(o.DeployStorageProvider) {
+	if o != nil && o.DeployStorageProvider.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDeployStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DeployStorageProvider field.
-func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.DeployStorageProvider = &v
+// SetDeployStorageProvider gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the DeployStorageProvider field.
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProvider(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.DeployStorageProvider.Set(&v)
+}
+
+// SetDeployStorageProviderNil sets the value for DeployStorageProvider to be an explicit nil
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) SetDeployStorageProviderNil() {
+	o.DeployStorageProvider.Set(nil)
+}
+
+// UnsetDeployStorageProvider ensures that no value is present for DeployStorageProvider, not even an explicit nil
+func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnsetDeployStorageProvider() {
+	o.DeployStorageProvider.Unset()
 }
 
 func (o ListProvisioningSettings200ResponseProvisioningSettings) MarshalJSON() ([]byte, error) {
@@ -563,8 +585,8 @@ func (o ListProvisioningSettings200ResponseProvisioningSettings) ToMap() (map[st
 	if !IsNil(o.CloudInitPassword) {
 		toSerialize["cloudInitPassword"] = o.CloudInitPassword
 	}
-	if !IsNil(o.CloudInitKeyPair) {
-		toSerialize["cloudInitKeyPair"] = o.CloudInitKeyPair
+	if o.CloudInitKeyPair.IsSet() {
+		toSerialize["cloudInitKeyPair"] = o.CloudInitKeyPair.Get()
 	}
 	if o.WindowsPassword.IsSet() {
 		toSerialize["windowsPassword"] = o.WindowsPassword.Get()
@@ -575,8 +597,8 @@ func (o ListProvisioningSettings200ResponseProvisioningSettings) ToMap() (map[st
 	if !IsNil(o.DefaultTemplateType) {
 		toSerialize["defaultTemplateType"] = o.DefaultTemplateType
 	}
-	if !IsNil(o.DeployStorageProvider) {
-		toSerialize["deployStorageProvider"] = o.DeployStorageProvider
+	if o.DeployStorageProvider.IsSet() {
+		toSerialize["deployStorageProvider"] = o.DeployStorageProvider.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

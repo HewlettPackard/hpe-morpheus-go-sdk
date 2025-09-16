@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Group** | Pointer to **map[string]interface{}** |  | [optional] 
 **Cloud** | Pointer to [**ListInvoices200ResponseAllOfInvoicesInnerCloud**](ListInvoices200ResponseAllOfInvoicesInnerCloud.md) |  | [optional] 
 **Instance** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -175,20 +175,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListInvoices200ResponseAllOfInvoicesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -198,6 +198,16 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
+### SetAccountNil
+
+`func (o *ListInvoices200ResponseAllOfInvoicesInner) SetAccountNil(b bool)`
+
+ SetAccountNil sets the value for Account to be an explicit nil
+
+### UnsetAccount
+`func (o *ListInvoices200ResponseAllOfInvoicesInner) UnsetAccount()`
+
+UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetGroup
 
 `func (o *ListInvoices200ResponseAllOfInvoicesInner) GetGroup() map[string]interface{}`

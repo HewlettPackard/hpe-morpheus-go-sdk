@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -30,9 +30,9 @@ type GetClusterMasters200ResponseMastersInner struct {
 	ExternalName             *string                                                                             `json:"externalName,omitempty"`
 	Hostname                 *string                                                                             `json:"hostname,omitempty"`
 	AccountId                *int64                                                                              `json:"accountId,omitempty"`
-	Account                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"account,omitempty"`
+	Account                  NullableListApprovals200ResponseAllOfApprovalsInnerAccount                          `json:"account,omitempty"`
 	Owner                    *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                         `json:"owner,omitempty"`
-	Zone                     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"zone,omitempty"`
+	Zone                     NullableListApprovals200ResponseAllOfApprovalsInnerAccount                          `json:"zone,omitempty"`
 	Plan                     *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"plan,omitempty"`
 	ComputeServerType        *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
 	Visibility               *string                                                                             `json:"visibility,omitempty"`
@@ -424,36 +424,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetClusterMasters200ResponseMastersInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetClusterMasters200ResponseMastersInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterMasters200ResponseMastersInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetClusterMasters200ResponseMastersInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *GetClusterMasters200ResponseMastersInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *GetClusterMasters200ResponseMastersInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -488,36 +499,47 @@ func (o *GetClusterMasters200ResponseMastersInner) SetOwner(v ListActivity200Res
 	o.Owner = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetClusterMasters200ResponseMastersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GetClusterMasters200ResponseMastersInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterMasters200ResponseMastersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GetClusterMasters200ResponseMastersInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *GetClusterMasters200ResponseMastersInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *GetClusterMasters200ResponseMastersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *GetClusterMasters200ResponseMastersInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *GetClusterMasters200ResponseMastersInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -2610,14 +2632,14 @@ func (o GetClusterMasters200ResponseMastersInner) ToMap() (map[string]interface{
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan

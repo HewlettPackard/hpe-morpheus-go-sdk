@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**PrepareAppApply200ResponseAllOfData**](PrepareAppApply200ResponseAllOfData.md) |  | [optional] 
+**Data** | Pointer to [**AppPrepareApplyData**](AppPrepareApplyData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AppPrepareApply) GetData() PrepareAppApply200ResponseAllOfData`
+`func (o *AppPrepareApply) GetData() AppPrepareApplyData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AppPrepareApply) GetDataOk() (*PrepareAppApply200ResponseAllOfData, bool)`
+`func (o *AppPrepareApply) GetDataOk() (*AppPrepareApplyData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AppPrepareApply) SetData(v PrepareAppApply200ResponseAllOfData)`
+`func (o *AppPrepareApply) SetData(v AppPrepareApplyData)`
 
 SetData sets Data field to given value.
 

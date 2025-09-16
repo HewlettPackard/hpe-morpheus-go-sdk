@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## GetInstanceDeploys
 
-> ListDeploys200Response GetInstanceDeploys(ctx, id).Max(max).Offset(offset).Phrase(phrase).Name(name).DeploymentId(deploymentId).InstanceName(instanceName).InstanceId(instanceId).Version(version).VersionId(versionId).CreatedById(createdById).DeployType(deployType).DateCreated(dateCreated).LastUpdated(lastUpdated).DeployDate(deployDate).Status(status).Execute()
+> GetInstanceDeploys200Response GetInstanceDeploys(ctx, id).Max(max).Offset(offset).Phrase(phrase).Name(name).DeploymentId(deploymentId).InstanceName(instanceName).InstanceId(instanceId).Version(version).VersionId(versionId).CreatedById(createdById).DeployType(deployType).DateCreated(dateCreated).LastUpdated(lastUpdated).DeployDate(deployDate).Status(status).Execute()
 
 Get all Deploys for an Instance
 
@@ -201,7 +201,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeploysAPI.GetInstanceDeploys``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstanceDeploys`: ListDeploys200Response
+	// response from `GetInstanceDeploys`: GetInstanceDeploys200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeploysAPI.GetInstanceDeploys`: %v\n", resp)
 }
 ```
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDeploys200Response**](ListDeploys200Response.md)
+[**GetInstanceDeploys200Response**](GetInstanceDeploys200Response.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**ImageBuild** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ImageBuild** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **BuildNumber** | Pointer to **int64** |  | [optional] 
 **StartDate** | Pointer to **time.Time** |  | [optional] 
 **EndDate** | Pointer to **NullableTime** |  | [optional] 
@@ -64,20 +64,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetImageBuild
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuild() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuild() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetImageBuild returns the ImageBuild field if non-nil, zero value otherwise.
 
 ### GetImageBuildOk
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuildOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetImageBuildOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetImageBuildOk returns a tuple with the ImageBuild field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageBuild
 
-`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuild(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuild(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetImageBuild sets ImageBuild field to given value.
 
@@ -87,6 +87,16 @@ SetImageBuild sets ImageBuild field to given value.
 
 HasImageBuild returns a boolean if a field has been set.
 
+### SetImageBuildNil
+
+`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) SetImageBuildNil(b bool)`
+
+ SetImageBuildNil sets the value for ImageBuild to be an explicit nil
+
+### UnsetImageBuild
+`func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) UnsetImageBuild()`
+
+UnsetImageBuild ensures that no value is present for ImageBuild, not even an explicit nil
 ### GetBuildNumber
 
 `func (o *AddImageBuild200ResponseAllOfImageBuildLastResult) GetBuildNumber() int64`

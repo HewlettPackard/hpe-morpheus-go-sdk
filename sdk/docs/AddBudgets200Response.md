@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Budget** | Pointer to [**ListBudgets200ResponseAllOfBudgetsInner**](ListBudgets200ResponseAllOfBudgetsInner.md) |  | [optional] 
+**Budget** | Pointer to [**AddBudgets200ResponseAllOfBudget**](AddBudgets200ResponseAllOfBudget.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBudget
 
-`func (o *AddBudgets200Response) GetBudget() ListBudgets200ResponseAllOfBudgetsInner`
+`func (o *AddBudgets200Response) GetBudget() AddBudgets200ResponseAllOfBudget`
 
 GetBudget returns the Budget field if non-nil, zero value otherwise.
 
 ### GetBudgetOk
 
-`func (o *AddBudgets200Response) GetBudgetOk() (*ListBudgets200ResponseAllOfBudgetsInner, bool)`
+`func (o *AddBudgets200Response) GetBudgetOk() (*AddBudgets200ResponseAllOfBudget, bool)`
 
 GetBudgetOk returns a tuple with the Budget field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBudget
 
-`func (o *AddBudgets200Response) SetBudget(v ListBudgets200ResponseAllOfBudgetsInner)`
+`func (o *AddBudgets200Response) SetBudget(v AddBudgets200ResponseAllOfBudget)`
 
 SetBudget sets Budget field to given value.
 

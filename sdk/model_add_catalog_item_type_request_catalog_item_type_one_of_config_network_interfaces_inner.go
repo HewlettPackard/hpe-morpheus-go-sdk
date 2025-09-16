@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -27,9 +27,13 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner s
 	IpMode *string `json:"ipMode,omitempty"`
 	// The ip address. Not applicable when using DHCP or IP Pools.
 	IpAddress *string `json:"ipAddress,omitempty"`
+	// The MAC address.
+	MacAddress *string `json:"macAddress,omitempty"`
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
-	Id                   *int64                 `json:"id,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id *int64 `json:"id,omitempty"`
+	// The nested networkInterfaces can be used to define child virtual network intefaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
+	NetworkInterfaces    []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                            `json:",remain"`
 }
 
 type _AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
@@ -176,6 +180,38 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInn
 	o.IpAddress = &v
 }
 
+// GetMacAddress returns the MacAddress field value if set, zero value otherwise.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) GetMacAddress() string {
+	if o == nil || IsNil(o.MacAddress) {
+		var ret string
+		return ret
+	}
+	return *o.MacAddress
+}
+
+// GetMacAddressOk returns a tuple with the MacAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) GetMacAddressOk() (*string, bool) {
+	if o == nil || IsNil(o.MacAddress) {
+		return nil, false
+	}
+	return o.MacAddress, true
+}
+
+// IsSetMacAddress returns a boolean if a field has been set.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) IsSetMacAddress() bool {
+	if o != nil && !IsNil(o.MacAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetMacAddress gets a reference to the given string and assigns it to the MacAddress field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) SetMacAddress(v string) {
+	o.MacAddress = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
@@ -208,6 +244,38 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInn
 	o.Id = &v
 }
 
+// GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner
+		return ret
+	}
+	return o.NetworkInterfaces
+}
+
+// GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) GetNetworkInterfacesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner, bool) {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		return nil, false
+	}
+	return o.NetworkInterfaces, true
+}
+
+// IsSetNetworkInterfaces returns a boolean if a field has been set.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) IsSetNetworkInterfaces() bool {
+	if o != nil && !IsNil(o.NetworkInterfaces) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkInterfaces gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner) {
+	o.NetworkInterfaces = v
+}
+
 func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -228,8 +296,14 @@ func (o AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInne
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
 	}
+	if !IsNil(o.MacAddress) {
+		toSerialize["macAddress"] = o.MacAddress
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.NetworkInterfaces) {
+		toSerialize["networkInterfaces"] = o.NetworkInterfaces
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Folder** | Pointer to [**ListCloudFolders200ResponseAllOfFoldersInner**](ListCloudFolders200ResponseAllOfFoldersInner.md) |  | [optional] 
+**Folder** | Pointer to [**GetCloudFolders200ResponseAllOfFolder**](GetCloudFolders200ResponseAllOfFolder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetFolder
 
-`func (o *GetCloudFolders200Response) GetFolder() ListCloudFolders200ResponseAllOfFoldersInner`
+`func (o *GetCloudFolders200Response) GetFolder() GetCloudFolders200ResponseAllOfFolder`
 
 GetFolder returns the Folder field if non-nil, zero value otherwise.
 
 ### GetFolderOk
 
-`func (o *GetCloudFolders200Response) GetFolderOk() (*ListCloudFolders200ResponseAllOfFoldersInner, bool)`
+`func (o *GetCloudFolders200Response) GetFolderOk() (*GetCloudFolders200ResponseAllOfFolder, bool)`
 
 GetFolderOk returns a tuple with the Folder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFolder
 
-`func (o *GetCloudFolders200Response) SetFolder(v ListCloudFolders200ResponseAllOfFoldersInner)`
+`func (o *GetCloudFolders200Response) SetFolder(v GetCloudFolders200ResponseAllOfFolder)`
 
 SetFolder sets Folder field to given value.
 

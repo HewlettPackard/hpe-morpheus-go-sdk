@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetStorageVolumes200Response{}
 
 // GetStorageVolumes200Response struct for GetStorageVolumes200Response
 type GetStorageVolumes200Response struct {
-	StorageVolume        *ListClusterVolumes200ResponseAllOfVolumesInner `json:"storageVolume,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	StorageVolume        *ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner `json:"storageVolume,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _GetStorageVolumes200Response GetStorageVolumes200Response
@@ -44,9 +44,9 @@ func NewGetStorageVolumes200ResponseWithDefaults() *GetStorageVolumes200Response
 }
 
 // GetStorageVolume returns the StorageVolume field value if set, zero value otherwise.
-func (o *GetStorageVolumes200Response) GetStorageVolume() ListClusterVolumes200ResponseAllOfVolumesInner {
+func (o *GetStorageVolumes200Response) GetStorageVolume() ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
 	if o == nil || IsNil(o.StorageVolume) {
-		var ret ListClusterVolumes200ResponseAllOfVolumesInner
+		var ret ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
 		return ret
 	}
 	return *o.StorageVolume
@@ -54,7 +54,7 @@ func (o *GetStorageVolumes200Response) GetStorageVolume() ListClusterVolumes200R
 
 // GetStorageVolumeOk returns a tuple with the StorageVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetStorageVolumes200Response) GetStorageVolumeOk() (*ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
+func (o *GetStorageVolumes200Response) GetStorageVolumeOk() (*ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
 	if o == nil || IsNil(o.StorageVolume) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetStorageVolumes200Response) IsSetStorageVolume() bool {
 	return false
 }
 
-// SetStorageVolume gets a reference to the given ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the StorageVolume field.
-func (o *GetStorageVolumes200Response) SetStorageVolume(v ListClusterVolumes200ResponseAllOfVolumesInner) {
+// SetStorageVolume gets a reference to the given ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the StorageVolume field.
+func (o *GetStorageVolumes200Response) SetStorageVolume(v ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.StorageVolume = &v
 }
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetCloudDatastores200Response{}
 
 // GetCloudDatastores200Response struct for GetCloudDatastores200Response
 type GetCloudDatastores200Response struct {
-	Datastore            *ListCloudDatastores200ResponseAllOfDatastoresInner `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	Datastore            *GetCloudDatastores200ResponseAllOfDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetCloudDatastores200Response GetCloudDatastores200Response
@@ -44,9 +44,9 @@ func NewGetCloudDatastores200ResponseWithDefaults() *GetCloudDatastores200Respon
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *GetCloudDatastores200Response) GetDatastore() ListCloudDatastores200ResponseAllOfDatastoresInner {
+func (o *GetCloudDatastores200Response) GetDatastore() GetCloudDatastores200ResponseAllOfDatastore {
 	if o == nil || IsNil(o.Datastore) {
-		var ret ListCloudDatastores200ResponseAllOfDatastoresInner
+		var ret GetCloudDatastores200ResponseAllOfDatastore
 		return ret
 	}
 	return *o.Datastore
@@ -54,7 +54,7 @@ func (o *GetCloudDatastores200Response) GetDatastore() ListCloudDatastores200Res
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetCloudDatastores200Response) GetDatastoreOk() (*ListCloudDatastores200ResponseAllOfDatastoresInner, bool) {
+func (o *GetCloudDatastores200Response) GetDatastoreOk() (*GetCloudDatastores200ResponseAllOfDatastore, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetCloudDatastores200Response) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given ListCloudDatastores200ResponseAllOfDatastoresInner and assigns it to the Datastore field.
-func (o *GetCloudDatastores200Response) SetDatastore(v ListCloudDatastores200ResponseAllOfDatastoresInner) {
+// SetDatastore gets a reference to the given GetCloudDatastores200ResponseAllOfDatastore and assigns it to the Datastore field.
+func (o *GetCloudDatastores200Response) SetDatastore(v GetCloudDatastores200ResponseAllOfDatastore) {
 	o.Datastore = &v
 }
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateInvoices200Response{}
 
 // UpdateInvoices200Response struct for UpdateInvoices200Response
 type UpdateInvoices200Response struct {
-	User                 *ListInvoices200ResponseAllOfInvoicesInner `json:"user,omitempty"`
-	Success              *bool                                      `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	User                 *GetInvoices200ResponseAllOfInvoice `json:"user,omitempty"`
+	Success              *bool                               `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _UpdateInvoices200Response UpdateInvoices200Response
@@ -45,9 +45,9 @@ func NewUpdateInvoices200ResponseWithDefaults() *UpdateInvoices200Response {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UpdateInvoices200Response) GetUser() ListInvoices200ResponseAllOfInvoicesInner {
+func (o *UpdateInvoices200Response) GetUser() GetInvoices200ResponseAllOfInvoice {
 	if o == nil || IsNil(o.User) {
-		var ret ListInvoices200ResponseAllOfInvoicesInner
+		var ret GetInvoices200ResponseAllOfInvoice
 		return ret
 	}
 	return *o.User
@@ -55,7 +55,7 @@ func (o *UpdateInvoices200Response) GetUser() ListInvoices200ResponseAllOfInvoic
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateInvoices200Response) GetUserOk() (*ListInvoices200ResponseAllOfInvoicesInner, bool) {
+func (o *UpdateInvoices200Response) GetUserOk() (*GetInvoices200ResponseAllOfInvoice, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *UpdateInvoices200Response) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given ListInvoices200ResponseAllOfInvoicesInner and assigns it to the User field.
-func (o *UpdateInvoices200Response) SetUser(v ListInvoices200ResponseAllOfInvoicesInner) {
+// SetUser gets a reference to the given GetInvoices200ResponseAllOfInvoice and assigns it to the User field.
+func (o *UpdateInvoices200Response) SetUser(v GetInvoices200ResponseAllOfInvoice) {
 	o.User = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**License** | Pointer to [**ListProvisioningLicenses200ResponseAllOfLicensesInner**](ListProvisioningLicenses200ResponseAllOfLicensesInner.md) |  | [optional] 
+**License** | Pointer to [**GetProvisioningLicense200ResponseLicense**](GetProvisioningLicense200ResponseLicense.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLicense
 
-`func (o *GetProvisioningLicense200Response) GetLicense() ListProvisioningLicenses200ResponseAllOfLicensesInner`
+`func (o *GetProvisioningLicense200Response) GetLicense() GetProvisioningLicense200ResponseLicense`
 
 GetLicense returns the License field if non-nil, zero value otherwise.
 
 ### GetLicenseOk
 
-`func (o *GetProvisioningLicense200Response) GetLicenseOk() (*ListProvisioningLicenses200ResponseAllOfLicensesInner, bool)`
+`func (o *GetProvisioningLicense200Response) GetLicenseOk() (*GetProvisioningLicense200ResponseLicense, bool)`
 
 GetLicenseOk returns a tuple with the License field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLicense
 
-`func (o *GetProvisioningLicense200Response) SetLicense(v ListProvisioningLicenses200ResponseAllOfLicensesInner)`
+`func (o *GetProvisioningLicense200Response) SetLicense(v GetProvisioningLicense200ResponseLicense)`
 
 SetLicense sets License field to given value.
 

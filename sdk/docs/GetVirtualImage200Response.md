@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualImage** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInner**](ListVirtualImages200ResponseAllOfVirtualImagesInner.md) |  | [optional] 
+**VirtualImage** | Pointer to [**AddVirtualImage200ResponseAllOfVirtualImage**](AddVirtualImage200ResponseAllOfVirtualImage.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualImage
 
-`func (o *GetVirtualImage200Response) GetVirtualImage() ListVirtualImages200ResponseAllOfVirtualImagesInner`
+`func (o *GetVirtualImage200Response) GetVirtualImage() AddVirtualImage200ResponseAllOfVirtualImage`
 
 GetVirtualImage returns the VirtualImage field if non-nil, zero value otherwise.
 
 ### GetVirtualImageOk
 
-`func (o *GetVirtualImage200Response) GetVirtualImageOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInner, bool)`
+`func (o *GetVirtualImage200Response) GetVirtualImageOk() (*AddVirtualImage200ResponseAllOfVirtualImage, bool)`
 
 GetVirtualImageOk returns a tuple with the VirtualImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualImage
 
-`func (o *GetVirtualImage200Response) SetVirtualImage(v ListVirtualImages200ResponseAllOfVirtualImagesInner)`
+`func (o *GetVirtualImage200Response) SetVirtualImage(v AddVirtualImage200ResponseAllOfVirtualImage)`
 
 SetVirtualImage sets VirtualImage field to given value.
 

@@ -173,8 +173,8 @@ import (
 )
 
 func main() {
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	taskId := int64(5) // int64 | The Task ID for filtering (optional)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	ansibleTowerIntegrationId := int64(33) // int64 | Filter by an integration Id of an Ansible Tower Integration. (optional)
@@ -202,8 +202,8 @@ Other parameters are passed through a pointer to a apiListOptionAnsibleTowerInve
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zoneId** | **int64** | The Zone ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **taskId** | **int64** | The Task ID for filtering | 
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **ansibleTowerIntegrationId** | **int64** | Filter by an integration Id of an Ansible Tower Integration. | 
@@ -247,8 +247,8 @@ import (
 )
 
 func main() {
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 	taskId := int64(5) // int64 | The Task ID for filtering (optional)
 	accountId := int64(3) // int64 | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. (optional)
 	ansibleTowerIntegrationId := int64(33) // int64 | Filter by an integration Id of an Ansible Tower Integration. (optional)
@@ -276,8 +276,8 @@ Other parameters are passed through a pointer to a apiListOptionAnsibleTowerJobT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zoneId** | **int64** | The Zone ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
  **taskId** | **int64** | The Task ID for filtering | 
  **accountId** | **int64** | Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users. | 
  **ansibleTowerIntegrationId** | **int64** | Filter by an integration Id of an Ansible Tower Integration. | 
@@ -387,7 +387,7 @@ import (
 )
 
 func main() {
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	provisionTypeId := int64(22) // int64 | Provision type filter, restricts query to only load service plans of specified provision type (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -413,7 +413,7 @@ Other parameters are passed through a pointer to a apiListOptionNetworkOptionsRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **provisionTypeId** | **int64** | Provision type filter, restricts query to only load service plans of specified provision type | 
 
 ### Return type

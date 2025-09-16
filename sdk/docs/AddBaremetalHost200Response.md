@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
-**Server** | Pointer to [**ListHosts200ResponseAllOfServersInner**](ListHosts200ResponseAllOfServersInner.md) |  | [optional] 
+**Server** | Pointer to [**AddBaremetalHost200ResponseServer**](AddBaremetalHost200ResponseServer.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSuccess returns a boolean if a field has been set.
 
 ### GetServer
 
-`func (o *AddBaremetalHost200Response) GetServer() ListHosts200ResponseAllOfServersInner`
+`func (o *AddBaremetalHost200Response) GetServer() AddBaremetalHost200ResponseServer`
 
 GetServer returns the Server field if non-nil, zero value otherwise.
 
 ### GetServerOk
 
-`func (o *AddBaremetalHost200Response) GetServerOk() (*ListHosts200ResponseAllOfServersInner, bool)`
+`func (o *AddBaremetalHost200Response) GetServerOk() (*AddBaremetalHost200ResponseServer, bool)`
 
 GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServer
 
-`func (o *AddBaremetalHost200Response) SetServer(v ListHosts200ResponseAllOfServersInner)`
+`func (o *AddBaremetalHost200Response) SetServer(v AddBaremetalHost200ResponseServer)`
 
 SetServer sets Server field to given value.
 

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,11 +20,11 @@ var _ MappedNullable = &GetImageBuildExecutions200Response{}
 
 // GetImageBuildExecutions200Response struct for GetImageBuildExecutions200Response
 type GetImageBuildExecutions200Response struct {
-	ImageBuildExecutions     []GetImageBuild200ResponseImageBuildExecutionsInner `json:"imageBuildExecutions,omitempty"`
-	ImageBuildExecutionCount *int64                                              `json:"imageBuildExecutionCount,omitempty"`
-	ImageBuild               *AddImageBuild200ResponseAllOfImageBuild            `json:"imageBuild,omitempty"`
-	Meta                     *ListActivity200ResponseAllOfMeta                   `json:"meta,omitempty"`
-	AdditionalProperties     map[string]interface{}                              `json:",remain"`
+	ImageBuildExecutions     []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner `json:"imageBuildExecutions,omitempty"`
+	ImageBuildExecutionCount *int64                                                             `json:"imageBuildExecutionCount,omitempty"`
+	ImageBuild               *GetImageBuild200ResponseImageBuild                                `json:"imageBuild,omitempty"`
+	Meta                     *ListActivity200ResponseAllOfMeta                                  `json:"meta,omitempty"`
+	AdditionalProperties     map[string]interface{}                                             `json:",remain"`
 }
 
 type _GetImageBuildExecutions200Response GetImageBuildExecutions200Response
@@ -47,9 +47,9 @@ func NewGetImageBuildExecutions200ResponseWithDefaults() *GetImageBuildExecution
 }
 
 // GetImageBuildExecutions returns the ImageBuildExecutions field value if set, zero value otherwise.
-func (o *GetImageBuildExecutions200Response) GetImageBuildExecutions() []GetImageBuild200ResponseImageBuildExecutionsInner {
+func (o *GetImageBuildExecutions200Response) GetImageBuildExecutions() []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner {
 	if o == nil || IsNil(o.ImageBuildExecutions) {
-		var ret []GetImageBuild200ResponseImageBuildExecutionsInner
+		var ret []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner
 		return ret
 	}
 	return o.ImageBuildExecutions
@@ -57,7 +57,7 @@ func (o *GetImageBuildExecutions200Response) GetImageBuildExecutions() []GetImag
 
 // GetImageBuildExecutionsOk returns a tuple with the ImageBuildExecutions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionsOk() ([]GetImageBuild200ResponseImageBuildExecutionsInner, bool) {
+func (o *GetImageBuildExecutions200Response) GetImageBuildExecutionsOk() ([]GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner, bool) {
 	if o == nil || IsNil(o.ImageBuildExecutions) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *GetImageBuildExecutions200Response) IsSetImageBuildExecutions() bool {
 	return false
 }
 
-// SetImageBuildExecutions gets a reference to the given []GetImageBuild200ResponseImageBuildExecutionsInner and assigns it to the ImageBuildExecutions field.
-func (o *GetImageBuildExecutions200Response) SetImageBuildExecutions(v []GetImageBuild200ResponseImageBuildExecutionsInner) {
+// SetImageBuildExecutions gets a reference to the given []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner and assigns it to the ImageBuildExecutions field.
+func (o *GetImageBuildExecutions200Response) SetImageBuildExecutions(v []GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) {
 	o.ImageBuildExecutions = v
 }
 
@@ -111,9 +111,9 @@ func (o *GetImageBuildExecutions200Response) SetImageBuildExecutionCount(v int64
 }
 
 // GetImageBuild returns the ImageBuild field value if set, zero value otherwise.
-func (o *GetImageBuildExecutions200Response) GetImageBuild() AddImageBuild200ResponseAllOfImageBuild {
+func (o *GetImageBuildExecutions200Response) GetImageBuild() GetImageBuild200ResponseImageBuild {
 	if o == nil || IsNil(o.ImageBuild) {
-		var ret AddImageBuild200ResponseAllOfImageBuild
+		var ret GetImageBuild200ResponseImageBuild
 		return ret
 	}
 	return *o.ImageBuild
@@ -121,7 +121,7 @@ func (o *GetImageBuildExecutions200Response) GetImageBuild() AddImageBuild200Res
 
 // GetImageBuildOk returns a tuple with the ImageBuild field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetImageBuildExecutions200Response) GetImageBuildOk() (*AddImageBuild200ResponseAllOfImageBuild, bool) {
+func (o *GetImageBuildExecutions200Response) GetImageBuildOk() (*GetImageBuild200ResponseImageBuild, bool) {
 	if o == nil || IsNil(o.ImageBuild) {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *GetImageBuildExecutions200Response) IsSetImageBuild() bool {
 	return false
 }
 
-// SetImageBuild gets a reference to the given AddImageBuild200ResponseAllOfImageBuild and assigns it to the ImageBuild field.
-func (o *GetImageBuildExecutions200Response) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuild) {
+// SetImageBuild gets a reference to the given GetImageBuild200ResponseImageBuild and assigns it to the ImageBuild field.
+func (o *GetImageBuildExecutions200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild) {
 	o.ImageBuild = &v
 }
 

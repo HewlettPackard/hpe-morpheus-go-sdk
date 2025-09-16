@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddBaremetalHost200Response{}
 
 // AddBaremetalHost200Response struct for AddBaremetalHost200Response
 type AddBaremetalHost200Response struct {
-	Success              *bool                                  `json:"success,omitempty"`
-	Server               *ListHosts200ResponseAllOfServersInner `json:"server,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Success              *bool                              `json:"success,omitempty"`
+	Server               *AddBaremetalHost200ResponseServer `json:"server,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _AddBaremetalHost200Response AddBaremetalHost200Response
@@ -77,9 +77,9 @@ func (o *AddBaremetalHost200Response) SetSuccess(v bool) {
 }
 
 // GetServer returns the Server field value if set, zero value otherwise.
-func (o *AddBaremetalHost200Response) GetServer() ListHosts200ResponseAllOfServersInner {
+func (o *AddBaremetalHost200Response) GetServer() AddBaremetalHost200ResponseServer {
 	if o == nil || IsNil(o.Server) {
-		var ret ListHosts200ResponseAllOfServersInner
+		var ret AddBaremetalHost200ResponseServer
 		return ret
 	}
 	return *o.Server
@@ -87,7 +87,7 @@ func (o *AddBaremetalHost200Response) GetServer() ListHosts200ResponseAllOfServe
 
 // GetServerOk returns a tuple with the Server field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200Response) GetServerOk() (*ListHosts200ResponseAllOfServersInner, bool) {
+func (o *AddBaremetalHost200Response) GetServerOk() (*AddBaremetalHost200ResponseServer, bool) {
 	if o == nil || IsNil(o.Server) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *AddBaremetalHost200Response) IsSetServer() bool {
 	return false
 }
 
-// SetServer gets a reference to the given ListHosts200ResponseAllOfServersInner and assigns it to the Server field.
-func (o *AddBaremetalHost200Response) SetServer(v ListHosts200ResponseAllOfServersInner) {
+// SetServer gets a reference to the given AddBaremetalHost200ResponseServer and assigns it to the Server field.
+func (o *AddBaremetalHost200Response) SetServer(v AddBaremetalHost200ResponseServer) {
 	o.Server = &v
 }
 

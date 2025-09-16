@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ImageBuild** | Pointer to [**AddImageBuild200ResponseAllOfImageBuild**](AddImageBuild200ResponseAllOfImageBuild.md) |  | [optional] 
+**ImageBuild** | Pointer to [**GetImageBuild200ResponseImageBuild**](GetImageBuild200ResponseImageBuild.md) |  | [optional] 
 **ImageBuildExecutions** | Pointer to [**[]GetImageBuild200ResponseImageBuildExecutionsInner**](GetImageBuild200ResponseImageBuildExecutionsInner.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetImageBuild
 
-`func (o *GetImageBuild200Response) GetImageBuild() AddImageBuild200ResponseAllOfImageBuild`
+`func (o *GetImageBuild200Response) GetImageBuild() GetImageBuild200ResponseImageBuild`
 
 GetImageBuild returns the ImageBuild field if non-nil, zero value otherwise.
 
 ### GetImageBuildOk
 
-`func (o *GetImageBuild200Response) GetImageBuildOk() (*AddImageBuild200ResponseAllOfImageBuild, bool)`
+`func (o *GetImageBuild200Response) GetImageBuildOk() (*GetImageBuild200ResponseImageBuild, bool)`
 
 GetImageBuildOk returns a tuple with the ImageBuild field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImageBuild
 
-`func (o *GetImageBuild200Response) SetImageBuild(v AddImageBuild200ResponseAllOfImageBuild)`
+`func (o *GetImageBuild200Response) SetImageBuild(v GetImageBuild200ResponseImageBuild)`
 
 SetImageBuild sets ImageBuild field to given value.
 

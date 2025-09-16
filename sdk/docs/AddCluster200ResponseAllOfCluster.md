@@ -51,12 +51,12 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **UserGroup** | Pointer to **NullableString** |  | [optional] 
 **Layout** | Pointer to [**ListClusters200ResponseAllOfClustersInnerLayout**](ListClusters200ResponseAllOfClustersInnerLayout.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Servers** | Pointer to [**[]ListClusters200ResponseAllOfClustersInnerServersInner**](ListClusters200ResponseAllOfClustersInnerServersInner.md) |  | [optional] 
 **Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Integrations** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Site** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Type** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Site** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Type** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Zone** | Pointer to [**ListClusters200ResponseAllOfClustersInnerZone**](ListClusters200ResponseAllOfClustersInnerZone.md) |  | [optional] 
 **WorkerStats** | Pointer to [**ListClusters200ResponseAllOfClustersInnerWorkerStats**](ListClusters200ResponseAllOfClustersInnerWorkerStats.md) |  | [optional] 
 **ContainersCount** | Pointer to **int64** |  | [optional] 
@@ -1576,20 +1576,20 @@ HasLayout returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *AddCluster200ResponseAllOfCluster) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddCluster200ResponseAllOfCluster) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *AddCluster200ResponseAllOfCluster) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddCluster200ResponseAllOfCluster) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *AddCluster200ResponseAllOfCluster) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddCluster200ResponseAllOfCluster) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -1599,6 +1599,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *AddCluster200ResponseAllOfCluster) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetServers
 
 `func (o *AddCluster200ResponseAllOfCluster) GetServers() []ListClusters200ResponseAllOfClustersInnerServersInner`
@@ -1676,20 +1686,20 @@ HasIntegrations returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *AddCluster200ResponseAllOfCluster) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddCluster200ResponseAllOfCluster) GetSite() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *AddCluster200ResponseAllOfCluster) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddCluster200ResponseAllOfCluster) GetSiteOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *AddCluster200ResponseAllOfCluster) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddCluster200ResponseAllOfCluster) SetSite(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetSite sets Site field to given value.
 
@@ -1699,22 +1709,32 @@ SetSite sets Site field to given value.
 
 HasSite returns a boolean if a field has been set.
 
+### SetSiteNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetSiteNil(b bool)`
+
+ SetSiteNil sets the value for Site to be an explicit nil
+
+### UnsetSite
+`func (o *AddCluster200ResponseAllOfCluster) UnsetSite()`
+
+UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetType
 
-`func (o *AddCluster200ResponseAllOfCluster) GetType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddCluster200ResponseAllOfCluster) GetType() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *AddCluster200ResponseAllOfCluster) GetTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddCluster200ResponseAllOfCluster) GetTypeOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *AddCluster200ResponseAllOfCluster) SetType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddCluster200ResponseAllOfCluster) SetType(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetType sets Type field to given value.
 
@@ -1724,6 +1744,16 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *AddCluster200ResponseAllOfCluster) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *AddCluster200ResponseAllOfCluster) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetZone
 
 `func (o *AddCluster200ResponseAllOfCluster) GetZone() ListClusters200ResponseAllOfClustersInnerZone`

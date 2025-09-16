@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -33,7 +33,7 @@ type ArchiveBucket struct {
 	FilePath             *string                                                         `json:"filePath,omitempty"`
 	RawSize              NullableInt64                                                   `json:"rawSize,omitempty"`
 	FileCount            *int64                                                          `json:"fileCount,omitempty"`
-	Accounts             []map[string]interface{}                                        `json:"accounts,omitempty"`
+	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"accounts,omitempty"`
 	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
 	AdditionalProperties map[string]interface{}                                          `json:",remain"`
@@ -465,9 +465,9 @@ func (o *ArchiveBucket) SetFileCount(v int64) {
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *ArchiveBucket) GetAccounts() []map[string]interface{} {
+func (o *ArchiveBucket) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []map[string]interface{}
+		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
 	return o.Accounts
@@ -475,7 +475,7 @@ func (o *ArchiveBucket) GetAccounts() []map[string]interface{} {
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ArchiveBucket) GetAccountsOk() ([]map[string]interface{}, bool) {
+func (o *ArchiveBucket) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -491,8 +491,8 @@ func (o *ArchiveBucket) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []map[string]interface{} and assigns it to the Accounts field.
-func (o *ArchiveBucket) SetAccounts(v []map[string]interface{}) {
+// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
+func (o *ArchiveBucket) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
 	o.Accounts = v
 }
 

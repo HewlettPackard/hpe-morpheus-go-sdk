@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,10 @@ var _ MappedNullable = &AttachServerVolumeRequest{}
 
 // AttachServerVolumeRequest struct for AttachServerVolumeRequest
 type AttachServerVolumeRequest struct {
-	MountPoint           AttachServerVolumeRequestMountPoint `json:"mountPoint"`
-	AdditionalProperties map[string]interface{}              `json:",remain"`
+	MountPoint AttachServerVolumeRequestMountPoint `json:"mountPoint"`
+	// Attach as root volume
+	RootVolume           *bool                  `json:"rootVolume,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AttachServerVolumeRequest AttachServerVolumeRequest
@@ -68,6 +70,38 @@ func (o *AttachServerVolumeRequest) SetMountPoint(v AttachServerVolumeRequestMou
 	o.MountPoint = v
 }
 
+// GetRootVolume returns the RootVolume field value if set, zero value otherwise.
+func (o *AttachServerVolumeRequest) GetRootVolume() bool {
+	if o == nil || IsNil(o.RootVolume) {
+		var ret bool
+		return ret
+	}
+	return *o.RootVolume
+}
+
+// GetRootVolumeOk returns a tuple with the RootVolume field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AttachServerVolumeRequest) GetRootVolumeOk() (*bool, bool) {
+	if o == nil || IsNil(o.RootVolume) {
+		return nil, false
+	}
+	return o.RootVolume, true
+}
+
+// IsSetRootVolume returns a boolean if a field has been set.
+func (o *AttachServerVolumeRequest) IsSetRootVolume() bool {
+	if o != nil && !IsNil(o.RootVolume) {
+		return true
+	}
+
+	return false
+}
+
+// SetRootVolume gets a reference to the given bool and assigns it to the RootVolume field.
+func (o *AttachServerVolumeRequest) SetRootVolume(v bool) {
+	o.RootVolume = &v
+}
+
 func (o AttachServerVolumeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -79,6 +113,9 @@ func (o AttachServerVolumeRequest) MarshalJSON() ([]byte, error) {
 func (o AttachServerVolumeRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mountPoint"] = o.MountPoint
+	if !IsNil(o.RootVolume) {
+		toSerialize["rootVolume"] = o.RootVolume
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

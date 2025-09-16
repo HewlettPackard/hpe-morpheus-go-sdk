@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -28,19 +28,19 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	Authority   *string        `json:"authority,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           NullableString                                     `json:"landingUrl,omitempty"`
-	Scope                *string                                            `json:"scope,omitempty"`
-	RoleType             *string                                            `json:"roleType,omitempty"`
-	Multitenant          *bool                                              `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                              `json:"multitenantLocked,omitempty"`
-	ParentRoleId         NullableString                                     `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                              `json:"diverged,omitempty"`
-	OwnerId              *int64                                             `json:"ownerId,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	DefaultPersona       NullableString                                     `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	LandingUrl           NullableString                                             `json:"landingUrl,omitempty"`
+	Scope                *string                                                    `json:"scope,omitempty"`
+	RoleType             *string                                                    `json:"roleType,omitempty"`
+	Multitenant          *bool                                                      `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                                      `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                                             `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                                      `json:"diverged,omitempty"`
+	OwnerId              *int64                                                     `json:"ownerId,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"owner,omitempty"`
+	DefaultPersona       NullableString                                             `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
@@ -479,36 +479,47 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerId(v int64) {
 	o.OwnerId = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -664,8 +675,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if o.DefaultPersona.IsSet() {
 		toSerialize["defaultPersona"] = o.DefaultPersona.Get()

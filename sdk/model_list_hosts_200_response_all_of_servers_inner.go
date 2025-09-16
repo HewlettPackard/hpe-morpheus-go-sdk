@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -29,11 +29,11 @@ type ListHosts200ResponseAllOfServersInner struct {
 	Name                     *string                                                                             `json:"name,omitempty"`
 	ExternalName             *string                                                                             `json:"externalName,omitempty"`
 	Hostname                 *string                                                                             `json:"hostname,omitempty"`
-	ParentServer             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"parentServer,omitempty"`
+	ParentServer             NullableListApprovals200ResponseAllOfApprovalsInnerAccount                          `json:"parentServer,omitempty"`
 	AccountId                *int64                                                                              `json:"accountId,omitempty"`
-	Account                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"account,omitempty"`
+	Account                  NullableListApprovals200ResponseAllOfApprovalsInnerAccount                          `json:"account,omitempty"`
 	Owner                    *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                         `json:"owner,omitempty"`
-	Zone                     *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                  `json:"zone,omitempty"`
+	Zone                     NullableListApprovals200ResponseAllOfApprovalsInnerAccount                          `json:"zone,omitempty"`
 	Plan                     *ListHosts200ResponseAllOfServersInnerPlan                                          `json:"plan,omitempty"`
 	ComputeServerType        *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType `json:"computeServerType,omitempty"`
 	Visibility               *string                                                                             `json:"visibility,omitempty"`
@@ -84,7 +84,7 @@ type ListHosts200ResponseAllOfServersInner struct {
 	HourlyPrice              *float32                                                                            `json:"hourlyPrice,omitempty"`
 	SourceImage              *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"sourceImage,omitempty"`
 	ServerOs                 *ListHosts200ResponseAllOfServersInnerServerOs                                      `json:"serverOs,omitempty"`
-	Volumes                  []ListClusterVolumes200ResponseAllOfVolumesInner                                    `json:"volumes,omitempty"`
+	Volumes                  []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner                          `json:"volumes,omitempty"`
 	Controllers              []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner        `json:"controllers,omitempty"`
 	Interfaces               []ListHosts200ResponseAllOfServersInnerInterfacesInner                              `json:"interfaces,omitempty"`
 	Labels                   []map[string]interface{}                                                            `json:"labels,omitempty"`
@@ -411,36 +411,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetHostname(v string) {
 	o.Hostname = &v
 }
 
-// GetParentServer returns the ParentServer field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetParentServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.ParentServer) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetParentServer returns the ParentServer field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListHosts200ResponseAllOfServersInner) GetParentServer() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.ParentServer.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.ParentServer
+	return *o.ParentServer.Get()
 }
 
 // GetParentServerOk returns a tuple with the ParentServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetParentServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.ParentServer) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListHosts200ResponseAllOfServersInner) GetParentServerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentServer, true
+	return o.ParentServer.Get(), o.ParentServer.IsSet()
 }
 
 // IsSetParentServer returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetParentServer() bool {
-	if o != nil && !IsNil(o.ParentServer) {
+	if o != nil && o.ParentServer.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentServer gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ParentServer field.
-func (o *ListHosts200ResponseAllOfServersInner) SetParentServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.ParentServer = &v
+// SetParentServer gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the ParentServer field.
+func (o *ListHosts200ResponseAllOfServersInner) SetParentServer(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.ParentServer.Set(&v)
+}
+
+// SetParentServerNil sets the value for ParentServer to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetParentServerNil() {
+	o.ParentServer.Set(nil)
+}
+
+// UnsetParentServer ensures that no value is present for ParentServer, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetParentServer() {
+	o.ParentServer.Unset()
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -475,36 +486,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListHosts200ResponseAllOfServersInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListHosts200ResponseAllOfServersInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListHosts200ResponseAllOfServersInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListHosts200ResponseAllOfServersInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -539,36 +561,47 @@ func (o *ListHosts200ResponseAllOfServersInner) SetOwner(v ListActivity200Respon
 	o.Owner = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListHosts200ResponseAllOfServersInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListHosts200ResponseAllOfServersInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListHosts200ResponseAllOfServersInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *ListHosts200ResponseAllOfServersInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListHosts200ResponseAllOfServersInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -2414,9 +2447,9 @@ func (o *ListHosts200ResponseAllOfServersInner) SetServerOs(v ListHosts200Respon
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
+func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
+		var ret []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
 		return ret
 	}
 	return o.Volumes
@@ -2424,7 +2457,7 @@ func (o *ListHosts200ResponseAllOfServersInner) GetVolumes() []ListClusterVolume
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
+func (o *ListHosts200ResponseAllOfServersInner) GetVolumesOk() ([]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -2440,8 +2473,8 @@ func (o *ListHosts200ResponseAllOfServersInner) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumes field.
-func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
+// SetVolumes gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the Volumes field.
+func (o *ListHosts200ResponseAllOfServersInner) SetVolumes(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.Volumes = v
 }
 
@@ -3027,20 +3060,20 @@ func (o ListHosts200ResponseAllOfServersInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Hostname) {
 		toSerialize["hostname"] = o.Hostname
 	}
-	if !IsNil(o.ParentServer) {
-		toSerialize["parentServer"] = o.ParentServer
+	if o.ParentServer.IsSet() {
+		toSerialize["parentServer"] = o.ParentServer.Get()
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork.md) |  | [optional] 
+**Network** | Pointer to [**ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork**](ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **ShowNetworkPoolLabel** | Pointer to **bool** |  | [optional] 
 **ShowNetworkDhcpLabel** | Pointer to **bool** |  | [optional] 
@@ -56,20 +56,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetwork() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetwork() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetworkOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork, bool)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetworkOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) SetNetwork(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) SetNetwork(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork)`
 
 SetNetwork sets Network field to given value.
 

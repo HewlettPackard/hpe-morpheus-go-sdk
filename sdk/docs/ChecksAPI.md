@@ -183,7 +183,7 @@ import (
 )
 
 func main() {
-	addChecksRequest := *openapiclient.NewAddChecksRequest(openapiclient.addChecks_request_check{AddChecksRequestCheckOneOf: openapiclient.NewAddChecksRequestCheckOneOf()}) // AddChecksRequest |  (optional)
+	addChecksRequest := *openapiclient.NewAddChecksRequest(openapiclient.addChecks_request_check{CheckSocket: openapiclient.NewCheckSocket("My Check")}) // AddChecksRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1201,7 +1201,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	updateChecksRequest := *openapiclient.NewUpdateChecksRequest(openapiclient.updateChecks_request_check{AddChecksRequestCheckOneOf: openapiclient.NewAddChecksRequestCheckOneOf()}) // UpdateChecksRequest |  (optional)
+	updateChecksRequest := *openapiclient.NewUpdateChecksRequest(openapiclient.updateChecks_request_check{CheckSocket: openapiclient.NewCheckSocket("My Check")}) // UpdateChecksRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

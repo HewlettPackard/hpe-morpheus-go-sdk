@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -84,9 +84,9 @@ type Server struct {
 	HourlyPrice              *float32                                                                            `json:"hourlyPrice,omitempty"`
 	SourceImage              *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                         `json:"sourceImage,omitempty"`
 	ServerOs                 *ListHosts200ResponseAllOfServersInnerServerOs                                      `json:"serverOs,omitempty"`
-	Volumes                  []ListClusterVolumes200ResponseAllOfVolumesInner                                    `json:"volumes,omitempty"`
+	Volumes                  []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner                          `json:"volumes,omitempty"`
 	Controllers              []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner        `json:"controllers,omitempty"`
-	Interfaces               []ListHosts200ResponseAllOfServersInnerInterfacesInner                              `json:"interfaces,omitempty"`
+	Interfaces               []AddBaremetalHost200ResponseServerInterfacesInner                                  `json:"interfaces,omitempty"`
 	Labels                   []map[string]interface{}                                                            `json:"labels,omitempty"`
 	Tags                     []map[string]interface{}                                                            `json:"tags,omitempty"`
 	Enabled                  *bool                                                                               `json:"enabled,omitempty"`
@@ -2414,9 +2414,9 @@ func (o *Server) SetServerOs(v ListHosts200ResponseAllOfServersInnerServerOs) {
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *Server) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
+func (o *Server) GetVolumes() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
+		var ret []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
 		return ret
 	}
 	return o.Volumes
@@ -2424,7 +2424,7 @@ func (o *Server) GetVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Server) GetVolumesOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
+func (o *Server) GetVolumesOk() ([]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -2440,8 +2440,8 @@ func (o *Server) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumes field.
-func (o *Server) SetVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
+// SetVolumes gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the Volumes field.
+func (o *Server) SetVolumes(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.Volumes = v
 }
 
@@ -2478,9 +2478,9 @@ func (o *Server) SetControllers(v []ListGuidances200ResponseAllOfDiscoveriesInne
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *Server) GetInterfaces() []ListHosts200ResponseAllOfServersInnerInterfacesInner {
+func (o *Server) GetInterfaces() []AddBaremetalHost200ResponseServerInterfacesInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []ListHosts200ResponseAllOfServersInnerInterfacesInner
+		var ret []AddBaremetalHost200ResponseServerInterfacesInner
 		return ret
 	}
 	return o.Interfaces
@@ -2488,7 +2488,7 @@ func (o *Server) GetInterfaces() []ListHosts200ResponseAllOfServersInnerInterfac
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Server) GetInterfacesOk() ([]ListHosts200ResponseAllOfServersInnerInterfacesInner, bool) {
+func (o *Server) GetInterfacesOk() ([]AddBaremetalHost200ResponseServerInterfacesInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -2504,8 +2504,8 @@ func (o *Server) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []ListHosts200ResponseAllOfServersInnerInterfacesInner and assigns it to the Interfaces field.
-func (o *Server) SetInterfaces(v []ListHosts200ResponseAllOfServersInnerInterfacesInner) {
+// SetInterfaces gets a reference to the given []AddBaremetalHost200ResponseServerInterfacesInner and assigns it to the Interfaces field.
+func (o *Server) SetInterfaces(v []AddBaremetalHost200ResponseServerInterfacesInner) {
 	o.Interfaces = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Instance** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Instance** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **InstanceThreshold** | Pointer to [**GetInstanceThreshold200ResponseInstanceThreshold**](GetInstanceThreshold200ResponseInstanceThreshold.md) |  | [optional] 
 **InstanceSchedules** | Pointer to [**[]GetInstanceThreshold200ResponseInstanceSchedulesInner**](GetInstanceThreshold200ResponseInstanceSchedulesInner.md) |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstance
 
-`func (o *GetInstanceThreshold200Response) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetInstanceThreshold200Response) GetInstance() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *GetInstanceThreshold200Response) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetInstanceThreshold200Response) GetInstanceOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *GetInstanceThreshold200Response) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetInstanceThreshold200Response) SetInstance(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetInstance sets Instance field to given value.
 
@@ -52,6 +52,16 @@ SetInstance sets Instance field to given value.
 
 HasInstance returns a boolean if a field has been set.
 
+### SetInstanceNil
+
+`func (o *GetInstanceThreshold200Response) SetInstanceNil(b bool)`
+
+ SetInstanceNil sets the value for Instance to be an explicit nil
+
+### UnsetInstance
+`func (o *GetInstanceThreshold200Response) UnsetInstance()`
+
+UnsetInstance ensures that no value is present for Instance, not even an explicit nil
 ### GetInstanceThreshold
 
 `func (o *GetInstanceThreshold200Response) GetInstanceThreshold() GetInstanceThreshold200ResponseInstanceThreshold`

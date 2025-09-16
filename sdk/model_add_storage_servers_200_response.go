@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &AddStorageServers200Response{}
 
 // AddStorageServers200Response struct for AddStorageServers200Response
 type AddStorageServers200Response struct {
-	StorageServer        *ListStorageServers200ResponseAllOfStorageServersInner `json:"storageServer,omitempty"`
-	Success              *bool                                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	StorageServer        *AddStorageServers200ResponseAllOfStorageServer `json:"storageServer,omitempty"`
+	Success              *bool                                           `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _AddStorageServers200Response AddStorageServers200Response
@@ -45,9 +45,9 @@ func NewAddStorageServers200ResponseWithDefaults() *AddStorageServers200Response
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *AddStorageServers200Response) GetStorageServer() ListStorageServers200ResponseAllOfStorageServersInner {
+func (o *AddStorageServers200Response) GetStorageServer() AddStorageServers200ResponseAllOfStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret ListStorageServers200ResponseAllOfStorageServersInner
+		var ret AddStorageServers200ResponseAllOfStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -55,7 +55,7 @@ func (o *AddStorageServers200Response) GetStorageServer() ListStorageServers200R
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddStorageServers200Response) GetStorageServerOk() (*ListStorageServers200ResponseAllOfStorageServersInner, bool) {
+func (o *AddStorageServers200Response) GetStorageServerOk() (*AddStorageServers200ResponseAllOfStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddStorageServers200Response) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given ListStorageServers200ResponseAllOfStorageServersInner and assigns it to the StorageServer field.
-func (o *AddStorageServers200Response) SetStorageServer(v ListStorageServers200ResponseAllOfStorageServersInner) {
+// SetStorageServer gets a reference to the given AddStorageServers200ResponseAllOfStorageServer and assigns it to the StorageServer field.
+func (o *AddStorageServers200Response) SetStorageServer(v AddStorageServers200ResponseAllOfStorageServer) {
 	o.StorageServer = &v
 }
 

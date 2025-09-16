@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ListStorageVolumes200Response{}
 
 // ListStorageVolumes200Response struct for ListStorageVolumes200Response
 type ListStorageVolumes200Response struct {
-	StorageVolumes       []ListClusterVolumes200ResponseAllOfVolumesInner `json:"storageVolumes,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	StorageVolumes       []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner `json:"storageVolumes,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                          `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListStorageVolumes200Response ListStorageVolumes200Response
@@ -45,9 +45,9 @@ func NewListStorageVolumes200ResponseWithDefaults() *ListStorageVolumes200Respon
 }
 
 // GetStorageVolumes returns the StorageVolumes field value if set, zero value otherwise.
-func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListClusterVolumes200ResponseAllOfVolumesInner {
+func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
 	if o == nil || IsNil(o.StorageVolumes) {
-		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
+		var ret []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
 		return ret
 	}
 	return o.StorageVolumes
@@ -55,7 +55,7 @@ func (o *ListStorageVolumes200Response) GetStorageVolumes() []ListClusterVolumes
 
 // GetStorageVolumesOk returns a tuple with the StorageVolumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListStorageVolumes200Response) GetStorageVolumesOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
+func (o *ListStorageVolumes200Response) GetStorageVolumesOk() ([]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
 	if o == nil || IsNil(o.StorageVolumes) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListStorageVolumes200Response) IsSetStorageVolumes() bool {
 	return false
 }
 
-// SetStorageVolumes gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the StorageVolumes field.
-func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
+// SetStorageVolumes gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the StorageVolumes field.
+func (o *ListStorageVolumes200Response) SetStorageVolumes(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.StorageVolumes = v
 }
 

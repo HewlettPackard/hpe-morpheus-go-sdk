@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VdiAllocation** | Pointer to [**ListVDIAllocations200ResponseAllOfVdiAllocationsInner**](ListVDIAllocations200ResponseAllOfVdiAllocationsInner.md) |  | [optional] 
+**VdiAllocation** | Pointer to [**GetVDIAllocations200ResponseVdiAllocation**](GetVDIAllocations200ResponseVdiAllocation.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVdiAllocation
 
-`func (o *GetVDIAllocations200Response) GetVdiAllocation() ListVDIAllocations200ResponseAllOfVdiAllocationsInner`
+`func (o *GetVDIAllocations200Response) GetVdiAllocation() GetVDIAllocations200ResponseVdiAllocation`
 
 GetVdiAllocation returns the VdiAllocation field if non-nil, zero value otherwise.
 
 ### GetVdiAllocationOk
 
-`func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*ListVDIAllocations200ResponseAllOfVdiAllocationsInner, bool)`
+`func (o *GetVDIAllocations200Response) GetVdiAllocationOk() (*GetVDIAllocations200ResponseVdiAllocation, bool)`
 
 GetVdiAllocationOk returns a tuple with the VdiAllocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdiAllocation
 
-`func (o *GetVDIAllocations200Response) SetVdiAllocation(v ListVDIAllocations200ResponseAllOfVdiAllocationsInner)`
+`func (o *GetVDIAllocations200Response) SetVdiAllocation(v GetVDIAllocations200ResponseVdiAllocation)`
 
 SetVdiAllocation sets VdiAllocation field to given value.
 

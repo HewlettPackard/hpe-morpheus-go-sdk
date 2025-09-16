@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -35,7 +35,7 @@ type ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 struct {
 	AccountId            *int64                                                     `json:"accountId,omitempty"`
 	UserId               NullableString                                             `json:"userId,omitempty"`
 	SiteId               *int64                                                     `json:"siteId,omitempty"`
-	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone    `json:"zone,omitempty"`
+	Zone                 *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone   `json:"zone,omitempty"`
 	State                *string                                                    `json:"state,omitempty"`
 	StateMessage         NullableString                                             `json:"stateMessage,omitempty"`
 	Severity             *string                                                    `json:"severity,omitempty"`
@@ -540,9 +540,9 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) SetSiteId(v int64)
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) GetZone() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone
+		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone
 		return ret
 	}
 	return *o.Zone
@@ -550,7 +550,7 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) GetZone() ListGuid
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone, bool) {
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) GetZoneOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -566,8 +566,8 @@ func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone and assigns it to the Zone field.
-func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfZone) {
+// SetZone gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone and assigns it to the Zone field.
+func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) SetZone(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1Zone) {
 	o.Zone = &v
 }
 

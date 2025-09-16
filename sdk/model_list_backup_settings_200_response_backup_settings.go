@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,7 +23,7 @@ type ListBackupSettings200ResponseBackupSettings struct {
 	BackupsEnabled       *bool                                                       `json:"backupsEnabled,omitempty"`
 	CreateBackups        *bool                                                       `json:"createBackups,omitempty"`
 	BackupAppliance      *bool                                                       `json:"backupAppliance,omitempty"`
-	DefaultStorageBucket *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultStorageBucket,omitempty"`
+	DefaultStorageBucket NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"defaultStorageBucket,omitempty"`
 	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
 	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
@@ -144,36 +144,47 @@ func (o *ListBackupSettings200ResponseBackupSettings) SetBackupAppliance(v bool)
 	o.BackupAppliance = &v
 }
 
-// GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.DefaultStorageBucket) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.DefaultStorageBucket.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.DefaultStorageBucket
+	return *o.DefaultStorageBucket.Get()
 }
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.DefaultStorageBucket) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DefaultStorageBucket, true
+	return o.DefaultStorageBucket.Get(), o.DefaultStorageBucket.IsSet()
 }
 
 // IsSetDefaultStorageBucket returns a boolean if a field has been set.
 func (o *ListBackupSettings200ResponseBackupSettings) IsSetDefaultStorageBucket() bool {
-	if o != nil && !IsNil(o.DefaultStorageBucket) {
+	if o != nil && o.DefaultStorageBucket.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultStorageBucket field.
-func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.DefaultStorageBucket = &v
+// SetDefaultStorageBucket gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the DefaultStorageBucket field.
+func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.DefaultStorageBucket.Set(&v)
+}
+
+// SetDefaultStorageBucketNil sets the value for DefaultStorageBucket to be an explicit nil
+func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucketNil() {
+	o.DefaultStorageBucket.Set(nil)
+}
+
+// UnsetDefaultStorageBucket ensures that no value is present for DefaultStorageBucket, not even an explicit nil
+func (o *ListBackupSettings200ResponseBackupSettings) UnsetDefaultStorageBucket() {
+	o.DefaultStorageBucket.Unset()
 }
 
 // GetDefaultSchedule returns the DefaultSchedule field value if set, zero value otherwise.
@@ -259,8 +270,8 @@ func (o ListBackupSettings200ResponseBackupSettings) ToMap() (map[string]interfa
 	if !IsNil(o.BackupAppliance) {
 		toSerialize["backupAppliance"] = o.BackupAppliance
 	}
-	if !IsNil(o.DefaultStorageBucket) {
-		toSerialize["defaultStorageBucket"] = o.DefaultStorageBucket
+	if o.DefaultStorageBucket.IsSet() {
+		toSerialize["defaultStorageBucket"] = o.DefaultStorageBucket.Get()
 	}
 	if !IsNil(o.DefaultSchedule) {
 		toSerialize["defaultSchedule"] = o.DefaultSchedule

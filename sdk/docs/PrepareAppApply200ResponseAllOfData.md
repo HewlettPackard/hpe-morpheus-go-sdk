@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** |  | [optional] 
 **TemplateId** | Pointer to **int64** |  | [optional] 
 **BlueprintId** | Pointer to **int64** |  | [optional] 
-**Group** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Group** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -297,20 +297,20 @@ HasBlueprintId returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *PrepareAppApply200ResponseAllOfData) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *PrepareAppApply200ResponseAllOfData) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *PrepareAppApply200ResponseAllOfData) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *PrepareAppApply200ResponseAllOfData) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetGroup sets Group field to given value.
 
@@ -320,6 +320,16 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
+### SetGroupNil
+
+`func (o *PrepareAppApply200ResponseAllOfData) SetGroupNil(b bool)`
+
+ SetGroupNil sets the value for Group to be an explicit nil
+
+### UnsetGroup
+`func (o *PrepareAppApply200ResponseAllOfData) UnsetGroup()`
+
+UnsetGroup ensures that no value is present for Group, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

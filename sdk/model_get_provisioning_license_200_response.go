@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetProvisioningLicense200Response{}
 
 // GetProvisioningLicense200Response struct for GetProvisioningLicense200Response
 type GetProvisioningLicense200Response struct {
-	License              *ListProvisioningLicenses200ResponseAllOfLicensesInner `json:"license,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	License              *GetProvisioningLicense200ResponseLicense `json:"license,omitempty"`
+	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
 
 type _GetProvisioningLicense200Response GetProvisioningLicense200Response
@@ -44,9 +44,9 @@ func NewGetProvisioningLicense200ResponseWithDefaults() *GetProvisioningLicense2
 }
 
 // GetLicense returns the License field value if set, zero value otherwise.
-func (o *GetProvisioningLicense200Response) GetLicense() ListProvisioningLicenses200ResponseAllOfLicensesInner {
+func (o *GetProvisioningLicense200Response) GetLicense() GetProvisioningLicense200ResponseLicense {
 	if o == nil || IsNil(o.License) {
-		var ret ListProvisioningLicenses200ResponseAllOfLicensesInner
+		var ret GetProvisioningLicense200ResponseLicense
 		return ret
 	}
 	return *o.License
@@ -54,7 +54,7 @@ func (o *GetProvisioningLicense200Response) GetLicense() ListProvisioningLicense
 
 // GetLicenseOk returns a tuple with the License field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetProvisioningLicense200Response) GetLicenseOk() (*ListProvisioningLicenses200ResponseAllOfLicensesInner, bool) {
+func (o *GetProvisioningLicense200Response) GetLicenseOk() (*GetProvisioningLicense200ResponseLicense, bool) {
 	if o == nil || IsNil(o.License) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetProvisioningLicense200Response) IsSetLicense() bool {
 	return false
 }
 
-// SetLicense gets a reference to the given ListProvisioningLicenses200ResponseAllOfLicensesInner and assigns it to the License field.
-func (o *GetProvisioningLicense200Response) SetLicense(v ListProvisioningLicenses200ResponseAllOfLicensesInner) {
+// SetLicense gets a reference to the given GetProvisioningLicense200ResponseLicense and assigns it to the License field.
+func (o *GetProvisioningLicense200Response) SetLicense(v GetProvisioningLicense200ResponseLicense) {
 	o.License = &v
 }
 

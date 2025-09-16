@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## ListDatastores
 
-> ListCloudDatastores200Response ListDatastores(ctx).Name(name).Phrase(phrase).Max(max).Sort(sort).Direction(direction).Execute()
+> ListDatastores200Response ListDatastores(ctx).Name(name).Phrase(phrase).Max(max).Sort(sort).Direction(direction).Execute()
 
 Retrieves all Datastores
 
@@ -115,7 +115,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatastoresAPI.ListDatastores``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDatastores`: ListCloudDatastores200Response
+	// response from `ListDatastores`: ListDatastores200Response
 	fmt.Fprintf(os.Stdout, "Response from `DatastoresAPI.ListDatastores`: %v\n", resp)
 }
 ```
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListCloudDatastores200Response**](ListCloudDatastores200Response.md)
+[**ListDatastores200Response**](ListDatastores200Response.md)
 
 ### Authorization
 

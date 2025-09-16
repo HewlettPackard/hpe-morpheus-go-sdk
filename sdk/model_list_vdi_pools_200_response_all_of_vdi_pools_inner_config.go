@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfig{}
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfig struct {
 	Group                *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner           `json:"group,omitempty"`
-	Cloud                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                       `json:"cloud,omitempty"`
+	Cloud                NullableListApprovals200ResponseAllOfApprovalsInnerAccount               `json:"cloud,omitempty"`
 	Type                 *string                                                                  `json:"type,omitempty"`
 	Instance             *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance                 `json:"instance,omitempty"`
 	Name                 *string                                                                  `json:"name,omitempty"`
@@ -98,36 +98,47 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetGroup(v ListInstanc
 	o.Group = &v
 }
 
-// GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Cloud) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetCloud returns the Cloud field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Cloud.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Cloud
+	return *o.Cloud.Get()
 }
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Cloud) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) GetCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Cloud, true
+	return o.Cloud.Get(), o.Cloud.IsSet()
 }
 
 // IsSetCloud returns a boolean if a field has been set.
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) IsSetCloud() bool {
-	if o != nil && !IsNil(o.Cloud) {
+	if o != nil && o.Cloud.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCloud gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Cloud field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Cloud = &v
+// SetCloud gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Cloud field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Cloud.Set(&v)
+}
+
+// SetCloudNil sets the value for Cloud to be an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) SetCloudNil() {
+	o.Cloud.Set(nil)
+}
+
+// UnsetCloud ensures that no value is present for Cloud, not even an explicit nil
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) UnsetCloud() {
+	o.Cloud.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -849,8 +860,8 @@ func (o ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) ToMap() (map[string]int
 	if !IsNil(o.Group) {
 		toSerialize["group"] = o.Group
 	}
-	if !IsNil(o.Cloud) {
-		toSerialize["cloud"] = o.Cloud
+	if o.Cloud.IsSet() {
+		toSerialize["cloud"] = o.Cloud.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,13 +20,13 @@ var _ MappedNullable = &ListIntegrationInventory200ResponseAllOfInventoryInner{}
 
 // ListIntegrationInventory200ResponseAllOfInventoryInner struct for ListIntegrationInventory200ResponseAllOfInventoryInner
 type ListIntegrationInventory200ResponseAllOfInventoryInner struct {
-	Id                   *int64                                              `json:"id,omitempty"`
-	Name                 *string                                             `json:"name,omitempty"`
-	Description          NullableString                                      `json:"description,omitempty"`
-	ExternalId           NullableString                                      `json:"externalId,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"owner,omitempty"`
-	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenants,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	Description          NullableString                                             `json:"description,omitempty"`
+	ExternalId           NullableString                                             `json:"externalId,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"owner,omitempty"`
+	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance        `json:"tenants,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListIntegrationInventory200ResponseAllOfInventoryInner ListIntegrationInventory200ResponseAllOfInventoryInner
@@ -198,36 +198,47 @@ func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnsetExternalId
 	o.ExternalId.Unset()
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
@@ -284,8 +295,8 @@ func (o ListIntegrationInventory200ResponseAllOfInventoryInner) ToMap() (map[str
 	if o.ExternalId.IsSet() {
 		toSerialize["externalId"] = o.ExternalId.Get()
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.Tenants) {
 		toSerialize["tenants"] = o.Tenants

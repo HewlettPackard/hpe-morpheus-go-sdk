@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Optional name for the snapshot being created. | [optional] [default to "{serverName}.{timestamp}"]
 **Description** | Pointer to **string** | Optional description for the snapshot | [optional] 
 **MemorySnapshot** | Pointer to **bool** | Whether to include the memory state in the snapshot. Only supported by certain provision types such as VMware | [optional] [default to false]
+**ForExport** | Pointer to **bool** | For Export? Indicates the snapshot is intended for export to storage. | [optional] [default to false]
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetMemorySnapshot sets MemorySnapshot field to given value.
 `func (o *SnapshotInstanceRequestSnapshot) HasMemorySnapshot() bool`
 
 HasMemorySnapshot returns a boolean if a field has been set.
+
+### GetForExport
+
+`func (o *SnapshotInstanceRequestSnapshot) GetForExport() bool`
+
+GetForExport returns the ForExport field if non-nil, zero value otherwise.
+
+### GetForExportOk
+
+`func (o *SnapshotInstanceRequestSnapshot) GetForExportOk() (*bool, bool)`
+
+GetForExportOk returns a tuple with the ForExport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForExport
+
+`func (o *SnapshotInstanceRequestSnapshot) SetForExport(v bool)`
+
+SetForExport sets ForExport field to given value.
+
+### HasForExport
+
+`func (o *SnapshotInstanceRequestSnapshot) HasForExport() bool`
+
+HasForExport returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

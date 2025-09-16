@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LoadBalancer** | Pointer to [**ListLoadBalancers200ResponseAllOfLoadBalancersInner**](ListLoadBalancers200ResponseAllOfLoadBalancersInner.md) |  | [optional] 
+**LoadBalancer** | Pointer to [**CreateLoadBalancer200ResponseLoadBalancer**](CreateLoadBalancer200ResponseLoadBalancer.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLoadBalancer
 
-`func (o *CreateLoadBalancer200Response) GetLoadBalancer() ListLoadBalancers200ResponseAllOfLoadBalancersInner`
+`func (o *CreateLoadBalancer200Response) GetLoadBalancer() CreateLoadBalancer200ResponseLoadBalancer`
 
 GetLoadBalancer returns the LoadBalancer field if non-nil, zero value otherwise.
 
 ### GetLoadBalancerOk
 
-`func (o *CreateLoadBalancer200Response) GetLoadBalancerOk() (*ListLoadBalancers200ResponseAllOfLoadBalancersInner, bool)`
+`func (o *CreateLoadBalancer200Response) GetLoadBalancerOk() (*CreateLoadBalancer200ResponseLoadBalancer, bool)`
 
 GetLoadBalancerOk returns a tuple with the LoadBalancer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadBalancer
 
-`func (o *CreateLoadBalancer200Response) SetLoadBalancer(v ListLoadBalancers200ResponseAllOfLoadBalancersInner)`
+`func (o *CreateLoadBalancer200Response) SetLoadBalancer(v CreateLoadBalancer200ResponseLoadBalancer)`
 
 SetLoadBalancer sets LoadBalancer field to given value.
 

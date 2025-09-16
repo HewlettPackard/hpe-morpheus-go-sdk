@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetApp200Response{}
 
 // GetApp200Response struct for GetApp200Response
 type GetApp200Response struct {
-	App                  *ListApps200ResponseAllOfAppsInner `json:"app,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	App                  *GetApp200ResponseApp  `json:"app,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GetApp200Response GetApp200Response
@@ -44,9 +44,9 @@ func NewGetApp200ResponseWithDefaults() *GetApp200Response {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *GetApp200Response) GetApp() ListApps200ResponseAllOfAppsInner {
+func (o *GetApp200Response) GetApp() GetApp200ResponseApp {
 	if o == nil || IsNil(o.App) {
-		var ret ListApps200ResponseAllOfAppsInner
+		var ret GetApp200ResponseApp
 		return ret
 	}
 	return *o.App
@@ -54,7 +54,7 @@ func (o *GetApp200Response) GetApp() ListApps200ResponseAllOfAppsInner {
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetApp200Response) GetAppOk() (*ListApps200ResponseAllOfAppsInner, bool) {
+func (o *GetApp200Response) GetAppOk() (*GetApp200ResponseApp, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetApp200Response) IsSetApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given ListApps200ResponseAllOfAppsInner and assigns it to the App field.
-func (o *GetApp200Response) SetApp(v ListApps200ResponseAllOfAppsInner) {
+// SetApp gets a reference to the given GetApp200ResponseApp and assigns it to the App field.
+func (o *GetApp200Response) SetApp(v GetApp200ResponseApp) {
 	o.App = &v
 }
 

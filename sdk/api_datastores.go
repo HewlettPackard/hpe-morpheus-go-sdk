@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -188,7 +188,7 @@ func (r ApiListDatastoresRequest) Direction(direction string) ApiListDatastoresR
 	return r
 }
 
-func (r ApiListDatastoresRequest) Execute() (*ListCloudDatastores200Response, *http.Response, error) {
+func (r ApiListDatastoresRequest) Execute() (*ListDatastores200Response, *http.Response, error) {
 	return r.ApiService.ListDatastoresExecute(r)
 }
 
@@ -209,13 +209,13 @@ func (a *DatastoresAPIService) ListDatastores(ctx context.Context) ApiListDatast
 
 // Execute executes the request
 //
-//	@return ListCloudDatastores200Response
-func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest) (*ListCloudDatastores200Response, *http.Response, error) {
+//	@return ListDatastores200Response
+func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest) (*ListDatastores200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ListCloudDatastores200Response
+		localVarReturnValue *ListDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.ListDatastores")

@@ -1651,7 +1651,7 @@ func main() {
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	containerId := int64(135) // int64 | The Container ID for Filtering (optional)
 	serverId := int64(97) // int64 | The Server ID for Filtering (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1684,7 +1684,7 @@ Name | Type | Description  | Notes
  **phrase** | **string** | Search phrase for partial matches on name or description | 
  **containerId** | **int64** | The Container ID for Filtering | 
  **serverId** | **int64** | The Server ID for Filtering | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
 
 ### Return type
 
@@ -2501,9 +2501,9 @@ import (
 )
 
 func main() {
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	layoutId := int64(98) // int64 | The Layout ID for Filtering (optional)
-	siteId := int64(7) // int64 | The Site ID for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2528,9 +2528,9 @@ Other parameters are passed through a pointer to a apiListInstanceServicePlansRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **layoutId** | **int64** | The Layout ID for Filtering | 
- **siteId** | **int64** | The Site ID for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
 
 ### Return type
 
@@ -2634,7 +2634,7 @@ Name | Type | Description  | Notes
 
 ## ListInstances
 
-> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+> ListInstances200Response ListInstances(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
 
 Get All Instances
 
@@ -2658,6 +2658,9 @@ func main() {
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	name := "example" // string | Filter by name (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
+	siteId := int64(7) // int64 | The Group ID (Site ID) for Filtering (optional)
+	planId := int64(1) // int64 | The Plan ID for Filtering (optional)
 	instanceType := "ubuntu" // string | The Instance Type Code for Filtering (optional)
 	lastUpdated := time.Now() // time.Time | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) (optional)
 	createdBy := int64(63) // int64 | The User ID for Filtering (optional)
@@ -2681,7 +2684,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
+	resp, r, err := apiClient.InstancesAPI.ListInstances(context.Background()).Max(max).Offset(offset).Name(name).Phrase(phrase).ZoneId(zoneId).SiteId(siteId).PlanId(planId).InstanceType(instanceType).LastUpdated(lastUpdated).CreatedBy(createdBy).AgentInstalled(agentInstalled).Status(status).Environment(environment).ShowDeleted(showDeleted).Deleted(deleted).ExpireDate(expireDate).ExpireDateMin(expireDateMin).ExpireDays(expireDays).ExpireDaysMin(expireDaysMin).ShutdownDate(shutdownDate).ShutdownDateMin(shutdownDateMin).ShutdownDays(shutdownDays).ShutdownDaysMin(shutdownDaysMin).Labels(labels).AllLabels(allLabels).TagsName(tagsName).Details(details).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.ListInstances``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2706,6 +2709,9 @@ Name | Type | Description  | Notes
  **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
  **name** | **string** | Filter by name | 
  **phrase** | **string** | Search phrase for partial matches on name or description | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
+ **siteId** | **int64** | The Group ID (Site ID) for Filtering | 
+ **planId** | **int64** | The Plan ID for Filtering | 
  **instanceType** | **string** | The Instance Type Code for Filtering | 
  **lastUpdated** | **time.Time** | Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601) | 
  **createdBy** | **int64** | The User ID for Filtering | 
@@ -3095,7 +3101,7 @@ Name | Type | Description  | Notes
 
 ## RestartInstance
 
-> RestartInstance200Response RestartInstance(ctx, id).Execute()
+> RestartInstance200Response RestartInstance(ctx, id).Server(server).Execute()
 
 Restart an instance
 
@@ -3115,10 +3121,11 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	server := true // bool | Restart the underlying server(s) as well by passing `true`. By default only the service will be restarted. (optional) (default to true)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.RestartInstance(context.Background(), id).Execute()
+	resp, r, err := apiClient.InstancesAPI.RestartInstance(context.Background(), id).Server(server).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.RestartInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3144,6 +3151,7 @@ Other parameters are passed through a pointer to a apiRestartInstanceRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **server** | **bool** | Restart the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be restarted. | [default to true]
 
 ### Return type
 
@@ -3600,7 +3608,7 @@ Name | Type | Description  | Notes
 
 ## StartInstance
 
-> RestartInstance200Response StartInstance(ctx, id).Execute()
+> RestartInstance200Response StartInstance(ctx, id).Server(server).Execute()
 
 Start an instance
 
@@ -3620,10 +3628,11 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	server := true // bool | Start the underlying server(s) as well by passing `true`. By default only the service will be started. (optional) (default to true)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.StartInstance(context.Background(), id).Execute()
+	resp, r, err := apiClient.InstancesAPI.StartInstance(context.Background(), id).Server(server).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.StartInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3649,6 +3658,7 @@ Other parameters are passed through a pointer to a apiStartInstanceRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **server** | **bool** | Start the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be started. | [default to true]
 
 ### Return type
 
@@ -3670,7 +3680,7 @@ Name | Type | Description  | Notes
 
 ## StopInstance
 
-> RestartInstance200Response StopInstance(ctx, id).Execute()
+> RestartInstance200Response StopInstance(ctx, id).Server(server).MuteMonitoring(muteMonitoring).Execute()
 
 Stop an instance
 
@@ -3690,10 +3700,12 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+	server := true // bool | Stop the underlying server(s) as well by passing `true`. By default only the service will be stopped. (optional) (default to true)
+	muteMonitoring := true // bool | Mute monitoring checks for the instance by passing `true`. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.StopInstance(context.Background(), id).Execute()
+	resp, r, err := apiClient.InstancesAPI.StopInstance(context.Background(), id).Server(server).MuteMonitoring(muteMonitoring).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.StopInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3719,6 +3731,8 @@ Other parameters are passed through a pointer to a apiStopInstanceRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **server** | **bool** | Stop the underlying server(s) as well by passing &#x60;true&#x60;. By default only the service will be stopped. | [default to true]
+ **muteMonitoring** | **bool** | Mute monitoring checks for the instance by passing &#x60;true&#x60;. | [default to false]
 
 ### Return type
 

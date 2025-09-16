@@ -175,7 +175,7 @@ func main() {
 	instanceId := int64(94) // int64 | The Instance ID for Filtering (optional)
 	containerId := int64(135) // int64 | The Container ID for Filtering (optional)
 	serverId := int64(97) // int64 | The Server ID for Filtering (optional)
-	zoneId := int64(3) // int64 | The Zone ID for Filtering (optional)
+	zoneId := int64(3) // int64 | The Cloud ID (Zone ID) for Filtering (optional)
 	appId := int64(5) // int64 | The App ID for Filtering (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on message, displayName, output, event.message, event.output or event.error (optional)
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
  **instanceId** | **int64** | The Instance ID for Filtering | 
  **containerId** | **int64** | The Container ID for Filtering | 
  **serverId** | **int64** | The Server ID for Filtering | 
- **zoneId** | **int64** | The Zone ID for Filtering | 
+ **zoneId** | **int64** | The Cloud ID (Zone ID) for Filtering | 
  **appId** | **int64** | The App ID for Filtering | 
  **phrase** | **string** | Search phrase for partial matches on message, displayName, output, event.message, event.output or event.error | 
 

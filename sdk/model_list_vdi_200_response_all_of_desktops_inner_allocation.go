@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &ListVdi200ResponseAllOfDesktopsInnerAllocation{}
 type ListVdi200ResponseAllOfDesktopsInnerAllocation struct {
 	Id                   *int64                                                         `json:"id,omitempty"`
 	PoolId               *int64                                                         `json:"poolId,omitempty"`
-	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"pool,omitempty"`
+	Pool                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount     `json:"pool,omitempty"`
 	Instance             *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance `json:"instance,omitempty"`
 	User                 *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner                `json:"user,omitempty"`
 	LocalUserCreated     *bool                                                          `json:"localUserCreated,omitempty"`
@@ -120,36 +120,47 @@ func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPoolId(v int64) {
 	o.PoolId = &v
 }
 
-// GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Pool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetPool returns the Pool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Pool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Pool
+	return *o.Pool.Get()
 }
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Pool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) GetPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Pool, true
+	return o.Pool.Get(), o.Pool.IsSet()
 }
 
 // IsSetPool returns a boolean if a field has been set.
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) IsSetPool() bool {
-	if o != nil && !IsNil(o.Pool) {
+	if o != nil && o.Pool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
-func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Pool = &v
+// SetPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Pool field.
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Pool.Set(&v)
+}
+
+// SetPoolNil sets the value for Pool to be an explicit nil
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) SetPoolNil() {
+	o.Pool.Set(nil)
+}
+
+// UnsetPool ensures that no value is present for Pool, not even an explicit nil
+func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnsetPool() {
+	o.Pool.Unset()
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
@@ -499,8 +510,8 @@ func (o ListVdi200ResponseAllOfDesktopsInnerAllocation) ToMap() (map[string]inte
 	if !IsNil(o.PoolId) {
 		toSerialize["poolId"] = o.PoolId
 	}
-	if !IsNil(o.Pool) {
-		toSerialize["pool"] = o.Pool
+	if o.Pool.IsSet() {
+		toSerialize["pool"] = o.Pool.Get()
 	}
 	if !IsNil(o.Instance) {
 		toSerialize["instance"] = o.Instance

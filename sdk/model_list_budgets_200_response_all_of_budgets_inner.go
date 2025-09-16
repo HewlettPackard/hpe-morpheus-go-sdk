@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,39 +21,39 @@ var _ MappedNullable = &ListBudgets200ResponseAllOfBudgetsInner{}
 
 // ListBudgets200ResponseAllOfBudgetsInner struct for ListBudgets200ResponseAllOfBudgetsInner
 type ListBudgets200ResponseAllOfBudgetsInner struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	Description          NullableString                                     `json:"description,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
-	Enabled              *bool                                              `json:"enabled,omitempty"`
-	RefScope             *string                                            `json:"refScope,omitempty"`
-	RefType              *string                                            `json:"refType,omitempty"`
-	RefId                *int64                                             `json:"refId,omitempty"`
-	RefName              *string                                            `json:"refName,omitempty"`
-	Period               *string                                            `json:"period,omitempty"`
-	Year                 *string                                            `json:"year,omitempty"`
-	ResourceType         *string                                            `json:"resourceType,omitempty"`
-	Timezone             *string                                            `json:"timezone,omitempty"`
-	StartDate            *time.Time                                         `json:"startDate,omitempty"`
-	EndDate              *time.Time                                         `json:"endDate,omitempty"`
-	Interval             *string                                            `json:"interval,omitempty"`
-	Costs                []int64                                            `json:"costs,omitempty"`
-	IsFiscal             *bool                                              `json:"isFiscal,omitempty"`
-	AverageCost          *int64                                             `json:"averageCost,omitempty"`
-	TotalCost            *int64                                             `json:"totalCost,omitempty"`
-	Currency             *string                                            `json:"currency,omitempty"`
-	Rollover             *bool                                              `json:"rollover,omitempty"`
-	WarningLimit         NullableString                                     `json:"warningLimit,omitempty"`
-	OverLimit            NullableString                                     `json:"overLimit,omitempty"`
-	ExternalId           NullableString                                     `json:"externalId,omitempty"`
-	InternalId           NullableString                                     `json:"internalId,omitempty"`
-	CreatedById          *int64                                             `json:"createdById,omitempty"`
-	CreatedByName        *string                                            `json:"createdByName,omitempty"`
-	UpdatedById          NullableString                                     `json:"updatedById,omitempty"`
-	UpdatedByName        NullableString                                     `json:"updatedByName,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                     `json:"id,omitempty"`
+	Name                 *string                                                    `json:"name,omitempty"`
+	Description          NullableString                                             `json:"description,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"account,omitempty"`
+	Enabled              *bool                                                      `json:"enabled,omitempty"`
+	RefScope             *string                                                    `json:"refScope,omitempty"`
+	RefType              *string                                                    `json:"refType,omitempty"`
+	RefId                *int64                                                     `json:"refId,omitempty"`
+	RefName              *string                                                    `json:"refName,omitempty"`
+	Period               *string                                                    `json:"period,omitempty"`
+	Year                 *string                                                    `json:"year,omitempty"`
+	ResourceType         *string                                                    `json:"resourceType,omitempty"`
+	Timezone             *string                                                    `json:"timezone,omitempty"`
+	StartDate            *time.Time                                                 `json:"startDate,omitempty"`
+	EndDate              *time.Time                                                 `json:"endDate,omitempty"`
+	Interval             *string                                                    `json:"interval,omitempty"`
+	Costs                []int64                                                    `json:"costs,omitempty"`
+	IsFiscal             *bool                                                      `json:"isFiscal,omitempty"`
+	AverageCost          *int64                                                     `json:"averageCost,omitempty"`
+	TotalCost            *int64                                                     `json:"totalCost,omitempty"`
+	Currency             *string                                                    `json:"currency,omitempty"`
+	Rollover             *bool                                                      `json:"rollover,omitempty"`
+	WarningLimit         NullableString                                             `json:"warningLimit,omitempty"`
+	OverLimit            NullableString                                             `json:"overLimit,omitempty"`
+	ExternalId           NullableString                                             `json:"externalId,omitempty"`
+	InternalId           NullableString                                             `json:"internalId,omitempty"`
+	CreatedById          *int64                                                     `json:"createdById,omitempty"`
+	CreatedByName        *string                                                    `json:"createdByName,omitempty"`
+	UpdatedById          NullableString                                             `json:"updatedById,omitempty"`
+	UpdatedByName        NullableString                                             `json:"updatedByName,omitempty"`
+	DateCreated          *time.Time                                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                 `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListBudgets200ResponseAllOfBudgetsInner ListBudgets200ResponseAllOfBudgetsInner
@@ -182,36 +182,47 @@ func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetDescription() {
 	o.Description.Unset()
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListBudgets200ResponseAllOfBudgetsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListBudgets200ResponseAllOfBudgetsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListBudgets200ResponseAllOfBudgetsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListBudgets200ResponseAllOfBudgetsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -1195,8 +1206,8 @@ func (o ListBudgets200ResponseAllOfBudgetsInner) ToMap() (map[string]interface{}
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

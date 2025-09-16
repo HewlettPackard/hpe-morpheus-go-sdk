@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **HostGroups** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Hosts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Tenants** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Credential** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -1380,20 +1380,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListStorageServers200ResponseAllOfStorageServersInner) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListStorageServers200ResponseAllOfStorageServersInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListStorageServers200ResponseAllOfStorageServersInner) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListStorageServers200ResponseAllOfStorageServersInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListStorageServers200ResponseAllOfStorageServersInner) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListStorageServers200ResponseAllOfStorageServersInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
@@ -1403,6 +1403,16 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
+### SetOwnerNil
+
+`func (o *ListStorageServers200ResponseAllOfStorageServersInner) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ListStorageServers200ResponseAllOfStorageServersInner) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetCredential
 
 `func (o *ListStorageServers200ResponseAllOfStorageServersInner) GetCredential() map[string]interface{}`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cluster** | Pointer to [**AddCluster200ResponseAllOfCluster**](AddCluster200ResponseAllOfCluster.md) |  | [optional] 
+**Cluster** | Pointer to [**GetCluster200ResponseCluster**](GetCluster200ResponseCluster.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCluster
 
-`func (o *GetCluster200Response) GetCluster() AddCluster200ResponseAllOfCluster`
+`func (o *GetCluster200Response) GetCluster() GetCluster200ResponseCluster`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *GetCluster200Response) GetClusterOk() (*AddCluster200ResponseAllOfCluster, bool)`
+`func (o *GetCluster200Response) GetClusterOk() (*GetCluster200ResponseCluster, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *GetCluster200Response) SetCluster(v AddCluster200ResponseAllOfCluster)`
+`func (o *GetCluster200Response) SetCluster(v GetCluster200ResponseCluster)`
 
 SetCluster sets Cluster field to given value.
 

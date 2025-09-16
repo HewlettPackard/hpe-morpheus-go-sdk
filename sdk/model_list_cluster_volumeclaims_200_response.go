@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &ListClusterVolumeclaims200Response{}
 
 // ListClusterVolumeclaims200Response struct for ListClusterVolumeclaims200Response
 type ListClusterVolumeclaims200Response struct {
-	Volumeclaims         []ListClusterVolumes200ResponseAllOfVolumesInner `json:"volumeclaims,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	Volumeclaims         []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner `json:"volumeclaims,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta                          `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListClusterVolumeclaims200Response ListClusterVolumeclaims200Response
@@ -45,9 +45,9 @@ func NewListClusterVolumeclaims200ResponseWithDefaults() *ListClusterVolumeclaim
 }
 
 // GetVolumeclaims returns the Volumeclaims field value if set, zero value otherwise.
-func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumes200ResponseAllOfVolumesInner {
+func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner {
 	if o == nil || IsNil(o.Volumeclaims) {
-		var ret []ListClusterVolumes200ResponseAllOfVolumesInner
+		var ret []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner
 		return ret
 	}
 	return o.Volumeclaims
@@ -55,7 +55,7 @@ func (o *ListClusterVolumeclaims200Response) GetVolumeclaims() []ListClusterVolu
 
 // GetVolumeclaimsOk returns a tuple with the Volumeclaims field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() ([]ListClusterVolumes200ResponseAllOfVolumesInner, bool) {
+func (o *ListClusterVolumeclaims200Response) GetVolumeclaimsOk() ([]ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner, bool) {
 	if o == nil || IsNil(o.Volumeclaims) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListClusterVolumeclaims200Response) IsSetVolumeclaims() bool {
 	return false
 }
 
-// SetVolumeclaims gets a reference to the given []ListClusterVolumes200ResponseAllOfVolumesInner and assigns it to the Volumeclaims field.
-func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumes200ResponseAllOfVolumesInner) {
+// SetVolumeclaims gets a reference to the given []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner and assigns it to the Volumeclaims field.
+func (o *ListClusterVolumeclaims200Response) SetVolumeclaims(v []ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) {
 	o.Volumeclaims = v
 }
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **FilePath** | Pointer to **string** |  | [optional] 
 **RawSize** | Pointer to **NullableInt64** |  | [optional] 
 **FileCount** | Pointer to **int64** |  | [optional] 
-**Accounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -361,20 +361,20 @@ HasFileCount returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *ArchiveBucket) GetAccounts() []map[string]interface{}`
+`func (o *ArchiveBucket) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *ArchiveBucket) GetAccountsOk() (*[]map[string]interface{}, bool)`
+`func (o *ArchiveBucket) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *ArchiveBucket) SetAccounts(v []map[string]interface{})`
+`func (o *ArchiveBucket) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetAccounts sets Accounts field to given value.
 

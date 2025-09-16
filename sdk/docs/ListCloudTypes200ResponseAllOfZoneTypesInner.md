@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Provision** | Pointer to **bool** |  | [optional] 
 **AutoCapacity** | Pointer to **bool** |  | [optional] 
 **MigrationTarget** | Pointer to **bool** |  | [optional] 
+**HasAffinityGroups** | Pointer to **bool** |  | [optional] 
 **HasDatastores** | Pointer to **bool** |  | [optional] 
 **HasNetworks** | Pointer to **bool** |  | [optional] 
 **HasResourcePools** | Pointer to **bool** |  | [optional] 
@@ -231,6 +232,31 @@ SetMigrationTarget sets MigrationTarget field to given value.
 `func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) HasMigrationTarget() bool`
 
 HasMigrationTarget returns a boolean if a field has been set.
+
+### GetHasAffinityGroups
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) GetHasAffinityGroups() bool`
+
+GetHasAffinityGroups returns the HasAffinityGroups field if non-nil, zero value otherwise.
+
+### GetHasAffinityGroupsOk
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) GetHasAffinityGroupsOk() (*bool, bool)`
+
+GetHasAffinityGroupsOk returns a tuple with the HasAffinityGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasAffinityGroups
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) SetHasAffinityGroups(v bool)`
+
+SetHasAffinityGroups sets HasAffinityGroups field to given value.
+
+### HasHasAffinityGroups
+
+`func (o *ListCloudTypes200ResponseAllOfZoneTypesInner) HasHasAffinityGroups() bool`
+
+HasHasAffinityGroups returns a boolean if a field has been set.
 
 ### GetHasDatastores
 

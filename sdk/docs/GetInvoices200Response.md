@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Invoice** | Pointer to [**ListInvoices200ResponseAllOfInvoicesInner**](ListInvoices200ResponseAllOfInvoicesInner.md) |  | [optional] 
+**Invoice** | Pointer to [**GetInvoices200ResponseAllOfInvoice**](GetInvoices200ResponseAllOfInvoice.md) |  | [optional] 
 **MasterAccount** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInvoice
 
-`func (o *GetInvoices200Response) GetInvoice() ListInvoices200ResponseAllOfInvoicesInner`
+`func (o *GetInvoices200Response) GetInvoice() GetInvoices200ResponseAllOfInvoice`
 
 GetInvoice returns the Invoice field if non-nil, zero value otherwise.
 
 ### GetInvoiceOk
 
-`func (o *GetInvoices200Response) GetInvoiceOk() (*ListInvoices200ResponseAllOfInvoicesInner, bool)`
+`func (o *GetInvoices200Response) GetInvoiceOk() (*GetInvoices200ResponseAllOfInvoice, bool)`
 
 GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoice
 
-`func (o *GetInvoices200Response) SetInvoice(v ListInvoices200ResponseAllOfInvoicesInner)`
+`func (o *GetInvoices200Response) SetInvoice(v GetInvoices200ResponseAllOfInvoice)`
 
 SetInvoice sets Invoice field to given value.
 

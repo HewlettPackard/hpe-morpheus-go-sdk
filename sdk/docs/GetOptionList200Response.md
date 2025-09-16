@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OptionTypes** | Pointer to [**[]ListOptionLists200ResponseAllOfOptionTypesInner**](ListOptionLists200ResponseAllOfOptionTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]GetOptionList200ResponseOptionTypesInner**](GetOptionList200ResponseOptionTypesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOptionTypes
 
-`func (o *GetOptionList200Response) GetOptionTypes() []ListOptionLists200ResponseAllOfOptionTypesInner`
+`func (o *GetOptionList200Response) GetOptionTypes() []GetOptionList200ResponseOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *GetOptionList200Response) GetOptionTypesOk() (*[]ListOptionLists200ResponseAllOfOptionTypesInner, bool)`
+`func (o *GetOptionList200Response) GetOptionTypesOk() (*[]GetOptionList200ResponseOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *GetOptionList200Response) SetOptionTypes(v []ListOptionLists200ResponseAllOfOptionTypesInner)`
+`func (o *GetOptionList200Response) SetOptionTypes(v []GetOptionList200ResponseOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 

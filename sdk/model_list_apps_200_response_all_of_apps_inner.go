@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -27,10 +27,10 @@ type ListApps200ResponseAllOfAppsInner struct {
 	Labels               []string                                                    `json:"labels,omitempty"`
 	Environment          *string                                                     `json:"environment,omitempty"`
 	AccountId            *int64                                                      `json:"accountId,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"account,omitempty"`
 	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"owner,omitempty"`
 	SiteId               *int64                                                      `json:"siteId,omitempty"`
-	Group                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"group,omitempty"`
+	Group                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"group,omitempty"`
 	Blueprint            *ListApps200ResponseAllOfAppsInnerBlueprint                 `json:"blueprint,omitempty"`
 	Type                 *string                                                     `json:"type,omitempty"`
 	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
@@ -42,7 +42,7 @@ type ListApps200ResponseAllOfAppsInner struct {
 	InstanceCount        *int64                                                      `json:"instanceCount,omitempty"`
 	ContainerCount       *int64                                                      `json:"containerCount,omitempty"`
 	AppTiers             []map[string]interface{}                                    `json:"appTiers,omitempty"`
-	Instances            []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"instances,omitempty"`
+	Instances            []ListApprovals200ResponseAllOfApprovalsInnerAccount        `json:"instances,omitempty"`
 	Stats                *ListApps200ResponseAllOfAppsInnerStats                     `json:"stats,omitempty"`
 	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
@@ -258,36 +258,47 @@ func (o *ListApps200ResponseAllOfAppsInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListApps200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListApps200ResponseAllOfAppsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListApps200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListApps200ResponseAllOfAppsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListApps200ResponseAllOfAppsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListApps200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListApps200ResponseAllOfAppsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListApps200ResponseAllOfAppsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListApps200ResponseAllOfAppsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
@@ -354,36 +365,47 @@ func (o *ListApps200ResponseAllOfAppsInner) SetSiteId(v int64) {
 	o.SiteId = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise.
-func (o *ListApps200ResponseAllOfAppsInner) GetGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Group) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListApps200ResponseAllOfAppsInner) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Group.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Group
+	return *o.Group.Get()
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListApps200ResponseAllOfAppsInner) GetGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Group) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListApps200ResponseAllOfAppsInner) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Group, true
+	return o.Group.Get(), o.Group.IsSet()
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *ListApps200ResponseAllOfAppsInner) IsSetGroup() bool {
-	if o != nil && !IsNil(o.Group) {
+	if o != nil && o.Group.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Group field.
-func (o *ListApps200ResponseAllOfAppsInner) SetGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Group = &v
+// SetGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Group field.
+func (o *ListApps200ResponseAllOfAppsInner) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Group.Set(&v)
+}
+
+// SetGroupNil sets the value for Group to be an explicit nil
+func (o *ListApps200ResponseAllOfAppsInner) SetGroupNil() {
+	o.Group.Set(nil)
+}
+
+// UnsetGroup ensures that no value is present for Group, not even an explicit nil
+func (o *ListApps200ResponseAllOfAppsInner) UnsetGroup() {
+	o.Group.Unset()
 }
 
 // GetBlueprint returns the Blueprint field value if set, zero value otherwise.
@@ -750,9 +772,9 @@ func (o *ListApps200ResponseAllOfAppsInner) SetAppTiers(v []map[string]interface
 }
 
 // GetInstances returns the Instances field value if set, zero value otherwise.
-func (o *ListApps200ResponseAllOfAppsInner) GetInstances() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListApps200ResponseAllOfAppsInner) GetInstances() []ListApprovals200ResponseAllOfApprovalsInnerAccount {
 	if o == nil || IsNil(o.Instances) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
 	return o.Instances
@@ -760,7 +782,7 @@ func (o *ListApps200ResponseAllOfAppsInner) GetInstances() []GetAlerts200Respons
 
 // GetInstancesOk returns a tuple with the Instances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListApps200ResponseAllOfAppsInner) GetInstancesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListApps200ResponseAllOfAppsInner) GetInstancesOk() ([]ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
 	if o == nil || IsNil(o.Instances) {
 		return nil, false
 	}
@@ -776,8 +798,8 @@ func (o *ListApps200ResponseAllOfAppsInner) IsSetInstances() bool {
 	return false
 }
 
-// SetInstances gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instances field.
-func (o *ListApps200ResponseAllOfAppsInner) SetInstances(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetInstances gets a reference to the given []ListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Instances field.
+func (o *ListApps200ResponseAllOfAppsInner) SetInstances(v []ListApprovals200ResponseAllOfApprovalsInnerAccount) {
 	o.Instances = v
 }
 
@@ -841,8 +863,8 @@ func (o ListApps200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
@@ -850,8 +872,8 @@ func (o ListApps200ResponseAllOfAppsInner) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.SiteId) {
 		toSerialize["siteId"] = o.SiteId
 	}
-	if !IsNil(o.Group) {
-		toSerialize["group"] = o.Group
+	if o.Group.IsSet() {
+		toSerialize["group"] = o.Group.Get()
 	}
 	if !IsNil(o.Blueprint) {
 		toSerialize["blueprint"] = o.Blueprint

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -998,7 +998,7 @@ func (r ApiListTenantSubtenantIdentitySourcesRequest) Name(name string) ApiListT
 	return r
 }
 
-func (r ApiListTenantSubtenantIdentitySourcesRequest) Execute() (*ListIdentitySources200Response, *http.Response, error) {
+func (r ApiListTenantSubtenantIdentitySourcesRequest) Execute() (*ListTenantSubtenantIdentitySources200Response, *http.Response, error) {
 	return r.ApiService.ListTenantSubtenantIdentitySourcesExecute(r)
 }
 
@@ -1021,13 +1021,13 @@ func (a *TenantsAPIService) ListTenantSubtenantIdentitySources(ctx context.Conte
 
 // Execute executes the request
 //
-//	@return ListIdentitySources200Response
-func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListTenantSubtenantIdentitySourcesRequest) (*ListIdentitySources200Response, *http.Response, error) {
+//	@return ListTenantSubtenantIdentitySources200Response
+func (a *TenantsAPIService) ListTenantSubtenantIdentitySourcesExecute(r ApiListTenantSubtenantIdentitySourcesRequest) (*ListTenantSubtenantIdentitySources200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ListIdentitySources200Response
+		localVarReturnValue *ListTenantSubtenantIdentitySources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenantsAPIService.ListTenantSubtenantIdentitySources")

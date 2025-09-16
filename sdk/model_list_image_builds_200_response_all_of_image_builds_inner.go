@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -21,10 +21,10 @@ var _ MappedNullable = &ListImageBuilds200ResponseAllOfImageBuildsInner{}
 // ListImageBuilds200ResponseAllOfImageBuildsInner struct for ListImageBuilds200ResponseAllOfImageBuildsInner
 type ListImageBuilds200ResponseAllOfImageBuildsInner struct {
 	Id                   *int64                                                        `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"account,omitempty"`
+	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount    `json:"account,omitempty"`
 	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule   `json:"type,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"site,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance            `json:"zone,omitempty"`
+	Site                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount    `json:"site,omitempty"`
+	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount    `json:"zone,omitempty"`
 	Name                 *string                                                       `json:"name,omitempty"`
 	Description          *string                                                       `json:"description,omitempty"`
 	BootScript           *ListImageBuilds200ResponseAllOfImageBuildsInnerBootScript    `json:"bootScript,omitempty"`
@@ -96,36 +96,47 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetId(v int64) {
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Account.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Account
+	return *o.Account.Get()
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Account) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Account, true
+	return o.Account.Get(), o.Account.IsSet()
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) IsSetAccount() bool {
-	if o != nil && !IsNil(o.Account) {
+	if o != nil && o.Account.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Account = &v
+// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Account.Set(&v)
+}
+
+// SetAccountNil sets the value for Account to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetAccountNil() {
+	o.Account.Set(nil)
+}
+
+// UnsetAccount ensures that no value is present for Account, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetAccount() {
+	o.Account.Unset()
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -160,68 +171,90 @@ func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetType(v ListBackupSe
 	o.Type = &v
 }
 
-// GetSite returns the Site field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Site) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetSite returns the Site field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSite() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Site.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Site
+	return *o.Site.Get()
 }
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Site) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetSiteOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Site, true
+	return o.Site.Get(), o.Site.IsSet()
 }
 
 // IsSetSite returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
+	if o != nil && o.Site.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSite gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Site field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Site = &v
+// SetSite gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Site field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSite(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Site.Set(&v)
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetSiteNil sets the value for Site to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetSiteNil() {
+	o.Site.Set(nil)
+}
+
+// UnsetSite ensures that no value is present for Site, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetSite() {
+	o.Site.Unset()
+}
+
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *ListImageBuilds200ResponseAllOfImageBuildsInner) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -814,17 +847,17 @@ func (o ListImageBuilds200ResponseAllOfImageBuildsInner) ToMap() (map[string]int
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Account) {
-		toSerialize["account"] = o.Account
+	if o.Account.IsSet() {
+		toSerialize["account"] = o.Account.Get()
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Site) {
-		toSerialize["site"] = o.Site
+	if o.Site.IsSet() {
+		toSerialize["site"] = o.Site.Get()
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name

@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,12 +20,12 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkIn
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner struct {
-	PrimaryInterface     *bool                                                                               `json:"primaryInterface,omitempty"`
-	Network              *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
-	IpMode               *string                                                                             `json:"ipMode,omitempty"`
-	ShowNetworkPoolLabel *bool                                                                               `json:"showNetworkPoolLabel,omitempty"`
-	ShowNetworkDhcpLabel *bool                                                                               `json:"showNetworkDhcpLabel,omitempty"`
-	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
+	PrimaryInterface     *bool                                                                         `json:"primaryInterface,omitempty"`
+	Network              *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork `json:"network,omitempty"`
+	IpMode               *string                                                                       `json:"ipMode,omitempty"`
+	ShowNetworkPoolLabel *bool                                                                         `json:"showNetworkPoolLabel,omitempty"`
+	ShowNetworkDhcpLabel *bool                                                                         `json:"showNetworkDhcpLabel,omitempty"`
+	AdditionalProperties map[string]interface{}                                                        `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner
@@ -80,9 +80,9 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) 
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetwork() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetwork() ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork {
 	if o == nil || IsNil(o.Network) {
-		var ret ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork
+		var ret ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork
 		return ret
 	}
 	return *o.Network
@@ -90,7 +90,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) 
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetworkOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork, bool) {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) GetNetworkOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -106,8 +106,8 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) 
 	return false
 }
 
-// SetNetwork gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) SetNetwork(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigNetworkInterfacesInnerNetwork) {
+// SetNetwork gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork and assigns it to the Network field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInner) SetNetwork(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork) {
 	o.Network = &v
 }
 

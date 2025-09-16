@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**AddUserTenant200ResponseAllOfUser**](AddUserTenant200ResponseAllOfUser.md) |  | [optional] 
+**User** | Pointer to [**ListUsers200ResponseAllOfUsersInner**](ListUsers200ResponseAllOfUsersInner.md) |  | [optional] 
 **IsMasterAccount** | Pointer to **bool** |  | [optional] 
 **Permissions** | Pointer to [**[]Whoami200ResponsePermissionsInner**](Whoami200ResponsePermissionsInner.md) |  | [optional] 
 **Appliance** | Pointer to [**Whoami200ResponseAppliance**](Whoami200ResponseAppliance.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *Whoami200Response) GetUser() AddUserTenant200ResponseAllOfUser`
+`func (o *Whoami200Response) GetUser() ListUsers200ResponseAllOfUsersInner`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *Whoami200Response) GetUserOk() (*AddUserTenant200ResponseAllOfUser, bool)`
+`func (o *Whoami200Response) GetUserOk() (*ListUsers200ResponseAllOfUsersInner, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *Whoami200Response) SetUser(v AddUserTenant200ResponseAllOfUser)`
+`func (o *Whoami200Response) SetUser(v ListUsers200ResponseAllOfUsersInner)`
 
 SetUser sets User field to given value.
 

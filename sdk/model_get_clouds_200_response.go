@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClouds200Response{}
 
 // GetClouds200Response struct for GetClouds200Response
 type GetClouds200Response struct {
-	Zone                 *ListClouds200ResponseAllOfZonesInner `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}                `json:",remain"`
+	Zone                 *AddClouds200ResponseAllOfZone `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}         `json:",remain"`
 }
 
 type _GetClouds200Response GetClouds200Response
@@ -44,9 +44,9 @@ func NewGetClouds200ResponseWithDefaults() *GetClouds200Response {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetClouds200Response) GetZone() ListClouds200ResponseAllOfZonesInner {
+func (o *GetClouds200Response) GetZone() AddClouds200ResponseAllOfZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListClouds200ResponseAllOfZonesInner
+		var ret AddClouds200ResponseAllOfZone
 		return ret
 	}
 	return *o.Zone
@@ -54,7 +54,7 @@ func (o *GetClouds200Response) GetZone() ListClouds200ResponseAllOfZonesInner {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClouds200Response) GetZoneOk() (*ListClouds200ResponseAllOfZonesInner, bool) {
+func (o *GetClouds200Response) GetZoneOk() (*AddClouds200ResponseAllOfZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetClouds200Response) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListClouds200ResponseAllOfZonesInner and assigns it to the Zone field.
-func (o *GetClouds200Response) SetZone(v ListClouds200ResponseAllOfZonesInner) {
+// SetZone gets a reference to the given AddClouds200ResponseAllOfZone and assigns it to the Zone field.
+func (o *GetClouds200Response) SetZone(v AddClouds200ResponseAllOfZone) {
 	o.Zone = &v
 }
 

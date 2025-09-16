@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -71,12 +71,12 @@ type AddCluster200ResponseAllOfCluster struct {
 	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
 	UserGroup            NullableString                                              `json:"userGroup,omitempty"`
 	Layout               *ListClusters200ResponseAllOfClustersInnerLayout            `json:"layout,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
 	Servers              []ListClusters200ResponseAllOfClustersInnerServersInner     `json:"servers,omitempty"`
 	Accounts             []map[string]interface{}                                    `json:"accounts,omitempty"`
 	Integrations         []map[string]interface{}                                    `json:"integrations,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"site,omitempty"`
-	Type                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"type,omitempty"`
+	Site                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"site,omitempty"`
+	Type                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"type,omitempty"`
 	Zone                 *ListClusters200ResponseAllOfClustersInnerZone              `json:"zone,omitempty"`
 	WorkerStats          *ListClusters200ResponseAllOfClustersInnerWorkerStats       `json:"workerStats,omitempty"`
 	ContainersCount      *int64                                                      `json:"containersCount,omitempty"`
@@ -1950,36 +1950,47 @@ func (o *AddCluster200ResponseAllOfCluster) SetLayout(v ListClusters200ResponseA
 	o.Layout = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfCluster) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddCluster200ResponseAllOfCluster) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Owner.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Owner
+	return *o.Owner.Get()
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfCluster) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Owner) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddCluster200ResponseAllOfCluster) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Owner, true
+	return o.Owner.Get(), o.Owner.IsSet()
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetOwner() bool {
-	if o != nil && !IsNil(o.Owner) {
+	if o != nil && o.Owner.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *AddCluster200ResponseAllOfCluster) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Owner = &v
+// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
+func (o *AddCluster200ResponseAllOfCluster) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Owner.Set(&v)
+}
+
+// SetOwnerNil sets the value for Owner to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetOwnerNil() {
+	o.Owner.Set(nil)
+}
+
+// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetOwner() {
+	o.Owner.Unset()
 }
 
 // GetServers returns the Servers field value if set, zero value otherwise.
@@ -2078,68 +2089,90 @@ func (o *AddCluster200ResponseAllOfCluster) SetIntegrations(v []map[string]inter
 	o.Integrations = v
 }
 
-// GetSite returns the Site field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfCluster) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Site) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetSite returns the Site field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddCluster200ResponseAllOfCluster) GetSite() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Site.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Site
+	return *o.Site.Get()
 }
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfCluster) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Site) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddCluster200ResponseAllOfCluster) GetSiteOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Site, true
+	return o.Site.Get(), o.Site.IsSet()
 }
 
 // IsSetSite returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetSite() bool {
-	if o != nil && !IsNil(o.Site) {
+	if o != nil && o.Site.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSite gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Site field.
-func (o *AddCluster200ResponseAllOfCluster) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Site = &v
+// SetSite gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Site field.
+func (o *AddCluster200ResponseAllOfCluster) SetSite(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Site.Set(&v)
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *AddCluster200ResponseAllOfCluster) GetType() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Type) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// SetSiteNil sets the value for Site to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetSiteNil() {
+	o.Site.Set(nil)
+}
+
+// UnsetSite ensures that no value is present for Site, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetSite() {
+	o.Site.Unset()
+}
+
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddCluster200ResponseAllOfCluster) GetType() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Type.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Type
+	return *o.Type.Get()
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCluster200ResponseAllOfCluster) GetTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Type) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddCluster200ResponseAllOfCluster) GetTypeOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return o.Type.Get(), o.Type.IsSet()
 }
 
 // IsSetType returns a boolean if a field has been set.
 func (o *AddCluster200ResponseAllOfCluster) IsSetType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && o.Type.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Type field.
-func (o *AddCluster200ResponseAllOfCluster) SetType(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Type = &v
+// SetType gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Type field.
+func (o *AddCluster200ResponseAllOfCluster) SetType(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Type.Set(&v)
+}
+
+// SetTypeNil sets the value for Type to be an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) SetTypeNil() {
+	o.Type.Set(nil)
+}
+
+// UnsetType ensures that no value is present for Type, not even an explicit nil
+func (o *AddCluster200ResponseAllOfCluster) UnsetType() {
+	o.Type.Unset()
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
@@ -2677,8 +2710,8 @@ func (o AddCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Layout) {
 		toSerialize["layout"] = o.Layout
 	}
-	if !IsNil(o.Owner) {
-		toSerialize["owner"] = o.Owner
+	if o.Owner.IsSet() {
+		toSerialize["owner"] = o.Owner.Get()
 	}
 	if !IsNil(o.Servers) {
 		toSerialize["servers"] = o.Servers
@@ -2689,11 +2722,11 @@ func (o AddCluster200ResponseAllOfCluster) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Integrations) {
 		toSerialize["integrations"] = o.Integrations
 	}
-	if !IsNil(o.Site) {
-		toSerialize["site"] = o.Site
+	if o.Site.IsSet() {
+		toSerialize["site"] = o.Site.Get()
 	}
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
+	if o.Type.IsSet() {
+		toSerialize["type"] = o.Type.Get()
 	}
 	if !IsNil(o.Zone) {
 		toSerialize["zone"] = o.Zone

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Server** | Pointer to [**ListHosts200ResponseAllOfServersInner**](ListHosts200ResponseAllOfServersInner.md) |  | [optional] 
+**Server** | Pointer to [**AddBaremetalHost200ResponseServer**](AddBaremetalHost200ResponseServer.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServer
 
-`func (o *UpdateHostAssignTenant200Response) GetServer() ListHosts200ResponseAllOfServersInner`
+`func (o *UpdateHostAssignTenant200Response) GetServer() AddBaremetalHost200ResponseServer`
 
 GetServer returns the Server field if non-nil, zero value otherwise.
 
 ### GetServerOk
 
-`func (o *UpdateHostAssignTenant200Response) GetServerOk() (*ListHosts200ResponseAllOfServersInner, bool)`
+`func (o *UpdateHostAssignTenant200Response) GetServerOk() (*AddBaremetalHost200ResponseServer, bool)`
 
 GetServerOk returns a tuple with the Server field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServer
 
-`func (o *UpdateHostAssignTenant200Response) SetServer(v ListHosts200ResponseAllOfServersInner)`
+`func (o *UpdateHostAssignTenant200Response) SetServer(v AddBaremetalHost200ResponseServer)`
 
 SetServer sets Server field to given value.
 

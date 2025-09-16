@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &GetSpecTemplate200Response{}
 
 // GetSpecTemplate200Response struct for GetSpecTemplate200Response
 type GetSpecTemplate200Response struct {
-	SpecTemplate         *ListSpecTemplates200ResponseAllOfSpecTemplatesInner `json:"specTemplate,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	SpecTemplate         *GetSpecTemplate200ResponseSpecTemplate `json:"specTemplate,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _GetSpecTemplate200Response GetSpecTemplate200Response
@@ -44,9 +44,9 @@ func NewGetSpecTemplate200ResponseWithDefaults() *GetSpecTemplate200Response {
 }
 
 // GetSpecTemplate returns the SpecTemplate field value if set, zero value otherwise.
-func (o *GetSpecTemplate200Response) GetSpecTemplate() ListSpecTemplates200ResponseAllOfSpecTemplatesInner {
+func (o *GetSpecTemplate200Response) GetSpecTemplate() GetSpecTemplate200ResponseSpecTemplate {
 	if o == nil || IsNil(o.SpecTemplate) {
-		var ret ListSpecTemplates200ResponseAllOfSpecTemplatesInner
+		var ret GetSpecTemplate200ResponseSpecTemplate
 		return ret
 	}
 	return *o.SpecTemplate
@@ -54,7 +54,7 @@ func (o *GetSpecTemplate200Response) GetSpecTemplate() ListSpecTemplates200Respo
 
 // GetSpecTemplateOk returns a tuple with the SpecTemplate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*ListSpecTemplates200ResponseAllOfSpecTemplatesInner, bool) {
+func (o *GetSpecTemplate200Response) GetSpecTemplateOk() (*GetSpecTemplate200ResponseSpecTemplate, bool) {
 	if o == nil || IsNil(o.SpecTemplate) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetSpecTemplate200Response) IsSetSpecTemplate() bool {
 	return false
 }
 
-// SetSpecTemplate gets a reference to the given ListSpecTemplates200ResponseAllOfSpecTemplatesInner and assigns it to the SpecTemplate field.
-func (o *GetSpecTemplate200Response) SetSpecTemplate(v ListSpecTemplates200ResponseAllOfSpecTemplatesInner) {
+// SetSpecTemplate gets a reference to the given GetSpecTemplate200ResponseSpecTemplate and assigns it to the SpecTemplate field.
+func (o *GetSpecTemplate200Response) SetSpecTemplate(v GetSpecTemplate200ResponseSpecTemplate) {
 	o.SpecTemplate = &v
 }
 

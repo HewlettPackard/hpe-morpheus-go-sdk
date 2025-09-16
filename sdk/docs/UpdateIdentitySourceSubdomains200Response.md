@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserSource** | Pointer to [**ListIdentitySources200ResponseAllOfUserSourcesInner**](ListIdentitySources200ResponseAllOfUserSourcesInner.md) |  | [optional] 
+**UserSource** | Pointer to [**GetIdentitySources200ResponseUserSource**](GetIdentitySources200ResponseUserSource.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUserSource
 
-`func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() ListIdentitySources200ResponseAllOfUserSourcesInner`
+`func (o *UpdateIdentitySourceSubdomains200Response) GetUserSource() GetIdentitySources200ResponseUserSource`
 
 GetUserSource returns the UserSource field if non-nil, zero value otherwise.
 
 ### GetUserSourceOk
 
-`func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*ListIdentitySources200ResponseAllOfUserSourcesInner, bool)`
+`func (o *UpdateIdentitySourceSubdomains200Response) GetUserSourceOk() (*GetIdentitySources200ResponseUserSource, bool)`
 
 GetUserSourceOk returns a tuple with the UserSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserSource
 
-`func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v ListIdentitySources200ResponseAllOfUserSourcesInner)`
+`func (o *UpdateIdentitySourceSubdomains200Response) SetUserSource(v GetIdentitySources200ResponseUserSource)`
 
 SetUserSource sets UserSource field to given value.
 

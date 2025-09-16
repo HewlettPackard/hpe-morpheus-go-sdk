@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ArchiveBucket** | Pointer to [**ListArchiveBuckets200ResponseAllOfArchiveBucketsInner**](ListArchiveBuckets200ResponseAllOfArchiveBucketsInner.md) |  | [optional] 
+**ArchiveBucket** | Pointer to [**AddArchiveBucket200ResponseAllOfArchiveBucket**](AddArchiveBucket200ResponseAllOfArchiveBucket.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** |  | [optional] 
 **ParentDirectory** | Pointer to **NullableString** |  | [optional] 
 **ArchiveFiles** | Pointer to [**[]GetArchiveBucket200ResponseArchiveFilesInner**](GetArchiveBucket200ResponseArchiveFilesInner.md) |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetArchiveBucket
 
-`func (o *ListArchiveFiles200Response) GetArchiveBucket() ListArchiveBuckets200ResponseAllOfArchiveBucketsInner`
+`func (o *ListArchiveFiles200Response) GetArchiveBucket() AddArchiveBucket200ResponseAllOfArchiveBucket`
 
 GetArchiveBucket returns the ArchiveBucket field if non-nil, zero value otherwise.
 
 ### GetArchiveBucketOk
 
-`func (o *ListArchiveFiles200Response) GetArchiveBucketOk() (*ListArchiveBuckets200ResponseAllOfArchiveBucketsInner, bool)`
+`func (o *ListArchiveFiles200Response) GetArchiveBucketOk() (*AddArchiveBucket200ResponseAllOfArchiveBucket, bool)`
 
 GetArchiveBucketOk returns a tuple with the ArchiveBucket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetArchiveBucket
 
-`func (o *ListArchiveFiles200Response) SetArchiveBucket(v ListArchiveBuckets200ResponseAllOfArchiveBucketsInner)`
+`func (o *ListArchiveFiles200Response) SetArchiveBucket(v AddArchiveBucket200ResponseAllOfArchiveBucket)`
 
 SetArchiveBucket sets ArchiveBucket field to given value.
 

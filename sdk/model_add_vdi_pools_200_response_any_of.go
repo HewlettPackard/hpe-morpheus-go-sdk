@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &AddVDIPools200ResponseAnyOf{}
 
 // AddVDIPools200ResponseAnyOf struct for AddVDIPools200ResponseAnyOf
 type AddVDIPools200ResponseAnyOf struct {
-	VdiPool              *ListVDIPools200ResponseAllOfVdiPoolsInner `json:"vdiPool,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	VdiPool              *AddVDIPools200ResponseAnyOfVdiPool `json:"vdiPool,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _AddVDIPools200ResponseAnyOf AddVDIPools200ResponseAnyOf
@@ -44,9 +44,9 @@ func NewAddVDIPools200ResponseAnyOfWithDefaults() *AddVDIPools200ResponseAnyOf {
 }
 
 // GetVdiPool returns the VdiPool field value if set, zero value otherwise.
-func (o *AddVDIPools200ResponseAnyOf) GetVdiPool() ListVDIPools200ResponseAllOfVdiPoolsInner {
+func (o *AddVDIPools200ResponseAnyOf) GetVdiPool() AddVDIPools200ResponseAnyOfVdiPool {
 	if o == nil || IsNil(o.VdiPool) {
-		var ret ListVDIPools200ResponseAllOfVdiPoolsInner
+		var ret AddVDIPools200ResponseAnyOfVdiPool
 		return ret
 	}
 	return *o.VdiPool
@@ -54,7 +54,7 @@ func (o *AddVDIPools200ResponseAnyOf) GetVdiPool() ListVDIPools200ResponseAllOfV
 
 // GetVdiPoolOk returns a tuple with the VdiPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddVDIPools200ResponseAnyOf) GetVdiPoolOk() (*ListVDIPools200ResponseAllOfVdiPoolsInner, bool) {
+func (o *AddVDIPools200ResponseAnyOf) GetVdiPoolOk() (*AddVDIPools200ResponseAnyOfVdiPool, bool) {
 	if o == nil || IsNil(o.VdiPool) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *AddVDIPools200ResponseAnyOf) IsSetVdiPool() bool {
 	return false
 }
 
-// SetVdiPool gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInner and assigns it to the VdiPool field.
-func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v ListVDIPools200ResponseAllOfVdiPoolsInner) {
+// SetVdiPool gets a reference to the given AddVDIPools200ResponseAnyOfVdiPool and assigns it to the VdiPool field.
+func (o *AddVDIPools200ResponseAnyOf) SetVdiPool(v AddVDIPools200ResponseAnyOfVdiPool) {
 	o.VdiPool = &v
 }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Uuid** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Cloud** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Cloud** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -151,20 +151,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloud() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetCloudOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloud(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetCloud sets Cloud field to given value.
 
@@ -174,6 +174,16 @@ SetCloud sets Cloud field to given value.
 
 HasCloud returns a boolean if a field has been set.
 
+### SetCloudNil
+
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) SetCloudNil(b bool)`
+
+ SetCloudNil sets the value for Cloud to be an explicit nil
+
+### UnsetCloud
+`func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnsetCloud()`
+
+UnsetCloud ensures that no value is present for Cloud, not even an explicit nil
 ### GetType
 
 `func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

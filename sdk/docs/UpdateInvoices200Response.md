@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**ListInvoices200ResponseAllOfInvoicesInner**](ListInvoices200ResponseAllOfInvoicesInner.md) |  | [optional] 
+**User** | Pointer to [**GetInvoices200ResponseAllOfInvoice**](GetInvoices200ResponseAllOfInvoice.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *UpdateInvoices200Response) GetUser() ListInvoices200ResponseAllOfInvoicesInner`
+`func (o *UpdateInvoices200Response) GetUser() GetInvoices200ResponseAllOfInvoice`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UpdateInvoices200Response) GetUserOk() (*ListInvoices200ResponseAllOfInvoicesInner, bool)`
+`func (o *UpdateInvoices200Response) GetUserOk() (*GetInvoices200ResponseAllOfInvoice, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UpdateInvoices200Response) SetUser(v ListInvoices200ResponseAllOfInvoicesInner)`
+`func (o *UpdateInvoices200Response) SetUser(v GetInvoices200ResponseAllOfInvoice)`
 
 SetUser sets User field to given value.
 

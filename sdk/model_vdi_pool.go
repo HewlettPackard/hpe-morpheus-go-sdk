@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -47,7 +47,7 @@ type VdiPool struct {
 	Logo                             *string                                             `json:"logo,omitempty"`
 	Apps                             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"apps,omitempty"`
 	Owner                            *ListVDIPools200ResponseAllOfVdiPoolsInnerOwner     `json:"owner,omitempty"`
-	Config                           *ListVDIPools200ResponseAllOfVdiPoolsInnerConfig    `json:"config,omitempty"`
+	Config                           *AddVDIPools200ResponseAnyOfVdiPoolConfig           `json:"config,omitempty"`
 	Group                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"group,omitempty"`
 	Cloud                            *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"cloud,omitempty"`
 	UsedCount                        *int64                                              `json:"usedCount,omitempty"`
@@ -1044,9 +1044,9 @@ func (o *VdiPool) SetOwner(v ListVDIPools200ResponseAllOfVdiPoolsInnerOwner) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *VdiPool) GetConfig() ListVDIPools200ResponseAllOfVdiPoolsInnerConfig {
+func (o *VdiPool) GetConfig() AddVDIPools200ResponseAnyOfVdiPoolConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListVDIPools200ResponseAllOfVdiPoolsInnerConfig
+		var ret AddVDIPools200ResponseAnyOfVdiPoolConfig
 		return ret
 	}
 	return *o.Config
@@ -1054,7 +1054,7 @@ func (o *VdiPool) GetConfig() ListVDIPools200ResponseAllOfVdiPoolsInnerConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VdiPool) GetConfigOk() (*ListVDIPools200ResponseAllOfVdiPoolsInnerConfig, bool) {
+func (o *VdiPool) GetConfigOk() (*AddVDIPools200ResponseAnyOfVdiPoolConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1070,8 +1070,8 @@ func (o *VdiPool) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListVDIPools200ResponseAllOfVdiPoolsInnerConfig and assigns it to the Config field.
-func (o *VdiPool) SetConfig(v ListVDIPools200ResponseAllOfVdiPoolsInnerConfig) {
+// SetConfig gets a reference to the given AddVDIPools200ResponseAnyOfVdiPoolConfig and assigns it to the Config field.
+func (o *VdiPool) SetConfig(v AddVDIPools200ResponseAnyOfVdiPoolConfig) {
 	o.Config = &v
 }
 

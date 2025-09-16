@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageServer** | Pointer to [**ListStorageServers200ResponseAllOfStorageServersInner**](ListStorageServers200ResponseAllOfStorageServersInner.md) |  | [optional] 
+**StorageServer** | Pointer to [**AddStorageServers200ResponseAllOfStorageServer**](AddStorageServers200ResponseAllOfStorageServer.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStorageServer
 
-`func (o *GetStorageServers200Response) GetStorageServer() ListStorageServers200ResponseAllOfStorageServersInner`
+`func (o *GetStorageServers200Response) GetStorageServer() AddStorageServers200ResponseAllOfStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *GetStorageServers200Response) GetStorageServerOk() (*ListStorageServers200ResponseAllOfStorageServersInner, bool)`
+`func (o *GetStorageServers200Response) GetStorageServerOk() (*AddStorageServers200ResponseAllOfStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *GetStorageServers200Response) SetStorageServer(v ListStorageServers200ResponseAllOfStorageServersInner)`
+`func (o *GetStorageServers200Response) SetStorageServer(v AddStorageServers200ResponseAllOfStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 

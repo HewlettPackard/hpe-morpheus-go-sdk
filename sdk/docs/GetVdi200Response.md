@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Desktop** | Pointer to [**ListVdi200ResponseAllOfDesktopsInner**](ListVdi200ResponseAllOfDesktopsInner.md) |  | [optional] 
+**Desktop** | Pointer to [**GetVdi200ResponseDesktop**](GetVdi200ResponseDesktop.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDesktop
 
-`func (o *GetVdi200Response) GetDesktop() ListVdi200ResponseAllOfDesktopsInner`
+`func (o *GetVdi200Response) GetDesktop() GetVdi200ResponseDesktop`
 
 GetDesktop returns the Desktop field if non-nil, zero value otherwise.
 
 ### GetDesktopOk
 
-`func (o *GetVdi200Response) GetDesktopOk() (*ListVdi200ResponseAllOfDesktopsInner, bool)`
+`func (o *GetVdi200Response) GetDesktopOk() (*GetVdi200ResponseDesktop, bool)`
 
 GetDesktopOk returns a tuple with the Desktop field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDesktop
 
-`func (o *GetVdi200Response) SetDesktop(v ListVdi200ResponseAllOfDesktopsInner)`
+`func (o *GetVdi200Response) SetDesktop(v GetVdi200ResponseDesktop)`
 
 SetDesktop sets Desktop field to given value.
 

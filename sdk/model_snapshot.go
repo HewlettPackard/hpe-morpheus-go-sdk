@@ -3,7 +3,7 @@ Morpheus API
 
 Morpheus is a powerful cloud management tool that provides provisioning, monitoring, logging, backups, and application deployment strategies.  This document describes the Morpheus API protocol and the available endpoints. Sections are organized in the same manner as they appear in the Morpheus UI.
 
-API version: 8.0.8
+API version: 8.0.10
 Contact: dev@morpheusdata.com
 */
 
@@ -35,6 +35,8 @@ type Snapshot struct {
 	SnapshotFiles        []SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner                                             `json:"snapshotFiles,omitempty"`
 	CurrentlyActive      *bool                                                                                                      `json:"currentlyActive,omitempty"`
 	MemorySnapshot       *bool                                                                                                      `json:"memorySnapshot,omitempty"`
+	ForExport            *bool                                                                                                      `json:"forExport,omitempty"`
+	ForBackup            *bool                                                                                                      `json:"forBackup,omitempty"`
 	DateCreated          *time.Time                                                                                                 `json:"dateCreated,omitempty"`
 	AdditionalProperties map[string]interface{}                                                                                     `json:",remain"`
 }
@@ -572,6 +574,70 @@ func (o *Snapshot) SetMemorySnapshot(v bool) {
 	o.MemorySnapshot = &v
 }
 
+// GetForExport returns the ForExport field value if set, zero value otherwise.
+func (o *Snapshot) GetForExport() bool {
+	if o == nil || IsNil(o.ForExport) {
+		var ret bool
+		return ret
+	}
+	return *o.ForExport
+}
+
+// GetForExportOk returns a tuple with the ForExport field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Snapshot) GetForExportOk() (*bool, bool) {
+	if o == nil || IsNil(o.ForExport) {
+		return nil, false
+	}
+	return o.ForExport, true
+}
+
+// IsSetForExport returns a boolean if a field has been set.
+func (o *Snapshot) IsSetForExport() bool {
+	if o != nil && !IsNil(o.ForExport) {
+		return true
+	}
+
+	return false
+}
+
+// SetForExport gets a reference to the given bool and assigns it to the ForExport field.
+func (o *Snapshot) SetForExport(v bool) {
+	o.ForExport = &v
+}
+
+// GetForBackup returns the ForBackup field value if set, zero value otherwise.
+func (o *Snapshot) GetForBackup() bool {
+	if o == nil || IsNil(o.ForBackup) {
+		var ret bool
+		return ret
+	}
+	return *o.ForBackup
+}
+
+// GetForBackupOk returns a tuple with the ForBackup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Snapshot) GetForBackupOk() (*bool, bool) {
+	if o == nil || IsNil(o.ForBackup) {
+		return nil, false
+	}
+	return o.ForBackup, true
+}
+
+// IsSetForBackup returns a boolean if a field has been set.
+func (o *Snapshot) IsSetForBackup() bool {
+	if o != nil && !IsNil(o.ForBackup) {
+		return true
+	}
+
+	return false
+}
+
+// SetForBackup gets a reference to the given bool and assigns it to the ForBackup field.
+func (o *Snapshot) SetForBackup(v bool) {
+	o.ForBackup = &v
+}
+
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
 func (o *Snapshot) GetDateCreated() time.Time {
 	if o == nil || IsNil(o.DateCreated) {
@@ -655,6 +721,12 @@ func (o Snapshot) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.MemorySnapshot) {
 		toSerialize["memorySnapshot"] = o.MemorySnapshot
+	}
+	if !IsNil(o.ForExport) {
+		toSerialize["forExport"] = o.ForExport
+	}
+	if !IsNil(o.ForBackup) {
+		toSerialize["forBackup"] = o.ForBackup
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

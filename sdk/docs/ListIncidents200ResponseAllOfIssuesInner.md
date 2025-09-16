@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **App** | Pointer to **NullableString** |  | [optional] 
 **Available** | Pointer to **bool** |  | [optional] 
 **Check** | Pointer to **NullableString** |  | [optional] 
-**CheckGroup** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**CheckGroup** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **CheckStatus** | Pointer to **NullableString** |  | [optional] 
 **EndDate** | Pointer to **NullableTime** |  | [optional] 
 **Health** | Pointer to **int64** |  | [optional] 
@@ -190,20 +190,20 @@ HasCheck returns a boolean if a field has been set.
 UnsetCheck ensures that no value is present for Check, not even an explicit nil
 ### GetCheckGroup
 
-`func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroup() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetCheckGroup returns the CheckGroup field if non-nil, zero value otherwise.
 
 ### GetCheckGroupOk
 
-`func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroupOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetCheckGroupOk returns a tuple with the CheckGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckGroup
 
-`func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroup(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetCheckGroup sets CheckGroup field to given value.
 
@@ -213,6 +213,16 @@ SetCheckGroup sets CheckGroup field to given value.
 
 HasCheckGroup returns a boolean if a field has been set.
 
+### SetCheckGroupNil
+
+`func (o *ListIncidents200ResponseAllOfIssuesInner) SetCheckGroupNil(b bool)`
+
+ SetCheckGroupNil sets the value for CheckGroup to be an explicit nil
+
+### UnsetCheckGroup
+`func (o *ListIncidents200ResponseAllOfIssuesInner) UnsetCheckGroup()`
+
+UnsetCheckGroup ensures that no value is present for CheckGroup, not even an explicit nil
 ### GetCheckStatus
 
 `func (o *ListIncidents200ResponseAllOfIssuesInner) GetCheckStatus() string`
