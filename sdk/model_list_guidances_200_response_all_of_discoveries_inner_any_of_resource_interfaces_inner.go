@@ -1200,6 +1200,14 @@ func (v *NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInter
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

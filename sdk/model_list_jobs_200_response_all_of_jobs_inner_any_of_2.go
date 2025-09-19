@@ -968,6 +968,14 @@ func (v *NullableListJobs200ResponseAllOfJobsInnerAnyOf2) UnmarshalJSON(src []by
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListJobs200ResponseAllOfJobsInnerAnyOf2) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

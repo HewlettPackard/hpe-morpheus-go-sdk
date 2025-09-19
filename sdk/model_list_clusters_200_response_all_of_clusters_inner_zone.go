@@ -204,6 +204,14 @@ func (v *NullableListClusters200ResponseAllOfClustersInnerZone) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClusters200ResponseAllOfClustersInnerZone) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClusters200ResponseAllOfClustersInnerZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

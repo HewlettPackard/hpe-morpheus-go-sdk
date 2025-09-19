@@ -1382,6 +1382,14 @@ func (v *NullableGetServicePlans200ResponseServicePlan) UnmarshalJSON(src []byte
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetServicePlans200ResponseServicePlan) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetServicePlans200ResponseServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

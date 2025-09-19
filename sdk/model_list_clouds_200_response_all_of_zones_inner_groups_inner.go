@@ -204,6 +204,14 @@ func (v *NullableListClouds200ResponseAllOfZonesInnerGroupsInner) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClouds200ResponseAllOfZonesInnerGroupsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClouds200ResponseAllOfZonesInnerGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

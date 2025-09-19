@@ -1012,6 +1012,14 @@ func (v *NullableGetNetworkRoutersFirewallRules200ResponseRulesInner) UnmarshalJ
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetNetworkRoutersFirewallRules200ResponseRulesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetNetworkRoutersFirewallRules200ResponseRulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

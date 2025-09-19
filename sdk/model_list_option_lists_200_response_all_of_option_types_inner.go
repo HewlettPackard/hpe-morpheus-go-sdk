@@ -857,6 +857,14 @@ func (v *NullableListOptionLists200ResponseAllOfOptionTypesInner) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListOptionLists200ResponseAllOfOptionTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListOptionLists200ResponseAllOfOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

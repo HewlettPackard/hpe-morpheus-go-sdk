@@ -519,6 +519,14 @@ func (v *NullableListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) Unmarsha
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

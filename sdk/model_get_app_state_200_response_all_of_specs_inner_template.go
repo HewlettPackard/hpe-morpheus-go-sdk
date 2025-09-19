@@ -168,6 +168,14 @@ func (v *NullableGetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

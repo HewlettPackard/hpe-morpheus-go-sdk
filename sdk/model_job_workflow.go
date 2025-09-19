@@ -968,6 +968,14 @@ func (v *NullableJobWorkflow) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableJobWorkflow) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *JobWorkflow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -587,6 +587,14 @@ func (v *NullableCreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(src
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableCreateTenantSubtenantGroup200ResponseAccount) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *CreateTenantSubtenantGroup200ResponseAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

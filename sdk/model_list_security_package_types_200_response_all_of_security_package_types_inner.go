@@ -323,6 +323,14 @@ func (v *NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInn
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

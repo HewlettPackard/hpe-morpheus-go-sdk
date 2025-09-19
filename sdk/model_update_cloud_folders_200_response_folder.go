@@ -636,6 +636,14 @@ func (v *NullableUpdateCloudFolders200ResponseFolder) UnmarshalJSON(src []byte) 
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableUpdateCloudFolders200ResponseFolder) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *UpdateCloudFolders200ResponseFolder) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

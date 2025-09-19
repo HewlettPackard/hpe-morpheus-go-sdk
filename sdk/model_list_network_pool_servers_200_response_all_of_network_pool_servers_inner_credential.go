@@ -226,6 +226,14 @@ func (v *NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

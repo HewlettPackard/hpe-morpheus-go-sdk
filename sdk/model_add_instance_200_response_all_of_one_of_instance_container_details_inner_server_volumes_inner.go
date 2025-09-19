@@ -636,6 +636,14 @@ func (v *NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerSe
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServerVolumesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServerVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

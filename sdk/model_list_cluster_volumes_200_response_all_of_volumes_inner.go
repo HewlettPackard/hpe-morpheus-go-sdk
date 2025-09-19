@@ -2437,6 +2437,14 @@ func (v *NullableListClusterVolumes200ResponseAllOfVolumesInner) UnmarshalJSON(s
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClusterVolumes200ResponseAllOfVolumesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClusterVolumes200ResponseAllOfVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

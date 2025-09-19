@@ -240,6 +240,14 @@ func (v *NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalJ
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

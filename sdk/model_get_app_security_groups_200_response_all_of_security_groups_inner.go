@@ -240,6 +240,14 @@ func (v *NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) Unmars
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetAppSecurityGroups200ResponseAllOfSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

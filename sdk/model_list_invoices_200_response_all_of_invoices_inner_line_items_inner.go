@@ -1481,6 +1481,14 @@ func (v *NullableListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) Unmars
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

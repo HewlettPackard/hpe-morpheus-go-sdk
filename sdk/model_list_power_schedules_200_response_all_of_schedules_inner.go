@@ -1476,6 +1476,14 @@ func (v *NullableListPowerSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListPowerSchedules200ResponseAllOfSchedulesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListPowerSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

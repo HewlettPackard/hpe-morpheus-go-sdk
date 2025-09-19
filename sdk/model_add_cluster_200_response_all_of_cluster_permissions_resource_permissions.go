@@ -384,6 +384,14 @@ func (v *NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -699,6 +699,14 @@ func (v *NullableInstanceTypeLayoutUpdate) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableInstanceTypeLayoutUpdate) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *InstanceTypeLayoutUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

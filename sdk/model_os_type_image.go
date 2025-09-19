@@ -398,6 +398,14 @@ func (v *NullableOsTypeImage) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableOsTypeImage) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *OsTypeImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

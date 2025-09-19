@@ -437,6 +437,14 @@ func (v *NullableAddCertificateRequestCertificate) UnmarshalJSON(src []byte) err
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddCertificateRequestCertificate) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddCertificateRequestCertificate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

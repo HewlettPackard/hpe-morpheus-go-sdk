@@ -1321,3 +1321,12 @@ func (v *NullableListPolicies200ResponseAllOfPoliciesInnerConfig) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}

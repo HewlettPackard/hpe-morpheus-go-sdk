@@ -420,6 +420,14 @@ func (v *NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) Un
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListLoadBalancerTypes200ResponseAllOfLoadBalancerTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

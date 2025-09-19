@@ -384,6 +384,14 @@ func (v *NullableListClients200ResponseAllOfClientsInner) UnmarshalJSON(src []by
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClients200ResponseAllOfClientsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClients200ResponseAllOfClientsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1066,6 +1066,14 @@ func (v *NullableListClusterDatastores200ResponseAllOfDatastoresInner) Unmarshal
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

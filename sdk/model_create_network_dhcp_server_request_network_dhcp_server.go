@@ -209,6 +209,14 @@ func (v *NullableCreateNetworkDhcpServerRequestNetworkDhcpServer) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableCreateNetworkDhcpServerRequestNetworkDhcpServer) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *CreateNetworkDhcpServerRequestNetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

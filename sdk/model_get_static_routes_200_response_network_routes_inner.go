@@ -832,6 +832,14 @@ func (v *NullableGetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(src
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetStaticRoutes200ResponseNetworkRoutesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

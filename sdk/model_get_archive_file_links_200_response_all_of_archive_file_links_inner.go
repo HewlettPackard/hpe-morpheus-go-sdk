@@ -443,6 +443,14 @@ func (v *NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) Unmar
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

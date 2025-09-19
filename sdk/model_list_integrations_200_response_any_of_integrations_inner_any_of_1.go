@@ -671,6 +671,14 @@ func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1) Unmars
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

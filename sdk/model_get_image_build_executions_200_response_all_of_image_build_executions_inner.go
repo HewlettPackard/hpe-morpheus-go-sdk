@@ -621,6 +621,14 @@ func (v *NullableGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInne
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

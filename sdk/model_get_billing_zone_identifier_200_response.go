@@ -168,6 +168,14 @@ func (v *NullableGetBillingZoneIdentifier200Response) UnmarshalJSON(src []byte) 
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetBillingZoneIdentifier200Response) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetBillingZoneIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

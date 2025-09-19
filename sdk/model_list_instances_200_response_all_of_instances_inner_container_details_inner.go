@@ -889,6 +889,14 @@ func (v *NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInne
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListInstances200ResponseAllOfInstancesInnerContainerDetailsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

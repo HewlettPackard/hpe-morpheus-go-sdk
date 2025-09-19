@@ -525,6 +525,14 @@ func (v *NullableCreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(src []
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableCreateNetworkProxy200ResponseNetworkProxy) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *CreateNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

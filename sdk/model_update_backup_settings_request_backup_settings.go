@@ -427,6 +427,14 @@ func (v *NullableUpdateBackupSettingsRequestBackupSettings) UnmarshalJSON(src []
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableUpdateBackupSettingsRequestBackupSettings) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *UpdateBackupSettingsRequestBackupSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -204,6 +204,14 @@ func (v *NullableGetStateInstance200ResponseAllOfInstanceInput) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetStateInstance200ResponseAllOfInstanceInput) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetStateInstance200ResponseAllOfInstanceInput) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -168,6 +168,14 @@ func (v *NullableGetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(src 
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetWikiCategories200ResponseCategoriesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

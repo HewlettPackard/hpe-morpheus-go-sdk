@@ -170,6 +170,14 @@ func (v *NullableListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalJSON(s
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListNetworks200ResponseAllOfNetworksInnerOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

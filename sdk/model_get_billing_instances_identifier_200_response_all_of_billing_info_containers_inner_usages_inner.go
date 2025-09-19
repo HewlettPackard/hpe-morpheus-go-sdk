@@ -1272,6 +1272,14 @@ func (v *NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContain
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

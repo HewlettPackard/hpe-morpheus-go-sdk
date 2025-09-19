@@ -152,6 +152,14 @@ func (v *NullableAddRolesRequestRoleReportTypePermissionsInner) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddRolesRequestRoleReportTypePermissionsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddRolesRequestRoleReportTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

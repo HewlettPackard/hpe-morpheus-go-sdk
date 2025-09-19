@@ -204,6 +204,14 @@ func (v *NullableAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) Un
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

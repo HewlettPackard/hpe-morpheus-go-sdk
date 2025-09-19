@@ -421,6 +421,14 @@ func (v *NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(s
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -954,6 +954,14 @@ func (v *NullableClusterJobs) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableClusterJobs) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ClusterJobs) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -800,6 +800,14 @@ func (v *NullableListBackupRestores200ResponseAllOfRestoresInner) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListBackupRestores200ResponseAllOfRestoresInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListBackupRestores200ResponseAllOfRestoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

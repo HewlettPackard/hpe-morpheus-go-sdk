@@ -133,6 +133,14 @@ func (v *NullableAddStorageBucketsRequestStorageBucketConfigOneOf3) UnmarshalJSO
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf3) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

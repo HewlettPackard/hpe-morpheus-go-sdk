@@ -984,6 +984,14 @@ func (v *NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) Unmarsh
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

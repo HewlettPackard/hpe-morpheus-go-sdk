@@ -132,6 +132,14 @@ func (v *NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) Unmarshal
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

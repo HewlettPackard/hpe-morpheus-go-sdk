@@ -922,6 +922,14 @@ func (v *NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) Unmarsh
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfo) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

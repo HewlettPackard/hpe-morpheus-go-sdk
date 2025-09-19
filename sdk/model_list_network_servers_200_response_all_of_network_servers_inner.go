@@ -1704,6 +1704,14 @@ func (v *NullableListNetworkServers200ResponseAllOfNetworkServersInner) Unmarsha
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListNetworkServers200ResponseAllOfNetworkServersInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

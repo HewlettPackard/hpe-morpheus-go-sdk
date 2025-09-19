@@ -606,6 +606,14 @@ func (v *NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) Unmarshal
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableCreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *CreateNetworkPool200ResponseNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

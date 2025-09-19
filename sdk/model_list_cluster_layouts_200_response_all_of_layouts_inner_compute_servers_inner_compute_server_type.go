@@ -276,6 +276,14 @@ func (v *NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInn
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

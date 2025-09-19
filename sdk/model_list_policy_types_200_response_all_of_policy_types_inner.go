@@ -583,6 +583,14 @@ func (v *NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

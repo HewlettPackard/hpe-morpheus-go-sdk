@@ -1185,6 +1185,14 @@ func (v *NullableGetGuidances200ResponseDiscoveryAnyOf) UnmarshalJSON(src []byte
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetGuidances200ResponseDiscoveryAnyOf) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetGuidances200ResponseDiscoveryAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

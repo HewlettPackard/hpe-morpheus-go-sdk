@@ -170,6 +170,14 @@ func (v *NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) Unmarsh
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -312,6 +312,14 @@ func (v *NullableListIntegrationObjects200ResponseObjectsInner) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListIntegrationObjects200ResponseObjectsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListIntegrationObjects200ResponseObjectsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

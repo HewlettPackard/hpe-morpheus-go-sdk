@@ -240,6 +240,14 @@ func (v *NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBala
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerLoadBalancers) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

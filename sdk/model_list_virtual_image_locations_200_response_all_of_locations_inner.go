@@ -1095,6 +1095,14 @@ func (v *NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Unmars
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

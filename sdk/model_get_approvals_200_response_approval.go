@@ -714,6 +714,14 @@ func (v *NullableGetApprovals200ResponseApproval) UnmarshalJSON(src []byte) erro
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetApprovals200ResponseApproval) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetApprovals200ResponseApproval) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

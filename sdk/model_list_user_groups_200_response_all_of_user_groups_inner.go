@@ -526,6 +526,14 @@ func (v *NullableListUserGroups200ResponseAllOfUserGroupsInner) UnmarshalJSON(sr
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListUserGroups200ResponseAllOfUserGroupsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListUserGroups200ResponseAllOfUserGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

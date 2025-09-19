@@ -1016,6 +1016,14 @@ func (v *NullableGetNetworkRouter200ResponseNetworkRouter) UnmarshalJSON(src []b
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetNetworkRouter200ResponseNetworkRouter) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetNetworkRouter200ResponseNetworkRouter) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

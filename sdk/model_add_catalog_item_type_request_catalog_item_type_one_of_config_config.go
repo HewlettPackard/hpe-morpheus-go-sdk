@@ -187,3 +187,12 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}

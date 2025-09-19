@@ -682,6 +682,14 @@ func (v *NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalJSON(s
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

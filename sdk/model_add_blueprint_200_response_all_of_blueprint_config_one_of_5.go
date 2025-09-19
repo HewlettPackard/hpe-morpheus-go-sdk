@@ -431,6 +431,14 @@ func (v *NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf5) UnmarshalJSO
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf5) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

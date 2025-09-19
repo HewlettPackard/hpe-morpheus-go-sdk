@@ -170,6 +170,14 @@ func (v *NullablePreseedScriptsCreate) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullablePreseedScriptsCreate) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *PreseedScriptsCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

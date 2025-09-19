@@ -168,6 +168,14 @@ func (v *NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDa
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

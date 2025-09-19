@@ -204,6 +204,14 @@ func (v *NullableListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(src [
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

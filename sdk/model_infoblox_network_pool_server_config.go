@@ -185,6 +185,14 @@ func (v *NullableInfobloxNetworkPoolServerConfig) UnmarshalJSON(src []byte) erro
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableInfobloxNetworkPoolServerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *InfobloxNetworkPoolServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

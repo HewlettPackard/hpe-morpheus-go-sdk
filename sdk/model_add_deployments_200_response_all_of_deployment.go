@@ -396,6 +396,14 @@ func (v *NullableAddDeployments200ResponseAllOfDeployment) UnmarshalJSON(src []b
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddDeployments200ResponseAllOfDeployment) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddDeployments200ResponseAllOfDeployment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

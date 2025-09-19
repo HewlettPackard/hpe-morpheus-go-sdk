@@ -132,6 +132,14 @@ func (v *NullableUpdateApplianceSettingsRequest) UnmarshalJSON(src []byte) error
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableUpdateApplianceSettingsRequest) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *UpdateApplianceSettingsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

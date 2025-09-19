@@ -1967,6 +1967,14 @@ func (v *NullableAddStorageServers200ResponseAllOfStorageServer) UnmarshalJSON(s
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddStorageServers200ResponseAllOfStorageServer) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddStorageServers200ResponseAllOfStorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

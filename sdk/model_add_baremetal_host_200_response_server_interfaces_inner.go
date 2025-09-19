@@ -1244,6 +1244,14 @@ func (v *NullableAddBaremetalHost200ResponseServerInterfacesInner) UnmarshalJSON
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddBaremetalHost200ResponseServerInterfacesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddBaremetalHost200ResponseServerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

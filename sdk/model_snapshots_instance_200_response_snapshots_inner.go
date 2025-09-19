@@ -775,6 +775,14 @@ func (v *NullableSnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(src [
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableSnapshotsInstance200ResponseSnapshotsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *SnapshotsInstance200ResponseSnapshotsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

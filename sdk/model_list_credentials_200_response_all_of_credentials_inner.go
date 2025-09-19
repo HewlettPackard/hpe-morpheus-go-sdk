@@ -1104,6 +1104,14 @@ func (v *NullableListCredentials200ResponseAllOfCredentialsInner) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListCredentials200ResponseAllOfCredentialsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListCredentials200ResponseAllOfCredentialsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

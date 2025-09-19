@@ -124,6 +124,14 @@ func (v *NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

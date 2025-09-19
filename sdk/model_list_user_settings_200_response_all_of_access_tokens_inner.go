@@ -313,6 +313,14 @@ func (v *NullableListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSO
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

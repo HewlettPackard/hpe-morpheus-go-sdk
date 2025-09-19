@@ -1827,6 +1827,14 @@ func (v *NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOption
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

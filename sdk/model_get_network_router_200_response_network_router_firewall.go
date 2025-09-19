@@ -309,6 +309,14 @@ func (v *NullableGetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

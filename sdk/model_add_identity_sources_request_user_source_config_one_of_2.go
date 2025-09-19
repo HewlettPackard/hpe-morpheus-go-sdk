@@ -359,6 +359,14 @@ func (v *NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

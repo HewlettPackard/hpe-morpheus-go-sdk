@@ -612,6 +612,14 @@ func (v *NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) 
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

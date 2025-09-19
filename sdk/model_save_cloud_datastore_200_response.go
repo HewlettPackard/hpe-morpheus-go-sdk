@@ -204,6 +204,14 @@ func (v *NullableSaveCloudDatastore200Response) UnmarshalJSON(src []byte) error 
 	return json.Unmarshal(src, &v.value)
 }
 
+func (v NullableSaveCloudDatastore200Response) UnmarshalMapstructure(data any) (any, error) {
+	if err := mapstructDecode(data, &v.value); err != nil {
+		return nil, err
+	}
+	v.isSet = true
+
+	return v, nil
+}
 func (o *SaveCloudDatastore200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
