@@ -178,6 +178,7 @@ func (v NullableUpdateHostCloudRequest) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *UpdateHostCloudRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

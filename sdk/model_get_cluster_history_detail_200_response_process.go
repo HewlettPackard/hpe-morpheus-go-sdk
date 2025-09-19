@@ -1328,6 +1328,7 @@ func (v NullableGetClusterHistoryDetail200ResponseProcess) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *GetClusterHistoryDetail200ResponseProcess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

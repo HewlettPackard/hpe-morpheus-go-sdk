@@ -216,6 +216,7 @@ func (v NullableAddBlueprintRequestOneOf1CloudFormationGit) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOf1CloudFormationGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

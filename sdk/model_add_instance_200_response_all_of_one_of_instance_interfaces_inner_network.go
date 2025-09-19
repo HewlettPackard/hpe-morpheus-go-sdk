@@ -320,6 +320,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) 
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

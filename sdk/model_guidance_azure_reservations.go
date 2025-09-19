@@ -1085,6 +1085,7 @@ func (v NullableGuidanceAzureReservations) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *GuidanceAzureReservations) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

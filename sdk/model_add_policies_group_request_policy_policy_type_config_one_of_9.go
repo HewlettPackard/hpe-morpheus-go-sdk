@@ -176,6 +176,7 @@ func (v NullableAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

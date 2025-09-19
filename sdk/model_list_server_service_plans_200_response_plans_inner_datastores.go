@@ -176,6 +176,7 @@ func (v NullableListServerServicePlans200ResponsePlansInnerDatastores) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListServerServicePlans200ResponsePlansInnerDatastores) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

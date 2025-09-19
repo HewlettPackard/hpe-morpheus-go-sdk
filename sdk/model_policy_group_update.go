@@ -214,6 +214,7 @@ func (v NullablePolicyGroupUpdate) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *PolicyGroupUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

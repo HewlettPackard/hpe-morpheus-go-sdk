@@ -429,6 +429,7 @@ func (v NullableGetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *GetNetworkDhcpRelay200ResponseNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

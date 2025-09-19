@@ -1024,6 +1024,7 @@ func (v NullableGetInstanceThreshold200ResponseInstanceThreshold) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetInstanceThreshold200ResponseInstanceThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

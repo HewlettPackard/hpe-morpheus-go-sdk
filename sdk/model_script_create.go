@@ -441,6 +441,7 @@ func (v NullableScriptCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ScriptCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1613,6 +1613,7 @@ func (v NullableListInvoiceLineItems200ResponseAllOfLineItemsInner) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *ListInvoiceLineItems200ResponseAllOfLineItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableAddCheckApps200Response) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *AddCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

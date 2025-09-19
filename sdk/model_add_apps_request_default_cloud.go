@@ -140,6 +140,7 @@ func (v NullableAddAppsRequestDefaultCloud) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AddAppsRequestDefaultCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

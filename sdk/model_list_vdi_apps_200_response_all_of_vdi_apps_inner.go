@@ -426,6 +426,7 @@ func (v NullableListVDIApps200ResponseAllOfVdiAppsInner) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ListVDIApps200ResponseAllOfVdiAppsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

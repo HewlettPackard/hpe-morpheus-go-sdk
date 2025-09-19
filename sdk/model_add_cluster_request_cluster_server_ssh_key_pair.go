@@ -141,6 +141,7 @@ func (v NullableAddClusterRequestClusterServerSshKeyPair) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddClusterRequestClusterServerSshKeyPair) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableListActivity200ResponseAllOfActivityInnerActivityInnerUser) Unma
 
 	return v, nil
 }
+
 func (o *ListActivity200ResponseAllOfActivityInnerActivityInnerUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

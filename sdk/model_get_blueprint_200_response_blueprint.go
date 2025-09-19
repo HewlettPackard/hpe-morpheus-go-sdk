@@ -523,6 +523,7 @@ func (v NullableGetBlueprint200ResponseBlueprint) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *GetBlueprint200ResponseBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

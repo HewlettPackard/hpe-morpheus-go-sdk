@@ -212,6 +212,7 @@ func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigService
 
 	return v, nil
 }
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServicesAzureVmsPaymentOptionsValue) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

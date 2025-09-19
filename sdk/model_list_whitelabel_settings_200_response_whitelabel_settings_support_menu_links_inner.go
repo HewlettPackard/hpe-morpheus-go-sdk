@@ -212,6 +212,7 @@ func (v NullableListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLi
 
 	return v, nil
 }
+
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

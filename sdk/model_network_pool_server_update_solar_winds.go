@@ -487,6 +487,7 @@ func (v NullableNetworkPoolServerUpdateSolarWinds) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *NetworkPoolServerUpdateSolarWinds) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

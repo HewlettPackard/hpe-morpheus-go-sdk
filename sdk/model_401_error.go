@@ -140,6 +140,7 @@ func (v NullableModel401Error) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Model401Error) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

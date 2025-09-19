@@ -626,6 +626,7 @@ func (v NullableGetInstanceThreshold200ResponseInstanceSchedulesInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *GetInstanceThreshold200ResponseInstanceSchedulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

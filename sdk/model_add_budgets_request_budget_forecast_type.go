@@ -132,6 +132,7 @@ func (v NullableAddBudgetsRequestBudgetForecastType) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *AddBudgetsRequestBudgetForecastType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

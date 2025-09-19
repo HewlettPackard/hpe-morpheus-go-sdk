@@ -3839,6 +3839,7 @@ func (v NullableGetInvoices200ResponseAllOfInvoice) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *GetInvoices200ResponseAllOfInvoice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

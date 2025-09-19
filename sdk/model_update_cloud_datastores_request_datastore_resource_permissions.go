@@ -260,6 +260,7 @@ func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) Unmars
 
 	return v, nil
 }
+
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

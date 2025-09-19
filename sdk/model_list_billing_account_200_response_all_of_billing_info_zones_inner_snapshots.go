@@ -248,6 +248,7 @@ func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots
 
 	return v, nil
 }
+
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInnerSnapshots) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

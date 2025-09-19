@@ -140,6 +140,7 @@ func (v NullableAddCertificateRequest) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *AddCertificateRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

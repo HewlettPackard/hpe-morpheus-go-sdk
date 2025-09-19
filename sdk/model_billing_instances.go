@@ -285,6 +285,7 @@ func (v NullableBillingInstances) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *BillingInstances) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

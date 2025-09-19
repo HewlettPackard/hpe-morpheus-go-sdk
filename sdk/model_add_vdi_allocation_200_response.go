@@ -176,6 +176,7 @@ func (v NullableAddVdiAllocation200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *AddVdiAllocation200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

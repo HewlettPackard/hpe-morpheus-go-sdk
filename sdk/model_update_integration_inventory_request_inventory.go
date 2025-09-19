@@ -141,6 +141,7 @@ func (v NullableUpdateIntegrationInventoryRequestInventory) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *UpdateIntegrationInventoryRequestInventory) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

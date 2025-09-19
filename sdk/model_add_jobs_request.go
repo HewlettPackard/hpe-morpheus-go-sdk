@@ -131,6 +131,7 @@ func (v NullableAddJobsRequest) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *AddJobsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

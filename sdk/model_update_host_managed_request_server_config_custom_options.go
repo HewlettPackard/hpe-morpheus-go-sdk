@@ -140,6 +140,7 @@ func (v NullableUpdateHostManagedRequestServerConfigCustomOptions) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *UpdateHostManagedRequestServerConfigCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

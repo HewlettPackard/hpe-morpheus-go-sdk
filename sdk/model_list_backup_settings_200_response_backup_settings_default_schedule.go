@@ -212,6 +212,7 @@ func (v NullableListBackupSettings200ResponseBackupSettingsDefaultSchedule) Unma
 
 	return v, nil
 }
+
 func (o *ListBackupSettings200ResponseBackupSettingsDefaultSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

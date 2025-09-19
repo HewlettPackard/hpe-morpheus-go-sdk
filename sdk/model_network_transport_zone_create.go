@@ -254,6 +254,7 @@ func (v NullableNetworkTransportZoneCreate) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *NetworkTransportZoneCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

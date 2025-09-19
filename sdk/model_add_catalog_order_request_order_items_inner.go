@@ -242,6 +242,7 @@ func (v NullableAddCatalogOrderRequestOrderItemsInner) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *AddCatalogOrderRequestOrderItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

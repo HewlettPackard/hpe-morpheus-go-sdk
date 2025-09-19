@@ -141,6 +141,7 @@ func (v NullableManageHostPlacementRequestServerPreferredParentServer) Unmarshal
 
 	return v, nil
 }
+
 func (o *ManageHostPlacementRequestServerPreferredParentServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

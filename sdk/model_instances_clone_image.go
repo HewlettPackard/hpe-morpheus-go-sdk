@@ -182,6 +182,7 @@ func (v NullableInstancesCloneImage) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *InstancesCloneImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -182,6 +182,7 @@ func (v NullableGetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourceP
 
 	return v, nil
 }
+
 func (o *GetResourcePoolGroups200ResponseResourcePoolGroupsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -440,6 +440,7 @@ func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfo) Unmars
 
 	return v, nil
 }
+
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

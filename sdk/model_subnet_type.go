@@ -428,6 +428,7 @@ func (v NullableSubnetType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *SubnetType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

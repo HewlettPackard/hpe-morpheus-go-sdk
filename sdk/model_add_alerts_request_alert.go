@@ -522,6 +522,7 @@ func (v NullableAddAlertsRequestAlert) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *AddAlertsRequestAlert) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

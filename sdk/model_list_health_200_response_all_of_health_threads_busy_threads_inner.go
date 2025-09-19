@@ -751,6 +751,7 @@ func (v NullableListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthThreadsBusyThreadsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

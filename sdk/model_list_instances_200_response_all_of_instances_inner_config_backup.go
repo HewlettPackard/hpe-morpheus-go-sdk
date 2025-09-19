@@ -248,6 +248,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerConfigBackup) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigBackup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

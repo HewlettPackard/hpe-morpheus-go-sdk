@@ -797,6 +797,7 @@ func (v NullableGetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInne
 
 	return v, nil
 }
+
 func (o *GetBillingServersIdentifier200ResponseAllOfBillingInfoUsagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

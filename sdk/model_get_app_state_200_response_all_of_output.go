@@ -140,6 +140,7 @@ func (v NullableGetAppState200ResponseAllOfOutput) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *GetAppState200ResponseAllOfOutput) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

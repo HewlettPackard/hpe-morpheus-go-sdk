@@ -879,6 +879,7 @@ func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInner) Unmars
 
 	return v, nil
 }
+
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

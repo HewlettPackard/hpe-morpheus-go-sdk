@@ -131,6 +131,7 @@ func (v NullableIntegrationGitRepoConfig) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *IntegrationGitRepoConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

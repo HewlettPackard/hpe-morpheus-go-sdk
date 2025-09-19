@@ -176,6 +176,7 @@ func (v NullableServiceNowWorkflowsOptions) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *ServiceNowWorkflowsOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

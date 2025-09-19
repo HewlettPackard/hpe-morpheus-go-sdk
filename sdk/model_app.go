@@ -944,6 +944,7 @@ func (v NullableApp) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *App) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

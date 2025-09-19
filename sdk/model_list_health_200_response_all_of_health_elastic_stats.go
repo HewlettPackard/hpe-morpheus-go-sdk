@@ -500,6 +500,7 @@ func (v NullableListHealth200ResponseAllOfHealthElasticStats) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthElasticStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

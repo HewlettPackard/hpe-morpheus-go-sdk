@@ -248,6 +248,7 @@ func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActi
 
 	return v, nil
 }
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

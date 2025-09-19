@@ -140,6 +140,7 @@ func (v NullableCreateResourcePoolGroup200Response) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *CreateResourcePoolGroup200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

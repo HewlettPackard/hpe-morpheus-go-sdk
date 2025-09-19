@@ -440,6 +440,7 @@ func (v NullableCreateNetworkProxyRequestNetworkProxy) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *CreateNetworkProxyRequestNetworkProxy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

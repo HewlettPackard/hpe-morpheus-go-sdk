@@ -140,6 +140,7 @@ func (v NullableGetUserSettingsApiClients200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *GetUserSettingsApiClients200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

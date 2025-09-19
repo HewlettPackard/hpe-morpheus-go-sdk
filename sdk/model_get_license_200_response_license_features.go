@@ -1976,6 +1976,7 @@ func (v NullableGetLicense200ResponseLicenseFeatures) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *GetLicense200ResponseLicenseFeatures) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

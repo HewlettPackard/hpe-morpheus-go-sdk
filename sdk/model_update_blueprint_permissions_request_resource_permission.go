@@ -215,6 +215,7 @@ func (v NullableUpdateBlueprintPermissionsRequestResourcePermission) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *UpdateBlueprintPermissionsRequestResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

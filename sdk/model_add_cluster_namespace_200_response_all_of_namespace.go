@@ -342,6 +342,7 @@ func (v NullableAddClusterNamespace200ResponseAllOfNamespace) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *AddClusterNamespace200ResponseAllOfNamespace) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

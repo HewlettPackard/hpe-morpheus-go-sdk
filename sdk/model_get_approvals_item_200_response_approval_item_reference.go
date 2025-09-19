@@ -248,6 +248,7 @@ func (v NullableGetApprovalsItem200ResponseApprovalItemReference) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetApprovalsItem200ResponseApprovalItemReference) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

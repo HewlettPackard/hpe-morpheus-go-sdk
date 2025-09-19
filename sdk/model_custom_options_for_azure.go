@@ -141,6 +141,7 @@ func (v NullableCustomOptionsForAzure) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *CustomOptionsForAzure) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

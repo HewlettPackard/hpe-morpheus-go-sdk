@@ -210,6 +210,7 @@ func (v NullableAddOptionListRequestOptionTypeListConfigSourceHeadersInner) Unma
 
 	return v, nil
 }
+
 func (o *AddOptionListRequestOptionTypeListConfigSourceHeadersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

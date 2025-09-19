@@ -176,6 +176,7 @@ func (v NullableGetBillingZoneIdentifier200Response) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *GetBillingZoneIdentifier200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

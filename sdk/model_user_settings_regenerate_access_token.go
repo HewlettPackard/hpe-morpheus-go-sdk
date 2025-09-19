@@ -140,6 +140,7 @@ func (v NullableUserSettingsRegenerateAccessToken) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *UserSettingsRegenerateAccessToken) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

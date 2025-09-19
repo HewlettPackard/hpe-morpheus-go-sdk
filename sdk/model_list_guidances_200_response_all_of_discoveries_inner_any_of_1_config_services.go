@@ -140,6 +140,7 @@ func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigService
 
 	return v, nil
 }
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1ConfigServices) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

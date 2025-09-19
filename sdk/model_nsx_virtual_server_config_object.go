@@ -152,6 +152,7 @@ func (v NullableNSXVirtualServerConfigObject) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *NSXVirtualServerConfigObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

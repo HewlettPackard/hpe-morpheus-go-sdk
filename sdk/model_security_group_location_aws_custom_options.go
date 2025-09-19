@@ -141,6 +141,7 @@ func (v NullableSecurityGroupLocationAwsCustomOptions) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *SecurityGroupLocationAwsCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

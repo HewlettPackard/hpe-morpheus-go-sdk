@@ -1477,6 +1477,7 @@ func (v NullableListApplianceSettings200ResponseApplianceSettings) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListApplianceSettings200ResponseApplianceSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

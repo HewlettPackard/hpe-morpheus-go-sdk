@@ -187,6 +187,7 @@ func (v NullableAddClusterLayouts200Response) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *AddClusterLayouts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

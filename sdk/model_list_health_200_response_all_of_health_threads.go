@@ -431,6 +431,7 @@ func (v NullableListHealth200ResponseAllOfHealthThreads) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthThreads) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

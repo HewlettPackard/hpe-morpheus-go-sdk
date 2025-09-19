@@ -314,6 +314,7 @@ func (v NullableAddImageBuild200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *AddImageBuild200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

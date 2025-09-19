@@ -212,6 +212,7 @@ func (v NullableListClusters200ResponseAllOfClustersInnerServersInnerComputeServ
 
 	return v, nil
 }
+
 func (o *ListClusters200ResponseAllOfClustersInnerServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

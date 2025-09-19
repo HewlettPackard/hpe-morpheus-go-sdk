@@ -140,6 +140,7 @@ func (v NullableUpdateEmailTemplateRequest) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *UpdateEmailTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

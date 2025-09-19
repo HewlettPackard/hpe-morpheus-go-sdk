@@ -248,6 +248,7 @@ func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfaces
 
 	return v, nil
 }
+
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

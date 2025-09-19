@@ -212,6 +212,7 @@ func (v NullableListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListApps200ResponseAllOfAppsInnerBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

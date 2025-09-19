@@ -822,6 +822,7 @@ func (v NullableCatalogItemTypeInstanceUpdate) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

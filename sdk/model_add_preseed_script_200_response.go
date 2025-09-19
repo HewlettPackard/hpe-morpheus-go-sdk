@@ -314,6 +314,7 @@ func (v NullableAddPreseedScript200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *AddPreseedScript200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

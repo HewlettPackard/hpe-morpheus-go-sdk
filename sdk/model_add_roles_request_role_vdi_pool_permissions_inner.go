@@ -160,6 +160,7 @@ func (v NullableAddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *AddRolesRequestRoleVdiPoolPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

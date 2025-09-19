@@ -415,6 +415,7 @@ func (v NullableCypher) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Cypher) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -750,6 +750,7 @@ func (v NullableIntegrationRemedy) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *IntegrationRemedy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

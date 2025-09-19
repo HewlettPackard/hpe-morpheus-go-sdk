@@ -1484,6 +1484,7 @@ func (v NullableListPowerSchedules200ResponseAllOfSchedulesInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListPowerSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

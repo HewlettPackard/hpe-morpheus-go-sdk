@@ -961,6 +961,7 @@ func (v NullableFileTemplate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *FileTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

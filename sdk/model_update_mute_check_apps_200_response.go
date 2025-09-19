@@ -176,6 +176,7 @@ func (v NullableUpdateMuteCheckApps200Response) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *UpdateMuteCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

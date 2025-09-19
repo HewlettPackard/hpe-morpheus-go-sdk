@@ -689,6 +689,7 @@ func (v NullableIntegrationGitRepo) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *IntegrationGitRepo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

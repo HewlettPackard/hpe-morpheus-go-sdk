@@ -739,6 +739,7 @@ func (v NullableTaskNestedWorkflowConfig) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *TaskNestedWorkflowConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

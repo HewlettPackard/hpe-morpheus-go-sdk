@@ -215,6 +215,7 @@ func (v NullableAddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

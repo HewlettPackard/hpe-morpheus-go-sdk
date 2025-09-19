@@ -392,6 +392,7 @@ func (v NullableAddIncidentRequestIncident) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AddIncidentRequestIncident) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -584,6 +584,7 @@ func (v NullableListClusterDeployments200ResponseAllOfDeploymentsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListClusterDeployments200ResponseAllOfDeploymentsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableListCatalogCart200ResponseCartStats) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *ListCatalogCart200ResponseCartStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

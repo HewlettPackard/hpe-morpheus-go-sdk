@@ -559,6 +559,7 @@ func (v NullableTenantGroup) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *TenantGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

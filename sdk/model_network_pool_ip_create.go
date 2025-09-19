@@ -252,6 +252,7 @@ func (v NullableNetworkPoolIpCreate) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *NetworkPoolIpCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

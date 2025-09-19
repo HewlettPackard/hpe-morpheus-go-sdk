@@ -825,6 +825,7 @@ func (v NullableIdentitySourcesLDAPConfig) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *IdentitySourcesLDAPConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

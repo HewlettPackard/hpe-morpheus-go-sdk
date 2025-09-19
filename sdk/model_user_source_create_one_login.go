@@ -289,6 +289,7 @@ func (v NullableUserSourceCreateOneLogin) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *UserSourceCreateOneLogin) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

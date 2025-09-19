@@ -132,6 +132,7 @@ func (v NullableUpdateTenantSubtenantGroupZonesRequestGroup) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *UpdateTenantSubtenantGroupZonesRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableForgotPassword200Response) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *ForgotPassword200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

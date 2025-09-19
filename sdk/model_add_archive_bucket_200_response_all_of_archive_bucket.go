@@ -667,6 +667,7 @@ func (v NullableAddArchiveBucket200ResponseAllOfArchiveBucket) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddArchiveBucket200ResponseAllOfArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

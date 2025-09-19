@@ -140,6 +140,7 @@ func (v NullableCreateLoadBalancerPoolRequest) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerPoolRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

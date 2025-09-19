@@ -176,6 +176,7 @@ func (v NullableListTenantSubtenantGroups200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *ListTenantSubtenantGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

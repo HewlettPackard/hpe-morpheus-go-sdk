@@ -1533,6 +1533,7 @@ func (v NullableVdiPool) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *VdiPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

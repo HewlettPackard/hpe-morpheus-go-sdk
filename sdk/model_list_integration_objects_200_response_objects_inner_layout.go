@@ -320,6 +320,7 @@ func (v NullableListIntegrationObjects200ResponseObjectsInnerLayout) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListIntegrationObjects200ResponseObjectsInnerLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

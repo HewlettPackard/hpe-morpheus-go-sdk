@@ -583,6 +583,7 @@ func (v NullableListProvisioningLicenses200ResponseAllOfLicensesInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListProvisioningLicenses200ResponseAllOfLicensesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

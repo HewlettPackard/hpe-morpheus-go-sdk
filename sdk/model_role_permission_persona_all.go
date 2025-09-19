@@ -160,6 +160,7 @@ func (v NullableRolePermissionPersonaAll) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *RolePermissionPersonaAll) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

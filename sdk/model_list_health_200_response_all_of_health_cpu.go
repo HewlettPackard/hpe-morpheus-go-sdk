@@ -356,6 +356,7 @@ func (v NullableListHealth200ResponseAllOfHealthCpu) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthCpu) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

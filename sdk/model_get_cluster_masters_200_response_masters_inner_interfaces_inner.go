@@ -1274,6 +1274,7 @@ func (v NullableGetClusterMasters200ResponseMastersInnerInterfacesInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *GetClusterMasters200ResponseMastersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

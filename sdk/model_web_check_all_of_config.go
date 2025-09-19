@@ -562,6 +562,7 @@ func (v NullableWebCheckAllOfConfig) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *WebCheckAllOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

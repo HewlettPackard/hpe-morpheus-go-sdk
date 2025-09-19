@@ -512,6 +512,7 @@ func (v NullableListDeploys200ResponseAllOfAppDeploysInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListDeploys200ResponseAllOfAppDeploysInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

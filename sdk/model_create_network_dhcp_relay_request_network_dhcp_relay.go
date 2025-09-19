@@ -176,6 +176,7 @@ func (v NullableCreateNetworkDhcpRelayRequestNetworkDhcpRelay) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateNetworkDhcpRelayRequestNetworkDhcpRelay) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

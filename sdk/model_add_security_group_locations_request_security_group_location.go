@@ -159,6 +159,7 @@ func (v NullableAddSecurityGroupLocationsRequestSecurityGroupLocation) Unmarshal
 
 	return v, nil
 }
+
 func (o *AddSecurityGroupLocationsRequestSecurityGroupLocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

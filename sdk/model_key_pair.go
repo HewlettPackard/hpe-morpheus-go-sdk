@@ -510,6 +510,7 @@ func (v NullableKeyPair) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *KeyPair) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

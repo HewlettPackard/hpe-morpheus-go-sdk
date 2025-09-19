@@ -3839,6 +3839,7 @@ func (v NullableInvoice) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Invoice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -320,6 +320,7 @@ func (v NullableZoneNetworkOptionsResponseNetworkSubnetsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ZoneNetworkOptionsResponseNetworkSubnetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

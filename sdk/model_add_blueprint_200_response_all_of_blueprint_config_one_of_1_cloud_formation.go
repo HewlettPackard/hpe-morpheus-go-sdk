@@ -422,6 +422,7 @@ func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation)
 
 	return v, nil
 }
+
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

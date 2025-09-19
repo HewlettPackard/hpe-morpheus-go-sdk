@@ -185,6 +185,7 @@ func (v NullableUpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLink
 
 	return v, nil
 }
+
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettingsSupportMenuLinksInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

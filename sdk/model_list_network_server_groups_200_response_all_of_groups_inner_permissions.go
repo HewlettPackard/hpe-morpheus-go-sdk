@@ -212,6 +212,7 @@ func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) U
 
 	return v, nil
 }
+
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

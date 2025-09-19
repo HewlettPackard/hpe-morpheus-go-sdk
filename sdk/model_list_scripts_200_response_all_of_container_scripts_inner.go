@@ -783,6 +783,7 @@ func (v NullableListScripts200ResponseAllOfContainerScriptsInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListScripts200ResponseAllOfContainerScriptsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

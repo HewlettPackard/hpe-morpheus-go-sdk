@@ -422,6 +422,7 @@ func (v NullableAddPoliciesRequestPolicy) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *AddPoliciesRequestPolicy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

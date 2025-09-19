@@ -176,6 +176,7 @@ func (v NullableListCheckApps200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *ListCheckApps200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

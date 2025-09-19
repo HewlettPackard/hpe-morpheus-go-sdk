@@ -595,6 +595,7 @@ func (v NullableClusterStatefulSets) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *ClusterStatefulSets) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

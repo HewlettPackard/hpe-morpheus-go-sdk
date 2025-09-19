@@ -898,6 +898,7 @@ func (v NullableListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner)
 
 	return v, nil
 }
+
 func (o *ListSecurityGroups200ResponseAllOfSecurityGroupsInnerRulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

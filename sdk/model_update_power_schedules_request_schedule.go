@@ -871,6 +871,7 @@ func (v NullableUpdatePowerSchedulesRequestSchedule) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *UpdatePowerSchedulesRequestSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

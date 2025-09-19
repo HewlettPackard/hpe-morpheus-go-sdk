@@ -140,6 +140,7 @@ func (v NullableWebCheckAllOfCheckType) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *WebCheckAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

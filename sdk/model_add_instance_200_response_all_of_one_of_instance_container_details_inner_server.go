@@ -1522,6 +1522,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerSer
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInnerServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

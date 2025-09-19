@@ -619,6 +619,7 @@ func (v NullableUpdateProvisioningSettingsRequestProvisioningSettings) Unmarshal
 
 	return v, nil
 }
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

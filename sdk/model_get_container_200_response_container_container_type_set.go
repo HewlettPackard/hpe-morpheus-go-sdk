@@ -212,6 +212,7 @@ func (v NullableGetContainer200ResponseContainerContainerTypeSet) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetContainer200ResponseContainerContainerTypeSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

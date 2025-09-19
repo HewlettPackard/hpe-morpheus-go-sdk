@@ -361,6 +361,7 @@ func (v NullableAddPriceSetsRequestPriceSet) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *AddPriceSetsRequestPriceSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

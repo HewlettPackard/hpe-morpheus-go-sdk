@@ -212,6 +212,7 @@ func (v NullableListHealth200ResponseAllOfHealthRabbitQueuesInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthRabbitQueuesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

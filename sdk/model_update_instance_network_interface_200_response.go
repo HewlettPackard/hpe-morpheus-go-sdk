@@ -321,6 +321,7 @@ func (v NullableUpdateInstanceNetworkInterface200Response) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *UpdateInstanceNetworkInterface200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

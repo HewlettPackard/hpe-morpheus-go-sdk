@@ -293,6 +293,7 @@ func (v NullableAddIntegrationsRequestOneOf2IntegrationConfig) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddIntegrationsRequestOneOf2IntegrationConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

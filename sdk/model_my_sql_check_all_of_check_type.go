@@ -140,6 +140,7 @@ func (v NullableMySqlCheckAllOfCheckType) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *MySqlCheckAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

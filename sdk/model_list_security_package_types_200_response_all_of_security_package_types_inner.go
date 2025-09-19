@@ -331,6 +331,7 @@ func (v NullableListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInne
 
 	return v, nil
 }
+
 func (o *ListSecurityPackageTypes200ResponseAllOfSecurityPackageTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

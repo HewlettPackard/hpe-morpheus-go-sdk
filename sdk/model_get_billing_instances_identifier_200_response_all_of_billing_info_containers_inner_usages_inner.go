@@ -1280,6 +1280,7 @@ func (v NullableGetBillingInstancesIdentifier200ResponseAllOfBillingInfoContaine
 
 	return v, nil
 }
+
 func (o *GetBillingInstancesIdentifier200ResponseAllOfBillingInfoContainersInnerUsagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

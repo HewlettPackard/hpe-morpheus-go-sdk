@@ -140,6 +140,7 @@ func (v NullableAddImageBuildRequestImageBuildBootScript) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddImageBuildRequestImageBuildBootScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

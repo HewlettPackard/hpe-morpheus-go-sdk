@@ -176,6 +176,7 @@ func (v NullableSetAppSecurityGroups200Response) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *SetAppSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

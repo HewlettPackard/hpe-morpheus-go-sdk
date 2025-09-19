@@ -783,6 +783,7 @@ func (v NullableSnapshot) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Snapshot) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

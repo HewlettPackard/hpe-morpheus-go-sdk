@@ -2401,6 +2401,7 @@ func (v NullableStorageVolume) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *StorageVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

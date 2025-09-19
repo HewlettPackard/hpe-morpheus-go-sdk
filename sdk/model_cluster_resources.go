@@ -629,6 +629,7 @@ func (v NullableClusterResources) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ClusterResources) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

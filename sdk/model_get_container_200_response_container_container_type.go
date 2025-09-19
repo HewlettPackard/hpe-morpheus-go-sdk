@@ -248,6 +248,7 @@ func (v NullableGetContainer200ResponseContainerContainerType) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetContainer200ResponseContainerContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

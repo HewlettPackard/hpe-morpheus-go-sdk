@@ -252,6 +252,7 @@ func (v NullableUserSourceCreateCustomApi) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *UserSourceCreateCustomApi) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

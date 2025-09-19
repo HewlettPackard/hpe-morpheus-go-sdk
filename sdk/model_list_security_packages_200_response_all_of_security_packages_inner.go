@@ -502,6 +502,7 @@ func (v NullableListSecurityPackages200ResponseAllOfSecurityPackagesInner) Unmar
 
 	return v, nil
 }
+
 func (o *ListSecurityPackages200ResponseAllOfSecurityPackagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

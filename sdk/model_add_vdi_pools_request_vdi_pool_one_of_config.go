@@ -267,6 +267,7 @@ func (v NullableAddVDIPoolsRequestVdiPoolOneOfConfig) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *AddVDIPoolsRequestVdiPoolOneOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

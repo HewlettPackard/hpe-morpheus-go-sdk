@@ -1732,6 +1732,7 @@ func (v NullableListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) Unm
 
 	return v, nil
 }
+
 func (o *ListLoadBalancerPools200ResponseAllOfLoadBalancerPoolsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -141,6 +141,7 @@ func (v NullableUpdateUserSettingsRequestUserDefaultCloud) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *UpdateUserSettingsRequestUserDefaultCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

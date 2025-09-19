@@ -465,6 +465,7 @@ func (v NullableLog) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Log) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

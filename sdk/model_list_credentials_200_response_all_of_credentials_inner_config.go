@@ -389,6 +389,7 @@ func (v NullableListCredentials200ResponseAllOfCredentialsInnerConfig) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListCredentials200ResponseAllOfCredentialsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

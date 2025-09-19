@@ -140,6 +140,7 @@ func (v NullableGetPrepareApplyInstance200ResponseAllOfData) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetPrepareApplyInstance200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

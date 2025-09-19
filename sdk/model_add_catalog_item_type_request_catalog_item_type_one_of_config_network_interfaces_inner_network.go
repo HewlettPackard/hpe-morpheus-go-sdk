@@ -132,6 +132,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterf
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

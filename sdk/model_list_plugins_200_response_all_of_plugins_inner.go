@@ -844,6 +844,7 @@ func (v NullableListPlugins200ResponseAllOfPluginsInner) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ListPlugins200ResponseAllOfPluginsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

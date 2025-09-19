@@ -600,6 +600,7 @@ func (v NullableClusterServices) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ClusterServices) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

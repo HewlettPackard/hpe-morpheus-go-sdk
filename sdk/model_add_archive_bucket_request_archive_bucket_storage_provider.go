@@ -140,6 +140,7 @@ func (v NullableAddArchiveBucketRequestArchiveBucketStorageProvider) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *AddArchiveBucketRequestArchiveBucketStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

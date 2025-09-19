@@ -689,6 +689,7 @@ func (v NullableListArchiveBuckets200ResponseAllOfArchiveBucketsInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListArchiveBuckets200ResponseAllOfArchiveBucketsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

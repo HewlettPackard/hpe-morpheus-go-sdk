@@ -140,6 +140,7 @@ func (v NullableUpdateNetworkFirewallRuleGroupRequest) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *UpdateNetworkFirewallRuleGroupRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

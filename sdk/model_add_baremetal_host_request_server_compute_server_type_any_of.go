@@ -141,6 +141,7 @@ func (v NullableAddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *AddBaremetalHostRequestServerComputeServerTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -243,6 +243,7 @@ func (v NullableCreateTenantSubtenantGroupRequestGroup) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *CreateTenantSubtenantGroupRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableGetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) Unmar
 
 	return v, nil
 }
+
 func (o *GetArchiveBucket200ResponseArchiveFilesInnerArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

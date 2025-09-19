@@ -248,6 +248,7 @@ func (v NullableListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypes
 
 	return v, nil
 }
+
 func (o *ListClusterTypes200ResponseAllOfClusterTypesInnerControllerTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

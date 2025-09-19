@@ -212,6 +212,7 @@ func (v NullableGetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveF
 
 	return v, nil
 }
+
 func (o *GetArchiveFileLinks200ResponseAllOfArchiveFileLinksInnerArchiveFile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

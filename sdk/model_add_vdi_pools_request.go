@@ -131,6 +131,7 @@ func (v NullableAddVDIPoolsRequest) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *AddVDIPoolsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

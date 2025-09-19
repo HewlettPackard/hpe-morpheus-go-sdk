@@ -808,6 +808,7 @@ func (v NullableBackupRestore) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *BackupRestore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableListActivity200ResponseAllOfActivityInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *ListActivity200ResponseAllOfActivityInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

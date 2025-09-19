@@ -176,6 +176,7 @@ func (v NullableUpdateUserSettingsAccessToken200Response) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *UpdateUserSettingsAccessToken200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

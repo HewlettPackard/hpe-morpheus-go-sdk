@@ -991,6 +991,7 @@ func (v NullableUpdateWhitelabelSettingsRequestWhitelabelSettings) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *UpdateWhitelabelSettingsRequestWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

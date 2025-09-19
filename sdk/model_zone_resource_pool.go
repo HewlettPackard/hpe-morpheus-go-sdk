@@ -868,6 +868,7 @@ func (v NullableZoneResourcePool) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ZoneResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

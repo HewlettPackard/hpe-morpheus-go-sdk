@@ -206,6 +206,7 @@ func (v NullableReferenceObject) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ReferenceObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -567,6 +567,7 @@ func (v NullableUpdateStorageBucketsRequestStorageBucket) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *UpdateStorageBucketsRequestStorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

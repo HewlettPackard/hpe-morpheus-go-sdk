@@ -612,6 +612,7 @@ func (v NullableUpdateOptionTypeRequestOptionType) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *UpdateOptionTypeRequestOptionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

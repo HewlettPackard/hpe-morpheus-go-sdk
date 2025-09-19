@@ -140,6 +140,7 @@ func (v NullableGetProvisioningLicenseReservations200Response) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetProvisioningLicenseReservations200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

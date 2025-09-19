@@ -595,6 +595,7 @@ func (v NullableListClusterPods200ResponseAllOfPodsInner) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *ListClusterPods200ResponseAllOfPodsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

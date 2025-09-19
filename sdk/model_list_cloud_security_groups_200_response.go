@@ -212,6 +212,7 @@ func (v NullableListCloudSecurityGroups200Response) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *ListCloudSecurityGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

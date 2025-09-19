@@ -168,6 +168,7 @@ func (v NullableAttachServerVolumeRequest) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *AttachServerVolumeRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -655,6 +655,7 @@ func (v NullableIntegrationType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *IntegrationType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableGetVDIAllocations200Response) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *GetVDIAllocations200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

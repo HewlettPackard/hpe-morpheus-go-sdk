@@ -141,6 +141,7 @@ func (v NullableCreateNetworkFirewallRuleRequestRuleRuleGroup) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateNetworkFirewallRuleRequestRuleRuleGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

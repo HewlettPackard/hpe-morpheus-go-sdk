@@ -176,6 +176,7 @@ func (v NullableListVDIAllocations200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *ListVDIAllocations200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

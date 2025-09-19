@@ -140,6 +140,7 @@ func (v NullableGetNetworkPoolIps400Response) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *GetNetworkPoolIps400Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

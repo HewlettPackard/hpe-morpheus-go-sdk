@@ -140,6 +140,7 @@ func (v NullableListOptionLists200ResponseAllOfOptionTypesInnerConfig) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

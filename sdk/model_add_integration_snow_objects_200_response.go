@@ -176,6 +176,7 @@ func (v NullableAddIntegrationSnowObjects200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *AddIntegrationSnowObjects200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

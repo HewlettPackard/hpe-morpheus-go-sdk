@@ -140,6 +140,7 @@ func (v NullableGetUserSettingsApiClients200ResponseClientsInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetUserSettingsApiClients200ResponseClientsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

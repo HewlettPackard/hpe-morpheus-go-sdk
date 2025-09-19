@@ -268,6 +268,7 @@ func (v NullableMetaObject) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *MetaObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

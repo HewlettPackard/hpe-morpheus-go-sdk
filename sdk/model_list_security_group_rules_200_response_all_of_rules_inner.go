@@ -959,6 +959,7 @@ func (v NullableListSecurityGroupRules200ResponseAllOfRulesInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListSecurityGroupRules200ResponseAllOfRulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

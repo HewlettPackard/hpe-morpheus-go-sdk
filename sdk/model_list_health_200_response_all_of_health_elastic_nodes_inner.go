@@ -464,6 +464,7 @@ func (v NullableListHealth200ResponseAllOfHealthElasticNodesInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthElasticNodesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

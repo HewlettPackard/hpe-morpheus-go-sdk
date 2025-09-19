@@ -231,6 +231,7 @@ func (v NullableModel200SuccessExpanded) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *Model200SuccessExpanded) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

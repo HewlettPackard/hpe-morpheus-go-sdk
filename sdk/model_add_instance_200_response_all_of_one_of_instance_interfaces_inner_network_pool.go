@@ -176,6 +176,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPo
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

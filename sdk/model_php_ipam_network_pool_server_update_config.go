@@ -182,6 +182,7 @@ func (v NullablePhpIPAMNetworkPoolServerUpdateConfig) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *PhpIPAMNetworkPoolServerUpdateConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

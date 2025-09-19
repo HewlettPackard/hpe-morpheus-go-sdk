@@ -891,6 +891,7 @@ func (v NullableGetNetworkRouters200ResponseNetworkRoutersInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *GetNetworkRouters200ResponseNetworkRoutersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

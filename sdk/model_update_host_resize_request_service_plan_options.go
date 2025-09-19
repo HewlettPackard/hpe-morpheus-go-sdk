@@ -215,6 +215,7 @@ func (v NullableUpdateHostResizeRequestServicePlanOptions) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *UpdateHostResizeRequestServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

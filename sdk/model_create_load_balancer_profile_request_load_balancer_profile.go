@@ -252,6 +252,7 @@ func (v NullableCreateLoadBalancerProfileRequestLoadBalancerProfile) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerProfileRequestLoadBalancerProfile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

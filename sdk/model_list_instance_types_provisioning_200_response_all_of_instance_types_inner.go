@@ -727,6 +727,7 @@ func (v NullableListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner)
 
 	return v, nil
 }
+
 func (o *ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

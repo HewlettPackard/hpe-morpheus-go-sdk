@@ -572,6 +572,7 @@ func (v NullableGetProvisioningLicense200ResponseLicense) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *GetProvisioningLicense200ResponseLicense) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

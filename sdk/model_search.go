@@ -248,6 +248,7 @@ func (v NullableSearch) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Search) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -820,6 +820,7 @@ func (v NullableOptionTypeListCreate) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *OptionTypeListCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

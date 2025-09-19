@@ -248,6 +248,7 @@ func (v NullableListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInne
 
 	return v, nil
 }
+
 func (o *ListLoadBalancerMonitors200ResponseAllOfLoadBalancerMonitorsInnerLoadBalancer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

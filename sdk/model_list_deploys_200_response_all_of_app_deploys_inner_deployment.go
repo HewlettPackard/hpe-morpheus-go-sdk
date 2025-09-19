@@ -212,6 +212,7 @@ func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeployment) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeployment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

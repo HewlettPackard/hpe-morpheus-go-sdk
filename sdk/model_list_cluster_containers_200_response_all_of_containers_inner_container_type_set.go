@@ -245,6 +245,7 @@ func (v NullableListClusterContainers200ResponseAllOfContainersInnerContainerTyp
 
 	return v, nil
 }
+
 func (o *ListClusterContainers200ResponseAllOfContainersInnerContainerTypeSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

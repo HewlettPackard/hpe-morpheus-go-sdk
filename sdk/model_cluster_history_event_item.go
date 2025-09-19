@@ -1342,6 +1342,7 @@ func (v NullableClusterHistoryEventItem) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *ClusterHistoryEventItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

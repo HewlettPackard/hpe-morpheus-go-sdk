@@ -140,6 +140,7 @@ func (v NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolu
 
 	return v, nil
 }
+
 func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInnerVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

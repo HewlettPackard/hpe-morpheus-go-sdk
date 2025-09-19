@@ -178,6 +178,7 @@ func (v NullableGetMonitoringSettings200ResponseMonitoringSettingsServiceNowInte
 
 	return v, nil
 }
+
 func (o *GetMonitoringSettings200ResponseMonitoringSettingsServiceNowIntegration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

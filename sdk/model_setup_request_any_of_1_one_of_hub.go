@@ -160,6 +160,7 @@ func (v NullableSetupRequestAnyOf1OneOfHub) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *SetupRequestAnyOf1OneOfHub) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

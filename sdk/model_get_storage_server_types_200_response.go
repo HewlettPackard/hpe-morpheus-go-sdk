@@ -140,6 +140,7 @@ func (v NullableGetStorageServerTypes200Response) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *GetStorageServerTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

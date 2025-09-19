@@ -223,6 +223,7 @@ func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMapp
 
 	return v, nil
 }
+
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOfRoleMappingsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -324,6 +324,7 @@ func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

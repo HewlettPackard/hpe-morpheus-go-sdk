@@ -212,6 +212,7 @@ func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) U
 
 	return v, nil
 }
+
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInnerInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

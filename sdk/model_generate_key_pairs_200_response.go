@@ -140,6 +140,7 @@ func (v NullableGenerateKeyPairs200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *GenerateKeyPairs200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

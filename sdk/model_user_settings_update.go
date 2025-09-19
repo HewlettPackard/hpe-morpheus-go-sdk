@@ -619,6 +619,7 @@ func (v NullableUserSettingsUpdate) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *UserSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

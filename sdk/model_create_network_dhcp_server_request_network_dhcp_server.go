@@ -217,6 +217,7 @@ func (v NullableCreateNetworkDhcpServerRequestNetworkDhcpServer) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *CreateNetworkDhcpServerRequestNetworkDhcpServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

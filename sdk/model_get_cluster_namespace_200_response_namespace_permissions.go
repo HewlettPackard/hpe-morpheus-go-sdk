@@ -140,6 +140,7 @@ func (v NullableGetClusterNamespace200ResponseNamespacePermissions) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *GetClusterNamespace200ResponseNamespacePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

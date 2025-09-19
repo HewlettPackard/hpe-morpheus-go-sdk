@@ -1208,6 +1208,7 @@ func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterf
 
 	return v, nil
 }
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

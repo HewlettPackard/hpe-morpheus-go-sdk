@@ -629,6 +629,7 @@ func (v NullableUpdateInstanceThresholdRequestInstanceThreshold) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *UpdateInstanceThresholdRequestInstanceThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

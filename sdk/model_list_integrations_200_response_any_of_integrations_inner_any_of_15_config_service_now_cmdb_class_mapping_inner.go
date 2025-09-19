@@ -248,6 +248,7 @@ func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigSe
 
 	return v, nil
 }
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15ConfigServiceNowCmdbClassMappingInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

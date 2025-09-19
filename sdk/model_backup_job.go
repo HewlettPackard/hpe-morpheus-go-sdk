@@ -733,6 +733,7 @@ func (v NullableBackupJob) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *BackupJob) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

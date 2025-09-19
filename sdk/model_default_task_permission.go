@@ -160,6 +160,7 @@ func (v NullableDefaultTaskPermission) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *DefaultTaskPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

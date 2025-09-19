@@ -141,6 +141,7 @@ func (v NullableSecurityGroupLocationAzureCustomOptions) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *SecurityGroupLocationAzureCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

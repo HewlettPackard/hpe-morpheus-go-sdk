@@ -416,6 +416,7 @@ func (v NullablePostgresCheck) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *PostgresCheck) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

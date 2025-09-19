@@ -160,6 +160,7 @@ func (v NullableUpdateRoleCatalogItemTypeAccessRequestOneOf1) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *UpdateRoleCatalogItemTypeAccessRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

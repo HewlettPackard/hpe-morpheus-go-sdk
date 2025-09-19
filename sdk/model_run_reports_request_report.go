@@ -350,6 +350,7 @@ func (v NullableRunReportsRequestReport) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *RunReportsRequestReport) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

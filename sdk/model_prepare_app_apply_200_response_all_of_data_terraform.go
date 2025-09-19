@@ -248,6 +248,7 @@ func (v NullablePrepareAppApply200ResponseAllOfDataTerraform) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *PrepareAppApply200ResponseAllOfDataTerraform) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

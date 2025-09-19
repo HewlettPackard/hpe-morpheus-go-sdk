@@ -177,6 +177,7 @@ func (v NullableManageHostPlacementRequestServer) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *ManageHostPlacementRequestServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

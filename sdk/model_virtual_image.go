@@ -1937,6 +1937,7 @@ func (v NullableVirtualImage) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *VirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

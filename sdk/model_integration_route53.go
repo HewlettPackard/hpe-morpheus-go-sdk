@@ -643,6 +643,7 @@ func (v NullableIntegrationRoute53) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *IntegrationRoute53) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

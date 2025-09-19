@@ -295,6 +295,7 @@ func (v NullableNetworkRoutersCreate) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *NetworkRoutersCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

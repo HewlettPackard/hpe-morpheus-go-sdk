@@ -1328,6 +1328,7 @@ func (v NullableClusterHistoryItem) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *ClusterHistoryItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *ListInvoices200ResponseAllOfInvoicesInnerCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

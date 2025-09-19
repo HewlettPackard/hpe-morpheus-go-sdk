@@ -140,6 +140,7 @@ func (v NullableGetMonitoringSettings200Response) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *GetMonitoringSettings200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

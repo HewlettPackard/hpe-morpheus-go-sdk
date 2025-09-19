@@ -681,6 +681,7 @@ func (v NullableClusterLayoutUpdate) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *ClusterLayoutUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

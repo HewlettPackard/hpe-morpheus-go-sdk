@@ -248,6 +248,7 @@ func (v NullableListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) Unmar
 
 	return v, nil
 }
+
 func (o *ListClusterNetworkEndpoints200ResponseAllOfEndpointsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

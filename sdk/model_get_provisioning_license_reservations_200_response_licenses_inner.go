@@ -176,6 +176,7 @@ func (v NullableGetProvisioningLicenseReservations200ResponseLicensesInner) Unma
 
 	return v, nil
 }
+
 func (o *GetProvisioningLicenseReservations200ResponseLicensesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

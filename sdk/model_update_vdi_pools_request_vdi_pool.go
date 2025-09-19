@@ -1097,6 +1097,7 @@ func (v NullableUpdateVDIPoolsRequestVdiPool) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *UpdateVDIPoolsRequestVdiPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

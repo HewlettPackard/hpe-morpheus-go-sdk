@@ -176,6 +176,7 @@ func (v NullableListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) U
 
 	return v, nil
 }
+
 func (o *ListInstanceServicePlans200ResponsePlansInnerAutoOptionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

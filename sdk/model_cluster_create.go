@@ -419,6 +419,7 @@ func (v NullableClusterCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ClusterCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

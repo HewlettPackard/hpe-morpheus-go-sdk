@@ -256,6 +256,7 @@ func (v NullableUserSourceCreateJumpCloud) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *UserSourceCreateJumpCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

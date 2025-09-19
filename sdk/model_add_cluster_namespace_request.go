@@ -140,6 +140,7 @@ func (v NullableAddClusterNamespaceRequest) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AddClusterNamespaceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

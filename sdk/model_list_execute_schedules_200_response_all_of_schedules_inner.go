@@ -498,6 +498,7 @@ func (v NullableListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *ListExecuteSchedules200ResponseAllOfSchedulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

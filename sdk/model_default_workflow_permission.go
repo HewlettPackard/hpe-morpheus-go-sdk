@@ -160,6 +160,7 @@ func (v NullableDefaultWorkflowPermission) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *DefaultWorkflowPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -363,6 +363,7 @@ func (v NullableNetworkServerUpdateNSX) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *NetworkServerUpdateNSX) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableUpdateCloudResourcePoolRequest) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *UpdateCloudResourcePoolRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

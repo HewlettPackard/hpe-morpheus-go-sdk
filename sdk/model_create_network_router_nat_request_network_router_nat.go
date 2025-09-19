@@ -135,6 +135,7 @@ func (v NullableCreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateNetworkRouterNatRequestNetworkRouterNAT) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

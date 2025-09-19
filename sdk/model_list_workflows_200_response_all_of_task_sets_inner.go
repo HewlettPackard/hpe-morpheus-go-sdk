@@ -633,6 +633,7 @@ func (v NullableListWorkflows200ResponseAllOfTaskSetsInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListWorkflows200ResponseAllOfTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

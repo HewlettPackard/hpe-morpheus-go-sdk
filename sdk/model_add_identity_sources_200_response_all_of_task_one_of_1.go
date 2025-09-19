@@ -825,6 +825,7 @@ func (v NullableAddIdentitySources200ResponseAllOfTaskOneOf1) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *AddIdentitySources200ResponseAllOfTaskOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

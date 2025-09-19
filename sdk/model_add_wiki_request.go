@@ -131,6 +131,7 @@ func (v NullableAddWikiRequest) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *AddWikiRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

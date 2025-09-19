@@ -160,6 +160,7 @@ func (v NullableDefaultCloudPermission) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *DefaultCloudPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

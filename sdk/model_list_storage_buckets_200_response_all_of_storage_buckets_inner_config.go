@@ -320,6 +320,7 @@ func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) Unm
 
 	return v, nil
 }
+
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

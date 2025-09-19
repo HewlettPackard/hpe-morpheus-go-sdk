@@ -131,6 +131,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) Unmar
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

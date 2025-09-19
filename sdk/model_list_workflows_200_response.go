@@ -176,6 +176,7 @@ func (v NullableListWorkflows200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *ListWorkflows200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

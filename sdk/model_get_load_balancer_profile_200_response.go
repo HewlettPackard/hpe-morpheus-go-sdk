@@ -140,6 +140,7 @@ func (v NullableGetLoadBalancerProfile200Response) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *GetLoadBalancerProfile200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -488,6 +488,7 @@ func (v NullableGetGuidanceSettings200ResponseGuidanceSettings) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *GetGuidanceSettings200ResponseGuidanceSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

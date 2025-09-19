@@ -194,6 +194,7 @@ func (v NullableAddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *AddNodeTypeRequestContainerTypeContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -808,6 +808,7 @@ func (v NullableListBackupRestores200ResponseAllOfRestoresInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *ListBackupRestores200ResponseAllOfRestoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

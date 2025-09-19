@@ -356,6 +356,7 @@ func (v NullableListImageBuilds200ResponseAllOfImageBuildsInnerConfig) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListImageBuilds200ResponseAllOfImageBuildsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

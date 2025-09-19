@@ -140,6 +140,7 @@ func (v NullableSuccess) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Success) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

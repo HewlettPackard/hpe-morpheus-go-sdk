@@ -926,6 +926,7 @@ func (v NullableSNMPCheckAllOfConfig) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *SNMPCheckAllOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

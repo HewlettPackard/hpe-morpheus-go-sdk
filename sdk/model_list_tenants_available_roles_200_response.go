@@ -140,6 +140,7 @@ func (v NullableListTenantsAvailableRoles200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *ListTenantsAvailableRoles200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

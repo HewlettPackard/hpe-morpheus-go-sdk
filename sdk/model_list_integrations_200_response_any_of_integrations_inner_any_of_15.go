@@ -642,6 +642,7 @@ func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15) Unmars
 
 	return v, nil
 }
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

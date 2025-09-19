@@ -131,6 +131,7 @@ func (v NullableIntegrationAnsibleConfig) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *IntegrationAnsibleConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -196,6 +196,7 @@ func (v NullablePolicyGroupCreate) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *PolicyGroupCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

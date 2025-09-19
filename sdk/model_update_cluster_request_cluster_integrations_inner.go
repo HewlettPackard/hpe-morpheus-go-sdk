@@ -141,6 +141,7 @@ func (v NullableUpdateClusterRequestClusterIntegrationsInner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *UpdateClusterRequestClusterIntegrationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

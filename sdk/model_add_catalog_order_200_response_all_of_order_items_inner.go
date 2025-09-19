@@ -465,6 +465,7 @@ func (v NullableAddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddCatalogOrder200ResponseAllOfOrderItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

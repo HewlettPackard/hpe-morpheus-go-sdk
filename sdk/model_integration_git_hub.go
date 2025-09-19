@@ -750,6 +750,7 @@ func (v NullableIntegrationGitHub) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *IntegrationGitHub) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

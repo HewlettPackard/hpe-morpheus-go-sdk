@@ -210,6 +210,7 @@ func (v NullableListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAn
 
 	return v, nil
 }
+
 func (o *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

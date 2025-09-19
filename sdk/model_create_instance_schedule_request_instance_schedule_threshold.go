@@ -666,6 +666,7 @@ func (v NullableCreateInstanceScheduleRequestInstanceScheduleThreshold) Unmarsha
 
 	return v, nil
 }
+
 func (o *CreateInstanceScheduleRequestInstanceScheduleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

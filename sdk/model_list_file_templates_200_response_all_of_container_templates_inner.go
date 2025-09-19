@@ -961,6 +961,7 @@ func (v NullableListFileTemplates200ResponseAllOfContainerTemplatesInner) Unmars
 
 	return v, nil
 }
+
 func (o *ListFileTemplates200ResponseAllOfContainerTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

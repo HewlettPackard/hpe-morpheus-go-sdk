@@ -962,6 +962,7 @@ func (v NullableGetImageBuild200ResponseImageBuild) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *GetImageBuild200ResponseImageBuild) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

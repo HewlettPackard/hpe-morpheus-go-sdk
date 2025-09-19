@@ -2783,6 +2783,7 @@ func (v NullableGetCluster200ResponseCluster) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *GetCluster200ResponseCluster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

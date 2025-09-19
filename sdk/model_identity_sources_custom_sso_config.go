@@ -825,6 +825,7 @@ func (v NullableIdentitySourcesCustomSSOConfig) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *IdentitySourcesCustomSSOConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

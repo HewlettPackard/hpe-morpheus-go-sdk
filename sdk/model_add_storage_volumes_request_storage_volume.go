@@ -260,6 +260,7 @@ func (v NullableAddStorageVolumesRequestStorageVolume) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *AddStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

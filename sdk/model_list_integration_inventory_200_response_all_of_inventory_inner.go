@@ -353,6 +353,7 @@ func (v NullableListIntegrationInventory200ResponseAllOfInventoryInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListIntegrationInventory200ResponseAllOfInventoryInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

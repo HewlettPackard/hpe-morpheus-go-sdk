@@ -176,6 +176,7 @@ func (v NullableOwner) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Owner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

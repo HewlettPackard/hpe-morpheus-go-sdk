@@ -822,6 +822,7 @@ func (v NullableUpdateCatalogItemTypeRequestCatalogItemTypeAnyOf) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

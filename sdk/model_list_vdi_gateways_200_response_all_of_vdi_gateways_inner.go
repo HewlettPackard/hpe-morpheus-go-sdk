@@ -390,6 +390,7 @@ func (v NullableListVDIGateways200ResponseAllOfVdiGatewaysInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *ListVDIGateways200ResponseAllOfVdiGatewaysInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

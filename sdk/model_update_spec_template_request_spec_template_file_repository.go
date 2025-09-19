@@ -141,6 +141,7 @@ func (v NullableUpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *UpdateSpecTemplateRequestSpecTemplateFileRepository) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -178,6 +178,7 @@ func (v NullableCreateLoadBalancerRequestLoadBalancerResourcePermission) Unmarsh
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerRequestLoadBalancerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

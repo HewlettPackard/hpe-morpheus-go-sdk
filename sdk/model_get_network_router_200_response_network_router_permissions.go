@@ -176,6 +176,7 @@ func (v NullableGetNetworkRouter200ResponseNetworkRouterPermissions) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *GetNetworkRouter200ResponseNetworkRouterPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

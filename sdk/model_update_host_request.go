@@ -140,6 +140,7 @@ func (v NullableUpdateHostRequest) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *UpdateHostRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

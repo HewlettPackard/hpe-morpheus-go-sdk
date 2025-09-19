@@ -141,6 +141,7 @@ func (v NullableGetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) Unmarsh
 
 	return v, nil
 }
+
 func (o *GetCatalogType200ResponseAllOfCatalogItemTypesInnerForm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

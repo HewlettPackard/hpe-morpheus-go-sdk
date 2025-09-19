@@ -317,6 +317,7 @@ func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewall) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

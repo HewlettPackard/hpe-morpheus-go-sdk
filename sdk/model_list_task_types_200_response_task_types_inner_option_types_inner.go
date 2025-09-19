@@ -1786,6 +1786,7 @@ func (v NullableListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListTaskTypes200ResponseTaskTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

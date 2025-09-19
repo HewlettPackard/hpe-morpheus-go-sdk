@@ -356,6 +356,7 @@ func (v NullableDeploymentVersionCreate) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *DeploymentVersionCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

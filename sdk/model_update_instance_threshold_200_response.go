@@ -212,6 +212,7 @@ func (v NullableUpdateInstanceThreshold200Response) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *UpdateInstanceThreshold200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

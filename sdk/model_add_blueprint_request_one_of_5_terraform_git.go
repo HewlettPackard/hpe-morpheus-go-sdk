@@ -216,6 +216,7 @@ func (v NullableAddBlueprintRequestOneOf5TerraformGit) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOf5TerraformGit) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

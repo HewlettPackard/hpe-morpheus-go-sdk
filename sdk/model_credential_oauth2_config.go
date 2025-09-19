@@ -375,6 +375,7 @@ func (v NullableCredentialOauth2Config) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *CredentialOauth2Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

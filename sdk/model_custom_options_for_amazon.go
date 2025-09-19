@@ -141,6 +141,7 @@ func (v NullableCustomOptionsForAmazon) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *CustomOptionsForAmazon) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

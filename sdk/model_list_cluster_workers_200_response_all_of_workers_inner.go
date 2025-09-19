@@ -2848,6 +2848,7 @@ func (v NullableListClusterWorkers200ResponseAllOfWorkersInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *ListClusterWorkers200ResponseAllOfWorkersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

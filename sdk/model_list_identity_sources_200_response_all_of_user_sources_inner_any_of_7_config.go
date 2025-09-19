@@ -320,6 +320,7 @@ func (v NullableListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config)
 
 	return v, nil
 }
+
 func (o *ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

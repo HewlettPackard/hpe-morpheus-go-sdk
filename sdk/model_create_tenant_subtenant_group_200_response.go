@@ -140,6 +140,7 @@ func (v NullableCreateTenantSubtenantGroup200Response) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *CreateTenantSubtenantGroup200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

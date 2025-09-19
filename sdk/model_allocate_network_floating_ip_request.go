@@ -178,6 +178,7 @@ func (v NullableAllocateNetworkFloatingIpRequest) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *AllocateNetworkFloatingIpRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

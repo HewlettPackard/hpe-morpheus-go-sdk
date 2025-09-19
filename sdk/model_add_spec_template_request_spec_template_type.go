@@ -132,6 +132,7 @@ func (v NullableAddSpecTemplateRequestSpecTemplateType) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *AddSpecTemplateRequestSpecTemplateType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

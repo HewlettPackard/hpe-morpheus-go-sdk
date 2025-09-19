@@ -356,6 +356,7 @@ func (v NullableZoneNetworkOptionsResponseNetworkTypesInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *ZoneNetworkOptionsResponseNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableGetPowerSchedules200ResponseAllOfInstancesInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *GetPowerSchedules200ResponseAllOfInstancesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

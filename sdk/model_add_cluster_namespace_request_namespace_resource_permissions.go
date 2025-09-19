@@ -252,6 +252,7 @@ func (v NullableAddClusterNamespaceRequestNamespaceResourcePermissions) Unmarsha
 
 	return v, nil
 }
+
 func (o *AddClusterNamespaceRequestNamespaceResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

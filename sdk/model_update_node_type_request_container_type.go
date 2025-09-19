@@ -695,6 +695,7 @@ func (v NullableUpdateNodeTypeRequestContainerType) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *UpdateNodeTypeRequestContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

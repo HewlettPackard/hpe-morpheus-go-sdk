@@ -366,6 +366,7 @@ func (v NullableAddPoliciesGroupRequestPolicyPolicyType) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *AddPoliciesGroupRequestPolicyPolicyType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

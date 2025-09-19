@@ -140,6 +140,7 @@ func (v NullableAddOptionFormRequest) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *AddOptionFormRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

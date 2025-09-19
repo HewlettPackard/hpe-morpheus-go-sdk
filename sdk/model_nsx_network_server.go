@@ -505,6 +505,7 @@ func (v NullableNSXNetworkServer) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *NSXNetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

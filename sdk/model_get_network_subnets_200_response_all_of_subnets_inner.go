@@ -1613,6 +1613,7 @@ func (v NullableGetNetworkSubnets200ResponseAllOfSubnetsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

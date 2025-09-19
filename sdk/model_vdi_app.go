@@ -426,6 +426,7 @@ func (v NullableVdiApp) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *VdiApp) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

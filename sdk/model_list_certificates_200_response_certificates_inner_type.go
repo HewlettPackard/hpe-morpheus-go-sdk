@@ -176,6 +176,7 @@ func (v NullableListCertificates200ResponseCertificatesInnerType) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListCertificates200ResponseCertificatesInnerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

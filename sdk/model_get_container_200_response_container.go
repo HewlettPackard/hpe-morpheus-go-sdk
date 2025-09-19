@@ -1718,6 +1718,7 @@ func (v NullableGetContainer200ResponseContainer) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *GetContainer200ResponseContainer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

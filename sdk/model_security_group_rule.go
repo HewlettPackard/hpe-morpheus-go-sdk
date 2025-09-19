@@ -959,6 +959,7 @@ func (v NullableSecurityGroupRule) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *SecurityGroupRule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

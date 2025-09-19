@@ -252,6 +252,7 @@ func (v NullableAddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) Unmarsh
 
 	return v, nil
 }
+
 func (o *AddBlueprint200ResponseAllOfBlueprintConfigOneOf4Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

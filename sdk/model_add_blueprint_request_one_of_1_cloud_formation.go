@@ -447,6 +447,7 @@ func (v NullableAddBlueprintRequestOneOf1CloudFormation) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOf1CloudFormation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

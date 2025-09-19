@@ -730,6 +730,7 @@ func (v NullableUpdatePricesRequestPrice) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *UpdatePricesRequestPrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

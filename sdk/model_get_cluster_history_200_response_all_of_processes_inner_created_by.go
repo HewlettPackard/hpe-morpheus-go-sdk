@@ -176,6 +176,7 @@ func (v NullableGetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) Unmars
 
 	return v, nil
 }
+
 func (o *GetClusterHistory200ResponseAllOfProcessesInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

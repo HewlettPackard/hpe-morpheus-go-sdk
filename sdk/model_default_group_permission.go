@@ -162,6 +162,7 @@ func (v NullableDefaultGroupPermission) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *DefaultGroupPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

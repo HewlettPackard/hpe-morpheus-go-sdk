@@ -629,6 +629,7 @@ func (v NullableListClusterReplicasets200ResponseAllOfReplicasetsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListClusterReplicasets200ResponseAllOfReplicasetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

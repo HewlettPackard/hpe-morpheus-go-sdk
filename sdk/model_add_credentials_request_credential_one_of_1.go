@@ -330,6 +330,7 @@ func (v NullableAddCredentialsRequestCredentialOneOf1) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *AddCredentialsRequestCredentialOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

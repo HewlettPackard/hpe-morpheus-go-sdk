@@ -140,6 +140,7 @@ func (v NullableListLogSettings200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *ListLogSettings200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

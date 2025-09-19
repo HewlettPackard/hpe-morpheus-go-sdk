@@ -131,6 +131,7 @@ func (v NullableAddExecuteSchedulesRequest) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AddExecuteSchedulesRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

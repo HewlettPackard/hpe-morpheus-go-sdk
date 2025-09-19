@@ -455,6 +455,7 @@ func (v NullableBackupTypeInstance) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *BackupTypeInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

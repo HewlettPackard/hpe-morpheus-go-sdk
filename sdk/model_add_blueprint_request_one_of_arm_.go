@@ -351,6 +351,7 @@ func (v NullableAddBlueprintRequestOneOfArm) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOfArm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

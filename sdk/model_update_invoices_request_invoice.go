@@ -215,6 +215,7 @@ func (v NullableUpdateInvoicesRequestInvoice) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *UpdateInvoicesRequestInvoice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

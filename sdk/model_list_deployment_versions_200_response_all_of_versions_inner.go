@@ -534,6 +534,7 @@ func (v NullableListDeploymentVersions200ResponseAllOfVersionsInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListDeploymentVersions200ResponseAllOfVersionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

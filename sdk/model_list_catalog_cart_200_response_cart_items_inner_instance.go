@@ -320,6 +320,7 @@ func (v NullableListCatalogCart200ResponseCartItemsInnerInstance) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListCatalogCart200ResponseCartItemsInnerInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

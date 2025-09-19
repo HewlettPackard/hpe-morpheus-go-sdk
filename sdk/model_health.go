@@ -573,6 +573,7 @@ func (v NullableHealth) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Health) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

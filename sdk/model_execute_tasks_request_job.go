@@ -400,6 +400,7 @@ func (v NullableExecuteTasksRequestJob) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *ExecuteTasksRequestJob) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

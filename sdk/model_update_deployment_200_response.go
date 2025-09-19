@@ -176,6 +176,7 @@ func (v NullableUpdateDeployment200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *UpdateDeployment200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

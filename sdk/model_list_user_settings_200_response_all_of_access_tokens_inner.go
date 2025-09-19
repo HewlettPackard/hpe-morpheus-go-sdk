@@ -321,6 +321,7 @@ func (v NullableListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListUserSettings200ResponseAllOfAccessTokensInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -531,6 +531,7 @@ func (v NullablePhpIPAMNetworkPoolServer) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *PhpIPAMNetworkPoolServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

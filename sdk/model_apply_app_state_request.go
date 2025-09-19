@@ -141,6 +141,7 @@ func (v NullableApplyAppStateRequest) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *ApplyAppStateRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

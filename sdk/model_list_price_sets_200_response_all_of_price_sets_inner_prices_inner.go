@@ -992,6 +992,7 @@ func (v NullableListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListPriceSets200ResponseAllOfPriceSetsInnerPricesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

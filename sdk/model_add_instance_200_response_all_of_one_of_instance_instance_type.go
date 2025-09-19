@@ -284,6 +284,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstanceType) UnmarshalM
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

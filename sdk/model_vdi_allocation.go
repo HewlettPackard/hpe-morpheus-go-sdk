@@ -534,6 +534,7 @@ func (v NullableVdiAllocation) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *VdiAllocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

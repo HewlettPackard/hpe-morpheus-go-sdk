@@ -678,6 +678,7 @@ func (v NullableIntegrationAnsible) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *IntegrationAnsible) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

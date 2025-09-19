@@ -212,6 +212,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) Unm
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

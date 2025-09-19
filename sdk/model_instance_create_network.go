@@ -357,6 +357,7 @@ func (v NullableInstanceCreateNetwork) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *InstanceCreateNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

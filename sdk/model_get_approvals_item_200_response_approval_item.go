@@ -711,6 +711,7 @@ func (v NullableGetApprovalsItem200ResponseApprovalItem) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *GetApprovalsItem200ResponseApprovalItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

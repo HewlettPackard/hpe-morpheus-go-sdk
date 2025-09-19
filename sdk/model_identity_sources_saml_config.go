@@ -825,6 +825,7 @@ func (v NullableIdentitySourcesSAMLConfig) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *IdentitySourcesSAMLConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

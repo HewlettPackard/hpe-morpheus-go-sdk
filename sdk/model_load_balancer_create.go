@@ -366,6 +366,7 @@ func (v NullableLoadBalancerCreate) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *LoadBalancerCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

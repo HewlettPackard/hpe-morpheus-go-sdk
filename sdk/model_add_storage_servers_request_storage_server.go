@@ -344,6 +344,7 @@ func (v NullableAddStorageServersRequestStorageServer) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *AddStorageServersRequestStorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -999,6 +999,7 @@ func (v NullableGetCheckApps200ResponseOpenIncidentsInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *GetCheckApps200ResponseOpenIncidentsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableUpdateNetworkEdgeClusterRequest) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *UpdateNetworkEdgeClusterRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

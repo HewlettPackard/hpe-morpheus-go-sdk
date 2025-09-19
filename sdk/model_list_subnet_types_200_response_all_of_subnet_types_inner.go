@@ -428,6 +428,7 @@ func (v NullableListSubnetTypes200ResponseAllOfSubnetTypesInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *ListSubnetTypes200ResponseAllOfSubnetTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

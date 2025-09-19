@@ -140,6 +140,7 @@ func (v NullableUpdateArchiveBucketRequest) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *UpdateArchiveBucketRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

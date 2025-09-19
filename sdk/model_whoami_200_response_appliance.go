@@ -140,6 +140,7 @@ func (v NullableWhoami200ResponseAppliance) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *Whoami200ResponseAppliance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

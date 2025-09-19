@@ -176,6 +176,7 @@ func (v NullableListCloudFolders200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *ListCloudFolders200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

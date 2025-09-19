@@ -198,6 +198,7 @@ func (v NullableGetBudgets200ResponseAllOfBudgetStatsCurrent) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetBudgets200ResponseAllOfBudgetStatsCurrent) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

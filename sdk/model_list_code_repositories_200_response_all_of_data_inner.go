@@ -176,6 +176,7 @@ func (v NullableListCodeRepositories200ResponseAllOfDataInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListCodeRepositories200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

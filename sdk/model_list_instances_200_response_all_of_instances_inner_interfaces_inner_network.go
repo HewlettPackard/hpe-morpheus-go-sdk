@@ -375,6 +375,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwor
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

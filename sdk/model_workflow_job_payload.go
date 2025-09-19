@@ -589,6 +589,7 @@ func (v NullableWorkflowJobPayload) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *WorkflowJobPayload) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

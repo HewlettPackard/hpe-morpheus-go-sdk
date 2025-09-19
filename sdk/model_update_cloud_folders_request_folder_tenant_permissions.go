@@ -215,6 +215,7 @@ func (v NullableUpdateCloudFoldersRequestFolderTenantPermissions) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateCloudFoldersRequestFolderTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

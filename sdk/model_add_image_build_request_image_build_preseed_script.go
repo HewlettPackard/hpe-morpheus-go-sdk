@@ -140,6 +140,7 @@ func (v NullableAddImageBuildRequestImageBuildPreseedScript) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *AddImageBuildRequestImageBuildPreseedScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

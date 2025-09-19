@@ -177,6 +177,7 @@ func (v NullableAddCypherKeyRequest) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *AddCypherKeyRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

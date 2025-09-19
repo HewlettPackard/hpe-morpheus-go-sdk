@@ -178,6 +178,7 @@ func (v NullableAddClusterRequestClusterServerSshHostsInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *AddClusterRequestClusterServerSshHostsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

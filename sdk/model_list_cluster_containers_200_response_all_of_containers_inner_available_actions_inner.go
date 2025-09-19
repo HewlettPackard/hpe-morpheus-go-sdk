@@ -176,6 +176,7 @@ func (v NullableListClusterContainers200ResponseAllOfContainersInnerAvailableAct
 
 	return v, nil
 }
+
 func (o *ListClusterContainers200ResponseAllOfContainersInnerAvailableActionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

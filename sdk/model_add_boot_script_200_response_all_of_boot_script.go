@@ -367,6 +367,7 @@ func (v NullableAddBootScript200ResponseAllOfBootScript) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *AddBootScript200ResponseAllOfBootScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

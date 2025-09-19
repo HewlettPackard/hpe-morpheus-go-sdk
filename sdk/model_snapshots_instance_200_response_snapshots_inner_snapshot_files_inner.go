@@ -392,6 +392,7 @@ func (v NullableSnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner) Un
 
 	return v, nil
 }
+
 func (o *SnapshotsInstance200ResponseSnapshotsInnerSnapshotFilesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

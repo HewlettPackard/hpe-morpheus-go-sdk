@@ -160,6 +160,7 @@ func (v NullableUpdateRoleBlueprintAccessRequestOneOf1) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *UpdateRoleBlueprintAccessRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

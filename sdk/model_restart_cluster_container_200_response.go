@@ -177,6 +177,7 @@ func (v NullableRestartClusterContainer200Response) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *RestartClusterContainer200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

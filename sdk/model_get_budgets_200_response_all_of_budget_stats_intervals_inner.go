@@ -393,6 +393,7 @@ func (v NullableGetBudgets200ResponseAllOfBudgetStatsIntervalsInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *GetBudgets200ResponseAllOfBudgetStatsIntervalsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

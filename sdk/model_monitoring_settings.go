@@ -321,6 +321,7 @@ func (v NullableMonitoringSettings) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *MonitoringSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

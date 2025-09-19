@@ -132,6 +132,7 @@ func (v NullableAttachServerVolumeRequestMountPointController) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AttachServerVolumeRequestMountPointController) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

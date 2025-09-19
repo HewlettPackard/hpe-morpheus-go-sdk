@@ -178,6 +178,7 @@ func (v NullableListOptionValues200ResponseAllOfDataInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *ListOptionValues200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

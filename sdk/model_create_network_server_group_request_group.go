@@ -527,6 +527,7 @@ func (v NullableCreateNetworkServerGroupRequestGroup) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *CreateNetworkServerGroupRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -968,6 +968,7 @@ func (v NullableListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListWhitelabelSettings200ResponseWhitelabelSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

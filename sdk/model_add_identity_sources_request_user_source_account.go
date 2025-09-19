@@ -132,6 +132,7 @@ func (v NullableAddIdentitySourcesRequestUserSourceAccount) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *AddIdentitySourcesRequestUserSourceAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

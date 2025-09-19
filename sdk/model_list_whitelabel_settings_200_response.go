@@ -140,6 +140,7 @@ func (v NullableListWhitelabelSettings200Response) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *ListWhitelabelSettings200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

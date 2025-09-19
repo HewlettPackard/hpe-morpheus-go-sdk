@@ -131,6 +131,7 @@ func (v NullableIntegrationDockerRepoConfig) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *IntegrationDockerRepoConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableAddCatalogCartItemRequest) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *AddCatalogCartItemRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableTenantsAvailableRoles) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *TenantsAvailableRoles) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

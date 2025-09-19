@@ -678,6 +678,7 @@ func (v NullableAddIntegrations200ResponseAllOfIntegrationOneOf) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddIntegrations200ResponseAllOfIntegrationOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1263,6 +1263,7 @@ func (v NullableListHosts200ResponseAllOfServersInnerInterfacesInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ListHosts200ResponseAllOfServersInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

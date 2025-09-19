@@ -330,6 +330,7 @@ func (v NullableCredentialUsernameAPIKeyConfig) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *CredentialUsernameAPIKeyConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

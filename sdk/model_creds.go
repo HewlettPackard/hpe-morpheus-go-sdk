@@ -271,6 +271,7 @@ func (v NullableCreds) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Creds) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

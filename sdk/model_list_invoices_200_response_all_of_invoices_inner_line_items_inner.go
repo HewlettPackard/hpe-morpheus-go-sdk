@@ -1489,6 +1489,7 @@ func (v NullableListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListInvoices200ResponseAllOfInvoicesInnerLineItemsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

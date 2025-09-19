@@ -141,6 +141,7 @@ func (v NullableInstanceSnapshots) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *InstanceSnapshots) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

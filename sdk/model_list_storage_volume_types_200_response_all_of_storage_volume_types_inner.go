@@ -620,6 +620,7 @@ func (v NullableListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) U
 
 	return v, nil
 }
+
 func (o *ListStorageVolumeTypes200ResponseAllOfStorageVolumeTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

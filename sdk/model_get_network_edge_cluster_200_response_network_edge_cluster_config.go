@@ -248,6 +248,7 @@ func (v NullableGetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) Unmars
 
 	return v, nil
 }
+
 func (o *GetNetworkEdgeCluster200ResponseNetworkEdgeClusterConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

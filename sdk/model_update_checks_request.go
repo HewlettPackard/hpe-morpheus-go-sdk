@@ -131,6 +131,7 @@ func (v NullableUpdateChecksRequest) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *UpdateChecksRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

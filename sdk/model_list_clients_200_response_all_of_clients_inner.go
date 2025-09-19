@@ -392,6 +392,7 @@ func (v NullableListClients200ResponseAllOfClientsInner) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ListClients200ResponseAllOfClientsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

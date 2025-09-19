@@ -1707,6 +1707,7 @@ func (v NullableGetReportTypes200ResponseReportTypesInnerOptionTypesInner) Unmar
 
 	return v, nil
 }
+
 func (o *GetReportTypes200ResponseReportTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

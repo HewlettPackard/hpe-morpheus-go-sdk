@@ -378,6 +378,7 @@ func (v NullableListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *ListBootScripts200ResponseAllOfBootScriptsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

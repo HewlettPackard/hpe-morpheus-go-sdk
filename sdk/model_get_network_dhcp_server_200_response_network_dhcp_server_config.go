@@ -212,6 +212,7 @@ func (v NullableGetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) Unmarsha
 
 	return v, nil
 }
+
 func (o *GetNetworkDhcpServer200ResponseNetworkDhcpServerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

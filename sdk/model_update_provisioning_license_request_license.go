@@ -330,6 +330,7 @@ func (v NullableUpdateProvisioningLicenseRequestLicense) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *UpdateProvisioningLicenseRequestLicense) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

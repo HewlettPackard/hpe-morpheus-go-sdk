@@ -1975,6 +1975,7 @@ func (v NullableAddStorageServers200ResponseAllOfStorageServer) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddStorageServers200ResponseAllOfStorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

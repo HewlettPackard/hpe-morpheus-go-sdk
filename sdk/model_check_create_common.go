@@ -344,6 +344,7 @@ func (v NullableCheckCreateCommon) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *CheckCreateCommon) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

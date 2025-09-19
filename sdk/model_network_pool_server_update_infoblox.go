@@ -672,6 +672,7 @@ func (v NullableNetworkPoolServerUpdateInfoblox) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *NetworkPoolServerUpdateInfoblox) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

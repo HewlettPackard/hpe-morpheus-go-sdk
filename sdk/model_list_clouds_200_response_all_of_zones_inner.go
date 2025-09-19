@@ -2589,6 +2589,7 @@ func (v NullableListClouds200ResponseAllOfZonesInner) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *ListClouds200ResponseAllOfZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

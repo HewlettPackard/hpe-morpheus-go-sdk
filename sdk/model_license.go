@@ -213,6 +213,7 @@ func (v NullableLicense) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *License) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

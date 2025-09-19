@@ -331,6 +331,7 @@ func (v NullableAddPreseedScript200ResponseAllOfPreseedScript) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddPreseedScript200ResponseAllOfPreseedScript) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

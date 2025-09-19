@@ -225,6 +225,7 @@ func (v NullableBlueprintCFTCreate) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *BlueprintCFTCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

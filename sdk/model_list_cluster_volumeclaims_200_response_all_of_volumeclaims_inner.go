@@ -2401,6 +2401,7 @@ func (v NullableListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) Unmars
 
 	return v, nil
 }
+
 func (o *ListClusterVolumeclaims200ResponseAllOfVolumeclaimsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

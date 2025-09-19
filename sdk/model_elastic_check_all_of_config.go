@@ -521,6 +521,7 @@ func (v NullableElasticCheckAllOfConfig) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *ElasticCheckAllOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

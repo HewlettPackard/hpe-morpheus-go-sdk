@@ -617,6 +617,7 @@ func (v NullableIntegrationPuppet) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *IntegrationPuppet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

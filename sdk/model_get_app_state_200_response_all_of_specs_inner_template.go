@@ -176,6 +176,7 @@ func (v NullableGetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetAppState200ResponseAllOfSpecsInnerTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1823,6 +1823,7 @@ func (v NullableListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstan
 
 	return v, nil
 }
+
 func (o *ListLoadBalancerVirtualServers200ResponseAllOfLoadBalancerInstancesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

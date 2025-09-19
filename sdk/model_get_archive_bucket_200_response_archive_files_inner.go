@@ -548,6 +548,7 @@ func (v NullableGetArchiveBucket200ResponseArchiveFilesInner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetArchiveBucket200ResponseArchiveFilesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

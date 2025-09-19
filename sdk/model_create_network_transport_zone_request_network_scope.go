@@ -254,6 +254,7 @@ func (v NullableCreateNetworkTransportZoneRequestNetworkScope) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateNetworkTransportZoneRequestNetworkScope) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

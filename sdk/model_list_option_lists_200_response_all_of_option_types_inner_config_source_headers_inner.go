@@ -212,6 +212,7 @@ func (v NullableListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeade
 
 	return v, nil
 }
+
 func (o *ListOptionLists200ResponseAllOfOptionTypesInnerConfigSourceHeadersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

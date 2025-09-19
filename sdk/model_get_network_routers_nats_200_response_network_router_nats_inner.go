@@ -1007,6 +1007,7 @@ func (v NullableGetNetworkRoutersNats200ResponseNetworkRouterNATsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *GetNetworkRoutersNats200ResponseNetworkRouterNATsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

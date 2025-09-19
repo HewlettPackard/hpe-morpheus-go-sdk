@@ -428,6 +428,7 @@ func (v NullableGetAppState200Response) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *GetAppState200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

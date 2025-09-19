@@ -140,6 +140,7 @@ func (v NullableCreateNetworkRouterNatRequest) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *CreateNetworkRouterNatRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

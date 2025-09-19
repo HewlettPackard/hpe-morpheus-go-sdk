@@ -176,6 +176,7 @@ func (v NullableGetNetworkTransportZone200ResponseNetworkScopeConfig) UnmarshalM
 
 	return v, nil
 }
+
 func (o *GetNetworkTransportZone200ResponseNetworkScopeConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

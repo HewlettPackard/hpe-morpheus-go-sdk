@@ -796,6 +796,7 @@ func (v NullableListUserSettings200ResponseAllOfUser) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *ListUserSettings200ResponseAllOfUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

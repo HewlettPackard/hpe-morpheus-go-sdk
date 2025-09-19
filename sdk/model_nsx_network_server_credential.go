@@ -176,6 +176,7 @@ func (v NullableNSXNetworkServerCredential) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *NSXNetworkServerCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

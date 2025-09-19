@@ -212,6 +212,7 @@ func (v NullableConvertImageRequest) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *ConvertImageRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

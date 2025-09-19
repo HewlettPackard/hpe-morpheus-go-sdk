@@ -141,6 +141,7 @@ func (v NullableCloneInstanceRequestGroup) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *CloneInstanceRequestGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

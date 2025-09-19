@@ -212,6 +212,7 @@ func (v NullableListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) Unm
 
 	return v, nil
 }
+
 func (o *ListDeploys200ResponseAllOfAppDeploysInnerDeploymentVersion) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

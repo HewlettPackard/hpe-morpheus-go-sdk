@@ -1103,6 +1103,7 @@ func (v NullableListVirtualImageLocations200ResponseAllOfLocationsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListVirtualImageLocations200ResponseAllOfLocationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

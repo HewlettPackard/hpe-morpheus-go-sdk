@@ -425,6 +425,7 @@ func (v NullableClusterNamespaces) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *ClusterNamespaces) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

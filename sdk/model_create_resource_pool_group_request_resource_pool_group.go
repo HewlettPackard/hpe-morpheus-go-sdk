@@ -357,6 +357,7 @@ func (v NullableCreateResourcePoolGroupRequestResourcePoolGroup) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *CreateResourcePoolGroupRequestResourcePoolGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

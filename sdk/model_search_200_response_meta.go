@@ -268,6 +268,7 @@ func (v NullableSearch200ResponseMeta) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *Search200ResponseMeta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

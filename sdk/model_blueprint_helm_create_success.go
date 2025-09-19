@@ -403,6 +403,7 @@ func (v NullableBlueprintHelmCreateSuccess) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *BlueprintHelmCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

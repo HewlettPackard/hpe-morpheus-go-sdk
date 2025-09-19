@@ -976,6 +976,7 @@ func (v NullableJobTask) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *JobTask) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

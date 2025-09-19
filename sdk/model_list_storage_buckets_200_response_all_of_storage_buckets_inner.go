@@ -677,6 +677,7 @@ func (v NullableListStorageBuckets200ResponseAllOfStorageBucketsInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListStorageBuckets200ResponseAllOfStorageBucketsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

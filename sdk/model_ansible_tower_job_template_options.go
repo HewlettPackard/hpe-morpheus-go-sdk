@@ -176,6 +176,7 @@ func (v NullableAnsibleTowerJobTemplateOptions) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *AnsibleTowerJobTemplateOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

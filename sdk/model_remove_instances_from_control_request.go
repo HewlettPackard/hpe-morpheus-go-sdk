@@ -141,6 +141,7 @@ func (v NullableRemoveInstancesFromControlRequest) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *RemoveInstancesFromControlRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

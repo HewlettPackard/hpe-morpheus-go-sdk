@@ -536,6 +536,7 @@ func (v NullableListHealth200ResponseAllOfHealthDatabaseInnodbStats) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthDatabaseInnodbStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

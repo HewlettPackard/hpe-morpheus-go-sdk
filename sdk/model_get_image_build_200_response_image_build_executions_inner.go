@@ -640,6 +640,7 @@ func (v NullableGetImageBuild200ResponseImageBuildExecutionsInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *GetImageBuild200ResponseImageBuildExecutionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

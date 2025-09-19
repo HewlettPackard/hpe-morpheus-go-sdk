@@ -140,6 +140,7 @@ func (v NullableGetNetworkRouterBgpNeighbor200Response) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *GetNetworkRouterBgpNeighbor200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

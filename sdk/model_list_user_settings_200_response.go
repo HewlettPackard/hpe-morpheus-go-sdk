@@ -212,6 +212,7 @@ func (v NullableListUserSettings200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *ListUserSettings200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

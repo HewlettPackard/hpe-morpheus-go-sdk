@@ -451,6 +451,7 @@ func (v NullableArchiveFileLinks) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ArchiveFileLinks) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

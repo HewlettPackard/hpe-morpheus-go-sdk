@@ -677,6 +677,7 @@ func (v NullableStorageBucket) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *StorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -252,6 +252,7 @@ func (v NullableUserSourceCreateLDAP) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *UserSourceCreateLDAP) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -451,6 +451,7 @@ func (v NullableOptionTypeForm) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *OptionTypeForm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

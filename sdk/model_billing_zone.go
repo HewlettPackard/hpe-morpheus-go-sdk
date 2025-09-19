@@ -656,6 +656,7 @@ func (v NullableBillingZone) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *BillingZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

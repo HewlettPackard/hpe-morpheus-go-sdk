@@ -389,6 +389,7 @@ func (v NullableListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInn
 
 	return v, nil
 }
+
 func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigVolumesDisplayInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

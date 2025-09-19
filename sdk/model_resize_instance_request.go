@@ -291,6 +291,7 @@ func (v NullableResizeInstanceRequest) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *ResizeInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

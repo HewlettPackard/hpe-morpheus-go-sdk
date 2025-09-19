@@ -141,6 +141,7 @@ func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDeployStora
 
 	return v, nil
 }
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDeployStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

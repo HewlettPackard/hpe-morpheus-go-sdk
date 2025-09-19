@@ -1613,6 +1613,7 @@ func (v NullableLineItem) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *LineItem) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

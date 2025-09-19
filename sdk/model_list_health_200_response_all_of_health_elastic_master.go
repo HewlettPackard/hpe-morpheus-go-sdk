@@ -248,6 +248,7 @@ func (v NullableListHealth200ResponseAllOfHealthElasticMaster) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthElasticMaster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

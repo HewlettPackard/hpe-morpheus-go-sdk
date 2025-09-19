@@ -132,6 +132,7 @@ func (v NullableRemoveAppInstanceRequest) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *RemoveAppInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

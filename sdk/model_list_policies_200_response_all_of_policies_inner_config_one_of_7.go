@@ -463,6 +463,7 @@ func (v NullableListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

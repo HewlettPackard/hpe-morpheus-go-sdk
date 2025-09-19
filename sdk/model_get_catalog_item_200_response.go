@@ -140,6 +140,7 @@ func (v NullableGetCatalogItem200Response) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *GetCatalogItem200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

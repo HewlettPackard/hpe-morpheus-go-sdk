@@ -296,6 +296,7 @@ func (v NullableUpdateArchiveBucketRequestArchiveBucket) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *UpdateArchiveBucketRequestArchiveBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

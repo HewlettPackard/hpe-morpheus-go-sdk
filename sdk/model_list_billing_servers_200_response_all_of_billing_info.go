@@ -285,6 +285,7 @@ func (v NullableListBillingServers200ResponseAllOfBillingInfo) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListBillingServers200ResponseAllOfBillingInfo) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

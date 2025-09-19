@@ -140,6 +140,7 @@ func (v NullableAddCloudsRequestZoneZoneTypeAnyOf1) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *AddCloudsRequestZoneZoneTypeAnyOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

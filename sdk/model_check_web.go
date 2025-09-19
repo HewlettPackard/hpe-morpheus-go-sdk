@@ -416,6 +416,7 @@ func (v NullableCheckWeb) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckWeb) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

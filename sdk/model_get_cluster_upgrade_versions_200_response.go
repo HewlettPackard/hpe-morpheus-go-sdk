@@ -176,6 +176,7 @@ func (v NullableGetClusterUpgradeVersions200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *GetClusterUpgradeVersions200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

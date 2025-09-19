@@ -555,6 +555,7 @@ func (v NullableNetworkServerGroupMember) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *NetworkServerGroupMember) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

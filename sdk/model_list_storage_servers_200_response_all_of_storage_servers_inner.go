@@ -1986,6 +1986,7 @@ func (v NullableListStorageServers200ResponseAllOfStorageServersInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListStorageServers200ResponseAllOfStorageServersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -367,6 +367,7 @@ func (v NullableAddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddIdentitySourcesRequestUserSourceConfigOneOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

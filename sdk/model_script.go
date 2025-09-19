@@ -783,6 +783,7 @@ func (v NullableScript) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Script) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

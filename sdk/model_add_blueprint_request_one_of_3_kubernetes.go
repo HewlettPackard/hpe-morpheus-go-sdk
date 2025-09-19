@@ -205,6 +205,7 @@ func (v NullableAddBlueprintRequestOneOf3Kubernetes) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOf3Kubernetes) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -231,6 +231,7 @@ func (v NullableListActivity4XXResponse) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *ListActivity4XXResponse) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

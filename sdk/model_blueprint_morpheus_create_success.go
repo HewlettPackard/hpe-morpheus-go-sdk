@@ -366,6 +366,7 @@ func (v NullableBlueprintMorpheusCreateSuccess) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *BlueprintMorpheusCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

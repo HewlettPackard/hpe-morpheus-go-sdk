@@ -356,6 +356,7 @@ func (v NullableImageBuildsConfigNetworkInterfacesInner) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ImageBuildsConfigNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

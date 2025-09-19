@@ -1087,6 +1087,7 @@ func (v NullableListBackupResults200ResponseAllOfResultsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListBackupResults200ResponseAllOfResultsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

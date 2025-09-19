@@ -214,6 +214,7 @@ func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) Unmar
 
 	return v, nil
 }
+
 func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

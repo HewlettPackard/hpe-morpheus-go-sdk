@@ -1252,6 +1252,7 @@ func (v NullableAddBaremetalHost200ResponseServerInterfacesInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *AddBaremetalHost200ResponseServerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1151,6 +1151,7 @@ func (v NullableListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInne
 
 	return v, nil
 }
+
 func (o *ListLoadBalancerProfiles200ResponseAllOfLoadBalancerProfilesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableUpdateWikiAppRequestPage) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *UpdateWikiAppRequestPage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

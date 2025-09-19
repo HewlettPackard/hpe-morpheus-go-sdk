@@ -176,6 +176,7 @@ func (v NullableListIdentitySources200Response) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *ListIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

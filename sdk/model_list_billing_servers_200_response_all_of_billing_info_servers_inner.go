@@ -952,6 +952,7 @@ func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInner) Unmar
 
 	return v, nil
 }
+
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

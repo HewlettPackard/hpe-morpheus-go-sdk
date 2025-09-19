@@ -178,6 +178,7 @@ func (v NullableAddStorageBucketsRequestStorageBucketConfigOneOf4) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *AddStorageBucketsRequestStorageBucketConfigOneOf4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

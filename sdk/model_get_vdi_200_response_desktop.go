@@ -367,6 +367,7 @@ func (v NullableGetVdi200ResponseDesktop) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *GetVdi200ResponseDesktop) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

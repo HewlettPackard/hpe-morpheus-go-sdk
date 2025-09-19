@@ -534,6 +534,7 @@ func (v NullableListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListBlueprints200ResponseAllOfBlueprintsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -652,6 +652,7 @@ func (v NullableListProvisioningSettings200ResponseProvisioningSettings) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListProvisioningSettings200ResponseProvisioningSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

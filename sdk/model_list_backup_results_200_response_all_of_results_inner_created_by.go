@@ -178,6 +178,7 @@ func (v NullableListBackupResults200ResponseAllOfResultsInnerCreatedBy) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListBackupResults200ResponseAllOfResultsInnerCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -896,6 +896,7 @@ func (v NullableListHostTypes200ResponseAllOfServerTypesInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListHostTypes200ResponseAllOfServerTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

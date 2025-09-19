@@ -390,6 +390,7 @@ func (v NullableVdiGateway) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *VdiGateway) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -141,6 +141,7 @@ func (v NullableAddPriceSetsRequestPriceSetZonePool) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *AddPriceSetsRequestPriceSetZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

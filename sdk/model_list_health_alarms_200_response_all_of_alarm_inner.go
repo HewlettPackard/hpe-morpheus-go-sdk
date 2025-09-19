@@ -249,6 +249,7 @@ func (v NullableListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListHealthAlarms200ResponseAllOfAlarmInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

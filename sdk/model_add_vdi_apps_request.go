@@ -131,6 +131,7 @@ func (v NullableAddVDIAppsRequest) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *AddVDIAppsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

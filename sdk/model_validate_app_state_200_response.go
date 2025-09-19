@@ -176,6 +176,7 @@ func (v NullableValidateAppState200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *ValidateAppState200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

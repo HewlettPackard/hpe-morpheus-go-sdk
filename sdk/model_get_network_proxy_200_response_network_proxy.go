@@ -555,6 +555,7 @@ func (v NullableGetNetworkProxy200ResponseNetworkProxy) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *GetNetworkProxy200ResponseNetworkProxy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

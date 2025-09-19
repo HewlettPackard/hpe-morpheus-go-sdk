@@ -140,6 +140,7 @@ func (v NullableGetIntegrationTypeOptionTypes200Response) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *GetIntegrationTypeOptionTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -400,6 +400,7 @@ func (v NullableListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *ListOsTypes200ResponseAllOfOsTypesInnerImagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -663,6 +663,7 @@ func (v NullableListClusterPackages200ResponseAllOfClusterPackagesInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListClusterPackages200ResponseAllOfClusterPackagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

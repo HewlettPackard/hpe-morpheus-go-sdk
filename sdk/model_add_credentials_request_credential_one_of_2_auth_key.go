@@ -132,6 +132,7 @@ func (v NullableAddCredentialsRequestCredentialOneOf2AuthKey) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *AddCredentialsRequestCredentialOneOf2AuthKey) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

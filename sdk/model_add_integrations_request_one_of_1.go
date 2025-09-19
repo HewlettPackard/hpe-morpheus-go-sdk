@@ -131,6 +131,7 @@ func (v NullableAddIntegrationsRequestOneOf1) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *AddIntegrationsRequestOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

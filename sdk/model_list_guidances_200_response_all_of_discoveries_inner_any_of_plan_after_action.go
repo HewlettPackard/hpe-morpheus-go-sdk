@@ -1193,6 +1193,7 @@ func (v NullableListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterActio
 
 	return v, nil
 }
+
 func (o *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanAfterAction) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

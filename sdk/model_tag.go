@@ -212,6 +212,7 @@ func (v NullableTag) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Tag) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableGetJobExecutions200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *GetJobExecutions200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

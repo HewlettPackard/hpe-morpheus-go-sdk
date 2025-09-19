@@ -486,6 +486,7 @@ func (v NullableListHosts200ResponseAllOfServersInnerServerOs) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListHosts200ResponseAllOfServersInnerServerOs) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

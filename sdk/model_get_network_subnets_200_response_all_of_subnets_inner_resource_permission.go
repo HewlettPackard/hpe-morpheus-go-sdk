@@ -248,6 +248,7 @@ func (v NullableGetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission)
 
 	return v, nil
 }
+
 func (o *GetNetworkSubnets200ResponseAllOfSubnetsInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

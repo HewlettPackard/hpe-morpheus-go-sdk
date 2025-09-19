@@ -212,6 +212,7 @@ func (v NullableListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) Unm
 
 	return v, nil
 }
+
 func (o *ListNetworkServerGroups200ResponseAllOfGroupsInnerTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -416,6 +416,7 @@ func (v NullableSqlCheck) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *SqlCheck) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

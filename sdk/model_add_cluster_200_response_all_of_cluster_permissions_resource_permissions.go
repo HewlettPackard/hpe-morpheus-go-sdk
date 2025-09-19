@@ -392,6 +392,7 @@ func (v NullableAddCluster200ResponseAllOfClusterPermissionsResourcePermissions)
 
 	return v, nil
 }
+
 func (o *AddCluster200ResponseAllOfClusterPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

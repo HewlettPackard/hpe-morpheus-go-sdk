@@ -656,6 +656,7 @@ func (v NullableListBillingAccount200ResponseAllOfBillingInfoZonesInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListBillingAccount200ResponseAllOfBillingInfoZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

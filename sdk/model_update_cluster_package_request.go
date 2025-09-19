@@ -140,6 +140,7 @@ func (v NullableUpdateClusterPackageRequest) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *UpdateClusterPackageRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

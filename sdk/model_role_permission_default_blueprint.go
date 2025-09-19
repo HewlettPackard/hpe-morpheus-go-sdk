@@ -160,6 +160,7 @@ func (v NullableRolePermissionDefaultBlueprint) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *RolePermissionDefaultBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -160,6 +160,7 @@ func (v NullableResetPasswordRequest) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *ResetPasswordRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

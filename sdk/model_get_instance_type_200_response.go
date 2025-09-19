@@ -140,6 +140,7 @@ func (v NullableGetInstanceType200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *GetInstanceType200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

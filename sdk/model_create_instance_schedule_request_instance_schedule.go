@@ -444,6 +444,7 @@ func (v NullableCreateInstanceScheduleRequestInstanceSchedule) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateInstanceScheduleRequestInstanceSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

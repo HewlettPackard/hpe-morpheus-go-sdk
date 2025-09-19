@@ -176,6 +176,7 @@ func (v NullableListPowerSchedules200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *ListPowerSchedules200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1212,6 +1212,7 @@ func (v NullableListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) 
 
 	return v, nil
 }
+
 func (o *ListInstanceServicePlans200ResponsePlansInnerStorageTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

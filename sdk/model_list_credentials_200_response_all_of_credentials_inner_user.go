@@ -212,6 +212,7 @@ func (v NullableListCredentials200ResponseAllOfCredentialsInnerUser) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListCredentials200ResponseAllOfCredentialsInnerUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

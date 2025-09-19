@@ -140,6 +140,7 @@ func (v NullableListCypherKeys200ResponseAllOfData) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *ListCypherKeys200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -287,6 +287,7 @@ func (v NullableUpdateStorageVolumesRequestStorageVolume) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *UpdateStorageVolumesRequestStorageVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

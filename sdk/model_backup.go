@@ -889,6 +889,7 @@ func (v NullableBackup) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Backup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

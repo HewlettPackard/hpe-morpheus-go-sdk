@@ -176,6 +176,7 @@ func (v NullableListNetworkPoolServerTypes200Response) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *ListNetworkPoolServerTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableAddVDIGatewaysRequest) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *AddVDIGatewaysRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

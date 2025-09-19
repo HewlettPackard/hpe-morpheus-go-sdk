@@ -361,6 +361,7 @@ func (v NullableAddWorkflowsRequestTaskSet) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AddWorkflowsRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -160,6 +160,7 @@ func (v NullableCreateStaticRouteRequestNetworkRoute) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *CreateStaticRouteRequestNetworkRoute) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

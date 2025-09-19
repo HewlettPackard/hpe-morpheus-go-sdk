@@ -758,6 +758,7 @@ func (v NullableListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListSpecTemplates200ResponseAllOfSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

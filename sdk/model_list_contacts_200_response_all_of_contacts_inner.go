@@ -295,6 +295,7 @@ func (v NullableListContacts200ResponseAllOfContactsInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *ListContacts200ResponseAllOfContactsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

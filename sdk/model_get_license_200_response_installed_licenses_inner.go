@@ -1586,6 +1586,7 @@ func (v NullableGetLicense200ResponseInstalledLicensesInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetLicense200ResponseInstalledLicensesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

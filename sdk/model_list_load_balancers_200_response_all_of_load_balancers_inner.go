@@ -1093,6 +1093,7 @@ func (v NullableListLoadBalancers200ResponseAllOfLoadBalancersInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListLoadBalancers200ResponseAllOfLoadBalancersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

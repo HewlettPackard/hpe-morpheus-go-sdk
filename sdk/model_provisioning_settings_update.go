@@ -619,6 +619,7 @@ func (v NullableProvisioningSettingsUpdate) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *ProvisioningSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

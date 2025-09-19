@@ -716,6 +716,7 @@ func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOfServerCompute
 
 	return v, nil
 }
+
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOfServerComputeServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

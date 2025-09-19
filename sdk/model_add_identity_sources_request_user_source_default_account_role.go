@@ -132,6 +132,7 @@ func (v NullableAddIdentitySourcesRequestUserSourceDefaultAccountRole) Unmarshal
 
 	return v, nil
 }
+
 func (o *AddIdentitySourcesRequestUserSourceDefaultAccountRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

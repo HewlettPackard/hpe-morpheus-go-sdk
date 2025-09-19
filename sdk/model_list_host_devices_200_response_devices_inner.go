@@ -860,6 +860,7 @@ func (v NullableListHostDevices200ResponseDevicesInner) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *ListHostDevices200ResponseDevicesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

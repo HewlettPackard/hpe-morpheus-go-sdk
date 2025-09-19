@@ -141,6 +141,7 @@ func (v NullableAddBlueprintRequestOneOf3Config) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *AddBlueprintRequestOneOf3Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

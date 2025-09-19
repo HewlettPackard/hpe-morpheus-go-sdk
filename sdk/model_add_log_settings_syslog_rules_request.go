@@ -131,6 +131,7 @@ func (v NullableAddLogSettingsSyslogRulesRequest) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *AddLogSettingsSyslogRulesRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

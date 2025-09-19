@@ -140,6 +140,7 @@ func (v NullableUpdateBlueprintPermissionsRequest) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *UpdateBlueprintPermissionsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

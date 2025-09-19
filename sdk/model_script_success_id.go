@@ -176,6 +176,7 @@ func (v NullableScriptSuccessId) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ScriptSuccessId) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

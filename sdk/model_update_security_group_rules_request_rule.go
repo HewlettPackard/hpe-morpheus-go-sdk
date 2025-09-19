@@ -688,6 +688,7 @@ func (v NullableUpdateSecurityGroupRulesRequestRule) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *UpdateSecurityGroupRulesRequestRule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

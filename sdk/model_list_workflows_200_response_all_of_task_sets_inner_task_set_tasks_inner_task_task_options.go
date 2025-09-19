@@ -527,6 +527,7 @@ func (v NullableListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskT
 
 	return v, nil
 }
+
 func (o *ListWorkflows200ResponseAllOfTaskSetsInnerTaskSetTasksInnerTaskTaskOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

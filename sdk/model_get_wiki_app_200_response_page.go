@@ -559,6 +559,7 @@ func (v NullableGetWikiApp200ResponsePage) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *GetWikiApp200ResponsePage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

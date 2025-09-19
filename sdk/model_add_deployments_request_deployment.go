@@ -178,6 +178,7 @@ func (v NullableAddDeploymentsRequestDeployment) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *AddDeploymentsRequestDeployment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

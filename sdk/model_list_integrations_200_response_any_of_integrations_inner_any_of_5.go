@@ -715,6 +715,7 @@ func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

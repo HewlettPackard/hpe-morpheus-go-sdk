@@ -690,6 +690,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

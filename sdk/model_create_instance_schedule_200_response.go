@@ -176,6 +176,7 @@ func (v NullableCreateInstanceSchedule200Response) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *CreateInstanceSchedule200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

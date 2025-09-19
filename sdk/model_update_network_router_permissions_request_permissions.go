@@ -177,6 +177,7 @@ func (v NullableUpdateNetworkRouterPermissionsRequestPermissions) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateNetworkRouterPermissionsRequestPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

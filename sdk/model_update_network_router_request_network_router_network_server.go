@@ -141,6 +141,7 @@ func (v NullableUpdateNetworkRouterRequestNetworkRouterNetworkServer) UnmarshalM
 
 	return v, nil
 }
+
 func (o *UpdateNetworkRouterRequestNetworkRouterNetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

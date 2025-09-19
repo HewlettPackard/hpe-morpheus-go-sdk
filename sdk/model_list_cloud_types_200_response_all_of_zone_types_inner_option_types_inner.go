@@ -1830,6 +1830,7 @@ func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInner) Un
 
 	return v, nil
 }
+
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

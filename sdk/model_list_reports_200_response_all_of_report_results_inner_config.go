@@ -259,6 +259,7 @@ func (v NullableListReports200ResponseAllOfReportResultsInnerConfig) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListReports200ResponseAllOfReportResultsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

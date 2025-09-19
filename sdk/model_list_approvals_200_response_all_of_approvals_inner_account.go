@@ -176,6 +176,7 @@ func (v NullableListApprovals200ResponseAllOfApprovalsInnerAccount) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *ListApprovals200ResponseAllOfApprovalsInnerAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -356,6 +356,7 @@ func (v NullableGetClusterNamespace200ResponseNamespace) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *GetClusterNamespace200ResponseNamespace) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

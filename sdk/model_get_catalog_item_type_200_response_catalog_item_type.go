@@ -1247,6 +1247,7 @@ func (v NullableGetCatalogItemType200ResponseCatalogItemType) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetCatalogItemType200ResponseCatalogItemType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

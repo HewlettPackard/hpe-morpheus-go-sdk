@@ -212,6 +212,7 @@ func (v NullableListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) Unmars
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthDatabaseSlowQueriesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

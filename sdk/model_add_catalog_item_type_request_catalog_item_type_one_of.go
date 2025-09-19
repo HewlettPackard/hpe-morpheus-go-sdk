@@ -813,6 +813,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

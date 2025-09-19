@@ -140,6 +140,7 @@ func (v NullableGetSpecTemplate200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *GetSpecTemplate200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -317,6 +317,7 @@ func (v NullableAddSecurityPackagesRequestSecurityPackage) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *AddSecurityPackagesRequestSecurityPackage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

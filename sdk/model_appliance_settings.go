@@ -1477,6 +1477,7 @@ func (v NullableApplianceSettings) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *ApplianceSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

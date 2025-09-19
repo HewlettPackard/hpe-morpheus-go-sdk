@@ -1844,6 +1844,7 @@ func (v NullableGetIntegrationTypeOptionTypes200ResponseOptionTypesInner) Unmars
 
 	return v, nil
 }
+
 func (o *GetIntegrationTypeOptionTypes200ResponseOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

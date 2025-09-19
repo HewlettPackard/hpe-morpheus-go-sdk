@@ -3850,6 +3850,7 @@ func (v NullableListInvoices200ResponseAllOfInvoicesInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *ListInvoices200ResponseAllOfInvoicesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

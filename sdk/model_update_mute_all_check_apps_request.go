@@ -134,6 +134,7 @@ func (v NullableUpdateMuteAllCheckAppsRequest) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *UpdateMuteAllCheckAppsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

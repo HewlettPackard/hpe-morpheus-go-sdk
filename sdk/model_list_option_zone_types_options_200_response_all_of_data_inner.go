@@ -248,6 +248,7 @@ func (v NullableListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListOptionZoneTypesOptions200ResponseAllOfDataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

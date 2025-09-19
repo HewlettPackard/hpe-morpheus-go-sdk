@@ -178,6 +178,7 @@ func (v NullableAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedR
 
 	return v, nil
 }
+
 func (o *AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInnerMappedRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

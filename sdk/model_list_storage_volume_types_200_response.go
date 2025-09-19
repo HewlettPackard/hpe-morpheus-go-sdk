@@ -176,6 +176,7 @@ func (v NullableListStorageVolumeTypes200Response) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *ListStorageVolumeTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -160,6 +160,7 @@ func (v NullableDefaultVDIPoolPermission) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *DefaultVDIPoolPermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

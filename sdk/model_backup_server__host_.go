@@ -400,6 +400,7 @@ func (v NullableBackupServerHost) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *BackupServerHost) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

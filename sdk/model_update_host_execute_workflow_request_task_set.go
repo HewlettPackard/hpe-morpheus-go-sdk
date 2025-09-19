@@ -141,6 +141,7 @@ func (v NullableUpdateHostExecuteWorkflowRequestTaskSet) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *UpdateHostExecuteWorkflowRequestTaskSet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

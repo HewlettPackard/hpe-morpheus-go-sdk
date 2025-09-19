@@ -212,6 +212,7 @@ func (v NullableListClusters200ResponseAllOfClustersInnerZone) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListClusters200ResponseAllOfClustersInnerZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

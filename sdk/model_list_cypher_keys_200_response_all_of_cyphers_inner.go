@@ -415,6 +415,7 @@ func (v NullableListCypherKeys200ResponseAllOfCyphersInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListCypherKeys200ResponseAllOfCyphersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

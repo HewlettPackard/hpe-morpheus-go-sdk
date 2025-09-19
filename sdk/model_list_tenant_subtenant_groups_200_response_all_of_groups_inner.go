@@ -559,6 +559,7 @@ func (v NullableListTenantSubtenantGroups200ResponseAllOfGroupsInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ListTenantSubtenantGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

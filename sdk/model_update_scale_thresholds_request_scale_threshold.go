@@ -666,6 +666,7 @@ func (v NullableUpdateScaleThresholdsRequestScaleThreshold) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *UpdateScaleThresholdsRequestScaleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -707,6 +707,7 @@ func (v NullableUpdateLayoutRequestInstanceTypeLayout) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *UpdateLayoutRequestInstanceTypeLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableAddTenantRequest) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *AddTenantRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

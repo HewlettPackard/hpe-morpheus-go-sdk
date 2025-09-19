@@ -131,6 +131,7 @@ func (v NullableHubLoginObject) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *HubLoginObject) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

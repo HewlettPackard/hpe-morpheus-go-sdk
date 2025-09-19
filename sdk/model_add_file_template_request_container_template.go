@@ -457,6 +457,7 @@ func (v NullableAddFileTemplateRequestContainerTemplate) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *AddFileTemplateRequestContainerTemplate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

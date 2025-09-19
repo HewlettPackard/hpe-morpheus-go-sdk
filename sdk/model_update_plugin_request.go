@@ -131,6 +131,7 @@ func (v NullableUpdatePluginRequest) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *UpdatePluginRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

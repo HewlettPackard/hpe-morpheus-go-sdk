@@ -140,6 +140,7 @@ func (v NullableCheckSocketAllOfCheckType) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *CheckSocketAllOfCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

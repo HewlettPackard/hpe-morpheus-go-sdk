@@ -498,6 +498,7 @@ func (v NullableGetDeployment200ResponseDeploymentVersionsInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *GetDeployment200ResponseDeploymentVersionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

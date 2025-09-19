@@ -334,6 +334,7 @@ func (v NullableUpdateCloudFoldersRequestFolder) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *UpdateCloudFoldersRequestFolder) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

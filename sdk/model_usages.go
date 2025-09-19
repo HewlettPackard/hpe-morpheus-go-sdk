@@ -176,6 +176,7 @@ func (v NullableUsages) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Usages) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

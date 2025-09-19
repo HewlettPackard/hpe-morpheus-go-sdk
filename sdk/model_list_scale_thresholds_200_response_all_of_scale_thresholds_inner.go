@@ -789,6 +789,7 @@ func (v NullableListScaleThresholds200ResponseAllOfScaleThresholdsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListScaleThresholds200ResponseAllOfScaleThresholdsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

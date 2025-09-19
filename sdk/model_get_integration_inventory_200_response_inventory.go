@@ -342,6 +342,7 @@ func (v NullableGetIntegrationInventory200ResponseInventory) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetIntegrationInventory200ResponseInventory) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

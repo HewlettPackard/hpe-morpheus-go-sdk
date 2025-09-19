@@ -249,6 +249,7 @@ func (v NullableUpdateClientsRequestClient) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *UpdateClientsRequestClient) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

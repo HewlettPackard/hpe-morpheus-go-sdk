@@ -716,6 +716,7 @@ func (v NullableGetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) Unmar
 
 	return v, nil
 }
+
 func (o *GetNetworkFirewallRuleGroup200ResponseRuleGroupRulesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

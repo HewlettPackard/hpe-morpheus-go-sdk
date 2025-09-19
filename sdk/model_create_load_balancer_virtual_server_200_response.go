@@ -140,6 +140,7 @@ func (v NullableCreateLoadBalancerVirtualServer200Response) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerVirtualServer200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

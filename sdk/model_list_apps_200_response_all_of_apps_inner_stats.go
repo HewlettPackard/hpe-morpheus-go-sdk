@@ -464,6 +464,7 @@ func (v NullableListApps200ResponseAllOfAppsInnerStats) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *ListApps200ResponseAllOfAppsInnerStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

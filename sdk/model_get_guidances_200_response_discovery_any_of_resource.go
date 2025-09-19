@@ -2580,6 +2580,7 @@ func (v NullableGetGuidances200ResponseDiscoveryAnyOfResource) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetGuidances200ResponseDiscoveryAnyOfResource) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

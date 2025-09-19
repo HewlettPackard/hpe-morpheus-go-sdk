@@ -428,6 +428,7 @@ func (v NullableListCheckTypes200ResponseAllOfCheckTypesInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListCheckTypes200ResponseAllOfCheckTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

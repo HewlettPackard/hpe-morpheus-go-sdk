@@ -436,6 +436,7 @@ func (v NullableCreateLoadBalancerVirtualServerRequestLoadBalancerInstance) Unma
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerVirtualServerRequestLoadBalancerInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

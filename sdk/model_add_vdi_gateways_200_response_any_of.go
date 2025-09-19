@@ -140,6 +140,7 @@ func (v NullableAddVDIGateways200ResponseAnyOf) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *AddVDIGateways200ResponseAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

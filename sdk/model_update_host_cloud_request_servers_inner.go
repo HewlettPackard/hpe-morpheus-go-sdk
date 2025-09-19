@@ -176,6 +176,7 @@ func (v NullableUpdateHostCloudRequestServersInner) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *UpdateHostCloudRequestServersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

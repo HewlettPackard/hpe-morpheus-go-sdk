@@ -214,6 +214,7 @@ func (v NullableUpdateHostInstallAgentRequestServer) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *UpdateHostInstallAgentRequestServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

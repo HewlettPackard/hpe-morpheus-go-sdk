@@ -629,6 +629,7 @@ func (v NullableGetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner
 
 	return v, nil
 }
+
 func (o *GetImageBuildExecutions200ResponseAllOfImageBuildExecutionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

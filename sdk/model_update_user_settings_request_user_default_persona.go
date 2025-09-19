@@ -141,6 +141,7 @@ func (v NullableUpdateUserSettingsRequestUserDefaultPersona) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *UpdateUserSettingsRequestUserDefaultPersona) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

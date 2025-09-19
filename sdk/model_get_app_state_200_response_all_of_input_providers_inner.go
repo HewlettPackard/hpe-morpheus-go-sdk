@@ -140,6 +140,7 @@ func (v NullableGetAppState200ResponseAllOfInputProvidersInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *GetAppState200ResponseAllOfInputProvidersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

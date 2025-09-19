@@ -404,6 +404,7 @@ func (v NullableAddDeployments200ResponseAllOfDeployment) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddDeployments200ResponseAllOfDeployment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

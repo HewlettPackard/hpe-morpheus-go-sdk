@@ -406,6 +406,7 @@ func (v NullableGetOsTypeImage200ResponseOsType) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *GetOsTypeImage200ResponseOsType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -680,6 +680,7 @@ func (v NullableGetNetworkRouterType200ResponseNetworkRouterType) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *GetNetworkRouterType200ResponseNetworkRouterType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

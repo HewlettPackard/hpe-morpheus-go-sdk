@@ -461,6 +461,7 @@ func (v NullableListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner)
 
 	return v, nil
 }
+
 func (o *ListOptionForms200ResponseAllOfOptionTypesInnerFieldGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

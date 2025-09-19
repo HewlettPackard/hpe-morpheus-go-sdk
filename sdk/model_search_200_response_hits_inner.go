@@ -393,6 +393,7 @@ func (v NullableSearch200ResponseHitsInner) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *Search200ResponseHitsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

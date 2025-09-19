@@ -306,6 +306,7 @@ func (v NullableListUsersAvailableRoles200ResponseRolesInner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *ListUsersAvailableRoles200ResponseRolesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

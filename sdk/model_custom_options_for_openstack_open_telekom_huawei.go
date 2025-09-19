@@ -141,6 +141,7 @@ func (v NullableCustomOptionsForOpenstackOpenTelekomHuawei) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *CustomOptionsForOpenstackOpenTelekomHuawei) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableGetStateInstance200ResponseAllOfInstanceInput) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetStateInstance200ResponseAllOfInstanceInput) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

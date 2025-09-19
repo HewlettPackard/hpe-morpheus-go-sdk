@@ -896,6 +896,7 @@ func (v NullableListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) Un
 
 	return v, nil
 }
+
 func (o *ListCloudTypes200ResponseAllOfZoneTypesInnerServerTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

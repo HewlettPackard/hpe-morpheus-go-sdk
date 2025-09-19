@@ -364,6 +364,7 @@ func (v NullableAddCheckAppsRequestMonitorApp) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *AddCheckAppsRequestMonitorApp) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

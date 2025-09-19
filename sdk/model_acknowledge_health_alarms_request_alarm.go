@@ -210,6 +210,7 @@ func (v NullableAcknowledgeHealthAlarmsRequestAlarm) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *AcknowledgeHealthAlarmsRequestAlarm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

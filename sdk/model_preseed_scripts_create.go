@@ -178,6 +178,7 @@ func (v NullablePreseedScriptsCreate) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *PreseedScriptsCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

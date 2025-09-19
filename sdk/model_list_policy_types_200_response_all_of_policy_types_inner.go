@@ -591,6 +591,7 @@ func (v NullableListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *ListPolicyTypes200ResponseAllOfPolicyTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -250,6 +250,7 @@ func (v NullableResourcePermissions) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *ResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

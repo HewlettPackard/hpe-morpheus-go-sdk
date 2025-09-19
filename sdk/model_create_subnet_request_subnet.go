@@ -293,6 +293,7 @@ func (v NullableCreateSubnetRequestSubnet) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *CreateSubnetRequestSubnet) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

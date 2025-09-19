@@ -212,6 +212,7 @@ func (v NullableWhoami200ResponsePermissionsInner) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *Whoami200ResponsePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

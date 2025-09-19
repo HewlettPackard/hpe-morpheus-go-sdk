@@ -522,6 +522,7 @@ func (v NullablePrepareAppApply200ResponseAllOfData) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *PrepareAppApply200ResponseAllOfData) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

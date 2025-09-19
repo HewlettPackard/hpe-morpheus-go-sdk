@@ -178,6 +178,7 @@ func (v NullableAllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer
 
 	return v, nil
 }
+
 func (o *AllocateNetworkFloatingIp200ResponseAllOfNetworkFloatingIpServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

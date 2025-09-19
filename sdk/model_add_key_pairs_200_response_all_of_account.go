@@ -510,6 +510,7 @@ func (v NullableAddKeyPairs200ResponseAllOfAccount) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *AddKeyPairs200ResponseAllOfAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

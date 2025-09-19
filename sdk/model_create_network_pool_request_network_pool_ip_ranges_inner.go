@@ -215,6 +215,7 @@ func (v NullableCreateNetworkPoolRequestNetworkPoolIpRangesInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *CreateNetworkPoolRequestNetworkPoolIpRangesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

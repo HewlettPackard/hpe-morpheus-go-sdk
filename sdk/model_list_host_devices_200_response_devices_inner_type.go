@@ -436,6 +436,7 @@ func (v NullableListHostDevices200ResponseDevicesInnerType) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListHostDevices200ResponseDevicesInnerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

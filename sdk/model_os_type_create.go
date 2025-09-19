@@ -637,6 +637,7 @@ func (v NullableOsTypeCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *OsTypeCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

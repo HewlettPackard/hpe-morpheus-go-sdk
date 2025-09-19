@@ -215,6 +215,7 @@ func (v NullableCloudFoundryResourcePoolConfig) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *CloudFoundryResourcePoolConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

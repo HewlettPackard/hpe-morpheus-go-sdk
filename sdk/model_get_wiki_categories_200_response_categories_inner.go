@@ -176,6 +176,7 @@ func (v NullableGetWikiCategories200ResponseCategoriesInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetWikiCategories200ResponseCategoriesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

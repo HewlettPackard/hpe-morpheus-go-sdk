@@ -176,6 +176,7 @@ func (v NullableListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDat
 
 	return v, nil
 }
+
 func (o *ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3ConfigDatabagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

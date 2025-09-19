@@ -140,6 +140,7 @@ func (v NullableAddClusterRequestClusterServerServerType) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddClusterRequestClusterServerServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

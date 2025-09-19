@@ -403,6 +403,7 @@ func (v NullableCredentialType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CredentialType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -653,6 +653,7 @@ func (v NullableIntegrationChef) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *IntegrationChef) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

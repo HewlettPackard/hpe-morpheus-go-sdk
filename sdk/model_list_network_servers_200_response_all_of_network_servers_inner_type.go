@@ -212,6 +212,7 @@ func (v NullableListNetworkServers200ResponseAllOfNetworkServersInnerType) Unmar
 
 	return v, nil
 }
+
 func (o *ListNetworkServers200ResponseAllOfNetworkServersInnerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

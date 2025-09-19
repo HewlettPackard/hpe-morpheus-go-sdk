@@ -132,6 +132,7 @@ func (v NullableUpdateIdentitySourceSubdomainsRequest) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *UpdateIdentitySourceSubdomainsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

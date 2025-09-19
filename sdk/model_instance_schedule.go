@@ -626,6 +626,7 @@ func (v NullableInstanceSchedule) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *InstanceSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

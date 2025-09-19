@@ -1364,6 +1364,7 @@ func (v NullableGetClusterHistory200ResponseAllOfProcessesInnerEventsInner) Unma
 
 	return v, nil
 }
+
 func (o *GetClusterHistory200ResponseAllOfProcessesInnerEventsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

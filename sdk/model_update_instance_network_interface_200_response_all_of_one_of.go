@@ -248,6 +248,7 @@ func (v NullableUpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *UpdateInstanceNetworkInterface200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

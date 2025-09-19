@@ -403,6 +403,7 @@ func (v NullableListCredentialTypes200ResponseAllOfCredentialTypesInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *ListCredentialTypes200ResponseAllOfCredentialTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

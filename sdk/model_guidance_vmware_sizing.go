@@ -1193,6 +1193,7 @@ func (v NullableGuidanceVmwareSizing) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *GuidanceVmwareSizing) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

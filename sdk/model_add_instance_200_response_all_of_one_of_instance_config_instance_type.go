@@ -140,6 +140,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) Unma
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

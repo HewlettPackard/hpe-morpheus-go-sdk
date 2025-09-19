@@ -131,6 +131,7 @@ func (v NullableInstanceCreateSuccess) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

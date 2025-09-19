@@ -140,6 +140,7 @@ func (v NullableServerBaremetalCreate) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *ServerBaremetalCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

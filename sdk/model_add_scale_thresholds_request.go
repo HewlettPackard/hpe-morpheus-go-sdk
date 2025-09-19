@@ -131,6 +131,7 @@ func (v NullableAddScaleThresholdsRequest) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *AddScaleThresholdsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

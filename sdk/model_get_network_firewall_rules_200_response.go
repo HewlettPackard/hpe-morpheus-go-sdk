@@ -177,6 +177,7 @@ func (v NullableGetNetworkFirewallRules200Response) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *GetNetworkFirewallRules200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableGetInvoiceLineItems200Response) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *GetInvoiceLineItems200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

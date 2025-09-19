@@ -160,6 +160,7 @@ func (v NullableRolePermissionDefaultCatalogItemType) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *RolePermissionDefaultCatalogItemType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1309,6 +1309,7 @@ func (v NullableListHistory200ResponseAllOfProcessesInnerEventsInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ListHistory200ResponseAllOfProcessesInnerEventsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

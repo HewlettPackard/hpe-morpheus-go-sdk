@@ -729,6 +729,7 @@ func (v NullableSecurityScan) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *SecurityScan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

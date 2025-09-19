@@ -433,6 +433,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

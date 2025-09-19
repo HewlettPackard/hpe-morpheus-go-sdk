@@ -176,6 +176,7 @@ func (v NullableAllocateNetworkFloatingIp200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *AllocateNetworkFloatingIp200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

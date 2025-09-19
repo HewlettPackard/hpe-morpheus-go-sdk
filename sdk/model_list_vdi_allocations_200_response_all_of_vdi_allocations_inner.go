@@ -545,6 +545,7 @@ func (v NullableListVDIAllocations200ResponseAllOfVdiAllocationsInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListVDIAllocations200ResponseAllOfVdiAllocationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

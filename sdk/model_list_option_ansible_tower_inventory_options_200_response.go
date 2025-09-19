@@ -176,6 +176,7 @@ func (v NullableListOptionAnsibleTowerInventoryOptions200Response) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListOptionAnsibleTowerInventoryOptions200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

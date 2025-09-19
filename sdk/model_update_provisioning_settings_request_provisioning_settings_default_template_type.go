@@ -141,6 +141,7 @@ func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemp
 
 	return v, nil
 }
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsDefaultTemplateType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

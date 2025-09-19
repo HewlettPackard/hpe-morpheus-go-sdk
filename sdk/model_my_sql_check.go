@@ -416,6 +416,7 @@ func (v NullableMySqlCheck) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *MySqlCheck) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

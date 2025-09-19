@@ -176,6 +176,7 @@ func (v NullableListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerInt
 
 	return v, nil
 }
+
 func (o *ListNetworkPoolServers200ResponseAllOfNetworkPoolServersInnerIntegration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

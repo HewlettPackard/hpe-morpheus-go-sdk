@@ -298,6 +298,7 @@ func (v NullableBlueprintKubernetesCreate) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *BlueprintKubernetesCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

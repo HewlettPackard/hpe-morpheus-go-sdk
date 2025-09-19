@@ -185,6 +185,7 @@ func (v NullableAddSpecTemplateRequestSpecTemplateConfigCloudformation) Unmarsha
 
 	return v, nil
 }
+
 func (o *AddSpecTemplateRequestSpecTemplateConfigCloudformation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

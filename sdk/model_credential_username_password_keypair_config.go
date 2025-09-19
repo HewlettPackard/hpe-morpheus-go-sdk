@@ -357,6 +357,7 @@ func (v NullableCredentialUsernamePasswordKeypairConfig) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *CredentialUsernamePasswordKeypairConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -181,6 +181,7 @@ func (v NullableMaxMemoryPolicyTypeConfiguration1) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *MaxMemoryPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

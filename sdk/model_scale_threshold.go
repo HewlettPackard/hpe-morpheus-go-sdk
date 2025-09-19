@@ -789,6 +789,7 @@ func (v NullableScaleThreshold) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ScaleThreshold) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

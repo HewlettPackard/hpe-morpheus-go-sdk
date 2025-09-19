@@ -517,6 +517,7 @@ func (v NullableCreateNetworkFirewallRuleRequestRule) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *CreateNetworkFirewallRuleRequestRule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

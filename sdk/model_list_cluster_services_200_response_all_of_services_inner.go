@@ -600,6 +600,7 @@ func (v NullableListClusterServices200ResponseAllOfServicesInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ListClusterServices200ResponseAllOfServicesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

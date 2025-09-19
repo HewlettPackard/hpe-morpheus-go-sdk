@@ -642,6 +642,7 @@ func (v NullableIntegrationBindDNS) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *IntegrationBindDNS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

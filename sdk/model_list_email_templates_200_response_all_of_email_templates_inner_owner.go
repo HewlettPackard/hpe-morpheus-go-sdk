@@ -198,6 +198,7 @@ func (v NullableListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) Unma
 
 	return v, nil
 }
+
 func (o *ListEmailTemplates200ResponseAllOfEmailTemplatesInnerOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

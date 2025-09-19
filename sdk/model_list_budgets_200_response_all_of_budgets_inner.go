@@ -1345,6 +1345,7 @@ func (v NullableListBudgets200ResponseAllOfBudgetsInner) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *ListBudgets200ResponseAllOfBudgetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

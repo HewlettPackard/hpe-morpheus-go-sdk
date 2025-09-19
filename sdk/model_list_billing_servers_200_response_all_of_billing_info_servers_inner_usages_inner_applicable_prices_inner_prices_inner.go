@@ -320,6 +320,7 @@ func (v NullableListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesI
 
 	return v, nil
 }
+
 func (o *ListBillingServers200ResponseAllOfBillingInfoServersInnerUsagesInnerApplicablePricesInnerPricesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

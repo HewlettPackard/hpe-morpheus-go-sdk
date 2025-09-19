@@ -289,6 +289,7 @@ func (v NullableCreateLoadBalancerPoolRequestLoadBalancerPool) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateLoadBalancerPoolRequestLoadBalancerPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

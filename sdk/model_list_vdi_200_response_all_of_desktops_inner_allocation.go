@@ -595,6 +595,7 @@ func (v NullableListVdi200ResponseAllOfDesktopsInnerAllocation) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *ListVdi200ResponseAllOfDesktopsInnerAllocation) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

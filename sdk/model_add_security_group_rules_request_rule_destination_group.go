@@ -141,6 +141,7 @@ func (v NullableAddSecurityGroupRulesRequestRuleDestinationGroup) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *AddSecurityGroupRulesRequestRuleDestinationGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -248,6 +248,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) Unmarshal
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

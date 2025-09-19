@@ -215,6 +215,7 @@ func (v NullableUserSourceCreateOkta) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *UserSourceCreateOkta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

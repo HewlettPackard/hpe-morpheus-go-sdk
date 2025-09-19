@@ -140,6 +140,7 @@ func (v NullableGetArchiveFileLinks200Response) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *GetArchiveFileLinks200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

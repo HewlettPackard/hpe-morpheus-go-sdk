@@ -178,6 +178,7 @@ func (v NullableListBackups200ResponseAllOfBackupsInnerJob) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *ListBackups200ResponseAllOfBackupsInnerJob) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

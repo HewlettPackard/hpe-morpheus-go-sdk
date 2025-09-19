@@ -699,6 +699,7 @@ func (v NullableGetClusterMasters200ResponseMastersInnerVolumesInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *GetClusterMasters200ResponseMastersInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

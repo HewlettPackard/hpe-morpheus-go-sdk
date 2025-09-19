@@ -1193,6 +1193,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

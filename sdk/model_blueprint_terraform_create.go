@@ -298,6 +298,7 @@ func (v NullableBlueprintTerraformCreate) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *BlueprintTerraformCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -342,6 +342,7 @@ func (v NullableListPreseedScripts200ResponseAllOfPreseedScriptsInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListPreseedScripts200ResponseAllOfPreseedScriptsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

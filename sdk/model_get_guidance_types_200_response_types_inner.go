@@ -284,6 +284,7 @@ func (v NullableGetGuidanceTypes200ResponseTypesInner) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *GetGuidanceTypes200ResponseTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

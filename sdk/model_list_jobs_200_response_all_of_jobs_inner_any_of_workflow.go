@@ -176,6 +176,7 @@ func (v NullableListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *ListJobs200ResponseAllOfJobsInnerAnyOfWorkflow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableListLoadBalancerPoolNodes200Response) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *ListLoadBalancerPoolNodes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

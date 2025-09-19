@@ -17924,6 +17924,7 @@ func (v NullableListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListHealth200ResponseAllOfHealthDatabaseStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

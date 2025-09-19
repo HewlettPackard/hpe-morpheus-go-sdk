@@ -243,6 +243,7 @@ func (v NullableAddContactsRequestContact) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *AddContactsRequestContact) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

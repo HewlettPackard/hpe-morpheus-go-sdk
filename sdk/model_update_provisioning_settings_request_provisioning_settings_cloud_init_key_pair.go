@@ -141,6 +141,7 @@ func (v NullableUpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKe
 
 	return v, nil
 }
+
 func (o *UpdateProvisioningSettingsRequestProvisioningSettingsCloudInitKeyPair) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

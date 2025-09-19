@@ -299,6 +299,7 @@ func (v NullableAddCredentialsRequestCredentialOneOf8Config) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *AddCredentialsRequestCredentialOneOf8Config) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

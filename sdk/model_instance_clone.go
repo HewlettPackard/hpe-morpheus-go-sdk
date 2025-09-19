@@ -177,6 +177,7 @@ func (v NullableInstanceClone) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *InstanceClone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

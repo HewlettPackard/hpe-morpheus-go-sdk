@@ -752,6 +752,7 @@ func (v NullableGetNetworkRouter200ResponseNetworkRouterType) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetNetworkRouter200ResponseNetworkRouterType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

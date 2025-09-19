@@ -178,6 +178,7 @@ func (v NullableAddSecurityGroupsRequestSecurityGroupTenantPermissions) Unmarsha
 
 	return v, nil
 }
+
 func (o *AddSecurityGroupsRequestSecurityGroupTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

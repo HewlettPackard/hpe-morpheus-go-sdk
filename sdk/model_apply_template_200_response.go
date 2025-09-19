@@ -176,6 +176,7 @@ func (v NullableApplyTemplate200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *ApplyTemplate200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

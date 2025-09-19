@@ -686,6 +686,7 @@ func (v NullableListApprovals200ResponseAllOfApprovalsInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *ListApprovals200ResponseAllOfApprovalsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

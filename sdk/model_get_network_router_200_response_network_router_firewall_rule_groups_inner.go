@@ -544,6 +544,7 @@ func (v NullableGetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner)
 
 	return v, nil
 }
+
 func (o *GetNetworkRouter200ResponseNetworkRouterFirewallRuleGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

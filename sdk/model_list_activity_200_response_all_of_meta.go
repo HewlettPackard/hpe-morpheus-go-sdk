@@ -268,6 +268,7 @@ func (v NullableListActivity200ResponseAllOfMeta) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *ListActivity200ResponseAllOfMeta) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

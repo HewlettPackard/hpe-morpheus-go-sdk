@@ -1712,6 +1712,7 @@ func (v NullableNetworkServer) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *NetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

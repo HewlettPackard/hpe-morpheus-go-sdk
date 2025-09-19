@@ -176,6 +176,7 @@ func (v NullableListTenants200ResponseAllOfAccountsInnerStats) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListTenants200ResponseAllOfAccountsInnerStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

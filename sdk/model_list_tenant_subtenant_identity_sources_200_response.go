@@ -176,6 +176,7 @@ func (v NullableListTenantSubtenantIdentitySources200Response) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListTenantSubtenantIdentitySources200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

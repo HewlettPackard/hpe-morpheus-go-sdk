@@ -140,6 +140,7 @@ func (v NullableGetStaticRoutes200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *GetStaticRoutes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

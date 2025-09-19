@@ -132,6 +132,7 @@ func (v NullableCreateNetworkRouterRequestNetworkRouterZone) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *CreateNetworkRouterRequestNetworkRouterZone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

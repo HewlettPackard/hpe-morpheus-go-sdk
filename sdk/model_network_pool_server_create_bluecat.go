@@ -540,6 +540,7 @@ func (v NullableNetworkPoolServerCreateBluecat) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *NetworkPoolServerCreateBluecat) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1074,6 +1074,7 @@ func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

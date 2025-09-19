@@ -176,6 +176,7 @@ func (v NullableAddBackups200Response) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *AddBackups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
