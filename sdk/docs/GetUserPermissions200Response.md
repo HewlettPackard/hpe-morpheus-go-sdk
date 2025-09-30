@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Access** | Pointer to [**AddUserTenant200ResponseAllOfUserAccess**](AddUserTenant200ResponseAllOfUserAccess.md) |  | [optional] 
+**Access** | Pointer to [**GetUserPermissions200ResponseAccess**](GetUserPermissions200ResponseAccess.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccess
 
-`func (o *GetUserPermissions200Response) GetAccess() AddUserTenant200ResponseAllOfUserAccess`
+`func (o *GetUserPermissions200Response) GetAccess() GetUserPermissions200ResponseAccess`
 
 GetAccess returns the Access field if non-nil, zero value otherwise.
 
 ### GetAccessOk
 
-`func (o *GetUserPermissions200Response) GetAccessOk() (*AddUserTenant200ResponseAllOfUserAccess, bool)`
+`func (o *GetUserPermissions200Response) GetAccessOk() (*GetUserPermissions200ResponseAccess, bool)`
 
 GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccess
 
-`func (o *GetUserPermissions200Response) SetAccess(v AddUserTenant200ResponseAllOfUserAccess)`
+`func (o *GetUserPermissions200Response) SetAccess(v GetUserPermissions200ResponseAccess)`
 
 SetAccess sets Access field to given value.
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &GetUserPermissions200Response{}
 
 // GetUserPermissions200Response struct for GetUserPermissions200Response
 type GetUserPermissions200Response struct {
-	Access               *AddUserTenant200ResponseAllOfUserAccess `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}                   `json:",remain"`
+	Access               *GetUserPermissions200ResponseAccess `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}               `json:",remain"`
 }
 
 type _GetUserPermissions200Response GetUserPermissions200Response
@@ -44,9 +44,9 @@ func NewGetUserPermissions200ResponseWithDefaults() *GetUserPermissions200Respon
 }
 
 // GetAccess returns the Access field value if set, zero value otherwise.
-func (o *GetUserPermissions200Response) GetAccess() AddUserTenant200ResponseAllOfUserAccess {
+func (o *GetUserPermissions200Response) GetAccess() GetUserPermissions200ResponseAccess {
 	if o == nil || IsNil(o.Access) {
-		var ret AddUserTenant200ResponseAllOfUserAccess
+		var ret GetUserPermissions200ResponseAccess
 		return ret
 	}
 	return *o.Access
@@ -54,7 +54,7 @@ func (o *GetUserPermissions200Response) GetAccess() AddUserTenant200ResponseAllO
 
 // GetAccessOk returns a tuple with the Access field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetUserPermissions200Response) GetAccessOk() (*AddUserTenant200ResponseAllOfUserAccess, bool) {
+func (o *GetUserPermissions200Response) GetAccessOk() (*GetUserPermissions200ResponseAccess, bool) {
 	if o == nil || IsNil(o.Access) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetUserPermissions200Response) IsSetAccess() bool {
 	return false
 }
 
-// SetAccess gets a reference to the given AddUserTenant200ResponseAllOfUserAccess and assigns it to the Access field.
-func (o *GetUserPermissions200Response) SetAccess(v AddUserTenant200ResponseAllOfUserAccess) {
+// SetAccess gets a reference to the given GetUserPermissions200ResponseAccess and assigns it to the Access field.
+func (o *GetUserPermissions200Response) SetAccess(v GetUserPermissions200ResponseAccess) {
 	o.Access = &v
 }
 

@@ -159783,7 +159783,9 @@ paths:
                                 authority:
                                   type: string
                                 description:
-                                  type: string
+                                  type:
+                                    - string
+                                    - 'null'
                           account:
                             type: object
                             properties:
@@ -159814,7 +159816,9 @@ paths:
                               - string
                               - 'null'
                           defaultPersona:
-                            type: object
+                            type:
+                              - object
+                              - 'null'
                             properties:
                               id:
                                 type: integer
@@ -159838,46 +159842,149 @@ paths:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
+                                    subCategory:
+                                      type: string
                               zones:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               sites:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               instanceTypes:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               appTemplates:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               catalogItemTypes:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               personas:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               vdiPools:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               reportTypes:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               tasks:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    code:
+                                      type:
+                                        - string
+                                        - 'null'
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                               taskSets:
                                 type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    code:
+                                      type:
+                                        - string
+                                        - 'null'
+                                    name:
+                                      type: string
+                                    access:
+                                      type: string
                   - type: object
                     properties: *ref_7
               examples:

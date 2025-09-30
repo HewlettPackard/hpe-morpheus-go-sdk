@@ -646,6 +646,7 @@ docs/AddUserGroupRequestUserGroup.md
 docs/AddUserTenant200Response.md
 docs/AddUserTenant200ResponseAllOfUser.md
 docs/AddUserTenant200ResponseAllOfUserAccess.md
+docs/AddUserTenant200ResponseAllOfUserAccessFeaturesInner.md
 docs/AddUserTenant200ResponseAllOfUserRolesInner.md
 docs/AddUserTenantRequest.md
 docs/AddUserTenantRequestUser.md
@@ -1455,6 +1456,7 @@ docs/GetTenantSubtenantGroup200Response.md
 docs/GetUser200Response.md
 docs/GetUserGroup200Response.md
 docs/GetUserPermissions200Response.md
+docs/GetUserPermissions200ResponseAccess.md
 docs/GetUserSettingsApiClients200Response.md
 docs/GetUserSettingsApiClients200ResponseClientsInner.md
 docs/GetVDIAllocations200Response.md
@@ -3648,6 +3650,7 @@ model_add_user_group_request_user_group.go
 model_add_user_tenant_200_response.go
 model_add_user_tenant_200_response_all_of_user.go
 model_add_user_tenant_200_response_all_of_user_access.go
+model_add_user_tenant_200_response_all_of_user_access_features_inner.go
 model_add_user_tenant_200_response_all_of_user_roles_inner.go
 model_add_user_tenant_request.go
 model_add_user_tenant_request_user.go
@@ -4429,6 +4432,7 @@ model_get_tenant_subtenant_group_200_response.go
 model_get_user_200_response.go
 model_get_user_group_200_response.go
 model_get_user_permissions_200_response.go
+model_get_user_permissions_200_response_access.go
 model_get_user_settings_api_clients_200_response.go
 model_get_user_settings_api_clients_200_response_clients_inner.go
 model_get_vdi_200_response.go
