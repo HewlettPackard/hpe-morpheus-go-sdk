@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SourceHostname** | Pointer to **string** | Host name or IP address for target NFS instance. | [optional] 
-**SourceDirPath** | Pointer to **string** | Path to the target NFS export directory. | [optional] 
+**SourceHostname** | **string** | Host name or IP address for target NFS instance. | 
+**SourceDirPath** | **string** | Path to the target NFS export directory. | 
+**SourceVersion** | Pointer to **string** | NFS version to use when mounting the export. | [optional] 
 
 ## Methods
 
 ### NewSaveClusterDatastoreRequestDatastoreConfigAnyOf
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf() *SaveClusterDatastoreRequestDatastoreConfigAnyOf`
+`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf(sourceHostname string, sourceDirPath string, ) *SaveClusterDatastoreRequestDatastoreConfigAnyOf`
 
 NewSaveClusterDatastoreRequestDatastoreConfigAnyOf instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetSourceHostname sets SourceHostname field to given value.
 
-### HasSourceHostname
-
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) HasSourceHostname() bool`
-
-HasSourceHostname returns a boolean if a field has been set.
 
 ### GetSourceDirPath
 
@@ -70,11 +66,31 @@ and a boolean to check if the value has been set.
 
 SetSourceDirPath sets SourceDirPath field to given value.
 
-### HasSourceDirPath
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) HasSourceDirPath() bool`
+### GetSourceVersion
 
-HasSourceDirPath returns a boolean if a field has been set.
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersion() string`
+
+GetSourceVersion returns the SourceVersion field if non-nil, zero value otherwise.
+
+### GetSourceVersionOk
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersionOk() (*string, bool)`
+
+GetSourceVersionOk returns a tuple with the SourceVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceVersion
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceVersion(v string)`
+
+SetSourceVersion sets SourceVersion field to given value.
+
+### HasSourceVersion
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) HasSourceVersion() bool`
+
+HasSourceVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

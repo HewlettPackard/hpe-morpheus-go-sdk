@@ -20,19 +20,25 @@ var _ MappedNullable = &StorageDatastoreCreate{}
 
 // StorageDatastoreCreate struct for StorageDatastoreCreate
 type StorageDatastoreCreate struct {
-	Name *string `json:"name,omitempty"`
+	// The name of the datastore to be created.
+	Name string `json:"name"`
 	// The code of the datatoreType
-	DatastoreType        *string                                                          `json:"datastoreType,omitempty"`
-	RefType              *string                                                          `json:"refType,omitempty"`
-	RefId                *int64                                                           `json:"refId,omitempty"`
-	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
-	Visibility           *string                                                          `json:"visibility,omitempty"`
-	Active               *bool                                                            `json:"active,omitempty"`
-	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	DatastoreType string                              `json:"datastoreType"`
+	Config        SaveDatastoreRequestDatastoreConfig `json:"config"`
+	// Type of the resource this datastore is associated with, can be 'ComputeZone' ('Cloud') or 'ComputeServerGroup' ('Cluster')
+	RefType string `json:"refType"`
+	// The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup
+	RefId         int64                                        `json:"refId"`
+	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
+	// Visibility level of the datastore, can be 'private' or 'public'. If not specified, defaults to 'private'.
+	Visibility          *string                                                  `json:"visibility,omitempty"`
+	Active              *bool                                                    `json:"active,omitempty"`
+	DefaultStore        *bool                                                    `json:"defaultStore,omitempty"`
+	TenantPermissions   *SaveDatastoreRequestDatastoreTenantPermissions          `json:"tenantPermissions,omitempty"`
+	ResourcePermissions *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	// List of datastores associated with this datastore, for use with vSphere clouds.
+	Datastores           []map[string]interface{} `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}   `json:",remain"`
 }
 
 type _StorageDatastoreCreate StorageDatastoreCreate
@@ -41,8 +47,13 @@ type _StorageDatastoreCreate StorageDatastoreCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageDatastoreCreate() *StorageDatastoreCreate {
+func NewStorageDatastoreCreate(name string, datastoreType string, config SaveDatastoreRequestDatastoreConfig, refType string, refId int64) *StorageDatastoreCreate {
 	this := StorageDatastoreCreate{}
+	this.Name = name
+	this.DatastoreType = datastoreType
+	this.Config = config
+	this.RefType = refType
+	this.RefId = refId
 	return &this
 }
 
@@ -54,132 +65,124 @@ func NewStorageDatastoreCreateWithDefaults() *StorageDatastoreCreate {
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
+// GetName returns the Name field value
 func (o *StorageDatastoreCreate) GetName() string {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Name
+
+	return o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *StorageDatastoreCreate) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
-// IsSetName returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
+// SetName sets field value
 func (o *StorageDatastoreCreate) SetName(v string) {
-	o.Name = &v
+	o.Name = v
 }
 
-// GetDatastoreType returns the DatastoreType field value if set, zero value otherwise.
+// GetDatastoreType returns the DatastoreType field value
 func (o *StorageDatastoreCreate) GetDatastoreType() string {
-	if o == nil || IsNil(o.DatastoreType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.DatastoreType
+
+	return o.DatastoreType
 }
 
-// GetDatastoreTypeOk returns a tuple with the DatastoreType field value if set, nil otherwise
+// GetDatastoreTypeOk returns a tuple with the DatastoreType field value
 // and a boolean to check if the value has been set.
 func (o *StorageDatastoreCreate) GetDatastoreTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.DatastoreType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DatastoreType, true
+	return &o.DatastoreType, true
 }
 
-// IsSetDatastoreType returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetDatastoreType() bool {
-	if o != nil && !IsNil(o.DatastoreType) {
-		return true
+// SetDatastoreType sets field value
+func (o *StorageDatastoreCreate) SetDatastoreType(v string) {
+	o.DatastoreType = v
+}
+
+// GetConfig returns the Config field value
+func (o *StorageDatastoreCreate) GetConfig() SaveDatastoreRequestDatastoreConfig {
+	if o == nil {
+		var ret SaveDatastoreRequestDatastoreConfig
+		return ret
 	}
 
-	return false
+	return o.Config
 }
 
-// SetDatastoreType gets a reference to the given string and assigns it to the DatastoreType field.
-func (o *StorageDatastoreCreate) SetDatastoreType(v string) {
-	o.DatastoreType = &v
+// GetConfigOk returns a tuple with the Config field value
+// and a boolean to check if the value has been set.
+func (o *StorageDatastoreCreate) GetConfigOk() (*SaveDatastoreRequestDatastoreConfig, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Config, true
 }
 
-// GetRefType returns the RefType field value if set, zero value otherwise.
+// SetConfig sets field value
+func (o *StorageDatastoreCreate) SetConfig(v SaveDatastoreRequestDatastoreConfig) {
+	o.Config = v
+}
+
+// GetRefType returns the RefType field value
 func (o *StorageDatastoreCreate) GetRefType() string {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.RefType
+
+	return o.RefType
 }
 
-// GetRefTypeOk returns a tuple with the RefType field value if set, nil otherwise
+// GetRefTypeOk returns a tuple with the RefType field value
 // and a boolean to check if the value has been set.
 func (o *StorageDatastoreCreate) GetRefTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.RefType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefType, true
+	return &o.RefType, true
 }
 
-// IsSetRefType returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetRefType() bool {
-	if o != nil && !IsNil(o.RefType) {
-		return true
-	}
-
-	return false
-}
-
-// SetRefType gets a reference to the given string and assigns it to the RefType field.
+// SetRefType sets field value
 func (o *StorageDatastoreCreate) SetRefType(v string) {
-	o.RefType = &v
+	o.RefType = v
 }
 
-// GetRefId returns the RefId field value if set, zero value otherwise.
+// GetRefId returns the RefId field value
 func (o *StorageDatastoreCreate) GetRefId() int64 {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.RefId
+
+	return o.RefId
 }
 
-// GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
+// GetRefIdOk returns a tuple with the RefId field value
 // and a boolean to check if the value has been set.
 func (o *StorageDatastoreCreate) GetRefIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.RefId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RefId, true
+	return &o.RefId, true
 }
 
-// IsSetRefId returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetRefId() bool {
-	if o != nil && !IsNil(o.RefId) {
-		return true
-	}
-
-	return false
-}
-
-// SetRefId gets a reference to the given int64 and assigns it to the RefId field.
+// SetRefId sets field value
 func (o *StorageDatastoreCreate) SetRefId(v int64) {
-	o.RefId = &v
+	o.RefId = v
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
@@ -310,42 +313,42 @@ func (o *StorageDatastoreCreate) SetDefaultStore(v bool) {
 	o.DefaultStore = &v
 }
 
-// GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *StorageDatastoreCreate) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
-	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+// GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
+func (o *StorageDatastoreCreate) GetTenantPermissions() SaveDatastoreRequestDatastoreTenantPermissions {
+	if o == nil || IsNil(o.TenantPermissions) {
+		var ret SaveDatastoreRequestDatastoreTenantPermissions
 		return ret
 	}
-	return o.Tenants
+	return *o.TenantPermissions
 }
 
-// GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
+// GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
-	if o == nil || IsNil(o.Tenants) {
+func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*SaveDatastoreRequestDatastoreTenantPermissions, bool) {
+	if o == nil || IsNil(o.TenantPermissions) {
 		return nil, false
 	}
-	return o.Tenants, true
+	return o.TenantPermissions, true
 }
 
-// IsSetTenants returns a boolean if a field has been set.
-func (o *StorageDatastoreCreate) IsSetTenants() bool {
-	if o != nil && !IsNil(o.Tenants) {
+// IsSetTenantPermissions returns a boolean if a field has been set.
+func (o *StorageDatastoreCreate) IsSetTenantPermissions() bool {
+	if o != nil && !IsNil(o.TenantPermissions) {
 		return true
 	}
 
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *StorageDatastoreCreate) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
-	o.Tenants = v
+// SetTenantPermissions gets a reference to the given SaveDatastoreRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
+func (o *StorageDatastoreCreate) SetTenantPermissions(v SaveDatastoreRequestDatastoreTenantPermissions) {
+	o.TenantPermissions = &v
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *StorageDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions {
+func (o *StorageDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveCloudDatastoreRequestDatastoreResourcePermissions
+		var ret SaveClusterDatastoreRequestDatastoreResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -353,7 +356,7 @@ func (o *StorageDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequ
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -369,8 +372,8 @@ func (o *StorageDatastoreCreate) IsSetResourcePermissions() bool {
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *StorageDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *StorageDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 
@@ -416,18 +419,11 @@ func (o StorageDatastoreCreate) MarshalJSON() ([]byte, error) {
 
 func (o StorageDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.DatastoreType) {
-		toSerialize["datastoreType"] = o.DatastoreType
-	}
-	if !IsNil(o.RefType) {
-		toSerialize["refType"] = o.RefType
-	}
-	if !IsNil(o.RefId) {
-		toSerialize["refId"] = o.RefId
-	}
+	toSerialize["name"] = o.Name
+	toSerialize["datastoreType"] = o.DatastoreType
+	toSerialize["config"] = o.Config
+	toSerialize["refType"] = o.RefType
+	toSerialize["refId"] = o.RefId
 	if !IsNil(o.StorageServer) {
 		toSerialize["storageServer"] = o.StorageServer
 	}
@@ -440,8 +436,8 @@ func (o StorageDatastoreCreate) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DefaultStore) {
 		toSerialize["defaultStore"] = o.DefaultStore
 	}
-	if !IsNil(o.Tenants) {
-		toSerialize["tenants"] = o.Tenants
+	if !IsNil(o.TenantPermissions) {
+		toSerialize["tenantPermissions"] = o.TenantPermissions
 	}
 	if !IsNil(o.ResourcePermissions) {
 		toSerialize["resourcePermissions"] = o.ResourcePermissions

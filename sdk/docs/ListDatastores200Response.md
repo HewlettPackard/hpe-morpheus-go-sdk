@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Datastores** | Pointer to [**[]GetCloudDatastores200ResponseAllOfDatastore**](GetCloudDatastores200ResponseAllOfDatastore.md) |  | [optional] 
+**Datastores** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInner.md) |  | [optional] 
 **Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatastores
 
-`func (o *ListDatastores200Response) GetDatastores() []GetCloudDatastores200ResponseAllOfDatastore`
+`func (o *ListDatastores200Response) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInner`
 
 GetDatastores returns the Datastores field if non-nil, zero value otherwise.
 
 ### GetDatastoresOk
 
-`func (o *ListDatastores200Response) GetDatastoresOk() (*[]GetCloudDatastores200ResponseAllOfDatastore, bool)`
+`func (o *ListDatastores200Response) GetDatastoresOk() (*[]ListDatastores200ResponseAllOfDatastoresInner, bool)`
 
 GetDatastoresOk returns a tuple with the Datastores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastores
 
-`func (o *ListDatastores200Response) SetDatastores(v []GetCloudDatastores200ResponseAllOfDatastore)`
+`func (o *ListDatastores200Response) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInner)`
 
 SetDatastores sets Datastores field to given value.
 

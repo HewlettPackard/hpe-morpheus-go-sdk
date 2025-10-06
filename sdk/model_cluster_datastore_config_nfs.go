@@ -18,12 +18,14 @@ import (
 // checks if the ClusterDatastoreConfigNFS type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClusterDatastoreConfigNFS{}
 
-// ClusterDatastoreConfigNFS struct for ClusterDatastoreConfigNFS
+// ClusterDatastoreConfigNFS NFS Cluster Datastore Configuration
 type ClusterDatastoreConfigNFS struct {
 	// Host name or IP address for target NFS instance.
-	SourceHostname *string `json:"sourceHostname,omitempty"`
+	SourceHostname string `json:"sourceHostname"`
 	// Path to the target NFS export directory.
-	SourceDirPath        *string                `json:"sourceDirPath,omitempty"`
+	SourceDirPath string `json:"sourceDirPath"`
+	// NFS version to use when mounting the export.
+	SourceVersion        *string                `json:"sourceVersion,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -33,8 +35,10 @@ type _ClusterDatastoreConfigNFS ClusterDatastoreConfigNFS
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterDatastoreConfigNFS() *ClusterDatastoreConfigNFS {
+func NewClusterDatastoreConfigNFS(sourceHostname string, sourceDirPath string) *ClusterDatastoreConfigNFS {
 	this := ClusterDatastoreConfigNFS{}
+	this.SourceHostname = sourceHostname
+	this.SourceDirPath = sourceDirPath
 	return &this
 }
 
@@ -46,68 +50,84 @@ func NewClusterDatastoreConfigNFSWithDefaults() *ClusterDatastoreConfigNFS {
 	return &this
 }
 
-// GetSourceHostname returns the SourceHostname field value if set, zero value otherwise.
+// GetSourceHostname returns the SourceHostname field value
 func (o *ClusterDatastoreConfigNFS) GetSourceHostname() string {
-	if o == nil || IsNil(o.SourceHostname) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.SourceHostname
+
+	return o.SourceHostname
 }
 
-// GetSourceHostnameOk returns a tuple with the SourceHostname field value if set, nil otherwise
+// GetSourceHostnameOk returns a tuple with the SourceHostname field value
 // and a boolean to check if the value has been set.
 func (o *ClusterDatastoreConfigNFS) GetSourceHostnameOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceHostname) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceHostname, true
+	return &o.SourceHostname, true
 }
 
-// IsSetSourceHostname returns a boolean if a field has been set.
-func (o *ClusterDatastoreConfigNFS) IsSetSourceHostname() bool {
-	if o != nil && !IsNil(o.SourceHostname) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceHostname gets a reference to the given string and assigns it to the SourceHostname field.
+// SetSourceHostname sets field value
 func (o *ClusterDatastoreConfigNFS) SetSourceHostname(v string) {
-	o.SourceHostname = &v
+	o.SourceHostname = v
 }
 
-// GetSourceDirPath returns the SourceDirPath field value if set, zero value otherwise.
+// GetSourceDirPath returns the SourceDirPath field value
 func (o *ClusterDatastoreConfigNFS) GetSourceDirPath() string {
-	if o == nil || IsNil(o.SourceDirPath) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.SourceDirPath
+
+	return o.SourceDirPath
 }
 
-// GetSourceDirPathOk returns a tuple with the SourceDirPath field value if set, nil otherwise
+// GetSourceDirPathOk returns a tuple with the SourceDirPath field value
 // and a boolean to check if the value has been set.
 func (o *ClusterDatastoreConfigNFS) GetSourceDirPathOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceDirPath) {
+	if o == nil {
 		return nil, false
 	}
-	return o.SourceDirPath, true
+	return &o.SourceDirPath, true
 }
 
-// IsSetSourceDirPath returns a boolean if a field has been set.
-func (o *ClusterDatastoreConfigNFS) IsSetSourceDirPath() bool {
-	if o != nil && !IsNil(o.SourceDirPath) {
+// SetSourceDirPath sets field value
+func (o *ClusterDatastoreConfigNFS) SetSourceDirPath(v string) {
+	o.SourceDirPath = v
+}
+
+// GetSourceVersion returns the SourceVersion field value if set, zero value otherwise.
+func (o *ClusterDatastoreConfigNFS) GetSourceVersion() string {
+	if o == nil || IsNil(o.SourceVersion) {
+		var ret string
+		return ret
+	}
+	return *o.SourceVersion
+}
+
+// GetSourceVersionOk returns a tuple with the SourceVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterDatastoreConfigNFS) GetSourceVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.SourceVersion) {
+		return nil, false
+	}
+	return o.SourceVersion, true
+}
+
+// IsSetSourceVersion returns a boolean if a field has been set.
+func (o *ClusterDatastoreConfigNFS) IsSetSourceVersion() bool {
+	if o != nil && !IsNil(o.SourceVersion) {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceDirPath gets a reference to the given string and assigns it to the SourceDirPath field.
-func (o *ClusterDatastoreConfigNFS) SetSourceDirPath(v string) {
-	o.SourceDirPath = &v
+// SetSourceVersion gets a reference to the given string and assigns it to the SourceVersion field.
+func (o *ClusterDatastoreConfigNFS) SetSourceVersion(v string) {
+	o.SourceVersion = &v
 }
 
 func (o ClusterDatastoreConfigNFS) MarshalJSON() ([]byte, error) {
@@ -120,11 +140,10 @@ func (o ClusterDatastoreConfigNFS) MarshalJSON() ([]byte, error) {
 
 func (o ClusterDatastoreConfigNFS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceHostname) {
-		toSerialize["sourceHostname"] = o.SourceHostname
-	}
-	if !IsNil(o.SourceDirPath) {
-		toSerialize["sourceDirPath"] = o.SourceDirPath
+	toSerialize["sourceHostname"] = o.SourceHostname
+	toSerialize["sourceDirPath"] = o.SourceDirPath
+	if !IsNil(o.SourceVersion) {
+		toSerialize["sourceVersion"] = o.SourceVersion
 	}
 
 	for key, value := range o.AdditionalProperties {

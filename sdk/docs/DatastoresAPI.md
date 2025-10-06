@@ -4,11 +4,82 @@ All URIs are relative to *https://CHANGEME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**DeleteDatastores**](DatastoresAPI.md#DeleteDatastores) | **Delete** /api/data-stores/{id} | Delete a Datastore
 [**GetDatastores**](DatastoresAPI.md#GetDatastores) | **Get** /api/data-stores/{id} | Retrieves a Datastore
 [**ListDatastores**](DatastoresAPI.md#ListDatastores) | **Get** /api/data-stores | Retrieves all Datastores
 [**SaveDatastore**](DatastoresAPI.md#SaveDatastore) | **Post** /api/data-stores | Create a Datastore
 [**UpdateDatastores**](DatastoresAPI.md#UpdateDatastores) | **Put** /api/data-stores/{id} | Updates a Specified Datastore
 
+
+
+## DeleteDatastores
+
+> DeleteClusterDatastore200Response DeleteDatastores(ctx, id).Execute()
+
+Delete a Datastore
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DatastoresAPI.DeleteDatastores(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DatastoresAPI.DeleteDatastores``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteDatastores`: DeleteClusterDatastore200Response
+	fmt.Fprintf(os.Stdout, "Response from `DatastoresAPI.DeleteDatastores`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteDatastoresRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DeleteClusterDatastore200Response**](DeleteClusterDatastore200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetDatastores
@@ -157,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## SaveDatastore
 
-> SaveCloudDatastore200Response SaveDatastore(ctx).SaveDatastoreRequest(saveDatastoreRequest).Execute()
+> SaveDatastore200Response SaveDatastore(ctx).SaveDatastoreRequest(saveDatastoreRequest).Execute()
 
 Create a Datastore
 
@@ -185,7 +256,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatastoresAPI.SaveDatastore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SaveDatastore`: SaveCloudDatastore200Response
+	// response from `SaveDatastore`: SaveDatastore200Response
 	fmt.Fprintf(os.Stdout, "Response from `DatastoresAPI.SaveDatastore`: %v\n", resp)
 }
 ```
@@ -205,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SaveCloudDatastore200Response**](SaveCloudDatastore200Response.md)
+[**SaveDatastore200Response**](SaveDatastore200Response.md)
 
 ### Authorization
 

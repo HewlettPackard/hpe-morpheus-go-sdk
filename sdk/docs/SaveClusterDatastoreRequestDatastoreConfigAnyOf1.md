@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlockDevice** | Pointer to **string** | Block device for target GFS2. | [optional] 
+**BlockDevice** | **string** | Block device for target GFS2. | 
+**AllowReformat** | Pointer to **bool** | Allow reformatting of the device if it is already formatted. | [optional] 
 
 ## Methods
 
 ### NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1() *SaveClusterDatastoreRequestDatastoreConfigAnyOf1`
+`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1(blockDevice string, ) *SaveClusterDatastoreRequestDatastoreConfigAnyOf1`
 
 NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1 instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf1 object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +45,31 @@ and a boolean to check if the value has been set.
 
 SetBlockDevice sets BlockDevice field to given value.
 
-### HasBlockDevice
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) HasBlockDevice() bool`
+### GetAllowReformat
 
-HasBlockDevice returns a boolean if a field has been set.
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetAllowReformat() bool`
+
+GetAllowReformat returns the AllowReformat field if non-nil, zero value otherwise.
+
+### GetAllowReformatOk
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetAllowReformatOk() (*bool, bool)`
+
+GetAllowReformatOk returns a tuple with the AllowReformat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowReformat
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) SetAllowReformat(v bool)`
+
+SetAllowReformat sets AllowReformat field to given value.
+
+### HasAllowReformat
+
+`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) HasAllowReformat() bool`
+
+HasAllowReformat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

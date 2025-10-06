@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Datastore** | Pointer to [**SaveCloudDatastore200ResponseAllOfDatastore**](SaveCloudDatastore200ResponseAllOfDatastore.md) |  | [optional] 
+**Datastore** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatastore
 
-`func (o *GetDatastores200Response) GetDatastore() SaveCloudDatastore200ResponseAllOfDatastore`
+`func (o *GetDatastores200Response) GetDatastore() ListDatastores200ResponseAllOfDatastoresInner`
 
 GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
 ### GetDatastoreOk
 
-`func (o *GetDatastores200Response) GetDatastoreOk() (*SaveCloudDatastore200ResponseAllOfDatastore, bool)`
+`func (o *GetDatastores200Response) GetDatastoreOk() (*ListDatastores200ResponseAllOfDatastoresInner, bool)`
 
 GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastore
 
-`func (o *GetDatastores200Response) SetDatastore(v SaveCloudDatastore200ResponseAllOfDatastore)`
+`func (o *GetDatastores200Response) SetDatastore(v ListDatastores200ResponseAllOfDatastoresInner)`
 
 SetDatastore sets Datastore field to given value.
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &ListDatastores200Response{}
 
 // ListDatastores200Response struct for ListDatastores200Response
 type ListDatastores200Response struct {
-	Datastores           []GetCloudDatastores200ResponseAllOfDatastore `json:"datastores,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta             `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	Datastores           []ListDatastores200ResponseAllOfDatastoresInner `json:"datastores,omitempty"`
+	Meta                 *ListActivity200ResponseAllOfMeta               `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
 
 type _ListDatastores200Response ListDatastores200Response
@@ -45,9 +45,9 @@ func NewListDatastores200ResponseWithDefaults() *ListDatastores200Response {
 }
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise.
-func (o *ListDatastores200Response) GetDatastores() []GetCloudDatastores200ResponseAllOfDatastore {
+func (o *ListDatastores200Response) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInner {
 	if o == nil || IsNil(o.Datastores) {
-		var ret []GetCloudDatastores200ResponseAllOfDatastore
+		var ret []ListDatastores200ResponseAllOfDatastoresInner
 		return ret
 	}
 	return o.Datastores
@@ -55,7 +55,7 @@ func (o *ListDatastores200Response) GetDatastores() []GetCloudDatastores200Respo
 
 // GetDatastoresOk returns a tuple with the Datastores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDatastores200Response) GetDatastoresOk() ([]GetCloudDatastores200ResponseAllOfDatastore, bool) {
+func (o *ListDatastores200Response) GetDatastoresOk() ([]ListDatastores200ResponseAllOfDatastoresInner, bool) {
 	if o == nil || IsNil(o.Datastores) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListDatastores200Response) IsSetDatastores() bool {
 	return false
 }
 
-// SetDatastores gets a reference to the given []GetCloudDatastores200ResponseAllOfDatastore and assigns it to the Datastores field.
-func (o *ListDatastores200Response) SetDatastores(v []GetCloudDatastores200ResponseAllOfDatastore) {
+// SetDatastores gets a reference to the given []ListDatastores200ResponseAllOfDatastoresInner and assigns it to the Datastores field.
+func (o *ListDatastores200Response) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInner) {
 	o.Datastores = v
 }
 

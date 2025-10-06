@@ -1,4 +1,4 @@
-# SaveClusterDatastoreRequestDatastoreConfig
+# SaveDatastoreRequestDatastoreConfig
 
 ## Properties
 
@@ -14,169 +14,169 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSaveClusterDatastoreRequestDatastoreConfig
+### NewSaveDatastoreRequestDatastoreConfig
 
-`func NewSaveClusterDatastoreRequestDatastoreConfig(sourceHostname string, sourceDirPath string, blockDevice string, enableRansomware bool, protocolType string, ) *SaveClusterDatastoreRequestDatastoreConfig`
+`func NewSaveDatastoreRequestDatastoreConfig(sourceHostname string, sourceDirPath string, blockDevice string, enableRansomware bool, protocolType string, ) *SaveDatastoreRequestDatastoreConfig`
 
-NewSaveClusterDatastoreRequestDatastoreConfig instantiates a new SaveClusterDatastoreRequestDatastoreConfig object
+NewSaveDatastoreRequestDatastoreConfig instantiates a new SaveDatastoreRequestDatastoreConfig object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveClusterDatastoreRequestDatastoreConfigWithDefaults
+### NewSaveDatastoreRequestDatastoreConfigWithDefaults
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigWithDefaults() *SaveClusterDatastoreRequestDatastoreConfig`
+`func NewSaveDatastoreRequestDatastoreConfigWithDefaults() *SaveDatastoreRequestDatastoreConfig`
 
-NewSaveClusterDatastoreRequestDatastoreConfigWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreConfig object
+NewSaveDatastoreRequestDatastoreConfigWithDefaults instantiates a new SaveDatastoreRequestDatastoreConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSourceHostname
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceHostname() string`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceHostname() string`
 
 GetSourceHostname returns the SourceHostname field if non-nil, zero value otherwise.
 
 ### GetSourceHostnameOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceHostnameOk() (*string, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceHostnameOk() (*string, bool)`
 
 GetSourceHostnameOk returns a tuple with the SourceHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceHostname
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetSourceHostname(v string)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetSourceHostname(v string)`
 
 SetSourceHostname sets SourceHostname field to given value.
 
 
 ### GetSourceDirPath
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceDirPath() string`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceDirPath() string`
 
 GetSourceDirPath returns the SourceDirPath field if non-nil, zero value otherwise.
 
 ### GetSourceDirPathOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceDirPathOk() (*string, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceDirPathOk() (*string, bool)`
 
 GetSourceDirPathOk returns a tuple with the SourceDirPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceDirPath
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetSourceDirPath(v string)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetSourceDirPath(v string)`
 
 SetSourceDirPath sets SourceDirPath field to given value.
 
 
 ### GetSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceVersion() string`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceVersion() string`
 
 GetSourceVersion returns the SourceVersion field if non-nil, zero value otherwise.
 
 ### GetSourceVersionOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetSourceVersionOk() (*string, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetSourceVersionOk() (*string, bool)`
 
 GetSourceVersionOk returns a tuple with the SourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetSourceVersion(v string)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetSourceVersion(v string)`
 
 SetSourceVersion sets SourceVersion field to given value.
 
 ### HasSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) HasSourceVersion() bool`
+`func (o *SaveDatastoreRequestDatastoreConfig) HasSourceVersion() bool`
 
 HasSourceVersion returns a boolean if a field has been set.
 
 ### GetBlockDevice
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetBlockDevice() string`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetBlockDevice() string`
 
 GetBlockDevice returns the BlockDevice field if non-nil, zero value otherwise.
 
 ### GetBlockDeviceOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetBlockDeviceOk() (*string, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetBlockDeviceOk() (*string, bool)`
 
 GetBlockDeviceOk returns a tuple with the BlockDevice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlockDevice
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetBlockDevice(v string)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetBlockDevice(v string)`
 
 SetBlockDevice sets BlockDevice field to given value.
 
 
 ### GetAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetAllowReformat() bool`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetAllowReformat() bool`
 
 GetAllowReformat returns the AllowReformat field if non-nil, zero value otherwise.
 
 ### GetAllowReformatOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetAllowReformatOk() (*bool, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetAllowReformatOk() (*bool, bool)`
 
 GetAllowReformatOk returns a tuple with the AllowReformat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetAllowReformat(v bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetAllowReformat(v bool)`
 
 SetAllowReformat sets AllowReformat field to given value.
 
 ### HasAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) HasAllowReformat() bool`
+`func (o *SaveDatastoreRequestDatastoreConfig) HasAllowReformat() bool`
 
 HasAllowReformat returns a boolean if a field has been set.
 
 ### GetEnableRansomware
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetEnableRansomware() bool`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableRansomware() bool`
 
 GetEnableRansomware returns the EnableRansomware field if non-nil, zero value otherwise.
 
 ### GetEnableRansomwareOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetEnableRansomwareOk() (*bool, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableRansomwareOk() (*bool, bool)`
 
 GetEnableRansomwareOk returns a tuple with the EnableRansomware field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableRansomware
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetEnableRansomware(v bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetEnableRansomware(v bool)`
 
 SetEnableRansomware sets EnableRansomware field to given value.
 
 
 ### GetProtocolType
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetProtocolType() string`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetProtocolType() string`
 
 GetProtocolType returns the ProtocolType field if non-nil, zero value otherwise.
 
 ### GetProtocolTypeOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) GetProtocolTypeOk() (*string, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetProtocolTypeOk() (*string, bool)`
 
 GetProtocolTypeOk returns a tuple with the ProtocolType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocolType
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfig) SetProtocolType(v string)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetProtocolType(v string)`
 
 SetProtocolType sets ProtocolType field to given value.
 

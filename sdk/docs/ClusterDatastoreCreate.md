@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DefaultStore** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**SaveClusterDatastoreRequestDatastoreConfig**](SaveClusterDatastoreRequestDatastoreConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissions**](SaveCloudDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -236,20 +236,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions`
+`func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions)`
+`func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

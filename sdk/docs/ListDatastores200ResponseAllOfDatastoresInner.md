@@ -1,4 +1,4 @@
-# UpdateDatastores200ResponseDatastore
+# ListDatastores200ResponseAllOfDatastoresInner
 
 ## Properties
 
@@ -34,806 +34,780 @@ Name | Type | Description | Notes
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Datastores** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner.md) | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
 **Locations** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner**](ListDatastores200ResponseAllOfDatastoresInnerLocationsInner.md) |  | [optional] 
-**Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
-### NewUpdateDatastores200ResponseDatastore
+### NewListDatastores200ResponseAllOfDatastoresInner
 
-`func NewUpdateDatastores200ResponseDatastore(id int64, name string, datastoreType ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, type_ string, status string, ) *UpdateDatastores200ResponseDatastore`
+`func NewListDatastores200ResponseAllOfDatastoresInner(id int64, name string, datastoreType ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, type_ string, status string, ) *ListDatastores200ResponseAllOfDatastoresInner`
 
-NewUpdateDatastores200ResponseDatastore instantiates a new UpdateDatastores200ResponseDatastore object
+NewListDatastores200ResponseAllOfDatastoresInner instantiates a new ListDatastores200ResponseAllOfDatastoresInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUpdateDatastores200ResponseDatastoreWithDefaults
+### NewListDatastores200ResponseAllOfDatastoresInnerWithDefaults
 
-`func NewUpdateDatastores200ResponseDatastoreWithDefaults() *UpdateDatastores200ResponseDatastore`
+`func NewListDatastores200ResponseAllOfDatastoresInnerWithDefaults() *ListDatastores200ResponseAllOfDatastoresInner`
 
-NewUpdateDatastores200ResponseDatastoreWithDefaults instantiates a new UpdateDatastores200ResponseDatastore object
+NewListDatastores200ResponseAllOfDatastoresInnerWithDefaults instantiates a new ListDatastores200ResponseAllOfDatastoresInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *UpdateDatastores200ResponseDatastore) GetId() int64`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetIdOk() (*int64, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UpdateDatastores200ResponseDatastore) SetId(v int64)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 
 ### GetName
 
-`func (o *UpdateDatastores200ResponseDatastore) GetName() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetNameOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *UpdateDatastores200ResponseDatastore) SetName(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetName(v string)`
 
 SetName sets Name field to given value.
 
 
 ### GetCode
 
-`func (o *UpdateDatastores200ResponseDatastore) GetCode() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetCode() string`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetCodeOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetCodeOk() (*string, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *UpdateDatastores200ResponseDatastore) SetCode(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetCode(v string)`
 
 SetCode sets Code field to given value.
 
 ### HasCode
 
-`func (o *UpdateDatastores200ResponseDatastore) HasCode() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
 
 ### SetCodeNil
 
-`func (o *UpdateDatastores200ResponseDatastore) SetCodeNil(b bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetCodeNil(b bool)`
 
  SetCodeNil sets the value for Code to be an explicit nil
 
 ### UnsetCode
-`func (o *UpdateDatastores200ResponseDatastore) UnsetCode()`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) UnsetCode()`
 
 UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetDatastoreType
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDatastoreType() ListDatastores200ResponseAllOfDatastoresInnerDatastoreType`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDatastoreType() ListDatastores200ResponseAllOfDatastoresInnerDatastoreType`
 
 GetDatastoreType returns the DatastoreType field if non-nil, zero value otherwise.
 
 ### GetDatastoreTypeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDatastoreTypeOk() (*ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDatastoreTypeOk() (*ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, bool)`
 
 GetDatastoreTypeOk returns a tuple with the DatastoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastoreType
 
-`func (o *UpdateDatastores200ResponseDatastore) SetDatastoreType(v ListDatastores200ResponseAllOfDatastoresInnerDatastoreType)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetDatastoreType(v ListDatastores200ResponseAllOfDatastoresInnerDatastoreType)`
 
 SetDatastoreType sets DatastoreType field to given value.
 
 
 ### GetConfig
 
-`func (o *UpdateDatastores200ResponseDatastore) GetConfig() map[string]interface{}`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetConfig() map[string]interface{}`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetConfigOk() (*map[string]interface{}, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetConfigOk() (*map[string]interface{}, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *UpdateDatastores200ResponseDatastore) SetConfig(v map[string]interface{})`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetConfig(v map[string]interface{})`
 
 SetConfig sets Config field to given value.
 
 ### HasConfig
 
-`func (o *UpdateDatastores200ResponseDatastore) HasConfig() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *UpdateDatastores200ResponseDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetStorageServer sets StorageServer field to given value.
 
 ### HasStorageServer
 
-`func (o *UpdateDatastores200ResponseDatastore) HasStorageServer() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasStorageServer() bool`
 
 HasStorageServer returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *UpdateDatastores200ResponseDatastore) GetType() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetTypeOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *UpdateDatastores200ResponseDatastore) SetType(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetType(v string)`
 
 SetType sets Type field to given value.
 
 
 ### GetStatus
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStatus() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStatusOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *UpdateDatastores200ResponseDatastore) SetStatus(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
 
 ### GetStatusMessage
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStatusMessage() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStatusMessage() string`
 
 GetStatusMessage returns the StatusMessage field if non-nil, zero value otherwise.
 
 ### GetStatusMessageOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStatusMessageOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStatusMessageOk() (*string, bool)`
 
 GetStatusMessageOk returns a tuple with the StatusMessage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatusMessage
 
-`func (o *UpdateDatastores200ResponseDatastore) SetStatusMessage(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStatusMessage(v string)`
 
 SetStatusMessage sets StatusMessage field to given value.
 
 ### HasStatusMessage
 
-`func (o *UpdateDatastores200ResponseDatastore) HasStatusMessage() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasStatusMessage() bool`
 
 HasStatusMessage returns a boolean if a field has been set.
 
 ### GetVisibility
 
-`func (o *UpdateDatastores200ResponseDatastore) GetVisibility() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetVisibility() string`
 
 GetVisibility returns the Visibility field if non-nil, zero value otherwise.
 
 ### GetVisibilityOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetVisibilityOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetVisibilityOk() (*string, bool)`
 
 GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVisibility
 
-`func (o *UpdateDatastores200ResponseDatastore) SetVisibility(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetVisibility(v string)`
 
 SetVisibility sets Visibility field to given value.
 
 ### HasVisibility
 
-`func (o *UpdateDatastores200ResponseDatastore) HasVisibility() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasVisibility() bool`
 
 HasVisibility returns a boolean if a field has been set.
 
 ### GetStorageSize
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStorageSize() int64`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageSize() int64`
 
 GetStorageSize returns the StorageSize field if non-nil, zero value otherwise.
 
 ### GetStorageSizeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetStorageSizeOk() (*int64, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageSizeOk() (*int64, bool)`
 
 GetStorageSizeOk returns a tuple with the StorageSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageSize
 
-`func (o *UpdateDatastores200ResponseDatastore) SetStorageSize(v int64)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStorageSize(v int64)`
 
 SetStorageSize sets StorageSize field to given value.
 
 ### HasStorageSize
 
-`func (o *UpdateDatastores200ResponseDatastore) HasStorageSize() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasStorageSize() bool`
 
 HasStorageSize returns a boolean if a field has been set.
 
 ### SetStorageSizeNil
 
-`func (o *UpdateDatastores200ResponseDatastore) SetStorageSizeNil(b bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStorageSizeNil(b bool)`
 
  SetStorageSizeNil sets the value for StorageSize to be an explicit nil
 
 ### UnsetStorageSize
-`func (o *UpdateDatastores200ResponseDatastore) UnsetStorageSize()`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) UnsetStorageSize()`
 
 UnsetStorageSize ensures that no value is present for StorageSize, not even an explicit nil
 ### GetFreeSpace
 
-`func (o *UpdateDatastores200ResponseDatastore) GetFreeSpace() int64`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetFreeSpace() int64`
 
 GetFreeSpace returns the FreeSpace field if non-nil, zero value otherwise.
 
 ### GetFreeSpaceOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetFreeSpaceOk() (*int64, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetFreeSpaceOk() (*int64, bool)`
 
 GetFreeSpaceOk returns a tuple with the FreeSpace field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFreeSpace
 
-`func (o *UpdateDatastores200ResponseDatastore) SetFreeSpace(v int64)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetFreeSpace(v int64)`
 
 SetFreeSpace sets FreeSpace field to given value.
 
 ### HasFreeSpace
 
-`func (o *UpdateDatastores200ResponseDatastore) HasFreeSpace() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasFreeSpace() bool`
 
 HasFreeSpace returns a boolean if a field has been set.
 
 ### SetFreeSpaceNil
 
-`func (o *UpdateDatastores200ResponseDatastore) SetFreeSpaceNil(b bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetFreeSpaceNil(b bool)`
 
  SetFreeSpaceNil sets the value for FreeSpace to be an explicit nil
 
 ### UnsetFreeSpace
-`func (o *UpdateDatastores200ResponseDatastore) UnsetFreeSpace()`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) UnsetFreeSpace()`
 
 UnsetFreeSpace ensures that no value is present for FreeSpace, not even an explicit nil
 ### GetDrsEnabled
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDrsEnabled() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDrsEnabled() bool`
 
 GetDrsEnabled returns the DrsEnabled field if non-nil, zero value otherwise.
 
 ### GetDrsEnabledOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDrsEnabledOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDrsEnabledOk() (*bool, bool)`
 
 GetDrsEnabledOk returns a tuple with the DrsEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDrsEnabled
 
-`func (o *UpdateDatastores200ResponseDatastore) SetDrsEnabled(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetDrsEnabled(v bool)`
 
 SetDrsEnabled sets DrsEnabled field to given value.
 
 ### HasDrsEnabled
 
-`func (o *UpdateDatastores200ResponseDatastore) HasDrsEnabled() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasDrsEnabled() bool`
 
 HasDrsEnabled returns a boolean if a field has been set.
 
 ### GetActive
 
-`func (o *UpdateDatastores200ResponseDatastore) GetActive() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetActive() bool`
 
 GetActive returns the Active field if non-nil, zero value otherwise.
 
 ### GetActiveOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetActiveOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetActiveOk() (*bool, bool)`
 
 GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActive
 
-`func (o *UpdateDatastores200ResponseDatastore) SetActive(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetActive(v bool)`
 
 SetActive sets Active field to given value.
 
 ### HasActive
 
-`func (o *UpdateDatastores200ResponseDatastore) HasActive() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasActive() bool`
 
 HasActive returns a boolean if a field has been set.
 
 ### GetAllowWrite
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowWrite() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowWrite() bool`
 
 GetAllowWrite returns the AllowWrite field if non-nil, zero value otherwise.
 
 ### GetAllowWriteOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowWriteOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowWriteOk() (*bool, bool)`
 
 GetAllowWriteOk returns a tuple with the AllowWrite field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowWrite
 
-`func (o *UpdateDatastores200ResponseDatastore) SetAllowWrite(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetAllowWrite(v bool)`
 
 SetAllowWrite sets AllowWrite field to given value.
 
 ### HasAllowWrite
 
-`func (o *UpdateDatastores200ResponseDatastore) HasAllowWrite() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasAllowWrite() bool`
 
 HasAllowWrite returns a boolean if a field has been set.
 
 ### GetDefaultStore
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDefaultStore() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDefaultStore() bool`
 
 GetDefaultStore returns the DefaultStore field if non-nil, zero value otherwise.
 
 ### GetDefaultStoreOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDefaultStoreOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDefaultStoreOk() (*bool, bool)`
 
 GetDefaultStoreOk returns a tuple with the DefaultStore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStore
 
-`func (o *UpdateDatastores200ResponseDatastore) SetDefaultStore(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetDefaultStore(v bool)`
 
 SetDefaultStore sets DefaultStore field to given value.
 
 ### HasDefaultStore
 
-`func (o *UpdateDatastores200ResponseDatastore) HasDefaultStore() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasDefaultStore() bool`
 
 HasDefaultStore returns a boolean if a field has been set.
 
 ### GetOnline
 
-`func (o *UpdateDatastores200ResponseDatastore) GetOnline() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOnline() bool`
 
 GetOnline returns the Online field if non-nil, zero value otherwise.
 
 ### GetOnlineOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetOnlineOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOnlineOk() (*bool, bool)`
 
 GetOnlineOk returns a tuple with the Online field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOnline
 
-`func (o *UpdateDatastores200ResponseDatastore) SetOnline(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetOnline(v bool)`
 
 SetOnline sets Online field to given value.
 
 ### HasOnline
 
-`func (o *UpdateDatastores200ResponseDatastore) HasOnline() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasOnline() bool`
 
 HasOnline returns a boolean if a field has been set.
 
 ### GetAllowRead
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowRead() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowRead() bool`
 
 GetAllowRead returns the AllowRead field if non-nil, zero value otherwise.
 
 ### GetAllowReadOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowReadOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowReadOk() (*bool, bool)`
 
 GetAllowReadOk returns a tuple with the AllowRead field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowRead
 
-`func (o *UpdateDatastores200ResponseDatastore) SetAllowRead(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetAllowRead(v bool)`
 
 SetAllowRead sets AllowRead field to given value.
 
 ### HasAllowRead
 
-`func (o *UpdateDatastores200ResponseDatastore) HasAllowRead() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasAllowRead() bool`
 
 HasAllowRead returns a boolean if a field has been set.
 
 ### GetAllowProvision
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowProvision() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowProvision() bool`
 
 GetAllowProvision returns the AllowProvision field if non-nil, zero value otherwise.
 
 ### GetAllowProvisionOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetAllowProvisionOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetAllowProvisionOk() (*bool, bool)`
 
 GetAllowProvisionOk returns a tuple with the AllowProvision field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowProvision
 
-`func (o *UpdateDatastores200ResponseDatastore) SetAllowProvision(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetAllowProvision(v bool)`
 
 SetAllowProvision sets AllowProvision field to given value.
 
 ### HasAllowProvision
 
-`func (o *UpdateDatastores200ResponseDatastore) HasAllowProvision() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasAllowProvision() bool`
 
 HasAllowProvision returns a boolean if a field has been set.
 
 ### GetHeartBeatTarget
 
-`func (o *UpdateDatastores200ResponseDatastore) GetHeartBeatTarget() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetHeartBeatTarget() bool`
 
 GetHeartBeatTarget returns the HeartBeatTarget field if non-nil, zero value otherwise.
 
 ### GetHeartBeatTargetOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetHeartBeatTargetOk() (*bool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetHeartBeatTargetOk() (*bool, bool)`
 
 GetHeartBeatTargetOk returns a tuple with the HeartBeatTarget field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeartBeatTarget
 
-`func (o *UpdateDatastores200ResponseDatastore) SetHeartBeatTarget(v bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetHeartBeatTarget(v bool)`
 
 SetHeartBeatTarget sets HeartBeatTarget field to given value.
 
 ### HasHeartBeatTarget
 
-`func (o *UpdateDatastores200ResponseDatastore) HasHeartBeatTarget() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasHeartBeatTarget() bool`
 
 HasHeartBeatTarget returns a boolean if a field has been set.
 
 ### GetRefType
 
-`func (o *UpdateDatastores200ResponseDatastore) GetRefType() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetRefType() string`
 
 GetRefType returns the RefType field if non-nil, zero value otherwise.
 
 ### GetRefTypeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetRefTypeOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetRefTypeOk() (*string, bool)`
 
 GetRefTypeOk returns a tuple with the RefType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefType
 
-`func (o *UpdateDatastores200ResponseDatastore) SetRefType(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetRefType(v string)`
 
 SetRefType sets RefType field to given value.
 
 ### HasRefType
 
-`func (o *UpdateDatastores200ResponseDatastore) HasRefType() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasRefType() bool`
 
 HasRefType returns a boolean if a field has been set.
 
 ### GetRefId
 
-`func (o *UpdateDatastores200ResponseDatastore) GetRefId() int64`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetRefId() int64`
 
 GetRefId returns the RefId field if non-nil, zero value otherwise.
 
 ### GetRefIdOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetRefIdOk() (*int64, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetRefIdOk() (*int64, bool)`
 
 GetRefIdOk returns a tuple with the RefId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefId
 
-`func (o *UpdateDatastores200ResponseDatastore) SetRefId(v int64)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetRefId(v int64)`
 
 SetRefId sets RefId field to given value.
 
 ### HasRefId
 
-`func (o *UpdateDatastores200ResponseDatastore) HasRefId() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasRefId() bool`
 
 HasRefId returns a boolean if a field has been set.
 
 ### GetExternalId
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalId() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalId() string`
 
 GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
 
 ### GetExternalIdOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalIdOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalIdOk() (*string, bool)`
 
 GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalId
 
-`func (o *UpdateDatastores200ResponseDatastore) SetExternalId(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetExternalId(v string)`
 
 SetExternalId sets ExternalId field to given value.
 
 ### HasExternalId
 
-`func (o *UpdateDatastores200ResponseDatastore) HasExternalId() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasExternalId() bool`
 
 HasExternalId returns a boolean if a field has been set.
 
 ### GetExternalPath
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalPath() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalPath() string`
 
 GetExternalPath returns the ExternalPath field if non-nil, zero value otherwise.
 
 ### GetExternalPathOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalPathOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalPathOk() (*string, bool)`
 
 GetExternalPathOk returns a tuple with the ExternalPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalPath
 
-`func (o *UpdateDatastores200ResponseDatastore) SetExternalPath(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetExternalPath(v string)`
 
 SetExternalPath sets ExternalPath field to given value.
 
 ### HasExternalPath
 
-`func (o *UpdateDatastores200ResponseDatastore) HasExternalPath() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasExternalPath() bool`
 
 HasExternalPath returns a boolean if a field has been set.
 
 ### GetExternalType
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalType() string`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalType() string`
 
 GetExternalType returns the ExternalType field if non-nil, zero value otherwise.
 
 ### GetExternalTypeOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetExternalTypeOk() (*string, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetExternalTypeOk() (*string, bool)`
 
 GetExternalTypeOk returns a tuple with the ExternalType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalType
 
-`func (o *UpdateDatastores200ResponseDatastore) SetExternalType(v string)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetExternalType(v string)`
 
 SetExternalType sets ExternalType field to given value.
 
 ### HasExternalType
 
-`func (o *UpdateDatastores200ResponseDatastore) HasExternalType() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasExternalType() bool`
 
 HasExternalType returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *UpdateDatastores200ResponseDatastore) GetZone() ListDatastores200ResponseAllOfDatastoresInnerZone`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetZone() ListDatastores200ResponseAllOfDatastoresInnerZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetZoneOk() (*ListDatastores200ResponseAllOfDatastoresInnerZone, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListDatastores200ResponseAllOfDatastoresInnerZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *UpdateDatastores200ResponseDatastore) SetZone(v ListDatastores200ResponseAllOfDatastoresInnerZone)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetZone(v ListDatastores200ResponseAllOfDatastoresInnerZone)`
 
 SetZone sets Zone field to given value.
 
 ### HasZone
 
-`func (o *UpdateDatastores200ResponseDatastore) HasZone() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasZone() bool`
 
 HasZone returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *UpdateDatastores200ResponseDatastore) GetZonePool() ListDatastores200ResponseAllOfDatastoresInnerZonePool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetZonePool() ListDatastores200ResponseAllOfDatastoresInnerZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetZonePoolOk() (*ListDatastores200ResponseAllOfDatastoresInnerZonePool, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetZonePoolOk() (*ListDatastores200ResponseAllOfDatastoresInnerZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *UpdateDatastores200ResponseDatastore) SetZonePool(v ListDatastores200ResponseAllOfDatastoresInnerZonePool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetZonePool(v ListDatastores200ResponseAllOfDatastoresInnerZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
 ### HasZonePool
 
-`func (o *UpdateDatastores200ResponseDatastore) HasZonePool() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasZonePool() bool`
 
 HasZonePool returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *UpdateDatastores200ResponseDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *UpdateDatastores200ResponseDatastore) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetOwner sets Owner field to given value.
 
 ### HasOwner
 
-`func (o *UpdateDatastores200ResponseDatastore) HasOwner() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
 
 ### GetDatastores
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner`
 
 GetDatastores returns the Datastores field if non-nil, zero value otherwise.
 
 ### GetDatastoresOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetDatastoresOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetDatastoresOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner, bool)`
 
 GetDatastoresOk returns a tuple with the Datastores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastores
 
-`func (o *UpdateDatastores200ResponseDatastore) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner)`
 
 SetDatastores sets Datastores field to given value.
 
 ### HasDatastores
 
-`func (o *UpdateDatastores200ResponseDatastore) HasDatastores() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasDatastores() bool`
 
 HasDatastores returns a boolean if a field has been set.
 
 ### GetLocations
 
-`func (o *UpdateDatastores200ResponseDatastore) GetLocations() []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetLocations() []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner`
 
 GetLocations returns the Locations field if non-nil, zero value otherwise.
 
 ### GetLocationsOk
 
-`func (o *UpdateDatastores200ResponseDatastore) GetLocationsOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetLocationsOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner, bool)`
 
 GetLocationsOk returns a tuple with the Locations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocations
 
-`func (o *UpdateDatastores200ResponseDatastore) SetLocations(v []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetLocations(v []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner)`
 
 SetLocations sets Locations field to given value.
 
 ### HasLocations
 
-`func (o *UpdateDatastores200ResponseDatastore) HasLocations() bool`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) HasLocations() bool`
 
 HasLocations returns a boolean if a field has been set.
-
-### GetSuccess
-
-`func (o *UpdateDatastores200ResponseDatastore) GetSuccess() bool`
-
-GetSuccess returns the Success field if non-nil, zero value otherwise.
-
-### GetSuccessOk
-
-`func (o *UpdateDatastores200ResponseDatastore) GetSuccessOk() (*bool, bool)`
-
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSuccess
-
-`func (o *UpdateDatastores200ResponseDatastore) SetSuccess(v bool)`
-
-SetSuccess sets Success field to given value.
-
-### HasSuccess
-
-`func (o *UpdateDatastores200ResponseDatastore) HasSuccess() bool`
-
-HasSuccess returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

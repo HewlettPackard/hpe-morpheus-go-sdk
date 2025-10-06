@@ -18,10 +18,12 @@ import (
 // checks if the ClusterDatastoreConfigGFS2 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ClusterDatastoreConfigGFS2{}
 
-// ClusterDatastoreConfigGFS2 struct for ClusterDatastoreConfigGFS2
+// ClusterDatastoreConfigGFS2 GFS2 Cluster Datastore Configuration
 type ClusterDatastoreConfigGFS2 struct {
 	// Block device for target GFS2.
-	BlockDevice          *string                `json:"blockDevice,omitempty"`
+	BlockDevice string `json:"blockDevice"`
+	// Allow reformatting of the device if it is already formatted.
+	AllowReformat        *bool                  `json:"allowReformat,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -31,8 +33,9 @@ type _ClusterDatastoreConfigGFS2 ClusterDatastoreConfigGFS2
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterDatastoreConfigGFS2() *ClusterDatastoreConfigGFS2 {
+func NewClusterDatastoreConfigGFS2(blockDevice string) *ClusterDatastoreConfigGFS2 {
 	this := ClusterDatastoreConfigGFS2{}
+	this.BlockDevice = blockDevice
 	return &this
 }
 
@@ -44,36 +47,60 @@ func NewClusterDatastoreConfigGFS2WithDefaults() *ClusterDatastoreConfigGFS2 {
 	return &this
 }
 
-// GetBlockDevice returns the BlockDevice field value if set, zero value otherwise.
+// GetBlockDevice returns the BlockDevice field value
 func (o *ClusterDatastoreConfigGFS2) GetBlockDevice() string {
-	if o == nil || IsNil(o.BlockDevice) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BlockDevice
+
+	return o.BlockDevice
 }
 
-// GetBlockDeviceOk returns a tuple with the BlockDevice field value if set, nil otherwise
+// GetBlockDeviceOk returns a tuple with the BlockDevice field value
 // and a boolean to check if the value has been set.
 func (o *ClusterDatastoreConfigGFS2) GetBlockDeviceOk() (*string, bool) {
-	if o == nil || IsNil(o.BlockDevice) {
+	if o == nil {
 		return nil, false
 	}
-	return o.BlockDevice, true
+	return &o.BlockDevice, true
 }
 
-// IsSetBlockDevice returns a boolean if a field has been set.
-func (o *ClusterDatastoreConfigGFS2) IsSetBlockDevice() bool {
-	if o != nil && !IsNil(o.BlockDevice) {
+// SetBlockDevice sets field value
+func (o *ClusterDatastoreConfigGFS2) SetBlockDevice(v string) {
+	o.BlockDevice = v
+}
+
+// GetAllowReformat returns the AllowReformat field value if set, zero value otherwise.
+func (o *ClusterDatastoreConfigGFS2) GetAllowReformat() bool {
+	if o == nil || IsNil(o.AllowReformat) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowReformat
+}
+
+// GetAllowReformatOk returns a tuple with the AllowReformat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterDatastoreConfigGFS2) GetAllowReformatOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowReformat) {
+		return nil, false
+	}
+	return o.AllowReformat, true
+}
+
+// IsSetAllowReformat returns a boolean if a field has been set.
+func (o *ClusterDatastoreConfigGFS2) IsSetAllowReformat() bool {
+	if o != nil && !IsNil(o.AllowReformat) {
 		return true
 	}
 
 	return false
 }
 
-// SetBlockDevice gets a reference to the given string and assigns it to the BlockDevice field.
-func (o *ClusterDatastoreConfigGFS2) SetBlockDevice(v string) {
-	o.BlockDevice = &v
+// SetAllowReformat gets a reference to the given bool and assigns it to the AllowReformat field.
+func (o *ClusterDatastoreConfigGFS2) SetAllowReformat(v bool) {
+	o.AllowReformat = &v
 }
 
 func (o ClusterDatastoreConfigGFS2) MarshalJSON() ([]byte, error) {
@@ -86,8 +113,9 @@ func (o ClusterDatastoreConfigGFS2) MarshalJSON() ([]byte, error) {
 
 func (o ClusterDatastoreConfigGFS2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BlockDevice) {
-		toSerialize["blockDevice"] = o.BlockDevice
+	toSerialize["blockDevice"] = o.BlockDevice
+	if !IsNil(o.AllowReformat) {
+		toSerialize["allowReformat"] = o.AllowReformat
 	}
 
 	for key, value := range o.AdditionalProperties {

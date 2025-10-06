@@ -4,23 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
-**DatastoreType** | Pointer to **string** | The code of the datatoreType | [optional] 
-**RefType** | Pointer to **string** |  | [optional] 
-**RefId** | Pointer to **int64** |  | [optional] 
+**Name** | **string** | The name of the datastore to be created. | 
+**DatastoreType** | **string** | The code of the datatoreType | 
+**Config** | [**SaveDatastoreRequestDatastoreConfig**](SaveDatastoreRequestDatastoreConfig.md) |  | 
+**RefType** | **string** | Type of the resource this datastore is associated with, can be &#39;ComputeZone&#39; (&#39;Cloud&#39;) or &#39;ComputeServerGroup&#39; (&#39;Cluster&#39;) | 
+**RefId** | **int64** | The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup | 
 **StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to **string** | Visibility level of the datastore, can be &#39;private&#39; or &#39;public&#39;. If not specified, defaults to &#39;private&#39;. | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissions**](SaveCloudDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
-**Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**TenantPermissions** | Pointer to [**SaveDatastoreRequestDatastoreTenantPermissions**](SaveDatastoreRequestDatastoreTenantPermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**Datastores** | Pointer to **[]map[string]interface{}** | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
 
 ## Methods
 
 ### NewSaveDatastoreRequestDatastore
 
-`func NewSaveDatastoreRequestDatastore() *SaveDatastoreRequestDatastore`
+`func NewSaveDatastoreRequestDatastore(name string, datastoreType string, config SaveDatastoreRequestDatastoreConfig, refType string, refId int64, ) *SaveDatastoreRequestDatastore`
 
 NewSaveDatastoreRequestDatastore instantiates a new SaveDatastoreRequestDatastore object
 This constructor will assign default values to properties that have it defined,
@@ -54,11 +55,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *SaveDatastoreRequestDatastore) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetDatastoreType
 
@@ -79,11 +75,26 @@ and a boolean to check if the value has been set.
 
 SetDatastoreType sets DatastoreType field to given value.
 
-### HasDatastoreType
 
-`func (o *SaveDatastoreRequestDatastore) HasDatastoreType() bool`
+### GetConfig
 
-HasDatastoreType returns a boolean if a field has been set.
+`func (o *SaveDatastoreRequestDatastore) GetConfig() SaveDatastoreRequestDatastoreConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *SaveDatastoreRequestDatastore) GetConfigOk() (*SaveDatastoreRequestDatastoreConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *SaveDatastoreRequestDatastore) SetConfig(v SaveDatastoreRequestDatastoreConfig)`
+
+SetConfig sets Config field to given value.
+
 
 ### GetRefType
 
@@ -104,11 +115,6 @@ and a boolean to check if the value has been set.
 
 SetRefType sets RefType field to given value.
 
-### HasRefType
-
-`func (o *SaveDatastoreRequestDatastore) HasRefType() bool`
-
-HasRefType returns a boolean if a field has been set.
 
 ### GetRefId
 
@@ -129,11 +135,6 @@ and a boolean to check if the value has been set.
 
 SetRefId sets RefId field to given value.
 
-### HasRefId
-
-`func (o *SaveDatastoreRequestDatastore) HasRefId() bool`
-
-HasRefId returns a boolean if a field has been set.
 
 ### GetStorageServer
 
@@ -235,47 +236,47 @@ SetDefaultStore sets DefaultStore field to given value.
 
 HasDefaultStore returns a boolean if a field has been set.
 
-### GetTenants
+### GetTenantPermissions
 
-`func (o *SaveDatastoreRequestDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner`
+`func (o *SaveDatastoreRequestDatastore) GetTenantPermissions() SaveDatastoreRequestDatastoreTenantPermissions`
 
-GetTenants returns the Tenants field if non-nil, zero value otherwise.
+GetTenantPermissions returns the TenantPermissions field if non-nil, zero value otherwise.
 
-### GetTenantsOk
+### GetTenantPermissionsOk
 
-`func (o *SaveDatastoreRequestDatastore) GetTenantsOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
+`func (o *SaveDatastoreRequestDatastore) GetTenantPermissionsOk() (*SaveDatastoreRequestDatastoreTenantPermissions, bool)`
 
-GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
+GetTenantPermissionsOk returns a tuple with the TenantPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTenants
+### SetTenantPermissions
 
-`func (o *SaveDatastoreRequestDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
+`func (o *SaveDatastoreRequestDatastore) SetTenantPermissions(v SaveDatastoreRequestDatastoreTenantPermissions)`
 
-SetTenants sets Tenants field to given value.
+SetTenantPermissions sets TenantPermissions field to given value.
 
-### HasTenants
+### HasTenantPermissions
 
-`func (o *SaveDatastoreRequestDatastore) HasTenants() bool`
+`func (o *SaveDatastoreRequestDatastore) HasTenantPermissions() bool`
 
-HasTenants returns a boolean if a field has been set.
+HasTenantPermissions returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *SaveDatastoreRequestDatastore) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions`
+`func (o *SaveDatastoreRequestDatastore) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *SaveDatastoreRequestDatastore) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *SaveDatastoreRequestDatastore) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *SaveDatastoreRequestDatastore) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions)`
+`func (o *SaveDatastoreRequestDatastore) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

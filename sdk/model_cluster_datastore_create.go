@@ -28,7 +28,7 @@ type ClusterDatastoreCreate struct {
 	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
 	Config               *SaveClusterDatastoreRequestDatastoreConfig                      `json:"config,omitempty"`
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
+	ResourcePermissions  *SaveClusterDatastoreRequestDatastoreResourcePermissions         `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
 	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
@@ -309,9 +309,9 @@ func (o *ClusterDatastoreCreate) SetTenants(v []ListCloudDatastores200ResponseAl
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions {
+func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveCloudDatastoreRequestDatastoreResourcePermissions
+		var ret SaveClusterDatastoreRequestDatastoreResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -319,7 +319,7 @@ func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequ
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -335,8 +335,8 @@ func (o *ClusterDatastoreCreate) IsSetResourcePermissions() bool {
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 

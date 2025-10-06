@@ -370,6 +370,7 @@ Class | Method | HTTP request | Description
 *CypherAPI* | [**GetCypherKey**](docs/CypherAPI.md#getcypherkey) | **Get** /api/cypher/{cypherPath} | Read or Create a Cypher Key
 *CypherAPI* | [**ListCypherKeys**](docs/CypherAPI.md#listcypherkeys) | **Get** /api/cypher | List Cypher Keys
 *CypherAPI* | [**RemoveCypher**](docs/CypherAPI.md#removecypher) | **Delete** /api/cypher/{cypherPath} | Delete a Cypher
+*DatastoresAPI* | [**DeleteDatastores**](docs/DatastoresAPI.md#deletedatastores) | **Delete** /api/data-stores/{id} | Delete a Datastore
 *DatastoresAPI* | [**GetDatastores**](docs/DatastoresAPI.md#getdatastores) | **Get** /api/data-stores/{id} | Retrieves a Datastore
 *DatastoresAPI* | [**ListDatastores**](docs/DatastoresAPI.md#listdatastores) | **Get** /api/data-stores | Retrieves all Datastores
 *DatastoresAPI* | [**SaveDatastore**](docs/DatastoresAPI.md#savedatastore) | **Post** /api/data-stores | Create a Datastore
@@ -2718,6 +2719,12 @@ Class | Method | HTTP request | Description
  - [ListCypherKeys200ResponseAllOfCyphersInner](docs/ListCypherKeys200ResponseAllOfCyphersInner.md)
  - [ListCypherKeys200ResponseAllOfData](docs/ListCypherKeys200ResponseAllOfData.md)
  - [ListDatastores200Response](docs/ListDatastores200Response.md)
+ - [ListDatastores200ResponseAllOfDatastoresInner](docs/ListDatastores200ResponseAllOfDatastoresInner.md)
+ - [ListDatastores200ResponseAllOfDatastoresInnerDatastoreType](docs/ListDatastores200ResponseAllOfDatastoresInnerDatastoreType.md)
+ - [ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner](docs/ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner.md)
+ - [ListDatastores200ResponseAllOfDatastoresInnerLocationsInner](docs/ListDatastores200ResponseAllOfDatastoresInnerLocationsInner.md)
+ - [ListDatastores200ResponseAllOfDatastoresInnerZone](docs/ListDatastores200ResponseAllOfDatastoresInnerZone.md)
+ - [ListDatastores200ResponseAllOfDatastoresInnerZonePool](docs/ListDatastores200ResponseAllOfDatastoresInnerZonePool.md)
  - [ListDeploymentVersions200Response](docs/ListDeploymentVersions200Response.md)
  - [ListDeploymentVersions200ResponseAllOfVersionsInner](docs/ListDeploymentVersions200ResponseAllOfVersionsInner.md)
  - [ListDeployments200Response](docs/ListDeployments200Response.md)
@@ -3463,8 +3470,13 @@ Class | Method | HTTP request | Description
  - [SaveClusterDatastoreRequestDatastoreConfig](docs/SaveClusterDatastoreRequestDatastoreConfig.md)
  - [SaveClusterDatastoreRequestDatastoreConfigAnyOf](docs/SaveClusterDatastoreRequestDatastoreConfigAnyOf.md)
  - [SaveClusterDatastoreRequestDatastoreConfigAnyOf1](docs/SaveClusterDatastoreRequestDatastoreConfigAnyOf1.md)
+ - [SaveClusterDatastoreRequestDatastoreConfigAnyOf2](docs/SaveClusterDatastoreRequestDatastoreConfigAnyOf2.md)
+ - [SaveClusterDatastoreRequestDatastoreResourcePermissions](docs/SaveClusterDatastoreRequestDatastoreResourcePermissions.md)
+ - [SaveDatastore200Response](docs/SaveDatastore200Response.md)
  - [SaveDatastoreRequest](docs/SaveDatastoreRequest.md)
  - [SaveDatastoreRequestDatastore](docs/SaveDatastoreRequestDatastore.md)
+ - [SaveDatastoreRequestDatastoreConfig](docs/SaveDatastoreRequestDatastoreConfig.md)
+ - [SaveDatastoreRequestDatastoreTenantPermissions](docs/SaveDatastoreRequestDatastoreTenantPermissions.md)
  - [ScaleThreshold](docs/ScaleThreshold.md)
  - [Script](docs/Script.md)
  - [ScriptCreate](docs/ScriptCreate.md)
@@ -3527,6 +3539,7 @@ Class | Method | HTTP request | Description
  - [SqlCheckAllOfConfig](docs/SqlCheckAllOfConfig.md)
  - [StorageBucket](docs/StorageBucket.md)
  - [StorageDatastore](docs/StorageDatastore.md)
+ - [StorageDatastoreConfigAlletraMPHVM](docs/StorageDatastoreConfigAlletraMPHVM.md)
  - [StorageDatastoreCreate](docs/StorageDatastoreCreate.md)
  - [StorageServer](docs/StorageServer.md)
  - [StorageServerStorageQuotaPolicyTypeConfiguration](docs/StorageServerStorageQuotaPolicyTypeConfiguration.md)
