@@ -137073,8 +137073,16 @@ paths:
                                   type: string
                             defaultPersona:
                               type:
-                                - string
+                                - object
                                 - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                code:
+                                  type: string
+                                name:
+                                  type: string
                             dateCreated:
                               type: string
                               format: date-time
@@ -137693,8 +137701,16 @@ paths:
                                 type: string
                           defaultPersona:
                             type:
-                              - string
+                              - object
                               - 'null'
+                            properties:
+                              id:
+                                type: integer
+                                format: int64
+                              code:
+                                type: string
+                              name:
+                                type: string
                           dateCreated:
                             type: string
                             format: date-time

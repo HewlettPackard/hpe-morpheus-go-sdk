@@ -28,19 +28,19 @@ type AddRoles200ResponseAllOfRole struct {
 	Authority   *string        `json:"authority,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           NullableString                                     `json:"landingUrl,omitempty"`
-	Scope                *string                                            `json:"scope,omitempty"`
-	RoleType             *string                                            `json:"roleType,omitempty"`
-	Multitenant          *bool                                              `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                              `json:"multitenantLocked,omitempty"`
-	ParentRoleId         NullableString                                     `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                              `json:"diverged,omitempty"`
-	OwnerId              *int64                                             `json:"ownerId,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"owner,omitempty"`
-	DefaultPersona       NullableString                                     `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	LandingUrl           NullableString                                              `json:"landingUrl,omitempty"`
+	Scope                *string                                                     `json:"scope,omitempty"`
+	RoleType             *string                                                     `json:"roleType,omitempty"`
+	Multitenant          *bool                                                       `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                                       `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                                              `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                                       `json:"diverged,omitempty"`
+	OwnerId              *int64                                                      `json:"ownerId,omitempty"`
+	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
+	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _AddRoles200ResponseAllOfRole AddRoles200ResponseAllOfRole
@@ -511,47 +511,36 @@ func (o *AddRoles200ResponseAllOfRole) SetOwner(v GetAlerts200ResponseAllOfCheck
 	o.Owner = &v
 }
 
-// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() string {
-	if o == nil || IsNil(o.DefaultPersona.Get()) {
-		var ret string
+// GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
+func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+	if o == nil || IsNil(o.DefaultPersona) {
+		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
 		return ret
 	}
-	return *o.DefaultPersona.Get()
+	return *o.DefaultPersona
 }
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*string, bool) {
-	if o == nil {
+func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+	if o == nil || IsNil(o.DefaultPersona) {
 		return nil, false
 	}
-	return o.DefaultPersona.Get(), o.DefaultPersona.IsSet()
+	return o.DefaultPersona, true
 }
 
 // IsSetDefaultPersona returns a boolean if a field has been set.
 func (o *AddRoles200ResponseAllOfRole) IsSetDefaultPersona() bool {
-	if o != nil && o.DefaultPersona.IsSet() {
+	if o != nil && !IsNil(o.DefaultPersona) {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given NullableString and assigns it to the DefaultPersona field.
-func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v string) {
-	o.DefaultPersona.Set(&v)
-}
-
-// SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
-func (o *AddRoles200ResponseAllOfRole) SetDefaultPersonaNil() {
-	o.DefaultPersona.Set(nil)
-}
-
-// UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
-func (o *AddRoles200ResponseAllOfRole) UnsetDefaultPersona() {
-	o.DefaultPersona.Unset()
+// SetDefaultPersona gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultPersona field.
+func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+	o.DefaultPersona = &v
 }
 
 // GetDateCreated returns the DateCreated field value if set, zero value otherwise.
@@ -667,8 +656,8 @@ func (o AddRoles200ResponseAllOfRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if o.DefaultPersona.IsSet() {
-		toSerialize["defaultPersona"] = o.DefaultPersona.Get()
+	if !IsNil(o.DefaultPersona) {
+		toSerialize["defaultPersona"] = o.DefaultPersona
 	}
 	if !IsNil(o.DateCreated) {
 		toSerialize["dateCreated"] = o.DateCreated

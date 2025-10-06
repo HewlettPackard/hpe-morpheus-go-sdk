@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**DefaultPersona** | Pointer to **NullableString** |  | [optional] 
+**DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -397,20 +397,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetDefaultPersona
 
-`func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() string`
+`func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetDefaultPersona returns the DefaultPersona field if non-nil, zero value otherwise.
 
 ### GetDefaultPersonaOk
 
-`func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*string, bool)`
+`func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetDefaultPersonaOk returns a tuple with the DefaultPersona field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPersona
 
-`func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v string)`
+`func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetDefaultPersona sets DefaultPersona field to given value.
 
@@ -420,16 +420,6 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
-### SetDefaultPersonaNil
-
-`func (o *AddRoles200ResponseAllOfRole) SetDefaultPersonaNil(b bool)`
-
- SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
-
-### UnsetDefaultPersona
-`func (o *AddRoles200ResponseAllOfRole) UnsetDefaultPersona()`
-
-UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 ### GetDateCreated
 
 `func (o *AddRoles200ResponseAllOfRole) GetDateCreated() time.Time`

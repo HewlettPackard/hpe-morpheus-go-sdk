@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
 **Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
-**DefaultPersona** | Pointer to **NullableString** |  | [optional] 
+**DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -407,20 +407,20 @@ HasOwner returns a boolean if a field has been set.
 UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDefaultPersona
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() string`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetDefaultPersona returns the DefaultPersona field if non-nil, zero value otherwise.
 
 ### GetDefaultPersonaOk
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*string, bool)`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetDefaultPersonaOk returns a tuple with the DefaultPersona field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPersona
 
-`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v string)`
+`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetDefaultPersona sets DefaultPersona field to given value.
 
@@ -430,16 +430,6 @@ SetDefaultPersona sets DefaultPersona field to given value.
 
 HasDefaultPersona returns a boolean if a field has been set.
 
-### SetDefaultPersonaNil
-
-`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersonaNil(b bool)`
-
- SetDefaultPersonaNil sets the value for DefaultPersona to be an explicit nil
-
-### UnsetDefaultPersona
-`func (o *ListRoles200ResponseAllOfRolesInner) UnsetDefaultPersona()`
-
-UnsetDefaultPersona ensures that no value is present for DefaultPersona, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListRoles200ResponseAllOfRolesInner) GetDateCreated() time.Time`
