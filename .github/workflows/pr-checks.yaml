@@ -1,0 +1,49 @@
+name: "PR Checks"
+on:
+  push:
+
+env:
+  DEFAULT_GITREF: tf-dev
+
+jobs:
+  check-generated:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v2
+      with:
+        go-version: 1.24.1
+    - name: Install Task
+      uses: arduino/setup-task@v2
+      with:
+        version: 3.x
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install tools
+      run: task install-tools
+    - name: Re-generate SDK code
+      run: task generate
+    - name: Check for changed files
+      shell: bash
+      run: |
+        echo "Checking all auto-generated files are in sync with checked-in"
+        status="$(git status --short)"
+        if [[ ! -z $status ]]
+        then
+            echo "some generated files are out of sync or missing"
+            echo "run 'task generate' and commit the changes"
+            echo "$status"
+            exit 1
+        fi
+        echo "Input and generated seem up-to-date"
+  run-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v2
+      with:
+        go-version: 1.24.1
+    - name: Run tests
+      run: go test ./... -v

@@ -523,3 +523,76 @@ func decode(data []byte, v any, decodeFuncs ...mapstructure.DecodeHookFunc) erro
 
 	return nil
 }
+
+type AdditionalProperties interface {
+	getActualValue() any
+}
+
+func getActualValue(v any) any {
+	o, ok := v.(AdditionalProperties)
+	if !ok {
+		return v
+	}
+
+	return o.getActualValue()
+}
+
+// Check if a primitive or a struct(w/o AdditionalProperties) is an empty value
+// This is useful for determining which of the struct in a oneOf are set.
+// Function does not perform checks for nil vs empty maps/structs, we will need
+// to implement this later.
+func IsEmpty(v any) bool {
+	actual := getActualValue(v)
+
+	// if nil it's empty
+	if actual == nil {
+		return true
+	}
+
+	val := reflect.ValueOf(actual)
+	typ := val.Type()
+
+	if val.IsZero() {
+		return true
+	}
+
+	if typ.Kind() == reflect.Ptr {
+		if val.IsNil() {
+			return true
+		}
+
+		if val.Interface() == nil {
+			return true
+		}
+
+		if val.IsZero() {
+			return true
+		}
+
+		// if value is a pointer type get the underlying type
+		val = val.Elem()
+		typ = typ.Elem()
+	}
+
+	// zero value for maps and slices is.. a nil pointer, it's better if we just
+	// check the length
+	if typ.Kind() == reflect.Map || typ.Kind() == reflect.Slice {
+		if val.Len() == 0 {
+			return true
+		}
+	}
+
+	// if it's a struct get the zero value of the element
+	if typ.Kind() == reflect.Struct {
+		zeroValue := reflect.New(typ).Elem()
+
+		// check if the value matches the zero value
+		return reflect.DeepEqual(val.Interface(), zeroValue.Interface())
+	}
+
+	// for everything else get the zero value directly
+	zeroValue := reflect.Zero(typ)
+
+	// check if value matches the zero value
+	return reflect.DeepEqual(val.Interface(), zeroValue.Interface())
+}
