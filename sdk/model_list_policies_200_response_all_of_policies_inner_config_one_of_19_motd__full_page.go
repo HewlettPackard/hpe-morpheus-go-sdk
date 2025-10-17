@@ -38,8 +38,12 @@ func (dst *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage) U
 		dst = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage{}
 	}
 
-	if out, ok := data.(string); ok {
-		dst.String = &out
+	if err := mapstructDecode(data, &dst.String); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
 
 	return dst, nil

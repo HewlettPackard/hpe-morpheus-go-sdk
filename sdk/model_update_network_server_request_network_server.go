@@ -38,8 +38,12 @@ func (dst *UpdateNetworkServerRequestNetworkServer) UnmarshalMapstructure(data a
 		dst = &UpdateNetworkServerRequestNetworkServer{}
 	}
 
-	if out, ok := data.(NSXNetworkServerUpdate); ok {
-		dst.NSXNetworkServerUpdate = &out
+	if err := mapstructDecode(data, &dst.NSXNetworkServerUpdate); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.NSXNetworkServerUpdate) {
+		dst.NSXNetworkServerUpdate = nil
 	}
 
 	return dst, nil

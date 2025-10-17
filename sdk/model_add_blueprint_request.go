@@ -78,28 +78,52 @@ func (dst *AddBlueprintRequest) UnmarshalMapstructure(data any) (any, error) {
 		dst = &AddBlueprintRequest{}
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf); ok {
-		dst.AddBlueprintRequestOneOf = &out
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf1); ok {
-		dst.AddBlueprintRequestOneOf1 = &out
+	if IsEmpty(dst.AddBlueprintRequestOneOf) {
+		dst.AddBlueprintRequestOneOf = nil
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf2); ok {
-		dst.AddBlueprintRequestOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf3); ok {
-		dst.AddBlueprintRequestOneOf3 = &out
+	if IsEmpty(dst.AddBlueprintRequestOneOf1) {
+		dst.AddBlueprintRequestOneOf1 = nil
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf4); ok {
-		dst.AddBlueprintRequestOneOf4 = &out
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprintRequestOneOf5); ok {
-		dst.AddBlueprintRequestOneOf5 = &out
+	if IsEmpty(dst.AddBlueprintRequestOneOf2) {
+		dst.AddBlueprintRequestOneOf2 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprintRequestOneOf3) {
+		dst.AddBlueprintRequestOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprintRequestOneOf4) {
+		dst.AddBlueprintRequestOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprintRequestOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprintRequestOneOf5) {
+		dst.AddBlueprintRequestOneOf5 = nil
 	}
 
 	return dst, nil

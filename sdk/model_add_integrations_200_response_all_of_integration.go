@@ -166,72 +166,140 @@ func (dst *AddIntegrations200ResponseAllOfIntegration) UnmarshalMapstructure(dat
 		dst = &AddIntegrations200ResponseAllOfIntegration{}
 	}
 
-	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf); ok {
-		dst.AddIntegrations200ResponseAllOfIntegrationOneOf = &out
+	if err := mapstructDecode(data, &dst.AddIntegrations200ResponseAllOfIntegrationOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf1); ok {
-		dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = &out
+	if IsEmpty(dst.AddIntegrations200ResponseAllOfIntegrationOneOf) {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf = nil
 	}
 
-	if out, ok := data.(AddIntegrations200ResponseAllOfIntegrationOneOf2); ok {
-		dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddIntegrations200ResponseAllOfIntegrationOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 = &out
+	if IsEmpty(dst.AddIntegrations200ResponseAllOfIntegrationOneOf1) {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf1 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 = &out
+	if err := mapstructDecode(data, &dst.AddIntegrations200ResponseAllOfIntegrationOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 = &out
+	if IsEmpty(dst.AddIntegrations200ResponseAllOfIntegrationOneOf2) {
+		dst.AddIntegrations200ResponseAllOfIntegrationOneOf2 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13 = &out
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf1 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15 = &out
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf10 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2 = &out
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf11 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4 = &out
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf12 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = &out
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf13 = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9); ok {
-		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 = &out
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf14 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf15 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf16 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf2 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf5 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf6 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9) {
+		dst.ListIntegrations200ResponseAnyOfIntegrationsInnerAnyOf9 = nil
 	}
 
 	return dst, nil

@@ -46,12 +46,20 @@ func (dst *AddIdentitySourcesRequestUserSourceRoleMappings) UnmarshalMapstructur
 		dst = &AddIdentitySourcesRequestUserSourceRoleMappings{}
 	}
 
-	if out, ok := data.([]AddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner); ok {
-		dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner = &out
+	if err := mapstructDecode(data, &dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(map[string]string); ok {
-		dst.MapmapOfStringstring = &out
+	if IsEmpty(dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner) {
+		dst.ArrayOfAddIdentitySourcesRequestUserSourceRoleMappingsOneOfInner = nil
+	}
+
+	if err := mapstructDecode(data, &dst.MapmapOfStringstring); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.MapmapOfStringstring) {
+		dst.MapmapOfStringstring = nil
 	}
 
 	return dst, nil

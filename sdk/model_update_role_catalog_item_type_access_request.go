@@ -46,12 +46,20 @@ func (dst *UpdateRoleCatalogItemTypeAccessRequest) UnmarshalMapstructure(data an
 		dst = &UpdateRoleCatalogItemTypeAccessRequest{}
 	}
 
-	if out, ok := data.(UpdateRoleCatalogItemTypeAccessRequestOneOf); ok {
-		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf = &out
+	if err := mapstructDecode(data, &dst.UpdateRoleCatalogItemTypeAccessRequestOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(UpdateRoleCatalogItemTypeAccessRequestOneOf1); ok {
-		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf1 = &out
+	if IsEmpty(dst.UpdateRoleCatalogItemTypeAccessRequestOneOf) {
+		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdateRoleCatalogItemTypeAccessRequestOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdateRoleCatalogItemTypeAccessRequestOneOf1) {
+		dst.UpdateRoleCatalogItemTypeAccessRequestOneOf1 = nil
 	}
 
 	return dst, nil

@@ -270,124 +270,244 @@ func (dst *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalMapstructu
 		dst = &UpdatePoliciesGroupRequestPolicyPolicyTypeConfig{}
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf14 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf21 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 = nil
 	}
 
-	if out, ok := data.(AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9); ok {
-		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf); ok {
-		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23 = nil
 	}
 
-	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); ok {
-		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = &out
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); ok {
-		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = &out
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf9 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf) {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1) {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2) {
+		dst.UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 = nil
 	}
 
 	return dst, nil

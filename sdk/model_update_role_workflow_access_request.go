@@ -46,12 +46,20 @@ func (dst *UpdateRoleWorkflowAccessRequest) UnmarshalMapstructure(data any) (any
 		dst = &UpdateRoleWorkflowAccessRequest{}
 	}
 
-	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf); ok {
-		dst.UpdateRoleWorkflowAccessRequestOneOf = &out
+	if err := mapstructDecode(data, &dst.UpdateRoleWorkflowAccessRequestOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(UpdateRoleWorkflowAccessRequestOneOf1); ok {
-		dst.UpdateRoleWorkflowAccessRequestOneOf1 = &out
+	if IsEmpty(dst.UpdateRoleWorkflowAccessRequestOneOf) {
+		dst.UpdateRoleWorkflowAccessRequestOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdateRoleWorkflowAccessRequestOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdateRoleWorkflowAccessRequestOneOf1) {
+		dst.UpdateRoleWorkflowAccessRequestOneOf1 = nil
 	}
 
 	return dst, nil

@@ -78,28 +78,52 @@ func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalMapstructure(da
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfig{}
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf = &out
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf1); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 = &out
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf = nil
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf2); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf3); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 = &out
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 = nil
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf4); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 = &out
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddBlueprint200ResponseAllOfBlueprintConfigOneOf5); ok {
-		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5 = &out
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5) {
+		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5 = nil
 	}
 
 	return dst, nil

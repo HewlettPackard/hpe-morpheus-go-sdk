@@ -46,12 +46,20 @@ func (dst *SetupRequestAnyOf1) UnmarshalMapstructure(data any) (any, error) {
 		dst = &SetupRequestAnyOf1{}
 	}
 
-	if out, ok := data.(SetupRequestAnyOf1OneOf); ok {
-		dst.SetupRequestAnyOf1OneOf = &out
+	if err := mapstructDecode(data, &dst.SetupRequestAnyOf1OneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(SetupRequestAnyOf1OneOf1); ok {
-		dst.SetupRequestAnyOf1OneOf1 = &out
+	if IsEmpty(dst.SetupRequestAnyOf1OneOf) {
+		dst.SetupRequestAnyOf1OneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.SetupRequestAnyOf1OneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.SetupRequestAnyOf1OneOf1) {
+		dst.SetupRequestAnyOf1OneOf1 = nil
 	}
 
 	return dst, nil

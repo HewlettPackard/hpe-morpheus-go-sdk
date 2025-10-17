@@ -86,32 +86,60 @@ func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalMapstructure(da
 		dst = &AddStorageBucketsRequestStorageBucketConfig{}
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf = &out
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf1); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf1 = &out
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf = nil
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf2); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf3); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf3 = &out
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf1) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf1 = nil
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf4); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf4 = &out
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf5); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf5 = &out
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf2) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf2 = nil
 	}
 
-	if out, ok := data.(AddStorageBucketsRequestStorageBucketConfigOneOf6); ok {
-		dst.AddStorageBucketsRequestStorageBucketConfigOneOf6 = &out
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf3) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf4) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf5) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf5 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf6); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf6) {
+		dst.AddStorageBucketsRequestStorageBucketConfigOneOf6 = nil
 	}
 
 	return dst, nil

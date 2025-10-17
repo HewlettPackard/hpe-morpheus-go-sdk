@@ -38,8 +38,12 @@ func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, err
 		dst = &UpdateVDIAppsRequestVdiApp{}
 	}
 
-	if out, ok := data.(UpdateVDIAppsRequestVdiAppOneOf); ok {
-		dst.UpdateVDIAppsRequestVdiAppOneOf = &out
+	if err := mapstructDecode(data, &dst.UpdateVDIAppsRequestVdiAppOneOf); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdateVDIAppsRequestVdiAppOneOf) {
+		dst.UpdateVDIAppsRequestVdiAppOneOf = nil
 	}
 
 	return dst, nil

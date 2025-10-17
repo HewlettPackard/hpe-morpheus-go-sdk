@@ -54,16 +54,28 @@ func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data 
 		dst = &AddCatalogItemTypeRequestCatalogItemType{}
 	}
 
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = &out
+	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf1); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = &out
+	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf) {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
 	}
 
-	if out, ok := data.(AddCatalogItemTypeRequestCatalogItemTypeOneOf2); ok {
-		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1) {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2) {
+		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil
 	}
 
 	return dst, nil

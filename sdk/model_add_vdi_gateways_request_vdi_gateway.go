@@ -38,8 +38,12 @@ func (dst *AddVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data any) (any
 		dst = &AddVDIGatewaysRequestVdiGateway{}
 	}
 
-	if out, ok := data.(AddVDIGatewaysRequestVdiGatewayOneOf); ok {
-		dst.AddVDIGatewaysRequestVdiGatewayOneOf = &out
+	if err := mapstructDecode(data, &dst.AddVDIGatewaysRequestVdiGatewayOneOf); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddVDIGatewaysRequestVdiGatewayOneOf) {
+		dst.AddVDIGatewaysRequestVdiGatewayOneOf = nil
 	}
 
 	return dst, nil

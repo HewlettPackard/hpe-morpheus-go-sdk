@@ -46,12 +46,20 @@ func (dst *AddVDIPoolsRequestVdiPool) UnmarshalMapstructure(data any) (any, erro
 		dst = &AddVDIPoolsRequestVdiPool{}
 	}
 
-	if out, ok := data.(AddVDIPoolsRequestVdiPoolOneOf); ok {
-		dst.AddVDIPoolsRequestVdiPoolOneOf = &out
+	if err := mapstructDecode(data, &dst.AddVDIPoolsRequestVdiPoolOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddVDIPoolsRequestVdiPoolOneOf1); ok {
-		dst.AddVDIPoolsRequestVdiPoolOneOf1 = &out
+	if IsEmpty(dst.AddVDIPoolsRequestVdiPoolOneOf) {
+		dst.AddVDIPoolsRequestVdiPoolOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddVDIPoolsRequestVdiPoolOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddVDIPoolsRequestVdiPoolOneOf1) {
+		dst.AddVDIPoolsRequestVdiPoolOneOf1 = nil
 	}
 
 	return dst, nil

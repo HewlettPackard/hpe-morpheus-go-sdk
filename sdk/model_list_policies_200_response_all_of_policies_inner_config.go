@@ -262,120 +262,236 @@ func (dst *ListPolicies200ResponseAllOfPoliciesInnerConfig) UnmarshalMapstructur
 		dst = &ListPolicies200ResponseAllOfPoliciesInnerConfig{}
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf1 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf10 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf11 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf12 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf13 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf14 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf15 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf16 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf17 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf18 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf2 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 = &out
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf20 = nil
 	}
 
-	if out, ok := data.(ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9); ok {
-		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9 = &out
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf21 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf22 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf24 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf25 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf26 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf5 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf6 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf7 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf8 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9) {
+		dst.ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf9 = nil
 	}
 
 	return dst, nil

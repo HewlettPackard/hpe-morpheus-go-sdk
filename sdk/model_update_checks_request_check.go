@@ -94,36 +94,68 @@ func (dst *UpdateChecksRequestCheck) UnmarshalMapstructure(data any) (any, error
 		dst = &UpdateChecksRequestCheck{}
 	}
 
-	if out, ok := data.(CheckSocket); ok {
-		dst.CheckSocket = &out
+	if err := mapstructDecode(data, &dst.CheckSocket); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(ElasticCheck); ok {
-		dst.ElasticCheck = &out
+	if IsEmpty(dst.CheckSocket) {
+		dst.CheckSocket = nil
 	}
 
-	if out, ok := data.(MySqlCheck); ok {
-		dst.MySqlCheck = &out
+	if err := mapstructDecode(data, &dst.ElasticCheck); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(PostgresCheck); ok {
-		dst.PostgresCheck = &out
+	if IsEmpty(dst.ElasticCheck) {
+		dst.ElasticCheck = nil
 	}
 
-	if out, ok := data.(PushCheck); ok {
-		dst.PushCheck = &out
+	if err := mapstructDecode(data, &dst.MySqlCheck); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(SNMPCheck); ok {
-		dst.SNMPCheck = &out
+	if IsEmpty(dst.MySqlCheck) {
+		dst.MySqlCheck = nil
 	}
 
-	if out, ok := data.(SqlCheck); ok {
-		dst.SqlCheck = &out
+	if err := mapstructDecode(data, &dst.PostgresCheck); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(WebCheck); ok {
-		dst.WebCheck = &out
+	if IsEmpty(dst.PostgresCheck) {
+		dst.PostgresCheck = nil
+	}
+
+	if err := mapstructDecode(data, &dst.PushCheck); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.PushCheck) {
+		dst.PushCheck = nil
+	}
+
+	if err := mapstructDecode(data, &dst.SNMPCheck); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.SNMPCheck) {
+		dst.SNMPCheck = nil
+	}
+
+	if err := mapstructDecode(data, &dst.SqlCheck); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.SqlCheck) {
+		dst.SqlCheck = nil
+	}
+
+	if err := mapstructDecode(data, &dst.WebCheck); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.WebCheck) {
+		dst.WebCheck = nil
 	}
 
 	return dst, nil

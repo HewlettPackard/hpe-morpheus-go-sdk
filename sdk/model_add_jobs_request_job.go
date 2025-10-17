@@ -54,16 +54,28 @@ func (dst *AddJobsRequestJob) UnmarshalMapstructure(data any) (any, error) {
 		dst = &AddJobsRequestJob{}
 	}
 
-	if out, ok := data.(SecurityScanJob); ok {
-		dst.SecurityScanJob = &out
+	if err := mapstructDecode(data, &dst.SecurityScanJob); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(TaskJobPayload); ok {
-		dst.TaskJobPayload = &out
+	if IsEmpty(dst.SecurityScanJob) {
+		dst.SecurityScanJob = nil
 	}
 
-	if out, ok := data.(WorkflowJobPayload); ok {
-		dst.WorkflowJobPayload = &out
+	if err := mapstructDecode(data, &dst.TaskJobPayload); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.TaskJobPayload) {
+		dst.TaskJobPayload = nil
+	}
+
+	if err := mapstructDecode(data, &dst.WorkflowJobPayload); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.WorkflowJobPayload) {
+		dst.WorkflowJobPayload = nil
 	}
 
 	return dst, nil

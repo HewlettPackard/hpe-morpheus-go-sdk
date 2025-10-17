@@ -46,12 +46,20 @@ func (dst *CreateNetworkRouterRequestNetworkRouterSiteId) UnmarshalMapstructure(
 		dst = &CreateNetworkRouterRequestNetworkRouterSiteId{}
 	}
 
-	if out, ok := data.(int64); ok {
-		dst.Int64 = &out
+	if err := mapstructDecode(data, &dst.Int64); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(string); ok {
-		dst.String = &out
+	if IsEmpty(dst.Int64) {
+		dst.Int64 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.String); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
 
 	return dst, nil

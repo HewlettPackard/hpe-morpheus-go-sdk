@@ -46,12 +46,20 @@ func (dst *ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue) Unmarshal
 		dst = &ListInstances200ResponseAllOfInstancesInnerEvarsInnerValue{}
 	}
 
-	if out, ok := data.(float32); ok {
-		dst.Float32 = &out
+	if err := mapstructDecode(data, &dst.Float32); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(string); ok {
-		dst.String = &out
+	if IsEmpty(dst.Float32) {
+		dst.Float32 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.String); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
 
 	return dst, nil

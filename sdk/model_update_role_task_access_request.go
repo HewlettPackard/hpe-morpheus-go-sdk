@@ -46,12 +46,20 @@ func (dst *UpdateRoleTaskAccessRequest) UnmarshalMapstructure(data any) (any, er
 		dst = &UpdateRoleTaskAccessRequest{}
 	}
 
-	if out, ok := data.(UpdateRoleTaskAccessRequestOneOf); ok {
-		dst.UpdateRoleTaskAccessRequestOneOf = &out
+	if err := mapstructDecode(data, &dst.UpdateRoleTaskAccessRequestOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(UpdateRoleTaskAccessRequestOneOf1); ok {
-		dst.UpdateRoleTaskAccessRequestOneOf1 = &out
+	if IsEmpty(dst.UpdateRoleTaskAccessRequestOneOf) {
+		dst.UpdateRoleTaskAccessRequestOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.UpdateRoleTaskAccessRequestOneOf1); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.UpdateRoleTaskAccessRequestOneOf1) {
+		dst.UpdateRoleTaskAccessRequestOneOf1 = nil
 	}
 
 	return dst, nil

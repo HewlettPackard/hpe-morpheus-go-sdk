@@ -86,32 +86,60 @@ func (dst *AddIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) 
 		dst = &AddIntegrationsRequest{}
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf); ok {
-		dst.AddIntegrationsRequestOneOf = &out
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf1); ok {
-		dst.AddIntegrationsRequestOneOf1 = &out
+	if IsEmpty(dst.AddIntegrationsRequestOneOf) {
+		dst.AddIntegrationsRequestOneOf = nil
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf2); ok {
-		dst.AddIntegrationsRequestOneOf2 = &out
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf1); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf3); ok {
-		dst.AddIntegrationsRequestOneOf3 = &out
+	if IsEmpty(dst.AddIntegrationsRequestOneOf1) {
+		dst.AddIntegrationsRequestOneOf1 = nil
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf4); ok {
-		dst.AddIntegrationsRequestOneOf4 = &out
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf2); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf5); ok {
-		dst.AddIntegrationsRequestOneOf5 = &out
+	if IsEmpty(dst.AddIntegrationsRequestOneOf2) {
+		dst.AddIntegrationsRequestOneOf2 = nil
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOf6); ok {
-		dst.AddIntegrationsRequestOneOf6 = &out
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf3); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddIntegrationsRequestOneOf3) {
+		dst.AddIntegrationsRequestOneOf3 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf4); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddIntegrationsRequestOneOf4) {
+		dst.AddIntegrationsRequestOneOf4 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf5); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddIntegrationsRequestOneOf5) {
+		dst.AddIntegrationsRequestOneOf5 = nil
+	}
+
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf6); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.AddIntegrationsRequestOneOf6) {
+		dst.AddIntegrationsRequestOneOf6 = nil
 	}
 
 	return dst, nil

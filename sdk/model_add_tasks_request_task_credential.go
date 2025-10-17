@@ -46,12 +46,20 @@ func (dst *AddTasksRequestTaskCredential) UnmarshalMapstructure(data any) (any, 
 		dst = &AddTasksRequestTaskCredential{}
 	}
 
-	if out, ok := data.(AddIntegrationsRequestOneOfIntegrationCredentialOneOf); ok {
-		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = &out
+	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf); err != nil {
+		return nil, err
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerAccount); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerAccount = &out
+	if IsEmpty(dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf) {
+		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
+	}
+
+	if err := mapstructDecode(data, &dst.GetAlerts200ResponseAllOfChecksInnerAccount); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.GetAlerts200ResponseAllOfChecksInnerAccount) {
+		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 	}
 
 	return dst, nil
