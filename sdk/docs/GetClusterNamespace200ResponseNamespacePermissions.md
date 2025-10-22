@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourcePermissions** | Pointer to [**GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions**](GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions**](SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResourcePermissions
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissions() GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions`
+`func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissions() SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissionsOk() (*GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions, bool)`
+`func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissionsOk() (*SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissions) SetResourcePermissions(v GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions)`
+`func (o *GetClusterNamespace200ResponseNamespacePermissions) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

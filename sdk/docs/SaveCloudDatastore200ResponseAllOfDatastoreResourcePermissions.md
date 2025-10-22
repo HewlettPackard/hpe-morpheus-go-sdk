@@ -1,4 +1,4 @@
-# GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
+# SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions
 
 ## Properties
 
@@ -18,295 +18,295 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
+### NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions
 
-`func NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions() *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions`
+`func NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions() *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions`
 
-NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissions instantiates a new GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions object
+NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions instantiates a new SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsWithDefaults
+### NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsWithDefaults
 
-`func NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsWithDefaults() *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions`
+`func NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsWithDefaults() *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions`
 
-NewGetClusterNamespace200ResponseNamespacePermissionsResourcePermissionsWithDefaults instantiates a new GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions object
+NewSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissionsWithDefaults instantiates a new SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAllGroups
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAllGroups() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllGroups() bool`
 
 GetAllGroups returns the AllGroups field if non-nil, zero value otherwise.
 
 ### GetAllGroupsOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAllGroupsOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllGroupsOk() (*bool, bool)`
 
 GetAllGroupsOk returns a tuple with the AllGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllGroups
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAllGroups(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAllGroups(v bool)`
 
 SetAllGroups sets AllGroups field to given value.
 
 ### HasAllGroups
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasAllGroups() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasAllGroups() bool`
 
 HasAllGroups returns a boolean if a field has been set.
 
 ### GetDefaultStore
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetDefaultStore() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefaultStore() bool`
 
 GetDefaultStore returns the DefaultStore field if non-nil, zero value otherwise.
 
 ### GetDefaultStoreOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetDefaultStoreOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefaultStoreOk() (*bool, bool)`
 
 GetDefaultStoreOk returns a tuple with the DefaultStore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStore
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetDefaultStore(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetDefaultStore(v bool)`
 
 SetDefaultStore sets DefaultStore field to given value.
 
 ### HasDefaultStore
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasDefaultStore() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasDefaultStore() bool`
 
 HasDefaultStore returns a boolean if a field has been set.
 
 ### GetAllPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAllPlans() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllPlans() bool`
 
 GetAllPlans returns the AllPlans field if non-nil, zero value otherwise.
 
 ### GetAllPlansOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAllPlansOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllPlansOk() (*bool, bool)`
 
 GetAllPlansOk returns a tuple with the AllPlans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAllPlans(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAllPlans(v bool)`
 
 SetAllPlans sets AllPlans field to given value.
 
 ### HasAllPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasAllPlans() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasAllPlans() bool`
 
 HasAllPlans returns a boolean if a field has been set.
 
 ### GetDefaultTarget
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetDefaultTarget() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefaultTarget() bool`
 
 GetDefaultTarget returns the DefaultTarget field if non-nil, zero value otherwise.
 
 ### GetDefaultTargetOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetDefaultTargetOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetDefaultTargetOk() (*bool, bool)`
 
 GetDefaultTargetOk returns a tuple with the DefaultTarget field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultTarget
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetDefaultTarget(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetDefaultTarget(v bool)`
 
 SetDefaultTarget sets DefaultTarget field to given value.
 
 ### HasDefaultTarget
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasDefaultTarget() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasDefaultTarget() bool`
 
 HasDefaultTarget returns a boolean if a field has been set.
 
 ### GetMorpheusResourceType
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetMorpheusResourceType() string`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorpheusResourceType() string`
 
 GetMorpheusResourceType returns the MorpheusResourceType field if non-nil, zero value otherwise.
 
 ### GetMorpheusResourceTypeOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetMorpheusResourceTypeOk() (*string, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorpheusResourceTypeOk() (*string, bool)`
 
 GetMorpheusResourceTypeOk returns a tuple with the MorpheusResourceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMorpheusResourceType
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetMorpheusResourceType(v string)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetMorpheusResourceType(v string)`
 
 SetMorpheusResourceType sets MorpheusResourceType field to given value.
 
 ### HasMorpheusResourceType
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasMorpheusResourceType() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasMorpheusResourceType() bool`
 
 HasMorpheusResourceType returns a boolean if a field has been set.
 
 ### GetMorpheusResourceId
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetMorpheusResourceId() int64`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorpheusResourceId() int64`
 
 GetMorpheusResourceId returns the MorpheusResourceId field if non-nil, zero value otherwise.
 
 ### GetMorpheusResourceIdOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetMorpheusResourceIdOk() (*int64, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetMorpheusResourceIdOk() (*int64, bool)`
 
 GetMorpheusResourceIdOk returns a tuple with the MorpheusResourceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMorpheusResourceId
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetMorpheusResourceId(v int64)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetMorpheusResourceId(v int64)`
 
 SetMorpheusResourceId sets MorpheusResourceId field to given value.
 
 ### HasMorpheusResourceId
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasMorpheusResourceId() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasMorpheusResourceId() bool`
 
 HasMorpheusResourceId returns a boolean if a field has been set.
 
 ### GetCanManage
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetCanManage() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetCanManage() bool`
 
 GetCanManage returns the CanManage field if non-nil, zero value otherwise.
 
 ### GetCanManageOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetCanManageOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetCanManageOk() (*bool, bool)`
 
 GetCanManageOk returns a tuple with the CanManage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCanManage
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetCanManage(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetCanManage(v bool)`
 
 SetCanManage sets CanManage field to given value.
 
 ### HasCanManage
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasCanManage() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasCanManage() bool`
 
 HasCanManage returns a boolean if a field has been set.
 
 ### GetAll
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAll() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAll() bool`
 
 GetAll returns the All field if non-nil, zero value otherwise.
 
 ### GetAllOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAllOk() (*bool, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAllOk() (*bool, bool)`
 
 GetAllOk returns a tuple with the All field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAll
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAll(v bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAll(v bool)`
 
 SetAll sets All field to given value.
 
 ### HasAll
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasAll() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasAll() bool`
 
 HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
 
 SetAccount sets Account field to given value.
 
 ### HasAccount
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasAccount() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasAccount() bool`
 
 HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetSitesOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetSitesOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
 
 SetSites sets Sites field to given value.
 
 ### HasSites
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasSites() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasSites() bool`
 
 HasSites returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) GetPlansOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) GetPlansOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
 
 SetPlans sets Plans field to given value.
 
 ### HasPlans
 
-`func (o *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) HasPlans() bool`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) HasPlans() bool`
 
 HasPlans returns a boolean if a field has been set.
 

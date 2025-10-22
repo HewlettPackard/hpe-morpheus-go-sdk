@@ -43,7 +43,7 @@ type SaveCloudDatastore200ResponseAllOfDatastore struct {
 	ZonePool             *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zonePool,omitempty"`
 	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"owner,omitempty"`
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
+	ResourcePermissions  *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions  `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
 	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
@@ -837,9 +837,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetTenants(v []ListCloudDa
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissions() SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveCloudDatastoreRequestDatastoreResourcePermissions
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -847,7 +847,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissions() S
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissionsOk() (*SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -863,8 +863,8 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetResourcePermissions()
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 

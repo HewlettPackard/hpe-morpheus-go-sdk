@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **ZonePool** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 **Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissions**](SaveCloudDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions**](SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -656,20 +656,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissions() SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetResourcePermissionsOk() (*SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions)`
+`func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

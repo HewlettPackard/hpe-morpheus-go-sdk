@@ -36453,17 +36453,29 @@ paths:
                                     type: integer
                                     format: int64
                               sites:
-                                type:
-                                  - array
-                                  - 'null'
+                                type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    default:
+                                      type: boolean
                               plans:
-                                type:
-                                  - array
-                                  - 'null'
+                                type: array
                                 items:
                                   type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                      format: int64
+                                    name:
+                                      type: string
+                                    default:
+                                      type: boolean
                           datastores:
                             type: array
                             items:
@@ -44497,8 +44509,14 @@ paths:
                             all: true
                             account:
                               id: 1
-                            sites: []
-                            plans: []
+                            sites:
+                              - id: 1
+                                name: Default Site
+                                default: true
+                            plans:
+                              - id: 1
+                                name: Default Plan
+                                default: true
                           tenantPermissions:
                             accounts:
                               - 1
@@ -44776,8 +44794,14 @@ paths:
                         all: true
                         account:
                           id: 1
-                        sites: []
-                        plans: []
+                        sites:
+                          - id: 1
+                            name: Default Site
+                            default: true
+                        plans:
+                          - id: 1
+                            name: Default Plan
+                            default: true
                       tenants:
                         - id: 1
                           defaultStore: false

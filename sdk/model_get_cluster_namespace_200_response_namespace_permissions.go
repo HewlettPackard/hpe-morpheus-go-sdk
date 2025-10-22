@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClusterNamespace200ResponseNamespacePermissions{}
 
 // GetClusterNamespace200ResponseNamespacePermissions struct for GetClusterNamespace200ResponseNamespacePermissions
 type GetClusterNamespace200ResponseNamespacePermissions struct {
-	ResourcePermissions  *GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
+	ResourcePermissions  *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _GetClusterNamespace200ResponseNamespacePermissions GetClusterNamespace200ResponseNamespacePermissions
@@ -44,9 +44,9 @@ func NewGetClusterNamespace200ResponseNamespacePermissionsWithDefaults() *GetClu
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissions() GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions {
+func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissions() SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -54,7 +54,7 @@ func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissi
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissionsOk() (*GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions, bool) {
+func (o *GetClusterNamespace200ResponseNamespacePermissions) GetResourcePermissionsOk() (*SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetClusterNamespace200ResponseNamespacePermissions) IsSetResourcePermis
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *GetClusterNamespace200ResponseNamespacePermissions) SetResourcePermissions(v GetClusterNamespace200ResponseNamespacePermissionsResourcePermissions) {
+// SetResourcePermissions gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *GetClusterNamespace200ResponseNamespacePermissions) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 
