@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+	"github.com/HewlettPackard/hpe-morpheus-go-sdk/oapigen/sdk"
 )
 
 func TestIsEmpty(t *testing.T) {
