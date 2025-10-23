@@ -2,22 +2,22 @@ package morpheus
 
 import (
 	"fmt"
+	"net/http"
 	//"errors"
 	"time"
 	//"encoding/json"
-	"github.com/go-resty/resty/v2"
 	// "github.com/gormorpheus/morpheusapi/client"
 )
 
 type Response struct {
-	RestyResponse *resty.Response
-	Success       bool
-	StatusCode    int
-	Status        string
-	Body          []byte
-	Error         error
-	ReceivedAt    time.Time
-	Size          int64
+	HTTPResponse *http.Response
+	Success      bool
+	StatusCode   int
+	Status       string
+	Body         []byte
+	Error        error
+	ReceivedAt   time.Time
+	Size         int64
 
 	// This holds the parsed JSON for convenience
 	JsonData interface{}

@@ -7,16 +7,18 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"log"
+	"mime/multipart"
+	"net/http"
 	"strings"
 	"time"
-
-	"github.com/go-resty/resty/v2"
 )
 
 type clientOptions struct {
-	debug bool
+	debug           bool
 	insecure        bool
+	skipLogin       bool
 	errCallbackFunc func(err error) error
 }
 
@@ -46,6 +48,15 @@ func Insecure() ClientOption {
 	}
 }
 
+// The SkipLogin() option is used to explicitly skip the login step performed
+// at the start of each call to client.Execute().
+// We need to skip login if using e.g. a custom HTTP transport to handle auth.
+func SkipLogin() ClientOption {
+	return func(options *clientOptions) {
+		options.skipLogin = true
+	}
+}
+
 type Client struct {
 	Url             string
 	Username        string
@@ -58,22 +69,31 @@ type Client struct {
 	UserAgent       string
 	//Headers map[string]string
 	//BaseURL   *url.URL
-	//RestyClient *http.Client
+	HTTPClient *http.Client
 	// LastLoginDate time
 	// requests []*Request
-	lastRequest  *Request
-	lastResponse *Response
-	requestCount int64
-	successCount int64
-	errorCount   int64
-	debug        bool
-	insecure     bool
+	lastRequest     *Request
+	lastResponse    *Response
+	requestCount    int64
+	successCount    int64
+	errorCount      int64
+	debug           bool
+	insecure        bool
+	skipLogin       bool
 	errCallbackFunc func(err error) error
 }
 
 // func (client * Client) String() string {
 //         return fmt.Sprintf("Client Url: %s Username: %s Logged In: %b", client.Url, client.Username, client.IsLoggedIn())
 // }
+
+func (client *Client) IsInsecure() bool {
+	return client.insecure
+}
+
+func (client *Client) IsSkipLogin() bool {
+	return client.skipLogin
+}
 
 func (client *Client) IsLoggedIn() bool {
 	return client.AccessToken != ""
@@ -121,7 +141,7 @@ func parseJsonToResult(data []byte, output interface{}) error {
 }
 
 func NewClient(url string, options ...ClientOption) (client *Client) {
-	var userAgent = "morpheus-terraform-plugin v0.1"
+	var userAgent = "hpe-morpheus-terraform-provider"
 
 	opts := clientOptions{}
 	for _, opt := range options {
@@ -129,10 +149,11 @@ func NewClient(url string, options ...ClientOption) (client *Client) {
 	}
 
 	return &Client{
-		Url:       url,
-		UserAgent: userAgent,
-		debug:     opts.debug,
-		insecure:	opts.insecure,
+		Url:             url,
+		UserAgent:       userAgent,
+		debug:           opts.debug,
+		insecure:        opts.insecure,
+		skipLogin:       opts.skipLogin,
 		errCallbackFunc: opts.errCallbackFunc,
 	}
 }
@@ -176,7 +197,7 @@ func (client *Client) ClearAccessToken() *Client {
 
 func (client *Client) Execute(req *Request) (*Response, error) {
 	// first, login if needed
-	if !req.SkipLogin {
+	if !client.skipLogin {
 		if !client.IsLoggedIn() && client.Username != "" {
 			loginResp, loginErr := client.Login()
 			if loginErr != nil {
@@ -185,11 +206,8 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		}
 	}
 
-	// The transient resty response object
-	var restyResponse *resty.Response
-
 	// The response object to be returned
-	var resp *Response
+	var resp = &Response{}
 
 	// potential error to be returned
 	var err error
@@ -203,129 +221,151 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 
 	var url string = client.Url + req.Path
 
-	//var url string = client.Url + req.Path
-	// construct resty.Client
-	restyClient := resty.New()
-	restyClient.SetDebug(client.debug)
-
-	// TLS cert verification enabled by default
-	// to skip set insecure client field to true
-	if strings.HasPrefix(url, "https") {
-		restyClient.SetTLSClientConfig(&tls.Config{InsecureSkipVerify: client.insecure})
+	// If we're not using a custom HTTP client, use the default one
+	// with TLS settings based on the Morpheus client config
+	if client.HTTPClient == nil {
+		client.HTTPClient = &http.Client{
+			Transport: &http.Transport{
+				TLSClientConfig: &tls.Config{
+					InsecureSkipVerify: client.insecure,
+				},
+			},
+		}
 	}
 
-	//set timeout
-	if req.Timeout > 0 {
-		restyClient.SetTimeout(time.Duration(req.Timeout) * time.Second)
+	b, err := json.Marshal(req.Body)
+	if err != nil {
+		return nil, err
 	}
-	// construct resty.Request
-	restyReq := restyClient.R()
+
+	httpReqBody := bytes.NewReader(b)
+
+	httpReq, err := http.NewRequest(req.Method, url, httpReqBody)
+	if err != nil {
+		return nil, err
+	}
+
+	httpReq.Form = make(map[string][]string)
+	println("url is: ", url)
 
 	// set query params
-	restyReq.SetQueryParams(req.QueryParams)
+	q := httpReq.URL.Query()
+	for k, v := range req.QueryParams {
+		q.Add(k, v)
+	}
+	httpReq.URL.RawQuery = q.Encode()
 
 	// set Headers
 	// Set default headers: application/json
-	if req.Headers != nil {
-		// restyReq.SetHeaders(req.Headers)
-		for k, v := range req.Headers {
-			restyReq.SetHeader(k, v)
-		}
+	for k, v := range req.Headers {
+		httpReq.Header.Add(k, v)
 	}
 
 	// add Authorization Header with our access token
+	// Not needed with custom transport-level token refresh, but
+	// we can keep this in here to maintain similar behaviour to before.
 	if !req.SkipAuthorization {
-		if restyReq.Header["Authorization"] == nil {
-			if client.AccessToken != "" {
-				restyReq.SetHeader("Authorization", "Bearer "+client.AccessToken)
-			}
-		}
+		// NOTE: This will break things if we don't set the token first.
+		// if httpReq.Header.Get("Authorization") == "" {
+		// 	httpReq.Header.Set("Authorization", "Bearer "+client.AccessToken)
+		// }
 	}
 
+	// TODO: This could probably be made simpler by using
+	// a custom ParseForm() method for the Morpheus request struct.
 	// set body
 	if httpMethod == "POST" || httpMethod == "PUT" || httpMethod == "PATCH" {
 		// FormData means use application/x-www-form-urlencoded
+
+		// ParseForm() will allocate a map for Form, PostForm.
+		// It's a no-op otherwise on the httpReq Form data fields right now,
+		// since we aren't parsing form data from the body; we need to convert it
+		// from a Morpheus request struct.
+		// We allocate the memory to avoid nil pointer dereferences in conversions.
+		err = httpReq.ParseForm()
+		if err != nil {
+			return nil, err
+		}
+
 		if req.FormData != nil {
-			//log.Printf("REQUEST FORM DATA: ", req.FormData)
-			// var formData map[string]string
-			// for k,v := range req.FormData {
-			// 	formData[k] = fmt.Sprintf("%v", v)
-			// }
-			// restyReq.SetFormData(formData)
-			restyReq.SetFormData(req.FormData)
-			if restyReq.Header["Content-Type"] == nil {
-				restyReq.SetHeader("Content-Type", "application/x-www-form-urlencoded")
+			// NOTE: Might need to tidy this up....
+			for k, v := range req.FormData {
+				if v != "" {
+					// WARNING: PANIC HERE unless we explicitly allocate a map
+					// for httpReq.Form, which we do in calling httpReq.ParseForm() earlier.
+					httpReq.Form.Set(k, v)
+				}
+			}
+			if httpReq.Header.Get("Content-Type") == "" {
+				httpReq.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 			}
 		}
 
+		// NOTE: Need to test that this works correctly with the net/http client
 		if req.IsMultiPart {
+
+			var buf bytes.Buffer
+			w := multipart.NewWriter(&buf)
 			for _, v := range req.MultiPartFiles {
-				restyReq.SetFileReader(v.ParameterName, v.FileName, bytes.NewReader(v.FileContent))
+				part, err := w.CreateFormFile(v.ParameterName, v.FileName)
+				if err != nil {
+					return nil, err
+				}
+				_, err = part.Write(v.FileContent)
+				if err != nil {
+					return nil, err
+				}
+			}
+
+			err = w.Close()
+			if err != nil {
+				return nil, err
 			}
 		}
 
+		// NOTE: Need to test that this works correctly with the net/http client
 		if req.IsStream {
-			restyReq.SetBody(req.StreamBody)
+			httpReq.Body = io.NopCloser(strings.NewReader(req.StreamBody))
 		}
 
 		if req.Body != nil {
-			//log.Printf("REQUEST BODY: ", req.Body)
-			// Aways json for now...
-			// todo: use encoder
-			restyReq.SetBody(req.Body)
-			if restyReq.Header["Content-Type"] == nil {
-				restyReq.SetHeader("Content-Type", "application/json")
+			if httpReq.Header.Get("Content-Type") == "" {
+				httpReq.Header.Set("Content-Type", "application/json")
 			}
 		}
 
 		// Set default headers: application/json
-		if restyReq.Header["Content-Type"] == nil {
-			restyReq.SetHeader("Content-Type", "application/json")
+		if httpReq.Header.Get("Content-Type") == "" {
+			httpReq.Header.Set("Content-Type", "application/json")
 		}
 	}
 
 	// Set default Accept header
-	if restyReq.Header["Accept"] == nil {
-		restyReq.SetHeader("Accept", "application/json")
+	if httpReq.Header.Get("Accept") == "" {
+		httpReq.Header.Set("Accept", "application/json")
 	}
 
-	// print for debugging
-	// TODO: log me please
-	// log.Printf("API Request: %s %s", req.Method, url)
-
-	// Make the request
-	if httpMethod == "GET" {
-		restyResponse, err = restyReq.Get(url)
-	} else if httpMethod == "POST" {
-		restyResponse, err = restyReq.Post(url)
-	} else if httpMethod == "PUT" {
-		restyResponse, err = restyReq.Put(url)
-	} else if httpMethod == "DELETE" {
-		restyResponse, err = restyReq.Delete(url)
-	} else if httpMethod == "PATCH" {
-		restyResponse, err = restyReq.Patch(url)
-	} else if httpMethod == "HEAD" {
-		restyResponse, err = restyReq.Head(url)
-	} else if httpMethod == "OPTIONS" {
-		restyResponse, err = restyReq.Options(url)
-		// } else if httpMethod == "LIST" {
-		// restyResponse, err = restyReq.List(url)
-	} else {
-		return nil, fmt.Errorf("invalid request. unknown HTTP method: %v", httpMethod)
+	httpResp, err := client.HTTPClient.Do(httpReq)
+	if err != nil {
+		return resp, err
 	}
 
-	// convert a resty response into our Response object
+	receivedTime := time.Now()
 
-	//var err error
+	httpRespBody, err := io.ReadAll(httpResp.Body)
+	if err != nil {
+		return nil, err
+	}
+	defer httpResp.Body.Close()
 
+	// Convert a net/http response into a Morpheus Response object
 	resp = &Response{
-		//RestyResponse: restyResponse,
-		Success:    restyResponse.IsSuccess(),
-		StatusCode: restyResponse.StatusCode(),
-		Status:     restyResponse.Status(),
-		ReceivedAt: restyResponse.ReceivedAt(),
-		Size:       restyResponse.Size(),
-		Body:       restyResponse.Body(), // byte[]
+		Success:    httpResp.StatusCode > 199 && httpResp.StatusCode < 300,
+		StatusCode: httpResp.StatusCode,
+		Status:     httpResp.Status,
+		ReceivedAt: receivedTime,
+		Size:       int64(len(httpRespBody)), // This is the same as what Resty does
+		Body:       httpRespBody,
 	}
 
 	if client.errCallbackFunc != nil {
@@ -351,11 +391,8 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 			}
 		}
 	}
-	// resp.Error = err
-	// RestyResponse is a the underlying resty object,
-	// This is handy for inspecting the complete request
-	// The http response is available at RestyResponse.RawResponse
-	resp.RestyResponse = restyResponse
+
+	resp.HTTPResponse = httpResp
 
 	// attempt to parse as json, populates JsonData
 	var parsedResult interface{}
@@ -451,6 +488,7 @@ type LoginResult struct {
 	Scope        string `json:"scope"`
 }
 
+// NOTE: Login not currently working correctly.
 func (client *Client) Login() (*Response, error) {
 	// already logged in
 	if client.IsLoggedIn() {
