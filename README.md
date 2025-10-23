@@ -1,11 +1,9 @@
-# HPE Morpheus Go SDK
+# hpe-morpheus-go-sdk
 
-A Go SDK for the HPE Morpheus Cloud Management Platform generated from the [Morpheus OpenAPI specification](https://github.com/gomorpheus/morpheus-openapi).
+This repository contains the Go SDKs used to drive Morpheus in the HPE Morpheus Terraform Provider.
 
-### WARNING: FOR INTERNAL USE WITH MORPHEUS TERRAFORM PROVIDER ONLY
+## Packages
 
-Do NOT use as a general purpose client for interacting with Morpheus.
-
-This client is intended to be used in the [HPE Morpheus Terraform Provider](https://github.com/HPE/terraform-provider-hpe).
-
-Not all endpoints have been tested as development of the Terraform provider is ongoing.
+### oapigen
+The `oapigen` package contains the SDK generated from the [Morpheus OpenAPI Specification](https://github.com/HewlettPackard/morpheus-openapi).
+The SDK is generated using [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator), an open source SDK and server code generator which supports a multitude of different languages.

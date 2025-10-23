@@ -4,12 +4,12 @@ version: '3'
 
 vars:
   GENERATOR: "go"
-  BUNDLEDSPEC: ".api/bundled.yaml"
-  GENERATORCONFIG: ".openapi-generator/go/config-client-go.yaml"
-  GENERATORIGNOREFILE: ".openapi-generator/.openapi-generator-ignore"
-  TEMPLATEDIR: ".openapi-generator/go/templates"
+  BUNDLEDSPEC: "oapigen/.api/bundled.yaml"
+  GENERATORCONFIG: "oapigen/.openapi-generator/go/config-client-go.yaml"
+  GENERATORIGNOREFILE: "oapigen/.openapi-generator/.openapi-generator-ignore"
+  TEMPLATEDIR: "oapigen/.openapi-generator/go/templates"
   SPECREPO: "https://github.com/gomorpheus/morpheus-openapi"
-  OUTPUTDIR: "sdk"
+  OUTPUTDIR: "oapigen/sdk"
 
 tasks:
   default:
