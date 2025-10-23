@@ -667,7 +667,7 @@ func (a *WikiAPIService) GetWikiCloudExecute(r ApiGetWikiCloudRequest) (*GetWiki
 type ApiGetWikiClusterRequest struct {
 	ctx        context.Context
 	ApiService *WikiAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetWikiClusterRequest) Execute() (*GetWikiApp200Response, *http.Response, error) {
@@ -683,7 +683,7 @@ This endpoint retrieves a cluster Wiki page.
 	@param clusterId The ID of the cluster
 	@return ApiGetWikiClusterRequest
 */
-func (a *WikiAPIService) GetWikiCluster(ctx context.Context, clusterId int32) ApiGetWikiClusterRequest {
+func (a *WikiAPIService) GetWikiCluster(ctx context.Context, clusterId int64) ApiGetWikiClusterRequest {
 	return ApiGetWikiClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1823,7 +1823,7 @@ func (a *WikiAPIService) UpdateWikiCloudExecute(r ApiUpdateWikiCloudRequest) (*U
 type ApiUpdateWikiClusterRequest struct {
 	ctx                  context.Context
 	ApiService           *WikiAPIService
-	clusterId            int32
+	clusterId            int64
 	updateWikiAppRequest *UpdateWikiAppRequest
 }
 
@@ -1845,7 +1845,7 @@ Updates a cluster Wiki page.
 	@param clusterId The ID of the cluster
 	@return ApiUpdateWikiClusterRequest
 */
-func (a *WikiAPIService) UpdateWikiCluster(ctx context.Context, clusterId int32) ApiUpdateWikiClusterRequest {
+func (a *WikiAPIService) UpdateWikiCluster(ctx context.Context, clusterId int64) ApiUpdateWikiClusterRequest {
 	return ApiUpdateWikiClusterRequest{
 		ApiService: a,
 		ctx:        ctx,

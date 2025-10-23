@@ -155,7 +155,7 @@ func (a *ClustersAPIService) AddClusterExecute(r ApiAddClusterRequest) (*AddClus
 type ApiAddClusterNamespaceRequest struct {
 	ctx                        context.Context
 	ApiService                 *ClustersAPIService
-	clusterId                  int32
+	clusterId                  int64
 	addClusterNamespaceRequest *AddClusterNamespaceRequest
 }
 
@@ -177,7 +177,7 @@ Add Namespace (Kubernetes)
 	@param clusterId The ID of the cluster
 	@return ApiAddClusterNamespaceRequest
 */
-func (a *ClustersAPIService) AddClusterNamespace(ctx context.Context, clusterId int32) ApiAddClusterNamespaceRequest {
+func (a *ClustersAPIService) AddClusterNamespace(ctx context.Context, clusterId int64) ApiAddClusterNamespaceRequest {
 	return ApiAddClusterNamespaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -287,7 +287,7 @@ func (a *ClustersAPIService) AddClusterNamespaceExecute(r ApiAddClusterNamespace
 type ApiAddClusterWorkerRequest struct {
 	ctx                     context.Context
 	ApiService              *ClustersAPIService
-	clusterId               int32
+	clusterId               int64
 	addClusterWorkerRequest *AddClusterWorkerRequest
 }
 
@@ -309,7 +309,7 @@ Add Worker
 	@param clusterId The ID of the cluster
 	@return ApiAddClusterWorkerRequest
 */
-func (a *ClustersAPIService) AddClusterWorker(ctx context.Context, clusterId int32) ApiAddClusterWorkerRequest {
+func (a *ClustersAPIService) AddClusterWorker(ctx context.Context, clusterId int64) ApiAddClusterWorkerRequest {
 	return ApiAddClusterWorkerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -419,7 +419,7 @@ func (a *ClustersAPIService) AddClusterWorkerExecute(r ApiAddClusterWorkerReques
 type ApiApplyTemplateRequest struct {
 	ctx                  context.Context
 	ApiService           *ClustersAPIService
-	clusterId            int32
+	clusterId            int64
 	applyTemplateRequest *ApplyTemplateRequest
 }
 
@@ -443,7 +443,7 @@ This endpoint applies the requested template, via Service Url, YAML, or Spec Tem
 	@param clusterId The ID of the cluster
 	@return ApiApplyTemplateRequest
 */
-func (a *ClustersAPIService) ApplyTemplate(ctx context.Context, clusterId int32) ApiApplyTemplateRequest {
+func (a *ClustersAPIService) ApplyTemplate(ctx context.Context, clusterId int64) ApiApplyTemplateRequest {
 	return ApiApplyTemplateRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -553,7 +553,7 @@ func (a *ClustersAPIService) ApplyTemplateExecute(r ApiApplyTemplateRequest) (*A
 type ApiDeleteClusterRequest struct {
 	ctx                context.Context
 	ApiService         *ClustersAPIService
-	clusterId          int32
+	clusterId          int64
 	removeInstances    *string
 	removeResources    *string
 	preserveVolumes    *string
@@ -611,7 +611,7 @@ Will delete a cluster and associated resources, hosts, volumes asynchronously
 	@param clusterId The ID of the cluster
 	@return ApiDeleteClusterRequest
 */
-func (a *ClustersAPIService) DeleteCluster(ctx context.Context, clusterId int32) ApiDeleteClusterRequest {
+func (a *ClustersAPIService) DeleteCluster(ctx context.Context, clusterId int64) ApiDeleteClusterRequest {
 	return ApiDeleteClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -755,7 +755,7 @@ func (a *ClustersAPIService) DeleteClusterExecute(r ApiDeleteClusterRequest) (*D
 type ApiDeleteClusterContainerRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -780,7 +780,7 @@ This endpoint deletes a specified container from a specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterContainerRequest
 */
-func (a *ClustersAPIService) DeleteClusterContainer(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterContainerRequest {
+func (a *ClustersAPIService) DeleteClusterContainer(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterContainerRequest {
 	return ApiDeleteClusterContainerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -896,7 +896,7 @@ func (a *ClustersAPIService) DeleteClusterContainerExecute(r ApiDeleteClusterCon
 type ApiDeleteClusterDatastoreRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -916,7 +916,7 @@ Will initiate delete of a cluster datastore.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterDatastoreRequest
 */
-func (a *ClustersAPIService) DeleteClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterDatastoreRequest {
+func (a *ClustersAPIService) DeleteClusterDatastore(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterDatastoreRequest {
 	return ApiDeleteClusterDatastoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1026,7 +1026,7 @@ func (a *ClustersAPIService) DeleteClusterDatastoreExecute(r ApiDeleteClusterDat
 type ApiDeleteClusterDeploymentRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1051,7 +1051,7 @@ This endpoint deletes a specified deployment from a specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterDeploymentRequest
 */
-func (a *ClustersAPIService) DeleteClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterDeploymentRequest {
+func (a *ClustersAPIService) DeleteClusterDeployment(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterDeploymentRequest {
 	return ApiDeleteClusterDeploymentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1167,7 +1167,7 @@ func (a *ClustersAPIService) DeleteClusterDeploymentExecute(r ApiDeleteClusterDe
 type ApiDeleteClusterJobRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1192,7 +1192,7 @@ This endpoint deletes a specified job from a specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterJobRequest
 */
-func (a *ClustersAPIService) DeleteClusterJob(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterJobRequest {
+func (a *ClustersAPIService) DeleteClusterJob(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterJobRequest {
 	return ApiDeleteClusterJobRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1308,7 +1308,7 @@ func (a *ClustersAPIService) DeleteClusterJobExecute(r ApiDeleteClusterJobReques
 type ApiDeleteClusterNamespaceRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1333,7 +1333,7 @@ Will delete a namespace from the specified cluster
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterNamespaceRequest
 */
-func (a *ClustersAPIService) DeleteClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterNamespaceRequest {
+func (a *ClustersAPIService) DeleteClusterNamespace(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterNamespaceRequest {
 	return ApiDeleteClusterNamespaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1449,7 +1449,7 @@ func (a *ClustersAPIService) DeleteClusterNamespaceExecute(r ApiDeleteClusterNam
 type ApiDeleteClusterServiceRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1474,7 +1474,7 @@ This endpoint deletes a specified service from a specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterServiceRequest
 */
-func (a *ClustersAPIService) DeleteClusterService(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterServiceRequest {
+func (a *ClustersAPIService) DeleteClusterService(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterServiceRequest {
 	return ApiDeleteClusterServiceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1590,7 +1590,7 @@ func (a *ClustersAPIService) DeleteClusterServiceExecute(r ApiDeleteClusterServi
 type ApiDeleteClusterStatefulSetRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1615,7 +1615,7 @@ Will delete a stateful set from the specified cluster
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterStatefulSetRequest
 */
-func (a *ClustersAPIService) DeleteClusterStatefulSet(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterStatefulSetRequest {
+func (a *ClustersAPIService) DeleteClusterStatefulSet(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterStatefulSetRequest {
 	return ApiDeleteClusterStatefulSetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1731,7 +1731,7 @@ func (a *ClustersAPIService) DeleteClusterStatefulSetExecute(r ApiDeleteClusterS
 type ApiDeleteClusterVolumeRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1756,7 +1756,7 @@ Will delete a volume from the specified cluster
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterVolumeRequest
 */
-func (a *ClustersAPIService) DeleteClusterVolume(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterVolumeRequest {
+func (a *ClustersAPIService) DeleteClusterVolume(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterVolumeRequest {
 	return ApiDeleteClusterVolumeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1872,7 +1872,7 @@ func (a *ClustersAPIService) DeleteClusterVolumeExecute(r ApiDeleteClusterVolume
 type ApiDeleteClusterWorkerRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 	force      *string
 }
@@ -1897,7 +1897,7 @@ This endpoint deletes a specified worker from a specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiDeleteClusterWorkerRequest
 */
-func (a *ClustersAPIService) DeleteClusterWorker(ctx context.Context, clusterId int32, id int64) ApiDeleteClusterWorkerRequest {
+func (a *ClustersAPIService) DeleteClusterWorker(ctx context.Context, clusterId int64, id int64) ApiDeleteClusterWorkerRequest {
 	return ApiDeleteClusterWorkerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2013,7 +2013,7 @@ func (a *ClustersAPIService) DeleteClusterWorkerExecute(r ApiDeleteClusterWorker
 type ApiGetClusterRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetClusterRequest) Execute() (*GetCluster200Response, *http.Response, error) {
@@ -2029,7 +2029,7 @@ This endpoint retrieves a specific cluster.
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterRequest
 */
-func (a *ClustersAPIService) GetCluster(ctx context.Context, clusterId int32) ApiGetClusterRequest {
+func (a *ClustersAPIService) GetCluster(ctx context.Context, clusterId int64) ApiGetClusterRequest {
 	return ApiGetClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2137,7 +2137,7 @@ func (a *ClustersAPIService) GetClusterExecute(r ApiGetClusterRequest) (*GetClus
 type ApiGetClusterApiConfigRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetClusterApiConfigRequest) Execute() (*GetClusterApiConfig200Response, *http.Response, error) {
@@ -2153,7 +2153,7 @@ This endpoint retrieves the API configuration for a specified cluster. The confi
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterApiConfigRequest
 */
-func (a *ClustersAPIService) GetClusterApiConfig(ctx context.Context, clusterId int32) ApiGetClusterApiConfigRequest {
+func (a *ClustersAPIService) GetClusterApiConfig(ctx context.Context, clusterId int64) ApiGetClusterApiConfigRequest {
 	return ApiGetClusterApiConfigRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2261,7 +2261,7 @@ func (a *ClustersAPIService) GetClusterApiConfigExecute(r ApiGetClusterApiConfig
 type ApiGetClusterConfigmapRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -2279,7 +2279,7 @@ This endpoint retrieves a specific cluster configmap.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterConfigmapRequest
 */
-func (a *ClustersAPIService) GetClusterConfigmap(ctx context.Context, clusterId int32, id int64) ApiGetClusterConfigmapRequest {
+func (a *ClustersAPIService) GetClusterConfigmap(ctx context.Context, clusterId int64, id int64) ApiGetClusterConfigmapRequest {
 	return ApiGetClusterConfigmapRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2389,7 +2389,7 @@ func (a *ClustersAPIService) GetClusterConfigmapExecute(r ApiGetClusterConfigmap
 type ApiGetClusterContainerRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -2407,7 +2407,7 @@ This endpoint retrieves a specific cluster container.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterContainerRequest
 */
-func (a *ClustersAPIService) GetClusterContainer(ctx context.Context, clusterId int32, id int64) ApiGetClusterContainerRequest {
+func (a *ClustersAPIService) GetClusterContainer(ctx context.Context, clusterId int64, id int64) ApiGetClusterContainerRequest {
 	return ApiGetClusterContainerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2517,7 +2517,7 @@ func (a *ClustersAPIService) GetClusterContainerExecute(r ApiGetClusterContainer
 type ApiGetClusterDaemonsetRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -2535,7 +2535,7 @@ This endpoint retrieves a specific cluster daemonset.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterDaemonsetRequest
 */
-func (a *ClustersAPIService) GetClusterDaemonset(ctx context.Context, clusterId int32, id int64) ApiGetClusterDaemonsetRequest {
+func (a *ClustersAPIService) GetClusterDaemonset(ctx context.Context, clusterId int64, id int64) ApiGetClusterDaemonsetRequest {
 	return ApiGetClusterDaemonsetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2645,7 +2645,7 @@ func (a *ClustersAPIService) GetClusterDaemonsetExecute(r ApiGetClusterDaemonset
 type ApiGetClusterDatastoreRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -2663,7 +2663,7 @@ This endpoint retrieves a specific cluster datastore.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterDatastoreRequest
 */
-func (a *ClustersAPIService) GetClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiGetClusterDatastoreRequest {
+func (a *ClustersAPIService) GetClusterDatastore(ctx context.Context, clusterId int64, id int64) ApiGetClusterDatastoreRequest {
 	return ApiGetClusterDatastoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2773,7 +2773,7 @@ func (a *ClustersAPIService) GetClusterDatastoreExecute(r ApiGetClusterDatastore
 type ApiGetClusterDeploymentRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -2791,7 +2791,7 @@ This endpoint retrieves a specific cluster deployment.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterDeploymentRequest
 */
-func (a *ClustersAPIService) GetClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiGetClusterDeploymentRequest {
+func (a *ClustersAPIService) GetClusterDeployment(ctx context.Context, clusterId int64, id int64) ApiGetClusterDeploymentRequest {
 	return ApiGetClusterDeploymentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2901,7 +2901,7 @@ func (a *ClustersAPIService) GetClusterDeploymentExecute(r ApiGetClusterDeployme
 type ApiGetClusterHistoryRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetClusterHistoryRequest) Execute() (*GetClusterHistory200Response, *http.Response, error) {
@@ -2917,7 +2917,7 @@ This endpoint retrieves the process history for a specific cluster.
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterHistoryRequest
 */
-func (a *ClustersAPIService) GetClusterHistory(ctx context.Context, clusterId int32) ApiGetClusterHistoryRequest {
+func (a *ClustersAPIService) GetClusterHistory(ctx context.Context, clusterId int64) ApiGetClusterHistoryRequest {
 	return ApiGetClusterHistoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3025,7 +3025,7 @@ func (a *ClustersAPIService) GetClusterHistoryExecute(r ApiGetClusterHistoryRequ
 type ApiGetClusterHistoryDetailRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3043,7 +3043,7 @@ This endpoint retrieves the history for a specific cluster process.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterHistoryDetailRequest
 */
-func (a *ClustersAPIService) GetClusterHistoryDetail(ctx context.Context, clusterId int32, id int64) ApiGetClusterHistoryDetailRequest {
+func (a *ClustersAPIService) GetClusterHistoryDetail(ctx context.Context, clusterId int64, id int64) ApiGetClusterHistoryDetailRequest {
 	return ApiGetClusterHistoryDetailRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3153,7 +3153,7 @@ func (a *ClustersAPIService) GetClusterHistoryDetailExecute(r ApiGetClusterHisto
 type ApiGetClusterHistoryEventDetailRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3171,7 +3171,7 @@ This endpoint retrieves the process event for a specific cluster process event.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterHistoryEventDetailRequest
 */
-func (a *ClustersAPIService) GetClusterHistoryEventDetail(ctx context.Context, clusterId int32, id int64) ApiGetClusterHistoryEventDetailRequest {
+func (a *ClustersAPIService) GetClusterHistoryEventDetail(ctx context.Context, clusterId int64, id int64) ApiGetClusterHistoryEventDetailRequest {
 	return ApiGetClusterHistoryEventDetailRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3281,7 +3281,7 @@ func (a *ClustersAPIService) GetClusterHistoryEventDetailExecute(r ApiGetCluster
 type ApiGetClusterIngressRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3299,7 +3299,7 @@ This endpoint retrieves a specific cluster ingress.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterIngressRequest
 */
-func (a *ClustersAPIService) GetClusterIngress(ctx context.Context, clusterId int32, id int64) ApiGetClusterIngressRequest {
+func (a *ClustersAPIService) GetClusterIngress(ctx context.Context, clusterId int64, id int64) ApiGetClusterIngressRequest {
 	return ApiGetClusterIngressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3409,7 +3409,7 @@ func (a *ClustersAPIService) GetClusterIngressExecute(r ApiGetClusterIngressRequ
 type ApiGetClusterJobRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3427,7 +3427,7 @@ This endpoint retrieves a specific cluster job.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterJobRequest
 */
-func (a *ClustersAPIService) GetClusterJob(ctx context.Context, clusterId int32, id int64) ApiGetClusterJobRequest {
+func (a *ClustersAPIService) GetClusterJob(ctx context.Context, clusterId int64, id int64) ApiGetClusterJobRequest {
 	return ApiGetClusterJobRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3537,7 +3537,7 @@ func (a *ClustersAPIService) GetClusterJobExecute(r ApiGetClusterJobRequest) (*G
 type ApiGetClusterMastersRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	phrase     *string
 }
 
@@ -3560,7 +3560,7 @@ This endpoint retrieves masters of a specified kubernetes cluster.
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterMastersRequest
 */
-func (a *ClustersAPIService) GetClusterMasters(ctx context.Context, clusterId int32) ApiGetClusterMastersRequest {
+func (a *ClustersAPIService) GetClusterMasters(ctx context.Context, clusterId int64) ApiGetClusterMastersRequest {
 	return ApiGetClusterMastersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3671,7 +3671,7 @@ func (a *ClustersAPIService) GetClusterMastersExecute(r ApiGetClusterMastersRequ
 type ApiGetClusterNamespaceRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3689,7 +3689,7 @@ This endpoint retrieves a specific namespace of a Kubernetes cluster
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterNamespaceRequest
 */
-func (a *ClustersAPIService) GetClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiGetClusterNamespaceRequest {
+func (a *ClustersAPIService) GetClusterNamespace(ctx context.Context, clusterId int64, id int64) ApiGetClusterNamespaceRequest {
 	return ApiGetClusterNamespaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3799,7 +3799,7 @@ func (a *ClustersAPIService) GetClusterNamespaceExecute(r ApiGetClusterNamespace
 type ApiGetClusterNamespacesRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetClusterNamespacesRequest) Execute() (*GetClusterNamespaces200Response, *http.Response, error) {
@@ -3815,7 +3815,7 @@ List Namespaces (Kubernetes)
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterNamespacesRequest
 */
-func (a *ClustersAPIService) GetClusterNamespaces(ctx context.Context, clusterId int32) ApiGetClusterNamespacesRequest {
+func (a *ClustersAPIService) GetClusterNamespaces(ctx context.Context, clusterId int64) ApiGetClusterNamespacesRequest {
 	return ApiGetClusterNamespacesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3923,7 +3923,7 @@ func (a *ClustersAPIService) GetClusterNamespacesExecute(r ApiGetClusterNamespac
 type ApiGetClusterNetworkEndpoingRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -3941,7 +3941,7 @@ This endpoint retrieves a specific cluster endpoint.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterNetworkEndpoingRequest
 */
-func (a *ClustersAPIService) GetClusterNetworkEndpoing(ctx context.Context, clusterId int32, id int64) ApiGetClusterNetworkEndpoingRequest {
+func (a *ClustersAPIService) GetClusterNetworkEndpoing(ctx context.Context, clusterId int64, id int64) ApiGetClusterNetworkEndpoingRequest {
 	return ApiGetClusterNetworkEndpoingRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4051,7 +4051,7 @@ func (a *ClustersAPIService) GetClusterNetworkEndpoingExecute(r ApiGetClusterNet
 type ApiGetClusterPodRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4069,7 +4069,7 @@ This endpoint retrieves a specific cluster pod.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterPodRequest
 */
-func (a *ClustersAPIService) GetClusterPod(ctx context.Context, clusterId int32, id int64) ApiGetClusterPodRequest {
+func (a *ClustersAPIService) GetClusterPod(ctx context.Context, clusterId int64, id int64) ApiGetClusterPodRequest {
 	return ApiGetClusterPodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4179,7 +4179,7 @@ func (a *ClustersAPIService) GetClusterPodExecute(r ApiGetClusterPodRequest) (*G
 type ApiGetClusterPolicyRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4197,7 +4197,7 @@ This endpoint retrieves a specific cluster policy.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterPolicyRequest
 */
-func (a *ClustersAPIService) GetClusterPolicy(ctx context.Context, clusterId int32, id int64) ApiGetClusterPolicyRequest {
+func (a *ClustersAPIService) GetClusterPolicy(ctx context.Context, clusterId int64, id int64) ApiGetClusterPolicyRequest {
 	return ApiGetClusterPolicyRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4307,7 +4307,7 @@ func (a *ClustersAPIService) GetClusterPolicyExecute(r ApiGetClusterPolicyReques
 type ApiGetClusterReplicasetRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4325,7 +4325,7 @@ This endpoint retrieves a specific cluster replicaset.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterReplicasetRequest
 */
-func (a *ClustersAPIService) GetClusterReplicaset(ctx context.Context, clusterId int32, id int64) ApiGetClusterReplicasetRequest {
+func (a *ClustersAPIService) GetClusterReplicaset(ctx context.Context, clusterId int64, id int64) ApiGetClusterReplicasetRequest {
 	return ApiGetClusterReplicasetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4435,7 +4435,7 @@ func (a *ClustersAPIService) GetClusterReplicasetExecute(r ApiGetClusterReplicas
 type ApiGetClusterSecretRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4453,7 +4453,7 @@ This endpoint retrieves a specific cluster secret.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterSecretRequest
 */
-func (a *ClustersAPIService) GetClusterSecret(ctx context.Context, clusterId int32, id int64) ApiGetClusterSecretRequest {
+func (a *ClustersAPIService) GetClusterSecret(ctx context.Context, clusterId int64, id int64) ApiGetClusterSecretRequest {
 	return ApiGetClusterSecretRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4563,7 +4563,7 @@ func (a *ClustersAPIService) GetClusterSecretExecute(r ApiGetClusterSecretReques
 type ApiGetClusterServiceRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4581,7 +4581,7 @@ This endpoint retrieves a specific cluster service.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterServiceRequest
 */
-func (a *ClustersAPIService) GetClusterService(ctx context.Context, clusterId int32, id int64) ApiGetClusterServiceRequest {
+func (a *ClustersAPIService) GetClusterService(ctx context.Context, clusterId int64, id int64) ApiGetClusterServiceRequest {
 	return ApiGetClusterServiceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4691,7 +4691,7 @@ func (a *ClustersAPIService) GetClusterServiceExecute(r ApiGetClusterServiceRequ
 type ApiGetClusterStatefulsetRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4709,7 +4709,7 @@ This endpoint retrieves a specific cluster statefulset.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterStatefulsetRequest
 */
-func (a *ClustersAPIService) GetClusterStatefulset(ctx context.Context, clusterId int32, id int64) ApiGetClusterStatefulsetRequest {
+func (a *ClustersAPIService) GetClusterStatefulset(ctx context.Context, clusterId int64, id int64) ApiGetClusterStatefulsetRequest {
 	return ApiGetClusterStatefulsetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4819,7 +4819,7 @@ func (a *ClustersAPIService) GetClusterStatefulsetExecute(r ApiGetClusterStatefu
 type ApiGetClusterUpgradeVersionsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiGetClusterUpgradeVersionsRequest) Execute() (*GetClusterUpgradeVersions200Response, *http.Response, error) {
@@ -4835,7 +4835,7 @@ This endpoint returns valid version targets for upgrading kubectl and kubeadm on
 	@param clusterId The ID of the cluster
 	@return ApiGetClusterUpgradeVersionsRequest
 */
-func (a *ClustersAPIService) GetClusterUpgradeVersions(ctx context.Context, clusterId int32) ApiGetClusterUpgradeVersionsRequest {
+func (a *ClustersAPIService) GetClusterUpgradeVersions(ctx context.Context, clusterId int64) ApiGetClusterUpgradeVersionsRequest {
 	return ApiGetClusterUpgradeVersionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4943,7 +4943,7 @@ func (a *ClustersAPIService) GetClusterUpgradeVersionsExecute(r ApiGetClusterUpg
 type ApiGetClusterVolumeRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -4961,7 +4961,7 @@ This endpoint retrieves a specific cluster volume.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterVolumeRequest
 */
-func (a *ClustersAPIService) GetClusterVolume(ctx context.Context, clusterId int32, id int64) ApiGetClusterVolumeRequest {
+func (a *ClustersAPIService) GetClusterVolume(ctx context.Context, clusterId int64, id int64) ApiGetClusterVolumeRequest {
 	return ApiGetClusterVolumeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5071,7 +5071,7 @@ func (a *ClustersAPIService) GetClusterVolumeExecute(r ApiGetClusterVolumeReques
 type ApiGetClusterVolumeclaimRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -5089,7 +5089,7 @@ This endpoint retrieves a specific cluster volumeclaim.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetClusterVolumeclaimRequest
 */
-func (a *ClustersAPIService) GetClusterVolumeclaim(ctx context.Context, clusterId int32, id int64) ApiGetClusterVolumeclaimRequest {
+func (a *ClustersAPIService) GetClusterVolumeclaim(ctx context.Context, clusterId int64, id int64) ApiGetClusterVolumeclaimRequest {
 	return ApiGetClusterVolumeclaimRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5199,7 +5199,7 @@ func (a *ClustersAPIService) GetClusterVolumeclaimExecute(r ApiGetClusterVolumec
 type ApiListClusterConfigmapsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterConfigmapsRequest) Execute() (*ListClusterConfigmaps200Response, *http.Response, error) {
@@ -5215,7 +5215,7 @@ This endpoint retrieves configmaps of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterConfigmapsRequest
 */
-func (a *ClustersAPIService) ListClusterConfigmaps(ctx context.Context, clusterId int32) ApiListClusterConfigmapsRequest {
+func (a *ClustersAPIService) ListClusterConfigmaps(ctx context.Context, clusterId int64) ApiListClusterConfigmapsRequest {
 	return ApiListClusterConfigmapsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5323,7 +5323,7 @@ func (a *ClustersAPIService) ListClusterConfigmapsExecute(r ApiListClusterConfig
 type ApiListClusterContainersRequest struct {
 	ctx           context.Context
 	ApiService    *ClustersAPIService
-	clusterId     int32
+	clusterId     int64
 	max           *int64
 	offset        *int64
 	sort          *string
@@ -5381,7 +5381,7 @@ This endpoint retrieves containers of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterContainersRequest
 */
-func (a *ClustersAPIService) ListClusterContainers(ctx context.Context, clusterId int32) ApiListClusterContainersRequest {
+func (a *ClustersAPIService) ListClusterContainers(ctx context.Context, clusterId int64) ApiListClusterContainersRequest {
 	return ApiListClusterContainersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5516,7 +5516,7 @@ func (a *ClustersAPIService) ListClusterContainersExecute(r ApiListClusterContai
 type ApiListClusterDaemonsetsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterDaemonsetsRequest) Execute() (*ListClusterDaemonsets200Response, *http.Response, error) {
@@ -5532,7 +5532,7 @@ This endpoint retrieves daemonsets of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterDaemonsetsRequest
 */
-func (a *ClustersAPIService) ListClusterDaemonsets(ctx context.Context, clusterId int32) ApiListClusterDaemonsetsRequest {
+func (a *ClustersAPIService) ListClusterDaemonsets(ctx context.Context, clusterId int64) ApiListClusterDaemonsetsRequest {
 	return ApiListClusterDaemonsetsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5640,7 +5640,7 @@ func (a *ClustersAPIService) ListClusterDaemonsetsExecute(r ApiListClusterDaemon
 type ApiListClusterDatastoresRequest struct {
 	ctx          context.Context
 	ApiService   *ClustersAPIService
-	clusterId    int32
+	clusterId    int64
 	max          *int64
 	offset       *int64
 	sort         *string
@@ -5712,7 +5712,7 @@ This endpoint retrieves datastores of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterDatastoresRequest
 */
-func (a *ClustersAPIService) ListClusterDatastores(ctx context.Context, clusterId int32) ApiListClusterDatastoresRequest {
+func (a *ClustersAPIService) ListClusterDatastores(ctx context.Context, clusterId int64) ApiListClusterDatastoresRequest {
 	return ApiListClusterDatastoresRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5859,7 +5859,7 @@ func (a *ClustersAPIService) ListClusterDatastoresExecute(r ApiListClusterDatast
 type ApiListClusterDeploymentsRequest struct {
 	ctx           context.Context
 	ApiService    *ClustersAPIService
-	clusterId     int32
+	clusterId     int64
 	max           *int64
 	offset        *int64
 	sort          *string
@@ -5917,7 +5917,7 @@ This endpoint retrieves deployments of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterDeploymentsRequest
 */
-func (a *ClustersAPIService) ListClusterDeployments(ctx context.Context, clusterId int32) ApiListClusterDeploymentsRequest {
+func (a *ClustersAPIService) ListClusterDeployments(ctx context.Context, clusterId int64) ApiListClusterDeploymentsRequest {
 	return ApiListClusterDeploymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6055,7 +6055,7 @@ func (a *ClustersAPIService) ListClusterDeploymentsExecute(r ApiListClusterDeplo
 type ApiListClusterIngressesRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterIngressesRequest) Execute() (*ListClusterIngresses200Response, *http.Response, error) {
@@ -6071,7 +6071,7 @@ This endpoint retrieves ingresses of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterIngressesRequest
 */
-func (a *ClustersAPIService) ListClusterIngresses(ctx context.Context, clusterId int32) ApiListClusterIngressesRequest {
+func (a *ClustersAPIService) ListClusterIngresses(ctx context.Context, clusterId int64) ApiListClusterIngressesRequest {
 	return ApiListClusterIngressesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6179,7 +6179,7 @@ func (a *ClustersAPIService) ListClusterIngressesExecute(r ApiListClusterIngress
 type ApiListClusterJobsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -6230,7 +6230,7 @@ This endpoint retrieves jobs of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterJobsRequest
 */
-func (a *ClustersAPIService) ListClusterJobs(ctx context.Context, clusterId int32) ApiListClusterJobsRequest {
+func (a *ClustersAPIService) ListClusterJobs(ctx context.Context, clusterId int64) ApiListClusterJobsRequest {
 	return ApiListClusterJobsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6365,7 +6365,7 @@ func (a *ClustersAPIService) ListClusterJobsExecute(r ApiListClusterJobsRequest)
 type ApiListClusterNetworkEndpointsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterNetworkEndpointsRequest) Execute() (*ListClusterNetworkEndpoints200Response, *http.Response, error) {
@@ -6381,7 +6381,7 @@ This endpoint retrieves network endpoints of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterNetworkEndpointsRequest
 */
-func (a *ClustersAPIService) ListClusterNetworkEndpoints(ctx context.Context, clusterId int32) ApiListClusterNetworkEndpointsRequest {
+func (a *ClustersAPIService) ListClusterNetworkEndpoints(ctx context.Context, clusterId int64) ApiListClusterNetworkEndpointsRequest {
 	return ApiListClusterNetworkEndpointsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6489,7 +6489,7 @@ func (a *ClustersAPIService) ListClusterNetworkEndpointsExecute(r ApiListCluster
 type ApiListClusterPodsRequest struct {
 	ctx           context.Context
 	ApiService    *ClustersAPIService
-	clusterId     int32
+	clusterId     int64
 	max           *int64
 	offset        *int64
 	sort          *string
@@ -6547,7 +6547,7 @@ This endpoint retrieves pods of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterPodsRequest
 */
-func (a *ClustersAPIService) ListClusterPods(ctx context.Context, clusterId int32) ApiListClusterPodsRequest {
+func (a *ClustersAPIService) ListClusterPods(ctx context.Context, clusterId int64) ApiListClusterPodsRequest {
 	return ApiListClusterPodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6685,7 +6685,7 @@ func (a *ClustersAPIService) ListClusterPodsExecute(r ApiListClusterPodsRequest)
 type ApiListClusterPoliciesRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterPoliciesRequest) Execute() (*ListClusterPolicies200Response, *http.Response, error) {
@@ -6701,7 +6701,7 @@ This endpoint retrieves policies of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterPoliciesRequest
 */
-func (a *ClustersAPIService) ListClusterPolicies(ctx context.Context, clusterId int32) ApiListClusterPoliciesRequest {
+func (a *ClustersAPIService) ListClusterPolicies(ctx context.Context, clusterId int64) ApiListClusterPoliciesRequest {
 	return ApiListClusterPoliciesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6809,7 +6809,7 @@ func (a *ClustersAPIService) ListClusterPoliciesExecute(r ApiListClusterPolicies
 type ApiListClusterReplicasetsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterReplicasetsRequest) Execute() (*ListClusterReplicasets200Response, *http.Response, error) {
@@ -6825,7 +6825,7 @@ This endpoint retrieves replicasets of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterReplicasetsRequest
 */
-func (a *ClustersAPIService) ListClusterReplicasets(ctx context.Context, clusterId int32) ApiListClusterReplicasetsRequest {
+func (a *ClustersAPIService) ListClusterReplicasets(ctx context.Context, clusterId int64) ApiListClusterReplicasetsRequest {
 	return ApiListClusterReplicasetsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6933,7 +6933,7 @@ func (a *ClustersAPIService) ListClusterReplicasetsExecute(r ApiListClusterRepli
 type ApiListClusterSecretsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterSecretsRequest) Execute() (*ListClusterSecrets200Response, *http.Response, error) {
@@ -6949,7 +6949,7 @@ This endpoint retrieves secrets of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterSecretsRequest
 */
-func (a *ClustersAPIService) ListClusterSecrets(ctx context.Context, clusterId int32) ApiListClusterSecretsRequest {
+func (a *ClustersAPIService) ListClusterSecrets(ctx context.Context, clusterId int64) ApiListClusterSecretsRequest {
 	return ApiListClusterSecretsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7057,7 +7057,7 @@ func (a *ClustersAPIService) ListClusterSecretsExecute(r ApiListClusterSecretsRe
 type ApiListClusterServicesRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	max        *int64
 	offset     *int64
 	sort       *string
@@ -7108,7 +7108,7 @@ This endpoint retrieves services of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterServicesRequest
 */
-func (a *ClustersAPIService) ListClusterServices(ctx context.Context, clusterId int32) ApiListClusterServicesRequest {
+func (a *ClustersAPIService) ListClusterServices(ctx context.Context, clusterId int64) ApiListClusterServicesRequest {
 	return ApiListClusterServicesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7243,7 +7243,7 @@ func (a *ClustersAPIService) ListClusterServicesExecute(r ApiListClusterServices
 type ApiListClusterStatefulSetsRequest struct {
 	ctx           context.Context
 	ApiService    *ClustersAPIService
-	clusterId     int32
+	clusterId     int64
 	max           *int64
 	offset        *int64
 	sort          *string
@@ -7301,7 +7301,7 @@ This endpoint retrieves stateful sets of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterStatefulSetsRequest
 */
-func (a *ClustersAPIService) ListClusterStatefulSets(ctx context.Context, clusterId int32) ApiListClusterStatefulSetsRequest {
+func (a *ClustersAPIService) ListClusterStatefulSets(ctx context.Context, clusterId int64) ApiListClusterStatefulSetsRequest {
 	return ApiListClusterStatefulSetsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7651,7 +7651,7 @@ func (a *ClustersAPIService) ListClusterTypesExecute(r ApiListClusterTypesReques
 type ApiListClusterVolumeclaimsRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterVolumeclaimsRequest) Execute() (*ListClusterVolumeclaims200Response, *http.Response, error) {
@@ -7667,7 +7667,7 @@ This endpoint retrieves volumeclaims of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterVolumeclaimsRequest
 */
-func (a *ClustersAPIService) ListClusterVolumeclaims(ctx context.Context, clusterId int32) ApiListClusterVolumeclaimsRequest {
+func (a *ClustersAPIService) ListClusterVolumeclaims(ctx context.Context, clusterId int64) ApiListClusterVolumeclaimsRequest {
 	return ApiListClusterVolumeclaimsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7775,7 +7775,7 @@ func (a *ClustersAPIService) ListClusterVolumeclaimsExecute(r ApiListClusterVolu
 type ApiListClusterVolumesRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterVolumesRequest) Execute() (*ListClusterVolumes200Response, *http.Response, error) {
@@ -7791,7 +7791,7 @@ This endpoint retrieves volumes of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterVolumesRequest
 */
-func (a *ClustersAPIService) ListClusterVolumes(ctx context.Context, clusterId int32) ApiListClusterVolumesRequest {
+func (a *ClustersAPIService) ListClusterVolumes(ctx context.Context, clusterId int64) ApiListClusterVolumesRequest {
 	return ApiListClusterVolumesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7899,7 +7899,7 @@ func (a *ClustersAPIService) ListClusterVolumesExecute(r ApiListClusterVolumesRe
 type ApiListClusterWorkersRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiListClusterWorkersRequest) Execute() (*ListClusterWorkers200Response, *http.Response, error) {
@@ -7915,7 +7915,7 @@ This endpoint retrieves workers of a specified cluster.
 	@param clusterId The ID of the cluster
 	@return ApiListClusterWorkersRequest
 */
-func (a *ClustersAPIService) ListClusterWorkers(ctx context.Context, clusterId int32) ApiListClusterWorkersRequest {
+func (a *ClustersAPIService) ListClusterWorkers(ctx context.Context, clusterId int64) ApiListClusterWorkersRequest {
 	return ApiListClusterWorkersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8255,7 +8255,7 @@ func (a *ClustersAPIService) ListClustersExecute(r ApiListClustersRequest) (*Lis
 type ApiRefreshClusterRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 }
 
 func (r ApiRefreshClusterRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -8271,7 +8271,7 @@ Refreshes a cluster.
 	@param clusterId The ID of the cluster
 	@return ApiRefreshClusterRequest
 */
-func (a *ClustersAPIService) RefreshCluster(ctx context.Context, clusterId int32) ApiRefreshClusterRequest {
+func (a *ClustersAPIService) RefreshCluster(ctx context.Context, clusterId int64) ApiRefreshClusterRequest {
 	return ApiRefreshClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8379,7 +8379,7 @@ func (a *ClustersAPIService) RefreshClusterExecute(r ApiRefreshClusterRequest) (
 type ApiRestartClusterContainerRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -8397,7 +8397,7 @@ Will restart a container in the specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRestartClusterContainerRequest
 */
-func (a *ClustersAPIService) RestartClusterContainer(ctx context.Context, clusterId int32, id int64) ApiRestartClusterContainerRequest {
+func (a *ClustersAPIService) RestartClusterContainer(ctx context.Context, clusterId int64, id int64) ApiRestartClusterContainerRequest {
 	return ApiRestartClusterContainerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8507,7 +8507,7 @@ func (a *ClustersAPIService) RestartClusterContainerExecute(r ApiRestartClusterC
 type ApiRestartClusterDeploymentRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -8525,7 +8525,7 @@ Will restart a deployment in the specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRestartClusterDeploymentRequest
 */
-func (a *ClustersAPIService) RestartClusterDeployment(ctx context.Context, clusterId int32, id int64) ApiRestartClusterDeploymentRequest {
+func (a *ClustersAPIService) RestartClusterDeployment(ctx context.Context, clusterId int64, id int64) ApiRestartClusterDeploymentRequest {
 	return ApiRestartClusterDeploymentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8635,7 +8635,7 @@ func (a *ClustersAPIService) RestartClusterDeploymentExecute(r ApiRestartCluster
 type ApiRestartClusterPodRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -8653,7 +8653,7 @@ Will restart a pod in the specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRestartClusterPodRequest
 */
-func (a *ClustersAPIService) RestartClusterPod(ctx context.Context, clusterId int32, id int64) ApiRestartClusterPodRequest {
+func (a *ClustersAPIService) RestartClusterPod(ctx context.Context, clusterId int64, id int64) ApiRestartClusterPodRequest {
 	return ApiRestartClusterPodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8763,7 +8763,7 @@ func (a *ClustersAPIService) RestartClusterPodExecute(r ApiRestartClusterPodRequ
 type ApiRestartClusterStatefulSetRequest struct {
 	ctx        context.Context
 	ApiService *ClustersAPIService
-	clusterId  int32
+	clusterId  int64
 	id         int64
 }
 
@@ -8781,7 +8781,7 @@ Will restart a stateful set in the specified cluster.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRestartClusterStatefulSetRequest
 */
-func (a *ClustersAPIService) RestartClusterStatefulSet(ctx context.Context, clusterId int32, id int64) ApiRestartClusterStatefulSetRequest {
+func (a *ClustersAPIService) RestartClusterStatefulSet(ctx context.Context, clusterId int64, id int64) ApiRestartClusterStatefulSetRequest {
 	return ApiRestartClusterStatefulSetRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8891,7 +8891,7 @@ func (a *ClustersAPIService) RestartClusterStatefulSetExecute(r ApiRestartCluste
 type ApiSaveClusterDatastoreRequest struct {
 	ctx                         context.Context
 	ApiService                  *ClustersAPIService
-	clusterId                   int32
+	clusterId                   int64
 	saveClusterDatastoreRequest *SaveClusterDatastoreRequest
 }
 
@@ -8913,7 +8913,7 @@ This endpoint will create a datastore for a specific cluster.
 	@param clusterId The ID of the cluster
 	@return ApiSaveClusterDatastoreRequest
 */
-func (a *ClustersAPIService) SaveClusterDatastore(ctx context.Context, clusterId int32) ApiSaveClusterDatastoreRequest {
+func (a *ClustersAPIService) SaveClusterDatastore(ctx context.Context, clusterId int64) ApiSaveClusterDatastoreRequest {
 	return ApiSaveClusterDatastoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9023,7 +9023,7 @@ func (a *ClustersAPIService) SaveClusterDatastoreExecute(r ApiSaveClusterDatasto
 type ApiUpdateClusterRequest struct {
 	ctx                  context.Context
 	ApiService           *ClustersAPIService
-	clusterId            int32
+	clusterId            int64
 	updateClusterRequest *UpdateClusterRequest
 }
 
@@ -9045,7 +9045,7 @@ Update Cluster
 	@param clusterId The ID of the cluster
 	@return ApiUpdateClusterRequest
 */
-func (a *ClustersAPIService) UpdateCluster(ctx context.Context, clusterId int32) ApiUpdateClusterRequest {
+func (a *ClustersAPIService) UpdateCluster(ctx context.Context, clusterId int64) ApiUpdateClusterRequest {
 	return ApiUpdateClusterRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9155,7 +9155,7 @@ func (a *ClustersAPIService) UpdateClusterExecute(r ApiUpdateClusterRequest) (*U
 type ApiUpdateClusterDatastoreRequest struct {
 	ctx                           context.Context
 	ApiService                    *ClustersAPIService
-	clusterId                     int32
+	clusterId                     int64
 	id                            int64
 	updateClusterDatastoreRequest *UpdateClusterDatastoreRequest
 }
@@ -9179,7 +9179,7 @@ Update Cluster Datastore
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateClusterDatastoreRequest
 */
-func (a *ClustersAPIService) UpdateClusterDatastore(ctx context.Context, clusterId int32, id int64) ApiUpdateClusterDatastoreRequest {
+func (a *ClustersAPIService) UpdateClusterDatastore(ctx context.Context, clusterId int64, id int64) ApiUpdateClusterDatastoreRequest {
 	return ApiUpdateClusterDatastoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9291,7 +9291,7 @@ func (a *ClustersAPIService) UpdateClusterDatastoreExecute(r ApiUpdateClusterDat
 type ApiUpdateClusterNamespaceRequest struct {
 	ctx                           context.Context
 	ApiService                    *ClustersAPIService
-	clusterId                     int32
+	clusterId                     int64
 	id                            int64
 	updateClusterNamespaceRequest *UpdateClusterNamespaceRequest
 }
@@ -9315,7 +9315,7 @@ Update Namespace (Kubernetes)
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateClusterNamespaceRequest
 */
-func (a *ClustersAPIService) UpdateClusterNamespace(ctx context.Context, clusterId int32, id int64) ApiUpdateClusterNamespaceRequest {
+func (a *ClustersAPIService) UpdateClusterNamespace(ctx context.Context, clusterId int64, id int64) ApiUpdateClusterNamespaceRequest {
 	return ApiUpdateClusterNamespaceRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9427,7 +9427,7 @@ func (a *ClustersAPIService) UpdateClusterNamespaceExecute(r ApiUpdateClusterNam
 type ApiUpdateClusterPermissionsRequest struct {
 	ctx                             context.Context
 	ApiService                      *ClustersAPIService
-	clusterId                       int32
+	clusterId                       int64
 	updateClusterPermissionsRequest *UpdateClusterPermissionsRequest
 }
 
@@ -9449,7 +9449,7 @@ Update Cluster Permissions
 	@param clusterId The ID of the cluster
 	@return ApiUpdateClusterPermissionsRequest
 */
-func (a *ClustersAPIService) UpdateClusterPermissions(ctx context.Context, clusterId int32) ApiUpdateClusterPermissionsRequest {
+func (a *ClustersAPIService) UpdateClusterPermissions(ctx context.Context, clusterId int64) ApiUpdateClusterPermissionsRequest {
 	return ApiUpdateClusterPermissionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9559,7 +9559,7 @@ func (a *ClustersAPIService) UpdateClusterPermissionsExecute(r ApiUpdateClusterP
 type ApiUpdateClusterUpgradeVersionsRequest struct {
 	ctx           context.Context
 	ApiService    *ClustersAPIService
-	clusterId     int32
+	clusterId     int64
 	targetVersion *string
 }
 
@@ -9582,7 +9582,7 @@ This endpoint updates the kubectl and kudeadm versions on a Kubernetes cluster t
 	@param clusterId The ID of the cluster
 	@return ApiUpdateClusterUpgradeVersionsRequest
 */
-func (a *ClustersAPIService) UpdateClusterUpgradeVersions(ctx context.Context, clusterId int32) ApiUpdateClusterUpgradeVersionsRequest {
+func (a *ClustersAPIService) UpdateClusterUpgradeVersions(ctx context.Context, clusterId int64) ApiUpdateClusterUpgradeVersionsRequest {
 	return ApiUpdateClusterUpgradeVersionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9694,7 +9694,7 @@ func (a *ClustersAPIService) UpdateClusterUpgradeVersionsExecute(r ApiUpdateClus
 type ApiUpdateClusterWorkerCountRequest struct {
 	ctx         context.Context
 	ApiService  *ClustersAPIService
-	clusterId   int32
+	clusterId   int64
 	workerCount *int64
 }
 
@@ -9717,7 +9717,7 @@ This endpoint resizes a cluster to the specified number of worker nodes (only su
 	@param clusterId The ID of the cluster
 	@return ApiUpdateClusterWorkerCountRequest
 */
-func (a *ClustersAPIService) UpdateClusterWorkerCount(ctx context.Context, clusterId int32) ApiUpdateClusterWorkerCountRequest {
+func (a *ClustersAPIService) UpdateClusterWorkerCount(ctx context.Context, clusterId int64) ApiUpdateClusterWorkerCountRequest {
 	return ApiUpdateClusterWorkerCountRequest{
 		ApiService: a,
 		ctx:        ctx,

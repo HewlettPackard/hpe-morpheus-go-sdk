@@ -164,7 +164,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	addClusterNamespaceRequest := *openapiclient.NewAddClusterNamespaceRequest() // AddClusterNamespaceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -185,7 +185,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -236,7 +236,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	addClusterWorkerRequest := *openapiclient.NewAddClusterWorkerRequest() // AddClusterWorkerRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -257,7 +257,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -308,7 +308,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	applyTemplateRequest := *openapiclient.NewApplyTemplateRequest() // ApplyTemplateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -329,7 +329,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -380,7 +380,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	removeInstances := "on" // string | Remove Instances (optional) (default to "off")
 	removeResources := "off" // string | Remove Resources (optional) (default to "on")
 	preserveVolumes := "on" // string | Preserve Volumes (optional) (default to "off")
@@ -406,7 +406,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -462,7 +462,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -484,7 +484,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -537,7 +537,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -558,7 +558,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -610,7 +610,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -632,7 +632,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -685,7 +685,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -707,7 +707,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -760,7 +760,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -782,7 +782,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -835,7 +835,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -857,7 +857,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -910,7 +910,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -932,7 +932,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -985,7 +985,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -1007,7 +1007,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1060,7 +1060,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	force := "on" // string | Force Delete (optional) (default to "off")
 
@@ -1082,7 +1082,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1135,7 +1135,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1155,7 +1155,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -1205,7 +1205,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1225,7 +1225,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -1275,7 +1275,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1296,7 +1296,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1348,7 +1348,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1369,7 +1369,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1421,7 +1421,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1442,7 +1442,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1494,7 +1494,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1515,7 +1515,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1567,7 +1567,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1588,7 +1588,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1640,7 +1640,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1660,7 +1660,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -1710,7 +1710,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1731,7 +1731,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1783,7 +1783,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1804,7 +1804,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1856,7 +1856,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1877,7 +1877,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1929,7 +1929,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1950,7 +1950,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2002,7 +2002,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2023,7 +2023,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -2074,7 +2074,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2095,7 +2095,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2147,7 +2147,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2167,7 +2167,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -2217,7 +2217,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2238,7 +2238,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2290,7 +2290,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2311,7 +2311,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2363,7 +2363,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2384,7 +2384,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2436,7 +2436,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2457,7 +2457,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2509,7 +2509,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2530,7 +2530,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2582,7 +2582,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2603,7 +2603,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2655,7 +2655,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2676,7 +2676,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2728,7 +2728,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2748,7 +2748,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -2798,7 +2798,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2819,7 +2819,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2871,7 +2871,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -2892,7 +2892,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -2944,7 +2944,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2964,7 +2964,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3014,7 +3014,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional)
@@ -3040,7 +3040,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3096,7 +3096,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3116,7 +3116,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3166,7 +3166,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3194,7 +3194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3252,7 +3252,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3278,7 +3278,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3334,7 +3334,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3354,7 +3354,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3404,7 +3404,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3429,7 +3429,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3484,7 +3484,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3504,7 +3504,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3554,7 +3554,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3580,7 +3580,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3636,7 +3636,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3656,7 +3656,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3706,7 +3706,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3726,7 +3726,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3776,7 +3776,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3796,7 +3796,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3846,7 +3846,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3871,7 +3871,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -3926,7 +3926,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
 	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
 	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
@@ -3952,7 +3952,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4088,7 +4088,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4108,7 +4108,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4158,7 +4158,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4178,7 +4178,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4228,7 +4228,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4248,7 +4248,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4382,7 +4382,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4402,7 +4402,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4452,7 +4452,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -4473,7 +4473,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -4525,7 +4525,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -4546,7 +4546,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -4598,7 +4598,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -4619,7 +4619,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -4671,7 +4671,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -4692,7 +4692,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -4744,7 +4744,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	saveClusterDatastoreRequest := *openapiclient.NewSaveClusterDatastoreRequest() // SaveClusterDatastoreRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4765,7 +4765,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4816,7 +4816,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	updateClusterRequest := *openapiclient.NewUpdateClusterRequest() // UpdateClusterRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4837,7 +4837,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -4888,7 +4888,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateClusterDatastoreRequest := *openapiclient.NewUpdateClusterDatastoreRequest() // UpdateClusterDatastoreRequest |  (optional)
 
@@ -4910,7 +4910,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -4963,7 +4963,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateClusterNamespaceRequest := *openapiclient.NewUpdateClusterNamespaceRequest() // UpdateClusterNamespaceRequest |  (optional)
 
@@ -4985,7 +4985,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -5038,7 +5038,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	updateClusterPermissionsRequest := *openapiclient.NewUpdateClusterPermissionsRequest(*openapiclient.NewUpdateClusterDatastoreRequestDatastorePermissions()) // UpdateClusterPermissionsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -5059,7 +5059,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -5110,7 +5110,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	targetVersion := "1.21.14" // string | Target version for cluster after upgrade
 
 	configuration := openapiclient.NewConfiguration()
@@ -5131,7 +5131,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 
@@ -5182,7 +5182,7 @@ import (
 )
 
 func main() {
-	clusterId := int32(5) // int32 | The ID of the cluster
+	clusterId := int64(5) // int64 | The ID of the cluster
 	workerCount := int64(5) // int64 | The target number of worker nodes
 
 	configuration := openapiclient.NewConfiguration()
@@ -5203,7 +5203,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clusterId** | **int32** | The ID of the cluster | 
+**clusterId** | **int64** | The ID of the cluster | 
 
 ### Other Parameters
 

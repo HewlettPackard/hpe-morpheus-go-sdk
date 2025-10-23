@@ -36047,7 +36047,8 @@ paths:
           description: The ID of the cloud
           required: true
           schema: &ref_133
-            type: number
+            type: integer
+            format: int64
           example: 7
         - name: name
           in: query
@@ -42667,6 +42668,7 @@ paths:
           required: true
           schema: &ref_150
             type: integer
+            format: int64
           example: 5
       responses:
         '200':

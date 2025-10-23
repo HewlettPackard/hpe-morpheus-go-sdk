@@ -51,7 +51,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	addCloudResourcePoolRequest := *openapiclient.NewAddCloudResourcePoolRequest(*openapiclient.NewAddCloudResourcePoolRequestResourcePool("Name_example", *openapiclient.NewAddCloudResourcePoolRequestResourcePoolConfig())) // AddCloudResourcePoolRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -72,7 +72,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 
 ### Other Parameters
 
@@ -189,7 +189,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -210,7 +210,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -262,7 +262,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -283,7 +283,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -335,7 +335,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -356,7 +356,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -548,7 +548,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	name := "example" // string | Filter by name (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
@@ -573,7 +573,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 
 ### Other Parameters
 
@@ -628,7 +628,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	name := "example" // string | Filter by name (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
@@ -651,7 +651,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 
 ### Other Parameters
 
@@ -704,7 +704,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	name := "example" // string | Filter by name (optional)
 	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
 	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
@@ -727,7 +727,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 
 ### Other Parameters
 
@@ -1087,7 +1087,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -1108,7 +1108,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1234,7 +1234,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	saveCloudDatastoreRequest := *openapiclient.NewSaveCloudDatastoreRequest() // SaveCloudDatastoreRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1255,7 +1255,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 
 ### Other Parameters
 
@@ -1306,7 +1306,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateCloudDatastoresRequest := *openapiclient.NewUpdateCloudDatastoresRequest(*openapiclient.NewUpdateCloudDatastoresRequestDatastore()) // UpdateCloudDatastoresRequest |  (optional)
 
@@ -1328,7 +1328,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1381,7 +1381,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateCloudFoldersRequest := *openapiclient.NewUpdateCloudFoldersRequest(*openapiclient.NewUpdateCloudFoldersRequestFolder()) // UpdateCloudFoldersRequest |  (optional)
 
@@ -1403,7 +1403,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -1530,7 +1530,7 @@ import (
 )
 
 func main() {
-	zoneId := float32(7) // float32 | The ID of the cloud
+	zoneId := int64(7) // int64 | The ID of the cloud
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 	updateCloudResourcePoolRequest := *openapiclient.NewUpdateCloudResourcePoolRequest(*openapiclient.NewUpdateCloudResourcePoolRequestResourcePool()) // UpdateCloudResourcePoolRequest |  (optional)
 
@@ -1552,7 +1552,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**zoneId** | **float32** | The ID of the cloud | 
+**zoneId** | **int64** | The ID of the cloud | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters

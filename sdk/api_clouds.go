@@ -29,7 +29,7 @@ type CloudsAPIService service
 type ApiAddCloudResourcePoolRequest struct {
 	ctx                         context.Context
 	ApiService                  *CloudsAPIService
-	zoneId                      float32
+	zoneId                      int64
 	addCloudResourcePoolRequest *AddCloudResourcePoolRequest
 }
 
@@ -51,7 +51,7 @@ Creates a resource pool for specified cloud. Only certain types of clouds suppor
 	@param zoneId The ID of the cloud
 	@return ApiAddCloudResourcePoolRequest
 */
-func (a *CloudsAPIService) AddCloudResourcePool(ctx context.Context, zoneId float32) ApiAddCloudResourcePoolRequest {
+func (a *CloudsAPIService) AddCloudResourcePool(ctx context.Context, zoneId int64) ApiAddCloudResourcePoolRequest {
 	return ApiAddCloudResourcePoolRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -289,7 +289,7 @@ func (a *CloudsAPIService) AddCloudsExecute(r ApiAddCloudsRequest) (*AddClouds20
 type ApiGetCloudDatastoresRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	id         int64
 }
 
@@ -308,7 +308,7 @@ This endpoint retrieves a specific datastore under a cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetCloudDatastoresRequest
 */
-func (a *CloudsAPIService) GetCloudDatastores(ctx context.Context, zoneId float32, id int64) ApiGetCloudDatastoresRequest {
+func (a *CloudsAPIService) GetCloudDatastores(ctx context.Context, zoneId int64, id int64) ApiGetCloudDatastoresRequest {
 	return ApiGetCloudDatastoresRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -418,7 +418,7 @@ func (a *CloudsAPIService) GetCloudDatastoresExecute(r ApiGetCloudDatastoresRequ
 type ApiGetCloudFoldersRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	id         int64
 }
 
@@ -437,7 +437,7 @@ This endpoint retrieves a specific folder under a cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetCloudFoldersRequest
 */
-func (a *CloudsAPIService) GetCloudFolders(ctx context.Context, zoneId float32, id int64) ApiGetCloudFoldersRequest {
+func (a *CloudsAPIService) GetCloudFolders(ctx context.Context, zoneId int64, id int64) ApiGetCloudFoldersRequest {
 	return ApiGetCloudFoldersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -547,7 +547,7 @@ func (a *CloudsAPIService) GetCloudFoldersExecute(r ApiGetCloudFoldersRequest) (
 type ApiGetCloudResourcePoolsRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	id         int64
 }
 
@@ -565,7 +565,7 @@ This endpoint retrieves a specific resource pool.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiGetCloudResourcePoolsRequest
 */
-func (a *CloudsAPIService) GetCloudResourcePools(ctx context.Context, zoneId float32, id int64) ApiGetCloudResourcePoolsRequest {
+func (a *CloudsAPIService) GetCloudResourcePools(ctx context.Context, zoneId int64, id int64) ApiGetCloudResourcePoolsRequest {
 	return ApiGetCloudResourcePoolsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -923,7 +923,7 @@ func (a *CloudsAPIService) GetCloudsExecute(r ApiGetCloudsRequest) (*GetClouds20
 type ApiListCloudDatastoresRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	name       *string
 	phrase     *string
 	max        *int64
@@ -975,7 +975,7 @@ This endpoint retrieves all data stores under a cloud.
 	@param zoneId The ID of the cloud
 	@return ApiListCloudDatastoresRequest
 */
-func (a *CloudsAPIService) ListCloudDatastores(ctx context.Context, zoneId float32) ApiListCloudDatastoresRequest {
+func (a *CloudsAPIService) ListCloudDatastores(ctx context.Context, zoneId int64) ApiListCloudDatastoresRequest {
 	return ApiListCloudDatastoresRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1107,7 +1107,7 @@ func (a *CloudsAPIService) ListCloudDatastoresExecute(r ApiListCloudDatastoresRe
 type ApiListCloudFoldersRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	name       *string
 	phrase     *string
 	max        *int64
@@ -1145,7 +1145,7 @@ This endpoint retrieves all resource folders under a cloud.
 	@param zoneId The ID of the cloud
 	@return ApiListCloudFoldersRequest
 */
-func (a *CloudsAPIService) ListCloudFolders(ctx context.Context, zoneId float32) ApiListCloudFoldersRequest {
+func (a *CloudsAPIService) ListCloudFolders(ctx context.Context, zoneId int64) ApiListCloudFoldersRequest {
 	return ApiListCloudFoldersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1265,7 +1265,7 @@ func (a *CloudsAPIService) ListCloudFoldersExecute(r ApiListCloudFoldersRequest)
 type ApiListCloudResourcePoolsRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	name       *string
 	phrase     *string
 	max        *int64
@@ -1303,7 +1303,7 @@ This endpoint retrieves all resource pools under a cloud.
 	@param zoneId The ID of the cloud
 	@return ApiListCloudResourcePoolsRequest
 */
-func (a *CloudsAPIService) ListCloudResourcePools(ctx context.Context, zoneId float32) ApiListCloudResourcePoolsRequest {
+func (a *CloudsAPIService) ListCloudResourcePools(ctx context.Context, zoneId int64) ApiListCloudResourcePoolsRequest {
 	return ApiListCloudResourcePoolsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2124,7 +2124,7 @@ func (a *CloudsAPIService) RefreshCloudsExecute(r ApiRefreshCloudsRequest) (*Del
 type ApiRemoveCloudResourcePoolsRequest struct {
 	ctx        context.Context
 	ApiService *CloudsAPIService
-	zoneId     float32
+	zoneId     int64
 	id         int64
 }
 
@@ -2142,7 +2142,7 @@ Deletes a resource pool for specified Cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRemoveCloudResourcePoolsRequest
 */
-func (a *CloudsAPIService) RemoveCloudResourcePools(ctx context.Context, zoneId float32, id int64) ApiRemoveCloudResourcePoolsRequest {
+func (a *CloudsAPIService) RemoveCloudResourcePools(ctx context.Context, zoneId int64, id int64) ApiRemoveCloudResourcePoolsRequest {
 	return ApiRemoveCloudResourcePoolsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2402,7 +2402,7 @@ func (a *CloudsAPIService) RemoveCloudsExecute(r ApiRemoveCloudsRequest) (*Delet
 type ApiSaveCloudDatastoreRequest struct {
 	ctx                       context.Context
 	ApiService                *CloudsAPIService
-	zoneId                    float32
+	zoneId                    int64
 	saveCloudDatastoreRequest *SaveCloudDatastoreRequest
 }
 
@@ -2424,7 +2424,7 @@ This endpoint will create a datastore for a specific cloud.
 	@param zoneId The ID of the cloud
 	@return ApiSaveCloudDatastoreRequest
 */
-func (a *CloudsAPIService) SaveCloudDatastore(ctx context.Context, zoneId float32) ApiSaveCloudDatastoreRequest {
+func (a *CloudsAPIService) SaveCloudDatastore(ctx context.Context, zoneId int64) ApiSaveCloudDatastoreRequest {
 	return ApiSaveCloudDatastoreRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2534,7 +2534,7 @@ func (a *CloudsAPIService) SaveCloudDatastoreExecute(r ApiSaveCloudDatastoreRequ
 type ApiUpdateCloudDatastoresRequest struct {
 	ctx                          context.Context
 	ApiService                   *CloudsAPIService
-	zoneId                       float32
+	zoneId                       int64
 	id                           int64
 	updateCloudDatastoresRequest *UpdateCloudDatastoresRequest
 }
@@ -2558,7 +2558,7 @@ Updates a datastore for specified cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateCloudDatastoresRequest
 */
-func (a *CloudsAPIService) UpdateCloudDatastores(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudDatastoresRequest {
+func (a *CloudsAPIService) UpdateCloudDatastores(ctx context.Context, zoneId int64, id int64) ApiUpdateCloudDatastoresRequest {
 	return ApiUpdateCloudDatastoresRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2670,7 +2670,7 @@ func (a *CloudsAPIService) UpdateCloudDatastoresExecute(r ApiUpdateCloudDatastor
 type ApiUpdateCloudFoldersRequest struct {
 	ctx                       context.Context
 	ApiService                *CloudsAPIService
-	zoneId                    float32
+	zoneId                    int64
 	id                        int64
 	updateCloudFoldersRequest *UpdateCloudFoldersRequest
 }
@@ -2694,7 +2694,7 @@ Updates a resource folder for specified cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateCloudFoldersRequest
 */
-func (a *CloudsAPIService) UpdateCloudFolders(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudFoldersRequest {
+func (a *CloudsAPIService) UpdateCloudFolders(ctx context.Context, zoneId int64, id int64) ApiUpdateCloudFoldersRequest {
 	return ApiUpdateCloudFoldersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2974,7 +2974,7 @@ func (a *CloudsAPIService) UpdateCloudLogoExecute(r ApiUpdateCloudLogoRequest) (
 type ApiUpdateCloudResourcePoolRequest struct {
 	ctx                            context.Context
 	ApiService                     *CloudsAPIService
-	zoneId                         float32
+	zoneId                         int64
 	id                             int64
 	updateCloudResourcePoolRequest *UpdateCloudResourcePoolRequest
 }
@@ -2998,7 +2998,7 @@ Updates a resource pool for specified cloud.
 	@param id Morpheus ID of the Object being referenced
 	@return ApiUpdateCloudResourcePoolRequest
 */
-func (a *CloudsAPIService) UpdateCloudResourcePool(ctx context.Context, zoneId float32, id int64) ApiUpdateCloudResourcePoolRequest {
+func (a *CloudsAPIService) UpdateCloudResourcePool(ctx context.Context, zoneId int64, id int64) ApiUpdateCloudResourcePoolRequest {
 	return ApiUpdateCloudResourcePoolRequest{
 		ApiService: a,
 		ctx:        ctx,
