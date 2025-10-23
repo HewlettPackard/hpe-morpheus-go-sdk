@@ -1,4 +1,4 @@
-module github.com/HewlettPackard/hpe-morpheus-go-sdk
+module github.com/HewlettPackard/hpe-morpheus-go-sdk/oapigen
 
 go 1.24
 
