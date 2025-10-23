@@ -53,7 +53,8 @@ tasks:
           -c {{.GENERATORCONFIG}}
           {{if .TEMPLATEDIR -}}-t {{.TEMPLATEDIR}} {{end}}
           -o {{.OUTPUTDIR}}
-      - goimports -w .
+      - goimports -w ./oapigen
+      - mv openapitools.json oapigen/
   
   clone-spec:
     silent: true
@@ -80,7 +81,7 @@ tasks:
       - defer: rm -rf ../morpheus-openapi
       - git checkout {{.GITREF}}
       - task: bundle-spec
-      - git rev-parse HEAD > ../.api/latest-commit-sha
+      - git rev-parse HEAD > ../oapigen/.api/latest-commit-sha
   
   update-client:
     desc: "update Go SDK to match the morpheus-openapi GITREF"
