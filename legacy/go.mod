@@ -1,0 +1,12 @@
+module github.com/HewlettPackard/hpe-morpheus-go-sdk/legacy
+
+go 1.17
+
+require github.com/go-resty/resty/v2 v2.14.0
+
+require golang.org/x/net v0.27.0 // indirect
+
+retract v0.1.6
+
+// voodoo
+//replace github.com/go-resty/resty => gopkg.in/resty.v1 v1.12.0
