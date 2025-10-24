@@ -246,7 +246,6 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	httpReq.Form = make(map[string][]string)
-	println("url is: ", url)
 
 	// set query params
 	q := httpReq.URL.Query()
