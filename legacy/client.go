@@ -346,7 +346,8 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		httpReq.Header.Set("Accept", "application/json")
 	}
 
-	// Dump the request if debug is enabled
+	// Dump the request if debug is enabled.
+	// This is also what the OpenAPI Generator client does.
 	if client.debug {
 		dump, err := httputil.DumpRequestOut(httpReq, true)
 		if err != nil {
