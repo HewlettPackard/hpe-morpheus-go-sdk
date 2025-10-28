@@ -29,7 +29,7 @@ type Policy struct {
 	User                 *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
 	Role                 *AddPolicies200ResponseAllOfPolicyRole                      `json:"role,omitempty"`
 	RefType              NullableString                                              `json:"refType,omitempty"`
-	RefId                NullableString                                              `json:"refId,omitempty"`
+	RefId                NullableInt64                                               `json:"refId,omitempty"`
 	EachUser             NullableBool                                                `json:"eachUser,omitempty"`
 	Config               *AddPolicies200ResponseAllOfPolicyConfig                    `json:"config,omitempty"`
 	Enabled              *bool                                                       `json:"enabled,omitempty"`
@@ -368,9 +368,9 @@ func (o *Policy) UnsetRefType() {
 }
 
 // GetRefId returns the RefId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Policy) GetRefId() string {
+func (o *Policy) GetRefId() int64 {
 	if o == nil || IsNil(o.RefId.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.RefId.Get()
@@ -379,7 +379,7 @@ func (o *Policy) GetRefId() string {
 // GetRefIdOk returns a tuple with the RefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Policy) GetRefIdOk() (*string, bool) {
+func (o *Policy) GetRefIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -395,8 +395,8 @@ func (o *Policy) IsSetRefId() bool {
 	return false
 }
 
-// SetRefId gets a reference to the given NullableString and assigns it to the RefId field.
-func (o *Policy) SetRefId(v string) {
+// SetRefId gets a reference to the given NullableInt64 and assigns it to the RefId field.
+func (o *Policy) SetRefId(v int64) {
 	o.RefId.Set(&v)
 }
 

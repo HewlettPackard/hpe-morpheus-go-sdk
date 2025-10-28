@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **User** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
 **Role** | Pointer to [**AddPolicies200ResponseAllOfPolicyRole**](AddPolicies200ResponseAllOfPolicyRole.md) |  | [optional] 
 **RefType** | Pointer to **NullableString** |  | [optional] 
-**RefId** | Pointer to **NullableString** |  | [optional] 
+**RefId** | Pointer to **NullableInt64** |  | [optional] 
 **EachUser** | Pointer to **NullableBool** |  | [optional] 
 **Config** | Pointer to [**AddPolicies200ResponseAllOfPolicyConfig**](AddPolicies200ResponseAllOfPolicyConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -286,20 +286,20 @@ HasRefType returns a boolean if a field has been set.
 UnsetRefType ensures that no value is present for RefType, not even an explicit nil
 ### GetRefId
 
-`func (o *AddPolicies200ResponseAllOfPolicy) GetRefId() string`
+`func (o *AddPolicies200ResponseAllOfPolicy) GetRefId() int64`
 
 GetRefId returns the RefId field if non-nil, zero value otherwise.
 
 ### GetRefIdOk
 
-`func (o *AddPolicies200ResponseAllOfPolicy) GetRefIdOk() (*string, bool)`
+`func (o *AddPolicies200ResponseAllOfPolicy) GetRefIdOk() (*int64, bool)`
 
 GetRefIdOk returns a tuple with the RefId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefId
 
-`func (o *AddPolicies200ResponseAllOfPolicy) SetRefId(v string)`
+`func (o *AddPolicies200ResponseAllOfPolicy) SetRefId(v int64)`
 
 SetRefId sets RefId field to given value.
 
