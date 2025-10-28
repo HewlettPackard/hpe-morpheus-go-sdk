@@ -353,7 +353,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		if err != nil {
 			return resp, err
 		}
-		log.Printf("\n%s\n", string(dump))
+		log.Printf("\nREQUEST:\n%s\n", string(dump))
 	}
 
 	httpResp, err := client.HTTPClient.Do(httpReq)
@@ -369,7 +369,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		if err != nil {
 			return resp, err
 		}
-		log.Printf("\n%s\n", string(dump))
+		log.Printf("\nRESPONSE:\n%s\n", string(dump))
 	}
 
 	receivedTime := time.Now()
