@@ -11,6 +11,7 @@ import (
 	"log"
 	"mime/multipart"
 	"net/http"
+	"net/http/httputil"
 	"strings"
 	"time"
 )
@@ -345,9 +346,29 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		httpReq.Header.Set("Accept", "application/json")
 	}
 
+	// Dump the request if debug is enabled
+	if client.debug {
+		dump, err := httputil.DumpRequestOut(httpReq, true)
+		if err != nil {
+			return resp, err
+		}
+		log.Printf("\n%s\n", string(dump))
+	}
+
 	httpResp, err := client.HTTPClient.Do(httpReq)
 	if err != nil {
-		return resp, err
+		// standardize the error format across both providers
+		return resp, errWithBody(err, httpResp)
+	}
+
+	// Dump the response if debug is enabled.
+	// This is also what the OpenAPI Generator client does.
+	if client.debug {
+		dump, err := httputil.DumpResponse(httpResp, true)
+		if err != nil {
+			return resp, err
+		}
+		log.Printf("\n%s\n", string(dump))
 	}
 
 	receivedTime := time.Now()
