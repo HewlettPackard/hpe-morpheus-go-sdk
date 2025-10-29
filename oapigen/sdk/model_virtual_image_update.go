@@ -38,8 +38,8 @@ type VirtualImageUpdate struct {
 	// SSH Password
 	SshPassword NullableString `json:"sshPassword,omitempty"`
 	// SSH Key
-	SshKey NullableString                            `json:"sshKey,omitempty"`
-	OsType *AddVirtualImageRequestVirtualImageOsType `json:"osType,omitempty"`
+	SshKey NullableString                               `json:"sshKey,omitempty"`
+	OsType *UpdateVirtualImageRequestVirtualImageOsType `json:"osType,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	Accounts   []int64 `json:"accounts,omitempty"`
@@ -54,8 +54,8 @@ type VirtualImageUpdate struct {
 	// Trial Version
 	TrialVersion *bool `json:"trialVersion,omitempty"`
 	// Sysprep Enabled?
-	IsSysprep *bool                                     `json:"isSysprep,omitempty"`
-	Config    *AddVirtualImageRequestVirtualImageConfig `json:"config,omitempty"`
+	IsSysprep *bool                                        `json:"isSysprep,omitempty"`
+	Config    *UpdateVirtualImageRequestVirtualImageConfig `json:"config,omitempty"`
 	// Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified.
 	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
 	// Add or update value of Metadata tags, Array of objects having a name and value.
@@ -486,9 +486,9 @@ func (o *VirtualImageUpdate) UnsetSshKey() {
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *VirtualImageUpdate) GetOsType() AddVirtualImageRequestVirtualImageOsType {
+func (o *VirtualImageUpdate) GetOsType() UpdateVirtualImageRequestVirtualImageOsType {
 	if o == nil || IsNil(o.OsType) {
-		var ret AddVirtualImageRequestVirtualImageOsType
+		var ret UpdateVirtualImageRequestVirtualImageOsType
 		return ret
 	}
 	return *o.OsType
@@ -496,7 +496,7 @@ func (o *VirtualImageUpdate) GetOsType() AddVirtualImageRequestVirtualImageOsTyp
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImageUpdate) GetOsTypeOk() (*AddVirtualImageRequestVirtualImageOsType, bool) {
+func (o *VirtualImageUpdate) GetOsTypeOk() (*UpdateVirtualImageRequestVirtualImageOsType, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -512,8 +512,8 @@ func (o *VirtualImageUpdate) IsSetOsType() bool {
 	return false
 }
 
-// SetOsType gets a reference to the given AddVirtualImageRequestVirtualImageOsType and assigns it to the OsType field.
-func (o *VirtualImageUpdate) SetOsType(v AddVirtualImageRequestVirtualImageOsType) {
+// SetOsType gets a reference to the given UpdateVirtualImageRequestVirtualImageOsType and assigns it to the OsType field.
+func (o *VirtualImageUpdate) SetOsType(v UpdateVirtualImageRequestVirtualImageOsType) {
 	o.OsType = &v
 }
 
@@ -774,9 +774,9 @@ func (o *VirtualImageUpdate) SetIsSysprep(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *VirtualImageUpdate) GetConfig() AddVirtualImageRequestVirtualImageConfig {
+func (o *VirtualImageUpdate) GetConfig() UpdateVirtualImageRequestVirtualImageConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddVirtualImageRequestVirtualImageConfig
+		var ret UpdateVirtualImageRequestVirtualImageConfig
 		return ret
 	}
 	return *o.Config
@@ -784,7 +784,7 @@ func (o *VirtualImageUpdate) GetConfig() AddVirtualImageRequestVirtualImageConfi
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImageUpdate) GetConfigOk() (*AddVirtualImageRequestVirtualImageConfig, bool) {
+func (o *VirtualImageUpdate) GetConfigOk() (*UpdateVirtualImageRequestVirtualImageConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -800,8 +800,8 @@ func (o *VirtualImageUpdate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddVirtualImageRequestVirtualImageConfig and assigns it to the Config field.
-func (o *VirtualImageUpdate) SetConfig(v AddVirtualImageRequestVirtualImageConfig) {
+// SetConfig gets a reference to the given UpdateVirtualImageRequestVirtualImageConfig and assigns it to the Config field.
+func (o *VirtualImageUpdate) SetConfig(v UpdateVirtualImageRequestVirtualImageConfig) {
 	o.Config = &v
 }
 

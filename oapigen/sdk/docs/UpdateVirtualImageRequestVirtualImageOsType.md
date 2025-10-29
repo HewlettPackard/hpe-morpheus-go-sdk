@@ -1,4 +1,4 @@
-# AddVirtualImageRequestVirtualImageOsType
+# UpdateVirtualImageRequestVirtualImageOsType
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewAddVirtualImageRequestVirtualImageOsType
+### NewUpdateVirtualImageRequestVirtualImageOsType
 
-`func NewAddVirtualImageRequestVirtualImageOsType() *AddVirtualImageRequestVirtualImageOsType`
+`func NewUpdateVirtualImageRequestVirtualImageOsType() *UpdateVirtualImageRequestVirtualImageOsType`
 
-NewAddVirtualImageRequestVirtualImageOsType instantiates a new AddVirtualImageRequestVirtualImageOsType object
+NewUpdateVirtualImageRequestVirtualImageOsType instantiates a new UpdateVirtualImageRequestVirtualImageOsType object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddVirtualImageRequestVirtualImageOsTypeWithDefaults
+### NewUpdateVirtualImageRequestVirtualImageOsTypeWithDefaults
 
-`func NewAddVirtualImageRequestVirtualImageOsTypeWithDefaults() *AddVirtualImageRequestVirtualImageOsType`
+`func NewUpdateVirtualImageRequestVirtualImageOsTypeWithDefaults() *UpdateVirtualImageRequestVirtualImageOsType`
 
-NewAddVirtualImageRequestVirtualImageOsTypeWithDefaults instantiates a new AddVirtualImageRequestVirtualImageOsType object
+NewUpdateVirtualImageRequestVirtualImageOsTypeWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageOsType object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddVirtualImageRequestVirtualImageOsType) GetId() int64`
+`func (o *UpdateVirtualImageRequestVirtualImageOsType) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddVirtualImageRequestVirtualImageOsType) GetIdOk() (*int64, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImageOsType) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddVirtualImageRequestVirtualImageOsType) SetId(v int64)`
+`func (o *UpdateVirtualImageRequestVirtualImageOsType) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *AddVirtualImageRequestVirtualImageOsType) HasId() bool`
+`func (o *UpdateVirtualImageRequestVirtualImageOsType) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 

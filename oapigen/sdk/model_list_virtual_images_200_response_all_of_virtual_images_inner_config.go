@@ -13,87 +13,151 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
+
+	"gopkg.in/validator.v2"
 )
 
-// checks if the ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
-// ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct for ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
+// ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig - Map of configuration properties, varies by image type.
 type ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
-	MemorySizeType       *string                `json:"memorySizeType,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AzureReferenceVirtualImageConfiguration *AzureReferenceVirtualImageConfiguration
+	MapmapOfStringAny                       *map[string]interface{}
 }
 
-type _ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
-
-// NewListVirtualImages200ResponseAllOfVirtualImagesInnerConfig instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListVirtualImages200ResponseAllOfVirtualImagesInnerConfig() *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
-	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
-	return &this
-}
-
-// NewListVirtualImages200ResponseAllOfVirtualImagesInnerConfigWithDefaults instantiates a new ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListVirtualImages200ResponseAllOfVirtualImagesInnerConfigWithDefaults() *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
-	this := ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
-	return &this
-}
-
-// GetMemorySizeType returns the MemorySizeType field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) GetMemorySizeType() string {
-	if o == nil || IsNil(o.MemorySizeType) {
-		var ret string
-		return ret
+// AzureReferenceVirtualImageConfigurationAsListVirtualImages200ResponseAllOfVirtualImagesInnerConfig is a convenience function that returns AzureReferenceVirtualImageConfiguration wrapped in ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
+func AzureReferenceVirtualImageConfigurationAsListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(v *AzureReferenceVirtualImageConfiguration) ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
+	return ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{
+		AzureReferenceVirtualImageConfiguration: v,
 	}
-	return *o.MemorySizeType
 }
 
-// GetMemorySizeTypeOk returns a tuple with the MemorySizeType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) GetMemorySizeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MemorySizeType) {
-		return nil, false
+// map[string]interface{}AsListVirtualImages200ResponseAllOfVirtualImagesInnerConfig is a convenience function that returns map[string]interface{} wrapped in ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
+func MapmapOfStringAnyAsListVirtualImages200ResponseAllOfVirtualImagesInnerConfig(v *map[string]interface{}) ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
+	return ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{
+		MapmapOfStringAny: v,
 	}
-	return o.MemorySizeType, true
 }
 
-// IsSetMemorySizeType returns a boolean if a field has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) IsSetMemorySizeType() bool {
-	if o != nil && !IsNil(o.MemorySizeType) {
-		return true
+func (dst *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
 	}
 
-	return false
-}
-
-// SetMemorySizeType gets a reference to the given string and assigns it to the MemorySizeType field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) SetMemorySizeType(v string) {
-	o.MemorySizeType = &v
-}
-
-func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MemorySizeType) {
-		toSerialize["memorySizeType"] = o.MemorySizeType
+	if err := mapstructDecode(data, &dst.AzureReferenceVirtualImageConfiguration); err != nil {
+		return nil, err
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if IsEmpty(dst.AzureReferenceVirtualImageConfiguration) {
+		dst.AzureReferenceVirtualImageConfiguration = nil
 	}
 
-	return toSerialize, nil
+	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
+		return nil, err
+	}
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return dst, nil
+}
+
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+	// try to unmarshal data into AzureReferenceVirtualImageConfiguration
+	err = newStrictDecoder(data).Decode(&dst.AzureReferenceVirtualImageConfiguration)
+	if err == nil {
+		jsonAzureReferenceVirtualImageConfiguration, _ := json.Marshal(dst.AzureReferenceVirtualImageConfiguration)
+		if string(jsonAzureReferenceVirtualImageConfiguration) == "{}" { // empty struct
+			dst.AzureReferenceVirtualImageConfiguration = nil
+		} else {
+			if err = validator.Validate(dst.AzureReferenceVirtualImageConfiguration); err != nil {
+				dst.AzureReferenceVirtualImageConfiguration = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AzureReferenceVirtualImageConfiguration = nil
+	}
+
+	// try to unmarshal data into MapmapOfStringAny
+	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			if err = validator.Validate(dst.MapmapOfStringAny); err != nil {
+				dst.MapmapOfStringAny = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.AzureReferenceVirtualImageConfiguration = nil
+		dst.MapmapOfStringAny = nil
+
+		return NewResponseValidationError("data matches more than one schema in oneOf(ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return NewResponseValidationError("data failed to match schemas in oneOf(ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig)")
+	}
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) MarshalJSON() ([]byte, error) {
+	if src.AzureReferenceVirtualImageConfiguration != nil {
+		return json.Marshal(&src.AzureReferenceVirtualImageConfiguration)
+	}
+
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
+	}
+
+	return nil, nil // no data in oneOf schemas
+}
+
+// Get the actual instance
+func (obj *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) GetActualInstance() interface{} {
+	if obj == nil {
+		return nil
+	}
+	if obj.AzureReferenceVirtualImageConfiguration != nil {
+		return obj.AzureReferenceVirtualImageConfiguration
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) GetActualInstanceValue() interface{} {
+	if obj.AzureReferenceVirtualImageConfiguration != nil {
+		return *obj.AzureReferenceVirtualImageConfiguration
+	}
+
+	if obj.MapmapOfStringAny != nil {
+		return *obj.MapmapOfStringAny
+	}
+
+	// all schemas are nil
+	return nil
 }
 
 type NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig struct {
@@ -140,9 +204,3 @@ func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) Unmar
 
 	return v, nil
 }
-
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

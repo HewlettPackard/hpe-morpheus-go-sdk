@@ -38,8 +38,8 @@ type AddVirtualImage200ResponseAllOfVirtualImage struct {
 	SshKey               NullableString                                                      `json:"sshKey,omitempty"`
 	OsType               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
 	MinRam               NullableInt64                                                       `json:"minRam,omitempty"`
-	MinRamGB             NullableInt64                                                       `json:"minRamGB,omitempty"`
-	MinDisk              NullableString                                                      `json:"minDisk,omitempty"`
+	MinRamGB             NullableFloat64                                                     `json:"minRamGB,omitempty"`
+	MinDisk              NullableInt64                                                       `json:"minDisk,omitempty"`
 	MinDiskGB            NullableString                                                      `json:"minDiskGB,omitempty"`
 	RawSize              NullableInt64                                                       `json:"rawSize,omitempty"`
 	RawSizeGB            NullableFloat32                                                     `json:"rawSizeGB,omitempty"`
@@ -54,7 +54,7 @@ type AddVirtualImage200ResponseAllOfVirtualImage struct {
 	FipsEnabled          *bool                                                               `json:"fipsEnabled,omitempty"`
 	UserData             NullableString                                                      `json:"userData,omitempty"`
 	ConsoleKeymap        NullableString                                                      `json:"consoleKeymap,omitempty"`
-	StorageProvider      NullableString                                                      `json:"storageProvider,omitempty"`
+	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                  `json:"storageProvider,omitempty"`
 	ExternalId           NullableString                                                      `json:"externalId,omitempty"`
 	Visibility           *string                                                             `json:"visibility,omitempty"`
 	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                 `json:"accounts,omitempty"`
@@ -62,7 +62,7 @@ type AddVirtualImage200ResponseAllOfVirtualImage struct {
 	Volumes              []map[string]interface{}                                            `json:"volumes,omitempty"`
 	StorageControllers   []map[string]interface{}                                            `json:"storageControllers,omitempty"`
 	NetworkInterfaces    []map[string]interface{}                                            `json:"networkInterfaces,omitempty"`
-	Tags                 []map[string]interface{}                                            `json:"tags,omitempty"`
+	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner     `json:"tags,omitempty"`
 	Locations            []map[string]interface{}                                            `json:"locations,omitempty"`
 	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
@@ -700,9 +700,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinRam() {
 }
 
 // GetMinRamGB returns the MinRamGB field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGB() int64 {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGB() float64 {
 	if o == nil || IsNil(o.MinRamGB.Get()) {
-		var ret int64
+		var ret float64
 		return ret
 	}
 	return *o.MinRamGB.Get()
@@ -711,7 +711,7 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGB() int64 {
 // GetMinRamGBOk returns a tuple with the MinRamGB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGBOk() (*int64, bool) {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinRamGBOk() (*float64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -727,8 +727,8 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinRamGB() bool {
 	return false
 }
 
-// SetMinRamGB gets a reference to the given NullableInt64 and assigns it to the MinRamGB field.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRamGB(v int64) {
+// SetMinRamGB gets a reference to the given NullableFloat64 and assigns it to the MinRamGB field.
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinRamGB(v float64) {
 	o.MinRamGB.Set(&v)
 }
 
@@ -743,9 +743,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetMinRamGB() {
 }
 
 // GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDisk() string {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDisk() int64 {
 	if o == nil || IsNil(o.MinDisk.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MinDisk.Get()
@@ -754,7 +754,7 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDisk() string {
 // GetMinDiskOk returns a tuple with the MinDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDiskOk() (*string, bool) {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetMinDiskOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -770,8 +770,8 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetMinDisk() bool {
 	return false
 }
 
-// SetMinDisk gets a reference to the given NullableString and assigns it to the MinDisk field.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDisk(v string) {
+// SetMinDisk gets a reference to the given NullableInt64 and assigns it to the MinDisk field.
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetMinDisk(v int64) {
 	o.MinDisk.Set(&v)
 }
 
@@ -1299,47 +1299,36 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetConsoleKeymap() {
 	o.ConsoleKeymap.Unset()
 }
 
-// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageProvider() string {
-	if o == nil || IsNil(o.StorageProvider.Get()) {
-		var ret string
+// GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+	if o == nil || IsNil(o.StorageProvider) {
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
 		return ret
 	}
-	return *o.StorageProvider.Get()
+	return *o.StorageProvider
 }
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageProviderOk() (*string, bool) {
-	if o == nil {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
-	return o.StorageProvider.Get(), o.StorageProvider.IsSet()
+	return o.StorageProvider, true
 }
 
 // IsSetStorageProvider returns a boolean if a field has been set.
 func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetStorageProvider() bool {
-	if o != nil && o.StorageProvider.IsSet() {
+	if o != nil && !IsNil(o.StorageProvider) {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageProvider gets a reference to the given NullableString and assigns it to the StorageProvider field.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetStorageProvider(v string) {
-	o.StorageProvider.Set(&v)
-}
-
-// SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetStorageProviderNil() {
-	o.StorageProvider.Set(nil)
-}
-
-// UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) UnsetStorageProvider() {
-	o.StorageProvider.Unset()
+// SetStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the StorageProvider field.
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+	o.StorageProvider = &v
 }
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1578,9 +1567,9 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetNetworkInterfaces(v []m
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTags() []map[string]interface{} {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []map[string]interface{}
+		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
 		return ret
 	}
 	return o.Tags
@@ -1588,7 +1577,7 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTags() []map[string]int
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTagsOk() ([]map[string]interface{}, bool) {
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -1604,8 +1593,8 @@ func (o *AddVirtualImage200ResponseAllOfVirtualImage) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []map[string]interface{} and assigns it to the Tags field.
-func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetTags(v []map[string]interface{}) {
+// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
+func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
 	o.Tags = v
 }
 
@@ -1846,8 +1835,8 @@ func (o AddVirtualImage200ResponseAllOfVirtualImage) ToMap() (map[string]interfa
 	if o.ConsoleKeymap.IsSet() {
 		toSerialize["consoleKeymap"] = o.ConsoleKeymap.Get()
 	}
-	if o.StorageProvider.IsSet() {
-		toSerialize["storageProvider"] = o.StorageProvider.Get()
+	if !IsNil(o.StorageProvider) {
+		toSerialize["storageProvider"] = o.StorageProvider
 	}
 	if o.ExternalId.IsSet() {
 		toSerialize["externalId"] = o.ExternalId.Get()

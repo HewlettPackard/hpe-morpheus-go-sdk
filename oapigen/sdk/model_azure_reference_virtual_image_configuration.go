@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddVirtualImageRequestVirtualImageConfigOneOf type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddVirtualImageRequestVirtualImageConfigOneOf{}
+// checks if the AzureReferenceVirtualImageConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AzureReferenceVirtualImageConfiguration{}
 
-// AddVirtualImageRequestVirtualImageConfigOneOf Azure Reference Virtual Image Parameters
-type AddVirtualImageRequestVirtualImageConfigOneOf struct {
+// AzureReferenceVirtualImageConfiguration Azure Reference Virtual Image Parameters
+type AzureReferenceVirtualImageConfiguration struct {
 	// The name of the publisher in the Azure Marketplace
 	Publisher string `json:"publisher"`
 	// The name of the offer in the Azure Marketplace
@@ -31,14 +31,14 @@ type AddVirtualImageRequestVirtualImageConfigOneOf struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _AddVirtualImageRequestVirtualImageConfigOneOf AddVirtualImageRequestVirtualImageConfigOneOf
+type _AzureReferenceVirtualImageConfiguration AzureReferenceVirtualImageConfiguration
 
-// NewAddVirtualImageRequestVirtualImageConfigOneOf instantiates a new AddVirtualImageRequestVirtualImageConfigOneOf object
+// NewAzureReferenceVirtualImageConfiguration instantiates a new AzureReferenceVirtualImageConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddVirtualImageRequestVirtualImageConfigOneOf(publisher string, offer string, sku string, version string) *AddVirtualImageRequestVirtualImageConfigOneOf {
-	this := AddVirtualImageRequestVirtualImageConfigOneOf{}
+func NewAzureReferenceVirtualImageConfiguration(publisher string, offer string, sku string, version string) *AzureReferenceVirtualImageConfiguration {
+	this := AzureReferenceVirtualImageConfiguration{}
 	this.Publisher = publisher
 	this.Offer = offer
 	this.Sku = sku
@@ -46,16 +46,16 @@ func NewAddVirtualImageRequestVirtualImageConfigOneOf(publisher string, offer st
 	return &this
 }
 
-// NewAddVirtualImageRequestVirtualImageConfigOneOfWithDefaults instantiates a new AddVirtualImageRequestVirtualImageConfigOneOf object
+// NewAzureReferenceVirtualImageConfigurationWithDefaults instantiates a new AzureReferenceVirtualImageConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddVirtualImageRequestVirtualImageConfigOneOfWithDefaults() *AddVirtualImageRequestVirtualImageConfigOneOf {
-	this := AddVirtualImageRequestVirtualImageConfigOneOf{}
+func NewAzureReferenceVirtualImageConfigurationWithDefaults() *AzureReferenceVirtualImageConfiguration {
+	this := AzureReferenceVirtualImageConfiguration{}
 	return &this
 }
 
 // GetPublisher returns the Publisher field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisher() string {
+func (o *AzureReferenceVirtualImageConfiguration) GetPublisher() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -66,7 +66,7 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisher() string {
 
 // GetPublisherOk returns a tuple with the Publisher field value
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisherOk() (*string, bool) {
+func (o *AzureReferenceVirtualImageConfiguration) GetPublisherOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -74,12 +74,12 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisherOk() (*strin
 }
 
 // SetPublisher sets field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetPublisher(v string) {
+func (o *AzureReferenceVirtualImageConfiguration) SetPublisher(v string) {
 	o.Publisher = v
 }
 
 // GetOffer returns the Offer field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOffer() string {
+func (o *AzureReferenceVirtualImageConfiguration) GetOffer() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -90,7 +90,7 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOffer() string {
 
 // GetOfferOk returns a tuple with the Offer field value
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOfferOk() (*string, bool) {
+func (o *AzureReferenceVirtualImageConfiguration) GetOfferOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -98,12 +98,12 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOfferOk() (*string, b
 }
 
 // SetOffer sets field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetOffer(v string) {
+func (o *AzureReferenceVirtualImageConfiguration) SetOffer(v string) {
 	o.Offer = v
 }
 
 // GetSku returns the Sku field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSku() string {
+func (o *AzureReferenceVirtualImageConfiguration) GetSku() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -114,7 +114,7 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSku() string {
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSkuOk() (*string, bool) {
+func (o *AzureReferenceVirtualImageConfiguration) GetSkuOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -122,12 +122,12 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSkuOk() (*string, boo
 }
 
 // SetSku sets field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetSku(v string) {
+func (o *AzureReferenceVirtualImageConfiguration) SetSku(v string) {
 	o.Sku = v
 }
 
 // GetVersion returns the Version field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersion() string {
+func (o *AzureReferenceVirtualImageConfiguration) GetVersion() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -138,7 +138,7 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersion() string {
 
 // GetVersionOk returns a tuple with the Version field value
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersionOk() (*string, bool) {
+func (o *AzureReferenceVirtualImageConfiguration) GetVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -146,11 +146,11 @@ func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersionOk() (*string,
 }
 
 // SetVersion sets field value
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetVersion(v string) {
+func (o *AzureReferenceVirtualImageConfiguration) SetVersion(v string) {
 	o.Version = v
 }
 
-func (o AddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
+func (o AzureReferenceVirtualImageConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -158,7 +158,7 @@ func (o AddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, er
 	return json.Marshal(toSerialize)
 }
 
-func (o AddVirtualImageRequestVirtualImageConfigOneOf) ToMap() (map[string]interface{}, error) {
+func (o AzureReferenceVirtualImageConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["publisher"] = o.Publisher
 	toSerialize["offer"] = o.Offer
@@ -172,43 +172,43 @@ func (o AddVirtualImageRequestVirtualImageConfigOneOf) ToMap() (map[string]inter
 	return toSerialize, nil
 }
 
-type NullableAddVirtualImageRequestVirtualImageConfigOneOf struct {
-	value *AddVirtualImageRequestVirtualImageConfigOneOf
+type NullableAzureReferenceVirtualImageConfiguration struct {
+	value *AzureReferenceVirtualImageConfiguration
 	isSet bool
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) Get() *AddVirtualImageRequestVirtualImageConfigOneOf {
+func (v NullableAzureReferenceVirtualImageConfiguration) Get() *AzureReferenceVirtualImageConfiguration {
 	return v.value
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Set(val *AddVirtualImageRequestVirtualImageConfigOneOf) {
+func (v *NullableAzureReferenceVirtualImageConfiguration) Set(val *AzureReferenceVirtualImageConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) IsSet() bool {
+func (v NullableAzureReferenceVirtualImageConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) Unset() {
+func (v *NullableAzureReferenceVirtualImageConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddVirtualImageRequestVirtualImageConfigOneOf(val *AddVirtualImageRequestVirtualImageConfigOneOf) *NullableAddVirtualImageRequestVirtualImageConfigOneOf {
-	return &NullableAddVirtualImageRequestVirtualImageConfigOneOf{value: val, isSet: true}
+func NewNullableAzureReferenceVirtualImageConfiguration(val *AzureReferenceVirtualImageConfiguration) *NullableAzureReferenceVirtualImageConfiguration {
+	return &NullableAzureReferenceVirtualImageConfiguration{value: val, isSet: true}
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) MarshalJSON() ([]byte, error) {
+func (v NullableAzureReferenceVirtualImageConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(src []byte) error {
+func (v *NullableAzureReferenceVirtualImageConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableAzureReferenceVirtualImageConfiguration) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -217,7 +217,7 @@ func (v NullableAddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalMapstruc
 	return v, nil
 }
 
-func (o *AddVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(data []byte) (err error) {
+func (o *AzureReferenceVirtualImageConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

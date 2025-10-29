@@ -23,14 +23,14 @@ var _ fmt.Stringer
 
 // AddVirtualImageRequestVirtualImageConfig - Map of configuration properties, varies by image type.
 type AddVirtualImageRequestVirtualImageConfig struct {
-	AddVirtualImageRequestVirtualImageConfigOneOf *AddVirtualImageRequestVirtualImageConfigOneOf
-	MapmapOfStringAny                             *map[string]interface{}
+	AzureReferenceVirtualImageConfiguration *AzureReferenceVirtualImageConfiguration
+	MapmapOfStringAny                       *map[string]interface{}
 }
 
-// AddVirtualImageRequestVirtualImageConfigOneOfAsAddVirtualImageRequestVirtualImageConfig is a convenience function that returns AddVirtualImageRequestVirtualImageConfigOneOf wrapped in AddVirtualImageRequestVirtualImageConfig
-func AddVirtualImageRequestVirtualImageConfigOneOfAsAddVirtualImageRequestVirtualImageConfig(v *AddVirtualImageRequestVirtualImageConfigOneOf) AddVirtualImageRequestVirtualImageConfig {
+// AzureReferenceVirtualImageConfigurationAsAddVirtualImageRequestVirtualImageConfig is a convenience function that returns AzureReferenceVirtualImageConfiguration wrapped in AddVirtualImageRequestVirtualImageConfig
+func AzureReferenceVirtualImageConfigurationAsAddVirtualImageRequestVirtualImageConfig(v *AzureReferenceVirtualImageConfiguration) AddVirtualImageRequestVirtualImageConfig {
 	return AddVirtualImageRequestVirtualImageConfig{
-		AddVirtualImageRequestVirtualImageConfigOneOf: v,
+		AzureReferenceVirtualImageConfiguration: v,
 	}
 }
 
@@ -46,12 +46,12 @@ func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(data 
 		dst = &AddVirtualImageRequestVirtualImageConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddVirtualImageRequestVirtualImageConfigOneOf); err != nil {
+	if err := mapstructDecode(data, &dst.AzureReferenceVirtualImageConfiguration); err != nil {
 		return nil, err
 	}
 
-	if IsEmpty(dst.AddVirtualImageRequestVirtualImageConfigOneOf) {
-		dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
+	if IsEmpty(dst.AzureReferenceVirtualImageConfiguration) {
+		dst.AzureReferenceVirtualImageConfiguration = nil
 	}
 
 	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
@@ -69,21 +69,21 @@ func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(data 
 func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AddVirtualImageRequestVirtualImageConfigOneOf
-	err = newStrictDecoder(data).Decode(&dst.AddVirtualImageRequestVirtualImageConfigOneOf)
+	// try to unmarshal data into AzureReferenceVirtualImageConfiguration
+	err = newStrictDecoder(data).Decode(&dst.AzureReferenceVirtualImageConfiguration)
 	if err == nil {
-		jsonAddVirtualImageRequestVirtualImageConfigOneOf, _ := json.Marshal(dst.AddVirtualImageRequestVirtualImageConfigOneOf)
-		if string(jsonAddVirtualImageRequestVirtualImageConfigOneOf) == "{}" { // empty struct
-			dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
+		jsonAzureReferenceVirtualImageConfiguration, _ := json.Marshal(dst.AzureReferenceVirtualImageConfiguration)
+		if string(jsonAzureReferenceVirtualImageConfiguration) == "{}" { // empty struct
+			dst.AzureReferenceVirtualImageConfiguration = nil
 		} else {
-			if err = validator.Validate(dst.AddVirtualImageRequestVirtualImageConfigOneOf); err != nil {
-				dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
+			if err = validator.Validate(dst.AzureReferenceVirtualImageConfiguration); err != nil {
+				dst.AzureReferenceVirtualImageConfiguration = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
+		dst.AzureReferenceVirtualImageConfiguration = nil
 	}
 
 	// try to unmarshal data into MapmapOfStringAny
@@ -105,7 +105,7 @@ func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) 
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AddVirtualImageRequestVirtualImageConfigOneOf = nil
+		dst.AzureReferenceVirtualImageConfiguration = nil
 		dst.MapmapOfStringAny = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageConfig)")
@@ -118,8 +118,8 @@ func (dst *AddVirtualImageRequestVirtualImageConfig) UnmarshalJSON(data []byte) 
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddVirtualImageRequestVirtualImageConfig) MarshalJSON() ([]byte, error) {
-	if src.AddVirtualImageRequestVirtualImageConfigOneOf != nil {
-		return json.Marshal(&src.AddVirtualImageRequestVirtualImageConfigOneOf)
+	if src.AzureReferenceVirtualImageConfiguration != nil {
+		return json.Marshal(&src.AzureReferenceVirtualImageConfiguration)
 	}
 
 	if src.MapmapOfStringAny != nil {
@@ -134,8 +134,8 @@ func (obj *AddVirtualImageRequestVirtualImageConfig) GetActualInstance() interfa
 	if obj == nil {
 		return nil
 	}
-	if obj.AddVirtualImageRequestVirtualImageConfigOneOf != nil {
-		return obj.AddVirtualImageRequestVirtualImageConfigOneOf
+	if obj.AzureReferenceVirtualImageConfiguration != nil {
+		return obj.AzureReferenceVirtualImageConfiguration
 	}
 
 	if obj.MapmapOfStringAny != nil {
@@ -148,8 +148,8 @@ func (obj *AddVirtualImageRequestVirtualImageConfig) GetActualInstance() interfa
 
 // Get the actual instance value
 func (obj AddVirtualImageRequestVirtualImageConfig) GetActualInstanceValue() interface{} {
-	if obj.AddVirtualImageRequestVirtualImageConfigOneOf != nil {
-		return *obj.AddVirtualImageRequestVirtualImageConfigOneOf
+	if obj.AzureReferenceVirtualImageConfiguration != nil {
+		return *obj.AzureReferenceVirtualImageConfiguration
 	}
 
 	if obj.MapmapOfStringAny != nil {

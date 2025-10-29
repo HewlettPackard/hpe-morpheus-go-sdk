@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
-**OsType** | Pointer to [**AddVirtualImageRequestVirtualImageOsType**](AddVirtualImageRequestVirtualImageOsType.md) |  | [optional] 
+**OsType** | Pointer to [**UpdateVirtualImageRequestVirtualImageOsType**](UpdateVirtualImageRequestVirtualImageOsType.md) |  | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **Accounts** | Pointer to **[]int64** |  | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** | Auto Join Domain? | [optional] [default to false]
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **IsForceCustomization** | Pointer to **bool** | Force Guest Customization? | [optional] [default to false]
 **TrialVersion** | Pointer to **bool** | Trial Version | [optional] [default to false]
 **IsSysprep** | Pointer to **bool** | Sysprep Enabled? | [optional] [default to false]
-**Config** | Pointer to [**AddVirtualImageRequestVirtualImageConfig**](AddVirtualImageRequestVirtualImageConfig.md) |  | [optional] 
+**Config** | Pointer to [**UpdateVirtualImageRequestVirtualImageConfig**](UpdateVirtualImageRequestVirtualImageConfig.md) |  | [optional] 
 **Tags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified. | [optional] 
 **AddTags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
 **RemoveTags** | Pointer to [**[]UpdateVirtualImageRequestVirtualImageRemoveTagsInner**](UpdateVirtualImageRequestVirtualImageRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
@@ -349,20 +349,20 @@ HasSshKey returns a boolean if a field has been set.
 UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
-`func (o *VirtualImageUpdate) GetOsType() AddVirtualImageRequestVirtualImageOsType`
+`func (o *VirtualImageUpdate) GetOsType() UpdateVirtualImageRequestVirtualImageOsType`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *VirtualImageUpdate) GetOsTypeOk() (*AddVirtualImageRequestVirtualImageOsType, bool)`
+`func (o *VirtualImageUpdate) GetOsTypeOk() (*UpdateVirtualImageRequestVirtualImageOsType, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *VirtualImageUpdate) SetOsType(v AddVirtualImageRequestVirtualImageOsType)`
+`func (o *VirtualImageUpdate) SetOsType(v UpdateVirtualImageRequestVirtualImageOsType)`
 
 SetOsType sets OsType field to given value.
 
@@ -574,20 +574,20 @@ HasIsSysprep returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *VirtualImageUpdate) GetConfig() AddVirtualImageRequestVirtualImageConfig`
+`func (o *VirtualImageUpdate) GetConfig() UpdateVirtualImageRequestVirtualImageConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *VirtualImageUpdate) GetConfigOk() (*AddVirtualImageRequestVirtualImageConfig, bool)`
+`func (o *VirtualImageUpdate) GetConfigOk() (*UpdateVirtualImageRequestVirtualImageConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *VirtualImageUpdate) SetConfig(v AddVirtualImageRequestVirtualImageConfig)`
+`func (o *VirtualImageUpdate) SetConfig(v UpdateVirtualImageRequestVirtualImageConfig)`
 
 SetConfig sets Config field to given value.
 

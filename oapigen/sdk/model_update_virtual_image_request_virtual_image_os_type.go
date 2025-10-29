@@ -21,29 +21,29 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// AddVirtualImageRequestVirtualImageOsType - A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
-type AddVirtualImageRequestVirtualImageOsType struct {
+// UpdateVirtualImageRequestVirtualImageOsType - A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
+type UpdateVirtualImageRequestVirtualImageOsType struct {
 	GetAlerts200ResponseAllOfChecksInnerAccount *GetAlerts200ResponseAllOfChecksInnerAccount
 	String                                      *string
 }
 
-// GetAlerts200ResponseAllOfChecksInnerAccountAsAddVirtualImageRequestVirtualImageOsType is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerAccount wrapped in AddVirtualImageRequestVirtualImageOsType
-func GetAlerts200ResponseAllOfChecksInnerAccountAsAddVirtualImageRequestVirtualImageOsType(v *GetAlerts200ResponseAllOfChecksInnerAccount) AddVirtualImageRequestVirtualImageOsType {
-	return AddVirtualImageRequestVirtualImageOsType{
+// GetAlerts200ResponseAllOfChecksInnerAccountAsUpdateVirtualImageRequestVirtualImageOsType is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerAccount wrapped in UpdateVirtualImageRequestVirtualImageOsType
+func GetAlerts200ResponseAllOfChecksInnerAccountAsUpdateVirtualImageRequestVirtualImageOsType(v *GetAlerts200ResponseAllOfChecksInnerAccount) UpdateVirtualImageRequestVirtualImageOsType {
+	return UpdateVirtualImageRequestVirtualImageOsType{
 		GetAlerts200ResponseAllOfChecksInnerAccount: v,
 	}
 }
 
-// stringAsAddVirtualImageRequestVirtualImageOsType is a convenience function that returns string wrapped in AddVirtualImageRequestVirtualImageOsType
-func StringAsAddVirtualImageRequestVirtualImageOsType(v *string) AddVirtualImageRequestVirtualImageOsType {
-	return AddVirtualImageRequestVirtualImageOsType{
+// stringAsUpdateVirtualImageRequestVirtualImageOsType is a convenience function that returns string wrapped in UpdateVirtualImageRequestVirtualImageOsType
+func StringAsUpdateVirtualImageRequestVirtualImageOsType(v *string) UpdateVirtualImageRequestVirtualImageOsType {
+	return UpdateVirtualImageRequestVirtualImageOsType{
 		String: v,
 	}
 }
 
-func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
+func (dst *UpdateVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
-		dst = &AddVirtualImageRequestVirtualImageOsType{}
+		dst = &UpdateVirtualImageRequestVirtualImageOsType{}
 	}
 
 	if err := mapstructDecode(data, &dst.GetAlerts200ResponseAllOfChecksInnerAccount); err != nil {
@@ -66,7 +66,7 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data 
 }
 
 // Unmarshal JSON data into one of the pointers in the struct
-func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) error {
+func (dst *UpdateVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into GetAlerts200ResponseAllOfChecksInnerAccount
@@ -108,16 +108,16 @@ func (dst *AddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(data []byte) 
 		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
 		dst.String = nil
 
-		return NewResponseValidationError("data matches more than one schema in oneOf(AddVirtualImageRequestVirtualImageOsType)")
+		return NewResponseValidationError("data matches more than one schema in oneOf(UpdateVirtualImageRequestVirtualImageOsType)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(AddVirtualImageRequestVirtualImageOsType)")
+		return NewResponseValidationError("data failed to match schemas in oneOf(UpdateVirtualImageRequestVirtualImageOsType)")
 	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src AddVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error) {
+func (src UpdateVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error) {
 	if src.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
 		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerAccount)
 	}
@@ -130,7 +130,7 @@ func (src AddVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error
 }
 
 // Get the actual instance
-func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() interface{} {
+func (obj *UpdateVirtualImageRequestVirtualImageOsType) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -147,7 +147,7 @@ func (obj *AddVirtualImageRequestVirtualImageOsType) GetActualInstance() interfa
 }
 
 // Get the actual instance value
-func (obj AddVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() interface{} {
+func (obj UpdateVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() interface{} {
 	if obj.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
 		return *obj.GetAlerts200ResponseAllOfChecksInnerAccount
 	}
@@ -160,43 +160,43 @@ func (obj AddVirtualImageRequestVirtualImageOsType) GetActualInstanceValue() int
 	return nil
 }
 
-type NullableAddVirtualImageRequestVirtualImageOsType struct {
-	value *AddVirtualImageRequestVirtualImageOsType
+type NullableUpdateVirtualImageRequestVirtualImageOsType struct {
+	value *UpdateVirtualImageRequestVirtualImageOsType
 	isSet bool
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageOsType) Get() *AddVirtualImageRequestVirtualImageOsType {
+func (v NullableUpdateVirtualImageRequestVirtualImageOsType) Get() *UpdateVirtualImageRequestVirtualImageOsType {
 	return v.value
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageOsType) Set(val *AddVirtualImageRequestVirtualImageOsType) {
+func (v *NullableUpdateVirtualImageRequestVirtualImageOsType) Set(val *UpdateVirtualImageRequestVirtualImageOsType) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageOsType) IsSet() bool {
+func (v NullableUpdateVirtualImageRequestVirtualImageOsType) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageOsType) Unset() {
+func (v *NullableUpdateVirtualImageRequestVirtualImageOsType) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddVirtualImageRequestVirtualImageOsType(val *AddVirtualImageRequestVirtualImageOsType) *NullableAddVirtualImageRequestVirtualImageOsType {
-	return &NullableAddVirtualImageRequestVirtualImageOsType{value: val, isSet: true}
+func NewNullableUpdateVirtualImageRequestVirtualImageOsType(val *UpdateVirtualImageRequestVirtualImageOsType) *NullableUpdateVirtualImageRequestVirtualImageOsType {
+	return &NullableUpdateVirtualImageRequestVirtualImageOsType{value: val, isSet: true}
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error) {
+func (v NullableUpdateVirtualImageRequestVirtualImageOsType) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddVirtualImageRequestVirtualImageOsType) UnmarshalJSON(src []byte) error {
+func (v *NullableUpdateVirtualImageRequestVirtualImageOsType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableAddVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableUpdateVirtualImageRequestVirtualImageOsType) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}

@@ -1,4 +1,4 @@
-# AddVirtualImageRequestVirtualImageConfigOneOf
+# UpdateVirtualImageRequestVirtualImageConfigOneOf
 
 ## Properties
 
@@ -11,99 +11,99 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewAddVirtualImageRequestVirtualImageConfigOneOf
+### NewUpdateVirtualImageRequestVirtualImageConfigOneOf
 
-`func NewAddVirtualImageRequestVirtualImageConfigOneOf(publisher string, offer string, sku string, version string, ) *AddVirtualImageRequestVirtualImageConfigOneOf`
+`func NewUpdateVirtualImageRequestVirtualImageConfigOneOf(publisher string, offer string, sku string, version string, ) *UpdateVirtualImageRequestVirtualImageConfigOneOf`
 
-NewAddVirtualImageRequestVirtualImageConfigOneOf instantiates a new AddVirtualImageRequestVirtualImageConfigOneOf object
+NewUpdateVirtualImageRequestVirtualImageConfigOneOf instantiates a new UpdateVirtualImageRequestVirtualImageConfigOneOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddVirtualImageRequestVirtualImageConfigOneOfWithDefaults
+### NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults
 
-`func NewAddVirtualImageRequestVirtualImageConfigOneOfWithDefaults() *AddVirtualImageRequestVirtualImageConfigOneOf`
+`func NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults() *UpdateVirtualImageRequestVirtualImageConfigOneOf`
 
-NewAddVirtualImageRequestVirtualImageConfigOneOfWithDefaults instantiates a new AddVirtualImageRequestVirtualImageConfigOneOf object
+NewUpdateVirtualImageRequestVirtualImageConfigOneOfWithDefaults instantiates a new UpdateVirtualImageRequestVirtualImageConfigOneOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetPublisher
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisher() string`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetPublisher() string`
 
 GetPublisher returns the Publisher field if non-nil, zero value otherwise.
 
 ### GetPublisherOk
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetPublisherOk() (*string, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetPublisherOk() (*string, bool)`
 
 GetPublisherOk returns a tuple with the Publisher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublisher
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetPublisher(v string)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetPublisher(v string)`
 
 SetPublisher sets Publisher field to given value.
 
 
 ### GetOffer
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOffer() string`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetOffer() string`
 
 GetOffer returns the Offer field if non-nil, zero value otherwise.
 
 ### GetOfferOk
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetOfferOk() (*string, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetOfferOk() (*string, bool)`
 
 GetOfferOk returns a tuple with the Offer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOffer
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetOffer(v string)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetOffer(v string)`
 
 SetOffer sets Offer field to given value.
 
 
 ### GetSku
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSku() string`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetSku() string`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetSkuOk() (*string, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetSkuOk() (*string, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetSku(v string)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetSku(v string)`
 
 SetSku sets Sku field to given value.
 
 
 ### GetVersion
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersion() string`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) GetVersionOk() (*string, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *AddVirtualImageRequestVirtualImageConfigOneOf) SetVersion(v string)`
+`func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

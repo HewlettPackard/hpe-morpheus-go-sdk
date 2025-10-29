@@ -22,6 +22,8 @@ var _ MappedNullable = &AddVirtualImageRequestVirtualImage{}
 type AddVirtualImageRequestVirtualImage struct {
 	// A name for the virtual image
 	Name *string `json:"name,omitempty"`
+	// A description for the virtual image
+	Description *string `json:"description,omitempty"`
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
@@ -38,8 +40,9 @@ type AddVirtualImageRequestVirtualImage struct {
 	// SSH Password
 	SshPassword NullableString `json:"sshPassword,omitempty"`
 	// SSH Key
-	SshKey NullableString                            `json:"sshKey,omitempty"`
-	OsType *AddVirtualImageRequestVirtualImageOsType `json:"osType,omitempty"`
+	SshKey NullableString `json:"sshKey,omitempty"`
+	// A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
+	OsType *int64 `json:"osType,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	Accounts   []int64 `json:"accounts,omitempty"`
@@ -60,6 +63,10 @@ type AddVirtualImageRequestVirtualImage struct {
 	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
 	// Image File URL, a virtual image file will be created by fetching the specified URL
 	Url                  *string                `json:"url,omitempty"`
+	MinRam               NullableInt64          `json:"minRam,omitempty"`
+	MinRamGB             NullableInt64          `json:"minRamGB,omitempty"`
+	MinDisk              NullableInt64          `json:"minDisk,omitempty"`
+	MinDiskGB            NullableInt64          `json:"minDiskGB,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -148,6 +155,38 @@ func (o *AddVirtualImageRequestVirtualImage) IsSetName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *AddVirtualImageRequestVirtualImage) SetName(v string) {
 	o.Name = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *AddVirtualImageRequestVirtualImage) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddVirtualImageRequestVirtualImage) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *AddVirtualImageRequestVirtualImage) IsSetDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *AddVirtualImageRequestVirtualImage) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -484,9 +523,9 @@ func (o *AddVirtualImageRequestVirtualImage) UnsetSshKey() {
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *AddVirtualImageRequestVirtualImage) GetOsType() AddVirtualImageRequestVirtualImageOsType {
+func (o *AddVirtualImageRequestVirtualImage) GetOsType() int64 {
 	if o == nil || IsNil(o.OsType) {
-		var ret AddVirtualImageRequestVirtualImageOsType
+		var ret int64
 		return ret
 	}
 	return *o.OsType
@@ -494,7 +533,7 @@ func (o *AddVirtualImageRequestVirtualImage) GetOsType() AddVirtualImageRequestV
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddVirtualImageRequestVirtualImage) GetOsTypeOk() (*AddVirtualImageRequestVirtualImageOsType, bool) {
+func (o *AddVirtualImageRequestVirtualImage) GetOsTypeOk() (*int64, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -510,8 +549,8 @@ func (o *AddVirtualImageRequestVirtualImage) IsSetOsType() bool {
 	return false
 }
 
-// SetOsType gets a reference to the given AddVirtualImageRequestVirtualImageOsType and assigns it to the OsType field.
-func (o *AddVirtualImageRequestVirtualImage) SetOsType(v AddVirtualImageRequestVirtualImageOsType) {
+// SetOsType gets a reference to the given int64 and assigns it to the OsType field.
+func (o *AddVirtualImageRequestVirtualImage) SetOsType(v int64) {
 	o.OsType = &v
 }
 
@@ -867,6 +906,178 @@ func (o *AddVirtualImageRequestVirtualImage) SetUrl(v string) {
 	o.Url = &v
 }
 
+// GetMinRam returns the MinRam field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddVirtualImageRequestVirtualImage) GetMinRam() int64 {
+	if o == nil || IsNil(o.MinRam.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MinRam.Get()
+}
+
+// GetMinRamOk returns a tuple with the MinRam field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddVirtualImageRequestVirtualImage) GetMinRamOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MinRam.Get(), o.MinRam.IsSet()
+}
+
+// IsSetMinRam returns a boolean if a field has been set.
+func (o *AddVirtualImageRequestVirtualImage) IsSetMinRam() bool {
+	if o != nil && o.MinRam.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMinRam gets a reference to the given NullableInt64 and assigns it to the MinRam field.
+func (o *AddVirtualImageRequestVirtualImage) SetMinRam(v int64) {
+	o.MinRam.Set(&v)
+}
+
+// SetMinRamNil sets the value for MinRam to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetMinRamNil() {
+	o.MinRam.Set(nil)
+}
+
+// UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetMinRam() {
+	o.MinRam.Unset()
+}
+
+// GetMinRamGB returns the MinRamGB field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddVirtualImageRequestVirtualImage) GetMinRamGB() int64 {
+	if o == nil || IsNil(o.MinRamGB.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MinRamGB.Get()
+}
+
+// GetMinRamGBOk returns a tuple with the MinRamGB field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddVirtualImageRequestVirtualImage) GetMinRamGBOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MinRamGB.Get(), o.MinRamGB.IsSet()
+}
+
+// IsSetMinRamGB returns a boolean if a field has been set.
+func (o *AddVirtualImageRequestVirtualImage) IsSetMinRamGB() bool {
+	if o != nil && o.MinRamGB.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMinRamGB gets a reference to the given NullableInt64 and assigns it to the MinRamGB field.
+func (o *AddVirtualImageRequestVirtualImage) SetMinRamGB(v int64) {
+	o.MinRamGB.Set(&v)
+}
+
+// SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetMinRamGBNil() {
+	o.MinRamGB.Set(nil)
+}
+
+// UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetMinRamGB() {
+	o.MinRamGB.Unset()
+}
+
+// GetMinDisk returns the MinDisk field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddVirtualImageRequestVirtualImage) GetMinDisk() int64 {
+	if o == nil || IsNil(o.MinDisk.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MinDisk.Get()
+}
+
+// GetMinDiskOk returns a tuple with the MinDisk field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddVirtualImageRequestVirtualImage) GetMinDiskOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MinDisk.Get(), o.MinDisk.IsSet()
+}
+
+// IsSetMinDisk returns a boolean if a field has been set.
+func (o *AddVirtualImageRequestVirtualImage) IsSetMinDisk() bool {
+	if o != nil && o.MinDisk.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMinDisk gets a reference to the given NullableInt64 and assigns it to the MinDisk field.
+func (o *AddVirtualImageRequestVirtualImage) SetMinDisk(v int64) {
+	o.MinDisk.Set(&v)
+}
+
+// SetMinDiskNil sets the value for MinDisk to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetMinDiskNil() {
+	o.MinDisk.Set(nil)
+}
+
+// UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetMinDisk() {
+	o.MinDisk.Unset()
+}
+
+// GetMinDiskGB returns the MinDiskGB field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddVirtualImageRequestVirtualImage) GetMinDiskGB() int64 {
+	if o == nil || IsNil(o.MinDiskGB.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.MinDiskGB.Get()
+}
+
+// GetMinDiskGBOk returns a tuple with the MinDiskGB field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddVirtualImageRequestVirtualImage) GetMinDiskGBOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MinDiskGB.Get(), o.MinDiskGB.IsSet()
+}
+
+// IsSetMinDiskGB returns a boolean if a field has been set.
+func (o *AddVirtualImageRequestVirtualImage) IsSetMinDiskGB() bool {
+	if o != nil && o.MinDiskGB.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMinDiskGB gets a reference to the given NullableInt64 and assigns it to the MinDiskGB field.
+func (o *AddVirtualImageRequestVirtualImage) SetMinDiskGB(v int64) {
+	o.MinDiskGB.Set(&v)
+}
+
+// SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) SetMinDiskGBNil() {
+	o.MinDiskGB.Set(nil)
+}
+
+// UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
+func (o *AddVirtualImageRequestVirtualImage) UnsetMinDiskGB() {
+	o.MinDiskGB.Unset()
+}
+
 func (o AddVirtualImageRequestVirtualImage) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -879,6 +1090,9 @@ func (o AddVirtualImageRequestVirtualImage) ToMap() (map[string]interface{}, err
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
@@ -942,6 +1156,18 @@ func (o AddVirtualImageRequestVirtualImage) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
+	}
+	if o.MinRam.IsSet() {
+		toSerialize["minRam"] = o.MinRam.Get()
+	}
+	if o.MinRamGB.IsSet() {
+		toSerialize["minRamGB"] = o.MinRamGB.Get()
+	}
+	if o.MinDisk.IsSet() {
+		toSerialize["minDisk"] = o.MinDisk.Get()
+	}
+	if o.MinDiskGB.IsSet() {
+		toSerialize["minDiskGB"] = o.MinDiskGB.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -1557,7 +1557,7 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 type ApiAddVirtualImageFileRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 	filename       *string
 	url            *string
 	body           *os.File
@@ -1593,7 +1593,7 @@ This will upload the file and associate it to the Virtual Image.
 	@param virtualImageId Virtual Image ID
 	@return ApiAddVirtualImageFileRequest
 */
-func (a *LibraryAPIService) AddVirtualImageFile(ctx context.Context, virtualImageId float32) ApiAddVirtualImageFileRequest {
+func (a *LibraryAPIService) AddVirtualImageFile(ctx context.Context, virtualImageId int64) ApiAddVirtualImageFileRequest {
 	return ApiAddVirtualImageFileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -1709,7 +1709,7 @@ func (a *LibraryAPIService) AddVirtualImageFileExecute(r ApiAddVirtualImageFileR
 type ApiConvertImageRequest struct {
 	ctx                 context.Context
 	ApiService          *LibraryAPIService
-	virtualImageId      float32
+	virtualImageId      int64
 	convertImageRequest *ConvertImageRequest
 }
 
@@ -1731,7 +1731,7 @@ This will convert an existing virtual image to a new virtual image in specified 
 	@param virtualImageId Virtual Image ID
 	@return ApiConvertImageRequest
 */
-func (a *LibraryAPIService) ConvertImage(ctx context.Context, virtualImageId float32) ApiConvertImageRequest {
+func (a *LibraryAPIService) ConvertImage(ctx context.Context, virtualImageId int64) ApiConvertImageRequest {
 	return ApiConvertImageRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -3205,7 +3205,7 @@ func (a *LibraryAPIService) DeleteSpecTemplateExecute(r ApiDeleteSpecTemplateReq
 type ApiDownloadVirtualImageRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 }
 
 func (r ApiDownloadVirtualImageRequest) Execute() (*http.Response, error) {
@@ -3221,7 +3221,7 @@ This will download the virtual image a zip file containing all of its files.
 	@param virtualImageId Virtual Image ID
 	@return ApiDownloadVirtualImageRequest
 */
-func (a *LibraryAPIService) DownloadVirtualImage(ctx context.Context, virtualImageId float32) ApiDownloadVirtualImageRequest {
+func (a *LibraryAPIService) DownloadVirtualImage(ctx context.Context, virtualImageId int64) ApiDownloadVirtualImageRequest {
 	return ApiDownloadVirtualImageRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4933,7 +4933,7 @@ func (a *LibraryAPIService) GetSpecTemplateExecute(r ApiGetSpecTemplateRequest) 
 type ApiGetVirtualImageRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 }
 
 func (r ApiGetVirtualImageRequest) Execute() (*GetVirtualImage200Response, *http.Response, error) {
@@ -4949,7 +4949,7 @@ This endpoint retrieves a specific virtual image and its files.
 	@param virtualImageId Virtual Image ID
 	@return ApiGetVirtualImageRequest
 */
-func (a *LibraryAPIService) GetVirtualImage(ctx context.Context, virtualImageId float32) ApiGetVirtualImageRequest {
+func (a *LibraryAPIService) GetVirtualImage(ctx context.Context, virtualImageId int64) ApiGetVirtualImageRequest {
 	return ApiGetVirtualImageRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -7657,7 +7657,7 @@ func (a *LibraryAPIService) ListSpecTemplatesExecute(r ApiListSpecTemplatesReque
 type ApiListVirtualImageLocationsRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 }
 
 func (r ApiListVirtualImageLocationsRequest) Execute() (*ListVirtualImageLocations200Response, *http.Response, error) {
@@ -7673,7 +7673,7 @@ This endpoint retrieves a specific virtual image and its files.
 	@param virtualImageId Virtual Image ID
 	@return ApiListVirtualImageLocationsRequest
 */
-func (a *LibraryAPIService) ListVirtualImageLocations(ctx context.Context, virtualImageId float32) ApiListVirtualImageLocationsRequest {
+func (a *LibraryAPIService) ListVirtualImageLocations(ctx context.Context, virtualImageId int64) ApiListVirtualImageLocationsRequest {
 	return ApiListVirtualImageLocationsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -8134,7 +8134,7 @@ func (a *LibraryAPIService) RemoveSecurityScansExecute(r ApiRemoveSecurityScansR
 type ApiRemoveVirtualImageRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 }
 
 func (r ApiRemoveVirtualImageRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
@@ -8150,7 +8150,7 @@ Will delete a virtual image and any associated files, use removeFromCloud=true t
 	@param virtualImageId Virtual Image ID
 	@return ApiRemoveVirtualImageRequest
 */
-func (a *LibraryAPIService) RemoveVirtualImage(ctx context.Context, virtualImageId float32) ApiRemoveVirtualImageRequest {
+func (a *LibraryAPIService) RemoveVirtualImage(ctx context.Context, virtualImageId int64) ApiRemoveVirtualImageRequest {
 	return ApiRemoveVirtualImageRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -8258,7 +8258,7 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 type ApiRemoveVirtualImageFileRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 	filename       *string
 }
 
@@ -8281,7 +8281,7 @@ Remove Virtual Image File
 	@param virtualImageId Virtual Image ID
 	@return ApiRemoveVirtualImageFileRequest
 */
-func (a *LibraryAPIService) RemoveVirtualImageFile(ctx context.Context, virtualImageId float32) ApiRemoveVirtualImageFileRequest {
+func (a *LibraryAPIService) RemoveVirtualImageFile(ctx context.Context, virtualImageId int64) ApiRemoveVirtualImageFileRequest {
 	return ApiRemoveVirtualImageFileRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -8392,7 +8392,7 @@ func (a *LibraryAPIService) RemoveVirtualImageFileExecute(r ApiRemoveVirtualImag
 type ApiRemoveVirtualImageLocationRequest struct {
 	ctx            context.Context
 	ApiService     *LibraryAPIService
-	virtualImageId float32
+	virtualImageId int64
 	id             int64
 }
 
@@ -8410,7 +8410,7 @@ Will delete a virtual image location, use removeFromCloud=true to all also delet
 	@param id Morpheus ID of the Object being referenced
 	@return ApiRemoveVirtualImageLocationRequest
 */
-func (a *LibraryAPIService) RemoveVirtualImageLocation(ctx context.Context, virtualImageId float32, id int64) ApiRemoveVirtualImageLocationRequest {
+func (a *LibraryAPIService) RemoveVirtualImageLocation(ctx context.Context, virtualImageId int64, id int64) ApiRemoveVirtualImageLocationRequest {
 	return ApiRemoveVirtualImageLocationRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -10264,7 +10264,7 @@ func (a *LibraryAPIService) UpdateSpecTemplateExecute(r ApiUpdateSpecTemplateReq
 type ApiUpdateVirtualImageRequest struct {
 	ctx                       context.Context
 	ApiService                *LibraryAPIService
-	virtualImageId            float32
+	virtualImageId            int64
 	updateVirtualImageRequest *UpdateVirtualImageRequest
 }
 
@@ -10286,7 +10286,7 @@ This endpoint updates an existing virtual image.
 	@param virtualImageId Virtual Image ID
 	@return ApiUpdateVirtualImageRequest
 */
-func (a *LibraryAPIService) UpdateVirtualImage(ctx context.Context, virtualImageId float32) ApiUpdateVirtualImageRequest {
+func (a *LibraryAPIService) UpdateVirtualImage(ctx context.Context, virtualImageId int64) ApiUpdateVirtualImageRequest {
 	return ApiUpdateVirtualImageRequest{
 		ApiService:     a,
 		ctx:            ctx,

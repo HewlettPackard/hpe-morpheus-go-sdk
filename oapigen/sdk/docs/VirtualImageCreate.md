@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A name for the virtual image | [optional] 
+**Description** | Pointer to **string** | A description for the virtual image | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
 **StorageProvider** | Pointer to [**AddVirtualImageRequestVirtualImageStorageProvider**](AddVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
-**OsType** | Pointer to [**AddVirtualImageRequestVirtualImageOsType**](AddVirtualImageRequestVirtualImageOsType.md) |  | [optional] 
+**OsType** | Pointer to **int64** | A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead. | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **Accounts** | Pointer to **[]int64** |  | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** | Auto Join Domain? | [optional] [default to false]
@@ -26,6 +27,10 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**AddVirtualImageRequestVirtualImageConfig**](AddVirtualImageRequestVirtualImageConfig.md) |  | [optional] 
 **Tags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
 **Url** | Pointer to **string** | Image File URL, a virtual image file will be created by fetching the specified URL | [optional] 
+**MinRam** | Pointer to **NullableInt64** |  | [optional] 
+**MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
+**MinDisk** | Pointer to **NullableInt64** |  | [optional] 
+**MinDiskGB** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -70,6 +75,31 @@ SetName sets Name field to given value.
 `func (o *VirtualImageCreate) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *VirtualImageCreate) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *VirtualImageCreate) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *VirtualImageCreate) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *VirtualImageCreate) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetLabels
 
@@ -348,20 +378,20 @@ HasSshKey returns a boolean if a field has been set.
 UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
-`func (o *VirtualImageCreate) GetOsType() AddVirtualImageRequestVirtualImageOsType`
+`func (o *VirtualImageCreate) GetOsType() int64`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *VirtualImageCreate) GetOsTypeOk() (*AddVirtualImageRequestVirtualImageOsType, bool)`
+`func (o *VirtualImageCreate) GetOsTypeOk() (*int64, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *VirtualImageCreate) SetOsType(v AddVirtualImageRequestVirtualImageOsType)`
+`func (o *VirtualImageCreate) SetOsType(v int64)`
 
 SetOsType sets OsType field to given value.
 
@@ -646,6 +676,146 @@ SetUrl sets Url field to given value.
 
 HasUrl returns a boolean if a field has been set.
 
+### GetMinRam
+
+`func (o *VirtualImageCreate) GetMinRam() int64`
+
+GetMinRam returns the MinRam field if non-nil, zero value otherwise.
+
+### GetMinRamOk
+
+`func (o *VirtualImageCreate) GetMinRamOk() (*int64, bool)`
+
+GetMinRamOk returns a tuple with the MinRam field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinRam
+
+`func (o *VirtualImageCreate) SetMinRam(v int64)`
+
+SetMinRam sets MinRam field to given value.
+
+### HasMinRam
+
+`func (o *VirtualImageCreate) HasMinRam() bool`
+
+HasMinRam returns a boolean if a field has been set.
+
+### SetMinRamNil
+
+`func (o *VirtualImageCreate) SetMinRamNil(b bool)`
+
+ SetMinRamNil sets the value for MinRam to be an explicit nil
+
+### UnsetMinRam
+`func (o *VirtualImageCreate) UnsetMinRam()`
+
+UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
+### GetMinRamGB
+
+`func (o *VirtualImageCreate) GetMinRamGB() int64`
+
+GetMinRamGB returns the MinRamGB field if non-nil, zero value otherwise.
+
+### GetMinRamGBOk
+
+`func (o *VirtualImageCreate) GetMinRamGBOk() (*int64, bool)`
+
+GetMinRamGBOk returns a tuple with the MinRamGB field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinRamGB
+
+`func (o *VirtualImageCreate) SetMinRamGB(v int64)`
+
+SetMinRamGB sets MinRamGB field to given value.
+
+### HasMinRamGB
+
+`func (o *VirtualImageCreate) HasMinRamGB() bool`
+
+HasMinRamGB returns a boolean if a field has been set.
+
+### SetMinRamGBNil
+
+`func (o *VirtualImageCreate) SetMinRamGBNil(b bool)`
+
+ SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
+
+### UnsetMinRamGB
+`func (o *VirtualImageCreate) UnsetMinRamGB()`
+
+UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
+### GetMinDisk
+
+`func (o *VirtualImageCreate) GetMinDisk() int64`
+
+GetMinDisk returns the MinDisk field if non-nil, zero value otherwise.
+
+### GetMinDiskOk
+
+`func (o *VirtualImageCreate) GetMinDiskOk() (*int64, bool)`
+
+GetMinDiskOk returns a tuple with the MinDisk field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinDisk
+
+`func (o *VirtualImageCreate) SetMinDisk(v int64)`
+
+SetMinDisk sets MinDisk field to given value.
+
+### HasMinDisk
+
+`func (o *VirtualImageCreate) HasMinDisk() bool`
+
+HasMinDisk returns a boolean if a field has been set.
+
+### SetMinDiskNil
+
+`func (o *VirtualImageCreate) SetMinDiskNil(b bool)`
+
+ SetMinDiskNil sets the value for MinDisk to be an explicit nil
+
+### UnsetMinDisk
+`func (o *VirtualImageCreate) UnsetMinDisk()`
+
+UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
+### GetMinDiskGB
+
+`func (o *VirtualImageCreate) GetMinDiskGB() int64`
+
+GetMinDiskGB returns the MinDiskGB field if non-nil, zero value otherwise.
+
+### GetMinDiskGBOk
+
+`func (o *VirtualImageCreate) GetMinDiskGBOk() (*int64, bool)`
+
+GetMinDiskGBOk returns a tuple with the MinDiskGB field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinDiskGB
+
+`func (o *VirtualImageCreate) SetMinDiskGB(v int64)`
+
+SetMinDiskGB sets MinDiskGB field to given value.
+
+### HasMinDiskGB
+
+`func (o *VirtualImageCreate) HasMinDiskGB() bool`
+
+HasMinDiskGB returns a boolean if a field has been set.
+
+### SetMinDiskGBNil
+
+`func (o *VirtualImageCreate) SetMinDiskGBNil(b bool)`
+
+ SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
+
+### UnsetMinDiskGB
+`func (o *VirtualImageCreate) UnsetMinDiskGB()`
+
+UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

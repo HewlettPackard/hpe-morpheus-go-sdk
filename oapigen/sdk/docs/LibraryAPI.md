@@ -896,7 +896,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 	filename := "testimage.ovf" // string | The name of the file (optional)
 	url := "https://example.com/testimage.ovf" // string | Download the file from a remote url. This can be used instead of uploading a local file. (optional)
 	body := os.NewFile(1234, "some_file") // *os.File |  (optional)
@@ -919,7 +919,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -972,7 +972,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 	convertImageRequest := *openapiclient.NewConvertImageRequest() // ConvertImageRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -993,7 +993,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -1814,7 +1814,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1832,7 +1832,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -2792,7 +2792,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2812,7 +2812,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -3837,7 +3837,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3857,7 +3857,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -4062,7 +4062,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4082,7 +4082,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -4132,7 +4132,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 	filename := "testimage.ovf" // string | The name of the file (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4153,7 +4153,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 
@@ -4204,7 +4204,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
 
 	configuration := openapiclient.NewConfiguration()
@@ -4225,7 +4225,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 **id** | **int64** | Morpheus ID of the Object being referenced | 
 
 ### Other Parameters
@@ -5213,7 +5213,7 @@ import (
 )
 
 func main() {
-	virtualImageId := float32(4) // float32 | Virtual Image ID
+	virtualImageId := int64(4) // int64 | Virtual Image ID
 	updateVirtualImageRequest := *openapiclient.NewUpdateVirtualImageRequest(*openapiclient.NewUpdateVirtualImageRequestVirtualImage()) // UpdateVirtualImageRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -5234,7 +5234,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualImageId** | **float32** | Virtual Image ID | 
+**virtualImageId** | **int64** | Virtual Image ID | 
 
 ### Other Parameters
 

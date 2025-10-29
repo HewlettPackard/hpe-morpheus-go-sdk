@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **SshKey** | Pointer to **NullableString** |  | [optional] 
 **OsType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs.md) |  | [optional] 
 **MinRam** | Pointer to **NullableInt64** |  | [optional] 
-**MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
-**MinDisk** | Pointer to **NullableString** |  | [optional] 
+**MinRamGB** | Pointer to **NullableFloat64** |  | [optional] 
+**MinDisk** | Pointer to **NullableInt64** |  | [optional] 
 **MinDiskGB** | Pointer to **NullableString** |  | [optional] 
 **RawSize** | Pointer to **NullableInt64** |  | [optional] 
 **RawSizeGB** | Pointer to **NullableFloat32** |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **FipsEnabled** | Pointer to **bool** |  | [optional] 
 **UserData** | Pointer to **NullableString** |  | [optional] 
 **ConsoleKeymap** | Pointer to **NullableString** |  | [optional] 
-**StorageProvider** | Pointer to **NullableString** |  | [optional] 
+**StorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **Volumes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **StorageControllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **NetworkInterfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Tags** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) |  | [optional] 
 **Locations** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -567,20 +567,20 @@ HasMinRam returns a boolean if a field has been set.
 UnsetMinRam ensures that no value is present for MinRam, not even an explicit nil
 ### GetMinRamGB
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGB() int64`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGB() float64`
 
 GetMinRamGB returns the MinRamGB field if non-nil, zero value otherwise.
 
 ### GetMinRamGBOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGBOk() (*int64, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinRamGBOk() (*float64, bool)`
 
 GetMinRamGBOk returns a tuple with the MinRamGB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinRamGB
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamGB(v int64)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinRamGB(v float64)`
 
 SetMinRamGB sets MinRamGB field to given value.
 
@@ -602,20 +602,20 @@ HasMinRamGB returns a boolean if a field has been set.
 UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
 ### GetMinDisk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDisk() string`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDisk() int64`
 
 GetMinDisk returns the MinDisk field if non-nil, zero value otherwise.
 
 ### GetMinDiskOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskOk() (*string, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetMinDiskOk() (*int64, bool)`
 
 GetMinDiskOk returns a tuple with the MinDisk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMinDisk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDisk(v string)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetMinDisk(v int64)`
 
 SetMinDisk sets MinDisk field to given value.
 
@@ -1047,20 +1047,20 @@ HasConsoleKeymap returns a boolean if a field has been set.
 UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
 ### GetStorageProvider
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() string`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*string, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v string)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -1070,16 +1070,6 @@ SetStorageProvider sets StorageProvider field to given value.
 
 HasStorageProvider returns a boolean if a field has been set.
 
-### SetStorageProviderNil
-
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProviderNil(b bool)`
-
- SetStorageProviderNil sets the value for StorageProvider to be an explicit nil
-
-### UnsetStorageProvider
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetStorageProvider()`
-
-UnsetStorageProvider ensures that no value is present for StorageProvider, not even an explicit nil
 ### GetExternalId
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetExternalId() string`
@@ -1267,20 +1257,20 @@ HasNetworkInterfaces returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []map[string]interface{}`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() (*[]map[string]interface{}, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []map[string]interface{})`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
 
 SetTags sets Tags field to given value.
 
