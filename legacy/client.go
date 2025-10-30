@@ -43,9 +43,12 @@ func WithErrCallbackFunc(callbackFunc func(err error) error) ClientOption {
 	}
 }
 
-func Insecure() ClientOption {
+// WithInsecure controls server TLS certificate verification.
+// If set to true, it will accept any certificate presented by the server.
+// This option should be used with caution.
+func WithInsecure(insecure bool) ClientOption {
 	return func(options *clientOptions) {
-		options.insecure = true
+		options.insecure = insecure
 	}
 }
 
