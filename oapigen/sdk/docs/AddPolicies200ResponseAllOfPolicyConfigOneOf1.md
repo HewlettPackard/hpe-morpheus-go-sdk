@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
 **MotdFullPage** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage**](ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage.md) |  | [optional] 
-**MotdDate** | Pointer to **time.Time** |  | [optional] 
+**MotdDate** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -162,20 +162,20 @@ HasMotdFullPage returns a boolean if a field has been set.
 
 ### GetMotdDate
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) GetMotdDate() time.Time`
+`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) GetMotdDate() string`
 
 GetMotdDate returns the MotdDate field if non-nil, zero value otherwise.
 
 ### GetMotdDateOk
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) GetMotdDateOk() (*time.Time, bool)`
+`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) GetMotdDateOk() (*string, bool)`
 
 GetMotdDateOk returns a tuple with the MotdDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdDate
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) SetMotdDate(v time.Time)`
+`func (o *AddPolicies200ResponseAllOfPolicyConfigOneOf1) SetMotdDate(v string)`
 
 SetMotdDate sets MotdDate field to given value.
 

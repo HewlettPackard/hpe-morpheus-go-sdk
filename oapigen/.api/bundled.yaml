@@ -120705,7 +120705,6 @@ paths:
                                         - type: 'null'
                                     motd.date:
                                       type: string
-                                      format: date-time
                                 - type: object
                                   additionalProperties: false
                                   required:
@@ -121939,7 +121938,6 @@ paths:
                                 - 'null'
                             motd.date:
                               type: string
-                              format: date-time
                         - type: object
                           title: Network Quota Policy Type Configuration
                           description: |
@@ -124151,7 +124149,6 @@ paths:
                                 - 'null'
                             motd.date:
                               type: string
-                              format: date-time
                         - type: object
                           title: Network Quota Policy Type Configuration
                           description: |
@@ -124835,7 +124832,6 @@ paths:
                                     - 'null'
                                 motd.date:
                                   type: string
-                                  format: date-time
                             - type: object
                               description: |
                                 - Network Quota
@@ -125532,7 +125528,6 @@ paths:
                                     - 'null'
                                 motd.date:
                                   type: string
-                                  format: date-time
                             - type: object
                               description: |
                                 - Network Quota
@@ -126199,7 +126194,6 @@ paths:
                                     - 'null'
                                 motd.date:
                                   type: string
-                                  format: date-time
                             - type: object
                               description: |
                                 - Network Quota
@@ -126896,7 +126890,6 @@ paths:
                                     - 'null'
                                 motd.date:
                                   type: string
-                                  format: date-time
                             - type: object
                               description: |
                                 - Network Quota

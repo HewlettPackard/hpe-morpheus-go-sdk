@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 type satisfies the MappedNullable interface at compile time
@@ -26,7 +25,7 @@ type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19 struct {
 	MotdMessage          *string                                                             `json:"motd.message,omitempty"`
 	MotdType             *string                                                             `json:"motd.type,omitempty"`
 	MotdFullPage         *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage `json:"motd._fullPage,omitempty"`
-	MotdDate             *time.Time                                                          `json:"motd.date,omitempty"`
+	MotdDate             *string                                                             `json:"motd.date,omitempty"`
 	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
@@ -214,9 +213,9 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) SetMotdFullPage
 }
 
 // GetMotdDate returns the MotdDate field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) GetMotdDate() time.Time {
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) GetMotdDate() string {
 	if o == nil || IsNil(o.MotdDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.MotdDate
@@ -224,7 +223,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) GetMotdDate() t
 
 // GetMotdDateOk returns a tuple with the MotdDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) GetMotdDateOk() (*time.Time, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) GetMotdDateOk() (*string, bool) {
 	if o == nil || IsNil(o.MotdDate) {
 		return nil, false
 	}
@@ -240,8 +239,8 @@ func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) IsSetMotdDate()
 	return false
 }
 
-// SetMotdDate gets a reference to the given time.Time and assigns it to the MotdDate field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) SetMotdDate(v time.Time) {
+// SetMotdDate gets a reference to the given string and assigns it to the MotdDate field.
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19) SetMotdDate(v string) {
 	o.MotdDate = &v
 }
 

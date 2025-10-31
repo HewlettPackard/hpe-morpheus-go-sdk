@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 type satisfies the MappedNullable interface at compile time
@@ -26,7 +25,7 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {
 	MotdMessage          *string                                     `json:"motd.message,omitempty"`
 	MotdType             *string                                     `json:"motd.type,omitempty"`
 	MotdFullPage         NullableBool                                `json:"motd._fullPage,omitempty"`
-	MotdDate             *time.Time                                  `json:"motd.date,omitempty"`
+	MotdDate             *string                                     `json:"motd.date,omitempty"`
 	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
@@ -221,9 +220,9 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) UnsetMotdFullPage
 }
 
 // GetMotdDate returns the MotdDate field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDate() time.Time {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDate() string {
 	if o == nil || IsNil(o.MotdDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.MotdDate
@@ -231,7 +230,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDate() tim
 
 // GetMotdDateOk returns a tuple with the MotdDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDateOk() (*time.Time, bool) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDateOk() (*string, bool) {
 	if o == nil || IsNil(o.MotdDate) {
 		return nil, false
 	}
@@ -247,8 +246,8 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdDate() b
 	return false
 }
 
-// SetMotdDate gets a reference to the given time.Time and assigns it to the MotdDate field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdDate(v time.Time) {
+// SetMotdDate gets a reference to the given string and assigns it to the MotdDate field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdDate(v string) {
 	o.MotdDate = &v
 }
 
