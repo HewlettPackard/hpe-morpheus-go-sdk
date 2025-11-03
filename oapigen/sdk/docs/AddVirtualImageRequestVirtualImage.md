@@ -14,8 +14,10 @@ Name | Type | Description | Notes
 **InstallAgent** | Pointer to **bool** | Install Agent? | [optional] [default to false]
 **SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
+**Uefi** | Pointer to **bool** | UEFI enabled? | [optional] 
+**FipsEnabled** | Pointer to **bool** | FIPS enabled? | [optional] 
 **SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
-**OsType** | Pointer to **int64** | A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead. | [optional] 
+**OsType** | Pointer to **NullableInt64** | A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead. | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **Accounts** | Pointer to **[]int64** |  | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** | Auto Join Domain? | [optional] [default to false]
@@ -341,6 +343,56 @@ HasSshPassword returns a boolean if a field has been set.
 `func (o *AddVirtualImageRequestVirtualImage) UnsetSshPassword()`
 
 UnsetSshPassword ensures that no value is present for SshPassword, not even an explicit nil
+### GetUefi
+
+`func (o *AddVirtualImageRequestVirtualImage) GetUefi() bool`
+
+GetUefi returns the Uefi field if non-nil, zero value otherwise.
+
+### GetUefiOk
+
+`func (o *AddVirtualImageRequestVirtualImage) GetUefiOk() (*bool, bool)`
+
+GetUefiOk returns a tuple with the Uefi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUefi
+
+`func (o *AddVirtualImageRequestVirtualImage) SetUefi(v bool)`
+
+SetUefi sets Uefi field to given value.
+
+### HasUefi
+
+`func (o *AddVirtualImageRequestVirtualImage) HasUefi() bool`
+
+HasUefi returns a boolean if a field has been set.
+
+### GetFipsEnabled
+
+`func (o *AddVirtualImageRequestVirtualImage) GetFipsEnabled() bool`
+
+GetFipsEnabled returns the FipsEnabled field if non-nil, zero value otherwise.
+
+### GetFipsEnabledOk
+
+`func (o *AddVirtualImageRequestVirtualImage) GetFipsEnabledOk() (*bool, bool)`
+
+GetFipsEnabledOk returns a tuple with the FipsEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFipsEnabled
+
+`func (o *AddVirtualImageRequestVirtualImage) SetFipsEnabled(v bool)`
+
+SetFipsEnabled sets FipsEnabled field to given value.
+
+### HasFipsEnabled
+
+`func (o *AddVirtualImageRequestVirtualImage) HasFipsEnabled() bool`
+
+HasFipsEnabled returns a boolean if a field has been set.
+
 ### GetSshKey
 
 `func (o *AddVirtualImageRequestVirtualImage) GetSshKey() string`
@@ -401,6 +453,16 @@ SetOsType sets OsType field to given value.
 
 HasOsType returns a boolean if a field has been set.
 
+### SetOsTypeNil
+
+`func (o *AddVirtualImageRequestVirtualImage) SetOsTypeNil(b bool)`
+
+ SetOsTypeNil sets the value for OsType to be an explicit nil
+
+### UnsetOsType
+`func (o *AddVirtualImageRequestVirtualImage) UnsetOsType()`
+
+UnsetOsType ensures that no value is present for OsType, not even an explicit nil
 ### GetVisibility
 
 `func (o *AddVirtualImageRequestVirtualImage) GetVisibility() string`

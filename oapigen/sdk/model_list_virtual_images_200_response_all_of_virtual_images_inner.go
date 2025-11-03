@@ -21,53 +21,54 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInner{}
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInner struct for ListVirtualImages200ResponseAllOfVirtualImagesInner
 type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
-	Id                   *int64                                                              `json:"id,omitempty"`
-	Name                 *string                                                             `json:"name,omitempty"`
-	Description          NullableString                                                      `json:"description,omitempty"`
-	Labels               []string                                                            `json:"labels,omitempty"`
-	OwnerId              *int64                                                              `json:"ownerId,omitempty"`
-	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount          `json:"tenant,omitempty"`
-	ImageType            *string                                                             `json:"imageType,omitempty"`
-	UserUploaded         *bool                                                               `json:"userUploaded,omitempty"`
-	UserDefined          *bool                                                               `json:"userDefined,omitempty"`
-	SystemImage          *bool                                                               `json:"systemImage,omitempty"`
-	IsCloudInit          *bool                                                               `json:"isCloudInit,omitempty"`
-	SshUsername          NullableString                                                      `json:"sshUsername,omitempty"`
-	SshPassword          NullableString                                                      `json:"sshPassword,omitempty"`
-	SshPasswordHash      NullableString                                                      `json:"sshPasswordHash,omitempty"`
-	SshKey               NullableString                                                      `json:"sshKey,omitempty"`
-	OsType               *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
-	MinRam               NullableInt64                                                       `json:"minRam,omitempty"`
-	MinRamGB             NullableFloat64                                                     `json:"minRamGB,omitempty"`
-	MinDisk              NullableInt64                                                       `json:"minDisk,omitempty"`
-	MinDiskGB            NullableString                                                      `json:"minDiskGB,omitempty"`
-	RawSize              NullableInt64                                                       `json:"rawSize,omitempty"`
-	RawSizeGB            NullableFloat32                                                     `json:"rawSizeGB,omitempty"`
-	TrialVersion         *bool                                                               `json:"trialVersion,omitempty"`
-	VirtioSupported      *bool                                                               `json:"virtioSupported,omitempty"`
-	Uefi                 NullableString                                                      `json:"uefi,omitempty"`
-	IsAutoJoinDomain     *bool                                                               `json:"isAutoJoinDomain,omitempty"`
-	VmToolsInstalled     *bool                                                               `json:"vmToolsInstalled,omitempty"`
-	InstallAgent         *bool                                                               `json:"installAgent,omitempty"`
-	IsForceCustomization *bool                                                               `json:"isForceCustomization,omitempty"`
-	IsSysprep            *bool                                                               `json:"isSysprep,omitempty"`
-	FipsEnabled          *bool                                                               `json:"fipsEnabled,omitempty"`
-	UserData             NullableString                                                      `json:"userData,omitempty"`
-	ConsoleKeymap        NullableString                                                      `json:"consoleKeymap,omitempty"`
-	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                  `json:"storageProvider,omitempty"`
-	ExternalId           NullableString                                                      `json:"externalId,omitempty"`
-	Visibility           *string                                                             `json:"visibility,omitempty"`
-	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                 `json:"accounts,omitempty"`
-	Config               *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig          `json:"config,omitempty"`
-	Volumes              []map[string]interface{}                                            `json:"volumes,omitempty"`
-	StorageControllers   []map[string]interface{}                                            `json:"storageControllers,omitempty"`
-	NetworkInterfaces    []map[string]interface{}                                            `json:"networkInterfaces,omitempty"`
-	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner     `json:"tags,omitempty"`
-	Locations            []map[string]interface{}                                            `json:"locations,omitempty"`
-	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
-	Status               *string                                                             `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	Id              *int64                                                              `json:"id,omitempty"`
+	Name            *string                                                             `json:"name,omitempty"`
+	Description     NullableString                                                      `json:"description,omitempty"`
+	Labels          []string                                                            `json:"labels,omitempty"`
+	OwnerId         *int64                                                              `json:"ownerId,omitempty"`
+	Tenant          NullableListApprovals200ResponseAllOfApprovalsInnerAccount          `json:"tenant,omitempty"`
+	ImageType       *string                                                             `json:"imageType,omitempty"`
+	UserUploaded    *bool                                                               `json:"userUploaded,omitempty"`
+	UserDefined     *bool                                                               `json:"userDefined,omitempty"`
+	SystemImage     *bool                                                               `json:"systemImage,omitempty"`
+	IsCloudInit     *bool                                                               `json:"isCloudInit,omitempty"`
+	SshUsername     NullableString                                                      `json:"sshUsername,omitempty"`
+	SshPassword     NullableString                                                      `json:"sshPassword,omitempty"`
+	SshPasswordHash NullableString                                                      `json:"sshPasswordHash,omitempty"`
+	SshKey          NullableString                                                      `json:"sshKey,omitempty"`
+	OsType          *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
+	MinRam          NullableInt64                                                       `json:"minRam,omitempty"`
+	MinRamGB        NullableFloat64                                                     `json:"minRamGB,omitempty"`
+	MinDisk         NullableInt64                                                       `json:"minDisk,omitempty"`
+	MinDiskGB       NullableString                                                      `json:"minDiskGB,omitempty"`
+	RawSize         NullableInt64                                                       `json:"rawSize,omitempty"`
+	RawSizeGB       NullableFloat32                                                     `json:"rawSizeGB,omitempty"`
+	TrialVersion    *bool                                                               `json:"trialVersion,omitempty"`
+	VirtioSupported *bool                                                               `json:"virtioSupported,omitempty"`
+	// UEFI enabled?
+	Uefi                 NullableBool                                                    `json:"uefi,omitempty"`
+	IsAutoJoinDomain     *bool                                                           `json:"isAutoJoinDomain,omitempty"`
+	VmToolsInstalled     *bool                                                           `json:"vmToolsInstalled,omitempty"`
+	InstallAgent         *bool                                                           `json:"installAgent,omitempty"`
+	IsForceCustomization *bool                                                           `json:"isForceCustomization,omitempty"`
+	IsSysprep            *bool                                                           `json:"isSysprep,omitempty"`
+	FipsEnabled          *bool                                                           `json:"fipsEnabled,omitempty"`
+	UserData             NullableString                                                  `json:"userData,omitempty"`
+	ConsoleKeymap        NullableString                                                  `json:"consoleKeymap,omitempty"`
+	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"storageProvider,omitempty"`
+	ExternalId           NullableString                                                  `json:"externalId,omitempty"`
+	Visibility           *string                                                         `json:"visibility,omitempty"`
+	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"accounts,omitempty"`
+	Config               *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig      `json:"config,omitempty"`
+	Volumes              []map[string]interface{}                                        `json:"volumes,omitempty"`
+	StorageControllers   []map[string]interface{}                                        `json:"storageControllers,omitempty"`
+	NetworkInterfaces    []map[string]interface{}                                        `json:"networkInterfaces,omitempty"`
+	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
+	Locations            []map[string]interface{}                                        `json:"locations,omitempty"`
+	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
+	Status               *string                                                         `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInner ListVirtualImages200ResponseAllOfVirtualImagesInner
@@ -990,9 +991,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetVirtioSupported
 }
 
 // GetUefi returns the Uefi field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefi() string {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefi() bool {
 	if o == nil || IsNil(o.Uefi.Get()) {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.Uefi.Get()
@@ -1001,7 +1002,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefi() string {
 // GetUefiOk returns a tuple with the Uefi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefiOk() (*string, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetUefiOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1017,8 +1018,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetUefi() bool {
 	return false
 }
 
-// SetUefi gets a reference to the given NullableString and assigns it to the Uefi field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUefi(v string) {
+// SetUefi gets a reference to the given NullableBool and assigns it to the Uefi field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetUefi(v bool) {
 	o.Uefi.Set(&v)
 }
 

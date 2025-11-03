@@ -176934,8 +176934,9 @@ paths:
                             virtioSupported:
                               type: boolean
                             uefi:
+                              description: UEFI enabled?
                               type:
-                                - string
+                                - boolean
                                 - 'null'
                             isAutoJoinDomain:
                               type: boolean
@@ -177235,6 +177236,12 @@ paths:
                         - string
                         - 'null'
                       description: SSH Password
+                    uefi:
+                      type: boolean
+                      description: UEFI enabled?
+                    fipsEnabled:
+                      description: FIPS enabled?
+                      type: boolean
                     sshKey:
                       type:
                         - string
@@ -177245,11 +177252,6 @@ paths:
                       type:
                         - integer
                         - 'null'
-                        - object
-                      properties:
-                        id:
-                          type: integer
-                          format: int64
                       format: int64
                     visibility:
                       type: string
@@ -177359,8 +177361,7 @@ paths:
                     sshUsername: root
                     sshPassword: mygoodpassword123
                     sshKey: null
-                    osType:
-                      id: 9
+                    osType: 9
                     virtioSupported: true
                     vmToolsInstalled: true
                     config: {}

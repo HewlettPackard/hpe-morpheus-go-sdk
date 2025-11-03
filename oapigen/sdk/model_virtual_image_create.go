@@ -39,10 +39,14 @@ type VirtualImageCreate struct {
 	SshUsername NullableString `json:"sshUsername,omitempty"`
 	// SSH Password
 	SshPassword NullableString `json:"sshPassword,omitempty"`
+	// UEFI enabled?
+	Uefi *bool `json:"uefi,omitempty"`
+	// FIPS enabled?
+	FipsEnabled *bool `json:"fipsEnabled,omitempty"`
 	// SSH Key
 	SshKey NullableString `json:"sshKey,omitempty"`
 	// A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead.
-	OsType *int64 `json:"osType,omitempty"`
+	OsType NullableInt64 `json:"osType,omitempty"`
 	// private or public
 	Visibility *string `json:"visibility,omitempty"`
 	Accounts   []int64 `json:"accounts,omitempty"`
@@ -479,6 +483,70 @@ func (o *VirtualImageCreate) UnsetSshPassword() {
 	o.SshPassword.Unset()
 }
 
+// GetUefi returns the Uefi field value if set, zero value otherwise.
+func (o *VirtualImageCreate) GetUefi() bool {
+	if o == nil || IsNil(o.Uefi) {
+		var ret bool
+		return ret
+	}
+	return *o.Uefi
+}
+
+// GetUefiOk returns a tuple with the Uefi field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualImageCreate) GetUefiOk() (*bool, bool) {
+	if o == nil || IsNil(o.Uefi) {
+		return nil, false
+	}
+	return o.Uefi, true
+}
+
+// IsSetUefi returns a boolean if a field has been set.
+func (o *VirtualImageCreate) IsSetUefi() bool {
+	if o != nil && !IsNil(o.Uefi) {
+		return true
+	}
+
+	return false
+}
+
+// SetUefi gets a reference to the given bool and assigns it to the Uefi field.
+func (o *VirtualImageCreate) SetUefi(v bool) {
+	o.Uefi = &v
+}
+
+// GetFipsEnabled returns the FipsEnabled field value if set, zero value otherwise.
+func (o *VirtualImageCreate) GetFipsEnabled() bool {
+	if o == nil || IsNil(o.FipsEnabled) {
+		var ret bool
+		return ret
+	}
+	return *o.FipsEnabled
+}
+
+// GetFipsEnabledOk returns a tuple with the FipsEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VirtualImageCreate) GetFipsEnabledOk() (*bool, bool) {
+	if o == nil || IsNil(o.FipsEnabled) {
+		return nil, false
+	}
+	return o.FipsEnabled, true
+}
+
+// IsSetFipsEnabled returns a boolean if a field has been set.
+func (o *VirtualImageCreate) IsSetFipsEnabled() bool {
+	if o != nil && !IsNil(o.FipsEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetFipsEnabled gets a reference to the given bool and assigns it to the FipsEnabled field.
+func (o *VirtualImageCreate) SetFipsEnabled(v bool) {
+	o.FipsEnabled = &v
+}
+
 // GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualImageCreate) GetSshKey() string {
 	if o == nil || IsNil(o.SshKey.Get()) {
@@ -522,36 +590,47 @@ func (o *VirtualImageCreate) UnsetSshKey() {
 	o.SshKey.Unset()
 }
 
-// GetOsType returns the OsType field value if set, zero value otherwise.
+// GetOsType returns the OsType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualImageCreate) GetOsType() int64 {
-	if o == nil || IsNil(o.OsType) {
+	if o == nil || IsNil(o.OsType.Get()) {
 		var ret int64
 		return ret
 	}
-	return *o.OsType
+	return *o.OsType.Get()
 }
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualImageCreate) GetOsTypeOk() (*int64, bool) {
-	if o == nil || IsNil(o.OsType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.OsType, true
+	return o.OsType.Get(), o.OsType.IsSet()
 }
 
 // IsSetOsType returns a boolean if a field has been set.
 func (o *VirtualImageCreate) IsSetOsType() bool {
-	if o != nil && !IsNil(o.OsType) {
+	if o != nil && o.OsType.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetOsType gets a reference to the given int64 and assigns it to the OsType field.
+// SetOsType gets a reference to the given NullableInt64 and assigns it to the OsType field.
 func (o *VirtualImageCreate) SetOsType(v int64) {
-	o.OsType = &v
+	o.OsType.Set(&v)
+}
+
+// SetOsTypeNil sets the value for OsType to be an explicit nil
+func (o *VirtualImageCreate) SetOsTypeNil() {
+	o.OsType.Set(nil)
+}
+
+// UnsetOsType ensures that no value is present for OsType, not even an explicit nil
+func (o *VirtualImageCreate) UnsetOsType() {
+	o.OsType.Unset()
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -1118,11 +1197,17 @@ func (o VirtualImageCreate) ToMap() (map[string]interface{}, error) {
 	if o.SshPassword.IsSet() {
 		toSerialize["sshPassword"] = o.SshPassword.Get()
 	}
+	if !IsNil(o.Uefi) {
+		toSerialize["uefi"] = o.Uefi
+	}
+	if !IsNil(o.FipsEnabled) {
+		toSerialize["fipsEnabled"] = o.FipsEnabled
+	}
 	if o.SshKey.IsSet() {
 		toSerialize["sshKey"] = o.SshKey.Get()
 	}
-	if !IsNil(o.OsType) {
-		toSerialize["osType"] = o.OsType
+	if o.OsType.IsSet() {
+		toSerialize["osType"] = o.OsType.Get()
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility

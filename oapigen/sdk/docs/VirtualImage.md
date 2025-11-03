@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **RawSizeGB** | Pointer to **NullableFloat32** |  | [optional] 
 **TrialVersion** | Pointer to **bool** |  | [optional] 
 **VirtioSupported** | Pointer to **bool** |  | [optional] 
-**Uefi** | Pointer to **NullableString** |  | [optional] 
+**Uefi** | Pointer to **NullableBool** | UEFI enabled? | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** |  | [optional] 
 **VmToolsInstalled** | Pointer to **bool** |  | [optional] 
 **InstallAgent** | Pointer to **bool** |  | [optional] 
@@ -782,20 +782,20 @@ HasVirtioSupported returns a boolean if a field has been set.
 
 ### GetUefi
 
-`func (o *VirtualImage) GetUefi() string`
+`func (o *VirtualImage) GetUefi() bool`
 
 GetUefi returns the Uefi field if non-nil, zero value otherwise.
 
 ### GetUefiOk
 
-`func (o *VirtualImage) GetUefiOk() (*string, bool)`
+`func (o *VirtualImage) GetUefiOk() (*bool, bool)`
 
 GetUefiOk returns a tuple with the Uefi field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUefi
 
-`func (o *VirtualImage) SetUefi(v string)`
+`func (o *VirtualImage) SetUefi(v bool)`
 
 SetUefi sets Uefi field to given value.
 
