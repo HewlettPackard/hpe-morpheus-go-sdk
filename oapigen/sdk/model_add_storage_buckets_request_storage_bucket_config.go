@@ -86,57 +86,43 @@ func (dst *AddStorageBucketsRequestStorageBucketConfig) UnmarshalMapstructure(da
 		dst = &AddStorageBucketsRequestStorageBucketConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf1)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf1) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf2)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf2) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf3)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf3) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf4)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf4) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf5)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf5) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf5 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf6); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddStorageBucketsRequestStorageBucketConfigOneOf6)
 
 	if IsEmpty(dst.AddStorageBucketsRequestStorageBucketConfigOneOf6) {
 		dst.AddStorageBucketsRequestStorageBucketConfigOneOf6 = nil

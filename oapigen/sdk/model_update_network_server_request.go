@@ -20,8 +20,8 @@ var _ MappedNullable = &UpdateNetworkServerRequest{}
 
 // UpdateNetworkServerRequest struct for UpdateNetworkServerRequest
 type UpdateNetworkServerRequest struct {
-	NetworkServer        *UpdateNetworkServerRequestNetworkServer `json:"networkServer,omitempty"`
-	AdditionalProperties map[string]interface{}                   `json:",remain"`
+	NetworkServer        *NSXNetworkServerUpdate `json:"networkServer,omitempty"`
+	AdditionalProperties map[string]interface{}  `json:",remain"`
 }
 
 type _UpdateNetworkServerRequest UpdateNetworkServerRequest
@@ -44,9 +44,9 @@ func NewUpdateNetworkServerRequestWithDefaults() *UpdateNetworkServerRequest {
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *UpdateNetworkServerRequest) GetNetworkServer() UpdateNetworkServerRequestNetworkServer {
+func (o *UpdateNetworkServerRequest) GetNetworkServer() NSXNetworkServerUpdate {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret UpdateNetworkServerRequestNetworkServer
+		var ret NSXNetworkServerUpdate
 		return ret
 	}
 	return *o.NetworkServer
@@ -54,7 +54,7 @@ func (o *UpdateNetworkServerRequest) GetNetworkServer() UpdateNetworkServerReque
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkServerRequest) GetNetworkServerOk() (*UpdateNetworkServerRequestNetworkServer, bool) {
+func (o *UpdateNetworkServerRequest) GetNetworkServerOk() (*NSXNetworkServerUpdate, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *UpdateNetworkServerRequest) IsSetNetworkServer() bool {
 	return false
 }
 
-// SetNetworkServer gets a reference to the given UpdateNetworkServerRequestNetworkServer and assigns it to the NetworkServer field.
-func (o *UpdateNetworkServerRequest) SetNetworkServer(v UpdateNetworkServerRequestNetworkServer) {
+// SetNetworkServer gets a reference to the given NSXNetworkServerUpdate and assigns it to the NetworkServer field.
+func (o *UpdateNetworkServerRequest) SetNetworkServer(v NSXNetworkServerUpdate) {
 	o.NetworkServer = &v
 }
 

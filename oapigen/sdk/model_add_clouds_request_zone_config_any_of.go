@@ -62,33 +62,25 @@ func (dst *AddCloudsRequestZoneConfigAnyOf) UnmarshalMapstructure(data any) (any
 		dst = &AddCloudsRequestZoneConfigAnyOf{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf)
 
 	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf) {
 		dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf1)
 
 	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf1) {
 		dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf2)
 
 	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf2) {
 		dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf3)
 
 	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf3) {
 		dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil

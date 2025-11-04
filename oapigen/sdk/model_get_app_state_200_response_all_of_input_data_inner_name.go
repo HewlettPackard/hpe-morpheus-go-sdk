@@ -46,17 +46,13 @@ func (dst *GetAppState200ResponseAllOfInputDataInnerName) UnmarshalMapstructure(
 		dst = &GetAppState200ResponseAllOfInputDataInnerName{}
 	}
 
-	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.MapmapOfStringAny)
 
 	if IsEmpty(dst.MapmapOfStringAny) {
 		dst.MapmapOfStringAny = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

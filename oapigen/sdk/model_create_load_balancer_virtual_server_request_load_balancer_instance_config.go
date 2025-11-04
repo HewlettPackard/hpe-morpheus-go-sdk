@@ -46,17 +46,13 @@ func (dst *CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig) Unm
 		dst = &CreateLoadBalancerVirtualServerRequestLoadBalancerInstanceConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.NSXVirtualServerConfigObject); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.NSXVirtualServerConfigObject)
 
 	if IsEmpty(dst.NSXVirtualServerConfigObject) {
 		dst.NSXVirtualServerConfigObject = nil
 	}
 
-	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.MapmapOfStringAny)
 
 	if IsEmpty(dst.MapmapOfStringAny) {
 		dst.MapmapOfStringAny = nil

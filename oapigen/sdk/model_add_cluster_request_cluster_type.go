@@ -46,17 +46,13 @@ func (dst *AddClusterRequestClusterType) UnmarshalMapstructure(data any) (any, e
 		dst = &AddClusterRequestClusterType{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddClusterRequestClusterTypeOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddClusterRequestClusterTypeOneOf)
 
 	if IsEmpty(dst.AddClusterRequestClusterTypeOneOf) {
 		dst.AddClusterRequestClusterTypeOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

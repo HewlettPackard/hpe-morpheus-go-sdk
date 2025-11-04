@@ -46,17 +46,13 @@ func (dst *AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue) UnmarshalMap
 		dst = &AddInstance200ResponseAllOfOneOfInstanceEvarsInnerValue{}
 	}
 
-	if err := mapstructDecode(data, &dst.Float32); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.Float32)
 
 	if IsEmpty(dst.Float32) {
 		dst.Float32 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

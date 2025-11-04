@@ -78,49 +78,37 @@ func (dst *AddBlueprint200ResponseAllOfBlueprintConfig) UnmarshalMapstructure(da
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5)
 
 	if IsEmpty(dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5) {
 		dst.AddBlueprint200ResponseAllOfBlueprintConfigOneOf5 = nil

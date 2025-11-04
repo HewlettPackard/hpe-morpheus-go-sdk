@@ -46,17 +46,13 @@ func (dst *AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABI
 		dst = &AddBlueprint200ResponseAllOfBlueprintConfigOneOf1CloudFormationCAPABILITYNAMEDIAM{}
 	}
 
-	if err := mapstructDecode(data, &dst.Bool); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.Bool)
 
 	if IsEmpty(dst.Bool) {
 		dst.Bool = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

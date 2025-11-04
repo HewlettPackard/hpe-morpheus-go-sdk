@@ -46,17 +46,13 @@ func (dst *ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId) Unma
 		dst = &ListInstances200ResponseAllOfInstancesInnerConfigResourcePoolId{}
 	}
 
-	if err := mapstructDecode(data, &dst.Int64); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.Int64)
 
 	if IsEmpty(dst.Int64) {
 		dst.Int64 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

@@ -94,65 +94,49 @@ func (dst *AddIdentitySourcesRequestUserSourceConfig) UnmarshalMapstructure(data
 		dst = &AddIdentitySourcesRequestUserSourceConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf1)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf1) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf2)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf2) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf3)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf3) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf4)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf4) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf5)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf5) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf5 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf6); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf6)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf6) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf6 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf7); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySourcesRequestUserSourceConfigOneOf7)
 
 	if IsEmpty(dst.AddIdentitySourcesRequestUserSourceConfigOneOf7) {
 		dst.AddIdentitySourcesRequestUserSourceConfigOneOf7 = nil

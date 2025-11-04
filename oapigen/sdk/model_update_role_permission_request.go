@@ -118,89 +118,67 @@ func (dst *UpdateRolePermissionRequest) UnmarshalMapstructure(data any) (any, er
 		dst = &UpdateRolePermissionRequest{}
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultBlueprintPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultBlueprintPermission)
 
 	if IsEmpty(dst.DefaultBlueprintPermission) {
 		dst.DefaultBlueprintPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultCatalogItemTypePermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultCatalogItemTypePermission)
 
 	if IsEmpty(dst.DefaultCatalogItemTypePermission) {
 		dst.DefaultCatalogItemTypePermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultCloudPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultCloudPermission)
 
 	if IsEmpty(dst.DefaultCloudPermission) {
 		dst.DefaultCloudPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultGroupPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultGroupPermission)
 
 	if IsEmpty(dst.DefaultGroupPermission) {
 		dst.DefaultGroupPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultInstanceTypePermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultInstanceTypePermission)
 
 	if IsEmpty(dst.DefaultInstanceTypePermission) {
 		dst.DefaultInstanceTypePermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultPersonaPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultPersonaPermission)
 
 	if IsEmpty(dst.DefaultPersonaPermission) {
 		dst.DefaultPersonaPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultReportTypePermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultReportTypePermission)
 
 	if IsEmpty(dst.DefaultReportTypePermission) {
 		dst.DefaultReportTypePermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultTaskPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultTaskPermission)
 
 	if IsEmpty(dst.DefaultTaskPermission) {
 		dst.DefaultTaskPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultVDIPoolPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultVDIPoolPermission)
 
 	if IsEmpty(dst.DefaultVDIPoolPermission) {
 		dst.DefaultVDIPoolPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.DefaultWorkflowPermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.DefaultWorkflowPermission)
 
 	if IsEmpty(dst.DefaultWorkflowPermission) {
 		dst.DefaultWorkflowPermission = nil
 	}
 
-	if err := mapstructDecode(data, &dst.FeaturePermission); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.FeaturePermission)
 
 	if IsEmpty(dst.FeaturePermission) {
 		dst.FeaturePermission = nil

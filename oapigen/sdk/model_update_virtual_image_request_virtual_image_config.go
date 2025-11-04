@@ -46,17 +46,13 @@ func (dst *UpdateVirtualImageRequestVirtualImageConfig) UnmarshalMapstructure(da
 		dst = &UpdateVirtualImageRequestVirtualImageConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.UpdateVirtualImageRequestVirtualImageConfigOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.UpdateVirtualImageRequestVirtualImageConfigOneOf)
 
 	if IsEmpty(dst.UpdateVirtualImageRequestVirtualImageConfigOneOf) {
 		dst.UpdateVirtualImageRequestVirtualImageConfigOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.MapmapOfStringAny)
 
 	if IsEmpty(dst.MapmapOfStringAny) {
 		dst.MapmapOfStringAny = nil

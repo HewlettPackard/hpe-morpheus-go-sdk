@@ -86,57 +86,43 @@ func (dst *AddIntegrationsRequest) UnmarshalMapstructure(data any) (any, error) 
 		dst = &AddIntegrationsRequest{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf) {
 		dst.AddIntegrationsRequestOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf1)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf1) {
 		dst.AddIntegrationsRequestOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf2)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf2) {
 		dst.AddIntegrationsRequestOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf3)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf3) {
 		dst.AddIntegrationsRequestOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf4)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf4) {
 		dst.AddIntegrationsRequestOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf5)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf5) {
 		dst.AddIntegrationsRequestOneOf5 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIntegrationsRequestOneOf6); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIntegrationsRequestOneOf6)
 
 	if IsEmpty(dst.AddIntegrationsRequestOneOf6) {
 		dst.AddIntegrationsRequestOneOf6 = nil

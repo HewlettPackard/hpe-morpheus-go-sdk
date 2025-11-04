@@ -62,33 +62,25 @@ func (dst *UpdateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructur
 		dst = &UpdateNetworkPoolServerRequestNetworkPoolServer{}
 	}
 
-	if err := mapstructDecode(data, &dst.BluecatNetworkPoolServerUpdate); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.BluecatNetworkPoolServerUpdate)
 
 	if IsEmpty(dst.BluecatNetworkPoolServerUpdate) {
 		dst.BluecatNetworkPoolServerUpdate = nil
 	}
 
-	if err := mapstructDecode(data, &dst.InfobloxNetworkPoolServerUpdate); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.InfobloxNetworkPoolServerUpdate)
 
 	if IsEmpty(dst.InfobloxNetworkPoolServerUpdate) {
 		dst.InfobloxNetworkPoolServerUpdate = nil
 	}
 
-	if err := mapstructDecode(data, &dst.PhpIPAMNetworkPoolServerUpdate); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.PhpIPAMNetworkPoolServerUpdate)
 
 	if IsEmpty(dst.PhpIPAMNetworkPoolServerUpdate) {
 		dst.PhpIPAMNetworkPoolServerUpdate = nil
 	}
 
-	if err := mapstructDecode(data, &dst.SolarWindsNetworkPoolServerUpdate); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.SolarWindsNetworkPoolServerUpdate)
 
 	if IsEmpty(dst.SolarWindsNetworkPoolServerUpdate) {
 		dst.SolarWindsNetworkPoolServerUpdate = nil

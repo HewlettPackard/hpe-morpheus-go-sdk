@@ -46,17 +46,13 @@ func (dst *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) UnmarshalM
 		dst = &ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig{}
 	}
 
-	if err := mapstructDecode(data, &dst.AzureReferenceVirtualImageConfiguration); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AzureReferenceVirtualImageConfiguration)
 
 	if IsEmpty(dst.AzureReferenceVirtualImageConfiguration) {
 		dst.AzureReferenceVirtualImageConfiguration = nil
 	}
 
-	if err := mapstructDecode(data, &dst.MapmapOfStringAny); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.MapmapOfStringAny)
 
 	if IsEmpty(dst.MapmapOfStringAny) {
 		dst.MapmapOfStringAny = nil

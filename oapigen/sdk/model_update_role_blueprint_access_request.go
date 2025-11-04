@@ -46,17 +46,13 @@ func (dst *UpdateRoleBlueprintAccessRequest) UnmarshalMapstructure(data any) (an
 		dst = &UpdateRoleBlueprintAccessRequest{}
 	}
 
-	if err := mapstructDecode(data, &dst.UpdateRoleBlueprintAccessRequestOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.UpdateRoleBlueprintAccessRequestOneOf)
 
 	if IsEmpty(dst.UpdateRoleBlueprintAccessRequestOneOf) {
 		dst.UpdateRoleBlueprintAccessRequestOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.UpdateRoleBlueprintAccessRequestOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.UpdateRoleBlueprintAccessRequestOneOf1)
 
 	if IsEmpty(dst.UpdateRoleBlueprintAccessRequestOneOf1) {
 		dst.UpdateRoleBlueprintAccessRequestOneOf1 = nil

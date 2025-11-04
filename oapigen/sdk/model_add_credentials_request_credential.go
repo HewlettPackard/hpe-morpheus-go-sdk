@@ -102,73 +102,55 @@ func (dst *AddCredentialsRequestCredential) UnmarshalMapstructure(data any) (any
 		dst = &AddCredentialsRequestCredential{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf) {
 		dst.AddCredentialsRequestCredentialOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf1)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf1) {
 		dst.AddCredentialsRequestCredentialOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf2)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf2) {
 		dst.AddCredentialsRequestCredentialOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf3)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf3) {
 		dst.AddCredentialsRequestCredentialOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf4)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf4) {
 		dst.AddCredentialsRequestCredentialOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf5)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf5) {
 		dst.AddCredentialsRequestCredentialOneOf5 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf6); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf6)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf6) {
 		dst.AddCredentialsRequestCredentialOneOf6 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf7); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf7)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf7) {
 		dst.AddCredentialsRequestCredentialOneOf7 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf8); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCredentialsRequestCredentialOneOf8)
 
 	if IsEmpty(dst.AddCredentialsRequestCredentialOneOf8) {
 		dst.AddCredentialsRequestCredentialOneOf8 = nil

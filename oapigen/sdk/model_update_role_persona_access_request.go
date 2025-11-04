@@ -46,17 +46,13 @@ func (dst *UpdateRolePersonaAccessRequest) UnmarshalMapstructure(data any) (any,
 		dst = &UpdateRolePersonaAccessRequest{}
 	}
 
-	if err := mapstructDecode(data, &dst.UpdateRolePersonaAccessRequestOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.UpdateRolePersonaAccessRequestOneOf)
 
 	if IsEmpty(dst.UpdateRolePersonaAccessRequestOneOf) {
 		dst.UpdateRolePersonaAccessRequestOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.UpdateRolePersonaAccessRequestOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.UpdateRolePersonaAccessRequestOneOf1)
 
 	if IsEmpty(dst.UpdateRolePersonaAccessRequestOneOf1) {
 		dst.UpdateRolePersonaAccessRequestOneOf1 = nil

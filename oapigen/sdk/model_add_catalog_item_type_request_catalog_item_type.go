@@ -54,25 +54,19 @@ func (dst *AddCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(data 
 		dst = &AddCatalogItemTypeRequestCatalogItemType{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf)
 
 	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf) {
 		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1)
 
 	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1) {
 		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2)
 
 	if IsEmpty(dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2) {
 		dst.AddCatalogItemTypeRequestCatalogItemTypeOneOf2 = nil

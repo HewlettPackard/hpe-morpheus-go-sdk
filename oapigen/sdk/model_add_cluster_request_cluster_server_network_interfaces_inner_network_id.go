@@ -46,17 +46,13 @@ func (dst *AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId) Unmars
 		dst = &AddClusterRequestClusterServerNetworkInterfacesInnerNetworkId{}
 	}
 
-	if err := mapstructDecode(data, &dst.Int32); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.Int32)
 
 	if IsEmpty(dst.Int32) {
 		dst.Int32 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.String); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.String)
 
 	if IsEmpty(dst.String) {
 		dst.String = nil

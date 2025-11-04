@@ -94,65 +94,49 @@ func (dst *AddIdentitySources200ResponseAllOfTask) UnmarshalMapstructure(data an
 		dst = &AddIdentitySources200ResponseAllOfTask{}
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf1); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf1)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf1) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf1 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf2); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf2)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf2) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf2 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf3); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf3)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf3) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf3 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf4); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf4)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf4) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf4 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf5); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf5)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf5) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf5 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf6); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf6)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf6) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf6 = nil
 	}
 
-	if err := mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf7); err != nil {
-		return nil, err
-	}
+	mapstructDecode(data, &dst.AddIdentitySources200ResponseAllOfTaskOneOf7)
 
 	if IsEmpty(dst.AddIdentitySources200ResponseAllOfTaskOneOf7) {
 		dst.AddIdentitySources200ResponseAllOfTaskOneOf7 = nil
