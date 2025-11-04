@@ -1,4 +1,4 @@
-# SaveClusterDatastoreRequestDatastoreConfigAnyOf1
+# GFS2DatastoreConfiguration
 
 ## Properties
 
@@ -9,65 +9,65 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1
+### NewGFS2DatastoreConfiguration
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1(blockDevice string, ) *SaveClusterDatastoreRequestDatastoreConfigAnyOf1`
+`func NewGFS2DatastoreConfiguration(blockDevice string, ) *GFS2DatastoreConfiguration`
 
-NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1 instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf1 object
+NewGFS2DatastoreConfiguration instantiates a new GFS2DatastoreConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1WithDefaults
+### NewGFS2DatastoreConfigurationWithDefaults
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1WithDefaults() *SaveClusterDatastoreRequestDatastoreConfigAnyOf1`
+`func NewGFS2DatastoreConfigurationWithDefaults() *GFS2DatastoreConfiguration`
 
-NewSaveClusterDatastoreRequestDatastoreConfigAnyOf1WithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf1 object
+NewGFS2DatastoreConfigurationWithDefaults instantiates a new GFS2DatastoreConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetBlockDevice
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetBlockDevice() string`
+`func (o *GFS2DatastoreConfiguration) GetBlockDevice() string`
 
 GetBlockDevice returns the BlockDevice field if non-nil, zero value otherwise.
 
 ### GetBlockDeviceOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetBlockDeviceOk() (*string, bool)`
+`func (o *GFS2DatastoreConfiguration) GetBlockDeviceOk() (*string, bool)`
 
 GetBlockDeviceOk returns a tuple with the BlockDevice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlockDevice
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) SetBlockDevice(v string)`
+`func (o *GFS2DatastoreConfiguration) SetBlockDevice(v string)`
 
 SetBlockDevice sets BlockDevice field to given value.
 
 
 ### GetAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetAllowReformat() bool`
+`func (o *GFS2DatastoreConfiguration) GetAllowReformat() bool`
 
 GetAllowReformat returns the AllowReformat field if non-nil, zero value otherwise.
 
 ### GetAllowReformatOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) GetAllowReformatOk() (*bool, bool)`
+`func (o *GFS2DatastoreConfiguration) GetAllowReformatOk() (*bool, bool)`
 
 GetAllowReformatOk returns a tuple with the AllowReformat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) SetAllowReformat(v bool)`
+`func (o *GFS2DatastoreConfiguration) SetAllowReformat(v bool)`
 
 SetAllowReformat sets AllowReformat field to given value.
 
 ### HasAllowReformat
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf1) HasAllowReformat() bool`
+`func (o *GFS2DatastoreConfiguration) HasAllowReformat() bool`
 
 HasAllowReformat returns a boolean if a field has been set.
 

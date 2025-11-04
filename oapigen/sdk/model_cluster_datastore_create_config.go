@@ -19,17 +19,17 @@ import (
 // very silly way of avoiding `"fmt" imported and not used` errors
 var _ fmt.Stringer
 
-// SaveDatastoreRequestDatastoreConfig Configuration options for the datastore, varies based on the type of datastore.
-type SaveDatastoreRequestDatastoreConfig struct {
+// ClusterDatastoreCreateConfig struct for ClusterDatastoreCreateConfig
+type ClusterDatastoreCreateConfig struct {
 	AlletraMPHVMDatastoreConfiguration1 *AlletraMPHVMDatastoreConfiguration1
 	GFS2DatastoreConfiguration          *GFS2DatastoreConfiguration
 	NFSDatastoreConfiguration           *NFSDatastoreConfiguration
 	MapmapOfStringAny                   *map[string]interface{}
 }
 
-func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) (any, error) {
+func (dst *ClusterDatastoreCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
-		dst = &SaveDatastoreRequestDatastoreConfig{}
+		dst = &ClusterDatastoreCreateConfig{}
 	}
 
 	if out, ok := data.(AlletraMPHVMDatastoreConfiguration1); ok {
@@ -52,7 +52,7 @@ func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) 
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
-func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte) error {
+func (dst *ClusterDatastoreCreateConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into AlletraMPHVMDatastoreConfiguration1
 	err = json.Unmarshal(data, &dst.AlletraMPHVMDatastoreConfiguration1)
@@ -106,11 +106,11 @@ func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte) error
 		dst.MapmapOfStringAny = nil
 	}
 
-	return NewResponseValidationError("data failed to match schemas in anyOf(SaveDatastoreRequestDatastoreConfig)")
+	return NewResponseValidationError("data failed to match schemas in anyOf(ClusterDatastoreCreateConfig)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src SaveDatastoreRequestDatastoreConfig) MarshalJSON() ([]byte, error) {
+func (src ClusterDatastoreCreateConfig) MarshalJSON() ([]byte, error) {
 	if src.AlletraMPHVMDatastoreConfiguration1 != nil {
 		return json.Marshal(&src.AlletraMPHVMDatastoreConfiguration1)
 	}
@@ -130,43 +130,43 @@ func (src SaveDatastoreRequestDatastoreConfig) MarshalJSON() ([]byte, error) {
 	return nil, nil // no data in anyOf schemas
 }
 
-type NullableSaveDatastoreRequestDatastoreConfig struct {
-	value *SaveDatastoreRequestDatastoreConfig
+type NullableClusterDatastoreCreateConfig struct {
+	value *ClusterDatastoreCreateConfig
 	isSet bool
 }
 
-func (v NullableSaveDatastoreRequestDatastoreConfig) Get() *SaveDatastoreRequestDatastoreConfig {
+func (v NullableClusterDatastoreCreateConfig) Get() *ClusterDatastoreCreateConfig {
 	return v.value
 }
 
-func (v *NullableSaveDatastoreRequestDatastoreConfig) Set(val *SaveDatastoreRequestDatastoreConfig) {
+func (v *NullableClusterDatastoreCreateConfig) Set(val *ClusterDatastoreCreateConfig) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSaveDatastoreRequestDatastoreConfig) IsSet() bool {
+func (v NullableClusterDatastoreCreateConfig) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSaveDatastoreRequestDatastoreConfig) Unset() {
+func (v *NullableClusterDatastoreCreateConfig) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSaveDatastoreRequestDatastoreConfig(val *SaveDatastoreRequestDatastoreConfig) *NullableSaveDatastoreRequestDatastoreConfig {
-	return &NullableSaveDatastoreRequestDatastoreConfig{value: val, isSet: true}
+func NewNullableClusterDatastoreCreateConfig(val *ClusterDatastoreCreateConfig) *NullableClusterDatastoreCreateConfig {
+	return &NullableClusterDatastoreCreateConfig{value: val, isSet: true}
 }
 
-func (v NullableSaveDatastoreRequestDatastoreConfig) MarshalJSON() ([]byte, error) {
+func (v NullableClusterDatastoreCreateConfig) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSaveDatastoreRequestDatastoreConfig) UnmarshalJSON(src []byte) error {
+func (v *NullableClusterDatastoreCreateConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableSaveDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableClusterDatastoreCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}

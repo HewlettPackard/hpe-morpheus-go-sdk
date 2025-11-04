@@ -1,4 +1,4 @@
-# SaveClusterDatastoreRequestDatastoreConfigAnyOf
+# NFSDatastoreConfiguration
 
 ## Properties
 
@@ -10,85 +10,85 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSaveClusterDatastoreRequestDatastoreConfigAnyOf
+### NewNFSDatastoreConfiguration
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf(sourceHostname string, sourceDirPath string, ) *SaveClusterDatastoreRequestDatastoreConfigAnyOf`
+`func NewNFSDatastoreConfiguration(sourceHostname string, sourceDirPath string, ) *NFSDatastoreConfiguration`
 
-NewSaveClusterDatastoreRequestDatastoreConfigAnyOf instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
+NewNFSDatastoreConfiguration instantiates a new NFSDatastoreConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSaveClusterDatastoreRequestDatastoreConfigAnyOfWithDefaults
+### NewNFSDatastoreConfigurationWithDefaults
 
-`func NewSaveClusterDatastoreRequestDatastoreConfigAnyOfWithDefaults() *SaveClusterDatastoreRequestDatastoreConfigAnyOf`
+`func NewNFSDatastoreConfigurationWithDefaults() *NFSDatastoreConfiguration`
 
-NewSaveClusterDatastoreRequestDatastoreConfigAnyOfWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
+NewNFSDatastoreConfigurationWithDefaults instantiates a new NFSDatastoreConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSourceHostname
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostname() string`
+`func (o *NFSDatastoreConfiguration) GetSourceHostname() string`
 
 GetSourceHostname returns the SourceHostname field if non-nil, zero value otherwise.
 
 ### GetSourceHostnameOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostnameOk() (*string, bool)`
+`func (o *NFSDatastoreConfiguration) GetSourceHostnameOk() (*string, bool)`
 
 GetSourceHostnameOk returns a tuple with the SourceHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceHostname
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceHostname(v string)`
+`func (o *NFSDatastoreConfiguration) SetSourceHostname(v string)`
 
 SetSourceHostname sets SourceHostname field to given value.
 
 
 ### GetSourceDirPath
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPath() string`
+`func (o *NFSDatastoreConfiguration) GetSourceDirPath() string`
 
 GetSourceDirPath returns the SourceDirPath field if non-nil, zero value otherwise.
 
 ### GetSourceDirPathOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPathOk() (*string, bool)`
+`func (o *NFSDatastoreConfiguration) GetSourceDirPathOk() (*string, bool)`
 
 GetSourceDirPathOk returns a tuple with the SourceDirPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceDirPath
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceDirPath(v string)`
+`func (o *NFSDatastoreConfiguration) SetSourceDirPath(v string)`
 
 SetSourceDirPath sets SourceDirPath field to given value.
 
 
 ### GetSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersion() string`
+`func (o *NFSDatastoreConfiguration) GetSourceVersion() string`
 
 GetSourceVersion returns the SourceVersion field if non-nil, zero value otherwise.
 
 ### GetSourceVersionOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersionOk() (*string, bool)`
+`func (o *NFSDatastoreConfiguration) GetSourceVersionOk() (*string, bool)`
 
 GetSourceVersionOk returns a tuple with the SourceVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceVersion(v string)`
+`func (o *NFSDatastoreConfiguration) SetSourceVersion(v string)`
 
 SetSourceVersion sets SourceVersion field to given value.
 
 ### HasSourceVersion
 
-`func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) HasSourceVersion() bool`
+`func (o *NFSDatastoreConfiguration) HasSourceVersion() bool`
 
 HasSourceVersion returns a boolean if a field has been set.
 

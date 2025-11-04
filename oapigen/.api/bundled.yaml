@@ -44594,6 +44594,7 @@ paths:
                     config:
                       anyOf:
                         - type: object
+                          title: NFS Datastore Configuration
                           description: NFS Cluster Datastore Configuration
                           properties: &ref_225
                             sourceHostname:
@@ -44612,6 +44613,7 @@ paths:
                             - sourceHostname
                             - sourceDirPath
                         - type: object
+                          title: GFS2 Datastore Configuration
                           description: GFS2 Cluster Datastore Configuration
                           properties: &ref_227
                             blockDevice:
@@ -44626,11 +44628,15 @@ paths:
                           description: Generic configuration options for the datastore, varies based on the type of datastore.
                           type: object
                         - type: object
+                          title: Alletra MP HVM Datastore Configuration
                           description: AlletraMP HVM Datastore Configuration
                           properties: &ref_229
-                            enableRansomware:
-                              type: boolean
+                            enableransomware:
+                              type: string
                               description: Enable ransomware protection for this datastore
+                              enum:
+                                - 'on'
+                                - 'off'
                             protocolType:
                               type: string
                               description: Storage protocol to use, can be 'iSCSI' or 'FC'
@@ -56489,10 +56495,12 @@ paths:
                       description: Configuration options for the datastore, varies based on the type of datastore.
                       anyOf:
                         - type: object
+                          title: NFS Datastore Configuration
                           description: NFS Cluster Datastore Configuration
                           properties: *ref_225
                           required: *ref_226
                         - type: object
+                          title: GFS2 Datastore Configuration
                           description: GFS2 Cluster Datastore Configuration
                           properties: *ref_227
                           required: *ref_228
@@ -56500,6 +56508,7 @@ paths:
                           description: Generic configuration options for the datastore, varies based on the type of datastore.
                           type: object
                         - type: object
+                          title: Alletra MP HVM Datastore Configuration
                           description: AlletraMP HVM Datastore Configuration
                           properties: *ref_229
                           required: *ref_230
@@ -120739,6 +120748,18 @@ paths:
                                 - type: object
                                   additionalProperties: false
                                   required:
+                                    - requiredNetworks
+                                  description: |
+                                    - Instance Networks
+                                  properties:
+                                    requiredNetworks:
+                                      type: array
+                                      items:
+                                        type: integer
+                                        format: int64
+                                - type: object
+                                  additionalProperties: false
+                                  required:
                                     - shutdownType
                                   description: |
                                     - Shutdown
@@ -121665,6 +121686,7 @@ paths:
                             - maxNetworks
                             - storageBucketQuota
                             - powerSchedule
+                            - requiredNetwork
                             - maxRouters
                             - shutdown
                             - storageServerQuota
@@ -121966,6 +121988,18 @@ paths:
                           properties:
                             maxRouters:
                               type: string
+                        - type: object
+                          title: Required Network Policy Type Configuration
+                          description: |
+                            Configuration settings for the following policy types:
+                            - Instance Networks
+                          properties:
+                            requiredNetworks:
+                              type: array
+                              description: Array of network IDs that are required
+                              items:
+                                type: integer
+                                format: int64
                         - type: object
                           title: Shutdown Policy Type Configuration
                           description: |
@@ -124178,6 +124212,18 @@ paths:
                             maxRouters:
                               type: string
                         - type: object
+                          title: Required Network Policy Type Configuration
+                          description: |
+                            Configuration settings for the following policy types:
+                            - Instance Networks
+                          properties:
+                            requiredNetworks:
+                              type: array
+                              description: Array of network IDs that are required
+                              items:
+                                type: integer
+                                format: int64
+                        - type: object
                           title: Shutdown Policy Type Configuration
                           description: |
                             Configuration settings for the following policy types:
@@ -124607,6 +124653,7 @@ paths:
                             - Network Quota
                             - Object Storage Quota
                             - Power Schedule
+                            - Instance Networks
                             - Router Quota
                             - Shutdown
                             - Storage Server Storage Quota
@@ -124854,6 +124901,15 @@ paths:
                               properties:
                                 maxRouters:
                                   type: string
+                            - type: object
+                              description: |
+                                - Instance Networks
+                              properties:
+                                requiredNetworks:
+                                  type: array
+                                  items:
+                                    type: integer
+                                    format: int64
                             - type: object
                               description: |
                                 - Shutdown
@@ -125309,6 +125365,7 @@ paths:
                             - Network Quota
                             - Object Storage Quota
                             - Power Schedule
+                            - Instance Networks
                             - Router Quota
                             - Shutdown
                             - Storage Server Storage Quota
@@ -125550,6 +125607,15 @@ paths:
                               properties:
                                 maxRouters:
                                   type: string
+                            - type: object
+                              description: |
+                                - Instance Networks
+                              properties:
+                                requiredNetworks:
+                                  type: array
+                                  items:
+                                    type: integer
+                                    format: int64
                             - type: object
                               description: |
                                 - Shutdown
@@ -125969,6 +126035,7 @@ paths:
                             - Network Quota
                             - Object Storage Quota
                             - Power Schedule
+                            - Instance Networks
                             - Router Quota
                             - Shutdown
                             - Storage Server Storage Quota
@@ -126216,6 +126283,15 @@ paths:
                               properties:
                                 maxRouters:
                                   type: string
+                            - type: object
+                              description: |
+                                - Instance Networks
+                              properties:
+                                requiredNetworks:
+                                  type: array
+                                  items:
+                                    type: integer
+                                    format: int64
                             - type: object
                               description: |
                                 - Shutdown
@@ -126671,6 +126747,7 @@ paths:
                             - Network Quota
                             - Object Storage Quota
                             - Power Schedule
+                            - Instance Networks
                             - Router Quota
                             - Shutdown
                             - Storage Server Storage Quota
@@ -126912,6 +126989,15 @@ paths:
                               properties:
                                 maxRouters:
                                   type: string
+                            - type: object
+                              description: |
+                                - Instance Networks
+                              properties:
+                                requiredNetworks:
+                                  type: array
+                                  items:
+                                    type: integer
+                                    format: int64
                             - type: object
                               description: |
                                 - Shutdown
@@ -181709,11 +181795,13 @@ components:
       properties: *ref_1482
     clusterDatastoreConfigNFS:
       type: object
+      title: NFS Datastore Configuration
       description: NFS Cluster Datastore Configuration
       properties: *ref_225
       required: *ref_226
     clusterDatastoreConfigGFS2:
       type: object
+      title: GFS2 Datastore Configuration
       description: GFS2 Cluster Datastore Configuration
       properties: *ref_227
       required: *ref_228
@@ -181723,6 +181811,7 @@ components:
       type: object
     storageDatastoreConfigAlletraMPHVM:
       type: object
+      title: Alletra MP HVM Datastore Configuration
       description: AlletraMP HVM Datastore Configuration
       properties: *ref_229
       required: *ref_230

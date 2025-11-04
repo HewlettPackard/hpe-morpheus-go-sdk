@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **SourceVersion** | Pointer to **string** | NFS version to use when mounting the export. | [optional] 
 **BlockDevice** | **string** | Block device for target GFS2. | 
 **AllowReformat** | Pointer to **bool** | Allow reformatting of the device if it is already formatted. | [optional] 
-**EnableRansomware** | **bool** | Enable ransomware protection for this datastore | 
+**Enableransomware** | Pointer to **string** | Enable ransomware protection for this datastore | [optional] 
 **ProtocolType** | **string** | Storage protocol to use, can be &#39;iSCSI&#39; or &#39;FC&#39; | 
 
 ## Methods
 
 ### NewSaveDatastoreRequestDatastoreConfig
 
-`func NewSaveDatastoreRequestDatastoreConfig(sourceHostname string, sourceDirPath string, blockDevice string, enableRansomware bool, protocolType string, ) *SaveDatastoreRequestDatastoreConfig`
+`func NewSaveDatastoreRequestDatastoreConfig(sourceHostname string, sourceDirPath string, blockDevice string, protocolType string, ) *SaveDatastoreRequestDatastoreConfig`
 
 NewSaveDatastoreRequestDatastoreConfig instantiates a new SaveDatastoreRequestDatastoreConfig object
 This constructor will assign default values to properties that have it defined,
@@ -141,25 +141,30 @@ SetAllowReformat sets AllowReformat field to given value.
 
 HasAllowReformat returns a boolean if a field has been set.
 
-### GetEnableRansomware
+### GetEnableransomware
 
-`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableRansomware() bool`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableransomware() string`
 
-GetEnableRansomware returns the EnableRansomware field if non-nil, zero value otherwise.
+GetEnableransomware returns the Enableransomware field if non-nil, zero value otherwise.
 
-### GetEnableRansomwareOk
+### GetEnableransomwareOk
 
-`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableRansomwareOk() (*bool, bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) GetEnableransomwareOk() (*string, bool)`
 
-GetEnableRansomwareOk returns a tuple with the EnableRansomware field if it's non-nil, zero value otherwise
+GetEnableransomwareOk returns a tuple with the Enableransomware field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetEnableRansomware
+### SetEnableransomware
 
-`func (o *SaveDatastoreRequestDatastoreConfig) SetEnableRansomware(v bool)`
+`func (o *SaveDatastoreRequestDatastoreConfig) SetEnableransomware(v string)`
 
-SetEnableRansomware sets EnableRansomware field to given value.
+SetEnableransomware sets Enableransomware field to given value.
 
+### HasEnableransomware
+
+`func (o *SaveDatastoreRequestDatastoreConfig) HasEnableransomware() bool`
+
+HasEnableransomware returns a boolean if a field has been set.
 
 ### GetProtocolType
 

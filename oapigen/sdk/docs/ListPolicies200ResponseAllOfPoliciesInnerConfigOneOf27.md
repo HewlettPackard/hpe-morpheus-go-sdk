@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | **string** |  | 
+**CreateUserType** | **string** |  | 
+**CreateUser** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27(userGroup string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27(createUserType string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 object
 This constructor will assign default values to properties that have it defined,
@@ -25,25 +26,50 @@ NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27WithDefaults instantiat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserGroup
+### GetCreateUserType
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetUserGroup() string`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserType() string`
 
-GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
+GetCreateUserType returns the CreateUserType field if non-nil, zero value otherwise.
 
-### GetUserGroupOk
+### GetCreateUserTypeOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetUserGroupOk() (*string, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserTypeOk() (*string, bool)`
 
-GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
+GetCreateUserTypeOk returns a tuple with the CreateUserType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserGroup
+### SetCreateUserType
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetUserGroup(v string)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetCreateUserType(v string)`
 
-SetUserGroup sets UserGroup field to given value.
+SetCreateUserType sets CreateUserType field to given value.
 
+
+### GetCreateUser
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUser() bool`
+
+GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
+
+### GetCreateUserOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserOk() (*bool, bool)`
+
+GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateUser
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetCreateUser(v bool)`
+
+SetCreateUser sets CreateUser field to given value.
+
+### HasCreateUser
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) HasCreateUser() bool`
+
+HasCreateUser returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

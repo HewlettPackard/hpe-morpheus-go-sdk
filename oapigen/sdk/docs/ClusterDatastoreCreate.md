@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**SaveClusterDatastoreRequestDatastoreConfig**](SaveClusterDatastoreRequestDatastoreConfig.md) |  | [optional] 
+**Config** | Pointer to [**ClusterDatastoreCreateConfig**](ClusterDatastoreCreateConfig.md) |  | [optional] 
 **Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -186,20 +186,20 @@ HasDefaultStore returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ClusterDatastoreCreate) GetConfig() SaveClusterDatastoreRequestDatastoreConfig`
+`func (o *ClusterDatastoreCreate) GetConfig() ClusterDatastoreCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ClusterDatastoreCreate) GetConfigOk() (*SaveClusterDatastoreRequestDatastoreConfig, bool)`
+`func (o *ClusterDatastoreCreate) GetConfigOk() (*ClusterDatastoreCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ClusterDatastoreCreate) SetConfig(v SaveClusterDatastoreRequestDatastoreConfig)`
+`func (o *ClusterDatastoreCreate) SetConfig(v ClusterDatastoreCreateConfig)`
 
 SetConfig sets Config field to given value.
 

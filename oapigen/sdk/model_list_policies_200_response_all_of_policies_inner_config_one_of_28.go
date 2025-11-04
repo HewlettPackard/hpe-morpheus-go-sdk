@@ -18,9 +18,9 @@ import (
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28{}
 
-// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 - Workflow
+// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 - User Group Creation
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 struct {
-	WorkflowId           string                 `json:"workflowId"`
+	UserGroup            string                 `json:"userGroup"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,9 +30,9 @@ type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 ListPolicies200Resp
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28(workflowId string) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 {
+func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28(userGroup string) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 {
 	this := ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28{}
-	this.WorkflowId = workflowId
+	this.UserGroup = userGroup
 	return &this
 }
 
@@ -44,28 +44,28 @@ func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28WithDefaults() *Li
 	return &this
 }
 
-// GetWorkflowId returns the WorkflowId field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetWorkflowId() string {
+// GetUserGroup returns the UserGroup field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetUserGroup() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.WorkflowId
+	return o.UserGroup
 }
 
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value
+// GetUserGroupOk returns a tuple with the UserGroup field value
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetWorkflowIdOk() (*string, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetUserGroupOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WorkflowId, true
+	return &o.UserGroup, true
 }
 
-// SetWorkflowId sets field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) SetWorkflowId(v string) {
-	o.WorkflowId = v
+// SetUserGroup sets field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) SetUserGroup(v string) {
+	o.UserGroup = v
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) MarshalJSON() ([]byte, error) {
@@ -78,7 +78,7 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) MarshalJSON() ([
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["workflowId"] = o.WorkflowId
+	toSerialize["userGroup"] = o.UserGroup
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Strict** | Pointer to **bool** |  | [optional] 
-**Key** | Pointer to **string** |  | [optional] 
-**ValueListId** | Pointer to **string** |  | [optional] 
-**Value** | Pointer to **string** |  | [optional] 
+**StorageServerId** | Pointer to **string** |  | [optional] 
+**MaxStorage** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,105 +26,55 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStrict
+### GetStorageServerId
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStrict() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStorageServerId() string`
 
-GetStrict returns the Strict field if non-nil, zero value otherwise.
+GetStorageServerId returns the StorageServerId field if non-nil, zero value otherwise.
 
-### GetStrictOk
+### GetStorageServerIdOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStrictOk() (*bool, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStorageServerIdOk() (*string, bool)`
 
-GetStrictOk returns a tuple with the Strict field if it's non-nil, zero value otherwise
+GetStorageServerIdOk returns a tuple with the StorageServerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStrict
+### SetStorageServerId
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetStrict(v bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetStorageServerId(v string)`
 
-SetStrict sets Strict field to given value.
+SetStorageServerId sets StorageServerId field to given value.
 
-### HasStrict
+### HasStorageServerId
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasStrict() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasStorageServerId() bool`
 
-HasStrict returns a boolean if a field has been set.
+HasStorageServerId returns a boolean if a field has been set.
 
-### GetKey
+### GetMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetKey() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetMaxStorage() string`
 
-GetKey returns the Key field if non-nil, zero value otherwise.
+GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
-### GetKeyOk
+### GetMaxStorageOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetKeyOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetMaxStorageOk() (*string, bool)`
 
-GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
+GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKey
+### SetMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetKey(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetMaxStorage(v string)`
 
-SetKey sets Key field to given value.
+SetMaxStorage sets MaxStorage field to given value.
 
-### HasKey
+### HasMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasKey() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasMaxStorage() bool`
 
-HasKey returns a boolean if a field has been set.
-
-### GetValueListId
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetValueListId() string`
-
-GetValueListId returns the ValueListId field if non-nil, zero value otherwise.
-
-### GetValueListIdOk
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetValueListIdOk() (*string, bool)`
-
-GetValueListIdOk returns a tuple with the ValueListId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValueListId
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetValueListId(v string)`
-
-SetValueListId sets ValueListId field to given value.
-
-### HasValueListId
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasValueListId() bool`
-
-HasValueListId returns a boolean if a field has been set.
-
-### GetValue
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetValue() string`
-
-GetValue returns the Value field if non-nil, zero value otherwise.
-
-### GetValueOk
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetValueOk() (*string, bool)`
-
-GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetValue
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetValue(v string)`
-
-SetValue sets Value field to given value.
-
-### HasValue
-
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) HasValue() bool`
-
-HasValue returns a boolean if a field has been set.
+HasMaxStorage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

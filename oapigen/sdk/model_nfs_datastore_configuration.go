@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the SaveClusterDatastoreRequestDatastoreConfigAnyOf type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SaveClusterDatastoreRequestDatastoreConfigAnyOf{}
+// checks if the NFSDatastoreConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &NFSDatastoreConfiguration{}
 
-// SaveClusterDatastoreRequestDatastoreConfigAnyOf NFS Cluster Datastore Configuration
-type SaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
+// NFSDatastoreConfiguration NFS Cluster Datastore Configuration
+type NFSDatastoreConfiguration struct {
 	// Host name or IP address for target NFS instance.
 	SourceHostname string `json:"sourceHostname"`
 	// Path to the target NFS export directory.
@@ -29,29 +29,29 @@ type SaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _SaveClusterDatastoreRequestDatastoreConfigAnyOf SaveClusterDatastoreRequestDatastoreConfigAnyOf
+type _NFSDatastoreConfiguration NFSDatastoreConfiguration
 
-// NewSaveClusterDatastoreRequestDatastoreConfigAnyOf instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
+// NewNFSDatastoreConfiguration instantiates a new NFSDatastoreConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSaveClusterDatastoreRequestDatastoreConfigAnyOf(sourceHostname string, sourceDirPath string) *SaveClusterDatastoreRequestDatastoreConfigAnyOf {
-	this := SaveClusterDatastoreRequestDatastoreConfigAnyOf{}
+func NewNFSDatastoreConfiguration(sourceHostname string, sourceDirPath string) *NFSDatastoreConfiguration {
+	this := NFSDatastoreConfiguration{}
 	this.SourceHostname = sourceHostname
 	this.SourceDirPath = sourceDirPath
 	return &this
 }
 
-// NewSaveClusterDatastoreRequestDatastoreConfigAnyOfWithDefaults instantiates a new SaveClusterDatastoreRequestDatastoreConfigAnyOf object
+// NewNFSDatastoreConfigurationWithDefaults instantiates a new NFSDatastoreConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSaveClusterDatastoreRequestDatastoreConfigAnyOfWithDefaults() *SaveClusterDatastoreRequestDatastoreConfigAnyOf {
-	this := SaveClusterDatastoreRequestDatastoreConfigAnyOf{}
+func NewNFSDatastoreConfigurationWithDefaults() *NFSDatastoreConfiguration {
+	this := NFSDatastoreConfiguration{}
 	return &this
 }
 
 // GetSourceHostname returns the SourceHostname field value
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostname() string {
+func (o *NFSDatastoreConfiguration) GetSourceHostname() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -62,7 +62,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostname() st
 
 // GetSourceHostnameOk returns a tuple with the SourceHostname field value
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostnameOk() (*string, bool) {
+func (o *NFSDatastoreConfiguration) GetSourceHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,12 +70,12 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceHostnameOk() 
 }
 
 // SetSourceHostname sets field value
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceHostname(v string) {
+func (o *NFSDatastoreConfiguration) SetSourceHostname(v string) {
 	o.SourceHostname = v
 }
 
 // GetSourceDirPath returns the SourceDirPath field value
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPath() string {
+func (o *NFSDatastoreConfiguration) GetSourceDirPath() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -86,7 +86,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPath() str
 
 // GetSourceDirPathOk returns a tuple with the SourceDirPath field value
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPathOk() (*string, bool) {
+func (o *NFSDatastoreConfiguration) GetSourceDirPathOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -94,12 +94,12 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceDirPathOk() (
 }
 
 // SetSourceDirPath sets field value
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceDirPath(v string) {
+func (o *NFSDatastoreConfiguration) SetSourceDirPath(v string) {
 	o.SourceDirPath = v
 }
 
 // GetSourceVersion returns the SourceVersion field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersion() string {
+func (o *NFSDatastoreConfiguration) GetSourceVersion() string {
 	if o == nil || IsNil(o.SourceVersion) {
 		var ret string
 		return ret
@@ -109,7 +109,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersion() str
 
 // GetSourceVersionOk returns a tuple with the SourceVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersionOk() (*string, bool) {
+func (o *NFSDatastoreConfiguration) GetSourceVersionOk() (*string, bool) {
 	if o == nil || IsNil(o.SourceVersion) {
 		return nil, false
 	}
@@ -117,7 +117,7 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) GetSourceVersionOk() (
 }
 
 // IsSetSourceVersion returns a boolean if a field has been set.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) IsSetSourceVersion() bool {
+func (o *NFSDatastoreConfiguration) IsSetSourceVersion() bool {
 	if o != nil && !IsNil(o.SourceVersion) {
 		return true
 	}
@@ -126,11 +126,11 @@ func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) IsSetSourceVersion() b
 }
 
 // SetSourceVersion gets a reference to the given string and assigns it to the SourceVersion field.
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) SetSourceVersion(v string) {
+func (o *NFSDatastoreConfiguration) SetSourceVersion(v string) {
 	o.SourceVersion = &v
 }
 
-func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, error) {
+func (o NFSDatastoreConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -138,7 +138,7 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, 
 	return json.Marshal(toSerialize)
 }
 
-func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) ToMap() (map[string]interface{}, error) {
+func (o NFSDatastoreConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sourceHostname"] = o.SourceHostname
 	toSerialize["sourceDirPath"] = o.SourceDirPath
@@ -153,43 +153,43 @@ func (o SaveClusterDatastoreRequestDatastoreConfigAnyOf) ToMap() (map[string]int
 	return toSerialize, nil
 }
 
-type NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf struct {
-	value *SaveClusterDatastoreRequestDatastoreConfigAnyOf
+type NullableNFSDatastoreConfiguration struct {
+	value *NFSDatastoreConfiguration
 	isSet bool
 }
 
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Get() *SaveClusterDatastoreRequestDatastoreConfigAnyOf {
+func (v NullableNFSDatastoreConfiguration) Get() *NFSDatastoreConfiguration {
 	return v.value
 }
 
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Set(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) {
+func (v *NullableNFSDatastoreConfiguration) Set(val *NFSDatastoreConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) IsSet() bool {
+func (v NullableNFSDatastoreConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) Unset() {
+func (v *NullableNFSDatastoreConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSaveClusterDatastoreRequestDatastoreConfigAnyOf(val *SaveClusterDatastoreRequestDatastoreConfigAnyOf) *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf {
-	return &NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf{value: val, isSet: true}
+func NewNullableNFSDatastoreConfiguration(val *NFSDatastoreConfiguration) *NullableNFSDatastoreConfiguration {
+	return &NullableNFSDatastoreConfiguration{value: val, isSet: true}
 }
 
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) MarshalJSON() ([]byte, error) {
+func (v NullableNFSDatastoreConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(src []byte) error {
+func (v *NullableNFSDatastoreConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableNFSDatastoreConfiguration) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -198,7 +198,7 @@ func (v NullableSaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalMapstr
 	return v, nil
 }
 
-func (o *SaveClusterDatastoreRequestDatastoreConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+func (o *NFSDatastoreConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

@@ -18,9 +18,9 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 - Workflow
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 - User Group Creation
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 struct {
-	WorkflowId           *string                `json:"workflowId,omitempty"`
+	UserGroup            *string                `json:"userGroup,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,36 +43,36 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29WithDefaults() *AddP
 	return &this
 }
 
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
+// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroup() string {
+	if o == nil || IsNil(o.UserGroup) {
 		var ret string
 		return ret
 	}
-	return *o.WorkflowId
+	return *o.UserGroup
 }
 
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroupOk() (*string, bool) {
+	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
-	return o.WorkflowId, true
+	return o.UserGroup, true
 }
 
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
+// IsSetUserGroup returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) IsSetUserGroup() bool {
+	if o != nil && !IsNil(o.UserGroup) {
 		return true
 	}
 
 	return false
 }
 
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetWorkflowId(v string) {
-	o.WorkflowId = &v
+// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetUserGroup(v string) {
+	o.UserGroup = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) MarshalJSON() ([]byte, error) {
@@ -85,8 +85,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.WorkflowId) {
-		toSerialize["workflowId"] = o.WorkflowId
+	if !IsNil(o.UserGroup) {
+		toSerialize["userGroup"] = o.UserGroup
 	}
 
 	for key, value := range o.AdditionalProperties {

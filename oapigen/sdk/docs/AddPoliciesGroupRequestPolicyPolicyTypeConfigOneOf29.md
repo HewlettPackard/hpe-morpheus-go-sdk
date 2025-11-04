@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkflowId** | Pointer to **string** |  | [optional] 
+**UserGroup** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWorkflowId
+### GetUserGroup
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetWorkflowId() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroup() string`
 
-GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
-### GetWorkflowIdOk
+### GetUserGroupOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetWorkflowIdOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroupOk() (*string, bool)`
 
-GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWorkflowId
+### SetUserGroup
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetWorkflowId(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetUserGroup(v string)`
 
-SetWorkflowId sets WorkflowId field to given value.
+SetUserGroup sets UserGroup field to given value.
 
-### HasWorkflowId
+### HasUserGroup
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) HasWorkflowId() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) HasUserGroup() bool`
 
-HasWorkflowId returns a boolean if a field has been set.
+HasUserGroup returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

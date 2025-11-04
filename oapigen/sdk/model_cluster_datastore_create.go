@@ -26,7 +26,7 @@ type ClusterDatastoreCreate struct {
 	Visibility           *string                                                          `json:"visibility,omitempty"`
 	Active               *bool                                                            `json:"active,omitempty"`
 	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Config               *SaveClusterDatastoreRequestDatastoreConfig                      `json:"config,omitempty"`
+	Config               *ClusterDatastoreCreateConfig                                    `json:"config,omitempty"`
 	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
 	ResourcePermissions  *SaveClusterDatastoreRequestDatastoreResourcePermissions         `json:"resourcePermissions,omitempty"`
 	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
@@ -245,9 +245,9 @@ func (o *ClusterDatastoreCreate) SetDefaultStore(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ClusterDatastoreCreate) GetConfig() SaveClusterDatastoreRequestDatastoreConfig {
+func (o *ClusterDatastoreCreate) GetConfig() ClusterDatastoreCreateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret SaveClusterDatastoreRequestDatastoreConfig
+		var ret ClusterDatastoreCreateConfig
 		return ret
 	}
 	return *o.Config
@@ -255,7 +255,7 @@ func (o *ClusterDatastoreCreate) GetConfig() SaveClusterDatastoreRequestDatastor
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterDatastoreCreate) GetConfigOk() (*SaveClusterDatastoreRequestDatastoreConfig, bool) {
+func (o *ClusterDatastoreCreate) GetConfigOk() (*ClusterDatastoreCreateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *ClusterDatastoreCreate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given SaveClusterDatastoreRequestDatastoreConfig and assigns it to the Config field.
-func (o *ClusterDatastoreCreate) SetConfig(v SaveClusterDatastoreRequestDatastoreConfig) {
+// SetConfig gets a reference to the given ClusterDatastoreCreateConfig and assigns it to the Config field.
+func (o *ClusterDatastoreCreate) SetConfig(v ClusterDatastoreCreateConfig) {
 	o.Config = &v
 }
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkflowId** | **string** |  | 
+**UserGroup** | **string** |  | 
 
 ## Methods
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28(workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28(userGroup string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28 object
 This constructor will assign default values to properties that have it defined,
@@ -25,24 +25,24 @@ NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28WithDefaults instantiat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWorkflowId
+### GetUserGroup
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetWorkflowId() string`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetUserGroup() string`
 
-GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
-### GetWorkflowIdOk
+### GetUserGroupOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetWorkflowIdOk() (*string, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) GetUserGroupOk() (*string, bool)`
 
-GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWorkflowId
+### SetUserGroup
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) SetWorkflowId(v string)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf28) SetUserGroup(v string)`
 
-SetWorkflowId sets WorkflowId field to given value.
+SetUserGroup sets UserGroup field to given value.
 
 
 

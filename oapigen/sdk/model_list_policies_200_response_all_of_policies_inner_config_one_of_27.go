@@ -18,9 +18,10 @@ import (
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27{}
 
-// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 - User Group Creation
+// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 - User Creation
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 struct {
-	UserGroup            string                 `json:"userGroup"`
+	CreateUserType       string                 `json:"createUserType"`
+	CreateUser           *bool                  `json:"createUser,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,9 +31,9 @@ type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 ListPolicies200Resp
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27(userGroup string) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 {
+func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27(createUserType string) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27 {
 	this := ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27{}
-	this.UserGroup = userGroup
+	this.CreateUserType = createUserType
 	return &this
 }
 
@@ -44,28 +45,60 @@ func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27WithDefaults() *Li
 	return &this
 }
 
-// GetUserGroup returns the UserGroup field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetUserGroup() string {
+// GetCreateUserType returns the CreateUserType field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserType() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.UserGroup
+	return o.CreateUserType
 }
 
-// GetUserGroupOk returns a tuple with the UserGroup field value
+// GetCreateUserTypeOk returns a tuple with the CreateUserType field value
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetUserGroupOk() (*string, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserGroup, true
+	return &o.CreateUserType, true
 }
 
-// SetUserGroup sets field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetUserGroup(v string) {
-	o.UserGroup = v
+// SetCreateUserType sets field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetCreateUserType(v string) {
+	o.CreateUserType = v
+}
+
+// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUser() bool {
+	if o == nil || IsNil(o.CreateUser) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateUser
+}
+
+// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) GetCreateUserOk() (*bool, bool) {
+	if o == nil || IsNil(o.CreateUser) {
+		return nil, false
+	}
+	return o.CreateUser, true
+}
+
+// IsSetCreateUser returns a boolean if a field has been set.
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) IsSetCreateUser() bool {
+	if o != nil && !IsNil(o.CreateUser) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) SetCreateUser(v bool) {
+	o.CreateUser = &v
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) MarshalJSON() ([]byte, error) {
@@ -78,7 +111,10 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) MarshalJSON() ([
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf27) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["userGroup"] = o.UserGroup
+	toSerialize["createUserType"] = o.CreateUserType
+	if !IsNil(o.CreateUser) {
+		toSerialize["createUser"] = o.CreateUser
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

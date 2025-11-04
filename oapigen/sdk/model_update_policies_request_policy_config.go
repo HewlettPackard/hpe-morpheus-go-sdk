@@ -44,6 +44,7 @@ type UpdatePoliciesRequestPolicyConfig struct {
 	MessageOfTheDayPolicyTypeConfiguration                  *MessageOfTheDayPolicyTypeConfiguration
 	NetworkQuotaPolicyTypeConfiguration                     *NetworkQuotaPolicyTypeConfiguration
 	PowerSchedulePolicyTypeConfiguration                    *PowerSchedulePolicyTypeConfiguration
+	RequiredNetworkPolicyTypeConfiguration                  *RequiredNetworkPolicyTypeConfiguration
 	RouterQuotaPolicyTypeConfiguration                      *RouterQuotaPolicyTypeConfiguration
 	ShutdownPolicyTypeConfiguration                         *ShutdownPolicyTypeConfiguration
 	StorageServerStorageQuotaPolicyTypeConfiguration        *StorageServerStorageQuotaPolicyTypeConfiguration
@@ -148,6 +149,10 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 
 	if out, ok := data.(PowerSchedulePolicyTypeConfiguration); ok {
 		dst.PowerSchedulePolicyTypeConfiguration = &out
+	}
+
+	if out, ok := data.(RequiredNetworkPolicyTypeConfiguration); ok {
+		dst.RequiredNetworkPolicyTypeConfiguration = &out
 	}
 
 	if out, ok := data.(RouterQuotaPolicyTypeConfiguration); ok {
@@ -483,6 +488,19 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.PowerSchedulePolicyTypeConfiguration = nil
 	}
 
+	// try to unmarshal JSON data into RequiredNetworkPolicyTypeConfiguration
+	err = json.Unmarshal(data, &dst.RequiredNetworkPolicyTypeConfiguration)
+	if err == nil {
+		jsonRequiredNetworkPolicyTypeConfiguration, _ := json.Marshal(dst.RequiredNetworkPolicyTypeConfiguration)
+		if string(jsonRequiredNetworkPolicyTypeConfiguration) == "{}" { // empty struct
+			dst.RequiredNetworkPolicyTypeConfiguration = nil
+		} else {
+			return nil // data stored in dst.RequiredNetworkPolicyTypeConfiguration, return on the first match
+		}
+	} else {
+		dst.RequiredNetworkPolicyTypeConfiguration = nil
+	}
+
 	// try to unmarshal JSON data into RouterQuotaPolicyTypeConfiguration
 	err = json.Unmarshal(data, &dst.RouterQuotaPolicyTypeConfiguration)
 	if err == nil {
@@ -669,6 +687,10 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 
 	if src.PowerSchedulePolicyTypeConfiguration != nil {
 		return json.Marshal(&src.PowerSchedulePolicyTypeConfiguration)
+	}
+
+	if src.RequiredNetworkPolicyTypeConfiguration != nil {
+		return json.Marshal(&src.RequiredNetworkPolicyTypeConfiguration)
 	}
 
 	if src.RouterQuotaPolicyTypeConfiguration != nil {

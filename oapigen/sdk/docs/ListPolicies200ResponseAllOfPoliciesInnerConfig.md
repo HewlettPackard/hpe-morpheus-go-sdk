@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **PowerSchedule** | Pointer to **string** |  | [optional] 
 **PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
 **MaxRouters** | **string** |  | 
+**RequiredNetworks** | **[]int64** |  | 
 **ShutdownType** | **string** |  | 
 **ShutdownAge** | Pointer to **string** |  | [optional] 
 **ShutdownRenewal** | Pointer to **string** |  | [optional] 
@@ -79,7 +80,7 @@ Name | Type | Description | Notes
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfig
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxStorage string, maxVirtualServers string, maxVms string, motd ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd, maxNetworks string, powerScheduleType string, maxRouters string, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxStorage string, maxVirtualServers string, maxVms string, motd ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfig instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfig object
 This constructor will assign default values to properties that have it defined,
@@ -1282,6 +1283,26 @@ and a boolean to check if the value has been set.
 `func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMaxRouters(v string)`
 
 SetMaxRouters sets MaxRouters field to given value.
+
+
+### GetRequiredNetworks
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetRequiredNetworks() []int64`
+
+GetRequiredNetworks returns the RequiredNetworks field if non-nil, zero value otherwise.
+
+### GetRequiredNetworksOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetRequiredNetworksOk() (*[]int64, bool)`
+
+GetRequiredNetworksOk returns a tuple with the RequiredNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequiredNetworks
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetRequiredNetworks(v []int64)`
+
+SetRequiredNetworks sets RequiredNetworks field to given value.
 
 
 ### GetShutdownType

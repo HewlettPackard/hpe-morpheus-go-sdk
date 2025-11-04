@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the StorageDatastoreConfigAlletraMPHVM type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StorageDatastoreConfigAlletraMPHVM{}
+// checks if the AlletraMPHVMDatastoreConfiguration type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlletraMPHVMDatastoreConfiguration{}
 
-// StorageDatastoreConfigAlletraMPHVM AlletraMP HVM Datastore Configuration
-type StorageDatastoreConfigAlletraMPHVM struct {
+// AlletraMPHVMDatastoreConfiguration AlletraMP HVM Datastore Configuration
+type AlletraMPHVMDatastoreConfiguration struct {
 	// Enable ransomware protection for this datastore
 	Enableransomware *string `json:"enableransomware,omitempty"`
 	// Storage protocol to use, can be 'iSCSI' or 'FC'
@@ -27,28 +27,28 @@ type StorageDatastoreConfigAlletraMPHVM struct {
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-type _StorageDatastoreConfigAlletraMPHVM StorageDatastoreConfigAlletraMPHVM
+type _AlletraMPHVMDatastoreConfiguration AlletraMPHVMDatastoreConfiguration
 
-// NewStorageDatastoreConfigAlletraMPHVM instantiates a new StorageDatastoreConfigAlletraMPHVM object
+// NewAlletraMPHVMDatastoreConfiguration instantiates a new AlletraMPHVMDatastoreConfiguration object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageDatastoreConfigAlletraMPHVM(protocolType string) *StorageDatastoreConfigAlletraMPHVM {
-	this := StorageDatastoreConfigAlletraMPHVM{}
+func NewAlletraMPHVMDatastoreConfiguration(protocolType string) *AlletraMPHVMDatastoreConfiguration {
+	this := AlletraMPHVMDatastoreConfiguration{}
 	this.ProtocolType = protocolType
 	return &this
 }
 
-// NewStorageDatastoreConfigAlletraMPHVMWithDefaults instantiates a new StorageDatastoreConfigAlletraMPHVM object
+// NewAlletraMPHVMDatastoreConfigurationWithDefaults instantiates a new AlletraMPHVMDatastoreConfiguration object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewStorageDatastoreConfigAlletraMPHVMWithDefaults() *StorageDatastoreConfigAlletraMPHVM {
-	this := StorageDatastoreConfigAlletraMPHVM{}
+func NewAlletraMPHVMDatastoreConfigurationWithDefaults() *AlletraMPHVMDatastoreConfiguration {
+	this := AlletraMPHVMDatastoreConfiguration{}
 	return &this
 }
 
 // GetEnableransomware returns the Enableransomware field value if set, zero value otherwise.
-func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomware() string {
+func (o *AlletraMPHVMDatastoreConfiguration) GetEnableransomware() string {
 	if o == nil || IsNil(o.Enableransomware) {
 		var ret string
 		return ret
@@ -58,7 +58,7 @@ func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomware() string {
 
 // GetEnableransomwareOk returns a tuple with the Enableransomware field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomwareOk() (*string, bool) {
+func (o *AlletraMPHVMDatastoreConfiguration) GetEnableransomwareOk() (*string, bool) {
 	if o == nil || IsNil(o.Enableransomware) {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomwareOk() (*string, b
 }
 
 // IsSetEnableransomware returns a boolean if a field has been set.
-func (o *StorageDatastoreConfigAlletraMPHVM) IsSetEnableransomware() bool {
+func (o *AlletraMPHVMDatastoreConfiguration) IsSetEnableransomware() bool {
 	if o != nil && !IsNil(o.Enableransomware) {
 		return true
 	}
@@ -75,12 +75,12 @@ func (o *StorageDatastoreConfigAlletraMPHVM) IsSetEnableransomware() bool {
 }
 
 // SetEnableransomware gets a reference to the given string and assigns it to the Enableransomware field.
-func (o *StorageDatastoreConfigAlletraMPHVM) SetEnableransomware(v string) {
+func (o *AlletraMPHVMDatastoreConfiguration) SetEnableransomware(v string) {
 	o.Enableransomware = &v
 }
 
 // GetProtocolType returns the ProtocolType field value
-func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolType() string {
+func (o *AlletraMPHVMDatastoreConfiguration) GetProtocolType() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -91,7 +91,7 @@ func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolType() string {
 
 // GetProtocolTypeOk returns a tuple with the ProtocolType field value
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolTypeOk() (*string, bool) {
+func (o *AlletraMPHVMDatastoreConfiguration) GetProtocolTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -99,11 +99,11 @@ func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolTypeOk() (*string, bool)
 }
 
 // SetProtocolType sets field value
-func (o *StorageDatastoreConfigAlletraMPHVM) SetProtocolType(v string) {
+func (o *AlletraMPHVMDatastoreConfiguration) SetProtocolType(v string) {
 	o.ProtocolType = v
 }
 
-func (o StorageDatastoreConfigAlletraMPHVM) MarshalJSON() ([]byte, error) {
+func (o AlletraMPHVMDatastoreConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -111,7 +111,7 @@ func (o StorageDatastoreConfigAlletraMPHVM) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o StorageDatastoreConfigAlletraMPHVM) ToMap() (map[string]interface{}, error) {
+func (o AlletraMPHVMDatastoreConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Enableransomware) {
 		toSerialize["enableransomware"] = o.Enableransomware
@@ -125,43 +125,43 @@ func (o StorageDatastoreConfigAlletraMPHVM) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-type NullableStorageDatastoreConfigAlletraMPHVM struct {
-	value *StorageDatastoreConfigAlletraMPHVM
+type NullableAlletraMPHVMDatastoreConfiguration struct {
+	value *AlletraMPHVMDatastoreConfiguration
 	isSet bool
 }
 
-func (v NullableStorageDatastoreConfigAlletraMPHVM) Get() *StorageDatastoreConfigAlletraMPHVM {
+func (v NullableAlletraMPHVMDatastoreConfiguration) Get() *AlletraMPHVMDatastoreConfiguration {
 	return v.value
 }
 
-func (v *NullableStorageDatastoreConfigAlletraMPHVM) Set(val *StorageDatastoreConfigAlletraMPHVM) {
+func (v *NullableAlletraMPHVMDatastoreConfiguration) Set(val *AlletraMPHVMDatastoreConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableStorageDatastoreConfigAlletraMPHVM) IsSet() bool {
+func (v NullableAlletraMPHVMDatastoreConfiguration) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableStorageDatastoreConfigAlletraMPHVM) Unset() {
+func (v *NullableAlletraMPHVMDatastoreConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableStorageDatastoreConfigAlletraMPHVM(val *StorageDatastoreConfigAlletraMPHVM) *NullableStorageDatastoreConfigAlletraMPHVM {
-	return &NullableStorageDatastoreConfigAlletraMPHVM{value: val, isSet: true}
+func NewNullableAlletraMPHVMDatastoreConfiguration(val *AlletraMPHVMDatastoreConfiguration) *NullableAlletraMPHVMDatastoreConfiguration {
+	return &NullableAlletraMPHVMDatastoreConfiguration{value: val, isSet: true}
 }
 
-func (v NullableStorageDatastoreConfigAlletraMPHVM) MarshalJSON() ([]byte, error) {
+func (v NullableAlletraMPHVMDatastoreConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableStorageDatastoreConfigAlletraMPHVM) UnmarshalJSON(src []byte) error {
+func (v *NullableAlletraMPHVMDatastoreConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-func (v NullableStorageDatastoreConfigAlletraMPHVM) UnmarshalMapstructure(data any) (any, error) {
+func (v NullableAlletraMPHVMDatastoreConfiguration) UnmarshalMapstructure(data any) (any, error) {
 	if err := mapstructDecode(data, &v.value); err != nil {
 		return nil, err
 	}
@@ -170,7 +170,7 @@ func (v NullableStorageDatastoreConfigAlletraMPHVM) UnmarshalMapstructure(data a
 	return v, nil
 }
 
-func (o *StorageDatastoreConfigAlletraMPHVM) UnmarshalJSON(data []byte) (err error) {
+func (o *AlletraMPHVMDatastoreConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
 

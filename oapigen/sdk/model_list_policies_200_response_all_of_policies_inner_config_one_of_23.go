@@ -18,19 +18,10 @@ import (
 // checks if the ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23{}
 
-// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 - Shutdown
+// ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 - Instance Networks
 type ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 struct {
-	ShutdownType                     string                 `json:"shutdownType"`
-	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
-	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
-	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
-	ShutdownMessage                  *string                `json:"shutdownMessage,omitempty"`
-	ShutdownAutoRenew                *string                `json:"shutdownAutoRenew,omitempty"`
-	ShutdownAllowExtend              *string                `json:"shutdownAllowExtend,omitempty"`
-	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
-	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
-	AdditionalProperties             map[string]interface{} `json:",remain"`
+	RequiredNetworks     []int64                `json:"requiredNetworks"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23
@@ -39,13 +30,9 @@ type _ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 ListPolicies200Resp
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23(shutdownType string) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 {
+func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23(requiredNetworks []int64) *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 {
 	this := ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23{}
-	this.ShutdownType = shutdownType
-	var shutdownAutoRenew string = "off"
-	this.ShutdownAutoRenew = &shutdownAutoRenew
-	var shutdownAllowExtend string = "off"
-	this.ShutdownAllowExtend = &shutdownAllowExtend
+	this.RequiredNetworks = requiredNetworks
 	return &this
 }
 
@@ -54,323 +41,31 @@ func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23(shutdownType stri
 // but it doesn't guarantee that properties required by API are set
 func NewListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23WithDefaults() *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23 {
 	this := ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23{}
-	var shutdownAutoRenew string = "off"
-	this.ShutdownAutoRenew = &shutdownAutoRenew
-	var shutdownAllowExtend string = "off"
-	this.ShutdownAllowExtend = &shutdownAllowExtend
 	return &this
 }
 
-// GetShutdownType returns the ShutdownType field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownType() string {
+// GetRequiredNetworks returns the RequiredNetworks field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetRequiredNetworks() []int64 {
 	if o == nil {
-		var ret string
+		var ret []int64
 		return ret
 	}
 
-	return o.ShutdownType
+	return o.RequiredNetworks
 }
 
-// GetShutdownTypeOk returns a tuple with the ShutdownType field value
+// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownTypeOk() (*string, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetRequiredNetworksOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ShutdownType, true
+	return o.RequiredNetworks, true
 }
 
-// SetShutdownType sets field value
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownType(v string) {
-	o.ShutdownType = v
-}
-
-// GetShutdownAge returns the ShutdownAge field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAge() string {
-	if o == nil || IsNil(o.ShutdownAge) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownAge
-}
-
-// GetShutdownAgeOk returns a tuple with the ShutdownAge field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownAge) {
-		return nil, false
-	}
-	return o.ShutdownAge, true
-}
-
-// IsSetShutdownAge returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownAge() bool {
-	if o != nil && !IsNil(o.ShutdownAge) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownAge gets a reference to the given string and assigns it to the ShutdownAge field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownAge(v string) {
-	o.ShutdownAge = &v
-}
-
-// GetShutdownRenewal returns the ShutdownRenewal field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownRenewal() string {
-	if o == nil || IsNil(o.ShutdownRenewal) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownRenewal
-}
-
-// GetShutdownRenewalOk returns a tuple with the ShutdownRenewal field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownRenewalOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownRenewal) {
-		return nil, false
-	}
-	return o.ShutdownRenewal, true
-}
-
-// IsSetShutdownRenewal returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownRenewal() bool {
-	if o != nil && !IsNil(o.ShutdownRenewal) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownRenewal gets a reference to the given string and assigns it to the ShutdownRenewal field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownRenewal(v string) {
-	o.ShutdownRenewal = &v
-}
-
-// GetShutdownNotify returns the ShutdownNotify field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownNotify() string {
-	if o == nil || IsNil(o.ShutdownNotify) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownNotify
-}
-
-// GetShutdownNotifyOk returns a tuple with the ShutdownNotify field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownNotifyOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownNotify) {
-		return nil, false
-	}
-	return o.ShutdownNotify, true
-}
-
-// IsSetShutdownNotify returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownNotify() bool {
-	if o != nil && !IsNil(o.ShutdownNotify) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownNotify gets a reference to the given string and assigns it to the ShutdownNotify field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownNotify(v string) {
-	o.ShutdownNotify = &v
-}
-
-// GetShutdownMessage returns the ShutdownMessage field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownMessage() string {
-	if o == nil || IsNil(o.ShutdownMessage) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownMessage
-}
-
-// GetShutdownMessageOk returns a tuple with the ShutdownMessage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownMessage) {
-		return nil, false
-	}
-	return o.ShutdownMessage, true
-}
-
-// IsSetShutdownMessage returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownMessage() bool {
-	if o != nil && !IsNil(o.ShutdownMessage) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownMessage gets a reference to the given string and assigns it to the ShutdownMessage field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownMessage(v string) {
-	o.ShutdownMessage = &v
-}
-
-// GetShutdownAutoRenew returns the ShutdownAutoRenew field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAutoRenew() string {
-	if o == nil || IsNil(o.ShutdownAutoRenew) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownAutoRenew
-}
-
-// GetShutdownAutoRenewOk returns a tuple with the ShutdownAutoRenew field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAutoRenewOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownAutoRenew) {
-		return nil, false
-	}
-	return o.ShutdownAutoRenew, true
-}
-
-// IsSetShutdownAutoRenew returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownAutoRenew() bool {
-	if o != nil && !IsNil(o.ShutdownAutoRenew) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownAutoRenew gets a reference to the given string and assigns it to the ShutdownAutoRenew field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownAutoRenew(v string) {
-	o.ShutdownAutoRenew = &v
-}
-
-// GetShutdownAllowExtend returns the ShutdownAllowExtend field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAllowExtend() string {
-	if o == nil || IsNil(o.ShutdownAllowExtend) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownAllowExtend
-}
-
-// GetShutdownAllowExtendOk returns a tuple with the ShutdownAllowExtend field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownAllowExtendOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownAllowExtend) {
-		return nil, false
-	}
-	return o.ShutdownAllowExtend, true
-}
-
-// IsSetShutdownAllowExtend returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownAllowExtend() bool {
-	if o != nil && !IsNil(o.ShutdownAllowExtend) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownAllowExtend gets a reference to the given string and assigns it to the ShutdownAllowExtend field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownAllowExtend(v string) {
-	o.ShutdownAllowExtend = &v
-}
-
-// GetShutdownExtensionsBeforeApproval returns the ShutdownExtensionsBeforeApproval field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownExtensionsBeforeApproval() string {
-	if o == nil || IsNil(o.ShutdownExtensionsBeforeApproval) {
-		var ret string
-		return ret
-	}
-	return *o.ShutdownExtensionsBeforeApproval
-}
-
-// GetShutdownExtensionsBeforeApprovalOk returns a tuple with the ShutdownExtensionsBeforeApproval field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownExtensionsBeforeApprovalOk() (*string, bool) {
-	if o == nil || IsNil(o.ShutdownExtensionsBeforeApproval) {
-		return nil, false
-	}
-	return o.ShutdownExtensionsBeforeApproval, true
-}
-
-// IsSetShutdownExtensionsBeforeApproval returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownExtensionsBeforeApproval() bool {
-	if o != nil && !IsNil(o.ShutdownExtensionsBeforeApproval) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownExtensionsBeforeApproval gets a reference to the given string and assigns it to the ShutdownExtensionsBeforeApproval field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownExtensionsBeforeApproval(v string) {
-	o.ShutdownExtensionsBeforeApproval = &v
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		var ret string
-		return ret
-	}
-	return *o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		return nil, false
-	}
-	return o.AccountIntegrationId, true
-}
-
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
-}
-
-// GetShutdownHideFixed returns the ShutdownHideFixed field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownHideFixed() bool {
-	if o == nil || IsNil(o.ShutdownHideFixed) {
-		var ret bool
-		return ret
-	}
-	return *o.ShutdownHideFixed
-}
-
-// GetShutdownHideFixedOk returns a tuple with the ShutdownHideFixed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) GetShutdownHideFixedOk() (*bool, bool) {
-	if o == nil || IsNil(o.ShutdownHideFixed) {
-		return nil, false
-	}
-	return o.ShutdownHideFixed, true
-}
-
-// IsSetShutdownHideFixed returns a boolean if a field has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) IsSetShutdownHideFixed() bool {
-	if o != nil && !IsNil(o.ShutdownHideFixed) {
-		return true
-	}
-
-	return false
-}
-
-// SetShutdownHideFixed gets a reference to the given bool and assigns it to the ShutdownHideFixed field.
-func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetShutdownHideFixed(v bool) {
-	o.ShutdownHideFixed = &v
+// SetRequiredNetworks sets field value
+func (o *ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) SetRequiredNetworks(v []int64) {
+	o.RequiredNetworks = v
 }
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) MarshalJSON() ([]byte, error) {
@@ -383,34 +78,7 @@ func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) MarshalJSON() ([
 
 func (o ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf23) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["shutdownType"] = o.ShutdownType
-	if !IsNil(o.ShutdownAge) {
-		toSerialize["shutdownAge"] = o.ShutdownAge
-	}
-	if !IsNil(o.ShutdownRenewal) {
-		toSerialize["shutdownRenewal"] = o.ShutdownRenewal
-	}
-	if !IsNil(o.ShutdownNotify) {
-		toSerialize["shutdownNotify"] = o.ShutdownNotify
-	}
-	if !IsNil(o.ShutdownMessage) {
-		toSerialize["shutdownMessage"] = o.ShutdownMessage
-	}
-	if !IsNil(o.ShutdownAutoRenew) {
-		toSerialize["shutdownAutoRenew"] = o.ShutdownAutoRenew
-	}
-	if !IsNil(o.ShutdownAllowExtend) {
-		toSerialize["shutdownAllowExtend"] = o.ShutdownAllowExtend
-	}
-	if !IsNil(o.ShutdownExtensionsBeforeApproval) {
-		toSerialize["shutdownExtensionsBeforeApproval"] = o.ShutdownExtensionsBeforeApproval
-	}
-	if !IsNil(o.AccountIntegrationId) {
-		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
-	}
-	if !IsNil(o.ShutdownHideFixed) {
-		toSerialize["shutdownHideFixed"] = o.ShutdownHideFixed
-	}
+	toSerialize["requiredNetworks"] = o.RequiredNetworks
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

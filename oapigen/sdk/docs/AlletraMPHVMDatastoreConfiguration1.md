@@ -1,4 +1,4 @@
-# StorageDatastoreConfigAlletraMPHVM
+# AlletraMPHVMDatastoreConfiguration1
 
 ## Properties
 
@@ -9,64 +9,64 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewStorageDatastoreConfigAlletraMPHVM
+### NewAlletraMPHVMDatastoreConfiguration1
 
-`func NewStorageDatastoreConfigAlletraMPHVM(protocolType string, ) *StorageDatastoreConfigAlletraMPHVM`
+`func NewAlletraMPHVMDatastoreConfiguration1(protocolType string, ) *AlletraMPHVMDatastoreConfiguration1`
 
-NewStorageDatastoreConfigAlletraMPHVM instantiates a new StorageDatastoreConfigAlletraMPHVM object
+NewAlletraMPHVMDatastoreConfiguration1 instantiates a new AlletraMPHVMDatastoreConfiguration1 object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewStorageDatastoreConfigAlletraMPHVMWithDefaults
+### NewAlletraMPHVMDatastoreConfiguration1WithDefaults
 
-`func NewStorageDatastoreConfigAlletraMPHVMWithDefaults() *StorageDatastoreConfigAlletraMPHVM`
+`func NewAlletraMPHVMDatastoreConfiguration1WithDefaults() *AlletraMPHVMDatastoreConfiguration1`
 
-NewStorageDatastoreConfigAlletraMPHVMWithDefaults instantiates a new StorageDatastoreConfigAlletraMPHVM object
+NewAlletraMPHVMDatastoreConfiguration1WithDefaults instantiates a new AlletraMPHVMDatastoreConfiguration1 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEnableransomware
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomware() string`
+`func (o *AlletraMPHVMDatastoreConfiguration1) GetEnableransomware() string`
 
 GetEnableransomware returns the Enableransomware field if non-nil, zero value otherwise.
 
 ### GetEnableransomwareOk
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) GetEnableransomwareOk() (*string, bool)`
+`func (o *AlletraMPHVMDatastoreConfiguration1) GetEnableransomwareOk() (*string, bool)`
 
 GetEnableransomwareOk returns a tuple with the Enableransomware field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableransomware
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) SetEnableransomware(v string)`
+`func (o *AlletraMPHVMDatastoreConfiguration1) SetEnableransomware(v string)`
 
 SetEnableransomware sets Enableransomware field to given value.
 
 ### HasEnableransomware
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) HasEnableransomware() bool`
+`func (o *AlletraMPHVMDatastoreConfiguration1) HasEnableransomware() bool`
 
 HasEnableransomware returns a boolean if a field has been set.
 
 ### GetProtocolType
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolType() string`
+`func (o *AlletraMPHVMDatastoreConfiguration1) GetProtocolType() string`
 
 GetProtocolType returns the ProtocolType field if non-nil, zero value otherwise.
 
 ### GetProtocolTypeOk
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) GetProtocolTypeOk() (*string, bool)`
+`func (o *AlletraMPHVMDatastoreConfiguration1) GetProtocolTypeOk() (*string, bool)`
 
 GetProtocolTypeOk returns a tuple with the ProtocolType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocolType
 
-`func (o *StorageDatastoreConfigAlletraMPHVM) SetProtocolType(v string)`
+`func (o *AlletraMPHVMDatastoreConfiguration1) SetProtocolType(v string)`
 
 SetProtocolType sets ProtocolType field to given value.
 

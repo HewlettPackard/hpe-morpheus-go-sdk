@@ -56,6 +56,7 @@ Name | Type | Description | Notes
 **PowerSchedule** | Pointer to **string** |  | [optional] 
 **PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
 **MaxRouters** | Pointer to **string** |  | [optional] 
+**RequiredNetworks** | Pointer to **[]int64** |  | [optional] 
 **ShutdownType** | Pointer to **string** |  | [optional] 
 **ShutdownAge** | Pointer to **string** |  | [optional] 
 **ShutdownRenewal** | Pointer to **string** |  | [optional] 
@@ -1393,6 +1394,31 @@ SetMaxRouters sets MaxRouters field to given value.
 `func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) HasMaxRouters() bool`
 
 HasMaxRouters returns a boolean if a field has been set.
+
+### GetRequiredNetworks
+
+`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) GetRequiredNetworks() []int64`
+
+GetRequiredNetworks returns the RequiredNetworks field if non-nil, zero value otherwise.
+
+### GetRequiredNetworksOk
+
+`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) GetRequiredNetworksOk() (*[]int64, bool)`
+
+GetRequiredNetworksOk returns a tuple with the RequiredNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequiredNetworks
+
+`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) SetRequiredNetworks(v []int64)`
+
+SetRequiredNetworks sets RequiredNetworks field to given value.
+
+### HasRequiredNetworks
+
+`func (o *UpdatePoliciesGroupRequestPolicyPolicyTypeConfig) HasRequiredNetworks() bool`
+
+HasRequiredNetworks returns a boolean if a field has been set.
 
 ### GetShutdownType
 
