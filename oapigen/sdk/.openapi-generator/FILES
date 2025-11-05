@@ -655,10 +655,12 @@ docs/AddVDIApps200Response.md
 docs/AddVDIApps200ResponseAnyOf.md
 docs/AddVDIAppsRequest.md
 docs/AddVDIAppsRequestVdiApp.md
+docs/AddVDIAppsRequestVdiAppOneOf.md
 docs/AddVDIGateways200Response.md
 docs/AddVDIGateways200ResponseAnyOf.md
 docs/AddVDIGatewaysRequest.md
 docs/AddVDIGatewaysRequestVdiGateway.md
+docs/AddVDIGatewaysRequestVdiGatewayOneOf.md
 docs/AddVDIPools200Response.md
 docs/AddVDIPools200ResponseAnyOf.md
 docs/AddVDIPools200ResponseAnyOfVdiPool.md
@@ -2874,6 +2876,7 @@ docs/UpdateNetworkRouterRequestNetworkRouterType.md
 docs/UpdateNetworkRouterRequestNetworkRouterZone.md
 docs/UpdateNetworkServerGroupRequest.md
 docs/UpdateNetworkServerRequest.md
+docs/UpdateNetworkServerRequestNetworkServer.md
 docs/UpdateNetworkTransportZoneRequest.md
 docs/UpdateNodeTypeRequest.md
 docs/UpdateNodeTypeRequestContainerType.md
@@ -2995,8 +2998,10 @@ docs/UpdateUserSettingsRequestUserDefaultGroup.md
 docs/UpdateUserSettingsRequestUserDefaultPersona.md
 docs/UpdateVDIAppsRequest.md
 docs/UpdateVDIAppsRequestVdiApp.md
+docs/UpdateVDIAppsRequestVdiAppOneOf.md
 docs/UpdateVDIGatewaysRequest.md
 docs/UpdateVDIGatewaysRequestVdiGateway.md
+docs/UpdateVDIGatewaysRequestVdiGatewayOneOf.md
 docs/UpdateVDIPoolsRequest.md
 docs/UpdateVDIPoolsRequestVdiPool.md
 docs/UpdateVirtualImageRequest.md
@@ -3674,10 +3679,12 @@ model_add_vdi_apps_200_response.go
 model_add_vdi_apps_200_response_any_of.go
 model_add_vdi_apps_request.go
 model_add_vdi_apps_request_vdi_app.go
+model_add_vdi_apps_request_vdi_app_one_of.go
 model_add_vdi_gateways_200_response.go
 model_add_vdi_gateways_200_response_any_of.go
 model_add_vdi_gateways_request.go
 model_add_vdi_gateways_request_vdi_gateway.go
+model_add_vdi_gateways_request_vdi_gateway_one_of.go
 model_add_vdi_pools_200_response.go
 model_add_vdi_pools_200_response_any_of.go
 model_add_vdi_pools_200_response_any_of_vdi_pool.go
@@ -5809,6 +5816,7 @@ model_update_network_router_request_network_router_type.go
 model_update_network_router_request_network_router_zone.go
 model_update_network_server_group_request.go
 model_update_network_server_request.go
+model_update_network_server_request_network_server.go
 model_update_network_transport_zone_request.go
 model_update_node_type_request.go
 model_update_node_type_request_container_type.go
@@ -5930,8 +5938,10 @@ model_update_user_settings_request_user_default_group.go
 model_update_user_settings_request_user_default_persona.go
 model_update_vdi_apps_request.go
 model_update_vdi_apps_request_vdi_app.go
+model_update_vdi_apps_request_vdi_app_one_of.go
 model_update_vdi_gateways_request.go
 model_update_vdi_gateways_request_vdi_gateway.go
+model_update_vdi_gateways_request_vdi_gateway_one_of.go
 model_update_vdi_pools_request.go
 model_update_vdi_pools_request_vdi_pool.go
 model_update_virtual_image_request.go

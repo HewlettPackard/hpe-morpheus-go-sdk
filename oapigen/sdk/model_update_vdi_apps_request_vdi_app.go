@@ -13,200 +13,103 @@ package sdk
 
 import (
 	"encoding/json"
-	"os"
+	"fmt"
+
+	"gopkg.in/validator.v2"
 )
 
-// checks if the UpdateVDIAppsRequestVdiApp type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UpdateVDIAppsRequestVdiApp{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
-// UpdateVDIAppsRequestVdiApp struct for UpdateVDIAppsRequestVdiApp
+// UpdateVDIAppsRequestVdiApp - struct for UpdateVDIAppsRequestVdiApp
 type UpdateVDIAppsRequestVdiApp struct {
-	// VDI App name
-	Name *string `json:"name,omitempty"`
-	// Description
-	Description *string `json:"description,omitempty"`
-	// Icon Path. A relative location of an icon image
-	IconPath **os.File `json:"iconPath,omitempty"`
-	// The RDS App Name Prefix.  Must start with '||'
-	LaunchPrefix         *string                `json:"launchPrefix,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	UpdateVDIAppsRequestVdiAppOneOf *UpdateVDIAppsRequestVdiAppOneOf
 }
 
-type _UpdateVDIAppsRequestVdiApp UpdateVDIAppsRequestVdiApp
-
-// NewUpdateVDIAppsRequestVdiApp instantiates a new UpdateVDIAppsRequestVdiApp object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUpdateVDIAppsRequestVdiApp() *UpdateVDIAppsRequestVdiApp {
-	this := UpdateVDIAppsRequestVdiApp{}
-	return &this
-}
-
-// NewUpdateVDIAppsRequestVdiAppWithDefaults instantiates a new UpdateVDIAppsRequestVdiApp object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewUpdateVDIAppsRequestVdiAppWithDefaults() *UpdateVDIAppsRequestVdiApp {
-	this := UpdateVDIAppsRequestVdiApp{}
-	return &this
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *UpdateVDIAppsRequestVdiApp) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
+// UpdateVDIAppsRequestVdiAppOneOfAsUpdateVDIAppsRequestVdiApp is a convenience function that returns UpdateVDIAppsRequestVdiAppOneOf wrapped in UpdateVDIAppsRequestVdiApp
+func UpdateVDIAppsRequestVdiAppOneOfAsUpdateVDIAppsRequestVdiApp(v *UpdateVDIAppsRequestVdiAppOneOf) UpdateVDIAppsRequestVdiApp {
+	return UpdateVDIAppsRequestVdiApp{
+		UpdateVDIAppsRequestVdiAppOneOf: v,
 	}
-	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIAppsRequestVdiApp) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *UpdateVDIAppsRequestVdiApp) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
+func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &UpdateVDIAppsRequestVdiApp{}
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.UpdateVDIAppsRequestVdiAppOneOf)
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *UpdateVDIAppsRequestVdiApp) SetName(v string) {
-	o.Name = &v
-}
-
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *UpdateVDIAppsRequestVdiApp) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIAppsRequestVdiApp) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// IsSetDescription returns a boolean if a field has been set.
-func (o *UpdateVDIAppsRequestVdiApp) IsSetDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
+	if IsEmpty(dst.UpdateVDIAppsRequestVdiAppOneOf) {
+		dst.UpdateVDIAppsRequestVdiAppOneOf = nil
 	}
 
-	return false
+	return dst, nil
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *UpdateVDIAppsRequestVdiApp) SetDescription(v string) {
-	o.Description = &v
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *UpdateVDIAppsRequestVdiApp) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+	// try to unmarshal data into UpdateVDIAppsRequestVdiAppOneOf
+	err = newStrictDecoder(data).Decode(&dst.UpdateVDIAppsRequestVdiAppOneOf)
+	if err == nil {
+		jsonUpdateVDIAppsRequestVdiAppOneOf, _ := json.Marshal(dst.UpdateVDIAppsRequestVdiAppOneOf)
+		if string(jsonUpdateVDIAppsRequestVdiAppOneOf) == "{}" { // empty struct
+			dst.UpdateVDIAppsRequestVdiAppOneOf = nil
+		} else {
+			if err = validator.Validate(dst.UpdateVDIAppsRequestVdiAppOneOf); err != nil {
+				dst.UpdateVDIAppsRequestVdiAppOneOf = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.UpdateVDIAppsRequestVdiAppOneOf = nil
+	}
+
+	if match > 1 { // more than 1 match
+		// reset to nil
+		dst.UpdateVDIAppsRequestVdiAppOneOf = nil
+
+		return NewResponseValidationError("data matches more than one schema in oneOf(UpdateVDIAppsRequestVdiApp)")
+	} else if match == 1 {
+		return nil // exactly one match
+	} else { // no match
+		return NewResponseValidationError("data failed to match schemas in oneOf(UpdateVDIAppsRequestVdiApp)")
+	}
 }
 
-// GetIconPath returns the IconPath field value if set, zero value otherwise.
-func (o *UpdateVDIAppsRequestVdiApp) GetIconPath() *os.File {
-	if o == nil || IsNil(o.IconPath) {
-		var ret *os.File
-		return ret
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src UpdateVDIAppsRequestVdiApp) MarshalJSON() ([]byte, error) {
+	if src.UpdateVDIAppsRequestVdiAppOneOf != nil {
+		return json.Marshal(&src.UpdateVDIAppsRequestVdiAppOneOf)
 	}
-	return *o.IconPath
+
+	return nil, nil // no data in oneOf schemas
 }
 
-// GetIconPathOk returns a tuple with the IconPath field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIAppsRequestVdiApp) GetIconPathOk() (**os.File, bool) {
-	if o == nil || IsNil(o.IconPath) {
-		return nil, false
+// Get the actual instance
+func (obj *UpdateVDIAppsRequestVdiApp) GetActualInstance() interface{} {
+	if obj == nil {
+		return nil
 	}
-	return o.IconPath, true
+	if obj.UpdateVDIAppsRequestVdiAppOneOf != nil {
+		return obj.UpdateVDIAppsRequestVdiAppOneOf
+	}
+
+	// all schemas are nil
+	return nil
 }
 
-// IsSetIconPath returns a boolean if a field has been set.
-func (o *UpdateVDIAppsRequestVdiApp) IsSetIconPath() bool {
-	if o != nil && !IsNil(o.IconPath) {
-		return true
+// Get the actual instance value
+func (obj UpdateVDIAppsRequestVdiApp) GetActualInstanceValue() interface{} {
+	if obj.UpdateVDIAppsRequestVdiAppOneOf != nil {
+		return *obj.UpdateVDIAppsRequestVdiAppOneOf
 	}
 
-	return false
-}
-
-// SetIconPath gets a reference to the given *os.File and assigns it to the IconPath field.
-func (o *UpdateVDIAppsRequestVdiApp) SetIconPath(v *os.File) {
-	o.IconPath = &v
-}
-
-// GetLaunchPrefix returns the LaunchPrefix field value if set, zero value otherwise.
-func (o *UpdateVDIAppsRequestVdiApp) GetLaunchPrefix() string {
-	if o == nil || IsNil(o.LaunchPrefix) {
-		var ret string
-		return ret
-	}
-	return *o.LaunchPrefix
-}
-
-// GetLaunchPrefixOk returns a tuple with the LaunchPrefix field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UpdateVDIAppsRequestVdiApp) GetLaunchPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.LaunchPrefix) {
-		return nil, false
-	}
-	return o.LaunchPrefix, true
-}
-
-// IsSetLaunchPrefix returns a boolean if a field has been set.
-func (o *UpdateVDIAppsRequestVdiApp) IsSetLaunchPrefix() bool {
-	if o != nil && !IsNil(o.LaunchPrefix) {
-		return true
-	}
-
-	return false
-}
-
-// SetLaunchPrefix gets a reference to the given string and assigns it to the LaunchPrefix field.
-func (o *UpdateVDIAppsRequestVdiApp) SetLaunchPrefix(v string) {
-	o.LaunchPrefix = &v
-}
-
-func (o UpdateVDIAppsRequestVdiApp) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o UpdateVDIAppsRequestVdiApp) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !IsNil(o.IconPath) {
-		toSerialize["iconPath"] = o.IconPath
-	}
-	if !IsNil(o.LaunchPrefix) {
-		toSerialize["launchPrefix"] = o.LaunchPrefix
-	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
-	return toSerialize, nil
+	// all schemas are nil
+	return nil
 }
 
 type NullableUpdateVDIAppsRequestVdiApp struct {
@@ -253,9 +156,3 @@ func (v NullableUpdateVDIAppsRequestVdiApp) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
-
-func (o *UpdateVDIAppsRequestVdiApp) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

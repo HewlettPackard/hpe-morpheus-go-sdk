@@ -48,7 +48,7 @@ import (
 )
 
 func main() {
-	addVDIAppsRequest := *openapiclient.NewAddVDIAppsRequest(*openapiclient.NewAddVDIAppsRequestVdiApp("Name_example")) // AddVDIAppsRequest |  (optional)
+	addVDIAppsRequest := *openapiclient.NewAddVDIAppsRequest(openapiclient.addVDIApps_request_vdiApp{AddVDIAppsRequestVdiAppOneOf: openapiclient.NewAddVDIAppsRequestVdiAppOneOf("Name_example")}) // AddVDIAppsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -114,7 +114,7 @@ import (
 )
 
 func main() {
-	addVDIGatewaysRequest := *openapiclient.NewAddVDIGatewaysRequest(*openapiclient.NewAddVDIGatewaysRequestVdiGateway("Name_example", "https://fqdn.com")) // AddVDIGatewaysRequest |  (optional)
+	addVDIGatewaysRequest := *openapiclient.NewAddVDIGatewaysRequest(openapiclient.addVDIGateways_request_vdiGateway{AddVDIGatewaysRequestVdiGatewayOneOf: openapiclient.NewAddVDIGatewaysRequestVdiGatewayOneOf("Name_example", "https://fqdn.com")}) // AddVDIGatewaysRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1275,7 +1275,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	updateVDIAppsRequest := *openapiclient.NewUpdateVDIAppsRequest(*openapiclient.NewUpdateVDIAppsRequestVdiApp()) // UpdateVDIAppsRequest |  (optional)
+	updateVDIAppsRequest := *openapiclient.NewUpdateVDIAppsRequest(openapiclient.updateVDIApps_request_vdiApp{UpdateVDIAppsRequestVdiAppOneOf: openapiclient.NewUpdateVDIAppsRequestVdiAppOneOf()}) // UpdateVDIAppsRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1347,7 +1347,7 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	updateVDIGatewaysRequest := *openapiclient.NewUpdateVDIGatewaysRequest(*openapiclient.NewUpdateVDIGatewaysRequestVdiGateway()) // UpdateVDIGatewaysRequest |  (optional)
+	updateVDIGatewaysRequest := *openapiclient.NewUpdateVDIGatewaysRequest(openapiclient.updateVDIGateways_request_vdiGateway{UpdateVDIGatewaysRequestVdiGatewayOneOf: openapiclient.NewUpdateVDIGatewaysRequestVdiGatewayOneOf()}) // UpdateVDIGatewaysRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
