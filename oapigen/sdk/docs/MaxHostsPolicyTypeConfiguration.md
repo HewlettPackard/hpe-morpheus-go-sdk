@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxHosts** | Pointer to **string** |  | [optional] 
+**MaxHosts** | **string** |  | 
 
 ## Methods
 
 ### NewMaxHostsPolicyTypeConfiguration
 
-`func NewMaxHostsPolicyTypeConfiguration() *MaxHostsPolicyTypeConfiguration`
+`func NewMaxHostsPolicyTypeConfiguration(maxHosts string, ) *MaxHostsPolicyTypeConfiguration`
 
 NewMaxHostsPolicyTypeConfiguration instantiates a new MaxHostsPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxHosts sets MaxHosts field to given value.
 
-### HasMaxHosts
-
-`func (o *MaxHostsPolicyTypeConfiguration) HasMaxHosts() bool`
-
-HasMaxHosts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

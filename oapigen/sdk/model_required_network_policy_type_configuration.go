@@ -18,10 +18,9 @@ import (
 // checks if the RequiredNetworkPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &RequiredNetworkPolicyTypeConfiguration{}
 
-// RequiredNetworkPolicyTypeConfiguration Configuration settings for the following policy types: - Instance Networks
+// RequiredNetworkPolicyTypeConfiguration - Instance Networks
 type RequiredNetworkPolicyTypeConfiguration struct {
-	// Array of network IDs that are required
-	RequiredNetworks     []int64                `json:"requiredNetworks,omitempty"`
+	RequiredNetworks     []int64                `json:"requiredNetworks"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -31,8 +30,9 @@ type _RequiredNetworkPolicyTypeConfiguration RequiredNetworkPolicyTypeConfigurat
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRequiredNetworkPolicyTypeConfiguration() *RequiredNetworkPolicyTypeConfiguration {
+func NewRequiredNetworkPolicyTypeConfiguration(requiredNetworks []int64) *RequiredNetworkPolicyTypeConfiguration {
 	this := RequiredNetworkPolicyTypeConfiguration{}
+	this.RequiredNetworks = requiredNetworks
 	return &this
 }
 
@@ -44,34 +44,26 @@ func NewRequiredNetworkPolicyTypeConfigurationWithDefaults() *RequiredNetworkPol
 	return &this
 }
 
-// GetRequiredNetworks returns the RequiredNetworks field value if set, zero value otherwise.
+// GetRequiredNetworks returns the RequiredNetworks field value
 func (o *RequiredNetworkPolicyTypeConfiguration) GetRequiredNetworks() []int64 {
-	if o == nil || IsNil(o.RequiredNetworks) {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
+
 	return o.RequiredNetworks
 }
 
-// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value if set, nil otherwise
+// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value
 // and a boolean to check if the value has been set.
 func (o *RequiredNetworkPolicyTypeConfiguration) GetRequiredNetworksOk() ([]int64, bool) {
-	if o == nil || IsNil(o.RequiredNetworks) {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequiredNetworks, true
 }
 
-// IsSetRequiredNetworks returns a boolean if a field has been set.
-func (o *RequiredNetworkPolicyTypeConfiguration) IsSetRequiredNetworks() bool {
-	if o != nil && !IsNil(o.RequiredNetworks) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequiredNetworks gets a reference to the given []int64 and assigns it to the RequiredNetworks field.
+// SetRequiredNetworks sets field value
 func (o *RequiredNetworkPolicyTypeConfiguration) SetRequiredNetworks(v []int64) {
 	o.RequiredNetworks = v
 }
@@ -86,9 +78,7 @@ func (o RequiredNetworkPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o RequiredNetworkPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RequiredNetworks) {
-		toSerialize["requiredNetworks"] = o.RequiredNetworks
-	}
+	toSerialize["requiredNetworks"] = o.RequiredNetworks
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

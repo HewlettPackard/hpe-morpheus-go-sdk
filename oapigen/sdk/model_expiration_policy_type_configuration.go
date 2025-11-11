@@ -18,9 +18,9 @@ import (
 // checks if the ExpirationPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ExpirationPolicyTypeConfiguration{}
 
-// ExpirationPolicyTypeConfiguration Configuration settings for the following policy types: - Expiration
+// ExpirationPolicyTypeConfiguration - Expiration
 type ExpirationPolicyTypeConfiguration struct {
-	LifecycleType                     *string                `json:"lifecycleType,omitempty"`
+	LifecycleType                     string                 `json:"lifecycleType"`
 	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
 	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
 	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
@@ -39,8 +39,9 @@ type _ExpirationPolicyTypeConfiguration ExpirationPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExpirationPolicyTypeConfiguration() *ExpirationPolicyTypeConfiguration {
+func NewExpirationPolicyTypeConfiguration(lifecycleType string) *ExpirationPolicyTypeConfiguration {
 	this := ExpirationPolicyTypeConfiguration{}
+	this.LifecycleType = lifecycleType
 	var lifecycleAutoRenew string = "off"
 	this.LifecycleAutoRenew = &lifecycleAutoRenew
 	var lifecycleAllowExtend string = "off"
@@ -60,36 +61,28 @@ func NewExpirationPolicyTypeConfigurationWithDefaults() *ExpirationPolicyTypeCon
 	return &this
 }
 
-// GetLifecycleType returns the LifecycleType field value if set, zero value otherwise.
+// GetLifecycleType returns the LifecycleType field value
 func (o *ExpirationPolicyTypeConfiguration) GetLifecycleType() string {
-	if o == nil || IsNil(o.LifecycleType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.LifecycleType
+
+	return o.LifecycleType
 }
 
-// GetLifecycleTypeOk returns a tuple with the LifecycleType field value if set, nil otherwise
+// GetLifecycleTypeOk returns a tuple with the LifecycleType field value
 // and a boolean to check if the value has been set.
 func (o *ExpirationPolicyTypeConfiguration) GetLifecycleTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.LifecycleType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LifecycleType, true
+	return &o.LifecycleType, true
 }
 
-// IsSetLifecycleType returns a boolean if a field has been set.
-func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleType() bool {
-	if o != nil && !IsNil(o.LifecycleType) {
-		return true
-	}
-
-	return false
-}
-
-// SetLifecycleType gets a reference to the given string and assigns it to the LifecycleType field.
+// SetLifecycleType sets field value
 func (o *ExpirationPolicyTypeConfiguration) SetLifecycleType(v string) {
-	o.LifecycleType = &v
+	o.LifecycleType = v
 }
 
 // GetLifecycleAge returns the LifecycleAge field value if set, zero value otherwise.
@@ -390,9 +383,7 @@ func (o ExpirationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o ExpirationPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LifecycleType) {
-		toSerialize["lifecycleType"] = o.LifecycleType
-	}
+	toSerialize["lifecycleType"] = o.LifecycleType
 	if !IsNil(o.LifecycleAge) {
 		toSerialize["lifecycleAge"] = o.LifecycleAge
 	}

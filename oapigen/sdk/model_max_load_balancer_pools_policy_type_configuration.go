@@ -18,9 +18,9 @@ import (
 // checks if the MaxLoadBalancerPoolsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxLoadBalancerPoolsPolicyTypeConfiguration{}
 
-// MaxLoadBalancerPoolsPolicyTypeConfiguration Configuration settings for the following policy types: - Max Load Balancer Pools
+// MaxLoadBalancerPoolsPolicyTypeConfiguration - Max Load Balancer Pools
 type MaxLoadBalancerPoolsPolicyTypeConfiguration struct {
-	MaxPools             *string                `json:"maxPools,omitempty"`
+	MaxPools             string                 `json:"maxPools"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxLoadBalancerPoolsPolicyTypeConfiguration MaxLoadBalancerPoolsPolicyType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxLoadBalancerPoolsPolicyTypeConfiguration() *MaxLoadBalancerPoolsPolicyTypeConfiguration {
+func NewMaxLoadBalancerPoolsPolicyTypeConfiguration(maxPools string) *MaxLoadBalancerPoolsPolicyTypeConfiguration {
 	this := MaxLoadBalancerPoolsPolicyTypeConfiguration{}
+	this.MaxPools = maxPools
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxLoadBalancerPoolsPolicyTypeConfigurationWithDefaults() *MaxLoadBalanc
 	return &this
 }
 
-// GetMaxPools returns the MaxPools field value if set, zero value otherwise.
+// GetMaxPools returns the MaxPools field value
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) GetMaxPools() string {
-	if o == nil || IsNil(o.MaxPools) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxPools
+
+	return o.MaxPools
 }
 
-// GetMaxPoolsOk returns a tuple with the MaxPools field value if set, nil otherwise
+// GetMaxPoolsOk returns a tuple with the MaxPools field value
 // and a boolean to check if the value has been set.
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) GetMaxPoolsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxPools) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxPools, true
+	return &o.MaxPools, true
 }
 
-// IsSetMaxPools returns a boolean if a field has been set.
-func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) IsSetMaxPools() bool {
-	if o != nil && !IsNil(o.MaxPools) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxPools gets a reference to the given string and assigns it to the MaxPools field.
+// SetMaxPools sets field value
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration) SetMaxPools(v string) {
-	o.MaxPools = &v
+	o.MaxPools = v
 }
 
 func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) MarshalJSON() ([]byte, erro
 
 func (o MaxLoadBalancerPoolsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxPools) {
-		toSerialize["maxPools"] = o.MaxPools
-	}
+	toSerialize["maxPools"] = o.MaxPools
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

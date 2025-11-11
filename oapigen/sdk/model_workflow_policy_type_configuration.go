@@ -18,9 +18,9 @@ import (
 // checks if the WorkflowPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WorkflowPolicyTypeConfiguration{}
 
-// WorkflowPolicyTypeConfiguration Configuration settings for the following policy types: - Workflow
+// WorkflowPolicyTypeConfiguration - Workflow
 type WorkflowPolicyTypeConfiguration struct {
-	WorkflowId           *string                `json:"workflowId,omitempty"`
+	WorkflowId           string                 `json:"workflowId"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _WorkflowPolicyTypeConfiguration WorkflowPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWorkflowPolicyTypeConfiguration() *WorkflowPolicyTypeConfiguration {
+func NewWorkflowPolicyTypeConfiguration(workflowId string) *WorkflowPolicyTypeConfiguration {
 	this := WorkflowPolicyTypeConfiguration{}
+	this.WorkflowId = workflowId
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewWorkflowPolicyTypeConfigurationWithDefaults() *WorkflowPolicyTypeConfigu
 	return &this
 }
 
-// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
+// GetWorkflowId returns the WorkflowId field value
 func (o *WorkflowPolicyTypeConfiguration) GetWorkflowId() string {
-	if o == nil || IsNil(o.WorkflowId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.WorkflowId
+
+	return o.WorkflowId
 }
 
-// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// GetWorkflowIdOk returns a tuple with the WorkflowId field value
 // and a boolean to check if the value has been set.
 func (o *WorkflowPolicyTypeConfiguration) GetWorkflowIdOk() (*string, bool) {
-	if o == nil || IsNil(o.WorkflowId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.WorkflowId, true
+	return &o.WorkflowId, true
 }
 
-// IsSetWorkflowId returns a boolean if a field has been set.
-func (o *WorkflowPolicyTypeConfiguration) IsSetWorkflowId() bool {
-	if o != nil && !IsNil(o.WorkflowId) {
-		return true
-	}
-
-	return false
-}
-
-// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
+// SetWorkflowId sets field value
 func (o *WorkflowPolicyTypeConfiguration) SetWorkflowId(v string) {
-	o.WorkflowId = &v
+	o.WorkflowId = v
 }
 
 func (o WorkflowPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o WorkflowPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o WorkflowPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.WorkflowId) {
-		toSerialize["workflowId"] = o.WorkflowId
-	}
+	toSerialize["workflowId"] = o.WorkflowId
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

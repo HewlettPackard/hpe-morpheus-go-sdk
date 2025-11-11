@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LifecycleType** | Pointer to **string** |  | [optional] 
+**LifecycleType** | **string** |  | 
 **LifecycleAge** | Pointer to **string** |  | [optional] 
 **LifecycleRenewal** | Pointer to **string** |  | [optional] 
 **LifecycleNotify** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewExpirationPolicyTypeConfiguration
 
-`func NewExpirationPolicyTypeConfiguration() *ExpirationPolicyTypeConfiguration`
+`func NewExpirationPolicyTypeConfiguration(lifecycleType string, ) *ExpirationPolicyTypeConfiguration`
 
 NewExpirationPolicyTypeConfiguration instantiates a new ExpirationPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -53,11 +53,6 @@ and a boolean to check if the value has been set.
 
 SetLifecycleType sets LifecycleType field to given value.
 
-### HasLifecycleType
-
-`func (o *ExpirationPolicyTypeConfiguration) HasLifecycleType() bool`
-
-HasLifecycleType returns a boolean if a field has been set.
 
 ### GetLifecycleAge
 

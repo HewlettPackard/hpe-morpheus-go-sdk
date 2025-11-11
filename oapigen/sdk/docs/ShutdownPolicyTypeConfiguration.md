@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShutdownType** | Pointer to **string** |  | [optional] 
+**ShutdownType** | **string** |  | 
 **ShutdownAge** | Pointer to **string** |  | [optional] 
 **ShutdownRenewal** | Pointer to **string** |  | [optional] 
 **ShutdownNotify** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewShutdownPolicyTypeConfiguration
 
-`func NewShutdownPolicyTypeConfiguration() *ShutdownPolicyTypeConfiguration`
+`func NewShutdownPolicyTypeConfiguration(shutdownType string, ) *ShutdownPolicyTypeConfiguration`
 
 NewShutdownPolicyTypeConfiguration instantiates a new ShutdownPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -53,11 +53,6 @@ and a boolean to check if the value has been set.
 
 SetShutdownType sets ShutdownType field to given value.
 
-### HasShutdownType
-
-`func (o *ShutdownPolicyTypeConfiguration) HasShutdownType() bool`
-
-HasShutdownType returns a boolean if a field has been set.
 
 ### GetShutdownAge
 

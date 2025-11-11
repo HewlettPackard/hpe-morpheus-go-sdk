@@ -18,9 +18,9 @@ import (
 // checks if the PowerSchedulePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PowerSchedulePolicyTypeConfiguration{}
 
-// PowerSchedulePolicyTypeConfiguration Configuration settings for the following policy types: - Power Schedule
+// PowerSchedulePolicyTypeConfiguration - Power Schedule
 type PowerSchedulePolicyTypeConfiguration struct {
-	PowerScheduleType      *string                `json:"powerScheduleType,omitempty"`
+	PowerScheduleType      string                 `json:"powerScheduleType"`
 	PowerSchedule          *string                `json:"powerSchedule,omitempty"`
 	PowerScheduleHideFixed *bool                  `json:"powerScheduleHideFixed,omitempty"`
 	AdditionalProperties   map[string]interface{} `json:",remain"`
@@ -32,8 +32,9 @@ type _PowerSchedulePolicyTypeConfiguration PowerSchedulePolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPowerSchedulePolicyTypeConfiguration() *PowerSchedulePolicyTypeConfiguration {
+func NewPowerSchedulePolicyTypeConfiguration(powerScheduleType string) *PowerSchedulePolicyTypeConfiguration {
 	this := PowerSchedulePolicyTypeConfiguration{}
+	this.PowerScheduleType = powerScheduleType
 	return &this
 }
 
@@ -45,36 +46,28 @@ func NewPowerSchedulePolicyTypeConfigurationWithDefaults() *PowerSchedulePolicyT
 	return &this
 }
 
-// GetPowerScheduleType returns the PowerScheduleType field value if set, zero value otherwise.
+// GetPowerScheduleType returns the PowerScheduleType field value
 func (o *PowerSchedulePolicyTypeConfiguration) GetPowerScheduleType() string {
-	if o == nil || IsNil(o.PowerScheduleType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.PowerScheduleType
+
+	return o.PowerScheduleType
 }
 
-// GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field value if set, nil otherwise
+// GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field value
 // and a boolean to check if the value has been set.
 func (o *PowerSchedulePolicyTypeConfiguration) GetPowerScheduleTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerScheduleType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.PowerScheduleType, true
+	return &o.PowerScheduleType, true
 }
 
-// IsSetPowerScheduleType returns a boolean if a field has been set.
-func (o *PowerSchedulePolicyTypeConfiguration) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
-		return true
-	}
-
-	return false
-}
-
-// SetPowerScheduleType gets a reference to the given string and assigns it to the PowerScheduleType field.
+// SetPowerScheduleType sets field value
 func (o *PowerSchedulePolicyTypeConfiguration) SetPowerScheduleType(v string) {
-	o.PowerScheduleType = &v
+	o.PowerScheduleType = v
 }
 
 // GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise.
@@ -151,9 +144,7 @@ func (o PowerSchedulePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o PowerSchedulePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PowerScheduleType) {
-		toSerialize["powerScheduleType"] = o.PowerScheduleType
-	}
+	toSerialize["powerScheduleType"] = o.PowerScheduleType
 	if !IsNil(o.PowerSchedule) {
 		toSerialize["powerSchedule"] = o.PowerSchedule
 	}

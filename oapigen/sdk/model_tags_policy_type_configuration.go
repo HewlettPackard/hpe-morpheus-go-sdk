@@ -18,9 +18,9 @@ import (
 // checks if the TagsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &TagsPolicyTypeConfiguration{}
 
-// TagsPolicyTypeConfiguration Configuration settings for the following policy types: - Tags
+// TagsPolicyTypeConfiguration - Tags
 type TagsPolicyTypeConfiguration struct {
-	Strict               *bool                  `json:"strict,omitempty"`
+	Strict               bool                   `json:"strict"`
 	Key                  *string                `json:"key,omitempty"`
 	ValueListId          *string                `json:"valueListId,omitempty"`
 	Value                *string                `json:"value,omitempty"`
@@ -33,8 +33,9 @@ type _TagsPolicyTypeConfiguration TagsPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTagsPolicyTypeConfiguration() *TagsPolicyTypeConfiguration {
+func NewTagsPolicyTypeConfiguration(strict bool) *TagsPolicyTypeConfiguration {
 	this := TagsPolicyTypeConfiguration{}
+	this.Strict = strict
 	return &this
 }
 
@@ -46,36 +47,28 @@ func NewTagsPolicyTypeConfigurationWithDefaults() *TagsPolicyTypeConfiguration {
 	return &this
 }
 
-// GetStrict returns the Strict field value if set, zero value otherwise.
+// GetStrict returns the Strict field value
 func (o *TagsPolicyTypeConfiguration) GetStrict() bool {
-	if o == nil || IsNil(o.Strict) {
+	if o == nil {
 		var ret bool
 		return ret
 	}
-	return *o.Strict
+
+	return o.Strict
 }
 
-// GetStrictOk returns a tuple with the Strict field value if set, nil otherwise
+// GetStrictOk returns a tuple with the Strict field value
 // and a boolean to check if the value has been set.
 func (o *TagsPolicyTypeConfiguration) GetStrictOk() (*bool, bool) {
-	if o == nil || IsNil(o.Strict) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Strict, true
+	return &o.Strict, true
 }
 
-// IsSetStrict returns a boolean if a field has been set.
-func (o *TagsPolicyTypeConfiguration) IsSetStrict() bool {
-	if o != nil && !IsNil(o.Strict) {
-		return true
-	}
-
-	return false
-}
-
-// SetStrict gets a reference to the given bool and assigns it to the Strict field.
+// SetStrict sets field value
 func (o *TagsPolicyTypeConfiguration) SetStrict(v bool) {
-	o.Strict = &v
+	o.Strict = v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
@@ -184,9 +177,7 @@ func (o TagsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o TagsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Strict) {
-		toSerialize["strict"] = o.Strict
-	}
+	toSerialize["strict"] = o.Strict
 	if !IsNil(o.Key) {
 		toSerialize["key"] = o.Key
 	}

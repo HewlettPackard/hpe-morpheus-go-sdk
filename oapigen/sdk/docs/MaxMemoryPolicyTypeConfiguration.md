@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxMemory** | [**MaxMemoryPolicyTypeConfigurationMaxMemory**](MaxMemoryPolicyTypeConfigurationMaxMemory.md) |  | 
+**MaxMemory** | **string** |  | 
 **ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxMemoryPolicyTypeConfiguration
 
-`func NewMaxMemoryPolicyTypeConfiguration(maxMemory MaxMemoryPolicyTypeConfigurationMaxMemory, ) *MaxMemoryPolicyTypeConfiguration`
+`func NewMaxMemoryPolicyTypeConfiguration(maxMemory string, ) *MaxMemoryPolicyTypeConfiguration`
 
 NewMaxMemoryPolicyTypeConfiguration instantiates a new MaxMemoryPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() MaxMemoryPolicyTypeConfigurationMaxMemory`
+`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() string`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfigurationMaxMemory, bool)`
+`func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*string, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration) SetMaxMemory(v MaxMemoryPolicyTypeConfigurationMaxMemory)`
+`func (o *MaxMemoryPolicyTypeConfiguration) SetMaxMemory(v string)`
 
 SetMaxMemory sets MaxMemory field to given value.
 

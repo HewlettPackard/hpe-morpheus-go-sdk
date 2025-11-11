@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxCores** | Pointer to **string** |  | [optional] 
+**MaxCores** | **string** |  | 
 **ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxCoresPolicyTypeConfiguration
 
-`func NewMaxCoresPolicyTypeConfiguration() *MaxCoresPolicyTypeConfiguration`
+`func NewMaxCoresPolicyTypeConfiguration(maxCores string, ) *MaxCoresPolicyTypeConfiguration`
 
 NewMaxCoresPolicyTypeConfiguration instantiates a new MaxCoresPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetMaxCores sets MaxCores field to given value.
 
-### HasMaxCores
-
-`func (o *MaxCoresPolicyTypeConfiguration) HasMaxCores() bool`
-
-HasMaxCores returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MotdTitle** | Pointer to **string** |  | [optional] 
-**Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotd**](MessageOfTheDayPolicyTypeConfigurationMotd.md) |  | [optional] 
+**Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration1Motd**](MessageOfTheDayPolicyTypeConfiguration1Motd.md) |  | [optional] 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
 **MotdFullPage** | Pointer to **NullableBool** |  | [optional] 
@@ -57,20 +57,20 @@ HasMotdTitle returns a boolean if a field has been set.
 
 ### GetMotd
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() MessageOfTheDayPolicyTypeConfigurationMotd`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() MessageOfTheDayPolicyTypeConfiguration1Motd`
 
 GetMotd returns the Motd field if non-nil, zero value otherwise.
 
 ### GetMotdOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdOk() (*MessageOfTheDayPolicyTypeConfigurationMotd, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration1Motd, bool)`
 
 GetMotdOk returns a tuple with the Motd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotd
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotd(v MessageOfTheDayPolicyTypeConfigurationMotd)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotd(v MessageOfTheDayPolicyTypeConfiguration1Motd)`
 
 SetMotd sets Motd field to given value.
 

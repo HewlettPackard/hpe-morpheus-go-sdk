@@ -18,9 +18,9 @@ import (
 // checks if the StorageServerStorageQuotaPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &StorageServerStorageQuotaPolicyTypeConfiguration{}
 
-// StorageServerStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - Storage Server Storage Quota
+// StorageServerStorageQuotaPolicyTypeConfiguration - Storage Server Storage Quota
 type StorageServerStorageQuotaPolicyTypeConfiguration struct {
-	StorageServerId      *string                `json:"storageServerId,omitempty"`
+	StorageServerId      string                 `json:"storageServerId"`
 	MaxStorage           *string                `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -31,8 +31,9 @@ type _StorageServerStorageQuotaPolicyTypeConfiguration StorageServerStorageQuota
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageServerStorageQuotaPolicyTypeConfiguration() *StorageServerStorageQuotaPolicyTypeConfiguration {
+func NewStorageServerStorageQuotaPolicyTypeConfiguration(storageServerId string) *StorageServerStorageQuotaPolicyTypeConfiguration {
 	this := StorageServerStorageQuotaPolicyTypeConfiguration{}
+	this.StorageServerId = storageServerId
 	return &this
 }
 
@@ -44,36 +45,28 @@ func NewStorageServerStorageQuotaPolicyTypeConfigurationWithDefaults() *StorageS
 	return &this
 }
 
-// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
+// GetStorageServerId returns the StorageServerId field value
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration) GetStorageServerId() string {
-	if o == nil || IsNil(o.StorageServerId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.StorageServerId
+
+	return o.StorageServerId
 }
 
-// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
+// GetStorageServerIdOk returns a tuple with the StorageServerId field value
 // and a boolean to check if the value has been set.
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration) GetStorageServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServerId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.StorageServerId, true
+	return &o.StorageServerId, true
 }
 
-// IsSetStorageServerId returns a boolean if a field has been set.
-func (o *StorageServerStorageQuotaPolicyTypeConfiguration) IsSetStorageServerId() bool {
-	if o != nil && !IsNil(o.StorageServerId) {
-		return true
-	}
-
-	return false
-}
-
-// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
+// SetStorageServerId sets field value
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration) SetStorageServerId(v string) {
-	o.StorageServerId = &v
+	o.StorageServerId = v
 }
 
 // GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
@@ -118,9 +111,7 @@ func (o StorageServerStorageQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte,
 
 func (o StorageServerStorageQuotaPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StorageServerId) {
-		toSerialize["storageServerId"] = o.StorageServerId
-	}
+	toSerialize["storageServerId"] = o.StorageServerId
 	if !IsNil(o.MaxStorage) {
 		toSerialize["maxStorage"] = o.MaxStorage
 	}

@@ -18,9 +18,9 @@ import (
 // checks if the NetworkQuotaPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &NetworkQuotaPolicyTypeConfiguration{}
 
-// NetworkQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - Network Quota
+// NetworkQuotaPolicyTypeConfiguration - Network Quota
 type NetworkQuotaPolicyTypeConfiguration struct {
-	MaxNetworks          *string                `json:"maxNetworks,omitempty"`
+	MaxNetworks          string                 `json:"maxNetworks"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _NetworkQuotaPolicyTypeConfiguration NetworkQuotaPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkQuotaPolicyTypeConfiguration() *NetworkQuotaPolicyTypeConfiguration {
+func NewNetworkQuotaPolicyTypeConfiguration(maxNetworks string) *NetworkQuotaPolicyTypeConfiguration {
 	this := NetworkQuotaPolicyTypeConfiguration{}
+	this.MaxNetworks = maxNetworks
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewNetworkQuotaPolicyTypeConfigurationWithDefaults() *NetworkQuotaPolicyTyp
 	return &this
 }
 
-// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise.
+// GetMaxNetworks returns the MaxNetworks field value
 func (o *NetworkQuotaPolicyTypeConfiguration) GetMaxNetworks() string {
-	if o == nil || IsNil(o.MaxNetworks) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxNetworks
+
+	return o.MaxNetworks
 }
 
-// GetMaxNetworksOk returns a tuple with the MaxNetworks field value if set, nil otherwise
+// GetMaxNetworksOk returns a tuple with the MaxNetworks field value
 // and a boolean to check if the value has been set.
 func (o *NetworkQuotaPolicyTypeConfiguration) GetMaxNetworksOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxNetworks) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxNetworks, true
+	return &o.MaxNetworks, true
 }
 
-// IsSetMaxNetworks returns a boolean if a field has been set.
-func (o *NetworkQuotaPolicyTypeConfiguration) IsSetMaxNetworks() bool {
-	if o != nil && !IsNil(o.MaxNetworks) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxNetworks gets a reference to the given string and assigns it to the MaxNetworks field.
+// SetMaxNetworks sets field value
 func (o *NetworkQuotaPolicyTypeConfiguration) SetMaxNetworks(v string) {
-	o.MaxNetworks = &v
+	o.MaxNetworks = v
 }
 
 func (o NetworkQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o NetworkQuotaPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o NetworkQuotaPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxNetworks) {
-		toSerialize["maxNetworks"] = o.MaxNetworks
-	}
+	toSerialize["maxNetworks"] = o.MaxNetworks
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

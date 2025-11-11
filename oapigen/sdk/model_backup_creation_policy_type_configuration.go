@@ -18,10 +18,11 @@ import (
 // checks if the BackupCreationPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &BackupCreationPolicyTypeConfiguration{}
 
-// BackupCreationPolicyTypeConfiguration Configuration settings for the following policy types: - Backup Creation
+// BackupCreationPolicyTypeConfiguration - Backup Creation
 type BackupCreationPolicyTypeConfiguration struct {
-	CreateBackupType     *string                `json:"createBackupType,omitempty"`
+	CreateBackupType     string                 `json:"createBackupType"`
 	CreateBackup         *bool                  `json:"createBackup,omitempty"`
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -31,8 +32,9 @@ type _BackupCreationPolicyTypeConfiguration BackupCreationPolicyTypeConfiguratio
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupCreationPolicyTypeConfiguration() *BackupCreationPolicyTypeConfiguration {
+func NewBackupCreationPolicyTypeConfiguration(createBackupType string) *BackupCreationPolicyTypeConfiguration {
 	this := BackupCreationPolicyTypeConfiguration{}
+	this.CreateBackupType = createBackupType
 	return &this
 }
 
@@ -44,36 +46,28 @@ func NewBackupCreationPolicyTypeConfigurationWithDefaults() *BackupCreationPolic
 	return &this
 }
 
-// GetCreateBackupType returns the CreateBackupType field value if set, zero value otherwise.
+// GetCreateBackupType returns the CreateBackupType field value
 func (o *BackupCreationPolicyTypeConfiguration) GetCreateBackupType() string {
-	if o == nil || IsNil(o.CreateBackupType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.CreateBackupType
+
+	return o.CreateBackupType
 }
 
-// GetCreateBackupTypeOk returns a tuple with the CreateBackupType field value if set, nil otherwise
+// GetCreateBackupTypeOk returns a tuple with the CreateBackupType field value
 // and a boolean to check if the value has been set.
 func (o *BackupCreationPolicyTypeConfiguration) GetCreateBackupTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateBackupType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.CreateBackupType, true
+	return &o.CreateBackupType, true
 }
 
-// IsSetCreateBackupType returns a boolean if a field has been set.
-func (o *BackupCreationPolicyTypeConfiguration) IsSetCreateBackupType() bool {
-	if o != nil && !IsNil(o.CreateBackupType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateBackupType gets a reference to the given string and assigns it to the CreateBackupType field.
+// SetCreateBackupType sets field value
 func (o *BackupCreationPolicyTypeConfiguration) SetCreateBackupType(v string) {
-	o.CreateBackupType = &v
+	o.CreateBackupType = v
 }
 
 // GetCreateBackup returns the CreateBackup field value if set, zero value otherwise.
@@ -108,6 +102,38 @@ func (o *BackupCreationPolicyTypeConfiguration) SetCreateBackup(v bool) {
 	o.CreateBackup = &v
 }
 
+// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+func (o *BackupCreationPolicyTypeConfiguration) GetAccountIntegrationId() string {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		var ret string
+		return ret
+	}
+	return *o.AccountIntegrationId
+}
+
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BackupCreationPolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		return nil, false
+	}
+	return o.AccountIntegrationId, true
+}
+
+// IsSetAccountIntegrationId returns a boolean if a field has been set.
+func (o *BackupCreationPolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
+	if o != nil && !IsNil(o.AccountIntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
+func (o *BackupCreationPolicyTypeConfiguration) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = &v
+}
+
 func (o BackupCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -118,11 +144,12 @@ func (o BackupCreationPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o BackupCreationPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CreateBackupType) {
-		toSerialize["createBackupType"] = o.CreateBackupType
-	}
+	toSerialize["createBackupType"] = o.CreateBackupType
 	if !IsNil(o.CreateBackup) {
 		toSerialize["createBackup"] = o.CreateBackup
+	}
+	if !IsNil(o.AccountIntegrationId) {
+		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
 
 	for key, value := range o.AdditionalProperties {

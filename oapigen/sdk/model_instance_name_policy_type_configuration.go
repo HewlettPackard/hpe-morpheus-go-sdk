@@ -18,9 +18,9 @@ import (
 // checks if the InstanceNamePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &InstanceNamePolicyTypeConfiguration{}
 
-// InstanceNamePolicyTypeConfiguration Configuration settings for the following policy types: - Instance Name
+// InstanceNamePolicyTypeConfiguration - Instance Name
 type InstanceNamePolicyTypeConfiguration struct {
-	NamingType           *string                `json:"namingType,omitempty"`
+	NamingType           string                 `json:"namingType"`
 	NamingPattern        *string                `json:"namingPattern,omitempty"`
 	NamingConflict       *bool                  `json:"namingConflict,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -32,8 +32,9 @@ type _InstanceNamePolicyTypeConfiguration InstanceNamePolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstanceNamePolicyTypeConfiguration() *InstanceNamePolicyTypeConfiguration {
+func NewInstanceNamePolicyTypeConfiguration(namingType string) *InstanceNamePolicyTypeConfiguration {
 	this := InstanceNamePolicyTypeConfiguration{}
+	this.NamingType = namingType
 	return &this
 }
 
@@ -45,36 +46,28 @@ func NewInstanceNamePolicyTypeConfigurationWithDefaults() *InstanceNamePolicyTyp
 	return &this
 }
 
-// GetNamingType returns the NamingType field value if set, zero value otherwise.
+// GetNamingType returns the NamingType field value
 func (o *InstanceNamePolicyTypeConfiguration) GetNamingType() string {
-	if o == nil || IsNil(o.NamingType) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.NamingType
+
+	return o.NamingType
 }
 
-// GetNamingTypeOk returns a tuple with the NamingType field value if set, nil otherwise
+// GetNamingTypeOk returns a tuple with the NamingType field value
 // and a boolean to check if the value has been set.
 func (o *InstanceNamePolicyTypeConfiguration) GetNamingTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.NamingType) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NamingType, true
+	return &o.NamingType, true
 }
 
-// IsSetNamingType returns a boolean if a field has been set.
-func (o *InstanceNamePolicyTypeConfiguration) IsSetNamingType() bool {
-	if o != nil && !IsNil(o.NamingType) {
-		return true
-	}
-
-	return false
-}
-
-// SetNamingType gets a reference to the given string and assigns it to the NamingType field.
+// SetNamingType sets field value
 func (o *InstanceNamePolicyTypeConfiguration) SetNamingType(v string) {
-	o.NamingType = &v
+	o.NamingType = v
 }
 
 // GetNamingPattern returns the NamingPattern field value if set, zero value otherwise.
@@ -151,9 +144,7 @@ func (o InstanceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o InstanceNamePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NamingType) {
-		toSerialize["namingType"] = o.NamingType
-	}
+	toSerialize["namingType"] = o.NamingType
 	if !IsNil(o.NamingPattern) {
 		toSerialize["namingPattern"] = o.NamingPattern
 	}

@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateBackupType** | Pointer to **string** |  | [optional] 
+**CreateBackupType** | **string** |  | 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
+**AccountIntegrationId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBackupCreationPolicyTypeConfiguration
 
-`func NewBackupCreationPolicyTypeConfiguration() *BackupCreationPolicyTypeConfiguration`
+`func NewBackupCreationPolicyTypeConfiguration(createBackupType string, ) *BackupCreationPolicyTypeConfiguration`
 
 NewBackupCreationPolicyTypeConfiguration instantiates a new BackupCreationPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetCreateBackupType sets CreateBackupType field to given value.
 
-### HasCreateBackupType
-
-`func (o *BackupCreationPolicyTypeConfiguration) HasCreateBackupType() bool`
-
-HasCreateBackupType returns a boolean if a field has been set.
 
 ### GetCreateBackup
 
@@ -75,6 +71,31 @@ SetCreateBackup sets CreateBackup field to given value.
 `func (o *BackupCreationPolicyTypeConfiguration) HasCreateBackup() bool`
 
 HasCreateBackup returns a boolean if a field has been set.
+
+### GetAccountIntegrationId
+
+`func (o *BackupCreationPolicyTypeConfiguration) GetAccountIntegrationId() string`
+
+GetAccountIntegrationId returns the AccountIntegrationId field if non-nil, zero value otherwise.
+
+### GetAccountIntegrationIdOk
+
+`func (o *BackupCreationPolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool)`
+
+GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountIntegrationId
+
+`func (o *BackupCreationPolicyTypeConfiguration) SetAccountIntegrationId(v string)`
+
+SetAccountIntegrationId sets AccountIntegrationId field to given value.
+
+### HasAccountIntegrationId
+
+`func (o *BackupCreationPolicyTypeConfiguration) HasAccountIntegrationId() bool`
+
+HasAccountIntegrationId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

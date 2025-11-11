@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxStorage** | Pointer to **string** |  | [optional] 
+**MaxStorage** | **string** |  | 
 **ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
 
-`func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration() *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration`
+`func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration(maxStorage string, ) *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration`
 
 NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration instantiates a new MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetMaxStorage sets MaxStorage field to given value.
 
-### HasMaxStorage
-
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration) HasMaxStorage() bool`
-
-HasMaxStorage returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 

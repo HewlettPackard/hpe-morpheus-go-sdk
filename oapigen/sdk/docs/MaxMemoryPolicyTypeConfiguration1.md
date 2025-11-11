@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxMemory** | Pointer to [**MaxMemoryPolicyTypeConfigurationMaxMemory**](MaxMemoryPolicyTypeConfigurationMaxMemory.md) |  | [optional] 
-**ExcludeContainers** | Pointer to **string** | Set to on to exclude containers | [optional] [default to "off"]
+**MaxMemory** | [**MaxMemoryPolicyTypeConfiguration1MaxMemory**](MaxMemoryPolicyTypeConfiguration1MaxMemory.md) |  | 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxMemoryPolicyTypeConfiguration1
 
-`func NewMaxMemoryPolicyTypeConfiguration1() *MaxMemoryPolicyTypeConfiguration1`
+`func NewMaxMemoryPolicyTypeConfiguration1(maxMemory MaxMemoryPolicyTypeConfiguration1MaxMemory, ) *MaxMemoryPolicyTypeConfiguration1`
 
 NewMaxMemoryPolicyTypeConfiguration1 instantiates a new MaxMemoryPolicyTypeConfiguration1 object
 This constructor will assign default values to properties that have it defined,
@@ -28,28 +28,23 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration1) GetMaxMemory() MaxMemoryPolicyTypeConfigurationMaxMemory`
+`func (o *MaxMemoryPolicyTypeConfiguration1) GetMaxMemory() MaxMemoryPolicyTypeConfiguration1MaxMemory`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *MaxMemoryPolicyTypeConfiguration1) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfigurationMaxMemory, bool)`
+`func (o *MaxMemoryPolicyTypeConfiguration1) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration1MaxMemory, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration1) SetMaxMemory(v MaxMemoryPolicyTypeConfigurationMaxMemory)`
+`func (o *MaxMemoryPolicyTypeConfiguration1) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration1MaxMemory)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
-### HasMaxMemory
-
-`func (o *MaxMemoryPolicyTypeConfiguration1) HasMaxMemory() bool`
-
-HasMaxMemory returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 

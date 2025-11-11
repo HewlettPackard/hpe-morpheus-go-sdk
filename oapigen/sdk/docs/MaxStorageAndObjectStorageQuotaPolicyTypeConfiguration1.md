@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxStorage** | Pointer to **string** |  | [optional] 
-**ExcludeContainers** | Pointer to **bool** |  | [optional] 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasMaxStorage returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) GetExcludeContainers() bool`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) GetExcludeContainers() string`
 
 GetExcludeContainers returns the ExcludeContainers field if non-nil, zero value otherwise.
 
 ### GetExcludeContainersOk
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) GetExcludeContainersOk() (*bool, bool)`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) GetExcludeContainersOk() (*string, bool)`
 
 GetExcludeContainersOk returns a tuple with the ExcludeContainers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeContainers
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) SetExcludeContainers(v bool)`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) SetExcludeContainers(v string)`
 
 SetExcludeContainers sets ExcludeContainers field to given value.
 

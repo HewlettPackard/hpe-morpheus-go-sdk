@@ -18,9 +18,9 @@ import (
 // checks if the MaxVMsPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxVMsPolicyTypeConfiguration{}
 
-// MaxVMsPolicyTypeConfiguration Configuration settings for the following policy types: - Max VMs
+// MaxVMsPolicyTypeConfiguration - Max VMs
 type MaxVMsPolicyTypeConfiguration struct {
-	MaxVms               *string                `json:"maxVms,omitempty"`
+	MaxVms               string                 `json:"maxVms"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxVMsPolicyTypeConfiguration MaxVMsPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxVMsPolicyTypeConfiguration() *MaxVMsPolicyTypeConfiguration {
+func NewMaxVMsPolicyTypeConfiguration(maxVms string) *MaxVMsPolicyTypeConfiguration {
 	this := MaxVMsPolicyTypeConfiguration{}
+	this.MaxVms = maxVms
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxVMsPolicyTypeConfigurationWithDefaults() *MaxVMsPolicyTypeConfigurati
 	return &this
 }
 
-// GetMaxVms returns the MaxVms field value if set, zero value otherwise.
+// GetMaxVms returns the MaxVms field value
 func (o *MaxVMsPolicyTypeConfiguration) GetMaxVms() string {
-	if o == nil || IsNil(o.MaxVms) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxVms
+
+	return o.MaxVms
 }
 
-// GetMaxVmsOk returns a tuple with the MaxVms field value if set, nil otherwise
+// GetMaxVmsOk returns a tuple with the MaxVms field value
 // and a boolean to check if the value has been set.
 func (o *MaxVMsPolicyTypeConfiguration) GetMaxVmsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVms) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxVms, true
+	return &o.MaxVms, true
 }
 
-// IsSetMaxVms returns a boolean if a field has been set.
-func (o *MaxVMsPolicyTypeConfiguration) IsSetMaxVms() bool {
-	if o != nil && !IsNil(o.MaxVms) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
+// SetMaxVms sets field value
 func (o *MaxVMsPolicyTypeConfiguration) SetMaxVms(v string) {
-	o.MaxVms = &v
+	o.MaxVms = v
 }
 
 func (o MaxVMsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxVMsPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o MaxVMsPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxVms) {
-		toSerialize["maxVms"] = o.MaxVms
-	}
+	toSerialize["maxVms"] = o.MaxVms
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

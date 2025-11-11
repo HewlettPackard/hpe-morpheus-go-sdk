@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkflowId** | Pointer to **string** |  | [optional] 
+**WorkflowId** | **string** |  | 
 
 ## Methods
 
 ### NewWorkflowPolicyTypeConfiguration
 
-`func NewWorkflowPolicyTypeConfiguration() *WorkflowPolicyTypeConfiguration`
+`func NewWorkflowPolicyTypeConfiguration(workflowId string, ) *WorkflowPolicyTypeConfiguration`
 
 NewWorkflowPolicyTypeConfiguration instantiates a new WorkflowPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetWorkflowId sets WorkflowId field to given value.
 
-### HasWorkflowId
-
-`func (o *WorkflowPolicyTypeConfiguration) HasWorkflowId() bool`
-
-HasWorkflowId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

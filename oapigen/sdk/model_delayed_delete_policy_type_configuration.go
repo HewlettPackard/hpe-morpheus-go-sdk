@@ -18,9 +18,10 @@ import (
 // checks if the DelayedDeletePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration{}
 
-// DelayedDeletePolicyTypeConfiguration Configuration settings for the following policy types: - Delayed Delete
+// DelayedDeletePolicyTypeConfiguration - Delayed Delete
 type DelayedDeletePolicyTypeConfiguration struct {
-	RemovalAge           *string                `json:"removalAge,omitempty"`
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	RemovalAge           string                 `json:"removalAge"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +31,9 @@ type _DelayedDeletePolicyTypeConfiguration DelayedDeletePolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDelayedDeletePolicyTypeConfiguration() *DelayedDeletePolicyTypeConfiguration {
+func NewDelayedDeletePolicyTypeConfiguration(removalAge string) *DelayedDeletePolicyTypeConfiguration {
 	this := DelayedDeletePolicyTypeConfiguration{}
+	this.RemovalAge = removalAge
 	return &this
 }
 
@@ -43,36 +45,60 @@ func NewDelayedDeletePolicyTypeConfigurationWithDefaults() *DelayedDeletePolicyT
 	return &this
 }
 
-// GetRemovalAge returns the RemovalAge field value if set, zero value otherwise.
-func (o *DelayedDeletePolicyTypeConfiguration) GetRemovalAge() string {
-	if o == nil || IsNil(o.RemovalAge) {
+// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+func (o *DelayedDeletePolicyTypeConfiguration) GetAccountIntegrationId() string {
+	if o == nil || IsNil(o.AccountIntegrationId) {
 		var ret string
 		return ret
 	}
-	return *o.RemovalAge
+	return *o.AccountIntegrationId
 }
 
-// GetRemovalAgeOk returns a tuple with the RemovalAge field value if set, nil otherwise
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DelayedDeletePolicyTypeConfiguration) GetRemovalAgeOk() (*string, bool) {
-	if o == nil || IsNil(o.RemovalAge) {
+func (o *DelayedDeletePolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountIntegrationId) {
 		return nil, false
 	}
-	return o.RemovalAge, true
+	return o.AccountIntegrationId, true
 }
 
-// IsSetRemovalAge returns a boolean if a field has been set.
-func (o *DelayedDeletePolicyTypeConfiguration) IsSetRemovalAge() bool {
-	if o != nil && !IsNil(o.RemovalAge) {
+// IsSetAccountIntegrationId returns a boolean if a field has been set.
+func (o *DelayedDeletePolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
+	if o != nil && !IsNil(o.AccountIntegrationId) {
 		return true
 	}
 
 	return false
 }
 
-// SetRemovalAge gets a reference to the given string and assigns it to the RemovalAge field.
+// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
+func (o *DelayedDeletePolicyTypeConfiguration) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = &v
+}
+
+// GetRemovalAge returns the RemovalAge field value
+func (o *DelayedDeletePolicyTypeConfiguration) GetRemovalAge() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.RemovalAge
+}
+
+// GetRemovalAgeOk returns a tuple with the RemovalAge field value
+// and a boolean to check if the value has been set.
+func (o *DelayedDeletePolicyTypeConfiguration) GetRemovalAgeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RemovalAge, true
+}
+
+// SetRemovalAge sets field value
 func (o *DelayedDeletePolicyTypeConfiguration) SetRemovalAge(v string) {
-	o.RemovalAge = &v
+	o.RemovalAge = v
 }
 
 func (o DelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +111,10 @@ func (o DelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o DelayedDeletePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RemovalAge) {
-		toSerialize["removalAge"] = o.RemovalAge
+	if !IsNil(o.AccountIntegrationId) {
+		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
+	toSerialize["removalAge"] = o.RemovalAge
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

@@ -44,7 +44,7 @@ import (
 )
 
 func main() {
-	addPoliciesRequest := *openapiclient.NewAddPoliciesRequest(*openapiclient.NewAddPoliciesRequestPolicy("Sample Policy", *openapiclient.NewAddPoliciesRequestPolicyPolicyType(), *openapiclient.NewAddPoliciesRequestPolicyConfig(*openapiclient.NewMaxMemoryPolicyTypeConfigurationMaxMemory()))) // AddPoliciesRequest |  (optional)
+	addPoliciesRequest := *openapiclient.NewAddPoliciesRequest(*openapiclient.NewAddPoliciesRequestPolicy("Sample Policy", *openapiclient.NewAddPoliciesRequestPolicyPolicyType(), *openapiclient.NewAddPoliciesRequestPolicyConfig(*openapiclient.NewMaxMemoryPolicyTypeConfiguration1MaxMemory()))) // AddPoliciesRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

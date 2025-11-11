@@ -18,7 +18,7 @@ import (
 // checks if the ApprovePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApprovePolicyTypeConfiguration{}
 
-// ApprovePolicyTypeConfiguration Configuration settings for the following policy types: - Approve Delete - Approve Provisiong - Approve Reconfigure
+// ApprovePolicyTypeConfiguration - Approve Delete - Approve Provisiong - Approve Reconfigure
 type ApprovePolicyTypeConfiguration struct {
 	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`

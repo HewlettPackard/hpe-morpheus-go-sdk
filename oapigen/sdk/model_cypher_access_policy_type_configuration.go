@@ -18,9 +18,10 @@ import (
 // checks if the CypherAccessPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &CypherAccessPolicyTypeConfiguration{}
 
-// CypherAccessPolicyTypeConfiguration Configuration settings for the following policy types: - Cypher Access
+// CypherAccessPolicyTypeConfiguration - Cypher Access
 type CypherAccessPolicyTypeConfiguration struct {
-	KeyPattern           *string                `json:"keyPattern,omitempty"`
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	KeyPattern           string                 `json:"keyPattern"`
 	Read                 *bool                  `json:"read,omitempty"`
 	Write                *bool                  `json:"write,omitempty"`
 	Update               *bool                  `json:"update,omitempty"`
@@ -35,8 +36,9 @@ type _CypherAccessPolicyTypeConfiguration CypherAccessPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCypherAccessPolicyTypeConfiguration() *CypherAccessPolicyTypeConfiguration {
+func NewCypherAccessPolicyTypeConfiguration(keyPattern string) *CypherAccessPolicyTypeConfiguration {
 	this := CypherAccessPolicyTypeConfiguration{}
+	this.KeyPattern = keyPattern
 	return &this
 }
 
@@ -48,36 +50,60 @@ func NewCypherAccessPolicyTypeConfigurationWithDefaults() *CypherAccessPolicyTyp
 	return &this
 }
 
-// GetKeyPattern returns the KeyPattern field value if set, zero value otherwise.
-func (o *CypherAccessPolicyTypeConfiguration) GetKeyPattern() string {
-	if o == nil || IsNil(o.KeyPattern) {
+// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+func (o *CypherAccessPolicyTypeConfiguration) GetAccountIntegrationId() string {
+	if o == nil || IsNil(o.AccountIntegrationId) {
 		var ret string
 		return ret
 	}
-	return *o.KeyPattern
+	return *o.AccountIntegrationId
 }
 
-// GetKeyPatternOk returns a tuple with the KeyPattern field value if set, nil otherwise
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CypherAccessPolicyTypeConfiguration) GetKeyPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.KeyPattern) {
+func (o *CypherAccessPolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountIntegrationId) {
 		return nil, false
 	}
-	return o.KeyPattern, true
+	return o.AccountIntegrationId, true
 }
 
-// IsSetKeyPattern returns a boolean if a field has been set.
-func (o *CypherAccessPolicyTypeConfiguration) IsSetKeyPattern() bool {
-	if o != nil && !IsNil(o.KeyPattern) {
+// IsSetAccountIntegrationId returns a boolean if a field has been set.
+func (o *CypherAccessPolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
+	if o != nil && !IsNil(o.AccountIntegrationId) {
 		return true
 	}
 
 	return false
 }
 
-// SetKeyPattern gets a reference to the given string and assigns it to the KeyPattern field.
+// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
+func (o *CypherAccessPolicyTypeConfiguration) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = &v
+}
+
+// GetKeyPattern returns the KeyPattern field value
+func (o *CypherAccessPolicyTypeConfiguration) GetKeyPattern() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.KeyPattern
+}
+
+// GetKeyPatternOk returns a tuple with the KeyPattern field value
+// and a boolean to check if the value has been set.
+func (o *CypherAccessPolicyTypeConfiguration) GetKeyPatternOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.KeyPattern, true
+}
+
+// SetKeyPattern sets field value
 func (o *CypherAccessPolicyTypeConfiguration) SetKeyPattern(v string) {
-	o.KeyPattern = &v
+	o.KeyPattern = v
 }
 
 // GetRead returns the Read field value if set, zero value otherwise.
@@ -250,9 +276,10 @@ func (o CypherAccessPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o CypherAccessPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.KeyPattern) {
-		toSerialize["keyPattern"] = o.KeyPattern
+	if !IsNil(o.AccountIntegrationId) {
+		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
 	}
+	toSerialize["keyPattern"] = o.KeyPattern
 	if !IsNil(o.Read) {
 		toSerialize["read"] = o.Read
 	}

@@ -18,9 +18,9 @@ import (
 // checks if the MaxContainersPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxContainersPolicyTypeConfiguration{}
 
-// MaxContainersPolicyTypeConfiguration Configuration settings for the following policy types: - Max Containers
+// MaxContainersPolicyTypeConfiguration - Max Containers
 type MaxContainersPolicyTypeConfiguration struct {
-	MaxContainers        *string                `json:"maxContainers,omitempty"`
+	MaxContainers        string                 `json:"maxContainers"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +30,9 @@ type _MaxContainersPolicyTypeConfiguration MaxContainersPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxContainersPolicyTypeConfiguration() *MaxContainersPolicyTypeConfiguration {
+func NewMaxContainersPolicyTypeConfiguration(maxContainers string) *MaxContainersPolicyTypeConfiguration {
 	this := MaxContainersPolicyTypeConfiguration{}
+	this.MaxContainers = maxContainers
 	return &this
 }
 
@@ -43,36 +44,28 @@ func NewMaxContainersPolicyTypeConfigurationWithDefaults() *MaxContainersPolicyT
 	return &this
 }
 
-// GetMaxContainers returns the MaxContainers field value if set, zero value otherwise.
+// GetMaxContainers returns the MaxContainers field value
 func (o *MaxContainersPolicyTypeConfiguration) GetMaxContainers() string {
-	if o == nil || IsNil(o.MaxContainers) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxContainers
+
+	return o.MaxContainers
 }
 
-// GetMaxContainersOk returns a tuple with the MaxContainers field value if set, nil otherwise
+// GetMaxContainersOk returns a tuple with the MaxContainers field value
 // and a boolean to check if the value has been set.
 func (o *MaxContainersPolicyTypeConfiguration) GetMaxContainersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxContainers) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MaxContainers, true
+	return &o.MaxContainers, true
 }
 
-// IsSetMaxContainers returns a boolean if a field has been set.
-func (o *MaxContainersPolicyTypeConfiguration) IsSetMaxContainers() bool {
-	if o != nil && !IsNil(o.MaxContainers) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxContainers gets a reference to the given string and assigns it to the MaxContainers field.
+// SetMaxContainers sets field value
 func (o *MaxContainersPolicyTypeConfiguration) SetMaxContainers(v string) {
-	o.MaxContainers = &v
+	o.MaxContainers = v
 }
 
 func (o MaxContainersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,9 +78,7 @@ func (o MaxContainersPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o MaxContainersPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxContainers) {
-		toSerialize["maxContainers"] = o.MaxContainers
-	}
+	toSerialize["maxContainers"] = o.MaxContainers
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value

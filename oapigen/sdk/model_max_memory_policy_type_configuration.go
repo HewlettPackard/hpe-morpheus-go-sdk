@@ -18,11 +18,11 @@ import (
 // checks if the MaxMemoryPolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxMemoryPolicyTypeConfiguration{}
 
-// MaxMemoryPolicyTypeConfiguration Configuration settings for the following policy types: - Max Memory
+// MaxMemoryPolicyTypeConfiguration - Max Memory
 type MaxMemoryPolicyTypeConfiguration struct {
-	MaxMemory            MaxMemoryPolicyTypeConfigurationMaxMemory `json:"maxMemory"`
-	ExcludeContainers    *string                                   `json:"excludeContainers,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	MaxMemory            string                 `json:"maxMemory"`
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _MaxMemoryPolicyTypeConfiguration MaxMemoryPolicyTypeConfiguration
@@ -31,7 +31,7 @@ type _MaxMemoryPolicyTypeConfiguration MaxMemoryPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxMemoryPolicyTypeConfiguration(maxMemory MaxMemoryPolicyTypeConfigurationMaxMemory) *MaxMemoryPolicyTypeConfiguration {
+func NewMaxMemoryPolicyTypeConfiguration(maxMemory string) *MaxMemoryPolicyTypeConfiguration {
 	this := MaxMemoryPolicyTypeConfiguration{}
 	this.MaxMemory = maxMemory
 	var excludeContainers string = "off"
@@ -50,9 +50,9 @@ func NewMaxMemoryPolicyTypeConfigurationWithDefaults() *MaxMemoryPolicyTypeConfi
 }
 
 // GetMaxMemory returns the MaxMemory field value
-func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() MaxMemoryPolicyTypeConfigurationMaxMemory {
+func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() string {
 	if o == nil {
-		var ret MaxMemoryPolicyTypeConfigurationMaxMemory
+		var ret string
 		return ret
 	}
 
@@ -61,7 +61,7 @@ func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemory() MaxMemoryPolicyTypeCon
 
 // GetMaxMemoryOk returns a tuple with the MaxMemory field value
 // and a boolean to check if the value has been set.
-func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfigurationMaxMemory, bool) {
+func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *MaxMemoryPolicyTypeConfiguration) GetMaxMemoryOk() (*MaxMemoryPolicyTyp
 }
 
 // SetMaxMemory sets field value
-func (o *MaxMemoryPolicyTypeConfiguration) SetMaxMemory(v MaxMemoryPolicyTypeConfigurationMaxMemory) {
+func (o *MaxMemoryPolicyTypeConfiguration) SetMaxMemory(v string) {
 	o.MaxMemory = v
 }
 

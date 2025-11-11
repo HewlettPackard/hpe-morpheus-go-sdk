@@ -46,10 +46,10 @@ Name | Type | Description | Notes
 **MaxVirtualServers** | **string** |  | 
 **MaxVms** | **string** |  | 
 **MotdTitle** | Pointer to **string** |  | [optional] 
-**Motd** | [**ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd**](ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd.md) |  | 
+**Motd** | [**MessageOfTheDayPolicyTypeConfigurationMotd**](MessageOfTheDayPolicyTypeConfigurationMotd.md) |  | 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to [**ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage**](ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage.md) |  | [optional] 
+**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage.md) |  | [optional] 
 **MotdDate** | Pointer to **string** |  | [optional] 
 **MaxNetworks** | **string** |  | 
 **PowerScheduleType** | **string** |  | 
@@ -80,7 +80,7 @@ Name | Type | Description | Notes
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfig
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxStorage string, maxVirtualServers string, maxVms string, motd ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfigurationMotd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfig instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfig object
 This constructor will assign default values to properties that have it defined,
@@ -1057,20 +1057,20 @@ HasMotdTitle returns a boolean if a field has been set.
 
 ### GetMotd
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotd() ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotd() MessageOfTheDayPolicyTypeConfigurationMotd`
 
 GetMotd returns the Motd field if non-nil, zero value otherwise.
 
 ### GetMotdOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdOk() (*ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdOk() (*MessageOfTheDayPolicyTypeConfigurationMotd, bool)`
 
 GetMotdOk returns a tuple with the Motd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotd
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMotd(v ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19Motd)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMotd(v MessageOfTheDayPolicyTypeConfigurationMotd)`
 
 SetMotd sets Motd field to given value.
 
@@ -1127,20 +1127,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdFullPage() ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdFullPageOk() (*ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage, bool)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMotdFullPage(v ListPolicies200ResponseAllOfPoliciesInnerConfigOneOf19MotdFullPage)`
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 

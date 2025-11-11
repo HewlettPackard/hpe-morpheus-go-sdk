@@ -20,13 +20,13 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 - Message of the Day
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {
-	MotdTitle            *string                                     `json:"motd.title,omitempty"`
-	Motd                 *MessageOfTheDayPolicyTypeConfigurationMotd `json:"motd,omitempty"`
-	MotdMessage          *string                                     `json:"motd.message,omitempty"`
-	MotdType             *string                                     `json:"motd.type,omitempty"`
-	MotdFullPage         NullableBool                                `json:"motd._fullPage,omitempty"`
-	MotdDate             *string                                     `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	MotdTitle            *string                                      `json:"motd.title,omitempty"`
+	Motd                 *MessageOfTheDayPolicyTypeConfiguration1Motd `json:"motd,omitempty"`
+	MotdMessage          *string                                      `json:"motd.message,omitempty"`
+	MotdType             *string                                      `json:"motd.type,omitempty"`
+	MotdFullPage         NullableBool                                 `json:"motd._fullPage,omitempty"`
+	MotdDate             *string                                      `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20
@@ -81,9 +81,9 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdTitle(v st
 }
 
 // GetMotd returns the Motd field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() MessageOfTheDayPolicyTypeConfigurationMotd {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() MessageOfTheDayPolicyTypeConfiguration1Motd {
 	if o == nil || IsNil(o.Motd) {
-		var ret MessageOfTheDayPolicyTypeConfigurationMotd
+		var ret MessageOfTheDayPolicyTypeConfiguration1Motd
 		return ret
 	}
 	return *o.Motd
@@ -91,7 +91,7 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() Message
 
 // GetMotdOk returns a tuple with the Motd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdOk() (*MessageOfTheDayPolicyTypeConfigurationMotd, bool) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration1Motd, bool) {
 	if o == nil || IsNil(o.Motd) {
 		return nil, false
 	}
@@ -107,8 +107,8 @@ func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotd() bool 
 	return false
 }
 
-// SetMotd gets a reference to the given MessageOfTheDayPolicyTypeConfigurationMotd and assigns it to the Motd field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotd(v MessageOfTheDayPolicyTypeConfigurationMotd) {
+// SetMotd gets a reference to the given MessageOfTheDayPolicyTypeConfiguration1Motd and assigns it to the Motd field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotd(v MessageOfTheDayPolicyTypeConfiguration1Motd) {
 	o.Motd = &v
 }
 

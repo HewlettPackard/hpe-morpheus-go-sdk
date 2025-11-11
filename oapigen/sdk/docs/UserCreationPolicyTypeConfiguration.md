@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateUserType** | Pointer to **string** |  | [optional] 
+**CreateUserType** | **string** |  | 
 **CreateUser** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewUserCreationPolicyTypeConfiguration
 
-`func NewUserCreationPolicyTypeConfiguration() *UserCreationPolicyTypeConfiguration`
+`func NewUserCreationPolicyTypeConfiguration(createUserType string, ) *UserCreationPolicyTypeConfiguration`
 
 NewUserCreationPolicyTypeConfiguration instantiates a new UserCreationPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetCreateUserType sets CreateUserType field to given value.
 
-### HasCreateUserType
-
-`func (o *UserCreationPolicyTypeConfiguration) HasCreateUserType() bool`
-
-HasCreateUserType returns a boolean if a field has been set.
 
 ### GetCreateUser
 
