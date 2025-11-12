@@ -10,11 +10,13 @@ Name | Type | Description | Notes
 **StorageProvider** | Pointer to [**AddVirtualImageRequestVirtualImageStorageProvider**](AddVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
 **IsCloudInit** | Pointer to **bool** | Cloud Init Enabled? | [optional] [default to false]
 **UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
+**Uefi** | Pointer to **bool** | UEFI enabled? | [optional] 
+**FipsEnabled** | Pointer to **bool** | FIPS enabled? | [optional] 
 **InstallAgent** | Pointer to **bool** | Install Agent? | [optional] [default to false]
 **SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** | SSH Password | [optional] 
 **SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
-**OsType** | Pointer to [**UpdateVirtualImageRequestVirtualImageOsType**](UpdateVirtualImageRequestVirtualImageOsType.md) |  | [optional] 
+**OsType** | Pointer to **NullableInt64** | A Map containing the id of the OS Type. This can also be passed as a string (code or name) instead. | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **Accounts** | Pointer to **[]int64** |  | [optional] 
 **IsAutoJoinDomain** | Pointer to **bool** | Auto Join Domain? | [optional] [default to false]
@@ -27,6 +29,9 @@ Name | Type | Description | Notes
 **Tags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified. | [optional] 
 **AddTags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
 **RemoveTags** | Pointer to [**[]UpdateVirtualImageRequestVirtualImageRemoveTagsInner**](UpdateVirtualImageRequestVirtualImageRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
+**MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
+**MinDisk** | Pointer to **NullableInt64** |  | [optional] 
+**MinDiskGB** | Pointer to **NullableInt64** |  | [optional] 
 
 ## Methods
 
@@ -217,6 +222,56 @@ HasUserData returns a boolean if a field has been set.
 `func (o *VirtualImageUpdate) UnsetUserData()`
 
 UnsetUserData ensures that no value is present for UserData, not even an explicit nil
+### GetUefi
+
+`func (o *VirtualImageUpdate) GetUefi() bool`
+
+GetUefi returns the Uefi field if non-nil, zero value otherwise.
+
+### GetUefiOk
+
+`func (o *VirtualImageUpdate) GetUefiOk() (*bool, bool)`
+
+GetUefiOk returns a tuple with the Uefi field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUefi
+
+`func (o *VirtualImageUpdate) SetUefi(v bool)`
+
+SetUefi sets Uefi field to given value.
+
+### HasUefi
+
+`func (o *VirtualImageUpdate) HasUefi() bool`
+
+HasUefi returns a boolean if a field has been set.
+
+### GetFipsEnabled
+
+`func (o *VirtualImageUpdate) GetFipsEnabled() bool`
+
+GetFipsEnabled returns the FipsEnabled field if non-nil, zero value otherwise.
+
+### GetFipsEnabledOk
+
+`func (o *VirtualImageUpdate) GetFipsEnabledOk() (*bool, bool)`
+
+GetFipsEnabledOk returns a tuple with the FipsEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFipsEnabled
+
+`func (o *VirtualImageUpdate) SetFipsEnabled(v bool)`
+
+SetFipsEnabled sets FipsEnabled field to given value.
+
+### HasFipsEnabled
+
+`func (o *VirtualImageUpdate) HasFipsEnabled() bool`
+
+HasFipsEnabled returns a boolean if a field has been set.
+
 ### GetInstallAgent
 
 `func (o *VirtualImageUpdate) GetInstallAgent() bool`
@@ -349,20 +404,20 @@ HasSshKey returns a boolean if a field has been set.
 UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
-`func (o *VirtualImageUpdate) GetOsType() UpdateVirtualImageRequestVirtualImageOsType`
+`func (o *VirtualImageUpdate) GetOsType() int64`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *VirtualImageUpdate) GetOsTypeOk() (*UpdateVirtualImageRequestVirtualImageOsType, bool)`
+`func (o *VirtualImageUpdate) GetOsTypeOk() (*int64, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *VirtualImageUpdate) SetOsType(v UpdateVirtualImageRequestVirtualImageOsType)`
+`func (o *VirtualImageUpdate) SetOsType(v int64)`
 
 SetOsType sets OsType field to given value.
 
@@ -372,6 +427,16 @@ SetOsType sets OsType field to given value.
 
 HasOsType returns a boolean if a field has been set.
 
+### SetOsTypeNil
+
+`func (o *VirtualImageUpdate) SetOsTypeNil(b bool)`
+
+ SetOsTypeNil sets the value for OsType to be an explicit nil
+
+### UnsetOsType
+`func (o *VirtualImageUpdate) UnsetOsType()`
+
+UnsetOsType ensures that no value is present for OsType, not even an explicit nil
 ### GetVisibility
 
 `func (o *VirtualImageUpdate) GetVisibility() string`
@@ -672,6 +737,111 @@ SetRemoveTags sets RemoveTags field to given value.
 
 HasRemoveTags returns a boolean if a field has been set.
 
+### GetMinRamGB
+
+`func (o *VirtualImageUpdate) GetMinRamGB() int64`
+
+GetMinRamGB returns the MinRamGB field if non-nil, zero value otherwise.
+
+### GetMinRamGBOk
+
+`func (o *VirtualImageUpdate) GetMinRamGBOk() (*int64, bool)`
+
+GetMinRamGBOk returns a tuple with the MinRamGB field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinRamGB
+
+`func (o *VirtualImageUpdate) SetMinRamGB(v int64)`
+
+SetMinRamGB sets MinRamGB field to given value.
+
+### HasMinRamGB
+
+`func (o *VirtualImageUpdate) HasMinRamGB() bool`
+
+HasMinRamGB returns a boolean if a field has been set.
+
+### SetMinRamGBNil
+
+`func (o *VirtualImageUpdate) SetMinRamGBNil(b bool)`
+
+ SetMinRamGBNil sets the value for MinRamGB to be an explicit nil
+
+### UnsetMinRamGB
+`func (o *VirtualImageUpdate) UnsetMinRamGB()`
+
+UnsetMinRamGB ensures that no value is present for MinRamGB, not even an explicit nil
+### GetMinDisk
+
+`func (o *VirtualImageUpdate) GetMinDisk() int64`
+
+GetMinDisk returns the MinDisk field if non-nil, zero value otherwise.
+
+### GetMinDiskOk
+
+`func (o *VirtualImageUpdate) GetMinDiskOk() (*int64, bool)`
+
+GetMinDiskOk returns a tuple with the MinDisk field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinDisk
+
+`func (o *VirtualImageUpdate) SetMinDisk(v int64)`
+
+SetMinDisk sets MinDisk field to given value.
+
+### HasMinDisk
+
+`func (o *VirtualImageUpdate) HasMinDisk() bool`
+
+HasMinDisk returns a boolean if a field has been set.
+
+### SetMinDiskNil
+
+`func (o *VirtualImageUpdate) SetMinDiskNil(b bool)`
+
+ SetMinDiskNil sets the value for MinDisk to be an explicit nil
+
+### UnsetMinDisk
+`func (o *VirtualImageUpdate) UnsetMinDisk()`
+
+UnsetMinDisk ensures that no value is present for MinDisk, not even an explicit nil
+### GetMinDiskGB
+
+`func (o *VirtualImageUpdate) GetMinDiskGB() int64`
+
+GetMinDiskGB returns the MinDiskGB field if non-nil, zero value otherwise.
+
+### GetMinDiskGBOk
+
+`func (o *VirtualImageUpdate) GetMinDiskGBOk() (*int64, bool)`
+
+GetMinDiskGBOk returns a tuple with the MinDiskGB field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinDiskGB
+
+`func (o *VirtualImageUpdate) SetMinDiskGB(v int64)`
+
+SetMinDiskGB sets MinDiskGB field to given value.
+
+### HasMinDiskGB
+
+`func (o *VirtualImageUpdate) HasMinDiskGB() bool`
+
+HasMinDiskGB returns a boolean if a field has been set.
+
+### SetMinDiskGBNil
+
+`func (o *VirtualImageUpdate) SetMinDiskGBNil(b bool)`
+
+ SetMinDiskGBNil sets the value for MinDiskGB to be an explicit nil
+
+### UnsetMinDiskGB
+`func (o *VirtualImageUpdate) UnsetMinDiskGB()`
+
+UnsetMinDiskGB ensures that no value is present for MinDiskGB, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

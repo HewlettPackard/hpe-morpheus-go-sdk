@@ -3902,7 +3902,6 @@ Class | Method | HTTP request | Description
  - [UpdateVirtualImageRequestVirtualImage](docs/UpdateVirtualImageRequestVirtualImage.md)
  - [UpdateVirtualImageRequestVirtualImageConfig](docs/UpdateVirtualImageRequestVirtualImageConfig.md)
  - [UpdateVirtualImageRequestVirtualImageConfigOneOf](docs/UpdateVirtualImageRequestVirtualImageConfigOneOf.md)
- - [UpdateVirtualImageRequestVirtualImageOsType](docs/UpdateVirtualImageRequestVirtualImageOsType.md)
  - [UpdateVirtualImageRequestVirtualImageRemoveTagsInner](docs/UpdateVirtualImageRequestVirtualImageRemoveTagsInner.md)
  - [UpdateWhitelabelSettingsRequest](docs/UpdateWhitelabelSettingsRequest.md)
  - [UpdateWhitelabelSettingsRequestWhitelabelSettings](docs/UpdateWhitelabelSettingsRequestWhitelabelSettings.md)
