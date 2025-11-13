@@ -16,7 +16,7 @@ jobs:
     - name: check-if-oapigen-change
       id: is-oapigen
       run: |
-        if git diff --name-only | grep oapigen/; then
+        if git diff --name-only HEAD~1 | grep oapigen/; then
             echo "is-oapigen=true" >> $GITHUB_OUTPUT
         fi
     - name: Bump oapigen version and push tag
