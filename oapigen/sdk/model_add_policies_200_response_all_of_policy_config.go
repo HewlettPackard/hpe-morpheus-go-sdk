@@ -39,6 +39,7 @@ type AddPolicies200ResponseAllOfPolicyConfig struct {
 	MaxLoadBalancerPoolsPolicyTypeConfiguration            *MaxLoadBalancerPoolsPolicyTypeConfiguration
 	MaxMemoryPolicyTypeConfiguration                       *MaxMemoryPolicyTypeConfiguration
 	MaxPoolMembersPolicyTypeConfiguration                  *MaxPoolMembersPolicyTypeConfiguration
+	MaxSnapshotsPolicyTypeConfiguration                    *MaxSnapshotsPolicyTypeConfiguration
 	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
 	MaxVMsPolicyTypeConfiguration                          *MaxVMsPolicyTypeConfiguration
 	MaxVirtualServersPolicyTypeConfiguration               *MaxVirtualServersPolicyTypeConfiguration
@@ -164,6 +165,13 @@ func MaxMemoryPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v
 func MaxPoolMembersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxPoolMembersPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
 		MaxPoolMembersPolicyTypeConfiguration: v,
+	}
+}
+
+// MaxSnapshotsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxSnapshotsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxSnapshotsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxSnapshotsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+	return AddPolicies200ResponseAllOfPolicyConfig{
+		MaxSnapshotsPolicyTypeConfiguration: v,
 	}
 }
 
@@ -364,6 +372,12 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 
 	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration) {
 		dst.MaxPoolMembersPolicyTypeConfiguration = nil
+	}
+
+	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration)
+
+	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration) {
+		dst.MaxSnapshotsPolicyTypeConfiguration = nil
 	}
 
 	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
@@ -729,6 +743,23 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.MaxPoolMembersPolicyTypeConfiguration = nil
 	}
 
+	// try to unmarshal data into MaxSnapshotsPolicyTypeConfiguration
+	err = newStrictDecoder(data).Decode(&dst.MaxSnapshotsPolicyTypeConfiguration)
+	if err == nil {
+		jsonMaxSnapshotsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration)
+		if string(jsonMaxSnapshotsPolicyTypeConfiguration) == "{}" { // empty struct
+			dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		} else {
+			if err = validator.Validate(dst.MaxSnapshotsPolicyTypeConfiguration); err != nil {
+				dst.MaxSnapshotsPolicyTypeConfiguration = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.MaxSnapshotsPolicyTypeConfiguration = nil
+	}
+
 	// try to unmarshal data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
 	err = newStrictDecoder(data).Decode(&dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
 	if err == nil {
@@ -985,6 +1016,7 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
 		dst.MaxMemoryPolicyTypeConfiguration = nil
 		dst.MaxPoolMembersPolicyTypeConfiguration = nil
+		dst.MaxSnapshotsPolicyTypeConfiguration = nil
 		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
 		dst.MaxVMsPolicyTypeConfiguration = nil
 		dst.MaxVirtualServersPolicyTypeConfiguration = nil
@@ -1072,6 +1104,10 @@ func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error)
 
 	if src.MaxPoolMembersPolicyTypeConfiguration != nil {
 		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration)
+	}
+
+	if src.MaxSnapshotsPolicyTypeConfiguration != nil {
+		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration)
 	}
 
 	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {
@@ -1202,6 +1238,10 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 		return obj.MaxPoolMembersPolicyTypeConfiguration
 	}
 
+	if obj.MaxSnapshotsPolicyTypeConfiguration != nil {
+		return obj.MaxSnapshotsPolicyTypeConfiguration
+	}
+
 	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {
 		return obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
 	}
@@ -1326,6 +1366,10 @@ func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() inte
 
 	if obj.MaxPoolMembersPolicyTypeConfiguration != nil {
 		return *obj.MaxPoolMembersPolicyTypeConfiguration
+	}
+
+	if obj.MaxSnapshotsPolicyTypeConfiguration != nil {
+		return *obj.MaxSnapshotsPolicyTypeConfiguration
 	}
 
 	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {

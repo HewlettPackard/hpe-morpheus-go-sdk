@@ -42,6 +42,7 @@ Name | Type | Description | Notes
 **MaxPools** | **string** |  | 
 **MaxMemory** | **string** |  | 
 **MaxPoolMembers** | **string** |  | 
+**MaxSnapshots** | Pointer to **string** |  | [optional] 
 **MaxStorage** | **string** |  | 
 **MaxVirtualServers** | **string** |  | 
 **MaxVms** | **string** |  | 
@@ -969,6 +970,31 @@ and a boolean to check if the value has been set.
 
 SetMaxPoolMembers sets MaxPoolMembers field to given value.
 
+
+### GetMaxSnapshots
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMaxSnapshots() string`
+
+GetMaxSnapshots returns the MaxSnapshots field if non-nil, zero value otherwise.
+
+### GetMaxSnapshotsOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetMaxSnapshotsOk() (*string, bool)`
+
+GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxSnapshots
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetMaxSnapshots(v string)`
+
+SetMaxSnapshots sets MaxSnapshots field to given value.
+
+### HasMaxSnapshots
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasMaxSnapshots() bool`
+
+HasMaxSnapshots returns a boolean if a field has been set.
 
 ### GetMaxStorage
 

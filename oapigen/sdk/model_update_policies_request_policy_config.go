@@ -38,6 +38,7 @@ type UpdatePoliciesRequestPolicyConfig struct {
 	MaxLoadBalancerPoolsPolicyTypeConfiguration1            *MaxLoadBalancerPoolsPolicyTypeConfiguration1
 	MaxMemoryPolicyTypeConfiguration2                       *MaxMemoryPolicyTypeConfiguration2
 	MaxPoolMembersPolicyTypeConfiguration1                  *MaxPoolMembersPolicyTypeConfiguration1
+	MaxSnapshotsPolicyTypeConfiguration                     *MaxSnapshotsPolicyTypeConfiguration
 	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
 	MaxVMsPolicyTypeConfiguration1                          *MaxVMsPolicyTypeConfiguration1
 	MaxVirtualServersPolicyTypeConfiguration1               *MaxVirtualServersPolicyTypeConfiguration1
@@ -125,6 +126,10 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 
 	if out, ok := data.(MaxPoolMembersPolicyTypeConfiguration1); ok {
 		dst.MaxPoolMembersPolicyTypeConfiguration1 = &out
+	}
+
+	if out, ok := data.(MaxSnapshotsPolicyTypeConfiguration); ok {
+		dst.MaxSnapshotsPolicyTypeConfiguration = &out
 	}
 
 	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2); ok {
@@ -410,6 +415,19 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.MaxPoolMembersPolicyTypeConfiguration1 = nil
 	}
 
+	// try to unmarshal JSON data into MaxSnapshotsPolicyTypeConfiguration
+	err = json.Unmarshal(data, &dst.MaxSnapshotsPolicyTypeConfiguration)
+	if err == nil {
+		jsonMaxSnapshotsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration)
+		if string(jsonMaxSnapshotsPolicyTypeConfiguration) == "{}" { // empty struct
+			dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		} else {
+			return nil // data stored in dst.MaxSnapshotsPolicyTypeConfiguration, return on the first match
+		}
+	} else {
+		dst.MaxSnapshotsPolicyTypeConfiguration = nil
+	}
+
 	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
 	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
 	if err == nil {
@@ -663,6 +681,10 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 
 	if src.MaxPoolMembersPolicyTypeConfiguration1 != nil {
 		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration1)
+	}
+
+	if src.MaxSnapshotsPolicyTypeConfiguration != nil {
+		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration)
 	}
 
 	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 != nil {

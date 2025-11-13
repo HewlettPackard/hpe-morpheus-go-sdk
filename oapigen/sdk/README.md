@@ -3253,6 +3253,7 @@ Class | Method | HTTP request | Description
  - [MaxMemoryPolicyTypeConfiguration2](docs/MaxMemoryPolicyTypeConfiguration2.md)
  - [MaxPoolMembersPolicyTypeConfiguration](docs/MaxPoolMembersPolicyTypeConfiguration.md)
  - [MaxPoolMembersPolicyTypeConfiguration1](docs/MaxPoolMembersPolicyTypeConfiguration1.md)
+ - [MaxSnapshotsPolicyTypeConfiguration](docs/MaxSnapshotsPolicyTypeConfiguration.md)
  - [MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration](docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration.md)
  - [MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1](docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1.md)
  - [MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2](docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2.md)
