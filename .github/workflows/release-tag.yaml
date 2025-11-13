@@ -1,0 +1,26 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        fetch-depth: '0'
+    - name: check-if-oapigen-change
+      id: is-oapigen
+      run: |
+        if git diff --name-only | grep oapigen/; then
+            echo "is-oapigen=true" >> $GITHUB_OUTPUT
+        fi
+    - name: Bump oapigen version and push tag
+      if: ${{ steps.is-oapigen.outputs.is-oapigen == 'true' }}
+      uses: anothrNick/github-tag-action@4ed44965e0db8dab2b466a16da04aec3cc312fd8
+      env:
+        TAG_PREFIX: oapigen/v
