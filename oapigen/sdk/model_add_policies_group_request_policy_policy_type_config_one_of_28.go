@@ -18,10 +18,12 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 - User Creation
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 - Tags
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28 struct {
-	CreateUserType       *string                `json:"createUserType,omitempty"`
-	CreateUser           *bool                  `json:"createUser,omitempty"`
+	Strict               *bool                  `json:"strict,omitempty"`
+	Key                  *string                `json:"key,omitempty"`
+	ValueListId          *string                `json:"valueListId,omitempty"`
+	Value                *string                `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -44,68 +46,132 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28WithDefaults() *AddP
 	return &this
 }
 
-// GetCreateUserType returns the CreateUserType field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserType() string {
-	if o == nil || IsNil(o.CreateUserType) {
-		var ret string
-		return ret
-	}
-	return *o.CreateUserType
-}
-
-// GetCreateUserTypeOk returns a tuple with the CreateUserType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.CreateUserType) {
-		return nil, false
-	}
-	return o.CreateUserType, true
-}
-
-// IsSetCreateUserType returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetCreateUserType() bool {
-	if o != nil && !IsNil(o.CreateUserType) {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateUserType gets a reference to the given string and assigns it to the CreateUserType field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetCreateUserType(v string) {
-	o.CreateUserType = &v
-}
-
-// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUser() bool {
-	if o == nil || IsNil(o.CreateUser) {
+// GetStrict returns the Strict field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetStrict() bool {
+	if o == nil || IsNil(o.Strict) {
 		var ret bool
 		return ret
 	}
-	return *o.CreateUser
+	return *o.Strict
 }
 
-// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
+// GetStrictOk returns a tuple with the Strict field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserOk() (*bool, bool) {
-	if o == nil || IsNil(o.CreateUser) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetStrictOk() (*bool, bool) {
+	if o == nil || IsNil(o.Strict) {
 		return nil, false
 	}
-	return o.CreateUser, true
+	return o.Strict, true
 }
 
-// IsSetCreateUser returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetCreateUser() bool {
-	if o != nil && !IsNil(o.CreateUser) {
+// IsSetStrict returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetStrict() bool {
+	if o != nil && !IsNil(o.Strict) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetCreateUser(v bool) {
-	o.CreateUser = &v
+// SetStrict gets a reference to the given bool and assigns it to the Strict field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetStrict(v bool) {
+	o.Strict = &v
+}
+
+// GetKey returns the Key field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetKey() string {
+	if o == nil || IsNil(o.Key) {
+		var ret string
+		return ret
+	}
+	return *o.Key
+}
+
+// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.Key) {
+		return nil, false
+	}
+	return o.Key, true
+}
+
+// IsSetKey returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetKey() bool {
+	if o != nil && !IsNil(o.Key) {
+		return true
+	}
+
+	return false
+}
+
+// SetKey gets a reference to the given string and assigns it to the Key field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetKey(v string) {
+	o.Key = &v
+}
+
+// GetValueListId returns the ValueListId field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueListId() string {
+	if o == nil || IsNil(o.ValueListId) {
+		var ret string
+		return ret
+	}
+	return *o.ValueListId
+}
+
+// GetValueListIdOk returns a tuple with the ValueListId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueListIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ValueListId) {
+		return nil, false
+	}
+	return o.ValueListId, true
+}
+
+// IsSetValueListId returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetValueListId() bool {
+	if o != nil && !IsNil(o.ValueListId) {
+		return true
+	}
+
+	return false
+}
+
+// SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetValueListId(v string) {
+	o.ValueListId = &v
+}
+
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValue() string {
+	if o == nil || IsNil(o.Value) {
+		var ret string
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueOk() (*string, bool) {
+	if o == nil || IsNil(o.Value) {
+		return nil, false
+	}
+	return o.Value, true
+}
+
+// IsSetValue returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) IsSetValue() bool {
+	if o != nil && !IsNil(o.Value) {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetValue(v string) {
+	o.Value = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) MarshalJSON() ([]byte, error) {
@@ -118,11 +184,17 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CreateUserType) {
-		toSerialize["createUserType"] = o.CreateUserType
+	if !IsNil(o.Strict) {
+		toSerialize["strict"] = o.Strict
 	}
-	if !IsNil(o.CreateUser) {
-		toSerialize["createUser"] = o.CreateUser
+	if !IsNil(o.Key) {
+		toSerialize["key"] = o.Key
+	}
+	if !IsNil(o.ValueListId) {
+		toSerialize["valueListId"] = o.ValueListId
+	}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 
 	for key, value := range o.AdditionalProperties {

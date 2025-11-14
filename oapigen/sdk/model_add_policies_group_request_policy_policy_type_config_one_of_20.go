@@ -18,15 +18,10 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 - Message of the Day
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 - Max VMs
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 struct {
-	MotdTitle            *string                                      `json:"motd.title,omitempty"`
-	Motd                 *MessageOfTheDayPolicyTypeConfiguration1Motd `json:"motd,omitempty"`
-	MotdMessage          *string                                      `json:"motd.message,omitempty"`
-	MotdType             *string                                      `json:"motd.type,omitempty"`
-	MotdFullPage         NullableBool                                 `json:"motd._fullPage,omitempty"`
-	MotdDate             *string                                      `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	MaxVms               *string                `json:"maxVms,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20
@@ -48,207 +43,36 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20WithDefaults() *AddP
 	return &this
 }
 
-// GetMotdTitle returns the MotdTitle field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdTitle() string {
-	if o == nil || IsNil(o.MotdTitle) {
+// GetMaxVms returns the MaxVms field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMaxVms() string {
+	if o == nil || IsNil(o.MaxVms) {
 		var ret string
 		return ret
 	}
-	return *o.MotdTitle
+	return *o.MaxVms
 }
 
-// GetMotdTitleOk returns a tuple with the MotdTitle field value if set, nil otherwise
+// GetMaxVmsOk returns a tuple with the MaxVms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.MotdTitle) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMaxVmsOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxVms) {
 		return nil, false
 	}
-	return o.MotdTitle, true
+	return o.MaxVms, true
 }
 
-// IsSetMotdTitle returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdTitle() bool {
-	if o != nil && !IsNil(o.MotdTitle) {
+// IsSetMaxVms returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMaxVms() bool {
+	if o != nil && !IsNil(o.MaxVms) {
 		return true
 	}
 
 	return false
 }
 
-// SetMotdTitle gets a reference to the given string and assigns it to the MotdTitle field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdTitle(v string) {
-	o.MotdTitle = &v
-}
-
-// GetMotd returns the Motd field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotd() MessageOfTheDayPolicyTypeConfiguration1Motd {
-	if o == nil || IsNil(o.Motd) {
-		var ret MessageOfTheDayPolicyTypeConfiguration1Motd
-		return ret
-	}
-	return *o.Motd
-}
-
-// GetMotdOk returns a tuple with the Motd field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdOk() (*MessageOfTheDayPolicyTypeConfiguration1Motd, bool) {
-	if o == nil || IsNil(o.Motd) {
-		return nil, false
-	}
-	return o.Motd, true
-}
-
-// IsSetMotd returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotd() bool {
-	if o != nil && !IsNil(o.Motd) {
-		return true
-	}
-
-	return false
-}
-
-// SetMotd gets a reference to the given MessageOfTheDayPolicyTypeConfiguration1Motd and assigns it to the Motd field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotd(v MessageOfTheDayPolicyTypeConfiguration1Motd) {
-	o.Motd = &v
-}
-
-// GetMotdMessage returns the MotdMessage field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdMessage() string {
-	if o == nil || IsNil(o.MotdMessage) {
-		var ret string
-		return ret
-	}
-	return *o.MotdMessage
-}
-
-// GetMotdMessageOk returns a tuple with the MotdMessage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.MotdMessage) {
-		return nil, false
-	}
-	return o.MotdMessage, true
-}
-
-// IsSetMotdMessage returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdMessage() bool {
-	if o != nil && !IsNil(o.MotdMessage) {
-		return true
-	}
-
-	return false
-}
-
-// SetMotdMessage gets a reference to the given string and assigns it to the MotdMessage field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdMessage(v string) {
-	o.MotdMessage = &v
-}
-
-// GetMotdType returns the MotdType field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdType() string {
-	if o == nil || IsNil(o.MotdType) {
-		var ret string
-		return ret
-	}
-	return *o.MotdType
-}
-
-// GetMotdTypeOk returns a tuple with the MotdType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MotdType) {
-		return nil, false
-	}
-	return o.MotdType, true
-}
-
-// IsSetMotdType returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdType() bool {
-	if o != nil && !IsNil(o.MotdType) {
-		return true
-	}
-
-	return false
-}
-
-// SetMotdType gets a reference to the given string and assigns it to the MotdType field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdType(v string) {
-	o.MotdType = &v
-}
-
-// GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdFullPage() bool {
-	if o == nil || IsNil(o.MotdFullPage.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.MotdFullPage.Get()
-}
-
-// GetMotdFullPageOk returns a tuple with the MotdFullPage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdFullPageOk() (*bool, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.MotdFullPage.Get(), o.MotdFullPage.IsSet()
-}
-
-// IsSetMotdFullPage returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdFullPage() bool {
-	if o != nil && o.MotdFullPage.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetMotdFullPage gets a reference to the given NullableBool and assigns it to the MotdFullPage field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdFullPage(v bool) {
-	o.MotdFullPage.Set(&v)
-}
-
-// SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdFullPageNil() {
-	o.MotdFullPage.Set(nil)
-}
-
-// UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) UnsetMotdFullPage() {
-	o.MotdFullPage.Unset()
-}
-
-// GetMotdDate returns the MotdDate field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDate() string {
-	if o == nil || IsNil(o.MotdDate) {
-		var ret string
-		return ret
-	}
-	return *o.MotdDate
-}
-
-// GetMotdDateOk returns a tuple with the MotdDate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) GetMotdDateOk() (*string, bool) {
-	if o == nil || IsNil(o.MotdDate) {
-		return nil, false
-	}
-	return o.MotdDate, true
-}
-
-// IsSetMotdDate returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) IsSetMotdDate() bool {
-	if o != nil && !IsNil(o.MotdDate) {
-		return true
-	}
-
-	return false
-}
-
-// SetMotdDate gets a reference to the given string and assigns it to the MotdDate field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMotdDate(v string) {
-	o.MotdDate = &v
+// SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) SetMaxVms(v string) {
+	o.MaxVms = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) MarshalJSON() ([]byte, error) {
@@ -261,23 +85,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf20) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MotdTitle) {
-		toSerialize["motd.title"] = o.MotdTitle
-	}
-	if !IsNil(o.Motd) {
-		toSerialize["motd"] = o.Motd
-	}
-	if !IsNil(o.MotdMessage) {
-		toSerialize["motd.message"] = o.MotdMessage
-	}
-	if !IsNil(o.MotdType) {
-		toSerialize["motd.type"] = o.MotdType
-	}
-	if o.MotdFullPage.IsSet() {
-		toSerialize["motd._fullPage"] = o.MotdFullPage.Get()
-	}
-	if !IsNil(o.MotdDate) {
-		toSerialize["motd.date"] = o.MotdDate
+	if !IsNil(o.MaxVms) {
+		toSerialize["maxVms"] = o.MaxVms
 	}
 
 	for key, value := range o.AdditionalProperties {

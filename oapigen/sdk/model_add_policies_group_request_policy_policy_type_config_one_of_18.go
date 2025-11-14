@@ -18,9 +18,10 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 - Max Virtual Servers
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 - Max Storage - Object Storage Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 struct {
-	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
+	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -32,6 +33,8 @@ type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 AddPoliciesGroupReque
 // will change when the set of required properties is changed
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18{}
+	var excludeContainers string = "off"
+	this.ExcludeContainers = &excludeContainers
 	return &this
 }
 
@@ -40,39 +43,73 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18() *AddPoliciesGroup
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18{}
+	var excludeContainers string = "off"
+	this.ExcludeContainers = &excludeContainers
 	return &this
 }
 
-// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxVirtualServers() string {
-	if o == nil || IsNil(o.MaxVirtualServers) {
+// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxStorage() string {
+	if o == nil || IsNil(o.MaxStorage) {
 		var ret string
 		return ret
 	}
-	return *o.MaxVirtualServers
+	return *o.MaxStorage
 }
 
-// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
+// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxVirtualServersOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVirtualServers) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxStorageOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxStorage) {
 		return nil, false
 	}
-	return o.MaxVirtualServers, true
+	return o.MaxStorage, true
 }
 
-// IsSetMaxVirtualServers returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) IsSetMaxVirtualServers() bool {
-	if o != nil && !IsNil(o.MaxVirtualServers) {
+// IsSetMaxStorage returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) IsSetMaxStorage() bool {
+	if o != nil && !IsNil(o.MaxStorage) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetMaxVirtualServers(v string) {
-	o.MaxVirtualServers = &v
+// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetMaxStorage(v string) {
+	o.MaxStorage = &v
+}
+
+// GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetExcludeContainers() string {
+	if o == nil || IsNil(o.ExcludeContainers) {
+		var ret string
+		return ret
+	}
+	return *o.ExcludeContainers
+}
+
+// GetExcludeContainersOk returns a tuple with the ExcludeContainers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetExcludeContainersOk() (*string, bool) {
+	if o == nil || IsNil(o.ExcludeContainers) {
+		return nil, false
+	}
+	return o.ExcludeContainers, true
+}
+
+// IsSetExcludeContainers returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) IsSetExcludeContainers() bool {
+	if o != nil && !IsNil(o.ExcludeContainers) {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeContainers gets a reference to the given string and assigns it to the ExcludeContainers field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetExcludeContainers(v string) {
+	o.ExcludeContainers = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) MarshalJSON() ([]byte, error) {
@@ -85,8 +122,11 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxVirtualServers) {
-		toSerialize["maxVirtualServers"] = o.MaxVirtualServers
+	if !IsNil(o.MaxStorage) {
+		toSerialize["maxStorage"] = o.MaxStorage
+	}
+	if !IsNil(o.ExcludeContainers) {
+		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVms** | Pointer to **string** |  | [optional] 
+**MaxVirtualServers** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMaxVms
+### GetMaxVirtualServers
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVms() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServers() string`
 
-GetMaxVms returns the MaxVms field if non-nil, zero value otherwise.
+GetMaxVirtualServers returns the MaxVirtualServers field if non-nil, zero value otherwise.
 
-### GetMaxVmsOk
+### GetMaxVirtualServersOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVmsOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*string, bool)`
 
-GetMaxVmsOk returns a tuple with the MaxVms field if it's non-nil, zero value otherwise
+GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxVms
+### SetMaxVirtualServers
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) SetMaxVms(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) SetMaxVirtualServers(v string)`
 
-SetMaxVms sets MaxVms field to given value.
+SetMaxVirtualServers sets MaxVirtualServers field to given value.
 
-### HasMaxVms
+### HasMaxVirtualServers
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) HasMaxVms() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) HasMaxVirtualServers() bool`
 
-HasMaxVms returns a boolean if a field has been set.
+HasMaxVirtualServers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

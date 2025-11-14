@@ -18,12 +18,10 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 - Tags
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 - Storage Server Storage Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 struct {
-	Strict               *bool                  `json:"strict,omitempty"`
-	Key                  *string                `json:"key,omitempty"`
-	ValueListId          *string                `json:"valueListId,omitempty"`
-	Value                *string                `json:"value,omitempty"`
+	StorageServerId      *string                `json:"storageServerId,omitempty"`
+	MaxStorage           *string                `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -46,132 +44,68 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27WithDefaults() *AddP
 	return &this
 }
 
-// GetStrict returns the Strict field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStrict() bool {
-	if o == nil || IsNil(o.Strict) {
-		var ret bool
-		return ret
-	}
-	return *o.Strict
-}
-
-// GetStrictOk returns a tuple with the Strict field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStrictOk() (*bool, bool) {
-	if o == nil || IsNil(o.Strict) {
-		return nil, false
-	}
-	return o.Strict, true
-}
-
-// IsSetStrict returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetStrict() bool {
-	if o != nil && !IsNil(o.Strict) {
-		return true
-	}
-
-	return false
-}
-
-// SetStrict gets a reference to the given bool and assigns it to the Strict field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetStrict(v bool) {
-	o.Strict = &v
-}
-
-// GetKey returns the Key field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetKey() string {
-	if o == nil || IsNil(o.Key) {
+// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStorageServerId() string {
+	if o == nil || IsNil(o.StorageServerId) {
 		var ret string
 		return ret
 	}
-	return *o.Key
+	return *o.StorageServerId
 }
 
-// GetKeyOk returns a tuple with the Key field value if set, nil otherwise
+// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Key) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetStorageServerIdOk() (*string, bool) {
+	if o == nil || IsNil(o.StorageServerId) {
 		return nil, false
 	}
-	return o.Key, true
+	return o.StorageServerId, true
 }
 
-// IsSetKey returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetKey() bool {
-	if o != nil && !IsNil(o.Key) {
+// IsSetStorageServerId returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetStorageServerId() bool {
+	if o != nil && !IsNil(o.StorageServerId) {
 		return true
 	}
 
 	return false
 }
 
-// SetKey gets a reference to the given string and assigns it to the Key field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetKey(v string) {
-	o.Key = &v
+// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetStorageServerId(v string) {
+	o.StorageServerId = &v
 }
 
-// GetValueListId returns the ValueListId field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetValueListId() string {
-	if o == nil || IsNil(o.ValueListId) {
+// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetMaxStorage() string {
+	if o == nil || IsNil(o.MaxStorage) {
 		var ret string
 		return ret
 	}
-	return *o.ValueListId
+	return *o.MaxStorage
 }
 
-// GetValueListIdOk returns a tuple with the ValueListId field value if set, nil otherwise
+// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetValueListIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValueListId) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetMaxStorageOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxStorage) {
 		return nil, false
 	}
-	return o.ValueListId, true
+	return o.MaxStorage, true
 }
 
-// IsSetValueListId returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetValueListId() bool {
-	if o != nil && !IsNil(o.ValueListId) {
+// IsSetMaxStorage returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetMaxStorage() bool {
+	if o != nil && !IsNil(o.MaxStorage) {
 		return true
 	}
 
 	return false
 }
 
-// SetValueListId gets a reference to the given string and assigns it to the ValueListId field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetValueListId(v string) {
-	o.ValueListId = &v
-}
-
-// GetValue returns the Value field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetValue() string {
-	if o == nil || IsNil(o.Value) {
-		var ret string
-		return ret
-	}
-	return *o.Value
-}
-
-// GetValueOk returns a tuple with the Value field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
-		return nil, false
-	}
-	return o.Value, true
-}
-
-// IsSetValue returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) IsSetValue() bool {
-	if o != nil && !IsNil(o.Value) {
-		return true
-	}
-
-	return false
-}
-
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetValue(v string) {
-	o.Value = &v
+// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) SetMaxStorage(v string) {
+	o.MaxStorage = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) MarshalJSON() ([]byte, error) {
@@ -184,17 +118,11 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Strict) {
-		toSerialize["strict"] = o.Strict
+	if !IsNil(o.StorageServerId) {
+		toSerialize["storageServerId"] = o.StorageServerId
 	}
-	if !IsNil(o.Key) {
-		toSerialize["key"] = o.Key
-	}
-	if !IsNil(o.ValueListId) {
-		toSerialize["valueListId"] = o.ValueListId
-	}
-	if !IsNil(o.Value) {
-		toSerialize["value"] = o.Value
+	if !IsNil(o.MaxStorage) {
+		toSerialize["maxStorage"] = o.MaxStorage
 	}
 
 	for key, value := range o.AdditionalProperties {

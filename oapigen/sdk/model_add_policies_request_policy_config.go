@@ -38,7 +38,7 @@ type AddPoliciesRequestPolicyConfig struct {
 	MaxLoadBalancerPoolsPolicyTypeConfiguration1            *MaxLoadBalancerPoolsPolicyTypeConfiguration1
 	MaxMemoryPolicyTypeConfiguration1                       *MaxMemoryPolicyTypeConfiguration1
 	MaxPoolMembersPolicyTypeConfiguration1                  *MaxPoolMembersPolicyTypeConfiguration1
-	MaxSnapshotsPolicyTypeConfiguration                     *MaxSnapshotsPolicyTypeConfiguration
+	MaxSnapshotsPolicyTypeConfiguration1                    *MaxSnapshotsPolicyTypeConfiguration1
 	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
 	MaxVMsPolicyTypeConfiguration1                          *MaxVMsPolicyTypeConfiguration1
 	MaxVirtualServersPolicyTypeConfiguration1               *MaxVirtualServersPolicyTypeConfiguration1
@@ -128,8 +128,8 @@ func (dst *AddPoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (any,
 		dst.MaxPoolMembersPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(MaxSnapshotsPolicyTypeConfiguration); ok {
-		dst.MaxSnapshotsPolicyTypeConfiguration = &out
+	if out, ok := data.(MaxSnapshotsPolicyTypeConfiguration1); ok {
+		dst.MaxSnapshotsPolicyTypeConfiguration1 = &out
 	}
 
 	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1); ok {
@@ -415,17 +415,17 @@ func (dst *AddPoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.MaxPoolMembersPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into MaxSnapshotsPolicyTypeConfiguration
-	err = json.Unmarshal(data, &dst.MaxSnapshotsPolicyTypeConfiguration)
+	// try to unmarshal JSON data into MaxSnapshotsPolicyTypeConfiguration1
+	err = json.Unmarshal(data, &dst.MaxSnapshotsPolicyTypeConfiguration1)
 	if err == nil {
-		jsonMaxSnapshotsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration)
-		if string(jsonMaxSnapshotsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		jsonMaxSnapshotsPolicyTypeConfiguration1, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration1)
+		if string(jsonMaxSnapshotsPolicyTypeConfiguration1) == "{}" { // empty struct
+			dst.MaxSnapshotsPolicyTypeConfiguration1 = nil
 		} else {
-			return nil // data stored in dst.MaxSnapshotsPolicyTypeConfiguration, return on the first match
+			return nil // data stored in dst.MaxSnapshotsPolicyTypeConfiguration1, return on the first match
 		}
 	} else {
-		dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		dst.MaxSnapshotsPolicyTypeConfiguration1 = nil
 	}
 
 	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1
@@ -683,8 +683,8 @@ func (src AddPoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration1)
 	}
 
-	if src.MaxSnapshotsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration)
+	if src.MaxSnapshotsPolicyTypeConfiguration1 != nil {
+		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration1)
 	}
 
 	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 != nil {

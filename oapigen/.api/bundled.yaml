@@ -120657,8 +120657,10 @@ paths:
                                       type: string
                                 - type: object
                                   title: Max Snapshots Policy Type Configuration
+                                  additionalProperties: false
+                                  required:
+                                    - maxSnapshots
                                   description: |
-                                    Configuration settings for the following policy types:
                                     - Max Snapshots
                                   properties:
                                     maxSnapshots:
@@ -121941,7 +121943,6 @@ paths:
                         - type: object
                           title: Max Snapshots Policy Type Configuration
                           description: |
-                            Configuration settings for the following policy types:
                             - Max Snapshots
                           properties:
                             maxSnapshots:
@@ -124174,7 +124175,6 @@ paths:
                         - type: object
                           title: Max Snapshots Policy Type Configuration
                           description: |
-                            Configuration settings for the following policy types:
                             - Max Snapshots
                           properties:
                             maxSnapshots:
@@ -124880,6 +124880,12 @@ paths:
                                 - Max Pool Members
                               properties:
                                 maxPoolMembers:
+                                  type: string
+                            - type: object
+                              description: |
+                                - Max Snapshots
+                              properties:
+                                maxSnapshots:
                                   type: string
                             - type: object
                               description: |
@@ -125591,6 +125597,12 @@ paths:
                                   type: string
                             - type: object
                               description: |
+                                - Max Snapshots
+                              properties:
+                                maxSnapshots:
+                                  type: string
+                            - type: object
+                              description: |
                                 - Max Storage
                                 - Object Storage Quota
                               properties:
@@ -126262,6 +126274,12 @@ paths:
                                 - Max Pool Members
                               properties:
                                 maxPoolMembers:
+                                  type: string
+                            - type: object
+                              description: |
+                                - Max Snapshots
+                              properties:
+                                maxSnapshots:
                                   type: string
                             - type: object
                               description: |
@@ -126970,6 +126988,12 @@ paths:
                                 - Max Pool Members
                               properties:
                                 maxPoolMembers:
+                                  type: string
+                            - type: object
+                              description: |
+                                - Max Snapshots
+                              properties:
+                                maxSnapshots:
                                   type: string
                             - type: object
                               description: |

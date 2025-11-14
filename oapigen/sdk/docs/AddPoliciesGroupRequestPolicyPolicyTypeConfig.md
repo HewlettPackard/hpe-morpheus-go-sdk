@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **MaxPools** | Pointer to **string** |  | [optional] 
 **MaxMemory** | Pointer to **string** |  | [optional] 
 **MaxPoolMembers** | Pointer to **string** |  | [optional] 
+**MaxSnapshots** | Pointer to **string** |  | [optional] 
 **MaxVirtualServers** | Pointer to **string** |  | [optional] 
 **MaxVms** | Pointer to **string** |  | [optional] 
 **MotdTitle** | Pointer to **string** |  | [optional] 
@@ -1069,6 +1070,31 @@ SetMaxPoolMembers sets MaxPoolMembers field to given value.
 `func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfig) HasMaxPoolMembers() bool`
 
 HasMaxPoolMembers returns a boolean if a field has been set.
+
+### GetMaxSnapshots
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfig) GetMaxSnapshots() string`
+
+GetMaxSnapshots returns the MaxSnapshots field if non-nil, zero value otherwise.
+
+### GetMaxSnapshotsOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfig) GetMaxSnapshotsOk() (*string, bool)`
+
+GetMaxSnapshotsOk returns a tuple with the MaxSnapshots field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxSnapshots
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfig) SetMaxSnapshots(v string)`
+
+SetMaxSnapshots sets MaxSnapshots field to given value.
+
+### HasMaxSnapshots
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfig) HasMaxSnapshots() bool`
+
+HasMaxSnapshots returns a boolean if a field has been set.
 
 ### GetMaxVirtualServers
 

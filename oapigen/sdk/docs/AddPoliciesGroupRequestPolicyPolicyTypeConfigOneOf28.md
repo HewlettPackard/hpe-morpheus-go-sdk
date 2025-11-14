@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateUserType** | Pointer to **string** |  | [optional] 
-**CreateUser** | Pointer to **bool** |  | [optional] 
+**Strict** | Pointer to **bool** |  | [optional] 
+**Key** | Pointer to **string** |  | [optional] 
+**ValueListId** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -26,55 +28,105 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCreateUserType
+### GetStrict
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserType() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetStrict() bool`
 
-GetCreateUserType returns the CreateUserType field if non-nil, zero value otherwise.
+GetStrict returns the Strict field if non-nil, zero value otherwise.
 
-### GetCreateUserTypeOk
+### GetStrictOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserTypeOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetStrictOk() (*bool, bool)`
 
-GetCreateUserTypeOk returns a tuple with the CreateUserType field if it's non-nil, zero value otherwise
+GetStrictOk returns a tuple with the Strict field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreateUserType
+### SetStrict
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetCreateUserType(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetStrict(v bool)`
 
-SetCreateUserType sets CreateUserType field to given value.
+SetStrict sets Strict field to given value.
 
-### HasCreateUserType
+### HasStrict
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasCreateUserType() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasStrict() bool`
 
-HasCreateUserType returns a boolean if a field has been set.
+HasStrict returns a boolean if a field has been set.
 
-### GetCreateUser
+### GetKey
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUser() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetKey() string`
 
-GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
+GetKey returns the Key field if non-nil, zero value otherwise.
 
-### GetCreateUserOk
+### GetKeyOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetCreateUserOk() (*bool, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetKeyOk() (*string, bool)`
 
-GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
+GetKeyOk returns a tuple with the Key field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreateUser
+### SetKey
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetCreateUser(v bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetKey(v string)`
 
-SetCreateUser sets CreateUser field to given value.
+SetKey sets Key field to given value.
 
-### HasCreateUser
+### HasKey
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasCreateUser() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasKey() bool`
 
-HasCreateUser returns a boolean if a field has been set.
+HasKey returns a boolean if a field has been set.
+
+### GetValueListId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueListId() string`
+
+GetValueListId returns the ValueListId field if non-nil, zero value otherwise.
+
+### GetValueListIdOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueListIdOk() (*string, bool)`
+
+GetValueListIdOk returns a tuple with the ValueListId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueListId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetValueListId(v string)`
+
+SetValueListId sets ValueListId field to given value.
+
+### HasValueListId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasValueListId() bool`
+
+HasValueListId returns a boolean if a field has been set.
+
+### GetValue
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValue() string`
+
+GetValue returns the Value field if non-nil, zero value otherwise.
+
+### GetValueOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) GetValueOk() (*string, bool)`
+
+GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValue
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) SetValue(v string)`
+
+SetValue sets Value field to given value.
+
+### HasValue
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf28) HasValue() bool`
+
+HasValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

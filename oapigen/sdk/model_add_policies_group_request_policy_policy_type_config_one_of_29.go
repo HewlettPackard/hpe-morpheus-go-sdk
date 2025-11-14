@@ -18,9 +18,10 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 - User Group Creation
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 - User Creation
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 struct {
-	UserGroup            *string                `json:"userGroup,omitempty"`
+	CreateUserType       *string                `json:"createUserType,omitempty"`
+	CreateUser           *bool                  `json:"createUser,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,36 +44,68 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29WithDefaults() *AddP
 	return &this
 }
 
-// GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroup() string {
-	if o == nil || IsNil(o.UserGroup) {
+// GetCreateUserType returns the CreateUserType field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserType() string {
+	if o == nil || IsNil(o.CreateUserType) {
 		var ret string
 		return ret
 	}
-	return *o.UserGroup
+	return *o.CreateUserType
 }
 
-// GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
+// GetCreateUserTypeOk returns a tuple with the CreateUserType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.UserGroup) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.CreateUserType) {
 		return nil, false
 	}
-	return o.UserGroup, true
+	return o.CreateUserType, true
 }
 
-// IsSetUserGroup returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) IsSetUserGroup() bool {
-	if o != nil && !IsNil(o.UserGroup) {
+// IsSetCreateUserType returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) IsSetCreateUserType() bool {
+	if o != nil && !IsNil(o.CreateUserType) {
 		return true
 	}
 
 	return false
 }
 
-// SetUserGroup gets a reference to the given string and assigns it to the UserGroup field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetUserGroup(v string) {
-	o.UserGroup = &v
+// SetCreateUserType gets a reference to the given string and assigns it to the CreateUserType field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetCreateUserType(v string) {
+	o.CreateUserType = &v
+}
+
+// GetCreateUser returns the CreateUser field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUser() bool {
+	if o == nil || IsNil(o.CreateUser) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateUser
+}
+
+// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserOk() (*bool, bool) {
+	if o == nil || IsNil(o.CreateUser) {
+		return nil, false
+	}
+	return o.CreateUser, true
+}
+
+// IsSetCreateUser returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) IsSetCreateUser() bool {
+	if o != nil && !IsNil(o.CreateUser) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateUser gets a reference to the given bool and assigns it to the CreateUser field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetCreateUser(v bool) {
+	o.CreateUser = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) MarshalJSON() ([]byte, error) {
@@ -85,8 +118,11 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserGroup) {
-		toSerialize["userGroup"] = o.UserGroup
+	if !IsNil(o.CreateUserType) {
+		toSerialize["createUserType"] = o.CreateUserType
+	}
+	if !IsNil(o.CreateUser) {
+		toSerialize["createUser"] = o.CreateUser
 	}
 
 	for key, value := range o.AdditionalProperties {

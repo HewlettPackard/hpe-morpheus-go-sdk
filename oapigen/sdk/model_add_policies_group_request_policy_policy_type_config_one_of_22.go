@@ -18,12 +18,10 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 - Power Schedule
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 - Network Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 struct {
-	PowerScheduleType      *string                `json:"powerScheduleType,omitempty"`
-	PowerSchedule          *string                `json:"powerSchedule,omitempty"`
-	PowerScheduleHideFixed *bool                  `json:"powerScheduleHideFixed,omitempty"`
-	AdditionalProperties   map[string]interface{} `json:",remain"`
+	MaxNetworks          *string                `json:"maxNetworks,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22
@@ -45,100 +43,36 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22WithDefaults() *AddP
 	return &this
 }
 
-// GetPowerScheduleType returns the PowerScheduleType field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerScheduleType() string {
-	if o == nil || IsNil(o.PowerScheduleType) {
+// GetMaxNetworks returns the MaxNetworks field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetMaxNetworks() string {
+	if o == nil || IsNil(o.MaxNetworks) {
 		var ret string
 		return ret
 	}
-	return *o.PowerScheduleType
+	return *o.MaxNetworks
 }
 
-// GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field value if set, nil otherwise
+// GetMaxNetworksOk returns a tuple with the MaxNetworks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerScheduleTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerScheduleType) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetMaxNetworksOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxNetworks) {
 		return nil, false
 	}
-	return o.PowerScheduleType, true
+	return o.MaxNetworks, true
 }
 
-// IsSetPowerScheduleType returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) IsSetPowerScheduleType() bool {
-	if o != nil && !IsNil(o.PowerScheduleType) {
+// IsSetMaxNetworks returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) IsSetMaxNetworks() bool {
+	if o != nil && !IsNil(o.MaxNetworks) {
 		return true
 	}
 
 	return false
 }
 
-// SetPowerScheduleType gets a reference to the given string and assigns it to the PowerScheduleType field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) SetPowerScheduleType(v string) {
-	o.PowerScheduleType = &v
-}
-
-// GetPowerSchedule returns the PowerSchedule field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerSchedule() string {
-	if o == nil || IsNil(o.PowerSchedule) {
-		var ret string
-		return ret
-	}
-	return *o.PowerSchedule
-}
-
-// GetPowerScheduleOk returns a tuple with the PowerSchedule field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerScheduleOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerSchedule) {
-		return nil, false
-	}
-	return o.PowerSchedule, true
-}
-
-// IsSetPowerSchedule returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) IsSetPowerSchedule() bool {
-	if o != nil && !IsNil(o.PowerSchedule) {
-		return true
-	}
-
-	return false
-}
-
-// SetPowerSchedule gets a reference to the given string and assigns it to the PowerSchedule field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) SetPowerSchedule(v string) {
-	o.PowerSchedule = &v
-}
-
-// GetPowerScheduleHideFixed returns the PowerScheduleHideFixed field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerScheduleHideFixed() bool {
-	if o == nil || IsNil(o.PowerScheduleHideFixed) {
-		var ret bool
-		return ret
-	}
-	return *o.PowerScheduleHideFixed
-}
-
-// GetPowerScheduleHideFixedOk returns a tuple with the PowerScheduleHideFixed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) GetPowerScheduleHideFixedOk() (*bool, bool) {
-	if o == nil || IsNil(o.PowerScheduleHideFixed) {
-		return nil, false
-	}
-	return o.PowerScheduleHideFixed, true
-}
-
-// IsSetPowerScheduleHideFixed returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) IsSetPowerScheduleHideFixed() bool {
-	if o != nil && !IsNil(o.PowerScheduleHideFixed) {
-		return true
-	}
-
-	return false
-}
-
-// SetPowerScheduleHideFixed gets a reference to the given bool and assigns it to the PowerScheduleHideFixed field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) SetPowerScheduleHideFixed(v bool) {
-	o.PowerScheduleHideFixed = &v
+// SetMaxNetworks gets a reference to the given string and assigns it to the MaxNetworks field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) SetMaxNetworks(v string) {
+	o.MaxNetworks = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) MarshalJSON() ([]byte, error) {
@@ -151,14 +85,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PowerScheduleType) {
-		toSerialize["powerScheduleType"] = o.PowerScheduleType
-	}
-	if !IsNil(o.PowerSchedule) {
-		toSerialize["powerSchedule"] = o.PowerSchedule
-	}
-	if !IsNil(o.PowerScheduleHideFixed) {
-		toSerialize["powerScheduleHideFixed"] = o.PowerScheduleHideFixed
+	if !IsNil(o.MaxNetworks) {
+		toSerialize["maxNetworks"] = o.MaxNetworks
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -48,6 +48,7 @@ type AddPoliciesGroupRequestPolicyPolicyTypeConfig struct {
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3  *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30
+	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4  *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5  *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5
 	AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6  *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6
@@ -228,6 +229,13 @@ func AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3AsAddPoliciesGroupReques
 func AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30AsAddPoliciesGroupRequestPolicyPolicyTypeConfig(v *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) AddPoliciesGroupRequestPolicyPolicyTypeConfig {
 	return AddPoliciesGroupRequestPolicyPolicyTypeConfig{
 		AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30: v,
+	}
+}
+
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31AsAddPoliciesGroupRequestPolicyPolicyTypeConfig is a convenience function that returns AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 wrapped in AddPoliciesGroupRequestPolicyPolicyTypeConfig
+func AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31AsAddPoliciesGroupRequestPolicyPolicyTypeConfig(v *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31) AddPoliciesGroupRequestPolicyPolicyTypeConfig {
+	return AddPoliciesGroupRequestPolicyPolicyTypeConfig{
+		AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31: v,
 	}
 }
 
@@ -426,6 +434,12 @@ func (dst *AddPoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalMapstructure(
 
 	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30) {
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 = nil
+	}
+
+	mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31)
+
+	if IsEmpty(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31) {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 = nil
 	}
 
 	mapstructDecode(data, &dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4)
@@ -896,6 +910,23 @@ func (dst *AddPoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalJSON(data []b
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 = nil
 	}
 
+	// try to unmarshal data into AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31
+	err = newStrictDecoder(data).Decode(&dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31)
+	if err == nil {
+		jsonAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31, _ := json.Marshal(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31)
+		if string(jsonAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31) == "{}" { // empty struct
+			dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 = nil
+		} else {
+			if err = validator.Validate(dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31); err != nil {
+				dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 = nil
+			} else {
+				match++
+			}
+		}
+	} else {
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 = nil
+	}
+
 	// try to unmarshal data into AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4
 	err = newStrictDecoder(data).Decode(&dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4)
 	if err == nil {
@@ -1025,6 +1056,7 @@ func (dst *AddPoliciesGroupRequestPolicyPolicyTypeConfig) UnmarshalJSON(data []b
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 = nil
+		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 = nil
 		dst.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 = nil
@@ -1140,6 +1172,10 @@ func (src AddPoliciesGroupRequestPolicyPolicyTypeConfig) MarshalJSON() ([]byte, 
 
 	if src.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 != nil {
 		return json.Marshal(&src.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30)
+	}
+
+	if src.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 != nil {
+		return json.Marshal(&src.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31)
 	}
 
 	if src.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 != nil {
@@ -1274,6 +1310,10 @@ func (obj *AddPoliciesGroupRequestPolicyPolicyTypeConfig) GetActualInstance() in
 		return obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30
 	}
 
+	if obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 != nil {
+		return obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31
+	}
+
 	if obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 != nil {
 		return obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4
 	}
@@ -1402,6 +1442,10 @@ func (obj AddPoliciesGroupRequestPolicyPolicyTypeConfig) GetActualInstanceValue(
 
 	if obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30 != nil {
 		return *obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf30
+	}
+
+	if obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 != nil {
+		return *obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31
 	}
 
 	if obj.AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 != nil {

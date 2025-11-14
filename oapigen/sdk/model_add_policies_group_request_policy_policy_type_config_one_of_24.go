@@ -18,9 +18,9 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 - Instance Networks
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 - Router Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24 struct {
-	RequiredNetworks     []int64                `json:"requiredNetworks,omitempty"`
+	MaxRouters           *string                `json:"maxRouters,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,36 +43,36 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24WithDefaults() *AddP
 	return &this
 }
 
-// GetRequiredNetworks returns the RequiredNetworks field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetRequiredNetworks() []int64 {
-	if o == nil || IsNil(o.RequiredNetworks) {
-		var ret []int64
+// GetMaxRouters returns the MaxRouters field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRouters() string {
+	if o == nil || IsNil(o.MaxRouters) {
+		var ret string
 		return ret
 	}
-	return o.RequiredNetworks
+	return *o.MaxRouters
 }
 
-// GetRequiredNetworksOk returns a tuple with the RequiredNetworks field value if set, nil otherwise
+// GetMaxRoutersOk returns a tuple with the MaxRouters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetRequiredNetworksOk() ([]int64, bool) {
-	if o == nil || IsNil(o.RequiredNetworks) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRoutersOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxRouters) {
 		return nil, false
 	}
-	return o.RequiredNetworks, true
+	return o.MaxRouters, true
 }
 
-// IsSetRequiredNetworks returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) IsSetRequiredNetworks() bool {
-	if o != nil && !IsNil(o.RequiredNetworks) {
+// IsSetMaxRouters returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) IsSetMaxRouters() bool {
+	if o != nil && !IsNil(o.MaxRouters) {
 		return true
 	}
 
 	return false
 }
 
-// SetRequiredNetworks gets a reference to the given []int64 and assigns it to the RequiredNetworks field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetRequiredNetworks(v []int64) {
-	o.RequiredNetworks = v
+// SetMaxRouters gets a reference to the given string and assigns it to the MaxRouters field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetMaxRouters(v string) {
+	o.MaxRouters = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) MarshalJSON() ([]byte, error) {
@@ -85,8 +85,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RequiredNetworks) {
-		toSerialize["requiredNetworks"] = o.RequiredNetworks
+	if !IsNil(o.MaxRouters) {
+		toSerialize["maxRouters"] = o.MaxRouters
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **MaxPools** | **string** |  | 
 **MaxMemory** | **string** |  | 
 **MaxPoolMembers** | **string** |  | 
-**MaxSnapshots** | Pointer to **string** |  | [optional] 
+**MaxSnapshots** | **string** |  | 
 **MaxStorage** | **string** |  | 
 **MaxVirtualServers** | **string** |  | 
 **MaxVms** | **string** |  | 
@@ -81,7 +81,7 @@ Name | Type | Description | Notes
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfig
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfigurationMotd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxSnapshots string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfigurationMotd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfig instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfig object
 This constructor will assign default values to properties that have it defined,
@@ -990,11 +990,6 @@ and a boolean to check if the value has been set.
 
 SetMaxSnapshots sets MaxSnapshots field to given value.
 
-### HasMaxSnapshots
-
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasMaxSnapshots() bool`
-
-HasMaxSnapshots returns a boolean if a field has been set.
 
 ### GetMaxStorage
 

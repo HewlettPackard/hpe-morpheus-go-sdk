@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RequiredNetworks** | Pointer to **[]int64** |  | [optional] 
+**MaxRouters** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRequiredNetworks
+### GetMaxRouters
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetRequiredNetworks() []int64`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRouters() string`
 
-GetRequiredNetworks returns the RequiredNetworks field if non-nil, zero value otherwise.
+GetMaxRouters returns the MaxRouters field if non-nil, zero value otherwise.
 
-### GetRequiredNetworksOk
+### GetMaxRoutersOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetRequiredNetworksOk() (*[]int64, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) GetMaxRoutersOk() (*string, bool)`
 
-GetRequiredNetworksOk returns a tuple with the RequiredNetworks field if it's non-nil, zero value otherwise
+GetMaxRoutersOk returns a tuple with the MaxRouters field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRequiredNetworks
+### SetMaxRouters
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetRequiredNetworks(v []int64)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) SetMaxRouters(v string)`
 
-SetRequiredNetworks sets RequiredNetworks field to given value.
+SetMaxRouters sets MaxRouters field to given value.
 
-### HasRequiredNetworks
+### HasMaxRouters
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) HasRequiredNetworks() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf24) HasMaxRouters() bool`
 
-HasRequiredNetworks returns a boolean if a field has been set.
+HasMaxRouters returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

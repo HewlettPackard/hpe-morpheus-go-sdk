@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxSnapshots** | Pointer to **string** |  | [optional] 
+**MaxSnapshots** | **string** |  | 
 
 ## Methods
 
 ### NewMaxSnapshotsPolicyTypeConfiguration
 
-`func NewMaxSnapshotsPolicyTypeConfiguration() *MaxSnapshotsPolicyTypeConfiguration`
+`func NewMaxSnapshotsPolicyTypeConfiguration(maxSnapshots string, ) *MaxSnapshotsPolicyTypeConfiguration`
 
 NewMaxSnapshotsPolicyTypeConfiguration instantiates a new MaxSnapshotsPolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMaxSnapshots sets MaxSnapshots field to given value.
 
-### HasMaxSnapshots
-
-`func (o *MaxSnapshotsPolicyTypeConfiguration) HasMaxSnapshots() bool`
-
-HasMaxSnapshots returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

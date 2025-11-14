@@ -18,11 +18,19 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 - Storage Server Storage Quota
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 - Shutdown
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 struct {
-	StorageServerId      *string                `json:"storageServerId,omitempty"`
-	MaxStorage           *string                `json:"maxStorage,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ShutdownType                     *string                `json:"shutdownType,omitempty"`
+	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
+	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
+	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
+	ShutdownMessage                  *string                `json:"shutdownMessage,omitempty"`
+	ShutdownAutoRenew                *string                `json:"shutdownAutoRenew,omitempty"`
+	ShutdownAllowExtend              *string                `json:"shutdownAllowExtend,omitempty"`
+	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
+	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
+	AdditionalProperties             map[string]interface{} `json:",remain"`
 }
 
 type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26
@@ -33,6 +41,10 @@ type _AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 AddPoliciesGroupReque
 // will change when the set of required properties is changed
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26{}
+	var shutdownAutoRenew string = "off"
+	this.ShutdownAutoRenew = &shutdownAutoRenew
+	var shutdownAllowExtend string = "off"
+	this.ShutdownAllowExtend = &shutdownAllowExtend
 	return &this
 }
 
@@ -41,71 +53,331 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26() *AddPoliciesGroup
 // but it doesn't guarantee that properties required by API are set
 func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26WithDefaults() *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26 {
 	this := AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26{}
+	var shutdownAutoRenew string = "off"
+	this.ShutdownAutoRenew = &shutdownAutoRenew
+	var shutdownAllowExtend string = "off"
+	this.ShutdownAllowExtend = &shutdownAllowExtend
 	return &this
 }
 
-// GetStorageServerId returns the StorageServerId field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStorageServerId() string {
-	if o == nil || IsNil(o.StorageServerId) {
+// GetShutdownType returns the ShutdownType field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownType() string {
+	if o == nil || IsNil(o.ShutdownType) {
 		var ret string
 		return ret
 	}
-	return *o.StorageServerId
+	return *o.ShutdownType
 }
 
-// GetStorageServerIdOk returns a tuple with the StorageServerId field value if set, nil otherwise
+// GetShutdownTypeOk returns a tuple with the ShutdownType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetStorageServerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StorageServerId) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownType) {
 		return nil, false
 	}
-	return o.StorageServerId, true
+	return o.ShutdownType, true
 }
 
-// IsSetStorageServerId returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetStorageServerId() bool {
-	if o != nil && !IsNil(o.StorageServerId) {
+// IsSetShutdownType returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownType() bool {
+	if o != nil && !IsNil(o.ShutdownType) {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageServerId gets a reference to the given string and assigns it to the StorageServerId field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetStorageServerId(v string) {
-	o.StorageServerId = &v
+// SetShutdownType gets a reference to the given string and assigns it to the ShutdownType field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownType(v string) {
+	o.ShutdownType = &v
 }
 
-// GetMaxStorage returns the MaxStorage field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetMaxStorage() string {
-	if o == nil || IsNil(o.MaxStorage) {
+// GetShutdownAge returns the ShutdownAge field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAge() string {
+	if o == nil || IsNil(o.ShutdownAge) {
 		var ret string
 		return ret
 	}
-	return *o.MaxStorage
+	return *o.ShutdownAge
 }
 
-// GetMaxStorageOk returns a tuple with the MaxStorage field value if set, nil otherwise
+// GetShutdownAgeOk returns a tuple with the ShutdownAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetMaxStorageOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxStorage) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAgeOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownAge) {
 		return nil, false
 	}
-	return o.MaxStorage, true
+	return o.ShutdownAge, true
 }
 
-// IsSetMaxStorage returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetMaxStorage() bool {
-	if o != nil && !IsNil(o.MaxStorage) {
+// IsSetShutdownAge returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownAge() bool {
+	if o != nil && !IsNil(o.ShutdownAge) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxStorage gets a reference to the given string and assigns it to the MaxStorage field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetMaxStorage(v string) {
-	o.MaxStorage = &v
+// SetShutdownAge gets a reference to the given string and assigns it to the ShutdownAge field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownAge(v string) {
+	o.ShutdownAge = &v
+}
+
+// GetShutdownRenewal returns the ShutdownRenewal field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownRenewal() string {
+	if o == nil || IsNil(o.ShutdownRenewal) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownRenewal
+}
+
+// GetShutdownRenewalOk returns a tuple with the ShutdownRenewal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownRenewalOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownRenewal) {
+		return nil, false
+	}
+	return o.ShutdownRenewal, true
+}
+
+// IsSetShutdownRenewal returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownRenewal() bool {
+	if o != nil && !IsNil(o.ShutdownRenewal) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownRenewal gets a reference to the given string and assigns it to the ShutdownRenewal field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownRenewal(v string) {
+	o.ShutdownRenewal = &v
+}
+
+// GetShutdownNotify returns the ShutdownNotify field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownNotify() string {
+	if o == nil || IsNil(o.ShutdownNotify) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownNotify
+}
+
+// GetShutdownNotifyOk returns a tuple with the ShutdownNotify field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownNotifyOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownNotify) {
+		return nil, false
+	}
+	return o.ShutdownNotify, true
+}
+
+// IsSetShutdownNotify returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownNotify() bool {
+	if o != nil && !IsNil(o.ShutdownNotify) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownNotify gets a reference to the given string and assigns it to the ShutdownNotify field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownNotify(v string) {
+	o.ShutdownNotify = &v
+}
+
+// GetShutdownMessage returns the ShutdownMessage field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownMessage() string {
+	if o == nil || IsNil(o.ShutdownMessage) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownMessage
+}
+
+// GetShutdownMessageOk returns a tuple with the ShutdownMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownMessageOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownMessage) {
+		return nil, false
+	}
+	return o.ShutdownMessage, true
+}
+
+// IsSetShutdownMessage returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownMessage() bool {
+	if o != nil && !IsNil(o.ShutdownMessage) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownMessage gets a reference to the given string and assigns it to the ShutdownMessage field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownMessage(v string) {
+	o.ShutdownMessage = &v
+}
+
+// GetShutdownAutoRenew returns the ShutdownAutoRenew field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAutoRenew() string {
+	if o == nil || IsNil(o.ShutdownAutoRenew) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownAutoRenew
+}
+
+// GetShutdownAutoRenewOk returns a tuple with the ShutdownAutoRenew field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAutoRenewOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownAutoRenew) {
+		return nil, false
+	}
+	return o.ShutdownAutoRenew, true
+}
+
+// IsSetShutdownAutoRenew returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownAutoRenew() bool {
+	if o != nil && !IsNil(o.ShutdownAutoRenew) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownAutoRenew gets a reference to the given string and assigns it to the ShutdownAutoRenew field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownAutoRenew(v string) {
+	o.ShutdownAutoRenew = &v
+}
+
+// GetShutdownAllowExtend returns the ShutdownAllowExtend field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAllowExtend() string {
+	if o == nil || IsNil(o.ShutdownAllowExtend) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownAllowExtend
+}
+
+// GetShutdownAllowExtendOk returns a tuple with the ShutdownAllowExtend field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownAllowExtendOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownAllowExtend) {
+		return nil, false
+	}
+	return o.ShutdownAllowExtend, true
+}
+
+// IsSetShutdownAllowExtend returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownAllowExtend() bool {
+	if o != nil && !IsNil(o.ShutdownAllowExtend) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownAllowExtend gets a reference to the given string and assigns it to the ShutdownAllowExtend field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownAllowExtend(v string) {
+	o.ShutdownAllowExtend = &v
+}
+
+// GetShutdownExtensionsBeforeApproval returns the ShutdownExtensionsBeforeApproval field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownExtensionsBeforeApproval() string {
+	if o == nil || IsNil(o.ShutdownExtensionsBeforeApproval) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownExtensionsBeforeApproval
+}
+
+// GetShutdownExtensionsBeforeApprovalOk returns a tuple with the ShutdownExtensionsBeforeApproval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownExtensionsBeforeApprovalOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownExtensionsBeforeApproval) {
+		return nil, false
+	}
+	return o.ShutdownExtensionsBeforeApproval, true
+}
+
+// IsSetShutdownExtensionsBeforeApproval returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownExtensionsBeforeApproval() bool {
+	if o != nil && !IsNil(o.ShutdownExtensionsBeforeApproval) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownExtensionsBeforeApproval gets a reference to the given string and assigns it to the ShutdownExtensionsBeforeApproval field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownExtensionsBeforeApproval(v string) {
+	o.ShutdownExtensionsBeforeApproval = &v
+}
+
+// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetAccountIntegrationId() string {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		var ret string
+		return ret
+	}
+	return *o.AccountIntegrationId
+}
+
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetAccountIntegrationIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AccountIntegrationId) {
+		return nil, false
+	}
+	return o.AccountIntegrationId, true
+}
+
+// IsSetAccountIntegrationId returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetAccountIntegrationId() bool {
+	if o != nil && !IsNil(o.AccountIntegrationId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = &v
+}
+
+// GetShutdownHideFixed returns the ShutdownHideFixed field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownHideFixed() bool {
+	if o == nil || IsNil(o.ShutdownHideFixed) {
+		var ret bool
+		return ret
+	}
+	return *o.ShutdownHideFixed
+}
+
+// GetShutdownHideFixedOk returns a tuple with the ShutdownHideFixed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) GetShutdownHideFixedOk() (*bool, bool) {
+	if o == nil || IsNil(o.ShutdownHideFixed) {
+		return nil, false
+	}
+	return o.ShutdownHideFixed, true
+}
+
+// IsSetShutdownHideFixed returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) IsSetShutdownHideFixed() bool {
+	if o != nil && !IsNil(o.ShutdownHideFixed) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownHideFixed gets a reference to the given bool and assigns it to the ShutdownHideFixed field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) SetShutdownHideFixed(v bool) {
+	o.ShutdownHideFixed = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) MarshalJSON() ([]byte, error) {
@@ -118,11 +390,35 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf26) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StorageServerId) {
-		toSerialize["storageServerId"] = o.StorageServerId
+	if !IsNil(o.ShutdownType) {
+		toSerialize["shutdownType"] = o.ShutdownType
 	}
-	if !IsNil(o.MaxStorage) {
-		toSerialize["maxStorage"] = o.MaxStorage
+	if !IsNil(o.ShutdownAge) {
+		toSerialize["shutdownAge"] = o.ShutdownAge
+	}
+	if !IsNil(o.ShutdownRenewal) {
+		toSerialize["shutdownRenewal"] = o.ShutdownRenewal
+	}
+	if !IsNil(o.ShutdownNotify) {
+		toSerialize["shutdownNotify"] = o.ShutdownNotify
+	}
+	if !IsNil(o.ShutdownMessage) {
+		toSerialize["shutdownMessage"] = o.ShutdownMessage
+	}
+	if !IsNil(o.ShutdownAutoRenew) {
+		toSerialize["shutdownAutoRenew"] = o.ShutdownAutoRenew
+	}
+	if !IsNil(o.ShutdownAllowExtend) {
+		toSerialize["shutdownAllowExtend"] = o.ShutdownAllowExtend
+	}
+	if !IsNil(o.ShutdownExtensionsBeforeApproval) {
+		toSerialize["shutdownExtensionsBeforeApproval"] = o.ShutdownExtensionsBeforeApproval
+	}
+	if !IsNil(o.AccountIntegrationId) {
+		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
+	}
+	if !IsNil(o.ShutdownHideFixed) {
+		toSerialize["shutdownHideFixed"] = o.ShutdownHideFixed
 	}
 
 	for key, value := range o.AdditionalProperties {

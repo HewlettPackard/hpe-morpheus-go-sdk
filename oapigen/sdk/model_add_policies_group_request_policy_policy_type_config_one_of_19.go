@@ -18,9 +18,9 @@ import (
 // checks if the AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19{}
 
-// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 - Max VMs
+// AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 - Max Virtual Servers
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 struct {
-	MaxVms               *string                `json:"maxVms,omitempty"`
+	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,36 +43,36 @@ func NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19WithDefaults() *AddP
 	return &this
 }
 
-// GetMaxVms returns the MaxVms field value if set, zero value otherwise.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVms() string {
-	if o == nil || IsNil(o.MaxVms) {
+// GetMaxVirtualServers returns the MaxVirtualServers field value if set, zero value otherwise.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServers() string {
+	if o == nil || IsNil(o.MaxVirtualServers) {
 		var ret string
 		return ret
 	}
-	return *o.MaxVms
+	return *o.MaxVirtualServers
 }
 
-// GetMaxVmsOk returns a tuple with the MaxVms field value if set, nil otherwise
+// GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVmsOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxVms) {
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) GetMaxVirtualServersOk() (*string, bool) {
+	if o == nil || IsNil(o.MaxVirtualServers) {
 		return nil, false
 	}
-	return o.MaxVms, true
+	return o.MaxVirtualServers, true
 }
 
-// IsSetMaxVms returns a boolean if a field has been set.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) IsSetMaxVms() bool {
-	if o != nil && !IsNil(o.MaxVms) {
+// IsSetMaxVirtualServers returns a boolean if a field has been set.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) IsSetMaxVirtualServers() bool {
+	if o != nil && !IsNil(o.MaxVirtualServers) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxVms gets a reference to the given string and assigns it to the MaxVms field.
-func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) SetMaxVms(v string) {
-	o.MaxVms = &v
+// SetMaxVirtualServers gets a reference to the given string and assigns it to the MaxVirtualServers field.
+func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) SetMaxVirtualServers(v string) {
+	o.MaxVirtualServers = &v
 }
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) MarshalJSON() ([]byte, error) {
@@ -85,8 +85,8 @@ func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) MarshalJSON() ([]b
 
 func (o AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxVms) {
-		toSerialize["maxVms"] = o.MaxVms
+	if !IsNil(o.MaxVirtualServers) {
+		toSerialize["maxVirtualServers"] = o.MaxVirtualServers
 	}
 
 	for key, value := range o.AdditionalProperties {

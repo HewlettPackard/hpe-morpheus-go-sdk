@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVirtualServers** | Pointer to **string** |  | [optional] 
+**MaxStorage** | Pointer to **string** |  | [optional] 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
@@ -25,30 +26,55 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMaxVirtualServers
+### GetMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxVirtualServers() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxStorage() string`
 
-GetMaxVirtualServers returns the MaxVirtualServers field if non-nil, zero value otherwise.
+GetMaxStorage returns the MaxStorage field if non-nil, zero value otherwise.
 
-### GetMaxVirtualServersOk
+### GetMaxStorageOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxVirtualServersOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetMaxStorageOk() (*string, bool)`
 
-GetMaxVirtualServersOk returns a tuple with the MaxVirtualServers field if it's non-nil, zero value otherwise
+GetMaxStorageOk returns a tuple with the MaxStorage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxVirtualServers
+### SetMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetMaxVirtualServers(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetMaxStorage(v string)`
 
-SetMaxVirtualServers sets MaxVirtualServers field to given value.
+SetMaxStorage sets MaxStorage field to given value.
 
-### HasMaxVirtualServers
+### HasMaxStorage
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) HasMaxVirtualServers() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) HasMaxStorage() bool`
 
-HasMaxVirtualServers returns a boolean if a field has been set.
+HasMaxStorage returns a boolean if a field has been set.
+
+### GetExcludeContainers
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetExcludeContainers() string`
+
+GetExcludeContainers returns the ExcludeContainers field if non-nil, zero value otherwise.
+
+### GetExcludeContainersOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) GetExcludeContainersOk() (*string, bool)`
+
+GetExcludeContainersOk returns a tuple with the ExcludeContainers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeContainers
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) SetExcludeContainers(v string)`
+
+SetExcludeContainers sets ExcludeContainers field to given value.
+
+### HasExcludeContainers
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf18) HasExcludeContainers() bool`
+
+HasExcludeContainers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

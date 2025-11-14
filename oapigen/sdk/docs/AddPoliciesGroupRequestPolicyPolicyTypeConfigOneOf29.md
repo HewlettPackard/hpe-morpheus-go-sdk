@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | Pointer to **string** |  | [optional] 
+**CreateUserType** | Pointer to **string** |  | [optional] 
+**CreateUser** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +26,55 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserGroup
+### GetCreateUserType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroup() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserType() string`
 
-GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
+GetCreateUserType returns the CreateUserType field if non-nil, zero value otherwise.
 
-### GetUserGroupOk
+### GetCreateUserTypeOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetUserGroupOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserTypeOk() (*string, bool)`
 
-GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
+GetCreateUserTypeOk returns a tuple with the CreateUserType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserGroup
+### SetCreateUserType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetUserGroup(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetCreateUserType(v string)`
 
-SetUserGroup sets UserGroup field to given value.
+SetCreateUserType sets CreateUserType field to given value.
 
-### HasUserGroup
+### HasCreateUserType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) HasUserGroup() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) HasCreateUserType() bool`
 
-HasUserGroup returns a boolean if a field has been set.
+HasCreateUserType returns a boolean if a field has been set.
+
+### GetCreateUser
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUser() bool`
+
+GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
+
+### GetCreateUserOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) GetCreateUserOk() (*bool, bool)`
+
+GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateUser
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) SetCreateUser(v bool)`
+
+SetCreateUser sets CreateUser field to given value.
+
+### HasCreateUser
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf29) HasCreateUser() bool`
+
+HasCreateUser returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

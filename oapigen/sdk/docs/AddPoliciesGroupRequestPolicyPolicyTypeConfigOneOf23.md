@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxRouters** | Pointer to **string** |  | [optional] 
+**PowerScheduleType** | Pointer to **string** |  | [optional] 
+**PowerSchedule** | Pointer to **string** |  | [optional] 
+**PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -25,30 +27,80 @@ NewAddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23WithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMaxRouters
+### GetPowerScheduleType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetMaxRouters() string`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerScheduleType() string`
 
-GetMaxRouters returns the MaxRouters field if non-nil, zero value otherwise.
+GetPowerScheduleType returns the PowerScheduleType field if non-nil, zero value otherwise.
 
-### GetMaxRoutersOk
+### GetPowerScheduleTypeOk
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetMaxRoutersOk() (*string, bool)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerScheduleTypeOk() (*string, bool)`
 
-GetMaxRoutersOk returns a tuple with the MaxRouters field if it's non-nil, zero value otherwise
+GetPowerScheduleTypeOk returns a tuple with the PowerScheduleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxRouters
+### SetPowerScheduleType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) SetMaxRouters(v string)`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) SetPowerScheduleType(v string)`
 
-SetMaxRouters sets MaxRouters field to given value.
+SetPowerScheduleType sets PowerScheduleType field to given value.
 
-### HasMaxRouters
+### HasPowerScheduleType
 
-`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) HasMaxRouters() bool`
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) HasPowerScheduleType() bool`
 
-HasMaxRouters returns a boolean if a field has been set.
+HasPowerScheduleType returns a boolean if a field has been set.
+
+### GetPowerSchedule
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerSchedule() string`
+
+GetPowerSchedule returns the PowerSchedule field if non-nil, zero value otherwise.
+
+### GetPowerScheduleOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerScheduleOk() (*string, bool)`
+
+GetPowerScheduleOk returns a tuple with the PowerSchedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPowerSchedule
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) SetPowerSchedule(v string)`
+
+SetPowerSchedule sets PowerSchedule field to given value.
+
+### HasPowerSchedule
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) HasPowerSchedule() bool`
+
+HasPowerSchedule returns a boolean if a field has been set.
+
+### GetPowerScheduleHideFixed
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerScheduleHideFixed() bool`
+
+GetPowerScheduleHideFixed returns the PowerScheduleHideFixed field if non-nil, zero value otherwise.
+
+### GetPowerScheduleHideFixedOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) GetPowerScheduleHideFixedOk() (*bool, bool)`
+
+GetPowerScheduleHideFixedOk returns a tuple with the PowerScheduleHideFixed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPowerScheduleHideFixed
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) SetPowerScheduleHideFixed(v bool)`
+
+SetPowerScheduleHideFixed sets PowerScheduleHideFixed field to given value.
+
+### HasPowerScheduleHideFixed
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23) HasPowerScheduleHideFixed() bool`
+
+HasPowerScheduleHideFixed returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
