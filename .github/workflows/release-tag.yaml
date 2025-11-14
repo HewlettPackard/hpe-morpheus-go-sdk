@@ -24,3 +24,4 @@ jobs:
       uses: anothrNick/github-tag-action@4ed44965e0db8dab2b466a16da04aec3cc312fd8
       env:
         TAG_PREFIX: oapigen/v
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
