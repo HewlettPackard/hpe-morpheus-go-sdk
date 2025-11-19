@@ -24,7 +24,7 @@ type MessageOfTheDayPolicyTypeConfiguration2 struct {
 	Motd                 MessageOfTheDayPolicyTypeConfiguration2Motd         `json:"motd"`
 	MotdMessage          *string                                             `json:"motd.message,omitempty"`
 	MotdType             *string                                             `json:"motd.type,omitempty"`
-	MotdFullPage         *MessageOfTheDayPolicyTypeConfigurationMotdFullPage `json:"motd._fullPage,omitempty"`
+	MotdFullPage         *MessageOfTheDayPolicyTypeConfigurationMotdFullPage `json:"motd.fullPage,omitempty"`
 	MotdDate             *string                                             `json:"motd.date,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
@@ -265,7 +265,7 @@ func (o MessageOfTheDayPolicyTypeConfiguration2) ToMap() (map[string]interface{}
 		toSerialize["motd.type"] = o.MotdType
 	}
 	if !IsNil(o.MotdFullPage) {
-		toSerialize["motd._fullPage"] = o.MotdFullPage
+		toSerialize["motd.fullPage"] = o.MotdFullPage
 	}
 	if !IsNil(o.MotdDate) {
 		toSerialize["motd.date"] = o.MotdDate

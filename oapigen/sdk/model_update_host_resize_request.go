@@ -27,8 +27,8 @@ type UpdateHostResizeRequest struct {
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configurations. Include id to update an existing interface.
-	NetworkInterfaces    []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	NetworkInterfaces    []InstancesNetworkInterfaces `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _UpdateHostResizeRequest UpdateHostResizeRequest
@@ -183,9 +183,9 @@ func (o *UpdateHostResizeRequest) SetDeleteOriginalVolumes(v bool) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *UpdateHostResizeRequest) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner {
+func (o *UpdateHostResizeRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -193,7 +193,7 @@ func (o *UpdateHostResizeRequest) GetNetworkInterfaces() []AddCatalogItemTypeReq
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateHostResizeRequest) GetNetworkInterfacesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner, bool) {
+func (o *UpdateHostResizeRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -209,8 +209,8 @@ func (o *UpdateHostResizeRequest) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *UpdateHostResizeRequest) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
+func (o *UpdateHostResizeRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
 	o.NetworkInterfaces = v
 }
 

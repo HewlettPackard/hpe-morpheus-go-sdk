@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to [**UpdateHostResizeRequestServicePlanOptions**](UpdateHostResizeRequestServicePlanOptions.md) |  | [optional] 
 **Volumes** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner.md) | List of volumes with their new sizes. | [optional] 
 **DeleteOriginalVolumes** | Pointer to **bool** | Delete the original volumes after resizing. (Amazon only) | [optional] [default to false]
-**NetworkInterfaces** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner.md) | Key for network configurations. Include id to update an existing interface. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | Key for network configurations. Include id to update an existing interface. | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasDeleteOriginalVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *UpdateHostResizeRequest) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner`
+`func (o *UpdateHostResizeRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *UpdateHostResizeRequest) GetNetworkInterfacesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner, bool)`
+`func (o *UpdateHostResizeRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *UpdateHostResizeRequest) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner)`
+`func (o *UpdateHostResizeRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

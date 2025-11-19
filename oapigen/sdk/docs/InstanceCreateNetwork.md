@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Network** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork.md) |  | 
+**Network** | [**InstancesNetworkInterfacesNetwork**](InstancesNetworkInterfacesNetwork.md) |  | 
 **NetworkInterfaceTypeId** | Pointer to **int64** | The id of type of the network interface. | [optional] 
 **IpMode** | Pointer to **string** | The mode for determining ip address. Use &#39;static&#39; when specifying an ipAddress, otherwise &#39;dhcp&#39; is used. | [optional] [default to "dhcp"]
 **IpAddress** | Pointer to **string** | The ip address. Not applicable when using DHCP or IP Pools. | [optional] 
 **MacAddress** | Pointer to **string** | The MAC address. | [optional] 
 **Id** | Pointer to **int64** | The interface id. Applicable when resizing and you want to identify an interface to update that already exists. | [optional] 
-**NetworkInterfaces** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner.md) | The nested networkInterfaces can be used to define child virtual network intefaces. The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which types support this (&#x60;hasVirtualInvirtualInterfaces &#x3D; true&#x60; and list of available &#x60;virtualInterfaces&#x60; will be defined.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfacesNetworkInterfacesInner**](InstancesNetworkInterfacesNetworkInterfacesInner.md) | The nested networkInterfaces can be used to define child virtual network intefaces. The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which types support this (&#x60;hasVirtualInvirtualInterfaces &#x3D; true&#x60; and list of available &#x60;virtualInterfaces&#x60; will be defined.  | [optional] 
 
 ## Methods
 
 ### NewInstanceCreateNetwork
 
-`func NewInstanceCreateNetwork(network AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork, ) *InstanceCreateNetwork`
+`func NewInstanceCreateNetwork(network InstancesNetworkInterfacesNetwork, ) *InstanceCreateNetwork`
 
 NewInstanceCreateNetwork instantiates a new InstanceCreateNetwork object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetwork
 
-`func (o *InstanceCreateNetwork) GetNetwork() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork`
+`func (o *InstanceCreateNetwork) GetNetwork() InstancesNetworkInterfacesNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *InstanceCreateNetwork) GetNetworkOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork, bool)`
+`func (o *InstanceCreateNetwork) GetNetworkOk() (*InstancesNetworkInterfacesNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *InstanceCreateNetwork) SetNetwork(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetwork)`
+`func (o *InstanceCreateNetwork) SetNetwork(v InstancesNetworkInterfacesNetwork)`
 
 SetNetwork sets Network field to given value.
 
@@ -178,20 +178,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *InstanceCreateNetwork) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner`
+`func (o *InstanceCreateNetwork) GetNetworkInterfaces() []InstancesNetworkInterfacesNetworkInterfacesInner`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstanceCreateNetwork) GetNetworkInterfacesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner, bool)`
+`func (o *InstanceCreateNetwork) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfacesNetworkInterfacesInner, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstanceCreateNetwork) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInnerNetworkInterfacesInner)`
+`func (o *InstanceCreateNetwork) SetNetworkInterfaces(v []InstancesNetworkInterfacesNetworkInterfacesInner)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

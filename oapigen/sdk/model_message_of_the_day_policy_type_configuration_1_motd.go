@@ -23,7 +23,7 @@ type MessageOfTheDayPolicyTypeConfiguration1Motd struct {
 	Title                *string                `json:"title,omitempty"`
 	Message              *string                `json:"message,omitempty"`
 	Type                 *string                `json:"type,omitempty"`
-	FullPage             NullableBool           `json:"_fullPage,omitempty"`
+	FullPage             NullableBool           `json:"fullPage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -205,7 +205,7 @@ func (o MessageOfTheDayPolicyTypeConfiguration1Motd) ToMap() (map[string]interfa
 		toSerialize["type"] = o.Type
 	}
 	if o.FullPage.IsSet() {
-		toSerialize["_fullPage"] = o.FullPage.Get()
+		toSerialize["fullPage"] = o.FullPage.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

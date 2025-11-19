@@ -27,8 +27,8 @@ type ResizeInstanceRequest struct {
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API.
-	NetworkInterfaces    []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                                                      `json:",remain"`
+	NetworkInterfaces    []InstancesNetworkInterfaces `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _ResizeInstanceRequest ResizeInstanceRequest
@@ -183,9 +183,9 @@ func (o *ResizeInstanceRequest) SetDeleteOriginalVolumes(v bool) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner {
+func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -193,7 +193,7 @@ func (o *ResizeInstanceRequest) GetNetworkInterfaces() []AddCatalogItemTypeReque
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner, bool) {
+func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -209,8 +209,8 @@ func (o *ResizeInstanceRequest) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
+func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
 	o.NetworkInterfaces = v
 }
 

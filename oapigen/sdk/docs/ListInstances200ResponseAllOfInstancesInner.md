@@ -81,7 +81,7 @@ Name | Type | Description | Notes
 **InstanceThreshold** | Pointer to **map[string]interface{}** |  | [optional] 
 **IsBusy** | Pointer to **bool** |  | [optional] 
 **Apps** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ContainerDetails** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner**](ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner.md) |  | [optional] 
+**ContainerDetails** | Pointer to [**[]InstanceContainer**](InstanceContainer.md) |  | [optional] 
 
 ## Methods
 
@@ -2269,20 +2269,20 @@ HasApps returns a boolean if a field has been set.
 UnsetApps ensures that no value is present for Apps, not even an explicit nil
 ### GetContainerDetails
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []InstanceContainer`
 
 GetContainerDetails returns the ContainerDetails field if non-nil, zero value otherwise.
 
 ### GetContainerDetailsOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() (*[]ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() (*[]InstanceContainer, bool)`
 
 GetContainerDetailsOk returns a tuple with the ContainerDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerDetails
 
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetContainerDetails(v []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner)`
+`func (o *ListInstances200ResponseAllOfInstancesInner) SetContainerDetails(v []InstanceContainer)`
 
 SetContainerDetails sets ContainerDetails field to given value.
 

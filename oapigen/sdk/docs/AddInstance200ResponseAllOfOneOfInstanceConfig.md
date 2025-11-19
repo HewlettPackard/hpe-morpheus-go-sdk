@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
-**NoAgent** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState**](ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState.md) |  | [optional] 
+**NoAgent** | Pointer to [**InstanceContainerServerPowerState**](InstanceContainerServerPowerState.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
@@ -130,20 +130,20 @@ HasIsVpcSelectable returns a boolean if a field has been set.
 
 ### GetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() InstanceContainerServerPowerState`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*InstanceContainerServerPowerState, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v ListInstances200ResponseAllOfInstancesInnerContainerDetailsInnerServerPowerState)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v InstanceContainerServerPowerState)`
 
 SetNoAgent sets NoAgent field to given value.
 

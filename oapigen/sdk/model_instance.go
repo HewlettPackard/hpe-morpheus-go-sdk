@@ -98,7 +98,7 @@ type Instance struct {
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
 	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
-	ContainerDetails     []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner              `json:"containerDetails,omitempty"`
+	ContainerDetails     []InstanceContainer1                                                         `json:"containerDetails,omitempty"`
 	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
@@ -2820,9 +2820,9 @@ func (o *Instance) SetApps(v []map[string]interface{}) {
 }
 
 // GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
-func (o *Instance) GetContainerDetails() []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner {
+func (o *Instance) GetContainerDetails() []InstanceContainer1 {
 	if o == nil || IsNil(o.ContainerDetails) {
-		var ret []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner
+		var ret []InstanceContainer1
 		return ret
 	}
 	return o.ContainerDetails
@@ -2830,7 +2830,7 @@ func (o *Instance) GetContainerDetails() []AddInstance200ResponseAllOfOneOfInsta
 
 // GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Instance) GetContainerDetailsOk() ([]AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner, bool) {
+func (o *Instance) GetContainerDetailsOk() ([]InstanceContainer1, bool) {
 	if o == nil || IsNil(o.ContainerDetails) {
 		return nil, false
 	}
@@ -2846,8 +2846,8 @@ func (o *Instance) IsSetContainerDetails() bool {
 	return false
 }
 
-// SetContainerDetails gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner and assigns it to the ContainerDetails field.
-func (o *Instance) SetContainerDetails(v []AddInstance200ResponseAllOfOneOfInstanceContainerDetailsInner) {
+// SetContainerDetails gets a reference to the given []InstanceContainer1 and assigns it to the ContainerDetails field.
+func (o *Instance) SetContainerDetails(v []InstanceContainer1) {
 	o.ContainerDetails = v
 }
 

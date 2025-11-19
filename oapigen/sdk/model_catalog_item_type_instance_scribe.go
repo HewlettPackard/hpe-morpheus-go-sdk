@@ -43,7 +43,7 @@ type CatalogItemTypeInstanceScribe struct {
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces []InstancesNetworkInterfaces `json:"networkInterfaces,omitempty"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
@@ -472,9 +472,9 @@ func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []AddCatalogItemType
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner {
+func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetworkInterfaces {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -482,7 +482,7 @@ func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []AddCatalogItemT
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner, bool) {
+func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -498,8 +498,8 @@ func (o *CatalogItemTypeInstanceScribe) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
+func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
 	o.NetworkInterfaces = v
 }
 

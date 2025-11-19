@@ -19552,6 +19552,7 @@ paths:
                                 type: object
                                 required: &ref_311
                                   - network
+                                title: Instances Network Interfaces
                                 properties: &ref_312
                                   network:
                                     type: object
@@ -19561,6 +19562,13 @@ paths:
                                       id:
                                         type: string
                                         description: id of the network to be used. A network group can be specified instead by prefixing its ID with `networkGroup-`.
+                                      pool:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                            format: int64
+                                            description: id of the ip pool to be used with this network
                                   networkInterfaceTypeId:
                                     type: integer
                                     format: int64
@@ -19584,6 +19592,7 @@ paths:
                                     description: The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
                                   networkInterfaces:
                                     type: array
+                                    title: Instances Child Virtual Network Interfaces
                                     description: |
                                       The nested networkInterfaces can be used to define child virtual network intefaces.
                                       The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
@@ -19600,6 +19609,13 @@ paths:
                                             id:
                                               type: string
                                               description: id of the network to be used. A network group can be specified instead by prefixing its ID with `networkGroup-`.
+                                            pool:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                  description: id of the ip pool to be used with this network
                                         networkInterfaceTypeId:
                                           type: integer
                                           format: int64
@@ -75180,6 +75196,7 @@ paths:
                                 - 'null'
                               items:
                                 additionalProperties: true
+                                title: Instance Container
                                 properties:
                                   id:
                                     type: integer
@@ -75231,6 +75248,7 @@ paths:
                                         type: string
                                   server:
                                     additionalProperties: true
+                                    title: Instance Container Server
                                     properties:
                                       id:
                                         type: integer
@@ -75474,6 +75492,68 @@ paths:
                                               type:
                                                 - string
                                                 - 'null'
+                                      interfaces:
+                                        type: array
+                                        title: Instance Container Server Interfaces
+                                        items:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: integer
+                                              format: int64
+                                            name:
+                                              type: string
+                                            uniqueId:
+                                              type: string
+                                            publicIpAddress:
+                                              type: string
+                                            ipAddress:
+                                              type: string
+                                            dhcp:
+                                              type: boolean
+                                            active:
+                                              type: boolean
+                                            poolAssigned:
+                                              type: boolean
+                                            primaryInterface:
+                                              type: boolean
+                                            network:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
+                                            networkGroup:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
+                                            networkPool:
+                                              type: integer
+                                              format: int64
+                                            ipMode:
+                                              type: string
+                                              enum:
+                                                - dhcp
+                                                - static
+                                            macAddress:
+                                              type: string
+                                            interfaces:
+                                              type: array
+                                              title: Instance Container Server Instances Inner
+                                              items:
+                                                type: object
+                                                properties:
+                                                  id:
+                                                    type: integer
+                                                    format: int64
+                                                  name:
+                                                    type: string
                                   cloud:
                                     additionalProperties: true
                                     properties:
@@ -76309,6 +76389,7 @@ paths:
                   items:
                     type: object
                     required: *ref_311
+                    title: Instances Network Interfaces
                     properties: *ref_312
                 config:
                   anyOf:
@@ -77646,9 +77727,9 @@ paths:
                                 internalId: null
                                 externalId: null
                                 uniqueId: morpheus-nic-51714-749153-0
-                                publicIpAddress: null
+                                publicIpAddress: 10.0.0.0
                                 publicIpv6Address: null
-                                ipAddress: null
+                                ipAddress: 10.0.0.0
                                 ipv6Address: null
                                 ipSubnet: null
                                 ipv6Subnet: null
@@ -77665,11 +77746,12 @@ paths:
                                   id: 2
                                   name: Demo Preferred
                                 networkPosition: null
-                                networkPool: null
+                                networkPool: 1
                                 networkDomain: null
                                 type: null
-                                ipMode: null
-                                macAddress: null
+                                ipMode: dhcp
+                                macAddress: 52:54:00:de:a6:85
+                                interfaces: []
                             labels: []
                             tags: []
                             enabled: true
@@ -80613,6 +80695,7 @@ paths:
                   items:
                     type: object
                     required: *ref_311
+                    title: Instances Network Interfaces
                     properties: *ref_312
             examples:
               Instance Resize:
@@ -120722,7 +120805,7 @@ paths:
                                           type: string
                                         type:
                                           type: string
-                                        _fullPage:
+                                        fullPage:
                                           oneOf:
                                             - type: string
                                               enum:
@@ -120734,7 +120817,7 @@ paths:
                                       type: string
                                     motd.type:
                                       type: string
-                                    motd._fullPage:
+                                    motd.fullPage:
                                       oneOf:
                                         - type: string
                                           enum:
@@ -121257,10 +121340,10 @@ paths:
                             title: ''
                             message: knlghsn
                             type: info
-                            _fullPage: ''
+                            fullPage: ''
                           motd.message: knlghsn
                           motd.type: info
-                          motd._fullPage: ''
+                          motd.fullPage: ''
                           motd.date: '2022-08-26 15:53:26'
                         enabled: false
                         owner:
@@ -121993,7 +122076,7 @@ paths:
                                   type: string
                                 type:
                                   type: string
-                                _fullPage:
+                                fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -122001,7 +122084,7 @@ paths:
                               type: string
                             motd.type:
                               type: string
-                            motd._fullPage:
+                            motd.fullPage:
                               type:
                                 - boolean
                                 - 'null'
@@ -122777,10 +122860,10 @@ paths:
                           title: ''
                           message: knlghsn
                           type: info
-                          _fullPage: ''
+                          fullPage: ''
                         motd.message: knlghsn
                         motd.type: info
-                        motd._fullPage: ''
+                        motd.fullPage: ''
                         motd.date: '2022-08-26 15:53:26'
                       enabled: false
                       owner:
@@ -123663,10 +123746,10 @@ paths:
                           title: ''
                           message: knlghsn
                           type: info
-                          _fullPage: ''
+                          fullPage: ''
                         motd.message: knlghsn
                         motd.type: info
-                        motd._fullPage: ''
+                        motd.fullPage: ''
                         motd.date: '2022-08-26 15:53:26'
                       enabled: false
                       owner:
@@ -124223,7 +124306,7 @@ paths:
                                   type: string
                                 type:
                                   type: string
-                                _fullPage:
+                                fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -124231,7 +124314,7 @@ paths:
                               type: string
                             motd.type:
                               type: string
-                            motd._fullPage:
+                            motd.fullPage:
                               type:
                                 - boolean
                                 - 'null'
@@ -124925,7 +125008,7 @@ paths:
                                       type: string
                                     type:
                                       type: string
-                                    _fullPage:
+                                    fullPage:
                                       type:
                                         - boolean
                                         - 'null'
@@ -124933,7 +125016,7 @@ paths:
                                   type: string
                                 motd.type:
                                   type: string
-                                motd._fullPage:
+                                motd.fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -125637,7 +125720,7 @@ paths:
                                       type: string
                                     type:
                                       type: string
-                                    _fullPage:
+                                    fullPage:
                                       type:
                                         - boolean
                                         - 'null'
@@ -125645,7 +125728,7 @@ paths:
                                   type: string
                                 motd.type:
                                   type: string
-                                motd._fullPage:
+                                motd.fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -126319,7 +126402,7 @@ paths:
                                       type: string
                                     type:
                                       type: string
-                                    _fullPage:
+                                    fullPage:
                                       type:
                                         - boolean
                                         - 'null'
@@ -126327,7 +126410,7 @@ paths:
                                   type: string
                                 motd.type:
                                   type: string
-                                motd._fullPage:
+                                motd.fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -127031,7 +127114,7 @@ paths:
                                       type: string
                                     type:
                                       type: string
-                                    _fullPage:
+                                    fullPage:
                                       type:
                                         - boolean
                                         - 'null'
@@ -127039,7 +127122,7 @@ paths:
                                   type: string
                                 motd.type:
                                   type: string
-                                motd._fullPage:
+                                motd.fullPage:
                                   type:
                                     - boolean
                                     - 'null'
@@ -146856,6 +146939,7 @@ paths:
                   items:
                     type: object
                     required: *ref_311
+                    title: Instances Network Interfaces
                     properties: *ref_312
             examples:
               Host Request:
@@ -181657,6 +181741,7 @@ components:
     instanceCreateNetwork:
       type: object
       required: *ref_311
+      title: Instances Network Interfaces
       properties: *ref_312
     catalogItemTypeInstanceScribe:
       type: object

@@ -36,8 +36,8 @@ type InstanceCreate struct {
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
 	Volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner `json:"volumes,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
-	Config            AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig                   `json:"config"`
+	NetworkInterfaces []InstancesNetworkInterfaces                              `json:"networkInterfaces,omitempty"`
+	Config            AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig `json:"config"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
@@ -332,9 +332,9 @@ func (o *InstanceCreate) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemType
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstanceCreate) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner {
+func (o *InstanceCreate) GetNetworkInterfaces() []InstancesNetworkInterfaces {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner
+		var ret []InstancesNetworkInterfaces
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -342,7 +342,7 @@ func (o *InstanceCreate) GetNetworkInterfaces() []AddCatalogItemTypeRequestCatal
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreate) GetNetworkInterfacesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner, bool) {
+func (o *InstanceCreate) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -358,8 +358,8 @@ func (o *InstanceCreate) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
-func (o *InstanceCreate) SetNetworkInterfaces(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigNetworkInterfacesInner) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
+func (o *InstanceCreate) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
 	o.NetworkInterfaces = v
 }
 

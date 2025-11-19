@@ -98,7 +98,7 @@ type ListInstances200ResponseAllOfInstancesInner struct {
 	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
 	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
 	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
-	ContainerDetails     []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner           `json:"containerDetails,omitempty"`
+	ContainerDetails     []InstanceContainer                                                          `json:"containerDetails,omitempty"`
 	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
@@ -2820,9 +2820,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetApps(v []map[string]int
 }
 
 // GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner {
+func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []InstanceContainer {
 	if o == nil || IsNil(o.ContainerDetails) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner
+		var ret []InstanceContainer
 		return ret
 	}
 	return o.ContainerDetails
@@ -2830,7 +2830,7 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []Li
 
 // GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() ([]ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() ([]InstanceContainer, bool) {
 	if o == nil || IsNil(o.ContainerDetails) {
 		return nil, false
 	}
@@ -2846,8 +2846,8 @@ func (o *ListInstances200ResponseAllOfInstancesInner) IsSetContainerDetails() bo
 	return false
 }
 
-// SetContainerDetails gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner and assigns it to the ContainerDetails field.
-func (o *ListInstances200ResponseAllOfInstancesInner) SetContainerDetails(v []ListInstances200ResponseAllOfInstancesInnerContainerDetailsInner) {
+// SetContainerDetails gets a reference to the given []InstanceContainer and assigns it to the ContainerDetails field.
+func (o *ListInstances200ResponseAllOfInstancesInner) SetContainerDetails(v []InstanceContainer) {
 	o.ContainerDetails = v
 }
 
