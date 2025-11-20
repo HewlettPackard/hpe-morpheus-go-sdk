@@ -18,9 +18,12 @@ import (
 // checks if the ApprovePolicyTypeConfiguration type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ApprovePolicyTypeConfiguration{}
 
-// ApprovePolicyTypeConfiguration - Approve Delete - Approve Provisiong - Approve Reconfigure
+// ApprovePolicyTypeConfiguration - Approve Delete - Approve Provision - Approve Reconfigure
 type ApprovePolicyTypeConfiguration struct {
-	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	AccountIntegrationId string                 `json:"accountIntegrationId"`
+	WorkflowId           *string                `json:"workflowId,omitempty"`
+	FlowId               *string                `json:"flowId,omitempty"`
+	WorkflowType         *string                `json:"workflowType,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -30,8 +33,9 @@ type _ApprovePolicyTypeConfiguration ApprovePolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApprovePolicyTypeConfiguration() *ApprovePolicyTypeConfiguration {
+func NewApprovePolicyTypeConfiguration(accountIntegrationId string) *ApprovePolicyTypeConfiguration {
 	this := ApprovePolicyTypeConfiguration{}
+	this.AccountIntegrationId = accountIntegrationId
 	return &this
 }
 
@@ -43,36 +47,124 @@ func NewApprovePolicyTypeConfigurationWithDefaults() *ApprovePolicyTypeConfigura
 	return &this
 }
 
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
+// GetAccountIntegrationId returns the AccountIntegrationId field value
 func (o *ApprovePolicyTypeConfiguration) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.AccountIntegrationId
+
+	return o.AccountIntegrationId
 }
 
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
+// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value
 // and a boolean to check if the value has been set.
 func (o *ApprovePolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AccountIntegrationId, true
+	return &o.AccountIntegrationId, true
 }
 
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *ApprovePolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
+// SetAccountIntegrationId sets field value
+func (o *ApprovePolicyTypeConfiguration) SetAccountIntegrationId(v string) {
+	o.AccountIntegrationId = v
+}
+
+// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
+func (o *ApprovePolicyTypeConfiguration) GetWorkflowId() string {
+	if o == nil || IsNil(o.WorkflowId) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowId
+}
+
+// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApprovePolicyTypeConfiguration) GetWorkflowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.WorkflowId) {
+		return nil, false
+	}
+	return o.WorkflowId, true
+}
+
+// IsSetWorkflowId returns a boolean if a field has been set.
+func (o *ApprovePolicyTypeConfiguration) IsSetWorkflowId() bool {
+	if o != nil && !IsNil(o.WorkflowId) {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *ApprovePolicyTypeConfiguration) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
+// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
+func (o *ApprovePolicyTypeConfiguration) SetWorkflowId(v string) {
+	o.WorkflowId = &v
+}
+
+// GetFlowId returns the FlowId field value if set, zero value otherwise.
+func (o *ApprovePolicyTypeConfiguration) GetFlowId() string {
+	if o == nil || IsNil(o.FlowId) {
+		var ret string
+		return ret
+	}
+	return *o.FlowId
+}
+
+// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApprovePolicyTypeConfiguration) GetFlowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.FlowId) {
+		return nil, false
+	}
+	return o.FlowId, true
+}
+
+// IsSetFlowId returns a boolean if a field has been set.
+func (o *ApprovePolicyTypeConfiguration) IsSetFlowId() bool {
+	if o != nil && !IsNil(o.FlowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
+func (o *ApprovePolicyTypeConfiguration) SetFlowId(v string) {
+	o.FlowId = &v
+}
+
+// GetWorkflowType returns the WorkflowType field value if set, zero value otherwise.
+func (o *ApprovePolicyTypeConfiguration) GetWorkflowType() string {
+	if o == nil || IsNil(o.WorkflowType) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowType
+}
+
+// GetWorkflowTypeOk returns a tuple with the WorkflowType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApprovePolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.WorkflowType) {
+		return nil, false
+	}
+	return o.WorkflowType, true
+}
+
+// IsSetWorkflowType returns a boolean if a field has been set.
+func (o *ApprovePolicyTypeConfiguration) IsSetWorkflowType() bool {
+	if o != nil && !IsNil(o.WorkflowType) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
+func (o *ApprovePolicyTypeConfiguration) SetWorkflowType(v string) {
+	o.WorkflowType = &v
 }
 
 func (o ApprovePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
@@ -85,8 +177,15 @@ func (o ApprovePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o ApprovePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccountIntegrationId) {
-		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
+	toSerialize["accountIntegrationId"] = o.AccountIntegrationId
+	if !IsNil(o.WorkflowId) {
+		toSerialize["workflowId"] = o.WorkflowId
+	}
+	if !IsNil(o.FlowId) {
+		toSerialize["flowId"] = o.FlowId
+	}
+	if !IsNil(o.WorkflowType) {
+		toSerialize["workflowType"] = o.WorkflowType
 	}
 
 	for key, value := range o.AdditionalProperties {

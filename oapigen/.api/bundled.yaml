@@ -120513,12 +120513,20 @@ paths:
                                 - type: object
                                   title: Approve Policy Type Configuration
                                   additionalProperties: false
+                                  required:
+                                    - accountIntegrationId
                                   description: |
                                     - Approve Delete
-                                    - Approve Provisiong
+                                    - Approve Provision
                                     - Approve Reconfigure
                                   properties:
                                     accountIntegrationId:
+                                      type: string
+                                    workflowId:
+                                      type: string
+                                    flowId:
+                                      type: string
+                                    workflowType:
                                       type: string
                                 - type: object
                                   title: Backup Creation Policy Type Configuration
@@ -120532,8 +120540,6 @@ paths:
                                       type: string
                                     createBackup:
                                       type: boolean
-                                    accountIntegrationId:
-                                      type: string
                                 - type: object
                                   title: Backup Targets Policy Type Configuration
                                   additionalProperties: false
@@ -120641,6 +120647,12 @@ paths:
                                     lifecycleExtensionsBeforeApproval:
                                       type: string
                                     accountIntegrationId:
+                                      type: string
+                                    lifecycleWorkflowId:
+                                      type: string
+                                    flowId:
+                                      type: string
+                                    workflowType:
                                       type: string
                                     lifecycleHideFixed:
                                       type: boolean
@@ -120906,6 +120918,12 @@ paths:
                                       type: string
                                     shutdownHideFixed:
                                       type: boolean
+                                    shutdownWorkflowId:
+                                      type: string
+                                    flowId:
+                                      type: string
+                                    workflowType:
+                                      type: string
                                 - type: object
                                   title: Storage Server Storage Quota Policy Type Configuration
                                   additionalProperties: false
@@ -121825,10 +121843,16 @@ paths:
                           description: |
                             Configuration settings for the following policy types:
                             - Approve Delete
-                            - Approve Provisiong
+                            - Approve Provision
                             - Approve Reconfigure
                           properties:
                             accountIntegrationId:
+                              type: string
+                            workflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
                               type: string
                         - type: object
                           title: Backup Creation Policy Type Configuration
@@ -121931,6 +121955,12 @@ paths:
                               type: string
                             lifecycleHideFixed:
                               type: boolean
+                            lifecycleWorkflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
+                              type: string
                         - type: object
                           title: File Share Storage Quota Policy Type Configuration
                           description: |
@@ -122160,6 +122190,12 @@ paths:
                               type: string
                             shutdownHideFixed:
                               type: boolean
+                            shutdownWorkflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
+                              type: string
                         - type: object
                           title: Storage Server Storage Quota Policy Type Configuration
                           description: |
@@ -124058,10 +124094,16 @@ paths:
                           description: |
                             Configuration settings for the following policy types:
                             - Approve Delete
-                            - Approve Provisiong
+                            - Approve Provision
                             - Approve Reconfigure
                           properties:
                             accountIntegrationId:
+                              type: string
+                            workflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
                               type: string
                         - type: object
                           title: Backup Creation Policy Type Configuration
@@ -124164,6 +124206,12 @@ paths:
                               type: string
                             lifecycleHideFixed:
                               type: boolean
+                            lifecycleWorkflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
+                              type: string
                         - type: object
                           title: File Share Storage Quota Policy Type Configuration
                           description: |
@@ -124390,6 +124438,12 @@ paths:
                               type: string
                             shutdownHideFixed:
                               type: boolean
+                            shutdownWorkflowId:
+                              type: string
+                            flowId:
+                              type: string
+                            workflowType:
+                              type: string
                         - type: object
                           title: Storage Server Storage Quota Policy Type Configuration
                           description: |
@@ -124804,10 +124858,16 @@ paths:
                             - type: object
                               description: |
                                 - Approve Delete
-                                - Approve Provisiong
+                                - Approve Provision
                                 - Approve Reconfigure
                               properties:
                                 accountIntegrationId:
+                                  type: string
+                                workflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
                                   type: string
                             - type: object
                               description: |
@@ -124896,6 +124956,12 @@ paths:
                                   type: string
                                 lifecycleHideFixed:
                                   type: boolean
+                                lifecycleWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - File Share Storage Quota
@@ -125081,6 +125147,12 @@ paths:
                                   type: string
                                 shutdownHideFixed:
                                   type: boolean
+                                shutdownWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - Storage Server Storage Quota
@@ -125522,10 +125594,16 @@ paths:
                             - type: object
                               description: |
                                 - Approve Delete
-                                - Approve Provisiong
+                                - Approve Provision
                                 - Approve Reconfigure
                               properties:
                                 accountIntegrationId:
+                                  type: string
+                                workflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
                                   type: string
                             - type: object
                               description: |
@@ -125614,6 +125692,12 @@ paths:
                                   type: string
                                 lifecycleHideFixed:
                                   type: boolean
+                                lifecycleWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - File Share Storage Quota
@@ -125793,6 +125877,12 @@ paths:
                                   type: string
                                 shutdownHideFixed:
                                   type: boolean
+                                shutdownWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - Storage Server Storage Quota
@@ -126198,10 +126288,16 @@ paths:
                             - type: object
                               description: |
                                 - Approve Delete
-                                - Approve Provisiong
+                                - Approve Provision
                                 - Approve Reconfigure
                               properties:
                                 accountIntegrationId:
+                                  type: string
+                                workflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
                                   type: string
                             - type: object
                               description: |
@@ -126290,6 +126386,12 @@ paths:
                                   type: string
                                 lifecycleHideFixed:
                                   type: boolean
+                                lifecycleWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - File Share Storage Quota
@@ -126475,6 +126577,12 @@ paths:
                                   type: string
                                 shutdownHideFixed:
                                   type: boolean
+                                shutdownWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - Storage Server Storage Quota
@@ -126916,10 +127024,16 @@ paths:
                             - type: object
                               description: |
                                 - Approve Delete
-                                - Approve Provisiong
+                                - Approve Provision
                                 - Approve Reconfigure
                               properties:
                                 accountIntegrationId:
+                                  type: string
+                                workflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
                                   type: string
                             - type: object
                               description: |
@@ -127008,6 +127122,12 @@ paths:
                                   type: string
                                 lifecycleHideFixed:
                                   type: boolean
+                                lifecycleWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - File Share Storage Quota
@@ -127187,6 +127307,12 @@ paths:
                                   type: string
                                 shutdownHideFixed:
                                   type: boolean
+                                shutdownWorkflowId:
+                                  type: string
+                                flowId:
+                                  type: string
+                                workflowType:
+                                  type: string
                             - type: object
                               description: |
                                 - Storage Server Storage Quota

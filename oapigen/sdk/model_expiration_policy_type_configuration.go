@@ -29,6 +29,9 @@ type ExpirationPolicyTypeConfiguration struct {
 	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
 	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
+	LifecycleWorkflowId               *string                `json:"lifecycleWorkflowId,omitempty"`
+	FlowId                            *string                `json:"flowId,omitempty"`
+	WorkflowType                      *string                `json:"workflowType,omitempty"`
 	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
 	AdditionalProperties              map[string]interface{} `json:",remain"`
 }
@@ -341,6 +344,102 @@ func (o *ExpirationPolicyTypeConfiguration) SetAccountIntegrationId(v string) {
 	o.AccountIntegrationId = &v
 }
 
+// GetLifecycleWorkflowId returns the LifecycleWorkflowId field value if set, zero value otherwise.
+func (o *ExpirationPolicyTypeConfiguration) GetLifecycleWorkflowId() string {
+	if o == nil || IsNil(o.LifecycleWorkflowId) {
+		var ret string
+		return ret
+	}
+	return *o.LifecycleWorkflowId
+}
+
+// GetLifecycleWorkflowIdOk returns a tuple with the LifecycleWorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExpirationPolicyTypeConfiguration) GetLifecycleWorkflowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.LifecycleWorkflowId) {
+		return nil, false
+	}
+	return o.LifecycleWorkflowId, true
+}
+
+// IsSetLifecycleWorkflowId returns a boolean if a field has been set.
+func (o *ExpirationPolicyTypeConfiguration) IsSetLifecycleWorkflowId() bool {
+	if o != nil && !IsNil(o.LifecycleWorkflowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLifecycleWorkflowId gets a reference to the given string and assigns it to the LifecycleWorkflowId field.
+func (o *ExpirationPolicyTypeConfiguration) SetLifecycleWorkflowId(v string) {
+	o.LifecycleWorkflowId = &v
+}
+
+// GetFlowId returns the FlowId field value if set, zero value otherwise.
+func (o *ExpirationPolicyTypeConfiguration) GetFlowId() string {
+	if o == nil || IsNil(o.FlowId) {
+		var ret string
+		return ret
+	}
+	return *o.FlowId
+}
+
+// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExpirationPolicyTypeConfiguration) GetFlowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.FlowId) {
+		return nil, false
+	}
+	return o.FlowId, true
+}
+
+// IsSetFlowId returns a boolean if a field has been set.
+func (o *ExpirationPolicyTypeConfiguration) IsSetFlowId() bool {
+	if o != nil && !IsNil(o.FlowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
+func (o *ExpirationPolicyTypeConfiguration) SetFlowId(v string) {
+	o.FlowId = &v
+}
+
+// GetWorkflowType returns the WorkflowType field value if set, zero value otherwise.
+func (o *ExpirationPolicyTypeConfiguration) GetWorkflowType() string {
+	if o == nil || IsNil(o.WorkflowType) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowType
+}
+
+// GetWorkflowTypeOk returns a tuple with the WorkflowType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExpirationPolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.WorkflowType) {
+		return nil, false
+	}
+	return o.WorkflowType, true
+}
+
+// IsSetWorkflowType returns a boolean if a field has been set.
+func (o *ExpirationPolicyTypeConfiguration) IsSetWorkflowType() bool {
+	if o != nil && !IsNil(o.WorkflowType) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
+func (o *ExpirationPolicyTypeConfiguration) SetWorkflowType(v string) {
+	o.WorkflowType = &v
+}
+
 // GetLifecycleHideFixed returns the LifecycleHideFixed field value if set, zero value otherwise.
 func (o *ExpirationPolicyTypeConfiguration) GetLifecycleHideFixed() bool {
 	if o == nil || IsNil(o.LifecycleHideFixed) {
@@ -407,6 +506,15 @@ func (o ExpirationPolicyTypeConfiguration) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.AccountIntegrationId) {
 		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
+	}
+	if !IsNil(o.LifecycleWorkflowId) {
+		toSerialize["lifecycleWorkflowId"] = o.LifecycleWorkflowId
+	}
+	if !IsNil(o.FlowId) {
+		toSerialize["flowId"] = o.FlowId
+	}
+	if !IsNil(o.WorkflowType) {
+		toSerialize["workflowType"] = o.WorkflowType
 	}
 	if !IsNil(o.LifecycleHideFixed) {
 		toSerialize["lifecycleHideFixed"] = o.LifecycleHideFixed

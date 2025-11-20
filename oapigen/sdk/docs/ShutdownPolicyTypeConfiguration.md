@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **ShutdownExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **AccountIntegrationId** | Pointer to **string** |  | [optional] 
 **ShutdownHideFixed** | Pointer to **bool** |  | [optional] 
+**ShutdownWorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -278,6 +281,81 @@ SetShutdownHideFixed sets ShutdownHideFixed field to given value.
 `func (o *ShutdownPolicyTypeConfiguration) HasShutdownHideFixed() bool`
 
 HasShutdownHideFixed returns a boolean if a field has been set.
+
+### GetShutdownWorkflowId
+
+`func (o *ShutdownPolicyTypeConfiguration) GetShutdownWorkflowId() string`
+
+GetShutdownWorkflowId returns the ShutdownWorkflowId field if non-nil, zero value otherwise.
+
+### GetShutdownWorkflowIdOk
+
+`func (o *ShutdownPolicyTypeConfiguration) GetShutdownWorkflowIdOk() (*string, bool)`
+
+GetShutdownWorkflowIdOk returns a tuple with the ShutdownWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShutdownWorkflowId
+
+`func (o *ShutdownPolicyTypeConfiguration) SetShutdownWorkflowId(v string)`
+
+SetShutdownWorkflowId sets ShutdownWorkflowId field to given value.
+
+### HasShutdownWorkflowId
+
+`func (o *ShutdownPolicyTypeConfiguration) HasShutdownWorkflowId() bool`
+
+HasShutdownWorkflowId returns a boolean if a field has been set.
+
+### GetFlowId
+
+`func (o *ShutdownPolicyTypeConfiguration) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *ShutdownPolicyTypeConfiguration) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *ShutdownPolicyTypeConfiguration) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *ShutdownPolicyTypeConfiguration) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *ShutdownPolicyTypeConfiguration) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *ShutdownPolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *ShutdownPolicyTypeConfiguration) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *ShutdownPolicyTypeConfiguration) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

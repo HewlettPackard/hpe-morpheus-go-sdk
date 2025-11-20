@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **AccountIntegrationId** | Pointer to **string** |  | [optional] 
 **LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -283,6 +286,81 @@ SetLifecycleHideFixed sets LifecycleHideFixed field to given value.
 `func (o *ExpirationPolicyTypeConfiguration1) HasLifecycleHideFixed() bool`
 
 HasLifecycleHideFixed returns a boolean if a field has been set.
+
+### GetLifecycleWorkflowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetLifecycleWorkflowId() string`
+
+GetLifecycleWorkflowId returns the LifecycleWorkflowId field if non-nil, zero value otherwise.
+
+### GetLifecycleWorkflowIdOk
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetLifecycleWorkflowIdOk() (*string, bool)`
+
+GetLifecycleWorkflowIdOk returns a tuple with the LifecycleWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycleWorkflowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) SetLifecycleWorkflowId(v string)`
+
+SetLifecycleWorkflowId sets LifecycleWorkflowId field to given value.
+
+### HasLifecycleWorkflowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) HasLifecycleWorkflowId() bool`
+
+HasLifecycleWorkflowId returns a boolean if a field has been set.
+
+### GetFlowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *ExpirationPolicyTypeConfiguration1) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *ExpirationPolicyTypeConfiguration1) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *ExpirationPolicyTypeConfiguration1) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *ExpirationPolicyTypeConfiguration1) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

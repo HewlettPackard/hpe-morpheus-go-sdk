@@ -5,6 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountIntegrationId** | Pointer to **string** |  | [optional] 
+**WorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 **CreateBackupType** | Pointer to **string** |  | [optional] 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
 **BackupStorageIds** | Pointer to **[]int64** |  | [optional] 
@@ -30,6 +33,7 @@ Name | Type | Description | Notes
 **LifecycleAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
 **MaxStorage** | Pointer to **string** |  | [optional] 
 **HostNamingType** | Pointer to **string** |  | [optional] 
 **HostNamingPattern** | Pointer to **string** |  | [optional] 
@@ -67,6 +71,7 @@ Name | Type | Description | Notes
 **ShutdownAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
 **ShutdownExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **ShutdownHideFixed** | Pointer to **bool** |  | [optional] 
+**ShutdownWorkflowId** | Pointer to **string** |  | [optional] 
 **StorageServerId** | Pointer to **string** |  | [optional] 
 **Strict** | Pointer to **bool** |  | [optional] 
 **Key** | Pointer to **string** |  | [optional] 
@@ -75,7 +80,6 @@ Name | Type | Description | Notes
 **CreateUserType** | Pointer to **string** |  | [optional] 
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **UserGroup** | Pointer to **string** |  | [optional] 
-**WorkflowId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -120,6 +124,81 @@ SetAccountIntegrationId sets AccountIntegrationId field to given value.
 `func (o *AddPoliciesRequestPolicyConfig) HasAccountIntegrationId() bool`
 
 HasAccountIntegrationId returns a boolean if a field has been set.
+
+### GetWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+### HasWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) HasWorkflowId() bool`
+
+HasWorkflowId returns a boolean if a field has been set.
+
+### GetFlowId
+
+`func (o *AddPoliciesRequestPolicyConfig) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *AddPoliciesRequestPolicyConfig) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *AddPoliciesRequestPolicyConfig) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *AddPoliciesRequestPolicyConfig) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *AddPoliciesRequestPolicyConfig) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *AddPoliciesRequestPolicyConfig) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 ### GetCreateBackupType
 
@@ -745,6 +824,31 @@ SetLifecycleHideFixed sets LifecycleHideFixed field to given value.
 `func (o *AddPoliciesRequestPolicyConfig) HasLifecycleHideFixed() bool`
 
 HasLifecycleHideFixed returns a boolean if a field has been set.
+
+### GetLifecycleWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) GetLifecycleWorkflowId() string`
+
+GetLifecycleWorkflowId returns the LifecycleWorkflowId field if non-nil, zero value otherwise.
+
+### GetLifecycleWorkflowIdOk
+
+`func (o *AddPoliciesRequestPolicyConfig) GetLifecycleWorkflowIdOk() (*string, bool)`
+
+GetLifecycleWorkflowIdOk returns a tuple with the LifecycleWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycleWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) SetLifecycleWorkflowId(v string)`
+
+SetLifecycleWorkflowId sets LifecycleWorkflowId field to given value.
+
+### HasLifecycleWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) HasLifecycleWorkflowId() bool`
+
+HasLifecycleWorkflowId returns a boolean if a field has been set.
 
 ### GetMaxStorage
 
@@ -1666,6 +1770,31 @@ SetShutdownHideFixed sets ShutdownHideFixed field to given value.
 
 HasShutdownHideFixed returns a boolean if a field has been set.
 
+### GetShutdownWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) GetShutdownWorkflowId() string`
+
+GetShutdownWorkflowId returns the ShutdownWorkflowId field if non-nil, zero value otherwise.
+
+### GetShutdownWorkflowIdOk
+
+`func (o *AddPoliciesRequestPolicyConfig) GetShutdownWorkflowIdOk() (*string, bool)`
+
+GetShutdownWorkflowIdOk returns a tuple with the ShutdownWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShutdownWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) SetShutdownWorkflowId(v string)`
+
+SetShutdownWorkflowId sets ShutdownWorkflowId field to given value.
+
+### HasShutdownWorkflowId
+
+`func (o *AddPoliciesRequestPolicyConfig) HasShutdownWorkflowId() bool`
+
+HasShutdownWorkflowId returns a boolean if a field has been set.
+
 ### GetStorageServerId
 
 `func (o *AddPoliciesRequestPolicyConfig) GetStorageServerId() string`
@@ -1865,31 +1994,6 @@ SetUserGroup sets UserGroup field to given value.
 `func (o *AddPoliciesRequestPolicyConfig) HasUserGroup() bool`
 
 HasUserGroup returns a boolean if a field has been set.
-
-### GetWorkflowId
-
-`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowId() string`
-
-GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
-
-### GetWorkflowIdOk
-
-`func (o *AddPoliciesRequestPolicyConfig) GetWorkflowIdOk() (*string, bool)`
-
-GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWorkflowId
-
-`func (o *AddPoliciesRequestPolicyConfig) SetWorkflowId(v string)`
-
-SetWorkflowId sets WorkflowId field to given value.
-
-### HasWorkflowId
-
-`func (o *AddPoliciesRequestPolicyConfig) HasWorkflowId() bool`
-
-HasWorkflowId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

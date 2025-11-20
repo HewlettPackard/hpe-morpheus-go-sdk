@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **AccountIntegrationId** | Pointer to **string** |  | [optional] 
 **LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -283,6 +286,81 @@ SetLifecycleHideFixed sets LifecycleHideFixed field to given value.
 `func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) HasLifecycleHideFixed() bool`
 
 HasLifecycleHideFixed returns a boolean if a field has been set.
+
+### GetLifecycleWorkflowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetLifecycleWorkflowId() string`
+
+GetLifecycleWorkflowId returns the LifecycleWorkflowId field if non-nil, zero value otherwise.
+
+### GetLifecycleWorkflowIdOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetLifecycleWorkflowIdOk() (*string, bool)`
+
+GetLifecycleWorkflowIdOk returns a tuple with the LifecycleWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycleWorkflowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) SetLifecycleWorkflowId(v string)`
+
+SetLifecycleWorkflowId sets LifecycleWorkflowId field to given value.
+
+### HasLifecycleWorkflowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) HasLifecycleWorkflowId() bool`
+
+HasLifecycleWorkflowId returns a boolean if a field has been set.
+
+### GetFlowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf7) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

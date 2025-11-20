@@ -30,6 +30,9 @@ type ShutdownPolicyTypeConfiguration struct {
 	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
 	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
 	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
+	ShutdownWorkflowId               *string                `json:"shutdownWorkflowId,omitempty"`
+	FlowId                           *string                `json:"flowId,omitempty"`
+	WorkflowType                     *string                `json:"workflowType,omitempty"`
 	AdditionalProperties             map[string]interface{} `json:",remain"`
 }
 
@@ -373,6 +376,102 @@ func (o *ShutdownPolicyTypeConfiguration) SetShutdownHideFixed(v bool) {
 	o.ShutdownHideFixed = &v
 }
 
+// GetShutdownWorkflowId returns the ShutdownWorkflowId field value if set, zero value otherwise.
+func (o *ShutdownPolicyTypeConfiguration) GetShutdownWorkflowId() string {
+	if o == nil || IsNil(o.ShutdownWorkflowId) {
+		var ret string
+		return ret
+	}
+	return *o.ShutdownWorkflowId
+}
+
+// GetShutdownWorkflowIdOk returns a tuple with the ShutdownWorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShutdownPolicyTypeConfiguration) GetShutdownWorkflowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ShutdownWorkflowId) {
+		return nil, false
+	}
+	return o.ShutdownWorkflowId, true
+}
+
+// IsSetShutdownWorkflowId returns a boolean if a field has been set.
+func (o *ShutdownPolicyTypeConfiguration) IsSetShutdownWorkflowId() bool {
+	if o != nil && !IsNil(o.ShutdownWorkflowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetShutdownWorkflowId gets a reference to the given string and assigns it to the ShutdownWorkflowId field.
+func (o *ShutdownPolicyTypeConfiguration) SetShutdownWorkflowId(v string) {
+	o.ShutdownWorkflowId = &v
+}
+
+// GetFlowId returns the FlowId field value if set, zero value otherwise.
+func (o *ShutdownPolicyTypeConfiguration) GetFlowId() string {
+	if o == nil || IsNil(o.FlowId) {
+		var ret string
+		return ret
+	}
+	return *o.FlowId
+}
+
+// GetFlowIdOk returns a tuple with the FlowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShutdownPolicyTypeConfiguration) GetFlowIdOk() (*string, bool) {
+	if o == nil || IsNil(o.FlowId) {
+		return nil, false
+	}
+	return o.FlowId, true
+}
+
+// IsSetFlowId returns a boolean if a field has been set.
+func (o *ShutdownPolicyTypeConfiguration) IsSetFlowId() bool {
+	if o != nil && !IsNil(o.FlowId) {
+		return true
+	}
+
+	return false
+}
+
+// SetFlowId gets a reference to the given string and assigns it to the FlowId field.
+func (o *ShutdownPolicyTypeConfiguration) SetFlowId(v string) {
+	o.FlowId = &v
+}
+
+// GetWorkflowType returns the WorkflowType field value if set, zero value otherwise.
+func (o *ShutdownPolicyTypeConfiguration) GetWorkflowType() string {
+	if o == nil || IsNil(o.WorkflowType) {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowType
+}
+
+// GetWorkflowTypeOk returns a tuple with the WorkflowType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShutdownPolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.WorkflowType) {
+		return nil, false
+	}
+	return o.WorkflowType, true
+}
+
+// IsSetWorkflowType returns a boolean if a field has been set.
+func (o *ShutdownPolicyTypeConfiguration) IsSetWorkflowType() bool {
+	if o != nil && !IsNil(o.WorkflowType) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowType gets a reference to the given string and assigns it to the WorkflowType field.
+func (o *ShutdownPolicyTypeConfiguration) SetWorkflowType(v string) {
+	o.WorkflowType = &v
+}
+
 func (o ShutdownPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -410,6 +509,15 @@ func (o ShutdownPolicyTypeConfiguration) ToMap() (map[string]interface{}, error)
 	}
 	if !IsNil(o.ShutdownHideFixed) {
 		toSerialize["shutdownHideFixed"] = o.ShutdownHideFixed
+	}
+	if !IsNil(o.ShutdownWorkflowId) {
+		toSerialize["shutdownWorkflowId"] = o.ShutdownWorkflowId
+	}
+	if !IsNil(o.FlowId) {
+		toSerialize["flowId"] = o.FlowId
+	}
+	if !IsNil(o.WorkflowType) {
+		toSerialize["workflowType"] = o.WorkflowType
 	}
 
 	for key, value := range o.AdditionalProperties {

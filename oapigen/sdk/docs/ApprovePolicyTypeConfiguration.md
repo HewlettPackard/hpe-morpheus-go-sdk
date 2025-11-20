@@ -4,13 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
+**AccountIntegrationId** | **string** |  | 
+**WorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewApprovePolicyTypeConfiguration
 
-`func NewApprovePolicyTypeConfiguration() *ApprovePolicyTypeConfiguration`
+`func NewApprovePolicyTypeConfiguration(accountIntegrationId string, ) *ApprovePolicyTypeConfiguration`
 
 NewApprovePolicyTypeConfiguration instantiates a new ApprovePolicyTypeConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +47,81 @@ and a boolean to check if the value has been set.
 
 SetAccountIntegrationId sets AccountIntegrationId field to given value.
 
-### HasAccountIntegrationId
 
-`func (o *ApprovePolicyTypeConfiguration) HasAccountIntegrationId() bool`
+### GetWorkflowId
 
-HasAccountIntegrationId returns a boolean if a field has been set.
+`func (o *ApprovePolicyTypeConfiguration) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *ApprovePolicyTypeConfiguration) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *ApprovePolicyTypeConfiguration) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+### HasWorkflowId
+
+`func (o *ApprovePolicyTypeConfiguration) HasWorkflowId() bool`
+
+HasWorkflowId returns a boolean if a field has been set.
+
+### GetFlowId
+
+`func (o *ApprovePolicyTypeConfiguration) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *ApprovePolicyTypeConfiguration) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *ApprovePolicyTypeConfiguration) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *ApprovePolicyTypeConfiguration) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *ApprovePolicyTypeConfiguration) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *ApprovePolicyTypeConfiguration) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *ApprovePolicyTypeConfiguration) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *ApprovePolicyTypeConfiguration) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

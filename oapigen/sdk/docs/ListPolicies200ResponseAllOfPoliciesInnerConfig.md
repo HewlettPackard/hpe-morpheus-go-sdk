@@ -4,7 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
+**AccountIntegrationId** | **string** |  | 
+**WorkflowId** | **string** |  | 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
 **CreateBackupType** | **string** |  | 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
 **BackupStorageIds** | **[]string** |  | 
@@ -29,6 +32,7 @@ Name | Type | Description | Notes
 **LifecycleAutoRenew** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
 **LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
 **HostNamingType** | **string** |  | 
 **HostNamingPattern** | Pointer to **string** |  | [optional] 
@@ -67,6 +71,7 @@ Name | Type | Description | Notes
 **ShutdownAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
 **ShutdownExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
 **ShutdownHideFixed** | Pointer to **bool** |  | [optional] 
+**ShutdownWorkflowId** | Pointer to **string** |  | [optional] 
 **StorageServerId** | **string** |  | 
 **Strict** | **bool** |  | 
 **Key** | Pointer to **string** |  | [optional] 
@@ -75,13 +80,12 @@ Name | Type | Description | Notes
 **CreateUserType** | **string** |  | 
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **UserGroup** | **string** |  | 
-**WorkflowId** | **string** |  | 
 
 ## Methods
 
 ### NewListPolicies200ResponseAllOfPoliciesInnerConfig
 
-`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxSnapshots string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfigurationMotd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, workflowId string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
+`func NewListPolicies200ResponseAllOfPoliciesInnerConfig(accountIntegrationId string, workflowId string, createBackupType string, backupStorageIds []string, maxPrice string, serverNamingType string, keyPattern string, removalAge string, lifecycleType string, hostNamingType string, namingType string, maxContainers string, maxCores string, maxHosts string, maxPools string, maxMemory string, maxPoolMembers string, maxSnapshots string, maxStorage string, maxVirtualServers string, maxVms string, motd MessageOfTheDayPolicyTypeConfigurationMotd, maxNetworks string, powerScheduleType string, maxRouters string, requiredNetworks []int64, shutdownType string, storageServerId string, strict bool, createUserType string, userGroup string, ) *ListPolicies200ResponseAllOfPoliciesInnerConfig`
 
 NewListPolicies200ResponseAllOfPoliciesInnerConfig instantiates a new ListPolicies200ResponseAllOfPoliciesInnerConfig object
 This constructor will assign default values to properties that have it defined,
@@ -115,11 +119,76 @@ and a boolean to check if the value has been set.
 
 SetAccountIntegrationId sets AccountIntegrationId field to given value.
 
-### HasAccountIntegrationId
 
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasAccountIntegrationId() bool`
+### GetWorkflowId
 
-HasAccountIntegrationId returns a boolean if a field has been set.
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+
+### GetFlowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetFlowId() string`
+
+GetFlowId returns the FlowId field if non-nil, zero value otherwise.
+
+### GetFlowIdOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetFlowIdOk() (*string, bool)`
+
+GetFlowIdOk returns a tuple with the FlowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetFlowId(v string)`
+
+SetFlowId sets FlowId field to given value.
+
+### HasFlowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasFlowId() bool`
+
+HasFlowId returns a boolean if a field has been set.
+
+### GetWorkflowType
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowType() string`
+
+GetWorkflowType returns the WorkflowType field if non-nil, zero value otherwise.
+
+### GetWorkflowTypeOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowTypeOk() (*string, bool)`
+
+GetWorkflowTypeOk returns a tuple with the WorkflowType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowType
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetWorkflowType(v string)`
+
+SetWorkflowType sets WorkflowType field to given value.
+
+### HasWorkflowType
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasWorkflowType() bool`
+
+HasWorkflowType returns a boolean if a field has been set.
 
 ### GetCreateBackupType
 
@@ -685,6 +754,31 @@ SetLifecycleExtensionsBeforeApproval sets LifecycleExtensionsBeforeApproval fiel
 `func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasLifecycleExtensionsBeforeApproval() bool`
 
 HasLifecycleExtensionsBeforeApproval returns a boolean if a field has been set.
+
+### GetLifecycleWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetLifecycleWorkflowId() string`
+
+GetLifecycleWorkflowId returns the LifecycleWorkflowId field if non-nil, zero value otherwise.
+
+### GetLifecycleWorkflowIdOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetLifecycleWorkflowIdOk() (*string, bool)`
+
+GetLifecycleWorkflowIdOk returns a tuple with the LifecycleWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLifecycleWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetLifecycleWorkflowId(v string)`
+
+SetLifecycleWorkflowId sets LifecycleWorkflowId field to given value.
+
+### HasLifecycleWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasLifecycleWorkflowId() bool`
+
+HasLifecycleWorkflowId returns a boolean if a field has been set.
 
 ### GetLifecycleHideFixed
 
@@ -1546,6 +1640,31 @@ SetShutdownHideFixed sets ShutdownHideFixed field to given value.
 
 HasShutdownHideFixed returns a boolean if a field has been set.
 
+### GetShutdownWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetShutdownWorkflowId() string`
+
+GetShutdownWorkflowId returns the ShutdownWorkflowId field if non-nil, zero value otherwise.
+
+### GetShutdownWorkflowIdOk
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetShutdownWorkflowIdOk() (*string, bool)`
+
+GetShutdownWorkflowIdOk returns a tuple with the ShutdownWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShutdownWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetShutdownWorkflowId(v string)`
+
+SetShutdownWorkflowId sets ShutdownWorkflowId field to given value.
+
+### HasShutdownWorkflowId
+
+`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) HasShutdownWorkflowId() bool`
+
+HasShutdownWorkflowId returns a boolean if a field has been set.
+
 ### GetStorageServerId
 
 `func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetStorageServerId() string`
@@ -1724,26 +1843,6 @@ and a boolean to check if the value has been set.
 `func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetUserGroup(v string)`
 
 SetUserGroup sets UserGroup field to given value.
-
-
-### GetWorkflowId
-
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowId() string`
-
-GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
-
-### GetWorkflowIdOk
-
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) GetWorkflowIdOk() (*string, bool)`
-
-GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWorkflowId
-
-`func (o *ListPolicies200ResponseAllOfPoliciesInnerConfig) SetWorkflowId(v string)`
-
-SetWorkflowId sets WorkflowId field to given value.
 
 
 
