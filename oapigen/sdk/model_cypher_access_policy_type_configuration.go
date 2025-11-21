@@ -20,7 +20,6 @@ var _ MappedNullable = &CypherAccessPolicyTypeConfiguration{}
 
 // CypherAccessPolicyTypeConfiguration - Cypher Access
 type CypherAccessPolicyTypeConfiguration struct {
-	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
 	KeyPattern           string                 `json:"keyPattern"`
 	Read                 *bool                  `json:"read,omitempty"`
 	Write                *bool                  `json:"write,omitempty"`
@@ -48,38 +47,6 @@ func NewCypherAccessPolicyTypeConfiguration(keyPattern string) *CypherAccessPoli
 func NewCypherAccessPolicyTypeConfigurationWithDefaults() *CypherAccessPolicyTypeConfiguration {
 	this := CypherAccessPolicyTypeConfiguration{}
 	return &this
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
-func (o *CypherAccessPolicyTypeConfiguration) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		var ret string
-		return ret
-	}
-	return *o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *CypherAccessPolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		return nil, false
-	}
-	return o.AccountIntegrationId, true
-}
-
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *CypherAccessPolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *CypherAccessPolicyTypeConfiguration) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
 }
 
 // GetKeyPattern returns the KeyPattern field value
@@ -276,9 +243,6 @@ func (o CypherAccessPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o CypherAccessPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccountIntegrationId) {
-		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
-	}
 	toSerialize["keyPattern"] = o.KeyPattern
 	if !IsNil(o.Read) {
 		toSerialize["read"] = o.Read

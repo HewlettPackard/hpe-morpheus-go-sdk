@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
 **ServerNamingType** | **string** |  | 
 **ServerNamingPattern** | Pointer to **string** |  | [optional] 
 **ServerNamingConflict** | Pointer to **bool** |  | [optional] 
@@ -27,31 +26,6 @@ will change when the set of required properties is changed
 NewClusterResourceNamePolicyTypeConfigurationWithDefaults instantiates a new ClusterResourceNamePolicyTypeConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAccountIntegrationId
-
-`func (o *ClusterResourceNamePolicyTypeConfiguration) GetAccountIntegrationId() string`
-
-GetAccountIntegrationId returns the AccountIntegrationId field if non-nil, zero value otherwise.
-
-### GetAccountIntegrationIdOk
-
-`func (o *ClusterResourceNamePolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool)`
-
-GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAccountIntegrationId
-
-`func (o *ClusterResourceNamePolicyTypeConfiguration) SetAccountIntegrationId(v string)`
-
-SetAccountIntegrationId sets AccountIntegrationId field to given value.
-
-### HasAccountIntegrationId
-
-`func (o *ClusterResourceNamePolicyTypeConfiguration) HasAccountIntegrationId() bool`
-
-HasAccountIntegrationId returns a boolean if a field has been set.
 
 ### GetServerNamingType
 

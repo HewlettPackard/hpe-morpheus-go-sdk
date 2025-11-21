@@ -120574,8 +120574,6 @@ paths:
                                   description: |
                                     - Cluster Resource Name
                                   properties:
-                                    accountIntegrationId:
-                                      type: string
                                     serverNamingType:
                                       type: string
                                     serverNamingPattern:
@@ -120590,8 +120588,6 @@ paths:
                                   description: |
                                     - Cypher Access
                                   properties:
-                                    accountIntegrationId:
-                                      type: string
                                     keyPattern:
                                       type: string
                                     read:
@@ -120612,8 +120608,6 @@ paths:
                                   description: |
                                     - Delayed Delete
                                   properties:
-                                    accountIntegrationId:
-                                      type: string
                                     removalAge:
                                       type: string
                                 - type: object

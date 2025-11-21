@@ -20,7 +20,6 @@ var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration{}
 
 // DelayedDeletePolicyTypeConfiguration - Delayed Delete
 type DelayedDeletePolicyTypeConfiguration struct {
-	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
 	RemovalAge           string                 `json:"removalAge"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -43,38 +42,6 @@ func NewDelayedDeletePolicyTypeConfiguration(removalAge string) *DelayedDeletePo
 func NewDelayedDeletePolicyTypeConfigurationWithDefaults() *DelayedDeletePolicyTypeConfiguration {
 	this := DelayedDeletePolicyTypeConfiguration{}
 	return &this
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
-func (o *DelayedDeletePolicyTypeConfiguration) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		var ret string
-		return ret
-	}
-	return *o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DelayedDeletePolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		return nil, false
-	}
-	return o.AccountIntegrationId, true
-}
-
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *DelayedDeletePolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *DelayedDeletePolicyTypeConfiguration) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
 }
 
 // GetRemovalAge returns the RemovalAge field value
@@ -111,9 +78,6 @@ func (o DelayedDeletePolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o DelayedDeletePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccountIntegrationId) {
-		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
-	}
 	toSerialize["removalAge"] = o.RemovalAge
 
 	for key, value := range o.AdditionalProperties {

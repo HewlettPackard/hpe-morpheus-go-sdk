@@ -20,7 +20,6 @@ var _ MappedNullable = &ClusterResourceNamePolicyTypeConfiguration{}
 
 // ClusterResourceNamePolicyTypeConfiguration - Cluster Resource Name
 type ClusterResourceNamePolicyTypeConfiguration struct {
-	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
 	ServerNamingType     string                 `json:"serverNamingType"`
 	ServerNamingPattern  *string                `json:"serverNamingPattern,omitempty"`
 	ServerNamingConflict *bool                  `json:"serverNamingConflict,omitempty"`
@@ -45,38 +44,6 @@ func NewClusterResourceNamePolicyTypeConfiguration(serverNamingType string) *Clu
 func NewClusterResourceNamePolicyTypeConfigurationWithDefaults() *ClusterResourceNamePolicyTypeConfiguration {
 	this := ClusterResourceNamePolicyTypeConfiguration{}
 	return &this
-}
-
-// GetAccountIntegrationId returns the AccountIntegrationId field value if set, zero value otherwise.
-func (o *ClusterResourceNamePolicyTypeConfiguration) GetAccountIntegrationId() string {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		var ret string
-		return ret
-	}
-	return *o.AccountIntegrationId
-}
-
-// GetAccountIntegrationIdOk returns a tuple with the AccountIntegrationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration) GetAccountIntegrationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AccountIntegrationId) {
-		return nil, false
-	}
-	return o.AccountIntegrationId, true
-}
-
-// IsSetAccountIntegrationId returns a boolean if a field has been set.
-func (o *ClusterResourceNamePolicyTypeConfiguration) IsSetAccountIntegrationId() bool {
-	if o != nil && !IsNil(o.AccountIntegrationId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountIntegrationId gets a reference to the given string and assigns it to the AccountIntegrationId field.
-func (o *ClusterResourceNamePolicyTypeConfiguration) SetAccountIntegrationId(v string) {
-	o.AccountIntegrationId = &v
 }
 
 // GetServerNamingType returns the ServerNamingType field value
@@ -177,9 +144,6 @@ func (o ClusterResourceNamePolicyTypeConfiguration) MarshalJSON() ([]byte, error
 
 func (o ClusterResourceNamePolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccountIntegrationId) {
-		toSerialize["accountIntegrationId"] = o.AccountIntegrationId
-	}
 	toSerialize["serverNamingType"] = o.ServerNamingType
 	if !IsNil(o.ServerNamingPattern) {
 		toSerialize["serverNamingPattern"] = o.ServerNamingPattern
