@@ -21,54 +21,82 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInner{}
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInner struct for ListVirtualImages200ResponseAllOfVirtualImagesInner
 type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
-	Id              *int64                                                              `json:"id,omitempty"`
-	Name            *string                                                             `json:"name,omitempty"`
-	Description     NullableString                                                      `json:"description,omitempty"`
-	Labels          []string                                                            `json:"labels,omitempty"`
-	OwnerId         *int64                                                              `json:"ownerId,omitempty"`
-	Tenant          NullableListApprovals200ResponseAllOfApprovalsInnerAccount          `json:"tenant,omitempty"`
-	ImageType       *string                                                             `json:"imageType,omitempty"`
-	UserUploaded    *bool                                                               `json:"userUploaded,omitempty"`
-	UserDefined     *bool                                                               `json:"userDefined,omitempty"`
-	SystemImage     *bool                                                               `json:"systemImage,omitempty"`
-	IsCloudInit     *bool                                                               `json:"isCloudInit,omitempty"`
-	SshUsername     NullableString                                                      `json:"sshUsername,omitempty"`
-	SshPassword     NullableString                                                      `json:"sshPassword,omitempty"`
-	SshPasswordHash NullableString                                                      `json:"sshPasswordHash,omitempty"`
-	SshKey          NullableString                                                      `json:"sshKey,omitempty"`
-	OsType          *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
-	MinRam          NullableInt64                                                       `json:"minRam,omitempty"`
-	MinRamGB        NullableFloat64                                                     `json:"minRamGB,omitempty"`
-	MinDisk         NullableInt64                                                       `json:"minDisk,omitempty"`
-	MinDiskGB       NullableString                                                      `json:"minDiskGB,omitempty"`
-	RawSize         NullableInt64                                                       `json:"rawSize,omitempty"`
-	RawSizeGB       NullableFloat32                                                     `json:"rawSizeGB,omitempty"`
-	TrialVersion    *bool                                                               `json:"trialVersion,omitempty"`
-	VirtioSupported *bool                                                               `json:"virtioSupported,omitempty"`
+	Id *int64 `json:"id,omitempty"`
+	// A name for the virtual image
+	Name *string `json:"name,omitempty"`
+	// A description for the virtual image
+	Description NullableString `json:"description,omitempty"`
+	// Array of label strings, can be used for filtering.
+	Labels []string `json:"labels,omitempty"`
+	// Owner of the image
+	OwnerId *int64                                                     `json:"ownerId,omitempty"`
+	Tenant  NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"tenant,omitempty"`
+	// Code of image type. eg. vmware, ami, etc.
+	ImageType *string `json:"imageType,omitempty"`
+	// Is uploaded by an user?
+	UserUploaded *bool `json:"userUploaded,omitempty"`
+	// Is defined by an user?
+	UserDefined *bool `json:"userDefined,omitempty"`
+	// Is created by system?
+	SystemImage *bool `json:"systemImage,omitempty"`
+	// Cloud Init Enabled?
+	IsCloudInit *bool `json:"isCloudInit,omitempty"`
+	// SSH Username
+	SshUsername     NullableString `json:"sshUsername,omitempty"`
+	SshPassword     NullableString `json:"sshPassword,omitempty"`
+	SshPasswordHash NullableString `json:"sshPasswordHash,omitempty"`
+	// SSH Key
+	SshKey NullableString                                                      `json:"sshKey,omitempty"`
+	OsType *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
+	// Minimum required RAM in bytes
+	MinRam NullableInt64 `json:"minRam,omitempty"`
+	// Minimum required RAM in gigabytes
+	MinRamGB NullableFloat64 `json:"minRamGB,omitempty"`
+	// Minimum required disk size in bytes
+	MinDisk NullableInt64 `json:"minDisk,omitempty"`
+	// Minimum required disk size in gigabytes
+	MinDiskGB NullableString `json:"minDiskGB,omitempty"`
+	// Size of image in bytes
+	RawSize NullableInt64 `json:"rawSize,omitempty"`
+	// Size of image in gigabytes
+	RawSizeGB NullableFloat32 `json:"rawSizeGB,omitempty"`
+	// Is Trial Version?
+	TrialVersion *bool `json:"trialVersion,omitempty"`
+	// VirtIO Drivers Loaded?
+	VirtioSupported *bool `json:"virtioSupported,omitempty"`
 	// UEFI enabled?
-	Uefi                 NullableBool                                                    `json:"uefi,omitempty"`
-	IsAutoJoinDomain     *bool                                                           `json:"isAutoJoinDomain,omitempty"`
-	VmToolsInstalled     *bool                                                           `json:"vmToolsInstalled,omitempty"`
-	InstallAgent         *bool                                                           `json:"installAgent,omitempty"`
-	IsForceCustomization *bool                                                           `json:"isForceCustomization,omitempty"`
-	IsSysprep            *bool                                                           `json:"isSysprep,omitempty"`
-	FipsEnabled          *bool                                                           `json:"fipsEnabled,omitempty"`
-	UserData             NullableString                                                  `json:"userData,omitempty"`
-	ConsoleKeymap        NullableString                                                  `json:"consoleKeymap,omitempty"`
-	StorageProvider      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance              `json:"storageProvider,omitempty"`
-	ExternalId           NullableString                                                  `json:"externalId,omitempty"`
-	Visibility           *string                                                         `json:"visibility,omitempty"`
-	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance             `json:"accounts,omitempty"`
-	Config               *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig      `json:"config,omitempty"`
-	Volumes              []map[string]interface{}                                        `json:"volumes,omitempty"`
-	StorageControllers   []map[string]interface{}                                        `json:"storageControllers,omitempty"`
-	NetworkInterfaces    []map[string]interface{}                                        `json:"networkInterfaces,omitempty"`
-	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
-	Locations            []map[string]interface{}                                        `json:"locations,omitempty"`
-	DateCreated          *time.Time                                                      `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                      `json:"lastUpdated,omitempty"`
-	Status               *string                                                         `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	Uefi NullableBool `json:"uefi,omitempty"`
+	// Auto Join Domain?
+	IsAutoJoinDomain *bool `json:"isAutoJoinDomain,omitempty"`
+	// VM Tools Installed?
+	VmToolsInstalled *bool `json:"vmToolsInstalled,omitempty"`
+	// Install Agent?
+	InstallAgent *bool `json:"installAgent,omitempty"`
+	// Force Guest Customization?
+	IsForceCustomization *bool `json:"isForceCustomization,omitempty"`
+	// Sysprep Enabled?
+	IsSysprep *bool `json:"isSysprep,omitempty"`
+	// FIPS enabled?
+	FipsEnabled *bool `json:"fipsEnabled,omitempty"`
+	// Cloud-Init User Data, a bash script
+	UserData        NullableString                                     `json:"userData,omitempty"`
+	ConsoleKeymap   NullableString                                     `json:"consoleKeymap,omitempty"`
+	StorageProvider *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"storageProvider,omitempty"`
+	ExternalId      NullableString                                     `json:"externalId,omitempty"`
+	// private or public
+	Visibility         *string                                                                      `json:"visibility,omitempty"`
+	Accounts           []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"accounts,omitempty"`
+	Config             *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig                   `json:"config,omitempty"`
+	Volumes            []map[string]interface{}                                                     `json:"volumes,omitempty"`
+	StorageControllers []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner `json:"storageControllers,omitempty"`
+	NetworkInterfaces  []map[string]interface{}                                                     `json:"networkInterfaces,omitempty"`
+	// Metadata tags, Array of objects having a name and value
+	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner     `json:"tags,omitempty"`
+	Locations            []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner `json:"locations,omitempty"`
+	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
+	Status               *string                                                             `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInner ListVirtualImages200ResponseAllOfVirtualImagesInner
@@ -1515,9 +1543,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetVolumes(v []map
 }
 
 // GetStorageControllers returns the StorageControllers field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageControllers() []map[string]interface{} {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageControllers() []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner {
 	if o == nil || IsNil(o.StorageControllers) {
-		var ret []map[string]interface{}
+		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner
 		return ret
 	}
 	return o.StorageControllers
@@ -1525,7 +1553,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageControll
 
 // GetStorageControllersOk returns a tuple with the StorageControllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageControllersOk() ([]map[string]interface{}, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageControllersOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner, bool) {
 	if o == nil || IsNil(o.StorageControllers) {
 		return nil, false
 	}
@@ -1541,8 +1569,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetStorageContro
 	return false
 }
 
-// SetStorageControllers gets a reference to the given []map[string]interface{} and assigns it to the StorageControllers field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageControllers(v []map[string]interface{}) {
+// SetStorageControllers gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner and assigns it to the StorageControllers field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageControllers(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) {
 	o.StorageControllers = v
 }
 
@@ -1611,9 +1639,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []AddCat
 }
 
 // GetLocations returns the Locations field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLocations() []map[string]interface{} {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLocations() []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner {
 	if o == nil || IsNil(o.Locations) {
-		var ret []map[string]interface{}
+		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner
 		return ret
 	}
 	return o.Locations
@@ -1621,7 +1649,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLocations() []m
 
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLocationsOk() ([]map[string]interface{}, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetLocationsOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner, bool) {
 	if o == nil || IsNil(o.Locations) {
 		return nil, false
 	}
@@ -1637,8 +1665,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetLocations() b
 	return false
 }
 
-// SetLocations gets a reference to the given []map[string]interface{} and assigns it to the Locations field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetLocations(v []map[string]interface{}) {
+// SetLocations gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner and assigns it to the Locations field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetLocations(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner) {
 	o.Locations = v
 }
 

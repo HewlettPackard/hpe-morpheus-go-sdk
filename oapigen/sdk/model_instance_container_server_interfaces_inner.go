@@ -31,7 +31,7 @@ type InstanceContainerServerInterfacesInner struct {
 	PrimaryInterface     *bool                                                      `json:"primaryInterface,omitempty"`
 	Network              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"network,omitempty"`
 	NetworkGroup         NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"networkGroup,omitempty"`
-	NetworkPool          *int64                                                     `json:"networkPool,omitempty"`
+	NetworkPool          NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"networkPool,omitempty"`
 	IpMode               *string                                                    `json:"ipMode,omitempty"`
 	MacAddress           *string                                                    `json:"macAddress,omitempty"`
 	Interfaces           []ListApprovals200ResponseAllOfApprovalsInnerAccount       `json:"interfaces,omitempty"`
@@ -431,36 +431,47 @@ func (o *InstanceContainerServerInterfacesInner) UnsetNetworkGroup() {
 	o.NetworkGroup.Unset()
 }
 
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() int64 {
-	if o == nil || IsNil(o.NetworkPool) {
-		var ret int64
+// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.NetworkPool.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.NetworkPool
+	return *o.NetworkPool.Get()
 }
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*int64, bool) {
-	if o == nil || IsNil(o.NetworkPool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.NetworkPool, true
+	return o.NetworkPool.Get(), o.NetworkPool.IsSet()
 }
 
 // IsSetNetworkPool returns a boolean if a field has been set.
 func (o *InstanceContainerServerInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && !IsNil(o.NetworkPool) {
+	if o != nil && o.NetworkPool.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkPool gets a reference to the given int64 and assigns it to the NetworkPool field.
-func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v int64) {
-	o.NetworkPool = &v
+// SetNetworkPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the NetworkPool field.
+func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.NetworkPool.Set(&v)
+}
+
+// SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil() {
+	o.NetworkPool.Set(nil)
+}
+
+// UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
+func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool() {
+	o.NetworkPool.Unset()
 }
 
 // GetIpMode returns the IpMode field value if set, zero value otherwise.
@@ -602,8 +613,8 @@ func (o InstanceContainerServerInterfacesInner) ToMap() (map[string]interface{},
 	if o.NetworkGroup.IsSet() {
 		toSerialize["networkGroup"] = o.NetworkGroup.Get()
 	}
-	if !IsNil(o.NetworkPool) {
-		toSerialize["networkPool"] = o.NetworkPool
+	if o.NetworkPool.IsSet() {
+		toSerialize["networkPool"] = o.NetworkPool.Get()
 	}
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode

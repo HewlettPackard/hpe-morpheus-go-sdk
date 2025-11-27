@@ -5,48 +5,48 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **NullableString** |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**OwnerId** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** | A name for the virtual image | [optional] 
+**Description** | Pointer to **NullableString** | A description for the virtual image | [optional] 
+**Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
+**OwnerId** | Pointer to **int64** | Owner of the image | [optional] 
 **Tenant** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**ImageType** | Pointer to **string** |  | [optional] 
-**UserUploaded** | Pointer to **bool** |  | [optional] 
-**UserDefined** | Pointer to **bool** |  | [optional] 
-**SystemImage** | Pointer to **bool** |  | [optional] 
-**IsCloudInit** | Pointer to **bool** |  | [optional] 
-**SshUsername** | Pointer to **NullableString** |  | [optional] 
+**ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
+**UserUploaded** | Pointer to **bool** | Is uploaded by an user? | [optional] 
+**UserDefined** | Pointer to **bool** | Is defined by an user? | [optional] 
+**SystemImage** | Pointer to **bool** | Is created by system? | [optional] 
+**IsCloudInit** | Pointer to **bool** | Cloud Init Enabled? | [optional] 
+**SshUsername** | Pointer to **NullableString** | SSH Username | [optional] 
 **SshPassword** | Pointer to **NullableString** |  | [optional] 
 **SshPasswordHash** | Pointer to **NullableString** |  | [optional] 
-**SshKey** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
 **OsType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs.md) |  | [optional] 
-**MinRam** | Pointer to **NullableInt64** |  | [optional] 
-**MinRamGB** | Pointer to **NullableFloat64** |  | [optional] 
-**MinDisk** | Pointer to **NullableInt64** |  | [optional] 
-**MinDiskGB** | Pointer to **NullableString** |  | [optional] 
-**RawSize** | Pointer to **NullableInt64** |  | [optional] 
-**RawSizeGB** | Pointer to **NullableFloat32** |  | [optional] 
-**TrialVersion** | Pointer to **bool** |  | [optional] 
-**VirtioSupported** | Pointer to **bool** |  | [optional] 
+**MinRam** | Pointer to **NullableInt64** | Minimum required RAM in bytes | [optional] 
+**MinRamGB** | Pointer to **NullableFloat64** | Minimum required RAM in gigabytes | [optional] 
+**MinDisk** | Pointer to **NullableInt64** | Minimum required disk size in bytes | [optional] 
+**MinDiskGB** | Pointer to **NullableString** | Minimum required disk size in gigabytes | [optional] 
+**RawSize** | Pointer to **NullableInt64** | Size of image in bytes | [optional] 
+**RawSizeGB** | Pointer to **NullableFloat32** | Size of image in gigabytes | [optional] 
+**TrialVersion** | Pointer to **bool** | Is Trial Version? | [optional] 
+**VirtioSupported** | Pointer to **bool** | VirtIO Drivers Loaded? | [optional] 
 **Uefi** | Pointer to **NullableBool** | UEFI enabled? | [optional] 
-**IsAutoJoinDomain** | Pointer to **bool** |  | [optional] 
-**VmToolsInstalled** | Pointer to **bool** |  | [optional] 
-**InstallAgent** | Pointer to **bool** |  | [optional] 
-**IsForceCustomization** | Pointer to **bool** |  | [optional] 
-**IsSysprep** | Pointer to **bool** |  | [optional] 
-**FipsEnabled** | Pointer to **bool** |  | [optional] 
-**UserData** | Pointer to **NullableString** |  | [optional] 
+**IsAutoJoinDomain** | Pointer to **bool** | Auto Join Domain? | [optional] 
+**VmToolsInstalled** | Pointer to **bool** | VM Tools Installed? | [optional] 
+**InstallAgent** | Pointer to **bool** | Install Agent? | [optional] 
+**IsForceCustomization** | Pointer to **bool** | Force Guest Customization? | [optional] 
+**IsSysprep** | Pointer to **bool** | Sysprep Enabled? | [optional] 
+**FipsEnabled** | Pointer to **bool** | FIPS enabled? | [optional] 
+**UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
 **ConsoleKeymap** | Pointer to **NullableString** |  | [optional] 
 **StorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to **string** | private or public | [optional] 
 **Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Config** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig**](ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig.md) |  | [optional] 
 **Volumes** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**StorageControllers** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**StorageControllers** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner.md) |  | [optional] 
 **NetworkInterfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) |  | [optional] 
-**Locations** | Pointer to **[]map[string]interface{}** |  | [optional] 
+**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
+**Locations** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -1197,20 +1197,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetStorageControllers
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageControllers() []map[string]interface{}`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageControllers() []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner`
 
 GetStorageControllers returns the StorageControllers field if non-nil, zero value otherwise.
 
 ### GetStorageControllersOk
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageControllersOk() (*[]map[string]interface{}, bool)`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetStorageControllersOk() (*[]ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner, bool)`
 
 GetStorageControllersOk returns a tuple with the StorageControllers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageControllers
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetStorageControllers(v []map[string]interface{})`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetStorageControllers(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner)`
 
 SetStorageControllers sets StorageControllers field to given value.
 
@@ -1272,20 +1272,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetLocations
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLocations() []map[string]interface{}`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLocations() []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner`
 
 GetLocations returns the Locations field if non-nil, zero value otherwise.
 
 ### GetLocationsOk
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLocationsOk() (*[]map[string]interface{}, bool)`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) GetLocationsOk() (*[]ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner, bool)`
 
 GetLocationsOk returns a tuple with the Locations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocations
 
-`func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetLocations(v []map[string]interface{})`
+`func (o *AddVirtualImage200ResponseAllOfVirtualImage) SetLocations(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner)`
 
 SetLocations sets Locations field to given value.
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **NetworkGroup** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
-**NetworkPool** | Pointer to **int64** |  | [optional] 
+**NetworkPool** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
 **Interfaces** | Pointer to [**[]ListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
@@ -336,20 +336,20 @@ HasNetworkGroup returns a boolean if a field has been set.
 UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
 ### GetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() int64`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetNetworkPool returns the NetworkPool field if non-nil, zero value otherwise.
 
 ### GetNetworkPoolOk
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*int64, bool)`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetNetworkPoolOk returns a tuple with the NetworkPool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v int64)`
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetNetworkPool sets NetworkPool field to given value.
 
@@ -359,6 +359,16 @@ SetNetworkPool sets NetworkPool field to given value.
 
 HasNetworkPool returns a boolean if a field has been set.
 
+### SetNetworkPoolNil
+
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil(b bool)`
+
+ SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
+
+### UnsetNetworkPool
+`func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool()`
+
+UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetIpMode
 
 `func (o *InstanceContainerServerInterfacesInner) GetIpMode() string`

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
 **Network** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
 **NetworkGroup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
-**NetworkPool** | Pointer to **int64** |  | [optional] 
+**NetworkPool** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
 **Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
@@ -316,20 +316,20 @@ HasNetworkGroup returns a boolean if a field has been set.
 
 ### GetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() int64`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`
 
 GetNetworkPool returns the NetworkPool field if non-nil, zero value otherwise.
 
 ### GetNetworkPoolOk
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*int64, bool)`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool)`
 
 GetNetworkPoolOk returns a tuple with the NetworkPool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v int64)`
+`func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)`
 
 SetNetworkPool sets NetworkPool field to given value.
 

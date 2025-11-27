@@ -3222,6 +3222,8 @@ Class | Method | HTTP request | Description
  - [ListVirtualImages200Response](docs/ListVirtualImages200Response.md)
  - [ListVirtualImages200ResponseAllOfVirtualImagesInner](docs/ListVirtualImages200ResponseAllOfVirtualImagesInner.md)
  - [ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig](docs/ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig.md)
+ - [ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner](docs/ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner.md)
+ - [ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner](docs/ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner.md)
  - [ListWhitelabelSettings200Response](docs/ListWhitelabelSettings200Response.md)
  - [ListWhitelabelSettings200ResponseWhitelabelSettings](docs/ListWhitelabelSettings200ResponseWhitelabelSettings.md)
  - [ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner](docs/ListWhitelabelSettings200ResponseWhitelabelSettingsSupportMenuLinksInner.md)

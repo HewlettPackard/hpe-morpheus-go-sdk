@@ -31,7 +31,7 @@ type InstanceContainerServerInterfacesInner1 struct {
 	PrimaryInterface     *bool                                                                `json:"primaryInterface,omitempty"`
 	Network              *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool  `json:"network,omitempty"`
 	NetworkGroup         *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool  `json:"networkGroup,omitempty"`
-	NetworkPool          *int64                                                               `json:"networkPool,omitempty"`
+	NetworkPool          *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool  `json:"networkPool,omitempty"`
 	IpMode               *string                                                              `json:"ipMode,omitempty"`
 	MacAddress           *string                                                              `json:"macAddress,omitempty"`
 	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool `json:"interfaces,omitempty"`
@@ -410,9 +410,9 @@ func (o *InstanceContainerServerInterfacesInner1) SetNetworkGroup(v AddInstance2
 }
 
 // GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() int64 {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool {
 	if o == nil || IsNil(o.NetworkPool) {
-		var ret int64
+		var ret AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool
 		return ret
 	}
 	return *o.NetworkPool
@@ -420,7 +420,7 @@ func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() int64 {
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*int64, bool) {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool) {
 	if o == nil || IsNil(o.NetworkPool) {
 		return nil, false
 	}
@@ -436,8 +436,8 @@ func (o *InstanceContainerServerInterfacesInner1) IsSetNetworkPool() bool {
 	return false
 }
 
-// SetNetworkPool gets a reference to the given int64 and assigns it to the NetworkPool field.
-func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v int64) {
+// SetNetworkPool gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool and assigns it to the NetworkPool field.
+func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool) {
 	o.NetworkPool = &v
 }
 
