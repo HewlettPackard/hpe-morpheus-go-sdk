@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxCores** | Pointer to **string** |  | [optional] 
-**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
+**MaxCores** | Pointer to **string** | Max Cores | [optional] 
+**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
 
 ## Methods
 

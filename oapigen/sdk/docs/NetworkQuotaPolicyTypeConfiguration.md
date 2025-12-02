@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxNetworks** | **string** |  | 
+**MaxNetworks** | **string** | Max Networks | 
 
 ## Methods
 

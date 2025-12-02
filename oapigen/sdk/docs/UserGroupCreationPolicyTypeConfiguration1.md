@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | Pointer to **string** |  | [optional] 
+**UserGroup** | Pointer to **string** | ID of the user group to assign | [optional] 
 
 ## Methods
 

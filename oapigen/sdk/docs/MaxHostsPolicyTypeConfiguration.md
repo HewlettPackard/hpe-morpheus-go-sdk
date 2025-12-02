@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxHosts** | **string** |  | 
+**MaxHosts** | **string** | Max Hosts | 
 
 ## Methods
 

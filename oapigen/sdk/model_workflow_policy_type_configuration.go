@@ -20,6 +20,7 @@ var _ MappedNullable = &WorkflowPolicyTypeConfiguration{}
 
 // WorkflowPolicyTypeConfiguration - Workflow
 type WorkflowPolicyTypeConfiguration struct {
+	// ID of the workflow to execute
 	WorkflowId           string                 `json:"workflowId"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

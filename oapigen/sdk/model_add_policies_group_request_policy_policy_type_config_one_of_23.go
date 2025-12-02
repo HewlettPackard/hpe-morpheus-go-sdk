@@ -20,7 +20,9 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23 - Power Schedule
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf23 struct {
-	PowerScheduleType      *string                `json:"powerScheduleType,omitempty"`
+	// Options: \"user\" (user configurable), \"fixed\" (strict schedule)
+	PowerScheduleType *string `json:"powerScheduleType,omitempty"`
+	// ID of the power schedule
 	PowerSchedule          *string                `json:"powerSchedule,omitempty"`
 	PowerScheduleHideFixed *bool                  `json:"powerScheduleHideFixed,omitempty"`
 	AdditionalProperties   map[string]interface{} `json:",remain"`

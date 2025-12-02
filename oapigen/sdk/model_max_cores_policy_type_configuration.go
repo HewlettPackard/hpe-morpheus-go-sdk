@@ -20,7 +20,9 @@ var _ MappedNullable = &MaxCoresPolicyTypeConfiguration{}
 
 // MaxCoresPolicyTypeConfiguration - Max Cores
 type MaxCoresPolicyTypeConfiguration struct {
-	MaxCores             string                 `json:"maxCores"`
+	// Max Cores
+	MaxCores string `json:"maxCores"`
+	// Exclude containers from count
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

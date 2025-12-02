@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxStorage** | Pointer to **string** |  | [optional] 
+**MaxStorage** | Pointer to **string** | Max Storage (GB) | [optional] 
 
 ## Methods
 

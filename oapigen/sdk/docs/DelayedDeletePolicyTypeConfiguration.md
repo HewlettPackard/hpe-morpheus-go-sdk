@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RemovalAge** | **string** |  | 
+**RemovalAge** | **string** | Number of days to delay deletion | 
 
 ## Methods
 

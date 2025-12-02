@@ -20,6 +20,7 @@ var _ MappedNullable = &UserGroupCreationPolicyTypeConfiguration{}
 
 // UserGroupCreationPolicyTypeConfiguration - User Group Creation
 type UserGroupCreationPolicyTypeConfiguration struct {
+	// ID of the user group to assign
 	UserGroup            string                 `json:"userGroup"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

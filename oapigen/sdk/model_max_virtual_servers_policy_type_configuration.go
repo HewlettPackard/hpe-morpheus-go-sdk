@@ -20,6 +20,7 @@ var _ MappedNullable = &MaxVirtualServersPolicyTypeConfiguration{}
 
 // MaxVirtualServersPolicyTypeConfiguration - Max Virtual Servers
 type MaxVirtualServersPolicyTypeConfiguration struct {
+	// Max Virtual Servers
 	MaxVirtualServers    string                 `json:"maxVirtualServers"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

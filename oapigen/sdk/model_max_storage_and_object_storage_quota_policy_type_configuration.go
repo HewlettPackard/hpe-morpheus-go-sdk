@@ -20,7 +20,9 @@ var _ MappedNullable = &MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration{}
 
 // MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration - Max Storage - Object Storage Quota - File Share Storage Quota
 type MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration struct {
-	MaxStorage           string                 `json:"maxStorage"`
+	// Max Storage (GB)
+	MaxStorage string `json:"maxStorage"`
+	// Exclude containers from count
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

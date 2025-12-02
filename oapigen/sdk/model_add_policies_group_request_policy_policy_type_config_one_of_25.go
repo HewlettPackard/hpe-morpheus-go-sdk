@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25 - Instance Networks
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf25 struct {
+	// Array of required network IDs
 	RequiredNetworks     []int64                `json:"requiredNetworks,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

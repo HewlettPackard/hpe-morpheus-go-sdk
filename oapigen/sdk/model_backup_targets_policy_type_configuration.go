@@ -20,6 +20,7 @@ var _ MappedNullable = &BackupTargetsPolicyTypeConfiguration{}
 
 // BackupTargetsPolicyTypeConfiguration - Backup Targets
 type BackupTargetsPolicyTypeConfiguration struct {
+	// Array of backup storage IDs to restrict available backup targets
 	BackupStorageIds     []string               `json:"backupStorageIds"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

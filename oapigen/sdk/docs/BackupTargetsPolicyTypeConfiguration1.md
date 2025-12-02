@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BackupStorageIds** | Pointer to **[]int64** |  | [optional] 
+**BackupStorageIds** | Pointer to **[]int64** | Array of backup storage IDs to restrict available backup targets | [optional] 
 
 ## Methods
 

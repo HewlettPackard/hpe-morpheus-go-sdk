@@ -20,7 +20,9 @@ var _ MappedNullable = &MaxMemoryPolicyTypeConfiguration{}
 
 // MaxMemoryPolicyTypeConfiguration - Max Memory
 type MaxMemoryPolicyTypeConfiguration struct {
-	MaxMemory            string                 `json:"maxMemory"`
+	// Max Memory (GB)
+	MaxMemory string `json:"maxMemory"`
+	// Exclude containers from count
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

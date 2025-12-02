@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxRouters** | Pointer to **string** |  | [optional] 
+**MaxRouters** | Pointer to **string** | Max Routers | [optional] 
 
 ## Methods
 

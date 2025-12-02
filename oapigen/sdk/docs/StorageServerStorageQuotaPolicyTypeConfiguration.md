@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StorageServerId** | **string** |  | 
-**MaxStorage** | Pointer to **string** |  | [optional] 
+**StorageServerId** | **string** | ID of the storage server | 
+**MaxStorage** | Pointer to **string** | Max Storage (GB) | [optional] 
 
 ## Methods
 

@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 - Max Snapshots
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf17 struct {
+	// Max Snapshots
 	MaxSnapshots         *string                `json:"maxSnapshots,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxPoolMembers** | **string** |  | 
+**MaxPoolMembers** | **string** | Max Pool Members | 
 
 ## Methods
 

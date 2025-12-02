@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 - Workflow
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf31 struct {
+	// ID of the workflow to execute
 	WorkflowId           *string                `json:"workflowId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

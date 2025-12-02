@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MotdTitle** | Pointer to **NullableString** |  | [optional] 
+**MotdTitle** | Pointer to **string** | Message title | [optional] 
 **Motd** | [**MessageOfTheDayPolicyTypeConfiguration2Motd**](MessageOfTheDayPolicyTypeConfiguration2Motd.md) |  | 
-**MotdMessage** | Pointer to **string** |  | [optional] 
-**MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage.md) |  | [optional] 
-**MotdDate** | Pointer to **string** |  | [optional] 
+**MotdMessage** | Pointer to **string** | Message content | [optional] 
+**MotdType** | Pointer to **string** | Options: \&quot;info\&quot;, \&quot;warning\&quot;, \&quot;critical\&quot; | [optional] 
+**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage1**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage1.md) |  | [optional] 
+**MotdDate** | Pointer to **string** | Display date for message | [optional] 
 
 ## Methods
 
@@ -55,16 +55,6 @@ SetMotdTitle sets MotdTitle field to given value.
 
 HasMotdTitle returns a boolean if a field has been set.
 
-### SetMotdTitleNil
-
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdTitleNil(b bool)`
-
- SetMotdTitleNil sets the value for MotdTitle to be an explicit nil
-
-### UnsetMotdTitle
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) UnsetMotdTitle()`
-
-UnsetMotdTitle ensures that no value is present for MotdTitle, not even an explicit nil
 ### GetMotd
 
 `func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotd() MessageOfTheDayPolicyTypeConfiguration2Motd`
@@ -137,20 +127,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage1`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage, bool)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage1, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage1)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 

@@ -20,8 +20,11 @@ var _ MappedNullable = &ClusterResourceNamePolicyTypeConfiguration{}
 
 // ClusterResourceNamePolicyTypeConfiguration - Cluster Resource Name
 type ClusterResourceNamePolicyTypeConfiguration struct {
-	ServerNamingType     string                 `json:"serverNamingType"`
-	ServerNamingPattern  *string                `json:"serverNamingPattern,omitempty"`
+	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
+	ServerNamingType string `json:"serverNamingType"`
+	// Name pattern uses ${variable} string interpolation.  Available variables are:<br>groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
+	ServerNamingPattern *string `json:"serverNamingPattern,omitempty"`
+	// Auto-resolve conflicts
 	ServerNamingConflict *bool                  `json:"serverNamingConflict,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

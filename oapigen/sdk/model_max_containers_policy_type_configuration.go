@@ -20,6 +20,7 @@ var _ MappedNullable = &MaxContainersPolicyTypeConfiguration{}
 
 // MaxContainersPolicyTypeConfiguration - Max Containers
 type MaxContainersPolicyTypeConfiguration struct {
+	// Max Containers
 	MaxContainers        string                 `json:"maxContainers"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

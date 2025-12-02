@@ -20,9 +20,13 @@ var _ MappedNullable = &MessageOfTheDayPolicyTypeConfiguration1Motd{}
 
 // MessageOfTheDayPolicyTypeConfiguration1Motd struct for MessageOfTheDayPolicyTypeConfiguration1Motd
 type MessageOfTheDayPolicyTypeConfiguration1Motd struct {
-	Title                *string                `json:"title,omitempty"`
-	Message              *string                `json:"message,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
+	// Message title
+	Title *string `json:"title,omitempty"`
+	// Message content
+	Message *string `json:"message,omitempty"`
+	// Options: \"info\", \"warning\", \"critical\"
+	Type *string `json:"type,omitempty"`
+	// Display full page
 	FullPage             NullableBool           `json:"fullPage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

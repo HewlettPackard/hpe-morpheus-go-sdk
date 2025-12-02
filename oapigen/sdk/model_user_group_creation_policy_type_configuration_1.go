@@ -20,6 +20,7 @@ var _ MappedNullable = &UserGroupCreationPolicyTypeConfiguration1{}
 
 // UserGroupCreationPolicyTypeConfiguration1 Configuration settings for the following policy types: - User Group Creation
 type UserGroupCreationPolicyTypeConfiguration1 struct {
+	// ID of the user group to assign
 	UserGroup            *string                `json:"userGroup,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

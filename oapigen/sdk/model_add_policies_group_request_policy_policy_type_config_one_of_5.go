@@ -20,11 +20,17 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 - Cypher Access
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf5 struct {
-	KeyPattern           *string                `json:"keyPattern,omitempty"`
-	Read                 *bool                  `json:"read,omitempty"`
-	Write                *bool                  `json:"write,omitempty"`
-	Update               *bool                  `json:"update,omitempty"`
-	Delete               *bool                  `json:"delete,omitempty"`
+	// Pattern to match Cypher keys (e.g., \"secret/_*\", \"password/_*\")
+	KeyPattern *string `json:"keyPattern,omitempty"`
+	// Allow read access
+	Read *bool `json:"read,omitempty"`
+	// Allow write access
+	Write *bool `json:"write,omitempty"`
+	// Allow update access
+	Update *bool `json:"update,omitempty"`
+	// Allow delete access
+	Delete *bool `json:"delete,omitempty"`
+	// Allow list access
 	List                 *bool                  `json:"list,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

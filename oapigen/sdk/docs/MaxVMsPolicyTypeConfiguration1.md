@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVms** | Pointer to **string** |  | [optional] 
+**MaxVms** | Pointer to **string** | Max VMs | [optional] 
 
 ## Methods
 

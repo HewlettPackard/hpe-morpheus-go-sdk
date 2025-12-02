@@ -20,7 +20,9 @@ var _ MappedNullable = &HostnamePolicyTypeConfiguration1{}
 
 // HostnamePolicyTypeConfiguration1 Configuration settings for the following policy types: - Hostname
 type HostnamePolicyTypeConfiguration1 struct {
-	HostNamingType       *string                `json:"hostNamingType,omitempty"`
+	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
+	HostNamingType *string `json:"hostNamingType,omitempty"`
+	// Name pattern uses ${variable} string interpolation. Available variables are: groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
 	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

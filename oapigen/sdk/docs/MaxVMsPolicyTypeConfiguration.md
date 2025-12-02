@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVms** | **string** |  | 
+**MaxVms** | **string** | Max VMs | 
 
 ## Methods
 

@@ -20,6 +20,7 @@ var _ MappedNullable = &RequiredNetworkPolicyTypeConfiguration{}
 
 // RequiredNetworkPolicyTypeConfiguration - Instance Networks
 type RequiredNetworkPolicyTypeConfiguration struct {
+	// Array of required network IDs
 	RequiredNetworks     []int64                `json:"requiredNetworks"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

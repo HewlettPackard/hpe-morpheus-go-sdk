@@ -27,19 +27,19 @@ type UpdatePoliciesRequestPolicyConfig struct {
 	BudgetPolicyTypeConfiguration1                          *BudgetPolicyTypeConfiguration1
 	ClusterResourceNamePolicyTypeConfiguration1             *ClusterResourceNamePolicyTypeConfiguration1
 	CypherAccessPolicyTypeConfiguration1                    *CypherAccessPolicyTypeConfiguration1
-	DelayedDeletePolicyTypeConfiguration1                   *DelayedDeletePolicyTypeConfiguration1
-	ExpirationPolicyTypeConfiguration1                      *ExpirationPolicyTypeConfiguration1
+	DelayedDeletePolicyTypeConfiguration3                   *DelayedDeletePolicyTypeConfiguration3
+	ExpirationPolicyTypeConfiguration3                      *ExpirationPolicyTypeConfiguration3
 	FileShareStorageQuotaPolicyTypeConfiguration            *FileShareStorageQuotaPolicyTypeConfiguration
 	HostnamePolicyTypeConfiguration1                        *HostnamePolicyTypeConfiguration1
 	InstanceNamePolicyTypeConfiguration1                    *InstanceNamePolicyTypeConfiguration1
 	MaxContainersPolicyTypeConfiguration1                   *MaxContainersPolicyTypeConfiguration1
-	MaxCoresPolicyTypeConfiguration2                        *MaxCoresPolicyTypeConfiguration2
+	MaxCoresPolicyTypeConfiguration3                        *MaxCoresPolicyTypeConfiguration3
 	MaxHostsPolicyTypeConfiguration1                        *MaxHostsPolicyTypeConfiguration1
 	MaxLoadBalancerPoolsPolicyTypeConfiguration1            *MaxLoadBalancerPoolsPolicyTypeConfiguration1
-	MaxMemoryPolicyTypeConfiguration2                       *MaxMemoryPolicyTypeConfiguration2
+	MaxMemoryPolicyTypeConfiguration3                       *MaxMemoryPolicyTypeConfiguration3
 	MaxPoolMembersPolicyTypeConfiguration1                  *MaxPoolMembersPolicyTypeConfiguration1
 	MaxSnapshotsPolicyTypeConfiguration1                    *MaxSnapshotsPolicyTypeConfiguration1
-	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
+	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3
 	MaxVMsPolicyTypeConfiguration1                          *MaxVMsPolicyTypeConfiguration1
 	MaxVirtualServersPolicyTypeConfiguration1               *MaxVirtualServersPolicyTypeConfiguration1
 	MessageOfTheDayPolicyTypeConfiguration1                 *MessageOfTheDayPolicyTypeConfiguration1
@@ -47,7 +47,7 @@ type UpdatePoliciesRequestPolicyConfig struct {
 	PowerSchedulePolicyTypeConfiguration1                   *PowerSchedulePolicyTypeConfiguration1
 	RequiredNetworkPolicyTypeConfiguration1                 *RequiredNetworkPolicyTypeConfiguration1
 	RouterQuotaPolicyTypeConfiguration1                     *RouterQuotaPolicyTypeConfiguration1
-	ShutdownPolicyTypeConfiguration1                        *ShutdownPolicyTypeConfiguration1
+	ShutdownPolicyTypeConfiguration3                        *ShutdownPolicyTypeConfiguration3
 	StorageServerStorageQuotaPolicyTypeConfiguration1       *StorageServerStorageQuotaPolicyTypeConfiguration1
 	TagsPolicyTypeConfiguration1                            *TagsPolicyTypeConfiguration1
 	UserCreationPolicyTypeConfiguration1                    *UserCreationPolicyTypeConfiguration1
@@ -84,12 +84,12 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 		dst.CypherAccessPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(DelayedDeletePolicyTypeConfiguration1); ok {
-		dst.DelayedDeletePolicyTypeConfiguration1 = &out
+	if out, ok := data.(DelayedDeletePolicyTypeConfiguration3); ok {
+		dst.DelayedDeletePolicyTypeConfiguration3 = &out
 	}
 
-	if out, ok := data.(ExpirationPolicyTypeConfiguration1); ok {
-		dst.ExpirationPolicyTypeConfiguration1 = &out
+	if out, ok := data.(ExpirationPolicyTypeConfiguration3); ok {
+		dst.ExpirationPolicyTypeConfiguration3 = &out
 	}
 
 	if out, ok := data.(FileShareStorageQuotaPolicyTypeConfiguration); ok {
@@ -108,8 +108,8 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 		dst.MaxContainersPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(MaxCoresPolicyTypeConfiguration2); ok {
-		dst.MaxCoresPolicyTypeConfiguration2 = &out
+	if out, ok := data.(MaxCoresPolicyTypeConfiguration3); ok {
+		dst.MaxCoresPolicyTypeConfiguration3 = &out
 	}
 
 	if out, ok := data.(MaxHostsPolicyTypeConfiguration1); ok {
@@ -120,8 +120,8 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(MaxMemoryPolicyTypeConfiguration2); ok {
-		dst.MaxMemoryPolicyTypeConfiguration2 = &out
+	if out, ok := data.(MaxMemoryPolicyTypeConfiguration3); ok {
+		dst.MaxMemoryPolicyTypeConfiguration3 = &out
 	}
 
 	if out, ok := data.(MaxPoolMembersPolicyTypeConfiguration1); ok {
@@ -132,8 +132,8 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 		dst.MaxSnapshotsPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2); ok {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = &out
+	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3); ok {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3 = &out
 	}
 
 	if out, ok := data.(MaxVMsPolicyTypeConfiguration1); ok {
@@ -164,8 +164,8 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (a
 		dst.RouterQuotaPolicyTypeConfiguration1 = &out
 	}
 
-	if out, ok := data.(ShutdownPolicyTypeConfiguration1); ok {
-		dst.ShutdownPolicyTypeConfiguration1 = &out
+	if out, ok := data.(ShutdownPolicyTypeConfiguration3); ok {
+		dst.ShutdownPolicyTypeConfiguration3 = &out
 	}
 
 	if out, ok := data.(StorageServerStorageQuotaPolicyTypeConfiguration1); ok {
@@ -272,30 +272,30 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.CypherAccessPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into DelayedDeletePolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration1)
+	// try to unmarshal JSON data into DelayedDeletePolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.DelayedDeletePolicyTypeConfiguration3)
 	if err == nil {
-		jsonDelayedDeletePolicyTypeConfiguration1, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration1)
-		if string(jsonDelayedDeletePolicyTypeConfiguration1) == "{}" { // empty struct
-			dst.DelayedDeletePolicyTypeConfiguration1 = nil
+		jsonDelayedDeletePolicyTypeConfiguration3, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration3)
+		if string(jsonDelayedDeletePolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.DelayedDeletePolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.DelayedDeletePolicyTypeConfiguration1, return on the first match
+			return nil // data stored in dst.DelayedDeletePolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.DelayedDeletePolicyTypeConfiguration1 = nil
+		dst.DelayedDeletePolicyTypeConfiguration3 = nil
 	}
 
-	// try to unmarshal JSON data into ExpirationPolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration1)
+	// try to unmarshal JSON data into ExpirationPolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.ExpirationPolicyTypeConfiguration3)
 	if err == nil {
-		jsonExpirationPolicyTypeConfiguration1, _ := json.Marshal(dst.ExpirationPolicyTypeConfiguration1)
-		if string(jsonExpirationPolicyTypeConfiguration1) == "{}" { // empty struct
-			dst.ExpirationPolicyTypeConfiguration1 = nil
+		jsonExpirationPolicyTypeConfiguration3, _ := json.Marshal(dst.ExpirationPolicyTypeConfiguration3)
+		if string(jsonExpirationPolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.ExpirationPolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.ExpirationPolicyTypeConfiguration1, return on the first match
+			return nil // data stored in dst.ExpirationPolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.ExpirationPolicyTypeConfiguration1 = nil
+		dst.ExpirationPolicyTypeConfiguration3 = nil
 	}
 
 	// try to unmarshal JSON data into FileShareStorageQuotaPolicyTypeConfiguration
@@ -350,17 +350,17 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.MaxContainersPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into MaxCoresPolicyTypeConfiguration2
-	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration2)
+	// try to unmarshal JSON data into MaxCoresPolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.MaxCoresPolicyTypeConfiguration3)
 	if err == nil {
-		jsonMaxCoresPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration2)
-		if string(jsonMaxCoresPolicyTypeConfiguration2) == "{}" { // empty struct
-			dst.MaxCoresPolicyTypeConfiguration2 = nil
+		jsonMaxCoresPolicyTypeConfiguration3, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration3)
+		if string(jsonMaxCoresPolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.MaxCoresPolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.MaxCoresPolicyTypeConfiguration2, return on the first match
+			return nil // data stored in dst.MaxCoresPolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.MaxCoresPolicyTypeConfiguration2 = nil
+		dst.MaxCoresPolicyTypeConfiguration3 = nil
 	}
 
 	// try to unmarshal JSON data into MaxHostsPolicyTypeConfiguration1
@@ -389,17 +389,17 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into MaxMemoryPolicyTypeConfiguration2
-	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration2)
+	// try to unmarshal JSON data into MaxMemoryPolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.MaxMemoryPolicyTypeConfiguration3)
 	if err == nil {
-		jsonMaxMemoryPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration2)
-		if string(jsonMaxMemoryPolicyTypeConfiguration2) == "{}" { // empty struct
-			dst.MaxMemoryPolicyTypeConfiguration2 = nil
+		jsonMaxMemoryPolicyTypeConfiguration3, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration3)
+		if string(jsonMaxMemoryPolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.MaxMemoryPolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.MaxMemoryPolicyTypeConfiguration2, return on the first match
+			return nil // data stored in dst.MaxMemoryPolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.MaxMemoryPolicyTypeConfiguration2 = nil
+		dst.MaxMemoryPolicyTypeConfiguration3 = nil
 	}
 
 	// try to unmarshal JSON data into MaxPoolMembersPolicyTypeConfiguration1
@@ -428,17 +428,17 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.MaxSnapshotsPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
-	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
+	// try to unmarshal JSON data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3)
 	if err == nil {
-		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
-		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) == "{}" { // empty struct
-			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
+		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3)
+		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2, return on the first match
+			return nil // data stored in dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3 = nil
 	}
 
 	// try to unmarshal JSON data into MaxVMsPolicyTypeConfiguration1
@@ -532,17 +532,17 @@ func (dst *UpdatePoliciesRequestPolicyConfig) UnmarshalJSON(data []byte) error {
 		dst.RouterQuotaPolicyTypeConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into ShutdownPolicyTypeConfiguration1
-	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration1)
+	// try to unmarshal JSON data into ShutdownPolicyTypeConfiguration3
+	err = json.Unmarshal(data, &dst.ShutdownPolicyTypeConfiguration3)
 	if err == nil {
-		jsonShutdownPolicyTypeConfiguration1, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration1)
-		if string(jsonShutdownPolicyTypeConfiguration1) == "{}" { // empty struct
-			dst.ShutdownPolicyTypeConfiguration1 = nil
+		jsonShutdownPolicyTypeConfiguration3, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration3)
+		if string(jsonShutdownPolicyTypeConfiguration3) == "{}" { // empty struct
+			dst.ShutdownPolicyTypeConfiguration3 = nil
 		} else {
-			return nil // data stored in dst.ShutdownPolicyTypeConfiguration1, return on the first match
+			return nil // data stored in dst.ShutdownPolicyTypeConfiguration3, return on the first match
 		}
 	} else {
-		dst.ShutdownPolicyTypeConfiguration1 = nil
+		dst.ShutdownPolicyTypeConfiguration3 = nil
 	}
 
 	// try to unmarshal JSON data into StorageServerStorageQuotaPolicyTypeConfiguration1
@@ -639,12 +639,12 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CypherAccessPolicyTypeConfiguration1)
 	}
 
-	if src.DelayedDeletePolicyTypeConfiguration1 != nil {
-		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration1)
+	if src.DelayedDeletePolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration3)
 	}
 
-	if src.ExpirationPolicyTypeConfiguration1 != nil {
-		return json.Marshal(&src.ExpirationPolicyTypeConfiguration1)
+	if src.ExpirationPolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.ExpirationPolicyTypeConfiguration3)
 	}
 
 	if src.FileShareStorageQuotaPolicyTypeConfiguration != nil {
@@ -663,8 +663,8 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MaxContainersPolicyTypeConfiguration1)
 	}
 
-	if src.MaxCoresPolicyTypeConfiguration2 != nil {
-		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration2)
+	if src.MaxCoresPolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration3)
 	}
 
 	if src.MaxHostsPolicyTypeConfiguration1 != nil {
@@ -675,8 +675,8 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MaxLoadBalancerPoolsPolicyTypeConfiguration1)
 	}
 
-	if src.MaxMemoryPolicyTypeConfiguration2 != nil {
-		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration2)
+	if src.MaxMemoryPolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration3)
 	}
 
 	if src.MaxPoolMembersPolicyTypeConfiguration1 != nil {
@@ -687,8 +687,8 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration1)
 	}
 
-	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 != nil {
-		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
+	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3)
 	}
 
 	if src.MaxVMsPolicyTypeConfiguration1 != nil {
@@ -719,8 +719,8 @@ func (src UpdatePoliciesRequestPolicyConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.RouterQuotaPolicyTypeConfiguration1)
 	}
 
-	if src.ShutdownPolicyTypeConfiguration1 != nil {
-		return json.Marshal(&src.ShutdownPolicyTypeConfiguration1)
+	if src.ShutdownPolicyTypeConfiguration3 != nil {
+		return json.Marshal(&src.ShutdownPolicyTypeConfiguration3)
 	}
 
 	if src.StorageServerStorageQuotaPolicyTypeConfiguration1 != nil {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxRouters** | **string** |  | 
+**MaxRouters** | **string** | Max Routers | 
 
 ## Methods
 

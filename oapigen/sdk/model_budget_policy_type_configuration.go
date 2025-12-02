@@ -20,8 +20,11 @@ var _ MappedNullable = &BudgetPolicyTypeConfiguration{}
 
 // BudgetPolicyTypeConfiguration - Budget
 type BudgetPolicyTypeConfiguration struct {
-	MaxPrice             string                 `json:"maxPrice"`
-	MaxPriceCurrency     *string                `json:"maxPriceCurrency,omitempty"`
+	// Maximum price limit
+	MaxPrice float32 `json:"maxPrice"`
+	// Currency code (e.g., USD)
+	MaxPriceCurrency *string `json:"maxPriceCurrency,omitempty"`
+	// Options: \"hour\", \"month\"
 	MaxPriceUnit         *string                `json:"maxPriceUnit,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -32,7 +35,7 @@ type _BudgetPolicyTypeConfiguration BudgetPolicyTypeConfiguration
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBudgetPolicyTypeConfiguration(maxPrice string) *BudgetPolicyTypeConfiguration {
+func NewBudgetPolicyTypeConfiguration(maxPrice float32) *BudgetPolicyTypeConfiguration {
 	this := BudgetPolicyTypeConfiguration{}
 	this.MaxPrice = maxPrice
 	return &this
@@ -47,9 +50,9 @@ func NewBudgetPolicyTypeConfigurationWithDefaults() *BudgetPolicyTypeConfigurati
 }
 
 // GetMaxPrice returns the MaxPrice field value
-func (o *BudgetPolicyTypeConfiguration) GetMaxPrice() string {
+func (o *BudgetPolicyTypeConfiguration) GetMaxPrice() float32 {
 	if o == nil {
-		var ret string
+		var ret float32
 		return ret
 	}
 
@@ -58,7 +61,7 @@ func (o *BudgetPolicyTypeConfiguration) GetMaxPrice() string {
 
 // GetMaxPriceOk returns a tuple with the MaxPrice field value
 // and a boolean to check if the value has been set.
-func (o *BudgetPolicyTypeConfiguration) GetMaxPriceOk() (*string, bool) {
+func (o *BudgetPolicyTypeConfiguration) GetMaxPriceOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -66,7 +69,7 @@ func (o *BudgetPolicyTypeConfiguration) GetMaxPriceOk() (*string, bool) {
 }
 
 // SetMaxPrice sets field value
-func (o *BudgetPolicyTypeConfiguration) SetMaxPrice(v string) {
+func (o *BudgetPolicyTypeConfiguration) SetMaxPrice(v float32) {
 	o.MaxPrice = v
 }
 

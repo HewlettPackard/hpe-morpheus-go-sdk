@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Title** | Pointer to **string** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
-**FullPage** | Pointer to **NullableBool** |  | [optional] 
+**Title** | Pointer to **string** | Message title | [optional] 
+**Message** | Pointer to **string** | Message content | [optional] 
+**Type** | Pointer to **string** | Options: \&quot;info\&quot;, \&quot;warning\&quot;, \&quot;critical\&quot; | [optional] 
+**FullPage** | Pointer to **NullableBool** | Display full page | [optional] 
 
 ## Methods
 

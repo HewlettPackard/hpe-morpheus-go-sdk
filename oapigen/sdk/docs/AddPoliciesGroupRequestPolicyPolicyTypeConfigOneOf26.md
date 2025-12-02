@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShutdownType** | Pointer to **string** |  | [optional] 
-**ShutdownAge** | Pointer to **string** |  | [optional] 
-**ShutdownRenewal** | Pointer to **string** |  | [optional] 
-**ShutdownNotify** | Pointer to **string** |  | [optional] 
-**ShutdownMessage** | Pointer to **string** |  | [optional] 
+**ShutdownType** | Pointer to **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict shutdown) | [optional] 
+**ShutdownAge** | Pointer to **string** | Days instance is allowed to run before shutdown | [optional] 
+**ShutdownRenewal** | Pointer to **string** | If the instance is renewed, this is the number of day increments the shutdown date is increased by | [optional] 
+**ShutdownNotify** | Pointer to **string** | Days before shutdown to notify via email | [optional] 
+**ShutdownMessage** | Pointer to **string** | Notification message | [optional] 
 **ShutdownAutoRenew** | Pointer to **string** |  | [optional] [default to "off"]
 **ShutdownAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
-**ShutdownExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
-**ShutdownHideFixed** | Pointer to **bool** |  | [optional] 
-**ShutdownWorkflowId** | Pointer to **string** |  | [optional] 
-**FlowId** | Pointer to **string** |  | [optional] 
-**WorkflowType** | Pointer to **string** |  | [optional] 
+**ShutdownExtensionsBeforeApproval** | Pointer to **string** | Number of extensions before requiring approval | [optional] 
+**AccountIntegrationId** | Pointer to **string** | ID of your ServiceNow or approval integration | [optional] 
+**ShutdownHideFixed** | Pointer to **bool** | Hide fixed shutdown from users | [optional] 
+**ShutdownWorkflowId** | Pointer to **string** | ID of legacy ServiceNow workflow (set if workflowType is &#39;workflow&#39;) | [optional] 
+**FlowId** | Pointer to **string** | ID of ServiceNow Flow (set if workflowType is &#39;flow&#39;) | [optional] 
+**WorkflowType** | Pointer to **string** | Options: \&quot;workflow\&quot; (legacy workflow), \&quot;flow\&quot; (ServiceNow Flow) | [optional] 
 
 ## Methods
 

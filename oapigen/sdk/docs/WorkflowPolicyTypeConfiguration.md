@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkflowId** | **string** |  | 
+**WorkflowId** | **string** | ID of the workflow to execute | 
 
 ## Methods
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkflowId** | Pointer to **string** |  | [optional] 
+**WorkflowId** | Pointer to **string** | ID of the workflow to execute | [optional] 
 
 ## Methods
 

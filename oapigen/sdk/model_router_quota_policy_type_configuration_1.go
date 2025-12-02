@@ -20,6 +20,7 @@ var _ MappedNullable = &RouterQuotaPolicyTypeConfiguration1{}
 
 // RouterQuotaPolicyTypeConfiguration1 Configuration settings for the following policy types: - Router Quota
 type RouterQuotaPolicyTypeConfiguration1 struct {
+	// Max Routers
 	MaxRouters           *string                `json:"maxRouters,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

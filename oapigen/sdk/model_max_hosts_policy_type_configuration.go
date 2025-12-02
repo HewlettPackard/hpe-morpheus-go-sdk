@@ -20,6 +20,7 @@ var _ MappedNullable = &MaxHostsPolicyTypeConfiguration{}
 
 // MaxHostsPolicyTypeConfiguration - Max Hosts
 type MaxHostsPolicyTypeConfiguration struct {
+	// Max Hosts
 	MaxHosts             string                 `json:"maxHosts"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

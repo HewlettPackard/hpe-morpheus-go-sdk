@@ -20,6 +20,7 @@ var _ MappedNullable = &MaxPoolMembersPolicyTypeConfiguration{}
 
 // MaxPoolMembersPolicyTypeConfiguration - Max Pool Members
 type MaxPoolMembersPolicyTypeConfiguration struct {
+	// Max Pool Members
 	MaxPoolMembers       string                 `json:"maxPoolMembers"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

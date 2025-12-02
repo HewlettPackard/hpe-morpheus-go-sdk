@@ -18,8 +18,9 @@ import (
 // checks if the MaxSnapshotsPolicyTypeConfiguration1 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxSnapshotsPolicyTypeConfiguration1{}
 
-// MaxSnapshotsPolicyTypeConfiguration1 - Max Snapshots
+// MaxSnapshotsPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max Snapshots
 type MaxSnapshotsPolicyTypeConfiguration1 struct {
+	// Max Snapshots
 	MaxSnapshots         *string                `json:"maxSnapshots,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxContainers** | Pointer to **string** |  | [optional] 
+**MaxContainers** | Pointer to **string** | Max Containers | [optional] 
 
 ## Methods
 

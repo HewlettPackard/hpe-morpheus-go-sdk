@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RequiredNetworks** | **[]int64** |  | 
+**RequiredNetworks** | **[]int64** | Array of required network IDs | 
 
 ## Methods
 

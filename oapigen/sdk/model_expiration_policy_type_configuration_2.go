@@ -20,20 +20,31 @@ var _ MappedNullable = &ExpirationPolicyTypeConfiguration2{}
 
 // ExpirationPolicyTypeConfiguration2 - Expiration
 type ExpirationPolicyTypeConfiguration2 struct {
-	LifecycleType                     string                 `json:"lifecycleType"`
-	LifecycleAge                      *string                `json:"lifecycleAge,omitempty"`
-	LifecycleRenewal                  *string                `json:"lifecycleRenewal,omitempty"`
-	LifecycleNotify                   *string                `json:"lifecycleNotify,omitempty"`
-	LifecycleMessage                  *string                `json:"lifecycleMessage,omitempty"`
-	LifecycleAutoRenew                *string                `json:"lifecycleAutoRenew,omitempty"`
-	LifecycleAllowExtend              *string                `json:"lifecycleAllowExtend,omitempty"`
-	LifecycleExtensionsBeforeApproval *string                `json:"lifecycleExtensionsBeforeApproval,omitempty"`
-	AccountIntegrationId              *string                `json:"accountIntegrationId,omitempty"`
-	LifecycleWorkflowId               *string                `json:"lifecycleWorkflowId,omitempty"`
-	FlowId                            *string                `json:"flowId,omitempty"`
-	WorkflowType                      *string                `json:"workflowType,omitempty"`
-	LifecycleHideFixed                *bool                  `json:"lifecycleHideFixed,omitempty"`
-	AdditionalProperties              map[string]interface{} `json:",remain"`
+	// Options: \"user\" (user configurable), \"fixed\" (fixed expiration)
+	LifecycleType string `json:"lifecycleType"`
+	// Days until expiration
+	LifecycleAge *string `json:"lifecycleAge,omitempty"`
+	// Days for renewal window
+	LifecycleRenewal *string `json:"lifecycleRenewal,omitempty"`
+	// Days before expiration to notify
+	LifecycleNotify *string `json:"lifecycleNotify,omitempty"`
+	// Notification message
+	LifecycleMessage     *string `json:"lifecycleMessage,omitempty"`
+	LifecycleAutoRenew   *string `json:"lifecycleAutoRenew,omitempty"`
+	LifecycleAllowExtend *string `json:"lifecycleAllowExtend,omitempty"`
+	// Number of extensions before requiring approval
+	LifecycleExtensionsBeforeApproval *string `json:"lifecycleExtensionsBeforeApproval,omitempty"`
+	// ID of your ServiceNow or approval integration
+	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
+	// ID of legacy ServiceNow workflow (set if workflowType is 'workflow')
+	LifecycleWorkflowId *string `json:"lifecycleWorkflowId,omitempty"`
+	// ID of ServiceNow Flow (set if workflowType is 'flow')
+	FlowId *string `json:"flowId,omitempty"`
+	// Options: \"workflow\" (legacy workflow), \"flow\" (ServiceNow Flow)
+	WorkflowType *string `json:"workflowType,omitempty"`
+	// Hide fixed expiration from users
+	LifecycleHideFixed   *bool                  `json:"lifecycleHideFixed,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ExpirationPolicyTypeConfiguration2 ExpirationPolicyTypeConfiguration2

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateBackupType** | **string** |  | 
-**CreateBackup** | Pointer to **bool** |  | [optional] 
+**CreateBackupType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
+**CreateBackup** | Pointer to **bool** | Enforce backup creation | [optional] 
 
 ## Methods
 

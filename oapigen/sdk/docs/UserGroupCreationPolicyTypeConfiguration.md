@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | **string** |  | 
+**UserGroup** | **string** | ID of the user group to assign | 
 
 ## Methods
 

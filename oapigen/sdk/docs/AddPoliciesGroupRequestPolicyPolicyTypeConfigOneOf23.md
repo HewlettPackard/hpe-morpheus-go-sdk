@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PowerScheduleType** | Pointer to **string** |  | [optional] 
-**PowerSchedule** | Pointer to **string** |  | [optional] 
+**PowerScheduleType** | Pointer to **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict schedule) | [optional] 
+**PowerSchedule** | Pointer to **string** | ID of the power schedule | [optional] 
 **PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
 
 ## Methods

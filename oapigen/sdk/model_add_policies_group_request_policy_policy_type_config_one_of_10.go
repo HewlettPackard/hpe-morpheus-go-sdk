@@ -20,8 +20,11 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 - Instance Name
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf10 struct {
-	NamingType           *string                `json:"namingType,omitempty"`
-	NamingPattern        *string                `json:"namingPattern,omitempty"`
+	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
+	NamingType *string `json:"namingType,omitempty"`
+	// Name pattern uses ${variable} string interpolation. Available variables are: groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
+	NamingPattern *string `json:"namingPattern,omitempty"`
+	// Auto-resolve conflicts
 	NamingConflict       *bool                  `json:"namingConflict,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

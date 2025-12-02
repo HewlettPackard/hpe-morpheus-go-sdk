@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PowerScheduleType** | **string** |  | 
-**PowerSchedule** | Pointer to **string** |  | [optional] 
-**PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
+**PowerScheduleType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict schedule) | 
+**PowerSchedule** | Pointer to **string** | ID of the power schedule | [optional] 
+**PowerScheduleHideFixed** | Pointer to **bool** | Hide fixed schedule from users | [optional] 
 
 ## Methods
 

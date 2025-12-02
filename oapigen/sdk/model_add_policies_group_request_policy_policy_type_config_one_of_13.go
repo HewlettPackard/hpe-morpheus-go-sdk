@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13 - Max Hosts
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf13 struct {
+	// Max Hosts
 	MaxHosts             *string                `json:"maxHosts,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

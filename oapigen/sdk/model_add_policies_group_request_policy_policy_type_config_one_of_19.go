@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 - Max Virtual Servers
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf19 struct {
+	// Max Virtual Servers
 	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

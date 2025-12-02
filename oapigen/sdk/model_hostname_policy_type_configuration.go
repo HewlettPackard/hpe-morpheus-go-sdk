@@ -20,7 +20,9 @@ var _ MappedNullable = &HostnamePolicyTypeConfiguration{}
 
 // HostnamePolicyTypeConfiguration - Hostname
 type HostnamePolicyTypeConfiguration struct {
-	HostNamingType       string                 `json:"hostNamingType"`
+	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
+	HostNamingType string `json:"hostNamingType"`
+	// Name pattern uses ${variable} string interpolation.  Available variables are:<br>groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
 	HostNamingPattern    *string                `json:"hostNamingPattern,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

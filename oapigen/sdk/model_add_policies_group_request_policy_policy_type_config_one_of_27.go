@@ -20,7 +20,9 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 - Storage Server Storage Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf27 struct {
-	StorageServerId      *string                `json:"storageServerId,omitempty"`
+	// ID of the storage server
+	StorageServerId *string `json:"storageServerId,omitempty"`
+	// Max Storage (GB)
 	MaxStorage           *string                `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

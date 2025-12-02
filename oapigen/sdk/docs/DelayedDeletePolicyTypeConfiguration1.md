@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RemovalAge** | Pointer to **string** |  | [optional] 
+**RemovalAge** | Pointer to **string** | Removal Age (days) | [optional] 
 
 ## Methods
 

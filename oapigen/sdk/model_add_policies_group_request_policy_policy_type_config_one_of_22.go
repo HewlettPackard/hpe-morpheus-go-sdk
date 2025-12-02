@@ -20,6 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 - Network Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf22 struct {
+	// Max Networks
 	MaxNetworks          *string                `json:"maxNetworks,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

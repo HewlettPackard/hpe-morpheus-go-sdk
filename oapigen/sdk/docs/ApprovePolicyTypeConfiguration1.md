@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | Pointer to **string** |  | [optional] 
-**WorkflowId** | Pointer to **string** |  | [optional] 
-**FlowId** | Pointer to **string** |  | [optional] 
-**WorkflowType** | Pointer to **string** |  | [optional] 
+**AccountIntegrationId** | Pointer to **string** | ID of your ServiceNow or approval integration | [optional] 
+**WorkflowId** | Pointer to **string** | ID of legacy ServiceNow workflow (set if workflowType is &#39;workflow&#39;) | [optional] 
+**FlowId** | Pointer to **string** | ID of ServiceNow Flow (set if workflowType is &#39;flow&#39;) | [optional] 
+**WorkflowType** | Pointer to **string** | Options: \&quot;workflow\&quot; (legacy workflow), \&quot;flow\&quot; (ServiceNow Flow) | [optional] 
 
 ## Methods
 

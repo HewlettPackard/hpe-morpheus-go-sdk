@@ -23,85 +23,85 @@ var _ fmt.Stringer
 
 // AddPolicies200ResponseAllOfPolicyConfig - struct for AddPolicies200ResponseAllOfPolicyConfig
 type AddPolicies200ResponseAllOfPolicyConfig struct {
-	ApprovePolicyTypeConfiguration                         *ApprovePolicyTypeConfiguration
-	BackupCreationPolicyTypeConfiguration                  *BackupCreationPolicyTypeConfiguration
-	BackupTargetsPolicyTypeConfiguration                   *BackupTargetsPolicyTypeConfiguration
-	BudgetPolicyTypeConfiguration                          *BudgetPolicyTypeConfiguration
-	ClusterResourceNamePolicyTypeConfiguration             *ClusterResourceNamePolicyTypeConfiguration
-	CypherAccessPolicyTypeConfiguration                    *CypherAccessPolicyTypeConfiguration
-	DelayedDeletePolicyTypeConfiguration                   *DelayedDeletePolicyTypeConfiguration
-	ExpirationPolicyTypeConfiguration2                     *ExpirationPolicyTypeConfiguration2
-	HostnamePolicyTypeConfiguration                        *HostnamePolicyTypeConfiguration
-	InstanceNamePolicyTypeConfiguration                    *InstanceNamePolicyTypeConfiguration
-	MaxContainersPolicyTypeConfiguration                   *MaxContainersPolicyTypeConfiguration
-	MaxCoresPolicyTypeConfiguration                        *MaxCoresPolicyTypeConfiguration
-	MaxHostsPolicyTypeConfiguration                        *MaxHostsPolicyTypeConfiguration
-	MaxLoadBalancerPoolsPolicyTypeConfiguration            *MaxLoadBalancerPoolsPolicyTypeConfiguration
-	MaxMemoryPolicyTypeConfiguration                       *MaxMemoryPolicyTypeConfiguration
-	MaxPoolMembersPolicyTypeConfiguration                  *MaxPoolMembersPolicyTypeConfiguration
-	MaxSnapshotsPolicyTypeConfiguration                    *MaxSnapshotsPolicyTypeConfiguration
-	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
-	MaxVMsPolicyTypeConfiguration                          *MaxVMsPolicyTypeConfiguration
-	MaxVirtualServersPolicyTypeConfiguration               *MaxVirtualServersPolicyTypeConfiguration
-	MessageOfTheDayPolicyTypeConfiguration2                *MessageOfTheDayPolicyTypeConfiguration2
-	NetworkQuotaPolicyTypeConfiguration                    *NetworkQuotaPolicyTypeConfiguration
-	PowerSchedulePolicyTypeConfiguration                   *PowerSchedulePolicyTypeConfiguration
-	RequiredNetworkPolicyTypeConfiguration                 *RequiredNetworkPolicyTypeConfiguration
-	RouterQuotaPolicyTypeConfiguration                     *RouterQuotaPolicyTypeConfiguration
-	ShutdownPolicyTypeConfiguration                        *ShutdownPolicyTypeConfiguration
-	StorageServerStorageQuotaPolicyTypeConfiguration       *StorageServerStorageQuotaPolicyTypeConfiguration
-	TagsPolicyTypeConfiguration                            *TagsPolicyTypeConfiguration
-	UserCreationPolicyTypeConfiguration                    *UserCreationPolicyTypeConfiguration
-	UserGroupCreationPolicyTypeConfiguration               *UserGroupCreationPolicyTypeConfiguration
-	WorkflowPolicyTypeConfiguration                        *WorkflowPolicyTypeConfiguration
+	ApprovePolicyTypeConfiguration2                         *ApprovePolicyTypeConfiguration2
+	BackupCreationPolicyTypeConfiguration2                  *BackupCreationPolicyTypeConfiguration2
+	BackupTargetsPolicyTypeConfiguration2                   *BackupTargetsPolicyTypeConfiguration2
+	BudgetPolicyTypeConfiguration2                          *BudgetPolicyTypeConfiguration2
+	ClusterResourceNamePolicyTypeConfiguration2             *ClusterResourceNamePolicyTypeConfiguration2
+	CypherAccessPolicyTypeConfiguration2                    *CypherAccessPolicyTypeConfiguration2
+	DelayedDeletePolicyTypeConfiguration2                   *DelayedDeletePolicyTypeConfiguration2
+	ExpirationPolicyTypeConfiguration2                      *ExpirationPolicyTypeConfiguration2
+	HostnamePolicyTypeConfiguration                         *HostnamePolicyTypeConfiguration
+	InstanceNamePolicyTypeConfiguration                     *InstanceNamePolicyTypeConfiguration
+	MaxContainersPolicyTypeConfiguration2                   *MaxContainersPolicyTypeConfiguration2
+	MaxCoresPolicyTypeConfiguration2                        *MaxCoresPolicyTypeConfiguration2
+	MaxHostsPolicyTypeConfiguration2                        *MaxHostsPolicyTypeConfiguration2
+	MaxLoadBalancerPoolsPolicyTypeConfiguration2            *MaxLoadBalancerPoolsPolicyTypeConfiguration2
+	MaxMemoryPolicyTypeConfiguration2                       *MaxMemoryPolicyTypeConfiguration2
+	MaxPoolMembersPolicyTypeConfiguration2                  *MaxPoolMembersPolicyTypeConfiguration2
+	MaxSnapshotsPolicyTypeConfiguration2                    *MaxSnapshotsPolicyTypeConfiguration2
+	MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
+	MaxVMsPolicyTypeConfiguration2                          *MaxVMsPolicyTypeConfiguration2
+	MaxVirtualServersPolicyTypeConfiguration2               *MaxVirtualServersPolicyTypeConfiguration2
+	MessageOfTheDayPolicyTypeConfiguration2                 *MessageOfTheDayPolicyTypeConfiguration2
+	NetworkQuotaPolicyTypeConfiguration2                    *NetworkQuotaPolicyTypeConfiguration2
+	PowerSchedulePolicyTypeConfiguration2                   *PowerSchedulePolicyTypeConfiguration2
+	RequiredNetworkPolicyTypeConfiguration                  *RequiredNetworkPolicyTypeConfiguration
+	RouterQuotaPolicyTypeConfiguration2                     *RouterQuotaPolicyTypeConfiguration2
+	ShutdownPolicyTypeConfiguration2                        *ShutdownPolicyTypeConfiguration2
+	StorageServerStorageQuotaPolicyTypeConfiguration2       *StorageServerStorageQuotaPolicyTypeConfiguration2
+	TagsPolicyTypeConfiguration2                            *TagsPolicyTypeConfiguration2
+	UserCreationPolicyTypeConfiguration2                    *UserCreationPolicyTypeConfiguration2
+	UserGroupCreationPolicyTypeConfiguration2               *UserGroupCreationPolicyTypeConfiguration2
+	WorkflowPolicyTypeConfiguration2                        *WorkflowPolicyTypeConfiguration2
 }
 
-// ApprovePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ApprovePolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func ApprovePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *ApprovePolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// ApprovePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ApprovePolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func ApprovePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *ApprovePolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		ApprovePolicyTypeConfiguration: v,
+		ApprovePolicyTypeConfiguration2: v,
 	}
 }
 
-// BackupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupCreationPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func BackupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *BackupCreationPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// BackupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupCreationPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func BackupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *BackupCreationPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		BackupCreationPolicyTypeConfiguration: v,
+		BackupCreationPolicyTypeConfiguration2: v,
 	}
 }
 
-// BackupTargetsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupTargetsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func BackupTargetsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *BackupTargetsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// BackupTargetsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupTargetsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func BackupTargetsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *BackupTargetsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		BackupTargetsPolicyTypeConfiguration: v,
+		BackupTargetsPolicyTypeConfiguration2: v,
 	}
 }
 
-// BudgetPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BudgetPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func BudgetPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *BudgetPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// BudgetPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BudgetPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func BudgetPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *BudgetPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		BudgetPolicyTypeConfiguration: v,
+		BudgetPolicyTypeConfiguration2: v,
 	}
 }
 
-// ClusterResourceNamePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ClusterResourceNamePolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func ClusterResourceNamePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *ClusterResourceNamePolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// ClusterResourceNamePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ClusterResourceNamePolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func ClusterResourceNamePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *ClusterResourceNamePolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		ClusterResourceNamePolicyTypeConfiguration: v,
+		ClusterResourceNamePolicyTypeConfiguration2: v,
 	}
 }
 
-// CypherAccessPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns CypherAccessPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func CypherAccessPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *CypherAccessPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// CypherAccessPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns CypherAccessPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func CypherAccessPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *CypherAccessPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		CypherAccessPolicyTypeConfiguration: v,
+		CypherAccessPolicyTypeConfiguration2: v,
 	}
 }
 
-// DelayedDeletePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns DelayedDeletePolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func DelayedDeletePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *DelayedDeletePolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// DelayedDeletePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns DelayedDeletePolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func DelayedDeletePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *DelayedDeletePolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		DelayedDeletePolicyTypeConfiguration: v,
+		DelayedDeletePolicyTypeConfiguration2: v,
 	}
 }
 
@@ -126,73 +126,73 @@ func InstanceNamePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfi
 	}
 }
 
-// MaxContainersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxContainersPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxContainersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxContainersPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxContainersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxContainersPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxContainersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxContainersPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxContainersPolicyTypeConfiguration: v,
+		MaxContainersPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxCoresPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxCoresPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxCoresPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxCoresPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxCoresPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxCoresPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxCoresPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxCoresPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxCoresPolicyTypeConfiguration: v,
+		MaxCoresPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxHostsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxHostsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxHostsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxHostsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxHostsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxHostsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxHostsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxHostsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxHostsPolicyTypeConfiguration: v,
+		MaxHostsPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxLoadBalancerPoolsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxLoadBalancerPoolsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxLoadBalancerPoolsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxLoadBalancerPoolsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxLoadBalancerPoolsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxLoadBalancerPoolsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxLoadBalancerPoolsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxLoadBalancerPoolsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxLoadBalancerPoolsPolicyTypeConfiguration: v,
+		MaxLoadBalancerPoolsPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxMemoryPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxMemoryPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxMemoryPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxMemoryPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxMemoryPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxMemoryPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxMemoryPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxMemoryPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxMemoryPolicyTypeConfiguration: v,
+		MaxMemoryPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxPoolMembersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxPoolMembersPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxPoolMembersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxPoolMembersPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxPoolMembersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxPoolMembersPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxPoolMembersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxPoolMembersPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxPoolMembersPolicyTypeConfiguration: v,
+		MaxPoolMembersPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxSnapshotsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxSnapshotsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxSnapshotsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxSnapshotsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxSnapshotsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxSnapshotsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxSnapshotsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxSnapshotsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxSnapshotsPolicyTypeConfiguration: v,
+		MaxSnapshotsPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxStorageAndObjectStorageQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxStorageAndObjectStorageQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration: v,
+		MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxVMsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxVMsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxVMsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxVMsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxVMsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxVMsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxVMsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxVMsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxVMsPolicyTypeConfiguration: v,
+		MaxVMsPolicyTypeConfiguration2: v,
 	}
 }
 
-// MaxVirtualServersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxVirtualServersPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func MaxVirtualServersPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *MaxVirtualServersPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// MaxVirtualServersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns MaxVirtualServersPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func MaxVirtualServersPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *MaxVirtualServersPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		MaxVirtualServersPolicyTypeConfiguration: v,
+		MaxVirtualServersPolicyTypeConfiguration2: v,
 	}
 }
 
@@ -203,17 +203,17 @@ func MessageOfTheDayPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyC
 	}
 }
 
-// NetworkQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns NetworkQuotaPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func NetworkQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *NetworkQuotaPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// NetworkQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns NetworkQuotaPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func NetworkQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *NetworkQuotaPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		NetworkQuotaPolicyTypeConfiguration: v,
+		NetworkQuotaPolicyTypeConfiguration2: v,
 	}
 }
 
-// PowerSchedulePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns PowerSchedulePolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func PowerSchedulePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *PowerSchedulePolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// PowerSchedulePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns PowerSchedulePolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func PowerSchedulePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *PowerSchedulePolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		PowerSchedulePolicyTypeConfiguration: v,
+		PowerSchedulePolicyTypeConfiguration2: v,
 	}
 }
 
@@ -224,52 +224,52 @@ func RequiredNetworkPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyCo
 	}
 }
 
-// RouterQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns RouterQuotaPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func RouterQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *RouterQuotaPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// RouterQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns RouterQuotaPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func RouterQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *RouterQuotaPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		RouterQuotaPolicyTypeConfiguration: v,
+		RouterQuotaPolicyTypeConfiguration2: v,
 	}
 }
 
-// ShutdownPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ShutdownPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func ShutdownPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *ShutdownPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// ShutdownPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ShutdownPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func ShutdownPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *ShutdownPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		ShutdownPolicyTypeConfiguration: v,
+		ShutdownPolicyTypeConfiguration2: v,
 	}
 }
 
-// StorageServerStorageQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns StorageServerStorageQuotaPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func StorageServerStorageQuotaPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *StorageServerStorageQuotaPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// StorageServerStorageQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns StorageServerStorageQuotaPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func StorageServerStorageQuotaPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *StorageServerStorageQuotaPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		StorageServerStorageQuotaPolicyTypeConfiguration: v,
+		StorageServerStorageQuotaPolicyTypeConfiguration2: v,
 	}
 }
 
-// TagsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns TagsPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func TagsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *TagsPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// TagsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns TagsPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func TagsPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *TagsPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		TagsPolicyTypeConfiguration: v,
+		TagsPolicyTypeConfiguration2: v,
 	}
 }
 
-// UserCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns UserCreationPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func UserCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *UserCreationPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// UserCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns UserCreationPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func UserCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *UserCreationPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		UserCreationPolicyTypeConfiguration: v,
+		UserCreationPolicyTypeConfiguration2: v,
 	}
 }
 
-// UserGroupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns UserGroupCreationPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func UserGroupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *UserGroupCreationPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// UserGroupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns UserGroupCreationPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func UserGroupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *UserGroupCreationPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		UserGroupCreationPolicyTypeConfiguration: v,
+		UserGroupCreationPolicyTypeConfiguration2: v,
 	}
 }
 
-// WorkflowPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns WorkflowPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func WorkflowPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *WorkflowPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// WorkflowPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns WorkflowPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func WorkflowPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *WorkflowPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		WorkflowPolicyTypeConfiguration: v,
+		WorkflowPolicyTypeConfiguration2: v,
 	}
 }
 
@@ -278,46 +278,46 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst = &AddPolicies200ResponseAllOfPolicyConfig{}
 	}
 
-	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration)
+	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration2)
 
-	if IsEmpty(dst.ApprovePolicyTypeConfiguration) {
-		dst.ApprovePolicyTypeConfiguration = nil
+	if IsEmpty(dst.ApprovePolicyTypeConfiguration2) {
+		dst.ApprovePolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration) {
-		dst.BackupCreationPolicyTypeConfiguration = nil
+	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration2) {
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.BackupTargetsPolicyTypeConfiguration) {
-		dst.BackupTargetsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.BackupTargetsPolicyTypeConfiguration2) {
+		dst.BackupTargetsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.BudgetPolicyTypeConfiguration) {
-		dst.BudgetPolicyTypeConfiguration = nil
+	if IsEmpty(dst.BudgetPolicyTypeConfiguration2) {
+		dst.BudgetPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration)
+	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration2)
 
-	if IsEmpty(dst.ClusterResourceNamePolicyTypeConfiguration) {
-		dst.ClusterResourceNamePolicyTypeConfiguration = nil
+	if IsEmpty(dst.ClusterResourceNamePolicyTypeConfiguration2) {
+		dst.ClusterResourceNamePolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.CypherAccessPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.CypherAccessPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.CypherAccessPolicyTypeConfiguration) {
-		dst.CypherAccessPolicyTypeConfiguration = nil
+	if IsEmpty(dst.CypherAccessPolicyTypeConfiguration2) {
+		dst.CypherAccessPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.DelayedDeletePolicyTypeConfiguration)
+	mapstructDecode(data, &dst.DelayedDeletePolicyTypeConfiguration2)
 
-	if IsEmpty(dst.DelayedDeletePolicyTypeConfiguration) {
-		dst.DelayedDeletePolicyTypeConfiguration = nil
+	if IsEmpty(dst.DelayedDeletePolicyTypeConfiguration2) {
+		dst.DelayedDeletePolicyTypeConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.ExpirationPolicyTypeConfiguration2)
@@ -338,64 +338,64 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst.InstanceNamePolicyTypeConfiguration = nil
 	}
 
-	mapstructDecode(data, &dst.MaxContainersPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxContainersPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxContainersPolicyTypeConfiguration) {
-		dst.MaxContainersPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxContainersPolicyTypeConfiguration2) {
+		dst.MaxContainersPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxCoresPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxCoresPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxCoresPolicyTypeConfiguration) {
-		dst.MaxCoresPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxCoresPolicyTypeConfiguration2) {
+		dst.MaxCoresPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxHostsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxHostsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxHostsPolicyTypeConfiguration) {
-		dst.MaxHostsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxHostsPolicyTypeConfiguration2) {
+		dst.MaxHostsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration) {
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2) {
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxMemoryPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxMemoryPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxMemoryPolicyTypeConfiguration) {
-		dst.MaxMemoryPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxMemoryPolicyTypeConfiguration2) {
+		dst.MaxMemoryPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxPoolMembersPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxPoolMembersPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration) {
-		dst.MaxPoolMembersPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration2) {
+		dst.MaxPoolMembersPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration) {
-		dst.MaxSnapshotsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration2) {
+		dst.MaxSnapshotsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration) {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxVMsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxVMsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxVMsPolicyTypeConfiguration) {
-		dst.MaxVMsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxVMsPolicyTypeConfiguration2) {
+		dst.MaxVMsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.MaxVirtualServersPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.MaxVirtualServersPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.MaxVirtualServersPolicyTypeConfiguration) {
-		dst.MaxVirtualServersPolicyTypeConfiguration = nil
+	if IsEmpty(dst.MaxVirtualServersPolicyTypeConfiguration2) {
+		dst.MaxVirtualServersPolicyTypeConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.MessageOfTheDayPolicyTypeConfiguration2)
@@ -404,16 +404,16 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst.MessageOfTheDayPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.NetworkQuotaPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.NetworkQuotaPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.NetworkQuotaPolicyTypeConfiguration) {
-		dst.NetworkQuotaPolicyTypeConfiguration = nil
+	if IsEmpty(dst.NetworkQuotaPolicyTypeConfiguration2) {
+		dst.NetworkQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.PowerSchedulePolicyTypeConfiguration)
+	mapstructDecode(data, &dst.PowerSchedulePolicyTypeConfiguration2)
 
-	if IsEmpty(dst.PowerSchedulePolicyTypeConfiguration) {
-		dst.PowerSchedulePolicyTypeConfiguration = nil
+	if IsEmpty(dst.PowerSchedulePolicyTypeConfiguration2) {
+		dst.PowerSchedulePolicyTypeConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.RequiredNetworkPolicyTypeConfiguration)
@@ -422,46 +422,46 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst.RequiredNetworkPolicyTypeConfiguration = nil
 	}
 
-	mapstructDecode(data, &dst.RouterQuotaPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.RouterQuotaPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.RouterQuotaPolicyTypeConfiguration) {
-		dst.RouterQuotaPolicyTypeConfiguration = nil
+	if IsEmpty(dst.RouterQuotaPolicyTypeConfiguration2) {
+		dst.RouterQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.ShutdownPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.ShutdownPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.ShutdownPolicyTypeConfiguration) {
-		dst.ShutdownPolicyTypeConfiguration = nil
+	if IsEmpty(dst.ShutdownPolicyTypeConfiguration2) {
+		dst.ShutdownPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.StorageServerStorageQuotaPolicyTypeConfiguration) {
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration = nil
+	if IsEmpty(dst.StorageServerStorageQuotaPolicyTypeConfiguration2) {
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.TagsPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.TagsPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.TagsPolicyTypeConfiguration) {
-		dst.TagsPolicyTypeConfiguration = nil
+	if IsEmpty(dst.TagsPolicyTypeConfiguration2) {
+		dst.TagsPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.UserCreationPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.UserCreationPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.UserCreationPolicyTypeConfiguration) {
-		dst.UserCreationPolicyTypeConfiguration = nil
+	if IsEmpty(dst.UserCreationPolicyTypeConfiguration2) {
+		dst.UserCreationPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.UserGroupCreationPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.UserGroupCreationPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.UserGroupCreationPolicyTypeConfiguration) {
-		dst.UserGroupCreationPolicyTypeConfiguration = nil
+	if IsEmpty(dst.UserGroupCreationPolicyTypeConfiguration2) {
+		dst.UserGroupCreationPolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.WorkflowPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.WorkflowPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.WorkflowPolicyTypeConfiguration) {
-		dst.WorkflowPolicyTypeConfiguration = nil
+	if IsEmpty(dst.WorkflowPolicyTypeConfiguration2) {
+		dst.WorkflowPolicyTypeConfiguration2 = nil
 	}
 
 	return dst, nil
@@ -471,123 +471,123 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ApprovePolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.ApprovePolicyTypeConfiguration)
+	// try to unmarshal data into ApprovePolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.ApprovePolicyTypeConfiguration2)
 	if err == nil {
-		jsonApprovePolicyTypeConfiguration, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration)
-		if string(jsonApprovePolicyTypeConfiguration) == "{}" { // empty struct
-			dst.ApprovePolicyTypeConfiguration = nil
+		jsonApprovePolicyTypeConfiguration2, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration2)
+		if string(jsonApprovePolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.ApprovePolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.ApprovePolicyTypeConfiguration); err != nil {
-				dst.ApprovePolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.ApprovePolicyTypeConfiguration2); err != nil {
+				dst.ApprovePolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ApprovePolicyTypeConfiguration = nil
+		dst.ApprovePolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into BackupCreationPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.BackupCreationPolicyTypeConfiguration)
+	// try to unmarshal data into BackupCreationPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.BackupCreationPolicyTypeConfiguration2)
 	if err == nil {
-		jsonBackupCreationPolicyTypeConfiguration, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration)
-		if string(jsonBackupCreationPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.BackupCreationPolicyTypeConfiguration = nil
+		jsonBackupCreationPolicyTypeConfiguration2, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration2)
+		if string(jsonBackupCreationPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.BackupCreationPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.BackupCreationPolicyTypeConfiguration); err != nil {
-				dst.BackupCreationPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.BackupCreationPolicyTypeConfiguration2); err != nil {
+				dst.BackupCreationPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.BackupCreationPolicyTypeConfiguration = nil
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into BackupTargetsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.BackupTargetsPolicyTypeConfiguration)
+	// try to unmarshal data into BackupTargetsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.BackupTargetsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonBackupTargetsPolicyTypeConfiguration, _ := json.Marshal(dst.BackupTargetsPolicyTypeConfiguration)
-		if string(jsonBackupTargetsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.BackupTargetsPolicyTypeConfiguration = nil
+		jsonBackupTargetsPolicyTypeConfiguration2, _ := json.Marshal(dst.BackupTargetsPolicyTypeConfiguration2)
+		if string(jsonBackupTargetsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.BackupTargetsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.BackupTargetsPolicyTypeConfiguration); err != nil {
-				dst.BackupTargetsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.BackupTargetsPolicyTypeConfiguration2); err != nil {
+				dst.BackupTargetsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.BackupTargetsPolicyTypeConfiguration = nil
+		dst.BackupTargetsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into BudgetPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.BudgetPolicyTypeConfiguration)
+	// try to unmarshal data into BudgetPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.BudgetPolicyTypeConfiguration2)
 	if err == nil {
-		jsonBudgetPolicyTypeConfiguration, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration)
-		if string(jsonBudgetPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.BudgetPolicyTypeConfiguration = nil
+		jsonBudgetPolicyTypeConfiguration2, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration2)
+		if string(jsonBudgetPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.BudgetPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.BudgetPolicyTypeConfiguration); err != nil {
-				dst.BudgetPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.BudgetPolicyTypeConfiguration2); err != nil {
+				dst.BudgetPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.BudgetPolicyTypeConfiguration = nil
+		dst.BudgetPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into ClusterResourceNamePolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.ClusterResourceNamePolicyTypeConfiguration)
+	// try to unmarshal data into ClusterResourceNamePolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.ClusterResourceNamePolicyTypeConfiguration2)
 	if err == nil {
-		jsonClusterResourceNamePolicyTypeConfiguration, _ := json.Marshal(dst.ClusterResourceNamePolicyTypeConfiguration)
-		if string(jsonClusterResourceNamePolicyTypeConfiguration) == "{}" { // empty struct
-			dst.ClusterResourceNamePolicyTypeConfiguration = nil
+		jsonClusterResourceNamePolicyTypeConfiguration2, _ := json.Marshal(dst.ClusterResourceNamePolicyTypeConfiguration2)
+		if string(jsonClusterResourceNamePolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.ClusterResourceNamePolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.ClusterResourceNamePolicyTypeConfiguration); err != nil {
-				dst.ClusterResourceNamePolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.ClusterResourceNamePolicyTypeConfiguration2); err != nil {
+				dst.ClusterResourceNamePolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ClusterResourceNamePolicyTypeConfiguration = nil
+		dst.ClusterResourceNamePolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into CypherAccessPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.CypherAccessPolicyTypeConfiguration)
+	// try to unmarshal data into CypherAccessPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.CypherAccessPolicyTypeConfiguration2)
 	if err == nil {
-		jsonCypherAccessPolicyTypeConfiguration, _ := json.Marshal(dst.CypherAccessPolicyTypeConfiguration)
-		if string(jsonCypherAccessPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.CypherAccessPolicyTypeConfiguration = nil
+		jsonCypherAccessPolicyTypeConfiguration2, _ := json.Marshal(dst.CypherAccessPolicyTypeConfiguration2)
+		if string(jsonCypherAccessPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.CypherAccessPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.CypherAccessPolicyTypeConfiguration); err != nil {
-				dst.CypherAccessPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.CypherAccessPolicyTypeConfiguration2); err != nil {
+				dst.CypherAccessPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.CypherAccessPolicyTypeConfiguration = nil
+		dst.CypherAccessPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into DelayedDeletePolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.DelayedDeletePolicyTypeConfiguration)
+	// try to unmarshal data into DelayedDeletePolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.DelayedDeletePolicyTypeConfiguration2)
 	if err == nil {
-		jsonDelayedDeletePolicyTypeConfiguration, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration)
-		if string(jsonDelayedDeletePolicyTypeConfiguration) == "{}" { // empty struct
-			dst.DelayedDeletePolicyTypeConfiguration = nil
+		jsonDelayedDeletePolicyTypeConfiguration2, _ := json.Marshal(dst.DelayedDeletePolicyTypeConfiguration2)
+		if string(jsonDelayedDeletePolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.DelayedDeletePolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.DelayedDeletePolicyTypeConfiguration); err != nil {
-				dst.DelayedDeletePolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.DelayedDeletePolicyTypeConfiguration2); err != nil {
+				dst.DelayedDeletePolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.DelayedDeletePolicyTypeConfiguration = nil
+		dst.DelayedDeletePolicyTypeConfiguration2 = nil
 	}
 
 	// try to unmarshal data into ExpirationPolicyTypeConfiguration2
@@ -641,174 +641,174 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.InstanceNamePolicyTypeConfiguration = nil
 	}
 
-	// try to unmarshal data into MaxContainersPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxContainersPolicyTypeConfiguration)
+	// try to unmarshal data into MaxContainersPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxContainersPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxContainersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxContainersPolicyTypeConfiguration)
-		if string(jsonMaxContainersPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxContainersPolicyTypeConfiguration = nil
+		jsonMaxContainersPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxContainersPolicyTypeConfiguration2)
+		if string(jsonMaxContainersPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxContainersPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxContainersPolicyTypeConfiguration); err != nil {
-				dst.MaxContainersPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxContainersPolicyTypeConfiguration2); err != nil {
+				dst.MaxContainersPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxContainersPolicyTypeConfiguration = nil
+		dst.MaxContainersPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxCoresPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxCoresPolicyTypeConfiguration)
+	// try to unmarshal data into MaxCoresPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxCoresPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxCoresPolicyTypeConfiguration, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration)
-		if string(jsonMaxCoresPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxCoresPolicyTypeConfiguration = nil
+		jsonMaxCoresPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxCoresPolicyTypeConfiguration2)
+		if string(jsonMaxCoresPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxCoresPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxCoresPolicyTypeConfiguration); err != nil {
-				dst.MaxCoresPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxCoresPolicyTypeConfiguration2); err != nil {
+				dst.MaxCoresPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxCoresPolicyTypeConfiguration = nil
+		dst.MaxCoresPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxHostsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxHostsPolicyTypeConfiguration)
+	// try to unmarshal data into MaxHostsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxHostsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxHostsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxHostsPolicyTypeConfiguration)
-		if string(jsonMaxHostsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxHostsPolicyTypeConfiguration = nil
+		jsonMaxHostsPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxHostsPolicyTypeConfiguration2)
+		if string(jsonMaxHostsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxHostsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxHostsPolicyTypeConfiguration); err != nil {
-				dst.MaxHostsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxHostsPolicyTypeConfiguration2); err != nil {
+				dst.MaxHostsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxHostsPolicyTypeConfiguration = nil
+		dst.MaxHostsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxLoadBalancerPoolsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxLoadBalancerPoolsPolicyTypeConfiguration)
+	// try to unmarshal data into MaxLoadBalancerPoolsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxLoadBalancerPoolsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration)
-		if string(jsonMaxLoadBalancerPoolsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
+		jsonMaxLoadBalancerPoolsPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2)
+		if string(jsonMaxLoadBalancerPoolsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration); err != nil {
-				dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2); err != nil {
+				dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxMemoryPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxMemoryPolicyTypeConfiguration)
+	// try to unmarshal data into MaxMemoryPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxMemoryPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxMemoryPolicyTypeConfiguration, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration)
-		if string(jsonMaxMemoryPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxMemoryPolicyTypeConfiguration = nil
+		jsonMaxMemoryPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxMemoryPolicyTypeConfiguration2)
+		if string(jsonMaxMemoryPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxMemoryPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxMemoryPolicyTypeConfiguration); err != nil {
-				dst.MaxMemoryPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxMemoryPolicyTypeConfiguration2); err != nil {
+				dst.MaxMemoryPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxMemoryPolicyTypeConfiguration = nil
+		dst.MaxMemoryPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxPoolMembersPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxPoolMembersPolicyTypeConfiguration)
+	// try to unmarshal data into MaxPoolMembersPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxPoolMembersPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxPoolMembersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxPoolMembersPolicyTypeConfiguration)
-		if string(jsonMaxPoolMembersPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxPoolMembersPolicyTypeConfiguration = nil
+		jsonMaxPoolMembersPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxPoolMembersPolicyTypeConfiguration2)
+		if string(jsonMaxPoolMembersPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxPoolMembersPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxPoolMembersPolicyTypeConfiguration); err != nil {
-				dst.MaxPoolMembersPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxPoolMembersPolicyTypeConfiguration2); err != nil {
+				dst.MaxPoolMembersPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxPoolMembersPolicyTypeConfiguration = nil
+		dst.MaxPoolMembersPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxSnapshotsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxSnapshotsPolicyTypeConfiguration)
+	// try to unmarshal data into MaxSnapshotsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxSnapshotsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxSnapshotsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration)
-		if string(jsonMaxSnapshotsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		jsonMaxSnapshotsPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxSnapshotsPolicyTypeConfiguration2)
+		if string(jsonMaxSnapshotsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxSnapshotsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxSnapshotsPolicyTypeConfiguration); err != nil {
-				dst.MaxSnapshotsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxSnapshotsPolicyTypeConfiguration2); err != nil {
+				dst.MaxSnapshotsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxSnapshotsPolicyTypeConfiguration = nil
+		dst.MaxSnapshotsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
+	// try to unmarshal data into MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
-		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
+		jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
+		if string(jsonMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration); err != nil {
-				dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2); err != nil {
+				dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxVMsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxVMsPolicyTypeConfiguration)
+	// try to unmarshal data into MaxVMsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxVMsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxVMsPolicyTypeConfiguration, _ := json.Marshal(dst.MaxVMsPolicyTypeConfiguration)
-		if string(jsonMaxVMsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxVMsPolicyTypeConfiguration = nil
+		jsonMaxVMsPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxVMsPolicyTypeConfiguration2)
+		if string(jsonMaxVMsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxVMsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxVMsPolicyTypeConfiguration); err != nil {
-				dst.MaxVMsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxVMsPolicyTypeConfiguration2); err != nil {
+				dst.MaxVMsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxVMsPolicyTypeConfiguration = nil
+		dst.MaxVMsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into MaxVirtualServersPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.MaxVirtualServersPolicyTypeConfiguration)
+	// try to unmarshal data into MaxVirtualServersPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.MaxVirtualServersPolicyTypeConfiguration2)
 	if err == nil {
-		jsonMaxVirtualServersPolicyTypeConfiguration, _ := json.Marshal(dst.MaxVirtualServersPolicyTypeConfiguration)
-		if string(jsonMaxVirtualServersPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.MaxVirtualServersPolicyTypeConfiguration = nil
+		jsonMaxVirtualServersPolicyTypeConfiguration2, _ := json.Marshal(dst.MaxVirtualServersPolicyTypeConfiguration2)
+		if string(jsonMaxVirtualServersPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.MaxVirtualServersPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.MaxVirtualServersPolicyTypeConfiguration); err != nil {
-				dst.MaxVirtualServersPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.MaxVirtualServersPolicyTypeConfiguration2); err != nil {
+				dst.MaxVirtualServersPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.MaxVirtualServersPolicyTypeConfiguration = nil
+		dst.MaxVirtualServersPolicyTypeConfiguration2 = nil
 	}
 
 	// try to unmarshal data into MessageOfTheDayPolicyTypeConfiguration2
@@ -828,38 +828,38 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.MessageOfTheDayPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into NetworkQuotaPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.NetworkQuotaPolicyTypeConfiguration)
+	// try to unmarshal data into NetworkQuotaPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.NetworkQuotaPolicyTypeConfiguration2)
 	if err == nil {
-		jsonNetworkQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.NetworkQuotaPolicyTypeConfiguration)
-		if string(jsonNetworkQuotaPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.NetworkQuotaPolicyTypeConfiguration = nil
+		jsonNetworkQuotaPolicyTypeConfiguration2, _ := json.Marshal(dst.NetworkQuotaPolicyTypeConfiguration2)
+		if string(jsonNetworkQuotaPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.NetworkQuotaPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.NetworkQuotaPolicyTypeConfiguration); err != nil {
-				dst.NetworkQuotaPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.NetworkQuotaPolicyTypeConfiguration2); err != nil {
+				dst.NetworkQuotaPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.NetworkQuotaPolicyTypeConfiguration = nil
+		dst.NetworkQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into PowerSchedulePolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.PowerSchedulePolicyTypeConfiguration)
+	// try to unmarshal data into PowerSchedulePolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.PowerSchedulePolicyTypeConfiguration2)
 	if err == nil {
-		jsonPowerSchedulePolicyTypeConfiguration, _ := json.Marshal(dst.PowerSchedulePolicyTypeConfiguration)
-		if string(jsonPowerSchedulePolicyTypeConfiguration) == "{}" { // empty struct
-			dst.PowerSchedulePolicyTypeConfiguration = nil
+		jsonPowerSchedulePolicyTypeConfiguration2, _ := json.Marshal(dst.PowerSchedulePolicyTypeConfiguration2)
+		if string(jsonPowerSchedulePolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.PowerSchedulePolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.PowerSchedulePolicyTypeConfiguration); err != nil {
-				dst.PowerSchedulePolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.PowerSchedulePolicyTypeConfiguration2); err != nil {
+				dst.PowerSchedulePolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.PowerSchedulePolicyTypeConfiguration = nil
+		dst.PowerSchedulePolicyTypeConfiguration2 = nil
 	}
 
 	// try to unmarshal data into RequiredNetworkPolicyTypeConfiguration
@@ -879,158 +879,158 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.RequiredNetworkPolicyTypeConfiguration = nil
 	}
 
-	// try to unmarshal data into RouterQuotaPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.RouterQuotaPolicyTypeConfiguration)
+	// try to unmarshal data into RouterQuotaPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.RouterQuotaPolicyTypeConfiguration2)
 	if err == nil {
-		jsonRouterQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.RouterQuotaPolicyTypeConfiguration)
-		if string(jsonRouterQuotaPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.RouterQuotaPolicyTypeConfiguration = nil
+		jsonRouterQuotaPolicyTypeConfiguration2, _ := json.Marshal(dst.RouterQuotaPolicyTypeConfiguration2)
+		if string(jsonRouterQuotaPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.RouterQuotaPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.RouterQuotaPolicyTypeConfiguration); err != nil {
-				dst.RouterQuotaPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.RouterQuotaPolicyTypeConfiguration2); err != nil {
+				dst.RouterQuotaPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.RouterQuotaPolicyTypeConfiguration = nil
+		dst.RouterQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into ShutdownPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.ShutdownPolicyTypeConfiguration)
+	// try to unmarshal data into ShutdownPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.ShutdownPolicyTypeConfiguration2)
 	if err == nil {
-		jsonShutdownPolicyTypeConfiguration, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration)
-		if string(jsonShutdownPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.ShutdownPolicyTypeConfiguration = nil
+		jsonShutdownPolicyTypeConfiguration2, _ := json.Marshal(dst.ShutdownPolicyTypeConfiguration2)
+		if string(jsonShutdownPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.ShutdownPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.ShutdownPolicyTypeConfiguration); err != nil {
-				dst.ShutdownPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.ShutdownPolicyTypeConfiguration2); err != nil {
+				dst.ShutdownPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ShutdownPolicyTypeConfiguration = nil
+		dst.ShutdownPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into StorageServerStorageQuotaPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.StorageServerStorageQuotaPolicyTypeConfiguration)
+	// try to unmarshal data into StorageServerStorageQuotaPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.StorageServerStorageQuotaPolicyTypeConfiguration2)
 	if err == nil {
-		jsonStorageServerStorageQuotaPolicyTypeConfiguration, _ := json.Marshal(dst.StorageServerStorageQuotaPolicyTypeConfiguration)
-		if string(jsonStorageServerStorageQuotaPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.StorageServerStorageQuotaPolicyTypeConfiguration = nil
+		jsonStorageServerStorageQuotaPolicyTypeConfiguration2, _ := json.Marshal(dst.StorageServerStorageQuotaPolicyTypeConfiguration2)
+		if string(jsonStorageServerStorageQuotaPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.StorageServerStorageQuotaPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.StorageServerStorageQuotaPolicyTypeConfiguration); err != nil {
-				dst.StorageServerStorageQuotaPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.StorageServerStorageQuotaPolicyTypeConfiguration2); err != nil {
+				dst.StorageServerStorageQuotaPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration = nil
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into TagsPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.TagsPolicyTypeConfiguration)
+	// try to unmarshal data into TagsPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.TagsPolicyTypeConfiguration2)
 	if err == nil {
-		jsonTagsPolicyTypeConfiguration, _ := json.Marshal(dst.TagsPolicyTypeConfiguration)
-		if string(jsonTagsPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.TagsPolicyTypeConfiguration = nil
+		jsonTagsPolicyTypeConfiguration2, _ := json.Marshal(dst.TagsPolicyTypeConfiguration2)
+		if string(jsonTagsPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.TagsPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.TagsPolicyTypeConfiguration); err != nil {
-				dst.TagsPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.TagsPolicyTypeConfiguration2); err != nil {
+				dst.TagsPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.TagsPolicyTypeConfiguration = nil
+		dst.TagsPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into UserCreationPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.UserCreationPolicyTypeConfiguration)
+	// try to unmarshal data into UserCreationPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.UserCreationPolicyTypeConfiguration2)
 	if err == nil {
-		jsonUserCreationPolicyTypeConfiguration, _ := json.Marshal(dst.UserCreationPolicyTypeConfiguration)
-		if string(jsonUserCreationPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.UserCreationPolicyTypeConfiguration = nil
+		jsonUserCreationPolicyTypeConfiguration2, _ := json.Marshal(dst.UserCreationPolicyTypeConfiguration2)
+		if string(jsonUserCreationPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.UserCreationPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.UserCreationPolicyTypeConfiguration); err != nil {
-				dst.UserCreationPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.UserCreationPolicyTypeConfiguration2); err != nil {
+				dst.UserCreationPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.UserCreationPolicyTypeConfiguration = nil
+		dst.UserCreationPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into UserGroupCreationPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.UserGroupCreationPolicyTypeConfiguration)
+	// try to unmarshal data into UserGroupCreationPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.UserGroupCreationPolicyTypeConfiguration2)
 	if err == nil {
-		jsonUserGroupCreationPolicyTypeConfiguration, _ := json.Marshal(dst.UserGroupCreationPolicyTypeConfiguration)
-		if string(jsonUserGroupCreationPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.UserGroupCreationPolicyTypeConfiguration = nil
+		jsonUserGroupCreationPolicyTypeConfiguration2, _ := json.Marshal(dst.UserGroupCreationPolicyTypeConfiguration2)
+		if string(jsonUserGroupCreationPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.UserGroupCreationPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.UserGroupCreationPolicyTypeConfiguration); err != nil {
-				dst.UserGroupCreationPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.UserGroupCreationPolicyTypeConfiguration2); err != nil {
+				dst.UserGroupCreationPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.UserGroupCreationPolicyTypeConfiguration = nil
+		dst.UserGroupCreationPolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into WorkflowPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.WorkflowPolicyTypeConfiguration)
+	// try to unmarshal data into WorkflowPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.WorkflowPolicyTypeConfiguration2)
 	if err == nil {
-		jsonWorkflowPolicyTypeConfiguration, _ := json.Marshal(dst.WorkflowPolicyTypeConfiguration)
-		if string(jsonWorkflowPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.WorkflowPolicyTypeConfiguration = nil
+		jsonWorkflowPolicyTypeConfiguration2, _ := json.Marshal(dst.WorkflowPolicyTypeConfiguration2)
+		if string(jsonWorkflowPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.WorkflowPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.WorkflowPolicyTypeConfiguration); err != nil {
-				dst.WorkflowPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.WorkflowPolicyTypeConfiguration2); err != nil {
+				dst.WorkflowPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.WorkflowPolicyTypeConfiguration = nil
+		dst.WorkflowPolicyTypeConfiguration2 = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ApprovePolicyTypeConfiguration = nil
-		dst.BackupCreationPolicyTypeConfiguration = nil
-		dst.BackupTargetsPolicyTypeConfiguration = nil
-		dst.BudgetPolicyTypeConfiguration = nil
-		dst.ClusterResourceNamePolicyTypeConfiguration = nil
-		dst.CypherAccessPolicyTypeConfiguration = nil
-		dst.DelayedDeletePolicyTypeConfiguration = nil
+		dst.ApprovePolicyTypeConfiguration2 = nil
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
+		dst.BackupTargetsPolicyTypeConfiguration2 = nil
+		dst.BudgetPolicyTypeConfiguration2 = nil
+		dst.ClusterResourceNamePolicyTypeConfiguration2 = nil
+		dst.CypherAccessPolicyTypeConfiguration2 = nil
+		dst.DelayedDeletePolicyTypeConfiguration2 = nil
 		dst.ExpirationPolicyTypeConfiguration2 = nil
 		dst.HostnamePolicyTypeConfiguration = nil
 		dst.InstanceNamePolicyTypeConfiguration = nil
-		dst.MaxContainersPolicyTypeConfiguration = nil
-		dst.MaxCoresPolicyTypeConfiguration = nil
-		dst.MaxHostsPolicyTypeConfiguration = nil
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration = nil
-		dst.MaxMemoryPolicyTypeConfiguration = nil
-		dst.MaxPoolMembersPolicyTypeConfiguration = nil
-		dst.MaxSnapshotsPolicyTypeConfiguration = nil
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration = nil
-		dst.MaxVMsPolicyTypeConfiguration = nil
-		dst.MaxVirtualServersPolicyTypeConfiguration = nil
+		dst.MaxContainersPolicyTypeConfiguration2 = nil
+		dst.MaxCoresPolicyTypeConfiguration2 = nil
+		dst.MaxHostsPolicyTypeConfiguration2 = nil
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration2 = nil
+		dst.MaxMemoryPolicyTypeConfiguration2 = nil
+		dst.MaxPoolMembersPolicyTypeConfiguration2 = nil
+		dst.MaxSnapshotsPolicyTypeConfiguration2 = nil
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 = nil
+		dst.MaxVMsPolicyTypeConfiguration2 = nil
+		dst.MaxVirtualServersPolicyTypeConfiguration2 = nil
 		dst.MessageOfTheDayPolicyTypeConfiguration2 = nil
-		dst.NetworkQuotaPolicyTypeConfiguration = nil
-		dst.PowerSchedulePolicyTypeConfiguration = nil
+		dst.NetworkQuotaPolicyTypeConfiguration2 = nil
+		dst.PowerSchedulePolicyTypeConfiguration2 = nil
 		dst.RequiredNetworkPolicyTypeConfiguration = nil
-		dst.RouterQuotaPolicyTypeConfiguration = nil
-		dst.ShutdownPolicyTypeConfiguration = nil
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration = nil
-		dst.TagsPolicyTypeConfiguration = nil
-		dst.UserCreationPolicyTypeConfiguration = nil
-		dst.UserGroupCreationPolicyTypeConfiguration = nil
-		dst.WorkflowPolicyTypeConfiguration = nil
+		dst.RouterQuotaPolicyTypeConfiguration2 = nil
+		dst.ShutdownPolicyTypeConfiguration2 = nil
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration2 = nil
+		dst.TagsPolicyTypeConfiguration2 = nil
+		dst.UserCreationPolicyTypeConfiguration2 = nil
+		dst.UserGroupCreationPolicyTypeConfiguration2 = nil
+		dst.WorkflowPolicyTypeConfiguration2 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddPolicies200ResponseAllOfPolicyConfig)")
 	} else if match == 1 {
@@ -1042,32 +1042,32 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error) {
-	if src.ApprovePolicyTypeConfiguration != nil {
-		return json.Marshal(&src.ApprovePolicyTypeConfiguration)
+	if src.ApprovePolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.ApprovePolicyTypeConfiguration2)
 	}
 
-	if src.BackupCreationPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration)
+	if src.BackupCreationPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration2)
 	}
 
-	if src.BackupTargetsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.BackupTargetsPolicyTypeConfiguration)
+	if src.BackupTargetsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.BackupTargetsPolicyTypeConfiguration2)
 	}
 
-	if src.BudgetPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.BudgetPolicyTypeConfiguration)
+	if src.BudgetPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.BudgetPolicyTypeConfiguration2)
 	}
 
-	if src.ClusterResourceNamePolicyTypeConfiguration != nil {
-		return json.Marshal(&src.ClusterResourceNamePolicyTypeConfiguration)
+	if src.ClusterResourceNamePolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.ClusterResourceNamePolicyTypeConfiguration2)
 	}
 
-	if src.CypherAccessPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.CypherAccessPolicyTypeConfiguration)
+	if src.CypherAccessPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.CypherAccessPolicyTypeConfiguration2)
 	}
 
-	if src.DelayedDeletePolicyTypeConfiguration != nil {
-		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration)
+	if src.DelayedDeletePolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.DelayedDeletePolicyTypeConfiguration2)
 	}
 
 	if src.ExpirationPolicyTypeConfiguration2 != nil {
@@ -1082,88 +1082,88 @@ func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error)
 		return json.Marshal(&src.InstanceNamePolicyTypeConfiguration)
 	}
 
-	if src.MaxContainersPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxContainersPolicyTypeConfiguration)
+	if src.MaxContainersPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxContainersPolicyTypeConfiguration2)
 	}
 
-	if src.MaxCoresPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration)
+	if src.MaxCoresPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxCoresPolicyTypeConfiguration2)
 	}
 
-	if src.MaxHostsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxHostsPolicyTypeConfiguration)
+	if src.MaxHostsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxHostsPolicyTypeConfiguration2)
 	}
 
-	if src.MaxLoadBalancerPoolsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxLoadBalancerPoolsPolicyTypeConfiguration)
+	if src.MaxLoadBalancerPoolsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxLoadBalancerPoolsPolicyTypeConfiguration2)
 	}
 
-	if src.MaxMemoryPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration)
+	if src.MaxMemoryPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxMemoryPolicyTypeConfiguration2)
 	}
 
-	if src.MaxPoolMembersPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration)
+	if src.MaxPoolMembersPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxPoolMembersPolicyTypeConfiguration2)
 	}
 
-	if src.MaxSnapshotsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration)
+	if src.MaxSnapshotsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxSnapshotsPolicyTypeConfiguration2)
 	}
 
-	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration)
+	if src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2)
 	}
 
-	if src.MaxVMsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxVMsPolicyTypeConfiguration)
+	if src.MaxVMsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxVMsPolicyTypeConfiguration2)
 	}
 
-	if src.MaxVirtualServersPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.MaxVirtualServersPolicyTypeConfiguration)
+	if src.MaxVirtualServersPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.MaxVirtualServersPolicyTypeConfiguration2)
 	}
 
 	if src.MessageOfTheDayPolicyTypeConfiguration2 != nil {
 		return json.Marshal(&src.MessageOfTheDayPolicyTypeConfiguration2)
 	}
 
-	if src.NetworkQuotaPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.NetworkQuotaPolicyTypeConfiguration)
+	if src.NetworkQuotaPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.NetworkQuotaPolicyTypeConfiguration2)
 	}
 
-	if src.PowerSchedulePolicyTypeConfiguration != nil {
-		return json.Marshal(&src.PowerSchedulePolicyTypeConfiguration)
+	if src.PowerSchedulePolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.PowerSchedulePolicyTypeConfiguration2)
 	}
 
 	if src.RequiredNetworkPolicyTypeConfiguration != nil {
 		return json.Marshal(&src.RequiredNetworkPolicyTypeConfiguration)
 	}
 
-	if src.RouterQuotaPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.RouterQuotaPolicyTypeConfiguration)
+	if src.RouterQuotaPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.RouterQuotaPolicyTypeConfiguration2)
 	}
 
-	if src.ShutdownPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.ShutdownPolicyTypeConfiguration)
+	if src.ShutdownPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.ShutdownPolicyTypeConfiguration2)
 	}
 
-	if src.StorageServerStorageQuotaPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.StorageServerStorageQuotaPolicyTypeConfiguration)
+	if src.StorageServerStorageQuotaPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.StorageServerStorageQuotaPolicyTypeConfiguration2)
 	}
 
-	if src.TagsPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.TagsPolicyTypeConfiguration)
+	if src.TagsPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.TagsPolicyTypeConfiguration2)
 	}
 
-	if src.UserCreationPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.UserCreationPolicyTypeConfiguration)
+	if src.UserCreationPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.UserCreationPolicyTypeConfiguration2)
 	}
 
-	if src.UserGroupCreationPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.UserGroupCreationPolicyTypeConfiguration)
+	if src.UserGroupCreationPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.UserGroupCreationPolicyTypeConfiguration2)
 	}
 
-	if src.WorkflowPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.WorkflowPolicyTypeConfiguration)
+	if src.WorkflowPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.WorkflowPolicyTypeConfiguration2)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -1174,32 +1174,32 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 	if obj == nil {
 		return nil
 	}
-	if obj.ApprovePolicyTypeConfiguration != nil {
-		return obj.ApprovePolicyTypeConfiguration
+	if obj.ApprovePolicyTypeConfiguration2 != nil {
+		return obj.ApprovePolicyTypeConfiguration2
 	}
 
-	if obj.BackupCreationPolicyTypeConfiguration != nil {
-		return obj.BackupCreationPolicyTypeConfiguration
+	if obj.BackupCreationPolicyTypeConfiguration2 != nil {
+		return obj.BackupCreationPolicyTypeConfiguration2
 	}
 
-	if obj.BackupTargetsPolicyTypeConfiguration != nil {
-		return obj.BackupTargetsPolicyTypeConfiguration
+	if obj.BackupTargetsPolicyTypeConfiguration2 != nil {
+		return obj.BackupTargetsPolicyTypeConfiguration2
 	}
 
-	if obj.BudgetPolicyTypeConfiguration != nil {
-		return obj.BudgetPolicyTypeConfiguration
+	if obj.BudgetPolicyTypeConfiguration2 != nil {
+		return obj.BudgetPolicyTypeConfiguration2
 	}
 
-	if obj.ClusterResourceNamePolicyTypeConfiguration != nil {
-		return obj.ClusterResourceNamePolicyTypeConfiguration
+	if obj.ClusterResourceNamePolicyTypeConfiguration2 != nil {
+		return obj.ClusterResourceNamePolicyTypeConfiguration2
 	}
 
-	if obj.CypherAccessPolicyTypeConfiguration != nil {
-		return obj.CypherAccessPolicyTypeConfiguration
+	if obj.CypherAccessPolicyTypeConfiguration2 != nil {
+		return obj.CypherAccessPolicyTypeConfiguration2
 	}
 
-	if obj.DelayedDeletePolicyTypeConfiguration != nil {
-		return obj.DelayedDeletePolicyTypeConfiguration
+	if obj.DelayedDeletePolicyTypeConfiguration2 != nil {
+		return obj.DelayedDeletePolicyTypeConfiguration2
 	}
 
 	if obj.ExpirationPolicyTypeConfiguration2 != nil {
@@ -1214,88 +1214,88 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 		return obj.InstanceNamePolicyTypeConfiguration
 	}
 
-	if obj.MaxContainersPolicyTypeConfiguration != nil {
-		return obj.MaxContainersPolicyTypeConfiguration
+	if obj.MaxContainersPolicyTypeConfiguration2 != nil {
+		return obj.MaxContainersPolicyTypeConfiguration2
 	}
 
-	if obj.MaxCoresPolicyTypeConfiguration != nil {
-		return obj.MaxCoresPolicyTypeConfiguration
+	if obj.MaxCoresPolicyTypeConfiguration2 != nil {
+		return obj.MaxCoresPolicyTypeConfiguration2
 	}
 
-	if obj.MaxHostsPolicyTypeConfiguration != nil {
-		return obj.MaxHostsPolicyTypeConfiguration
+	if obj.MaxHostsPolicyTypeConfiguration2 != nil {
+		return obj.MaxHostsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxLoadBalancerPoolsPolicyTypeConfiguration != nil {
-		return obj.MaxLoadBalancerPoolsPolicyTypeConfiguration
+	if obj.MaxLoadBalancerPoolsPolicyTypeConfiguration2 != nil {
+		return obj.MaxLoadBalancerPoolsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxMemoryPolicyTypeConfiguration != nil {
-		return obj.MaxMemoryPolicyTypeConfiguration
+	if obj.MaxMemoryPolicyTypeConfiguration2 != nil {
+		return obj.MaxMemoryPolicyTypeConfiguration2
 	}
 
-	if obj.MaxPoolMembersPolicyTypeConfiguration != nil {
-		return obj.MaxPoolMembersPolicyTypeConfiguration
+	if obj.MaxPoolMembersPolicyTypeConfiguration2 != nil {
+		return obj.MaxPoolMembersPolicyTypeConfiguration2
 	}
 
-	if obj.MaxSnapshotsPolicyTypeConfiguration != nil {
-		return obj.MaxSnapshotsPolicyTypeConfiguration
+	if obj.MaxSnapshotsPolicyTypeConfiguration2 != nil {
+		return obj.MaxSnapshotsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {
-		return obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
+	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 != nil {
+		return obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.MaxVMsPolicyTypeConfiguration != nil {
-		return obj.MaxVMsPolicyTypeConfiguration
+	if obj.MaxVMsPolicyTypeConfiguration2 != nil {
+		return obj.MaxVMsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxVirtualServersPolicyTypeConfiguration != nil {
-		return obj.MaxVirtualServersPolicyTypeConfiguration
+	if obj.MaxVirtualServersPolicyTypeConfiguration2 != nil {
+		return obj.MaxVirtualServersPolicyTypeConfiguration2
 	}
 
 	if obj.MessageOfTheDayPolicyTypeConfiguration2 != nil {
 		return obj.MessageOfTheDayPolicyTypeConfiguration2
 	}
 
-	if obj.NetworkQuotaPolicyTypeConfiguration != nil {
-		return obj.NetworkQuotaPolicyTypeConfiguration
+	if obj.NetworkQuotaPolicyTypeConfiguration2 != nil {
+		return obj.NetworkQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.PowerSchedulePolicyTypeConfiguration != nil {
-		return obj.PowerSchedulePolicyTypeConfiguration
+	if obj.PowerSchedulePolicyTypeConfiguration2 != nil {
+		return obj.PowerSchedulePolicyTypeConfiguration2
 	}
 
 	if obj.RequiredNetworkPolicyTypeConfiguration != nil {
 		return obj.RequiredNetworkPolicyTypeConfiguration
 	}
 
-	if obj.RouterQuotaPolicyTypeConfiguration != nil {
-		return obj.RouterQuotaPolicyTypeConfiguration
+	if obj.RouterQuotaPolicyTypeConfiguration2 != nil {
+		return obj.RouterQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.ShutdownPolicyTypeConfiguration != nil {
-		return obj.ShutdownPolicyTypeConfiguration
+	if obj.ShutdownPolicyTypeConfiguration2 != nil {
+		return obj.ShutdownPolicyTypeConfiguration2
 	}
 
-	if obj.StorageServerStorageQuotaPolicyTypeConfiguration != nil {
-		return obj.StorageServerStorageQuotaPolicyTypeConfiguration
+	if obj.StorageServerStorageQuotaPolicyTypeConfiguration2 != nil {
+		return obj.StorageServerStorageQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.TagsPolicyTypeConfiguration != nil {
-		return obj.TagsPolicyTypeConfiguration
+	if obj.TagsPolicyTypeConfiguration2 != nil {
+		return obj.TagsPolicyTypeConfiguration2
 	}
 
-	if obj.UserCreationPolicyTypeConfiguration != nil {
-		return obj.UserCreationPolicyTypeConfiguration
+	if obj.UserCreationPolicyTypeConfiguration2 != nil {
+		return obj.UserCreationPolicyTypeConfiguration2
 	}
 
-	if obj.UserGroupCreationPolicyTypeConfiguration != nil {
-		return obj.UserGroupCreationPolicyTypeConfiguration
+	if obj.UserGroupCreationPolicyTypeConfiguration2 != nil {
+		return obj.UserGroupCreationPolicyTypeConfiguration2
 	}
 
-	if obj.WorkflowPolicyTypeConfiguration != nil {
-		return obj.WorkflowPolicyTypeConfiguration
+	if obj.WorkflowPolicyTypeConfiguration2 != nil {
+		return obj.WorkflowPolicyTypeConfiguration2
 	}
 
 	// all schemas are nil
@@ -1304,32 +1304,32 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 
 // Get the actual instance value
 func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() interface{} {
-	if obj.ApprovePolicyTypeConfiguration != nil {
-		return *obj.ApprovePolicyTypeConfiguration
+	if obj.ApprovePolicyTypeConfiguration2 != nil {
+		return *obj.ApprovePolicyTypeConfiguration2
 	}
 
-	if obj.BackupCreationPolicyTypeConfiguration != nil {
-		return *obj.BackupCreationPolicyTypeConfiguration
+	if obj.BackupCreationPolicyTypeConfiguration2 != nil {
+		return *obj.BackupCreationPolicyTypeConfiguration2
 	}
 
-	if obj.BackupTargetsPolicyTypeConfiguration != nil {
-		return *obj.BackupTargetsPolicyTypeConfiguration
+	if obj.BackupTargetsPolicyTypeConfiguration2 != nil {
+		return *obj.BackupTargetsPolicyTypeConfiguration2
 	}
 
-	if obj.BudgetPolicyTypeConfiguration != nil {
-		return *obj.BudgetPolicyTypeConfiguration
+	if obj.BudgetPolicyTypeConfiguration2 != nil {
+		return *obj.BudgetPolicyTypeConfiguration2
 	}
 
-	if obj.ClusterResourceNamePolicyTypeConfiguration != nil {
-		return *obj.ClusterResourceNamePolicyTypeConfiguration
+	if obj.ClusterResourceNamePolicyTypeConfiguration2 != nil {
+		return *obj.ClusterResourceNamePolicyTypeConfiguration2
 	}
 
-	if obj.CypherAccessPolicyTypeConfiguration != nil {
-		return *obj.CypherAccessPolicyTypeConfiguration
+	if obj.CypherAccessPolicyTypeConfiguration2 != nil {
+		return *obj.CypherAccessPolicyTypeConfiguration2
 	}
 
-	if obj.DelayedDeletePolicyTypeConfiguration != nil {
-		return *obj.DelayedDeletePolicyTypeConfiguration
+	if obj.DelayedDeletePolicyTypeConfiguration2 != nil {
+		return *obj.DelayedDeletePolicyTypeConfiguration2
 	}
 
 	if obj.ExpirationPolicyTypeConfiguration2 != nil {
@@ -1344,88 +1344,88 @@ func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() inte
 		return *obj.InstanceNamePolicyTypeConfiguration
 	}
 
-	if obj.MaxContainersPolicyTypeConfiguration != nil {
-		return *obj.MaxContainersPolicyTypeConfiguration
+	if obj.MaxContainersPolicyTypeConfiguration2 != nil {
+		return *obj.MaxContainersPolicyTypeConfiguration2
 	}
 
-	if obj.MaxCoresPolicyTypeConfiguration != nil {
-		return *obj.MaxCoresPolicyTypeConfiguration
+	if obj.MaxCoresPolicyTypeConfiguration2 != nil {
+		return *obj.MaxCoresPolicyTypeConfiguration2
 	}
 
-	if obj.MaxHostsPolicyTypeConfiguration != nil {
-		return *obj.MaxHostsPolicyTypeConfiguration
+	if obj.MaxHostsPolicyTypeConfiguration2 != nil {
+		return *obj.MaxHostsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxLoadBalancerPoolsPolicyTypeConfiguration != nil {
-		return *obj.MaxLoadBalancerPoolsPolicyTypeConfiguration
+	if obj.MaxLoadBalancerPoolsPolicyTypeConfiguration2 != nil {
+		return *obj.MaxLoadBalancerPoolsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxMemoryPolicyTypeConfiguration != nil {
-		return *obj.MaxMemoryPolicyTypeConfiguration
+	if obj.MaxMemoryPolicyTypeConfiguration2 != nil {
+		return *obj.MaxMemoryPolicyTypeConfiguration2
 	}
 
-	if obj.MaxPoolMembersPolicyTypeConfiguration != nil {
-		return *obj.MaxPoolMembersPolicyTypeConfiguration
+	if obj.MaxPoolMembersPolicyTypeConfiguration2 != nil {
+		return *obj.MaxPoolMembersPolicyTypeConfiguration2
 	}
 
-	if obj.MaxSnapshotsPolicyTypeConfiguration != nil {
-		return *obj.MaxSnapshotsPolicyTypeConfiguration
+	if obj.MaxSnapshotsPolicyTypeConfiguration2 != nil {
+		return *obj.MaxSnapshotsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration != nil {
-		return *obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration
+	if obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 != nil {
+		return *obj.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.MaxVMsPolicyTypeConfiguration != nil {
-		return *obj.MaxVMsPolicyTypeConfiguration
+	if obj.MaxVMsPolicyTypeConfiguration2 != nil {
+		return *obj.MaxVMsPolicyTypeConfiguration2
 	}
 
-	if obj.MaxVirtualServersPolicyTypeConfiguration != nil {
-		return *obj.MaxVirtualServersPolicyTypeConfiguration
+	if obj.MaxVirtualServersPolicyTypeConfiguration2 != nil {
+		return *obj.MaxVirtualServersPolicyTypeConfiguration2
 	}
 
 	if obj.MessageOfTheDayPolicyTypeConfiguration2 != nil {
 		return *obj.MessageOfTheDayPolicyTypeConfiguration2
 	}
 
-	if obj.NetworkQuotaPolicyTypeConfiguration != nil {
-		return *obj.NetworkQuotaPolicyTypeConfiguration
+	if obj.NetworkQuotaPolicyTypeConfiguration2 != nil {
+		return *obj.NetworkQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.PowerSchedulePolicyTypeConfiguration != nil {
-		return *obj.PowerSchedulePolicyTypeConfiguration
+	if obj.PowerSchedulePolicyTypeConfiguration2 != nil {
+		return *obj.PowerSchedulePolicyTypeConfiguration2
 	}
 
 	if obj.RequiredNetworkPolicyTypeConfiguration != nil {
 		return *obj.RequiredNetworkPolicyTypeConfiguration
 	}
 
-	if obj.RouterQuotaPolicyTypeConfiguration != nil {
-		return *obj.RouterQuotaPolicyTypeConfiguration
+	if obj.RouterQuotaPolicyTypeConfiguration2 != nil {
+		return *obj.RouterQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.ShutdownPolicyTypeConfiguration != nil {
-		return *obj.ShutdownPolicyTypeConfiguration
+	if obj.ShutdownPolicyTypeConfiguration2 != nil {
+		return *obj.ShutdownPolicyTypeConfiguration2
 	}
 
-	if obj.StorageServerStorageQuotaPolicyTypeConfiguration != nil {
-		return *obj.StorageServerStorageQuotaPolicyTypeConfiguration
+	if obj.StorageServerStorageQuotaPolicyTypeConfiguration2 != nil {
+		return *obj.StorageServerStorageQuotaPolicyTypeConfiguration2
 	}
 
-	if obj.TagsPolicyTypeConfiguration != nil {
-		return *obj.TagsPolicyTypeConfiguration
+	if obj.TagsPolicyTypeConfiguration2 != nil {
+		return *obj.TagsPolicyTypeConfiguration2
 	}
 
-	if obj.UserCreationPolicyTypeConfiguration != nil {
-		return *obj.UserCreationPolicyTypeConfiguration
+	if obj.UserCreationPolicyTypeConfiguration2 != nil {
+		return *obj.UserCreationPolicyTypeConfiguration2
 	}
 
-	if obj.UserGroupCreationPolicyTypeConfiguration != nil {
-		return *obj.UserGroupCreationPolicyTypeConfiguration
+	if obj.UserGroupCreationPolicyTypeConfiguration2 != nil {
+		return *obj.UserGroupCreationPolicyTypeConfiguration2
 	}
 
-	if obj.WorkflowPolicyTypeConfiguration != nil {
-		return *obj.WorkflowPolicyTypeConfiguration
+	if obj.WorkflowPolicyTypeConfiguration2 != nil {
+		return *obj.WorkflowPolicyTypeConfiguration2
 	}
 
 	// all schemas are nil
