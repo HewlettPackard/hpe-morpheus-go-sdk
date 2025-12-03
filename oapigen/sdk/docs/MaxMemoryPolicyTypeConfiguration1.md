@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MaxMemory** | [**MaxMemoryPolicyTypeConfiguration1MaxMemory**](MaxMemoryPolicyTypeConfiguration1MaxMemory.md) |  | 
-**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 

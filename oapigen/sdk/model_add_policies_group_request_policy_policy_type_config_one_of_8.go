@@ -20,7 +20,6 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 - File Share Storage Quota
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf8 struct {
-	// Max Storage (GB)
 	MaxStorage           *string                `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

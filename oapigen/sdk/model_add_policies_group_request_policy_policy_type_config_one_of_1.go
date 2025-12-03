@@ -20,9 +20,7 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 - Backup Creation
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf1 struct {
-	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
-	CreateBackupType *string `json:"createBackupType,omitempty"`
-	// Enforce backup creation
+	CreateBackupType     *string                `json:"createBackupType,omitempty"`
 	CreateBackup         *bool                  `json:"createBackup,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

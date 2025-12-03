@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxSnapshots** | Pointer to **string** | Max Snapshots | [optional] 
+**MaxSnapshots** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

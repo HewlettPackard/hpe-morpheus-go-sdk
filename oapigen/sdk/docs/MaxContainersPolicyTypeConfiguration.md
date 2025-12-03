@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxContainers** | **string** | Max Containers | 
+**MaxContainers** | **string** |  | 
 
 ## Methods
 

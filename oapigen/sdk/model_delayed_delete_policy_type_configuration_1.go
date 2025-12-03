@@ -20,7 +20,6 @@ var _ MappedNullable = &DelayedDeletePolicyTypeConfiguration1{}
 
 // DelayedDeletePolicyTypeConfiguration1 Configuration settings for the following policy types: - Delayed Delete
 type DelayedDeletePolicyTypeConfiguration1 struct {
-	// Removal Age (days)
 	RemovalAge           *string                `json:"removalAge,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

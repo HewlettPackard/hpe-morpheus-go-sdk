@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxPrice** | **float32** | Maximum price limit | 
-**MaxPriceCurrency** | Pointer to **string** | Currency code (e.g., USD) | [optional] 
-**MaxPriceUnit** | Pointer to **string** | Options: \&quot;hour\&quot;, \&quot;month\&quot; | [optional] 
+**MaxPrice** | **float32** |  | 
+**MaxPriceCurrency** | Pointer to **string** |  | [optional] 
+**MaxPriceUnit** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LifecycleType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (fixed expiration) | 
-**LifecycleAge** | Pointer to **string** | Days until expiration | [optional] 
-**LifecycleRenewal** | Pointer to **string** | Days for renewal window | [optional] 
-**LifecycleNotify** | Pointer to **string** | Days before expiration to notify | [optional] 
-**LifecycleMessage** | Pointer to **string** | Notification message | [optional] 
+**LifecycleType** | **string** |  | 
+**LifecycleAge** | Pointer to **string** |  | [optional] 
+**LifecycleRenewal** | Pointer to **string** |  | [optional] 
+**LifecycleNotify** | Pointer to **string** |  | [optional] 
+**LifecycleMessage** | Pointer to **string** |  | [optional] 
 **LifecycleAutoRenew** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
-**LifecycleExtensionsBeforeApproval** | Pointer to **string** | Number of extensions before requiring approval | [optional] 
-**AccountIntegrationId** | Pointer to **string** | ID of your ServiceNow or approval integration | [optional] 
-**LifecycleWorkflowId** | Pointer to **string** | ID of legacy ServiceNow workflow (set if workflowType is &#39;workflow&#39;) | [optional] 
-**FlowId** | Pointer to **string** | ID of ServiceNow Flow (set if workflowType is &#39;flow&#39;) | [optional] 
-**WorkflowType** | Pointer to **string** | Options: \&quot;workflow\&quot; (legacy workflow), \&quot;flow\&quot; (ServiceNow Flow) | [optional] 
-**LifecycleHideFixed** | Pointer to **bool** | Hide fixed expiration from users | [optional] 
+**LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
+**AccountIntegrationId** | Pointer to **string** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
+**LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 

@@ -20,13 +20,9 @@ var _ MappedNullable = &TagsPolicyTypeConfiguration{}
 
 // TagsPolicyTypeConfiguration - Tags
 type TagsPolicyTypeConfiguration struct {
-	// Strict enforcement
-	Strict bool `json:"strict"`
-	// Tag key to enforce
-	Key *string `json:"key,omitempty"`
-	// ID of value from value list (optional)
-	ValueListId *string `json:"valueListId,omitempty"`
-	// Tag value (optional, can be left empty for any value)
+	Strict               bool                   `json:"strict"`
+	Key                  *string                `json:"key,omitempty"`
+	ValueListId          *string                `json:"valueListId,omitempty"`
 	Value                *string                `json:"value,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

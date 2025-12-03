@@ -20,7 +20,6 @@ var _ MappedNullable = &BackupTargetsPolicyTypeConfiguration1{}
 
 // BackupTargetsPolicyTypeConfiguration1 Configuration settings for the following policy types: - Backup Targets
 type BackupTargetsPolicyTypeConfiguration1 struct {
-	// Array of backup storage IDs to restrict available backup targets
 	BackupStorageIds     []int64                `json:"backupStorageIds,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

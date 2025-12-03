@@ -20,11 +20,8 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 - Cluster Resource Name
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf4 struct {
-	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
-	ServerNamingType *string `json:"serverNamingType,omitempty"`
-	// Name pattern uses ${variable} string interpolation. Available variables are: groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
-	ServerNamingPattern *string `json:"serverNamingPattern,omitempty"`
-	// Auto-resolve conflicts
+	ServerNamingType     *string                `json:"serverNamingType,omitempty"`
+	ServerNamingPattern  *string                `json:"serverNamingPattern,omitempty"`
 	ServerNamingConflict *bool                  `json:"serverNamingConflict,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

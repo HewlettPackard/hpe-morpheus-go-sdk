@@ -20,7 +20,6 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 - Delayed Delete
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf6 struct {
-	// Number of days to delay deletion
 	RemovalAge           *string                `json:"removalAge,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

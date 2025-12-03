@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxNetworks** | Pointer to **string** | Max Networks | [optional] 
+**MaxNetworks** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

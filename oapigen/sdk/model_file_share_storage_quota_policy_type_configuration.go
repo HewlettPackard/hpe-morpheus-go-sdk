@@ -20,7 +20,6 @@ var _ MappedNullable = &FileShareStorageQuotaPolicyTypeConfiguration{}
 
 // FileShareStorageQuotaPolicyTypeConfiguration Configuration settings for the following policy types: - File Share Storage Quota
 type FileShareStorageQuotaPolicyTypeConfiguration struct {
-	// Max Storage (GB)
 	MaxStorage           *string                `json:"maxStorage,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

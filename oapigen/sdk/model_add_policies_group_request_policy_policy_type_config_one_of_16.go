@@ -20,7 +20,6 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16 - Max Pool Members
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf16 struct {
-	// Max Pool Members
 	MaxPoolMembers       *string                `json:"maxPoolMembers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

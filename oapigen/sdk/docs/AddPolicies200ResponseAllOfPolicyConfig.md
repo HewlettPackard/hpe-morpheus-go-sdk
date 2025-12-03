@@ -4,82 +4,82 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountIntegrationId** | **string** | ID of your ServiceNow or approval integration | 
-**WorkflowId** | **string** | ID of the workflow to execute | 
-**FlowId** | Pointer to **string** | ID of ServiceNow Flow (set if workflowType is &#39;flow&#39;) | [optional] 
-**WorkflowType** | Pointer to **string** | Options: \&quot;workflow\&quot; (legacy workflow), \&quot;flow\&quot; (ServiceNow Flow) | [optional] 
-**CreateBackupType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**CreateBackup** | Pointer to **bool** | Enforce backup creation | [optional] 
-**BackupStorageIds** | **[]string** | Array of backup storage IDs to restrict available backup targets | 
-**MaxPrice** | **float32** | Maximum price limit | 
-**MaxPriceCurrency** | Pointer to **string** | Currency code (e.g., USD) | [optional] 
-**MaxPriceUnit** | Pointer to **string** | Options: \&quot;hour\&quot;, \&quot;month\&quot; | [optional] 
-**ServerNamingType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**ServerNamingPattern** | Pointer to **string** | Name pattern uses ${variable} string interpolation.  Available variables are:&lt;br&gt;groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType | [optional] 
-**ServerNamingConflict** | Pointer to **bool** | Auto-resolve conflicts | [optional] 
-**KeyPattern** | **string** | Pattern to match Cypher keys (e.g., \&quot;secret/_*\&quot;, \&quot;password/_*\&quot;) | 
-**Read** | Pointer to **bool** | Allow read access | [optional] 
-**Write** | Pointer to **bool** | Allow write access | [optional] 
-**Update** | Pointer to **bool** | Allow update access | [optional] 
-**Delete** | Pointer to **bool** | Allow delete access | [optional] 
-**List** | Pointer to **bool** | Allow list access | [optional] 
-**RemovalAge** | **string** | Number of days to delay deletion | 
-**LifecycleType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (fixed expiration) | 
-**LifecycleAge** | Pointer to **string** | Days until expiration | [optional] 
-**LifecycleRenewal** | Pointer to **string** | Days for renewal window | [optional] 
-**LifecycleNotify** | Pointer to **string** | Days before expiration to notify | [optional] 
-**LifecycleMessage** | Pointer to **string** | Notification message | [optional] 
+**AccountIntegrationId** | **string** |  | 
+**WorkflowId** | **string** |  | 
+**FlowId** | Pointer to **string** |  | [optional] 
+**WorkflowType** | Pointer to **string** |  | [optional] 
+**CreateBackupType** | **string** |  | 
+**CreateBackup** | Pointer to **bool** |  | [optional] 
+**BackupStorageIds** | **[]string** |  | 
+**MaxPrice** | **float32** |  | 
+**MaxPriceCurrency** | Pointer to **string** |  | [optional] 
+**MaxPriceUnit** | Pointer to **string** |  | [optional] 
+**ServerNamingType** | **string** |  | 
+**ServerNamingPattern** | Pointer to **string** |  | [optional] 
+**ServerNamingConflict** | Pointer to **bool** |  | [optional] 
+**KeyPattern** | **string** |  | 
+**Read** | Pointer to **bool** |  | [optional] 
+**Write** | Pointer to **bool** |  | [optional] 
+**Update** | Pointer to **bool** |  | [optional] 
+**Delete** | Pointer to **bool** |  | [optional] 
+**List** | Pointer to **bool** |  | [optional] 
+**RemovalAge** | **string** |  | 
+**LifecycleType** | **string** |  | 
+**LifecycleAge** | Pointer to **string** |  | [optional] 
+**LifecycleRenewal** | Pointer to **string** |  | [optional] 
+**LifecycleNotify** | Pointer to **string** |  | [optional] 
+**LifecycleMessage** | Pointer to **string** |  | [optional] 
 **LifecycleAutoRenew** | Pointer to **string** |  | [optional] [default to "off"]
 **LifecycleAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
-**LifecycleExtensionsBeforeApproval** | Pointer to **string** | Number of extensions before requiring approval | [optional] 
-**LifecycleWorkflowId** | Pointer to **string** | ID of legacy ServiceNow workflow (set if workflowType is &#39;workflow&#39;) | [optional] 
-**LifecycleHideFixed** | Pointer to **bool** | Hide fixed expiration from users | [optional] 
-**HostNamingType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**HostNamingPattern** | Pointer to **string** | Name pattern uses ${variable} string interpolation.  Available variables are:&lt;br&gt;groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType | [optional] 
-**NamingType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**NamingPattern** | Pointer to **string** | Name pattern uses ${variable} string interpolation.  Available variables are:&lt;br&gt;groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType | [optional] 
-**NamingConflict** | Pointer to **bool** | Auto-resolve conflicts | [optional] 
-**MaxContainers** | **string** | Max Containers | 
-**MaxCores** | **string** | Max Cores | 
-**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
-**MaxHosts** | **string** | Max Hosts | 
-**MaxPools** | **string** | Max Pools | 
-**MaxMemory** | **string** | Max Memory (GB) | 
-**MaxPoolMembers** | **string** | Max Pool Members | 
-**MaxSnapshots** | **string** | Max Snapshots | 
-**MaxStorage** | **string** | Max Storage (GB) | 
-**MaxVirtualServers** | **string** | Max Virtual Servers | 
-**MaxVms** | **string** | Max VMs | 
-**MotdTitle** | Pointer to **string** | Message title | [optional] 
+**LifecycleExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
+**LifecycleWorkflowId** | Pointer to **string** |  | [optional] 
+**LifecycleHideFixed** | Pointer to **bool** |  | [optional] 
+**HostNamingType** | **string** |  | 
+**HostNamingPattern** | Pointer to **string** |  | [optional] 
+**NamingType** | **string** |  | 
+**NamingPattern** | Pointer to **string** |  | [optional] 
+**NamingConflict** | Pointer to **bool** |  | [optional] 
+**MaxContainers** | **string** |  | 
+**MaxCores** | **string** |  | 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
+**MaxHosts** | **string** |  | 
+**MaxPools** | **string** |  | 
+**MaxMemory** | **string** |  | 
+**MaxPoolMembers** | **string** |  | 
+**MaxSnapshots** | **string** |  | 
+**MaxStorage** | **string** |  | 
+**MaxVirtualServers** | **string** |  | 
+**MaxVms** | **string** |  | 
+**MotdTitle** | Pointer to **string** |  | [optional] 
 **Motd** | [**MessageOfTheDayPolicyTypeConfiguration2Motd**](MessageOfTheDayPolicyTypeConfiguration2Motd.md) |  | 
-**MotdMessage** | Pointer to **string** | Message content | [optional] 
-**MotdType** | Pointer to **string** | Options: \&quot;info\&quot;, \&quot;warning\&quot;, \&quot;critical\&quot; | [optional] 
-**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage1**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage1.md) |  | [optional] 
-**MotdDate** | Pointer to **string** | Display date for message | [optional] 
-**MaxNetworks** | **string** | Max Networks | 
-**PowerScheduleType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict schedule) | 
-**PowerSchedule** | Pointer to **string** | ID of the power schedule | [optional] 
-**PowerScheduleHideFixed** | Pointer to **bool** | Hide fixed schedule from users | [optional] 
-**MaxRouters** | **string** | Max Routers | 
-**RequiredNetworks** | **[]int64** | Array of required network IDs | 
-**ShutdownType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict shutdown) | 
-**ShutdownAge** | Pointer to **string** | Days instance is allowed to run before shutdown | [optional] 
-**ShutdownRenewal** | Pointer to **string** | If the instance is renewed, this is the number of day increments the shutdown date is increased by | [optional] 
-**ShutdownNotify** | Pointer to **string** | Days before shutdown to notify via email | [optional] 
-**ShutdownMessage** | Pointer to **string** | Notification message | [optional] 
+**MotdMessage** | Pointer to **string** |  | [optional] 
+**MotdType** | Pointer to **string** |  | [optional] 
+**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage.md) |  | [optional] 
+**MotdDate** | Pointer to **string** |  | [optional] 
+**MaxNetworks** | **string** |  | 
+**PowerScheduleType** | **string** |  | 
+**PowerSchedule** | Pointer to **string** |  | [optional] 
+**PowerScheduleHideFixed** | Pointer to **bool** |  | [optional] 
+**MaxRouters** | **string** |  | 
+**RequiredNetworks** | **[]int64** |  | 
+**ShutdownType** | **string** |  | 
+**ShutdownAge** | Pointer to **string** |  | [optional] 
+**ShutdownRenewal** | Pointer to **string** |  | [optional] 
+**ShutdownNotify** | Pointer to **string** |  | [optional] 
+**ShutdownMessage** | Pointer to **string** |  | [optional] 
 **ShutdownAutoRenew** | Pointer to **string** |  | [optional] [default to "off"]
 **ShutdownAllowExtend** | Pointer to **string** |  | [optional] [default to "off"]
-**ShutdownExtensionsBeforeApproval** | Pointer to **string** | Number of extensions before requiring approval | [optional] 
-**ShutdownHideFixed** | Pointer to **bool** | Hide fixed shutdown from users | [optional] 
-**ShutdownWorkflowId** | Pointer to **string** | ID of legacy ServiceNow workflow (set if workflowType is &#39;workflow&#39;) | [optional] 
-**StorageServerId** | **string** | ID of the storage server | 
-**Strict** | **bool** | Strict enforcement | 
-**Key** | Pointer to **string** | Tag key to enforce | [optional] 
-**ValueListId** | Pointer to **string** | ID of value from value list (optional) | [optional] 
-**Value** | Pointer to **string** | Tag value (optional, can be left empty for any value) | [optional] 
-**CreateUserType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; | 
-**CreateUser** | Pointer to **bool** | Enforce user creation | [optional] 
-**UserGroup** | **string** | ID of the user group to assign | 
+**ShutdownExtensionsBeforeApproval** | Pointer to **string** |  | [optional] 
+**ShutdownHideFixed** | Pointer to **bool** |  | [optional] 
+**ShutdownWorkflowId** | Pointer to **string** |  | [optional] 
+**StorageServerId** | **string** |  | 
+**Strict** | **bool** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**ValueListId** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
+**CreateUserType** | **string** |  | 
+**CreateUser** | Pointer to **bool** |  | [optional] 
+**UserGroup** | **string** |  | 
 
 ## Methods
 
@@ -1242,20 +1242,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage1`
+`func (o *AddPolicies200ResponseAllOfPolicyConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage1, bool)`
+`func (o *AddPolicies200ResponseAllOfPolicyConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *AddPolicies200ResponseAllOfPolicyConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage1)`
+`func (o *AddPolicies200ResponseAllOfPolicyConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 

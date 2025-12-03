@@ -20,7 +20,6 @@ var _ MappedNullable = &WorkflowPolicyTypeConfiguration1{}
 
 // WorkflowPolicyTypeConfiguration1 Configuration settings for the following policy types: - Workflow
 type WorkflowPolicyTypeConfiguration1 struct {
-	// ID of the workflow to execute
 	WorkflowId           *string                `json:"workflowId,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

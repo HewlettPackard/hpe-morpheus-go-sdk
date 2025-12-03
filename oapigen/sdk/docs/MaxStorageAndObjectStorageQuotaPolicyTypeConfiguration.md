@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxStorage** | **string** | Max Storage (GB) | 
-**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
+**MaxStorage** | **string** |  | 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 

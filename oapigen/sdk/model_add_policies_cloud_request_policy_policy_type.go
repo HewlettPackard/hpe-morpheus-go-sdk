@@ -22,7 +22,7 @@ var _ MappedNullable = &AddPoliciesCloudRequestPolicyPolicyType{}
 type AddPoliciesCloudRequestPolicyPolicyType struct {
 	// The policy type
 	Code   *string                                        `json:"code,omitempty"`
-	Config *AddPoliciesCloudRequestPolicyPolicyTypeConfig `json:"config,omitempty"`
+	Config *AddPoliciesGroupRequestPolicyPolicyTypeConfig `json:"config,omitempty"`
 	// Set to false to disable
 	Enabled *bool `json:"enabled,omitempty"`
 	// Scope object type
@@ -92,9 +92,9 @@ func (o *AddPoliciesCloudRequestPolicyPolicyType) SetCode(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfig() AddPoliciesCloudRequestPolicyPolicyTypeConfig {
+func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfig() AddPoliciesGroupRequestPolicyPolicyTypeConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddPoliciesCloudRequestPolicyPolicyTypeConfig
+		var ret AddPoliciesGroupRequestPolicyPolicyTypeConfig
 		return ret
 	}
 	return *o.Config
@@ -102,7 +102,7 @@ func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfig() AddPoliciesCloudRe
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfigOk() (*AddPoliciesCloudRequestPolicyPolicyTypeConfig, bool) {
+func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfigOk() (*AddPoliciesGroupRequestPolicyPolicyTypeConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *AddPoliciesCloudRequestPolicyPolicyType) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddPoliciesCloudRequestPolicyPolicyTypeConfig and assigns it to the Config field.
-func (o *AddPoliciesCloudRequestPolicyPolicyType) SetConfig(v AddPoliciesCloudRequestPolicyPolicyTypeConfig) {
+// SetConfig gets a reference to the given AddPoliciesGroupRequestPolicyPolicyTypeConfig and assigns it to the Config field.
+func (o *AddPoliciesCloudRequestPolicyPolicyType) SetConfig(v AddPoliciesGroupRequestPolicyPolicyTypeConfig) {
 	o.Config = &v
 }
 

@@ -20,7 +20,6 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11 - Max Containers
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf11 struct {
-	// Max Containers
 	MaxContainers        *string                `json:"maxContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

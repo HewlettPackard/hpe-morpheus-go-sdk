@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MotdTitle** | Pointer to **string** | Message title | [optional] 
+**MotdTitle** | Pointer to **string** |  | [optional] 
 **Motd** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration1Motd**](MessageOfTheDayPolicyTypeConfiguration1Motd.md) |  | [optional] 
-**MotdMessage** | Pointer to **string** | Message content | [optional] 
-**MotdType** | Pointer to **string** | Options: \&quot;info\&quot;, \&quot;warning\&quot;, \&quot;critical\&quot; | [optional] 
-**MotdFullPage** | Pointer to **NullableBool** | Display full page | [optional] 
-**MotdDate** | Pointer to **string** | Display date for message | [optional] 
+**MotdMessage** | Pointer to **string** |  | [optional] 
+**MotdType** | Pointer to **string** |  | [optional] 
+**MotdFullPage** | Pointer to **NullableBool** |  | [optional] 
+**MotdDate** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

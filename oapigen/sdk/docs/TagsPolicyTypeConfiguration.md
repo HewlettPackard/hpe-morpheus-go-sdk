@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Strict** | **bool** | Strict enforcement | 
-**Key** | Pointer to **string** | Tag key to enforce | [optional] 
-**ValueListId** | Pointer to **string** | ID of value from value list (optional) | [optional] 
-**Value** | Pointer to **string** | Tag value (optional, can be left empty for any value) | [optional] 
+**Strict** | **bool** |  | 
+**Key** | Pointer to **string** |  | [optional] 
+**ValueListId** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

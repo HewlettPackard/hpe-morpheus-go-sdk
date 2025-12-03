@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HostNamingType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**HostNamingPattern** | Pointer to **string** | Name pattern uses ${variable} string interpolation.  Available variables are:&lt;br&gt;groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType | [optional] 
+**HostNamingType** | **string** |  | 
+**HostNamingPattern** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxMemory** | **string** | Max Memory (GB) | 
-**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
+**MaxMemory** | Pointer to [**MaxMemoryPolicyTypeConfiguration1MaxMemory**](MaxMemoryPolicyTypeConfiguration1MaxMemory.md) |  | [optional] 
+**ExcludeContainers** | Pointer to **string** | Set to on to exclude containers | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxMemoryPolicyTypeConfiguration2
 
-`func NewMaxMemoryPolicyTypeConfiguration2(maxMemory string, ) *MaxMemoryPolicyTypeConfiguration2`
+`func NewMaxMemoryPolicyTypeConfiguration2() *MaxMemoryPolicyTypeConfiguration2`
 
 NewMaxMemoryPolicyTypeConfiguration2 instantiates a new MaxMemoryPolicyTypeConfiguration2 object
 This constructor will assign default values to properties that have it defined,
@@ -28,23 +28,28 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemory() string`
+`func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemory() MaxMemoryPolicyTypeConfiguration1MaxMemory`
 
 GetMaxMemory returns the MaxMemory field if non-nil, zero value otherwise.
 
 ### GetMaxMemoryOk
 
-`func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemoryOk() (*string, bool)`
+`func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration1MaxMemory, bool)`
 
 GetMaxMemoryOk returns a tuple with the MaxMemory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxMemory
 
-`func (o *MaxMemoryPolicyTypeConfiguration2) SetMaxMemory(v string)`
+`func (o *MaxMemoryPolicyTypeConfiguration2) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration1MaxMemory)`
 
 SetMaxMemory sets MaxMemory field to given value.
 
+### HasMaxMemory
+
+`func (o *MaxMemoryPolicyTypeConfiguration2) HasMaxMemory() bool`
+
+HasMaxMemory returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 

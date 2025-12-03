@@ -20,7 +20,6 @@ var _ MappedNullable = &MaxVirtualServersPolicyTypeConfiguration1{}
 
 // MaxVirtualServersPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max Virtual Servers
 type MaxVirtualServersPolicyTypeConfiguration1 struct {
-	// Max Virtual Servers
 	MaxVirtualServers    *string                `json:"maxVirtualServers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

@@ -18,11 +18,10 @@ import (
 // checks if the MaxMemoryPolicyTypeConfiguration2 type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &MaxMemoryPolicyTypeConfiguration2{}
 
-// MaxMemoryPolicyTypeConfiguration2 - Max Memory
+// MaxMemoryPolicyTypeConfiguration2 Configuration settings for the following policy types: - Max Memory
 type MaxMemoryPolicyTypeConfiguration2 struct {
-	// Max Memory (GB)
-	MaxMemory string `json:"maxMemory"`
-	// Exclude containers from count
+	MaxMemory *MaxMemoryPolicyTypeConfiguration1MaxMemory `json:"maxMemory,omitempty"`
+	// Set to on to exclude containers
 	ExcludeContainers    *string                `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -33,9 +32,8 @@ type _MaxMemoryPolicyTypeConfiguration2 MaxMemoryPolicyTypeConfiguration2
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMaxMemoryPolicyTypeConfiguration2(maxMemory string) *MaxMemoryPolicyTypeConfiguration2 {
+func NewMaxMemoryPolicyTypeConfiguration2() *MaxMemoryPolicyTypeConfiguration2 {
 	this := MaxMemoryPolicyTypeConfiguration2{}
-	this.MaxMemory = maxMemory
 	var excludeContainers string = "off"
 	this.ExcludeContainers = &excludeContainers
 	return &this
@@ -51,28 +49,36 @@ func NewMaxMemoryPolicyTypeConfiguration2WithDefaults() *MaxMemoryPolicyTypeConf
 	return &this
 }
 
-// GetMaxMemory returns the MaxMemory field value
-func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemory() string {
-	if o == nil {
-		var ret string
+// GetMaxMemory returns the MaxMemory field value if set, zero value otherwise.
+func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemory() MaxMemoryPolicyTypeConfiguration1MaxMemory {
+	if o == nil || IsNil(o.MaxMemory) {
+		var ret MaxMemoryPolicyTypeConfiguration1MaxMemory
 		return ret
 	}
-
-	return o.MaxMemory
+	return *o.MaxMemory
 }
 
-// GetMaxMemoryOk returns a tuple with the MaxMemory field value
+// GetMaxMemoryOk returns a tuple with the MaxMemory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemoryOk() (*string, bool) {
-	if o == nil {
+func (o *MaxMemoryPolicyTypeConfiguration2) GetMaxMemoryOk() (*MaxMemoryPolicyTypeConfiguration1MaxMemory, bool) {
+	if o == nil || IsNil(o.MaxMemory) {
 		return nil, false
 	}
-	return &o.MaxMemory, true
+	return o.MaxMemory, true
 }
 
-// SetMaxMemory sets field value
-func (o *MaxMemoryPolicyTypeConfiguration2) SetMaxMemory(v string) {
-	o.MaxMemory = v
+// IsSetMaxMemory returns a boolean if a field has been set.
+func (o *MaxMemoryPolicyTypeConfiguration2) IsSetMaxMemory() bool {
+	if o != nil && !IsNil(o.MaxMemory) {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxMemory gets a reference to the given MaxMemoryPolicyTypeConfiguration1MaxMemory and assigns it to the MaxMemory field.
+func (o *MaxMemoryPolicyTypeConfiguration2) SetMaxMemory(v MaxMemoryPolicyTypeConfiguration1MaxMemory) {
+	o.MaxMemory = &v
 }
 
 // GetExcludeContainers returns the ExcludeContainers field value if set, zero value otherwise.
@@ -117,7 +123,9 @@ func (o MaxMemoryPolicyTypeConfiguration2) MarshalJSON() ([]byte, error) {
 
 func (o MaxMemoryPolicyTypeConfiguration2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["maxMemory"] = o.MaxMemory
+	if !IsNil(o.MaxMemory) {
+		toSerialize["maxMemory"] = o.MaxMemory
+	}
 	if !IsNil(o.ExcludeContainers) {
 		toSerialize["excludeContainers"] = o.ExcludeContainers
 	}

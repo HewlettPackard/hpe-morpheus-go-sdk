@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxStorage** | **string** | Max Storage (GB) | 
-**ExcludeContainers** | Pointer to **string** | Exclude containers from count | [optional] [default to "off"]
+**MaxStorage** | Pointer to **string** |  | [optional] 
+**ExcludeContainers** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2
 
-`func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2(maxStorage string, ) *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2`
+`func NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2() *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2`
 
 NewMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 instantiates a new MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2 object
 This constructor will assign default values to properties that have it defined,
@@ -45,23 +45,28 @@ and a boolean to check if the value has been set.
 
 SetMaxStorage sets MaxStorage field to given value.
 
+### HasMaxStorage
+
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) HasMaxStorage() bool`
+
+HasMaxStorage returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) GetExcludeContainers() string`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) GetExcludeContainers() bool`
 
 GetExcludeContainers returns the ExcludeContainers field if non-nil, zero value otherwise.
 
 ### GetExcludeContainersOk
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) GetExcludeContainersOk() (*string, bool)`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) GetExcludeContainersOk() (*bool, bool)`
 
 GetExcludeContainersOk returns a tuple with the ExcludeContainers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeContainers
 
-`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) SetExcludeContainers(v string)`
+`func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2) SetExcludeContainers(v bool)`
 
 SetExcludeContainers sets ExcludeContainers field to given value.
 

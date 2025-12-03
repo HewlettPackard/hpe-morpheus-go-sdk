@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxHosts** | Pointer to **string** | Max Hosts | [optional] 
+**MaxHosts** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

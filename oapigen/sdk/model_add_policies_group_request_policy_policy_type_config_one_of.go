@@ -20,13 +20,9 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf - Approve Delete - Approve Provision - Approve Reconfigure
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf struct {
-	// ID of your ServiceNow or approval integration
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	// ID of legacy ServiceNow workflow (set if workflowType is 'workflow')
-	WorkflowId *string `json:"workflowId,omitempty"`
-	// ID of ServiceNow Flow (set if workflowType is 'flow')
-	FlowId *string `json:"flowId,omitempty"`
-	// Options: \"workflow\" (legacy workflow), \"flow\" (ServiceNow Flow)
+	AccountIntegrationId *string                `json:"accountIntegrationId,omitempty"`
+	WorkflowId           *string                `json:"workflowId,omitempty"`
+	FlowId               *string                `json:"flowId,omitempty"`
 	WorkflowType         *string                `json:"workflowType,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

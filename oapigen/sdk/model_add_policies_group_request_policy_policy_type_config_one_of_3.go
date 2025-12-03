@@ -20,11 +20,8 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 - Budget
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf3 struct {
-	// Maximum price limit
-	MaxPrice *float32 `json:"maxPrice,omitempty"`
-	// Currency code (e.g., USD)
-	MaxPriceCurrency *string `json:"maxPriceCurrency,omitempty"`
-	// Options: \"hour\", \"month\"
+	MaxPrice             *float32               `json:"maxPrice,omitempty"`
+	MaxPriceCurrency     *string                `json:"maxPriceCurrency,omitempty"`
 	MaxPriceUnit         *string                `json:"maxPriceUnit,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

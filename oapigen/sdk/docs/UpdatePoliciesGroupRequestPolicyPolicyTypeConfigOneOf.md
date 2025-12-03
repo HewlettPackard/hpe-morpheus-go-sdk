@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxCores** | Pointer to **string** | Max Cores | [optional] 
+**MaxCores** | Pointer to **string** |  | [optional] 
 **ExcludeContainers** | Pointer to **bool** |  | [optional] 
 
 ## Methods

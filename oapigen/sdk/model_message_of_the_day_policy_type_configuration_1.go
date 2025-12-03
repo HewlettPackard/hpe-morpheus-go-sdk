@@ -20,18 +20,13 @@ var _ MappedNullable = &MessageOfTheDayPolicyTypeConfiguration1{}
 
 // MessageOfTheDayPolicyTypeConfiguration1 Configuration settings for the following policy types: - Message of the Day
 type MessageOfTheDayPolicyTypeConfiguration1 struct {
-	// Message title
-	MotdTitle *string                                      `json:"motd.title,omitempty"`
-	Motd      *MessageOfTheDayPolicyTypeConfiguration1Motd `json:"motd,omitempty"`
-	// Message content
-	MotdMessage *string `json:"motd.message,omitempty"`
-	// Options: \"info\", \"warning\", \"critical\"
-	MotdType *string `json:"motd.type,omitempty"`
-	// Display full page
-	MotdFullPage NullableBool `json:"motd.fullPage,omitempty"`
-	// Display date for message
-	MotdDate             *string                `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MotdTitle            *string                                      `json:"motd.title,omitempty"`
+	Motd                 *MessageOfTheDayPolicyTypeConfiguration1Motd `json:"motd,omitempty"`
+	MotdMessage          *string                                      `json:"motd.message,omitempty"`
+	MotdType             *string                                      `json:"motd.type,omitempty"`
+	MotdFullPage         NullableBool                                 `json:"motd.fullPage,omitempty"`
+	MotdDate             *string                                      `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _MessageOfTheDayPolicyTypeConfiguration1 MessageOfTheDayPolicyTypeConfiguration1

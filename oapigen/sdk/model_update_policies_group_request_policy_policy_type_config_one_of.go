@@ -20,7 +20,6 @@ var _ MappedNullable = &UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf{}
 
 // UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf - Max Cores
 type UpdatePoliciesGroupRequestPolicyPolicyTypeConfigOneOf struct {
-	// Max Cores
 	MaxCores             *string                `json:"maxCores,omitempty"`
 	ExcludeContainers    *bool                  `json:"excludeContainers,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`

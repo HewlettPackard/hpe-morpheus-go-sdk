@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BackupStorageIds** | **[]string** | Array of backup storage IDs to restrict available backup targets | 
+**BackupStorageIds** | **[]string** |  | 
 
 ## Methods
 

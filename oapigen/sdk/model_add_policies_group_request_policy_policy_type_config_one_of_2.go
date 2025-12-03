@@ -20,7 +20,6 @@ var _ MappedNullable = &AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2{}
 
 // AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 - Backup Targets
 type AddPoliciesGroupRequestPolicyPolicyTypeConfigOneOf2 struct {
-	// Array of backup storage IDs to restrict available backup targets
 	BackupStorageIds     []int64                `json:"backupStorageIds,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

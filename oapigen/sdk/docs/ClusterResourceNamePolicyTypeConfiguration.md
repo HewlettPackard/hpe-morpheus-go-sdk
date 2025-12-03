@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerNamingType** | **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; (strict pattern) | 
-**ServerNamingPattern** | Pointer to **string** | Name pattern uses ${variable} string interpolation.  Available variables are:&lt;br&gt;groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType | [optional] 
-**ServerNamingConflict** | Pointer to **bool** | Auto-resolve conflicts | [optional] 
+**ServerNamingType** | **string** |  | 
+**ServerNamingPattern** | Pointer to **string** |  | [optional] 
+**ServerNamingConflict** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 

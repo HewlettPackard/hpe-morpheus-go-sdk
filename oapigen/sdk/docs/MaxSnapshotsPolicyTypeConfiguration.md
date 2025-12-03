@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxSnapshots** | **string** | Max Snapshots | 
+**MaxSnapshots** | **string** |  | 
 
 ## Methods
 

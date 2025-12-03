@@ -20,9 +20,7 @@ var _ MappedNullable = &UserCreationPolicyTypeConfiguration{}
 
 // UserCreationPolicyTypeConfiguration - User Creation
 type UserCreationPolicyTypeConfiguration struct {
-	// Options: \"user\" (user configurable), \"fixed\"
-	CreateUserType string `json:"createUserType"`
-	// Enforce user creation
+	CreateUserType       string                 `json:"createUserType"`
 	CreateUser           *bool                  `json:"createUser,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

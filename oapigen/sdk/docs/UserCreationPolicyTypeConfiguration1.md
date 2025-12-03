@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateUserType** | Pointer to **string** | Options: \&quot;user\&quot; (user configurable), \&quot;fixed\&quot; | [optional] 
-**CreateUser** | Pointer to **bool** | Enforce user creation | [optional] 
+**CreateUserType** | Pointer to **string** |  | [optional] 
+**CreateUser** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 

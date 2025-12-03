@@ -20,31 +20,20 @@ var _ MappedNullable = &ShutdownPolicyTypeConfiguration1{}
 
 // ShutdownPolicyTypeConfiguration1 Configuration settings for the following policy types: - Shutdown
 type ShutdownPolicyTypeConfiguration1 struct {
-	// Options: \"user\" (user configurable), \"fixed\" (strict shutdown)
-	ShutdownType *string `json:"shutdownType,omitempty"`
-	// Shutdown Age (days)
-	ShutdownAge *string `json:"shutdownAge,omitempty"`
-	// Renewal Days
-	ShutdownRenewal *string `json:"shutdownRenewal,omitempty"`
-	// Notification Days
-	ShutdownNotify *string `json:"shutdownNotify,omitempty"`
-	// Notification message
-	ShutdownMessage     *string `json:"shutdownMessage,omitempty"`
-	ShutdownAutoRenew   *string `json:"shutdownAutoRenew,omitempty"`
-	ShutdownAllowExtend *string `json:"shutdownAllowExtend,omitempty"`
-	// Extensions Before Approval
-	ShutdownExtensionsBeforeApproval *string `json:"shutdownExtensionsBeforeApproval,omitempty"`
-	// ID of your ServiceNow or approval integration
-	AccountIntegrationId *string `json:"accountIntegrationId,omitempty"`
-	// Hide fixed shutdown from users
-	ShutdownHideFixed *bool `json:"shutdownHideFixed,omitempty"`
-	// ID of legacy ServiceNow workflow (set if workflowType is 'workflow')
-	ShutdownWorkflowId *string `json:"shutdownWorkflowId,omitempty"`
-	// ID of ServiceNow Flow (set if workflowType is 'flow')
-	FlowId *string `json:"flowId,omitempty"`
-	// Options: \"workflow\" (legacy workflow), \"flow\" (ServiceNow Flow)
-	WorkflowType         *string                `json:"workflowType,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	ShutdownType                     *string                `json:"shutdownType,omitempty"`
+	ShutdownAge                      *string                `json:"shutdownAge,omitempty"`
+	ShutdownRenewal                  *string                `json:"shutdownRenewal,omitempty"`
+	ShutdownNotify                   *string                `json:"shutdownNotify,omitempty"`
+	ShutdownMessage                  *string                `json:"shutdownMessage,omitempty"`
+	ShutdownAutoRenew                *string                `json:"shutdownAutoRenew,omitempty"`
+	ShutdownAllowExtend              *string                `json:"shutdownAllowExtend,omitempty"`
+	ShutdownExtensionsBeforeApproval *string                `json:"shutdownExtensionsBeforeApproval,omitempty"`
+	AccountIntegrationId             *string                `json:"accountIntegrationId,omitempty"`
+	ShutdownHideFixed                *bool                  `json:"shutdownHideFixed,omitempty"`
+	ShutdownWorkflowId               *string                `json:"shutdownWorkflowId,omitempty"`
+	FlowId                           *string                `json:"flowId,omitempty"`
+	WorkflowType                     *string                `json:"workflowType,omitempty"`
+	AdditionalProperties             map[string]interface{} `json:",remain"`
 }
 
 type _ShutdownPolicyTypeConfiguration1 ShutdownPolicyTypeConfiguration1

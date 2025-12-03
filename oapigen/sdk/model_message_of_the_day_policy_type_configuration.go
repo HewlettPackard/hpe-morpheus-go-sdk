@@ -20,17 +20,13 @@ var _ MappedNullable = &MessageOfTheDayPolicyTypeConfiguration{}
 
 // MessageOfTheDayPolicyTypeConfiguration - Message of the Day
 type MessageOfTheDayPolicyTypeConfiguration struct {
-	// Message title
-	MotdTitle *string                                    `json:"motd.title,omitempty"`
-	Motd      MessageOfTheDayPolicyTypeConfigurationMotd `json:"motd"`
-	// Message content
-	MotdMessage *string `json:"motd.message,omitempty"`
-	// Options: \"info\", \"warning\", \"critical\"
-	MotdType     *string                                              `json:"motd.type,omitempty"`
-	MotdFullPage *MessageOfTheDayPolicyTypeConfigurationMotdFullPage1 `json:"motd.fullPage,omitempty"`
-	// Display date for message
-	MotdDate             *string                `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	MotdTitle            NullableString                                      `json:"motd.title,omitempty"`
+	Motd                 MessageOfTheDayPolicyTypeConfigurationMotd          `json:"motd"`
+	MotdMessage          *string                                             `json:"motd.message,omitempty"`
+	MotdType             *string                                             `json:"motd.type,omitempty"`
+	MotdFullPage         *MessageOfTheDayPolicyTypeConfigurationMotdFullPage `json:"motd.fullPage,omitempty"`
+	MotdDate             *string                                             `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _MessageOfTheDayPolicyTypeConfiguration MessageOfTheDayPolicyTypeConfiguration
@@ -53,36 +49,47 @@ func NewMessageOfTheDayPolicyTypeConfigurationWithDefaults() *MessageOfTheDayPol
 	return &this
 }
 
-// GetMotdTitle returns the MotdTitle field value if set, zero value otherwise.
+// GetMotdTitle returns the MotdTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdTitle() string {
-	if o == nil || IsNil(o.MotdTitle) {
+	if o == nil || IsNil(o.MotdTitle.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.MotdTitle
+	return *o.MotdTitle.Get()
 }
 
 // GetMotdTitleOk returns a tuple with the MotdTitle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.MotdTitle) {
+	if o == nil {
 		return nil, false
 	}
-	return o.MotdTitle, true
+	return o.MotdTitle.Get(), o.MotdTitle.IsSet()
 }
 
 // IsSetMotdTitle returns a boolean if a field has been set.
 func (o *MessageOfTheDayPolicyTypeConfiguration) IsSetMotdTitle() bool {
-	if o != nil && !IsNil(o.MotdTitle) {
+	if o != nil && o.MotdTitle.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMotdTitle gets a reference to the given string and assigns it to the MotdTitle field.
+// SetMotdTitle gets a reference to the given NullableString and assigns it to the MotdTitle field.
 func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdTitle(v string) {
-	o.MotdTitle = &v
+	o.MotdTitle.Set(&v)
+}
+
+// SetMotdTitleNil sets the value for MotdTitle to be an explicit nil
+func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdTitleNil() {
+	o.MotdTitle.Set(nil)
+}
+
+// UnsetMotdTitle ensures that no value is present for MotdTitle, not even an explicit nil
+func (o *MessageOfTheDayPolicyTypeConfiguration) UnsetMotdTitle() {
+	o.MotdTitle.Unset()
 }
 
 // GetMotd returns the Motd field value
@@ -174,9 +181,9 @@ func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdType(v string) {
 }
 
 // GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise.
-func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage1 {
+func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage {
 	if o == nil || IsNil(o.MotdFullPage) {
-		var ret MessageOfTheDayPolicyTypeConfigurationMotdFullPage1
+		var ret MessageOfTheDayPolicyTypeConfigurationMotdFullPage
 		return ret
 	}
 	return *o.MotdFullPage
@@ -184,7 +191,7 @@ func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdFullPage() MessageOfTheD
 
 // GetMotdFullPageOk returns a tuple with the MotdFullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage1, bool) {
+func (o *MessageOfTheDayPolicyTypeConfiguration) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage, bool) {
 	if o == nil || IsNil(o.MotdFullPage) {
 		return nil, false
 	}
@@ -200,8 +207,8 @@ func (o *MessageOfTheDayPolicyTypeConfiguration) IsSetMotdFullPage() bool {
 	return false
 }
 
-// SetMotdFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfigurationMotdFullPage1 and assigns it to the MotdFullPage field.
-func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage1) {
+// SetMotdFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfigurationMotdFullPage and assigns it to the MotdFullPage field.
+func (o *MessageOfTheDayPolicyTypeConfiguration) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage) {
 	o.MotdFullPage = &v
 }
 
@@ -247,8 +254,8 @@ func (o MessageOfTheDayPolicyTypeConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o MessageOfTheDayPolicyTypeConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MotdTitle) {
-		toSerialize["motd.title"] = o.MotdTitle
+	if o.MotdTitle.IsSet() {
+		toSerialize["motd.title"] = o.MotdTitle.Get()
 	}
 	toSerialize["motd"] = o.Motd
 	if !IsNil(o.MotdMessage) {

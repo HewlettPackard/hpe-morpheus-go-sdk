@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KeyPattern** | Pointer to **string** | Pattern to match Cypher keys (e.g., \&quot;secret/_*\&quot;, \&quot;password/_*\&quot;) | [optional] 
-**Read** | Pointer to **bool** | Allow read access | [optional] 
-**Write** | Pointer to **bool** | Allow write access | [optional] 
-**Update** | Pointer to **bool** | Allow update access | [optional] 
-**Delete** | Pointer to **bool** | Allow delete access | [optional] 
-**List** | Pointer to **bool** | Allow list access | [optional] 
+**KeyPattern** | Pointer to **string** |  | [optional] 
+**Read** | Pointer to **bool** |  | [optional] 
+**Write** | Pointer to **bool** |  | [optional] 
+**Update** | Pointer to **bool** |  | [optional] 
+**Delete** | Pointer to **bool** |  | [optional] 
+**List** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 

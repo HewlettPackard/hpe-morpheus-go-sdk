@@ -20,11 +20,8 @@ var _ MappedNullable = &InstanceNamePolicyTypeConfiguration1{}
 
 // InstanceNamePolicyTypeConfiguration1 Configuration settings for the following policy types: - Instance Name
 type InstanceNamePolicyTypeConfiguration1 struct {
-	// Options: \"user\" (user configurable), \"fixed\" (strict pattern)
-	NamingType *string `json:"namingType,omitempty"`
-	// Name pattern uses ${variable} string interpolation. Available variables are: groupName, groupCode, cloudName, cloudCode, type, accountId, account, accountType, platform, username, userId, userInitials, provisionType
-	NamingPattern *string `json:"namingPattern,omitempty"`
-	// Auto-resolve conflicts
+	NamingType           *string                `json:"namingType,omitempty"`
+	NamingPattern        *string                `json:"namingPattern,omitempty"`
 	NamingConflict       *bool                  `json:"namingConflict,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

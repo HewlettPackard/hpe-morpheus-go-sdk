@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | Pointer to **string** | The policy type | [optional] 
-**Config** | Pointer to [**AddPoliciesCloudRequestPolicyPolicyTypeConfig**](AddPoliciesCloudRequestPolicyPolicyTypeConfig.md) |  | [optional] 
+**Config** | Pointer to [**AddPoliciesGroupRequestPolicyPolicyTypeConfig**](AddPoliciesGroupRequestPolicyPolicyTypeConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Set to false to disable | [optional] [default to true]
 **RefType** | Pointer to **string** | Scope object type | [optional] 
 **RefId** | Pointer to **int64** | Scope object ID (&#x60;cloud&#x60;) | [optional] 
@@ -58,20 +58,20 @@ HasCode returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfig() AddPoliciesCloudRequestPolicyPolicyTypeConfig`
+`func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfig() AddPoliciesGroupRequestPolicyPolicyTypeConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfigOk() (*AddPoliciesCloudRequestPolicyPolicyTypeConfig, bool)`
+`func (o *AddPoliciesCloudRequestPolicyPolicyType) GetConfigOk() (*AddPoliciesGroupRequestPolicyPolicyTypeConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *AddPoliciesCloudRequestPolicyPolicyType) SetConfig(v AddPoliciesCloudRequestPolicyPolicyTypeConfig)`
+`func (o *AddPoliciesCloudRequestPolicyPolicyType) SetConfig(v AddPoliciesGroupRequestPolicyPolicyTypeConfig)`
 
 SetConfig sets Config field to given value.
 

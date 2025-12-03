@@ -470,8 +470,6 @@ docs/AddPolicies200ResponseAllOfPolicyRole.md
 docs/AddPoliciesCloudRequest.md
 docs/AddPoliciesCloudRequestPolicy.md
 docs/AddPoliciesCloudRequestPolicyPolicyType.md
-docs/AddPoliciesCloudRequestPolicyPolicyTypeConfig.md
-docs/AddPoliciesCloudRequestPolicyPolicyTypeConfigOneOf.md
 docs/AddPoliciesGroupRequest.md
 docs/AddPoliciesGroupRequestPolicy.md
 docs/AddPoliciesGroupRequestPolicyPolicyType.md
@@ -717,7 +715,6 @@ docs/Approvals.md
 docs/ApprovalsAPI.md
 docs/ApprovePolicyTypeConfiguration.md
 docs/ApprovePolicyTypeConfiguration1.md
-docs/ApprovePolicyTypeConfiguration2.md
 docs/AppsAPI.md
 docs/ArchiveBucket.md
 docs/ArchiveBucketCreate.md
@@ -737,7 +734,6 @@ docs/AzureReferenceVirtualImageConfiguration.md
 docs/Backup.md
 docs/BackupCreationPolicyTypeConfiguration.md
 docs/BackupCreationPolicyTypeConfiguration1.md
-docs/BackupCreationPolicyTypeConfiguration2.md
 docs/BackupInstance.md
 docs/BackupInstanceBackupJob.md
 docs/BackupJob.md
@@ -750,7 +746,6 @@ docs/BackupSettingsUpdate.md
 docs/BackupStorageProvider.md
 docs/BackupTargetsPolicyTypeConfiguration.md
 docs/BackupTargetsPolicyTypeConfiguration1.md
-docs/BackupTargetsPolicyTypeConfiguration2.md
 docs/BackupTypeInstance.md
 docs/BackupTypeProvider.md
 docs/BackupTypeServer.md
@@ -788,7 +783,6 @@ docs/BootScriptsCreate.md
 docs/Budget.md
 docs/BudgetPolicyTypeConfiguration.md
 docs/BudgetPolicyTypeConfiguration1.md
-docs/BudgetPolicyTypeConfiguration2.md
 docs/Budgets.md
 docs/BudgetsAPI.md
 docs/CatalogCart.md
@@ -880,7 +874,6 @@ docs/ClusterPods.md
 docs/ClusterResource.md
 docs/ClusterResourceNamePolicyTypeConfiguration.md
 docs/ClusterResourceNamePolicyTypeConfiguration1.md
-docs/ClusterResourceNamePolicyTypeConfiguration2.md
 docs/ClusterResources.md
 docs/ClusterServerCreate.md
 docs/ClusterServices.md
@@ -1034,7 +1027,6 @@ docs/Cypher.md
 docs/CypherAPI.md
 docs/CypherAccessPolicyTypeConfiguration.md
 docs/CypherAccessPolicyTypeConfiguration1.md
-docs/CypherAccessPolicyTypeConfiguration2.md
 docs/DatastoresAPI.md
 docs/DefaultBlueprintPermission.md
 docs/DefaultCatalogItemTypePermission.md
@@ -1049,8 +1041,6 @@ docs/DefaultVDIPoolPermission.md
 docs/DefaultWorkflowPermission.md
 docs/DelayedDeletePolicyTypeConfiguration.md
 docs/DelayedDeletePolicyTypeConfiguration1.md
-docs/DelayedDeletePolicyTypeConfiguration2.md
-docs/DelayedDeletePolicyTypeConfiguration3.md
 docs/DeleteAlerts200Response.md
 docs/DeleteClusterDatastore200Response.md
 docs/Deployment.md
@@ -1088,7 +1078,6 @@ docs/ExecutionRequest.md
 docs/ExpirationPolicyTypeConfiguration.md
 docs/ExpirationPolicyTypeConfiguration1.md
 docs/ExpirationPolicyTypeConfiguration2.md
-docs/ExpirationPolicyTypeConfiguration3.md
 docs/FeaturePermission.md
 docs/FileShareStorageQuotaPolicyTypeConfiguration.md
 docs/FileTemplate.md
@@ -2336,38 +2325,28 @@ docs/ManageHostPlacementRequestServer.md
 docs/ManageHostPlacementRequestServerPreferredParentServer.md
 docs/MaxContainersPolicyTypeConfiguration.md
 docs/MaxContainersPolicyTypeConfiguration1.md
-docs/MaxContainersPolicyTypeConfiguration2.md
 docs/MaxCoresPolicyTypeConfiguration.md
 docs/MaxCoresPolicyTypeConfiguration1.md
 docs/MaxCoresPolicyTypeConfiguration2.md
-docs/MaxCoresPolicyTypeConfiguration3.md
 docs/MaxHostsPolicyTypeConfiguration.md
 docs/MaxHostsPolicyTypeConfiguration1.md
-docs/MaxHostsPolicyTypeConfiguration2.md
 docs/MaxLoadBalancerPoolsPolicyTypeConfiguration.md
 docs/MaxLoadBalancerPoolsPolicyTypeConfiguration1.md
-docs/MaxLoadBalancerPoolsPolicyTypeConfiguration2.md
 docs/MaxMemoryPolicyTypeConfiguration.md
 docs/MaxMemoryPolicyTypeConfiguration1.md
 docs/MaxMemoryPolicyTypeConfiguration1MaxMemory.md
 docs/MaxMemoryPolicyTypeConfiguration2.md
-docs/MaxMemoryPolicyTypeConfiguration3.md
 docs/MaxPoolMembersPolicyTypeConfiguration.md
 docs/MaxPoolMembersPolicyTypeConfiguration1.md
-docs/MaxPoolMembersPolicyTypeConfiguration2.md
 docs/MaxSnapshotsPolicyTypeConfiguration.md
 docs/MaxSnapshotsPolicyTypeConfiguration1.md
-docs/MaxSnapshotsPolicyTypeConfiguration2.md
 docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration.md
 docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1.md
 docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration2.md
-docs/MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration3.md
 docs/MaxVMsPolicyTypeConfiguration.md
 docs/MaxVMsPolicyTypeConfiguration1.md
-docs/MaxVMsPolicyTypeConfiguration2.md
 docs/MaxVirtualServersPolicyTypeConfiguration.md
 docs/MaxVirtualServersPolicyTypeConfiguration1.md
-docs/MaxVirtualServersPolicyTypeConfiguration2.md
 docs/MessageOfTheDayPolicyTypeConfiguration.md
 docs/MessageOfTheDayPolicyTypeConfiguration1.md
 docs/MessageOfTheDayPolicyTypeConfiguration1Motd.md
@@ -2375,7 +2354,6 @@ docs/MessageOfTheDayPolicyTypeConfiguration2.md
 docs/MessageOfTheDayPolicyTypeConfiguration2Motd.md
 docs/MessageOfTheDayPolicyTypeConfigurationMotd.md
 docs/MessageOfTheDayPolicyTypeConfigurationMotdFullPage.md
-docs/MessageOfTheDayPolicyTypeConfigurationMotdFullPage1.md
 docs/Meta.md
 docs/MetaObject.md
 docs/MetaObjectDates.md
@@ -2427,7 +2405,6 @@ docs/NetworkPoolServerUpdatePhpIpam.md
 docs/NetworkPoolServerUpdateSolarWinds.md
 docs/NetworkQuotaPolicyTypeConfiguration.md
 docs/NetworkQuotaPolicyTypeConfiguration1.md
-docs/NetworkQuotaPolicyTypeConfiguration2.md
 docs/NetworkRouterFirewallRule.md
 docs/NetworkRouterFirewallRuleCreate.md
 docs/NetworkRouterNat.md
@@ -2493,7 +2470,6 @@ docs/PostgresCheckAllOfCheckType.md
 docs/PowerSchedule.md
 docs/PowerSchedulePolicyTypeConfiguration.md
 docs/PowerSchedulePolicyTypeConfiguration1.md
-docs/PowerSchedulePolicyTypeConfiguration2.md
 docs/PrepareAppApply200Response.md
 docs/PrepareAppApply200ResponseAllOfData.md
 docs/PrepareAppApply200ResponseAllOfDataTerraform.md
@@ -2574,7 +2550,6 @@ docs/RolesAPI.md
 docs/RouteOptionType.md
 docs/RouterQuotaPolicyTypeConfiguration.md
 docs/RouterQuotaPolicyTypeConfiguration1.md
-docs/RouterQuotaPolicyTypeConfiguration2.md
 docs/RunReports200Response.md
 docs/RunReportsRequest.md
 docs/RunReportsRequestReport.md
@@ -2652,8 +2627,6 @@ docs/SetupRequestAnyOf1OneOf1Hub.md
 docs/SetupRequestAnyOf1OneOfHub.md
 docs/ShutdownPolicyTypeConfiguration.md
 docs/ShutdownPolicyTypeConfiguration1.md
-docs/ShutdownPolicyTypeConfiguration2.md
-docs/ShutdownPolicyTypeConfiguration3.md
 docs/Snapshot.md
 docs/SnapshotHost200Response.md
 docs/SnapshotInstance200Response.md
@@ -2680,7 +2653,6 @@ docs/StorageDatastoreCreate.md
 docs/StorageServer.md
 docs/StorageServerStorageQuotaPolicyTypeConfiguration.md
 docs/StorageServerStorageQuotaPolicyTypeConfiguration1.md
-docs/StorageServerStorageQuotaPolicyTypeConfiguration2.md
 docs/StorageServerType.md
 docs/StorageType.md
 docs/StorageVolume.md
@@ -2694,7 +2666,6 @@ docs/SuccessMessage.md
 docs/Tag.md
 docs/TagsPolicyTypeConfiguration.md
 docs/TagsPolicyTypeConfiguration1.md
-docs/TagsPolicyTypeConfiguration2.md
 docs/TaskAnsiblePlaybookConfig.md
 docs/TaskAnsibleTowerConfig.md
 docs/TaskChefBootstrapConfig.md
@@ -3058,12 +3029,10 @@ docs/User.md
 docs/UserCreate.md
 docs/UserCreationPolicyTypeConfiguration.md
 docs/UserCreationPolicyTypeConfiguration1.md
-docs/UserCreationPolicyTypeConfiguration2.md
 docs/UserGroup.md
 docs/UserGroupCreate.md
 docs/UserGroupCreationPolicyTypeConfiguration.md
 docs/UserGroupCreationPolicyTypeConfiguration1.md
-docs/UserGroupCreationPolicyTypeConfiguration2.md
 docs/UserGroupUpdate.md
 docs/UserPermissions.md
 docs/UserSettings.md
@@ -3114,7 +3083,6 @@ docs/WorkflowJobPayloadTargetsInner.md
 docs/WorkflowJobPayloadTask.md
 docs/WorkflowPolicyTypeConfiguration.md
 docs/WorkflowPolicyTypeConfiguration1.md
-docs/WorkflowPolicyTypeConfiguration2.md
 docs/Zone.md
 docs/ZoneCreate.md
 docs/ZoneDatastore.md
@@ -3532,8 +3500,6 @@ model_add_policies_200_response_all_of_policy_role.go
 model_add_policies_cloud_request.go
 model_add_policies_cloud_request_policy.go
 model_add_policies_cloud_request_policy_policy_type.go
-model_add_policies_cloud_request_policy_policy_type_config.go
-model_add_policies_cloud_request_policy_policy_type_config_one_of.go
 model_add_policies_group_request.go
 model_add_policies_group_request_policy.go
 model_add_policies_group_request_policy_policy_type.go
@@ -3776,7 +3742,6 @@ model_approval_item.go
 model_approvals.go
 model_approve_policy_type_configuration.go
 model_approve_policy_type_configuration_1.go
-model_approve_policy_type_configuration_2.go
 model_archive_bucket.go
 model_archive_bucket_create.go
 model_archive_bucket_file.go
@@ -3792,7 +3757,6 @@ model_azure_reference_virtual_image_configuration.go
 model_backup.go
 model_backup_creation_policy_type_configuration.go
 model_backup_creation_policy_type_configuration_1.go
-model_backup_creation_policy_type_configuration_2.go
 model_backup_instance.go
 model_backup_instance_backup_job.go
 model_backup_job.go
@@ -3804,7 +3768,6 @@ model_backup_settings_update.go
 model_backup_storage_provider.go
 model_backup_targets_policy_type_configuration.go
 model_backup_targets_policy_type_configuration_1.go
-model_backup_targets_policy_type_configuration_2.go
 model_backup_type_instance.go
 model_backup_type_provider.go
 model_backup_type_server.go
@@ -3839,7 +3802,6 @@ model_boot_scripts_create.go
 model_budget.go
 model_budget_policy_type_configuration.go
 model_budget_policy_type_configuration_1.go
-model_budget_policy_type_configuration_2.go
 model_budgets.go
 model_catalog_cart.go
 model_catalog_cart_item_create.go
@@ -3924,7 +3886,6 @@ model_cluster_pods.go
 model_cluster_resource.go
 model_cluster_resource_name_policy_type_configuration.go
 model_cluster_resource_name_policy_type_configuration_1.go
-model_cluster_resource_name_policy_type_configuration_2.go
 model_cluster_resources.go
 model_cluster_server_create.go
 model_cluster_services.go
@@ -4073,7 +4034,6 @@ model_custom_options_for_openstack_open_telekom_huawei.go
 model_cypher.go
 model_cypher_access_policy_type_configuration.go
 model_cypher_access_policy_type_configuration_1.go
-model_cypher_access_policy_type_configuration_2.go
 model_default_blueprint_permission.go
 model_default_catalog_item_type_permission.go
 model_default_cloud_permission.go
@@ -4087,8 +4047,6 @@ model_default_vdi_pool_permission.go
 model_default_workflow_permission.go
 model_delayed_delete_policy_type_configuration.go
 model_delayed_delete_policy_type_configuration_1.go
-model_delayed_delete_policy_type_configuration_2.go
-model_delayed_delete_policy_type_configuration_3.go
 model_delete_alerts_200_response.go
 model_delete_cluster_datastore_200_response.go
 model_deployment.go
@@ -4122,7 +4080,6 @@ model_execution_request.go
 model_expiration_policy_type_configuration.go
 model_expiration_policy_type_configuration_1.go
 model_expiration_policy_type_configuration_2.go
-model_expiration_policy_type_configuration_3.go
 model_feature_permission.go
 model_file_share_storage_quota_policy_type_configuration.go
 model_file_template.go
@@ -5351,38 +5308,28 @@ model_manage_host_placement_request_server.go
 model_manage_host_placement_request_server_preferred_parent_server.go
 model_max_containers_policy_type_configuration.go
 model_max_containers_policy_type_configuration_1.go
-model_max_containers_policy_type_configuration_2.go
 model_max_cores_policy_type_configuration.go
 model_max_cores_policy_type_configuration_1.go
 model_max_cores_policy_type_configuration_2.go
-model_max_cores_policy_type_configuration_3.go
 model_max_hosts_policy_type_configuration.go
 model_max_hosts_policy_type_configuration_1.go
-model_max_hosts_policy_type_configuration_2.go
 model_max_load_balancer_pools_policy_type_configuration.go
 model_max_load_balancer_pools_policy_type_configuration_1.go
-model_max_load_balancer_pools_policy_type_configuration_2.go
 model_max_memory_policy_type_configuration.go
 model_max_memory_policy_type_configuration_1.go
 model_max_memory_policy_type_configuration_1_max_memory.go
 model_max_memory_policy_type_configuration_2.go
-model_max_memory_policy_type_configuration_3.go
 model_max_pool_members_policy_type_configuration.go
 model_max_pool_members_policy_type_configuration_1.go
-model_max_pool_members_policy_type_configuration_2.go
 model_max_snapshots_policy_type_configuration.go
 model_max_snapshots_policy_type_configuration_1.go
-model_max_snapshots_policy_type_configuration_2.go
 model_max_storage_and_object_storage_quota_policy_type_configuration.go
 model_max_storage_and_object_storage_quota_policy_type_configuration_1.go
 model_max_storage_and_object_storage_quota_policy_type_configuration_2.go
-model_max_storage_and_object_storage_quota_policy_type_configuration_3.go
 model_max_virtual_servers_policy_type_configuration.go
 model_max_virtual_servers_policy_type_configuration_1.go
-model_max_virtual_servers_policy_type_configuration_2.go
 model_max_vms_policy_type_configuration.go
 model_max_vms_policy_type_configuration_1.go
-model_max_vms_policy_type_configuration_2.go
 model_message_of_the_day_policy_type_configuration.go
 model_message_of_the_day_policy_type_configuration_1.go
 model_message_of_the_day_policy_type_configuration_1_motd.go
@@ -5390,7 +5337,6 @@ model_message_of_the_day_policy_type_configuration_2.go
 model_message_of_the_day_policy_type_configuration_2_motd.go
 model_message_of_the_day_policy_type_configuration_motd.go
 model_message_of_the_day_policy_type_configuration_motd_full_page.go
-model_message_of_the_day_policy_type_configuration_motd_full_page_1.go
 model_meta.go
 model_meta_object.go
 model_meta_object_dates.go
@@ -5423,7 +5369,6 @@ model_network_pool_server_update_php_ipam.go
 model_network_pool_server_update_solar_winds.go
 model_network_quota_policy_type_configuration.go
 model_network_quota_policy_type_configuration_1.go
-model_network_quota_policy_type_configuration_2.go
 model_network_router_firewall_rule.go
 model_network_router_firewall_rule_create.go
 model_network_router_nat.go
@@ -5490,7 +5435,6 @@ model_postgres_check_all_of_check_type.go
 model_power_schedule.go
 model_power_schedule_policy_type_configuration.go
 model_power_schedule_policy_type_configuration_1.go
-model_power_schedule_policy_type_configuration_2.go
 model_prepare_app_apply_200_response.go
 model_prepare_app_apply_200_response_all_of_data.go
 model_prepare_app_apply_200_response_all_of_data_terraform.go
@@ -5563,7 +5507,6 @@ model_roles.go
 model_route_option_type.go
 model_router_quota_policy_type_configuration.go
 model_router_quota_policy_type_configuration_1.go
-model_router_quota_policy_type_configuration_2.go
 model_run_reports_200_response.go
 model_run_reports_request.go
 model_run_reports_request_report.go
@@ -5628,8 +5571,6 @@ model_setup_request_any_of_1_one_of_1_hub.go
 model_setup_request_any_of_1_one_of_hub.go
 model_shutdown_policy_type_configuration.go
 model_shutdown_policy_type_configuration_1.go
-model_shutdown_policy_type_configuration_2.go
-model_shutdown_policy_type_configuration_3.go
 model_snapshot.go
 model_snapshot_host_200_response.go
 model_snapshot_instance_200_response.go
@@ -5660,7 +5601,6 @@ model_storage_datastore_create.go
 model_storage_server.go
 model_storage_server_storage_quota_policy_type_configuration.go
 model_storage_server_storage_quota_policy_type_configuration_1.go
-model_storage_server_storage_quota_policy_type_configuration_2.go
 model_storage_server_type.go
 model_storage_type.go
 model_storage_volume.go
@@ -5674,7 +5614,6 @@ model_success_message.go
 model_tag.go
 model_tags_policy_type_configuration.go
 model_tags_policy_type_configuration_1.go
-model_tags_policy_type_configuration_2.go
 model_task_ansible_playbook_config.go
 model_task_ansible_tower_config.go
 model_task_chef_bootstrap_config.go
@@ -6036,12 +5975,10 @@ model_user.go
 model_user_create.go
 model_user_creation_policy_type_configuration.go
 model_user_creation_policy_type_configuration_1.go
-model_user_creation_policy_type_configuration_2.go
 model_user_group.go
 model_user_group_create.go
 model_user_group_creation_policy_type_configuration.go
 model_user_group_creation_policy_type_configuration_1.go
-model_user_group_creation_policy_type_configuration_2.go
 model_user_group_update.go
 model_user_permissions.go
 model_user_settings.go
@@ -6088,7 +6025,6 @@ model_workflow_job_payload_targets_inner.go
 model_workflow_job_payload_task.go
 model_workflow_policy_type_configuration.go
 model_workflow_policy_type_configuration_1.go
-model_workflow_policy_type_configuration_2.go
 model_zone.go
 model_zone_create.go
 model_zone_datastore.go

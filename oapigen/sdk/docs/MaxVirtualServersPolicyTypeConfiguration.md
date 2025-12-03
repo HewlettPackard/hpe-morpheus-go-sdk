@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxVirtualServers** | **string** | Max Virtual Servers | 
+**MaxVirtualServers** | **string** |  | 
 
 ## Methods
 

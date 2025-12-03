@@ -20,7 +20,6 @@ var _ MappedNullable = &MaxVMsPolicyTypeConfiguration1{}
 
 // MaxVMsPolicyTypeConfiguration1 Configuration settings for the following policy types: - Max VMs
 type MaxVMsPolicyTypeConfiguration1 struct {
-	// Max VMs
 	MaxVms               *string                `json:"maxVms,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }

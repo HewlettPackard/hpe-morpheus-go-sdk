@@ -20,7 +20,6 @@ var _ MappedNullable = &MaxLoadBalancerPoolsPolicyTypeConfiguration{}
 
 // MaxLoadBalancerPoolsPolicyTypeConfiguration - Max Load Balancer Pools
 type MaxLoadBalancerPoolsPolicyTypeConfiguration struct {
-	// Max Pools
 	MaxPools             string                 `json:"maxPools"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
