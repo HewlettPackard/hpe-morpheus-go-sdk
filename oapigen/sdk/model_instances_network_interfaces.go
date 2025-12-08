@@ -23,7 +23,7 @@ type InstancesNetworkInterfaces struct {
 	Network InstancesNetworkInterfacesNetwork `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
-	// The mode for determining ip address. Use 'static' when specifying an ipAddress, otherwise 'dhcp' is used.
+	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
 	IpMode *string `json:"ipMode,omitempty"`
 	// The ip address. Not applicable when using DHCP or IP Pools.
 	IpAddress *string `json:"ipAddress,omitempty"`
@@ -31,7 +31,7 @@ type InstancesNetworkInterfaces struct {
 	MacAddress *string `json:"macAddress,omitempty"`
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
-	// The nested networkInterfaces can be used to define child virtual network intefaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
+	// The nested networkInterfaces can be used to define child virtual network interfaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
 	NetworkInterfaces    []InstancesNetworkInterfacesNetworkInterfacesInner `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
@@ -45,7 +45,7 @@ type _InstancesNetworkInterfaces InstancesNetworkInterfaces
 func NewInstancesNetworkInterfaces(network InstancesNetworkInterfacesNetwork) *InstancesNetworkInterfaces {
 	this := InstancesNetworkInterfaces{}
 	this.Network = network
-	var ipMode string = "dhcp"
+	var ipMode string = ""
 	this.IpMode = &ipMode
 	return &this
 }
@@ -55,7 +55,7 @@ func NewInstancesNetworkInterfaces(network InstancesNetworkInterfacesNetwork) *I
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesNetworkInterfacesWithDefaults() *InstancesNetworkInterfaces {
 	this := InstancesNetworkInterfaces{}
-	var ipMode string = "dhcp"
+	var ipMode string = ""
 	this.IpMode = &ipMode
 	return &this
 }

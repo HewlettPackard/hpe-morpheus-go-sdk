@@ -23,7 +23,7 @@ type InstancesNetworkInterfacesNetworkInterfacesInner struct {
 	Network InstancesNetworkInterfacesNetwork `json:"network"`
 	// The id of type of the network interface.
 	NetworkInterfaceTypeId *int64 `json:"networkInterfaceTypeId,omitempty"`
-	// The mode for determining ip address. Use 'static' when specifying an ipAddress, otherwise 'dhcp' is used.
+	// The mode for determining ip address. Can be 'static', 'dhcp' or empty string.
 	IpMode *string `json:"ipMode,omitempty"`
 	// The ip address. Not applicable when using DHCP or IP Pools.
 	IpAddress *string `json:"ipAddress,omitempty"`
@@ -43,7 +43,7 @@ type _InstancesNetworkInterfacesNetworkInterfacesInner InstancesNetworkInterface
 func NewInstancesNetworkInterfacesNetworkInterfacesInner(network InstancesNetworkInterfacesNetwork) *InstancesNetworkInterfacesNetworkInterfacesInner {
 	this := InstancesNetworkInterfacesNetworkInterfacesInner{}
 	this.Network = network
-	var ipMode string = "dhcp"
+	var ipMode string = ""
 	this.IpMode = &ipMode
 	return &this
 }
@@ -53,7 +53,7 @@ func NewInstancesNetworkInterfacesNetworkInterfacesInner(network InstancesNetwor
 // but it doesn't guarantee that properties required by API are set
 func NewInstancesNetworkInterfacesNetworkInterfacesInnerWithDefaults() *InstancesNetworkInterfacesNetworkInterfacesInner {
 	this := InstancesNetworkInterfacesNetworkInterfacesInner{}
-	var ipMode string = "dhcp"
+	var ipMode string = ""
 	this.IpMode = &ipMode
 	return &this
 }

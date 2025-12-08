@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Network** | [**InstancesNetworkInterfacesNetwork**](InstancesNetworkInterfacesNetwork.md) |  | 
 **NetworkInterfaceTypeId** | Pointer to **int64** | The id of type of the network interface. | [optional] 
-**IpMode** | Pointer to **string** | The mode for determining ip address. Use &#39;static&#39; when specifying an ipAddress, otherwise &#39;dhcp&#39; is used. | [optional] [default to "dhcp"]
+**IpMode** | Pointer to **string** | The mode for determining ip address. Can be &#39;static&#39;, &#39;dhcp&#39; or empty string. | [optional] [default to ""]
 **IpAddress** | Pointer to **string** | The ip address. Not applicable when using DHCP or IP Pools. | [optional] 
 **MacAddress** | Pointer to **string** | The MAC address. | [optional] 
 **Id** | Pointer to **int64** | The interface id. Applicable when resizing and you want to identify an interface to update that already exists. | [optional] 
