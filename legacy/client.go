@@ -71,8 +71,8 @@ type Client struct {
 	ExpiresIn       int64
 	Scope           string
 	UserAgent       string
-	//Headers map[string]string
-	//BaseURL   *url.URL
+	// Headers map[string]string
+	// BaseURL   *url.URL
 	HTTPClient *http.Client
 	// LastLoginDate time
 	// requests []*Request
@@ -145,7 +145,7 @@ func parseJsonToResult(data []byte, output interface{}) error {
 }
 
 func NewClient(url string, options ...ClientOption) (client *Client) {
-	var userAgent = "hpe-morpheus-terraform-provider"
+	userAgent := "hpe-morpheus-terraform-provider"
 
 	opts := clientOptions{}
 	for _, opt := range options {
@@ -166,7 +166,7 @@ func (client *Client) SetUsername(username string) *Client {
 	// clear access token if switching users
 	if client.Username != username {
 		client.ClearAccessToken()
-		//client.AccessToken = ""
+		// client.AccessToken = ""
 	}
 	client.Username = username
 	return client
@@ -211,13 +211,13 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	// The response object to be returned
-	var resp = &Response{}
+	resp := &Response{}
 
 	// potential error to be returned
 	var err error
 
 	// construct the request
-	var httpMethod = req.Method
+	httpMethod := req.Method
 	if httpMethod == "" {
 		// httpMethod = "GET"
 		return nil, errors.New("invalid Request: Method is required eg. GET,POST,PUT,DELETE")
@@ -324,6 +324,10 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 			if err != nil {
 				return nil, err
 			}
+
+			httpReq.Body = io.NopCloser(&buf)
+			httpReq.ContentLength = int64(buf.Len())
+			httpReq.Header.Set("Content-Type", w.FormDataContentType())
 		}
 
 		// NOTE: Need to test that this works correctly with the net/http client
@@ -433,7 +437,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		if jsonParseResultError != nil {
 			// maybe actually treat this as a failure..
 			log.Printf("Failed to parse JSON result for type %T. Parse Error: %v", resp.Result, jsonParseResultError)
-			//log.Errorf("Parse Error: %v", jsonParseResultError)
+			// log.Errorf("Parse Error: %v", jsonParseResultError)
 			// err = jsonParseResultError
 			// resp.Success = false
 		}
@@ -519,7 +523,7 @@ func (client *Client) Login() (*Response, error) {
 		// log.Printf("Login skipped. Already logged in as: %v", client.Username)
 		return nil, nil
 	} else {
-		//c(fmt.Sprintf("Logging in as %s at %s", client.Username, client.Url))
+		// c(fmt.Sprintf("Logging in as %s at %s", client.Username, client.Url))
 		loginRequest := &Request{
 			Method: "POST",
 			Path:   "/oauth/token",
@@ -542,7 +546,7 @@ func (client *Client) Login() (*Response, error) {
 			var loginResult LoginResult
 			jsonErr := json.Unmarshal(resp.Body, &loginResult)
 			if jsonErr != nil {
-				//logError(fmt.Sprintf("Error parsing JSON result for type %T [%v]", loginResult, jsonErr))
+				// logError(fmt.Sprintf("Error parsing JSON result for type %T [%v]", loginResult, jsonErr))
 				return resp, jsonErr
 			}
 			// log.Printf("LOGIN RESPONSE: ", resp, err)
@@ -554,7 +558,7 @@ func (client *Client) Login() (*Response, error) {
 				// log.Printf("Access Token: ", client.AccessToken)
 			} else {
 				err = errors.New("Login failed, unable to parse access token from login response")
-				//logError(err)
+				// logError(err)
 			}
 			// client.setLastLoginResult(loginResult)
 			return resp, err
@@ -565,7 +569,7 @@ func (client *Client) Login() (*Response, error) {
 
 	}
 
-	//return resp, err
+	// return resp, err
 }
 
 func (client *Client) Logout() (*Response, error) {
