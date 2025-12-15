@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
 	Id                   NullableInt64                                      `json:"id,omitempty"`
-	Group                NullableInt32                                      `json:"group,omitempty"`
+	Group                NullableInt64                                      `json:"group,omitempty"`
 	Subnet               NullableString                                     `json:"subnet,omitempty"`
 	DhcpServer           NullableBool                                       `json:"dhcpServer,omitempty"`
 	Name                 NullableString                                     `json:"name,omitempty"`
@@ -92,9 +92,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Unse
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroup() int32 {
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroup() int64 {
 	if o == nil || IsNil(o.Group.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Group.Get()
@@ -103,7 +103,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetG
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroupOk() (*int32, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroupOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSe
 	return false
 }
 
-// SetGroup gets a reference to the given NullableInt32 and assigns it to the Group field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroup(v int32) {
+// SetGroup gets a reference to the given NullableInt64 and assigns it to the Group field.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroup(v int64) {
 	o.Group.Set(&v)
 }
 

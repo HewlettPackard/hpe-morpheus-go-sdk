@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId**](AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId.md) |  | [optional] 
-**Network** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork.md) |  | [optional] 
+**Id** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerId**](InstanceInterfacesNetworkInterfacesInnerId.md) |  | [optional] 
+**Network** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerNetwork**](InstanceInterfacesNetworkInterfacesInnerNetwork.md) |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
 **NetworkInterfaceTypeId** | Pointer to **int64** |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstanceInterfacesNetworkInterfacesInner1**](InstanceInterfacesNetworkInterfacesInner1.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() InstanceInterfacesNetworkInterfacesInnerId`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v InstanceInterfacesNetworkInterfacesInnerId)`
 
 SetId sets Id field to given value.
 
@@ -56,20 +57,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetwork() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetwork() InstanceInterfacesNetworkInterfacesInnerNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkOk() (*InstanceInterfacesNetworkInterfacesInnerNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetwork(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetwork(v InstanceInterfacesNetworkInterfacesInnerNetwork)`
 
 SetNetwork sets Network field to given value.
 
@@ -153,6 +154,31 @@ SetIpMode sets IpMode field to given value.
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) HasIpMode() bool`
 
 HasIpMode returns a boolean if a field has been set.
+
+### GetNetworkInterfaces
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner1`
+
+GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
+
+### GetNetworkInterfacesOk
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfacesOk() (*[]InstanceInterfacesNetworkInterfacesInner1, bool)`
+
+GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkInterfaces
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetworkInterfaces(v []InstanceInterfacesNetworkInterfacesInner1)`
+
+SetNetworkInterfaces sets NetworkInterfaces field to given value.
+
+### HasNetworkInterfaces
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) HasNetworkInterfaces() bool`
+
+HasNetworkInterfaces returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **NullableInt64** |  | [optional] 
-**Group** | Pointer to **NullableInt32** |  | [optional] 
+**Group** | Pointer to **NullableInt64** |  | [optional] 
 **Subnet** | Pointer to **NullableString** |  | [optional] 
 **DhcpServer** | Pointer to **NullableBool** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
@@ -67,20 +67,20 @@ HasId returns a boolean if a field has been set.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetGroup
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroup() int32`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroup() int64`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroupOk() (*int32, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetGroupOk() (*int64, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroup(v int32)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetGroup(v int64)`
 
 SetGroup sets Group field to given value.
 

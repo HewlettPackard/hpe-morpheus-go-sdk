@@ -25,6 +25,7 @@ type ListInstances200ResponseAllOfInstancesInnerInterfacesInner struct {
 	IpAddress              NullableString                                                     `json:"ipAddress,omitempty"`
 	NetworkInterfaceTypeId NullableInt64                                                      `json:"networkInterfaceTypeId,omitempty"`
 	IpMode                 NullableString                                                     `json:"ipMode,omitempty"`
+	NetworkInterfaces      []InstanceInterfacesNetworkInterfacesInner                         `json:"networkInterfaces,omitempty"`
 	AdditionalProperties   map[string]interface{}                                             `json:",remain"`
 }
 
@@ -240,6 +241,38 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpMode
 	o.IpMode.Unset()
 }
 
+// GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		var ret []InstanceInterfacesNetworkInterfacesInner
+		return ret
+	}
+	return o.NetworkInterfaces
+}
+
+// GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfacesOk() ([]InstanceInterfacesNetworkInterfacesInner, bool) {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		return nil, false
+	}
+	return o.NetworkInterfaces, true
+}
+
+// IsSetNetworkInterfaces returns a boolean if a field has been set.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) IsSetNetworkInterfaces() bool {
+	if o != nil && !IsNil(o.NetworkInterfaces) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkInterfaces gets a reference to the given []InstanceInterfacesNetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaces(v []InstanceInterfacesNetworkInterfacesInner) {
+	o.NetworkInterfaces = v
+}
+
 func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -264,6 +297,9 @@ func (o ListInstances200ResponseAllOfInstancesInnerInterfacesInner) ToMap() (map
 	}
 	if o.IpMode.IsSet() {
 		toSerialize["ipMode"] = o.IpMode.Get()
+	}
+	if !IsNil(o.NetworkInterfaces) {
+		toSerialize["networkInterfaces"] = o.NetworkInterfaces
 	}
 
 	for key, value := range o.AdditionalProperties {

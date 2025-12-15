@@ -74923,6 +74923,7 @@ paths:
                                         type:
                                           - integer
                                           - 'null'
+                                        format: int64
                                       subnet:
                                         type:
                                           - string
@@ -74958,6 +74959,69 @@ paths:
                                     type:
                                       - string
                                       - 'null'
+                                  networkInterfaces:
+                                    title: Instance Interfaces Network Interfaces
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          oneOf:
+                                            - type:
+                                                - integer
+                                                - 'null'
+                                              format: int64
+                                            - type:
+                                                - string
+                                                - 'null'
+                                        network:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type:
+                                                - integer
+                                                - 'null'
+                                              format: int64
+                                            group:
+                                              type:
+                                                - integer
+                                                - 'null'
+                                              format: int64
+                                            subnet:
+                                              type:
+                                                - string
+                                                - 'null'
+                                            dhcpServer:
+                                              type:
+                                                - boolean
+                                                - 'null'
+                                            name:
+                                              type:
+                                                - string
+                                                - 'null'
+                                            pool:
+                                              type:
+                                                - object
+                                                - 'null'
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
+                                        ipAddress:
+                                          type:
+                                            - string
+                                            - 'null'
+                                        networkInterfaceTypeId:
+                                          type:
+                                            - integer
+                                            - 'null'
+                                          format: int64
+                                        ipMode:
+                                          type:
+                                            - string
+                                            - 'null'
                             customOptions:
                               type: object
                             instanceVersion:
@@ -77484,6 +77548,22 @@ paths:
                           ipAddress: null
                           networkInterfaceTypeId: null
                           ipMode: null
+                          networkInterfaces:
+                            - id: networkGroup-3
+                              row: 0
+                              network:
+                                id: 4
+                                subnet: null
+                                group: null
+                                dhcpServer: false
+                                name: BM Management
+                                pool:
+                                  id: 1
+                                  name: BM Management Pool
+                              ipAddress: ''
+                              macAddress: null
+                              ipMode: ''
+                              networkInterfaceTypeId: 19
                       customOptions: {}
                       instanceVersion: '20.04'
                       labels: []

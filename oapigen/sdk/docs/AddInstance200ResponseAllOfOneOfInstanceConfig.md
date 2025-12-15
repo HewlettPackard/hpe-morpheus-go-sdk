@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
-**ResourcePoolId** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId**](AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId.md) |  | [optional] 
+**ResourcePoolId** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerId**](InstanceInterfacesNetworkInterfacesInnerId.md) |  | [optional] 
 **PoolProviderType** | Pointer to **NullableString** |  | [optional] 
 **UserGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
 **ExpireDays** | Pointer to **string** |  | [optional] 
@@ -300,20 +300,20 @@ HasCustomOptions returns a boolean if a field has been set.
 
 ### GetResourcePoolId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() InstanceInterfacesNetworkInterfacesInnerId`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v InstanceInterfacesNetworkInterfacesInnerId)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 

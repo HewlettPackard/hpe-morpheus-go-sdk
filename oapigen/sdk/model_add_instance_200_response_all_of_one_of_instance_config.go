@@ -29,7 +29,7 @@ type AddInstance200ResponseAllOfOneOfInstanceConfig struct {
 	NestedVirtualization NullableString                                                  `json:"nestedVirtualization,omitempty"`
 	VmwareFolderId       *string                                                         `json:"vmwareFolderId,omitempty"`
 	CustomOptions        map[string]interface{}                                          `json:"customOptions,omitempty"`
-	ResourcePoolId       *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId   `json:"resourcePoolId,omitempty"`
+	ResourcePoolId       *InstanceInterfacesNetworkInterfacesInnerId                     `json:"resourcePoolId,omitempty"`
 	PoolProviderType     NullableString                                                  `json:"poolProviderType,omitempty"`
 	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup     `json:"userGroup,omitempty"`
 	ExpireDays           *string                                                         `json:"expireDays,omitempty"`
@@ -382,9 +382,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetCustomOptions(v map[
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() InstanceInterfacesNetworkInterfacesInnerId {
 	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId
+		var ret InstanceInterfacesNetworkInterfacesInnerId
 		return ret
 	}
 	return *o.ResourcePoolId
@@ -392,7 +392,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() Add
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -408,8 +408,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetResourcePoolId() b
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId and assigns it to the ResourcePoolId field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) {
+// SetResourcePoolId gets a reference to the given InstanceInterfacesNetworkInterfacesInnerId and assigns it to the ResourcePoolId field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v InstanceInterfacesNetworkInterfacesInnerId) {
 	o.ResourcePoolId = &v
 }
 

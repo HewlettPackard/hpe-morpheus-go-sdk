@@ -20,12 +20,13 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInterfacesInner{
 
 // AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct for AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
 type AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct {
-	Id                     *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId   `json:"id,omitempty"`
-	Network                *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork `json:"network,omitempty"`
-	IpAddress              *string                                                         `json:"ipAddress,omitempty"`
-	NetworkInterfaceTypeId *int64                                                          `json:"networkInterfaceTypeId,omitempty"`
-	IpMode                 *string                                                         `json:"ipMode,omitempty"`
-	AdditionalProperties   map[string]interface{}                                          `json:",remain"`
+	Id                     *InstanceInterfacesNetworkInterfacesInnerId      `json:"id,omitempty"`
+	Network                *InstanceInterfacesNetworkInterfacesInnerNetwork `json:"network,omitempty"`
+	IpAddress              *string                                          `json:"ipAddress,omitempty"`
+	NetworkInterfaceTypeId *int64                                           `json:"networkInterfaceTypeId,omitempty"`
+	IpMode                 *string                                          `json:"ipMode,omitempty"`
+	NetworkInterfaces      []InstanceInterfacesNetworkInterfacesInner1      `json:"networkInterfaces,omitempty"`
+	AdditionalProperties   map[string]interface{}                           `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceInterfacesInner AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
@@ -48,9 +49,9 @@ func NewAddInstance200ResponseAllOfOneOfInstanceInterfacesInnerWithDefaults() *A
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() InstanceInterfacesNetworkInterfacesInnerId {
 	if o == nil || IsNil(o.Id) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId
+		var ret InstanceInterfacesNetworkInterfacesInnerId
 		return ret
 	}
 	return *o.Id
@@ -58,7 +59,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetId() AddIns
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -74,15 +75,15 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetId() bool
 	return false
 }
 
-// SetId gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId and assigns it to the Id field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) {
+// SetId gets a reference to the given InstanceInterfacesNetworkInterfacesInnerId and assigns it to the Id field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetId(v InstanceInterfacesNetworkInterfacesInnerId) {
 	o.Id = &v
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetwork() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetwork() InstanceInterfacesNetworkInterfacesInnerNetwork {
 	if o == nil || IsNil(o.Network) {
-		var ret AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork
+		var ret InstanceInterfacesNetworkInterfacesInnerNetwork
 		return ret
 	}
 	return *o.Network
@@ -90,7 +91,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetwork() A
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkOk() (*InstanceInterfacesNetworkInterfacesInnerNetwork, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -106,8 +107,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetNetwork()
 	return false
 }
 
-// SetNetwork gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork and assigns it to the Network field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetwork(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) {
+// SetNetwork gets a reference to the given InstanceInterfacesNetworkInterfacesInnerNetwork and assigns it to the Network field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetwork(v InstanceInterfacesNetworkInterfacesInnerNetwork) {
 	o.Network = &v
 }
 
@@ -207,6 +208,38 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpMode(v st
 	o.IpMode = &v
 }
 
+// GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner1 {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		var ret []InstanceInterfacesNetworkInterfacesInner1
+		return ret
+	}
+	return o.NetworkInterfaces
+}
+
+// GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfacesOk() ([]InstanceInterfacesNetworkInterfacesInner1, bool) {
+	if o == nil || IsNil(o.NetworkInterfaces) {
+		return nil, false
+	}
+	return o.NetworkInterfaces, true
+}
+
+// IsSetNetworkInterfaces returns a boolean if a field has been set.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetNetworkInterfaces() bool {
+	if o != nil && !IsNil(o.NetworkInterfaces) {
+		return true
+	}
+
+	return false
+}
+
+// SetNetworkInterfaces gets a reference to the given []InstanceInterfacesNetworkInterfacesInner1 and assigns it to the NetworkInterfaces field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetworkInterfaces(v []InstanceInterfacesNetworkInterfacesInner1) {
+	o.NetworkInterfaces = v
+}
+
 func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -231,6 +264,9 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) ToMap() (map[st
 	}
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode
+	}
+	if !IsNil(o.NetworkInterfaces) {
+		toSerialize["networkInterfaces"] = o.NetworkInterfaces
 	}
 
 	for key, value := range o.AdditionalProperties {

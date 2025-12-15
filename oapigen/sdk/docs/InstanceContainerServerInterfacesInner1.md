@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
-**NetworkGroup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
-**NetworkPool** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
+**Network** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerNetworkPool**](InstanceInterfacesNetworkInterfacesInnerNetworkPool.md) |  | [optional] 
+**NetworkGroup** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerNetworkPool**](InstanceInterfacesNetworkInterfacesInnerNetworkPool.md) |  | [optional] 
+**NetworkPool** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerNetworkPool**](InstanceInterfacesNetworkInterfacesInnerNetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
-**Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]InstanceInterfacesNetworkInterfacesInnerNetworkPool**](InstanceInterfacesNetworkInterfacesInnerNetworkPool.md) |  | [optional] 
 
 ## Methods
 
@@ -266,20 +266,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetwork() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetwork() InstanceInterfacesNetworkInterfacesInnerNetworkPool`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool)`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *InstanceContainerServerInterfacesInner1) SetNetwork(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)`
+`func (o *InstanceContainerServerInterfacesInner1) SetNetwork(v InstanceInterfacesNetworkInterfacesInnerNetworkPool)`
 
 SetNetwork sets Network field to given value.
 
@@ -291,20 +291,20 @@ HasNetwork returns a boolean if a field has been set.
 
 ### GetNetworkGroup
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroup() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroup() InstanceInterfacesNetworkInterfacesInnerNetworkPool`
 
 GetNetworkGroup returns the NetworkGroup field if non-nil, zero value otherwise.
 
 ### GetNetworkGroupOk
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroupOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool)`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroupOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool)`
 
 GetNetworkGroupOk returns a tuple with the NetworkGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkGroup
 
-`func (o *InstanceContainerServerInterfacesInner1) SetNetworkGroup(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)`
+`func (o *InstanceContainerServerInterfacesInner1) SetNetworkGroup(v InstanceInterfacesNetworkInterfacesInnerNetworkPool)`
 
 SetNetworkGroup sets NetworkGroup field to given value.
 
@@ -316,20 +316,20 @@ HasNetworkGroup returns a boolean if a field has been set.
 
 ### GetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() InstanceInterfacesNetworkInterfacesInnerNetworkPool`
 
 GetNetworkPool returns the NetworkPool field if non-nil, zero value otherwise.
 
 ### GetNetworkPoolOk
 
-`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool)`
+`func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool)`
 
 GetNetworkPoolOk returns a tuple with the NetworkPool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)`
+`func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v InstanceInterfacesNetworkInterfacesInnerNetworkPool)`
 
 SetNetworkPool sets NetworkPool field to given value.
 
@@ -391,20 +391,20 @@ HasMacAddress returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *InstanceContainerServerInterfacesInner1) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`
+`func (o *InstanceContainerServerInterfacesInner1) GetInterfaces() []InstanceInterfacesNetworkInterfacesInnerNetworkPool`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *InstanceContainerServerInterfacesInner1) GetInterfacesOk() (*[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool, bool)`
+`func (o *InstanceContainerServerInterfacesInner1) GetInterfacesOk() (*[]InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *InstanceContainerServerInterfacesInner1) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool)`
+`func (o *InstanceContainerServerInterfacesInner1) SetInterfaces(v []InstanceInterfacesNetworkInterfacesInnerNetworkPool)`
 
 SetInterfaces sets Interfaces field to given value.
 

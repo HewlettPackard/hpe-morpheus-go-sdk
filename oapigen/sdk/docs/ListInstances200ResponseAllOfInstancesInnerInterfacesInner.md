@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IpAddress** | Pointer to **NullableString** |  | [optional] 
 **NetworkInterfaceTypeId** | Pointer to **NullableInt64** |  | [optional] 
 **IpMode** | Pointer to **NullableString** |  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstanceInterfacesNetworkInterfacesInner**](InstanceInterfacesNetworkInterfacesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -184,6 +185,31 @@ HasIpMode returns a boolean if a field has been set.
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnsetIpMode()`
 
 UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
+### GetNetworkInterfaces
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner`
+
+GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
+
+### GetNetworkInterfacesOk
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) GetNetworkInterfacesOk() (*[]InstanceInterfacesNetworkInterfacesInner, bool)`
+
+GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkInterfaces
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) SetNetworkInterfaces(v []InstanceInterfacesNetworkInterfacesInner)`
+
+SetNetworkInterfaces sets NetworkInterfaces field to given value.
+
+### HasNetworkInterfaces
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) HasNetworkInterfaces() bool`
+
+HasNetworkInterfaces returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
