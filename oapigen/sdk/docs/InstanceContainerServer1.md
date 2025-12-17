@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **SourceImage** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
 **ServerOs** | Pointer to [**InstanceContainerServerServerOs**](InstanceContainerServerServerOs.md) |  | [optional] 
-**Volumes** | Pointer to [**[]InstanceContainerServer1VolumesInner**](InstanceContainerServer1VolumesInner.md) |  | [optional] 
+**Volumes** | Pointer to [**[]InstanceContainerServerVolume1**](InstanceContainerServerVolume1.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]InstanceContainerServerInterfacesInner1**](InstanceContainerServerInterfacesInner1.md) |  | [optional] 
 
 ## Methods
@@ -1048,20 +1048,20 @@ HasServerOs returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *InstanceContainerServer1) GetVolumes() []InstanceContainerServer1VolumesInner`
+`func (o *InstanceContainerServer1) GetVolumes() []InstanceContainerServerVolume1`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *InstanceContainerServer1) GetVolumesOk() (*[]InstanceContainerServer1VolumesInner, bool)`
+`func (o *InstanceContainerServer1) GetVolumesOk() (*[]InstanceContainerServerVolume1, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *InstanceContainerServer1) SetVolumes(v []InstanceContainerServer1VolumesInner)`
+`func (o *InstanceContainerServer1) SetVolumes(v []InstanceContainerServerVolume1)`
 
 SetVolumes sets Volumes field to given value.
 

@@ -75313,6 +75313,7 @@ paths:
                                       code:
                                         type: string
                                   server:
+                                    type: object
                                     additionalProperties: true
                                     title: Instance Container Server
                                     properties:
@@ -75508,6 +75509,7 @@ paths:
                                         type: array
                                         items:
                                           type: object
+                                          title: Instance Container Server Volume
                                           properties:
                                             id:
                                               type: integer
@@ -75525,6 +75527,56 @@ paths:
                                                 - 'null'
                                             resizeable:
                                               type: boolean
+                                            rootVolume:
+                                              type: boolean
+                                            deviceName:
+                                              type: string
+                                            deviceDisplayName:
+                                              type: string
+                                            diskMode:
+                                              type:
+                                                - string
+                                                - 'null'
+                                            diskType:
+                                              type:
+                                                - string
+                                                - 'null'
+                                            category:
+                                              type:
+                                                - string
+                                                - 'null'
+                                            storageServer:
+                                              type: object
+                                              title: Instance Container Server Volume Storage Server
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
+                                            zoneId:
+                                              type:
+                                                - integer
+                                                - 'null'
+                                              format: int64
+                                            zone:
+                                              type: object
+                                              title: Instance Container Server Volume Zone
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
+                                            datastore:
+                                              type: object
+                                              title: Instance Container Server Volume Datastore
+                                              properties:
+                                                id:
+                                                  type: integer
+                                                  format: int64
+                                                name:
+                                                  type: string
                                             unitNumber:
                                               type:
                                                 - string
@@ -77797,6 +77849,21 @@ paths:
                                 resizeable: true
                                 planResizable: true
                                 rootVolume: true
+                                diskType: block
+                                diskMode: virtio
+                                category: disk
+                                deviceName: /dev/vda
+                                deviceDisplayName: vda
+                                storageServer:
+                                  id: 1489
+                                  name: Alletra MP
+                                zoneId: 12
+                                datastore:
+                                  id: 128
+                                  name: Alltera MP iSCSI
+                                zone:
+                                  id: 12
+                                  name: HVM
                                 unitNumber: null
                                 typeId: 6
                                 configurableIOPS: false

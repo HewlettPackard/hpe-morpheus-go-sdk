@@ -56,7 +56,7 @@ type InstanceContainerServer struct {
 	MaxStorage           *int64                                    `json:"maxStorage,omitempty"`
 	SourceImage          *InstanceContainerContainerType           `json:"sourceImage,omitempty"`
 	ServerOs             *InstanceContainerServerServerOs          `json:"serverOs,omitempty"`
-	Volumes              []InstanceContainerServerVolumesInner     `json:"volumes,omitempty"`
+	Volumes              []InstanceContainerServerVolume           `json:"volumes,omitempty"`
 	Interfaces           []InstanceContainerServerInterfacesInner  `json:"interfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                    `json:",remain"`
 }
@@ -1322,9 +1322,9 @@ func (o *InstanceContainerServer) SetServerOs(v InstanceContainerServerServerOs)
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *InstanceContainerServer) GetVolumes() []InstanceContainerServerVolumesInner {
+func (o *InstanceContainerServer) GetVolumes() []InstanceContainerServerVolume {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []InstanceContainerServerVolumesInner
+		var ret []InstanceContainerServerVolume
 		return ret
 	}
 	return o.Volumes
@@ -1332,7 +1332,7 @@ func (o *InstanceContainerServer) GetVolumes() []InstanceContainerServerVolumesI
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer) GetVolumesOk() ([]InstanceContainerServerVolumesInner, bool) {
+func (o *InstanceContainerServer) GetVolumesOk() ([]InstanceContainerServerVolume, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -1348,8 +1348,8 @@ func (o *InstanceContainerServer) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []InstanceContainerServerVolumesInner and assigns it to the Volumes field.
-func (o *InstanceContainerServer) SetVolumes(v []InstanceContainerServerVolumesInner) {
+// SetVolumes gets a reference to the given []InstanceContainerServerVolume and assigns it to the Volumes field.
+func (o *InstanceContainerServer) SetVolumes(v []InstanceContainerServerVolume) {
 	o.Volumes = v
 }
 
