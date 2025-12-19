@@ -712,6 +712,7 @@ docs/Approvals.md
 docs/ApprovalsAPI.md
 docs/ApprovePolicyTypeConfiguration.md
 docs/ApprovePolicyTypeConfiguration1.md
+docs/ApprovePolicyTypeConfiguration2.md
 docs/AppsAPI.md
 docs/ArchiveBucket.md
 docs/ArchiveBucketCreate.md
@@ -731,6 +732,7 @@ docs/AzureReferenceVirtualImageConfiguration.md
 docs/Backup.md
 docs/BackupCreationPolicyTypeConfiguration.md
 docs/BackupCreationPolicyTypeConfiguration1.md
+docs/BackupCreationPolicyTypeConfiguration2.md
 docs/BackupInstance.md
 docs/BackupInstanceBackupJob.md
 docs/BackupJob.md
@@ -780,6 +782,7 @@ docs/BootScriptsCreate.md
 docs/Budget.md
 docs/BudgetPolicyTypeConfiguration.md
 docs/BudgetPolicyTypeConfiguration1.md
+docs/BudgetPolicyTypeConfiguration2.md
 docs/Budgets.md
 docs/BudgetsAPI.md
 docs/CatalogCart.md
@@ -3747,6 +3750,7 @@ model_approval_item.go
 model_approvals.go
 model_approve_policy_type_configuration.go
 model_approve_policy_type_configuration_1.go
+model_approve_policy_type_configuration_2.go
 model_archive_bucket.go
 model_archive_bucket_create.go
 model_archive_bucket_file.go
@@ -3762,6 +3766,7 @@ model_azure_reference_virtual_image_configuration.go
 model_backup.go
 model_backup_creation_policy_type_configuration.go
 model_backup_creation_policy_type_configuration_1.go
+model_backup_creation_policy_type_configuration_2.go
 model_backup_instance.go
 model_backup_instance_backup_job.go
 model_backup_job.go
@@ -3807,6 +3812,7 @@ model_boot_scripts_create.go
 model_budget.go
 model_budget_policy_type_configuration.go
 model_budget_policy_type_configuration_1.go
+model_budget_policy_type_configuration_2.go
 model_budgets.go
 model_catalog_cart.go
 model_catalog_cart_item_create.go

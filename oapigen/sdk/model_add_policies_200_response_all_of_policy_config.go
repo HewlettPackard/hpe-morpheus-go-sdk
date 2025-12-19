@@ -23,10 +23,10 @@ var _ fmt.Stringer
 
 // AddPolicies200ResponseAllOfPolicyConfig - struct for AddPolicies200ResponseAllOfPolicyConfig
 type AddPolicies200ResponseAllOfPolicyConfig struct {
-	ApprovePolicyTypeConfiguration                         *ApprovePolicyTypeConfiguration
-	BackupCreationPolicyTypeConfiguration                  *BackupCreationPolicyTypeConfiguration
+	ApprovePolicyTypeConfiguration2                        *ApprovePolicyTypeConfiguration2
+	BackupCreationPolicyTypeConfiguration2                 *BackupCreationPolicyTypeConfiguration2
 	BackupTargetsPolicyTypeConfiguration                   *BackupTargetsPolicyTypeConfiguration
-	BudgetPolicyTypeConfiguration                          *BudgetPolicyTypeConfiguration
+	BudgetPolicyTypeConfiguration2                         *BudgetPolicyTypeConfiguration2
 	ClusterResourceNamePolicyTypeConfiguration             *ClusterResourceNamePolicyTypeConfiguration
 	CypherAccessPolicyTypeConfiguration                    *CypherAccessPolicyTypeConfiguration
 	DelayedDeletePolicyTypeConfiguration                   *DelayedDeletePolicyTypeConfiguration
@@ -56,17 +56,17 @@ type AddPolicies200ResponseAllOfPolicyConfig struct {
 	WorkflowPolicyTypeConfiguration                        *WorkflowPolicyTypeConfiguration
 }
 
-// ApprovePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ApprovePolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func ApprovePolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *ApprovePolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// ApprovePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns ApprovePolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func ApprovePolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *ApprovePolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		ApprovePolicyTypeConfiguration: v,
+		ApprovePolicyTypeConfiguration2: v,
 	}
 }
 
-// BackupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupCreationPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func BackupCreationPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *BackupCreationPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// BackupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BackupCreationPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func BackupCreationPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *BackupCreationPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		BackupCreationPolicyTypeConfiguration: v,
+		BackupCreationPolicyTypeConfiguration2: v,
 	}
 }
 
@@ -77,10 +77,10 @@ func BackupTargetsPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConf
 	}
 }
 
-// BudgetPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BudgetPolicyTypeConfiguration wrapped in AddPolicies200ResponseAllOfPolicyConfig
-func BudgetPolicyTypeConfigurationAsAddPolicies200ResponseAllOfPolicyConfig(v *BudgetPolicyTypeConfiguration) AddPolicies200ResponseAllOfPolicyConfig {
+// BudgetPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig is a convenience function that returns BudgetPolicyTypeConfiguration2 wrapped in AddPolicies200ResponseAllOfPolicyConfig
+func BudgetPolicyTypeConfiguration2AsAddPolicies200ResponseAllOfPolicyConfig(v *BudgetPolicyTypeConfiguration2) AddPolicies200ResponseAllOfPolicyConfig {
 	return AddPolicies200ResponseAllOfPolicyConfig{
-		BudgetPolicyTypeConfiguration: v,
+		BudgetPolicyTypeConfiguration2: v,
 	}
 }
 
@@ -278,16 +278,16 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst = &AddPolicies200ResponseAllOfPolicyConfig{}
 	}
 
-	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration)
+	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration2)
 
-	if IsEmpty(dst.ApprovePolicyTypeConfiguration) {
-		dst.ApprovePolicyTypeConfiguration = nil
+	if IsEmpty(dst.ApprovePolicyTypeConfiguration2) {
+		dst.ApprovePolicyTypeConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration) {
-		dst.BackupCreationPolicyTypeConfiguration = nil
+	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration2) {
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration)
@@ -296,10 +296,10 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 		dst.BackupTargetsPolicyTypeConfiguration = nil
 	}
 
-	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration)
+	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration2)
 
-	if IsEmpty(dst.BudgetPolicyTypeConfiguration) {
-		dst.BudgetPolicyTypeConfiguration = nil
+	if IsEmpty(dst.BudgetPolicyTypeConfiguration2) {
+		dst.BudgetPolicyTypeConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration)
@@ -471,38 +471,38 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalMapstructure(data a
 func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ApprovePolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.ApprovePolicyTypeConfiguration)
+	// try to unmarshal data into ApprovePolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.ApprovePolicyTypeConfiguration2)
 	if err == nil {
-		jsonApprovePolicyTypeConfiguration, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration)
-		if string(jsonApprovePolicyTypeConfiguration) == "{}" { // empty struct
-			dst.ApprovePolicyTypeConfiguration = nil
+		jsonApprovePolicyTypeConfiguration2, _ := json.Marshal(dst.ApprovePolicyTypeConfiguration2)
+		if string(jsonApprovePolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.ApprovePolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.ApprovePolicyTypeConfiguration); err != nil {
-				dst.ApprovePolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.ApprovePolicyTypeConfiguration2); err != nil {
+				dst.ApprovePolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.ApprovePolicyTypeConfiguration = nil
+		dst.ApprovePolicyTypeConfiguration2 = nil
 	}
 
-	// try to unmarshal data into BackupCreationPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.BackupCreationPolicyTypeConfiguration)
+	// try to unmarshal data into BackupCreationPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.BackupCreationPolicyTypeConfiguration2)
 	if err == nil {
-		jsonBackupCreationPolicyTypeConfiguration, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration)
-		if string(jsonBackupCreationPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.BackupCreationPolicyTypeConfiguration = nil
+		jsonBackupCreationPolicyTypeConfiguration2, _ := json.Marshal(dst.BackupCreationPolicyTypeConfiguration2)
+		if string(jsonBackupCreationPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.BackupCreationPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.BackupCreationPolicyTypeConfiguration); err != nil {
-				dst.BackupCreationPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.BackupCreationPolicyTypeConfiguration2); err != nil {
+				dst.BackupCreationPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.BackupCreationPolicyTypeConfiguration = nil
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
 	}
 
 	// try to unmarshal data into BackupTargetsPolicyTypeConfiguration
@@ -522,21 +522,21 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 		dst.BackupTargetsPolicyTypeConfiguration = nil
 	}
 
-	// try to unmarshal data into BudgetPolicyTypeConfiguration
-	err = newStrictDecoder(data).Decode(&dst.BudgetPolicyTypeConfiguration)
+	// try to unmarshal data into BudgetPolicyTypeConfiguration2
+	err = newStrictDecoder(data).Decode(&dst.BudgetPolicyTypeConfiguration2)
 	if err == nil {
-		jsonBudgetPolicyTypeConfiguration, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration)
-		if string(jsonBudgetPolicyTypeConfiguration) == "{}" { // empty struct
-			dst.BudgetPolicyTypeConfiguration = nil
+		jsonBudgetPolicyTypeConfiguration2, _ := json.Marshal(dst.BudgetPolicyTypeConfiguration2)
+		if string(jsonBudgetPolicyTypeConfiguration2) == "{}" { // empty struct
+			dst.BudgetPolicyTypeConfiguration2 = nil
 		} else {
-			if err = validator.Validate(dst.BudgetPolicyTypeConfiguration); err != nil {
-				dst.BudgetPolicyTypeConfiguration = nil
+			if err = validator.Validate(dst.BudgetPolicyTypeConfiguration2); err != nil {
+				dst.BudgetPolicyTypeConfiguration2 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.BudgetPolicyTypeConfiguration = nil
+		dst.BudgetPolicyTypeConfiguration2 = nil
 	}
 
 	// try to unmarshal data into ClusterResourceNamePolicyTypeConfiguration
@@ -1000,10 +1000,10 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ApprovePolicyTypeConfiguration = nil
-		dst.BackupCreationPolicyTypeConfiguration = nil
+		dst.ApprovePolicyTypeConfiguration2 = nil
+		dst.BackupCreationPolicyTypeConfiguration2 = nil
 		dst.BackupTargetsPolicyTypeConfiguration = nil
-		dst.BudgetPolicyTypeConfiguration = nil
+		dst.BudgetPolicyTypeConfiguration2 = nil
 		dst.ClusterResourceNamePolicyTypeConfiguration = nil
 		dst.CypherAccessPolicyTypeConfiguration = nil
 		dst.DelayedDeletePolicyTypeConfiguration = nil
@@ -1042,20 +1042,20 @@ func (dst *AddPolicies200ResponseAllOfPolicyConfig) UnmarshalJSON(data []byte) e
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddPolicies200ResponseAllOfPolicyConfig) MarshalJSON() ([]byte, error) {
-	if src.ApprovePolicyTypeConfiguration != nil {
-		return json.Marshal(&src.ApprovePolicyTypeConfiguration)
+	if src.ApprovePolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.ApprovePolicyTypeConfiguration2)
 	}
 
-	if src.BackupCreationPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration)
+	if src.BackupCreationPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.BackupCreationPolicyTypeConfiguration2)
 	}
 
 	if src.BackupTargetsPolicyTypeConfiguration != nil {
 		return json.Marshal(&src.BackupTargetsPolicyTypeConfiguration)
 	}
 
-	if src.BudgetPolicyTypeConfiguration != nil {
-		return json.Marshal(&src.BudgetPolicyTypeConfiguration)
+	if src.BudgetPolicyTypeConfiguration2 != nil {
+		return json.Marshal(&src.BudgetPolicyTypeConfiguration2)
 	}
 
 	if src.ClusterResourceNamePolicyTypeConfiguration != nil {
@@ -1174,20 +1174,20 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 	if obj == nil {
 		return nil
 	}
-	if obj.ApprovePolicyTypeConfiguration != nil {
-		return obj.ApprovePolicyTypeConfiguration
+	if obj.ApprovePolicyTypeConfiguration2 != nil {
+		return obj.ApprovePolicyTypeConfiguration2
 	}
 
-	if obj.BackupCreationPolicyTypeConfiguration != nil {
-		return obj.BackupCreationPolicyTypeConfiguration
+	if obj.BackupCreationPolicyTypeConfiguration2 != nil {
+		return obj.BackupCreationPolicyTypeConfiguration2
 	}
 
 	if obj.BackupTargetsPolicyTypeConfiguration != nil {
 		return obj.BackupTargetsPolicyTypeConfiguration
 	}
 
-	if obj.BudgetPolicyTypeConfiguration != nil {
-		return obj.BudgetPolicyTypeConfiguration
+	if obj.BudgetPolicyTypeConfiguration2 != nil {
+		return obj.BudgetPolicyTypeConfiguration2
 	}
 
 	if obj.ClusterResourceNamePolicyTypeConfiguration != nil {
@@ -1304,20 +1304,20 @@ func (obj *AddPolicies200ResponseAllOfPolicyConfig) GetActualInstance() interfac
 
 // Get the actual instance value
 func (obj AddPolicies200ResponseAllOfPolicyConfig) GetActualInstanceValue() interface{} {
-	if obj.ApprovePolicyTypeConfiguration != nil {
-		return *obj.ApprovePolicyTypeConfiguration
+	if obj.ApprovePolicyTypeConfiguration2 != nil {
+		return *obj.ApprovePolicyTypeConfiguration2
 	}
 
-	if obj.BackupCreationPolicyTypeConfiguration != nil {
-		return *obj.BackupCreationPolicyTypeConfiguration
+	if obj.BackupCreationPolicyTypeConfiguration2 != nil {
+		return *obj.BackupCreationPolicyTypeConfiguration2
 	}
 
 	if obj.BackupTargetsPolicyTypeConfiguration != nil {
 		return *obj.BackupTargetsPolicyTypeConfiguration
 	}
 
-	if obj.BudgetPolicyTypeConfiguration != nil {
-		return *obj.BudgetPolicyTypeConfiguration
+	if obj.BudgetPolicyTypeConfiguration2 != nil {
+		return *obj.BudgetPolicyTypeConfiguration2
 	}
 
 	if obj.ClusterResourceNamePolicyTypeConfiguration != nil {
