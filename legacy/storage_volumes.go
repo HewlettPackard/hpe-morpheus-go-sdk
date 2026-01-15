@@ -9,7 +9,7 @@ var StorageVolumesPath = "/api/storage-volumes"
 
 // StorageVolume structures for use in request and response payloads
 type StorageVolume struct {
-	ID                   interface{} `json:"id"`
+	ID                   int64       `json:"id"`
 	Name                 string      `json:"name"`
 	ShortName            string      `json:"shortName"`
 	Description          string      `json:"description"`
@@ -148,5 +148,5 @@ func (client *Client) FindStorageVolumeByName(name string) (*Response, error) {
 	}
 	firstRecord := (*listResult.StorageVolumes)[0]
 	StorageVolumeID := firstRecord.ID
-	return client.GetStorageVolume(StorageVolumeID.(int64), &Request{})
+	return client.GetStorageVolume(StorageVolumeID, &Request{})
 }
