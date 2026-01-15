@@ -54,7 +54,7 @@ type AddInstance200ResponseAllOfOneOfInstance struct {
 	MaxStorage           *int64                                                                       `json:"maxStorage,omitempty"`
 	MaxCores             *int64                                                                       `json:"maxCores,omitempty"`
 	CoresPerSocket       NullableInt64                                                                `json:"coresPerSocket,omitempty"`
-	MaxCpu               NullableString                                                               `json:"maxCpu,omitempty"`
+	MaxCpu               NullableInt64                                                                `json:"maxCpu,omitempty"`
 	HourlyCost           *float32                                                                     `json:"hourlyCost,omitempty"`
 	HourlyPrice          *float32                                                                     `json:"hourlyPrice,omitempty"`
 	InstancePrice        *AddInstance200ResponseAllOfOneOfInstanceInstancePrice                       `json:"instancePrice,omitempty"`
@@ -1267,9 +1267,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetCoresPerSocket() {
 }
 
 // GetMaxCpu returns the MaxCpu field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpu() string {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpu() int64 {
 	if o == nil || IsNil(o.MaxCpu.Get()) {
-		var ret string
+		var ret int64
 		return ret
 	}
 	return *o.MaxCpu.Get()
@@ -1278,7 +1278,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpu() string {
 // GetMaxCpuOk returns a tuple with the MaxCpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpuOk() (*string, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetMaxCpuOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1294,8 +1294,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetMaxCpu() bool {
 	return false
 }
 
-// SetMaxCpu gets a reference to the given NullableString and assigns it to the MaxCpu field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxCpu(v string) {
+// SetMaxCpu gets a reference to the given NullableInt64 and assigns it to the MaxCpu field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetMaxCpu(v int64) {
 	o.MaxCpu.Set(&v)
 }
 

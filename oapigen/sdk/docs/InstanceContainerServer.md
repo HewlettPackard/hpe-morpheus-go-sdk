@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **SiteId** | Pointer to **int64** |  | [optional] 
 **ResourcePoolId** | Pointer to **int64** |  | [optional] 
 **SshHost** | Pointer to **NullableString** |  | [optional] 
-**SshPort** | Pointer to **int32** |  | [optional] 
+**SshPort** | Pointer to **int64** |  | [optional] 
 **ExternalIp** | Pointer to **NullableString** |  | [optional] 
 **InternalIp** | Pointer to **NullableString** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
@@ -29,12 +29,12 @@ Name | Type | Description | Notes
 **StatusMessage** | Pointer to **NullableString** |  | [optional] 
 **ErrorMessage** | Pointer to **NullableString** |  | [optional] 
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
-**StatusPercent** | Pointer to **NullableInt32** |  | [optional] 
+**StatusPercent** | Pointer to **NullableInt64** |  | [optional] 
 **StatusEta** | Pointer to **NullableInt64** |  | [optional] 
 **PowerState** | Pointer to [**InstanceContainerServerPowerState**](InstanceContainerServerPowerState.md) |  | [optional] 
 **AgentInstalled** | Pointer to **bool** |  | [optional] 
 **LastAgentUpdate** | Pointer to **NullableTime** |  | [optional] 
-**MaxCores** | Pointer to **int32** |  | [optional] 
+**MaxCores** | Pointer to **int64** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **SourceImage** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
@@ -528,20 +528,20 @@ HasSshHost returns a boolean if a field has been set.
 UnsetSshHost ensures that no value is present for SshHost, not even an explicit nil
 ### GetSshPort
 
-`func (o *InstanceContainerServer) GetSshPort() int32`
+`func (o *InstanceContainerServer) GetSshPort() int64`
 
 GetSshPort returns the SshPort field if non-nil, zero value otherwise.
 
 ### GetSshPortOk
 
-`func (o *InstanceContainerServer) GetSshPortOk() (*int32, bool)`
+`func (o *InstanceContainerServer) GetSshPortOk() (*int64, bool)`
 
 GetSshPortOk returns a tuple with the SshPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshPort
 
-`func (o *InstanceContainerServer) SetSshPort(v int32)`
+`func (o *InstanceContainerServer) SetSshPort(v int64)`
 
 SetSshPort sets SshPort field to given value.
 
@@ -768,20 +768,20 @@ HasStatusDate returns a boolean if a field has been set.
 
 ### GetStatusPercent
 
-`func (o *InstanceContainerServer) GetStatusPercent() int32`
+`func (o *InstanceContainerServer) GetStatusPercent() int64`
 
 GetStatusPercent returns the StatusPercent field if non-nil, zero value otherwise.
 
 ### GetStatusPercentOk
 
-`func (o *InstanceContainerServer) GetStatusPercentOk() (*int32, bool)`
+`func (o *InstanceContainerServer) GetStatusPercentOk() (*int64, bool)`
 
 GetStatusPercentOk returns a tuple with the StatusPercent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatusPercent
 
-`func (o *InstanceContainerServer) SetStatusPercent(v int32)`
+`func (o *InstanceContainerServer) SetStatusPercent(v int64)`
 
 SetStatusPercent sets StatusPercent field to given value.
 
@@ -923,20 +923,20 @@ HasLastAgentUpdate returns a boolean if a field has been set.
 UnsetLastAgentUpdate ensures that no value is present for LastAgentUpdate, not even an explicit nil
 ### GetMaxCores
 
-`func (o *InstanceContainerServer) GetMaxCores() int32`
+`func (o *InstanceContainerServer) GetMaxCores() int64`
 
 GetMaxCores returns the MaxCores field if non-nil, zero value otherwise.
 
 ### GetMaxCoresOk
 
-`func (o *InstanceContainerServer) GetMaxCoresOk() (*int32, bool)`
+`func (o *InstanceContainerServer) GetMaxCoresOk() (*int64, bool)`
 
 GetMaxCoresOk returns a tuple with the MaxCores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCores
 
-`func (o *InstanceContainerServer) SetMaxCores(v int32)`
+`func (o *InstanceContainerServer) SetMaxCores(v int64)`
 
 SetMaxCores sets MaxCores field to given value.
 

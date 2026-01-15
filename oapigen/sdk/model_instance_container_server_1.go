@@ -38,7 +38,7 @@ type InstanceContainerServer1 struct {
 	SiteId               *int64                                    `json:"siteId,omitempty"`
 	ResourcePoolId       *int64                                    `json:"resourcePoolId,omitempty"`
 	SshHost              NullableString                            `json:"sshHost,omitempty"`
-	SshPort              *int32                                    `json:"sshPort,omitempty"`
+	SshPort              *int64                                    `json:"sshPort,omitempty"`
 	ExternalIp           NullableString                            `json:"externalIp,omitempty"`
 	InternalIp           NullableString                            `json:"internalIp,omitempty"`
 	Platform             *string                                   `json:"platform,omitempty"`
@@ -46,12 +46,12 @@ type InstanceContainerServer1 struct {
 	StatusMessage        NullableString                            `json:"statusMessage,omitempty"`
 	ErrorMessage         NullableString                            `json:"errorMessage,omitempty"`
 	StatusDate           *time.Time                                `json:"statusDate,omitempty"`
-	StatusPercent        NullableInt32                             `json:"statusPercent,omitempty"`
+	StatusPercent        NullableInt64                             `json:"statusPercent,omitempty"`
 	StatusEta            NullableInt64                             `json:"statusEta,omitempty"`
 	PowerState           *InstanceContainerServerPowerState        `json:"powerState,omitempty"`
 	AgentInstalled       *bool                                     `json:"agentInstalled,omitempty"`
 	LastAgentUpdate      NullableTime                              `json:"lastAgentUpdate,omitempty"`
-	MaxCores             *int32                                    `json:"maxCores,omitempty"`
+	MaxCores             *int64                                    `json:"maxCores,omitempty"`
 	MaxMemory            *int64                                    `json:"maxMemory,omitempty"`
 	MaxStorage           *int64                                    `json:"maxStorage,omitempty"`
 	SourceImage          *InstanceContainerContainerType           `json:"sourceImage,omitempty"`
@@ -669,9 +669,9 @@ func (o *InstanceContainerServer1) UnsetSshHost() {
 }
 
 // GetSshPort returns the SshPort field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetSshPort() int32 {
+func (o *InstanceContainerServer1) GetSshPort() int64 {
 	if o == nil || IsNil(o.SshPort) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SshPort
@@ -679,7 +679,7 @@ func (o *InstanceContainerServer1) GetSshPort() int32 {
 
 // GetSshPortOk returns a tuple with the SshPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetSshPortOk() (*int32, bool) {
+func (o *InstanceContainerServer1) GetSshPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.SshPort) {
 		return nil, false
 	}
@@ -695,8 +695,8 @@ func (o *InstanceContainerServer1) IsSetSshPort() bool {
 	return false
 }
 
-// SetSshPort gets a reference to the given int32 and assigns it to the SshPort field.
-func (o *InstanceContainerServer1) SetSshPort(v int32) {
+// SetSshPort gets a reference to the given int64 and assigns it to the SshPort field.
+func (o *InstanceContainerServer1) SetSshPort(v int64) {
 	o.SshPort = &v
 }
 
@@ -969,9 +969,9 @@ func (o *InstanceContainerServer1) SetStatusDate(v time.Time) {
 }
 
 // GetStatusPercent returns the StatusPercent field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceContainerServer1) GetStatusPercent() int32 {
+func (o *InstanceContainerServer1) GetStatusPercent() int64 {
 	if o == nil || IsNil(o.StatusPercent.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StatusPercent.Get()
@@ -980,7 +980,7 @@ func (o *InstanceContainerServer1) GetStatusPercent() int32 {
 // GetStatusPercentOk returns a tuple with the StatusPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceContainerServer1) GetStatusPercentOk() (*int32, bool) {
+func (o *InstanceContainerServer1) GetStatusPercentOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -996,8 +996,8 @@ func (o *InstanceContainerServer1) IsSetStatusPercent() bool {
 	return false
 }
 
-// SetStatusPercent gets a reference to the given NullableInt32 and assigns it to the StatusPercent field.
-func (o *InstanceContainerServer1) SetStatusPercent(v int32) {
+// SetStatusPercent gets a reference to the given NullableInt64 and assigns it to the StatusPercent field.
+func (o *InstanceContainerServer1) SetStatusPercent(v int64) {
 	o.StatusPercent.Set(&v)
 }
 
@@ -1162,9 +1162,9 @@ func (o *InstanceContainerServer1) UnsetLastAgentUpdate() {
 }
 
 // GetMaxCores returns the MaxCores field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetMaxCores() int32 {
+func (o *InstanceContainerServer1) GetMaxCores() int64 {
 	if o == nil || IsNil(o.MaxCores) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxCores
@@ -1172,7 +1172,7 @@ func (o *InstanceContainerServer1) GetMaxCores() int32 {
 
 // GetMaxCoresOk returns a tuple with the MaxCores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetMaxCoresOk() (*int32, bool) {
+func (o *InstanceContainerServer1) GetMaxCoresOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxCores) {
 		return nil, false
 	}
@@ -1188,8 +1188,8 @@ func (o *InstanceContainerServer1) IsSetMaxCores() bool {
 	return false
 }
 
-// SetMaxCores gets a reference to the given int32 and assigns it to the MaxCores field.
-func (o *InstanceContainerServer1) SetMaxCores(v int32) {
+// SetMaxCores gets a reference to the given int64 and assigns it to the MaxCores field.
+func (o *InstanceContainerServer1) SetMaxCores(v int64) {
 	o.MaxCores = &v
 }
 

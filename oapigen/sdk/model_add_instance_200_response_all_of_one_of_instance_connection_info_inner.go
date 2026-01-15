@@ -21,7 +21,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConnectionInfoIn
 // AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct for AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 type AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct {
 	Ip                   *string                `json:"ip,omitempty"`
-	Port                 *int32                 `json:"port,omitempty"`
+	Port                 *int64                 `json:"port,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -78,9 +78,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetIp(v st
 }
 
 // GetPort returns the Port field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int32 {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int64 {
 	if o == nil || IsNil(o.Port) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port
@@ -88,7 +88,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() 
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int32, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int64, bool) {
 	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) IsSetPort(
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int32) {
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int64) {
 	o.Port = &v
 }
 

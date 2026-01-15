@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Category** | Pointer to **string** |  | [optional] 
 **OsFamily** | Pointer to **string** |  | [optional] 
 **OsVersion** | Pointer to **string** |  | [optional] 
-**BitCount** | Pointer to **int32** |  | [optional] 
+**BitCount** | Pointer to **int64** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -246,20 +246,20 @@ HasOsVersion returns a boolean if a field has been set.
 
 ### GetBitCount
 
-`func (o *InstanceContainerServerServerOs) GetBitCount() int32`
+`func (o *InstanceContainerServerServerOs) GetBitCount() int64`
 
 GetBitCount returns the BitCount field if non-nil, zero value otherwise.
 
 ### GetBitCountOk
 
-`func (o *InstanceContainerServerServerOs) GetBitCountOk() (*int32, bool)`
+`func (o *InstanceContainerServerServerOs) GetBitCountOk() (*int64, bool)`
 
 GetBitCountOk returns a tuple with the BitCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBitCount
 
-`func (o *InstanceContainerServerServerOs) SetBitCount(v int32)`
+`func (o *InstanceContainerServerServerOs) SetBitCount(v int64)`
 
 SetBitCount sets BitCount field to given value.
 

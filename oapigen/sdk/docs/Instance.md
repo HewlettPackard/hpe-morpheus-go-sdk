@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
 **CoresPerSocket** | Pointer to **NullableInt64** |  | [optional] 
-**MaxCpu** | Pointer to **NullableString** |  | [optional] 
+**MaxCpu** | Pointer to **NullableInt64** |  | [optional] 
 **HourlyCost** | Pointer to **float32** |  | [optional] 
 **HourlyPrice** | Pointer to **float32** |  | [optional] 
 **InstancePrice** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInstancePrice**](AddInstance200ResponseAllOfOneOfInstanceInstancePrice.md) |  | [optional] 
@@ -1019,20 +1019,20 @@ HasCoresPerSocket returns a boolean if a field has been set.
 UnsetCoresPerSocket ensures that no value is present for CoresPerSocket, not even an explicit nil
 ### GetMaxCpu
 
-`func (o *Instance) GetMaxCpu() string`
+`func (o *Instance) GetMaxCpu() int64`
 
 GetMaxCpu returns the MaxCpu field if non-nil, zero value otherwise.
 
 ### GetMaxCpuOk
 
-`func (o *Instance) GetMaxCpuOk() (*string, bool)`
+`func (o *Instance) GetMaxCpuOk() (*int64, bool)`
 
 GetMaxCpuOk returns a tuple with the MaxCpu field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxCpu
 
-`func (o *Instance) SetMaxCpu(v string)`
+`func (o *Instance) SetMaxCpu(v int64)`
 
 SetMaxCpu sets MaxCpu field to given value.
 

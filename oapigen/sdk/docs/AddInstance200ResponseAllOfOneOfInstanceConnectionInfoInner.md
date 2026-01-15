@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ip** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **int32** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasIp returns a boolean if a field has been set.
 
 ### GetPort
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int32`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int32, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int32)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

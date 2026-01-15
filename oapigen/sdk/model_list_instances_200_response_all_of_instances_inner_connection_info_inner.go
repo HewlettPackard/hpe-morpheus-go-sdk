@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerConnectionInf
 // ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct for ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner
 type ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner struct {
 	Ip                   *string                `json:"ip,omitempty"`
-	Port                 NullableInt32          `json:"port,omitempty"`
+	Port                 NullableInt64          `json:"port,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -78,9 +78,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetIp(v
 }
 
 // GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPort() int32 {
+func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPort() int64 {
 	if o == nil || IsNil(o.Port.Get()) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Port.Get()
@@ -89,7 +89,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPort
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPortOk() (*int32, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) IsSetPo
 	return false
 }
 
-// SetPort gets a reference to the given NullableInt32 and assigns it to the Port field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetPort(v int32) {
+// SetPort gets a reference to the given NullableInt64 and assigns it to the Port field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) SetPort(v int64) {
 	o.Port.Set(&v)
 }
 

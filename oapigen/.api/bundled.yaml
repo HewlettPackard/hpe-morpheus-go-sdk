@@ -74642,6 +74642,7 @@ paths:
                                     type:
                                       - integer
                                       - 'null'
+                                    format: int64
                                   name:
                                     type: string
                             layout:
@@ -75078,8 +75079,9 @@ paths:
                               format: int64
                             maxCpu:
                               type:
-                                - string
+                                - integer
                                 - 'null'
+                              format: int64
                             hourlyCost:
                               type: number
                             hourlyPrice:
@@ -75418,6 +75420,7 @@ paths:
                                           - 'null'
                                       sshPort:
                                         type: integer
+                                        format: int64
                                       externalIp:
                                         type:
                                           - string
@@ -75445,6 +75448,7 @@ paths:
                                         type:
                                           - integer
                                           - 'null'
+                                        format: int64
                                       statusEta:
                                         type:
                                           - integer
@@ -75463,6 +75467,7 @@ paths:
                                         format: date-time
                                       maxCores:
                                         type: integer
+                                        format: int64
                                       maxMemory:
                                         type: integer
                                         format: int64
@@ -75503,6 +75508,7 @@ paths:
                                             type: string
                                           bitCount:
                                             type: integer
+                                            format: int64
                                           platform:
                                             type: string
                                       volumes:
