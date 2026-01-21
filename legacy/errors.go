@@ -19,8 +19,8 @@ func errWithBody(err error, resp *http.Response) error {
 		if err != nil {
 			return err
 		}
-		code := http.StatusText(resp.StatusCode)
-		msg = fmt.Sprintf("%s (%s): %s", msg, code, string(bodyBytes))
+
+		msg = fmt.Sprintf("%d (%s): %s", resp.StatusCode, http.StatusText(resp.StatusCode), string(bodyBytes))
 	}
 
 	return errors.New(msg)

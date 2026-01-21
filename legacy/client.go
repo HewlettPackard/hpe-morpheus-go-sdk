@@ -6,7 +6,6 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io"
 	"log"
 	"mime/multipart"
@@ -363,7 +362,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	httpResp, err := client.HTTPClient.Do(httpReq)
-	if err != nil {
+	if httpResp.StatusCode != http.StatusOK || err != nil {
 		// standardize the error format across both providers
 		return resp, errWithBody(err, httpResp)
 	}
@@ -401,22 +400,6 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 		// only use non-nil errors
 		if customErr != nil {
 			return resp, customErr
-		}
-	}
-
-	// determine success and set err accordingly
-	if !resp.Success {
-		err = fmt.Errorf("API returned HTTP %d", resp.StatusCode)
-		// try to parse the result as a standard result to get success info
-		var standardResult StandardResult
-		standardResultParseErr := json.Unmarshal(resp.Body, &standardResult)
-		if standardResultParseErr != nil {
-			// failed to parse body as standard result json
-			// err = standardResultParseErr
-		} else {
-			if standardResult.Message != "" {
-				err = errors.New(standardResult.Message)
-			}
 		}
 	}
 
