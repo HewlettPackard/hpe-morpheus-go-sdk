@@ -362,7 +362,7 @@ func (client *Client) Execute(req *Request) (*Response, error) {
 	}
 
 	httpResp, err := client.HTTPClient.Do(httpReq)
-	if httpResp.StatusCode != http.StatusOK || err != nil {
+	if httpResp == nil || httpResp.StatusCode != http.StatusOK || err != nil {
 		// standardize the error format across both providers
 		return resp, errWithBody(err, httpResp)
 	}

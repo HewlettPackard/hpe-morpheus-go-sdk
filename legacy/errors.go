@@ -12,6 +12,7 @@ func errWithBody(err error, resp *http.Response) error {
 
 	if err != nil {
 		msg = err.Error()
+		return errors.New(msg)
 	}
 
 	if resp != nil {
@@ -21,7 +22,8 @@ func errWithBody(err error, resp *http.Response) error {
 		}
 
 		msg = fmt.Sprintf("%d (%s): %s", resp.StatusCode, http.StatusText(resp.StatusCode), string(bodyBytes))
+		return errors.New(msg)
 	}
 
-	return errors.New(msg)
+	return errors.New("Unknown error")
 }
