@@ -31,16 +31,22 @@ func (dst *ListJobs200ResponseAllOfJobsInner) UnmarshalMapstructure(data any) (a
 		dst = &ListJobs200ResponseAllOfJobsInner{}
 	}
 
-	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf); ok {
-		dst.ListJobs200ResponseAllOfJobsInnerAnyOf = &out
+	mapstructDecode(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf)
+
+	if IsEmpty(dst.ListJobs200ResponseAllOfJobsInnerAnyOf) {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf = nil
 	}
 
-	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf1); ok {
-		dst.ListJobs200ResponseAllOfJobsInnerAnyOf1 = &out
+	mapstructDecode(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf1)
+
+	if IsEmpty(dst.ListJobs200ResponseAllOfJobsInnerAnyOf1) {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf1 = nil
 	}
 
-	if out, ok := data.(ListJobs200ResponseAllOfJobsInnerAnyOf2); ok {
-		dst.ListJobs200ResponseAllOfJobsInnerAnyOf2 = &out
+	mapstructDecode(data, &dst.ListJobs200ResponseAllOfJobsInnerAnyOf2)
+
+	if IsEmpty(dst.ListJobs200ResponseAllOfJobsInnerAnyOf2) {
+		dst.ListJobs200ResponseAllOfJobsInnerAnyOf2 = nil
 	}
 
 	return dst, nil

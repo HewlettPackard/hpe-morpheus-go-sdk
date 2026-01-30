@@ -30,12 +30,16 @@ func (dst *AddCloudResourcePoolRequestResourcePoolConfig) UnmarshalMapstructure(
 		dst = &AddCloudResourcePoolRequestResourcePoolConfig{}
 	}
 
-	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf); ok {
-		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf = &out
+	mapstructDecode(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf)
+
+	if IsEmpty(dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf) {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf = nil
 	}
 
-	if out, ok := data.(AddCloudResourcePoolRequestResourcePoolConfigAnyOf1); ok {
-		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 = &out
+	mapstructDecode(data, &dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1)
+
+	if IsEmpty(dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1) {
+		dst.AddCloudResourcePoolRequestResourcePoolConfigAnyOf1 = nil
 	}
 
 	return dst, nil

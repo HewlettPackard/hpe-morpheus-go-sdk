@@ -35,32 +35,46 @@ func (dst *GetAlerts200ResponseAllOfChecksInnerConfig) UnmarshalMapstructure(dat
 		dst = &GetAlerts200ResponseAllOfChecksInnerConfig{}
 	}
 
-	if out, ok := data.(ElasticSearchConfig); ok {
-		dst.ElasticSearchConfig = &out
+	mapstructDecode(data, &dst.ElasticSearchConfig)
+
+	if IsEmpty(dst.ElasticSearchConfig) {
+		dst.ElasticSearchConfig = nil
 	}
 
-	if out, ok := data.(GetAlerts200ResponseAllOfChecksInnerConfigAnyOf); ok {
-		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = &out
+	mapstructDecode(data, &dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf)
+
+	if IsEmpty(dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) {
+		dst.GetAlerts200ResponseAllOfChecksInnerConfigAnyOf = nil
 	}
 
-	if out, ok := data.(SNMPConfig); ok {
-		dst.SNMPConfig = &out
+	mapstructDecode(data, &dst.SNMPConfig)
+
+	if IsEmpty(dst.SNMPConfig) {
+		dst.SNMPConfig = nil
 	}
 
-	if out, ok := data.(SQLConfig); ok {
-		dst.SQLConfig = &out
+	mapstructDecode(data, &dst.SQLConfig)
+
+	if IsEmpty(dst.SQLConfig) {
+		dst.SQLConfig = nil
 	}
 
-	if out, ok := data.(SocketConfig); ok {
-		dst.SocketConfig = &out
+	mapstructDecode(data, &dst.SocketConfig)
+
+	if IsEmpty(dst.SocketConfig) {
+		dst.SocketConfig = nil
 	}
 
-	if out, ok := data.(WebGetConfig); ok {
-		dst.WebGetConfig = &out
+	mapstructDecode(data, &dst.WebGetConfig)
+
+	if IsEmpty(dst.WebGetConfig) {
+		dst.WebGetConfig = nil
 	}
 
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil

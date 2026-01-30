@@ -31,16 +31,22 @@ func (dst *UpdateCatalogItemTypeRequestCatalogItemType) UnmarshalMapstructure(da
 		dst = &UpdateCatalogItemTypeRequestCatalogItemType{}
 	}
 
-	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf); ok {
-		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf = &out
+	mapstructDecode(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf)
+
+	if IsEmpty(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf) {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf = nil
 	}
 
-	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1); ok {
-		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 = &out
+	mapstructDecode(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1)
+
+	if IsEmpty(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1) {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf1 = nil
 	}
 
-	if out, ok := data.(UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2); ok {
-		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 = &out
+	mapstructDecode(data, &dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2)
+
+	if IsEmpty(dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2) {
+		dst.UpdateCatalogItemTypeRequestCatalogItemTypeAnyOf2 = nil
 	}
 
 	return dst, nil

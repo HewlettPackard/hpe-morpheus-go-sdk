@@ -30,12 +30,16 @@ func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalMapstructure
 		dst = &ListClouds200ResponseAllOfZonesInnerCredential{}
 	}
 
-	if out, ok := data.(ListApps200ResponseAllOfAppsInnerBlueprint); ok {
-		dst.ListApps200ResponseAllOfAppsInnerBlueprint = &out
+	mapstructDecode(data, &dst.ListApps200ResponseAllOfAppsInnerBlueprint)
+
+	if IsEmpty(dst.ListApps200ResponseAllOfAppsInnerBlueprint) {
+		dst.ListApps200ResponseAllOfAppsInnerBlueprint = nil
 	}
 
-	if out, ok := data.(ListClouds200ResponseAllOfZonesInnerCredentialAnyOf); ok {
-		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = &out
+	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
+
+	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
+		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = nil
 	}
 
 	return dst, nil

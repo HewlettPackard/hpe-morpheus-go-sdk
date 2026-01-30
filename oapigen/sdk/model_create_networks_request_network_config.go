@@ -32,20 +32,28 @@ func (dst *CreateNetworksRequestNetworkConfig) UnmarshalMapstructure(data any) (
 		dst = &CreateNetworksRequestNetworkConfig{}
 	}
 
-	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf); ok {
-		dst.CreateNetworksRequestNetworkConfigAnyOf = &out
+	mapstructDecode(data, &dst.CreateNetworksRequestNetworkConfigAnyOf)
+
+	if IsEmpty(dst.CreateNetworksRequestNetworkConfigAnyOf) {
+		dst.CreateNetworksRequestNetworkConfigAnyOf = nil
 	}
 
-	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf1); ok {
-		dst.CreateNetworksRequestNetworkConfigAnyOf1 = &out
+	mapstructDecode(data, &dst.CreateNetworksRequestNetworkConfigAnyOf1)
+
+	if IsEmpty(dst.CreateNetworksRequestNetworkConfigAnyOf1) {
+		dst.CreateNetworksRequestNetworkConfigAnyOf1 = nil
 	}
 
-	if out, ok := data.(CreateNetworksRequestNetworkConfigAnyOf2); ok {
-		dst.CreateNetworksRequestNetworkConfigAnyOf2 = &out
+	mapstructDecode(data, &dst.CreateNetworksRequestNetworkConfigAnyOf2)
+
+	if IsEmpty(dst.CreateNetworksRequestNetworkConfigAnyOf2) {
+		dst.CreateNetworksRequestNetworkConfigAnyOf2 = nil
 	}
 
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil

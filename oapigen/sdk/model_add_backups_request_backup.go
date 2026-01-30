@@ -31,16 +31,22 @@ func (dst *AddBackupsRequestBackup) UnmarshalMapstructure(data any) (any, error)
 		dst = &AddBackupsRequestBackup{}
 	}
 
-	if out, ok := data.(BackupInstance); ok {
-		dst.BackupInstance = &out
+	mapstructDecode(data, &dst.BackupInstance)
+
+	if IsEmpty(dst.BackupInstance) {
+		dst.BackupInstance = nil
 	}
 
-	if out, ok := data.(BackupServerHost); ok {
-		dst.BackupServerHost = &out
+	mapstructDecode(data, &dst.BackupServerHost)
+
+	if IsEmpty(dst.BackupServerHost) {
+		dst.BackupServerHost = nil
 	}
 
-	if out, ok := data.(BackupStorageProvider); ok {
-		dst.BackupStorageProvider = &out
+	mapstructDecode(data, &dst.BackupStorageProvider)
+
+	if IsEmpty(dst.BackupStorageProvider) {
+		dst.BackupStorageProvider = nil
 	}
 
 	return dst, nil

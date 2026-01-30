@@ -30,12 +30,16 @@ func (dst *ListIntegrations200Response) UnmarshalMapstructure(data any) (any, er
 		dst = &ListIntegrations200Response{}
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOf); ok {
-		dst.ListIntegrations200ResponseAnyOf = &out
+	mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOf)
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOf) {
+		dst.ListIntegrations200ResponseAnyOf = nil
 	}
 
-	if out, ok := data.(ListIntegrations200ResponseAnyOf1); ok {
-		dst.ListIntegrations200ResponseAnyOf1 = &out
+	mapstructDecode(data, &dst.ListIntegrations200ResponseAnyOf1)
+
+	if IsEmpty(dst.ListIntegrations200ResponseAnyOf1) {
+		dst.ListIntegrations200ResponseAnyOf1 = nil
 	}
 
 	return dst, nil

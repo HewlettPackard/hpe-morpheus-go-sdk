@@ -30,12 +30,16 @@ func (dst *GetEnvVariables200ResponseReadOnlyEnvsValueValue) UnmarshalMapstructu
 		dst = &GetEnvVariables200ResponseReadOnlyEnvsValueValue{}
 	}
 
-	if out, ok := data.(float32); ok {
-		dst.Float32 = &out
+	mapstructDecode(data, &dst.Float32)
+
+	if IsEmpty(dst.Float32) {
+		dst.Float32 = nil
 	}
 
-	if out, ok := data.(string); ok {
-		dst.String = &out
+	mapstructDecode(data, &dst.String)
+
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
 
 	return dst, nil

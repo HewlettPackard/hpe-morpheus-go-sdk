@@ -30,12 +30,16 @@ func (dst *AddCloudsRequestZoneZoneType) UnmarshalMapstructure(data any) (any, e
 		dst = &AddCloudsRequestZoneZoneType{}
 	}
 
-	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf); ok {
-		dst.AddCloudsRequestZoneZoneTypeAnyOf = &out
+	mapstructDecode(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf)
+
+	if IsEmpty(dst.AddCloudsRequestZoneZoneTypeAnyOf) {
+		dst.AddCloudsRequestZoneZoneTypeAnyOf = nil
 	}
 
-	if out, ok := data.(AddCloudsRequestZoneZoneTypeAnyOf1); ok {
-		dst.AddCloudsRequestZoneZoneTypeAnyOf1 = &out
+	mapstructDecode(data, &dst.AddCloudsRequestZoneZoneTypeAnyOf1)
+
+	if IsEmpty(dst.AddCloudsRequestZoneZoneTypeAnyOf1) {
+		dst.AddCloudsRequestZoneZoneTypeAnyOf1 = nil
 	}
 
 	return dst, nil

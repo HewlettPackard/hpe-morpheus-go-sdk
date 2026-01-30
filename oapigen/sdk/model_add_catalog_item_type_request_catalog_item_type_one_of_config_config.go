@@ -33,24 +33,34 @@ func (dst *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) UnmarshalM
 		dst = &AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig{}
 	}
 
-	if out, ok := data.(AmazonInstanceConfiguration); ok {
-		dst.AmazonInstanceConfiguration = &out
+	mapstructDecode(data, &dst.AmazonInstanceConfiguration)
+
+	if IsEmpty(dst.AmazonInstanceConfiguration) {
+		dst.AmazonInstanceConfiguration = nil
 	}
 
-	if out, ok := data.(AzureInstanceConfiguration); ok {
-		dst.AzureInstanceConfiguration = &out
+	mapstructDecode(data, &dst.AzureInstanceConfiguration)
+
+	if IsEmpty(dst.AzureInstanceConfiguration) {
+		dst.AzureInstanceConfiguration = nil
 	}
 
-	if out, ok := data.(GoogleCloudInstanceConfiguration); ok {
-		dst.GoogleCloudInstanceConfiguration = &out
+	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration)
+
+	if IsEmpty(dst.GoogleCloudInstanceConfiguration) {
+		dst.GoogleCloudInstanceConfiguration = nil
 	}
 
-	if out, ok := data.(VMWareInstanceConfiguration); ok {
-		dst.VMWareInstanceConfiguration = &out
+	mapstructDecode(data, &dst.VMWareInstanceConfiguration)
+
+	if IsEmpty(dst.VMWareInstanceConfiguration) {
+		dst.VMWareInstanceConfiguration = nil
 	}
 
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil

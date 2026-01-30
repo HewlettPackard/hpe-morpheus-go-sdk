@@ -31,16 +31,22 @@ func (dst *AddSecurityGroupsRequestSecurityGroupCustomOptions) UnmarshalMapstruc
 		dst = &AddSecurityGroupsRequestSecurityGroupCustomOptions{}
 	}
 
-	if out, ok := data.(CustomOptionsForAmazon); ok {
-		dst.CustomOptionsForAmazon = &out
+	mapstructDecode(data, &dst.CustomOptionsForAmazon)
+
+	if IsEmpty(dst.CustomOptionsForAmazon) {
+		dst.CustomOptionsForAmazon = nil
 	}
 
-	if out, ok := data.(CustomOptionsForAzure); ok {
-		dst.CustomOptionsForAzure = &out
+	mapstructDecode(data, &dst.CustomOptionsForAzure)
+
+	if IsEmpty(dst.CustomOptionsForAzure) {
+		dst.CustomOptionsForAzure = nil
 	}
 
-	if out, ok := data.(CustomOptionsForOpenstackOpenTelekomHuawei); ok {
-		dst.CustomOptionsForOpenstackOpenTelekomHuawei = &out
+	mapstructDecode(data, &dst.CustomOptionsForOpenstackOpenTelekomHuawei)
+
+	if IsEmpty(dst.CustomOptionsForOpenstackOpenTelekomHuawei) {
+		dst.CustomOptionsForOpenstackOpenTelekomHuawei = nil
 	}
 
 	return dst, nil

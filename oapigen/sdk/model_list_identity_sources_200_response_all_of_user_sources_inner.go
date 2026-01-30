@@ -36,36 +36,52 @@ func (dst *ListIdentitySources200ResponseAllOfUserSourcesInner) UnmarshalMapstru
 		dst = &ListIdentitySources200ResponseAllOfUserSourcesInner{}
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf1 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf2 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf3 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf4 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf5 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf6 = nil
 	}
 
-	if out, ok := data.(ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7); ok {
-		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = &out
+	mapstructDecode(data, &dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7)
+
+	if IsEmpty(dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7) {
+		dst.ListIdentitySources200ResponseAllOfUserSourcesInnerAnyOf7 = nil
 	}
 
 	return dst, nil

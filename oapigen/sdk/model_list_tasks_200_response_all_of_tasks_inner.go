@@ -45,72 +45,106 @@ func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalMapstructure(data any) 
 		dst = &ListTasks200ResponseAllOfTasksInner{}
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf1); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf10); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf11); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf12); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf13); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf14); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf15); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf16); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf2); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf3); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf4); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf5); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf6); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf7); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf8); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
 	}
 
-	if out, ok := data.(ListTasks200ResponseAllOfTasksInnerAnyOf9); ok {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = &out
+	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
+
+	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9) {
+		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
 	}
 
 	return dst, nil

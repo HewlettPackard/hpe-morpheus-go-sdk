@@ -32,20 +32,28 @@ func (dst *SaveClusterDatastoreRequestDatastoreConfig) UnmarshalMapstructure(dat
 		dst = &SaveClusterDatastoreRequestDatastoreConfig{}
 	}
 
-	if out, ok := data.(AlletraMPHVMDatastoreConfiguration); ok {
-		dst.AlletraMPHVMDatastoreConfiguration = &out
+	mapstructDecode(data, &dst.AlletraMPHVMDatastoreConfiguration)
+
+	if IsEmpty(dst.AlletraMPHVMDatastoreConfiguration) {
+		dst.AlletraMPHVMDatastoreConfiguration = nil
 	}
 
-	if out, ok := data.(GFS2DatastoreConfiguration); ok {
-		dst.GFS2DatastoreConfiguration = &out
+	mapstructDecode(data, &dst.GFS2DatastoreConfiguration)
+
+	if IsEmpty(dst.GFS2DatastoreConfiguration) {
+		dst.GFS2DatastoreConfiguration = nil
 	}
 
-	if out, ok := data.(NFSDatastoreConfiguration); ok {
-		dst.NFSDatastoreConfiguration = &out
+	mapstructDecode(data, &dst.NFSDatastoreConfiguration)
+
+	if IsEmpty(dst.NFSDatastoreConfiguration) {
+		dst.NFSDatastoreConfiguration = nil
 	}
 
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil

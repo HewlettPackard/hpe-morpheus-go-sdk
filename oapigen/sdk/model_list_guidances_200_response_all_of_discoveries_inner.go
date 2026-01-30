@@ -30,12 +30,16 @@ func (dst *ListGuidances200ResponseAllOfDiscoveriesInner) UnmarshalMapstructure(
 		dst = &ListGuidances200ResponseAllOfDiscoveriesInner{}
 	}
 
-	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf); ok {
-		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf = &out
+	mapstructDecode(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf)
+
+	if IsEmpty(dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf) {
+		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf = nil
 	}
 
-	if out, ok := data.(ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1); ok {
-		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 = &out
+	mapstructDecode(data, &dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1)
+
+	if IsEmpty(dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1) {
+		dst.ListGuidances200ResponseAllOfDiscoveriesInnerAnyOf1 = nil
 	}
 
 	return dst, nil

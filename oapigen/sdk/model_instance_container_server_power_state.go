@@ -30,12 +30,16 @@ func (dst *InstanceContainerServerPowerState) UnmarshalMapstructure(data any) (a
 		dst = &InstanceContainerServerPowerState{}
 	}
 
-	if out, ok := data.(bool); ok {
-		dst.Bool = &out
+	mapstructDecode(data, &dst.Bool)
+
+	if IsEmpty(dst.Bool) {
+		dst.Bool = nil
 	}
 
-	if out, ok := data.(string); ok {
-		dst.String = &out
+	mapstructDecode(data, &dst.String)
+
+	if IsEmpty(dst.String) {
+		dst.String = nil
 	}
 
 	return dst, nil

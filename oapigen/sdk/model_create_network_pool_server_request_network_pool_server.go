@@ -32,20 +32,28 @@ func (dst *CreateNetworkPoolServerRequestNetworkPoolServer) UnmarshalMapstructur
 		dst = &CreateNetworkPoolServerRequestNetworkPoolServer{}
 	}
 
-	if out, ok := data.(BluecatNetworkPoolServer); ok {
-		dst.BluecatNetworkPoolServer = &out
+	mapstructDecode(data, &dst.BluecatNetworkPoolServer)
+
+	if IsEmpty(dst.BluecatNetworkPoolServer) {
+		dst.BluecatNetworkPoolServer = nil
 	}
 
-	if out, ok := data.(InfobloxNetworkPoolServer); ok {
-		dst.InfobloxNetworkPoolServer = &out
+	mapstructDecode(data, &dst.InfobloxNetworkPoolServer)
+
+	if IsEmpty(dst.InfobloxNetworkPoolServer) {
+		dst.InfobloxNetworkPoolServer = nil
 	}
 
-	if out, ok := data.(PhpIPAMNetworkPoolServer); ok {
-		dst.PhpIPAMNetworkPoolServer = &out
+	mapstructDecode(data, &dst.PhpIPAMNetworkPoolServer)
+
+	if IsEmpty(dst.PhpIPAMNetworkPoolServer) {
+		dst.PhpIPAMNetworkPoolServer = nil
 	}
 
-	if out, ok := data.(SolarWindsNetworkPoolServer); ok {
-		dst.SolarWindsNetworkPoolServer = &out
+	mapstructDecode(data, &dst.SolarWindsNetworkPoolServer)
+
+	if IsEmpty(dst.SolarWindsNetworkPoolServer) {
+		dst.SolarWindsNetworkPoolServer = nil
 	}
 
 	return dst, nil

@@ -30,12 +30,16 @@ func (dst *AddVDIGateways200Response) UnmarshalMapstructure(data any) (any, erro
 		dst = &AddVDIGateways200Response{}
 	}
 
-	if out, ok := data.(AddVDIGateways200ResponseAnyOf); ok {
-		dst.AddVDIGateways200ResponseAnyOf = &out
+	mapstructDecode(data, &dst.AddVDIGateways200ResponseAnyOf)
+
+	if IsEmpty(dst.AddVDIGateways200ResponseAnyOf) {
+		dst.AddVDIGateways200ResponseAnyOf = nil
 	}
 
-	if out, ok := data.(DeleteAlerts200Response); ok {
-		dst.DeleteAlerts200Response = &out
+	mapstructDecode(data, &dst.DeleteAlerts200Response)
+
+	if IsEmpty(dst.DeleteAlerts200Response) {
+		dst.DeleteAlerts200Response = nil
 	}
 
 	return dst, nil

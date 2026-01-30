@@ -31,16 +31,22 @@ func (dst *AddCloudResourcePool200ResponseResourcePoolAllOfConfig) UnmarshalMaps
 		dst = &AddCloudResourcePool200ResponseResourcePoolAllOfConfig{}
 	}
 
-	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf); ok {
-		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf = &out
+	mapstructDecode(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf)
+
+	if IsEmpty(dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf) {
+		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf = nil
 	}
 
-	if out, ok := data.(ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1); ok {
-		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 = &out
+	mapstructDecode(data, &dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1)
+
+	if IsEmpty(dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1) {
+		dst.ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfigAnyOf1 = nil
 	}
 
-	if out, ok := data.(map[string]interface{}); ok {
-		dst.MapmapOfStringAny = &out
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
 	return dst, nil

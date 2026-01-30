@@ -30,12 +30,16 @@ func (dst *AddBaremetalHostRequestServerComputeServerType) UnmarshalMapstructure
 		dst = &AddBaremetalHostRequestServerComputeServerType{}
 	}
 
-	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf); ok {
-		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf = &out
+	mapstructDecode(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf)
+
+	if IsEmpty(dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf) {
+		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf = nil
 	}
 
-	if out, ok := data.(AddBaremetalHostRequestServerComputeServerTypeAnyOf1); ok {
-		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1 = &out
+	mapstructDecode(data, &dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1)
+
+	if IsEmpty(dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1) {
+		dst.AddBaremetalHostRequestServerComputeServerTypeAnyOf1 = nil
 	}
 
 	return dst, nil

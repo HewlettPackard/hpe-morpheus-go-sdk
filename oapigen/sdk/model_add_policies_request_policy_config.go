@@ -60,132 +60,196 @@ func (dst *AddPoliciesRequestPolicyConfig) UnmarshalMapstructure(data any) (any,
 		dst = &AddPoliciesRequestPolicyConfig{}
 	}
 
-	if out, ok := data.(ApprovePolicyTypeConfiguration1); ok {
-		dst.ApprovePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.ApprovePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.ApprovePolicyTypeConfiguration1) {
+		dst.ApprovePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(BackupCreationPolicyTypeConfiguration1); ok {
-		dst.BackupCreationPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.BackupCreationPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.BackupCreationPolicyTypeConfiguration1) {
+		dst.BackupCreationPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(BackupTargetsPolicyTypeConfiguration1); ok {
-		dst.BackupTargetsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.BackupTargetsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.BackupTargetsPolicyTypeConfiguration1) {
+		dst.BackupTargetsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(BudgetPolicyTypeConfiguration1); ok {
-		dst.BudgetPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.BudgetPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.BudgetPolicyTypeConfiguration1) {
+		dst.BudgetPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(ClusterResourceNamePolicyTypeConfiguration1); ok {
-		dst.ClusterResourceNamePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.ClusterResourceNamePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.ClusterResourceNamePolicyTypeConfiguration1) {
+		dst.ClusterResourceNamePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(CypherAccessPolicyTypeConfiguration1); ok {
-		dst.CypherAccessPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.CypherAccessPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.CypherAccessPolicyTypeConfiguration1) {
+		dst.CypherAccessPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(DelayedDeletePolicyTypeConfiguration1); ok {
-		dst.DelayedDeletePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.DelayedDeletePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.DelayedDeletePolicyTypeConfiguration1) {
+		dst.DelayedDeletePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(ExpirationPolicyTypeConfiguration1); ok {
-		dst.ExpirationPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.ExpirationPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.ExpirationPolicyTypeConfiguration1) {
+		dst.ExpirationPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(FileShareStorageQuotaPolicyTypeConfiguration); ok {
-		dst.FileShareStorageQuotaPolicyTypeConfiguration = &out
+	mapstructDecode(data, &dst.FileShareStorageQuotaPolicyTypeConfiguration)
+
+	if IsEmpty(dst.FileShareStorageQuotaPolicyTypeConfiguration) {
+		dst.FileShareStorageQuotaPolicyTypeConfiguration = nil
 	}
 
-	if out, ok := data.(HostnamePolicyTypeConfiguration1); ok {
-		dst.HostnamePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.HostnamePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.HostnamePolicyTypeConfiguration1) {
+		dst.HostnamePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(InstanceNamePolicyTypeConfiguration1); ok {
-		dst.InstanceNamePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.InstanceNamePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.InstanceNamePolicyTypeConfiguration1) {
+		dst.InstanceNamePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxContainersPolicyTypeConfiguration1); ok {
-		dst.MaxContainersPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxContainersPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxContainersPolicyTypeConfiguration1) {
+		dst.MaxContainersPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxCoresPolicyTypeConfiguration1); ok {
-		dst.MaxCoresPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxCoresPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxCoresPolicyTypeConfiguration1) {
+		dst.MaxCoresPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxHostsPolicyTypeConfiguration1); ok {
-		dst.MaxHostsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxHostsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxHostsPolicyTypeConfiguration1) {
+		dst.MaxHostsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxLoadBalancerPoolsPolicyTypeConfiguration1); ok {
-		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1) {
+		dst.MaxLoadBalancerPoolsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxMemoryPolicyTypeConfiguration1); ok {
-		dst.MaxMemoryPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxMemoryPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxMemoryPolicyTypeConfiguration1) {
+		dst.MaxMemoryPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxPoolMembersPolicyTypeConfiguration1); ok {
-		dst.MaxPoolMembersPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxPoolMembersPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxPoolMembersPolicyTypeConfiguration1) {
+		dst.MaxPoolMembersPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxSnapshotsPolicyTypeConfiguration1); ok {
-		dst.MaxSnapshotsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxSnapshotsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxSnapshotsPolicyTypeConfiguration1) {
+		dst.MaxSnapshotsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1); ok {
-		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1) {
+		dst.MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxVMsPolicyTypeConfiguration1); ok {
-		dst.MaxVMsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxVMsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxVMsPolicyTypeConfiguration1) {
+		dst.MaxVMsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MaxVirtualServersPolicyTypeConfiguration1); ok {
-		dst.MaxVirtualServersPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MaxVirtualServersPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MaxVirtualServersPolicyTypeConfiguration1) {
+		dst.MaxVirtualServersPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(MessageOfTheDayPolicyTypeConfiguration1); ok {
-		dst.MessageOfTheDayPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.MessageOfTheDayPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.MessageOfTheDayPolicyTypeConfiguration1) {
+		dst.MessageOfTheDayPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(NetworkQuotaPolicyTypeConfiguration1); ok {
-		dst.NetworkQuotaPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.NetworkQuotaPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.NetworkQuotaPolicyTypeConfiguration1) {
+		dst.NetworkQuotaPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(PowerSchedulePolicyTypeConfiguration1); ok {
-		dst.PowerSchedulePolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.PowerSchedulePolicyTypeConfiguration1)
+
+	if IsEmpty(dst.PowerSchedulePolicyTypeConfiguration1) {
+		dst.PowerSchedulePolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(RequiredNetworkPolicyTypeConfiguration1); ok {
-		dst.RequiredNetworkPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.RequiredNetworkPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.RequiredNetworkPolicyTypeConfiguration1) {
+		dst.RequiredNetworkPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(RouterQuotaPolicyTypeConfiguration1); ok {
-		dst.RouterQuotaPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.RouterQuotaPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.RouterQuotaPolicyTypeConfiguration1) {
+		dst.RouterQuotaPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(ShutdownPolicyTypeConfiguration1); ok {
-		dst.ShutdownPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.ShutdownPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.ShutdownPolicyTypeConfiguration1) {
+		dst.ShutdownPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(StorageServerStorageQuotaPolicyTypeConfiguration1); ok {
-		dst.StorageServerStorageQuotaPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.StorageServerStorageQuotaPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.StorageServerStorageQuotaPolicyTypeConfiguration1) {
+		dst.StorageServerStorageQuotaPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(TagsPolicyTypeConfiguration1); ok {
-		dst.TagsPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.TagsPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.TagsPolicyTypeConfiguration1) {
+		dst.TagsPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(UserCreationPolicyTypeConfiguration1); ok {
-		dst.UserCreationPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.UserCreationPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.UserCreationPolicyTypeConfiguration1) {
+		dst.UserCreationPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(UserGroupCreationPolicyTypeConfiguration1); ok {
-		dst.UserGroupCreationPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.UserGroupCreationPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.UserGroupCreationPolicyTypeConfiguration1) {
+		dst.UserGroupCreationPolicyTypeConfiguration1 = nil
 	}
 
-	if out, ok := data.(WorkflowPolicyTypeConfiguration1); ok {
-		dst.WorkflowPolicyTypeConfiguration1 = &out
+	mapstructDecode(data, &dst.WorkflowPolicyTypeConfiguration1)
+
+	if IsEmpty(dst.WorkflowPolicyTypeConfiguration1) {
+		dst.WorkflowPolicyTypeConfiguration1 = nil
 	}
 
 	return dst, nil
