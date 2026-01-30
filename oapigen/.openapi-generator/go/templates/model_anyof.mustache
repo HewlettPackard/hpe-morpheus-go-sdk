@@ -20,8 +20,10 @@ func (dst *{{classname}}) UnmarshalMapstructure(data any) (any, error) {
 	}
 
 	{{#anyOf}}
-	if out, ok := data.({{.}}); ok {
-		dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}} = &out
+	mapstructDecode(data, &dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}})
+
+	if IsEmpty(dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}}) {
+		dst.{{#lambda.type-to-name}}{{{.}}}{{/lambda.type-to-name}} = nil
 	}
 	
 	{{/anyOf}}
