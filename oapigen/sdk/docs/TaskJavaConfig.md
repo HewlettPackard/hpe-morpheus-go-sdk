@@ -4,24 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf6TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf6TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**JsScript** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +33,321 @@ NewTaskJavaConfigWithDefaults instantiates a new TaskJavaConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetUsername
 
-`func (o *TaskJavaConfig) GetId() int64`
+`func (o *TaskJavaConfig) GetUsername() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetUsername returns the Username field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetUsernameOk
 
-`func (o *TaskJavaConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskJavaConfig) GetUsernameOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetUsername
 
-`func (o *TaskJavaConfig) SetId(v int64)`
+`func (o *TaskJavaConfig) SetUsername(v string)`
 
-SetId sets Id field to given value.
+SetUsername sets Username field to given value.
 
-### HasId
+### HasUsername
 
-`func (o *TaskJavaConfig) HasId() bool`
+`func (o *TaskJavaConfig) HasUsername() bool`
 
-HasId returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetAccountId
+### SetUsernameNil
 
-`func (o *TaskJavaConfig) GetAccountId() int64`
+`func (o *TaskJavaConfig) SetUsernameNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetAccountIdOk
+### UnsetUsername
+`func (o *TaskJavaConfig) UnsetUsername()`
 
-`func (o *TaskJavaConfig) GetAccountIdOk() (*int64, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetPort
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskJavaConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetPort
 
-`func (o *TaskJavaConfig) SetAccountId(v int64)`
+`func (o *TaskJavaConfig) SetPort(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetPort sets Port field to given value.
 
-### HasAccountId
+### HasPort
 
-`func (o *TaskJavaConfig) HasAccountId() bool`
+`func (o *TaskJavaConfig) HasPort() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetName
+### SetPortNil
 
-`func (o *TaskJavaConfig) GetName() string`
+`func (o *TaskJavaConfig) SetPortNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetNameOk
+### UnsetPort
+`func (o *TaskJavaConfig) UnsetPort()`
 
-`func (o *TaskJavaConfig) GetNameOk() (*string, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetJsScript
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetJsScript() string`
+
+GetJsScript returns the JsScript field if non-nil, zero value otherwise.
+
+### GetJsScriptOk
+
+`func (o *TaskJavaConfig) GetJsScriptOk() (*string, bool)`
+
+GetJsScriptOk returns a tuple with the JsScript field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetJsScript
 
-`func (o *TaskJavaConfig) SetName(v string)`
+`func (o *TaskJavaConfig) SetJsScript(v string)`
 
-SetName sets Name field to given value.
+SetJsScript sets JsScript field to given value.
 
-### HasName
+### HasJsScript
 
-`func (o *TaskJavaConfig) HasName() bool`
+`func (o *TaskJavaConfig) HasJsScript() bool`
 
-HasName returns a boolean if a field has been set.
+HasJsScript returns a boolean if a field has been set.
 
-### GetCode
+### SetJsScriptNil
 
-`func (o *TaskJavaConfig) GetCode() string`
+`func (o *TaskJavaConfig) SetJsScriptNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetJsScriptNil sets the value for JsScript to be an explicit nil
 
-### GetCodeOk
+### UnsetJsScript
+`func (o *TaskJavaConfig) UnsetJsScript()`
 
-`func (o *TaskJavaConfig) GetCodeOk() (*string, bool)`
+UnsetJsScript ensures that no value is present for JsScript, not even an explicit nil
+### GetHost
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskJavaConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetHost
 
-`func (o *TaskJavaConfig) SetCode(v string)`
+`func (o *TaskJavaConfig) SetHost(v string)`
 
-SetCode sets Code field to given value.
+SetHost sets Host field to given value.
 
-### HasCode
+### HasHost
 
-`func (o *TaskJavaConfig) HasCode() bool`
+`func (o *TaskJavaConfig) HasHost() bool`
 
-HasCode returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetHostNil
 
-`func (o *TaskJavaConfig) SetCodeNil(b bool)`
+`func (o *TaskJavaConfig) SetHostNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetHostNil sets the value for Host to be an explicit nil
 
-### UnsetCode
-`func (o *TaskJavaConfig) UnsetCode()`
+### UnsetHost
+`func (o *TaskJavaConfig) UnsetHost()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetLocalScriptGitRef
 
-`func (o *TaskJavaConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf6TaskType`
+`func (o *TaskJavaConfig) GetLocalScriptGitRef() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetLocalScriptGitRefOk
 
-`func (o *TaskJavaConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf6TaskType, bool)`
+`func (o *TaskJavaConfig) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetLocalScriptGitRef
 
-`func (o *TaskJavaConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf6TaskType)`
+`func (o *TaskJavaConfig) SetLocalScriptGitRef(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasTaskType
+### HasLocalScriptGitRef
 
-`func (o *TaskJavaConfig) HasTaskType() bool`
+`func (o *TaskJavaConfig) HasLocalScriptGitRef() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetLabels
+### SetLocalScriptGitRefNil
 
-`func (o *TaskJavaConfig) GetLabels() []string`
+`func (o *TaskJavaConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetLabelsOk
+### UnsetLocalScriptGitRef
+`func (o *TaskJavaConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskJavaConfig) GetLabelsOk() (*[]string, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPassword
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskJavaConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetPassword
 
-`func (o *TaskJavaConfig) SetLabels(v []string)`
+`func (o *TaskJavaConfig) SetPassword(v string)`
 
-SetLabels sets Labels field to given value.
+SetPassword sets Password field to given value.
 
-### HasLabels
+### HasPassword
 
-`func (o *TaskJavaConfig) HasLabels() bool`
+`func (o *TaskJavaConfig) HasPassword() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetVisibility
+### SetPasswordNil
 
-`func (o *TaskJavaConfig) GetVisibility() string`
+`func (o *TaskJavaConfig) SetPasswordNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetVisibilityOk
+### UnsetPassword
+`func (o *TaskJavaConfig) UnsetPassword()`
 
-`func (o *TaskJavaConfig) GetVisibilityOk() (*string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskJavaConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetPasswordHash
 
-`func (o *TaskJavaConfig) SetVisibility(v string)`
+`func (o *TaskJavaConfig) SetPasswordHash(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasVisibility
+### HasPasswordHash
 
-`func (o *TaskJavaConfig) HasVisibility() bool`
+`func (o *TaskJavaConfig) HasPasswordHash() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetPasswordHashNil
 
-`func (o *TaskJavaConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions`
+`func (o *TaskJavaConfig) SetPasswordHashNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetPasswordHash
+`func (o *TaskJavaConfig) UnsetPasswordHash()`
 
-`func (o *TaskJavaConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetSshKey
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskJavaConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetSshKey
 
-`func (o *TaskJavaConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf6TaskOptions)`
+`func (o *TaskJavaConfig) SetSshKey(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasTaskOptions
+### HasSshKey
 
-`func (o *TaskJavaConfig) HasTaskOptions() bool`
+`func (o *TaskJavaConfig) HasSshKey() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetFile
+### SetSshKeyNil
 
-`func (o *TaskJavaConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskJavaConfig) SetSshKeyNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetFileOk
+### UnsetSshKey
+`func (o *TaskJavaConfig) UnsetSshKey()`
 
-`func (o *TaskJavaConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetLocalScriptGitId
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskJavaConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskJavaConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetLocalScriptGitId
 
-`func (o *TaskJavaConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskJavaConfig) SetLocalScriptGitId(v string)`
 
-SetFile sets File field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasFile
+### HasLocalScriptGitId
 
-`func (o *TaskJavaConfig) HasFile() bool`
+`func (o *TaskJavaConfig) HasLocalScriptGitId() bool`
 
-HasFile returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetResultType
+### SetLocalScriptGitIdNil
 
-`func (o *TaskJavaConfig) GetResultType() string`
+`func (o *TaskJavaConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetResultTypeOk
+### UnsetLocalScriptGitId
+`func (o *TaskJavaConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskJavaConfig) GetResultTypeOk() (*string, bool)`
-
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResultType
-
-`func (o *TaskJavaConfig) SetResultType(v string)`
-
-SetResultType sets ResultType field to given value.
-
-### HasResultType
-
-`func (o *TaskJavaConfig) HasResultType() bool`
-
-HasResultType returns a boolean if a field has been set.
-
-### SetResultTypeNil
-
-`func (o *TaskJavaConfig) SetResultTypeNil(b bool)`
-
- SetResultTypeNil sets the value for ResultType to be an explicit nil
-
-### UnsetResultType
-`func (o *TaskJavaConfig) UnsetResultType()`
-
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskJavaConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskJavaConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskJavaConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskJavaConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskJavaConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskJavaConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskJavaConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskJavaConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskJavaConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskJavaConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskJavaConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskJavaConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskJavaConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskJavaConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskJavaConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskJavaConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskJavaConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskJavaConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskJavaConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskJavaConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskJavaConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskJavaConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskJavaConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskJavaConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskJavaConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskJavaConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskJavaConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskJavaConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskJavaConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskJavaConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskJavaConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskJavaConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

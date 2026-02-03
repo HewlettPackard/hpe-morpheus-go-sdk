@@ -4,24 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf4TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf4TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +32,286 @@ NewTaskGroovyConfigWithDefaults instantiates a new TaskGroovyConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetLocalScriptGitRef
 
-`func (o *TaskGroovyConfig) GetId() int64`
+`func (o *TaskGroovyConfig) GetLocalScriptGitRef() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetLocalScriptGitRefOk
 
-`func (o *TaskGroovyConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskGroovyConfig) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetLocalScriptGitRef
 
-`func (o *TaskGroovyConfig) SetId(v int64)`
+`func (o *TaskGroovyConfig) SetLocalScriptGitRef(v string)`
 
-SetId sets Id field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasId
+### HasLocalScriptGitRef
 
-`func (o *TaskGroovyConfig) HasId() bool`
+`func (o *TaskGroovyConfig) HasLocalScriptGitRef() bool`
 
-HasId returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetAccountId
+### SetLocalScriptGitRefNil
 
-`func (o *TaskGroovyConfig) GetAccountId() int64`
+`func (o *TaskGroovyConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetAccountIdOk
+### UnsetLocalScriptGitRef
+`func (o *TaskGroovyConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskGroovyConfig) GetAccountIdOk() (*int64, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPassword
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskGroovyConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetPassword
 
-`func (o *TaskGroovyConfig) SetAccountId(v int64)`
+`func (o *TaskGroovyConfig) SetPassword(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetPassword sets Password field to given value.
 
-### HasAccountId
+### HasPassword
 
-`func (o *TaskGroovyConfig) HasAccountId() bool`
+`func (o *TaskGroovyConfig) HasPassword() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetName
+### SetPasswordNil
 
-`func (o *TaskGroovyConfig) GetName() string`
+`func (o *TaskGroovyConfig) SetPasswordNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetNameOk
+### UnsetPassword
+`func (o *TaskGroovyConfig) UnsetPassword()`
 
-`func (o *TaskGroovyConfig) GetNameOk() (*string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskGroovyConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetPasswordHash
 
-`func (o *TaskGroovyConfig) SetName(v string)`
+`func (o *TaskGroovyConfig) SetPasswordHash(v string)`
 
-SetName sets Name field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasName
+### HasPasswordHash
 
-`func (o *TaskGroovyConfig) HasName() bool`
+`func (o *TaskGroovyConfig) HasPasswordHash() bool`
 
-HasName returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetCode
+### SetPasswordHashNil
 
-`func (o *TaskGroovyConfig) GetCode() string`
+`func (o *TaskGroovyConfig) SetPasswordHashNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetCodeOk
+### UnsetPasswordHash
+`func (o *TaskGroovyConfig) UnsetPasswordHash()`
 
-`func (o *TaskGroovyConfig) GetCodeOk() (*string, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetHost
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskGroovyConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetHost
 
-`func (o *TaskGroovyConfig) SetCode(v string)`
+`func (o *TaskGroovyConfig) SetHost(v string)`
 
-SetCode sets Code field to given value.
+SetHost sets Host field to given value.
 
-### HasCode
+### HasHost
 
-`func (o *TaskGroovyConfig) HasCode() bool`
+`func (o *TaskGroovyConfig) HasHost() bool`
 
-HasCode returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetHostNil
 
-`func (o *TaskGroovyConfig) SetCodeNil(b bool)`
+`func (o *TaskGroovyConfig) SetHostNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetHostNil sets the value for Host to be an explicit nil
 
-### UnsetCode
-`func (o *TaskGroovyConfig) UnsetCode()`
+### UnsetHost
+`func (o *TaskGroovyConfig) UnsetHost()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetLocalScriptGitId
 
-`func (o *TaskGroovyConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf4TaskType`
+`func (o *TaskGroovyConfig) GetLocalScriptGitId() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetLocalScriptGitIdOk
 
-`func (o *TaskGroovyConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf4TaskType, bool)`
+`func (o *TaskGroovyConfig) GetLocalScriptGitIdOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetLocalScriptGitId
 
-`func (o *TaskGroovyConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf4TaskType)`
+`func (o *TaskGroovyConfig) SetLocalScriptGitId(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasTaskType
+### HasLocalScriptGitId
 
-`func (o *TaskGroovyConfig) HasTaskType() bool`
+`func (o *TaskGroovyConfig) HasLocalScriptGitId() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetLabels
+### SetLocalScriptGitIdNil
 
-`func (o *TaskGroovyConfig) GetLabels() []string`
+`func (o *TaskGroovyConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetLabelsOk
+### UnsetLocalScriptGitId
+`func (o *TaskGroovyConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskGroovyConfig) GetLabelsOk() (*[]string, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetSshKey
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskGroovyConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetSshKey
 
-`func (o *TaskGroovyConfig) SetLabels(v []string)`
+`func (o *TaskGroovyConfig) SetSshKey(v string)`
 
-SetLabels sets Labels field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasLabels
+### HasSshKey
 
-`func (o *TaskGroovyConfig) HasLabels() bool`
+`func (o *TaskGroovyConfig) HasSshKey() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetVisibility
+### SetSshKeyNil
 
-`func (o *TaskGroovyConfig) GetVisibility() string`
+`func (o *TaskGroovyConfig) SetSshKeyNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetVisibilityOk
+### UnsetSshKey
+`func (o *TaskGroovyConfig) UnsetSshKey()`
 
-`func (o *TaskGroovyConfig) GetVisibilityOk() (*string, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetPort
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskGroovyConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetPort
 
-`func (o *TaskGroovyConfig) SetVisibility(v string)`
+`func (o *TaskGroovyConfig) SetPort(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetPort sets Port field to given value.
 
-### HasVisibility
+### HasPort
 
-`func (o *TaskGroovyConfig) HasVisibility() bool`
+`func (o *TaskGroovyConfig) HasPort() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetPortNil
 
-`func (o *TaskGroovyConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions`
+`func (o *TaskGroovyConfig) SetPortNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetPort
+`func (o *TaskGroovyConfig) UnsetPort()`
 
-`func (o *TaskGroovyConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetUsername
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskGroovyConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskGroovyConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetUsername
 
-`func (o *TaskGroovyConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf4TaskOptions)`
+`func (o *TaskGroovyConfig) SetUsername(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetUsername sets Username field to given value.
 
-### HasTaskOptions
+### HasUsername
 
-`func (o *TaskGroovyConfig) HasTaskOptions() bool`
+`func (o *TaskGroovyConfig) HasUsername() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetFile
+### SetUsernameNil
 
-`func (o *TaskGroovyConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskGroovyConfig) SetUsernameNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetFileOk
+### UnsetUsername
+`func (o *TaskGroovyConfig) UnsetUsername()`
 
-`func (o *TaskGroovyConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
-
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFile
-
-`func (o *TaskGroovyConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
-
-SetFile sets File field to given value.
-
-### HasFile
-
-`func (o *TaskGroovyConfig) HasFile() bool`
-
-HasFile returns a boolean if a field has been set.
-
-### GetResultType
-
-`func (o *TaskGroovyConfig) GetResultType() string`
-
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
-
-### GetResultTypeOk
-
-`func (o *TaskGroovyConfig) GetResultTypeOk() (*string, bool)`
-
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResultType
-
-`func (o *TaskGroovyConfig) SetResultType(v string)`
-
-SetResultType sets ResultType field to given value.
-
-### HasResultType
-
-`func (o *TaskGroovyConfig) HasResultType() bool`
-
-HasResultType returns a boolean if a field has been set.
-
-### SetResultTypeNil
-
-`func (o *TaskGroovyConfig) SetResultTypeNil(b bool)`
-
- SetResultTypeNil sets the value for ResultType to be an explicit nil
-
-### UnsetResultType
-`func (o *TaskGroovyConfig) UnsetResultType()`
-
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskGroovyConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskGroovyConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskGroovyConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskGroovyConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskGroovyConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskGroovyConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskGroovyConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskGroovyConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskGroovyConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskGroovyConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskGroovyConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskGroovyConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskGroovyConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskGroovyConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskGroovyConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskGroovyConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskGroovyConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskGroovyConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskGroovyConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskGroovyConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskGroovyConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskGroovyConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskGroovyConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskGroovyConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskGroovyConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskGroovyConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskGroovyConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskGroovyConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskGroovyConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskGroovyConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskGroovyConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskGroovyConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

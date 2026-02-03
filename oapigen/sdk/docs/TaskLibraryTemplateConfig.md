@@ -4,24 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ContainerTemplateId** | Pointer to **NullableString** |  | [optional] 
+**ContainerTemplate** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +34,356 @@ NewTaskLibraryTemplateConfigWithDefaults instantiates a new TaskLibraryTemplateC
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetUsername
 
-`func (o *TaskLibraryTemplateConfig) GetId() int64`
+`func (o *TaskLibraryTemplateConfig) GetUsername() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetUsername returns the Username field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetUsernameOk
 
-`func (o *TaskLibraryTemplateConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskLibraryTemplateConfig) GetUsernameOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetUsername
 
-`func (o *TaskLibraryTemplateConfig) SetId(v int64)`
+`func (o *TaskLibraryTemplateConfig) SetUsername(v string)`
 
-SetId sets Id field to given value.
+SetUsername sets Username field to given value.
 
-### HasId
+### HasUsername
 
-`func (o *TaskLibraryTemplateConfig) HasId() bool`
+`func (o *TaskLibraryTemplateConfig) HasUsername() bool`
 
-HasId returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetAccountId
+### SetUsernameNil
 
-`func (o *TaskLibraryTemplateConfig) GetAccountId() int64`
+`func (o *TaskLibraryTemplateConfig) SetUsernameNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetAccountIdOk
+### UnsetUsername
+`func (o *TaskLibraryTemplateConfig) UnsetUsername()`
 
-`func (o *TaskLibraryTemplateConfig) GetAccountIdOk() (*int64, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetLocalScriptGitId
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskLibraryTemplateConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetLocalScriptGitId
 
-`func (o *TaskLibraryTemplateConfig) SetAccountId(v int64)`
+`func (o *TaskLibraryTemplateConfig) SetLocalScriptGitId(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasAccountId
+### HasLocalScriptGitId
 
-`func (o *TaskLibraryTemplateConfig) HasAccountId() bool`
+`func (o *TaskLibraryTemplateConfig) HasLocalScriptGitId() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetName
+### SetLocalScriptGitIdNil
 
-`func (o *TaskLibraryTemplateConfig) GetName() string`
+`func (o *TaskLibraryTemplateConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetNameOk
+### UnsetLocalScriptGitId
+`func (o *TaskLibraryTemplateConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskLibraryTemplateConfig) GetNameOk() (*string, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetSshKey
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskLibraryTemplateConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetSshKey
 
-`func (o *TaskLibraryTemplateConfig) SetName(v string)`
+`func (o *TaskLibraryTemplateConfig) SetSshKey(v string)`
 
-SetName sets Name field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasName
+### HasSshKey
 
-`func (o *TaskLibraryTemplateConfig) HasName() bool`
+`func (o *TaskLibraryTemplateConfig) HasSshKey() bool`
 
-HasName returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetCode
+### SetSshKeyNil
 
-`func (o *TaskLibraryTemplateConfig) GetCode() string`
+`func (o *TaskLibraryTemplateConfig) SetSshKeyNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetCodeOk
+### UnsetSshKey
+`func (o *TaskLibraryTemplateConfig) UnsetSshKey()`
 
-`func (o *TaskLibraryTemplateConfig) GetCodeOk() (*string, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetPort
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskLibraryTemplateConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetPort
 
-`func (o *TaskLibraryTemplateConfig) SetCode(v string)`
+`func (o *TaskLibraryTemplateConfig) SetPort(v string)`
 
-SetCode sets Code field to given value.
+SetPort sets Port field to given value.
 
-### HasCode
+### HasPort
 
-`func (o *TaskLibraryTemplateConfig) HasCode() bool`
+`func (o *TaskLibraryTemplateConfig) HasPort() bool`
 
-HasCode returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetPortNil
 
-`func (o *TaskLibraryTemplateConfig) SetCodeNil(b bool)`
+`func (o *TaskLibraryTemplateConfig) SetPortNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetPortNil sets the value for Port to be an explicit nil
 
-### UnsetCode
-`func (o *TaskLibraryTemplateConfig) UnsetCode()`
+### UnsetPort
+`func (o *TaskLibraryTemplateConfig) UnsetPort()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetPassword
 
-`func (o *TaskLibraryTemplateConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType`
+`func (o *TaskLibraryTemplateConfig) GetPassword() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetPasswordOk
 
-`func (o *TaskLibraryTemplateConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType, bool)`
+`func (o *TaskLibraryTemplateConfig) GetPasswordOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetPassword
 
-`func (o *TaskLibraryTemplateConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf8TaskType)`
+`func (o *TaskLibraryTemplateConfig) SetPassword(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetPassword sets Password field to given value.
 
-### HasTaskType
+### HasPassword
 
-`func (o *TaskLibraryTemplateConfig) HasTaskType() bool`
+`func (o *TaskLibraryTemplateConfig) HasPassword() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetLabels
+### SetPasswordNil
 
-`func (o *TaskLibraryTemplateConfig) GetLabels() []string`
+`func (o *TaskLibraryTemplateConfig) SetPasswordNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetLabelsOk
+### UnsetPassword
+`func (o *TaskLibraryTemplateConfig) UnsetPassword()`
 
-`func (o *TaskLibraryTemplateConfig) GetLabelsOk() (*[]string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskLibraryTemplateConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetPasswordHash
 
-`func (o *TaskLibraryTemplateConfig) SetLabels(v []string)`
+`func (o *TaskLibraryTemplateConfig) SetPasswordHash(v string)`
 
-SetLabels sets Labels field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasLabels
+### HasPasswordHash
 
-`func (o *TaskLibraryTemplateConfig) HasLabels() bool`
+`func (o *TaskLibraryTemplateConfig) HasPasswordHash() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetVisibility
+### SetPasswordHashNil
 
-`func (o *TaskLibraryTemplateConfig) GetVisibility() string`
+`func (o *TaskLibraryTemplateConfig) SetPasswordHashNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetVisibilityOk
+### UnsetPasswordHash
+`func (o *TaskLibraryTemplateConfig) UnsetPasswordHash()`
 
-`func (o *TaskLibraryTemplateConfig) GetVisibilityOk() (*string, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetContainerTemplateId
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetContainerTemplateId() string`
+
+GetContainerTemplateId returns the ContainerTemplateId field if non-nil, zero value otherwise.
+
+### GetContainerTemplateIdOk
+
+`func (o *TaskLibraryTemplateConfig) GetContainerTemplateIdOk() (*string, bool)`
+
+GetContainerTemplateIdOk returns a tuple with the ContainerTemplateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetContainerTemplateId
 
-`func (o *TaskLibraryTemplateConfig) SetVisibility(v string)`
+`func (o *TaskLibraryTemplateConfig) SetContainerTemplateId(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetContainerTemplateId sets ContainerTemplateId field to given value.
 
-### HasVisibility
+### HasContainerTemplateId
 
-`func (o *TaskLibraryTemplateConfig) HasVisibility() bool`
+`func (o *TaskLibraryTemplateConfig) HasContainerTemplateId() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasContainerTemplateId returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetContainerTemplateIdNil
 
-`func (o *TaskLibraryTemplateConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions`
+`func (o *TaskLibraryTemplateConfig) SetContainerTemplateIdNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetContainerTemplateIdNil sets the value for ContainerTemplateId to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetContainerTemplateId
+`func (o *TaskLibraryTemplateConfig) UnsetContainerTemplateId()`
 
-`func (o *TaskLibraryTemplateConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions, bool)`
+UnsetContainerTemplateId ensures that no value is present for ContainerTemplateId, not even an explicit nil
+### GetContainerTemplate
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetContainerTemplate() string`
+
+GetContainerTemplate returns the ContainerTemplate field if non-nil, zero value otherwise.
+
+### GetContainerTemplateOk
+
+`func (o *TaskLibraryTemplateConfig) GetContainerTemplateOk() (*string, bool)`
+
+GetContainerTemplateOk returns a tuple with the ContainerTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetContainerTemplate
 
-`func (o *TaskLibraryTemplateConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf8TaskOptions)`
+`func (o *TaskLibraryTemplateConfig) SetContainerTemplate(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetContainerTemplate sets ContainerTemplate field to given value.
 
-### HasTaskOptions
+### HasContainerTemplate
 
-`func (o *TaskLibraryTemplateConfig) HasTaskOptions() bool`
+`func (o *TaskLibraryTemplateConfig) HasContainerTemplate() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasContainerTemplate returns a boolean if a field has been set.
 
-### GetFile
+### SetContainerTemplateNil
 
-`func (o *TaskLibraryTemplateConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskLibraryTemplateConfig) SetContainerTemplateNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetContainerTemplateNil sets the value for ContainerTemplate to be an explicit nil
 
-### GetFileOk
+### UnsetContainerTemplate
+`func (o *TaskLibraryTemplateConfig) UnsetContainerTemplate()`
 
-`func (o *TaskLibraryTemplateConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetContainerTemplate ensures that no value is present for ContainerTemplate, not even an explicit nil
+### GetLocalScriptGitRef
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetLocalScriptGitRef() string`
+
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitRefOk
+
+`func (o *TaskLibraryTemplateConfig) GetLocalScriptGitRefOk() (*string, bool)`
+
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetLocalScriptGitRef
 
-`func (o *TaskLibraryTemplateConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskLibraryTemplateConfig) SetLocalScriptGitRef(v string)`
 
-SetFile sets File field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasFile
+### HasLocalScriptGitRef
 
-`func (o *TaskLibraryTemplateConfig) HasFile() bool`
+`func (o *TaskLibraryTemplateConfig) HasLocalScriptGitRef() bool`
 
-HasFile returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetResultType
+### SetLocalScriptGitRefNil
 
-`func (o *TaskLibraryTemplateConfig) GetResultType() string`
+`func (o *TaskLibraryTemplateConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetResultTypeOk
+### UnsetLocalScriptGitRef
+`func (o *TaskLibraryTemplateConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskLibraryTemplateConfig) GetResultTypeOk() (*string, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetHost
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+`func (o *TaskLibraryTemplateConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskLibraryTemplateConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetHost
 
-`func (o *TaskLibraryTemplateConfig) SetResultType(v string)`
+`func (o *TaskLibraryTemplateConfig) SetHost(v string)`
 
-SetResultType sets ResultType field to given value.
+SetHost sets Host field to given value.
 
-### HasResultType
+### HasHost
 
-`func (o *TaskLibraryTemplateConfig) HasResultType() bool`
+`func (o *TaskLibraryTemplateConfig) HasHost() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetHostNil
 
-`func (o *TaskLibraryTemplateConfig) SetResultTypeNil(b bool)`
+`func (o *TaskLibraryTemplateConfig) SetHostNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetHostNil sets the value for Host to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskLibraryTemplateConfig) UnsetResultType()`
+### UnsetHost
+`func (o *TaskLibraryTemplateConfig) UnsetHost()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskLibraryTemplateConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskLibraryTemplateConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskLibraryTemplateConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskLibraryTemplateConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskLibraryTemplateConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskLibraryTemplateConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskLibraryTemplateConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskLibraryTemplateConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskLibraryTemplateConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskLibraryTemplateConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskLibraryTemplateConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskLibraryTemplateConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskLibraryTemplateConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskLibraryTemplateConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskLibraryTemplateConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskLibraryTemplateConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskLibraryTemplateConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskLibraryTemplateConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskLibraryTemplateConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskLibraryTemplateConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskLibraryTemplateConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskLibraryTemplateConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskLibraryTemplateConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskLibraryTemplateConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskLibraryTemplateConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskLibraryTemplateConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskLibraryTemplateConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskLibraryTemplateConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskLibraryTemplateConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskLibraryTemplateConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskLibraryTemplateConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskLibraryTemplateConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetHost ensures that no value is present for Host, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

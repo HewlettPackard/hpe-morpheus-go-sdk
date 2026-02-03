@@ -4,24 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**PuppetEnvironment** | Pointer to **NullableString** |  | [optional] 
+**PuppetNodeName** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +34,356 @@ NewTaskPuppetConfigWithDefaults instantiates a new TaskPuppetConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetPort
 
-`func (o *TaskPuppetConfig) GetId() int64`
+`func (o *TaskPuppetConfig) GetPort() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetPort returns the Port field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetPortOk
 
-`func (o *TaskPuppetConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskPuppetConfig) GetPortOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetPort
 
-`func (o *TaskPuppetConfig) SetId(v int64)`
+`func (o *TaskPuppetConfig) SetPort(v string)`
 
-SetId sets Id field to given value.
+SetPort sets Port field to given value.
 
-### HasId
+### HasPort
 
-`func (o *TaskPuppetConfig) HasId() bool`
+`func (o *TaskPuppetConfig) HasPort() bool`
 
-HasId returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetAccountId
+### SetPortNil
 
-`func (o *TaskPuppetConfig) GetAccountId() int64`
+`func (o *TaskPuppetConfig) SetPortNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetAccountIdOk
+### UnsetPort
+`func (o *TaskPuppetConfig) UnsetPort()`
 
-`func (o *TaskPuppetConfig) GetAccountIdOk() (*int64, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetHost
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskPuppetConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetHost
 
-`func (o *TaskPuppetConfig) SetAccountId(v int64)`
+`func (o *TaskPuppetConfig) SetHost(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetHost sets Host field to given value.
 
-### HasAccountId
+### HasHost
 
-`func (o *TaskPuppetConfig) HasAccountId() bool`
+`func (o *TaskPuppetConfig) HasHost() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetName
+### SetHostNil
 
-`func (o *TaskPuppetConfig) GetName() string`
+`func (o *TaskPuppetConfig) SetHostNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetHostNil sets the value for Host to be an explicit nil
 
-### GetNameOk
+### UnsetHost
+`func (o *TaskPuppetConfig) UnsetHost()`
 
-`func (o *TaskPuppetConfig) GetNameOk() (*string, bool)`
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetUsername
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskPuppetConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetUsername
 
-`func (o *TaskPuppetConfig) SetName(v string)`
+`func (o *TaskPuppetConfig) SetUsername(v string)`
 
-SetName sets Name field to given value.
+SetUsername sets Username field to given value.
 
-### HasName
+### HasUsername
 
-`func (o *TaskPuppetConfig) HasName() bool`
+`func (o *TaskPuppetConfig) HasUsername() bool`
 
-HasName returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetCode
+### SetUsernameNil
 
-`func (o *TaskPuppetConfig) GetCode() string`
+`func (o *TaskPuppetConfig) SetUsernameNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetCodeOk
+### UnsetUsername
+`func (o *TaskPuppetConfig) UnsetUsername()`
 
-`func (o *TaskPuppetConfig) GetCodeOk() (*string, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetPuppetEnvironment
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetPuppetEnvironment() string`
+
+GetPuppetEnvironment returns the PuppetEnvironment field if non-nil, zero value otherwise.
+
+### GetPuppetEnvironmentOk
+
+`func (o *TaskPuppetConfig) GetPuppetEnvironmentOk() (*string, bool)`
+
+GetPuppetEnvironmentOk returns a tuple with the PuppetEnvironment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetPuppetEnvironment
 
-`func (o *TaskPuppetConfig) SetCode(v string)`
+`func (o *TaskPuppetConfig) SetPuppetEnvironment(v string)`
 
-SetCode sets Code field to given value.
+SetPuppetEnvironment sets PuppetEnvironment field to given value.
 
-### HasCode
+### HasPuppetEnvironment
 
-`func (o *TaskPuppetConfig) HasCode() bool`
+`func (o *TaskPuppetConfig) HasPuppetEnvironment() bool`
 
-HasCode returns a boolean if a field has been set.
+HasPuppetEnvironment returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetPuppetEnvironmentNil
 
-`func (o *TaskPuppetConfig) SetCodeNil(b bool)`
+`func (o *TaskPuppetConfig) SetPuppetEnvironmentNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetPuppetEnvironmentNil sets the value for PuppetEnvironment to be an explicit nil
 
-### UnsetCode
-`func (o *TaskPuppetConfig) UnsetCode()`
+### UnsetPuppetEnvironment
+`func (o *TaskPuppetConfig) UnsetPuppetEnvironment()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetPuppetEnvironment ensures that no value is present for PuppetEnvironment, not even an explicit nil
+### GetPuppetNodeName
 
-`func (o *TaskPuppetConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType`
+`func (o *TaskPuppetConfig) GetPuppetNodeName() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetPuppetNodeName returns the PuppetNodeName field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetPuppetNodeNameOk
 
-`func (o *TaskPuppetConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType, bool)`
+`func (o *TaskPuppetConfig) GetPuppetNodeNameOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetPuppetNodeNameOk returns a tuple with the PuppetNodeName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetPuppetNodeName
 
-`func (o *TaskPuppetConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf11TaskType)`
+`func (o *TaskPuppetConfig) SetPuppetNodeName(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetPuppetNodeName sets PuppetNodeName field to given value.
 
-### HasTaskType
+### HasPuppetNodeName
 
-`func (o *TaskPuppetConfig) HasTaskType() bool`
+`func (o *TaskPuppetConfig) HasPuppetNodeName() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasPuppetNodeName returns a boolean if a field has been set.
 
-### GetLabels
+### SetPuppetNodeNameNil
 
-`func (o *TaskPuppetConfig) GetLabels() []string`
+`func (o *TaskPuppetConfig) SetPuppetNodeNameNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetPuppetNodeNameNil sets the value for PuppetNodeName to be an explicit nil
 
-### GetLabelsOk
+### UnsetPuppetNodeName
+`func (o *TaskPuppetConfig) UnsetPuppetNodeName()`
 
-`func (o *TaskPuppetConfig) GetLabelsOk() (*[]string, bool)`
+UnsetPuppetNodeName ensures that no value is present for PuppetNodeName, not even an explicit nil
+### GetSshKey
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskPuppetConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetSshKey
 
-`func (o *TaskPuppetConfig) SetLabels(v []string)`
+`func (o *TaskPuppetConfig) SetSshKey(v string)`
 
-SetLabels sets Labels field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasLabels
+### HasSshKey
 
-`func (o *TaskPuppetConfig) HasLabels() bool`
+`func (o *TaskPuppetConfig) HasSshKey() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetVisibility
+### SetSshKeyNil
 
-`func (o *TaskPuppetConfig) GetVisibility() string`
+`func (o *TaskPuppetConfig) SetSshKeyNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetVisibilityOk
+### UnsetSshKey
+`func (o *TaskPuppetConfig) UnsetSshKey()`
 
-`func (o *TaskPuppetConfig) GetVisibilityOk() (*string, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetLocalScriptGitId
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskPuppetConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetLocalScriptGitId
 
-`func (o *TaskPuppetConfig) SetVisibility(v string)`
+`func (o *TaskPuppetConfig) SetLocalScriptGitId(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasVisibility
+### HasLocalScriptGitId
 
-`func (o *TaskPuppetConfig) HasVisibility() bool`
+`func (o *TaskPuppetConfig) HasLocalScriptGitId() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetLocalScriptGitIdNil
 
-`func (o *TaskPuppetConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions`
+`func (o *TaskPuppetConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetLocalScriptGitId
+`func (o *TaskPuppetConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskPuppetConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetLocalScriptGitRef
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetLocalScriptGitRef() string`
+
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitRefOk
+
+`func (o *TaskPuppetConfig) GetLocalScriptGitRefOk() (*string, bool)`
+
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetLocalScriptGitRef
 
-`func (o *TaskPuppetConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf11TaskOptions)`
+`func (o *TaskPuppetConfig) SetLocalScriptGitRef(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasTaskOptions
+### HasLocalScriptGitRef
 
-`func (o *TaskPuppetConfig) HasTaskOptions() bool`
+`func (o *TaskPuppetConfig) HasLocalScriptGitRef() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetFile
+### SetLocalScriptGitRefNil
 
-`func (o *TaskPuppetConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskPuppetConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetFileOk
+### UnsetLocalScriptGitRef
+`func (o *TaskPuppetConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskPuppetConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPassword
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskPuppetConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetPassword
 
-`func (o *TaskPuppetConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskPuppetConfig) SetPassword(v string)`
 
-SetFile sets File field to given value.
+SetPassword sets Password field to given value.
 
-### HasFile
+### HasPassword
 
-`func (o *TaskPuppetConfig) HasFile() bool`
+`func (o *TaskPuppetConfig) HasPassword() bool`
 
-HasFile returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetResultType
+### SetPasswordNil
 
-`func (o *TaskPuppetConfig) GetResultType() string`
+`func (o *TaskPuppetConfig) SetPasswordNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetResultTypeOk
+### UnsetPassword
+`func (o *TaskPuppetConfig) UnsetPassword()`
 
-`func (o *TaskPuppetConfig) GetResultTypeOk() (*string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+`func (o *TaskPuppetConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskPuppetConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetPasswordHash
 
-`func (o *TaskPuppetConfig) SetResultType(v string)`
+`func (o *TaskPuppetConfig) SetPasswordHash(v string)`
 
-SetResultType sets ResultType field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasResultType
+### HasPasswordHash
 
-`func (o *TaskPuppetConfig) HasResultType() bool`
+`func (o *TaskPuppetConfig) HasPasswordHash() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetPasswordHashNil
 
-`func (o *TaskPuppetConfig) SetResultTypeNil(b bool)`
+`func (o *TaskPuppetConfig) SetPasswordHashNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskPuppetConfig) UnsetResultType()`
+### UnsetPasswordHash
+`func (o *TaskPuppetConfig) UnsetPasswordHash()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskPuppetConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskPuppetConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskPuppetConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskPuppetConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskPuppetConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskPuppetConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskPuppetConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskPuppetConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskPuppetConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskPuppetConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskPuppetConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskPuppetConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskPuppetConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskPuppetConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskPuppetConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskPuppetConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskPuppetConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskPuppetConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskPuppetConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskPuppetConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskPuppetConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskPuppetConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskPuppetConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskPuppetConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskPuppetConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskPuppetConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskPuppetConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskPuppetConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskPuppetConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskPuppetConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskPuppetConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskPuppetConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,18 +28,17 @@ type AddTasksRequestTask struct {
 	Visibility *string                     `json:"visibility,omitempty"`
 	TaskType   AddTasksRequestTaskTaskType `json:"taskType"`
 	// An array of Category labels for filtering
-	Labels []string `json:"labels,omitempty"`
-	// Map of options specific to each `task type`. eg. script
-	TaskOptions map[string]interface{} `json:"taskOptions,omitempty"`
-	ResultType  NullableString         `json:"resultType,omitempty"`
+	Labels      []string                        `json:"labels,omitempty"`
+	TaskOptions *AddTasksRequestTaskTaskOptions `json:"taskOptions,omitempty"`
+	ResultType  NullableString                  `json:"resultType,omitempty"`
 	// The execution target. eg. local,remote,resource. The default value varies by task type.
 	ExecuteTarget string `json:"executeTarget"`
 	// If the task should be retried or not.
 	Retryable *bool `json:"retryable,omitempty"`
 	// The number of times to retry.
-	RetryCount *int32 `json:"retryCount,omitempty"`
+	RetryCount *int64 `json:"retryCount,omitempty"`
 	// The delay, between retries.
-	RetryDelaySeconds    *float32                       `json:"retryDelaySeconds,omitempty"`
+	RetryDelaySeconds    *int64                         `json:"retryDelaySeconds,omitempty"`
 	File                 *AddTasksRequestTaskFile       `json:"file,omitempty"`
 	Credential           *AddTasksRequestTaskCredential `json:"credential,omitempty"`
 	AdditionalProperties map[string]interface{}         `json:",remain"`
@@ -220,19 +219,19 @@ func (o *AddTasksRequestTask) SetLabels(v []string) {
 }
 
 // GetTaskOptions returns the TaskOptions field value if set, zero value otherwise.
-func (o *AddTasksRequestTask) GetTaskOptions() map[string]interface{} {
+func (o *AddTasksRequestTask) GetTaskOptions() AddTasksRequestTaskTaskOptions {
 	if o == nil || IsNil(o.TaskOptions) {
-		var ret map[string]interface{}
+		var ret AddTasksRequestTaskTaskOptions
 		return ret
 	}
-	return o.TaskOptions
+	return *o.TaskOptions
 }
 
 // GetTaskOptionsOk returns a tuple with the TaskOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasksRequestTask) GetTaskOptionsOk() (map[string]interface{}, bool) {
+func (o *AddTasksRequestTask) GetTaskOptionsOk() (*AddTasksRequestTaskTaskOptions, bool) {
 	if o == nil || IsNil(o.TaskOptions) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.TaskOptions, true
 }
@@ -246,9 +245,9 @@ func (o *AddTasksRequestTask) IsSetTaskOptions() bool {
 	return false
 }
 
-// SetTaskOptions gets a reference to the given map[string]interface{} and assigns it to the TaskOptions field.
-func (o *AddTasksRequestTask) SetTaskOptions(v map[string]interface{}) {
-	o.TaskOptions = v
+// SetTaskOptions gets a reference to the given AddTasksRequestTaskTaskOptions and assigns it to the TaskOptions field.
+func (o *AddTasksRequestTask) SetTaskOptions(v AddTasksRequestTaskTaskOptions) {
+	o.TaskOptions = &v
 }
 
 // GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -351,9 +350,9 @@ func (o *AddTasksRequestTask) SetRetryable(v bool) {
 }
 
 // GetRetryCount returns the RetryCount field value if set, zero value otherwise.
-func (o *AddTasksRequestTask) GetRetryCount() int32 {
+func (o *AddTasksRequestTask) GetRetryCount() int64 {
 	if o == nil || IsNil(o.RetryCount) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RetryCount
@@ -361,7 +360,7 @@ func (o *AddTasksRequestTask) GetRetryCount() int32 {
 
 // GetRetryCountOk returns a tuple with the RetryCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasksRequestTask) GetRetryCountOk() (*int32, bool) {
+func (o *AddTasksRequestTask) GetRetryCountOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetryCount) {
 		return nil, false
 	}
@@ -377,15 +376,15 @@ func (o *AddTasksRequestTask) IsSetRetryCount() bool {
 	return false
 }
 
-// SetRetryCount gets a reference to the given int32 and assigns it to the RetryCount field.
-func (o *AddTasksRequestTask) SetRetryCount(v int32) {
+// SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
+func (o *AddTasksRequestTask) SetRetryCount(v int64) {
 	o.RetryCount = &v
 }
 
 // GetRetryDelaySeconds returns the RetryDelaySeconds field value if set, zero value otherwise.
-func (o *AddTasksRequestTask) GetRetryDelaySeconds() float32 {
+func (o *AddTasksRequestTask) GetRetryDelaySeconds() int64 {
 	if o == nil || IsNil(o.RetryDelaySeconds) {
-		var ret float32
+		var ret int64
 		return ret
 	}
 	return *o.RetryDelaySeconds
@@ -393,7 +392,7 @@ func (o *AddTasksRequestTask) GetRetryDelaySeconds() float32 {
 
 // GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasksRequestTask) GetRetryDelaySecondsOk() (*float32, bool) {
+func (o *AddTasksRequestTask) GetRetryDelaySecondsOk() (*int64, bool) {
 	if o == nil || IsNil(o.RetryDelaySeconds) {
 		return nil, false
 	}
@@ -409,8 +408,8 @@ func (o *AddTasksRequestTask) IsSetRetryDelaySeconds() bool {
 	return false
 }
 
-// SetRetryDelaySeconds gets a reference to the given float32 and assigns it to the RetryDelaySeconds field.
-func (o *AddTasksRequestTask) SetRetryDelaySeconds(v float32) {
+// SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
+func (o *AddTasksRequestTask) SetRetryDelaySeconds(v int64) {
 	o.RetryDelaySeconds = &v
 }
 

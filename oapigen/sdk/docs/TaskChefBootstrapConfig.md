@@ -4,24 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf2TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf2TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**ChefDataKey** | Pointer to **NullableString** |  | [optional] 
+**ChefDataKeyHash** | Pointer to **NullableString** |  | [optional] 
+**ChefRunList** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**ChefDataKeyPath** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**ChefEnv** | Pointer to **NullableString** |  | [optional] 
+**ChefNodeName** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**ChefAttributes** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -42,475 +39,520 @@ NewTaskChefBootstrapConfigWithDefaults instantiates a new TaskChefBootstrapConfi
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetChefDataKey
 
-`func (o *TaskChefBootstrapConfig) GetId() int64`
+`func (o *TaskChefBootstrapConfig) GetChefDataKey() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetChefDataKey returns the ChefDataKey field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetChefDataKeyOk
 
-`func (o *TaskChefBootstrapConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskChefBootstrapConfig) GetChefDataKeyOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetChefDataKeyOk returns a tuple with the ChefDataKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetChefDataKey
 
-`func (o *TaskChefBootstrapConfig) SetId(v int64)`
+`func (o *TaskChefBootstrapConfig) SetChefDataKey(v string)`
 
-SetId sets Id field to given value.
+SetChefDataKey sets ChefDataKey field to given value.
 
-### HasId
+### HasChefDataKey
 
-`func (o *TaskChefBootstrapConfig) HasId() bool`
+`func (o *TaskChefBootstrapConfig) HasChefDataKey() bool`
 
-HasId returns a boolean if a field has been set.
+HasChefDataKey returns a boolean if a field has been set.
 
-### GetAccountId
+### SetChefDataKeyNil
 
-`func (o *TaskChefBootstrapConfig) GetAccountId() int64`
+`func (o *TaskChefBootstrapConfig) SetChefDataKeyNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetChefDataKeyNil sets the value for ChefDataKey to be an explicit nil
 
-### GetAccountIdOk
+### UnsetChefDataKey
+`func (o *TaskChefBootstrapConfig) UnsetChefDataKey()`
 
-`func (o *TaskChefBootstrapConfig) GetAccountIdOk() (*int64, bool)`
+UnsetChefDataKey ensures that no value is present for ChefDataKey, not even an explicit nil
+### GetChefDataKeyHash
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetChefDataKeyHash() string`
+
+GetChefDataKeyHash returns the ChefDataKeyHash field if non-nil, zero value otherwise.
+
+### GetChefDataKeyHashOk
+
+`func (o *TaskChefBootstrapConfig) GetChefDataKeyHashOk() (*string, bool)`
+
+GetChefDataKeyHashOk returns a tuple with the ChefDataKeyHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetChefDataKeyHash
 
-`func (o *TaskChefBootstrapConfig) SetAccountId(v int64)`
+`func (o *TaskChefBootstrapConfig) SetChefDataKeyHash(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetChefDataKeyHash sets ChefDataKeyHash field to given value.
 
-### HasAccountId
+### HasChefDataKeyHash
 
-`func (o *TaskChefBootstrapConfig) HasAccountId() bool`
+`func (o *TaskChefBootstrapConfig) HasChefDataKeyHash() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasChefDataKeyHash returns a boolean if a field has been set.
 
-### GetName
+### SetChefDataKeyHashNil
 
-`func (o *TaskChefBootstrapConfig) GetName() string`
+`func (o *TaskChefBootstrapConfig) SetChefDataKeyHashNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetChefDataKeyHashNil sets the value for ChefDataKeyHash to be an explicit nil
 
-### GetNameOk
+### UnsetChefDataKeyHash
+`func (o *TaskChefBootstrapConfig) UnsetChefDataKeyHash()`
 
-`func (o *TaskChefBootstrapConfig) GetNameOk() (*string, bool)`
+UnsetChefDataKeyHash ensures that no value is present for ChefDataKeyHash, not even an explicit nil
+### GetChefRunList
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetChefRunList() string`
+
+GetChefRunList returns the ChefRunList field if non-nil, zero value otherwise.
+
+### GetChefRunListOk
+
+`func (o *TaskChefBootstrapConfig) GetChefRunListOk() (*string, bool)`
+
+GetChefRunListOk returns a tuple with the ChefRunList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetChefRunList
 
-`func (o *TaskChefBootstrapConfig) SetName(v string)`
+`func (o *TaskChefBootstrapConfig) SetChefRunList(v string)`
 
-SetName sets Name field to given value.
+SetChefRunList sets ChefRunList field to given value.
 
-### HasName
+### HasChefRunList
 
-`func (o *TaskChefBootstrapConfig) HasName() bool`
+`func (o *TaskChefBootstrapConfig) HasChefRunList() bool`
 
-HasName returns a boolean if a field has been set.
+HasChefRunList returns a boolean if a field has been set.
 
-### GetCode
+### SetChefRunListNil
 
-`func (o *TaskChefBootstrapConfig) GetCode() string`
+`func (o *TaskChefBootstrapConfig) SetChefRunListNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetChefRunListNil sets the value for ChefRunList to be an explicit nil
 
-### GetCodeOk
+### UnsetChefRunList
+`func (o *TaskChefBootstrapConfig) UnsetChefRunList()`
 
-`func (o *TaskChefBootstrapConfig) GetCodeOk() (*string, bool)`
+UnsetChefRunList ensures that no value is present for ChefRunList, not even an explicit nil
+### GetLocalScriptGitRef
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetLocalScriptGitRef() string`
+
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitRefOk
+
+`func (o *TaskChefBootstrapConfig) GetLocalScriptGitRefOk() (*string, bool)`
+
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetLocalScriptGitRef
 
-`func (o *TaskChefBootstrapConfig) SetCode(v string)`
+`func (o *TaskChefBootstrapConfig) SetLocalScriptGitRef(v string)`
 
-SetCode sets Code field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasCode
+### HasLocalScriptGitRef
 
-`func (o *TaskChefBootstrapConfig) HasCode() bool`
+`func (o *TaskChefBootstrapConfig) HasLocalScriptGitRef() bool`
 
-HasCode returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetLocalScriptGitRefNil
 
-`func (o *TaskChefBootstrapConfig) SetCodeNil(b bool)`
+`func (o *TaskChefBootstrapConfig) SetLocalScriptGitRefNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### UnsetCode
-`func (o *TaskChefBootstrapConfig) UnsetCode()`
+### UnsetLocalScriptGitRef
+`func (o *TaskChefBootstrapConfig) UnsetLocalScriptGitRef()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetChefDataKeyPath
 
-`func (o *TaskChefBootstrapConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf2TaskType`
+`func (o *TaskChefBootstrapConfig) GetChefDataKeyPath() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetChefDataKeyPath returns the ChefDataKeyPath field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetChefDataKeyPathOk
 
-`func (o *TaskChefBootstrapConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf2TaskType, bool)`
+`func (o *TaskChefBootstrapConfig) GetChefDataKeyPathOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetChefDataKeyPathOk returns a tuple with the ChefDataKeyPath field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetChefDataKeyPath
 
-`func (o *TaskChefBootstrapConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf2TaskType)`
+`func (o *TaskChefBootstrapConfig) SetChefDataKeyPath(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetChefDataKeyPath sets ChefDataKeyPath field to given value.
 
-### HasTaskType
+### HasChefDataKeyPath
 
-`func (o *TaskChefBootstrapConfig) HasTaskType() bool`
+`func (o *TaskChefBootstrapConfig) HasChefDataKeyPath() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasChefDataKeyPath returns a boolean if a field has been set.
 
-### GetLabels
+### SetChefDataKeyPathNil
 
-`func (o *TaskChefBootstrapConfig) GetLabels() []string`
+`func (o *TaskChefBootstrapConfig) SetChefDataKeyPathNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetChefDataKeyPathNil sets the value for ChefDataKeyPath to be an explicit nil
 
-### GetLabelsOk
+### UnsetChefDataKeyPath
+`func (o *TaskChefBootstrapConfig) UnsetChefDataKeyPath()`
 
-`func (o *TaskChefBootstrapConfig) GetLabelsOk() (*[]string, bool)`
+UnsetChefDataKeyPath ensures that no value is present for ChefDataKeyPath, not even an explicit nil
+### GetLocalScriptGitId
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskChefBootstrapConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetLocalScriptGitId
 
-`func (o *TaskChefBootstrapConfig) SetLabels(v []string)`
+`func (o *TaskChefBootstrapConfig) SetLocalScriptGitId(v string)`
 
-SetLabels sets Labels field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasLabels
+### HasLocalScriptGitId
 
-`func (o *TaskChefBootstrapConfig) HasLabels() bool`
+`func (o *TaskChefBootstrapConfig) HasLocalScriptGitId() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetVisibility
+### SetLocalScriptGitIdNil
 
-`func (o *TaskChefBootstrapConfig) GetVisibility() string`
+`func (o *TaskChefBootstrapConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetVisibilityOk
+### UnsetLocalScriptGitId
+`func (o *TaskChefBootstrapConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskChefBootstrapConfig) GetVisibilityOk() (*string, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetPort
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskChefBootstrapConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetPort
 
-`func (o *TaskChefBootstrapConfig) SetVisibility(v string)`
+`func (o *TaskChefBootstrapConfig) SetPort(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetPort sets Port field to given value.
 
-### HasVisibility
+### HasPort
 
-`func (o *TaskChefBootstrapConfig) HasVisibility() bool`
+`func (o *TaskChefBootstrapConfig) HasPort() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetPortNil
 
-`func (o *TaskChefBootstrapConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions`
+`func (o *TaskChefBootstrapConfig) SetPortNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetPort
+`func (o *TaskChefBootstrapConfig) UnsetPort()`
 
-`func (o *TaskChefBootstrapConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetChefEnv
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetChefEnv() string`
+
+GetChefEnv returns the ChefEnv field if non-nil, zero value otherwise.
+
+### GetChefEnvOk
+
+`func (o *TaskChefBootstrapConfig) GetChefEnvOk() (*string, bool)`
+
+GetChefEnvOk returns a tuple with the ChefEnv field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetChefEnv
 
-`func (o *TaskChefBootstrapConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf2TaskOptions)`
+`func (o *TaskChefBootstrapConfig) SetChefEnv(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetChefEnv sets ChefEnv field to given value.
 
-### HasTaskOptions
+### HasChefEnv
 
-`func (o *TaskChefBootstrapConfig) HasTaskOptions() bool`
+`func (o *TaskChefBootstrapConfig) HasChefEnv() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasChefEnv returns a boolean if a field has been set.
 
-### GetFile
+### SetChefEnvNil
 
-`func (o *TaskChefBootstrapConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskChefBootstrapConfig) SetChefEnvNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetChefEnvNil sets the value for ChefEnv to be an explicit nil
 
-### GetFileOk
+### UnsetChefEnv
+`func (o *TaskChefBootstrapConfig) UnsetChefEnv()`
 
-`func (o *TaskChefBootstrapConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetChefEnv ensures that no value is present for ChefEnv, not even an explicit nil
+### GetChefNodeName
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetChefNodeName() string`
+
+GetChefNodeName returns the ChefNodeName field if non-nil, zero value otherwise.
+
+### GetChefNodeNameOk
+
+`func (o *TaskChefBootstrapConfig) GetChefNodeNameOk() (*string, bool)`
+
+GetChefNodeNameOk returns a tuple with the ChefNodeName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetChefNodeName
 
-`func (o *TaskChefBootstrapConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskChefBootstrapConfig) SetChefNodeName(v string)`
 
-SetFile sets File field to given value.
+SetChefNodeName sets ChefNodeName field to given value.
 
-### HasFile
+### HasChefNodeName
 
-`func (o *TaskChefBootstrapConfig) HasFile() bool`
+`func (o *TaskChefBootstrapConfig) HasChefNodeName() bool`
 
-HasFile returns a boolean if a field has been set.
+HasChefNodeName returns a boolean if a field has been set.
 
-### GetResultType
+### SetChefNodeNameNil
 
-`func (o *TaskChefBootstrapConfig) GetResultType() string`
+`func (o *TaskChefBootstrapConfig) SetChefNodeNameNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetChefNodeNameNil sets the value for ChefNodeName to be an explicit nil
 
-### GetResultTypeOk
+### UnsetChefNodeName
+`func (o *TaskChefBootstrapConfig) UnsetChefNodeName()`
 
-`func (o *TaskChefBootstrapConfig) GetResultTypeOk() (*string, bool)`
+UnsetChefNodeName ensures that no value is present for ChefNodeName, not even an explicit nil
+### GetHost
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskChefBootstrapConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetHost
 
-`func (o *TaskChefBootstrapConfig) SetResultType(v string)`
+`func (o *TaskChefBootstrapConfig) SetHost(v string)`
 
-SetResultType sets ResultType field to given value.
+SetHost sets Host field to given value.
 
-### HasResultType
+### HasHost
 
-`func (o *TaskChefBootstrapConfig) HasResultType() bool`
+`func (o *TaskChefBootstrapConfig) HasHost() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetHostNil
 
-`func (o *TaskChefBootstrapConfig) SetResultTypeNil(b bool)`
+`func (o *TaskChefBootstrapConfig) SetHostNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetHostNil sets the value for Host to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskChefBootstrapConfig) UnsetResultType()`
+### UnsetHost
+`func (o *TaskChefBootstrapConfig) UnsetHost()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetSshKey
 
-`func (o *TaskChefBootstrapConfig) GetExecuteTarget() string`
+`func (o *TaskChefBootstrapConfig) GetSshKey() string`
 
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
 
-### GetExecuteTargetOk
+### GetSshKeyOk
 
-`func (o *TaskChefBootstrapConfig) GetExecuteTargetOk() (*string, bool)`
+`func (o *TaskChefBootstrapConfig) GetSshKeyOk() (*string, bool)`
 
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExecuteTarget
+### SetSshKey
 
-`func (o *TaskChefBootstrapConfig) SetExecuteTarget(v string)`
+`func (o *TaskChefBootstrapConfig) SetSshKey(v string)`
 
-SetExecuteTarget sets ExecuteTarget field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasExecuteTarget
+### HasSshKey
 
-`func (o *TaskChefBootstrapConfig) HasExecuteTarget() bool`
+`func (o *TaskChefBootstrapConfig) HasSshKey() bool`
 
-HasExecuteTarget returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetRetryable
+### SetSshKeyNil
 
-`func (o *TaskChefBootstrapConfig) GetRetryable() bool`
+`func (o *TaskChefBootstrapConfig) SetSshKeyNil(b bool)`
 
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetRetryableOk
+### UnsetSshKey
+`func (o *TaskChefBootstrapConfig) UnsetSshKey()`
 
-`func (o *TaskChefBootstrapConfig) GetRetryableOk() (*bool, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetUsername
 
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskChefBootstrapConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryable
+### SetUsername
 
-`func (o *TaskChefBootstrapConfig) SetRetryable(v bool)`
+`func (o *TaskChefBootstrapConfig) SetUsername(v string)`
 
-SetRetryable sets Retryable field to given value.
+SetUsername sets Username field to given value.
 
-### HasRetryable
+### HasUsername
 
-`func (o *TaskChefBootstrapConfig) HasRetryable() bool`
+`func (o *TaskChefBootstrapConfig) HasUsername() bool`
 
-HasRetryable returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetRetryCount
+### SetUsernameNil
 
-`func (o *TaskChefBootstrapConfig) GetRetryCount() int64`
+`func (o *TaskChefBootstrapConfig) SetUsernameNil(b bool)`
 
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetRetryCountOk
+### UnsetUsername
+`func (o *TaskChefBootstrapConfig) UnsetUsername()`
 
-`func (o *TaskChefBootstrapConfig) GetRetryCountOk() (*int64, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetPassword
 
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskChefBootstrapConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryCount
+### SetPassword
 
-`func (o *TaskChefBootstrapConfig) SetRetryCount(v int64)`
+`func (o *TaskChefBootstrapConfig) SetPassword(v string)`
 
-SetRetryCount sets RetryCount field to given value.
+SetPassword sets Password field to given value.
 
-### HasRetryCount
+### HasPassword
 
-`func (o *TaskChefBootstrapConfig) HasRetryCount() bool`
+`func (o *TaskChefBootstrapConfig) HasPassword() bool`
 
-HasRetryCount returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetRetryDelaySeconds
+### SetPasswordNil
 
-`func (o *TaskChefBootstrapConfig) GetRetryDelaySeconds() int64`
+`func (o *TaskChefBootstrapConfig) SetPasswordNil(b bool)`
 
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetRetryDelaySecondsOk
+### UnsetPassword
+`func (o *TaskChefBootstrapConfig) UnsetPassword()`
 
-`func (o *TaskChefBootstrapConfig) GetRetryDelaySecondsOk() (*int64, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskChefBootstrapConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryDelaySeconds
+### SetPasswordHash
 
-`func (o *TaskChefBootstrapConfig) SetRetryDelaySeconds(v int64)`
+`func (o *TaskChefBootstrapConfig) SetPasswordHash(v string)`
 
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasRetryDelaySeconds
+### HasPasswordHash
 
-`func (o *TaskChefBootstrapConfig) HasRetryDelaySeconds() bool`
+`func (o *TaskChefBootstrapConfig) HasPasswordHash() bool`
 
-HasRetryDelaySeconds returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetAllowCustomConfig
+### SetPasswordHashNil
 
-`func (o *TaskChefBootstrapConfig) GetAllowCustomConfig() bool`
+`func (o *TaskChefBootstrapConfig) SetPasswordHashNil(b bool)`
 
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetAllowCustomConfigOk
+### UnsetPasswordHash
+`func (o *TaskChefBootstrapConfig) UnsetPasswordHash()`
 
-`func (o *TaskChefBootstrapConfig) GetAllowCustomConfigOk() (*bool, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetChefAttributes
 
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
+`func (o *TaskChefBootstrapConfig) GetChefAttributes() string`
+
+GetChefAttributes returns the ChefAttributes field if non-nil, zero value otherwise.
+
+### GetChefAttributesOk
+
+`func (o *TaskChefBootstrapConfig) GetChefAttributesOk() (*string, bool)`
+
+GetChefAttributesOk returns a tuple with the ChefAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllowCustomConfig
+### SetChefAttributes
 
-`func (o *TaskChefBootstrapConfig) SetAllowCustomConfig(v bool)`
+`func (o *TaskChefBootstrapConfig) SetChefAttributes(v string)`
 
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
+SetChefAttributes sets ChefAttributes field to given value.
 
-### HasAllowCustomConfig
+### HasChefAttributes
 
-`func (o *TaskChefBootstrapConfig) HasAllowCustomConfig() bool`
+`func (o *TaskChefBootstrapConfig) HasChefAttributes() bool`
 
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskChefBootstrapConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskChefBootstrapConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskChefBootstrapConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskChefBootstrapConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskChefBootstrapConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskChefBootstrapConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskChefBootstrapConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskChefBootstrapConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskChefBootstrapConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskChefBootstrapConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskChefBootstrapConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskChefBootstrapConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
+HasChefAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

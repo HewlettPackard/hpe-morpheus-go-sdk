@@ -21,23 +21,23 @@ var _ fmt.Stringer
 
 // ListTasks200ResponseAllOfTasksInner struct for ListTasks200ResponseAllOfTasksInner
 type ListTasks200ResponseAllOfTasksInner struct {
-	ListTasks200ResponseAllOfTasksInnerAnyOf   *ListTasks200ResponseAllOfTasksInnerAnyOf
-	ListTasks200ResponseAllOfTasksInnerAnyOf1  *ListTasks200ResponseAllOfTasksInnerAnyOf1
-	ListTasks200ResponseAllOfTasksInnerAnyOf10 *ListTasks200ResponseAllOfTasksInnerAnyOf10
-	ListTasks200ResponseAllOfTasksInnerAnyOf11 *ListTasks200ResponseAllOfTasksInnerAnyOf11
-	ListTasks200ResponseAllOfTasksInnerAnyOf12 *ListTasks200ResponseAllOfTasksInnerAnyOf12
-	ListTasks200ResponseAllOfTasksInnerAnyOf13 *ListTasks200ResponseAllOfTasksInnerAnyOf13
-	ListTasks200ResponseAllOfTasksInnerAnyOf14 *ListTasks200ResponseAllOfTasksInnerAnyOf14
-	ListTasks200ResponseAllOfTasksInnerAnyOf15 *ListTasks200ResponseAllOfTasksInnerAnyOf15
-	ListTasks200ResponseAllOfTasksInnerAnyOf16 *ListTasks200ResponseAllOfTasksInnerAnyOf16
-	ListTasks200ResponseAllOfTasksInnerAnyOf2  *ListTasks200ResponseAllOfTasksInnerAnyOf2
-	ListTasks200ResponseAllOfTasksInnerAnyOf3  *ListTasks200ResponseAllOfTasksInnerAnyOf3
-	ListTasks200ResponseAllOfTasksInnerAnyOf4  *ListTasks200ResponseAllOfTasksInnerAnyOf4
-	ListTasks200ResponseAllOfTasksInnerAnyOf5  *ListTasks200ResponseAllOfTasksInnerAnyOf5
-	ListTasks200ResponseAllOfTasksInnerAnyOf6  *ListTasks200ResponseAllOfTasksInnerAnyOf6
-	ListTasks200ResponseAllOfTasksInnerAnyOf7  *ListTasks200ResponseAllOfTasksInnerAnyOf7
-	ListTasks200ResponseAllOfTasksInnerAnyOf8  *ListTasks200ResponseAllOfTasksInnerAnyOf8
-	ListTasks200ResponseAllOfTasksInnerAnyOf9  *ListTasks200ResponseAllOfTasksInnerAnyOf9
+	AnsiblePlaybookTaskConfig      *AnsiblePlaybookTaskConfig
+	AnsibleTowerTaskConfig         *AnsibleTowerTaskConfig
+	ChefBootstrapTaskConfig        *ChefBootstrapTaskConfig
+	EmailTaskConfig                *EmailTaskConfig
+	GroovyTaskConfig               *GroovyTaskConfig
+	HTTPTaskConfig                 *HTTPTaskConfig
+	JavaTaskConfig                 *JavaTaskConfig
+	LibraryScriptTaskConfig        *LibraryScriptTaskConfig
+	LibraryTemplateTaskConfig      *LibraryTemplateTaskConfig
+	NestedWorkflowTaskConfig       *NestedWorkflowTaskConfig
+	PowerShellTaskConfig           *PowerShellTaskConfig
+	PuppetTaskConfig               *PuppetTaskConfig
+	PythonTaskConfig               *PythonTaskConfig
+	RestartTaskConfig              *RestartTaskConfig
+	ShellTaskConfig                *ShellTaskConfig
+	VRealizeOrchestratorTaskConfig *VRealizeOrchestratorTaskConfig
+	WriteAttributesTaskConfig      *WriteAttributesTaskConfig
 }
 
 func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalMapstructure(data any) (any, error) {
@@ -45,106 +45,106 @@ func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalMapstructure(data any) 
 		dst = &ListTasks200ResponseAllOfTasksInner{}
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
+	mapstructDecode(data, &dst.AnsiblePlaybookTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
+	if IsEmpty(dst.AnsiblePlaybookTaskConfig) {
+		dst.AnsiblePlaybookTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
+	mapstructDecode(data, &dst.AnsibleTowerTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
+	if IsEmpty(dst.AnsibleTowerTaskConfig) {
+		dst.AnsibleTowerTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
+	mapstructDecode(data, &dst.ChefBootstrapTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
+	if IsEmpty(dst.ChefBootstrapTaskConfig) {
+		dst.ChefBootstrapTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
+	mapstructDecode(data, &dst.EmailTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
+	if IsEmpty(dst.EmailTaskConfig) {
+		dst.EmailTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
+	mapstructDecode(data, &dst.GroovyTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
+	if IsEmpty(dst.GroovyTaskConfig) {
+		dst.GroovyTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
+	mapstructDecode(data, &dst.HTTPTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
+	if IsEmpty(dst.HTTPTaskConfig) {
+		dst.HTTPTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
+	mapstructDecode(data, &dst.JavaTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
+	if IsEmpty(dst.JavaTaskConfig) {
+		dst.JavaTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
+	mapstructDecode(data, &dst.LibraryScriptTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
+	if IsEmpty(dst.LibraryScriptTaskConfig) {
+		dst.LibraryScriptTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
+	mapstructDecode(data, &dst.LibraryTemplateTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
+	if IsEmpty(dst.LibraryTemplateTaskConfig) {
+		dst.LibraryTemplateTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
+	mapstructDecode(data, &dst.NestedWorkflowTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
+	if IsEmpty(dst.NestedWorkflowTaskConfig) {
+		dst.NestedWorkflowTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
+	mapstructDecode(data, &dst.PowerShellTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
+	if IsEmpty(dst.PowerShellTaskConfig) {
+		dst.PowerShellTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
+	mapstructDecode(data, &dst.PuppetTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
+	if IsEmpty(dst.PuppetTaskConfig) {
+		dst.PuppetTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
+	mapstructDecode(data, &dst.PythonTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
+	if IsEmpty(dst.PythonTaskConfig) {
+		dst.PythonTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
+	mapstructDecode(data, &dst.RestartTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
+	if IsEmpty(dst.RestartTaskConfig) {
+		dst.RestartTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
+	mapstructDecode(data, &dst.ShellTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
+	if IsEmpty(dst.ShellTaskConfig) {
+		dst.ShellTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
+	mapstructDecode(data, &dst.VRealizeOrchestratorTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
+	if IsEmpty(dst.VRealizeOrchestratorTaskConfig) {
+		dst.VRealizeOrchestratorTaskConfig = nil
 	}
 
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
+	mapstructDecode(data, &dst.WriteAttributesTaskConfig)
 
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
+	if IsEmpty(dst.WriteAttributesTaskConfig) {
+		dst.WriteAttributesTaskConfig = nil
 	}
 
 	return dst, nil
@@ -153,225 +153,225 @@ func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalMapstructure(data any) 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
+	// try to unmarshal JSON data into AnsiblePlaybookTaskConfig
+	err = json.Unmarshal(data, &dst.AnsiblePlaybookTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
+		jsonAnsiblePlaybookTaskConfig, _ := json.Marshal(dst.AnsiblePlaybookTaskConfig)
+		if string(jsonAnsiblePlaybookTaskConfig) == "{}" { // empty struct
+			dst.AnsiblePlaybookTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf, return on the first match
+			return nil // data stored in dst.AnsiblePlaybookTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
+		dst.AnsiblePlaybookTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf1
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
+	// try to unmarshal JSON data into AnsibleTowerTaskConfig
+	err = json.Unmarshal(data, &dst.AnsibleTowerTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf1, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf1) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
+		jsonAnsibleTowerTaskConfig, _ := json.Marshal(dst.AnsibleTowerTaskConfig)
+		if string(jsonAnsibleTowerTaskConfig) == "{}" { // empty struct
+			dst.AnsibleTowerTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf1, return on the first match
+			return nil // data stored in dst.AnsibleTowerTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
+		dst.AnsibleTowerTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf10
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
+	// try to unmarshal JSON data into ChefBootstrapTaskConfig
+	err = json.Unmarshal(data, &dst.ChefBootstrapTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf10, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf10) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
+		jsonChefBootstrapTaskConfig, _ := json.Marshal(dst.ChefBootstrapTaskConfig)
+		if string(jsonChefBootstrapTaskConfig) == "{}" { // empty struct
+			dst.ChefBootstrapTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf10, return on the first match
+			return nil // data stored in dst.ChefBootstrapTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
+		dst.ChefBootstrapTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf11
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
+	// try to unmarshal JSON data into EmailTaskConfig
+	err = json.Unmarshal(data, &dst.EmailTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf11, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf11) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
+		jsonEmailTaskConfig, _ := json.Marshal(dst.EmailTaskConfig)
+		if string(jsonEmailTaskConfig) == "{}" { // empty struct
+			dst.EmailTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf11, return on the first match
+			return nil // data stored in dst.EmailTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
+		dst.EmailTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf12
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
+	// try to unmarshal JSON data into GroovyTaskConfig
+	err = json.Unmarshal(data, &dst.GroovyTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf12, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf12) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
+		jsonGroovyTaskConfig, _ := json.Marshal(dst.GroovyTaskConfig)
+		if string(jsonGroovyTaskConfig) == "{}" { // empty struct
+			dst.GroovyTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf12, return on the first match
+			return nil // data stored in dst.GroovyTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
+		dst.GroovyTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf13
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
+	// try to unmarshal JSON data into HTTPTaskConfig
+	err = json.Unmarshal(data, &dst.HTTPTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf13, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf13) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
+		jsonHTTPTaskConfig, _ := json.Marshal(dst.HTTPTaskConfig)
+		if string(jsonHTTPTaskConfig) == "{}" { // empty struct
+			dst.HTTPTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf13, return on the first match
+			return nil // data stored in dst.HTTPTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
+		dst.HTTPTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf14
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
+	// try to unmarshal JSON data into JavaTaskConfig
+	err = json.Unmarshal(data, &dst.JavaTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf14, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf14) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
+		jsonJavaTaskConfig, _ := json.Marshal(dst.JavaTaskConfig)
+		if string(jsonJavaTaskConfig) == "{}" { // empty struct
+			dst.JavaTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf14, return on the first match
+			return nil // data stored in dst.JavaTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
+		dst.JavaTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf15
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
+	// try to unmarshal JSON data into LibraryScriptTaskConfig
+	err = json.Unmarshal(data, &dst.LibraryScriptTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf15, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf15) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
+		jsonLibraryScriptTaskConfig, _ := json.Marshal(dst.LibraryScriptTaskConfig)
+		if string(jsonLibraryScriptTaskConfig) == "{}" { // empty struct
+			dst.LibraryScriptTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf15, return on the first match
+			return nil // data stored in dst.LibraryScriptTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
+		dst.LibraryScriptTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf16
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
+	// try to unmarshal JSON data into LibraryTemplateTaskConfig
+	err = json.Unmarshal(data, &dst.LibraryTemplateTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf16, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf16) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
+		jsonLibraryTemplateTaskConfig, _ := json.Marshal(dst.LibraryTemplateTaskConfig)
+		if string(jsonLibraryTemplateTaskConfig) == "{}" { // empty struct
+			dst.LibraryTemplateTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf16, return on the first match
+			return nil // data stored in dst.LibraryTemplateTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
+		dst.LibraryTemplateTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf2
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
+	// try to unmarshal JSON data into NestedWorkflowTaskConfig
+	err = json.Unmarshal(data, &dst.NestedWorkflowTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf2, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf2) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
+		jsonNestedWorkflowTaskConfig, _ := json.Marshal(dst.NestedWorkflowTaskConfig)
+		if string(jsonNestedWorkflowTaskConfig) == "{}" { // empty struct
+			dst.NestedWorkflowTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf2, return on the first match
+			return nil // data stored in dst.NestedWorkflowTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
+		dst.NestedWorkflowTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf3
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
+	// try to unmarshal JSON data into PowerShellTaskConfig
+	err = json.Unmarshal(data, &dst.PowerShellTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf3, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf3) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
+		jsonPowerShellTaskConfig, _ := json.Marshal(dst.PowerShellTaskConfig)
+		if string(jsonPowerShellTaskConfig) == "{}" { // empty struct
+			dst.PowerShellTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf3, return on the first match
+			return nil // data stored in dst.PowerShellTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
+		dst.PowerShellTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf4
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
+	// try to unmarshal JSON data into PuppetTaskConfig
+	err = json.Unmarshal(data, &dst.PuppetTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf4, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf4) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
+		jsonPuppetTaskConfig, _ := json.Marshal(dst.PuppetTaskConfig)
+		if string(jsonPuppetTaskConfig) == "{}" { // empty struct
+			dst.PuppetTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf4, return on the first match
+			return nil // data stored in dst.PuppetTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
+		dst.PuppetTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf5
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
+	// try to unmarshal JSON data into PythonTaskConfig
+	err = json.Unmarshal(data, &dst.PythonTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf5, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf5) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
+		jsonPythonTaskConfig, _ := json.Marshal(dst.PythonTaskConfig)
+		if string(jsonPythonTaskConfig) == "{}" { // empty struct
+			dst.PythonTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf5, return on the first match
+			return nil // data stored in dst.PythonTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
+		dst.PythonTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf6
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
+	// try to unmarshal JSON data into RestartTaskConfig
+	err = json.Unmarshal(data, &dst.RestartTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf6, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf6) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
+		jsonRestartTaskConfig, _ := json.Marshal(dst.RestartTaskConfig)
+		if string(jsonRestartTaskConfig) == "{}" { // empty struct
+			dst.RestartTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf6, return on the first match
+			return nil // data stored in dst.RestartTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
+		dst.RestartTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf7
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
+	// try to unmarshal JSON data into ShellTaskConfig
+	err = json.Unmarshal(data, &dst.ShellTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf7, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf7) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
+		jsonShellTaskConfig, _ := json.Marshal(dst.ShellTaskConfig)
+		if string(jsonShellTaskConfig) == "{}" { // empty struct
+			dst.ShellTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf7, return on the first match
+			return nil // data stored in dst.ShellTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
+		dst.ShellTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf8
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
+	// try to unmarshal JSON data into VRealizeOrchestratorTaskConfig
+	err = json.Unmarshal(data, &dst.VRealizeOrchestratorTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf8, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf8) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
+		jsonVRealizeOrchestratorTaskConfig, _ := json.Marshal(dst.VRealizeOrchestratorTaskConfig)
+		if string(jsonVRealizeOrchestratorTaskConfig) == "{}" { // empty struct
+			dst.VRealizeOrchestratorTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf8, return on the first match
+			return nil // data stored in dst.VRealizeOrchestratorTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
+		dst.VRealizeOrchestratorTaskConfig = nil
 	}
 
-	// try to unmarshal JSON data into ListTasks200ResponseAllOfTasksInnerAnyOf9
-	err = json.Unmarshal(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
+	// try to unmarshal JSON data into WriteAttributesTaskConfig
+	err = json.Unmarshal(data, &dst.WriteAttributesTaskConfig)
 	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf9, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf9) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
+		jsonWriteAttributesTaskConfig, _ := json.Marshal(dst.WriteAttributesTaskConfig)
+		if string(jsonWriteAttributesTaskConfig) == "{}" { // empty struct
+			dst.WriteAttributesTaskConfig = nil
 		} else {
-			return nil // data stored in dst.ListTasks200ResponseAllOfTasksInnerAnyOf9, return on the first match
+			return nil // data stored in dst.WriteAttributesTaskConfig, return on the first match
 		}
 	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
+		dst.WriteAttributesTaskConfig = nil
 	}
 
 	return NewResponseValidationError("data failed to match schemas in anyOf(ListTasks200ResponseAllOfTasksInner)")
@@ -379,72 +379,72 @@ func (dst *ListTasks200ResponseAllOfTasksInner) UnmarshalJSON(data []byte) error
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ListTasks200ResponseAllOfTasksInner) MarshalJSON() ([]byte, error) {
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf)
+	if src.AnsiblePlaybookTaskConfig != nil {
+		return json.Marshal(&src.AnsiblePlaybookTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf1 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf1)
+	if src.AnsibleTowerTaskConfig != nil {
+		return json.Marshal(&src.AnsibleTowerTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf10 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf10)
+	if src.ChefBootstrapTaskConfig != nil {
+		return json.Marshal(&src.ChefBootstrapTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf11 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf11)
+	if src.EmailTaskConfig != nil {
+		return json.Marshal(&src.EmailTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf12 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf12)
+	if src.GroovyTaskConfig != nil {
+		return json.Marshal(&src.GroovyTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf13 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf13)
+	if src.HTTPTaskConfig != nil {
+		return json.Marshal(&src.HTTPTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf14 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf14)
+	if src.JavaTaskConfig != nil {
+		return json.Marshal(&src.JavaTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf15 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf15)
+	if src.LibraryScriptTaskConfig != nil {
+		return json.Marshal(&src.LibraryScriptTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf16 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf16)
+	if src.LibraryTemplateTaskConfig != nil {
+		return json.Marshal(&src.LibraryTemplateTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf2 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf2)
+	if src.NestedWorkflowTaskConfig != nil {
+		return json.Marshal(&src.NestedWorkflowTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf3 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf3)
+	if src.PowerShellTaskConfig != nil {
+		return json.Marshal(&src.PowerShellTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf4 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf4)
+	if src.PuppetTaskConfig != nil {
+		return json.Marshal(&src.PuppetTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf5 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf5)
+	if src.PythonTaskConfig != nil {
+		return json.Marshal(&src.PythonTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf6 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf6)
+	if src.RestartTaskConfig != nil {
+		return json.Marshal(&src.RestartTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf7 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf7)
+	if src.ShellTaskConfig != nil {
+		return json.Marshal(&src.ShellTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf8 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf8)
+	if src.VRealizeOrchestratorTaskConfig != nil {
+		return json.Marshal(&src.VRealizeOrchestratorTaskConfig)
 	}
 
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf9 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf9)
+	if src.WriteAttributesTaskConfig != nil {
+		return json.Marshal(&src.WriteAttributesTaskConfig)
 	}
 
 	return nil, nil // no data in anyOf schemas

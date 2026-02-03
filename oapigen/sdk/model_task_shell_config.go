@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TaskShellConfig type satisfies the MappedNullable interface at compile time
@@ -21,25 +20,15 @@ var _ MappedNullable = &TaskShellConfig{}
 
 // TaskShellConfig struct for TaskShellConfig
 type TaskShellConfig struct {
-	Id                   *int64                                                 `json:"id,omitempty"`
-	AccountId            *int64                                                 `json:"accountId,omitempty"`
-	Name                 *string                                                `json:"name,omitempty"`
-	Code                 NullableString                                         `json:"code,omitempty"`
-	TaskType             *ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType    `json:"taskType,omitempty"`
-	Labels               []string                                               `json:"labels,omitempty"`
-	Visibility           *string                                                `json:"visibility,omitempty"`
-	TaskOptions          *ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions `json:"taskOptions,omitempty"`
-	File                 *ListTasks200ResponseAllOfTasksInnerAnyOfFile          `json:"file,omitempty"`
-	ResultType           NullableString                                         `json:"resultType,omitempty"`
-	ExecuteTarget        *string                                                `json:"executeTarget,omitempty"`
-	Retryable            *bool                                                  `json:"retryable,omitempty"`
-	RetryCount           *int64                                                 `json:"retryCount,omitempty"`
-	RetryDelaySeconds    *int64                                                 `json:"retryDelaySeconds,omitempty"`
-	AllowCustomConfig    *bool                                                  `json:"allowCustomConfig,omitempty"`
-	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf   `json:"credential,omitempty"`
-	DateCreated          *time.Time                                             `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                             `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
+	Port                 NullableString         `json:"port,omitempty"`
+	Password             NullableString         `json:"password,omitempty"`
+	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
+	Username             NullableString         `json:"username,omitempty"`
+	Host                 NullableString         `json:"host,omitempty"`
+	SshKey               NullableString         `json:"sshKey,omitempty"`
+	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _TaskShellConfig TaskShellConfig
@@ -61,602 +50,348 @@ func NewTaskShellConfigWithDefaults() *TaskShellConfig {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *TaskShellConfig) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetAccountId returns the AccountId field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetAccountId() int64 {
-	if o == nil || IsNil(o.AccountId) {
-		var ret int64
-		return ret
-	}
-	return *o.AccountId
-}
-
-// GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetAccountIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.AccountId) {
-		return nil, false
-	}
-	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
-func (o *TaskShellConfig) SetAccountId(v int64) {
-	o.AccountId = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetName() string {
-	if o == nil || IsNil(o.Name) {
+// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetLocalScriptGitRef() string {
+	if o == nil || IsNil(o.LocalScriptGitRef.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.LocalScriptGitRef.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TaskShellConfig) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TaskShellConfig) GetCode() string {
-	if o == nil || IsNil(o.Code.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Code.Get()
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TaskShellConfig) GetCodeOk() (*string, bool) {
+func (o *TaskShellConfig) GetLocalScriptGitRefOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Code.Get(), o.Code.IsSet()
+	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
+// IsSetLocalScriptGitRef returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetLocalScriptGitRef() bool {
+	if o != nil && o.LocalScriptGitRef.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given NullableString and assigns it to the Code field.
-func (o *TaskShellConfig) SetCode(v string) {
-	o.Code.Set(&v)
+// SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
+func (o *TaskShellConfig) SetLocalScriptGitRef(v string) {
+	o.LocalScriptGitRef.Set(&v)
 }
 
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *TaskShellConfig) SetCodeNil() {
-	o.Code.Set(nil)
+// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+func (o *TaskShellConfig) SetLocalScriptGitRefNil() {
+	o.LocalScriptGitRef.Set(nil)
 }
 
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *TaskShellConfig) UnsetCode() {
-	o.Code.Unset()
+// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+func (o *TaskShellConfig) UnsetLocalScriptGitRef() {
+	o.LocalScriptGitRef.Unset()
 }
 
-// GetTaskType returns the TaskType field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType {
-	if o == nil || IsNil(o.TaskType) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType
-		return ret
-	}
-	return *o.TaskType
-}
-
-// GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType, bool) {
-	if o == nil || IsNil(o.TaskType) {
-		return nil, false
-	}
-	return o.TaskType, true
-}
-
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskType gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType and assigns it to the TaskType field.
-func (o *TaskShellConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType) {
-	o.TaskType = &v
-}
-
-// GetLabels returns the Labels field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
-		var ret []string
-		return ret
-	}
-	return o.Labels
-}
-
-// GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetLabelsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Labels) {
-		return nil, false
-	}
-	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
-// SetLabels gets a reference to the given []string and assigns it to the Labels field.
-func (o *TaskShellConfig) SetLabels(v []string) {
-	o.Labels = v
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
+// GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetPort() string {
+	if o == nil || IsNil(o.Port.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Visibility
+	return *o.Port.Get()
 }
 
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *TaskShellConfig) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTaskOptions returns the TaskOptions field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions {
-	if o == nil || IsNil(o.TaskOptions) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions
-		return ret
-	}
-	return *o.TaskOptions
-}
-
-// GetTaskOptionsOk returns a tuple with the TaskOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions, bool) {
-	if o == nil || IsNil(o.TaskOptions) {
-		return nil, false
-	}
-	return o.TaskOptions, true
-}
-
-// IsSetTaskOptions returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetTaskOptions() bool {
-	if o != nil && !IsNil(o.TaskOptions) {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskOptions gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions and assigns it to the TaskOptions field.
-func (o *TaskShellConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions) {
-	o.TaskOptions = &v
-}
-
-// GetFile returns the File field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile {
-	if o == nil || IsNil(o.File) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOfFile
-		return ret
-	}
-	return *o.File
-}
-
-// GetFileOk returns a tuple with the File field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool) {
-	if o == nil || IsNil(o.File) {
-		return nil, false
-	}
-	return o.File, true
-}
-
-// IsSetFile returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
-// SetFile gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOfFile and assigns it to the File field.
-func (o *TaskShellConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile) {
-	o.File = &v
-}
-
-// GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TaskShellConfig) GetResultType() string {
-	if o == nil || IsNil(o.ResultType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ResultType.Get()
-}
-
-// GetResultTypeOk returns a tuple with the ResultType field value if set, nil otherwise
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TaskShellConfig) GetResultTypeOk() (*string, bool) {
+func (o *TaskShellConfig) GetPortOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ResultType.Get(), o.ResultType.IsSet()
+	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetResultType returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetResultType() bool {
-	if o != nil && o.ResultType.IsSet() {
+// IsSetPort returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetPort() bool {
+	if o != nil && o.Port.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
-func (o *TaskShellConfig) SetResultType(v string) {
-	o.ResultType.Set(&v)
+// SetPort gets a reference to the given NullableString and assigns it to the Port field.
+func (o *TaskShellConfig) SetPort(v string) {
+	o.Port.Set(&v)
 }
 
-// SetResultTypeNil sets the value for ResultType to be an explicit nil
-func (o *TaskShellConfig) SetResultTypeNil() {
-	o.ResultType.Set(nil)
+// SetPortNil sets the value for Port to be an explicit nil
+func (o *TaskShellConfig) SetPortNil() {
+	o.Port.Set(nil)
 }
 
-// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-func (o *TaskShellConfig) UnsetResultType() {
-	o.ResultType.Unset()
+// UnsetPort ensures that no value is present for Port, not even an explicit nil
+func (o *TaskShellConfig) UnsetPort() {
+	o.Port.Unset()
 }
 
-// GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetExecuteTarget() string {
-	if o == nil || IsNil(o.ExecuteTarget) {
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetPassword() string {
+	if o == nil || IsNil(o.Password.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExecuteTarget
+	return *o.Password.Get()
 }
 
-// GetExecuteTargetOk returns a tuple with the ExecuteTarget field value if set, nil otherwise
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetExecuteTargetOk() (*string, bool) {
-	if o == nil || IsNil(o.ExecuteTarget) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetPasswordOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExecuteTarget, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetExecuteTarget returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetExecuteTarget() bool {
-	if o != nil && !IsNil(o.ExecuteTarget) {
+// IsSetPassword returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetPassword() bool {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
-func (o *TaskShellConfig) SetExecuteTarget(v string) {
-	o.ExecuteTarget = &v
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
+func (o *TaskShellConfig) SetPassword(v string) {
+	o.Password.Set(&v)
 }
 
-// GetRetryable returns the Retryable field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetRetryable() bool {
-	if o == nil || IsNil(o.Retryable) {
-		var ret bool
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *TaskShellConfig) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *TaskShellConfig) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetPasswordHash() string {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.Retryable
+	return *o.PasswordHash.Get()
 }
 
-// GetRetryableOk returns a tuple with the Retryable field value if set, nil otherwise
+// GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetRetryableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Retryable) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetPasswordHashOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Retryable, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetRetryable returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetRetryable() bool {
-	if o != nil && !IsNil(o.Retryable) {
+// IsSetPasswordHash returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetPasswordHash() bool {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
-func (o *TaskShellConfig) SetRetryable(v bool) {
-	o.Retryable = &v
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
+func (o *TaskShellConfig) SetPasswordHash(v string) {
+	o.PasswordHash.Set(&v)
 }
 
-// GetRetryCount returns the RetryCount field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetRetryCount() int64 {
-	if o == nil || IsNil(o.RetryCount) {
-		var ret int64
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *TaskShellConfig) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *TaskShellConfig) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetUsername() string {
+	if o == nil || IsNil(o.Username.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.RetryCount
+	return *o.Username.Get()
 }
 
-// GetRetryCountOk returns a tuple with the RetryCount field value if set, nil otherwise
+// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetRetryCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetryCount) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetUsernameOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetryCount, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetRetryCount returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetRetryCount() bool {
-	if o != nil && !IsNil(o.RetryCount) {
+// IsSetUsername returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetUsername() bool {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
-func (o *TaskShellConfig) SetRetryCount(v int64) {
-	o.RetryCount = &v
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
+func (o *TaskShellConfig) SetUsername(v string) {
+	o.Username.Set(&v)
 }
 
-// GetRetryDelaySeconds returns the RetryDelaySeconds field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetRetryDelaySeconds() int64 {
-	if o == nil || IsNil(o.RetryDelaySeconds) {
-		var ret int64
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *TaskShellConfig) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *TaskShellConfig) UnsetUsername() {
+	o.Username.Unset()
+}
+
+// GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetHost() string {
+	if o == nil || IsNil(o.Host.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.RetryDelaySeconds
+	return *o.Host.Get()
 }
 
-// GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field value if set, nil otherwise
+// GetHostOk returns a tuple with the Host field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetRetryDelaySecondsOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetryDelaySeconds) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetHostOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetryDelaySeconds, true
+	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetRetryDelaySeconds returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetRetryDelaySeconds() bool {
-	if o != nil && !IsNil(o.RetryDelaySeconds) {
+// IsSetHost returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetHost() bool {
+	if o != nil && o.Host.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
-func (o *TaskShellConfig) SetRetryDelaySeconds(v int64) {
-	o.RetryDelaySeconds = &v
+// SetHost gets a reference to the given NullableString and assigns it to the Host field.
+func (o *TaskShellConfig) SetHost(v string) {
+	o.Host.Set(&v)
 }
 
-// GetAllowCustomConfig returns the AllowCustomConfig field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetAllowCustomConfig() bool {
-	if o == nil || IsNil(o.AllowCustomConfig) {
-		var ret bool
+// SetHostNil sets the value for Host to be an explicit nil
+func (o *TaskShellConfig) SetHostNil() {
+	o.Host.Set(nil)
+}
+
+// UnsetHost ensures that no value is present for Host, not even an explicit nil
+func (o *TaskShellConfig) UnsetHost() {
+	o.Host.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetSshKey() string {
+	if o == nil || IsNil(o.SshKey.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.AllowCustomConfig
+	return *o.SshKey.Get()
 }
 
-// GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field value if set, nil otherwise
+// GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetAllowCustomConfigOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowCustomConfig) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetSshKeyOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowCustomConfig, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
+// IsSetSshKey returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetSshKey() bool {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
-func (o *TaskShellConfig) SetAllowCustomConfig(v bool) {
-	o.AllowCustomConfig = &v
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
+func (o *TaskShellConfig) SetSshKey(v string) {
+	o.SshKey.Set(&v)
 }
 
-// GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
-	if o == nil || IsNil(o.Credential) {
-		var ret ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *TaskShellConfig) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *TaskShellConfig) UnsetSshKey() {
+	o.SshKey.Unset()
+}
+
+// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskShellConfig) GetLocalScriptGitId() string {
+	if o == nil || IsNil(o.LocalScriptGitId.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.Credential
+	return *o.LocalScriptGitId.Get()
 }
 
-// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
+// GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool) {
-	if o == nil || IsNil(o.Credential) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskShellConfig) GetLocalScriptGitIdOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Credential, true
+	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
+// IsSetLocalScriptGitId returns a boolean if a field has been set.
+func (o *TaskShellConfig) IsSetLocalScriptGitId() bool {
+	if o != nil && o.LocalScriptGitId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCredential gets a reference to the given ListClouds200ResponseAllOfZonesInnerCredentialAnyOf and assigns it to the Credential field.
-func (o *TaskShellConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
-	o.Credential = &v
+// SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
+func (o *TaskShellConfig) SetLocalScriptGitId(v string) {
+	o.LocalScriptGitId.Set(&v)
 }
 
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
-		var ret time.Time
-		return ret
-	}
-	return *o.DateCreated
+// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+func (o *TaskShellConfig) SetLocalScriptGitIdNil() {
+	o.LocalScriptGitId.Set(nil)
 }
 
-// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
-		return nil, false
-	}
-	return o.DateCreated, true
-}
-
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
-		return true
-	}
-
-	return false
-}
-
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *TaskShellConfig) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
-}
-
-// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
-func (o *TaskShellConfig) GetLastUpdated() time.Time {
-	if o == nil || IsNil(o.LastUpdated) {
-		var ret time.Time
-		return ret
-	}
-	return *o.LastUpdated
-}
-
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskShellConfig) GetLastUpdatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUpdated) {
-		return nil, false
-	}
-	return o.LastUpdated, true
-}
-
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *TaskShellConfig) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
-func (o *TaskShellConfig) SetLastUpdated(v time.Time) {
-	o.LastUpdated = &v
+// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+func (o *TaskShellConfig) UnsetLocalScriptGitId() {
+	o.LocalScriptGitId.Unset()
 }
 
 func (o TaskShellConfig) MarshalJSON() ([]byte, error) {
@@ -669,59 +404,29 @@ func (o TaskShellConfig) MarshalJSON() ([]byte, error) {
 
 func (o TaskShellConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.LocalScriptGitRef.IsSet() {
+		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef.Get()
 	}
-	if !IsNil(o.AccountId) {
-		toSerialize["accountId"] = o.AccountId
+	if o.Port.IsSet() {
+		toSerialize["port"] = o.Port.Get()
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
-	if o.Code.IsSet() {
-		toSerialize["code"] = o.Code.Get()
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
-	if !IsNil(o.TaskType) {
-		toSerialize["taskType"] = o.TaskType
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
-	if !IsNil(o.Labels) {
-		toSerialize["labels"] = o.Labels
+	if o.Host.IsSet() {
+		toSerialize["host"] = o.Host.Get()
 	}
-	if !IsNil(o.Visibility) {
-		toSerialize["visibility"] = o.Visibility
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
-	if !IsNil(o.TaskOptions) {
-		toSerialize["taskOptions"] = o.TaskOptions
-	}
-	if !IsNil(o.File) {
-		toSerialize["file"] = o.File
-	}
-	if o.ResultType.IsSet() {
-		toSerialize["resultType"] = o.ResultType.Get()
-	}
-	if !IsNil(o.ExecuteTarget) {
-		toSerialize["executeTarget"] = o.ExecuteTarget
-	}
-	if !IsNil(o.Retryable) {
-		toSerialize["retryable"] = o.Retryable
-	}
-	if !IsNil(o.RetryCount) {
-		toSerialize["retryCount"] = o.RetryCount
-	}
-	if !IsNil(o.RetryDelaySeconds) {
-		toSerialize["retryDelaySeconds"] = o.RetryDelaySeconds
-	}
-	if !IsNil(o.AllowCustomConfig) {
-		toSerialize["allowCustomConfig"] = o.AllowCustomConfig
-	}
-	if !IsNil(o.Credential) {
-		toSerialize["credential"] = o.Credential
-	}
-	if !IsNil(o.DateCreated) {
-		toSerialize["dateCreated"] = o.DateCreated
-	}
-	if !IsNil(o.LastUpdated) {
-		toSerialize["lastUpdated"] = o.LastUpdated
+	if o.LocalScriptGitId.IsSet() {
+		toSerialize["localScriptGitId"] = o.LocalScriptGitId.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

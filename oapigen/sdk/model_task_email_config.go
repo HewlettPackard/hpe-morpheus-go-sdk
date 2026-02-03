@@ -13,7 +13,6 @@ package sdk
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TaskEmailConfig type satisfies the MappedNullable interface at compile time
@@ -21,25 +20,18 @@ var _ MappedNullable = &TaskEmailConfig{}
 
 // TaskEmailConfig struct for TaskEmailConfig
 type TaskEmailConfig struct {
-	Id                   *int64                                                `json:"id,omitempty"`
-	AccountId            *int64                                                `json:"accountId,omitempty"`
-	Name                 *string                                               `json:"name,omitempty"`
-	Code                 NullableString                                        `json:"code,omitempty"`
-	TaskType             *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType    `json:"taskType,omitempty"`
-	Labels               []string                                              `json:"labels,omitempty"`
-	Visibility           *string                                               `json:"visibility,omitempty"`
-	TaskOptions          *ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions `json:"taskOptions,omitempty"`
-	File                 *ListTasks200ResponseAllOfTasksInnerAnyOfFile         `json:"file,omitempty"`
-	ResultType           NullableString                                        `json:"resultType,omitempty"`
-	ExecuteTarget        *string                                               `json:"executeTarget,omitempty"`
-	Retryable            *bool                                                 `json:"retryable,omitempty"`
-	RetryCount           *int64                                                `json:"retryCount,omitempty"`
-	RetryDelaySeconds    *int64                                                `json:"retryDelaySeconds,omitempty"`
-	AllowCustomConfig    *bool                                                 `json:"allowCustomConfig,omitempty"`
-	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  `json:"credential,omitempty"`
-	DateCreated          *time.Time                                            `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                            `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	LocalScriptGitId     NullableString         `json:"localScriptGitId,omitempty"`
+	EmailSkipTemplate    NullableString         `json:"emailSkipTemplate,omitempty"`
+	Username             NullableString         `json:"username,omitempty"`
+	EmailSubject         NullableString         `json:"emailSubject,omitempty"`
+	Host                 NullableString         `json:"host,omitempty"`
+	Password             NullableString         `json:"password,omitempty"`
+	PasswordHash         NullableString         `json:"passwordHash,omitempty"`
+	EmailAddress         NullableString         `json:"emailAddress,omitempty"`
+	Port                 NullableString         `json:"port,omitempty"`
+	SshKey               NullableString         `json:"sshKey,omitempty"`
+	LocalScriptGitRef    NullableString         `json:"localScriptGitRef,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _TaskEmailConfig TaskEmailConfig
@@ -61,602 +53,477 @@ func NewTaskEmailConfigWithDefaults() *TaskEmailConfig {
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetId() int64 {
-	if o == nil || IsNil(o.Id) {
-		var ret int64
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// IsSetId returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *TaskEmailConfig) SetId(v int64) {
-	o.Id = &v
-}
-
-// GetAccountId returns the AccountId field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetAccountId() int64 {
-	if o == nil || IsNil(o.AccountId) {
-		var ret int64
-		return ret
-	}
-	return *o.AccountId
-}
-
-// GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetAccountIdOk() (*int64, bool) {
-	if o == nil || IsNil(o.AccountId) {
-		return nil, false
-	}
-	return o.AccountId, true
-}
-
-// IsSetAccountId returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetAccountId() bool {
-	if o != nil && !IsNil(o.AccountId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
-func (o *TaskEmailConfig) SetAccountId(v int64) {
-	o.AccountId = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetName() string {
-	if o == nil || IsNil(o.Name) {
+// GetLocalScriptGitId returns the LocalScriptGitId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetLocalScriptGitId() string {
+	if o == nil || IsNil(o.LocalScriptGitId.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Name
+	return *o.LocalScriptGitId.Get()
 }
 
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// IsSetName returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TaskEmailConfig) SetName(v string) {
-	o.Name = &v
-}
-
-// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TaskEmailConfig) GetCode() string {
-	if o == nil || IsNil(o.Code.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.Code.Get()
-}
-
-// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TaskEmailConfig) GetCodeOk() (*string, bool) {
+func (o *TaskEmailConfig) GetLocalScriptGitIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Code.Get(), o.Code.IsSet()
+	return o.LocalScriptGitId.Get(), o.LocalScriptGitId.IsSet()
 }
 
-// IsSetCode returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetCode() bool {
-	if o != nil && o.Code.IsSet() {
+// IsSetLocalScriptGitId returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetLocalScriptGitId() bool {
+	if o != nil && o.LocalScriptGitId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given NullableString and assigns it to the Code field.
-func (o *TaskEmailConfig) SetCode(v string) {
-	o.Code.Set(&v)
+// SetLocalScriptGitId gets a reference to the given NullableString and assigns it to the LocalScriptGitId field.
+func (o *TaskEmailConfig) SetLocalScriptGitId(v string) {
+	o.LocalScriptGitId.Set(&v)
 }
 
-// SetCodeNil sets the value for Code to be an explicit nil
-func (o *TaskEmailConfig) SetCodeNil() {
-	o.Code.Set(nil)
+// SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
+func (o *TaskEmailConfig) SetLocalScriptGitIdNil() {
+	o.LocalScriptGitId.Set(nil)
 }
 
-// UnsetCode ensures that no value is present for Code, not even an explicit nil
-func (o *TaskEmailConfig) UnsetCode() {
-	o.Code.Unset()
+// UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+func (o *TaskEmailConfig) UnsetLocalScriptGitId() {
+	o.LocalScriptGitId.Unset()
 }
 
-// GetTaskType returns the TaskType field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType {
-	if o == nil || IsNil(o.TaskType) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType
-		return ret
-	}
-	return *o.TaskType
-}
-
-// GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType, bool) {
-	if o == nil || IsNil(o.TaskType) {
-		return nil, false
-	}
-	return o.TaskType, true
-}
-
-// IsSetTaskType returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetTaskType() bool {
-	if o != nil && !IsNil(o.TaskType) {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskType gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType and assigns it to the TaskType field.
-func (o *TaskEmailConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf3TaskType) {
-	o.TaskType = &v
-}
-
-// GetLabels returns the Labels field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
-		var ret []string
-		return ret
-	}
-	return o.Labels
-}
-
-// GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetLabelsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Labels) {
-		return nil, false
-	}
-	return o.Labels, true
-}
-
-// IsSetLabels returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetLabels() bool {
-	if o != nil && !IsNil(o.Labels) {
-		return true
-	}
-
-	return false
-}
-
-// SetLabels gets a reference to the given []string and assigns it to the Labels field.
-func (o *TaskEmailConfig) SetLabels(v []string) {
-	o.Labels = v
-}
-
-// GetVisibility returns the Visibility field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetVisibility() string {
-	if o == nil || IsNil(o.Visibility) {
+// GetEmailSkipTemplate returns the EmailSkipTemplate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetEmailSkipTemplate() string {
+	if o == nil || IsNil(o.EmailSkipTemplate.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Visibility
+	return *o.EmailSkipTemplate.Get()
 }
 
-// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetVisibilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Visibility) {
-		return nil, false
-	}
-	return o.Visibility, true
-}
-
-// IsSetVisibility returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetVisibility() bool {
-	if o != nil && !IsNil(o.Visibility) {
-		return true
-	}
-
-	return false
-}
-
-// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
-func (o *TaskEmailConfig) SetVisibility(v string) {
-	o.Visibility = &v
-}
-
-// GetTaskOptions returns the TaskOptions field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions {
-	if o == nil || IsNil(o.TaskOptions) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions
-		return ret
-	}
-	return *o.TaskOptions
-}
-
-// GetTaskOptionsOk returns a tuple with the TaskOptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions, bool) {
-	if o == nil || IsNil(o.TaskOptions) {
-		return nil, false
-	}
-	return o.TaskOptions, true
-}
-
-// IsSetTaskOptions returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetTaskOptions() bool {
-	if o != nil && !IsNil(o.TaskOptions) {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskOptions gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions and assigns it to the TaskOptions field.
-func (o *TaskEmailConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf3TaskOptions) {
-	o.TaskOptions = &v
-}
-
-// GetFile returns the File field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile {
-	if o == nil || IsNil(o.File) {
-		var ret ListTasks200ResponseAllOfTasksInnerAnyOfFile
-		return ret
-	}
-	return *o.File
-}
-
-// GetFileOk returns a tuple with the File field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool) {
-	if o == nil || IsNil(o.File) {
-		return nil, false
-	}
-	return o.File, true
-}
-
-// IsSetFile returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetFile() bool {
-	if o != nil && !IsNil(o.File) {
-		return true
-	}
-
-	return false
-}
-
-// SetFile gets a reference to the given ListTasks200ResponseAllOfTasksInnerAnyOfFile and assigns it to the File field.
-func (o *TaskEmailConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile) {
-	o.File = &v
-}
-
-// GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TaskEmailConfig) GetResultType() string {
-	if o == nil || IsNil(o.ResultType.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ResultType.Get()
-}
-
-// GetResultTypeOk returns a tuple with the ResultType field value if set, nil otherwise
+// GetEmailSkipTemplateOk returns a tuple with the EmailSkipTemplate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TaskEmailConfig) GetResultTypeOk() (*string, bool) {
+func (o *TaskEmailConfig) GetEmailSkipTemplateOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ResultType.Get(), o.ResultType.IsSet()
+	return o.EmailSkipTemplate.Get(), o.EmailSkipTemplate.IsSet()
 }
 
-// IsSetResultType returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetResultType() bool {
-	if o != nil && o.ResultType.IsSet() {
+// IsSetEmailSkipTemplate returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetEmailSkipTemplate() bool {
+	if o != nil && o.EmailSkipTemplate.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
-func (o *TaskEmailConfig) SetResultType(v string) {
-	o.ResultType.Set(&v)
+// SetEmailSkipTemplate gets a reference to the given NullableString and assigns it to the EmailSkipTemplate field.
+func (o *TaskEmailConfig) SetEmailSkipTemplate(v string) {
+	o.EmailSkipTemplate.Set(&v)
 }
 
-// SetResultTypeNil sets the value for ResultType to be an explicit nil
-func (o *TaskEmailConfig) SetResultTypeNil() {
-	o.ResultType.Set(nil)
+// SetEmailSkipTemplateNil sets the value for EmailSkipTemplate to be an explicit nil
+func (o *TaskEmailConfig) SetEmailSkipTemplateNil() {
+	o.EmailSkipTemplate.Set(nil)
 }
 
-// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-func (o *TaskEmailConfig) UnsetResultType() {
-	o.ResultType.Unset()
+// UnsetEmailSkipTemplate ensures that no value is present for EmailSkipTemplate, not even an explicit nil
+func (o *TaskEmailConfig) UnsetEmailSkipTemplate() {
+	o.EmailSkipTemplate.Unset()
 }
 
-// GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetExecuteTarget() string {
-	if o == nil || IsNil(o.ExecuteTarget) {
+// GetUsername returns the Username field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetUsername() string {
+	if o == nil || IsNil(o.Username.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.ExecuteTarget
+	return *o.Username.Get()
 }
 
-// GetExecuteTargetOk returns a tuple with the ExecuteTarget field value if set, nil otherwise
+// GetUsernameOk returns a tuple with the Username field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetExecuteTargetOk() (*string, bool) {
-	if o == nil || IsNil(o.ExecuteTarget) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetUsernameOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ExecuteTarget, true
+	return o.Username.Get(), o.Username.IsSet()
 }
 
-// IsSetExecuteTarget returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetExecuteTarget() bool {
-	if o != nil && !IsNil(o.ExecuteTarget) {
+// IsSetUsername returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetUsername() bool {
+	if o != nil && o.Username.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
-func (o *TaskEmailConfig) SetExecuteTarget(v string) {
-	o.ExecuteTarget = &v
+// SetUsername gets a reference to the given NullableString and assigns it to the Username field.
+func (o *TaskEmailConfig) SetUsername(v string) {
+	o.Username.Set(&v)
 }
 
-// GetRetryable returns the Retryable field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetRetryable() bool {
-	if o == nil || IsNil(o.Retryable) {
-		var ret bool
+// SetUsernameNil sets the value for Username to be an explicit nil
+func (o *TaskEmailConfig) SetUsernameNil() {
+	o.Username.Set(nil)
+}
+
+// UnsetUsername ensures that no value is present for Username, not even an explicit nil
+func (o *TaskEmailConfig) UnsetUsername() {
+	o.Username.Unset()
+}
+
+// GetEmailSubject returns the EmailSubject field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetEmailSubject() string {
+	if o == nil || IsNil(o.EmailSubject.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.Retryable
+	return *o.EmailSubject.Get()
 }
 
-// GetRetryableOk returns a tuple with the Retryable field value if set, nil otherwise
+// GetEmailSubjectOk returns a tuple with the EmailSubject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetRetryableOk() (*bool, bool) {
-	if o == nil || IsNil(o.Retryable) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetEmailSubjectOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Retryable, true
+	return o.EmailSubject.Get(), o.EmailSubject.IsSet()
 }
 
-// IsSetRetryable returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetRetryable() bool {
-	if o != nil && !IsNil(o.Retryable) {
+// IsSetEmailSubject returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetEmailSubject() bool {
+	if o != nil && o.EmailSubject.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
-func (o *TaskEmailConfig) SetRetryable(v bool) {
-	o.Retryable = &v
+// SetEmailSubject gets a reference to the given NullableString and assigns it to the EmailSubject field.
+func (o *TaskEmailConfig) SetEmailSubject(v string) {
+	o.EmailSubject.Set(&v)
 }
 
-// GetRetryCount returns the RetryCount field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetRetryCount() int64 {
-	if o == nil || IsNil(o.RetryCount) {
-		var ret int64
+// SetEmailSubjectNil sets the value for EmailSubject to be an explicit nil
+func (o *TaskEmailConfig) SetEmailSubjectNil() {
+	o.EmailSubject.Set(nil)
+}
+
+// UnsetEmailSubject ensures that no value is present for EmailSubject, not even an explicit nil
+func (o *TaskEmailConfig) UnsetEmailSubject() {
+	o.EmailSubject.Unset()
+}
+
+// GetHost returns the Host field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetHost() string {
+	if o == nil || IsNil(o.Host.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.RetryCount
+	return *o.Host.Get()
 }
 
-// GetRetryCountOk returns a tuple with the RetryCount field value if set, nil otherwise
+// GetHostOk returns a tuple with the Host field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetRetryCountOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetryCount) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetHostOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetryCount, true
+	return o.Host.Get(), o.Host.IsSet()
 }
 
-// IsSetRetryCount returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetRetryCount() bool {
-	if o != nil && !IsNil(o.RetryCount) {
+// IsSetHost returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetHost() bool {
+	if o != nil && o.Host.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
-func (o *TaskEmailConfig) SetRetryCount(v int64) {
-	o.RetryCount = &v
+// SetHost gets a reference to the given NullableString and assigns it to the Host field.
+func (o *TaskEmailConfig) SetHost(v string) {
+	o.Host.Set(&v)
 }
 
-// GetRetryDelaySeconds returns the RetryDelaySeconds field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetRetryDelaySeconds() int64 {
-	if o == nil || IsNil(o.RetryDelaySeconds) {
-		var ret int64
+// SetHostNil sets the value for Host to be an explicit nil
+func (o *TaskEmailConfig) SetHostNil() {
+	o.Host.Set(nil)
+}
+
+// UnsetHost ensures that no value is present for Host, not even an explicit nil
+func (o *TaskEmailConfig) UnsetHost() {
+	o.Host.Unset()
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetPassword() string {
+	if o == nil || IsNil(o.Password.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.RetryDelaySeconds
+	return *o.Password.Get()
 }
 
-// GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field value if set, nil otherwise
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetRetryDelaySecondsOk() (*int64, bool) {
-	if o == nil || IsNil(o.RetryDelaySeconds) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetPasswordOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.RetryDelaySeconds, true
+	return o.Password.Get(), o.Password.IsSet()
 }
 
-// IsSetRetryDelaySeconds returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetRetryDelaySeconds() bool {
-	if o != nil && !IsNil(o.RetryDelaySeconds) {
+// IsSetPassword returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetPassword() bool {
+	if o != nil && o.Password.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
-func (o *TaskEmailConfig) SetRetryDelaySeconds(v int64) {
-	o.RetryDelaySeconds = &v
+// SetPassword gets a reference to the given NullableString and assigns it to the Password field.
+func (o *TaskEmailConfig) SetPassword(v string) {
+	o.Password.Set(&v)
 }
 
-// GetAllowCustomConfig returns the AllowCustomConfig field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetAllowCustomConfig() bool {
-	if o == nil || IsNil(o.AllowCustomConfig) {
-		var ret bool
+// SetPasswordNil sets the value for Password to be an explicit nil
+func (o *TaskEmailConfig) SetPasswordNil() {
+	o.Password.Set(nil)
+}
+
+// UnsetPassword ensures that no value is present for Password, not even an explicit nil
+func (o *TaskEmailConfig) UnsetPassword() {
+	o.Password.Unset()
+}
+
+// GetPasswordHash returns the PasswordHash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetPasswordHash() string {
+	if o == nil || IsNil(o.PasswordHash.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.AllowCustomConfig
+	return *o.PasswordHash.Get()
 }
 
-// GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field value if set, nil otherwise
+// GetPasswordHashOk returns a tuple with the PasswordHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetAllowCustomConfigOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllowCustomConfig) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetPasswordHashOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.AllowCustomConfig, true
+	return o.PasswordHash.Get(), o.PasswordHash.IsSet()
 }
 
-// IsSetAllowCustomConfig returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetAllowCustomConfig() bool {
-	if o != nil && !IsNil(o.AllowCustomConfig) {
+// IsSetPasswordHash returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetPasswordHash() bool {
+	if o != nil && o.PasswordHash.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
-func (o *TaskEmailConfig) SetAllowCustomConfig(v bool) {
-	o.AllowCustomConfig = &v
+// SetPasswordHash gets a reference to the given NullableString and assigns it to the PasswordHash field.
+func (o *TaskEmailConfig) SetPasswordHash(v string) {
+	o.PasswordHash.Set(&v)
 }
 
-// GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
-	if o == nil || IsNil(o.Credential) {
-		var ret ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+// SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
+func (o *TaskEmailConfig) SetPasswordHashNil() {
+	o.PasswordHash.Set(nil)
+}
+
+// UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+func (o *TaskEmailConfig) UnsetPasswordHash() {
+	o.PasswordHash.Unset()
+}
+
+// GetEmailAddress returns the EmailAddress field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetEmailAddress() string {
+	if o == nil || IsNil(o.EmailAddress.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.Credential
+	return *o.EmailAddress.Get()
 }
 
-// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
+// GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool) {
-	if o == nil || IsNil(o.Credential) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetEmailAddressOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Credential, true
+	return o.EmailAddress.Get(), o.EmailAddress.IsSet()
 }
 
-// IsSetCredential returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetCredential() bool {
-	if o != nil && !IsNil(o.Credential) {
+// IsSetEmailAddress returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetEmailAddress() bool {
+	if o != nil && o.EmailAddress.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCredential gets a reference to the given ListClouds200ResponseAllOfZonesInnerCredentialAnyOf and assigns it to the Credential field.
-func (o *TaskEmailConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
-	o.Credential = &v
+// SetEmailAddress gets a reference to the given NullableString and assigns it to the EmailAddress field.
+func (o *TaskEmailConfig) SetEmailAddress(v string) {
+	o.EmailAddress.Set(&v)
 }
 
-// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetDateCreated() time.Time {
-	if o == nil || IsNil(o.DateCreated) {
-		var ret time.Time
+// SetEmailAddressNil sets the value for EmailAddress to be an explicit nil
+func (o *TaskEmailConfig) SetEmailAddressNil() {
+	o.EmailAddress.Set(nil)
+}
+
+// UnsetEmailAddress ensures that no value is present for EmailAddress, not even an explicit nil
+func (o *TaskEmailConfig) UnsetEmailAddress() {
+	o.EmailAddress.Unset()
+}
+
+// GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetPort() string {
+	if o == nil || IsNil(o.Port.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.DateCreated
+	return *o.Port.Get()
 }
 
-// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetDateCreatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.DateCreated) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetPortOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.DateCreated, true
+	return o.Port.Get(), o.Port.IsSet()
 }
 
-// IsSetDateCreated returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetDateCreated() bool {
-	if o != nil && !IsNil(o.DateCreated) {
+// IsSetPort returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetPort() bool {
+	if o != nil && o.Port.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
-func (o *TaskEmailConfig) SetDateCreated(v time.Time) {
-	o.DateCreated = &v
+// SetPort gets a reference to the given NullableString and assigns it to the Port field.
+func (o *TaskEmailConfig) SetPort(v string) {
+	o.Port.Set(&v)
 }
 
-// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
-func (o *TaskEmailConfig) GetLastUpdated() time.Time {
-	if o == nil || IsNil(o.LastUpdated) {
-		var ret time.Time
+// SetPortNil sets the value for Port to be an explicit nil
+func (o *TaskEmailConfig) SetPortNil() {
+	o.Port.Set(nil)
+}
+
+// UnsetPort ensures that no value is present for Port, not even an explicit nil
+func (o *TaskEmailConfig) UnsetPort() {
+	o.Port.Unset()
+}
+
+// GetSshKey returns the SshKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetSshKey() string {
+	if o == nil || IsNil(o.SshKey.Get()) {
+		var ret string
 		return ret
 	}
-	return *o.LastUpdated
+	return *o.SshKey.Get()
 }
 
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
+// GetSshKeyOk returns a tuple with the SshKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaskEmailConfig) GetLastUpdatedOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUpdated) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetSshKeyOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.LastUpdated, true
+	return o.SshKey.Get(), o.SshKey.IsSet()
 }
 
-// IsSetLastUpdated returns a boolean if a field has been set.
-func (o *TaskEmailConfig) IsSetLastUpdated() bool {
-	if o != nil && !IsNil(o.LastUpdated) {
+// IsSetSshKey returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetSshKey() bool {
+	if o != nil && o.SshKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
-func (o *TaskEmailConfig) SetLastUpdated(v time.Time) {
-	o.LastUpdated = &v
+// SetSshKey gets a reference to the given NullableString and assigns it to the SshKey field.
+func (o *TaskEmailConfig) SetSshKey(v string) {
+	o.SshKey.Set(&v)
+}
+
+// SetSshKeyNil sets the value for SshKey to be an explicit nil
+func (o *TaskEmailConfig) SetSshKeyNil() {
+	o.SshKey.Set(nil)
+}
+
+// UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+func (o *TaskEmailConfig) UnsetSshKey() {
+	o.SshKey.Unset()
+}
+
+// GetLocalScriptGitRef returns the LocalScriptGitRef field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TaskEmailConfig) GetLocalScriptGitRef() string {
+	if o == nil || IsNil(o.LocalScriptGitRef.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.LocalScriptGitRef.Get()
+}
+
+// GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaskEmailConfig) GetLocalScriptGitRefOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LocalScriptGitRef.Get(), o.LocalScriptGitRef.IsSet()
+}
+
+// IsSetLocalScriptGitRef returns a boolean if a field has been set.
+func (o *TaskEmailConfig) IsSetLocalScriptGitRef() bool {
+	if o != nil && o.LocalScriptGitRef.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLocalScriptGitRef gets a reference to the given NullableString and assigns it to the LocalScriptGitRef field.
+func (o *TaskEmailConfig) SetLocalScriptGitRef(v string) {
+	o.LocalScriptGitRef.Set(&v)
+}
+
+// SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
+func (o *TaskEmailConfig) SetLocalScriptGitRefNil() {
+	o.LocalScriptGitRef.Set(nil)
+}
+
+// UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+func (o *TaskEmailConfig) UnsetLocalScriptGitRef() {
+	o.LocalScriptGitRef.Unset()
 }
 
 func (o TaskEmailConfig) MarshalJSON() ([]byte, error) {
@@ -669,59 +536,38 @@ func (o TaskEmailConfig) MarshalJSON() ([]byte, error) {
 
 func (o TaskEmailConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if o.LocalScriptGitId.IsSet() {
+		toSerialize["localScriptGitId"] = o.LocalScriptGitId.Get()
 	}
-	if !IsNil(o.AccountId) {
-		toSerialize["accountId"] = o.AccountId
+	if o.EmailSkipTemplate.IsSet() {
+		toSerialize["emailSkipTemplate"] = o.EmailSkipTemplate.Get()
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
+	if o.Username.IsSet() {
+		toSerialize["username"] = o.Username.Get()
 	}
-	if o.Code.IsSet() {
-		toSerialize["code"] = o.Code.Get()
+	if o.EmailSubject.IsSet() {
+		toSerialize["emailSubject"] = o.EmailSubject.Get()
 	}
-	if !IsNil(o.TaskType) {
-		toSerialize["taskType"] = o.TaskType
+	if o.Host.IsSet() {
+		toSerialize["host"] = o.Host.Get()
 	}
-	if !IsNil(o.Labels) {
-		toSerialize["labels"] = o.Labels
+	if o.Password.IsSet() {
+		toSerialize["password"] = o.Password.Get()
 	}
-	if !IsNil(o.Visibility) {
-		toSerialize["visibility"] = o.Visibility
+	if o.PasswordHash.IsSet() {
+		toSerialize["passwordHash"] = o.PasswordHash.Get()
 	}
-	if !IsNil(o.TaskOptions) {
-		toSerialize["taskOptions"] = o.TaskOptions
+	if o.EmailAddress.IsSet() {
+		toSerialize["emailAddress"] = o.EmailAddress.Get()
 	}
-	if !IsNil(o.File) {
-		toSerialize["file"] = o.File
+	if o.Port.IsSet() {
+		toSerialize["port"] = o.Port.Get()
 	}
-	if o.ResultType.IsSet() {
-		toSerialize["resultType"] = o.ResultType.Get()
+	if o.SshKey.IsSet() {
+		toSerialize["sshKey"] = o.SshKey.Get()
 	}
-	if !IsNil(o.ExecuteTarget) {
-		toSerialize["executeTarget"] = o.ExecuteTarget
-	}
-	if !IsNil(o.Retryable) {
-		toSerialize["retryable"] = o.Retryable
-	}
-	if !IsNil(o.RetryCount) {
-		toSerialize["retryCount"] = o.RetryCount
-	}
-	if !IsNil(o.RetryDelaySeconds) {
-		toSerialize["retryDelaySeconds"] = o.RetryDelaySeconds
-	}
-	if !IsNil(o.AllowCustomConfig) {
-		toSerialize["allowCustomConfig"] = o.AllowCustomConfig
-	}
-	if !IsNil(o.Credential) {
-		toSerialize["credential"] = o.Credential
-	}
-	if !IsNil(o.DateCreated) {
-		toSerialize["dateCreated"] = o.DateCreated
-	}
-	if !IsNil(o.LastUpdated) {
-		toSerialize["lastUpdated"] = o.LastUpdated
+	if o.LocalScriptGitRef.IsSet() {
+		toSerialize["localScriptGitRef"] = o.LocalScriptGitRef.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

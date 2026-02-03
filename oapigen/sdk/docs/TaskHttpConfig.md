@@ -4,24 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf5TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf5TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**WebPassword** | Pointer to **NullableString** |  | [optional] 
+**WebPasswordHash** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**WebUser** | Pointer to **NullableString** |  | [optional] 
+**WebBody** | Pointer to **NullableString** |  | [optional] 
+**WebHeaders** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**IgnoreSSL** | Pointer to **NullableString** |  | [optional] 
+**WebMethod** | Pointer to **NullableString** |  | [optional] 
+**WebUrl** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +40,556 @@ NewTaskHttpConfigWithDefaults instantiates a new TaskHttpConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetWebPassword
 
-`func (o *TaskHttpConfig) GetId() int64`
+`func (o *TaskHttpConfig) GetWebPassword() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetWebPassword returns the WebPassword field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetWebPasswordOk
 
-`func (o *TaskHttpConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskHttpConfig) GetWebPasswordOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetWebPasswordOk returns a tuple with the WebPassword field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetWebPassword
 
-`func (o *TaskHttpConfig) SetId(v int64)`
+`func (o *TaskHttpConfig) SetWebPassword(v string)`
 
-SetId sets Id field to given value.
+SetWebPassword sets WebPassword field to given value.
 
-### HasId
+### HasWebPassword
 
-`func (o *TaskHttpConfig) HasId() bool`
+`func (o *TaskHttpConfig) HasWebPassword() bool`
 
-HasId returns a boolean if a field has been set.
+HasWebPassword returns a boolean if a field has been set.
 
-### GetAccountId
+### SetWebPasswordNil
 
-`func (o *TaskHttpConfig) GetAccountId() int64`
+`func (o *TaskHttpConfig) SetWebPasswordNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetWebPasswordNil sets the value for WebPassword to be an explicit nil
 
-### GetAccountIdOk
+### UnsetWebPassword
+`func (o *TaskHttpConfig) UnsetWebPassword()`
 
-`func (o *TaskHttpConfig) GetAccountIdOk() (*int64, bool)`
+UnsetWebPassword ensures that no value is present for WebPassword, not even an explicit nil
+### GetWebPasswordHash
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetWebPasswordHash() string`
+
+GetWebPasswordHash returns the WebPasswordHash field if non-nil, zero value otherwise.
+
+### GetWebPasswordHashOk
+
+`func (o *TaskHttpConfig) GetWebPasswordHashOk() (*string, bool)`
+
+GetWebPasswordHashOk returns a tuple with the WebPasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetWebPasswordHash
 
-`func (o *TaskHttpConfig) SetAccountId(v int64)`
+`func (o *TaskHttpConfig) SetWebPasswordHash(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetWebPasswordHash sets WebPasswordHash field to given value.
 
-### HasAccountId
+### HasWebPasswordHash
 
-`func (o *TaskHttpConfig) HasAccountId() bool`
+`func (o *TaskHttpConfig) HasWebPasswordHash() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasWebPasswordHash returns a boolean if a field has been set.
 
-### GetName
+### SetWebPasswordHashNil
 
-`func (o *TaskHttpConfig) GetName() string`
+`func (o *TaskHttpConfig) SetWebPasswordHashNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetWebPasswordHashNil sets the value for WebPasswordHash to be an explicit nil
 
-### GetNameOk
+### UnsetWebPasswordHash
+`func (o *TaskHttpConfig) UnsetWebPasswordHash()`
 
-`func (o *TaskHttpConfig) GetNameOk() (*string, bool)`
+UnsetWebPasswordHash ensures that no value is present for WebPasswordHash, not even an explicit nil
+### GetLocalScriptGitId
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskHttpConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetLocalScriptGitId
 
-`func (o *TaskHttpConfig) SetName(v string)`
+`func (o *TaskHttpConfig) SetLocalScriptGitId(v string)`
 
-SetName sets Name field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasName
+### HasLocalScriptGitId
 
-`func (o *TaskHttpConfig) HasName() bool`
+`func (o *TaskHttpConfig) HasLocalScriptGitId() bool`
 
-HasName returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetCode
+### SetLocalScriptGitIdNil
 
-`func (o *TaskHttpConfig) GetCode() string`
+`func (o *TaskHttpConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetCodeOk
+### UnsetLocalScriptGitId
+`func (o *TaskHttpConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskHttpConfig) GetCodeOk() (*string, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetLocalScriptGitRef
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetLocalScriptGitRef() string`
+
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitRefOk
+
+`func (o *TaskHttpConfig) GetLocalScriptGitRefOk() (*string, bool)`
+
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetLocalScriptGitRef
 
-`func (o *TaskHttpConfig) SetCode(v string)`
+`func (o *TaskHttpConfig) SetLocalScriptGitRef(v string)`
 
-SetCode sets Code field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasCode
+### HasLocalScriptGitRef
 
-`func (o *TaskHttpConfig) HasCode() bool`
+`func (o *TaskHttpConfig) HasLocalScriptGitRef() bool`
 
-HasCode returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetLocalScriptGitRefNil
 
-`func (o *TaskHttpConfig) SetCodeNil(b bool)`
+`func (o *TaskHttpConfig) SetLocalScriptGitRefNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### UnsetCode
-`func (o *TaskHttpConfig) UnsetCode()`
+### UnsetLocalScriptGitRef
+`func (o *TaskHttpConfig) UnsetLocalScriptGitRef()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetWebUser
 
-`func (o *TaskHttpConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf5TaskType`
+`func (o *TaskHttpConfig) GetWebUser() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetWebUser returns the WebUser field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetWebUserOk
 
-`func (o *TaskHttpConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf5TaskType, bool)`
+`func (o *TaskHttpConfig) GetWebUserOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetWebUserOk returns a tuple with the WebUser field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetWebUser
 
-`func (o *TaskHttpConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf5TaskType)`
+`func (o *TaskHttpConfig) SetWebUser(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetWebUser sets WebUser field to given value.
 
-### HasTaskType
+### HasWebUser
 
-`func (o *TaskHttpConfig) HasTaskType() bool`
+`func (o *TaskHttpConfig) HasWebUser() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasWebUser returns a boolean if a field has been set.
 
-### GetLabels
+### SetWebUserNil
 
-`func (o *TaskHttpConfig) GetLabels() []string`
+`func (o *TaskHttpConfig) SetWebUserNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetWebUserNil sets the value for WebUser to be an explicit nil
 
-### GetLabelsOk
+### UnsetWebUser
+`func (o *TaskHttpConfig) UnsetWebUser()`
 
-`func (o *TaskHttpConfig) GetLabelsOk() (*[]string, bool)`
+UnsetWebUser ensures that no value is present for WebUser, not even an explicit nil
+### GetWebBody
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetWebBody() string`
+
+GetWebBody returns the WebBody field if non-nil, zero value otherwise.
+
+### GetWebBodyOk
+
+`func (o *TaskHttpConfig) GetWebBodyOk() (*string, bool)`
+
+GetWebBodyOk returns a tuple with the WebBody field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetWebBody
 
-`func (o *TaskHttpConfig) SetLabels(v []string)`
+`func (o *TaskHttpConfig) SetWebBody(v string)`
 
-SetLabels sets Labels field to given value.
+SetWebBody sets WebBody field to given value.
 
-### HasLabels
+### HasWebBody
 
-`func (o *TaskHttpConfig) HasLabels() bool`
+`func (o *TaskHttpConfig) HasWebBody() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasWebBody returns a boolean if a field has been set.
 
-### GetVisibility
+### SetWebBodyNil
 
-`func (o *TaskHttpConfig) GetVisibility() string`
+`func (o *TaskHttpConfig) SetWebBodyNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetWebBodyNil sets the value for WebBody to be an explicit nil
 
-### GetVisibilityOk
+### UnsetWebBody
+`func (o *TaskHttpConfig) UnsetWebBody()`
 
-`func (o *TaskHttpConfig) GetVisibilityOk() (*string, bool)`
+UnsetWebBody ensures that no value is present for WebBody, not even an explicit nil
+### GetWebHeaders
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetWebHeaders() string`
+
+GetWebHeaders returns the WebHeaders field if non-nil, zero value otherwise.
+
+### GetWebHeadersOk
+
+`func (o *TaskHttpConfig) GetWebHeadersOk() (*string, bool)`
+
+GetWebHeadersOk returns a tuple with the WebHeaders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetWebHeaders
 
-`func (o *TaskHttpConfig) SetVisibility(v string)`
+`func (o *TaskHttpConfig) SetWebHeaders(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetWebHeaders sets WebHeaders field to given value.
 
-### HasVisibility
+### HasWebHeaders
 
-`func (o *TaskHttpConfig) HasVisibility() bool`
+`func (o *TaskHttpConfig) HasWebHeaders() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasWebHeaders returns a boolean if a field has been set.
 
-### GetTaskOptions
+### GetPassword
 
-`func (o *TaskHttpConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions`
+`func (o *TaskHttpConfig) GetPassword() string`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetTaskOptionsOk
+### GetPasswordOk
 
-`func (o *TaskHttpConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions, bool)`
+`func (o *TaskHttpConfig) GetPasswordOk() (*string, bool)`
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetPassword
 
-`func (o *TaskHttpConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf5TaskOptions)`
+`func (o *TaskHttpConfig) SetPassword(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetPassword sets Password field to given value.
 
-### HasTaskOptions
+### HasPassword
 
-`func (o *TaskHttpConfig) HasTaskOptions() bool`
+`func (o *TaskHttpConfig) HasPassword() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetFile
+### SetPasswordNil
 
-`func (o *TaskHttpConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskHttpConfig) SetPasswordNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetFileOk
+### UnsetPassword
+`func (o *TaskHttpConfig) UnsetPassword()`
 
-`func (o *TaskHttpConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskHttpConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetPasswordHash
 
-`func (o *TaskHttpConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskHttpConfig) SetPasswordHash(v string)`
 
-SetFile sets File field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasFile
+### HasPasswordHash
 
-`func (o *TaskHttpConfig) HasFile() bool`
+`func (o *TaskHttpConfig) HasPasswordHash() bool`
 
-HasFile returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetResultType
+### SetPasswordHashNil
 
-`func (o *TaskHttpConfig) GetResultType() string`
+`func (o *TaskHttpConfig) SetPasswordHashNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetResultTypeOk
+### UnsetPasswordHash
+`func (o *TaskHttpConfig) UnsetPasswordHash()`
 
-`func (o *TaskHttpConfig) GetResultTypeOk() (*string, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetUsername
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskHttpConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetUsername
 
-`func (o *TaskHttpConfig) SetResultType(v string)`
+`func (o *TaskHttpConfig) SetUsername(v string)`
 
-SetResultType sets ResultType field to given value.
+SetUsername sets Username field to given value.
 
-### HasResultType
+### HasUsername
 
-`func (o *TaskHttpConfig) HasResultType() bool`
+`func (o *TaskHttpConfig) HasUsername() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetUsernameNil
 
-`func (o *TaskHttpConfig) SetResultTypeNil(b bool)`
+`func (o *TaskHttpConfig) SetUsernameNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskHttpConfig) UnsetResultType()`
+### UnsetUsername
+`func (o *TaskHttpConfig) UnsetUsername()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetIgnoreSSL
 
-`func (o *TaskHttpConfig) GetExecuteTarget() string`
+`func (o *TaskHttpConfig) GetIgnoreSSL() string`
 
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
+GetIgnoreSSL returns the IgnoreSSL field if non-nil, zero value otherwise.
 
-### GetExecuteTargetOk
+### GetIgnoreSSLOk
 
-`func (o *TaskHttpConfig) GetExecuteTargetOk() (*string, bool)`
+`func (o *TaskHttpConfig) GetIgnoreSSLOk() (*string, bool)`
 
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
+GetIgnoreSSLOk returns a tuple with the IgnoreSSL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExecuteTarget
+### SetIgnoreSSL
 
-`func (o *TaskHttpConfig) SetExecuteTarget(v string)`
+`func (o *TaskHttpConfig) SetIgnoreSSL(v string)`
 
-SetExecuteTarget sets ExecuteTarget field to given value.
+SetIgnoreSSL sets IgnoreSSL field to given value.
 
-### HasExecuteTarget
+### HasIgnoreSSL
 
-`func (o *TaskHttpConfig) HasExecuteTarget() bool`
+`func (o *TaskHttpConfig) HasIgnoreSSL() bool`
 
-HasExecuteTarget returns a boolean if a field has been set.
+HasIgnoreSSL returns a boolean if a field has been set.
 
-### GetRetryable
+### SetIgnoreSSLNil
 
-`func (o *TaskHttpConfig) GetRetryable() bool`
+`func (o *TaskHttpConfig) SetIgnoreSSLNil(b bool)`
 
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
+ SetIgnoreSSLNil sets the value for IgnoreSSL to be an explicit nil
 
-### GetRetryableOk
+### UnsetIgnoreSSL
+`func (o *TaskHttpConfig) UnsetIgnoreSSL()`
 
-`func (o *TaskHttpConfig) GetRetryableOk() (*bool, bool)`
+UnsetIgnoreSSL ensures that no value is present for IgnoreSSL, not even an explicit nil
+### GetWebMethod
 
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetWebMethod() string`
+
+GetWebMethod returns the WebMethod field if non-nil, zero value otherwise.
+
+### GetWebMethodOk
+
+`func (o *TaskHttpConfig) GetWebMethodOk() (*string, bool)`
+
+GetWebMethodOk returns a tuple with the WebMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryable
+### SetWebMethod
 
-`func (o *TaskHttpConfig) SetRetryable(v bool)`
+`func (o *TaskHttpConfig) SetWebMethod(v string)`
 
-SetRetryable sets Retryable field to given value.
+SetWebMethod sets WebMethod field to given value.
 
-### HasRetryable
+### HasWebMethod
 
-`func (o *TaskHttpConfig) HasRetryable() bool`
+`func (o *TaskHttpConfig) HasWebMethod() bool`
 
-HasRetryable returns a boolean if a field has been set.
+HasWebMethod returns a boolean if a field has been set.
 
-### GetRetryCount
+### SetWebMethodNil
 
-`func (o *TaskHttpConfig) GetRetryCount() int64`
+`func (o *TaskHttpConfig) SetWebMethodNil(b bool)`
 
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
+ SetWebMethodNil sets the value for WebMethod to be an explicit nil
 
-### GetRetryCountOk
+### UnsetWebMethod
+`func (o *TaskHttpConfig) UnsetWebMethod()`
 
-`func (o *TaskHttpConfig) GetRetryCountOk() (*int64, bool)`
+UnsetWebMethod ensures that no value is present for WebMethod, not even an explicit nil
+### GetWebUrl
 
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetWebUrl() string`
+
+GetWebUrl returns the WebUrl field if non-nil, zero value otherwise.
+
+### GetWebUrlOk
+
+`func (o *TaskHttpConfig) GetWebUrlOk() (*string, bool)`
+
+GetWebUrlOk returns a tuple with the WebUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryCount
+### SetWebUrl
 
-`func (o *TaskHttpConfig) SetRetryCount(v int64)`
+`func (o *TaskHttpConfig) SetWebUrl(v string)`
 
-SetRetryCount sets RetryCount field to given value.
+SetWebUrl sets WebUrl field to given value.
 
-### HasRetryCount
+### HasWebUrl
 
-`func (o *TaskHttpConfig) HasRetryCount() bool`
+`func (o *TaskHttpConfig) HasWebUrl() bool`
 
-HasRetryCount returns a boolean if a field has been set.
+HasWebUrl returns a boolean if a field has been set.
 
-### GetRetryDelaySeconds
+### SetWebUrlNil
 
-`func (o *TaskHttpConfig) GetRetryDelaySeconds() int64`
+`func (o *TaskHttpConfig) SetWebUrlNil(b bool)`
 
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
+ SetWebUrlNil sets the value for WebUrl to be an explicit nil
 
-### GetRetryDelaySecondsOk
+### UnsetWebUrl
+`func (o *TaskHttpConfig) UnsetWebUrl()`
 
-`func (o *TaskHttpConfig) GetRetryDelaySecondsOk() (*int64, bool)`
+UnsetWebUrl ensures that no value is present for WebUrl, not even an explicit nil
+### GetHost
 
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskHttpConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryDelaySeconds
+### SetHost
 
-`func (o *TaskHttpConfig) SetRetryDelaySeconds(v int64)`
+`func (o *TaskHttpConfig) SetHost(v string)`
 
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
+SetHost sets Host field to given value.
 
-### HasRetryDelaySeconds
+### HasHost
 
-`func (o *TaskHttpConfig) HasRetryDelaySeconds() bool`
+`func (o *TaskHttpConfig) HasHost() bool`
 
-HasRetryDelaySeconds returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetAllowCustomConfig
+### SetHostNil
 
-`func (o *TaskHttpConfig) GetAllowCustomConfig() bool`
+`func (o *TaskHttpConfig) SetHostNil(b bool)`
 
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
+ SetHostNil sets the value for Host to be an explicit nil
 
-### GetAllowCustomConfigOk
+### UnsetHost
+`func (o *TaskHttpConfig) UnsetHost()`
 
-`func (o *TaskHttpConfig) GetAllowCustomConfigOk() (*bool, bool)`
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetPort
 
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskHttpConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllowCustomConfig
+### SetPort
 
-`func (o *TaskHttpConfig) SetAllowCustomConfig(v bool)`
+`func (o *TaskHttpConfig) SetPort(v string)`
 
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
+SetPort sets Port field to given value.
 
-### HasAllowCustomConfig
+### HasPort
 
-`func (o *TaskHttpConfig) HasAllowCustomConfig() bool`
+`func (o *TaskHttpConfig) HasPort() bool`
 
-HasAllowCustomConfig returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetCredential
+### SetPortNil
 
-`func (o *TaskHttpConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
+`func (o *TaskHttpConfig) SetPortNil(b bool)`
 
-GetCredential returns the Credential field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetCredentialOk
+### UnsetPort
+`func (o *TaskHttpConfig) UnsetPort()`
 
-`func (o *TaskHttpConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetSshKey
 
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
+`func (o *TaskHttpConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskHttpConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCredential
+### SetSshKey
 
-`func (o *TaskHttpConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
+`func (o *TaskHttpConfig) SetSshKey(v string)`
 
-SetCredential sets Credential field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasCredential
+### HasSshKey
 
-`func (o *TaskHttpConfig) HasCredential() bool`
+`func (o *TaskHttpConfig) HasSshKey() bool`
 
-HasCredential returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetDateCreated
+### SetSshKeyNil
 
-`func (o *TaskHttpConfig) GetDateCreated() time.Time`
+`func (o *TaskHttpConfig) SetSshKeyNil(b bool)`
 
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetDateCreatedOk
+### UnsetSshKey
+`func (o *TaskHttpConfig) UnsetSshKey()`
 
-`func (o *TaskHttpConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskHttpConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskHttpConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskHttpConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskHttpConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskHttpConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskHttpConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

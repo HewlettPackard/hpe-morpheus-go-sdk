@@ -4,24 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfTaskType**](ListTasks200ResponseAllOfTasksInnerAnyOfTaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**AnsibleOptions** | Pointer to **NullableString** |  | [optional] 
+**AnsiblePlaybook** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**AnsibleGitId** | Pointer to **string** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**AnsibleSkipTags** | Pointer to **NullableString** |  | [optional] 
+**AnsibleTags** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**AnsibleGitRef** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +38,486 @@ NewTaskAnsiblePlaybookConfigWithDefaults instantiates a new TaskAnsiblePlaybookC
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAnsibleOptions
 
-`func (o *TaskAnsiblePlaybookConfig) GetId() int64`
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleOptions() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAnsibleOptions returns the AnsibleOptions field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAnsibleOptionsOk
 
-`func (o *TaskAnsiblePlaybookConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleOptionsOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAnsibleOptionsOk returns a tuple with the AnsibleOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAnsibleOptions
 
-`func (o *TaskAnsiblePlaybookConfig) SetId(v int64)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleOptions(v string)`
 
-SetId sets Id field to given value.
+SetAnsibleOptions sets AnsibleOptions field to given value.
 
-### HasId
+### HasAnsibleOptions
 
-`func (o *TaskAnsiblePlaybookConfig) HasId() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsibleOptions() bool`
 
-HasId returns a boolean if a field has been set.
+HasAnsibleOptions returns a boolean if a field has been set.
 
-### GetAccountId
+### SetAnsibleOptionsNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetAccountId() int64`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleOptionsNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetAnsibleOptionsNil sets the value for AnsibleOptions to be an explicit nil
 
-### GetAccountIdOk
+### UnsetAnsibleOptions
+`func (o *TaskAnsiblePlaybookConfig) UnsetAnsibleOptions()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetAccountIdOk() (*int64, bool)`
+UnsetAnsibleOptions ensures that no value is present for AnsibleOptions, not even an explicit nil
+### GetAnsiblePlaybook
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetAnsiblePlaybook() string`
+
+GetAnsiblePlaybook returns the AnsiblePlaybook field if non-nil, zero value otherwise.
+
+### GetAnsiblePlaybookOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetAnsiblePlaybookOk() (*string, bool)`
+
+GetAnsiblePlaybookOk returns a tuple with the AnsiblePlaybook field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetAnsiblePlaybook
 
-`func (o *TaskAnsiblePlaybookConfig) SetAccountId(v int64)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsiblePlaybook(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetAnsiblePlaybook sets AnsiblePlaybook field to given value.
 
-### HasAccountId
+### HasAnsiblePlaybook
 
-`func (o *TaskAnsiblePlaybookConfig) HasAccountId() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsiblePlaybook() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasAnsiblePlaybook returns a boolean if a field has been set.
 
-### GetName
+### SetAnsiblePlaybookNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetName() string`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsiblePlaybookNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetAnsiblePlaybookNil sets the value for AnsiblePlaybook to be an explicit nil
 
-### GetNameOk
+### UnsetAnsiblePlaybook
+`func (o *TaskAnsiblePlaybookConfig) UnsetAnsiblePlaybook()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetNameOk() (*string, bool)`
+UnsetAnsiblePlaybook ensures that no value is present for AnsiblePlaybook, not even an explicit nil
+### GetSshKey
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetSshKey
 
-`func (o *TaskAnsiblePlaybookConfig) SetName(v string)`
+`func (o *TaskAnsiblePlaybookConfig) SetSshKey(v string)`
 
-SetName sets Name field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasName
+### HasSshKey
 
-`func (o *TaskAnsiblePlaybookConfig) HasName() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasSshKey() bool`
 
-HasName returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetCode
+### SetSshKeyNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetCode() string`
+`func (o *TaskAnsiblePlaybookConfig) SetSshKeyNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetCodeOk
+### UnsetSshKey
+`func (o *TaskAnsiblePlaybookConfig) UnsetSshKey()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetCodeOk() (*string, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetPort
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetPort
 
-`func (o *TaskAnsiblePlaybookConfig) SetCode(v string)`
+`func (o *TaskAnsiblePlaybookConfig) SetPort(v string)`
 
-SetCode sets Code field to given value.
+SetPort sets Port field to given value.
 
-### HasCode
+### HasPort
 
-`func (o *TaskAnsiblePlaybookConfig) HasCode() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasPort() bool`
 
-HasCode returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetPortNil
 
-`func (o *TaskAnsiblePlaybookConfig) SetCodeNil(b bool)`
+`func (o *TaskAnsiblePlaybookConfig) SetPortNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetPortNil sets the value for Port to be an explicit nil
 
-### UnsetCode
-`func (o *TaskAnsiblePlaybookConfig) UnsetCode()`
+### UnsetPort
+`func (o *TaskAnsiblePlaybookConfig) UnsetPort()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetLocalScriptGitRef
 
-`func (o *TaskAnsiblePlaybookConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOfTaskType`
+`func (o *TaskAnsiblePlaybookConfig) GetLocalScriptGitRef() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetLocalScriptGitRefOk
 
-`func (o *TaskAnsiblePlaybookConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfTaskType, bool)`
+`func (o *TaskAnsiblePlaybookConfig) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetLocalScriptGitRef
 
-`func (o *TaskAnsiblePlaybookConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOfTaskType)`
+`func (o *TaskAnsiblePlaybookConfig) SetLocalScriptGitRef(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasTaskType
+### HasLocalScriptGitRef
 
-`func (o *TaskAnsiblePlaybookConfig) HasTaskType() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasLocalScriptGitRef() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetLabels
+### SetLocalScriptGitRefNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetLabels() []string`
+`func (o *TaskAnsiblePlaybookConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetLabelsOk
+### UnsetLocalScriptGitRef
+`func (o *TaskAnsiblePlaybookConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetLabelsOk() (*[]string, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPassword
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetPassword
 
-`func (o *TaskAnsiblePlaybookConfig) SetLabels(v []string)`
+`func (o *TaskAnsiblePlaybookConfig) SetPassword(v string)`
 
-SetLabels sets Labels field to given value.
+SetPassword sets Password field to given value.
 
-### HasLabels
+### HasPassword
 
-`func (o *TaskAnsiblePlaybookConfig) HasLabels() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasPassword() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetVisibility
+### SetPasswordNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetVisibility() string`
+`func (o *TaskAnsiblePlaybookConfig) SetPasswordNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetVisibilityOk
+### UnsetPassword
+`func (o *TaskAnsiblePlaybookConfig) UnsetPassword()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetVisibilityOk() (*string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetPasswordHash
 
-`func (o *TaskAnsiblePlaybookConfig) SetVisibility(v string)`
+`func (o *TaskAnsiblePlaybookConfig) SetPasswordHash(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasVisibility
+### HasPasswordHash
 
-`func (o *TaskAnsiblePlaybookConfig) HasVisibility() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasPasswordHash() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetPasswordHashNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions`
+`func (o *TaskAnsiblePlaybookConfig) SetPasswordHashNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetPasswordHash
+`func (o *TaskAnsiblePlaybookConfig) UnsetPasswordHash()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetLocalScriptGitId
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetLocalScriptGitId
 
-`func (o *TaskAnsiblePlaybookConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOfTaskOptions)`
+`func (o *TaskAnsiblePlaybookConfig) SetLocalScriptGitId(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasTaskOptions
+### HasLocalScriptGitId
 
-`func (o *TaskAnsiblePlaybookConfig) HasTaskOptions() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasLocalScriptGitId() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetFile
+### SetLocalScriptGitIdNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskAnsiblePlaybookConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetFileOk
+### UnsetLocalScriptGitId
+`func (o *TaskAnsiblePlaybookConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetAnsibleGitId
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleGitId() string`
+
+GetAnsibleGitId returns the AnsibleGitId field if non-nil, zero value otherwise.
+
+### GetAnsibleGitIdOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleGitIdOk() (*string, bool)`
+
+GetAnsibleGitIdOk returns a tuple with the AnsibleGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetAnsibleGitId
 
-`func (o *TaskAnsiblePlaybookConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleGitId(v string)`
 
-SetFile sets File field to given value.
+SetAnsibleGitId sets AnsibleGitId field to given value.
 
-### HasFile
+### HasAnsibleGitId
 
-`func (o *TaskAnsiblePlaybookConfig) HasFile() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsibleGitId() bool`
 
-HasFile returns a boolean if a field has been set.
+HasAnsibleGitId returns a boolean if a field has been set.
 
-### GetResultType
+### GetHost
 
-`func (o *TaskAnsiblePlaybookConfig) GetResultType() string`
+`func (o *TaskAnsiblePlaybookConfig) GetHost() string`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+GetHost returns the Host field if non-nil, zero value otherwise.
 
-### GetResultTypeOk
+### GetHostOk
 
-`func (o *TaskAnsiblePlaybookConfig) GetResultTypeOk() (*string, bool)`
+`func (o *TaskAnsiblePlaybookConfig) GetHostOk() (*string, bool)`
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetHost
 
-`func (o *TaskAnsiblePlaybookConfig) SetResultType(v string)`
+`func (o *TaskAnsiblePlaybookConfig) SetHost(v string)`
 
-SetResultType sets ResultType field to given value.
+SetHost sets Host field to given value.
 
-### HasResultType
+### HasHost
 
-`func (o *TaskAnsiblePlaybookConfig) HasResultType() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasHost() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetHostNil
 
-`func (o *TaskAnsiblePlaybookConfig) SetResultTypeNil(b bool)`
+`func (o *TaskAnsiblePlaybookConfig) SetHostNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetHostNil sets the value for Host to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskAnsiblePlaybookConfig) UnsetResultType()`
+### UnsetHost
+`func (o *TaskAnsiblePlaybookConfig) UnsetHost()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetAnsibleSkipTags
 
-`func (o *TaskAnsiblePlaybookConfig) GetExecuteTarget() string`
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleSkipTags() string`
 
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
+GetAnsibleSkipTags returns the AnsibleSkipTags field if non-nil, zero value otherwise.
 
-### GetExecuteTargetOk
+### GetAnsibleSkipTagsOk
 
-`func (o *TaskAnsiblePlaybookConfig) GetExecuteTargetOk() (*string, bool)`
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleSkipTagsOk() (*string, bool)`
 
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
+GetAnsibleSkipTagsOk returns a tuple with the AnsibleSkipTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExecuteTarget
+### SetAnsibleSkipTags
 
-`func (o *TaskAnsiblePlaybookConfig) SetExecuteTarget(v string)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleSkipTags(v string)`
 
-SetExecuteTarget sets ExecuteTarget field to given value.
+SetAnsibleSkipTags sets AnsibleSkipTags field to given value.
 
-### HasExecuteTarget
+### HasAnsibleSkipTags
 
-`func (o *TaskAnsiblePlaybookConfig) HasExecuteTarget() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsibleSkipTags() bool`
 
-HasExecuteTarget returns a boolean if a field has been set.
+HasAnsibleSkipTags returns a boolean if a field has been set.
 
-### GetRetryable
+### SetAnsibleSkipTagsNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryable() bool`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleSkipTagsNil(b bool)`
 
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
+ SetAnsibleSkipTagsNil sets the value for AnsibleSkipTags to be an explicit nil
 
-### GetRetryableOk
+### UnsetAnsibleSkipTags
+`func (o *TaskAnsiblePlaybookConfig) UnsetAnsibleSkipTags()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryableOk() (*bool, bool)`
+UnsetAnsibleSkipTags ensures that no value is present for AnsibleSkipTags, not even an explicit nil
+### GetAnsibleTags
 
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleTags() string`
+
+GetAnsibleTags returns the AnsibleTags field if non-nil, zero value otherwise.
+
+### GetAnsibleTagsOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleTagsOk() (*string, bool)`
+
+GetAnsibleTagsOk returns a tuple with the AnsibleTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryable
+### SetAnsibleTags
 
-`func (o *TaskAnsiblePlaybookConfig) SetRetryable(v bool)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleTags(v string)`
 
-SetRetryable sets Retryable field to given value.
+SetAnsibleTags sets AnsibleTags field to given value.
 
-### HasRetryable
+### HasAnsibleTags
 
-`func (o *TaskAnsiblePlaybookConfig) HasRetryable() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsibleTags() bool`
 
-HasRetryable returns a boolean if a field has been set.
+HasAnsibleTags returns a boolean if a field has been set.
 
-### GetRetryCount
+### SetAnsibleTagsNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryCount() int64`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleTagsNil(b bool)`
 
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
+ SetAnsibleTagsNil sets the value for AnsibleTags to be an explicit nil
 
-### GetRetryCountOk
+### UnsetAnsibleTags
+`func (o *TaskAnsiblePlaybookConfig) UnsetAnsibleTags()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryCountOk() (*int64, bool)`
+UnsetAnsibleTags ensures that no value is present for AnsibleTags, not even an explicit nil
+### GetUsername
 
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryCount
+### SetUsername
 
-`func (o *TaskAnsiblePlaybookConfig) SetRetryCount(v int64)`
+`func (o *TaskAnsiblePlaybookConfig) SetUsername(v string)`
 
-SetRetryCount sets RetryCount field to given value.
+SetUsername sets Username field to given value.
 
-### HasRetryCount
+### HasUsername
 
-`func (o *TaskAnsiblePlaybookConfig) HasRetryCount() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasUsername() bool`
 
-HasRetryCount returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetRetryDelaySeconds
+### SetUsernameNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryDelaySeconds() int64`
+`func (o *TaskAnsiblePlaybookConfig) SetUsernameNil(b bool)`
 
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetRetryDelaySecondsOk
+### UnsetUsername
+`func (o *TaskAnsiblePlaybookConfig) UnsetUsername()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetRetryDelaySecondsOk() (*int64, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetAnsibleGitRef
 
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleGitRef() string`
+
+GetAnsibleGitRef returns the AnsibleGitRef field if non-nil, zero value otherwise.
+
+### GetAnsibleGitRefOk
+
+`func (o *TaskAnsiblePlaybookConfig) GetAnsibleGitRefOk() (*string, bool)`
+
+GetAnsibleGitRefOk returns a tuple with the AnsibleGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryDelaySeconds
+### SetAnsibleGitRef
 
-`func (o *TaskAnsiblePlaybookConfig) SetRetryDelaySeconds(v int64)`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleGitRef(v string)`
 
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
+SetAnsibleGitRef sets AnsibleGitRef field to given value.
 
-### HasRetryDelaySeconds
+### HasAnsibleGitRef
 
-`func (o *TaskAnsiblePlaybookConfig) HasRetryDelaySeconds() bool`
+`func (o *TaskAnsiblePlaybookConfig) HasAnsibleGitRef() bool`
 
-HasRetryDelaySeconds returns a boolean if a field has been set.
+HasAnsibleGitRef returns a boolean if a field has been set.
 
-### GetAllowCustomConfig
+### SetAnsibleGitRefNil
 
-`func (o *TaskAnsiblePlaybookConfig) GetAllowCustomConfig() bool`
+`func (o *TaskAnsiblePlaybookConfig) SetAnsibleGitRefNil(b bool)`
 
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
+ SetAnsibleGitRefNil sets the value for AnsibleGitRef to be an explicit nil
 
-### GetAllowCustomConfigOk
+### UnsetAnsibleGitRef
+`func (o *TaskAnsiblePlaybookConfig) UnsetAnsibleGitRef()`
 
-`func (o *TaskAnsiblePlaybookConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskAnsiblePlaybookConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskAnsiblePlaybookConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskAnsiblePlaybookConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskAnsiblePlaybookConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskAnsiblePlaybookConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskAnsiblePlaybookConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskAnsiblePlaybookConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskAnsiblePlaybookConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskAnsiblePlaybookConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskAnsiblePlaybookConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskAnsiblePlaybookConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskAnsiblePlaybookConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskAnsiblePlaybookConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskAnsiblePlaybookConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetAnsibleGitRef ensures that no value is present for AnsibleGitRef, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

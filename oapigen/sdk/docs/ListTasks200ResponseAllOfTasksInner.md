@@ -4,30 +4,61 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**AnsibleOptions** | Pointer to **string** |  | [optional] 
+**AnsiblePlaybook** | Pointer to **string** |  | [optional] 
+**SshKey** | Pointer to **string** |  | [optional] 
+**Port** | Pointer to **string** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **string** |  | [optional] 
+**PasswordHash** | Pointer to **string** |  | [optional] 
+**LocalScriptGitId** | Pointer to **string** |  | [optional] 
+**AnsibleGitId** | Pointer to **string** |  | [optional] 
+**Host** | Pointer to **string** |  | [optional] 
+**AnsibleSkipTags** | Pointer to **string** |  | [optional] 
+**AnsibleTags** | Pointer to **string** |  | [optional] 
+**Username** | Pointer to **string** |  | [optional] 
+**AnsibleGitRef** | Pointer to **string** |  | [optional] 
+**AnsibleTowerGitRef** | Pointer to **string** |  | [optional] 
+**AnsibleGroup** | Pointer to **string** |  | [optional] 
+**AnsibleTowerExecuteMode** | Pointer to **string** |  | [optional] 
+**ChefDataKey** | Pointer to **string** |  | [optional] 
+**ChefDataKeyHash** | Pointer to **string** |  | [optional] 
+**ChefRunList** | Pointer to **string** |  | [optional] 
+**ChefDataKeyPath** | Pointer to **string** |  | [optional] 
+**ChefEnv** | Pointer to **string** |  | [optional] 
+**ChefNodeName** | Pointer to **string** |  | [optional] 
+**ChefAttributes** | Pointer to **string** |  | [optional] 
+**EmailSkipTemplate** | Pointer to **string** |  | [optional] 
+**EmailSubject** | Pointer to **string** |  | [optional] 
+**EmailAddress** | Pointer to **string** |  | [optional] 
+**WebPassword** | Pointer to **string** |  | [optional] 
+**WebPasswordHash** | Pointer to **string** |  | [optional] 
+**WebUser** | Pointer to **string** |  | [optional] 
+**WebBody** | Pointer to **string** |  | [optional] 
+**WebHeaders** | Pointer to **string** |  | [optional] 
+**IgnoreSSL** | Pointer to **string** |  | [optional] 
+**WebMethod** | Pointer to **string** |  | [optional] 
+**WebUrl** | Pointer to **string** |  | [optional] 
+**JsScript** | Pointer to **string** |  | [optional] 
+**ContainerScriptId** | Pointer to **string** |  | [optional] 
+**ContainerScript** | Pointer to **string** |  | [optional] 
+**ContainerTemplateId** | Pointer to **string** |  | [optional] 
+**ContainerTemplate** | Pointer to **string** |  | [optional] 
+**OperationalWorkflowId** | **string** | Operational Workflow ID | 
+**OperationalWorkflowName** | Pointer to **string** | Operational Workflow Name | [optional] 
+**PuppetEnvironment** | Pointer to **string** |  | [optional] 
+**PuppetNodeName** | Pointer to **string** |  | [optional] 
+**PythonArgs** | Pointer to **string** |  | [optional] 
+**PythonBinary** | Pointer to **string** |  | [optional] 
+**PythonAdditionalPackages** | Pointer to **string** |  | [optional] 
+**VroBody** | Pointer to **string** |  | [optional] 
+**WriteAttributesAttributes** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewListTasks200ResponseAllOfTasksInner
 
-`func NewListTasks200ResponseAllOfTasksInner() *ListTasks200ResponseAllOfTasksInner`
+`func NewListTasks200ResponseAllOfTasksInner(operationalWorkflowId string, ) *ListTasks200ResponseAllOfTasksInner`
 
 NewListTasks200ResponseAllOfTasksInner instantiates a new ListTasks200ResponseAllOfTasksInner object
 This constructor will assign default values to properties that have it defined,
@@ -42,455 +73,1225 @@ NewListTasks200ResponseAllOfTasksInnerWithDefaults instantiates a new ListTasks2
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetAnsibleOptions
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetId() int64`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleOptions() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetAnsibleOptions returns the AnsibleOptions field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetAnsibleOptionsOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetIdOk() (*int64, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleOptionsOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetAnsibleOptionsOk returns a tuple with the AnsibleOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetAnsibleOptions
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetId(v int64)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleOptions(v string)`
 
-SetId sets Id field to given value.
+SetAnsibleOptions sets AnsibleOptions field to given value.
 
-### HasId
+### HasAnsibleOptions
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasId() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleOptions() bool`
 
-HasId returns a boolean if a field has been set.
+HasAnsibleOptions returns a boolean if a field has been set.
 
-### GetAccountId
+### GetAnsiblePlaybook
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetAccountId() int64`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsiblePlaybook() string`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+GetAnsiblePlaybook returns the AnsiblePlaybook field if non-nil, zero value otherwise.
 
-### GetAccountIdOk
+### GetAnsiblePlaybookOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetAccountIdOk() (*int64, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsiblePlaybookOk() (*string, bool)`
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+GetAnsiblePlaybookOk returns a tuple with the AnsiblePlaybook field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetAnsiblePlaybook
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetAccountId(v int64)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsiblePlaybook(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetAnsiblePlaybook sets AnsiblePlaybook field to given value.
 
-### HasAccountId
+### HasAnsiblePlaybook
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasAccountId() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsiblePlaybook() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasAnsiblePlaybook returns a boolean if a field has been set.
 
-### GetName
+### GetSshKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetName() string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetSshKey() string`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
 
-### GetNameOk
+### GetSshKeyOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetNameOk() (*string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetSshKeyOk() (*string, bool)`
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetSshKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetName(v string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetSshKey(v string)`
 
-SetName sets Name field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasName
+### HasSshKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasName() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasSshKey() bool`
 
-HasName returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetCode
+### GetPort
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetCode() string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPort() string`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+GetPort returns the Port field if non-nil, zero value otherwise.
 
-### GetCodeOk
+### GetPortOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetCodeOk() (*string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPortOk() (*string, bool)`
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetPort
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetCode(v string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPort(v string)`
 
-SetCode sets Code field to given value.
+SetPort sets Port field to given value.
 
-### HasCode
+### HasPort
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasCode() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPort() bool`
 
-HasCode returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetTaskType
+### GetLocalScriptGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetLocalScriptGitRef() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetLocalScriptGitRefOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetLocalScriptGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetLocalScriptGitRef(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasTaskType
+### HasLocalScriptGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasTaskType() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasLocalScriptGitRef() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetLabels
+### GetPassword
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetLabels() []string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPassword() string`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetLabelsOk
+### GetPasswordOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetLabelsOk() (*[]string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPasswordOk() (*string, bool)`
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetPassword
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetLabels(v []string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPassword(v string)`
 
-SetLabels sets Labels field to given value.
+SetPassword sets Password field to given value.
 
-### HasLabels
+### HasPassword
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasLabels() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPassword() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetVisibility
+### GetPasswordHash
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetVisibility() string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPasswordHash() string`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
 
-### GetVisibilityOk
+### GetPasswordHashOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetVisibilityOk() (*string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPasswordHashOk() (*string, bool)`
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetPasswordHash
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetVisibility(v string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPasswordHash(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasVisibility
+### HasPasswordHash
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasVisibility() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPasswordHash() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetTaskOptions
+### GetLocalScriptGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetLocalScriptGitId() string`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
 
-### GetTaskOptionsOk
+### GetLocalScriptGitIdOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetLocalScriptGitIdOk() (*string, bool)`
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetLocalScriptGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetLocalScriptGitId(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasTaskOptions
+### HasLocalScriptGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasTaskOptions() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasLocalScriptGitId() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetFile
+### GetAnsibleGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGitId() string`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+GetAnsibleGitId returns the AnsibleGitId field if non-nil, zero value otherwise.
 
-### GetFileOk
+### GetAnsibleGitIdOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGitIdOk() (*string, bool)`
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+GetAnsibleGitIdOk returns a tuple with the AnsibleGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetAnsibleGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleGitId(v string)`
 
-SetFile sets File field to given value.
+SetAnsibleGitId sets AnsibleGitId field to given value.
 
-### HasFile
+### HasAnsibleGitId
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasFile() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleGitId() bool`
 
-HasFile returns a boolean if a field has been set.
+HasAnsibleGitId returns a boolean if a field has been set.
 
-### GetResultType
+### GetHost
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetResultType() string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetHost() string`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+GetHost returns the Host field if non-nil, zero value otherwise.
 
-### GetResultTypeOk
+### GetHostOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetResultTypeOk() (*string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetHostOk() (*string, bool)`
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetHost
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetResultType(v string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetHost(v string)`
 
-SetResultType sets ResultType field to given value.
+SetHost sets Host field to given value.
 
-### HasResultType
+### HasHost
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasResultType() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasHost() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetExecuteTarget
+### GetAnsibleSkipTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetExecuteTarget() string`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleSkipTags() string`
 
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
+GetAnsibleSkipTags returns the AnsibleSkipTags field if non-nil, zero value otherwise.
 
-### GetExecuteTargetOk
+### GetAnsibleSkipTagsOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetExecuteTargetOk() (*string, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleSkipTagsOk() (*string, bool)`
 
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
+GetAnsibleSkipTagsOk returns a tuple with the AnsibleSkipTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExecuteTarget
+### SetAnsibleSkipTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetExecuteTarget(v string)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleSkipTags(v string)`
 
-SetExecuteTarget sets ExecuteTarget field to given value.
+SetAnsibleSkipTags sets AnsibleSkipTags field to given value.
 
-### HasExecuteTarget
+### HasAnsibleSkipTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasExecuteTarget() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleSkipTags() bool`
 
-HasExecuteTarget returns a boolean if a field has been set.
+HasAnsibleSkipTags returns a boolean if a field has been set.
 
-### GetRetryable
+### GetAnsibleTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryable() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTags() string`
 
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
+GetAnsibleTags returns the AnsibleTags field if non-nil, zero value otherwise.
 
-### GetRetryableOk
+### GetAnsibleTagsOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryableOk() (*bool, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTagsOk() (*string, bool)`
 
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
+GetAnsibleTagsOk returns a tuple with the AnsibleTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryable
+### SetAnsibleTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetRetryable(v bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleTags(v string)`
 
-SetRetryable sets Retryable field to given value.
+SetAnsibleTags sets AnsibleTags field to given value.
 
-### HasRetryable
+### HasAnsibleTags
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasRetryable() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleTags() bool`
 
-HasRetryable returns a boolean if a field has been set.
+HasAnsibleTags returns a boolean if a field has been set.
 
-### GetRetryCount
+### GetUsername
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryCount() int64`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetUsername() string`
 
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
+GetUsername returns the Username field if non-nil, zero value otherwise.
 
-### GetRetryCountOk
+### GetUsernameOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryCountOk() (*int64, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetUsernameOk() (*string, bool)`
 
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryCount
+### SetUsername
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetRetryCount(v int64)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetUsername(v string)`
 
-SetRetryCount sets RetryCount field to given value.
+SetUsername sets Username field to given value.
 
-### HasRetryCount
+### HasUsername
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasRetryCount() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasUsername() bool`
 
-HasRetryCount returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetRetryDelaySeconds
+### GetAnsibleGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryDelaySeconds() int64`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGitRef() string`
 
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
+GetAnsibleGitRef returns the AnsibleGitRef field if non-nil, zero value otherwise.
 
-### GetRetryDelaySecondsOk
+### GetAnsibleGitRefOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetRetryDelaySecondsOk() (*int64, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGitRefOk() (*string, bool)`
 
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
+GetAnsibleGitRefOk returns a tuple with the AnsibleGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRetryDelaySeconds
+### SetAnsibleGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetRetryDelaySeconds(v int64)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleGitRef(v string)`
 
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
+SetAnsibleGitRef sets AnsibleGitRef field to given value.
 
-### HasRetryDelaySeconds
+### HasAnsibleGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasRetryDelaySeconds() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleGitRef() bool`
 
-HasRetryDelaySeconds returns a boolean if a field has been set.
+HasAnsibleGitRef returns a boolean if a field has been set.
 
-### GetAllowCustomConfig
+### GetAnsibleTowerGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetAllowCustomConfig() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTowerGitRef() string`
 
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
+GetAnsibleTowerGitRef returns the AnsibleTowerGitRef field if non-nil, zero value otherwise.
 
-### GetAllowCustomConfigOk
+### GetAnsibleTowerGitRefOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetAllowCustomConfigOk() (*bool, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTowerGitRefOk() (*string, bool)`
 
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
+GetAnsibleTowerGitRefOk returns a tuple with the AnsibleTowerGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllowCustomConfig
+### SetAnsibleTowerGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetAllowCustomConfig(v bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleTowerGitRef(v string)`
 
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
+SetAnsibleTowerGitRef sets AnsibleTowerGitRef field to given value.
 
-### HasAllowCustomConfig
+### HasAnsibleTowerGitRef
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasAllowCustomConfig() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleTowerGitRef() bool`
 
-HasAllowCustomConfig returns a boolean if a field has been set.
+HasAnsibleTowerGitRef returns a boolean if a field has been set.
 
-### GetCredential
+### GetAnsibleGroup
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGroup() string`
 
-GetCredential returns the Credential field if non-nil, zero value otherwise.
+GetAnsibleGroup returns the AnsibleGroup field if non-nil, zero value otherwise.
 
-### GetCredentialOk
+### GetAnsibleGroupOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleGroupOk() (*string, bool)`
 
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
+GetAnsibleGroupOk returns a tuple with the AnsibleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCredential
+### SetAnsibleGroup
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleGroup(v string)`
 
-SetCredential sets Credential field to given value.
+SetAnsibleGroup sets AnsibleGroup field to given value.
 
-### HasCredential
+### HasAnsibleGroup
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasCredential() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleGroup() bool`
 
-HasCredential returns a boolean if a field has been set.
+HasAnsibleGroup returns a boolean if a field has been set.
 
-### GetDateCreated
+### GetAnsibleTowerExecuteMode
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetDateCreated() time.Time`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTowerExecuteMode() string`
 
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
+GetAnsibleTowerExecuteMode returns the AnsibleTowerExecuteMode field if non-nil, zero value otherwise.
 
-### GetDateCreatedOk
+### GetAnsibleTowerExecuteModeOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetDateCreatedOk() (*time.Time, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetAnsibleTowerExecuteModeOk() (*string, bool)`
 
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
+GetAnsibleTowerExecuteModeOk returns a tuple with the AnsibleTowerExecuteMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDateCreated
+### SetAnsibleTowerExecuteMode
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetDateCreated(v time.Time)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetAnsibleTowerExecuteMode(v string)`
 
-SetDateCreated sets DateCreated field to given value.
+SetAnsibleTowerExecuteMode sets AnsibleTowerExecuteMode field to given value.
 
-### HasDateCreated
+### HasAnsibleTowerExecuteMode
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasDateCreated() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasAnsibleTowerExecuteMode() bool`
 
-HasDateCreated returns a boolean if a field has been set.
+HasAnsibleTowerExecuteMode returns a boolean if a field has been set.
 
-### GetLastUpdated
+### GetChefDataKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetLastUpdated() time.Time`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKey() string`
 
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
+GetChefDataKey returns the ChefDataKey field if non-nil, zero value otherwise.
 
-### GetLastUpdatedOk
+### GetChefDataKeyOk
 
-`func (o *ListTasks200ResponseAllOfTasksInner) GetLastUpdatedOk() (*time.Time, bool)`
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKeyOk() (*string, bool)`
 
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
+GetChefDataKeyOk returns a tuple with the ChefDataKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastUpdated
+### SetChefDataKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) SetLastUpdated(v time.Time)`
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefDataKey(v string)`
 
-SetLastUpdated sets LastUpdated field to given value.
+SetChefDataKey sets ChefDataKey field to given value.
 
-### HasLastUpdated
+### HasChefDataKey
 
-`func (o *ListTasks200ResponseAllOfTasksInner) HasLastUpdated() bool`
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefDataKey() bool`
 
-HasLastUpdated returns a boolean if a field has been set.
+HasChefDataKey returns a boolean if a field has been set.
+
+### GetChefDataKeyHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKeyHash() string`
+
+GetChefDataKeyHash returns the ChefDataKeyHash field if non-nil, zero value otherwise.
+
+### GetChefDataKeyHashOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKeyHashOk() (*string, bool)`
+
+GetChefDataKeyHashOk returns a tuple with the ChefDataKeyHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefDataKeyHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefDataKeyHash(v string)`
+
+SetChefDataKeyHash sets ChefDataKeyHash field to given value.
+
+### HasChefDataKeyHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefDataKeyHash() bool`
+
+HasChefDataKeyHash returns a boolean if a field has been set.
+
+### GetChefRunList
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefRunList() string`
+
+GetChefRunList returns the ChefRunList field if non-nil, zero value otherwise.
+
+### GetChefRunListOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefRunListOk() (*string, bool)`
+
+GetChefRunListOk returns a tuple with the ChefRunList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefRunList
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefRunList(v string)`
+
+SetChefRunList sets ChefRunList field to given value.
+
+### HasChefRunList
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefRunList() bool`
+
+HasChefRunList returns a boolean if a field has been set.
+
+### GetChefDataKeyPath
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKeyPath() string`
+
+GetChefDataKeyPath returns the ChefDataKeyPath field if non-nil, zero value otherwise.
+
+### GetChefDataKeyPathOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefDataKeyPathOk() (*string, bool)`
+
+GetChefDataKeyPathOk returns a tuple with the ChefDataKeyPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefDataKeyPath
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefDataKeyPath(v string)`
+
+SetChefDataKeyPath sets ChefDataKeyPath field to given value.
+
+### HasChefDataKeyPath
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefDataKeyPath() bool`
+
+HasChefDataKeyPath returns a boolean if a field has been set.
+
+### GetChefEnv
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefEnv() string`
+
+GetChefEnv returns the ChefEnv field if non-nil, zero value otherwise.
+
+### GetChefEnvOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefEnvOk() (*string, bool)`
+
+GetChefEnvOk returns a tuple with the ChefEnv field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefEnv
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefEnv(v string)`
+
+SetChefEnv sets ChefEnv field to given value.
+
+### HasChefEnv
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefEnv() bool`
+
+HasChefEnv returns a boolean if a field has been set.
+
+### GetChefNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefNodeName() string`
+
+GetChefNodeName returns the ChefNodeName field if non-nil, zero value otherwise.
+
+### GetChefNodeNameOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefNodeNameOk() (*string, bool)`
+
+GetChefNodeNameOk returns a tuple with the ChefNodeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefNodeName(v string)`
+
+SetChefNodeName sets ChefNodeName field to given value.
+
+### HasChefNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefNodeName() bool`
+
+HasChefNodeName returns a boolean if a field has been set.
+
+### GetChefAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefAttributes() string`
+
+GetChefAttributes returns the ChefAttributes field if non-nil, zero value otherwise.
+
+### GetChefAttributesOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetChefAttributesOk() (*string, bool)`
+
+GetChefAttributesOk returns a tuple with the ChefAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChefAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetChefAttributes(v string)`
+
+SetChefAttributes sets ChefAttributes field to given value.
+
+### HasChefAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasChefAttributes() bool`
+
+HasChefAttributes returns a boolean if a field has been set.
+
+### GetEmailSkipTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailSkipTemplate() string`
+
+GetEmailSkipTemplate returns the EmailSkipTemplate field if non-nil, zero value otherwise.
+
+### GetEmailSkipTemplateOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailSkipTemplateOk() (*string, bool)`
+
+GetEmailSkipTemplateOk returns a tuple with the EmailSkipTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailSkipTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetEmailSkipTemplate(v string)`
+
+SetEmailSkipTemplate sets EmailSkipTemplate field to given value.
+
+### HasEmailSkipTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasEmailSkipTemplate() bool`
+
+HasEmailSkipTemplate returns a boolean if a field has been set.
+
+### GetEmailSubject
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailSubject() string`
+
+GetEmailSubject returns the EmailSubject field if non-nil, zero value otherwise.
+
+### GetEmailSubjectOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailSubjectOk() (*string, bool)`
+
+GetEmailSubjectOk returns a tuple with the EmailSubject field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailSubject
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetEmailSubject(v string)`
+
+SetEmailSubject sets EmailSubject field to given value.
+
+### HasEmailSubject
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasEmailSubject() bool`
+
+HasEmailSubject returns a boolean if a field has been set.
+
+### GetEmailAddress
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailAddress() string`
+
+GetEmailAddress returns the EmailAddress field if non-nil, zero value otherwise.
+
+### GetEmailAddressOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetEmailAddressOk() (*string, bool)`
+
+GetEmailAddressOk returns a tuple with the EmailAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailAddress
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetEmailAddress(v string)`
+
+SetEmailAddress sets EmailAddress field to given value.
+
+### HasEmailAddress
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasEmailAddress() bool`
+
+HasEmailAddress returns a boolean if a field has been set.
+
+### GetWebPassword
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebPassword() string`
+
+GetWebPassword returns the WebPassword field if non-nil, zero value otherwise.
+
+### GetWebPasswordOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebPasswordOk() (*string, bool)`
+
+GetWebPasswordOk returns a tuple with the WebPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebPassword
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebPassword(v string)`
+
+SetWebPassword sets WebPassword field to given value.
+
+### HasWebPassword
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebPassword() bool`
+
+HasWebPassword returns a boolean if a field has been set.
+
+### GetWebPasswordHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebPasswordHash() string`
+
+GetWebPasswordHash returns the WebPasswordHash field if non-nil, zero value otherwise.
+
+### GetWebPasswordHashOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebPasswordHashOk() (*string, bool)`
+
+GetWebPasswordHashOk returns a tuple with the WebPasswordHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebPasswordHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebPasswordHash(v string)`
+
+SetWebPasswordHash sets WebPasswordHash field to given value.
+
+### HasWebPasswordHash
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebPasswordHash() bool`
+
+HasWebPasswordHash returns a boolean if a field has been set.
+
+### GetWebUser
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebUser() string`
+
+GetWebUser returns the WebUser field if non-nil, zero value otherwise.
+
+### GetWebUserOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebUserOk() (*string, bool)`
+
+GetWebUserOk returns a tuple with the WebUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebUser
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebUser(v string)`
+
+SetWebUser sets WebUser field to given value.
+
+### HasWebUser
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebUser() bool`
+
+HasWebUser returns a boolean if a field has been set.
+
+### GetWebBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebBody() string`
+
+GetWebBody returns the WebBody field if non-nil, zero value otherwise.
+
+### GetWebBodyOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebBodyOk() (*string, bool)`
+
+GetWebBodyOk returns a tuple with the WebBody field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebBody(v string)`
+
+SetWebBody sets WebBody field to given value.
+
+### HasWebBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebBody() bool`
+
+HasWebBody returns a boolean if a field has been set.
+
+### GetWebHeaders
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebHeaders() string`
+
+GetWebHeaders returns the WebHeaders field if non-nil, zero value otherwise.
+
+### GetWebHeadersOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebHeadersOk() (*string, bool)`
+
+GetWebHeadersOk returns a tuple with the WebHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebHeaders
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebHeaders(v string)`
+
+SetWebHeaders sets WebHeaders field to given value.
+
+### HasWebHeaders
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebHeaders() bool`
+
+HasWebHeaders returns a boolean if a field has been set.
+
+### GetIgnoreSSL
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetIgnoreSSL() string`
+
+GetIgnoreSSL returns the IgnoreSSL field if non-nil, zero value otherwise.
+
+### GetIgnoreSSLOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetIgnoreSSLOk() (*string, bool)`
+
+GetIgnoreSSLOk returns a tuple with the IgnoreSSL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreSSL
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetIgnoreSSL(v string)`
+
+SetIgnoreSSL sets IgnoreSSL field to given value.
+
+### HasIgnoreSSL
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasIgnoreSSL() bool`
+
+HasIgnoreSSL returns a boolean if a field has been set.
+
+### GetWebMethod
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebMethod() string`
+
+GetWebMethod returns the WebMethod field if non-nil, zero value otherwise.
+
+### GetWebMethodOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebMethodOk() (*string, bool)`
+
+GetWebMethodOk returns a tuple with the WebMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebMethod
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebMethod(v string)`
+
+SetWebMethod sets WebMethod field to given value.
+
+### HasWebMethod
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebMethod() bool`
+
+HasWebMethod returns a boolean if a field has been set.
+
+### GetWebUrl
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebUrl() string`
+
+GetWebUrl returns the WebUrl field if non-nil, zero value otherwise.
+
+### GetWebUrlOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWebUrlOk() (*string, bool)`
+
+GetWebUrlOk returns a tuple with the WebUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebUrl
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWebUrl(v string)`
+
+SetWebUrl sets WebUrl field to given value.
+
+### HasWebUrl
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWebUrl() bool`
+
+HasWebUrl returns a boolean if a field has been set.
+
+### GetJsScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetJsScript() string`
+
+GetJsScript returns the JsScript field if non-nil, zero value otherwise.
+
+### GetJsScriptOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetJsScriptOk() (*string, bool)`
+
+GetJsScriptOk returns a tuple with the JsScript field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetJsScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetJsScript(v string)`
+
+SetJsScript sets JsScript field to given value.
+
+### HasJsScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasJsScript() bool`
+
+HasJsScript returns a boolean if a field has been set.
+
+### GetContainerScriptId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerScriptId() string`
+
+GetContainerScriptId returns the ContainerScriptId field if non-nil, zero value otherwise.
+
+### GetContainerScriptIdOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerScriptIdOk() (*string, bool)`
+
+GetContainerScriptIdOk returns a tuple with the ContainerScriptId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainerScriptId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetContainerScriptId(v string)`
+
+SetContainerScriptId sets ContainerScriptId field to given value.
+
+### HasContainerScriptId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasContainerScriptId() bool`
+
+HasContainerScriptId returns a boolean if a field has been set.
+
+### GetContainerScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerScript() string`
+
+GetContainerScript returns the ContainerScript field if non-nil, zero value otherwise.
+
+### GetContainerScriptOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerScriptOk() (*string, bool)`
+
+GetContainerScriptOk returns a tuple with the ContainerScript field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainerScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetContainerScript(v string)`
+
+SetContainerScript sets ContainerScript field to given value.
+
+### HasContainerScript
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasContainerScript() bool`
+
+HasContainerScript returns a boolean if a field has been set.
+
+### GetContainerTemplateId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerTemplateId() string`
+
+GetContainerTemplateId returns the ContainerTemplateId field if non-nil, zero value otherwise.
+
+### GetContainerTemplateIdOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerTemplateIdOk() (*string, bool)`
+
+GetContainerTemplateIdOk returns a tuple with the ContainerTemplateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainerTemplateId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetContainerTemplateId(v string)`
+
+SetContainerTemplateId sets ContainerTemplateId field to given value.
+
+### HasContainerTemplateId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasContainerTemplateId() bool`
+
+HasContainerTemplateId returns a boolean if a field has been set.
+
+### GetContainerTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerTemplate() string`
+
+GetContainerTemplate returns the ContainerTemplate field if non-nil, zero value otherwise.
+
+### GetContainerTemplateOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetContainerTemplateOk() (*string, bool)`
+
+GetContainerTemplateOk returns a tuple with the ContainerTemplate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContainerTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetContainerTemplate(v string)`
+
+SetContainerTemplate sets ContainerTemplate field to given value.
+
+### HasContainerTemplate
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasContainerTemplate() bool`
+
+HasContainerTemplate returns a boolean if a field has been set.
+
+### GetOperationalWorkflowId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetOperationalWorkflowId() string`
+
+GetOperationalWorkflowId returns the OperationalWorkflowId field if non-nil, zero value otherwise.
+
+### GetOperationalWorkflowIdOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetOperationalWorkflowIdOk() (*string, bool)`
+
+GetOperationalWorkflowIdOk returns a tuple with the OperationalWorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperationalWorkflowId
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetOperationalWorkflowId(v string)`
+
+SetOperationalWorkflowId sets OperationalWorkflowId field to given value.
+
+
+### GetOperationalWorkflowName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetOperationalWorkflowName() string`
+
+GetOperationalWorkflowName returns the OperationalWorkflowName field if non-nil, zero value otherwise.
+
+### GetOperationalWorkflowNameOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetOperationalWorkflowNameOk() (*string, bool)`
+
+GetOperationalWorkflowNameOk returns a tuple with the OperationalWorkflowName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOperationalWorkflowName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetOperationalWorkflowName(v string)`
+
+SetOperationalWorkflowName sets OperationalWorkflowName field to given value.
+
+### HasOperationalWorkflowName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasOperationalWorkflowName() bool`
+
+HasOperationalWorkflowName returns a boolean if a field has been set.
+
+### GetPuppetEnvironment
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPuppetEnvironment() string`
+
+GetPuppetEnvironment returns the PuppetEnvironment field if non-nil, zero value otherwise.
+
+### GetPuppetEnvironmentOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPuppetEnvironmentOk() (*string, bool)`
+
+GetPuppetEnvironmentOk returns a tuple with the PuppetEnvironment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPuppetEnvironment
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPuppetEnvironment(v string)`
+
+SetPuppetEnvironment sets PuppetEnvironment field to given value.
+
+### HasPuppetEnvironment
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPuppetEnvironment() bool`
+
+HasPuppetEnvironment returns a boolean if a field has been set.
+
+### GetPuppetNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPuppetNodeName() string`
+
+GetPuppetNodeName returns the PuppetNodeName field if non-nil, zero value otherwise.
+
+### GetPuppetNodeNameOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPuppetNodeNameOk() (*string, bool)`
+
+GetPuppetNodeNameOk returns a tuple with the PuppetNodeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPuppetNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPuppetNodeName(v string)`
+
+SetPuppetNodeName sets PuppetNodeName field to given value.
+
+### HasPuppetNodeName
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPuppetNodeName() bool`
+
+HasPuppetNodeName returns a boolean if a field has been set.
+
+### GetPythonArgs
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonArgs() string`
+
+GetPythonArgs returns the PythonArgs field if non-nil, zero value otherwise.
+
+### GetPythonArgsOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonArgsOk() (*string, bool)`
+
+GetPythonArgsOk returns a tuple with the PythonArgs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPythonArgs
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPythonArgs(v string)`
+
+SetPythonArgs sets PythonArgs field to given value.
+
+### HasPythonArgs
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPythonArgs() bool`
+
+HasPythonArgs returns a boolean if a field has been set.
+
+### GetPythonBinary
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonBinary() string`
+
+GetPythonBinary returns the PythonBinary field if non-nil, zero value otherwise.
+
+### GetPythonBinaryOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonBinaryOk() (*string, bool)`
+
+GetPythonBinaryOk returns a tuple with the PythonBinary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPythonBinary
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPythonBinary(v string)`
+
+SetPythonBinary sets PythonBinary field to given value.
+
+### HasPythonBinary
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPythonBinary() bool`
+
+HasPythonBinary returns a boolean if a field has been set.
+
+### GetPythonAdditionalPackages
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonAdditionalPackages() string`
+
+GetPythonAdditionalPackages returns the PythonAdditionalPackages field if non-nil, zero value otherwise.
+
+### GetPythonAdditionalPackagesOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetPythonAdditionalPackagesOk() (*string, bool)`
+
+GetPythonAdditionalPackagesOk returns a tuple with the PythonAdditionalPackages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPythonAdditionalPackages
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetPythonAdditionalPackages(v string)`
+
+SetPythonAdditionalPackages sets PythonAdditionalPackages field to given value.
+
+### HasPythonAdditionalPackages
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasPythonAdditionalPackages() bool`
+
+HasPythonAdditionalPackages returns a boolean if a field has been set.
+
+### GetVroBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetVroBody() string`
+
+GetVroBody returns the VroBody field if non-nil, zero value otherwise.
+
+### GetVroBodyOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetVroBodyOk() (*string, bool)`
+
+GetVroBodyOk returns a tuple with the VroBody field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVroBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetVroBody(v string)`
+
+SetVroBody sets VroBody field to given value.
+
+### HasVroBody
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasVroBody() bool`
+
+HasVroBody returns a boolean if a field has been set.
+
+### GetWriteAttributesAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWriteAttributesAttributes() string`
+
+GetWriteAttributesAttributes returns the WriteAttributesAttributes field if non-nil, zero value otherwise.
+
+### GetWriteAttributesAttributesOk
+
+`func (o *ListTasks200ResponseAllOfTasksInner) GetWriteAttributesAttributesOk() (*string, bool)`
+
+GetWriteAttributesAttributesOk returns a tuple with the WriteAttributesAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWriteAttributesAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) SetWriteAttributesAttributes(v string)`
+
+SetWriteAttributesAttributes sets WriteAttributesAttributes field to given value.
+
+### HasWriteAttributesAttributes
+
+`func (o *ListTasks200ResponseAllOfTasksInner) HasWriteAttributesAttributes() bool`
+
+HasWriteAttributesAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

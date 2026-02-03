@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **string** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType.md) |  | [optional] 
+**Code** | Pointer to **NullableString** |  | [optional] 
+**TaskType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **string** |  | [optional] 
+**TaskOptions** | Pointer to [**AddTasks200ResponseAllOfTaskTaskOptions**](AddTasks200ResponseAllOfTaskTaskOptions.md) |  | [optional] 
+**File** | Pointer to [**AddTasks200ResponseAllOfTaskFile**](AddTasks200ResponseAllOfTaskFile.md) |  | [optional] 
+**ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** |  | [optional] 
 **Retryable** | Pointer to **bool** |  | [optional] 
 **RetryCount** | Pointer to **int64** |  | [optional] 
@@ -142,22 +142,32 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
+### SetCodeNil
+
+`func (o *AddTasks200ResponseAllOfTask) SetCodeNil(b bool)`
+
+ SetCodeNil sets the value for Code to be an explicit nil
+
+### UnsetCode
+`func (o *AddTasks200ResponseAllOfTask) UnsetCode()`
+
+UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetTaskType
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
 
 GetTaskType returns the TaskType field if non-nil, zero value otherwise.
 
 ### GetTaskTypeOk
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType, bool)`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
 
 GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskType
 
-`func (o *AddTasks200ResponseAllOfTask) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf16TaskType)`
+`func (o *AddTasks200ResponseAllOfTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
 
 SetTaskType sets TaskType field to given value.
 
@@ -219,20 +229,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetTaskOptions
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskOptions() AddTasks200ResponseAllOfTaskTaskOptions`
 
 GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
 
 ### GetTaskOptionsOk
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions, bool)`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskOptionsOk() (*AddTasks200ResponseAllOfTaskTaskOptions, bool)`
 
 GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskOptions
 
-`func (o *AddTasks200ResponseAllOfTask) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf16TaskOptions)`
+`func (o *AddTasks200ResponseAllOfTask) SetTaskOptions(v AddTasks200ResponseAllOfTaskTaskOptions)`
 
 SetTaskOptions sets TaskOptions field to given value.
 
@@ -244,20 +254,20 @@ HasTaskOptions returns a boolean if a field has been set.
 
 ### GetFile
 
-`func (o *AddTasks200ResponseAllOfTask) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *AddTasks200ResponseAllOfTask) GetFile() AddTasks200ResponseAllOfTaskFile`
 
 GetFile returns the File field if non-nil, zero value otherwise.
 
 ### GetFileOk
 
-`func (o *AddTasks200ResponseAllOfTask) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+`func (o *AddTasks200ResponseAllOfTask) GetFileOk() (*AddTasks200ResponseAllOfTaskFile, bool)`
 
 GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFile
 
-`func (o *AddTasks200ResponseAllOfTask) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *AddTasks200ResponseAllOfTask) SetFile(v AddTasks200ResponseAllOfTaskFile)`
 
 SetFile sets File field to given value.
 
@@ -292,6 +302,16 @@ SetResultType sets ResultType field to given value.
 
 HasResultType returns a boolean if a field has been set.
 
+### SetResultTypeNil
+
+`func (o *AddTasks200ResponseAllOfTask) SetResultTypeNil(b bool)`
+
+ SetResultTypeNil sets the value for ResultType to be an explicit nil
+
+### UnsetResultType
+`func (o *AddTasks200ResponseAllOfTask) UnsetResultType()`
+
+UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
 ### GetExecuteTarget
 
 `func (o *AddTasks200ResponseAllOfTask) GetExecuteTarget() string`

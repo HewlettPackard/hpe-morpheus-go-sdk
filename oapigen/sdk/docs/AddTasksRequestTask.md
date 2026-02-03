@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
 **TaskType** | [**AddTasksRequestTaskTaskType**](AddTasksRequestTaskTaskType.md) |  | 
 **Labels** | Pointer to **[]string** | An array of Category labels for filtering | [optional] 
-**TaskOptions** | Pointer to **map[string]interface{}** | Map of options specific to each &#x60;task type&#x60;. eg. script | [optional] 
+**TaskOptions** | Pointer to [**AddTasksRequestTaskTaskOptions**](AddTasksRequestTaskTaskOptions.md) |  | [optional] 
 **ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | **string** | The execution target. eg. local,remote,resource. The default value varies by task type.  | 
 **Retryable** | Pointer to **bool** | If the task should be retried or not. | [optional] [default to false]
-**RetryCount** | Pointer to **int32** | The number of times to retry. | [optional] 
-**RetryDelaySeconds** | Pointer to **float32** | The delay, between retries. | [optional] 
+**RetryCount** | Pointer to **int64** | The number of times to retry. | [optional] 
+**RetryDelaySeconds** | Pointer to **int64** | The delay, between retries. | [optional] 
 **File** | Pointer to [**AddTasksRequestTaskFile**](AddTasksRequestTaskFile.md) |  | [optional] 
 **Credential** | Pointer to [**AddTasksRequestTaskCredential**](AddTasksRequestTaskCredential.md) |  | [optional] 
 
@@ -154,20 +154,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTaskOptions
 
-`func (o *AddTasksRequestTask) GetTaskOptions() map[string]interface{}`
+`func (o *AddTasksRequestTask) GetTaskOptions() AddTasksRequestTaskTaskOptions`
 
 GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
 
 ### GetTaskOptionsOk
 
-`func (o *AddTasksRequestTask) GetTaskOptionsOk() (*map[string]interface{}, bool)`
+`func (o *AddTasksRequestTask) GetTaskOptionsOk() (*AddTasksRequestTaskTaskOptions, bool)`
 
 GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskOptions
 
-`func (o *AddTasksRequestTask) SetTaskOptions(v map[string]interface{})`
+`func (o *AddTasksRequestTask) SetTaskOptions(v AddTasksRequestTaskTaskOptions)`
 
 SetTaskOptions sets TaskOptions field to given value.
 
@@ -259,20 +259,20 @@ HasRetryable returns a boolean if a field has been set.
 
 ### GetRetryCount
 
-`func (o *AddTasksRequestTask) GetRetryCount() int32`
+`func (o *AddTasksRequestTask) GetRetryCount() int64`
 
 GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
 
 ### GetRetryCountOk
 
-`func (o *AddTasksRequestTask) GetRetryCountOk() (*int32, bool)`
+`func (o *AddTasksRequestTask) GetRetryCountOk() (*int64, bool)`
 
 GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetryCount
 
-`func (o *AddTasksRequestTask) SetRetryCount(v int32)`
+`func (o *AddTasksRequestTask) SetRetryCount(v int64)`
 
 SetRetryCount sets RetryCount field to given value.
 
@@ -284,20 +284,20 @@ HasRetryCount returns a boolean if a field has been set.
 
 ### GetRetryDelaySeconds
 
-`func (o *AddTasksRequestTask) GetRetryDelaySeconds() float32`
+`func (o *AddTasksRequestTask) GetRetryDelaySeconds() int64`
 
 GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
 
 ### GetRetryDelaySecondsOk
 
-`func (o *AddTasksRequestTask) GetRetryDelaySecondsOk() (*float32, bool)`
+`func (o *AddTasksRequestTask) GetRetryDelaySecondsOk() (*int64, bool)`
 
 GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetryDelaySeconds
 
-`func (o *AddTasksRequestTask) SetRetryDelaySeconds(v float32)`
+`func (o *AddTasksRequestTask) SetRetryDelaySeconds(v int64)`
 
 SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
 

@@ -13,807 +13,722 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
-
-	"gopkg.in/validator.v2"
+	"time"
 )
 
-// very silly way of avoiding `"fmt" imported and not used` errors
-var _ fmt.Stringer
+// checks if the AddTasks200ResponseAllOfTask type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddTasks200ResponseAllOfTask{}
 
-// AddTasks200ResponseAllOfTask - struct for AddTasks200ResponseAllOfTask
+// AddTasks200ResponseAllOfTask struct for AddTasks200ResponseAllOfTask
 type AddTasks200ResponseAllOfTask struct {
-	ListTasks200ResponseAllOfTasksInnerAnyOf   *ListTasks200ResponseAllOfTasksInnerAnyOf
-	ListTasks200ResponseAllOfTasksInnerAnyOf1  *ListTasks200ResponseAllOfTasksInnerAnyOf1
-	ListTasks200ResponseAllOfTasksInnerAnyOf10 *ListTasks200ResponseAllOfTasksInnerAnyOf10
-	ListTasks200ResponseAllOfTasksInnerAnyOf11 *ListTasks200ResponseAllOfTasksInnerAnyOf11
-	ListTasks200ResponseAllOfTasksInnerAnyOf12 *ListTasks200ResponseAllOfTasksInnerAnyOf12
-	ListTasks200ResponseAllOfTasksInnerAnyOf13 *ListTasks200ResponseAllOfTasksInnerAnyOf13
-	ListTasks200ResponseAllOfTasksInnerAnyOf14 *ListTasks200ResponseAllOfTasksInnerAnyOf14
-	ListTasks200ResponseAllOfTasksInnerAnyOf15 *ListTasks200ResponseAllOfTasksInnerAnyOf15
-	ListTasks200ResponseAllOfTasksInnerAnyOf16 *ListTasks200ResponseAllOfTasksInnerAnyOf16
-	ListTasks200ResponseAllOfTasksInnerAnyOf2  *ListTasks200ResponseAllOfTasksInnerAnyOf2
-	ListTasks200ResponseAllOfTasksInnerAnyOf3  *ListTasks200ResponseAllOfTasksInnerAnyOf3
-	ListTasks200ResponseAllOfTasksInnerAnyOf4  *ListTasks200ResponseAllOfTasksInnerAnyOf4
-	ListTasks200ResponseAllOfTasksInnerAnyOf5  *ListTasks200ResponseAllOfTasksInnerAnyOf5
-	ListTasks200ResponseAllOfTasksInnerAnyOf6  *ListTasks200ResponseAllOfTasksInnerAnyOf6
-	ListTasks200ResponseAllOfTasksInnerAnyOf7  *ListTasks200ResponseAllOfTasksInnerAnyOf7
-	ListTasks200ResponseAllOfTasksInnerAnyOf8  *ListTasks200ResponseAllOfTasksInnerAnyOf8
-	ListTasks200ResponseAllOfTasksInnerAnyOf9  *ListTasks200ResponseAllOfTasksInnerAnyOf9
+	Id                   *int64                                                      `json:"id,omitempty"`
+	AccountId            *int64                                                      `json:"accountId,omitempty"`
+	Name                 *string                                                     `json:"name,omitempty"`
+	Code                 NullableString                                              `json:"code,omitempty"`
+	TaskType             *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"taskType,omitempty"`
+	Labels               []string                                                    `json:"labels,omitempty"`
+	Visibility           *string                                                     `json:"visibility,omitempty"`
+	TaskOptions          *AddTasks200ResponseAllOfTaskTaskOptions                    `json:"taskOptions,omitempty"`
+	File                 *AddTasks200ResponseAllOfTaskFile                           `json:"file,omitempty"`
+	ResultType           NullableString                                              `json:"resultType,omitempty"`
+	ExecuteTarget        *string                                                     `json:"executeTarget,omitempty"`
+	Retryable            *bool                                                       `json:"retryable,omitempty"`
+	RetryCount           *int64                                                      `json:"retryCount,omitempty"`
+	RetryDelaySeconds    *int64                                                      `json:"retryDelaySeconds,omitempty"`
+	AllowCustomConfig    *bool                                                       `json:"allowCustomConfig,omitempty"`
+	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf        `json:"credential,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOfAsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOfAsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf: v,
-	}
+type _AddTasks200ResponseAllOfTask AddTasks200ResponseAllOfTask
+
+// NewAddTasks200ResponseAllOfTask instantiates a new AddTasks200ResponseAllOfTask object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewAddTasks200ResponseAllOfTask() *AddTasks200ResponseAllOfTask {
+	this := AddTasks200ResponseAllOfTask{}
+	return &this
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf1AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf1 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf1AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf1) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf1: v,
-	}
+// NewAddTasks200ResponseAllOfTaskWithDefaults instantiates a new AddTasks200ResponseAllOfTask object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewAddTasks200ResponseAllOfTaskWithDefaults() *AddTasks200ResponseAllOfTask {
+	this := AddTasks200ResponseAllOfTask{}
+	return &this
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf10AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf10 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf10AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf10) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf10: v,
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
+		return ret
 	}
+	return *o.Id
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf11AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf11 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf11AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf11) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf11: v,
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
+	return o.Id, true
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf12AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf12 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf12AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf12) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf12: v,
+// IsSetId returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
 	}
+
+	return false
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf13AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf13 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf13AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf13) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf13: v,
-	}
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AddTasks200ResponseAllOfTask) SetId(v int64) {
+	o.Id = &v
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf14AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf14 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf14AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf14) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf14: v,
+// GetAccountId returns the AccountId field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetAccountId() int64 {
+	if o == nil || IsNil(o.AccountId) {
+		var ret int64
+		return ret
 	}
+	return *o.AccountId
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf15AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf15 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf15AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf15) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf15: v,
+// GetAccountIdOk returns a tuple with the AccountId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetAccountIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.AccountId) {
+		return nil, false
 	}
+	return o.AccountId, true
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf16AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf16 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf16AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf16) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf16: v,
+// IsSetAccountId returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetAccountId() bool {
+	if o != nil && !IsNil(o.AccountId) {
+		return true
 	}
+
+	return false
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf2AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf2 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf2AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf2) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf2: v,
-	}
+// SetAccountId gets a reference to the given int64 and assigns it to the AccountId field.
+func (o *AddTasks200ResponseAllOfTask) SetAccountId(v int64) {
+	o.AccountId = &v
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf3AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf3 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf3AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf3) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf3: v,
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
 	}
+	return *o.Name
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf4AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf4 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf4AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf4) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf4: v,
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
 	}
+	return o.Name, true
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf5AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf5 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf5AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf5) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf5: v,
+// IsSetName returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
 	}
+
+	return false
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf6AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf6 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf6AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf6) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf6: v,
-	}
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *AddTasks200ResponseAllOfTask) SetName(v string) {
+	o.Name = &v
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf7AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf7 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf7AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf7) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf7: v,
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddTasks200ResponseAllOfTask) GetCode() string {
+	if o == nil || IsNil(o.Code.Get()) {
+		var ret string
+		return ret
 	}
+	return *o.Code.Get()
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf8AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf8 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf8AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf8) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf8: v,
+// GetCodeOk returns a tuple with the Code field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddTasks200ResponseAllOfTask) GetCodeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
 	}
+	return o.Code.Get(), o.Code.IsSet()
 }
 
-// ListTasks200ResponseAllOfTasksInnerAnyOf9AsAddTasks200ResponseAllOfTask is a convenience function that returns ListTasks200ResponseAllOfTasksInnerAnyOf9 wrapped in AddTasks200ResponseAllOfTask
-func ListTasks200ResponseAllOfTasksInnerAnyOf9AsAddTasks200ResponseAllOfTask(v *ListTasks200ResponseAllOfTasksInnerAnyOf9) AddTasks200ResponseAllOfTask {
-	return AddTasks200ResponseAllOfTask{
-		ListTasks200ResponseAllOfTasksInnerAnyOf9: v,
+// IsSetCode returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetCode() bool {
+	if o != nil && o.Code.IsSet() {
+		return true
 	}
+
+	return false
 }
 
-func (dst *AddTasks200ResponseAllOfTask) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddTasks200ResponseAllOfTask{}
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
-	}
-
-	mapstructDecode(data, &dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
-
-	if IsEmpty(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9) {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
-	}
-
-	return dst, nil
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
+func (o *AddTasks200ResponseAllOfTask) SetCode(v string) {
+	o.Code.Set(&v)
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *AddTasks200ResponseAllOfTask) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf1
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf1, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf1) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf1); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf10
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf10, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf10) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf10); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf11
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf11, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf11) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf11); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf12
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf12, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf12) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf12); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf13
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf13, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf13) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf13); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf14
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf14, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf14) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf14); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf15
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf15, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf15) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf15); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf16
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf16, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf16) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf16); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf2
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf2, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf2) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf2); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf3
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf3, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf3) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf3); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf4
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf4, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf4) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf4); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf5
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf5, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf5) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf5); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf6
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf6, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf6) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf6); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf7
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf7, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf7) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf7); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf8
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf8, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf8) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf8); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
-	}
-
-	// try to unmarshal data into ListTasks200ResponseAllOfTasksInnerAnyOf9
-	err = newStrictDecoder(data).Decode(&dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
-	if err == nil {
-		jsonListTasks200ResponseAllOfTasksInnerAnyOf9, _ := json.Marshal(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9)
-		if string(jsonListTasks200ResponseAllOfTasksInnerAnyOf9) == "{}" { // empty struct
-			dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
-		} else {
-			if err = validator.Validate(dst.ListTasks200ResponseAllOfTasksInnerAnyOf9); err != nil {
-				dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf1 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf10 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf11 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf12 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf13 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf14 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf15 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf16 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf2 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf3 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf4 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf5 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf6 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf7 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf8 = nil
-		dst.ListTasks200ResponseAllOfTasksInnerAnyOf9 = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(AddTasks200ResponseAllOfTask)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(AddTasks200ResponseAllOfTask)")
-	}
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *AddTasks200ResponseAllOfTask) SetCodeNil() {
+	o.Code.Set(nil)
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src AddTasks200ResponseAllOfTask) MarshalJSON() ([]byte, error) {
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf1 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf1)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf10 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf10)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf11 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf11)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf12 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf12)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf13 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf13)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf14 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf14)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf15 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf15)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf16 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf16)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf2 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf2)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf3 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf3)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf4 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf4)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf5 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf5)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf6 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf6)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf7 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf7)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf8 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf8)
-	}
-
-	if src.ListTasks200ResponseAllOfTasksInnerAnyOf9 != nil {
-		return json.Marshal(&src.ListTasks200ResponseAllOfTasksInnerAnyOf9)
-	}
-
-	return nil, nil // no data in oneOf schemas
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *AddTasks200ResponseAllOfTask) UnsetCode() {
+	o.Code.Unset()
 }
 
-// Get the actual instance
-func (obj *AddTasks200ResponseAllOfTask) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
+// GetTaskType returns the TaskType field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+	if o == nil || IsNil(o.TaskType) {
+		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		return ret
 	}
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf1 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf1
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf10 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf10
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf11 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf11
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf12 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf12
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf13 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf13
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf14 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf14
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf15 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf15
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf16 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf16
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf2 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf2
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf3 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf3
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf4 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf4
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf5 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf5
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf6 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf6
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf7 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf7
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf8 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf8
-	}
-
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf9 != nil {
-		return obj.ListTasks200ResponseAllOfTasksInnerAnyOf9
-	}
-
-	// all schemas are nil
-	return nil
+	return *o.TaskType
 }
 
-// Get the actual instance value
-func (obj AddTasks200ResponseAllOfTask) GetActualInstanceValue() interface{} {
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf
+// GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+	if o == nil || IsNil(o.TaskType) {
+		return nil, false
+	}
+	return o.TaskType, true
+}
+
+// IsSetTaskType returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetTaskType() bool {
+	if o != nil && !IsNil(o.TaskType) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf1 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf1
+	return false
+}
+
+// SetTaskType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the TaskType field.
+func (o *AddTasks200ResponseAllOfTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+	o.TaskType = &v
+}
+
+// GetLabels returns the Labels field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetLabels() []string {
+	if o == nil || IsNil(o.Labels) {
+		var ret []string
+		return ret
+	}
+	return o.Labels
+}
+
+// GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetLabelsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Labels) {
+		return nil, false
+	}
+	return o.Labels, true
+}
+
+// IsSetLabels returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetLabels() bool {
+	if o != nil && !IsNil(o.Labels) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf10 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf10
+	return false
+}
+
+// SetLabels gets a reference to the given []string and assigns it to the Labels field.
+func (o *AddTasks200ResponseAllOfTask) SetLabels(v []string) {
+	o.Labels = v
+}
+
+// GetVisibility returns the Visibility field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetVisibility() string {
+	if o == nil || IsNil(o.Visibility) {
+		var ret string
+		return ret
+	}
+	return *o.Visibility
+}
+
+// GetVisibilityOk returns a tuple with the Visibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetVisibilityOk() (*string, bool) {
+	if o == nil || IsNil(o.Visibility) {
+		return nil, false
+	}
+	return o.Visibility, true
+}
+
+// IsSetVisibility returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetVisibility() bool {
+	if o != nil && !IsNil(o.Visibility) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf11 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf11
+	return false
+}
+
+// SetVisibility gets a reference to the given string and assigns it to the Visibility field.
+func (o *AddTasks200ResponseAllOfTask) SetVisibility(v string) {
+	o.Visibility = &v
+}
+
+// GetTaskOptions returns the TaskOptions field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetTaskOptions() AddTasks200ResponseAllOfTaskTaskOptions {
+	if o == nil || IsNil(o.TaskOptions) {
+		var ret AddTasks200ResponseAllOfTaskTaskOptions
+		return ret
+	}
+	return *o.TaskOptions
+}
+
+// GetTaskOptionsOk returns a tuple with the TaskOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetTaskOptionsOk() (*AddTasks200ResponseAllOfTaskTaskOptions, bool) {
+	if o == nil || IsNil(o.TaskOptions) {
+		return nil, false
+	}
+	return o.TaskOptions, true
+}
+
+// IsSetTaskOptions returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetTaskOptions() bool {
+	if o != nil && !IsNil(o.TaskOptions) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf12 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf12
+	return false
+}
+
+// SetTaskOptions gets a reference to the given AddTasks200ResponseAllOfTaskTaskOptions and assigns it to the TaskOptions field.
+func (o *AddTasks200ResponseAllOfTask) SetTaskOptions(v AddTasks200ResponseAllOfTaskTaskOptions) {
+	o.TaskOptions = &v
+}
+
+// GetFile returns the File field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetFile() AddTasks200ResponseAllOfTaskFile {
+	if o == nil || IsNil(o.File) {
+		var ret AddTasks200ResponseAllOfTaskFile
+		return ret
+	}
+	return *o.File
+}
+
+// GetFileOk returns a tuple with the File field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetFileOk() (*AddTasks200ResponseAllOfTaskFile, bool) {
+	if o == nil || IsNil(o.File) {
+		return nil, false
+	}
+	return o.File, true
+}
+
+// IsSetFile returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetFile() bool {
+	if o != nil && !IsNil(o.File) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf13 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf13
+	return false
+}
+
+// SetFile gets a reference to the given AddTasks200ResponseAllOfTaskFile and assigns it to the File field.
+func (o *AddTasks200ResponseAllOfTask) SetFile(v AddTasks200ResponseAllOfTaskFile) {
+	o.File = &v
+}
+
+// GetResultType returns the ResultType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddTasks200ResponseAllOfTask) GetResultType() string {
+	if o == nil || IsNil(o.ResultType.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ResultType.Get()
+}
+
+// GetResultTypeOk returns a tuple with the ResultType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddTasks200ResponseAllOfTask) GetResultTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ResultType.Get(), o.ResultType.IsSet()
+}
+
+// IsSetResultType returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetResultType() bool {
+	if o != nil && o.ResultType.IsSet() {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf14 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf14
+	return false
+}
+
+// SetResultType gets a reference to the given NullableString and assigns it to the ResultType field.
+func (o *AddTasks200ResponseAllOfTask) SetResultType(v string) {
+	o.ResultType.Set(&v)
+}
+
+// SetResultTypeNil sets the value for ResultType to be an explicit nil
+func (o *AddTasks200ResponseAllOfTask) SetResultTypeNil() {
+	o.ResultType.Set(nil)
+}
+
+// UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
+func (o *AddTasks200ResponseAllOfTask) UnsetResultType() {
+	o.ResultType.Unset()
+}
+
+// GetExecuteTarget returns the ExecuteTarget field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetExecuteTarget() string {
+	if o == nil || IsNil(o.ExecuteTarget) {
+		var ret string
+		return ret
+	}
+	return *o.ExecuteTarget
+}
+
+// GetExecuteTargetOk returns a tuple with the ExecuteTarget field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetExecuteTargetOk() (*string, bool) {
+	if o == nil || IsNil(o.ExecuteTarget) {
+		return nil, false
+	}
+	return o.ExecuteTarget, true
+}
+
+// IsSetExecuteTarget returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetExecuteTarget() bool {
+	if o != nil && !IsNil(o.ExecuteTarget) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf15 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf15
+	return false
+}
+
+// SetExecuteTarget gets a reference to the given string and assigns it to the ExecuteTarget field.
+func (o *AddTasks200ResponseAllOfTask) SetExecuteTarget(v string) {
+	o.ExecuteTarget = &v
+}
+
+// GetRetryable returns the Retryable field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetRetryable() bool {
+	if o == nil || IsNil(o.Retryable) {
+		var ret bool
+		return ret
+	}
+	return *o.Retryable
+}
+
+// GetRetryableOk returns a tuple with the Retryable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetRetryableOk() (*bool, bool) {
+	if o == nil || IsNil(o.Retryable) {
+		return nil, false
+	}
+	return o.Retryable, true
+}
+
+// IsSetRetryable returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetRetryable() bool {
+	if o != nil && !IsNil(o.Retryable) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf16 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf16
+	return false
+}
+
+// SetRetryable gets a reference to the given bool and assigns it to the Retryable field.
+func (o *AddTasks200ResponseAllOfTask) SetRetryable(v bool) {
+	o.Retryable = &v
+}
+
+// GetRetryCount returns the RetryCount field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetRetryCount() int64 {
+	if o == nil || IsNil(o.RetryCount) {
+		var ret int64
+		return ret
+	}
+	return *o.RetryCount
+}
+
+// GetRetryCountOk returns a tuple with the RetryCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetRetryCountOk() (*int64, bool) {
+	if o == nil || IsNil(o.RetryCount) {
+		return nil, false
+	}
+	return o.RetryCount, true
+}
+
+// IsSetRetryCount returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetRetryCount() bool {
+	if o != nil && !IsNil(o.RetryCount) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf2 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf2
+	return false
+}
+
+// SetRetryCount gets a reference to the given int64 and assigns it to the RetryCount field.
+func (o *AddTasks200ResponseAllOfTask) SetRetryCount(v int64) {
+	o.RetryCount = &v
+}
+
+// GetRetryDelaySeconds returns the RetryDelaySeconds field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetRetryDelaySeconds() int64 {
+	if o == nil || IsNil(o.RetryDelaySeconds) {
+		var ret int64
+		return ret
+	}
+	return *o.RetryDelaySeconds
+}
+
+// GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetRetryDelaySecondsOk() (*int64, bool) {
+	if o == nil || IsNil(o.RetryDelaySeconds) {
+		return nil, false
+	}
+	return o.RetryDelaySeconds, true
+}
+
+// IsSetRetryDelaySeconds returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetRetryDelaySeconds() bool {
+	if o != nil && !IsNil(o.RetryDelaySeconds) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf3 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf3
+	return false
+}
+
+// SetRetryDelaySeconds gets a reference to the given int64 and assigns it to the RetryDelaySeconds field.
+func (o *AddTasks200ResponseAllOfTask) SetRetryDelaySeconds(v int64) {
+	o.RetryDelaySeconds = &v
+}
+
+// GetAllowCustomConfig returns the AllowCustomConfig field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetAllowCustomConfig() bool {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowCustomConfig
+}
+
+// GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetAllowCustomConfigOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		return nil, false
+	}
+	return o.AllowCustomConfig, true
+}
+
+// IsSetAllowCustomConfig returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetAllowCustomConfig() bool {
+	if o != nil && !IsNil(o.AllowCustomConfig) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf4 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf4
+	return false
+}
+
+// SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
+func (o *AddTasks200ResponseAllOfTask) SetAllowCustomConfig(v bool) {
+	o.AllowCustomConfig = &v
+}
+
+// GetCredential returns the Credential field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
+	if o == nil || IsNil(o.Credential) {
+		var ret ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+		return ret
+	}
+	return *o.Credential
+}
+
+// GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool) {
+	if o == nil || IsNil(o.Credential) {
+		return nil, false
+	}
+	return o.Credential, true
+}
+
+// IsSetCredential returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetCredential() bool {
+	if o != nil && !IsNil(o.Credential) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf5 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf5
+	return false
+}
+
+// SetCredential gets a reference to the given ListClouds200ResponseAllOfZonesInnerCredentialAnyOf and assigns it to the Credential field.
+func (o *AddTasks200ResponseAllOfTask) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
+	o.Credential = &v
+}
+
+// GetDateCreated returns the DateCreated field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetDateCreated() time.Time {
+	if o == nil || IsNil(o.DateCreated) {
+		var ret time.Time
+		return ret
+	}
+	return *o.DateCreated
+}
+
+// GetDateCreatedOk returns a tuple with the DateCreated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetDateCreatedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.DateCreated) {
+		return nil, false
+	}
+	return o.DateCreated, true
+}
+
+// IsSetDateCreated returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetDateCreated() bool {
+	if o != nil && !IsNil(o.DateCreated) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf6 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf6
+	return false
+}
+
+// SetDateCreated gets a reference to the given time.Time and assigns it to the DateCreated field.
+func (o *AddTasks200ResponseAllOfTask) SetDateCreated(v time.Time) {
+	o.DateCreated = &v
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise.
+func (o *AddTasks200ResponseAllOfTask) GetLastUpdated() time.Time {
+	if o == nil || IsNil(o.LastUpdated) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastUpdated
+}
+
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasks200ResponseAllOfTask) GetLastUpdatedOk() (*time.Time, bool) {
+	if o == nil || IsNil(o.LastUpdated) {
+		return nil, false
+	}
+	return o.LastUpdated, true
+}
+
+// IsSetLastUpdated returns a boolean if a field has been set.
+func (o *AddTasks200ResponseAllOfTask) IsSetLastUpdated() bool {
+	if o != nil && !IsNil(o.LastUpdated) {
+		return true
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf7 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf7
+	return false
+}
+
+// SetLastUpdated gets a reference to the given time.Time and assigns it to the LastUpdated field.
+func (o *AddTasks200ResponseAllOfTask) SetLastUpdated(v time.Time) {
+	o.LastUpdated = &v
+}
+
+func (o AddTasks200ResponseAllOfTask) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AddTasks200ResponseAllOfTask) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.AccountId) {
+		toSerialize["accountId"] = o.AccountId
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
+	}
+	if !IsNil(o.TaskType) {
+		toSerialize["taskType"] = o.TaskType
+	}
+	if !IsNil(o.Labels) {
+		toSerialize["labels"] = o.Labels
+	}
+	if !IsNil(o.Visibility) {
+		toSerialize["visibility"] = o.Visibility
+	}
+	if !IsNil(o.TaskOptions) {
+		toSerialize["taskOptions"] = o.TaskOptions
+	}
+	if !IsNil(o.File) {
+		toSerialize["file"] = o.File
+	}
+	if o.ResultType.IsSet() {
+		toSerialize["resultType"] = o.ResultType.Get()
+	}
+	if !IsNil(o.ExecuteTarget) {
+		toSerialize["executeTarget"] = o.ExecuteTarget
+	}
+	if !IsNil(o.Retryable) {
+		toSerialize["retryable"] = o.Retryable
+	}
+	if !IsNil(o.RetryCount) {
+		toSerialize["retryCount"] = o.RetryCount
+	}
+	if !IsNil(o.RetryDelaySeconds) {
+		toSerialize["retryDelaySeconds"] = o.RetryDelaySeconds
+	}
+	if !IsNil(o.AllowCustomConfig) {
+		toSerialize["allowCustomConfig"] = o.AllowCustomConfig
+	}
+	if !IsNil(o.Credential) {
+		toSerialize["credential"] = o.Credential
+	}
+	if !IsNil(o.DateCreated) {
+		toSerialize["dateCreated"] = o.DateCreated
+	}
+	if !IsNil(o.LastUpdated) {
+		toSerialize["lastUpdated"] = o.LastUpdated
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf8 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf8
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
 	}
 
-	if obj.ListTasks200ResponseAllOfTasksInnerAnyOf9 != nil {
-		return *obj.ListTasks200ResponseAllOfTasksInnerAnyOf9
-	}
-
-	// all schemas are nil
-	return nil
+	return toSerialize, nil
 }
 
 type NullableAddTasks200ResponseAllOfTask struct {
@@ -860,3 +775,9 @@ func (v NullableAddTasks200ResponseAllOfTask) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
+func (o *AddTasks200ResponseAllOfTask) UnmarshalJSON(data []byte) (err error) {
+	return decode(data, &o)
+}
+
+// - model_simple.mustache

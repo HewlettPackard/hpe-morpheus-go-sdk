@@ -4,24 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +32,286 @@ NewTaskShellConfigWithDefaults instantiates a new TaskShellConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetLocalScriptGitRef
 
-`func (o *TaskShellConfig) GetId() int64`
+`func (o *TaskShellConfig) GetLocalScriptGitRef() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetLocalScriptGitRefOk
 
-`func (o *TaskShellConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskShellConfig) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetLocalScriptGitRef
 
-`func (o *TaskShellConfig) SetId(v int64)`
+`func (o *TaskShellConfig) SetLocalScriptGitRef(v string)`
 
-SetId sets Id field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasId
+### HasLocalScriptGitRef
 
-`func (o *TaskShellConfig) HasId() bool`
+`func (o *TaskShellConfig) HasLocalScriptGitRef() bool`
 
-HasId returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetAccountId
+### SetLocalScriptGitRefNil
 
-`func (o *TaskShellConfig) GetAccountId() int64`
+`func (o *TaskShellConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetAccountIdOk
+### UnsetLocalScriptGitRef
+`func (o *TaskShellConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskShellConfig) GetAccountIdOk() (*int64, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPort
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskShellConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetPort
 
-`func (o *TaskShellConfig) SetAccountId(v int64)`
+`func (o *TaskShellConfig) SetPort(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetPort sets Port field to given value.
 
-### HasAccountId
+### HasPort
 
-`func (o *TaskShellConfig) HasAccountId() bool`
+`func (o *TaskShellConfig) HasPort() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetName
+### SetPortNil
 
-`func (o *TaskShellConfig) GetName() string`
+`func (o *TaskShellConfig) SetPortNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetNameOk
+### UnsetPort
+`func (o *TaskShellConfig) UnsetPort()`
 
-`func (o *TaskShellConfig) GetNameOk() (*string, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetPassword
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *TaskShellConfig) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetPassword
 
-`func (o *TaskShellConfig) SetName(v string)`
+`func (o *TaskShellConfig) SetPassword(v string)`
 
-SetName sets Name field to given value.
+SetPassword sets Password field to given value.
 
-### HasName
+### HasPassword
 
-`func (o *TaskShellConfig) HasName() bool`
+`func (o *TaskShellConfig) HasPassword() bool`
 
-HasName returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetCode
+### SetPasswordNil
 
-`func (o *TaskShellConfig) GetCode() string`
+`func (o *TaskShellConfig) SetPasswordNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetCodeOk
+### UnsetPassword
+`func (o *TaskShellConfig) UnsetPassword()`
 
-`func (o *TaskShellConfig) GetCodeOk() (*string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskShellConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetPasswordHash
 
-`func (o *TaskShellConfig) SetCode(v string)`
+`func (o *TaskShellConfig) SetPasswordHash(v string)`
 
-SetCode sets Code field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasCode
+### HasPasswordHash
 
-`func (o *TaskShellConfig) HasCode() bool`
+`func (o *TaskShellConfig) HasPasswordHash() bool`
 
-HasCode returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetPasswordHashNil
 
-`func (o *TaskShellConfig) SetCodeNil(b bool)`
+`func (o *TaskShellConfig) SetPasswordHashNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### UnsetCode
-`func (o *TaskShellConfig) UnsetCode()`
+### UnsetPasswordHash
+`func (o *TaskShellConfig) UnsetPasswordHash()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetUsername
 
-`func (o *TaskShellConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType`
+`func (o *TaskShellConfig) GetUsername() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetUsername returns the Username field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetUsernameOk
 
-`func (o *TaskShellConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType, bool)`
+`func (o *TaskShellConfig) GetUsernameOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetUsername
 
-`func (o *TaskShellConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf14TaskType)`
+`func (o *TaskShellConfig) SetUsername(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetUsername sets Username field to given value.
 
-### HasTaskType
+### HasUsername
 
-`func (o *TaskShellConfig) HasTaskType() bool`
+`func (o *TaskShellConfig) HasUsername() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetLabels
+### SetUsernameNil
 
-`func (o *TaskShellConfig) GetLabels() []string`
+`func (o *TaskShellConfig) SetUsernameNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetLabelsOk
+### UnsetUsername
+`func (o *TaskShellConfig) UnsetUsername()`
 
-`func (o *TaskShellConfig) GetLabelsOk() (*[]string, bool)`
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetHost
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskShellConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetHost
 
-`func (o *TaskShellConfig) SetLabels(v []string)`
+`func (o *TaskShellConfig) SetHost(v string)`
 
-SetLabels sets Labels field to given value.
+SetHost sets Host field to given value.
 
-### HasLabels
+### HasHost
 
-`func (o *TaskShellConfig) HasLabels() bool`
+`func (o *TaskShellConfig) HasHost() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetVisibility
+### SetHostNil
 
-`func (o *TaskShellConfig) GetVisibility() string`
+`func (o *TaskShellConfig) SetHostNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetHostNil sets the value for Host to be an explicit nil
 
-### GetVisibilityOk
+### UnsetHost
+`func (o *TaskShellConfig) UnsetHost()`
 
-`func (o *TaskShellConfig) GetVisibilityOk() (*string, bool)`
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetSshKey
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetSshKey() string`
+
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
+
+### GetSshKeyOk
+
+`func (o *TaskShellConfig) GetSshKeyOk() (*string, bool)`
+
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetSshKey
 
-`func (o *TaskShellConfig) SetVisibility(v string)`
+`func (o *TaskShellConfig) SetSshKey(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasVisibility
+### HasSshKey
 
-`func (o *TaskShellConfig) HasVisibility() bool`
+`func (o *TaskShellConfig) HasSshKey() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetSshKeyNil
 
-`func (o *TaskShellConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions`
+`func (o *TaskShellConfig) SetSshKeyNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetSshKey
+`func (o *TaskShellConfig) UnsetSshKey()`
 
-`func (o *TaskShellConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetLocalScriptGitId
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskShellConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskShellConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetLocalScriptGitId
 
-`func (o *TaskShellConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf14TaskOptions)`
+`func (o *TaskShellConfig) SetLocalScriptGitId(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasTaskOptions
+### HasLocalScriptGitId
 
-`func (o *TaskShellConfig) HasTaskOptions() bool`
+`func (o *TaskShellConfig) HasLocalScriptGitId() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetFile
+### SetLocalScriptGitIdNil
 
-`func (o *TaskShellConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskShellConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetFileOk
+### UnsetLocalScriptGitId
+`func (o *TaskShellConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskShellConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
-
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFile
-
-`func (o *TaskShellConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
-
-SetFile sets File field to given value.
-
-### HasFile
-
-`func (o *TaskShellConfig) HasFile() bool`
-
-HasFile returns a boolean if a field has been set.
-
-### GetResultType
-
-`func (o *TaskShellConfig) GetResultType() string`
-
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
-
-### GetResultTypeOk
-
-`func (o *TaskShellConfig) GetResultTypeOk() (*string, bool)`
-
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResultType
-
-`func (o *TaskShellConfig) SetResultType(v string)`
-
-SetResultType sets ResultType field to given value.
-
-### HasResultType
-
-`func (o *TaskShellConfig) HasResultType() bool`
-
-HasResultType returns a boolean if a field has been set.
-
-### SetResultTypeNil
-
-`func (o *TaskShellConfig) SetResultTypeNil(b bool)`
-
- SetResultTypeNil sets the value for ResultType to be an explicit nil
-
-### UnsetResultType
-`func (o *TaskShellConfig) UnsetResultType()`
-
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskShellConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskShellConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskShellConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskShellConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskShellConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskShellConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskShellConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskShellConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskShellConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskShellConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskShellConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskShellConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskShellConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskShellConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskShellConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskShellConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskShellConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskShellConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskShellConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskShellConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskShellConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskShellConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskShellConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskShellConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskShellConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskShellConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskShellConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskShellConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskShellConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskShellConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskShellConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskShellConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

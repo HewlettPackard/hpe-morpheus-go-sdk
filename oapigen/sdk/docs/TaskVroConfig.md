@@ -4,24 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf15TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf15TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
+**VroBody** | Pointer to **NullableString** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,476 +33,321 @@ NewTaskVroConfigWithDefaults instantiates a new TaskVroConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetSshKey
 
-`func (o *TaskVroConfig) GetId() int64`
+`func (o *TaskVroConfig) GetSshKey() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetSshKeyOk
 
-`func (o *TaskVroConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskVroConfig) GetSshKeyOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetSshKey
 
-`func (o *TaskVroConfig) SetId(v int64)`
+`func (o *TaskVroConfig) SetSshKey(v string)`
 
-SetId sets Id field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasId
+### HasSshKey
 
-`func (o *TaskVroConfig) HasId() bool`
+`func (o *TaskVroConfig) HasSshKey() bool`
 
-HasId returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetAccountId
+### SetSshKeyNil
 
-`func (o *TaskVroConfig) GetAccountId() int64`
+`func (o *TaskVroConfig) SetSshKeyNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetAccountIdOk
+### UnsetSshKey
+`func (o *TaskVroConfig) UnsetSshKey()`
 
-`func (o *TaskVroConfig) GetAccountIdOk() (*int64, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetLocalScriptGitRef
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetLocalScriptGitRef() string`
+
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitRefOk
+
+`func (o *TaskVroConfig) GetLocalScriptGitRefOk() (*string, bool)`
+
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetLocalScriptGitRef
 
-`func (o *TaskVroConfig) SetAccountId(v int64)`
+`func (o *TaskVroConfig) SetLocalScriptGitRef(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasAccountId
+### HasLocalScriptGitRef
 
-`func (o *TaskVroConfig) HasAccountId() bool`
+`func (o *TaskVroConfig) HasLocalScriptGitRef() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### GetName
+### SetLocalScriptGitRefNil
 
-`func (o *TaskVroConfig) GetName() string`
+`func (o *TaskVroConfig) SetLocalScriptGitRefNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### GetNameOk
+### UnsetLocalScriptGitRef
+`func (o *TaskVroConfig) UnsetLocalScriptGitRef()`
 
-`func (o *TaskVroConfig) GetNameOk() (*string, bool)`
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPort
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *TaskVroConfig) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetPort
 
-`func (o *TaskVroConfig) SetName(v string)`
+`func (o *TaskVroConfig) SetPort(v string)`
 
-SetName sets Name field to given value.
+SetPort sets Port field to given value.
 
-### HasName
+### HasPort
 
-`func (o *TaskVroConfig) HasName() bool`
+`func (o *TaskVroConfig) HasPort() bool`
 
-HasName returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetCode
+### SetPortNil
 
-`func (o *TaskVroConfig) GetCode() string`
+`func (o *TaskVroConfig) SetPortNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetCodeOk
+### UnsetPort
+`func (o *TaskVroConfig) UnsetPort()`
 
-`func (o *TaskVroConfig) GetCodeOk() (*string, bool)`
+UnsetPort ensures that no value is present for Port, not even an explicit nil
+### GetVroBody
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetVroBody() string`
+
+GetVroBody returns the VroBody field if non-nil, zero value otherwise.
+
+### GetVroBodyOk
+
+`func (o *TaskVroConfig) GetVroBodyOk() (*string, bool)`
+
+GetVroBodyOk returns a tuple with the VroBody field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetVroBody
 
-`func (o *TaskVroConfig) SetCode(v string)`
+`func (o *TaskVroConfig) SetVroBody(v string)`
 
-SetCode sets Code field to given value.
+SetVroBody sets VroBody field to given value.
 
-### HasCode
+### HasVroBody
 
-`func (o *TaskVroConfig) HasCode() bool`
+`func (o *TaskVroConfig) HasVroBody() bool`
 
-HasCode returns a boolean if a field has been set.
+HasVroBody returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetVroBodyNil
 
-`func (o *TaskVroConfig) SetCodeNil(b bool)`
+`func (o *TaskVroConfig) SetVroBodyNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetVroBodyNil sets the value for VroBody to be an explicit nil
 
-### UnsetCode
-`func (o *TaskVroConfig) UnsetCode()`
+### UnsetVroBody
+`func (o *TaskVroConfig) UnsetVroBody()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetVroBody ensures that no value is present for VroBody, not even an explicit nil
+### GetPassword
 
-`func (o *TaskVroConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType`
+`func (o *TaskVroConfig) GetPassword() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetPasswordOk
 
-`func (o *TaskVroConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType, bool)`
+`func (o *TaskVroConfig) GetPasswordOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetPassword
 
-`func (o *TaskVroConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf15TaskType)`
+`func (o *TaskVroConfig) SetPassword(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetPassword sets Password field to given value.
 
-### HasTaskType
+### HasPassword
 
-`func (o *TaskVroConfig) HasTaskType() bool`
+`func (o *TaskVroConfig) HasPassword() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetLabels
+### SetPasswordNil
 
-`func (o *TaskVroConfig) GetLabels() []string`
+`func (o *TaskVroConfig) SetPasswordNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetLabelsOk
+### UnsetPassword
+`func (o *TaskVroConfig) UnsetPassword()`
 
-`func (o *TaskVroConfig) GetLabelsOk() (*[]string, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskVroConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetPasswordHash
 
-`func (o *TaskVroConfig) SetLabels(v []string)`
+`func (o *TaskVroConfig) SetPasswordHash(v string)`
 
-SetLabels sets Labels field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasLabels
+### HasPasswordHash
 
-`func (o *TaskVroConfig) HasLabels() bool`
+`func (o *TaskVroConfig) HasPasswordHash() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetVisibility
+### SetPasswordHashNil
 
-`func (o *TaskVroConfig) GetVisibility() string`
+`func (o *TaskVroConfig) SetPasswordHashNil(b bool)`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetVisibilityOk
+### UnsetPasswordHash
+`func (o *TaskVroConfig) UnsetPasswordHash()`
 
-`func (o *TaskVroConfig) GetVisibilityOk() (*string, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetHost
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *TaskVroConfig) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetHost
 
-`func (o *TaskVroConfig) SetVisibility(v string)`
+`func (o *TaskVroConfig) SetHost(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetHost sets Host field to given value.
 
-### HasVisibility
+### HasHost
 
-`func (o *TaskVroConfig) HasVisibility() bool`
+`func (o *TaskVroConfig) HasHost() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetHostNil
 
-`func (o *TaskVroConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf15TaskOptions`
+`func (o *TaskVroConfig) SetHostNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetHostNil sets the value for Host to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetHost
+`func (o *TaskVroConfig) UnsetHost()`
 
-`func (o *TaskVroConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf15TaskOptions, bool)`
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetLocalScriptGitId
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskVroConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetLocalScriptGitId
 
-`func (o *TaskVroConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf15TaskOptions)`
+`func (o *TaskVroConfig) SetLocalScriptGitId(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasTaskOptions
+### HasLocalScriptGitId
 
-`func (o *TaskVroConfig) HasTaskOptions() bool`
+`func (o *TaskVroConfig) HasLocalScriptGitId() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### GetFile
+### SetLocalScriptGitIdNil
 
-`func (o *TaskVroConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskVroConfig) SetLocalScriptGitIdNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### GetFileOk
+### UnsetLocalScriptGitId
+`func (o *TaskVroConfig) UnsetLocalScriptGitId()`
 
-`func (o *TaskVroConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetUsername
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskVroConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskVroConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetUsername
 
-`func (o *TaskVroConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskVroConfig) SetUsername(v string)`
 
-SetFile sets File field to given value.
+SetUsername sets Username field to given value.
 
-### HasFile
+### HasUsername
 
-`func (o *TaskVroConfig) HasFile() bool`
+`func (o *TaskVroConfig) HasUsername() bool`
 
-HasFile returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### GetResultType
+### SetUsernameNil
 
-`func (o *TaskVroConfig) GetResultType() string`
+`func (o *TaskVroConfig) SetUsernameNil(b bool)`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### GetResultTypeOk
+### UnsetUsername
+`func (o *TaskVroConfig) UnsetUsername()`
 
-`func (o *TaskVroConfig) GetResultTypeOk() (*string, bool)`
-
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResultType
-
-`func (o *TaskVroConfig) SetResultType(v string)`
-
-SetResultType sets ResultType field to given value.
-
-### HasResultType
-
-`func (o *TaskVroConfig) HasResultType() bool`
-
-HasResultType returns a boolean if a field has been set.
-
-### SetResultTypeNil
-
-`func (o *TaskVroConfig) SetResultTypeNil(b bool)`
-
- SetResultTypeNil sets the value for ResultType to be an explicit nil
-
-### UnsetResultType
-`func (o *TaskVroConfig) UnsetResultType()`
-
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
-
-`func (o *TaskVroConfig) GetExecuteTarget() string`
-
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
-
-### GetExecuteTargetOk
-
-`func (o *TaskVroConfig) GetExecuteTargetOk() (*string, bool)`
-
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExecuteTarget
-
-`func (o *TaskVroConfig) SetExecuteTarget(v string)`
-
-SetExecuteTarget sets ExecuteTarget field to given value.
-
-### HasExecuteTarget
-
-`func (o *TaskVroConfig) HasExecuteTarget() bool`
-
-HasExecuteTarget returns a boolean if a field has been set.
-
-### GetRetryable
-
-`func (o *TaskVroConfig) GetRetryable() bool`
-
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
-
-### GetRetryableOk
-
-`func (o *TaskVroConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskVroConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskVroConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskVroConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskVroConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskVroConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskVroConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskVroConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskVroConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskVroConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskVroConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskVroConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskVroConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskVroConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskVroConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskVroConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskVroConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskVroConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskVroConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskVroConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskVroConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskVroConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskVroConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskVroConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskVroConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskVroConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskVroConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

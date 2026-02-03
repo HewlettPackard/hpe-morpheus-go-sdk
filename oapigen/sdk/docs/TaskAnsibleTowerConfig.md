@@ -4,24 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int64** |  | [optional] 
-**AccountId** | Pointer to **int64** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType**](ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType.md) |  | [optional] 
-**Labels** | Pointer to **[]string** |  | [optional] 
-**Visibility** | Pointer to **string** |  | [optional] 
-**TaskOptions** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions**](ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions.md) |  | [optional] 
-**File** | Pointer to [**ListTasks200ResponseAllOfTasksInnerAnyOfFile**](ListTasks200ResponseAllOfTasksInnerAnyOfFile.md) |  | [optional] 
-**ResultType** | Pointer to **NullableString** |  | [optional] 
-**ExecuteTarget** | Pointer to **string** |  | [optional] 
-**Retryable** | Pointer to **bool** |  | [optional] 
-**RetryCount** | Pointer to **int64** |  | [optional] 
-**RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
-**AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
-**DateCreated** | Pointer to **time.Time** |  | [optional] 
-**LastUpdated** | Pointer to **time.Time** |  | [optional] 
+**Password** | Pointer to **NullableString** |  | [optional] 
+**PasswordHash** | Pointer to **NullableString** |  | [optional] 
+**AnsibleTowerGitRef** | Pointer to **NullableString** |  | [optional] 
+**LocalScriptGitId** | Pointer to **NullableString** |  | [optional] 
+**Host** | Pointer to **NullableString** |  | [optional] 
+**Username** | Pointer to **NullableString** |  | [optional] 
+**SshKey** | Pointer to **NullableString** |  | [optional] 
+**AnsibleGroup** | Pointer to **NullableString** |  | [optional] 
+**AnsibleTowerExecuteMode** | Pointer to **string** |  | [optional] 
+**LocalScriptGitRef** | Pointer to **NullableString** |  | [optional] 
+**Port** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -42,486 +35,381 @@ NewTaskAnsibleTowerConfigWithDefaults instantiates a new TaskAnsibleTowerConfig 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetPassword
 
-`func (o *TaskAnsibleTowerConfig) GetId() int64`
+`func (o *TaskAnsibleTowerConfig) GetPassword() string`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetPassword returns the Password field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetPasswordOk
 
-`func (o *TaskAnsibleTowerConfig) GetIdOk() (*int64, bool)`
+`func (o *TaskAnsibleTowerConfig) GetPasswordOk() (*string, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetPassword
 
-`func (o *TaskAnsibleTowerConfig) SetId(v int64)`
+`func (o *TaskAnsibleTowerConfig) SetPassword(v string)`
 
-SetId sets Id field to given value.
+SetPassword sets Password field to given value.
 
-### HasId
+### HasPassword
 
-`func (o *TaskAnsibleTowerConfig) HasId() bool`
+`func (o *TaskAnsibleTowerConfig) HasPassword() bool`
 
-HasId returns a boolean if a field has been set.
+HasPassword returns a boolean if a field has been set.
 
-### GetAccountId
+### SetPasswordNil
 
-`func (o *TaskAnsibleTowerConfig) GetAccountId() int64`
+`func (o *TaskAnsibleTowerConfig) SetPasswordNil(b bool)`
 
-GetAccountId returns the AccountId field if non-nil, zero value otherwise.
+ SetPasswordNil sets the value for Password to be an explicit nil
 
-### GetAccountIdOk
+### UnsetPassword
+`func (o *TaskAnsibleTowerConfig) UnsetPassword()`
 
-`func (o *TaskAnsibleTowerConfig) GetAccountIdOk() (*int64, bool)`
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
+### GetPasswordHash
 
-GetAccountIdOk returns a tuple with the AccountId field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetPasswordHash() string`
+
+GetPasswordHash returns the PasswordHash field if non-nil, zero value otherwise.
+
+### GetPasswordHashOk
+
+`func (o *TaskAnsibleTowerConfig) GetPasswordHashOk() (*string, bool)`
+
+GetPasswordHashOk returns a tuple with the PasswordHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAccountId
+### SetPasswordHash
 
-`func (o *TaskAnsibleTowerConfig) SetAccountId(v int64)`
+`func (o *TaskAnsibleTowerConfig) SetPasswordHash(v string)`
 
-SetAccountId sets AccountId field to given value.
+SetPasswordHash sets PasswordHash field to given value.
 
-### HasAccountId
+### HasPasswordHash
 
-`func (o *TaskAnsibleTowerConfig) HasAccountId() bool`
+`func (o *TaskAnsibleTowerConfig) HasPasswordHash() bool`
 
-HasAccountId returns a boolean if a field has been set.
+HasPasswordHash returns a boolean if a field has been set.
 
-### GetName
+### SetPasswordHashNil
 
-`func (o *TaskAnsibleTowerConfig) GetName() string`
+`func (o *TaskAnsibleTowerConfig) SetPasswordHashNil(b bool)`
 
-GetName returns the Name field if non-nil, zero value otherwise.
+ SetPasswordHashNil sets the value for PasswordHash to be an explicit nil
 
-### GetNameOk
+### UnsetPasswordHash
+`func (o *TaskAnsibleTowerConfig) UnsetPasswordHash()`
 
-`func (o *TaskAnsibleTowerConfig) GetNameOk() (*string, bool)`
+UnsetPasswordHash ensures that no value is present for PasswordHash, not even an explicit nil
+### GetAnsibleTowerGitRef
 
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetAnsibleTowerGitRef() string`
+
+GetAnsibleTowerGitRef returns the AnsibleTowerGitRef field if non-nil, zero value otherwise.
+
+### GetAnsibleTowerGitRefOk
+
+`func (o *TaskAnsibleTowerConfig) GetAnsibleTowerGitRefOk() (*string, bool)`
+
+GetAnsibleTowerGitRefOk returns a tuple with the AnsibleTowerGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetName
+### SetAnsibleTowerGitRef
 
-`func (o *TaskAnsibleTowerConfig) SetName(v string)`
+`func (o *TaskAnsibleTowerConfig) SetAnsibleTowerGitRef(v string)`
 
-SetName sets Name field to given value.
+SetAnsibleTowerGitRef sets AnsibleTowerGitRef field to given value.
 
-### HasName
+### HasAnsibleTowerGitRef
 
-`func (o *TaskAnsibleTowerConfig) HasName() bool`
+`func (o *TaskAnsibleTowerConfig) HasAnsibleTowerGitRef() bool`
 
-HasName returns a boolean if a field has been set.
+HasAnsibleTowerGitRef returns a boolean if a field has been set.
 
-### GetCode
+### SetAnsibleTowerGitRefNil
 
-`func (o *TaskAnsibleTowerConfig) GetCode() string`
+`func (o *TaskAnsibleTowerConfig) SetAnsibleTowerGitRefNil(b bool)`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+ SetAnsibleTowerGitRefNil sets the value for AnsibleTowerGitRef to be an explicit nil
 
-### GetCodeOk
+### UnsetAnsibleTowerGitRef
+`func (o *TaskAnsibleTowerConfig) UnsetAnsibleTowerGitRef()`
 
-`func (o *TaskAnsibleTowerConfig) GetCodeOk() (*string, bool)`
+UnsetAnsibleTowerGitRef ensures that no value is present for AnsibleTowerGitRef, not even an explicit nil
+### GetLocalScriptGitId
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetLocalScriptGitId() string`
+
+GetLocalScriptGitId returns the LocalScriptGitId field if non-nil, zero value otherwise.
+
+### GetLocalScriptGitIdOk
+
+`func (o *TaskAnsibleTowerConfig) GetLocalScriptGitIdOk() (*string, bool)`
+
+GetLocalScriptGitIdOk returns a tuple with the LocalScriptGitId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetLocalScriptGitId
 
-`func (o *TaskAnsibleTowerConfig) SetCode(v string)`
+`func (o *TaskAnsibleTowerConfig) SetLocalScriptGitId(v string)`
 
-SetCode sets Code field to given value.
+SetLocalScriptGitId sets LocalScriptGitId field to given value.
 
-### HasCode
+### HasLocalScriptGitId
 
-`func (o *TaskAnsibleTowerConfig) HasCode() bool`
+`func (o *TaskAnsibleTowerConfig) HasLocalScriptGitId() bool`
 
-HasCode returns a boolean if a field has been set.
+HasLocalScriptGitId returns a boolean if a field has been set.
 
-### SetCodeNil
+### SetLocalScriptGitIdNil
 
-`func (o *TaskAnsibleTowerConfig) SetCodeNil(b bool)`
+`func (o *TaskAnsibleTowerConfig) SetLocalScriptGitIdNil(b bool)`
 
- SetCodeNil sets the value for Code to be an explicit nil
+ SetLocalScriptGitIdNil sets the value for LocalScriptGitId to be an explicit nil
 
-### UnsetCode
-`func (o *TaskAnsibleTowerConfig) UnsetCode()`
+### UnsetLocalScriptGitId
+`func (o *TaskAnsibleTowerConfig) UnsetLocalScriptGitId()`
 
-UnsetCode ensures that no value is present for Code, not even an explicit nil
-### GetTaskType
+UnsetLocalScriptGitId ensures that no value is present for LocalScriptGitId, not even an explicit nil
+### GetHost
 
-`func (o *TaskAnsibleTowerConfig) GetTaskType() ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType`
+`func (o *TaskAnsibleTowerConfig) GetHost() string`
 
-GetTaskType returns the TaskType field if non-nil, zero value otherwise.
+GetHost returns the Host field if non-nil, zero value otherwise.
 
-### GetTaskTypeOk
+### GetHostOk
 
-`func (o *TaskAnsibleTowerConfig) GetTaskTypeOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType, bool)`
+`func (o *TaskAnsibleTowerConfig) GetHostOk() (*string, bool)`
 
-GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskType
+### SetHost
 
-`func (o *TaskAnsibleTowerConfig) SetTaskType(v ListTasks200ResponseAllOfTasksInnerAnyOf1TaskType)`
+`func (o *TaskAnsibleTowerConfig) SetHost(v string)`
 
-SetTaskType sets TaskType field to given value.
+SetHost sets Host field to given value.
 
-### HasTaskType
+### HasHost
 
-`func (o *TaskAnsibleTowerConfig) HasTaskType() bool`
+`func (o *TaskAnsibleTowerConfig) HasHost() bool`
 
-HasTaskType returns a boolean if a field has been set.
+HasHost returns a boolean if a field has been set.
 
-### GetLabels
+### SetHostNil
 
-`func (o *TaskAnsibleTowerConfig) GetLabels() []string`
+`func (o *TaskAnsibleTowerConfig) SetHostNil(b bool)`
 
-GetLabels returns the Labels field if non-nil, zero value otherwise.
+ SetHostNil sets the value for Host to be an explicit nil
 
-### GetLabelsOk
+### UnsetHost
+`func (o *TaskAnsibleTowerConfig) UnsetHost()`
 
-`func (o *TaskAnsibleTowerConfig) GetLabelsOk() (*[]string, bool)`
+UnsetHost ensures that no value is present for Host, not even an explicit nil
+### GetUsername
 
-GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetUsername() string`
+
+GetUsername returns the Username field if non-nil, zero value otherwise.
+
+### GetUsernameOk
+
+`func (o *TaskAnsibleTowerConfig) GetUsernameOk() (*string, bool)`
+
+GetUsernameOk returns a tuple with the Username field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLabels
+### SetUsername
 
-`func (o *TaskAnsibleTowerConfig) SetLabels(v []string)`
+`func (o *TaskAnsibleTowerConfig) SetUsername(v string)`
 
-SetLabels sets Labels field to given value.
+SetUsername sets Username field to given value.
 
-### HasLabels
+### HasUsername
 
-`func (o *TaskAnsibleTowerConfig) HasLabels() bool`
+`func (o *TaskAnsibleTowerConfig) HasUsername() bool`
 
-HasLabels returns a boolean if a field has been set.
+HasUsername returns a boolean if a field has been set.
 
-### SetLabelsNil
+### SetUsernameNil
 
-`func (o *TaskAnsibleTowerConfig) SetLabelsNil(b bool)`
+`func (o *TaskAnsibleTowerConfig) SetUsernameNil(b bool)`
 
- SetLabelsNil sets the value for Labels to be an explicit nil
+ SetUsernameNil sets the value for Username to be an explicit nil
 
-### UnsetLabels
-`func (o *TaskAnsibleTowerConfig) UnsetLabels()`
+### UnsetUsername
+`func (o *TaskAnsibleTowerConfig) UnsetUsername()`
 
-UnsetLabels ensures that no value is present for Labels, not even an explicit nil
-### GetVisibility
+UnsetUsername ensures that no value is present for Username, not even an explicit nil
+### GetSshKey
 
-`func (o *TaskAnsibleTowerConfig) GetVisibility() string`
+`func (o *TaskAnsibleTowerConfig) GetSshKey() string`
 
-GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+GetSshKey returns the SshKey field if non-nil, zero value otherwise.
 
-### GetVisibilityOk
+### GetSshKeyOk
 
-`func (o *TaskAnsibleTowerConfig) GetVisibilityOk() (*string, bool)`
+`func (o *TaskAnsibleTowerConfig) GetSshKeyOk() (*string, bool)`
 
-GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+GetSshKeyOk returns a tuple with the SshKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetVisibility
+### SetSshKey
 
-`func (o *TaskAnsibleTowerConfig) SetVisibility(v string)`
+`func (o *TaskAnsibleTowerConfig) SetSshKey(v string)`
 
-SetVisibility sets Visibility field to given value.
+SetSshKey sets SshKey field to given value.
 
-### HasVisibility
+### HasSshKey
 
-`func (o *TaskAnsibleTowerConfig) HasVisibility() bool`
+`func (o *TaskAnsibleTowerConfig) HasSshKey() bool`
 
-HasVisibility returns a boolean if a field has been set.
+HasSshKey returns a boolean if a field has been set.
 
-### GetTaskOptions
+### SetSshKeyNil
 
-`func (o *TaskAnsibleTowerConfig) GetTaskOptions() ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions`
+`func (o *TaskAnsibleTowerConfig) SetSshKeyNil(b bool)`
 
-GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
+ SetSshKeyNil sets the value for SshKey to be an explicit nil
 
-### GetTaskOptionsOk
+### UnsetSshKey
+`func (o *TaskAnsibleTowerConfig) UnsetSshKey()`
 
-`func (o *TaskAnsibleTowerConfig) GetTaskOptionsOk() (*ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions, bool)`
+UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
+### GetAnsibleGroup
 
-GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetAnsibleGroup() string`
+
+GetAnsibleGroup returns the AnsibleGroup field if non-nil, zero value otherwise.
+
+### GetAnsibleGroupOk
+
+`func (o *TaskAnsibleTowerConfig) GetAnsibleGroupOk() (*string, bool)`
+
+GetAnsibleGroupOk returns a tuple with the AnsibleGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskOptions
+### SetAnsibleGroup
 
-`func (o *TaskAnsibleTowerConfig) SetTaskOptions(v ListTasks200ResponseAllOfTasksInnerAnyOf1TaskOptions)`
+`func (o *TaskAnsibleTowerConfig) SetAnsibleGroup(v string)`
 
-SetTaskOptions sets TaskOptions field to given value.
+SetAnsibleGroup sets AnsibleGroup field to given value.
 
-### HasTaskOptions
+### HasAnsibleGroup
 
-`func (o *TaskAnsibleTowerConfig) HasTaskOptions() bool`
+`func (o *TaskAnsibleTowerConfig) HasAnsibleGroup() bool`
 
-HasTaskOptions returns a boolean if a field has been set.
+HasAnsibleGroup returns a boolean if a field has been set.
 
-### GetFile
+### SetAnsibleGroupNil
 
-`func (o *TaskAnsibleTowerConfig) GetFile() ListTasks200ResponseAllOfTasksInnerAnyOfFile`
+`func (o *TaskAnsibleTowerConfig) SetAnsibleGroupNil(b bool)`
 
-GetFile returns the File field if non-nil, zero value otherwise.
+ SetAnsibleGroupNil sets the value for AnsibleGroup to be an explicit nil
 
-### GetFileOk
+### UnsetAnsibleGroup
+`func (o *TaskAnsibleTowerConfig) UnsetAnsibleGroup()`
 
-`func (o *TaskAnsibleTowerConfig) GetFileOk() (*ListTasks200ResponseAllOfTasksInnerAnyOfFile, bool)`
+UnsetAnsibleGroup ensures that no value is present for AnsibleGroup, not even an explicit nil
+### GetAnsibleTowerExecuteMode
 
-GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
+`func (o *TaskAnsibleTowerConfig) GetAnsibleTowerExecuteMode() string`
+
+GetAnsibleTowerExecuteMode returns the AnsibleTowerExecuteMode field if non-nil, zero value otherwise.
+
+### GetAnsibleTowerExecuteModeOk
+
+`func (o *TaskAnsibleTowerConfig) GetAnsibleTowerExecuteModeOk() (*string, bool)`
+
+GetAnsibleTowerExecuteModeOk returns a tuple with the AnsibleTowerExecuteMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFile
+### SetAnsibleTowerExecuteMode
 
-`func (o *TaskAnsibleTowerConfig) SetFile(v ListTasks200ResponseAllOfTasksInnerAnyOfFile)`
+`func (o *TaskAnsibleTowerConfig) SetAnsibleTowerExecuteMode(v string)`
 
-SetFile sets File field to given value.
+SetAnsibleTowerExecuteMode sets AnsibleTowerExecuteMode field to given value.
 
-### HasFile
+### HasAnsibleTowerExecuteMode
 
-`func (o *TaskAnsibleTowerConfig) HasFile() bool`
+`func (o *TaskAnsibleTowerConfig) HasAnsibleTowerExecuteMode() bool`
 
-HasFile returns a boolean if a field has been set.
+HasAnsibleTowerExecuteMode returns a boolean if a field has been set.
 
-### GetResultType
+### GetLocalScriptGitRef
 
-`func (o *TaskAnsibleTowerConfig) GetResultType() string`
+`func (o *TaskAnsibleTowerConfig) GetLocalScriptGitRef() string`
 
-GetResultType returns the ResultType field if non-nil, zero value otherwise.
+GetLocalScriptGitRef returns the LocalScriptGitRef field if non-nil, zero value otherwise.
 
-### GetResultTypeOk
+### GetLocalScriptGitRefOk
 
-`func (o *TaskAnsibleTowerConfig) GetResultTypeOk() (*string, bool)`
+`func (o *TaskAnsibleTowerConfig) GetLocalScriptGitRefOk() (*string, bool)`
 
-GetResultTypeOk returns a tuple with the ResultType field if it's non-nil, zero value otherwise
+GetLocalScriptGitRefOk returns a tuple with the LocalScriptGitRef field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResultType
+### SetLocalScriptGitRef
 
-`func (o *TaskAnsibleTowerConfig) SetResultType(v string)`
+`func (o *TaskAnsibleTowerConfig) SetLocalScriptGitRef(v string)`
 
-SetResultType sets ResultType field to given value.
+SetLocalScriptGitRef sets LocalScriptGitRef field to given value.
 
-### HasResultType
+### HasLocalScriptGitRef
 
-`func (o *TaskAnsibleTowerConfig) HasResultType() bool`
+`func (o *TaskAnsibleTowerConfig) HasLocalScriptGitRef() bool`
 
-HasResultType returns a boolean if a field has been set.
+HasLocalScriptGitRef returns a boolean if a field has been set.
 
-### SetResultTypeNil
+### SetLocalScriptGitRefNil
 
-`func (o *TaskAnsibleTowerConfig) SetResultTypeNil(b bool)`
+`func (o *TaskAnsibleTowerConfig) SetLocalScriptGitRefNil(b bool)`
 
- SetResultTypeNil sets the value for ResultType to be an explicit nil
+ SetLocalScriptGitRefNil sets the value for LocalScriptGitRef to be an explicit nil
 
-### UnsetResultType
-`func (o *TaskAnsibleTowerConfig) UnsetResultType()`
+### UnsetLocalScriptGitRef
+`func (o *TaskAnsibleTowerConfig) UnsetLocalScriptGitRef()`
 
-UnsetResultType ensures that no value is present for ResultType, not even an explicit nil
-### GetExecuteTarget
+UnsetLocalScriptGitRef ensures that no value is present for LocalScriptGitRef, not even an explicit nil
+### GetPort
 
-`func (o *TaskAnsibleTowerConfig) GetExecuteTarget() string`
+`func (o *TaskAnsibleTowerConfig) GetPort() string`
 
-GetExecuteTarget returns the ExecuteTarget field if non-nil, zero value otherwise.
+GetPort returns the Port field if non-nil, zero value otherwise.
 
-### GetExecuteTargetOk
+### GetPortOk
 
-`func (o *TaskAnsibleTowerConfig) GetExecuteTargetOk() (*string, bool)`
+`func (o *TaskAnsibleTowerConfig) GetPortOk() (*string, bool)`
 
-GetExecuteTargetOk returns a tuple with the ExecuteTarget field if it's non-nil, zero value otherwise
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExecuteTarget
+### SetPort
 
-`func (o *TaskAnsibleTowerConfig) SetExecuteTarget(v string)`
+`func (o *TaskAnsibleTowerConfig) SetPort(v string)`
 
-SetExecuteTarget sets ExecuteTarget field to given value.
+SetPort sets Port field to given value.
 
-### HasExecuteTarget
+### HasPort
 
-`func (o *TaskAnsibleTowerConfig) HasExecuteTarget() bool`
+`func (o *TaskAnsibleTowerConfig) HasPort() bool`
 
-HasExecuteTarget returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### GetRetryable
+### SetPortNil
 
-`func (o *TaskAnsibleTowerConfig) GetRetryable() bool`
+`func (o *TaskAnsibleTowerConfig) SetPortNil(b bool)`
 
-GetRetryable returns the Retryable field if non-nil, zero value otherwise.
+ SetPortNil sets the value for Port to be an explicit nil
 
-### GetRetryableOk
+### UnsetPort
+`func (o *TaskAnsibleTowerConfig) UnsetPort()`
 
-`func (o *TaskAnsibleTowerConfig) GetRetryableOk() (*bool, bool)`
-
-GetRetryableOk returns a tuple with the Retryable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryable
-
-`func (o *TaskAnsibleTowerConfig) SetRetryable(v bool)`
-
-SetRetryable sets Retryable field to given value.
-
-### HasRetryable
-
-`func (o *TaskAnsibleTowerConfig) HasRetryable() bool`
-
-HasRetryable returns a boolean if a field has been set.
-
-### GetRetryCount
-
-`func (o *TaskAnsibleTowerConfig) GetRetryCount() int64`
-
-GetRetryCount returns the RetryCount field if non-nil, zero value otherwise.
-
-### GetRetryCountOk
-
-`func (o *TaskAnsibleTowerConfig) GetRetryCountOk() (*int64, bool)`
-
-GetRetryCountOk returns a tuple with the RetryCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryCount
-
-`func (o *TaskAnsibleTowerConfig) SetRetryCount(v int64)`
-
-SetRetryCount sets RetryCount field to given value.
-
-### HasRetryCount
-
-`func (o *TaskAnsibleTowerConfig) HasRetryCount() bool`
-
-HasRetryCount returns a boolean if a field has been set.
-
-### GetRetryDelaySeconds
-
-`func (o *TaskAnsibleTowerConfig) GetRetryDelaySeconds() int64`
-
-GetRetryDelaySeconds returns the RetryDelaySeconds field if non-nil, zero value otherwise.
-
-### GetRetryDelaySecondsOk
-
-`func (o *TaskAnsibleTowerConfig) GetRetryDelaySecondsOk() (*int64, bool)`
-
-GetRetryDelaySecondsOk returns a tuple with the RetryDelaySeconds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRetryDelaySeconds
-
-`func (o *TaskAnsibleTowerConfig) SetRetryDelaySeconds(v int64)`
-
-SetRetryDelaySeconds sets RetryDelaySeconds field to given value.
-
-### HasRetryDelaySeconds
-
-`func (o *TaskAnsibleTowerConfig) HasRetryDelaySeconds() bool`
-
-HasRetryDelaySeconds returns a boolean if a field has been set.
-
-### GetAllowCustomConfig
-
-`func (o *TaskAnsibleTowerConfig) GetAllowCustomConfig() bool`
-
-GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
-
-### GetAllowCustomConfigOk
-
-`func (o *TaskAnsibleTowerConfig) GetAllowCustomConfigOk() (*bool, bool)`
-
-GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowCustomConfig
-
-`func (o *TaskAnsibleTowerConfig) SetAllowCustomConfig(v bool)`
-
-SetAllowCustomConfig sets AllowCustomConfig field to given value.
-
-### HasAllowCustomConfig
-
-`func (o *TaskAnsibleTowerConfig) HasAllowCustomConfig() bool`
-
-HasAllowCustomConfig returns a boolean if a field has been set.
-
-### GetCredential
-
-`func (o *TaskAnsibleTowerConfig) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
-
-GetCredential returns the Credential field if non-nil, zero value otherwise.
-
-### GetCredentialOk
-
-`func (o *TaskAnsibleTowerConfig) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
-
-GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCredential
-
-`func (o *TaskAnsibleTowerConfig) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
-
-SetCredential sets Credential field to given value.
-
-### HasCredential
-
-`func (o *TaskAnsibleTowerConfig) HasCredential() bool`
-
-HasCredential returns a boolean if a field has been set.
-
-### GetDateCreated
-
-`func (o *TaskAnsibleTowerConfig) GetDateCreated() time.Time`
-
-GetDateCreated returns the DateCreated field if non-nil, zero value otherwise.
-
-### GetDateCreatedOk
-
-`func (o *TaskAnsibleTowerConfig) GetDateCreatedOk() (*time.Time, bool)`
-
-GetDateCreatedOk returns a tuple with the DateCreated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDateCreated
-
-`func (o *TaskAnsibleTowerConfig) SetDateCreated(v time.Time)`
-
-SetDateCreated sets DateCreated field to given value.
-
-### HasDateCreated
-
-`func (o *TaskAnsibleTowerConfig) HasDateCreated() bool`
-
-HasDateCreated returns a boolean if a field has been set.
-
-### GetLastUpdated
-
-`func (o *TaskAnsibleTowerConfig) GetLastUpdated() time.Time`
-
-GetLastUpdated returns the LastUpdated field if non-nil, zero value otherwise.
-
-### GetLastUpdatedOk
-
-`func (o *TaskAnsibleTowerConfig) GetLastUpdatedOk() (*time.Time, bool)`
-
-GetLastUpdatedOk returns a tuple with the LastUpdated field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastUpdated
-
-`func (o *TaskAnsibleTowerConfig) SetLastUpdated(v time.Time)`
-
-SetLastUpdated sets LastUpdated field to given value.
-
-### HasLastUpdated
-
-`func (o *TaskAnsibleTowerConfig) HasLastUpdated() bool`
-
-HasLastUpdated returns a boolean if a field has been set.
-
+UnsetPort ensures that no value is present for Port, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
