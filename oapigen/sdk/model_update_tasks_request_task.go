@@ -20,6 +20,8 @@ var _ MappedNullable = &UpdateTasksRequestTask{}
 
 // UpdateTasksRequestTask struct for UpdateTasksRequestTask
 type UpdateTasksRequestTask struct {
+	// When enabled, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration
+	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
 	// A unique name for the task
 	Name *string `json:"name,omitempty"`
 	// A unique code for the task
@@ -69,6 +71,38 @@ func NewUpdateTasksRequestTaskWithDefaults() *UpdateTasksRequestTask {
 	var retryable bool = false
 	this.Retryable = &retryable
 	return &this
+}
+
+// GetAllowCustomConfig returns the AllowCustomConfig field value if set, zero value otherwise.
+func (o *UpdateTasksRequestTask) GetAllowCustomConfig() bool {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowCustomConfig
+}
+
+// GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateTasksRequestTask) GetAllowCustomConfigOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		return nil, false
+	}
+	return o.AllowCustomConfig, true
+}
+
+// IsSetAllowCustomConfig returns a boolean if a field has been set.
+func (o *UpdateTasksRequestTask) IsSetAllowCustomConfig() bool {
+	if o != nil && !IsNil(o.AllowCustomConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
+func (o *UpdateTasksRequestTask) SetAllowCustomConfig(v bool) {
+	o.AllowCustomConfig = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -508,6 +542,9 @@ func (o UpdateTasksRequestTask) MarshalJSON() ([]byte, error) {
 
 func (o UpdateTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AllowCustomConfig) {
+		toSerialize["allowCustomConfig"] = o.AllowCustomConfig
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}

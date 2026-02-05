@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllowCustomConfig** | Pointer to **bool** | When enabled, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration | [optional] 
 **Name** | **string** | A unique name for the task | 
 **Code** | Pointer to **string** | A unique code for the task | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] [default to "private"]
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewAddTasksRequestTaskWithDefaults instantiates a new AddTasksRequestTask object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllowCustomConfig
+
+`func (o *AddTasksRequestTask) GetAllowCustomConfig() bool`
+
+GetAllowCustomConfig returns the AllowCustomConfig field if non-nil, zero value otherwise.
+
+### GetAllowCustomConfigOk
+
+`func (o *AddTasksRequestTask) GetAllowCustomConfigOk() (*bool, bool)`
+
+GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowCustomConfig
+
+`func (o *AddTasksRequestTask) SetAllowCustomConfig(v bool)`
+
+SetAllowCustomConfig sets AllowCustomConfig field to given value.
+
+### HasAllowCustomConfig
+
+`func (o *AddTasksRequestTask) HasAllowCustomConfig() bool`
+
+HasAllowCustomConfig returns a boolean if a field has been set.
 
 ### GetName
 

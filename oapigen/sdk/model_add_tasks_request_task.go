@@ -20,6 +20,8 @@ var _ MappedNullable = &AddTasksRequestTask{}
 
 // AddTasksRequestTask struct for AddTasksRequestTask
 type AddTasksRequestTask struct {
+	// When enabled, a text area is provided at Task execution time to allow the user to pass extra variables or specify extra configuration
+	AllowCustomConfig *bool `json:"allowCustomConfig,omitempty"`
 	// A unique name for the task
 	Name string `json:"name"`
 	// A unique code for the task
@@ -72,6 +74,38 @@ func NewAddTasksRequestTaskWithDefaults() *AddTasksRequestTask {
 	var retryable bool = false
 	this.Retryable = &retryable
 	return &this
+}
+
+// GetAllowCustomConfig returns the AllowCustomConfig field value if set, zero value otherwise.
+func (o *AddTasksRequestTask) GetAllowCustomConfig() bool {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		var ret bool
+		return ret
+	}
+	return *o.AllowCustomConfig
+}
+
+// GetAllowCustomConfigOk returns a tuple with the AllowCustomConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddTasksRequestTask) GetAllowCustomConfigOk() (*bool, bool) {
+	if o == nil || IsNil(o.AllowCustomConfig) {
+		return nil, false
+	}
+	return o.AllowCustomConfig, true
+}
+
+// IsSetAllowCustomConfig returns a boolean if a field has been set.
+func (o *AddTasksRequestTask) IsSetAllowCustomConfig() bool {
+	if o != nil && !IsNil(o.AllowCustomConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowCustomConfig gets a reference to the given bool and assigns it to the AllowCustomConfig field.
+func (o *AddTasksRequestTask) SetAllowCustomConfig(v bool) {
+	o.AllowCustomConfig = &v
 }
 
 // GetName returns the Name field value
@@ -487,6 +521,9 @@ func (o AddTasksRequestTask) MarshalJSON() ([]byte, error) {
 
 func (o AddTasksRequestTask) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AllowCustomConfig) {
+		toSerialize["allowCustomConfig"] = o.AllowCustomConfig
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
