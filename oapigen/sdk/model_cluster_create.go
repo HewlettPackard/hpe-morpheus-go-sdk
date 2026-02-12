@@ -26,11 +26,12 @@ type ClusterCreate struct {
 	// Description of the cluster to be created
 	Description *string `json:"description,omitempty"`
 	// Array of strings (keywords). This will override labels passed under the `server` object.
-	Labels []string                       `json:"labels,omitempty"`
-	Group  AddClusterRequestClusterGroup  `json:"group"`
-	Cloud  AddClusterRequestClusterCloud  `json:"cloud"`
-	Layout AddClusterRequestClusterLayout `json:"layout"`
-	Server AddClusterRequestClusterServer `json:"server"`
+	Labels []string                        `json:"labels,omitempty"`
+	Group  AddClusterRequestClusterGroup   `json:"group"`
+	Cloud  AddClusterRequestClusterCloud   `json:"cloud"`
+	Config *AddClusterRequestClusterConfig `json:"config,omitempty"`
+	Layout AddClusterRequestClusterLayout  `json:"layout"`
+	Server AddClusterRequestClusterServer  `json:"server"`
 	// Automatically Power on VMs
 	AutoRecoverPowerState *bool `json:"autoRecoverPowerState,omitempty"`
 	// Optional Workflow Id desired to be run
@@ -227,6 +228,38 @@ func (o *ClusterCreate) SetCloud(v AddClusterRequestClusterCloud) {
 	o.Cloud = v
 }
 
+// GetConfig returns the Config field value if set, zero value otherwise.
+func (o *ClusterCreate) GetConfig() AddClusterRequestClusterConfig {
+	if o == nil || IsNil(o.Config) {
+		var ret AddClusterRequestClusterConfig
+		return ret
+	}
+	return *o.Config
+}
+
+// GetConfigOk returns a tuple with the Config field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClusterCreate) GetConfigOk() (*AddClusterRequestClusterConfig, bool) {
+	if o == nil || IsNil(o.Config) {
+		return nil, false
+	}
+	return o.Config, true
+}
+
+// IsSetConfig returns a boolean if a field has been set.
+func (o *ClusterCreate) IsSetConfig() bool {
+	if o != nil && !IsNil(o.Config) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfig gets a reference to the given AddClusterRequestClusterConfig and assigns it to the Config field.
+func (o *ClusterCreate) SetConfig(v AddClusterRequestClusterConfig) {
+	o.Config = &v
+}
+
 // GetLayout returns the Layout field value
 func (o *ClusterCreate) GetLayout() AddClusterRequestClusterLayout {
 	if o == nil {
@@ -359,6 +392,9 @@ func (o ClusterCreate) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["group"] = o.Group
 	toSerialize["cloud"] = o.Cloud
+	if !IsNil(o.Config) {
+		toSerialize["config"] = o.Config
+	}
 	toSerialize["layout"] = o.Layout
 	toSerialize["server"] = o.Server
 	if !IsNil(o.AutoRecoverPowerState) {

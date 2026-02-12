@@ -20,9 +20,9 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigNetworkInte
 
 // AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner struct for AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner
 type AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner struct {
-	PrimaryInterface     *bool                                                           `json:"primaryInterface,omitempty"`
-	Network              *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup `json:"network,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	PrimaryInterface     *bool                                                          `json:"primaryInterface,omitempty"`
+	Network              *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole `json:"network,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner
@@ -77,9 +77,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) Se
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetwork() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetwork() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole {
 	if o == nil || IsNil(o.Network) {
-		var ret AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole
 		return ret
 	}
 	return *o.Network
@@ -87,7 +87,7 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) Ge
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool) {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) GetNetworkOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) Is
 	return false
 }
 
-// SetNetwork gets a reference to the given AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup and assigns it to the Network field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetNetwork(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) {
+// SetNetwork gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole and assigns it to the Network field.
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigNetworkInterfacesInner) SetNetwork(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) {
 	o.Network = &v
 }
 

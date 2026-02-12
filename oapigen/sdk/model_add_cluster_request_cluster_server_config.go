@@ -13,136 +13,81 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the AddClusterRequestClusterServerConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddClusterRequestClusterServerConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
 // AddClusterRequestClusterServerConfig Key for specific host type configuration  The config parameter is for configuration options that are specific to each Provision Type. The Provision Types api can be used to see which options are available.
 type AddClusterRequestClusterServerConfig struct {
-	// Default Repo Account is the repository to be used when pulling images.  Default behavior is to be anonymous, which does have limits on allowed image pulls from public Docker Repos.
-	DefaultRepoAccount NullableInt32 `json:"defaultRepoAccount,omitempty"`
-	// Act as Image Server. Set to on to use the Default Repo Account to pull images.
-	ImageServer          *string                `json:"imageServer,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	AddClusterRequestClusterServerConfigAnyOf *AddClusterRequestClusterServerConfigAnyOf
+	MapmapOfStringAny                         *map[string]interface{}
 }
 
-type _AddClusterRequestClusterServerConfig AddClusterRequestClusterServerConfig
-
-// NewAddClusterRequestClusterServerConfig instantiates a new AddClusterRequestClusterServerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAddClusterRequestClusterServerConfig() *AddClusterRequestClusterServerConfig {
-	this := AddClusterRequestClusterServerConfig{}
-	return &this
-}
-
-// NewAddClusterRequestClusterServerConfigWithDefaults instantiates a new AddClusterRequestClusterServerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewAddClusterRequestClusterServerConfigWithDefaults() *AddClusterRequestClusterServerConfig {
-	this := AddClusterRequestClusterServerConfig{}
-	return &this
-}
-
-// GetDefaultRepoAccount returns the DefaultRepoAccount field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddClusterRequestClusterServerConfig) GetDefaultRepoAccount() int32 {
-	if o == nil || IsNil(o.DefaultRepoAccount.Get()) {
-		var ret int32
-		return ret
-	}
-	return *o.DefaultRepoAccount.Get()
-}
-
-// GetDefaultRepoAccountOk returns a tuple with the DefaultRepoAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddClusterRequestClusterServerConfig) GetDefaultRepoAccountOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DefaultRepoAccount.Get(), o.DefaultRepoAccount.IsSet()
-}
-
-// IsSetDefaultRepoAccount returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfig) IsSetDefaultRepoAccount() bool {
-	if o != nil && o.DefaultRepoAccount.IsSet() {
-		return true
+func (dst *AddClusterRequestClusterServerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &AddClusterRequestClusterServerConfig{}
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.AddClusterRequestClusterServerConfigAnyOf)
 
-// SetDefaultRepoAccount gets a reference to the given NullableInt32 and assigns it to the DefaultRepoAccount field.
-func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccount(v int32) {
-	o.DefaultRepoAccount.Set(&v)
-}
-
-// SetDefaultRepoAccountNil sets the value for DefaultRepoAccount to be an explicit nil
-func (o *AddClusterRequestClusterServerConfig) SetDefaultRepoAccountNil() {
-	o.DefaultRepoAccount.Set(nil)
-}
-
-// UnsetDefaultRepoAccount ensures that no value is present for DefaultRepoAccount, not even an explicit nil
-func (o *AddClusterRequestClusterServerConfig) UnsetDefaultRepoAccount() {
-	o.DefaultRepoAccount.Unset()
-}
-
-// GetImageServer returns the ImageServer field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfig) GetImageServer() string {
-	if o == nil || IsNil(o.ImageServer) {
-		var ret string
-		return ret
-	}
-	return *o.ImageServer
-}
-
-// GetImageServerOk returns a tuple with the ImageServer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfig) GetImageServerOk() (*string, bool) {
-	if o == nil || IsNil(o.ImageServer) {
-		return nil, false
-	}
-	return o.ImageServer, true
-}
-
-// IsSetImageServer returns a boolean if a field has been set.
-func (o *AddClusterRequestClusterServerConfig) IsSetImageServer() bool {
-	if o != nil && !IsNil(o.ImageServer) {
-		return true
+	if IsEmpty(dst.AddClusterRequestClusterServerConfigAnyOf) {
+		dst.AddClusterRequestClusterServerConfigAnyOf = nil
 	}
 
-	return false
+	mapstructDecode(data, &dst.MapmapOfStringAny)
+
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return dst, nil
 }
 
-// SetImageServer gets a reference to the given string and assigns it to the ImageServer field.
-func (o *AddClusterRequestClusterServerConfig) SetImageServer(v string) {
-	o.ImageServer = &v
+// Unmarshal JSON data into any of the pointers in the struct
+func (dst *AddClusterRequestClusterServerConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	// try to unmarshal JSON data into AddClusterRequestClusterServerConfigAnyOf
+	err = json.Unmarshal(data, &dst.AddClusterRequestClusterServerConfigAnyOf)
+	if err == nil {
+		jsonAddClusterRequestClusterServerConfigAnyOf, _ := json.Marshal(dst.AddClusterRequestClusterServerConfigAnyOf)
+		if string(jsonAddClusterRequestClusterServerConfigAnyOf) == "{}" { // empty struct
+			dst.AddClusterRequestClusterServerConfigAnyOf = nil
+		} else {
+			return nil // data stored in dst.AddClusterRequestClusterServerConfigAnyOf, return on the first match
+		}
+	} else {
+		dst.AddClusterRequestClusterServerConfigAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return NewResponseValidationError("data failed to match schemas in anyOf(AddClusterRequestClusterServerConfig)")
 }
 
-func (o AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AddClusterRequestClusterServerConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if o.DefaultRepoAccount.IsSet() {
-		toSerialize["defaultRepoAccount"] = o.DefaultRepoAccount.Get()
-	}
-	if !IsNil(o.ImageServer) {
-		toSerialize["imageServer"] = o.ImageServer
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src AddClusterRequestClusterServerConfig) MarshalJSON() ([]byte, error) {
+	if src.AddClusterRequestClusterServerConfigAnyOf != nil {
+		return json.Marshal(&src.AddClusterRequestClusterServerConfigAnyOf)
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
-	return toSerialize, nil
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableAddClusterRequestClusterServerConfig struct {
@@ -189,9 +134,3 @@ func (v NullableAddClusterRequestClusterServerConfig) UnmarshalMapstructure(data
 
 	return v, nil
 }
-
-func (o *AddClusterRequestClusterServerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

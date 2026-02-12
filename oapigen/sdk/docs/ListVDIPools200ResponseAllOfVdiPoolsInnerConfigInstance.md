@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserGroup** | Pointer to [**AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup**](AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup.md) |  | [optional] 
+**UserGroup** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole.md) |  | [optional] 
 **NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUserGroup
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup)`
+`func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole)`
 
 SetUserGroup sets UserGroup field to given value.
 

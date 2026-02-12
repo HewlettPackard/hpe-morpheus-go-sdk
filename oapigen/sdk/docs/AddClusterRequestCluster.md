@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Labels** | Pointer to **[]string** | Array of strings (keywords). This will override labels passed under the &#x60;server&#x60; object. | [optional] 
 **Group** | [**AddClusterRequestClusterGroup**](AddClusterRequestClusterGroup.md) |  | 
 **Cloud** | [**AddClusterRequestClusterCloud**](AddClusterRequestClusterCloud.md) |  | 
+**Config** | Pointer to [**AddClusterRequestClusterConfig**](AddClusterRequestClusterConfig.md) |  | [optional] 
 **Layout** | [**AddClusterRequestClusterLayout**](AddClusterRequestClusterLayout.md) |  | 
 **Server** | [**AddClusterRequestClusterServer**](AddClusterRequestClusterServer.md) |  | 
 **AutoRecoverPowerState** | Pointer to **bool** | Automatically Power on VMs | [optional] [default to false]
@@ -163,6 +164,31 @@ and a boolean to check if the value has been set.
 
 SetCloud sets Cloud field to given value.
 
+
+### GetConfig
+
+`func (o *AddClusterRequestCluster) GetConfig() AddClusterRequestClusterConfig`
+
+GetConfig returns the Config field if non-nil, zero value otherwise.
+
+### GetConfigOk
+
+`func (o *AddClusterRequestCluster) GetConfigOk() (*AddClusterRequestClusterConfig, bool)`
+
+GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfig
+
+`func (o *AddClusterRequestCluster) SetConfig(v AddClusterRequestClusterConfig)`
+
+SetConfig sets Config field to given value.
+
+### HasConfig
+
+`func (o *AddClusterRequestCluster) HasConfig() bool`
+
+HasConfig returns a boolean if a field has been set.
 
 ### GetLayout
 

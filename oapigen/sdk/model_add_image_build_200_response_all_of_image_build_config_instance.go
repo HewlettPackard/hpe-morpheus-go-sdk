@@ -20,10 +20,10 @@ var _ MappedNullable = &AddImageBuild200ResponseAllOfImageBuildConfigInstance{}
 
 // AddImageBuild200ResponseAllOfImageBuildConfigInstance struct for AddImageBuild200ResponseAllOfImageBuildConfigInstance
 type AddImageBuild200ResponseAllOfImageBuildConfigInstance struct {
-	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan      `json:"layout,omitempty"`
-	Type                 *string                                                         `json:"type,omitempty"`
-	UserGroup            *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup `json:"userGroup,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan     `json:"layout,omitempty"`
+	Type                 *string                                                        `json:"type,omitempty"`
+	UserGroup            *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole `json:"userGroup,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _AddImageBuild200ResponseAllOfImageBuildConfigInstance AddImageBuild200ResponseAllOfImageBuildConfigInstance
@@ -110,9 +110,9 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetType(v string
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole
 		return ret
 	}
 	return *o.UserGroup
@@ -120,7 +120,7 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroup() A
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool) {
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) GetUserGroupOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) IsSetUserGroup()
 	return false
 }
 
-// SetUserGroup gets a reference to the given AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup and assigns it to the UserGroup field.
-func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) {
+// SetUserGroup gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole and assigns it to the UserGroup field.
+func (o *AddImageBuild200ResponseAllOfImageBuildConfigInstance) SetUserGroup(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) {
 	o.UserGroup = &v
 }
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance{
 
 // ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct for ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
 type ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance struct {
-	UserGroup            *AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup `json:"userGroup,omitempty"`
-	NetworkDomain        *GetAlerts200ResponseAllOfChecksInnerAccount                    `json:"networkDomain,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	UserGroup            *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole `json:"userGroup,omitempty"`
+	NetworkDomain        *GetAlerts200ResponseAllOfChecksInnerAccount                   `json:"networkDomain,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance
@@ -45,9 +45,9 @@ func NewListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstanceWithDefaults() *L
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole
 		return ret
 	}
 	return *o.UserGroup
@@ -55,7 +55,7 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroup()
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup, bool) {
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) GetUserGroupOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) IsSetUserGroup
 	return false
 }
 
-// SetUserGroup gets a reference to the given AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup and assigns it to the UserGroup field.
-func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v AddImageBuild200ResponseAllOfImageBuildConfigInstanceUserGroup) {
+// SetUserGroup gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole and assigns it to the UserGroup field.
+func (o *ListVDIPools200ResponseAllOfVdiPoolsInnerConfigInstance) SetUserGroup(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) {
 	o.UserGroup = &v
 }
 

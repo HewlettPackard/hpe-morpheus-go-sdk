@@ -28,14 +28,14 @@ type CreateNetworkFirewallRuleRequestRule struct {
 	// Use this to set enabled state
 	Enabled *bool `json:"enabled,omitempty"`
 	// Network firewall rule priority
-	Priority             NullableString                               `json:"priority,omitempty"`
-	Direction            *string                                      `json:"direction,omitempty"`
-	Sources              *CreateNetworkFirewallRuleRequestRuleSources `json:"sources,omitempty"`
-	Destinations         *CreateNetworkFirewallRuleRequestRuleSources `json:"destinations,omitempty"`
-	Config               *CreateNetworkFirewallRuleRequestRuleConfig  `json:"config,omitempty"`
-	Scopes               *CreateNetworkFirewallRuleRequestRuleSources `json:"scopes,omitempty"`
-	Policy               *string                                      `json:"policy,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	Priority             NullableString                                                    `json:"priority,omitempty"`
+	Direction            *string                                                           `json:"direction,omitempty"`
+	Sources              *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork `json:"sources,omitempty"`
+	Destinations         *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork `json:"destinations,omitempty"`
+	Config               *CreateNetworkFirewallRuleRequestRuleConfig                       `json:"config,omitempty"`
+	Scopes               *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork `json:"scopes,omitempty"`
+	Policy               *string                                                           `json:"policy,omitempty"`
+	AdditionalProperties map[string]interface{}                                            `json:",remain"`
 }
 
 type _CreateNetworkFirewallRuleRequestRule CreateNetworkFirewallRuleRequestRule
@@ -265,9 +265,9 @@ func (o *CreateNetworkFirewallRuleRequestRule) SetDirection(v string) {
 }
 
 // GetSources returns the Sources field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequestRule) GetSources() CreateNetworkFirewallRuleRequestRuleSources {
+func (o *CreateNetworkFirewallRuleRequestRule) GetSources() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork {
 	if o == nil || IsNil(o.Sources) {
-		var ret CreateNetworkFirewallRuleRequestRuleSources
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork
 		return ret
 	}
 	return *o.Sources
@@ -275,7 +275,7 @@ func (o *CreateNetworkFirewallRuleRequestRule) GetSources() CreateNetworkFirewal
 
 // GetSourcesOk returns a tuple with the Sources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequestRule) GetSourcesOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool) {
+func (o *CreateNetworkFirewallRuleRequestRule) GetSourcesOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool) {
 	if o == nil || IsNil(o.Sources) {
 		return nil, false
 	}
@@ -291,15 +291,15 @@ func (o *CreateNetworkFirewallRuleRequestRule) IsSetSources() bool {
 	return false
 }
 
-// SetSources gets a reference to the given CreateNetworkFirewallRuleRequestRuleSources and assigns it to the Sources field.
-func (o *CreateNetworkFirewallRuleRequestRule) SetSources(v CreateNetworkFirewallRuleRequestRuleSources) {
+// SetSources gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Sources field.
+func (o *CreateNetworkFirewallRuleRequestRule) SetSources(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork) {
 	o.Sources = &v
 }
 
 // GetDestinations returns the Destinations field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() CreateNetworkFirewallRuleRequestRuleSources {
+func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork {
 	if o == nil || IsNil(o.Destinations) {
-		var ret CreateNetworkFirewallRuleRequestRuleSources
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork
 		return ret
 	}
 	return *o.Destinations
@@ -307,7 +307,7 @@ func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() CreateNetworkFi
 
 // GetDestinationsOk returns a tuple with the Destinations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool) {
+func (o *CreateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool) {
 	if o == nil || IsNil(o.Destinations) {
 		return nil, false
 	}
@@ -323,8 +323,8 @@ func (o *CreateNetworkFirewallRuleRequestRule) IsSetDestinations() bool {
 	return false
 }
 
-// SetDestinations gets a reference to the given CreateNetworkFirewallRuleRequestRuleSources and assigns it to the Destinations field.
-func (o *CreateNetworkFirewallRuleRequestRule) SetDestinations(v CreateNetworkFirewallRuleRequestRuleSources) {
+// SetDestinations gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Destinations field.
+func (o *CreateNetworkFirewallRuleRequestRule) SetDestinations(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork) {
 	o.Destinations = &v
 }
 
@@ -361,9 +361,9 @@ func (o *CreateNetworkFirewallRuleRequestRule) SetConfig(v CreateNetworkFirewall
 }
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
-func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() CreateNetworkFirewallRuleRequestRuleSources {
+func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork {
 	if o == nil || IsNil(o.Scopes) {
-		var ret CreateNetworkFirewallRuleRequestRuleSources
+		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork
 		return ret
 	}
 	return *o.Scopes
@@ -371,7 +371,7 @@ func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() CreateNetworkFirewall
 
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworkFirewallRuleRequestRule) GetScopesOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool) {
+func (o *CreateNetworkFirewallRuleRequestRule) GetScopesOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool) {
 	if o == nil || IsNil(o.Scopes) {
 		return nil, false
 	}
@@ -387,8 +387,8 @@ func (o *CreateNetworkFirewallRuleRequestRule) IsSetScopes() bool {
 	return false
 }
 
-// SetScopes gets a reference to the given CreateNetworkFirewallRuleRequestRuleSources and assigns it to the Scopes field.
-func (o *CreateNetworkFirewallRuleRequestRule) SetScopes(v CreateNetworkFirewallRuleRequestRuleSources) {
+// SetScopes gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork and assigns it to the Scopes field.
+func (o *CreateNetworkFirewallRuleRequestRule) SetScopes(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork) {
 	o.Scopes = &v
 }
 

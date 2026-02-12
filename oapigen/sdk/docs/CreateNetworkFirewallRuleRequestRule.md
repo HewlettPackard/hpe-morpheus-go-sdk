@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Use this to set enabled state | [optional] 
 **Priority** | Pointer to **NullableString** | Network firewall rule priority | [optional] 
 **Direction** | Pointer to **string** |  | [optional] 
-**Sources** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
-**Destinations** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
+**Sources** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork.md) |  | [optional] 
+**Destinations** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork.md) |  | [optional] 
 **Config** | Pointer to [**CreateNetworkFirewallRuleRequestRuleConfig**](CreateNetworkFirewallRuleRequestRuleConfig.md) |  | [optional] 
-**Scopes** | Pointer to [**CreateNetworkFirewallRuleRequestRuleSources**](CreateNetworkFirewallRuleRequestRuleSources.md) |  | [optional] 
+**Scopes** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork.md) |  | [optional] 
 **Policy** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -202,20 +202,20 @@ HasDirection returns a boolean if a field has been set.
 
 ### GetSources
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetSources() CreateNetworkFirewallRuleRequestRuleSources`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetSources() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork`
 
 GetSources returns the Sources field if non-nil, zero value otherwise.
 
 ### GetSourcesOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetSourcesOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool)`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetSourcesOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool)`
 
 GetSourcesOk returns a tuple with the Sources field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSources
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetSources(v CreateNetworkFirewallRuleRequestRuleSources)`
+`func (o *CreateNetworkFirewallRuleRequestRule) SetSources(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork)`
 
 SetSources sets Sources field to given value.
 
@@ -227,20 +227,20 @@ HasSources returns a boolean if a field has been set.
 
 ### GetDestinations
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() CreateNetworkFirewallRuleRequestRuleSources`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinations() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork`
 
 GetDestinations returns the Destinations field if non-nil, zero value otherwise.
 
 ### GetDestinationsOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool)`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetDestinationsOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool)`
 
 GetDestinationsOk returns a tuple with the Destinations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinations
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetDestinations(v CreateNetworkFirewallRuleRequestRuleSources)`
+`func (o *CreateNetworkFirewallRuleRequestRule) SetDestinations(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork)`
 
 SetDestinations sets Destinations field to given value.
 
@@ -277,20 +277,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetScopes
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() CreateNetworkFirewallRuleRequestRuleSources`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetScopes() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork`
 
 GetScopes returns the Scopes field if non-nil, zero value otherwise.
 
 ### GetScopesOk
 
-`func (o *CreateNetworkFirewallRuleRequestRule) GetScopesOk() (*CreateNetworkFirewallRuleRequestRuleSources, bool)`
+`func (o *CreateNetworkFirewallRuleRequestRule) GetScopesOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork, bool)`
 
 GetScopesOk returns a tuple with the Scopes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScopes
 
-`func (o *CreateNetworkFirewallRuleRequestRule) SetScopes(v CreateNetworkFirewallRuleRequestRuleSources)`
+`func (o *CreateNetworkFirewallRuleRequestRule) SetScopes(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork)`
 
 SetScopes sets Scopes field to given value.
 
