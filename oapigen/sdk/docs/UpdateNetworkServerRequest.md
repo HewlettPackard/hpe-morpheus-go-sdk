@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NetworkServer** | Pointer to [**UpdateNetworkServerRequestNetworkServer**](UpdateNetworkServerRequestNetworkServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**NSXNetworkServerUpdate**](NSXNetworkServerUpdate.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetworkServer
 
-`func (o *UpdateNetworkServerRequest) GetNetworkServer() UpdateNetworkServerRequestNetworkServer`
+`func (o *UpdateNetworkServerRequest) GetNetworkServer() NSXNetworkServerUpdate`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *UpdateNetworkServerRequest) GetNetworkServerOk() (*UpdateNetworkServerRequestNetworkServer, bool)`
+`func (o *UpdateNetworkServerRequest) GetNetworkServerOk() (*NSXNetworkServerUpdate, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *UpdateNetworkServerRequest) SetNetworkServer(v UpdateNetworkServerRequestNetworkServer)`
+`func (o *UpdateNetworkServerRequest) SetNetworkServer(v NSXNetworkServerUpdate)`
 
 SetNetworkServer sets NetworkServer field to given value.
 

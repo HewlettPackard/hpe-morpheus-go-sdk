@@ -13,103 +13,162 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
-
-	"gopkg.in/validator.v2"
 )
 
-// very silly way of avoiding `"fmt" imported and not used` errors
-var _ fmt.Stringer
+// checks if the UpdateVDIGatewaysRequestVdiGateway type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UpdateVDIGatewaysRequestVdiGateway{}
 
-// UpdateVDIGatewaysRequestVdiGateway - struct for UpdateVDIGatewaysRequestVdiGateway
+// UpdateVDIGatewaysRequestVdiGateway struct for UpdateVDIGatewaysRequestVdiGateway
 type UpdateVDIGatewaysRequestVdiGateway struct {
-	UpdateVDIGatewaysRequestVdiGatewayOneOf *UpdateVDIGatewaysRequestVdiGatewayOneOf
+	// VDI Gateway name
+	Name *string `json:"name,omitempty"`
+	// Description
+	Description *string `json:"description,omitempty"`
+	// Gateway URL
+	GatewayUrl           *string                `json:"gatewayUrl,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-// UpdateVDIGatewaysRequestVdiGatewayOneOfAsUpdateVDIGatewaysRequestVdiGateway is a convenience function that returns UpdateVDIGatewaysRequestVdiGatewayOneOf wrapped in UpdateVDIGatewaysRequestVdiGateway
-func UpdateVDIGatewaysRequestVdiGatewayOneOfAsUpdateVDIGatewaysRequestVdiGateway(v *UpdateVDIGatewaysRequestVdiGatewayOneOf) UpdateVDIGatewaysRequestVdiGateway {
-	return UpdateVDIGatewaysRequestVdiGateway{
-		UpdateVDIGatewaysRequestVdiGatewayOneOf: v,
-	}
+type _UpdateVDIGatewaysRequestVdiGateway UpdateVDIGatewaysRequestVdiGateway
+
+// NewUpdateVDIGatewaysRequestVdiGateway instantiates a new UpdateVDIGatewaysRequestVdiGateway object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewUpdateVDIGatewaysRequestVdiGateway() *UpdateVDIGatewaysRequestVdiGateway {
+	this := UpdateVDIGatewaysRequestVdiGateway{}
+	return &this
 }
 
-func (dst *UpdateVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &UpdateVDIGatewaysRequestVdiGateway{}
-	}
-
-	mapstructDecode(data, &dst.UpdateVDIGatewaysRequestVdiGatewayOneOf)
-
-	if IsEmpty(dst.UpdateVDIGatewaysRequestVdiGatewayOneOf) {
-		dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = nil
-	}
-
-	return dst, nil
+// NewUpdateVDIGatewaysRequestVdiGatewayWithDefaults instantiates a new UpdateVDIGatewaysRequestVdiGateway object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewUpdateVDIGatewaysRequestVdiGatewayWithDefaults() *UpdateVDIGatewaysRequestVdiGateway {
+	this := UpdateVDIGatewaysRequestVdiGateway{}
+	return &this
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *UpdateVDIGatewaysRequestVdiGateway) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into UpdateVDIGatewaysRequestVdiGatewayOneOf
-	err = newStrictDecoder(data).Decode(&dst.UpdateVDIGatewaysRequestVdiGatewayOneOf)
-	if err == nil {
-		jsonUpdateVDIGatewaysRequestVdiGatewayOneOf, _ := json.Marshal(dst.UpdateVDIGatewaysRequestVdiGatewayOneOf)
-		if string(jsonUpdateVDIGatewaysRequestVdiGatewayOneOf) == "{}" { // empty struct
-			dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = nil
-		} else {
-			if err = validator.Validate(dst.UpdateVDIGatewaysRequestVdiGatewayOneOf); err != nil {
-				dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = nil
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
 	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.UpdateVDIGatewaysRequestVdiGatewayOneOf = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(UpdateVDIGatewaysRequestVdiGateway)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(UpdateVDIGatewaysRequestVdiGateway)")
-	}
+	return *o.Name
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src UpdateVDIGatewaysRequestVdiGateway) MarshalJSON() ([]byte, error) {
-	if src.UpdateVDIGatewaysRequestVdiGatewayOneOf != nil {
-		return json.Marshal(&src.UpdateVDIGatewaysRequestVdiGatewayOneOf)
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
 	}
-
-	return nil, nil // no data in oneOf schemas
+	return o.Name, true
 }
 
-// Get the actual instance
-func (obj *UpdateVDIGatewaysRequestVdiGateway) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.UpdateVDIGatewaysRequestVdiGatewayOneOf != nil {
-		return obj.UpdateVDIGatewaysRequestVdiGatewayOneOf
+// IsSetName returns a boolean if a field has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) IsSetName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
 	}
 
-	// all schemas are nil
-	return nil
+	return false
 }
 
-// Get the actual instance value
-func (obj UpdateVDIGatewaysRequestVdiGateway) GetActualInstanceValue() interface{} {
-	if obj.UpdateVDIGatewaysRequestVdiGatewayOneOf != nil {
-		return *obj.UpdateVDIGatewaysRequestVdiGatewayOneOf
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *UpdateVDIGatewaysRequestVdiGateway) SetName(v string) {
+	o.Name = &v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// IsSetDescription returns a boolean if a field has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) IsSetDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
 	}
 
-	// all schemas are nil
-	return nil
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *UpdateVDIGatewaysRequestVdiGateway) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetGatewayUrl returns the GatewayUrl field value if set, zero value otherwise.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetGatewayUrl() string {
+	if o == nil || IsNil(o.GatewayUrl) {
+		var ret string
+		return ret
+	}
+	return *o.GatewayUrl
+}
+
+// GetGatewayUrlOk returns a tuple with the GatewayUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) GetGatewayUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.GatewayUrl) {
+		return nil, false
+	}
+	return o.GatewayUrl, true
+}
+
+// IsSetGatewayUrl returns a boolean if a field has been set.
+func (o *UpdateVDIGatewaysRequestVdiGateway) IsSetGatewayUrl() bool {
+	if o != nil && !IsNil(o.GatewayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetGatewayUrl gets a reference to the given string and assigns it to the GatewayUrl field.
+func (o *UpdateVDIGatewaysRequestVdiGateway) SetGatewayUrl(v string) {
+	o.GatewayUrl = &v
+}
+
+func (o UpdateVDIGatewaysRequestVdiGateway) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o UpdateVDIGatewaysRequestVdiGateway) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.GatewayUrl) {
+		toSerialize["gatewayUrl"] = o.GatewayUrl
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
+	return toSerialize, nil
 }
 
 type NullableUpdateVDIGatewaysRequestVdiGateway struct {
@@ -156,3 +215,9 @@ func (v NullableUpdateVDIGatewaysRequestVdiGateway) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
+func (o *UpdateVDIGatewaysRequestVdiGateway) UnmarshalJSON(data []byte) (err error) {
+	return decode(data, &o)
+}
+
+// - model_simple.mustache

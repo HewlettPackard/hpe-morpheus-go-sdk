@@ -41,17 +41,17 @@ type CloudCreateConfigVsphere struct {
 	// The id of the configuration management integration associated with the vSphere cloud.
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	// The name of the vSphere resource pool
-	ResourcePool *string                                 `json:"resourcePool,omitempty"`
-	RpcMode      NullableCloudCreateConfigVsphereRpcMode `json:"rpcMode,omitempty"`
+	ResourcePool *string        `json:"resourcePool,omitempty"`
+	RpcMode      NullableString `json:"rpcMode,omitempty"`
 	// The default vSphere VMDK type for virtual machines
 	StorageType *string `json:"storageType,omitempty"`
 	// Certificate provider
-	CertificateProvider        *string                                                    `json:"certificateProvider,omitempty"`
-	EnableVnc                  NullableString                                             `json:"enableVnc,omitempty"`
-	HideHostSelection          NullableString                                             `json:"hideHostSelection,omitempty"`
-	EnableDiskTypeSelection    NullableString                                             `json:"enableDiskTypeSelection,omitempty"`
-	EnableStorageTypeSelection NullableString                                             `json:"enableStorageTypeSelection,omitempty"`
-	EnableNetworkTypeSelection NullableCloudCreateConfigVsphereEnableNetworkTypeSelection `json:"enableNetworkTypeSelection,omitempty"`
+	CertificateProvider        *string        `json:"certificateProvider,omitempty"`
+	EnableVnc                  NullableString `json:"enableVnc,omitempty"`
+	HideHostSelection          NullableString `json:"hideHostSelection,omitempty"`
+	EnableDiskTypeSelection    NullableString `json:"enableDiskTypeSelection,omitempty"`
+	EnableStorageTypeSelection NullableString `json:"enableStorageTypeSelection,omitempty"`
+	EnableNetworkTypeSelection NullableString `json:"enableNetworkTypeSelection,omitempty"`
 	// Username.
 	Username *string `json:"username,omitempty"`
 	// Password to apply to the user
@@ -72,8 +72,6 @@ func NewCloudCreateConfigVsphere(apiUrl string, apiVersion string, datacenter st
 	this.Datacenter = datacenter
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode CloudCreateConfigVsphereRpcMode = guestexec
-	this.RpcMode = *NewNullableCloudCreateConfigVsphereRpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -88,8 +86,6 @@ func NewCloudCreateConfigVsphereWithDefaults() *CloudCreateConfigVsphere {
 	this := CloudCreateConfigVsphere{}
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode CloudCreateConfigVsphereRpcMode = guestexec
-	this.RpcMode = *NewNullableCloudCreateConfigVsphereRpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -437,9 +433,9 @@ func (o *CloudCreateConfigVsphere) SetResourcePool(v string) {
 }
 
 // GetRpcMode returns the RpcMode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CloudCreateConfigVsphere) GetRpcMode() CloudCreateConfigVsphereRpcMode {
+func (o *CloudCreateConfigVsphere) GetRpcMode() string {
 	if o == nil || IsNil(o.RpcMode.Get()) {
-		var ret CloudCreateConfigVsphereRpcMode
+		var ret string
 		return ret
 	}
 	return *o.RpcMode.Get()
@@ -448,7 +444,7 @@ func (o *CloudCreateConfigVsphere) GetRpcMode() CloudCreateConfigVsphereRpcMode 
 // GetRpcModeOk returns a tuple with the RpcMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CloudCreateConfigVsphere) GetRpcModeOk() (*CloudCreateConfigVsphereRpcMode, bool) {
+func (o *CloudCreateConfigVsphere) GetRpcModeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -464,8 +460,8 @@ func (o *CloudCreateConfigVsphere) IsSetRpcMode() bool {
 	return false
 }
 
-// SetRpcMode gets a reference to the given NullableCloudCreateConfigVsphereRpcMode and assigns it to the RpcMode field.
-func (o *CloudCreateConfigVsphere) SetRpcMode(v CloudCreateConfigVsphereRpcMode) {
+// SetRpcMode gets a reference to the given NullableString and assigns it to the RpcMode field.
+func (o *CloudCreateConfigVsphere) SetRpcMode(v string) {
 	o.RpcMode.Set(&v)
 }
 
@@ -716,9 +712,9 @@ func (o *CloudCreateConfigVsphere) UnsetEnableStorageTypeSelection() {
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelection() CloudCreateConfigVsphereEnableNetworkTypeSelection {
+func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelection() string {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection.Get()) {
-		var ret CloudCreateConfigVsphereEnableNetworkTypeSelection
+		var ret string
 		return ret
 	}
 	return *o.EnableNetworkTypeSelection.Get()
@@ -727,7 +723,7 @@ func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelection() CloudCreateCo
 // GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelectionOk() (*CloudCreateConfigVsphereEnableNetworkTypeSelection, bool) {
+func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelectionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -743,8 +739,8 @@ func (o *CloudCreateConfigVsphere) IsSetEnableNetworkTypeSelection() bool {
 	return false
 }
 
-// SetEnableNetworkTypeSelection gets a reference to the given NullableCloudCreateConfigVsphereEnableNetworkTypeSelection and assigns it to the EnableNetworkTypeSelection field.
-func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelection(v CloudCreateConfigVsphereEnableNetworkTypeSelection) {
+// SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
+func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelection(v string) {
 	o.EnableNetworkTypeSelection.Set(&v)
 }
 

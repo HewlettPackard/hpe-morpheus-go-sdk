@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** | A unique name scoped to your account for the cloud | 
 **GroupId** | **int64** | Specifies which Server group this cloud should be assigned to | 
 **ZoneType** | [**AddCloudsRequestZoneZoneType**](AddCloudsRequestZoneZoneType.md) |  | 
-**Config** | [**ZoneCreateConfig**](ZoneCreateConfig.md) |  | 
+**Config** | [**AddCloudsRequestZoneConfig**](AddCloudsRequestZoneConfig.md) |  | 
 **AgentMode** | Pointer to **string** | The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit). | [optional] [default to "cloudInit"]
 **Description** | Pointer to **string** | Optional description field if you want to put more info there | [optional] 
 **Code** | Pointer to **string** | Optional code for use with policies | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewZoneCreate
 
-`func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config ZoneCreateConfig, ) *ZoneCreate`
+`func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config AddCloudsRequestZoneConfig, ) *ZoneCreate`
 
 NewZoneCreate instantiates a new ZoneCreate object
 This constructor will assign default values to properties that have it defined,
@@ -109,20 +109,20 @@ SetZoneType sets ZoneType field to given value.
 
 ### GetConfig
 
-`func (o *ZoneCreate) GetConfig() ZoneCreateConfig`
+`func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool)`
+`func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ZoneCreate) SetConfig(v ZoneCreateConfig)`
+`func (o *ZoneCreate) SetConfig(v AddCloudsRequestZoneConfig)`
 
 SetConfig sets Config field to given value.
 

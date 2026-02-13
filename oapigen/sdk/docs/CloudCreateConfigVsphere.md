@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **Cluster** | Pointer to **string** | The name of the vSphere cluster | [optional] [default to "all"]
 **ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the vSphere cloud. | [optional] 
 **ResourcePool** | Pointer to **string** | The name of the vSphere resource pool | [optional] 
-**RpcMode** | Pointer to [**NullableCloudCreateConfigVsphereRpcMode**](CloudCreateConfigVsphereRpcMode.md) |  | [optional] [default to guestexec]
+**RpcMode** | Pointer to **NullableString** |  | [optional] 
 **StorageType** | Pointer to **string** | The default vSphere VMDK type for virtual machines | [optional] [default to "thin"]
 **CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
 **EnableVnc** | Pointer to **NullableString** |  | [optional] 
 **HideHostSelection** | Pointer to **NullableString** |  | [optional] 
 **EnableDiskTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **EnableStorageTypeSelection** | Pointer to **NullableString** |  | [optional] 
-**EnableNetworkTypeSelection** | Pointer to [**NullableCloudCreateConfigVsphereEnableNetworkTypeSelection**](CloudCreateConfigVsphereEnableNetworkTypeSelection.md) |  | [optional] 
+**EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
 **Username** | Pointer to **string** | Username. | [optional] 
 **Password** | Pointer to **string** | Password to apply to the user | [optional] 
 
@@ -317,20 +317,20 @@ HasResourcePool returns a boolean if a field has been set.
 
 ### GetRpcMode
 
-`func (o *CloudCreateConfigVsphere) GetRpcMode() CloudCreateConfigVsphereRpcMode`
+`func (o *CloudCreateConfigVsphere) GetRpcMode() string`
 
 GetRpcMode returns the RpcMode field if non-nil, zero value otherwise.
 
 ### GetRpcModeOk
 
-`func (o *CloudCreateConfigVsphere) GetRpcModeOk() (*CloudCreateConfigVsphereRpcMode, bool)`
+`func (o *CloudCreateConfigVsphere) GetRpcModeOk() (*string, bool)`
 
 GetRpcModeOk returns a tuple with the RpcMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRpcMode
 
-`func (o *CloudCreateConfigVsphere) SetRpcMode(v CloudCreateConfigVsphereRpcMode)`
+`func (o *CloudCreateConfigVsphere) SetRpcMode(v string)`
 
 SetRpcMode sets RpcMode field to given value.
 
@@ -542,20 +542,20 @@ HasEnableStorageTypeSelection returns a boolean if a field has been set.
 UnsetEnableStorageTypeSelection ensures that no value is present for EnableStorageTypeSelection, not even an explicit nil
 ### GetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelection() CloudCreateConfigVsphereEnableNetworkTypeSelection`
+`func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelection() string`
 
 GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field if non-nil, zero value otherwise.
 
 ### GetEnableNetworkTypeSelectionOk
 
-`func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelectionOk() (*CloudCreateConfigVsphereEnableNetworkTypeSelection, bool)`
+`func (o *CloudCreateConfigVsphere) GetEnableNetworkTypeSelectionOk() (*string, bool)`
 
 GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelection(v CloudCreateConfigVsphereEnableNetworkTypeSelection)`
+`func (o *CloudCreateConfigVsphere) SetEnableNetworkTypeSelection(v string)`
 
 SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given value.
 
