@@ -21,8 +21,11 @@ var _ fmt.Stringer
 
 // AddCloudsRequestZoneConfig Cloud configuration settings.
 type AddCloudsRequestZoneConfig struct {
-	AddCloudsRequestZoneConfigAnyOf *AddCloudsRequestZoneConfigAnyOf
-	MapmapOfStringAny               *map[string]interface{}
+	AddCloudsRequestZoneConfigAnyOf  *AddCloudsRequestZoneConfigAnyOf
+	AddCloudsRequestZoneConfigAnyOf1 *AddCloudsRequestZoneConfigAnyOf1
+	AddCloudsRequestZoneConfigAnyOf2 *AddCloudsRequestZoneConfigAnyOf2
+	AddCloudsRequestZoneConfigAnyOf3 *AddCloudsRequestZoneConfigAnyOf3
+	MapmapOfStringAny                *map[string]interface{}
 }
 
 func (dst *AddCloudsRequestZoneConfig) UnmarshalMapstructure(data any) (any, error) {
@@ -34,6 +37,24 @@ func (dst *AddCloudsRequestZoneConfig) UnmarshalMapstructure(data any) (any, err
 
 	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOf) {
 		dst.AddCloudsRequestZoneConfigAnyOf = nil
+	}
+
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOf1)
+
+	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOf1) {
+		dst.AddCloudsRequestZoneConfigAnyOf1 = nil
+	}
+
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOf2)
+
+	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOf2) {
+		dst.AddCloudsRequestZoneConfigAnyOf2 = nil
+	}
+
+	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOf3)
+
+	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOf3) {
+		dst.AddCloudsRequestZoneConfigAnyOf3 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -61,6 +82,45 @@ func (dst *AddCloudsRequestZoneConfig) UnmarshalJSON(data []byte) error {
 		dst.AddCloudsRequestZoneConfigAnyOf = nil
 	}
 
+	// try to unmarshal JSON data into AddCloudsRequestZoneConfigAnyOf1
+	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneConfigAnyOf1)
+	if err == nil {
+		jsonAddCloudsRequestZoneConfigAnyOf1, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOf1)
+		if string(jsonAddCloudsRequestZoneConfigAnyOf1) == "{}" { // empty struct
+			dst.AddCloudsRequestZoneConfigAnyOf1 = nil
+		} else {
+			return nil // data stored in dst.AddCloudsRequestZoneConfigAnyOf1, return on the first match
+		}
+	} else {
+		dst.AddCloudsRequestZoneConfigAnyOf1 = nil
+	}
+
+	// try to unmarshal JSON data into AddCloudsRequestZoneConfigAnyOf2
+	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneConfigAnyOf2)
+	if err == nil {
+		jsonAddCloudsRequestZoneConfigAnyOf2, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOf2)
+		if string(jsonAddCloudsRequestZoneConfigAnyOf2) == "{}" { // empty struct
+			dst.AddCloudsRequestZoneConfigAnyOf2 = nil
+		} else {
+			return nil // data stored in dst.AddCloudsRequestZoneConfigAnyOf2, return on the first match
+		}
+	} else {
+		dst.AddCloudsRequestZoneConfigAnyOf2 = nil
+	}
+
+	// try to unmarshal JSON data into AddCloudsRequestZoneConfigAnyOf3
+	err = json.Unmarshal(data, &dst.AddCloudsRequestZoneConfigAnyOf3)
+	if err == nil {
+		jsonAddCloudsRequestZoneConfigAnyOf3, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOf3)
+		if string(jsonAddCloudsRequestZoneConfigAnyOf3) == "{}" { // empty struct
+			dst.AddCloudsRequestZoneConfigAnyOf3 = nil
+		} else {
+			return nil // data stored in dst.AddCloudsRequestZoneConfigAnyOf3, return on the first match
+		}
+	} else {
+		dst.AddCloudsRequestZoneConfigAnyOf3 = nil
+	}
+
 	// try to unmarshal JSON data into MapmapOfStringAny
 	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
 	if err == nil {
@@ -81,6 +141,18 @@ func (dst *AddCloudsRequestZoneConfig) UnmarshalJSON(data []byte) error {
 func (src AddCloudsRequestZoneConfig) MarshalJSON() ([]byte, error) {
 	if src.AddCloudsRequestZoneConfigAnyOf != nil {
 		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOf)
+	}
+
+	if src.AddCloudsRequestZoneConfigAnyOf1 != nil {
+		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOf1)
+	}
+
+	if src.AddCloudsRequestZoneConfigAnyOf2 != nil {
+		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOf2)
+	}
+
+	if src.AddCloudsRequestZoneConfigAnyOf3 != nil {
+		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOf3)
 	}
 
 	if src.MapmapOfStringAny != nil {

@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **DefaultSecurityGroupSyncActive** | Pointer to **bool** |  | [optional] 
 **DefaultPoolSyncActive** | Pointer to **bool** |  | [optional] 
 **DefaultPlanSyncActive** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfig**](ListClouds200ResponseAllOfZonesInnerConfig.md) |  | [optional] 
+**Config** | Pointer to [**AddClouds200ResponseAllOfZoneConfig**](AddClouds200ResponseAllOfZoneConfig.md) |  | [optional] 
 **Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredential**](ListClouds200ResponseAllOfZonesInnerCredential.md) |  | [optional] 
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
 **DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
@@ -1452,20 +1452,20 @@ HasDefaultPlanSyncActive returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Zone) GetConfig() ListClouds200ResponseAllOfZonesInnerConfig`
+`func (o *Zone) GetConfig() AddClouds200ResponseAllOfZoneConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Zone) GetConfigOk() (*ListClouds200ResponseAllOfZonesInnerConfig, bool)`
+`func (o *Zone) GetConfigOk() (*AddClouds200ResponseAllOfZoneConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Zone) SetConfig(v ListClouds200ResponseAllOfZonesInnerConfig)`
+`func (o *Zone) SetConfig(v AddClouds200ResponseAllOfZoneConfig)`
 
 SetConfig sets Config field to given value.
 

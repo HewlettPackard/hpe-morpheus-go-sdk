@@ -20,7 +20,7 @@ var _ MappedNullable = &AddClusterRequestClusterServerConfigAnyOfOneOf2Controlle
 
 // AddClusterRequestClusterServerConfigAnyOfOneOf2Controller struct for AddClusterRequestClusterServerConfigAnyOfOneOf2Controller
 type AddClusterRequestClusterServerConfigAnyOfOneOf2Controller struct {
-	Role                 *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole    `json:"role,omitempty"`
+	Role                 *ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer     `json:"role,omitempty"`
 	Network              *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork `json:"network,omitempty"`
 	SecurityGroup        *AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork `json:"securityGroup,omitempty"`
 	AdditionalProperties map[string]interface{}                                            `json:",remain"`
@@ -46,9 +46,9 @@ func NewAddClusterRequestClusterServerConfigAnyOfOneOf2ControllerWithDefaults() 
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRole() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRole() ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer {
 	if o == nil || IsNil(o.Role) {
-		var ret AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole
+		var ret ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer
 		return ret
 	}
 	return *o.Role
@@ -56,7 +56,7 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRole() Ad
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRoleOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool) {
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) GetRoleOk() (*ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) IsSetRole() 
 	return false
 }
 
-// SetRole gets a reference to the given AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole and assigns it to the Role field.
-func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) SetRole(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole) {
+// SetRole gets a reference to the given ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer and assigns it to the Role field.
+func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Controller) SetRole(v ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer) {
 	o.Role = &v
 }
 

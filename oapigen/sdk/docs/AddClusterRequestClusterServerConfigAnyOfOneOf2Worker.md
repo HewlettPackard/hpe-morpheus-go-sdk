@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Network** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork.md) |  | [optional] 
 **SecurityGroup** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerNetwork.md) |  | [optional] 
 **Plan** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Role** | Pointer to [**AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole**](AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole.md) |  | [optional] 
+**Role** | Pointer to [**ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer**](ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetRole() AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetRole() ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetRoleOk() (*AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole, bool)`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) GetRoleOk() (*ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) SetRole(v AddClusterRequestClusterServerConfigAnyOfOneOf2ControllerRole)`
+`func (o *AddClusterRequestClusterServerConfigAnyOfOneOf2Worker) SetRole(v ListClouds200ResponseAllOfZonesInnerConfigAnyOfNetworkServer)`
 
 SetRole sets Role field to given value.
 

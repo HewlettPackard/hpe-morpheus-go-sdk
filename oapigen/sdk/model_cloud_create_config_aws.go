@@ -20,6 +20,16 @@ var _ MappedNullable = &CloudCreateConfigAWS{}
 
 // CloudCreateConfigAWS Amazon Cloud
 type CloudCreateConfigAWS struct {
+	// The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
+	ApplianceUrl *string `json:"applianceUrl,omitempty"`
+	// A custom name used to reference the datacenter for the cloud.
+	DatacenterName *string `json:"datacenterName,omitempty"`
+	// The external id of the cloud
+	ExternalId NullableString `json:"externalId,omitempty"`
+	// Whether to import existing virtual machines.
+	InventoryLevel *string `json:"inventoryLevel,omitempty"`
+	// The keyboard layout to use for the console
+	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
 	// AWS endpoint
 	Endpoint string `json:"endpoint"`
 	// AWS access key
@@ -65,6 +75,177 @@ func NewCloudCreateConfigAWSWithDefaults() *CloudCreateConfigAWS {
 	var ebsEncryption string = "on"
 	this.EbsEncryption = &ebsEncryption
 	return &this
+}
+
+// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetApplianceUrl() string {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		var ret string
+		return ret
+	}
+	return *o.ApplianceUrl
+}
+
+// GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetApplianceUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		return nil, false
+	}
+	return o.ApplianceUrl, true
+}
+
+// IsSetApplianceUrl returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetApplianceUrl() bool {
+	if o != nil && !IsNil(o.ApplianceUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
+func (o *CloudCreateConfigAWS) SetApplianceUrl(v string) {
+	o.ApplianceUrl = &v
+}
+
+// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetDatacenterName() string {
+	if o == nil || IsNil(o.DatacenterName) {
+		var ret string
+		return ret
+	}
+	return *o.DatacenterName
+}
+
+// GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetDatacenterNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DatacenterName) {
+		return nil, false
+	}
+	return o.DatacenterName, true
+}
+
+// IsSetDatacenterName returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetDatacenterName() bool {
+	if o != nil && !IsNil(o.DatacenterName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
+func (o *CloudCreateConfigAWS) SetDatacenterName(v string) {
+	o.DatacenterName = &v
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CloudCreateConfigAWS) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalId.Get()
+}
+
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CloudCreateConfigAWS) GetExternalIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
+}
+
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetExternalId() bool {
+	if o != nil && o.ExternalId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
+func (o *CloudCreateConfigAWS) SetExternalId(v string) {
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *CloudCreateConfigAWS) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *CloudCreateConfigAWS) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetInventoryLevel() string {
+	if o == nil || IsNil(o.InventoryLevel) {
+		var ret string
+		return ret
+	}
+	return *o.InventoryLevel
+}
+
+// GetInventoryLevelOk returns a tuple with the InventoryLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetInventoryLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.InventoryLevel) {
+		return nil, false
+	}
+	return o.InventoryLevel, true
+}
+
+// IsSetInventoryLevel returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetInventoryLevel() bool {
+	if o != nil && !IsNil(o.InventoryLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
+func (o *CloudCreateConfigAWS) SetInventoryLevel(v string) {
+	o.InventoryLevel = &v
+}
+
+// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
+func (o *CloudCreateConfigAWS) GetConsoleKeymap() string {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		var ret string
+		return ret
+	}
+	return *o.ConsoleKeymap
+}
+
+// GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAWS) GetConsoleKeymapOk() (*string, bool) {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		return nil, false
+	}
+	return o.ConsoleKeymap, true
+}
+
+// IsSetConsoleKeymap returns a boolean if a field has been set.
+func (o *CloudCreateConfigAWS) IsSetConsoleKeymap() bool {
+	if o != nil && !IsNil(o.ConsoleKeymap) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
+func (o *CloudCreateConfigAWS) SetConsoleKeymap(v string) {
+	o.ConsoleKeymap = &v
 }
 
 // GetEndpoint returns the Endpoint field value
@@ -325,6 +506,21 @@ func (o CloudCreateConfigAWS) MarshalJSON() ([]byte, error) {
 
 func (o CloudCreateConfigAWS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApplianceUrl) {
+		toSerialize["applianceUrl"] = o.ApplianceUrl
+	}
+	if !IsNil(o.DatacenterName) {
+		toSerialize["datacenterName"] = o.DatacenterName
+	}
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
+	}
+	if !IsNil(o.InventoryLevel) {
+		toSerialize["inventoryLevel"] = o.InventoryLevel
+	}
+	if !IsNil(o.ConsoleKeymap) {
+		toSerialize["consoleKeymap"] = o.ConsoleKeymap
+	}
 	toSerialize["endpoint"] = o.Endpoint
 	if !IsNil(o.AccessKey) {
 		toSerialize["accessKey"] = o.AccessKey

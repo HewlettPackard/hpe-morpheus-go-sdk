@@ -13,235 +13,542 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
-
-	"gopkg.in/validator.v2"
 )
 
-// very silly way of avoiding `"fmt" imported and not used` errors
-var _ fmt.Stringer
+// checks if the AddCloudsRequestZoneConfigAnyOf type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCloudsRequestZoneConfigAnyOf{}
 
-// AddCloudsRequestZoneConfigAnyOf - struct for AddCloudsRequestZoneConfigAnyOf
+// AddCloudsRequestZoneConfigAnyOf Amazon Cloud
 type AddCloudsRequestZoneConfigAnyOf struct {
-	AddCloudsRequestZoneConfigAnyOfOneOf  *AddCloudsRequestZoneConfigAnyOfOneOf
-	AddCloudsRequestZoneConfigAnyOfOneOf1 *AddCloudsRequestZoneConfigAnyOfOneOf1
-	AddCloudsRequestZoneConfigAnyOfOneOf2 *AddCloudsRequestZoneConfigAnyOfOneOf2
-	AddCloudsRequestZoneConfigAnyOfOneOf3 *AddCloudsRequestZoneConfigAnyOfOneOf3
+	// The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
+	ApplianceUrl *string `json:"applianceUrl,omitempty"`
+	// A custom name used to reference the datacenter for the cloud.
+	DatacenterName *string `json:"datacenterName,omitempty"`
+	// The external id of the cloud
+	ExternalId NullableString `json:"externalId,omitempty"`
+	// Whether to import existing virtual machines.
+	InventoryLevel *string `json:"inventoryLevel,omitempty"`
+	// The keyboard layout to use for the console
+	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
+	// AWS endpoint
+	Endpoint string `json:"endpoint"`
+	// AWS access key
+	AccessKey *string `json:"accessKey,omitempty"`
+	// AWS secret key
+	SecretKey *string `json:"secretKey,omitempty"`
+	// Whether to use the IAM profile associated with the Morpheus server or not
+	UseHostCredentials *string `json:"useHostCredentials,omitempty"`
+	// Determines whether to configure default EBS volume encryption or not
+	EbsEncryption *string `json:"ebsEncryption,omitempty"`
+	// The AWS IAM role ARN to assume for authentication
+	StsAssumeRole *string `json:"stsAssumeRole,omitempty"`
+	// The id of the configuration management integration associated with the AWS cloud
+	ConfigManagementId *string `json:"configManagementId,omitempty"`
+	// The VPC ID for a specific VPC
+	Vpc                  *string                `json:"vpc,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
-// AddCloudsRequestZoneConfigAnyOfOneOfAsAddCloudsRequestZoneConfigAnyOf is a convenience function that returns AddCloudsRequestZoneConfigAnyOfOneOf wrapped in AddCloudsRequestZoneConfigAnyOf
-func AddCloudsRequestZoneConfigAnyOfOneOfAsAddCloudsRequestZoneConfigAnyOf(v *AddCloudsRequestZoneConfigAnyOfOneOf) AddCloudsRequestZoneConfigAnyOf {
-	return AddCloudsRequestZoneConfigAnyOf{
-		AddCloudsRequestZoneConfigAnyOfOneOf: v,
-	}
+type _AddCloudsRequestZoneConfigAnyOf AddCloudsRequestZoneConfigAnyOf
+
+// NewAddCloudsRequestZoneConfigAnyOf instantiates a new AddCloudsRequestZoneConfigAnyOf object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewAddCloudsRequestZoneConfigAnyOf(endpoint string) *AddCloudsRequestZoneConfigAnyOf {
+	this := AddCloudsRequestZoneConfigAnyOf{}
+	this.Endpoint = endpoint
+	var useHostCredentials string = "on"
+	this.UseHostCredentials = &useHostCredentials
+	var ebsEncryption string = "on"
+	this.EbsEncryption = &ebsEncryption
+	return &this
 }
 
-// AddCloudsRequestZoneConfigAnyOfOneOf1AsAddCloudsRequestZoneConfigAnyOf is a convenience function that returns AddCloudsRequestZoneConfigAnyOfOneOf1 wrapped in AddCloudsRequestZoneConfigAnyOf
-func AddCloudsRequestZoneConfigAnyOfOneOf1AsAddCloudsRequestZoneConfigAnyOf(v *AddCloudsRequestZoneConfigAnyOfOneOf1) AddCloudsRequestZoneConfigAnyOf {
-	return AddCloudsRequestZoneConfigAnyOf{
-		AddCloudsRequestZoneConfigAnyOfOneOf1: v,
-	}
+// NewAddCloudsRequestZoneConfigAnyOfWithDefaults instantiates a new AddCloudsRequestZoneConfigAnyOf object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewAddCloudsRequestZoneConfigAnyOfWithDefaults() *AddCloudsRequestZoneConfigAnyOf {
+	this := AddCloudsRequestZoneConfigAnyOf{}
+	var useHostCredentials string = "on"
+	this.UseHostCredentials = &useHostCredentials
+	var ebsEncryption string = "on"
+	this.EbsEncryption = &ebsEncryption
+	return &this
 }
 
-// AddCloudsRequestZoneConfigAnyOfOneOf2AsAddCloudsRequestZoneConfigAnyOf is a convenience function that returns AddCloudsRequestZoneConfigAnyOfOneOf2 wrapped in AddCloudsRequestZoneConfigAnyOf
-func AddCloudsRequestZoneConfigAnyOfOneOf2AsAddCloudsRequestZoneConfigAnyOf(v *AddCloudsRequestZoneConfigAnyOfOneOf2) AddCloudsRequestZoneConfigAnyOf {
-	return AddCloudsRequestZoneConfigAnyOf{
-		AddCloudsRequestZoneConfigAnyOfOneOf2: v,
+// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetApplianceUrl() string {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		var ret string
+		return ret
 	}
+	return *o.ApplianceUrl
 }
 
-// AddCloudsRequestZoneConfigAnyOfOneOf3AsAddCloudsRequestZoneConfigAnyOf is a convenience function that returns AddCloudsRequestZoneConfigAnyOfOneOf3 wrapped in AddCloudsRequestZoneConfigAnyOf
-func AddCloudsRequestZoneConfigAnyOfOneOf3AsAddCloudsRequestZoneConfigAnyOf(v *AddCloudsRequestZoneConfigAnyOfOneOf3) AddCloudsRequestZoneConfigAnyOf {
-	return AddCloudsRequestZoneConfigAnyOf{
-		AddCloudsRequestZoneConfigAnyOfOneOf3: v,
+// GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetApplianceUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		return nil, false
 	}
+	return o.ApplianceUrl, true
 }
 
-func (dst *AddCloudsRequestZoneConfigAnyOf) UnmarshalMapstructure(data any) (any, error) {
-	if dst == nil {
-		dst = &AddCloudsRequestZoneConfigAnyOf{}
+// IsSetApplianceUrl returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetApplianceUrl() bool {
+	if o != nil && !IsNil(o.ApplianceUrl) {
+		return true
 	}
 
-	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf)
-
-	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf) {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
-	}
-
-	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf1)
-
-	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf1) {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
-	}
-
-	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf2)
-
-	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf2) {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
-	}
-
-	mapstructDecode(data, &dst.AddCloudsRequestZoneConfigAnyOfOneOf3)
-
-	if IsEmpty(dst.AddCloudsRequestZoneConfigAnyOfOneOf3) {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil
-	}
-
-	return dst, nil
+	return false
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *AddCloudsRequestZoneConfigAnyOf) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into AddCloudsRequestZoneConfigAnyOfOneOf
-	err = newStrictDecoder(data).Decode(&dst.AddCloudsRequestZoneConfigAnyOfOneOf)
-	if err == nil {
-		jsonAddCloudsRequestZoneConfigAnyOfOneOf, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOfOneOf)
-		if string(jsonAddCloudsRequestZoneConfigAnyOfOneOf) == "{}" { // empty struct
-			dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
-		} else {
-			if err = validator.Validate(dst.AddCloudsRequestZoneConfigAnyOfOneOf); err != nil {
-				dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
-	}
-
-	// try to unmarshal data into AddCloudsRequestZoneConfigAnyOfOneOf1
-	err = newStrictDecoder(data).Decode(&dst.AddCloudsRequestZoneConfigAnyOfOneOf1)
-	if err == nil {
-		jsonAddCloudsRequestZoneConfigAnyOfOneOf1, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOfOneOf1)
-		if string(jsonAddCloudsRequestZoneConfigAnyOfOneOf1) == "{}" { // empty struct
-			dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
-		} else {
-			if err = validator.Validate(dst.AddCloudsRequestZoneConfigAnyOfOneOf1); err != nil {
-				dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
-	}
-
-	// try to unmarshal data into AddCloudsRequestZoneConfigAnyOfOneOf2
-	err = newStrictDecoder(data).Decode(&dst.AddCloudsRequestZoneConfigAnyOfOneOf2)
-	if err == nil {
-		jsonAddCloudsRequestZoneConfigAnyOfOneOf2, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOfOneOf2)
-		if string(jsonAddCloudsRequestZoneConfigAnyOfOneOf2) == "{}" { // empty struct
-			dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
-		} else {
-			if err = validator.Validate(dst.AddCloudsRequestZoneConfigAnyOfOneOf2); err != nil {
-				dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
-	}
-
-	// try to unmarshal data into AddCloudsRequestZoneConfigAnyOfOneOf3
-	err = newStrictDecoder(data).Decode(&dst.AddCloudsRequestZoneConfigAnyOfOneOf3)
-	if err == nil {
-		jsonAddCloudsRequestZoneConfigAnyOfOneOf3, _ := json.Marshal(dst.AddCloudsRequestZoneConfigAnyOfOneOf3)
-		if string(jsonAddCloudsRequestZoneConfigAnyOfOneOf3) == "{}" { // empty struct
-			dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil
-		} else {
-			if err = validator.Validate(dst.AddCloudsRequestZoneConfigAnyOfOneOf3); err != nil {
-				dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil
-			} else {
-				match++
-			}
-		}
-	} else {
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf = nil
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf1 = nil
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf2 = nil
-		dst.AddCloudsRequestZoneConfigAnyOfOneOf3 = nil
-
-		return NewResponseValidationError("data matches more than one schema in oneOf(AddCloudsRequestZoneConfigAnyOf)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return NewResponseValidationError("data failed to match schemas in oneOf(AddCloudsRequestZoneConfigAnyOf)")
-	}
+// SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetApplianceUrl(v string) {
+	o.ApplianceUrl = &v
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src AddCloudsRequestZoneConfigAnyOf) MarshalJSON() ([]byte, error) {
-	if src.AddCloudsRequestZoneConfigAnyOfOneOf != nil {
-		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOfOneOf)
+// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetDatacenterName() string {
+	if o == nil || IsNil(o.DatacenterName) {
+		var ret string
+		return ret
 	}
-
-	if src.AddCloudsRequestZoneConfigAnyOfOneOf1 != nil {
-		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOfOneOf1)
-	}
-
-	if src.AddCloudsRequestZoneConfigAnyOfOneOf2 != nil {
-		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOfOneOf2)
-	}
-
-	if src.AddCloudsRequestZoneConfigAnyOfOneOf3 != nil {
-		return json.Marshal(&src.AddCloudsRequestZoneConfigAnyOfOneOf3)
-	}
-
-	return nil, nil // no data in oneOf schemas
+	return *o.DatacenterName
 }
 
-// Get the actual instance
-func (obj *AddCloudsRequestZoneConfigAnyOf) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
+// GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetDatacenterNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DatacenterName) {
+		return nil, false
 	}
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf != nil {
-		return obj.AddCloudsRequestZoneConfigAnyOfOneOf
-	}
-
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf1 != nil {
-		return obj.AddCloudsRequestZoneConfigAnyOfOneOf1
-	}
-
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf2 != nil {
-		return obj.AddCloudsRequestZoneConfigAnyOfOneOf2
-	}
-
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf3 != nil {
-		return obj.AddCloudsRequestZoneConfigAnyOfOneOf3
-	}
-
-	// all schemas are nil
-	return nil
+	return o.DatacenterName, true
 }
 
-// Get the actual instance value
-func (obj AddCloudsRequestZoneConfigAnyOf) GetActualInstanceValue() interface{} {
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf != nil {
-		return *obj.AddCloudsRequestZoneConfigAnyOfOneOf
+// IsSetDatacenterName returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetDatacenterName() bool {
+	if o != nil && !IsNil(o.DatacenterName) {
+		return true
 	}
 
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf1 != nil {
-		return *obj.AddCloudsRequestZoneConfigAnyOfOneOf1
+	return false
+}
+
+// SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetDatacenterName(v string) {
+	o.DatacenterName = &v
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddCloudsRequestZoneConfigAnyOf) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalId.Get()
+}
+
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddCloudsRequestZoneConfigAnyOf) GetExternalIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
+}
+
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetExternalId() bool {
+	if o != nil && o.ExternalId.IsSet() {
+		return true
 	}
 
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf2 != nil {
-		return *obj.AddCloudsRequestZoneConfigAnyOfOneOf2
+	return false
+}
+
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetExternalId(v string) {
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *AddCloudsRequestZoneConfigAnyOf) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *AddCloudsRequestZoneConfigAnyOf) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetInventoryLevel() string {
+	if o == nil || IsNil(o.InventoryLevel) {
+		var ret string
+		return ret
+	}
+	return *o.InventoryLevel
+}
+
+// GetInventoryLevelOk returns a tuple with the InventoryLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetInventoryLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.InventoryLevel) {
+		return nil, false
+	}
+	return o.InventoryLevel, true
+}
+
+// IsSetInventoryLevel returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetInventoryLevel() bool {
+	if o != nil && !IsNil(o.InventoryLevel) {
+		return true
 	}
 
-	if obj.AddCloudsRequestZoneConfigAnyOfOneOf3 != nil {
-		return *obj.AddCloudsRequestZoneConfigAnyOfOneOf3
+	return false
+}
+
+// SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetInventoryLevel(v string) {
+	o.InventoryLevel = &v
+}
+
+// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetConsoleKeymap() string {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		var ret string
+		return ret
+	}
+	return *o.ConsoleKeymap
+}
+
+// GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetConsoleKeymapOk() (*string, bool) {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		return nil, false
+	}
+	return o.ConsoleKeymap, true
+}
+
+// IsSetConsoleKeymap returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetConsoleKeymap() bool {
+	if o != nil && !IsNil(o.ConsoleKeymap) {
+		return true
 	}
 
-	// all schemas are nil
-	return nil
+	return false
+}
+
+// SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetConsoleKeymap(v string) {
+	o.ConsoleKeymap = &v
+}
+
+// GetEndpoint returns the Endpoint field value
+func (o *AddCloudsRequestZoneConfigAnyOf) GetEndpoint() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Endpoint
+}
+
+// GetEndpointOk returns a tuple with the Endpoint field value
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetEndpointOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Endpoint, true
+}
+
+// SetEndpoint sets field value
+func (o *AddCloudsRequestZoneConfigAnyOf) SetEndpoint(v string) {
+	o.Endpoint = v
+}
+
+// GetAccessKey returns the AccessKey field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetAccessKey() string {
+	if o == nil || IsNil(o.AccessKey) {
+		var ret string
+		return ret
+	}
+	return *o.AccessKey
+}
+
+// GetAccessKeyOk returns a tuple with the AccessKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetAccessKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.AccessKey) {
+		return nil, false
+	}
+	return o.AccessKey, true
+}
+
+// IsSetAccessKey returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetAccessKey() bool {
+	if o != nil && !IsNil(o.AccessKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccessKey gets a reference to the given string and assigns it to the AccessKey field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetAccessKey(v string) {
+	o.AccessKey = &v
+}
+
+// GetSecretKey returns the SecretKey field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetSecretKey() string {
+	if o == nil || IsNil(o.SecretKey) {
+		var ret string
+		return ret
+	}
+	return *o.SecretKey
+}
+
+// GetSecretKeyOk returns a tuple with the SecretKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetSecretKeyOk() (*string, bool) {
+	if o == nil || IsNil(o.SecretKey) {
+		return nil, false
+	}
+	return o.SecretKey, true
+}
+
+// IsSetSecretKey returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetSecretKey() bool {
+	if o != nil && !IsNil(o.SecretKey) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecretKey gets a reference to the given string and assigns it to the SecretKey field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetSecretKey(v string) {
+	o.SecretKey = &v
+}
+
+// GetUseHostCredentials returns the UseHostCredentials field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetUseHostCredentials() string {
+	if o == nil || IsNil(o.UseHostCredentials) {
+		var ret string
+		return ret
+	}
+	return *o.UseHostCredentials
+}
+
+// GetUseHostCredentialsOk returns a tuple with the UseHostCredentials field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetUseHostCredentialsOk() (*string, bool) {
+	if o == nil || IsNil(o.UseHostCredentials) {
+		return nil, false
+	}
+	return o.UseHostCredentials, true
+}
+
+// IsSetUseHostCredentials returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetUseHostCredentials() bool {
+	if o != nil && !IsNil(o.UseHostCredentials) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseHostCredentials gets a reference to the given string and assigns it to the UseHostCredentials field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetUseHostCredentials(v string) {
+	o.UseHostCredentials = &v
+}
+
+// GetEbsEncryption returns the EbsEncryption field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetEbsEncryption() string {
+	if o == nil || IsNil(o.EbsEncryption) {
+		var ret string
+		return ret
+	}
+	return *o.EbsEncryption
+}
+
+// GetEbsEncryptionOk returns a tuple with the EbsEncryption field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetEbsEncryptionOk() (*string, bool) {
+	if o == nil || IsNil(o.EbsEncryption) {
+		return nil, false
+	}
+	return o.EbsEncryption, true
+}
+
+// IsSetEbsEncryption returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetEbsEncryption() bool {
+	if o != nil && !IsNil(o.EbsEncryption) {
+		return true
+	}
+
+	return false
+}
+
+// SetEbsEncryption gets a reference to the given string and assigns it to the EbsEncryption field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetEbsEncryption(v string) {
+	o.EbsEncryption = &v
+}
+
+// GetStsAssumeRole returns the StsAssumeRole field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetStsAssumeRole() string {
+	if o == nil || IsNil(o.StsAssumeRole) {
+		var ret string
+		return ret
+	}
+	return *o.StsAssumeRole
+}
+
+// GetStsAssumeRoleOk returns a tuple with the StsAssumeRole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetStsAssumeRoleOk() (*string, bool) {
+	if o == nil || IsNil(o.StsAssumeRole) {
+		return nil, false
+	}
+	return o.StsAssumeRole, true
+}
+
+// IsSetStsAssumeRole returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetStsAssumeRole() bool {
+	if o != nil && !IsNil(o.StsAssumeRole) {
+		return true
+	}
+
+	return false
+}
+
+// SetStsAssumeRole gets a reference to the given string and assigns it to the StsAssumeRole field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetStsAssumeRole(v string) {
+	o.StsAssumeRole = &v
+}
+
+// GetConfigManagementId returns the ConfigManagementId field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementId() string {
+	if o == nil || IsNil(o.ConfigManagementId) {
+		var ret string
+		return ret
+	}
+	return *o.ConfigManagementId
+}
+
+// GetConfigManagementIdOk returns a tuple with the ConfigManagementId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetConfigManagementIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ConfigManagementId) {
+		return nil, false
+	}
+	return o.ConfigManagementId, true
+}
+
+// IsSetConfigManagementId returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetConfigManagementId() bool {
+	if o != nil && !IsNil(o.ConfigManagementId) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigManagementId gets a reference to the given string and assigns it to the ConfigManagementId field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetConfigManagementId(v string) {
+	o.ConfigManagementId = &v
+}
+
+// GetVpc returns the Vpc field value if set, zero value otherwise.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetVpc() string {
+	if o == nil || IsNil(o.Vpc) {
+		var ret string
+		return ret
+	}
+	return *o.Vpc
+}
+
+// GetVpcOk returns a tuple with the Vpc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) GetVpcOk() (*string, bool) {
+	if o == nil || IsNil(o.Vpc) {
+		return nil, false
+	}
+	return o.Vpc, true
+}
+
+// IsSetVpc returns a boolean if a field has been set.
+func (o *AddCloudsRequestZoneConfigAnyOf) IsSetVpc() bool {
+	if o != nil && !IsNil(o.Vpc) {
+		return true
+	}
+
+	return false
+}
+
+// SetVpc gets a reference to the given string and assigns it to the Vpc field.
+func (o *AddCloudsRequestZoneConfigAnyOf) SetVpc(v string) {
+	o.Vpc = &v
+}
+
+func (o AddCloudsRequestZoneConfigAnyOf) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AddCloudsRequestZoneConfigAnyOf) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApplianceUrl) {
+		toSerialize["applianceUrl"] = o.ApplianceUrl
+	}
+	if !IsNil(o.DatacenterName) {
+		toSerialize["datacenterName"] = o.DatacenterName
+	}
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
+	}
+	if !IsNil(o.InventoryLevel) {
+		toSerialize["inventoryLevel"] = o.InventoryLevel
+	}
+	if !IsNil(o.ConsoleKeymap) {
+		toSerialize["consoleKeymap"] = o.ConsoleKeymap
+	}
+	toSerialize["endpoint"] = o.Endpoint
+	if !IsNil(o.AccessKey) {
+		toSerialize["accessKey"] = o.AccessKey
+	}
+	if !IsNil(o.SecretKey) {
+		toSerialize["secretKey"] = o.SecretKey
+	}
+	if !IsNil(o.UseHostCredentials) {
+		toSerialize["useHostCredentials"] = o.UseHostCredentials
+	}
+	if !IsNil(o.EbsEncryption) {
+		toSerialize["ebsEncryption"] = o.EbsEncryption
+	}
+	if !IsNil(o.StsAssumeRole) {
+		toSerialize["stsAssumeRole"] = o.StsAssumeRole
+	}
+	if !IsNil(o.ConfigManagementId) {
+		toSerialize["configManagementId"] = o.ConfigManagementId
+	}
+	if !IsNil(o.Vpc) {
+		toSerialize["vpc"] = o.Vpc
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
+	return toSerialize, nil
 }
 
 type NullableAddCloudsRequestZoneConfigAnyOf struct {
@@ -288,3 +595,9 @@ func (v NullableAddCloudsRequestZoneConfigAnyOf) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
+func (o *AddCloudsRequestZoneConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
+	return decode(data, &o)
+}
+
+// - model_simple.mustache

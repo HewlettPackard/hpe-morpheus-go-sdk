@@ -20,6 +20,16 @@ var _ MappedNullable = &CloudCreateConfigAzure{}
 
 // CloudCreateConfigAzure Azure Cloud
 type CloudCreateConfigAzure struct {
+	// The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
+	ApplianceUrl *string `json:"applianceUrl,omitempty"`
+	// A custom name used to reference the datacenter for the cloud.
+	DatacenterName *string `json:"datacenterName,omitempty"`
+	// The external id of the cloud
+	ExternalId NullableString `json:"externalId,omitempty"`
+	// Whether to import existing virtual machines.
+	InventoryLevel *string `json:"inventoryLevel,omitempty"`
+	// The keyboard layout to use for the console
+	ConsoleKeymap *string `json:"consoleKeymap,omitempty"`
 	// Azure subscriber id
 	SubscriberId *string `json:"subscriberId,omitempty"`
 	// Azure tenant id
@@ -51,6 +61,177 @@ func NewCloudCreateConfigAzure() *CloudCreateConfigAzure {
 func NewCloudCreateConfigAzureWithDefaults() *CloudCreateConfigAzure {
 	this := CloudCreateConfigAzure{}
 	return &this
+}
+
+// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetApplianceUrl() string {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		var ret string
+		return ret
+	}
+	return *o.ApplianceUrl
+}
+
+// GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetApplianceUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.ApplianceUrl) {
+		return nil, false
+	}
+	return o.ApplianceUrl, true
+}
+
+// IsSetApplianceUrl returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetApplianceUrl() bool {
+	if o != nil && !IsNil(o.ApplianceUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetApplianceUrl gets a reference to the given string and assigns it to the ApplianceUrl field.
+func (o *CloudCreateConfigAzure) SetApplianceUrl(v string) {
+	o.ApplianceUrl = &v
+}
+
+// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetDatacenterName() string {
+	if o == nil || IsNil(o.DatacenterName) {
+		var ret string
+		return ret
+	}
+	return *o.DatacenterName
+}
+
+// GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetDatacenterNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DatacenterName) {
+		return nil, false
+	}
+	return o.DatacenterName, true
+}
+
+// IsSetDatacenterName returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetDatacenterName() bool {
+	if o != nil && !IsNil(o.DatacenterName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatacenterName gets a reference to the given string and assigns it to the DatacenterName field.
+func (o *CloudCreateConfigAzure) SetDatacenterName(v string) {
+	o.DatacenterName = &v
+}
+
+// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CloudCreateConfigAzure) GetExternalId() string {
+	if o == nil || IsNil(o.ExternalId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalId.Get()
+}
+
+// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CloudCreateConfigAzure) GetExternalIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ExternalId.Get(), o.ExternalId.IsSet()
+}
+
+// IsSetExternalId returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetExternalId() bool {
+	if o != nil && o.ExternalId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
+func (o *CloudCreateConfigAzure) SetExternalId(v string) {
+	o.ExternalId.Set(&v)
+}
+
+// SetExternalIdNil sets the value for ExternalId to be an explicit nil
+func (o *CloudCreateConfigAzure) SetExternalIdNil() {
+	o.ExternalId.Set(nil)
+}
+
+// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+func (o *CloudCreateConfigAzure) UnsetExternalId() {
+	o.ExternalId.Unset()
+}
+
+// GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetInventoryLevel() string {
+	if o == nil || IsNil(o.InventoryLevel) {
+		var ret string
+		return ret
+	}
+	return *o.InventoryLevel
+}
+
+// GetInventoryLevelOk returns a tuple with the InventoryLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetInventoryLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.InventoryLevel) {
+		return nil, false
+	}
+	return o.InventoryLevel, true
+}
+
+// IsSetInventoryLevel returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetInventoryLevel() bool {
+	if o != nil && !IsNil(o.InventoryLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryLevel gets a reference to the given string and assigns it to the InventoryLevel field.
+func (o *CloudCreateConfigAzure) SetInventoryLevel(v string) {
+	o.InventoryLevel = &v
+}
+
+// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise.
+func (o *CloudCreateConfigAzure) GetConsoleKeymap() string {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		var ret string
+		return ret
+	}
+	return *o.ConsoleKeymap
+}
+
+// GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CloudCreateConfigAzure) GetConsoleKeymapOk() (*string, bool) {
+	if o == nil || IsNil(o.ConsoleKeymap) {
+		return nil, false
+	}
+	return o.ConsoleKeymap, true
+}
+
+// IsSetConsoleKeymap returns a boolean if a field has been set.
+func (o *CloudCreateConfigAzure) IsSetConsoleKeymap() bool {
+	if o != nil && !IsNil(o.ConsoleKeymap) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsoleKeymap gets a reference to the given string and assigns it to the ConsoleKeymap field.
+func (o *CloudCreateConfigAzure) SetConsoleKeymap(v string) {
+	o.ConsoleKeymap = &v
 }
 
 // GetSubscriberId returns the SubscriberId field value if set, zero value otherwise.
@@ -266,6 +447,21 @@ func (o CloudCreateConfigAzure) MarshalJSON() ([]byte, error) {
 
 func (o CloudCreateConfigAzure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApplianceUrl) {
+		toSerialize["applianceUrl"] = o.ApplianceUrl
+	}
+	if !IsNil(o.DatacenterName) {
+		toSerialize["datacenterName"] = o.DatacenterName
+	}
+	if o.ExternalId.IsSet() {
+		toSerialize["externalId"] = o.ExternalId.Get()
+	}
+	if !IsNil(o.InventoryLevel) {
+		toSerialize["inventoryLevel"] = o.InventoryLevel
+	}
+	if !IsNil(o.ConsoleKeymap) {
+		toSerialize["consoleKeymap"] = o.ConsoleKeymap
+	}
 	if !IsNil(o.SubscriberId) {
 		toSerialize["subscriberId"] = o.SubscriberId
 	}

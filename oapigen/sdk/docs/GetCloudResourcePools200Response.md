@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourcePool** | Pointer to [**GetCloudResourcePools200ResponseAllOfResourcePool**](GetCloudResourcePools200ResponseAllOfResourcePool.md) |  | [optional] 
+**ResourcePool** | Pointer to [**ListCloudResourcePools200ResponseAllOfResourcePoolsInner**](ListCloudResourcePools200ResponseAllOfResourcePoolsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResourcePool
 
-`func (o *GetCloudResourcePools200Response) GetResourcePool() GetCloudResourcePools200ResponseAllOfResourcePool`
+`func (o *GetCloudResourcePools200Response) GetResourcePool() ListCloudResourcePools200ResponseAllOfResourcePoolsInner`
 
 GetResourcePool returns the ResourcePool field if non-nil, zero value otherwise.
 
 ### GetResourcePoolOk
 
-`func (o *GetCloudResourcePools200Response) GetResourcePoolOk() (*GetCloudResourcePools200ResponseAllOfResourcePool, bool)`
+`func (o *GetCloudResourcePools200Response) GetResourcePoolOk() (*ListCloudResourcePools200ResponseAllOfResourcePoolsInner, bool)`
 
 GetResourcePoolOk returns a tuple with the ResourcePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePool
 
-`func (o *GetCloudResourcePools200Response) SetResourcePool(v GetCloudResourcePools200ResponseAllOfResourcePool)`
+`func (o *GetCloudResourcePools200Response) SetResourcePool(v ListCloudResourcePools200ResponseAllOfResourcePoolsInner)`
 
 SetResourcePool sets ResourcePool field to given value.
 

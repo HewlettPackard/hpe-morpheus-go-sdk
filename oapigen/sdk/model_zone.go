@@ -68,7 +68,7 @@ type Zone struct {
 	DefaultSecurityGroupSyncActive *bool                                                       `json:"defaultSecurityGroupSyncActive,omitempty"`
 	DefaultPoolSyncActive          *bool                                                       `json:"defaultPoolSyncActive,omitempty"`
 	DefaultPlanSyncActive          *bool                                                       `json:"defaultPlanSyncActive,omitempty"`
-	Config                         *ListClouds200ResponseAllOfZonesInnerConfig                 `json:"config,omitempty"`
+	Config                         *AddClouds200ResponseAllOfZoneConfig                        `json:"config,omitempty"`
 	Credential                     *ListClouds200ResponseAllOfZonesInnerCredential             `json:"credential,omitempty"`
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
@@ -1820,9 +1820,9 @@ func (o *Zone) SetDefaultPlanSyncActive(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *Zone) GetConfig() ListClouds200ResponseAllOfZonesInnerConfig {
+func (o *Zone) GetConfig() AddClouds200ResponseAllOfZoneConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListClouds200ResponseAllOfZonesInnerConfig
+		var ret AddClouds200ResponseAllOfZoneConfig
 		return ret
 	}
 	return *o.Config
@@ -1830,7 +1830,7 @@ func (o *Zone) GetConfig() ListClouds200ResponseAllOfZonesInnerConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Zone) GetConfigOk() (*ListClouds200ResponseAllOfZonesInnerConfig, bool) {
+func (o *Zone) GetConfigOk() (*AddClouds200ResponseAllOfZoneConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1846,8 +1846,8 @@ func (o *Zone) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListClouds200ResponseAllOfZonesInnerConfig and assigns it to the Config field.
-func (o *Zone) SetConfig(v ListClouds200ResponseAllOfZonesInnerConfig) {
+// SetConfig gets a reference to the given AddClouds200ResponseAllOfZoneConfig and assigns it to the Config field.
+func (o *Zone) SetConfig(v AddClouds200ResponseAllOfZoneConfig) {
 	o.Config = &v
 }
 

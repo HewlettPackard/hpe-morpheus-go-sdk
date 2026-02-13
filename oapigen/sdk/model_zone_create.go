@@ -25,7 +25,7 @@ type ZoneCreate struct {
 	// Specifies which Server group this cloud should be assigned to
 	GroupId  int64                        `json:"groupId"`
 	ZoneType AddCloudsRequestZoneZoneType `json:"zoneType"`
-	Config   AddCloudsRequestZoneConfig   `json:"config"`
+	Config   ZoneCreateConfig             `json:"config"`
 	// The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit).
 	AgentMode *string `json:"agentMode,omitempty"`
 	// Optional description field if you want to put more info there
@@ -72,7 +72,7 @@ type _ZoneCreate ZoneCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config AddCloudsRequestZoneConfig) *ZoneCreate {
+func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config ZoneCreateConfig) *ZoneCreate {
 	this := ZoneCreate{}
 	this.Name = name
 	this.GroupId = groupId
@@ -186,9 +186,9 @@ func (o *ZoneCreate) SetZoneType(v AddCloudsRequestZoneZoneType) {
 }
 
 // GetConfig returns the Config field value
-func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig {
+func (o *ZoneCreate) GetConfig() ZoneCreateConfig {
 	if o == nil {
-		var ret AddCloudsRequestZoneConfig
+		var ret ZoneCreateConfig
 		return ret
 	}
 
@@ -197,7 +197,7 @@ func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig {
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
+func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -205,7 +205,7 @@ func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
 }
 
 // SetConfig sets field value
-func (o *ZoneCreate) SetConfig(v AddCloudsRequestZoneConfig) {
+func (o *ZoneCreate) SetConfig(v ZoneCreateConfig) {
 	o.Config = v
 }
 

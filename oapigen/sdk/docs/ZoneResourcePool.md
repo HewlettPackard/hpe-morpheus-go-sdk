@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zone** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
 **Parent** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **Inventory** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**AddCloudResourcePool200ResponseResourcePoolAllOfConfig**](AddCloudResourcePool200ResponseResourcePoolAllOfConfig.md) |  | [optional] 
+**Config** | Pointer to [**ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig**](ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **DisplayName** | Pointer to **NullableString** |  | [optional] 
 **Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
@@ -106,20 +106,20 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetZone
 
-`func (o *ZoneResourcePool) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ZoneResourcePool) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ZoneResourcePool) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ZoneResourcePool) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ZoneResourcePool) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ZoneResourcePool) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
 
 SetZone sets Zone field to given value.
 
@@ -129,6 +129,16 @@ SetZone sets Zone field to given value.
 
 HasZone returns a boolean if a field has been set.
 
+### SetZoneNil
+
+`func (o *ZoneResourcePool) SetZoneNil(b bool)`
+
+ SetZoneNil sets the value for Zone to be an explicit nil
+
+### UnsetZone
+`func (o *ZoneResourcePool) UnsetZone()`
+
+UnsetZone ensures that no value is present for Zone, not even an explicit nil
 ### GetParent
 
 `func (o *ZoneResourcePool) GetParent() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
@@ -426,20 +436,20 @@ HasInventory returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *ZoneResourcePool) GetConfig() AddCloudResourcePool200ResponseResourcePoolAllOfConfig`
+`func (o *ZoneResourcePool) GetConfig() ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ZoneResourcePool) GetConfigOk() (*AddCloudResourcePool200ResponseResourcePoolAllOfConfig, bool)`
+`func (o *ZoneResourcePool) GetConfigOk() (*ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ZoneResourcePool) SetConfig(v AddCloudResourcePool200ResponseResourcePoolAllOfConfig)`
+`func (o *ZoneResourcePool) SetConfig(v ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig)`
 
 SetConfig sets Config field to given value.
 

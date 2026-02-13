@@ -20,8 +20,8 @@ var _ MappedNullable = &GetCloudResourcePools200Response{}
 
 // GetCloudResourcePools200Response struct for GetCloudResourcePools200Response
 type GetCloudResourcePools200Response struct {
-	ResourcePool         *GetCloudResourcePools200ResponseAllOfResourcePool `json:"resourcePool,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	ResourcePool         *ListCloudResourcePools200ResponseAllOfResourcePoolsInner `json:"resourcePool,omitempty"`
+	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
 type _GetCloudResourcePools200Response GetCloudResourcePools200Response
@@ -44,9 +44,9 @@ func NewGetCloudResourcePools200ResponseWithDefaults() *GetCloudResourcePools200
 }
 
 // GetResourcePool returns the ResourcePool field value if set, zero value otherwise.
-func (o *GetCloudResourcePools200Response) GetResourcePool() GetCloudResourcePools200ResponseAllOfResourcePool {
+func (o *GetCloudResourcePools200Response) GetResourcePool() ListCloudResourcePools200ResponseAllOfResourcePoolsInner {
 	if o == nil || IsNil(o.ResourcePool) {
-		var ret GetCloudResourcePools200ResponseAllOfResourcePool
+		var ret ListCloudResourcePools200ResponseAllOfResourcePoolsInner
 		return ret
 	}
 	return *o.ResourcePool
@@ -54,7 +54,7 @@ func (o *GetCloudResourcePools200Response) GetResourcePool() GetCloudResourcePoo
 
 // GetResourcePoolOk returns a tuple with the ResourcePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetCloudResourcePools200Response) GetResourcePoolOk() (*GetCloudResourcePools200ResponseAllOfResourcePool, bool) {
+func (o *GetCloudResourcePools200Response) GetResourcePoolOk() (*ListCloudResourcePools200ResponseAllOfResourcePoolsInner, bool) {
 	if o == nil || IsNil(o.ResourcePool) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetCloudResourcePools200Response) IsSetResourcePool() bool {
 	return false
 }
 
-// SetResourcePool gets a reference to the given GetCloudResourcePools200ResponseAllOfResourcePool and assigns it to the ResourcePool field.
-func (o *GetCloudResourcePools200Response) SetResourcePool(v GetCloudResourcePools200ResponseAllOfResourcePool) {
+// SetResourcePool gets a reference to the given ListCloudResourcePools200ResponseAllOfResourcePoolsInner and assigns it to the ResourcePool field.
+func (o *GetCloudResourcePools200Response) SetResourcePool(v ListCloudResourcePools200ResponseAllOfResourcePoolsInner) {
 	o.ResourcePool = &v
 }
 

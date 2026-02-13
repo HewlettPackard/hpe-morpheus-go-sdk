@@ -22,7 +22,7 @@ var _ MappedNullable = &AddCloudResourcePool200ResponseResourcePool{}
 type AddCloudResourcePool200ResponseResourcePool struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
 	Description          NullableString                                                        `json:"description,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
+	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount            `json:"zone,omitempty"`
 	Parent               *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"parent,omitempty"`
 	Type                 *string                                                               `json:"type,omitempty"`
 	ExternalId           *string                                                               `json:"externalId,omitempty"`
@@ -34,7 +34,7 @@ type AddCloudResourcePool200ResponseResourcePool struct {
 	Active               *bool                                                                 `json:"active,omitempty"`
 	Status               *string                                                               `json:"status,omitempty"`
 	Inventory            *bool                                                                 `json:"inventory,omitempty"`
-	Config               *AddCloudResourcePool200ResponseResourcePoolAllOfConfig               `json:"config,omitempty"`
+	Config               *ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig       `json:"config,omitempty"`
 	Name                 *string                                                               `json:"name,omitempty"`
 	DisplayName          NullableString                                                        `json:"displayName,omitempty"`
 	Tenants              []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                   `json:"tenants,omitempty"`
@@ -138,36 +138,47 @@ func (o *AddCloudResourcePool200ResponseResourcePool) UnsetDescription() {
 	o.Description.Unset()
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise.
-func (o *AddCloudResourcePool200ResponseResourcePool) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
-	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddCloudResourcePool200ResponseResourcePool) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
+	if o == nil || IsNil(o.Zone.Get()) {
+		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
 		return ret
 	}
-	return *o.Zone
+	return *o.Zone.Get()
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCloudResourcePool200ResponseResourcePool) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
-	if o == nil || IsNil(o.Zone) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddCloudResourcePool200ResponseResourcePool) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Zone, true
+	return o.Zone.Get(), o.Zone.IsSet()
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *AddCloudResourcePool200ResponseResourcePool) IsSetZone() bool {
-	if o != nil && !IsNil(o.Zone) {
+	if o != nil && o.Zone.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *AddCloudResourcePool200ResponseResourcePool) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
-	o.Zone = &v
+// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
+func (o *AddCloudResourcePool200ResponseResourcePool) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+	o.Zone.Set(&v)
+}
+
+// SetZoneNil sets the value for Zone to be an explicit nil
+func (o *AddCloudResourcePool200ResponseResourcePool) SetZoneNil() {
+	o.Zone.Set(nil)
+}
+
+// UnsetZone ensures that no value is present for Zone, not even an explicit nil
+func (o *AddCloudResourcePool200ResponseResourcePool) UnsetZone() {
+	o.Zone.Unset()
 }
 
 // GetParent returns the Parent field value if set, zero value otherwise.
@@ -545,9 +556,9 @@ func (o *AddCloudResourcePool200ResponseResourcePool) SetInventory(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *AddCloudResourcePool200ResponseResourcePool) GetConfig() AddCloudResourcePool200ResponseResourcePoolAllOfConfig {
+func (o *AddCloudResourcePool200ResponseResourcePool) GetConfig() ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddCloudResourcePool200ResponseResourcePoolAllOfConfig
+		var ret ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig
 		return ret
 	}
 	return *o.Config
@@ -555,7 +566,7 @@ func (o *AddCloudResourcePool200ResponseResourcePool) GetConfig() AddCloudResour
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCloudResourcePool200ResponseResourcePool) GetConfigOk() (*AddCloudResourcePool200ResponseResourcePoolAllOfConfig, bool) {
+func (o *AddCloudResourcePool200ResponseResourcePool) GetConfigOk() (*ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -571,8 +582,8 @@ func (o *AddCloudResourcePool200ResponseResourcePool) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddCloudResourcePool200ResponseResourcePoolAllOfConfig and assigns it to the Config field.
-func (o *AddCloudResourcePool200ResponseResourcePool) SetConfig(v AddCloudResourcePool200ResponseResourcePoolAllOfConfig) {
+// SetConfig gets a reference to the given ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig and assigns it to the Config field.
+func (o *AddCloudResourcePool200ResponseResourcePool) SetConfig(v ListCloudResourcePools200ResponseAllOfResourcePoolsInnerConfig) {
 	o.Config = &v
 }
 
@@ -795,8 +806,8 @@ func (o AddCloudResourcePool200ResponseResourcePool) ToMap() (map[string]interfa
 	if o.Description.IsSet() {
 		toSerialize["description"] = o.Description.Get()
 	}
-	if !IsNil(o.Zone) {
-		toSerialize["zone"] = o.Zone
+	if o.Zone.IsSet() {
+		toSerialize["zone"] = o.Zone.Get()
 	}
 	if !IsNil(o.Parent) {
 		toSerialize["parent"] = o.Parent
