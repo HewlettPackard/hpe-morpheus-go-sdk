@@ -43,6 +43,7 @@ tasks:
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
+      - task: bundle-spec
       - rm -rf {{.OUTPUTDIR}}
       - mkdir -p {{.OUTPUTDIR}}
       - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
