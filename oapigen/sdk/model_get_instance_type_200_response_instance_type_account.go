@@ -176,6 +176,7 @@ func (v NullableGetInstanceType200ResponseInstanceTypeAccount) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetInstanceType200ResponseInstanceTypeAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

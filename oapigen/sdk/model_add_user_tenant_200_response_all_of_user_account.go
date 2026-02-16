@@ -176,6 +176,7 @@ func (v NullableAddUserTenant200ResponseAllOfUserAccount) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddUserTenant200ResponseAllOfUserAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

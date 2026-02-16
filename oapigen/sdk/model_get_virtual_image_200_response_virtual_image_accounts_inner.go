@@ -176,6 +176,7 @@ func (v NullableGetVirtualImage200ResponseVirtualImageAccountsInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *GetVirtualImage200ResponseVirtualImageAccountsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

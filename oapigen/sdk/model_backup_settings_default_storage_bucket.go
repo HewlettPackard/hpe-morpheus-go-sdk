@@ -176,6 +176,7 @@ func (v NullableBackupSettingsDefaultStorageBucket) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *BackupSettingsDefaultStorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

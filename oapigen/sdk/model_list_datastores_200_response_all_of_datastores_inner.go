@@ -1183,6 +1183,7 @@ func (v NullableListDatastores200ResponseAllOfDatastoresInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ListDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

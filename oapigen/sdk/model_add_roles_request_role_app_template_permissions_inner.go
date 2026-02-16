@@ -160,6 +160,7 @@ func (v NullableAddRolesRequestRoleAppTemplatePermissionsInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddRolesRequestRoleAppTemplatePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

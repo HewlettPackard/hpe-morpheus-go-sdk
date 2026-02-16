@@ -176,6 +176,7 @@ func (v NullableCatalogItemTypeOwner) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

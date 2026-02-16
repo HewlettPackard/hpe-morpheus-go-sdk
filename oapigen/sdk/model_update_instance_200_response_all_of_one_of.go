@@ -159,6 +159,7 @@ func (v NullableUpdateInstance200ResponseAllOfOneOf) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *UpdateInstance200ResponseAllOfOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

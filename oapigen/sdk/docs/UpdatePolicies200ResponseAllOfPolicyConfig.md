@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **Motd** | [**MessageOfTheDayPolicyTypeConfiguration5Motd**](MessageOfTheDayPolicyTypeConfiguration5Motd.md) |  | 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to **string** |  | [optional] 
+**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration5MotdFullPage**](MessageOfTheDayPolicyTypeConfiguration5MotdFullPage.md) |  | [optional] 
 **MotdDate** | Pointer to **string** |  | [optional] 
 **MaxNetworks** | **string** |  | 
 **PowerScheduleType** | **string** |  | 
@@ -1242,20 +1242,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) GetMotdFullPage() string`
+`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) GetMotdFullPage() MessageOfTheDayPolicyTypeConfiguration5MotdFullPage`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) GetMotdFullPageOk() (*string, bool)`
+`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration5MotdFullPage, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) SetMotdFullPage(v string)`
+`func (o *UpdatePolicies200ResponseAllOfPolicyConfig) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfiguration5MotdFullPage)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 

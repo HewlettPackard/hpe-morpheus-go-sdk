@@ -259,6 +259,7 @@ func (v NullableGetUser200ResponseUserAccessTaskSetsInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *GetUser200ResponseUserAccessTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

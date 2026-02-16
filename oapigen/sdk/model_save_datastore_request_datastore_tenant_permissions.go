@@ -140,6 +140,7 @@ func (v NullableSaveDatastoreRequestDatastoreTenantPermissions) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *SaveDatastoreRequestDatastoreTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

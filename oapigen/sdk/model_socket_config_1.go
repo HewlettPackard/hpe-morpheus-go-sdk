@@ -585,6 +585,7 @@ func (v NullableSocketConfig1) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *SocketConfig1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

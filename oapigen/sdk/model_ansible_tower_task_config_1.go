@@ -610,6 +610,7 @@ func (v NullableAnsibleTowerTaskConfig1) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *AnsibleTowerTaskConfig1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

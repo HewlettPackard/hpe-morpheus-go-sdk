@@ -140,6 +140,7 @@ func (v NullableZoneDatastoreCreateResourcePermissionsAccount) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ZoneDatastoreCreateResourcePermissionsAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

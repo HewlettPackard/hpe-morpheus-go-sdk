@@ -140,6 +140,7 @@ func (v NullableCheckGroupAccount) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *CheckGroupAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -248,6 +248,7 @@ func (v NullableGetCloudDatastores200ResponseAllOfDatastoreTenantsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *GetCloudDatastores200ResponseAllOfDatastoreTenantsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableUpdateCloudDatastoresRequest) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *UpdateCloudDatastoresRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

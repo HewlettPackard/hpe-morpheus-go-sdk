@@ -176,6 +176,7 @@ func (v NullableInstanceConfigLayout) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *InstanceConfigLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

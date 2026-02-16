@@ -212,6 +212,7 @@ func (v NullableServicePlanPermissionsResourcePermissionsSitesInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ServicePlanPermissionsResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

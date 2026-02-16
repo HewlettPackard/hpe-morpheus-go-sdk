@@ -176,6 +176,7 @@ func (v NullableGetEnvironments200ResponseEnvironmentAccount) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetEnvironments200ResponseEnvironmentAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

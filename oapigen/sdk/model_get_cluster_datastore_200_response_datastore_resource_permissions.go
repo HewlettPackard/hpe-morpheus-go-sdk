@@ -500,6 +500,7 @@ func (v NullableGetClusterDatastore200ResponseDatastoreResourcePermissions) Unma
 
 	return v, nil
 }
+
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

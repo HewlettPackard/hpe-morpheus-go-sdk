@@ -140,6 +140,7 @@ func (v NullableInstanceCreateSuccessInstanceConfigReplicationGroup) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceConfigReplicationGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

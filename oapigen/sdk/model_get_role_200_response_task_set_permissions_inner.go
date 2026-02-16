@@ -259,6 +259,7 @@ func (v NullableGetRole200ResponseTaskSetPermissionsInner) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *GetRole200ResponseTaskSetPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

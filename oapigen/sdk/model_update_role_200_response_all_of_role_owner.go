@@ -176,6 +176,7 @@ func (v NullableUpdateRole200ResponseAllOfRoleOwner) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *UpdateRole200ResponseAllOfRoleOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

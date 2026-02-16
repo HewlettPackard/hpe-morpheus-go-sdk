@@ -644,6 +644,7 @@ func (v NullableInstanceContainerServerInterfacesInner1) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *InstanceContainerServerInterfacesInner1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableSaveDatastoreRequestDatastoreTenantPermissionsAccountsInner) Unm
 
 	return v, nil
 }
+
 func (o *SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

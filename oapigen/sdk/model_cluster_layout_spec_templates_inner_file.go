@@ -353,6 +353,7 @@ func (v NullableClusterLayoutSpecTemplatesInnerFile) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *ClusterLayoutSpecTemplatesInnerFile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

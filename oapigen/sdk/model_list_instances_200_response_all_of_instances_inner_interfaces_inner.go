@@ -353,6 +353,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInner) Unma
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

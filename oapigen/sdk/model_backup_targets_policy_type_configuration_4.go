@@ -140,6 +140,7 @@ func (v NullableBackupTargetsPolicyTypeConfiguration4) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *BackupTargetsPolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -234,6 +234,7 @@ func (v NullableGetServicePlans200ResponseServicePlanConfig) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetServicePlans200ResponseServicePlanConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -798,6 +798,7 @@ func (v NullableChefBootstrapTaskConfig4) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *ChefBootstrapTaskConfig4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

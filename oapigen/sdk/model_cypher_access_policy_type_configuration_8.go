@@ -320,6 +320,7 @@ func (v NullableCypherAccessPolicyTypeConfiguration8) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *CypherAccessPolicyTypeConfiguration8) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

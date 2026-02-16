@@ -140,6 +140,7 @@ func (v NullableSaveDatastoreRequestDatastoreStorageServer) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *SaveDatastoreRequestDatastoreStorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

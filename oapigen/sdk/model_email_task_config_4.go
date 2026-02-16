@@ -621,6 +621,7 @@ func (v NullableEmailTaskConfig4) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *EmailTaskConfig4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableAddPolicies200ResponseAllOfPolicyAccountsInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddPolicies200ResponseAllOfPolicyAccountsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

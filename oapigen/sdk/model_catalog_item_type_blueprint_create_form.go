@@ -141,6 +141,7 @@ func (v NullableCatalogItemTypeBlueprintCreateForm) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeBlueprintCreateForm) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

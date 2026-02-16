@@ -216,6 +216,7 @@ func (v NullableAzureReferenceVirtualImageConfiguration4) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AzureReferenceVirtualImageConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -132,6 +132,7 @@ func (v NullableInstanceTypeCreatePriceSetsInner) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *InstanceTypeCreatePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

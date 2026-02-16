@@ -176,6 +176,7 @@ func (v NullableInstanceCreateEvarsInner) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *InstanceCreateEvarsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

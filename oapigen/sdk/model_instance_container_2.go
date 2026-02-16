@@ -36,7 +36,7 @@ type InstanceContainer2 struct {
 	ContainerTypeSet     *InstanceContainer2ContainerTypeSet `json:"containerTypeSet,omitempty"`
 	Server               *InstanceContainerServer2           `json:"server,omitempty"`
 	Cloud                *InstanceContainer2Cloud            `json:"cloud,omitempty"`
-	Ports                []InstanceContainer2PortsInner      `json:"ports,omitempty"`
+	Ports                []InstanceContainer1PortsInner      `json:"ports,omitempty"`
 	Plan                 *InstanceContainer2Plan             `json:"plan,omitempty"`
 	DateCreated          *time.Time                          `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                          `json:"lastUpdated,omitempty"`
@@ -546,9 +546,9 @@ func (o *InstanceContainer2) SetCloud(v InstanceContainer2Cloud) {
 }
 
 // GetPorts returns the Ports field value if set, zero value otherwise.
-func (o *InstanceContainer2) GetPorts() []InstanceContainer2PortsInner {
+func (o *InstanceContainer2) GetPorts() []InstanceContainer1PortsInner {
 	if o == nil || IsNil(o.Ports) {
-		var ret []InstanceContainer2PortsInner
+		var ret []InstanceContainer1PortsInner
 		return ret
 	}
 	return o.Ports
@@ -556,7 +556,7 @@ func (o *InstanceContainer2) GetPorts() []InstanceContainer2PortsInner {
 
 // GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer2) GetPortsOk() ([]InstanceContainer2PortsInner, bool) {
+func (o *InstanceContainer2) GetPortsOk() ([]InstanceContainer1PortsInner, bool) {
 	if o == nil || IsNil(o.Ports) {
 		return nil, false
 	}
@@ -572,8 +572,8 @@ func (o *InstanceContainer2) IsSetPorts() bool {
 	return false
 }
 
-// SetPorts gets a reference to the given []InstanceContainer2PortsInner and assigns it to the Ports field.
-func (o *InstanceContainer2) SetPorts(v []InstanceContainer2PortsInner) {
+// SetPorts gets a reference to the given []InstanceContainer1PortsInner and assigns it to the Ports field.
+func (o *InstanceContainer2) SetPorts(v []InstanceContainer1PortsInner) {
 	o.Ports = v
 }
 
@@ -897,6 +897,7 @@ func (v NullableInstanceContainer2) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *InstanceContainer2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

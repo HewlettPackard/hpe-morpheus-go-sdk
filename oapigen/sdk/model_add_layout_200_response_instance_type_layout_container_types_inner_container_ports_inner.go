@@ -223,6 +223,7 @@ func (v NullableAddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContain
 
 	return v, nil
 }
+
 func (o *AddLayout200ResponseInstanceTypeLayoutContainerTypesInnerContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

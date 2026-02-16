@@ -1037,6 +1037,7 @@ func (v NullableListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInn
 
 	return v, nil
 }
+
 func (o *ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -248,6 +248,7 @@ func (v NullableApprovePolicyTypeConfiguration4) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *ApprovePolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

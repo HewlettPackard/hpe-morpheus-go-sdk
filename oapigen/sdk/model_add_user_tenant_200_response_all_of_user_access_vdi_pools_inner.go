@@ -212,6 +212,7 @@ func (v NullableAddUserTenant200ResponseAllOfUserAccessVdiPoolsInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableCheckGroupCreatedBy) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
+
 func (o *CheckGroupCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

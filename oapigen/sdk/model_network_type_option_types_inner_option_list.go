@@ -176,6 +176,7 @@ func (v NullableNetworkTypeOptionTypesInnerOptionList) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *NetworkTypeOptionTypesInnerOptionList) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

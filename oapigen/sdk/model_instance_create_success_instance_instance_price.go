@@ -22,7 +22,7 @@ var _ MappedNullable = &InstanceCreateSuccessInstanceInstancePrice{}
 type InstanceCreateSuccessInstanceInstancePrice struct {
 	Price                *float32               `json:"price,omitempty"`
 	Cost                 *float32               `json:"cost,omitempty"`
-	Currency             NullableString         `json:"currency,omitempty"`
+	Currency             *string                `json:"currency,omitempty"`
 	Unit                 *string                `json:"unit,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -110,47 +110,36 @@ func (o *InstanceCreateSuccessInstanceInstancePrice) SetCost(v float32) {
 	o.Cost = &v
 }
 
-// GetCurrency returns the Currency field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *InstanceCreateSuccessInstanceInstancePrice) GetCurrency() string {
-	if o == nil || IsNil(o.Currency.Get()) {
+	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
 	}
-	return *o.Currency.Get()
+	return *o.Currency
 }
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceCreateSuccessInstanceInstancePrice) GetCurrencyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
-	return o.Currency.Get(), o.Currency.IsSet()
+	return o.Currency, true
 }
 
 // IsSetCurrency returns a boolean if a field has been set.
 func (o *InstanceCreateSuccessInstanceInstancePrice) IsSetCurrency() bool {
-	if o != nil && o.Currency.IsSet() {
+	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrency gets a reference to the given NullableString and assigns it to the Currency field.
+// SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *InstanceCreateSuccessInstanceInstancePrice) SetCurrency(v string) {
-	o.Currency.Set(&v)
-}
-
-// SetCurrencyNil sets the value for Currency to be an explicit nil
-func (o *InstanceCreateSuccessInstanceInstancePrice) SetCurrencyNil() {
-	o.Currency.Set(nil)
-}
-
-// UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
-func (o *InstanceCreateSuccessInstanceInstancePrice) UnsetCurrency() {
-	o.Currency.Unset()
+	o.Currency = &v
 }
 
 // GetUnit returns the Unit field value if set, zero value otherwise.
@@ -201,8 +190,8 @@ func (o InstanceCreateSuccessInstanceInstancePrice) ToMap() (map[string]interfac
 	if !IsNil(o.Cost) {
 		toSerialize["cost"] = o.Cost
 	}
-	if o.Currency.IsSet() {
-		toSerialize["currency"] = o.Currency.Get()
+	if !IsNil(o.Currency) {
+		toSerialize["currency"] = o.Currency
 	}
 	if !IsNil(o.Unit) {
 		toSerialize["unit"] = o.Unit
@@ -259,6 +248,7 @@ func (v NullableInstanceCreateSuccessInstanceInstancePrice) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceInstancePrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

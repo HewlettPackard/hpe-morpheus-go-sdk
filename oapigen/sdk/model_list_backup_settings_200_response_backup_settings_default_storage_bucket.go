@@ -176,6 +176,7 @@ func (v NullableListBackupSettings200ResponseBackupSettingsDefaultStorageBucket)
 
 	return v, nil
 }
+
 func (o *ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

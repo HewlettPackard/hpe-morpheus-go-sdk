@@ -140,6 +140,7 @@ func (v NullableGetClusterDatastore200ResponseDatastoreOwner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetClusterDatastore200ResponseDatastoreOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableSaveDatastore200ResponseAllOfDatastoreStorageServer) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *SaveDatastore200ResponseAllOfDatastoreStorageServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

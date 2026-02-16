@@ -187,6 +187,7 @@ func (v NullableUpdateNetwork200ResponseAllOfNetworkResourcePermissionSitesInner
 
 	return v, nil
 }
+
 func (o *UpdateNetwork200ResponseAllOfNetworkResourcePermissionSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

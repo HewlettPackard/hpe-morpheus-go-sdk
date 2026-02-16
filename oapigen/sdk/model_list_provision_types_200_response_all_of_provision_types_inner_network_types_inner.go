@@ -1037,6 +1037,7 @@ func (v NullableListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkType
 
 	return v, nil
 }
+
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

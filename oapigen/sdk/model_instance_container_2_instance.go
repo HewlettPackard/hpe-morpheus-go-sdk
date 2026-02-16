@@ -176,6 +176,7 @@ func (v NullableInstanceContainer2Instance) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *InstanceContainer2Instance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

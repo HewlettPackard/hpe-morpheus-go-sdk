@@ -279,6 +279,7 @@ func (v NullableAddEnvironmentsRequestEnvironment) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *AddEnvironmentsRequestEnvironment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

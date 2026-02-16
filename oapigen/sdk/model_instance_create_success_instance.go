@@ -21,85 +21,85 @@ var _ MappedNullable = &InstanceCreateSuccessInstance{}
 
 // InstanceCreateSuccessInstance struct for InstanceCreateSuccessInstance
 type InstanceCreateSuccessInstance struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	Uuid                 *string                                            `json:"uuid,omitempty"`
-	AccountId            *int64                                             `json:"accountId,omitempty"`
-	Tenant               *InstanceCreateSuccessInstanceTenant               `json:"tenant,omitempty"`
-	InstanceType         *InstanceCreateSuccessInstanceInstanceType         `json:"instanceType,omitempty"`
-	Group                *InstanceCreateSuccessInstanceGroup                `json:"group,omitempty"`
-	Cloud                *InstanceCreateSuccessInstanceCloud                `json:"cloud,omitempty"`
-	Cluster              *InstanceCreateSuccessInstanceCluster              `json:"cluster,omitempty"`
-	Containers           []int64                                            `json:"containers,omitempty"`
-	Servers              []int64                                            `json:"servers,omitempty"`
-	ConnectionInfo       []InstanceCreateSuccessInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
-	Layout               *InstanceCreateSuccessInstanceLayout               `json:"layout,omitempty"`
-	Plan                 *InstanceCreateSuccessInstancePlan                 `json:"plan,omitempty"`
-	Name                 *string                                            `json:"name,omitempty"`
-	DisplayName          *string                                            `json:"displayName,omitempty"`
-	Description          NullableString                                     `json:"description,omitempty"`
-	Environment          NullableString                                     `json:"environment,omitempty"`
-	Config               *InstanceCreateSuccessInstanceConfig               `json:"config,omitempty"`
-	ConfigGroup          NullableString                                     `json:"configGroup,omitempty"`
-	ConfigId             NullableString                                     `json:"configId,omitempty"`
-	ConfigRole           NullableString                                     `json:"configRole,omitempty"`
-	Volumes              []InstanceCreateSuccessInstanceVolumesInner        `json:"volumes,omitempty"`
-	Controllers          []InstanceCreateSuccessInstanceControllersInner    `json:"controllers,omitempty"`
-	Interfaces           []InstanceCreateSuccessInstanceInterfacesInner     `json:"interfaces,omitempty"`
-	CustomOptions        map[string]interface{}                             `json:"customOptions,omitempty"`
-	InstanceVersion      *string                                            `json:"instanceVersion,omitempty"`
-	Labels               []string                                           `json:"labels,omitempty"`
-	Tags                 []InstanceCreateSuccessInstanceTagsInner           `json:"tags,omitempty"`
-	Evars                []InstanceCreateSuccessInstanceEvarsInner          `json:"evars,omitempty"`
-	MaxMemory            *int64                                             `json:"maxMemory,omitempty"`
-	MaxStorage           *int64                                             `json:"maxStorage,omitempty"`
-	MaxCores             *int64                                             `json:"maxCores,omitempty"`
-	CoresPerSocket       NullableInt64                                      `json:"coresPerSocket,omitempty"`
-	MaxCpu               NullableInt64                                      `json:"maxCpu,omitempty"`
-	HourlyCost           *float32                                           `json:"hourlyCost,omitempty"`
-	HourlyPrice          *float32                                           `json:"hourlyPrice,omitempty"`
-	InstancePrice        *InstanceCreateSuccessInstanceInstancePrice        `json:"instancePrice,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	HostName             *string                                            `json:"hostName,omitempty"`
-	DomainName           NullableString                                     `json:"domainName,omitempty"`
-	EnvironmentPrefix    NullableString                                     `json:"environmentPrefix,omitempty"`
-	FirewallEnabled      *bool                                              `json:"firewallEnabled,omitempty"`
-	NetworkLevel         *string                                            `json:"networkLevel,omitempty"`
-	AutoScale            *bool                                              `json:"autoScale,omitempty"`
-	InstanceContext      NullableString                                     `json:"instanceContext,omitempty"`
-	CurrentDeployId      NullableString                                     `json:"currentDeployId,omitempty"`
-	Locked               *bool                                              `json:"locked,omitempty"`
-	Status               *string                                            `json:"status,omitempty"`
-	StatusMessage        NullableString                                     `json:"statusMessage,omitempty"`
-	ErrorMessage         NullableString                                     `json:"errorMessage,omitempty"`
-	StatusDate           *time.Time                                         `json:"statusDate,omitempty"`
-	StatusPercent        NullableString                                     `json:"statusPercent,omitempty"`
-	StatusEta            NullableString                                     `json:"statusEta,omitempty"`
-	UserStatus           NullableString                                     `json:"userStatus,omitempty"`
-	ExpireDays           *int64                                             `json:"expireDays,omitempty"`
-	RenewDays            *int64                                             `json:"renewDays,omitempty"`
-	ExpireCount          *int64                                             `json:"expireCount,omitempty"`
-	ExpireDate           *time.Time                                         `json:"expireDate,omitempty"`
-	ExpireWarningDate    *time.Time                                         `json:"expireWarningDate,omitempty"`
-	ExpireWarningSent    *bool                                              `json:"expireWarningSent,omitempty"`
-	ShutdownDays         *int64                                             `json:"shutdownDays,omitempty"`
-	ShutdownRenewDays    *int64                                             `json:"shutdownRenewDays,omitempty"`
-	ShutdownCount        *int64                                             `json:"shutdownCount,omitempty"`
-	ShutdownDate         *time.Time                                         `json:"shutdownDate,omitempty"`
-	ShutdownWarningDate  *time.Time                                         `json:"shutdownWarningDate,omitempty"`
-	ShutdownWarningSent  *bool                                              `json:"shutdownWarningSent,omitempty"`
-	RemovalDate          NullableTime                                       `json:"removalDate,omitempty"`
-	CreatedBy            *InstanceCreateSuccessInstanceCreatedBy            `json:"createdBy,omitempty"`
-	Owner                *InstanceCreateSuccessInstanceOwner                `json:"owner,omitempty"`
-	Notes                NullableString                                     `json:"notes,omitempty"`
-	Stats                *InstanceCreateSuccessInstanceStats                `json:"stats,omitempty"`
-	PowerSchedule        NullableString                                     `json:"powerSchedule,omitempty"`
-	IsScalable           *bool                                              `json:"isScalable,omitempty"`
-	InstanceThreshold    map[string]interface{}                             `json:"instanceThreshold,omitempty"`
-	IsBusy               *bool                                              `json:"isBusy,omitempty"`
-	Apps                 []map[string]interface{}                           `json:"apps,omitempty"`
-	ContainerDetails     []InstanceContainer4                               `json:"containerDetails,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Uuid                 *string                                                       `json:"uuid,omitempty"`
+	AccountId            *int64                                                        `json:"accountId,omitempty"`
+	Tenant               *InstanceCreateSuccessInstanceTenant                          `json:"tenant,omitempty"`
+	InstanceType         *InstanceCreateSuccessInstanceInstanceType                    `json:"instanceType,omitempty"`
+	Group                *InstanceCreateSuccessInstanceGroup                           `json:"group,omitempty"`
+	Cloud                *InstanceCreateSuccessInstanceCloud                           `json:"cloud,omitempty"`
+	Cluster              *InstanceCreateSuccessInstanceCluster                         `json:"cluster,omitempty"`
+	Containers           []int64                                                       `json:"containers,omitempty"`
+	Servers              []int64                                                       `json:"servers,omitempty"`
+	ConnectionInfo       []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
+	Layout               *InstanceCreateSuccessInstanceLayout                          `json:"layout,omitempty"`
+	Plan                 *InstanceCreateSuccessInstancePlan                            `json:"plan,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	DisplayName          *string                                                       `json:"displayName,omitempty"`
+	Description          NullableString                                                `json:"description,omitempty"`
+	Environment          NullableString                                                `json:"environment,omitempty"`
+	Config               *InstanceCreateSuccessInstanceConfig                          `json:"config,omitempty"`
+	ConfigGroup          NullableString                                                `json:"configGroup,omitempty"`
+	ConfigId             NullableString                                                `json:"configId,omitempty"`
+	ConfigRole           NullableString                                                `json:"configRole,omitempty"`
+	Volumes              []AddInstance200ResponseAllOfOneOfInstanceVolumesInner        `json:"volumes,omitempty"`
+	Controllers          []AddInstance200ResponseAllOfOneOfInstanceControllersInner    `json:"controllers,omitempty"`
+	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner     `json:"interfaces,omitempty"`
+	CustomOptions        map[string]interface{}                                        `json:"customOptions,omitempty"`
+	InstanceVersion      *string                                                       `json:"instanceVersion,omitempty"`
+	Labels               []string                                                      `json:"labels,omitempty"`
+	Tags                 []AddInstance200ResponseAllOfOneOfInstanceTagsInner           `json:"tags,omitempty"`
+	Evars                []AddInstance200ResponseAllOfOneOfInstanceEvarsInner          `json:"evars,omitempty"`
+	MaxMemory            *int64                                                        `json:"maxMemory,omitempty"`
+	MaxStorage           *int64                                                        `json:"maxStorage,omitempty"`
+	MaxCores             *int64                                                        `json:"maxCores,omitempty"`
+	CoresPerSocket       NullableInt64                                                 `json:"coresPerSocket,omitempty"`
+	MaxCpu               NullableInt64                                                 `json:"maxCpu,omitempty"`
+	HourlyCost           *float32                                                      `json:"hourlyCost,omitempty"`
+	HourlyPrice          *float32                                                      `json:"hourlyPrice,omitempty"`
+	InstancePrice        *InstanceCreateSuccessInstanceInstancePrice                   `json:"instancePrice,omitempty"`
+	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
+	HostName             *string                                                       `json:"hostName,omitempty"`
+	DomainName           NullableString                                                `json:"domainName,omitempty"`
+	EnvironmentPrefix    NullableString                                                `json:"environmentPrefix,omitempty"`
+	FirewallEnabled      *bool                                                         `json:"firewallEnabled,omitempty"`
+	NetworkLevel         *string                                                       `json:"networkLevel,omitempty"`
+	AutoScale            *bool                                                         `json:"autoScale,omitempty"`
+	InstanceContext      NullableString                                                `json:"instanceContext,omitempty"`
+	CurrentDeployId      NullableString                                                `json:"currentDeployId,omitempty"`
+	Locked               *bool                                                         `json:"locked,omitempty"`
+	Status               *string                                                       `json:"status,omitempty"`
+	StatusMessage        NullableString                                                `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString                                                `json:"errorMessage,omitempty"`
+	StatusDate           *time.Time                                                    `json:"statusDate,omitempty"`
+	StatusPercent        NullableString                                                `json:"statusPercent,omitempty"`
+	StatusEta            NullableString                                                `json:"statusEta,omitempty"`
+	UserStatus           NullableString                                                `json:"userStatus,omitempty"`
+	ExpireDays           *int64                                                        `json:"expireDays,omitempty"`
+	RenewDays            *int64                                                        `json:"renewDays,omitempty"`
+	ExpireCount          *int64                                                        `json:"expireCount,omitempty"`
+	ExpireDate           *time.Time                                                    `json:"expireDate,omitempty"`
+	ExpireWarningDate    *time.Time                                                    `json:"expireWarningDate,omitempty"`
+	ExpireWarningSent    *bool                                                         `json:"expireWarningSent,omitempty"`
+	ShutdownDays         *int64                                                        `json:"shutdownDays,omitempty"`
+	ShutdownRenewDays    *int64                                                        `json:"shutdownRenewDays,omitempty"`
+	ShutdownCount        *int64                                                        `json:"shutdownCount,omitempty"`
+	ShutdownDate         *time.Time                                                    `json:"shutdownDate,omitempty"`
+	ShutdownWarningDate  *time.Time                                                    `json:"shutdownWarningDate,omitempty"`
+	ShutdownWarningSent  *bool                                                         `json:"shutdownWarningSent,omitempty"`
+	RemovalDate          NullableTime                                                  `json:"removalDate,omitempty"`
+	CreatedBy            *InstanceCreateSuccessInstanceCreatedBy                       `json:"createdBy,omitempty"`
+	Owner                *InstanceCreateSuccessInstanceOwner                           `json:"owner,omitempty"`
+	Notes                NullableString                                                `json:"notes,omitempty"`
+	Stats                *InstanceCreateSuccessInstanceStats                           `json:"stats,omitempty"`
+	PowerSchedule        NullableString                                                `json:"powerSchedule,omitempty"`
+	IsScalable           *bool                                                         `json:"isScalable,omitempty"`
+	InstanceThreshold    map[string]interface{}                                        `json:"instanceThreshold,omitempty"`
+	IsBusy               *bool                                                         `json:"isBusy,omitempty"`
+	Apps                 []map[string]interface{}                                      `json:"apps,omitempty"`
+	ContainerDetails     []InstanceContainer4                                          `json:"containerDetails,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _InstanceCreateSuccessInstance InstanceCreateSuccessInstance
@@ -442,9 +442,9 @@ func (o *InstanceCreateSuccessInstance) SetServers(v []int64) {
 }
 
 // GetConnectionInfo returns the ConnectionInfo field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstance) GetConnectionInfo() []InstanceCreateSuccessInstanceConnectionInfoInner {
+func (o *InstanceCreateSuccessInstance) GetConnectionInfo() []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner {
 	if o == nil || IsNil(o.ConnectionInfo) {
-		var ret []InstanceCreateSuccessInstanceConnectionInfoInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 		return ret
 	}
 	return o.ConnectionInfo
@@ -452,7 +452,7 @@ func (o *InstanceCreateSuccessInstance) GetConnectionInfo() []InstanceCreateSucc
 
 // GetConnectionInfoOk returns a tuple with the ConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstance) GetConnectionInfoOk() ([]InstanceCreateSuccessInstanceConnectionInfoInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetConnectionInfoOk() ([]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner, bool) {
 	if o == nil || IsNil(o.ConnectionInfo) {
 		return nil, false
 	}
@@ -468,8 +468,8 @@ func (o *InstanceCreateSuccessInstance) IsSetConnectionInfo() bool {
 	return false
 }
 
-// SetConnectionInfo gets a reference to the given []InstanceCreateSuccessInstanceConnectionInfoInner and assigns it to the ConnectionInfo field.
-func (o *InstanceCreateSuccessInstance) SetConnectionInfo(v []InstanceCreateSuccessInstanceConnectionInfoInner) {
+// SetConnectionInfo gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner and assigns it to the ConnectionInfo field.
+func (o *InstanceCreateSuccessInstance) SetConnectionInfo(v []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) {
 	o.ConnectionInfo = v
 }
 
@@ -849,9 +849,9 @@ func (o *InstanceCreateSuccessInstance) UnsetConfigRole() {
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstance) GetVolumes() []InstanceCreateSuccessInstanceVolumesInner {
+func (o *InstanceCreateSuccessInstance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []InstanceCreateSuccessInstanceVolumesInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -859,7 +859,7 @@ func (o *InstanceCreateSuccessInstance) GetVolumes() []InstanceCreateSuccessInst
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstance) GetVolumesOk() ([]InstanceCreateSuccessInstanceVolumesInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetVolumesOk() ([]AddInstance200ResponseAllOfOneOfInstanceVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -875,15 +875,15 @@ func (o *InstanceCreateSuccessInstance) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []InstanceCreateSuccessInstanceVolumesInner and assigns it to the Volumes field.
-func (o *InstanceCreateSuccessInstance) SetVolumes(v []InstanceCreateSuccessInstanceVolumesInner) {
+// SetVolumes gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceVolumesInner and assigns it to the Volumes field.
+func (o *InstanceCreateSuccessInstance) SetVolumes(v []AddInstance200ResponseAllOfOneOfInstanceVolumesInner) {
 	o.Volumes = v
 }
 
 // GetControllers returns the Controllers field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstance) GetControllers() []InstanceCreateSuccessInstanceControllersInner {
+func (o *InstanceCreateSuccessInstance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner {
 	if o == nil || IsNil(o.Controllers) {
-		var ret []InstanceCreateSuccessInstanceControllersInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceControllersInner
 		return ret
 	}
 	return o.Controllers
@@ -891,7 +891,7 @@ func (o *InstanceCreateSuccessInstance) GetControllers() []InstanceCreateSuccess
 
 // GetControllersOk returns a tuple with the Controllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstance) GetControllersOk() ([]InstanceCreateSuccessInstanceControllersInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetControllersOk() ([]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool) {
 	if o == nil || IsNil(o.Controllers) {
 		return nil, false
 	}
@@ -907,15 +907,15 @@ func (o *InstanceCreateSuccessInstance) IsSetControllers() bool {
 	return false
 }
 
-// SetControllers gets a reference to the given []InstanceCreateSuccessInstanceControllersInner and assigns it to the Controllers field.
-func (o *InstanceCreateSuccessInstance) SetControllers(v []InstanceCreateSuccessInstanceControllersInner) {
+// SetControllers gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceControllersInner and assigns it to the Controllers field.
+func (o *InstanceCreateSuccessInstance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner) {
 	o.Controllers = v
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *InstanceCreateSuccessInstance) GetInterfaces() []InstanceCreateSuccessInstanceInterfacesInner {
+func (o *InstanceCreateSuccessInstance) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []InstanceCreateSuccessInstanceInterfacesInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner
 		return ret
 	}
 	return o.Interfaces
@@ -923,7 +923,7 @@ func (o *InstanceCreateSuccessInstance) GetInterfaces() []InstanceCreateSuccessI
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccessInstance) GetInterfacesOk() ([]InstanceCreateSuccessInstanceInterfacesInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetInterfacesOk() ([]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -939,8 +939,8 @@ func (o *InstanceCreateSuccessInstance) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []InstanceCreateSuccessInstanceInterfacesInner and assigns it to the Interfaces field.
-func (o *InstanceCreateSuccessInstance) SetInterfaces(v []InstanceCreateSuccessInstanceInterfacesInner) {
+// SetInterfaces gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner and assigns it to the Interfaces field.
+func (o *InstanceCreateSuccessInstance) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) {
 	o.Interfaces = v
 }
 
@@ -1041,10 +1041,10 @@ func (o *InstanceCreateSuccessInstance) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceCreateSuccessInstance) GetTags() []InstanceCreateSuccessInstanceTagsInner {
-	if o == nil {
-		var ret []InstanceCreateSuccessInstanceTagsInner
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *InstanceCreateSuccessInstance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner {
+	if o == nil || IsNil(o.Tags) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceTagsInner
 		return ret
 	}
 	return o.Tags
@@ -1052,8 +1052,7 @@ func (o *InstanceCreateSuccessInstance) GetTags() []InstanceCreateSuccessInstanc
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceCreateSuccessInstance) GetTagsOk() ([]InstanceCreateSuccessInstanceTagsInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetTagsOk() ([]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -1069,15 +1068,15 @@ func (o *InstanceCreateSuccessInstance) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []InstanceCreateSuccessInstanceTagsInner and assigns it to the Tags field.
-func (o *InstanceCreateSuccessInstance) SetTags(v []InstanceCreateSuccessInstanceTagsInner) {
+// SetTags gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceTagsInner and assigns it to the Tags field.
+func (o *InstanceCreateSuccessInstance) SetTags(v []AddInstance200ResponseAllOfOneOfInstanceTagsInner) {
 	o.Tags = v
 }
 
-// GetEvars returns the Evars field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceCreateSuccessInstance) GetEvars() []InstanceCreateSuccessInstanceEvarsInner {
-	if o == nil {
-		var ret []InstanceCreateSuccessInstanceEvarsInner
+// GetEvars returns the Evars field value if set, zero value otherwise.
+func (o *InstanceCreateSuccessInstance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
+	if o == nil || IsNil(o.Evars) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceEvarsInner
 		return ret
 	}
 	return o.Evars
@@ -1085,8 +1084,7 @@ func (o *InstanceCreateSuccessInstance) GetEvars() []InstanceCreateSuccessInstan
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceCreateSuccessInstance) GetEvarsOk() ([]InstanceCreateSuccessInstanceEvarsInner, bool) {
+func (o *InstanceCreateSuccessInstance) GetEvarsOk() ([]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
 	}
@@ -1102,8 +1100,8 @@ func (o *InstanceCreateSuccessInstance) IsSetEvars() bool {
 	return false
 }
 
-// SetEvars gets a reference to the given []InstanceCreateSuccessInstanceEvarsInner and assigns it to the Evars field.
-func (o *InstanceCreateSuccessInstance) SetEvars(v []InstanceCreateSuccessInstanceEvarsInner) {
+// SetEvars gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceEvarsInner and assigns it to the Evars field.
+func (o *InstanceCreateSuccessInstance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner) {
 	o.Evars = v
 }
 
@@ -2799,9 +2797,9 @@ func (o *InstanceCreateSuccessInstance) SetApps(v []map[string]interface{}) {
 	o.Apps = v
 }
 
-// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
 func (o *InstanceCreateSuccessInstance) GetContainerDetails() []InstanceContainer4 {
-	if o == nil {
+	if o == nil || IsNil(o.ContainerDetails) {
 		var ret []InstanceContainer4
 		return ret
 	}
@@ -2810,7 +2808,6 @@ func (o *InstanceCreateSuccessInstance) GetContainerDetails() []InstanceContaine
 
 // GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceCreateSuccessInstance) GetContainerDetailsOk() ([]InstanceContainer4, bool) {
 	if o == nil || IsNil(o.ContainerDetails) {
 		return nil, false
@@ -2923,10 +2920,10 @@ func (o InstanceCreateSuccessInstance) ToMap() (map[string]interface{}, error) {
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	if o.Tags != nil {
+	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-	if o.Evars != nil {
+	if !IsNil(o.Evars) {
 		toSerialize["evars"] = o.Evars
 	}
 	if !IsNil(o.MaxMemory) {
@@ -3073,7 +3070,7 @@ func (o InstanceCreateSuccessInstance) ToMap() (map[string]interface{}, error) {
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
 	}
-	if o.ContainerDetails != nil {
+	if !IsNil(o.ContainerDetails) {
 		toSerialize["containerDetails"] = o.ContainerDetails
 	}
 
@@ -3128,6 +3125,7 @@ func (v NullableInstanceCreateSuccessInstance) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -132,6 +132,7 @@ func (v NullableAddLayoutRequestInstanceTypeLayoutPriceSetsInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *AddLayoutRequestInstanceTypeLayoutPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

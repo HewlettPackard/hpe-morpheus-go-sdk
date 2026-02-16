@@ -140,6 +140,7 @@ func (v NullableUpdateBackupSettingsRequest) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *UpdateBackupSettingsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

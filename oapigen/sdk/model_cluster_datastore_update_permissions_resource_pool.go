@@ -141,6 +141,7 @@ func (v NullableClusterDatastoreUpdatePermissionsResourcePool) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ClusterDatastoreUpdatePermissionsResourcePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

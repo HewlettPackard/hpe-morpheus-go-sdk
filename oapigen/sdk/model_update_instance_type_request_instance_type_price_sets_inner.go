@@ -132,6 +132,7 @@ func (v NullableUpdateInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *UpdateInstanceTypeRequestInstanceTypePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

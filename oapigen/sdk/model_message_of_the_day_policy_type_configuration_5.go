@@ -20,13 +20,13 @@ var _ MappedNullable = &MessageOfTheDayPolicyTypeConfiguration5{}
 
 // MessageOfTheDayPolicyTypeConfiguration5 - Message of the Day
 type MessageOfTheDayPolicyTypeConfiguration5 struct {
-	MotdTitle            NullableString                              `json:"motd.title,omitempty"`
-	Motd                 MessageOfTheDayPolicyTypeConfiguration5Motd `json:"motd"`
-	MotdMessage          *string                                     `json:"motd.message,omitempty"`
-	MotdType             *string                                     `json:"motd.type,omitempty"`
-	MotdFullPage         NullableString                              `json:"motd.fullPage,omitempty"`
-	MotdDate             *string                                     `json:"motd.date,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	MotdTitle            NullableString                                       `json:"motd.title,omitempty"`
+	Motd                 MessageOfTheDayPolicyTypeConfiguration5Motd          `json:"motd"`
+	MotdMessage          *string                                              `json:"motd.message,omitempty"`
+	MotdType             *string                                              `json:"motd.type,omitempty"`
+	MotdFullPage         *MessageOfTheDayPolicyTypeConfiguration5MotdFullPage `json:"motd.fullPage,omitempty"`
+	MotdDate             *string                                              `json:"motd.date,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _MessageOfTheDayPolicyTypeConfiguration5 MessageOfTheDayPolicyTypeConfiguration5
@@ -180,47 +180,36 @@ func (o *MessageOfTheDayPolicyTypeConfiguration5) SetMotdType(v string) {
 	o.MotdType = &v
 }
 
-// GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MessageOfTheDayPolicyTypeConfiguration5) GetMotdFullPage() string {
-	if o == nil || IsNil(o.MotdFullPage.Get()) {
-		var ret string
+// GetMotdFullPage returns the MotdFullPage field value if set, zero value otherwise.
+func (o *MessageOfTheDayPolicyTypeConfiguration5) GetMotdFullPage() MessageOfTheDayPolicyTypeConfiguration5MotdFullPage {
+	if o == nil || IsNil(o.MotdFullPage) {
+		var ret MessageOfTheDayPolicyTypeConfiguration5MotdFullPage
 		return ret
 	}
-	return *o.MotdFullPage.Get()
+	return *o.MotdFullPage
 }
 
 // GetMotdFullPageOk returns a tuple with the MotdFullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MessageOfTheDayPolicyTypeConfiguration5) GetMotdFullPageOk() (*string, bool) {
-	if o == nil {
+func (o *MessageOfTheDayPolicyTypeConfiguration5) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration5MotdFullPage, bool) {
+	if o == nil || IsNil(o.MotdFullPage) {
 		return nil, false
 	}
-	return o.MotdFullPage.Get(), o.MotdFullPage.IsSet()
+	return o.MotdFullPage, true
 }
 
 // IsSetMotdFullPage returns a boolean if a field has been set.
 func (o *MessageOfTheDayPolicyTypeConfiguration5) IsSetMotdFullPage() bool {
-	if o != nil && o.MotdFullPage.IsSet() {
+	if o != nil && !IsNil(o.MotdFullPage) {
 		return true
 	}
 
 	return false
 }
 
-// SetMotdFullPage gets a reference to the given NullableString and assigns it to the MotdFullPage field.
-func (o *MessageOfTheDayPolicyTypeConfiguration5) SetMotdFullPage(v string) {
-	o.MotdFullPage.Set(&v)
-}
-
-// SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration5) SetMotdFullPageNil() {
-	o.MotdFullPage.Set(nil)
-}
-
-// UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration5) UnsetMotdFullPage() {
-	o.MotdFullPage.Unset()
+// SetMotdFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfiguration5MotdFullPage and assigns it to the MotdFullPage field.
+func (o *MessageOfTheDayPolicyTypeConfiguration5) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfiguration5MotdFullPage) {
+	o.MotdFullPage = &v
 }
 
 // GetMotdDate returns the MotdDate field value if set, zero value otherwise.
@@ -275,8 +264,8 @@ func (o MessageOfTheDayPolicyTypeConfiguration5) ToMap() (map[string]interface{}
 	if !IsNil(o.MotdType) {
 		toSerialize["motd.type"] = o.MotdType
 	}
-	if o.MotdFullPage.IsSet() {
-		toSerialize["motd.fullPage"] = o.MotdFullPage.Get()
+	if !IsNil(o.MotdFullPage) {
+		toSerialize["motd.fullPage"] = o.MotdFullPage
 	}
 	if !IsNil(o.MotdDate) {
 		toSerialize["motd.date"] = o.MotdDate
@@ -333,6 +322,7 @@ func (v NullableMessageOfTheDayPolicyTypeConfiguration5) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *MessageOfTheDayPolicyTypeConfiguration5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

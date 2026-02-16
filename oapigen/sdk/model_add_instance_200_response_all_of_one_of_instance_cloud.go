@@ -212,6 +212,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceCloud) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

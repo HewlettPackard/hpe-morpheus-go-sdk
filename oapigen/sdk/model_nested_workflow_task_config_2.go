@@ -21,9 +21,9 @@ var _ MappedNullable = &NestedWorkflowTaskConfig2{}
 // NestedWorkflowTaskConfig2 struct for NestedWorkflowTaskConfig2
 type NestedWorkflowTaskConfig2 struct {
 	// Operational Workflow ID
-	OperationalWorkflowId NullableString `json:"operationalWorkflowId"`
+	OperationalWorkflowId string `json:"operationalWorkflowId"`
 	// Operational Workflow Name
-	OperationalWorkflowName NullableString         `json:"operationalWorkflowName,omitempty"`
+	OperationalWorkflowName *string                `json:"operationalWorkflowName,omitempty"`
 	AdditionalProperties    map[string]interface{} `json:",remain"`
 }
 
@@ -33,7 +33,7 @@ type _NestedWorkflowTaskConfig2 NestedWorkflowTaskConfig2
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedWorkflowTaskConfig2(operationalWorkflowId NullableString) *NestedWorkflowTaskConfig2 {
+func NewNestedWorkflowTaskConfig2(operationalWorkflowId string) *NestedWorkflowTaskConfig2 {
 	this := NestedWorkflowTaskConfig2{}
 	this.OperationalWorkflowId = operationalWorkflowId
 	return &this
@@ -48,72 +48,59 @@ func NewNestedWorkflowTaskConfig2WithDefaults() *NestedWorkflowTaskConfig2 {
 }
 
 // GetOperationalWorkflowId returns the OperationalWorkflowId field value
-// If the value is explicit nil, the zero value for string will be returned
 func (o *NestedWorkflowTaskConfig2) GetOperationalWorkflowId() string {
-	if o == nil || o.OperationalWorkflowId.Get() == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return *o.OperationalWorkflowId.Get()
+	return o.OperationalWorkflowId
 }
 
 // GetOperationalWorkflowIdOk returns a tuple with the OperationalWorkflowId field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NestedWorkflowTaskConfig2) GetOperationalWorkflowIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.OperationalWorkflowId.Get(), o.OperationalWorkflowId.IsSet()
+	return &o.OperationalWorkflowId, true
 }
 
 // SetOperationalWorkflowId sets field value
 func (o *NestedWorkflowTaskConfig2) SetOperationalWorkflowId(v string) {
-	o.OperationalWorkflowId.Set(&v)
+	o.OperationalWorkflowId = v
 }
 
-// GetOperationalWorkflowName returns the OperationalWorkflowName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetOperationalWorkflowName returns the OperationalWorkflowName field value if set, zero value otherwise.
 func (o *NestedWorkflowTaskConfig2) GetOperationalWorkflowName() string {
-	if o == nil || IsNil(o.OperationalWorkflowName.Get()) {
+	if o == nil || IsNil(o.OperationalWorkflowName) {
 		var ret string
 		return ret
 	}
-	return *o.OperationalWorkflowName.Get()
+	return *o.OperationalWorkflowName
 }
 
 // GetOperationalWorkflowNameOk returns a tuple with the OperationalWorkflowName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *NestedWorkflowTaskConfig2) GetOperationalWorkflowNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.OperationalWorkflowName) {
 		return nil, false
 	}
-	return o.OperationalWorkflowName.Get(), o.OperationalWorkflowName.IsSet()
+	return o.OperationalWorkflowName, true
 }
 
 // IsSetOperationalWorkflowName returns a boolean if a field has been set.
 func (o *NestedWorkflowTaskConfig2) IsSetOperationalWorkflowName() bool {
-	if o != nil && o.OperationalWorkflowName.IsSet() {
+	if o != nil && !IsNil(o.OperationalWorkflowName) {
 		return true
 	}
 
 	return false
 }
 
-// SetOperationalWorkflowName gets a reference to the given NullableString and assigns it to the OperationalWorkflowName field.
+// SetOperationalWorkflowName gets a reference to the given string and assigns it to the OperationalWorkflowName field.
 func (o *NestedWorkflowTaskConfig2) SetOperationalWorkflowName(v string) {
-	o.OperationalWorkflowName.Set(&v)
-}
-
-// SetOperationalWorkflowNameNil sets the value for OperationalWorkflowName to be an explicit nil
-func (o *NestedWorkflowTaskConfig2) SetOperationalWorkflowNameNil() {
-	o.OperationalWorkflowName.Set(nil)
-}
-
-// UnsetOperationalWorkflowName ensures that no value is present for OperationalWorkflowName, not even an explicit nil
-func (o *NestedWorkflowTaskConfig2) UnsetOperationalWorkflowName() {
-	o.OperationalWorkflowName.Unset()
+	o.OperationalWorkflowName = &v
 }
 
 func (o NestedWorkflowTaskConfig2) MarshalJSON() ([]byte, error) {
@@ -126,9 +113,9 @@ func (o NestedWorkflowTaskConfig2) MarshalJSON() ([]byte, error) {
 
 func (o NestedWorkflowTaskConfig2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["operationalWorkflowId"] = o.OperationalWorkflowId.Get()
-	if o.OperationalWorkflowName.IsSet() {
-		toSerialize["operationalWorkflowName"] = o.OperationalWorkflowName.Get()
+	toSerialize["operationalWorkflowId"] = o.OperationalWorkflowId
+	if !IsNil(o.OperationalWorkflowName) {
+		toSerialize["operationalWorkflowName"] = o.OperationalWorkflowName
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -182,6 +169,7 @@ func (v NullableNestedWorkflowTaskConfig2) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *NestedWorkflowTaskConfig2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

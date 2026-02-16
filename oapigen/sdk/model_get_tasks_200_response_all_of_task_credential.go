@@ -140,6 +140,7 @@ func (v NullableGetTasks200ResponseAllOfTaskCredential) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *GetTasks200ResponseAllOfTaskCredential) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

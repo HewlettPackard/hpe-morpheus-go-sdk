@@ -433,6 +433,7 @@ func (v NullableResizeInstanceRequestVolumesInner) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *ResizeInstanceRequestVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

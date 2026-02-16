@@ -140,6 +140,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfigSite) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSite) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

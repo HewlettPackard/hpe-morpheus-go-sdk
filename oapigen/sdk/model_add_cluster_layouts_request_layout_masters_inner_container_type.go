@@ -131,6 +131,7 @@ func (v NullableAddClusterLayoutsRequestLayoutMastersInnerContainerType) Unmarsh
 
 	return v, nil
 }
+
 func (o *AddClusterLayoutsRequestLayoutMastersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

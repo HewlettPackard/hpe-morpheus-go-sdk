@@ -41,17 +41,17 @@ type ZoneCreateConfigAnyOf3 struct {
 	// The id of the configuration management integration associated with the vSphere cloud.
 	ConfigManagementId *string `json:"configManagementId,omitempty"`
 	// The name of the vSphere resource pool
-	ResourcePool *string        `json:"resourcePool,omitempty"`
-	RpcMode      NullableString `json:"rpcMode,omitempty"`
+	ResourcePool *string                               `json:"resourcePool,omitempty"`
+	RpcMode      NullableZoneCreateConfigAnyOf3RpcMode `json:"rpcMode,omitempty"`
 	// The default vSphere VMDK type for virtual machines
 	StorageType *string `json:"storageType,omitempty"`
 	// Certificate provider
-	CertificateProvider        *string        `json:"certificateProvider,omitempty"`
-	EnableVnc                  NullableString `json:"enableVnc,omitempty"`
-	HideHostSelection          NullableString `json:"hideHostSelection,omitempty"`
-	EnableDiskTypeSelection    NullableString `json:"enableDiskTypeSelection,omitempty"`
-	EnableStorageTypeSelection NullableString `json:"enableStorageTypeSelection,omitempty"`
-	EnableNetworkTypeSelection NullableString `json:"enableNetworkTypeSelection,omitempty"`
+	CertificateProvider        *string                                                  `json:"certificateProvider,omitempty"`
+	EnableVnc                  NullableZoneCreateConfigAnyOf3EnableVnc                  `json:"enableVnc,omitempty"`
+	HideHostSelection          NullableZoneCreateConfigAnyOf3HideHostSelection          `json:"hideHostSelection,omitempty"`
+	EnableDiskTypeSelection    NullableZoneCreateConfigAnyOf3EnableDiskTypeSelection    `json:"enableDiskTypeSelection,omitempty"`
+	EnableStorageTypeSelection NullableZoneCreateConfigAnyOf3EnableStorageTypeSelection `json:"enableStorageTypeSelection,omitempty"`
+	EnableNetworkTypeSelection NullableZoneCreateConfigAnyOf3EnableNetworkTypeSelection `json:"enableNetworkTypeSelection,omitempty"`
 	// Username.
 	Username *string `json:"username,omitempty"`
 	// Password to apply to the user
@@ -72,6 +72,8 @@ func NewZoneCreateConfigAnyOf3(apiUrl string, apiVersion string, datacenter stri
 	this.Datacenter = datacenter
 	var cluster string = "all"
 	this.Cluster = &cluster
+	var rpcMode ZoneCreateConfigAnyOf3RpcMode = guestexec
+	this.RpcMode = *NewNullableZoneCreateConfigAnyOf3RpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -86,6 +88,8 @@ func NewZoneCreateConfigAnyOf3WithDefaults() *ZoneCreateConfigAnyOf3 {
 	this := ZoneCreateConfigAnyOf3{}
 	var cluster string = "all"
 	this.Cluster = &cluster
+	var rpcMode ZoneCreateConfigAnyOf3RpcMode = guestexec
+	this.RpcMode = *NewNullableZoneCreateConfigAnyOf3RpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -433,9 +437,9 @@ func (o *ZoneCreateConfigAnyOf3) SetResourcePool(v string) {
 }
 
 // GetRpcMode returns the RpcMode field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetRpcMode() string {
+func (o *ZoneCreateConfigAnyOf3) GetRpcMode() ZoneCreateConfigAnyOf3RpcMode {
 	if o == nil || IsNil(o.RpcMode.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3RpcMode
 		return ret
 	}
 	return *o.RpcMode.Get()
@@ -444,7 +448,7 @@ func (o *ZoneCreateConfigAnyOf3) GetRpcMode() string {
 // GetRpcModeOk returns a tuple with the RpcMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetRpcModeOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetRpcModeOk() (*ZoneCreateConfigAnyOf3RpcMode, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -460,8 +464,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetRpcMode() bool {
 	return false
 }
 
-// SetRpcMode gets a reference to the given NullableString and assigns it to the RpcMode field.
-func (o *ZoneCreateConfigAnyOf3) SetRpcMode(v string) {
+// SetRpcMode gets a reference to the given NullableZoneCreateConfigAnyOf3RpcMode and assigns it to the RpcMode field.
+func (o *ZoneCreateConfigAnyOf3) SetRpcMode(v ZoneCreateConfigAnyOf3RpcMode) {
 	o.RpcMode.Set(&v)
 }
 
@@ -540,9 +544,9 @@ func (o *ZoneCreateConfigAnyOf3) SetCertificateProvider(v string) {
 }
 
 // GetEnableVnc returns the EnableVnc field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetEnableVnc() string {
+func (o *ZoneCreateConfigAnyOf3) GetEnableVnc() ZoneCreateConfigAnyOf3EnableVnc {
 	if o == nil || IsNil(o.EnableVnc.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3EnableVnc
 		return ret
 	}
 	return *o.EnableVnc.Get()
@@ -551,7 +555,7 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableVnc() string {
 // GetEnableVncOk returns a tuple with the EnableVnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetEnableVncOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetEnableVncOk() (*ZoneCreateConfigAnyOf3EnableVnc, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -567,8 +571,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetEnableVnc() bool {
 	return false
 }
 
-// SetEnableVnc gets a reference to the given NullableString and assigns it to the EnableVnc field.
-func (o *ZoneCreateConfigAnyOf3) SetEnableVnc(v string) {
+// SetEnableVnc gets a reference to the given NullableZoneCreateConfigAnyOf3EnableVnc and assigns it to the EnableVnc field.
+func (o *ZoneCreateConfigAnyOf3) SetEnableVnc(v ZoneCreateConfigAnyOf3EnableVnc) {
 	o.EnableVnc.Set(&v)
 }
 
@@ -583,9 +587,9 @@ func (o *ZoneCreateConfigAnyOf3) UnsetEnableVnc() {
 }
 
 // GetHideHostSelection returns the HideHostSelection field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetHideHostSelection() string {
+func (o *ZoneCreateConfigAnyOf3) GetHideHostSelection() ZoneCreateConfigAnyOf3HideHostSelection {
 	if o == nil || IsNil(o.HideHostSelection.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3HideHostSelection
 		return ret
 	}
 	return *o.HideHostSelection.Get()
@@ -594,7 +598,7 @@ func (o *ZoneCreateConfigAnyOf3) GetHideHostSelection() string {
 // GetHideHostSelectionOk returns a tuple with the HideHostSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetHideHostSelectionOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetHideHostSelectionOk() (*ZoneCreateConfigAnyOf3HideHostSelection, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -610,8 +614,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetHideHostSelection() bool {
 	return false
 }
 
-// SetHideHostSelection gets a reference to the given NullableString and assigns it to the HideHostSelection field.
-func (o *ZoneCreateConfigAnyOf3) SetHideHostSelection(v string) {
+// SetHideHostSelection gets a reference to the given NullableZoneCreateConfigAnyOf3HideHostSelection and assigns it to the HideHostSelection field.
+func (o *ZoneCreateConfigAnyOf3) SetHideHostSelection(v ZoneCreateConfigAnyOf3HideHostSelection) {
 	o.HideHostSelection.Set(&v)
 }
 
@@ -626,9 +630,9 @@ func (o *ZoneCreateConfigAnyOf3) UnsetHideHostSelection() {
 }
 
 // GetEnableDiskTypeSelection returns the EnableDiskTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelection() string {
+func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelection() ZoneCreateConfigAnyOf3EnableDiskTypeSelection {
 	if o == nil || IsNil(o.EnableDiskTypeSelection.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3EnableDiskTypeSelection
 		return ret
 	}
 	return *o.EnableDiskTypeSelection.Get()
@@ -637,7 +641,7 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelection() string {
 // GetEnableDiskTypeSelectionOk returns a tuple with the EnableDiskTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelectionOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetEnableDiskTypeSelectionOk() (*ZoneCreateConfigAnyOf3EnableDiskTypeSelection, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -653,8 +657,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetEnableDiskTypeSelection() bool {
 	return false
 }
 
-// SetEnableDiskTypeSelection gets a reference to the given NullableString and assigns it to the EnableDiskTypeSelection field.
-func (o *ZoneCreateConfigAnyOf3) SetEnableDiskTypeSelection(v string) {
+// SetEnableDiskTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableDiskTypeSelection and assigns it to the EnableDiskTypeSelection field.
+func (o *ZoneCreateConfigAnyOf3) SetEnableDiskTypeSelection(v ZoneCreateConfigAnyOf3EnableDiskTypeSelection) {
 	o.EnableDiskTypeSelection.Set(&v)
 }
 
@@ -669,9 +673,9 @@ func (o *ZoneCreateConfigAnyOf3) UnsetEnableDiskTypeSelection() {
 }
 
 // GetEnableStorageTypeSelection returns the EnableStorageTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelection() string {
+func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelection() ZoneCreateConfigAnyOf3EnableStorageTypeSelection {
 	if o == nil || IsNil(o.EnableStorageTypeSelection.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3EnableStorageTypeSelection
 		return ret
 	}
 	return *o.EnableStorageTypeSelection.Get()
@@ -680,7 +684,7 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelection() string {
 // GetEnableStorageTypeSelectionOk returns a tuple with the EnableStorageTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelectionOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetEnableStorageTypeSelectionOk() (*ZoneCreateConfigAnyOf3EnableStorageTypeSelection, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -696,8 +700,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetEnableStorageTypeSelection() bool {
 	return false
 }
 
-// SetEnableStorageTypeSelection gets a reference to the given NullableString and assigns it to the EnableStorageTypeSelection field.
-func (o *ZoneCreateConfigAnyOf3) SetEnableStorageTypeSelection(v string) {
+// SetEnableStorageTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableStorageTypeSelection and assigns it to the EnableStorageTypeSelection field.
+func (o *ZoneCreateConfigAnyOf3) SetEnableStorageTypeSelection(v ZoneCreateConfigAnyOf3EnableStorageTypeSelection) {
 	o.EnableStorageTypeSelection.Set(&v)
 }
 
@@ -712,9 +716,9 @@ func (o *ZoneCreateConfigAnyOf3) UnsetEnableStorageTypeSelection() {
 }
 
 // GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelection() string {
+func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelection() ZoneCreateConfigAnyOf3EnableNetworkTypeSelection {
 	if o == nil || IsNil(o.EnableNetworkTypeSelection.Get()) {
-		var ret string
+		var ret ZoneCreateConfigAnyOf3EnableNetworkTypeSelection
 		return ret
 	}
 	return *o.EnableNetworkTypeSelection.Get()
@@ -723,7 +727,7 @@ func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelection() string {
 // GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelectionOk() (*string, bool) {
+func (o *ZoneCreateConfigAnyOf3) GetEnableNetworkTypeSelectionOk() (*ZoneCreateConfigAnyOf3EnableNetworkTypeSelection, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -739,8 +743,8 @@ func (o *ZoneCreateConfigAnyOf3) IsSetEnableNetworkTypeSelection() bool {
 	return false
 }
 
-// SetEnableNetworkTypeSelection gets a reference to the given NullableString and assigns it to the EnableNetworkTypeSelection field.
-func (o *ZoneCreateConfigAnyOf3) SetEnableNetworkTypeSelection(v string) {
+// SetEnableNetworkTypeSelection gets a reference to the given NullableZoneCreateConfigAnyOf3EnableNetworkTypeSelection and assigns it to the EnableNetworkTypeSelection field.
+func (o *ZoneCreateConfigAnyOf3) SetEnableNetworkTypeSelection(v ZoneCreateConfigAnyOf3EnableNetworkTypeSelection) {
 	o.EnableNetworkTypeSelection.Set(&v)
 }
 
@@ -937,6 +941,7 @@ func (v NullableZoneCreateConfigAnyOf3) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *ZoneCreateConfigAnyOf3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -500,6 +500,7 @@ func (v NullableSaveDatastoreRequestDatastoreResourcePermissions) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *SaveDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

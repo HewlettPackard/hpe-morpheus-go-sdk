@@ -20,7 +20,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGr
 
 // AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner struct for AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner
 type AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner struct {
-	Id                   NullableString         `json:"id,omitempty"`
+	Id                   *string                `json:"id,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,47 +43,36 @@ func NewAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInnerWithDef
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetId returns the Id field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) GetId() string {
-	if o == nil || IsNil(o.Id.Get()) {
+	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
 	}
-	return *o.Id.Get()
+	return *o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) GetIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id.Get(), o.Id.IsSet()
+	return o.Id, true
 }
 
 // IsSetId returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) IsSetId() bool {
-	if o != nil && o.Id.IsSet() {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given NullableString and assigns it to the Id field.
+// SetId gets a reference to the given string and assigns it to the Id field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) SetId(v string) {
-	o.Id.Set(&v)
-}
-
-// SetIdNil sets the value for Id to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) SetIdNil() {
-	o.Id.Set(nil)
-}
-
-// UnsetId ensures that no value is present for Id, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) UnsetId() {
-	o.Id.Unset()
+	o.Id = &v
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) MarshalJSON() ([]byte, error) {
@@ -96,8 +85,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) Marsh
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id.IsSet() {
-		toSerialize["id"] = o.Id.Get()
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -151,6 +140,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInne
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

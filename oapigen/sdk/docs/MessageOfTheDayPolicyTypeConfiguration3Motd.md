@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**FullPage** | Pointer to **NullableString** |  | [optional] 
+**FullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfiguration2MotdFullPage**](MessageOfTheDayPolicyTypeConfiguration2MotdFullPage.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) GetFullPage() string`
+`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) GetFullPage() MessageOfTheDayPolicyTypeConfiguration2MotdFullPage`
 
 GetFullPage returns the FullPage field if non-nil, zero value otherwise.
 
 ### GetFullPageOk
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) GetFullPageOk() (*string, bool)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) GetFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration2MotdFullPage, bool)`
 
 GetFullPageOk returns a tuple with the FullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) SetFullPage(v string)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) SetFullPage(v MessageOfTheDayPolicyTypeConfiguration2MotdFullPage)`
 
 SetFullPage sets FullPage field to given value.
 
@@ -128,16 +128,6 @@ SetFullPage sets FullPage field to given value.
 
 HasFullPage returns a boolean if a field has been set.
 
-### SetFullPageNil
-
-`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) SetFullPageNil(b bool)`
-
- SetFullPageNil sets the value for FullPage to be an explicit nil
-
-### UnsetFullPage
-`func (o *MessageOfTheDayPolicyTypeConfiguration3Motd) UnsetFullPage()`
-
-UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

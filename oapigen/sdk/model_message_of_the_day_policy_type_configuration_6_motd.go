@@ -20,11 +20,11 @@ var _ MappedNullable = &MessageOfTheDayPolicyTypeConfiguration6Motd{}
 
 // MessageOfTheDayPolicyTypeConfiguration6Motd struct for MessageOfTheDayPolicyTypeConfiguration6Motd
 type MessageOfTheDayPolicyTypeConfiguration6Motd struct {
-	Title                *string                `json:"title,omitempty"`
-	Message              *string                `json:"message,omitempty"`
-	Type                 *string                `json:"type,omitempty"`
-	FullPage             NullableString         `json:"fullPage,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Title                *string                                              `json:"title,omitempty"`
+	Message              *string                                              `json:"message,omitempty"`
+	Type                 *string                                              `json:"type,omitempty"`
+	FullPage             *MessageOfTheDayPolicyTypeConfiguration2MotdFullPage `json:"fullPage,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _MessageOfTheDayPolicyTypeConfiguration6Motd MessageOfTheDayPolicyTypeConfiguration6Motd
@@ -142,47 +142,36 @@ func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) SetType(v string) {
 	o.Type = &v
 }
 
-// GetFullPage returns the FullPage field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) GetFullPage() string {
-	if o == nil || IsNil(o.FullPage.Get()) {
-		var ret string
+// GetFullPage returns the FullPage field value if set, zero value otherwise.
+func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) GetFullPage() MessageOfTheDayPolicyTypeConfiguration2MotdFullPage {
+	if o == nil || IsNil(o.FullPage) {
+		var ret MessageOfTheDayPolicyTypeConfiguration2MotdFullPage
 		return ret
 	}
-	return *o.FullPage.Get()
+	return *o.FullPage
 }
 
 // GetFullPageOk returns a tuple with the FullPage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) GetFullPageOk() (*string, bool) {
-	if o == nil {
+func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) GetFullPageOk() (*MessageOfTheDayPolicyTypeConfiguration2MotdFullPage, bool) {
+	if o == nil || IsNil(o.FullPage) {
 		return nil, false
 	}
-	return o.FullPage.Get(), o.FullPage.IsSet()
+	return o.FullPage, true
 }
 
 // IsSetFullPage returns a boolean if a field has been set.
 func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) IsSetFullPage() bool {
-	if o != nil && o.FullPage.IsSet() {
+	if o != nil && !IsNil(o.FullPage) {
 		return true
 	}
 
 	return false
 }
 
-// SetFullPage gets a reference to the given NullableString and assigns it to the FullPage field.
-func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) SetFullPage(v string) {
-	o.FullPage.Set(&v)
-}
-
-// SetFullPageNil sets the value for FullPage to be an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) SetFullPageNil() {
-	o.FullPage.Set(nil)
-}
-
-// UnsetFullPage ensures that no value is present for FullPage, not even an explicit nil
-func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) UnsetFullPage() {
-	o.FullPage.Unset()
+// SetFullPage gets a reference to the given MessageOfTheDayPolicyTypeConfiguration2MotdFullPage and assigns it to the FullPage field.
+func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) SetFullPage(v MessageOfTheDayPolicyTypeConfiguration2MotdFullPage) {
+	o.FullPage = &v
 }
 
 func (o MessageOfTheDayPolicyTypeConfiguration6Motd) MarshalJSON() ([]byte, error) {
@@ -204,8 +193,8 @@ func (o MessageOfTheDayPolicyTypeConfiguration6Motd) ToMap() (map[string]interfa
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if o.FullPage.IsSet() {
-		toSerialize["fullPage"] = o.FullPage.Get()
+	if !IsNil(o.FullPage) {
+		toSerialize["fullPage"] = o.FullPage
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -259,6 +248,7 @@ func (v NullableMessageOfTheDayPolicyTypeConfiguration6Motd) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *MessageOfTheDayPolicyTypeConfiguration6Motd) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

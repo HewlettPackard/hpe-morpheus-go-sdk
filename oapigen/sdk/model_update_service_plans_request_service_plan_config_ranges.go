@@ -546,6 +546,7 @@ func (v NullableUpdateServicePlansRequestServicePlanConfigRanges) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateServicePlansRequestServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

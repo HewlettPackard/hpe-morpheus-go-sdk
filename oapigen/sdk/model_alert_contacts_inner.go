@@ -284,6 +284,7 @@ func (v NullableAlertContactsInner) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *AlertContactsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

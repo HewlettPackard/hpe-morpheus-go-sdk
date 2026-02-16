@@ -141,6 +141,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2Form) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

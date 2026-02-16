@@ -248,6 +248,7 @@ func (v NullableAddUserTenant200ResponseAllOfUserAccessPersonasInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *AddUserTenant200ResponseAllOfUserAccessPersonasInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

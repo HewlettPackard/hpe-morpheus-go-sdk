@@ -20,22 +20,22 @@ var _ MappedNullable = &Policy{}
 
 // Policy struct for Policy
 type Policy struct {
-	Id                   *int64                 `json:"id,omitempty"`
-	Name                 *string                `json:"name,omitempty"`
-	Description          NullableString         `json:"description,omitempty"`
-	PolicyType           *PolicyPolicyType      `json:"policyType,omitempty"`
-	Zone                 *PolicyZone            `json:"zone,omitempty"`
-	Site                 *PolicySite            `json:"site,omitempty"`
-	User                 *PolicyUser            `json:"user,omitempty"`
-	Role                 *PolicyRole            `json:"role,omitempty"`
-	RefType              NullableString         `json:"refType,omitempty"`
-	RefId                NullableInt64          `json:"refId,omitempty"`
-	EachUser             NullableBool           `json:"eachUser,omitempty"`
-	Config               *PolicyConfig          `json:"config,omitempty"`
-	Enabled              *bool                  `json:"enabled,omitempty"`
-	Owner                *PolicyOwner           `json:"owner,omitempty"`
-	Accounts             []PolicyAccountsInner  `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{} `json:",remain"`
+	Id                   *int64                                           `json:"id,omitempty"`
+	Name                 *string                                          `json:"name,omitempty"`
+	Description          NullableString                                   `json:"description,omitempty"`
+	PolicyType           *PolicyPolicyType                                `json:"policyType,omitempty"`
+	Zone                 *PolicyZone                                      `json:"zone,omitempty"`
+	Site                 *PolicySite                                      `json:"site,omitempty"`
+	User                 *PolicyUser                                      `json:"user,omitempty"`
+	Role                 *PolicyRole                                      `json:"role,omitempty"`
+	RefType              NullableString                                   `json:"refType,omitempty"`
+	RefId                NullableInt64                                    `json:"refId,omitempty"`
+	EachUser             NullableBool                                     `json:"eachUser,omitempty"`
+	Config               *PolicyConfig                                    `json:"config,omitempty"`
+	Enabled              *bool                                            `json:"enabled,omitempty"`
+	Owner                *PolicyOwner                                     `json:"owner,omitempty"`
+	Accounts             []AddPolicies200ResponseAllOfPolicyAccountsInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
 type _Policy Policy
@@ -549,10 +549,10 @@ func (o *Policy) SetOwner(v PolicyOwner) {
 	o.Owner = &v
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Policy) GetAccounts() []PolicyAccountsInner {
-	if o == nil {
-		var ret []PolicyAccountsInner
+// GetAccounts returns the Accounts field value if set, zero value otherwise.
+func (o *Policy) GetAccounts() []AddPolicies200ResponseAllOfPolicyAccountsInner {
+	if o == nil || IsNil(o.Accounts) {
+		var ret []AddPolicies200ResponseAllOfPolicyAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -560,8 +560,7 @@ func (o *Policy) GetAccounts() []PolicyAccountsInner {
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Policy) GetAccountsOk() ([]PolicyAccountsInner, bool) {
+func (o *Policy) GetAccountsOk() ([]AddPolicies200ResponseAllOfPolicyAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -577,8 +576,8 @@ func (o *Policy) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []PolicyAccountsInner and assigns it to the Accounts field.
-func (o *Policy) SetAccounts(v []PolicyAccountsInner) {
+// SetAccounts gets a reference to the given []AddPolicies200ResponseAllOfPolicyAccountsInner and assigns it to the Accounts field.
+func (o *Policy) SetAccounts(v []AddPolicies200ResponseAllOfPolicyAccountsInner) {
 	o.Accounts = v
 }
 
@@ -634,7 +633,7 @@ func (o Policy) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if o.Accounts != nil {
+	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
 
@@ -689,6 +688,7 @@ func (v NullablePolicy) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Policy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -668,6 +668,7 @@ func (v NullableGetServicePlans200ResponseServicePlanConfigRanges) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *GetServicePlans200ResponseServicePlanConfigRanges) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -356,6 +356,7 @@ func (v NullableUpdateServicePlans200ResponseAllOfServicePlanProvisionType) Unma
 
 	return v, nil
 }
+
 func (o *UpdateServicePlans200ResponseAllOfServicePlanProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableMaxPoolMembersPolicyTypeConfiguration4) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *MaxPoolMembersPolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

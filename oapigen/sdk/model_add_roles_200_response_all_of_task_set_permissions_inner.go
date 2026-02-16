@@ -259,6 +259,7 @@ func (v NullableAddRoles200ResponseAllOfTaskSetPermissionsInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddRoles200ResponseAllOfTaskSetPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

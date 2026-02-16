@@ -212,6 +212,7 @@ func (v NullableInstanceCreateSuccessInstanceCluster) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceCluster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

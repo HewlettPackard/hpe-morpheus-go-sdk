@@ -176,6 +176,7 @@ func (v NullableUpdatePolicies200ResponseAllOfPolicyUser) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *UpdatePolicies200ResponseAllOfPolicyUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -252,6 +252,7 @@ func (v NullableClusterDatastoreUpdatePermissionsResourcePermissions) UnmarshalM
 
 	return v, nil
 }
+
 func (o *ClusterDatastoreUpdatePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

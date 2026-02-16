@@ -480,6 +480,7 @@ func (v NullableShellTaskConfig4) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ShellTaskConfig4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

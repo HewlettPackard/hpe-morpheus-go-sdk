@@ -2856,6 +2856,7 @@ func (v NullableUpdateNetwork200ResponseAllOfNetwork) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *UpdateNetwork200ResponseAllOfNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

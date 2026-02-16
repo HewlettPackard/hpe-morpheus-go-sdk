@@ -251,6 +251,7 @@ func (v NullableInstanceTypeLayoutCreateEnvironmentVariablesInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *InstanceTypeLayoutCreateEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

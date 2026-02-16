@@ -141,6 +141,7 @@ func (v NullableAddServicePlansRequestServicePlanPermissionsResourcePermissionsS
 
 	return v, nil
 }
+
 func (o *AddServicePlansRequestServicePlanPermissionsResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

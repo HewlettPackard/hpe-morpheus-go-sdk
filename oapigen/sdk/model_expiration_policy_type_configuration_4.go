@@ -580,6 +580,7 @@ func (v NullableExpirationPolicyTypeConfiguration4) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *ExpirationPolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

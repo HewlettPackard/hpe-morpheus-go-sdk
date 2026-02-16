@@ -140,6 +140,7 @@ func (v NullableWorkflowPolicyTypeConfiguration7) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *WorkflowPolicyTypeConfiguration7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

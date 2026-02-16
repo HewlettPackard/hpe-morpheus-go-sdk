@@ -239,6 +239,7 @@ func (v NullableTagsPolicyTypeConfiguration) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *TagsPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

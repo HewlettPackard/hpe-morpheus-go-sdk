@@ -212,6 +212,7 @@ func (v NullableGetClusterDatastore200ResponseDatastoreResourcePermissionsPlansI
 
 	return v, nil
 }
+
 func (o *GetClusterDatastore200ResponseDatastoreResourcePermissionsPlansInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

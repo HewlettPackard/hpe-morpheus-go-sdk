@@ -320,6 +320,7 @@ func (v NullableListBackupSettings200ResponseBackupSettings) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *ListBackupSettings200ResponseBackupSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

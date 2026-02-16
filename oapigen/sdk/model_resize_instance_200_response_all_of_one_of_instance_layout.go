@@ -132,6 +132,7 @@ func (v NullableResizeInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ResizeInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

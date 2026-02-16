@@ -140,6 +140,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow) Unmarsha
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

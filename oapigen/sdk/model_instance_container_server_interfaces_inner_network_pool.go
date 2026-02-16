@@ -176,6 +176,7 @@ func (v NullableInstanceContainerServerInterfacesInnerNetworkPool) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *InstanceContainerServerInterfacesInnerNetworkPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

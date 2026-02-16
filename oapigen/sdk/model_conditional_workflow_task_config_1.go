@@ -21,15 +21,15 @@ var _ MappedNullable = &ConditionalWorkflowTaskConfig1{}
 // ConditionalWorkflowTaskConfig1 struct for ConditionalWorkflowTaskConfig1
 type ConditionalWorkflowTaskConfig1 struct {
 	// Allows the user to set JavaScript logic. If it resolves to true, HPE Morpheus Enterprise will run the Operational Workflow set as the “IF OPERATIONAL WORKFLOW” and if it resolves to false, HPE Morpheus Enterprise will run the “ELSE OPERATIONAL WORKFLOW”
-	ConditionalScript NullableString `json:"conditionalScript,omitempty"`
+	ConditionalScript *string `json:"conditionalScript,omitempty"`
 	// If Operational Workflow ID
-	IfOperationalWorkflowId NullableInt64 `json:"ifOperationalWorkflowId,omitempty"`
+	IfOperationalWorkflowId *int64 `json:"ifOperationalWorkflowId,omitempty"`
 	// If Operational Workflow Name
-	IfOperationalWorkflowName NullableString `json:"ifOperationalWorkflowName,omitempty"`
+	IfOperationalWorkflowName *string `json:"ifOperationalWorkflowName,omitempty"`
 	// else Operational Workflow ID
-	ElseOperationalWorkflowId NullableInt64 `json:"elseOperationalWorkflowId,omitempty"`
+	ElseOperationalWorkflowId *int64 `json:"elseOperationalWorkflowId,omitempty"`
 	// Else Operational Workflow Name
-	ElseOperationalWorkflowName NullableString         `json:"elseOperationalWorkflowName,omitempty"`
+	ElseOperationalWorkflowName *string                `json:"elseOperationalWorkflowName,omitempty"`
 	AdditionalProperties        map[string]interface{} `json:",remain"`
 }
 
@@ -52,219 +52,164 @@ func NewConditionalWorkflowTaskConfig1WithDefaults() *ConditionalWorkflowTaskCon
 	return &this
 }
 
-// GetConditionalScript returns the ConditionalScript field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetConditionalScript returns the ConditionalScript field value if set, zero value otherwise.
 func (o *ConditionalWorkflowTaskConfig1) GetConditionalScript() string {
-	if o == nil || IsNil(o.ConditionalScript.Get()) {
+	if o == nil || IsNil(o.ConditionalScript) {
 		var ret string
 		return ret
 	}
-	return *o.ConditionalScript.Get()
+	return *o.ConditionalScript
 }
 
 // GetConditionalScriptOk returns a tuple with the ConditionalScript field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConditionalWorkflowTaskConfig1) GetConditionalScriptOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConditionalScript) {
 		return nil, false
 	}
-	return o.ConditionalScript.Get(), o.ConditionalScript.IsSet()
+	return o.ConditionalScript, true
 }
 
 // IsSetConditionalScript returns a boolean if a field has been set.
 func (o *ConditionalWorkflowTaskConfig1) IsSetConditionalScript() bool {
-	if o != nil && o.ConditionalScript.IsSet() {
+	if o != nil && !IsNil(o.ConditionalScript) {
 		return true
 	}
 
 	return false
 }
 
-// SetConditionalScript gets a reference to the given NullableString and assigns it to the ConditionalScript field.
+// SetConditionalScript gets a reference to the given string and assigns it to the ConditionalScript field.
 func (o *ConditionalWorkflowTaskConfig1) SetConditionalScript(v string) {
-	o.ConditionalScript.Set(&v)
+	o.ConditionalScript = &v
 }
 
-// SetConditionalScriptNil sets the value for ConditionalScript to be an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) SetConditionalScriptNil() {
-	o.ConditionalScript.Set(nil)
-}
-
-// UnsetConditionalScript ensures that no value is present for ConditionalScript, not even an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) UnsetConditionalScript() {
-	o.ConditionalScript.Unset()
-}
-
-// GetIfOperationalWorkflowId returns the IfOperationalWorkflowId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIfOperationalWorkflowId returns the IfOperationalWorkflowId field value if set, zero value otherwise.
 func (o *ConditionalWorkflowTaskConfig1) GetIfOperationalWorkflowId() int64 {
-	if o == nil || IsNil(o.IfOperationalWorkflowId.Get()) {
+	if o == nil || IsNil(o.IfOperationalWorkflowId) {
 		var ret int64
 		return ret
 	}
-	return *o.IfOperationalWorkflowId.Get()
+	return *o.IfOperationalWorkflowId
 }
 
 // GetIfOperationalWorkflowIdOk returns a tuple with the IfOperationalWorkflowId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConditionalWorkflowTaskConfig1) GetIfOperationalWorkflowIdOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IfOperationalWorkflowId) {
 		return nil, false
 	}
-	return o.IfOperationalWorkflowId.Get(), o.IfOperationalWorkflowId.IsSet()
+	return o.IfOperationalWorkflowId, true
 }
 
 // IsSetIfOperationalWorkflowId returns a boolean if a field has been set.
 func (o *ConditionalWorkflowTaskConfig1) IsSetIfOperationalWorkflowId() bool {
-	if o != nil && o.IfOperationalWorkflowId.IsSet() {
+	if o != nil && !IsNil(o.IfOperationalWorkflowId) {
 		return true
 	}
 
 	return false
 }
 
-// SetIfOperationalWorkflowId gets a reference to the given NullableInt64 and assigns it to the IfOperationalWorkflowId field.
+// SetIfOperationalWorkflowId gets a reference to the given int64 and assigns it to the IfOperationalWorkflowId field.
 func (o *ConditionalWorkflowTaskConfig1) SetIfOperationalWorkflowId(v int64) {
-	o.IfOperationalWorkflowId.Set(&v)
+	o.IfOperationalWorkflowId = &v
 }
 
-// SetIfOperationalWorkflowIdNil sets the value for IfOperationalWorkflowId to be an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) SetIfOperationalWorkflowIdNil() {
-	o.IfOperationalWorkflowId.Set(nil)
-}
-
-// UnsetIfOperationalWorkflowId ensures that no value is present for IfOperationalWorkflowId, not even an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) UnsetIfOperationalWorkflowId() {
-	o.IfOperationalWorkflowId.Unset()
-}
-
-// GetIfOperationalWorkflowName returns the IfOperationalWorkflowName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIfOperationalWorkflowName returns the IfOperationalWorkflowName field value if set, zero value otherwise.
 func (o *ConditionalWorkflowTaskConfig1) GetIfOperationalWorkflowName() string {
-	if o == nil || IsNil(o.IfOperationalWorkflowName.Get()) {
+	if o == nil || IsNil(o.IfOperationalWorkflowName) {
 		var ret string
 		return ret
 	}
-	return *o.IfOperationalWorkflowName.Get()
+	return *o.IfOperationalWorkflowName
 }
 
 // GetIfOperationalWorkflowNameOk returns a tuple with the IfOperationalWorkflowName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConditionalWorkflowTaskConfig1) GetIfOperationalWorkflowNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IfOperationalWorkflowName) {
 		return nil, false
 	}
-	return o.IfOperationalWorkflowName.Get(), o.IfOperationalWorkflowName.IsSet()
+	return o.IfOperationalWorkflowName, true
 }
 
 // IsSetIfOperationalWorkflowName returns a boolean if a field has been set.
 func (o *ConditionalWorkflowTaskConfig1) IsSetIfOperationalWorkflowName() bool {
-	if o != nil && o.IfOperationalWorkflowName.IsSet() {
+	if o != nil && !IsNil(o.IfOperationalWorkflowName) {
 		return true
 	}
 
 	return false
 }
 
-// SetIfOperationalWorkflowName gets a reference to the given NullableString and assigns it to the IfOperationalWorkflowName field.
+// SetIfOperationalWorkflowName gets a reference to the given string and assigns it to the IfOperationalWorkflowName field.
 func (o *ConditionalWorkflowTaskConfig1) SetIfOperationalWorkflowName(v string) {
-	o.IfOperationalWorkflowName.Set(&v)
+	o.IfOperationalWorkflowName = &v
 }
 
-// SetIfOperationalWorkflowNameNil sets the value for IfOperationalWorkflowName to be an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) SetIfOperationalWorkflowNameNil() {
-	o.IfOperationalWorkflowName.Set(nil)
-}
-
-// UnsetIfOperationalWorkflowName ensures that no value is present for IfOperationalWorkflowName, not even an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) UnsetIfOperationalWorkflowName() {
-	o.IfOperationalWorkflowName.Unset()
-}
-
-// GetElseOperationalWorkflowId returns the ElseOperationalWorkflowId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetElseOperationalWorkflowId returns the ElseOperationalWorkflowId field value if set, zero value otherwise.
 func (o *ConditionalWorkflowTaskConfig1) GetElseOperationalWorkflowId() int64 {
-	if o == nil || IsNil(o.ElseOperationalWorkflowId.Get()) {
+	if o == nil || IsNil(o.ElseOperationalWorkflowId) {
 		var ret int64
 		return ret
 	}
-	return *o.ElseOperationalWorkflowId.Get()
+	return *o.ElseOperationalWorkflowId
 }
 
 // GetElseOperationalWorkflowIdOk returns a tuple with the ElseOperationalWorkflowId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConditionalWorkflowTaskConfig1) GetElseOperationalWorkflowIdOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ElseOperationalWorkflowId) {
 		return nil, false
 	}
-	return o.ElseOperationalWorkflowId.Get(), o.ElseOperationalWorkflowId.IsSet()
+	return o.ElseOperationalWorkflowId, true
 }
 
 // IsSetElseOperationalWorkflowId returns a boolean if a field has been set.
 func (o *ConditionalWorkflowTaskConfig1) IsSetElseOperationalWorkflowId() bool {
-	if o != nil && o.ElseOperationalWorkflowId.IsSet() {
+	if o != nil && !IsNil(o.ElseOperationalWorkflowId) {
 		return true
 	}
 
 	return false
 }
 
-// SetElseOperationalWorkflowId gets a reference to the given NullableInt64 and assigns it to the ElseOperationalWorkflowId field.
+// SetElseOperationalWorkflowId gets a reference to the given int64 and assigns it to the ElseOperationalWorkflowId field.
 func (o *ConditionalWorkflowTaskConfig1) SetElseOperationalWorkflowId(v int64) {
-	o.ElseOperationalWorkflowId.Set(&v)
+	o.ElseOperationalWorkflowId = &v
 }
 
-// SetElseOperationalWorkflowIdNil sets the value for ElseOperationalWorkflowId to be an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) SetElseOperationalWorkflowIdNil() {
-	o.ElseOperationalWorkflowId.Set(nil)
-}
-
-// UnsetElseOperationalWorkflowId ensures that no value is present for ElseOperationalWorkflowId, not even an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) UnsetElseOperationalWorkflowId() {
-	o.ElseOperationalWorkflowId.Unset()
-}
-
-// GetElseOperationalWorkflowName returns the ElseOperationalWorkflowName field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetElseOperationalWorkflowName returns the ElseOperationalWorkflowName field value if set, zero value otherwise.
 func (o *ConditionalWorkflowTaskConfig1) GetElseOperationalWorkflowName() string {
-	if o == nil || IsNil(o.ElseOperationalWorkflowName.Get()) {
+	if o == nil || IsNil(o.ElseOperationalWorkflowName) {
 		var ret string
 		return ret
 	}
-	return *o.ElseOperationalWorkflowName.Get()
+	return *o.ElseOperationalWorkflowName
 }
 
 // GetElseOperationalWorkflowNameOk returns a tuple with the ElseOperationalWorkflowName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConditionalWorkflowTaskConfig1) GetElseOperationalWorkflowNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ElseOperationalWorkflowName) {
 		return nil, false
 	}
-	return o.ElseOperationalWorkflowName.Get(), o.ElseOperationalWorkflowName.IsSet()
+	return o.ElseOperationalWorkflowName, true
 }
 
 // IsSetElseOperationalWorkflowName returns a boolean if a field has been set.
 func (o *ConditionalWorkflowTaskConfig1) IsSetElseOperationalWorkflowName() bool {
-	if o != nil && o.ElseOperationalWorkflowName.IsSet() {
+	if o != nil && !IsNil(o.ElseOperationalWorkflowName) {
 		return true
 	}
 
 	return false
 }
 
-// SetElseOperationalWorkflowName gets a reference to the given NullableString and assigns it to the ElseOperationalWorkflowName field.
+// SetElseOperationalWorkflowName gets a reference to the given string and assigns it to the ElseOperationalWorkflowName field.
 func (o *ConditionalWorkflowTaskConfig1) SetElseOperationalWorkflowName(v string) {
-	o.ElseOperationalWorkflowName.Set(&v)
-}
-
-// SetElseOperationalWorkflowNameNil sets the value for ElseOperationalWorkflowName to be an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) SetElseOperationalWorkflowNameNil() {
-	o.ElseOperationalWorkflowName.Set(nil)
-}
-
-// UnsetElseOperationalWorkflowName ensures that no value is present for ElseOperationalWorkflowName, not even an explicit nil
-func (o *ConditionalWorkflowTaskConfig1) UnsetElseOperationalWorkflowName() {
-	o.ElseOperationalWorkflowName.Unset()
+	o.ElseOperationalWorkflowName = &v
 }
 
 func (o ConditionalWorkflowTaskConfig1) MarshalJSON() ([]byte, error) {
@@ -277,20 +222,20 @@ func (o ConditionalWorkflowTaskConfig1) MarshalJSON() ([]byte, error) {
 
 func (o ConditionalWorkflowTaskConfig1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ConditionalScript.IsSet() {
-		toSerialize["conditionalScript"] = o.ConditionalScript.Get()
+	if !IsNil(o.ConditionalScript) {
+		toSerialize["conditionalScript"] = o.ConditionalScript
 	}
-	if o.IfOperationalWorkflowId.IsSet() {
-		toSerialize["ifOperationalWorkflowId"] = o.IfOperationalWorkflowId.Get()
+	if !IsNil(o.IfOperationalWorkflowId) {
+		toSerialize["ifOperationalWorkflowId"] = o.IfOperationalWorkflowId
 	}
-	if o.IfOperationalWorkflowName.IsSet() {
-		toSerialize["ifOperationalWorkflowName"] = o.IfOperationalWorkflowName.Get()
+	if !IsNil(o.IfOperationalWorkflowName) {
+		toSerialize["ifOperationalWorkflowName"] = o.IfOperationalWorkflowName
 	}
-	if o.ElseOperationalWorkflowId.IsSet() {
-		toSerialize["elseOperationalWorkflowId"] = o.ElseOperationalWorkflowId.Get()
+	if !IsNil(o.ElseOperationalWorkflowId) {
+		toSerialize["elseOperationalWorkflowId"] = o.ElseOperationalWorkflowId
 	}
-	if o.ElseOperationalWorkflowName.IsSet() {
-		toSerialize["elseOperationalWorkflowName"] = o.ElseOperationalWorkflowName.Get()
+	if !IsNil(o.ElseOperationalWorkflowName) {
+		toSerialize["elseOperationalWorkflowName"] = o.ElseOperationalWorkflowName
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -344,6 +289,7 @@ func (v NullableConditionalWorkflowTaskConfig1) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *ConditionalWorkflowTaskConfig1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

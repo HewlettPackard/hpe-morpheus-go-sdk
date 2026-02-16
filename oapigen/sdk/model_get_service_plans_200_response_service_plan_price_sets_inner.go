@@ -248,6 +248,7 @@ func (v NullableGetServicePlans200ResponseServicePlanPriceSetsInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *GetServicePlans200ResponseServicePlanPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

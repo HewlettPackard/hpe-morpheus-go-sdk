@@ -212,6 +212,7 @@ func (v NullablePowerSchedulePolicyTypeConfiguration4) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *PowerSchedulePolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

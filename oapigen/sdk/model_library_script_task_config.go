@@ -574,6 +574,7 @@ func (v NullableLibraryScriptTaskConfig) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *LibraryScriptTaskConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

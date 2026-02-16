@@ -212,6 +212,7 @@ func (v NullableGetEnvVariables200ResponseImportedEnvsValue) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetEnvVariables200ResponseImportedEnvsValue) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

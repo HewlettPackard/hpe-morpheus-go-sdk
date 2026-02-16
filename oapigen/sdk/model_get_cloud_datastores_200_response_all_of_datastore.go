@@ -465,6 +465,7 @@ func (v NullableGetCloudDatastores200ResponseAllOfDatastore) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *GetCloudDatastores200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

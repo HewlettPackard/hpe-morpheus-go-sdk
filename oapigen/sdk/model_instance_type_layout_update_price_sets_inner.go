@@ -132,6 +132,7 @@ func (v NullableInstanceTypeLayoutUpdatePriceSetsInner) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *InstanceTypeLayoutUpdatePriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableInstanceContainerServer3Zone) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *InstanceContainerServer3Zone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

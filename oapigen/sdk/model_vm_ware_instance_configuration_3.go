@@ -434,6 +434,7 @@ func (v NullableVMWareInstanceConfiguration3) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *VMWareInstanceConfiguration3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IpAddress** | Pointer to **string** | The ip address. Not applicable when using DHCP or IP Pools. | [optional] 
 **MacAddress** | Pointer to **string** | The MAC address. | [optional] 
 **Id** | Pointer to **int64** | The interface id. Applicable when resizing and you want to identify an interface to update that already exists. | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesChildVirtualNetworkInterfacesInner1**](InstancesChildVirtualNetworkInterfacesInner1.md) | The nested networkInterfaces can be used to define child virtual network interfaces. The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which types support this (&#x60;hasVirtualInvirtualInterfaces &#x3D; true&#x60; and list of available &#x60;virtualInterfaces&#x60; will be defined.  | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces1NetworkInterfacesInner**](InstancesNetworkInterfaces1NetworkInterfacesInner.md) | The nested networkInterfaces can be used to define child virtual network interfaces. The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which types support this (&#x60;hasVirtualInvirtualInterfaces &#x3D; true&#x60; and list of available &#x60;virtualInterfaces&#x60; will be defined.  | [optional] 
 
 ## Methods
 
@@ -178,20 +178,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *InstancesNetworkInterfaces1) GetNetworkInterfaces() []InstancesChildVirtualNetworkInterfacesInner1`
+`func (o *InstancesNetworkInterfaces1) GetNetworkInterfaces() []InstancesNetworkInterfaces1NetworkInterfacesInner`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstancesNetworkInterfaces1) GetNetworkInterfacesOk() (*[]InstancesChildVirtualNetworkInterfacesInner1, bool)`
+`func (o *InstancesNetworkInterfaces1) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces1NetworkInterfacesInner, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstancesNetworkInterfaces1) SetNetworkInterfaces(v []InstancesChildVirtualNetworkInterfacesInner1)`
+`func (o *InstancesNetworkInterfaces1) SetNetworkInterfaces(v []InstancesNetworkInterfaces1NetworkInterfacesInner)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

@@ -223,6 +223,7 @@ func (v NullableListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeL
 
 	return v, nil
 }
+
 func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

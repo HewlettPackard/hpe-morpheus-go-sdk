@@ -403,6 +403,7 @@ func (v NullableStorageType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *StorageType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

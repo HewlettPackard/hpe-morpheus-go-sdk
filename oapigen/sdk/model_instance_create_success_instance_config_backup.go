@@ -248,6 +248,7 @@ func (v NullableInstanceCreateSuccessInstanceConfigBackup) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceConfigBackup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

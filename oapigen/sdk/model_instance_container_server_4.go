@@ -56,8 +56,8 @@ type InstanceContainerServer4 struct {
 	MaxStorage           *int64                                     `json:"maxStorage,omitempty"`
 	SourceImage          *InstanceContainerServer4SourceImage       `json:"sourceImage,omitempty"`
 	ServerOs             *InstanceContainerServer4ServerOs          `json:"serverOs,omitempty"`
-	Volumes              []InstanceContainerServerVolume4           `json:"volumes,omitempty"`
-	Interfaces           []InstanceContainerServerInterfacesInner4  `json:"interfaces,omitempty"`
+	Volumes              []InstanceContainerServerVolume1           `json:"volumes,omitempty"`
+	Interfaces           []InstanceContainerServerInterfacesInner1  `json:"interfaces,omitempty"`
 	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
@@ -1322,9 +1322,9 @@ func (o *InstanceContainerServer4) SetServerOs(v InstanceContainerServer4ServerO
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *InstanceContainerServer4) GetVolumes() []InstanceContainerServerVolume4 {
+func (o *InstanceContainerServer4) GetVolumes() []InstanceContainerServerVolume1 {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []InstanceContainerServerVolume4
+		var ret []InstanceContainerServerVolume1
 		return ret
 	}
 	return o.Volumes
@@ -1332,7 +1332,7 @@ func (o *InstanceContainerServer4) GetVolumes() []InstanceContainerServerVolume4
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer4) GetVolumesOk() ([]InstanceContainerServerVolume4, bool) {
+func (o *InstanceContainerServer4) GetVolumesOk() ([]InstanceContainerServerVolume1, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -1348,15 +1348,15 @@ func (o *InstanceContainerServer4) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []InstanceContainerServerVolume4 and assigns it to the Volumes field.
-func (o *InstanceContainerServer4) SetVolumes(v []InstanceContainerServerVolume4) {
+// SetVolumes gets a reference to the given []InstanceContainerServerVolume1 and assigns it to the Volumes field.
+func (o *InstanceContainerServer4) SetVolumes(v []InstanceContainerServerVolume1) {
 	o.Volumes = v
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *InstanceContainerServer4) GetInterfaces() []InstanceContainerServerInterfacesInner4 {
+func (o *InstanceContainerServer4) GetInterfaces() []InstanceContainerServerInterfacesInner1 {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []InstanceContainerServerInterfacesInner4
+		var ret []InstanceContainerServerInterfacesInner1
 		return ret
 	}
 	return o.Interfaces
@@ -1364,7 +1364,7 @@ func (o *InstanceContainerServer4) GetInterfaces() []InstanceContainerServerInte
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer4) GetInterfacesOk() ([]InstanceContainerServerInterfacesInner4, bool) {
+func (o *InstanceContainerServer4) GetInterfacesOk() ([]InstanceContainerServerInterfacesInner1, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -1380,8 +1380,8 @@ func (o *InstanceContainerServer4) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []InstanceContainerServerInterfacesInner4 and assigns it to the Interfaces field.
-func (o *InstanceContainerServer4) SetInterfaces(v []InstanceContainerServerInterfacesInner4) {
+// SetInterfaces gets a reference to the given []InstanceContainerServerInterfacesInner1 and assigns it to the Interfaces field.
+func (o *InstanceContainerServer4) SetInterfaces(v []InstanceContainerServerInterfacesInner1) {
 	o.Interfaces = v
 }
 
@@ -1558,6 +1558,7 @@ func (v NullableInstanceContainerServer4) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *InstanceContainerServer4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

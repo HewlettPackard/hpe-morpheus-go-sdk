@@ -356,6 +356,7 @@ func (v NullableServicePlanRowProvisionType) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *ServicePlanRowProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

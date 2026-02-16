@@ -382,6 +382,7 @@ func (v NullableAmazonInstanceConfiguration3) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *AmazonInstanceConfiguration3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

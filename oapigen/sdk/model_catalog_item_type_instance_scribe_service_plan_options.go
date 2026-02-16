@@ -215,6 +215,7 @@ func (v NullableCatalogItemTypeInstanceScribeServicePlanOptions) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceScribeServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

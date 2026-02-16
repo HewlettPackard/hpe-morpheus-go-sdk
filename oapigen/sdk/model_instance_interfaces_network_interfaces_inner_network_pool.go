@@ -176,6 +176,7 @@ func (v NullableInstanceInterfacesNetworkInterfacesInnerNetworkPool) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *InstanceInterfacesNetworkInterfacesInnerNetworkPool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

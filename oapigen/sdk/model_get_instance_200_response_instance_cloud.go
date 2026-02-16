@@ -212,6 +212,7 @@ func (v NullableGetInstance200ResponseInstanceCloud) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *GetInstance200ResponseInstanceCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

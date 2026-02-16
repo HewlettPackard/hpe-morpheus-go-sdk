@@ -1685,6 +1685,7 @@ func (v NullableInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInn
 
 	return v, nil
 }
+
 func (o *InstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

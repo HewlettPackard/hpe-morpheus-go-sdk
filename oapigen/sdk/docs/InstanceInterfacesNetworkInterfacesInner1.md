@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to [**InstanceInterfacesNetworkInterfacesInner1Id**](InstanceInterfacesNetworkInterfacesInner1Id.md) |  | [optional] 
 **Network** | Pointer to [**InstanceInterfacesNetworkInterfacesInner1Network**](InstanceInterfacesNetworkInterfacesInner1Network.md) |  | [optional] 
-**IpAddress** | Pointer to **NullableString** |  | [optional] 
-**NetworkInterfaceTypeId** | Pointer to **NullableInt64** |  | [optional] 
-**IpMode** | Pointer to **NullableString** |  | [optional] 
+**IpAddress** | Pointer to **string** |  | [optional] 
+**NetworkInterfaceTypeId** | Pointer to **int64** |  | [optional] 
+**IpMode** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -104,16 +104,6 @@ SetIpAddress sets IpAddress field to given value.
 
 HasIpAddress returns a boolean if a field has been set.
 
-### SetIpAddressNil
-
-`func (o *InstanceInterfacesNetworkInterfacesInner1) SetIpAddressNil(b bool)`
-
- SetIpAddressNil sets the value for IpAddress to be an explicit nil
-
-### UnsetIpAddress
-`func (o *InstanceInterfacesNetworkInterfacesInner1) UnsetIpAddress()`
-
-UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
 ### GetNetworkInterfaceTypeId
 
 `func (o *InstanceInterfacesNetworkInterfacesInner1) GetNetworkInterfaceTypeId() int64`
@@ -139,16 +129,6 @@ SetNetworkInterfaceTypeId sets NetworkInterfaceTypeId field to given value.
 
 HasNetworkInterfaceTypeId returns a boolean if a field has been set.
 
-### SetNetworkInterfaceTypeIdNil
-
-`func (o *InstanceInterfacesNetworkInterfacesInner1) SetNetworkInterfaceTypeIdNil(b bool)`
-
- SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
-
-### UnsetNetworkInterfaceTypeId
-`func (o *InstanceInterfacesNetworkInterfacesInner1) UnsetNetworkInterfaceTypeId()`
-
-UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
 ### GetIpMode
 
 `func (o *InstanceInterfacesNetworkInterfacesInner1) GetIpMode() string`
@@ -174,16 +154,6 @@ SetIpMode sets IpMode field to given value.
 
 HasIpMode returns a boolean if a field has been set.
 
-### SetIpModeNil
-
-`func (o *InstanceInterfacesNetworkInterfacesInner1) SetIpModeNil(b bool)`
-
- SetIpModeNil sets the value for IpMode to be an explicit nil
-
-### UnsetIpMode
-`func (o *InstanceInterfacesNetworkInterfacesInner1) UnsetIpMode()`
-
-UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

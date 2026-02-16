@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **NullableString** |  | [optional] 
+**Code** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -50,16 +50,6 @@ SetCode sets Code field to given value.
 
 HasCode returns a boolean if a field has been set.
 
-### SetCodeNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) SetCodeNil(b bool)`
-
- SetCodeNil sets the value for Code to be an explicit nil
-
-### UnsetCode
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) UnsetCode()`
-
-UnsetCode ensures that no value is present for Code, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

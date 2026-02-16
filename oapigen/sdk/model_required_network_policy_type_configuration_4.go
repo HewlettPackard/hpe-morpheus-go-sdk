@@ -141,6 +141,7 @@ func (v NullableRequiredNetworkPolicyTypeConfiguration4) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *RequiredNetworkPolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

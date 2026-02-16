@@ -168,6 +168,7 @@ func (v NullableCatalogItemTypeInstanceScribeGroup) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceScribeGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -259,6 +259,7 @@ func (v NullableMessageOfTheDayPolicyTypeConfiguration4Motd) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *MessageOfTheDayPolicyTypeConfiguration4Motd) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

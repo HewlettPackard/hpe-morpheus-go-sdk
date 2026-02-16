@@ -364,6 +364,7 @@ func (v NullableHVMInstanceConfiguration1) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *HVMInstanceConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

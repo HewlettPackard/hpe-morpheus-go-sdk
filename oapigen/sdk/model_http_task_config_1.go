@@ -845,6 +845,7 @@ func (v NullableHTTPTaskConfig1) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *HTTPTaskConfig1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

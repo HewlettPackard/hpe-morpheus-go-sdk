@@ -140,6 +140,7 @@ func (v NullableGetGroups200ResponseGroupStatsInstanceCounts) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetGroups200ResponseGroupStatsInstanceCounts) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

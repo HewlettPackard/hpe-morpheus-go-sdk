@@ -197,6 +197,7 @@ func (v NullableNFSDatastoreConfiguration1) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *NFSDatastoreConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

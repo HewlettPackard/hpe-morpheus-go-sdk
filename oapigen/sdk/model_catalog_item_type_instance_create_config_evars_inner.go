@@ -176,6 +176,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigEvarsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigEvarsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

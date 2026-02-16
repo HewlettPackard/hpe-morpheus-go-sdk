@@ -1835,6 +1835,7 @@ func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner) 
 
 	return v, nil
 }
+
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

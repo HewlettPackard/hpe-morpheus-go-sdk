@@ -141,6 +141,7 @@ func (v NullableCatalogItemTypeInstanceScribeSecurityGroupsInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceScribeSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

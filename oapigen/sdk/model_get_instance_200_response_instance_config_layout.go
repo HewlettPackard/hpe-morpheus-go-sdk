@@ -176,6 +176,7 @@ func (v NullableGetInstance200ResponseInstanceConfigLayout) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *GetInstance200ResponseInstanceConfigLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

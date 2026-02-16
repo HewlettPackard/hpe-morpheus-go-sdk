@@ -200,9 +200,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v AddInstanc
 	o.NoAgent = &v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner {
-	if o == nil {
+	if o == nil || IsNil(o.SecurityGroups) {
 		var ret []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner
 		return ret
 	}
@@ -211,7 +211,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []A
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroupsOk() ([]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
@@ -896,9 +895,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetMemoryDisplay(v stri
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetExpose returns the Expose field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64 {
-	if o == nil {
+	if o == nil || IsNil(o.Expose) {
 		var ret []int64
 		return ret
 	}
@@ -907,7 +906,6 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64 {
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
@@ -1112,7 +1110,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if o.SecurityGroups != nil {
+	if !IsNil(o.SecurityGroups) {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if o.KvmHostId.IsSet() {
@@ -1172,7 +1170,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if o.Expose != nil {
+	if !IsNil(o.Expose) {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {
@@ -1242,6 +1240,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

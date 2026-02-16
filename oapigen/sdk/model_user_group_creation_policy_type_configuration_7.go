@@ -140,6 +140,7 @@ func (v NullableUserGroupCreationPolicyTypeConfiguration7) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *UserGroupCreationPolicyTypeConfiguration7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

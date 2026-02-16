@@ -212,6 +212,7 @@ func (v NullableAddRoles200ResponseAllOfVdiPoolPermissionsInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddRoles200ResponseAllOfVdiPoolPermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

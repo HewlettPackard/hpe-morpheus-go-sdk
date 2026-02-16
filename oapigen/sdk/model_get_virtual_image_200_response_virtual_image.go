@@ -1955,6 +1955,7 @@ func (v NullableGetVirtualImage200ResponseVirtualImage) UnmarshalMapstructure(da
 
 	return v, nil
 }
+
 func (o *GetVirtualImage200ResponseVirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

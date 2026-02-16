@@ -176,6 +176,7 @@ func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvid
 
 	return v, nil
 }
+
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

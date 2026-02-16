@@ -393,6 +393,7 @@ func (v NullableServicePlanPermissionsResourcePermissions) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *ServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

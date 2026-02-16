@@ -231,6 +231,7 @@ func (v NullableGetAlerts4XXResponse) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *GetAlerts4XXResponse) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

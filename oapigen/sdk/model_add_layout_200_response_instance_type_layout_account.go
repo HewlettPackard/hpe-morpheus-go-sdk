@@ -176,6 +176,7 @@ func (v NullableAddLayout200ResponseInstanceTypeLayoutAccount) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddLayout200ResponseInstanceTypeLayoutAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

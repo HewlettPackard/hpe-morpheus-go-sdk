@@ -141,6 +141,7 @@ func (v NullablePolicyCreatePolicyType) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
+
 func (o *PolicyCreatePolicyType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

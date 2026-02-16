@@ -178,6 +178,7 @@ func (v NullableInstanceTypeLayoutUpdatePermissionsResourcePermissions) Unmarsha
 
 	return v, nil
 }
+
 func (o *InstanceTypeLayoutUpdatePermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

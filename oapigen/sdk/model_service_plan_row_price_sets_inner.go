@@ -248,6 +248,7 @@ func (v NullableServicePlanRowPriceSetsInner) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *ServicePlanRowPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

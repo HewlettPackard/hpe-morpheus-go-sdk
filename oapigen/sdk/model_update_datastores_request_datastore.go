@@ -254,6 +254,7 @@ func (v NullableUpdateDatastoresRequestDatastore) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *UpdateDatastoresRequestDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

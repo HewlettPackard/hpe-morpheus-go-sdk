@@ -215,6 +215,7 @@ func (v NullableCreateNetworks200ResponseAllOfNetworkPoolIPv6) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CreateNetworks200ResponseAllOfNetworkPoolIPv6) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

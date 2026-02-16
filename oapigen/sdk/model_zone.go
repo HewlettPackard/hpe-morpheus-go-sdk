@@ -2567,6 +2567,7 @@ func (v NullableZone) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Zone) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

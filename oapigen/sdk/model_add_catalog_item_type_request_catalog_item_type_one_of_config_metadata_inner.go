@@ -176,6 +176,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

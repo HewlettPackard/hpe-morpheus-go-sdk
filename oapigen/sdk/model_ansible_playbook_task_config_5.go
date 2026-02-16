@@ -751,6 +751,7 @@ func (v NullableAnsiblePlaybookTaskConfig5) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *AnsiblePlaybookTaskConfig5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

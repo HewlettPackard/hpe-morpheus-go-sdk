@@ -212,6 +212,7 @@ func (v NullableClusterUpdatePermissions) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *ClusterUpdatePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

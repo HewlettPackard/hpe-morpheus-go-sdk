@@ -1857,6 +1857,7 @@ func (v NullableInstanceTypeInstanceTypeLayoutsInnerProvisionType) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *InstanceTypeInstanceTypeLayoutsInnerProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

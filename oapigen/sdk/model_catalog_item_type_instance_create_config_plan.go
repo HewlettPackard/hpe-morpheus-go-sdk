@@ -131,6 +131,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigPlan) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigPlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

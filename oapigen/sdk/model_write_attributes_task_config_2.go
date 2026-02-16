@@ -527,6 +527,7 @@ func (v NullableWriteAttributesTaskConfig2) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *WriteAttributesTaskConfig2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

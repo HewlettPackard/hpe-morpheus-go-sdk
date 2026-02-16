@@ -549,9 +549,9 @@ func (o *AddPolicies200ResponseAllOfPolicy) SetOwner(v AddPolicies200ResponseAll
 	o.Owner = &v
 }
 
-// GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetAccounts returns the Accounts field value if set, zero value otherwise.
 func (o *AddPolicies200ResponseAllOfPolicy) GetAccounts() []AddPolicies200ResponseAllOfPolicyAccountsInner {
-	if o == nil {
+	if o == nil || IsNil(o.Accounts) {
 		var ret []AddPolicies200ResponseAllOfPolicyAccountsInner
 		return ret
 	}
@@ -560,7 +560,6 @@ func (o *AddPolicies200ResponseAllOfPolicy) GetAccounts() []AddPolicies200Respon
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddPolicies200ResponseAllOfPolicy) GetAccountsOk() ([]AddPolicies200ResponseAllOfPolicyAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
@@ -634,7 +633,7 @@ func (o AddPolicies200ResponseAllOfPolicy) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.Owner) {
 		toSerialize["owner"] = o.Owner
 	}
-	if o.Accounts != nil {
+	if !IsNil(o.Accounts) {
 		toSerialize["accounts"] = o.Accounts
 	}
 
@@ -689,6 +688,7 @@ func (v NullableAddPolicies200ResponseAllOfPolicy) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *AddPolicies200ResponseAllOfPolicy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

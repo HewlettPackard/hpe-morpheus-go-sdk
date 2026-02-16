@@ -132,6 +132,7 @@ func (v NullableAddServicePlansRequestServicePlanProvisionType) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddServicePlansRequestServicePlanProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

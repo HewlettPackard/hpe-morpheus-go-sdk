@@ -140,6 +140,7 @@ func (v NullableGetInstance200ResponseInstanceConfigReplicationGroup) UnmarshalM
 
 	return v, nil
 }
+
 func (o *GetInstance200ResponseInstanceConfigReplicationGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

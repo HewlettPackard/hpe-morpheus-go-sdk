@@ -131,6 +131,7 @@ func (v NullableClusterLayoutCreateWorkersInnerContainerType) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *ClusterLayoutCreateWorkersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

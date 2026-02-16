@@ -131,6 +131,7 @@ func (v NullableUpdateVirtualImageRequest) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *UpdateVirtualImageRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

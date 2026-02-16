@@ -500,6 +500,7 @@ func (v NullableSaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) 
 
 	return v, nil
 }
+
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

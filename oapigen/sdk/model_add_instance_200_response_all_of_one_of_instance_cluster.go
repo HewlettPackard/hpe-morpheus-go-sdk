@@ -212,6 +212,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceCluster) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceCluster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

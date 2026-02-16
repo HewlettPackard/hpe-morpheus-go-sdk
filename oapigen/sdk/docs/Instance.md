@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Cluster** | Pointer to [**InstanceCluster**](InstanceCluster.md) |  | [optional] 
 **Containers** | Pointer to **[]int64** |  | [optional] 
 **Servers** | Pointer to **[]int64** |  | [optional] 
-**ConnectionInfo** | Pointer to [**[]InstanceConnectionInfoInner**](InstanceConnectionInfoInner.md) |  | [optional] 
+**ConnectionInfo** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner**](AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner.md) |  | [optional] 
 **Layout** | Pointer to [**InstanceLayout**](InstanceLayout.md) |  | [optional] 
 **Plan** | Pointer to [**InstancePlan**](InstancePlan.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -25,14 +25,14 @@ Name | Type | Description | Notes
 **ConfigGroup** | Pointer to **NullableString** |  | [optional] 
 **ConfigId** | Pointer to **NullableString** |  | [optional] 
 **ConfigRole** | Pointer to **NullableString** |  | [optional] 
-**Volumes** | Pointer to [**[]InstanceVolumesInner**](InstanceVolumesInner.md) |  | [optional] 
-**Controllers** | Pointer to [**[]InstanceControllersInner**](InstanceControllersInner.md) |  | [optional] 
-**Interfaces** | Pointer to [**[]InstanceInterfacesInner**](InstanceInterfacesInner.md) |  | [optional] 
+**Volumes** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner**](AddInstance200ResponseAllOfOneOfInstanceVolumesInner.md) |  | [optional] 
+**Controllers** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceControllersInner**](AddInstance200ResponseAllOfOneOfInstanceControllersInner.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInner.md) |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceVersion** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Tags** | Pointer to [**[]InstanceTagsInner**](InstanceTagsInner.md) |  | [optional] 
-**Evars** | Pointer to [**[]InstanceEvarsInner**](InstanceEvarsInner.md) |  | [optional] 
+**Tags** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceTagsInner**](AddInstance200ResponseAllOfOneOfInstanceTagsInner.md) |  | [optional] 
+**Evars** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceEvarsInner**](AddInstance200ResponseAllOfOneOfInstanceEvarsInner.md) |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
@@ -354,20 +354,20 @@ HasServers returns a boolean if a field has been set.
 
 ### GetConnectionInfo
 
-`func (o *Instance) GetConnectionInfo() []InstanceConnectionInfoInner`
+`func (o *Instance) GetConnectionInfo() []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner`
 
 GetConnectionInfo returns the ConnectionInfo field if non-nil, zero value otherwise.
 
 ### GetConnectionInfoOk
 
-`func (o *Instance) GetConnectionInfoOk() (*[]InstanceConnectionInfoInner, bool)`
+`func (o *Instance) GetConnectionInfoOk() (*[]AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner, bool)`
 
 GetConnectionInfoOk returns a tuple with the ConnectionInfo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConnectionInfo
 
-`func (o *Instance) SetConnectionInfo(v []InstanceConnectionInfoInner)`
+`func (o *Instance) SetConnectionInfo(v []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner)`
 
 SetConnectionInfo sets ConnectionInfo field to given value.
 
@@ -679,20 +679,20 @@ HasConfigRole returns a boolean if a field has been set.
 UnsetConfigRole ensures that no value is present for ConfigRole, not even an explicit nil
 ### GetVolumes
 
-`func (o *Instance) GetVolumes() []InstanceVolumesInner`
+`func (o *Instance) GetVolumes() []AddInstance200ResponseAllOfOneOfInstanceVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *Instance) GetVolumesOk() (*[]InstanceVolumesInner, bool)`
+`func (o *Instance) GetVolumesOk() (*[]AddInstance200ResponseAllOfOneOfInstanceVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *Instance) SetVolumes(v []InstanceVolumesInner)`
+`func (o *Instance) SetVolumes(v []AddInstance200ResponseAllOfOneOfInstanceVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -704,20 +704,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetControllers
 
-`func (o *Instance) GetControllers() []InstanceControllersInner`
+`func (o *Instance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner`
 
 GetControllers returns the Controllers field if non-nil, zero value otherwise.
 
 ### GetControllersOk
 
-`func (o *Instance) GetControllersOk() (*[]InstanceControllersInner, bool)`
+`func (o *Instance) GetControllersOk() (*[]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool)`
 
 GetControllersOk returns a tuple with the Controllers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetControllers
 
-`func (o *Instance) SetControllers(v []InstanceControllersInner)`
+`func (o *Instance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner)`
 
 SetControllers sets Controllers field to given value.
 
@@ -729,20 +729,20 @@ HasControllers returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *Instance) GetInterfaces() []InstanceInterfacesInner`
+`func (o *Instance) GetInterfaces() []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *Instance) GetInterfacesOk() (*[]InstanceInterfacesInner, bool)`
+`func (o *Instance) GetInterfacesOk() (*[]AddInstance200ResponseAllOfOneOfInstanceInterfacesInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *Instance) SetInterfaces(v []InstanceInterfacesInner)`
+`func (o *Instance) SetInterfaces(v []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner)`
 
 SetInterfaces sets Interfaces field to given value.
 
@@ -839,20 +839,20 @@ HasLabels returns a boolean if a field has been set.
 UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetTags
 
-`func (o *Instance) GetTags() []InstanceTagsInner`
+`func (o *Instance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *Instance) GetTagsOk() (*[]InstanceTagsInner, bool)`
+`func (o *Instance) GetTagsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *Instance) SetTags(v []InstanceTagsInner)`
+`func (o *Instance) SetTags(v []AddInstance200ResponseAllOfOneOfInstanceTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -862,32 +862,22 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
-### SetTagsNil
-
-`func (o *Instance) SetTagsNil(b bool)`
-
- SetTagsNil sets the value for Tags to be an explicit nil
-
-### UnsetTags
-`func (o *Instance) UnsetTags()`
-
-UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetEvars
 
-`func (o *Instance) GetEvars() []InstanceEvarsInner`
+`func (o *Instance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *Instance) GetEvarsOk() (*[]InstanceEvarsInner, bool)`
+`func (o *Instance) GetEvarsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *Instance) SetEvars(v []InstanceEvarsInner)`
+`func (o *Instance) SetEvars(v []AddInstance200ResponseAllOfOneOfInstanceEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -897,16 +887,6 @@ SetEvars sets Evars field to given value.
 
 HasEvars returns a boolean if a field has been set.
 
-### SetEvarsNil
-
-`func (o *Instance) SetEvarsNil(b bool)`
-
- SetEvarsNil sets the value for Evars to be an explicit nil
-
-### UnsetEvars
-`func (o *Instance) UnsetEvars()`
-
-UnsetEvars ensures that no value is present for Evars, not even an explicit nil
 ### GetMaxMemory
 
 `func (o *Instance) GetMaxMemory() int64`
@@ -2292,16 +2272,6 @@ SetContainerDetails sets ContainerDetails field to given value.
 
 HasContainerDetails returns a boolean if a field has been set.
 
-### SetContainerDetailsNil
-
-`func (o *Instance) SetContainerDetailsNil(b bool)`
-
- SetContainerDetailsNil sets the value for ContainerDetails to be an explicit nil
-
-### UnsetContainerDetails
-`func (o *Instance) UnsetContainerDetails()`
-
-UnsetContainerDetails ensures that no value is present for ContainerDetails, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

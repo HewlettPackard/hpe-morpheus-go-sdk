@@ -176,6 +176,7 @@ func (v NullableCatalogItemTypeBlueprintCreateBlueprint) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeBlueprintCreateBlueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

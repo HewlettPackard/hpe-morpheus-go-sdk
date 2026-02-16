@@ -21,7 +21,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConnectionInfoIn
 // AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct for AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner
 type AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner struct {
 	Ip                   *string                `json:"ip,omitempty"`
-	Port                 NullableInt64          `json:"port,omitempty"`
+	Port                 *int64                 `json:"port,omitempty"`
 	Name                 *string                `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -77,47 +77,36 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetIp(v st
 	o.Ip = &v
 }
 
-// GetPort returns the Port field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPort returns the Port field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPort() int64 {
-	if o == nil || IsNil(o.Port.Get()) {
+	if o == nil || IsNil(o.Port) {
 		var ret int64
 		return ret
 	}
-	return *o.Port.Get()
+	return *o.Port
 }
 
 // GetPortOk returns a tuple with the Port field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetPortOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Port) {
 		return nil, false
 	}
-	return o.Port.Get(), o.Port.IsSet()
+	return o.Port, true
 }
 
 // IsSetPort returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) IsSetPort() bool {
-	if o != nil && o.Port.IsSet() {
+	if o != nil && !IsNil(o.Port) {
 		return true
 	}
 
 	return false
 }
 
-// SetPort gets a reference to the given NullableInt64 and assigns it to the Port field.
+// SetPort gets a reference to the given int64 and assigns it to the Port field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPort(v int64) {
-	o.Port.Set(&v)
-}
-
-// SetPortNil sets the value for Port to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPortNil() {
-	o.Port.Set(nil)
-}
-
-// UnsetPort ensures that no value is present for Port, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnsetPort() {
-	o.Port.Unset()
+	o.Port = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -165,8 +154,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) ToMap() (ma
 	if !IsNil(o.Ip) {
 		toSerialize["ip"] = o.Ip
 	}
-	if o.Port.IsSet() {
-		toSerialize["port"] = o.Port.Get()
+	if !IsNil(o.Port) {
+		toSerialize["port"] = o.Port
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -223,6 +212,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) Unm
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

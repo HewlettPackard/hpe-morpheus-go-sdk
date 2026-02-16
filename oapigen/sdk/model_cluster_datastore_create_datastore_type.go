@@ -140,6 +140,7 @@ func (v NullableClusterDatastoreCreateDatastoreType) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *ClusterDatastoreCreateDatastoreType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

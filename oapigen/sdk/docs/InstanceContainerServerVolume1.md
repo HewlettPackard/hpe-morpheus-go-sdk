@@ -6,29 +6,29 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**ControllerId** | Pointer to **NullableInt64** |  | [optional] 
-**ControllerMountPoint** | Pointer to **NullableString** |  | [optional] 
+**ControllerId** | Pointer to **int64** |  | [optional] 
+**ControllerMountPoint** | Pointer to **string** |  | [optional] 
 **Resizeable** | Pointer to **bool** |  | [optional] 
 **RootVolume** | Pointer to **bool** |  | [optional] 
 **DeviceName** | Pointer to **string** |  | [optional] 
 **DeviceDisplayName** | Pointer to **string** |  | [optional] 
-**DiskMode** | Pointer to **NullableString** |  | [optional] 
-**DiskType** | Pointer to **NullableString** |  | [optional] 
-**Category** | Pointer to **NullableString** |  | [optional] 
+**DiskMode** | Pointer to **string** |  | [optional] 
+**DiskType** | Pointer to **string** |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
 **StorageServer** | Pointer to [**InstanceContainerServerVolumeStorageServer1**](InstanceContainerServerVolumeStorageServer1.md) |  | [optional] 
-**ZoneId** | Pointer to **NullableInt64** |  | [optional] 
+**ZoneId** | Pointer to **int64** |  | [optional] 
 **Zone** | Pointer to [**InstanceContainerServerVolumeZone1**](InstanceContainerServerVolumeZone1.md) |  | [optional] 
 **Datastore** | Pointer to [**InstanceContainerServerVolumeDatastore1**](InstanceContainerServerVolumeDatastore1.md) |  | [optional] 
-**UnitNumber** | Pointer to **NullableString** |  | [optional] 
+**UnitNumber** | Pointer to **string** |  | [optional] 
 **TypeId** | Pointer to **int64** |  | [optional] 
 **ConfigurableIOPS** | Pointer to **bool** |  | [optional] 
-**DatastoreId** | Pointer to **NullableInt64** |  | [optional] 
+**DatastoreId** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
-**MaxIOPS** | Pointer to **NullableString** |  | [optional] 
+**MaxIOPS** | Pointer to **string** |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **UniqueId** | Pointer to **string** |  | [optional] 
-**ExternalId** | Pointer to **NullableString** |  | [optional] 
-**InternalId** | Pointer to **NullableString** |  | [optional] 
+**ExternalId** | Pointer to **string** |  | [optional] 
+**InternalId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -124,16 +124,6 @@ SetControllerId sets ControllerId field to given value.
 
 HasControllerId returns a boolean if a field has been set.
 
-### SetControllerIdNil
-
-`func (o *InstanceContainerServerVolume1) SetControllerIdNil(b bool)`
-
- SetControllerIdNil sets the value for ControllerId to be an explicit nil
-
-### UnsetControllerId
-`func (o *InstanceContainerServerVolume1) UnsetControllerId()`
-
-UnsetControllerId ensures that no value is present for ControllerId, not even an explicit nil
 ### GetControllerMountPoint
 
 `func (o *InstanceContainerServerVolume1) GetControllerMountPoint() string`
@@ -159,16 +149,6 @@ SetControllerMountPoint sets ControllerMountPoint field to given value.
 
 HasControllerMountPoint returns a boolean if a field has been set.
 
-### SetControllerMountPointNil
-
-`func (o *InstanceContainerServerVolume1) SetControllerMountPointNil(b bool)`
-
- SetControllerMountPointNil sets the value for ControllerMountPoint to be an explicit nil
-
-### UnsetControllerMountPoint
-`func (o *InstanceContainerServerVolume1) UnsetControllerMountPoint()`
-
-UnsetControllerMountPoint ensures that no value is present for ControllerMountPoint, not even an explicit nil
 ### GetResizeable
 
 `func (o *InstanceContainerServerVolume1) GetResizeable() bool`
@@ -294,16 +274,6 @@ SetDiskMode sets DiskMode field to given value.
 
 HasDiskMode returns a boolean if a field has been set.
 
-### SetDiskModeNil
-
-`func (o *InstanceContainerServerVolume1) SetDiskModeNil(b bool)`
-
- SetDiskModeNil sets the value for DiskMode to be an explicit nil
-
-### UnsetDiskMode
-`func (o *InstanceContainerServerVolume1) UnsetDiskMode()`
-
-UnsetDiskMode ensures that no value is present for DiskMode, not even an explicit nil
 ### GetDiskType
 
 `func (o *InstanceContainerServerVolume1) GetDiskType() string`
@@ -329,16 +299,6 @@ SetDiskType sets DiskType field to given value.
 
 HasDiskType returns a boolean if a field has been set.
 
-### SetDiskTypeNil
-
-`func (o *InstanceContainerServerVolume1) SetDiskTypeNil(b bool)`
-
- SetDiskTypeNil sets the value for DiskType to be an explicit nil
-
-### UnsetDiskType
-`func (o *InstanceContainerServerVolume1) UnsetDiskType()`
-
-UnsetDiskType ensures that no value is present for DiskType, not even an explicit nil
 ### GetCategory
 
 `func (o *InstanceContainerServerVolume1) GetCategory() string`
@@ -364,16 +324,6 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
-### SetCategoryNil
-
-`func (o *InstanceContainerServerVolume1) SetCategoryNil(b bool)`
-
- SetCategoryNil sets the value for Category to be an explicit nil
-
-### UnsetCategory
-`func (o *InstanceContainerServerVolume1) UnsetCategory()`
-
-UnsetCategory ensures that no value is present for Category, not even an explicit nil
 ### GetStorageServer
 
 `func (o *InstanceContainerServerVolume1) GetStorageServer() InstanceContainerServerVolumeStorageServer1`
@@ -424,16 +374,6 @@ SetZoneId sets ZoneId field to given value.
 
 HasZoneId returns a boolean if a field has been set.
 
-### SetZoneIdNil
-
-`func (o *InstanceContainerServerVolume1) SetZoneIdNil(b bool)`
-
- SetZoneIdNil sets the value for ZoneId to be an explicit nil
-
-### UnsetZoneId
-`func (o *InstanceContainerServerVolume1) UnsetZoneId()`
-
-UnsetZoneId ensures that no value is present for ZoneId, not even an explicit nil
 ### GetZone
 
 `func (o *InstanceContainerServerVolume1) GetZone() InstanceContainerServerVolumeZone1`
@@ -509,16 +449,6 @@ SetUnitNumber sets UnitNumber field to given value.
 
 HasUnitNumber returns a boolean if a field has been set.
 
-### SetUnitNumberNil
-
-`func (o *InstanceContainerServerVolume1) SetUnitNumberNil(b bool)`
-
- SetUnitNumberNil sets the value for UnitNumber to be an explicit nil
-
-### UnsetUnitNumber
-`func (o *InstanceContainerServerVolume1) UnsetUnitNumber()`
-
-UnsetUnitNumber ensures that no value is present for UnitNumber, not even an explicit nil
 ### GetTypeId
 
 `func (o *InstanceContainerServerVolume1) GetTypeId() int64`
@@ -594,16 +524,6 @@ SetDatastoreId sets DatastoreId field to given value.
 
 HasDatastoreId returns a boolean if a field has been set.
 
-### SetDatastoreIdNil
-
-`func (o *InstanceContainerServerVolume1) SetDatastoreIdNil(b bool)`
-
- SetDatastoreIdNil sets the value for DatastoreId to be an explicit nil
-
-### UnsetDatastoreId
-`func (o *InstanceContainerServerVolume1) UnsetDatastoreId()`
-
-UnsetDatastoreId ensures that no value is present for DatastoreId, not even an explicit nil
 ### GetMaxStorage
 
 `func (o *InstanceContainerServerVolume1) GetMaxStorage() int64`
@@ -654,16 +574,6 @@ SetMaxIOPS sets MaxIOPS field to given value.
 
 HasMaxIOPS returns a boolean if a field has been set.
 
-### SetMaxIOPSNil
-
-`func (o *InstanceContainerServerVolume1) SetMaxIOPSNil(b bool)`
-
- SetMaxIOPSNil sets the value for MaxIOPS to be an explicit nil
-
-### UnsetMaxIOPS
-`func (o *InstanceContainerServerVolume1) UnsetMaxIOPS()`
-
-UnsetMaxIOPS ensures that no value is present for MaxIOPS, not even an explicit nil
 ### GetUuid
 
 `func (o *InstanceContainerServerVolume1) GetUuid() string`
@@ -739,16 +649,6 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
-### SetExternalIdNil
-
-`func (o *InstanceContainerServerVolume1) SetExternalIdNil(b bool)`
-
- SetExternalIdNil sets the value for ExternalId to be an explicit nil
-
-### UnsetExternalId
-`func (o *InstanceContainerServerVolume1) UnsetExternalId()`
-
-UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetInternalId
 
 `func (o *InstanceContainerServerVolume1) GetInternalId() string`
@@ -774,16 +674,6 @@ SetInternalId sets InternalId field to given value.
 
 HasInternalId returns a boolean if a field has been set.
 
-### SetInternalIdNil
-
-`func (o *InstanceContainerServerVolume1) SetInternalIdNil(b bool)`
-
- SetInternalIdNil sets the value for InternalId to be an explicit nil
-
-### UnsetInternalId
-`func (o *InstanceContainerServerVolume1) UnsetInternalId()`
-
-UnsetInternalId ensures that no value is present for InternalId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

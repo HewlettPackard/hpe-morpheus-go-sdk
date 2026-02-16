@@ -176,6 +176,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigMetadataInner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigMetadataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

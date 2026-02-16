@@ -248,6 +248,7 @@ func (v NullableUpdateRole200ResponseAllOfInstanceTypePermissionsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *UpdateRole200ResponseAllOfInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

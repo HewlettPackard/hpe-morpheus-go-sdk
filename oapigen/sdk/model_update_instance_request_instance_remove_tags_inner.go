@@ -187,6 +187,7 @@ func (v NullableUpdateInstanceRequestInstanceRemoveTagsInner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *UpdateInstanceRequestInstanceRemoveTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

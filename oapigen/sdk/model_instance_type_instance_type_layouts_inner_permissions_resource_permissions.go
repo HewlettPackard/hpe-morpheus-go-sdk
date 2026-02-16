@@ -394,6 +394,7 @@ func (v NullableInstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissio
 
 	return v, nil
 }
+
 func (o *InstanceTypeInstanceTypeLayoutsInnerPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

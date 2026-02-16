@@ -176,6 +176,7 @@ func (v NullableCatalogItemTypeInstanceScribeMetadataInner) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceScribeMetadataInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

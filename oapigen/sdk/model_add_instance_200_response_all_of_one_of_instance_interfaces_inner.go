@@ -22,9 +22,9 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInterfacesInner{
 type AddInstance200ResponseAllOfOneOfInstanceInterfacesInner struct {
 	Id                     *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId      `json:"id,omitempty"`
 	Network                *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork `json:"network,omitempty"`
-	IpAddress              NullableString                                                  `json:"ipAddress,omitempty"`
-	NetworkInterfaceTypeId NullableInt64                                                   `json:"networkInterfaceTypeId,omitempty"`
-	IpMode                 NullableString                                                  `json:"ipMode,omitempty"`
+	IpAddress              *string                                                         `json:"ipAddress,omitempty"`
+	NetworkInterfaceTypeId *int64                                                          `json:"networkInterfaceTypeId,omitempty"`
+	IpMode                 *string                                                         `json:"ipMode,omitempty"`
 	NetworkInterfaces      []InstanceInterfacesNetworkInterfacesInner1                     `json:"networkInterfaces,omitempty"`
 	AdditionalProperties   map[string]interface{}                                          `json:",remain"`
 }
@@ -112,133 +112,100 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetwork(v A
 	o.Network = &v
 }
 
-// GetIpAddress returns the IpAddress field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIpAddress returns the IpAddress field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIpAddress() string {
-	if o == nil || IsNil(o.IpAddress.Get()) {
+	if o == nil || IsNil(o.IpAddress) {
 		var ret string
 		return ret
 	}
-	return *o.IpAddress.Get()
+	return *o.IpAddress
 }
 
 // GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIpAddressOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IpAddress) {
 		return nil, false
 	}
-	return o.IpAddress.Get(), o.IpAddress.IsSet()
+	return o.IpAddress, true
 }
 
 // IsSetIpAddress returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetIpAddress() bool {
-	if o != nil && o.IpAddress.IsSet() {
+	if o != nil && !IsNil(o.IpAddress) {
 		return true
 	}
 
 	return false
 }
 
-// SetIpAddress gets a reference to the given NullableString and assigns it to the IpAddress field.
+// SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpAddress(v string) {
-	o.IpAddress.Set(&v)
+	o.IpAddress = &v
 }
 
-// SetIpAddressNil sets the value for IpAddress to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpAddressNil() {
-	o.IpAddress.Set(nil)
-}
-
-// UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetIpAddress() {
-	o.IpAddress.Unset()
-}
-
-// GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetNetworkInterfaceTypeId returns the NetworkInterfaceTypeId field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaceTypeId() int64 {
-	if o == nil || IsNil(o.NetworkInterfaceTypeId.Get()) {
+	if o == nil || IsNil(o.NetworkInterfaceTypeId) {
 		var ret int64
 		return ret
 	}
-	return *o.NetworkInterfaceTypeId.Get()
+	return *o.NetworkInterfaceTypeId
 }
 
 // GetNetworkInterfaceTypeIdOk returns a tuple with the NetworkInterfaceTypeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaceTypeIdOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.NetworkInterfaceTypeId) {
 		return nil, false
 	}
-	return o.NetworkInterfaceTypeId.Get(), o.NetworkInterfaceTypeId.IsSet()
+	return o.NetworkInterfaceTypeId, true
 }
 
 // IsSetNetworkInterfaceTypeId returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetNetworkInterfaceTypeId() bool {
-	if o != nil && o.NetworkInterfaceTypeId.IsSet() {
+	if o != nil && !IsNil(o.NetworkInterfaceTypeId) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkInterfaceTypeId gets a reference to the given NullableInt64 and assigns it to the NetworkInterfaceTypeId field.
+// SetNetworkInterfaceTypeId gets a reference to the given int64 and assigns it to the NetworkInterfaceTypeId field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetworkInterfaceTypeId(v int64) {
-	o.NetworkInterfaceTypeId.Set(&v)
+	o.NetworkInterfaceTypeId = &v
 }
 
-// SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetworkInterfaceTypeIdNil() {
-	o.NetworkInterfaceTypeId.Set(nil)
-}
-
-// UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetNetworkInterfaceTypeId() {
-	o.NetworkInterfaceTypeId.Unset()
-}
-
-// GetIpMode returns the IpMode field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetIpMode returns the IpMode field value if set, zero value otherwise.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIpMode() string {
-	if o == nil || IsNil(o.IpMode.Get()) {
+	if o == nil || IsNil(o.IpMode) {
 		var ret string
 		return ret
 	}
-	return *o.IpMode.Get()
+	return *o.IpMode
 }
 
 // GetIpModeOk returns a tuple with the IpMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIpModeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IpMode) {
 		return nil, false
 	}
-	return o.IpMode.Get(), o.IpMode.IsSet()
+	return o.IpMode, true
 }
 
 // IsSetIpMode returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) IsSetIpMode() bool {
-	if o != nil && o.IpMode.IsSet() {
+	if o != nil && !IsNil(o.IpMode) {
 		return true
 	}
 
 	return false
 }
 
-// SetIpMode gets a reference to the given NullableString and assigns it to the IpMode field.
+// SetIpMode gets a reference to the given string and assigns it to the IpMode field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpMode(v string) {
-	o.IpMode.Set(&v)
-}
-
-// SetIpModeNil sets the value for IpMode to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpModeNil() {
-	o.IpMode.Set(nil)
-}
-
-// UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetIpMode() {
-	o.IpMode.Unset()
+	o.IpMode = &v
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
@@ -289,14 +256,14 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) ToMap() (map[st
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
 	}
-	if o.IpAddress.IsSet() {
-		toSerialize["ipAddress"] = o.IpAddress.Get()
+	if !IsNil(o.IpAddress) {
+		toSerialize["ipAddress"] = o.IpAddress
 	}
-	if o.NetworkInterfaceTypeId.IsSet() {
-		toSerialize["networkInterfaceTypeId"] = o.NetworkInterfaceTypeId.Get()
+	if !IsNil(o.NetworkInterfaceTypeId) {
+		toSerialize["networkInterfaceTypeId"] = o.NetworkInterfaceTypeId
 	}
-	if o.IpMode.IsSet() {
-		toSerialize["ipMode"] = o.IpMode.Get()
+	if !IsNil(o.IpMode) {
+		toSerialize["ipMode"] = o.IpMode
 	}
 	if !IsNil(o.NetworkInterfaces) {
 		toSerialize["networkInterfaces"] = o.NetworkInterfaces
@@ -353,6 +320,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInterfacesInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

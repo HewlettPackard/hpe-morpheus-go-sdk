@@ -140,6 +140,7 @@ func (v NullableSaveCloudDatastore200ResponseAllOfDatastoreOwner) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *SaveCloudDatastore200ResponseAllOfDatastoreOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -403,6 +403,7 @@ func (v NullableAddLayout200ResponseInstanceTypeLayoutProvisionTypeRootStorageTy
 
 	return v, nil
 }
+
 func (o *AddLayout200ResponseInstanceTypeLayoutProvisionTypeRootStorageTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

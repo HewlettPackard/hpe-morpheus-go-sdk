@@ -140,6 +140,7 @@ func (v NullableAddTasksRequestTaskCredentialOneOf) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *AddTasksRequestTaskCredentialOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

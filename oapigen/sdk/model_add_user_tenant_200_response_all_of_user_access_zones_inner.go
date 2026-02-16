@@ -212,6 +212,7 @@ func (v NullableAddUserTenant200ResponseAllOfUserAccessZonesInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *AddUserTenant200ResponseAllOfUserAccessZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

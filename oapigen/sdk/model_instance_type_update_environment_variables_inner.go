@@ -251,6 +251,7 @@ func (v NullableInstanceTypeUpdateEnvironmentVariablesInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *InstanceTypeUpdateEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

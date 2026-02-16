@@ -1037,6 +1037,7 @@ func (v NullableGetClusterDatastore200ResponseDatastore) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *GetClusterDatastore200ResponseDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

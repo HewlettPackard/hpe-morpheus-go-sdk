@@ -212,6 +212,7 @@ func (v NullableAddVirtualImage200ResponseAllOfVirtualImageStorageControllersInn
 
 	return v, nil
 }
+
 func (o *AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInnerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -248,6 +248,7 @@ func (v NullableGetAlerts200ResponseAllOfCheckGroupsInnerCheckType) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *GetAlerts200ResponseAllOfCheckGroupsInnerCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

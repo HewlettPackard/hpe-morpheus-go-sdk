@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**InstanceConfigNoAgent**](InstanceConfigNoAgent.md) |  | [optional] 
-**SecurityGroups** | Pointer to [**[]InstanceConfigSecurityGroupsInner**](InstanceConfigSecurityGroupsInner.md) |  | [optional] 
+**SecurityGroups** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner**](AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner.md) |  | [optional] 
 **KvmHostId** | Pointer to **NullableInt64** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
@@ -156,20 +156,20 @@ HasNoAgent returns a boolean if a field has been set.
 
 ### GetSecurityGroups
 
-`func (o *InstanceConfig) GetSecurityGroups() []InstanceConfigSecurityGroupsInner`
+`func (o *InstanceConfig) GetSecurityGroups() []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *InstanceConfig) GetSecurityGroupsOk() (*[]InstanceConfigSecurityGroupsInner, bool)`
+`func (o *InstanceConfig) GetSecurityGroupsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *InstanceConfig) SetSecurityGroups(v []InstanceConfigSecurityGroupsInner)`
+`func (o *InstanceConfig) SetSecurityGroups(v []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 
@@ -179,16 +179,6 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
-### SetSecurityGroupsNil
-
-`func (o *InstanceConfig) SetSecurityGroupsNil(b bool)`
-
- SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
-
-### UnsetSecurityGroups
-`func (o *InstanceConfig) UnsetSecurityGroups()`
-
-UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetKvmHostId
 
 `func (o *InstanceConfig) GetKvmHostId() int64`
@@ -739,16 +729,6 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
-### SetExposeNil
-
-`func (o *InstanceConfig) SetExposeNil(b bool)`
-
- SetExposeNil sets the value for Expose to be an explicit nil
-
-### UnsetExpose
-`func (o *InstanceConfig) UnsetExpose()`
-
-UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *InstanceConfig) GetCreateBackup() bool`

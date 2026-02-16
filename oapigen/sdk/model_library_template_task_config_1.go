@@ -574,6 +574,7 @@ func (v NullableLibraryTemplateTaskConfig1) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
+
 func (o *LibraryTemplateTaskConfig1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

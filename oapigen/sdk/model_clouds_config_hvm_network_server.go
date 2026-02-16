@@ -140,6 +140,7 @@ func (v NullableCloudsConfigHVMNetworkServer) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *CloudsConfigHVMNetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

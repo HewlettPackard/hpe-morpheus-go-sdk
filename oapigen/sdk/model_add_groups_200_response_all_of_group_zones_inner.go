@@ -176,6 +176,7 @@ func (v NullableAddGroups200ResponseAllOfGroupZonesInner) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *AddGroups200ResponseAllOfGroupZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1025,6 +1025,7 @@ func (v NullableNetworkUpdate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *NetworkUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

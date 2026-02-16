@@ -140,6 +140,7 @@ func (v NullableCheckContainer) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckContainer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

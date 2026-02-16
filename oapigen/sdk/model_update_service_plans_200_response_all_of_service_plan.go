@@ -1390,6 +1390,7 @@ func (v NullableUpdateServicePlans200ResponseAllOfServicePlan) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *UpdateServicePlans200ResponseAllOfServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

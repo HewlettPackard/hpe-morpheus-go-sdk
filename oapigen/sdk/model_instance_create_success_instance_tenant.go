@@ -176,6 +176,7 @@ func (v NullableInstanceCreateSuccessInstanceTenant) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceTenant) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

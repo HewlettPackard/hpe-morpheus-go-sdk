@@ -131,6 +131,7 @@ func (v NullableDelayedDeletePolicyTypeConfiguration2) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *DelayedDeletePolicyTypeConfiguration2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

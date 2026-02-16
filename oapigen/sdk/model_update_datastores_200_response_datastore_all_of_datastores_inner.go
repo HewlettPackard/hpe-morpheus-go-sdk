@@ -178,6 +178,7 @@ func (v NullableUpdateDatastores200ResponseDatastoreAllOfDatastoresInner) Unmars
 
 	return v, nil
 }
+
 func (o *UpdateDatastores200ResponseDatastoreAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

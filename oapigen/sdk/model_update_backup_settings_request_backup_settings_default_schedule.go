@@ -141,6 +141,7 @@ func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultSchedule) Unmars
 
 	return v, nil
 }
+
 func (o *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

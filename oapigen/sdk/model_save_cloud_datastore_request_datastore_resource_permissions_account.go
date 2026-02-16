@@ -140,6 +140,7 @@ func (v NullableSaveCloudDatastoreRequestDatastoreResourcePermissionsAccount) Un
 
 	return v, nil
 }
+
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

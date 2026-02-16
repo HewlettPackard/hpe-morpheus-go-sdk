@@ -248,6 +248,7 @@ func (v NullableUpdateUser200ResponseAllOfUserAccessPersonasInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *UpdateUser200ResponseAllOfUserAccessPersonasInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

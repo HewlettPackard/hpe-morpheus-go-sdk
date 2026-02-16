@@ -168,6 +168,7 @@ func (v NullableInstancesNetworkInterfaces3Network) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *InstancesNetworkInterfaces3Network) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

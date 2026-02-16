@@ -140,6 +140,7 @@ func (v NullableUpdateDatastoresRequestDatastoreResourcePermissionsSitesInner) U
 
 	return v, nil
 }
+
 func (o *UpdateDatastoresRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

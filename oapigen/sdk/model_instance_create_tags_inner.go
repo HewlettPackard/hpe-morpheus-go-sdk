@@ -176,6 +176,7 @@ func (v NullableInstanceCreateTagsInner) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
+
 func (o *InstanceCreateTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

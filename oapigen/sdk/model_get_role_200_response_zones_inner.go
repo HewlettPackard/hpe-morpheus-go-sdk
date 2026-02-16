@@ -212,6 +212,7 @@ func (v NullableGetRole200ResponseZonesInner) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *GetRole200ResponseZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

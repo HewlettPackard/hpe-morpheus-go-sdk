@@ -1955,6 +1955,7 @@ func (v NullableUpdateVirtualImage200ResponseAllOfVirtualImage) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -248,6 +248,7 @@ func (v NullableUpdateUser200ResponseAllOfUserAccessReportTypesInner) UnmarshalM
 
 	return v, nil
 }
+
 func (o *UpdateUser200ResponseAllOfUserAccessReportTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

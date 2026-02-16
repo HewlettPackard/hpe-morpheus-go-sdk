@@ -140,6 +140,7 @@ func (v NullableFileShareStorageQuotaPolicyTypeConfiguration1) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *FileShareStorageQuotaPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

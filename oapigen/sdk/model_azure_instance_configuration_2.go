@@ -441,6 +441,7 @@ func (v NullableAzureInstanceConfiguration2) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *AzureInstanceConfiguration2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

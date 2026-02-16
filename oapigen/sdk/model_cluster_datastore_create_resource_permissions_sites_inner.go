@@ -140,6 +140,7 @@ func (v NullableClusterDatastoreCreateResourcePermissionsSitesInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ClusterDatastoreCreateResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

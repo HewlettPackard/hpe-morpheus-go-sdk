@@ -140,6 +140,7 @@ func (v NullableGetAlerts200ResponseAllOfAppsInnerAccount) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *GetAlerts200ResponseAllOfAppsInnerAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

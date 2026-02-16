@@ -751,6 +751,7 @@ func (v NullableCheckSqlConfig) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckSqlConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

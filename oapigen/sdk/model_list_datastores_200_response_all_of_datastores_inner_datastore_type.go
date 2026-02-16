@@ -187,6 +187,7 @@ func (v NullableListDatastores200ResponseAllOfDatastoresInnerDatastoreType) Unma
 
 	return v, nil
 }
+
 func (o *ListDatastores200ResponseAllOfDatastoresInnerDatastoreType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

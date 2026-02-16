@@ -189,6 +189,7 @@ func (v NullableGetNetwork200ResponseNetworkGroup) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *GetNetwork200ResponseNetworkGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

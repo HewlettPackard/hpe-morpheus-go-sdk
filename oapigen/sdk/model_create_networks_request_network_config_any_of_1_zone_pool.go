@@ -132,6 +132,7 @@ func (v NullableCreateNetworksRequestNetworkConfigAnyOf1ZonePool) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *CreateNetworksRequestNetworkConfigAnyOf1ZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

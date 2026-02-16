@@ -140,6 +140,7 @@ func (v NullableUpdateLayoutRequestInstanceTypeLayoutPermissions) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateLayoutRequestInstanceTypeLayoutPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

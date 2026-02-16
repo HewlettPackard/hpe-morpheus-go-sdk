@@ -28,12 +28,12 @@ type InstanceContainer1PortsInner struct {
 	Export               *bool                  `json:"export,omitempty"`
 	Visible              *bool                  `json:"visible,omitempty"`
 	ExportName           *string                `json:"exportName,omitempty"`
-	LoadBalanceProtocol  NullableString         `json:"loadBalanceProtocol,omitempty"`
+	LoadBalanceProtocol  *string                `json:"loadBalanceProtocol,omitempty"`
 	LoadBalance          *bool                  `json:"loadBalance,omitempty"`
-	Protocol             NullableString         `json:"protocol,omitempty"`
+	Protocol             *string                `json:"protocol,omitempty"`
 	Link                 *bool                  `json:"link,omitempty"`
-	ExternalIp           NullableString         `json:"externalIp,omitempty"`
-	InternalIp           NullableString         `json:"internalIp,omitempty"`
+	ExternalIp           *string                `json:"externalIp,omitempty"`
+	InternalIp           *string                `json:"internalIp,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -312,47 +312,36 @@ func (o *InstanceContainer1PortsInner) SetExportName(v string) {
 	o.ExportName = &v
 }
 
-// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetLoadBalanceProtocol returns the LoadBalanceProtocol field value if set, zero value otherwise.
 func (o *InstanceContainer1PortsInner) GetLoadBalanceProtocol() string {
-	if o == nil || IsNil(o.LoadBalanceProtocol.Get()) {
+	if o == nil || IsNil(o.LoadBalanceProtocol) {
 		var ret string
 		return ret
 	}
-	return *o.LoadBalanceProtocol.Get()
+	return *o.LoadBalanceProtocol
 }
 
 // GetLoadBalanceProtocolOk returns a tuple with the LoadBalanceProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceContainer1PortsInner) GetLoadBalanceProtocolOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.LoadBalanceProtocol) {
 		return nil, false
 	}
-	return o.LoadBalanceProtocol.Get(), o.LoadBalanceProtocol.IsSet()
+	return o.LoadBalanceProtocol, true
 }
 
 // IsSetLoadBalanceProtocol returns a boolean if a field has been set.
 func (o *InstanceContainer1PortsInner) IsSetLoadBalanceProtocol() bool {
-	if o != nil && o.LoadBalanceProtocol.IsSet() {
+	if o != nil && !IsNil(o.LoadBalanceProtocol) {
 		return true
 	}
 
 	return false
 }
 
-// SetLoadBalanceProtocol gets a reference to the given NullableString and assigns it to the LoadBalanceProtocol field.
+// SetLoadBalanceProtocol gets a reference to the given string and assigns it to the LoadBalanceProtocol field.
 func (o *InstanceContainer1PortsInner) SetLoadBalanceProtocol(v string) {
-	o.LoadBalanceProtocol.Set(&v)
-}
-
-// SetLoadBalanceProtocolNil sets the value for LoadBalanceProtocol to be an explicit nil
-func (o *InstanceContainer1PortsInner) SetLoadBalanceProtocolNil() {
-	o.LoadBalanceProtocol.Set(nil)
-}
-
-// UnsetLoadBalanceProtocol ensures that no value is present for LoadBalanceProtocol, not even an explicit nil
-func (o *InstanceContainer1PortsInner) UnsetLoadBalanceProtocol() {
-	o.LoadBalanceProtocol.Unset()
+	o.LoadBalanceProtocol = &v
 }
 
 // GetLoadBalance returns the LoadBalance field value if set, zero value otherwise.
@@ -387,47 +376,36 @@ func (o *InstanceContainer1PortsInner) SetLoadBalance(v bool) {
 	o.LoadBalance = &v
 }
 
-// GetProtocol returns the Protocol field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *InstanceContainer1PortsInner) GetProtocol() string {
-	if o == nil || IsNil(o.Protocol.Get()) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret string
 		return ret
 	}
-	return *o.Protocol.Get()
+	return *o.Protocol
 }
 
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceContainer1PortsInner) GetProtocolOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Protocol) {
 		return nil, false
 	}
-	return o.Protocol.Get(), o.Protocol.IsSet()
+	return o.Protocol, true
 }
 
 // IsSetProtocol returns a boolean if a field has been set.
 func (o *InstanceContainer1PortsInner) IsSetProtocol() bool {
-	if o != nil && o.Protocol.IsSet() {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
 	return false
 }
 
-// SetProtocol gets a reference to the given NullableString and assigns it to the Protocol field.
+// SetProtocol gets a reference to the given string and assigns it to the Protocol field.
 func (o *InstanceContainer1PortsInner) SetProtocol(v string) {
-	o.Protocol.Set(&v)
-}
-
-// SetProtocolNil sets the value for Protocol to be an explicit nil
-func (o *InstanceContainer1PortsInner) SetProtocolNil() {
-	o.Protocol.Set(nil)
-}
-
-// UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
-func (o *InstanceContainer1PortsInner) UnsetProtocol() {
-	o.Protocol.Unset()
+	o.Protocol = &v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise.
@@ -462,90 +440,68 @@ func (o *InstanceContainer1PortsInner) SetLink(v bool) {
 	o.Link = &v
 }
 
-// GetExternalIp returns the ExternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetExternalIp returns the ExternalIp field value if set, zero value otherwise.
 func (o *InstanceContainer1PortsInner) GetExternalIp() string {
-	if o == nil || IsNil(o.ExternalIp.Get()) {
+	if o == nil || IsNil(o.ExternalIp) {
 		var ret string
 		return ret
 	}
-	return *o.ExternalIp.Get()
+	return *o.ExternalIp
 }
 
 // GetExternalIpOk returns a tuple with the ExternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceContainer1PortsInner) GetExternalIpOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalIp) {
 		return nil, false
 	}
-	return o.ExternalIp.Get(), o.ExternalIp.IsSet()
+	return o.ExternalIp, true
 }
 
 // IsSetExternalIp returns a boolean if a field has been set.
 func (o *InstanceContainer1PortsInner) IsSetExternalIp() bool {
-	if o != nil && o.ExternalIp.IsSet() {
+	if o != nil && !IsNil(o.ExternalIp) {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalIp gets a reference to the given NullableString and assigns it to the ExternalIp field.
+// SetExternalIp gets a reference to the given string and assigns it to the ExternalIp field.
 func (o *InstanceContainer1PortsInner) SetExternalIp(v string) {
-	o.ExternalIp.Set(&v)
+	o.ExternalIp = &v
 }
 
-// SetExternalIpNil sets the value for ExternalIp to be an explicit nil
-func (o *InstanceContainer1PortsInner) SetExternalIpNil() {
-	o.ExternalIp.Set(nil)
-}
-
-// UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
-func (o *InstanceContainer1PortsInner) UnsetExternalIp() {
-	o.ExternalIp.Unset()
-}
-
-// GetInternalIp returns the InternalIp field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetInternalIp returns the InternalIp field value if set, zero value otherwise.
 func (o *InstanceContainer1PortsInner) GetInternalIp() string {
-	if o == nil || IsNil(o.InternalIp.Get()) {
+	if o == nil || IsNil(o.InternalIp) {
 		var ret string
 		return ret
 	}
-	return *o.InternalIp.Get()
+	return *o.InternalIp
 }
 
 // GetInternalIpOk returns a tuple with the InternalIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceContainer1PortsInner) GetInternalIpOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InternalIp) {
 		return nil, false
 	}
-	return o.InternalIp.Get(), o.InternalIp.IsSet()
+	return o.InternalIp, true
 }
 
 // IsSetInternalIp returns a boolean if a field has been set.
 func (o *InstanceContainer1PortsInner) IsSetInternalIp() bool {
-	if o != nil && o.InternalIp.IsSet() {
+	if o != nil && !IsNil(o.InternalIp) {
 		return true
 	}
 
 	return false
 }
 
-// SetInternalIp gets a reference to the given NullableString and assigns it to the InternalIp field.
+// SetInternalIp gets a reference to the given string and assigns it to the InternalIp field.
 func (o *InstanceContainer1PortsInner) SetInternalIp(v string) {
-	o.InternalIp.Set(&v)
-}
-
-// SetInternalIpNil sets the value for InternalIp to be an explicit nil
-func (o *InstanceContainer1PortsInner) SetInternalIpNil() {
-	o.InternalIp.Set(nil)
-}
-
-// UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
-func (o *InstanceContainer1PortsInner) UnsetInternalIp() {
-	o.InternalIp.Unset()
+	o.InternalIp = &v
 }
 
 func (o InstanceContainer1PortsInner) MarshalJSON() ([]byte, error) {
@@ -582,23 +538,23 @@ func (o InstanceContainer1PortsInner) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ExportName) {
 		toSerialize["exportName"] = o.ExportName
 	}
-	if o.LoadBalanceProtocol.IsSet() {
-		toSerialize["loadBalanceProtocol"] = o.LoadBalanceProtocol.Get()
+	if !IsNil(o.LoadBalanceProtocol) {
+		toSerialize["loadBalanceProtocol"] = o.LoadBalanceProtocol
 	}
 	if !IsNil(o.LoadBalance) {
 		toSerialize["loadBalance"] = o.LoadBalance
 	}
-	if o.Protocol.IsSet() {
-		toSerialize["protocol"] = o.Protocol.Get()
+	if !IsNil(o.Protocol) {
+		toSerialize["protocol"] = o.Protocol
 	}
 	if !IsNil(o.Link) {
 		toSerialize["link"] = o.Link
 	}
-	if o.ExternalIp.IsSet() {
-		toSerialize["externalIp"] = o.ExternalIp.Get()
+	if !IsNil(o.ExternalIp) {
+		toSerialize["externalIp"] = o.ExternalIp
 	}
-	if o.InternalIp.IsSet() {
-		toSerialize["internalIp"] = o.InternalIp.Get()
+	if !IsNil(o.InternalIp) {
+		toSerialize["internalIp"] = o.InternalIp
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -652,6 +608,7 @@ func (v NullableInstanceContainer1PortsInner) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *InstanceContainer1PortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

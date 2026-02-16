@@ -259,6 +259,7 @@ func (v NullableListUsers200ResponseAllOfUsersInnerAccessTaskSetsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListUsers200ResponseAllOfUsersInnerAccessTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

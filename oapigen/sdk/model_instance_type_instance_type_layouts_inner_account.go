@@ -176,6 +176,7 @@ func (v NullableInstanceTypeInstanceTypeLayoutsInnerAccount) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *InstanceTypeInstanceTypeLayoutsInnerAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

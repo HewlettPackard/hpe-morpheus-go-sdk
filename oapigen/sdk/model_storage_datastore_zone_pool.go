@@ -140,6 +140,7 @@ func (v NullableStorageDatastoreZonePool) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
+
 func (o *StorageDatastoreZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -212,6 +212,7 @@ func (v NullableAddRoles200ResponseAllOfRoleDefaultPersona) UnmarshalMapstructur
 
 	return v, nil
 }
+
 func (o *AddRoles200ResponseAllOfRoleDefaultPersona) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

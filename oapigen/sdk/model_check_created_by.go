@@ -176,6 +176,7 @@ func (v NullableCheckCreatedBy) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckCreatedBy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

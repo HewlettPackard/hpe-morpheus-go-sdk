@@ -140,6 +140,7 @@ func (v NullableServicePlanPermissionsResourcePermissionsAccount) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *ServicePlanPermissionsResourcePermissionsAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -862,16 +862,6 @@ SetTags sets Tags field to given value.
 
 HasTags returns a boolean if a field has been set.
 
-### SetTagsNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetTagsNil(b bool)`
-
- SetTagsNil sets the value for Tags to be an explicit nil
-
-### UnsetTags
-`func (o *ListInstances200ResponseAllOfInstancesInner) UnsetTags()`
-
-UnsetTags ensures that no value is present for Tags, not even an explicit nil
 ### GetEvars
 
 `func (o *ListInstances200ResponseAllOfInstancesInner) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvarsInner`
@@ -897,16 +887,6 @@ SetEvars sets Evars field to given value.
 
 HasEvars returns a boolean if a field has been set.
 
-### SetEvarsNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetEvarsNil(b bool)`
-
- SetEvarsNil sets the value for Evars to be an explicit nil
-
-### UnsetEvars
-`func (o *ListInstances200ResponseAllOfInstancesInner) UnsetEvars()`
-
-UnsetEvars ensures that no value is present for Evars, not even an explicit nil
 ### GetMaxMemory
 
 `func (o *ListInstances200ResponseAllOfInstancesInner) GetMaxMemory() int64`
@@ -2292,16 +2272,6 @@ SetContainerDetails sets ContainerDetails field to given value.
 
 HasContainerDetails returns a boolean if a field has been set.
 
-### SetContainerDetailsNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInner) SetContainerDetailsNil(b bool)`
-
- SetContainerDetailsNil sets the value for ContainerDetails to be an explicit nil
-
-### UnsetContainerDetails
-`func (o *ListInstances200ResponseAllOfInstancesInner) UnsetContainerDetails()`
-
-UnsetContainerDetails ensures that no value is present for ContainerDetails, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

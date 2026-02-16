@@ -176,6 +176,7 @@ func (v NullableMaxStorageAndObjectStorageQuotaPolicyTypeConfiguration4) Unmarsh
 
 	return v, nil
 }
+
 func (o *MaxStorageAndObjectStorageQuotaPolicyTypeConfiguration4) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

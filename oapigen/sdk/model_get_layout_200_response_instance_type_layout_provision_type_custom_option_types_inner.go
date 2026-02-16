@@ -1835,6 +1835,7 @@ func (v NullableGetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionT
 
 	return v, nil
 }
+
 func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeCustomOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

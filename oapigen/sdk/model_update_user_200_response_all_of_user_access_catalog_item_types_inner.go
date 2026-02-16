@@ -212,6 +212,7 @@ func (v NullableUpdateUser200ResponseAllOfUserAccessCatalogItemTypesInner) Unmar
 
 	return v, nil
 }
+
 func (o *UpdateUser200ResponseAllOfUserAccessCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

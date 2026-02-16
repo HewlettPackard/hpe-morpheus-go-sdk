@@ -167,6 +167,7 @@ func (v NullableHostnamePolicyTypeConfiguration3) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *HostnamePolicyTypeConfiguration3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

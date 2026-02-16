@@ -215,6 +215,7 @@ func (v NullableGetNetwork200ResponseNetworkPoolIPv6) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *GetNetwork200ResponseNetworkPoolIPv6) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1074,6 +1074,7 @@ func (v NullableClusterDatastores) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *ClusterDatastores) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

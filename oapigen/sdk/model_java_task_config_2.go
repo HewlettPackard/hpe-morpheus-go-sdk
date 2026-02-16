@@ -527,6 +527,7 @@ func (v NullableJavaTaskConfig2) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *JavaTaskConfig2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

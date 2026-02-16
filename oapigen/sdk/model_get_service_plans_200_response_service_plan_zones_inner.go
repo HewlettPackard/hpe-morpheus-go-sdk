@@ -212,6 +212,7 @@ func (v NullableGetServicePlans200ResponseServicePlanZonesInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *GetServicePlans200ResponseServicePlanZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

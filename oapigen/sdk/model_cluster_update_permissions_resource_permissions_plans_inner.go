@@ -176,6 +176,7 @@ func (v NullableClusterUpdatePermissionsResourcePermissionsPlansInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ClusterUpdatePermissionsResourcePermissionsPlansInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

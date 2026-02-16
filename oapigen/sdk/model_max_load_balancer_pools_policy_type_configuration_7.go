@@ -140,6 +140,7 @@ func (v NullableMaxLoadBalancerPoolsPolicyTypeConfiguration7) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *MaxLoadBalancerPoolsPolicyTypeConfiguration7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableCatalogItemTypeInstanceScribeLayout) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceScribeLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

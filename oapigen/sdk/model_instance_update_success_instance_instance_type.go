@@ -132,6 +132,7 @@ func (v NullableInstanceUpdateSuccessInstanceInstanceType) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *InstanceUpdateSuccessInstanceInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

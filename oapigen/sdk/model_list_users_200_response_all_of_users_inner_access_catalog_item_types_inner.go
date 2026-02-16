@@ -212,6 +212,7 @@ func (v NullableListUsers200ResponseAllOfUsersInnerAccessCatalogItemTypesInner) 
 
 	return v, nil
 }
+
 func (o *ListUsers200ResponseAllOfUsersInnerAccessCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

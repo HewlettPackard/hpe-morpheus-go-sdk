@@ -20,10 +20,11 @@ var _ MappedNullable = &ApprovePolicyTypeConfiguration5{}
 
 // ApprovePolicyTypeConfiguration5 - Approve Delete - Approve Provision - Approve Reconfigure
 type ApprovePolicyTypeConfiguration5 struct {
-	AccountIntegrationId string  `json:"accountIntegrationId"`
-	WorkflowId           *string `json:"workflowId,omitempty"`
-	FlowId               *string `json:"flowId,omitempty"`
-	WorkflowType         *string `json:"workflowType,omitempty"`
+	AccountIntegrationId string                 `json:"accountIntegrationId"`
+	WorkflowId           *string                `json:"workflowId,omitempty"`
+	FlowId               *string                `json:"flowId,omitempty"`
+	WorkflowType         *string                `json:"workflowType,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ApprovePolicyTypeConfiguration5 ApprovePolicyTypeConfiguration5
@@ -186,6 +187,11 @@ func (o ApprovePolicyTypeConfiguration5) ToMap() (map[string]interface{}, error)
 	if !IsNil(o.WorkflowType) {
 		toSerialize["workflowType"] = o.WorkflowType
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
 }
 
@@ -233,6 +239,7 @@ func (v NullableApprovePolicyTypeConfiguration5) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *ApprovePolicyTypeConfiguration5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

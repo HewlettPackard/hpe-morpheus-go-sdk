@@ -212,6 +212,7 @@ func (v NullableGetLayout200ResponseInstanceTypeLayoutInstanceType) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *GetLayout200ResponseInstanceTypeLayoutInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

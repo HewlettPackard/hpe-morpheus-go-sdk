@@ -516,6 +516,7 @@ func (v NullableAddUserRequestUser) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
+
 func (o *AddUserRequestUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ContainerTypeSet** | Pointer to [**InstanceContainer3ContainerTypeSet**](InstanceContainer3ContainerTypeSet.md) |  | [optional] 
 **Server** | Pointer to [**InstanceContainerServer3**](InstanceContainerServer3.md) |  | [optional] 
 **Cloud** | Pointer to [**InstanceContainer3Cloud**](InstanceContainer3Cloud.md) |  | [optional] 
-**Ports** | Pointer to [**[]InstanceContainer3PortsInner**](InstanceContainer3PortsInner.md) |  | [optional] 
+**Ports** | Pointer to [**[]InstanceContainer1PortsInner**](InstanceContainer1PortsInner.md) |  | [optional] 
 **Plan** | Pointer to [**InstanceContainer3Plan**](InstanceContainer3Plan.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -423,20 +423,20 @@ HasCloud returns a boolean if a field has been set.
 
 ### GetPorts
 
-`func (o *InstanceContainer3) GetPorts() []InstanceContainer3PortsInner`
+`func (o *InstanceContainer3) GetPorts() []InstanceContainer1PortsInner`
 
 GetPorts returns the Ports field if non-nil, zero value otherwise.
 
 ### GetPortsOk
 
-`func (o *InstanceContainer3) GetPortsOk() (*[]InstanceContainer3PortsInner, bool)`
+`func (o *InstanceContainer3) GetPortsOk() (*[]InstanceContainer1PortsInner, bool)`
 
 GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPorts
 
-`func (o *InstanceContainer3) SetPorts(v []InstanceContainer3PortsInner)`
+`func (o *InstanceContainer3) SetPorts(v []InstanceContainer1PortsInner)`
 
 SetPorts sets Ports field to given value.
 

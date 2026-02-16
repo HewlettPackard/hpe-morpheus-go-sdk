@@ -433,6 +433,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigVolumesInner) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

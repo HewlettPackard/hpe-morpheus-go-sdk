@@ -1835,6 +1835,7 @@ func (v NullableCatalogItemTypeOptionTypesInner) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

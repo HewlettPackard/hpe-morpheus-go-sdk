@@ -231,6 +231,7 @@ func (v NullableDeleteRole400Response) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *DeleteRole400Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

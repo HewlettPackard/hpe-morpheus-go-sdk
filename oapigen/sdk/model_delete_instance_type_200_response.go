@@ -140,6 +140,7 @@ func (v NullableDeleteInstanceType200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *DeleteInstanceType200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -317,6 +317,7 @@ func (v NullableInstanceInterfacesNetworkInterfacesInner) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *InstanceInterfacesNetworkInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

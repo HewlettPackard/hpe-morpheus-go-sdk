@@ -652,6 +652,7 @@ func (v NullableInstanceContainerPortsInner) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *InstanceContainerPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

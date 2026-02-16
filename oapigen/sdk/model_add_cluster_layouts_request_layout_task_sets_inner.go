@@ -140,6 +140,7 @@ func (v NullableAddClusterLayoutsRequestLayoutTaskSetsInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *AddClusterLayoutsRequestLayoutTaskSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

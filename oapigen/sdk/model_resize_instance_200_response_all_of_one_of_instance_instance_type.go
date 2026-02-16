@@ -132,6 +132,7 @@ func (v NullableResizeInstance200ResponseAllOfOneOfInstanceInstanceType) Unmarsh
 
 	return v, nil
 }
+
 func (o *ResizeInstance200ResponseAllOfOneOfInstanceInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -160,6 +160,7 @@ func (v NullableUpdateRoleRequestRoleInstanceTypePermissionsInner) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *UpdateRoleRequestRoleInstanceTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

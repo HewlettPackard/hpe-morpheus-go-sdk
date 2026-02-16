@@ -212,6 +212,7 @@ func (v NullableClusterDatastoresResourcePermissionsPlansInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *ClusterDatastoresResourcePermissionsPlansInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

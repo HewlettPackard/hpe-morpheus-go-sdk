@@ -212,6 +212,7 @@ func (v NullableServicePlanZonesInner) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *ServicePlanZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

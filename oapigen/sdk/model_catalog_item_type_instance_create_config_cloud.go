@@ -168,6 +168,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigCloud) UnmarshalMapstructure(
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigCloud) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

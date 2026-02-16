@@ -1041,9 +1041,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetTags returns the Tags field value if set, zero value otherwise.
 func (o *ListInstances200ResponseAllOfInstancesInner) GetTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner {
-	if o == nil {
+	if o == nil || IsNil(o.Tags) {
 		var ret []ListInstances200ResponseAllOfInstancesInnerTagsInner
 		return ret
 	}
@@ -1052,7 +1052,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetTags() []ListInstances2
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetTagsOk() ([]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
@@ -1074,9 +1073,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetTags(v []ListInstances2
 	o.Tags = v
 }
 
-// GetEvars returns the Evars field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetEvars returns the Evars field value if set, zero value otherwise.
 func (o *ListInstances200ResponseAllOfInstancesInner) GetEvars() []ListInstances200ResponseAllOfInstancesInnerEvarsInner {
-	if o == nil {
+	if o == nil || IsNil(o.Evars) {
 		var ret []ListInstances200ResponseAllOfInstancesInnerEvarsInner
 		return ret
 	}
@@ -1085,7 +1084,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetEvars() []ListInstances
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetEvarsOk() ([]ListInstances200ResponseAllOfInstancesInnerEvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
@@ -2799,9 +2797,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetApps(v []map[string]int
 	o.Apps = v
 }
 
-// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
 func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []InstanceContainer {
-	if o == nil {
+	if o == nil || IsNil(o.ContainerDetails) {
 		var ret []InstanceContainer
 		return ret
 	}
@@ -2810,7 +2808,6 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetails() []In
 
 // GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetContainerDetailsOk() ([]InstanceContainer, bool) {
 	if o == nil || IsNil(o.ContainerDetails) {
 		return nil, false
@@ -2923,10 +2920,10 @@ func (o ListInstances200ResponseAllOfInstancesInner) ToMap() (map[string]interfa
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	if o.Tags != nil {
+	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-	if o.Evars != nil {
+	if !IsNil(o.Evars) {
 		toSerialize["evars"] = o.Evars
 	}
 	if !IsNil(o.MaxMemory) {
@@ -3073,7 +3070,7 @@ func (o ListInstances200ResponseAllOfInstancesInner) ToMap() (map[string]interfa
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
 	}
-	if o.ContainerDetails != nil {
+	if !IsNil(o.ContainerDetails) {
 		toSerialize["containerDetails"] = o.ContainerDetails
 	}
 
@@ -3128,6 +3125,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInner) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

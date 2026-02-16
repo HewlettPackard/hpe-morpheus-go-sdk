@@ -172,6 +172,7 @@ func (v NullableClusterLayoutCreateWorkersInner) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *ClusterLayoutCreateWorkersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

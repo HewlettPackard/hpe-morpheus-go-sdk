@@ -393,6 +393,7 @@ func (v NullableUpdateServicePlans200ResponseAllOfServicePlanPermissionsResource
 
 	return v, nil
 }
+
 func (o *UpdateServicePlans200ResponseAllOfServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

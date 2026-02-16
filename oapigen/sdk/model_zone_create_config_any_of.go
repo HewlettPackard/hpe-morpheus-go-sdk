@@ -595,6 +595,7 @@ func (v NullableZoneCreateConfigAnyOf) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
+
 func (o *ZoneCreateConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -141,6 +141,7 @@ func (v NullableUpdateNetwork200ResponseAllOfNetworkNetworkProxy) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateNetwork200ResponseAllOfNetworkNetworkProxy) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

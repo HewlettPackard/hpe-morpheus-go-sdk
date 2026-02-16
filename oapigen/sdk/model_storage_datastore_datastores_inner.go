@@ -178,6 +178,7 @@ func (v NullableStorageDatastoreDatastoresInner) UnmarshalMapstructure(data any)
 
 	return v, nil
 }
+
 func (o *StorageDatastoreDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

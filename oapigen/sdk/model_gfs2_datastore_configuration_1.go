@@ -169,6 +169,7 @@ func (v NullableGFS2DatastoreConfiguration1) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *GFS2DatastoreConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

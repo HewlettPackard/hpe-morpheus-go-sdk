@@ -216,6 +216,7 @@ func (v NullableUpdateVirtualImageRequestVirtualImageConfigOneOf) UnmarshalMapst
 
 	return v, nil
 }
+
 func (o *UpdateVirtualImageRequestVirtualImageConfigOneOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

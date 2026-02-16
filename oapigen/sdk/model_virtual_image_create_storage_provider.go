@@ -140,6 +140,7 @@ func (v NullableVirtualImageCreateStorageProvider) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *VirtualImageCreateStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

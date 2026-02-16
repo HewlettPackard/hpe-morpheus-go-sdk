@@ -356,6 +356,7 @@ func (v NullableInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypes
 
 	return v, nil
 }
+
 func (o *InstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

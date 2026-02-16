@@ -176,6 +176,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceOwner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceOwner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

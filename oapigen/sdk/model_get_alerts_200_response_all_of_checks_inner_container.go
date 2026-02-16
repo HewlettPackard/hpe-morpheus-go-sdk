@@ -140,6 +140,7 @@ func (v NullableGetAlerts200ResponseAllOfChecksInnerContainer) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *GetAlerts200ResponseAllOfChecksInnerContainer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

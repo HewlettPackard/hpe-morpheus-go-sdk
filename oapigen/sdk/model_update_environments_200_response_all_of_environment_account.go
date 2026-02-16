@@ -176,6 +176,7 @@ func (v NullableUpdateEnvironments200ResponseAllOfEnvironmentAccount) UnmarshalM
 
 	return v, nil
 }
+
 func (o *UpdateEnvironments200ResponseAllOfEnvironmentAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

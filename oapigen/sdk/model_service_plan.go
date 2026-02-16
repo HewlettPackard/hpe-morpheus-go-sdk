@@ -1390,6 +1390,7 @@ func (v NullableServicePlan) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *ServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

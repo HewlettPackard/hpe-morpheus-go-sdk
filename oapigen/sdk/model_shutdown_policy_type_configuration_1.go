@@ -580,6 +580,7 @@ func (v NullableShutdownPolicyTypeConfiguration1) UnmarshalMapstructure(data any
 
 	return v, nil
 }
+
 func (o *ShutdownPolicyTypeConfiguration1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

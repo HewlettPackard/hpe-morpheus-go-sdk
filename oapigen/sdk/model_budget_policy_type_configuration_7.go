@@ -212,6 +212,7 @@ func (v NullableBudgetPolicyTypeConfiguration7) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *BudgetPolicyTypeConfiguration7) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

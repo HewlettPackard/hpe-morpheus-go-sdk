@@ -140,6 +140,7 @@ func (v NullableSaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInne
 
 	return v, nil
 }
+
 func (o *SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

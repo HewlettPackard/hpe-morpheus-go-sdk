@@ -500,6 +500,7 @@ func (v NullableStorageDatastoreCreateResourcePermissions) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *StorageDatastoreCreateResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

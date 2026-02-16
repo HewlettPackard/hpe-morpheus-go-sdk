@@ -527,6 +527,7 @@ func (v NullableTaskWriteAttributesConfig) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *TaskWriteAttributesConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

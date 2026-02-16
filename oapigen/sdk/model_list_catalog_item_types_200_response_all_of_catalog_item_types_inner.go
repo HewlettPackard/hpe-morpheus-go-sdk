@@ -1247,6 +1247,7 @@ func (v NullableListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) Unmar
 
 	return v, nil
 }
+
 func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

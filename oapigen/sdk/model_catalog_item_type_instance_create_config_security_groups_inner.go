@@ -141,6 +141,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigSecurityGroupsInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

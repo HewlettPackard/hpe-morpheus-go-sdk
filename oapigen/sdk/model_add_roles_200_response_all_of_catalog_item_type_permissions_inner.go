@@ -212,6 +212,7 @@ func (v NullableAddRoles200ResponseAllOfCatalogItemTypePermissionsInner) Unmarsh
 
 	return v, nil
 }
+
 func (o *AddRoles200ResponseAllOfCatalogItemTypePermissionsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

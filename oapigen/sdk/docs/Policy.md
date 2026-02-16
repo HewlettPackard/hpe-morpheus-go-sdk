@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**PolicyConfig**](PolicyConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Owner** | Pointer to [**PolicyOwner**](PolicyOwner.md) |  | [optional] 
-**Accounts** | Pointer to [**[]PolicyAccountsInner**](PolicyAccountsInner.md) |  | [optional] 
+**Accounts** | Pointer to [**[]AddPolicies200ResponseAllOfPolicyAccountsInner**](AddPolicies200ResponseAllOfPolicyAccountsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -431,20 +431,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *Policy) GetAccounts() []PolicyAccountsInner`
+`func (o *Policy) GetAccounts() []AddPolicies200ResponseAllOfPolicyAccountsInner`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *Policy) GetAccountsOk() (*[]PolicyAccountsInner, bool)`
+`func (o *Policy) GetAccountsOk() (*[]AddPolicies200ResponseAllOfPolicyAccountsInner, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *Policy) SetAccounts(v []PolicyAccountsInner)`
+`func (o *Policy) SetAccounts(v []AddPolicies200ResponseAllOfPolicyAccountsInner)`
 
 SetAccounts sets Accounts field to given value.
 
@@ -454,16 +454,6 @@ SetAccounts sets Accounts field to given value.
 
 HasAccounts returns a boolean if a field has been set.
 
-### SetAccountsNil
-
-`func (o *Policy) SetAccountsNil(b bool)`
-
- SetAccountsNil sets the value for Accounts to be an explicit nil
-
-### UnsetAccounts
-`func (o *Policy) UnsetAccounts()`
-
-UnsetAccounts ensures that no value is present for Accounts, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

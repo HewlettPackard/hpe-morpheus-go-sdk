@@ -140,6 +140,7 @@ func (v NullableMaxVirtualServersPolicyTypeConfiguration8) UnmarshalMapstructure
 
 	return v, nil
 }
+
 func (o *MaxVirtualServersPolicyTypeConfiguration8) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

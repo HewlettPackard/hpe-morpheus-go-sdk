@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **NullableInt64** |  | [optional] 
-**Group** | Pointer to **NullableInt64** |  | [optional] 
-**Subnet** | Pointer to **NullableString** |  | [optional] 
-**DhcpServer** | Pointer to **NullableBool** |  | [optional] 
-**Name** | Pointer to **NullableString** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
+**Group** | Pointer to **int64** |  | [optional] 
+**Subnet** | Pointer to **string** |  | [optional] 
+**DhcpServer** | Pointer to **bool** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Pool** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool.md) |  | [optional] 
 
 ## Methods
@@ -55,16 +55,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### SetIdNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetIdNil(b bool)`
-
- SetIdNil sets the value for Id to be an explicit nil
-
-### UnsetId
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnsetId()`
-
-UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetGroup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetGroup() int64`
@@ -90,16 +80,6 @@ SetGroup sets Group field to given value.
 
 HasGroup returns a boolean if a field has been set.
 
-### SetGroupNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetGroupNil(b bool)`
-
- SetGroupNil sets the value for Group to be an explicit nil
-
-### UnsetGroup
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnsetGroup()`
-
-UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetSubnet
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetSubnet() string`
@@ -125,16 +105,6 @@ SetSubnet sets Subnet field to given value.
 
 HasSubnet returns a boolean if a field has been set.
 
-### SetSubnetNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetSubnetNil(b bool)`
-
- SetSubnetNil sets the value for Subnet to be an explicit nil
-
-### UnsetSubnet
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnsetSubnet()`
-
-UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
 ### GetDhcpServer
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetDhcpServer() bool`
@@ -160,16 +130,6 @@ SetDhcpServer sets DhcpServer field to given value.
 
 HasDhcpServer returns a boolean if a field has been set.
 
-### SetDhcpServerNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetDhcpServerNil(b bool)`
-
- SetDhcpServerNil sets the value for DhcpServer to be an explicit nil
-
-### UnsetDhcpServer
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnsetDhcpServer()`
-
-UnsetDhcpServer ensures that no value is present for DhcpServer, not even an explicit nil
 ### GetName
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetName() string`
@@ -195,16 +155,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### SetNameNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) SetNameNil(b bool)`
-
- SetNameNil sets the value for Name to be an explicit nil
-
-### UnsetName
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) UnsetName()`
-
-UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetPool
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork) GetPool() AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetworkPool`

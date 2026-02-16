@@ -140,6 +140,7 @@ func (v NullableAddClouds200ResponseAllOfZoneConfigAnyOf1NetworkServer) Unmarsha
 
 	return v, nil
 }
+
 func (o *AddClouds200ResponseAllOfZoneConfigAnyOf1NetworkServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableGetUser200ResponseUserAccount) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
+
 func (o *GetUser200ResponseUserAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

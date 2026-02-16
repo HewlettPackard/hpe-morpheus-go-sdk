@@ -341,6 +341,7 @@ func (v NullableGoogleCloudInstanceConfiguration3) UnmarshalMapstructure(data an
 
 	return v, nil
 }
+
 func (o *GoogleCloudInstanceConfiguration3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

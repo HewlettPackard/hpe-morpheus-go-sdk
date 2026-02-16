@@ -248,6 +248,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

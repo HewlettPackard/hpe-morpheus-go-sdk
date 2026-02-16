@@ -248,6 +248,7 @@ func (v NullableListServicePlans200ResponseAllOfServicePlansInnerPriceSetsInner)
 
 	return v, nil
 }
+
 func (o *ListServicePlans200ResponseAllOfServicePlansInnerPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

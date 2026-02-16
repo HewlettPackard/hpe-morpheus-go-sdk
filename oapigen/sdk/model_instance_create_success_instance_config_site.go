@@ -140,6 +140,7 @@ func (v NullableInstanceCreateSuccessInstanceConfigSite) UnmarshalMapstructure(d
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceConfigSite) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

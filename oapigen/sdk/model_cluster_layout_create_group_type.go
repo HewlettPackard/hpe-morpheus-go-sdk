@@ -132,6 +132,7 @@ func (v NullableClusterLayoutCreateGroupType) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
+
 func (o *ClusterLayoutCreateGroupType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

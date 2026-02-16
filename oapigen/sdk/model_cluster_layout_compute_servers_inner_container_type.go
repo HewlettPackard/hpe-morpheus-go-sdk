@@ -667,6 +667,7 @@ func (v NullableClusterLayoutComputeServersInnerContainerType) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *ClusterLayoutComputeServersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

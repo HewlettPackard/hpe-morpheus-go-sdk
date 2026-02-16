@@ -260,6 +260,7 @@ func (v NullableUpdateDatastoresRequestDatastoreResourcePermissions) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *UpdateDatastoresRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

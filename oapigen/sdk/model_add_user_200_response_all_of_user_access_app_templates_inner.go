@@ -212,6 +212,7 @@ func (v NullableAddUser200ResponseAllOfUserAccessAppTemplatesInner) UnmarshalMap
 
 	return v, nil
 }
+
 func (o *AddUser200ResponseAllOfUserAccessAppTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

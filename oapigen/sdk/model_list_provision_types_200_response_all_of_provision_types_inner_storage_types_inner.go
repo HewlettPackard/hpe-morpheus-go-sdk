@@ -403,6 +403,7 @@ func (v NullableListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageType
 
 	return v, nil
 }
+
 func (o *ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

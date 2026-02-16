@@ -248,6 +248,7 @@ func (v NullableClusterDatastoreCreateTenantsInner) UnmarshalMapstructure(data a
 
 	return v, nil
 }
+
 func (o *ClusterDatastoreCreateTenantsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

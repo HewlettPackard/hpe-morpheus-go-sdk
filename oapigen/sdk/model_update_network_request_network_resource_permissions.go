@@ -178,6 +178,7 @@ func (v NullableUpdateNetworkRequestNetworkResourcePermissions) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *UpdateNetworkRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

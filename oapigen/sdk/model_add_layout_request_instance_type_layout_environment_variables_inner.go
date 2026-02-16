@@ -251,6 +251,7 @@ func (v NullableAddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner) Unm
 
 	return v, nil
 }
+
 func (o *AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

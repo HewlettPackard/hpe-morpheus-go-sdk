@@ -909,6 +909,7 @@ func (v NullableUpdateVirtualImage200ResponseAllOfVirtualImageLocationsInner) Un
 
 	return v, nil
 }
+
 func (o *UpdateVirtualImage200ResponseAllOfVirtualImageLocationsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

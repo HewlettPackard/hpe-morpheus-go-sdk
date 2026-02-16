@@ -20,37 +20,37 @@ var _ MappedNullable = &InstanceCreateSuccessInstanceConfig{}
 
 // InstanceCreateSuccessInstanceConfig struct for InstanceCreateSuccessInstanceConfig
 type InstanceCreateSuccessInstanceConfig struct {
-	CreateUser           *bool                                                    `json:"createUser,omitempty"`
-	IsEC2                *bool                                                    `json:"isEC2,omitempty"`
-	IsVpcSelectable      *bool                                                    `json:"isVpcSelectable,omitempty"`
-	NoAgent              *InstanceCreateSuccessInstanceConfigNoAgent              `json:"noAgent,omitempty"`
-	SecurityGroups       []InstanceCreateSuccessInstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
-	KvmHostId            NullableInt64                                            `json:"kvmHostId,omitempty"`
-	SmbiosAssetTag       NullableString                                           `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization NullableString                                           `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                  `json:"vmwareFolderId,omitempty"`
-	CustomOptions        map[string]interface{}                                   `json:"customOptions,omitempty"`
-	ResourcePoolId       *InstanceCreateSuccessInstanceConfigResourcePoolId       `json:"resourcePoolId,omitempty"`
-	PoolProviderType     NullableString                                           `json:"poolProviderType,omitempty"`
-	UserGroup            *InstanceCreateSuccessInstanceConfigUserGroup            `json:"userGroup,omitempty"`
-	ExpireDays           *string                                                  `json:"expireDays,omitempty"`
-	ShutdownDays         *string                                                  `json:"shutdownDays,omitempty"`
-	Name                 *string                                                  `json:"name,omitempty"`
-	HostName             *string                                                  `json:"hostName,omitempty"`
-	InstanceType         *InstanceCreateSuccessInstanceConfigInstanceType         `json:"instanceType,omitempty"`
-	Site                 *InstanceCreateSuccessInstanceConfigSite                 `json:"site,omitempty"`
-	EnvironmentPrefix    NullableString                                           `json:"environmentPrefix,omitempty"`
-	Layout               *InstanceCreateSuccessInstanceConfigLayout               `json:"layout,omitempty"`
-	Type                 *string                                                  `json:"type,omitempty"`
-	InstanceContext      *string                                                  `json:"instanceContext,omitempty"`
-	MemoryDisplay        *string                                                  `json:"memoryDisplay,omitempty"`
-	Expose               []int64                                                  `json:"expose,omitempty"`
-	CreateBackup         *bool                                                    `json:"createBackup,omitempty"`
-	Backup               *InstanceCreateSuccessInstanceConfigBackup               `json:"backup,omitempty"`
-	ReplicationGroup     *InstanceCreateSuccessInstanceConfigReplicationGroup     `json:"replicationGroup,omitempty"`
-	LayoutSize           *int64                                                   `json:"layoutSize,omitempty"`
-	LbInstances          []map[string]interface{}                                 `json:"lbInstances,omitempty"`
-	AdditionalProperties map[string]interface{}                                   `json:",remain"`
+	CreateUser           *bool                                                               `json:"createUser,omitempty"`
+	IsEC2                *bool                                                               `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                                                               `json:"isVpcSelectable,omitempty"`
+	NoAgent              *InstanceCreateSuccessInstanceConfigNoAgent                         `json:"noAgent,omitempty"`
+	SecurityGroups       []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	KvmHostId            NullableInt64                                                       `json:"kvmHostId,omitempty"`
+	SmbiosAssetTag       NullableString                                                      `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString                                                      `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                             `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                              `json:"customOptions,omitempty"`
+	ResourcePoolId       *InstanceCreateSuccessInstanceConfigResourcePoolId                  `json:"resourcePoolId,omitempty"`
+	PoolProviderType     NullableString                                                      `json:"poolProviderType,omitempty"`
+	UserGroup            *InstanceCreateSuccessInstanceConfigUserGroup                       `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                             `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                             `json:"shutdownDays,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	HostName             *string                                                             `json:"hostName,omitempty"`
+	InstanceType         *InstanceCreateSuccessInstanceConfigInstanceType                    `json:"instanceType,omitempty"`
+	Site                 *InstanceCreateSuccessInstanceConfigSite                            `json:"site,omitempty"`
+	EnvironmentPrefix    NullableString                                                      `json:"environmentPrefix,omitempty"`
+	Layout               *InstanceCreateSuccessInstanceConfigLayout                          `json:"layout,omitempty"`
+	Type                 *string                                                             `json:"type,omitempty"`
+	InstanceContext      *string                                                             `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                             `json:"memoryDisplay,omitempty"`
+	Expose               []int64                                                             `json:"expose,omitempty"`
+	CreateBackup         *bool                                                               `json:"createBackup,omitempty"`
+	Backup               *InstanceCreateSuccessInstanceConfigBackup                          `json:"backup,omitempty"`
+	ReplicationGroup     *InstanceCreateSuccessInstanceConfigReplicationGroup                `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _InstanceCreateSuccessInstanceConfig InstanceCreateSuccessInstanceConfig
@@ -200,10 +200,10 @@ func (o *InstanceCreateSuccessInstanceConfig) SetNoAgent(v InstanceCreateSuccess
 	o.NoAgent = &v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceCreateSuccessInstanceConfig) GetSecurityGroups() []InstanceCreateSuccessInstanceConfigSecurityGroupsInner {
-	if o == nil {
-		var ret []InstanceCreateSuccessInstanceConfigSecurityGroupsInner
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
+func (o *InstanceCreateSuccessInstanceConfig) GetSecurityGroups() []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner {
+	if o == nil || IsNil(o.SecurityGroups) {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner
 		return ret
 	}
 	return o.SecurityGroups
@@ -211,8 +211,7 @@ func (o *InstanceCreateSuccessInstanceConfig) GetSecurityGroups() []InstanceCrea
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceCreateSuccessInstanceConfig) GetSecurityGroupsOk() ([]InstanceCreateSuccessInstanceConfigSecurityGroupsInner, bool) {
+func (o *InstanceCreateSuccessInstanceConfig) GetSecurityGroupsOk() ([]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
 	}
@@ -228,8 +227,8 @@ func (o *InstanceCreateSuccessInstanceConfig) IsSetSecurityGroups() bool {
 	return false
 }
 
-// SetSecurityGroups gets a reference to the given []InstanceCreateSuccessInstanceConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
-func (o *InstanceCreateSuccessInstanceConfig) SetSecurityGroups(v []InstanceCreateSuccessInstanceConfigSecurityGroupsInner) {
+// SetSecurityGroups gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
+func (o *InstanceCreateSuccessInstanceConfig) SetSecurityGroups(v []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) {
 	o.SecurityGroups = v
 }
 
@@ -896,9 +895,9 @@ func (o *InstanceCreateSuccessInstanceConfig) SetMemoryDisplay(v string) {
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetExpose returns the Expose field value if set, zero value otherwise.
 func (o *InstanceCreateSuccessInstanceConfig) GetExpose() []int64 {
-	if o == nil {
+	if o == nil || IsNil(o.Expose) {
 		var ret []int64
 		return ret
 	}
@@ -907,7 +906,6 @@ func (o *InstanceCreateSuccessInstanceConfig) GetExpose() []int64 {
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InstanceCreateSuccessInstanceConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
@@ -1112,7 +1110,7 @@ func (o InstanceCreateSuccessInstanceConfig) ToMap() (map[string]interface{}, er
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if o.SecurityGroups != nil {
+	if !IsNil(o.SecurityGroups) {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if o.KvmHostId.IsSet() {
@@ -1172,7 +1170,7 @@ func (o InstanceCreateSuccessInstanceConfig) ToMap() (map[string]interface{}, er
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if o.Expose != nil {
+	if !IsNil(o.Expose) {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {
@@ -1242,6 +1240,7 @@ func (v NullableInstanceCreateSuccessInstanceConfig) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *InstanceCreateSuccessInstanceConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

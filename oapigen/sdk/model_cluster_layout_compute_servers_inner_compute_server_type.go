@@ -284,6 +284,7 @@ func (v NullableClusterLayoutComputeServersInnerComputeServerType) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *ClusterLayoutComputeServersInnerComputeServerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

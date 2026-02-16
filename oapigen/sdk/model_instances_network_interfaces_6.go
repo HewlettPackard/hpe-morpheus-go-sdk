@@ -32,8 +32,8 @@ type InstancesNetworkInterfaces6 struct {
 	// The interface id. Applicable when resizing and you want to identify an interface to update that already exists.
 	Id *int64 `json:"id,omitempty"`
 	// The nested networkInterfaces can be used to define child virtual network interfaces. The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which types support this (`hasVirtualInvirtualInterfaces = true` and list of available `virtualInterfaces` will be defined.
-	NetworkInterfaces    []InstancesChildVirtualNetworkInterfacesInner6 `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	NetworkInterfaces    []InstancesNetworkInterfaces6NetworkInterfacesInner `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _InstancesNetworkInterfaces6 InstancesNetworkInterfaces6
@@ -245,9 +245,9 @@ func (o *InstancesNetworkInterfaces6) SetId(v int64) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstancesNetworkInterfaces6) GetNetworkInterfaces() []InstancesChildVirtualNetworkInterfacesInner6 {
+func (o *InstancesNetworkInterfaces6) GetNetworkInterfaces() []InstancesNetworkInterfaces6NetworkInterfacesInner {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesChildVirtualNetworkInterfacesInner6
+		var ret []InstancesNetworkInterfaces6NetworkInterfacesInner
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -255,7 +255,7 @@ func (o *InstancesNetworkInterfaces6) GetNetworkInterfaces() []InstancesChildVir
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstancesNetworkInterfaces6) GetNetworkInterfacesOk() ([]InstancesChildVirtualNetworkInterfacesInner6, bool) {
+func (o *InstancesNetworkInterfaces6) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces6NetworkInterfacesInner, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *InstancesNetworkInterfaces6) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesChildVirtualNetworkInterfacesInner6 and assigns it to the NetworkInterfaces field.
-func (o *InstancesNetworkInterfaces6) SetNetworkInterfaces(v []InstancesChildVirtualNetworkInterfacesInner6) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces6NetworkInterfacesInner and assigns it to the NetworkInterfaces field.
+func (o *InstancesNetworkInterfaces6) SetNetworkInterfaces(v []InstancesNetworkInterfaces6NetworkInterfacesInner) {
 	o.NetworkInterfaces = v
 }
 
@@ -357,6 +357,7 @@ func (v NullableInstancesNetworkInterfaces6) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
+
 func (o *InstancesNetworkInterfaces6) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -140,6 +140,7 @@ func (v NullableAddCatalogItemType200ResponseAllOfCatalogItemType) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *AddCatalogItemType200ResponseAllOfCatalogItemType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

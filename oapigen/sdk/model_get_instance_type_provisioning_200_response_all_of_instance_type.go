@@ -1242,6 +1242,7 @@ func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Unmarsh
 
 	return v, nil
 }
+
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

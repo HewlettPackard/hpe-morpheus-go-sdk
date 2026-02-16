@@ -212,6 +212,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerClusterType) Unmarsha
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerClusterType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

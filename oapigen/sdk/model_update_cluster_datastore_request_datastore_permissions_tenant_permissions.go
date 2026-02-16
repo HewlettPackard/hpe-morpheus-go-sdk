@@ -215,6 +215,7 @@ func (v NullableUpdateClusterDatastoreRequestDatastorePermissionsTenantPermissio
 
 	return v, nil
 }
+
 func (o *UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -145,6 +145,7 @@ func (v NullableGlobal) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *Global) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

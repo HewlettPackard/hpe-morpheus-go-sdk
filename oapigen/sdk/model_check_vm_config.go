@@ -547,6 +547,7 @@ func (v NullableCheckVmConfig) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckVmConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

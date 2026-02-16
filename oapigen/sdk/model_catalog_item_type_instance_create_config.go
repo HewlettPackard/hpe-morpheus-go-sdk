@@ -804,6 +804,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfig) UnmarshalMapstructure(data 
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

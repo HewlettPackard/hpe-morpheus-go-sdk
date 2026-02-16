@@ -140,6 +140,7 @@ func (v NullableNetworkUpdateTenantsInner) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *NetworkUpdateTenantsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

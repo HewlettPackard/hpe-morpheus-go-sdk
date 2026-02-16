@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Ip** | Pointer to **string** |  | [optional] 
-**Port** | Pointer to **NullableInt64** |  | [optional] 
+**Port** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -77,16 +77,6 @@ SetPort sets Port field to given value.
 
 HasPort returns a boolean if a field has been set.
 
-### SetPortNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) SetPortNil(b bool)`
-
- SetPortNil sets the value for Port to be an explicit nil
-
-### UnsetPort
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) UnsetPort()`
-
-UnsetPort ensures that no value is present for Port, not even an explicit nil
 ### GetName
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner) GetName() string`

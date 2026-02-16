@@ -574,6 +574,7 @@ func (v NullablePuppetTaskConfig2) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *PuppetTaskConfig2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

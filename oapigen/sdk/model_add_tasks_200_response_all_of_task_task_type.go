@@ -212,6 +212,7 @@ func (v NullableAddTasks200ResponseAllOfTaskTaskType) UnmarshalMapstructure(data
 
 	return v, nil
 }
+
 func (o *AddTasks200ResponseAllOfTaskTaskType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

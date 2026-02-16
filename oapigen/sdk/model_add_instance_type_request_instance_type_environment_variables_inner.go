@@ -251,6 +251,7 @@ func (v NullableAddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner) Unm
 
 	return v, nil
 }
+
 func (o *AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

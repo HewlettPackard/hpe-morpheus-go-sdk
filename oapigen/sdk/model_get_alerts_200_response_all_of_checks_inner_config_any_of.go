@@ -547,6 +547,7 @@ func (v NullableGetAlerts200ResponseAllOfChecksInnerConfigAnyOf) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *GetAlerts200ResponseAllOfChecksInnerConfigAnyOf) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

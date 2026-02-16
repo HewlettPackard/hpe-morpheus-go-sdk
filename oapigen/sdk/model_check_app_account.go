@@ -140,6 +140,7 @@ func (v NullableCheckAppAccount) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckAppAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

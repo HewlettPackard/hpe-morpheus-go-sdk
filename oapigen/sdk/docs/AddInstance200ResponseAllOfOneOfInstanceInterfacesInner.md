@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerId.md) |  | [optional] 
 **Network** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork**](AddInstance200ResponseAllOfOneOfInstanceInterfacesInnerNetwork.md) |  | [optional] 
-**IpAddress** | Pointer to **NullableString** |  | [optional] 
-**NetworkInterfaceTypeId** | Pointer to **NullableInt64** |  | [optional] 
-**IpMode** | Pointer to **NullableString** |  | [optional] 
+**IpAddress** | Pointer to **string** |  | [optional] 
+**NetworkInterfaceTypeId** | Pointer to **int64** |  | [optional] 
+**IpMode** | Pointer to **string** |  | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstanceInterfacesNetworkInterfacesInner1**](InstanceInterfacesNetworkInterfacesInner1.md) |  | [optional] 
 
 ## Methods
@@ -105,16 +105,6 @@ SetIpAddress sets IpAddress field to given value.
 
 HasIpAddress returns a boolean if a field has been set.
 
-### SetIpAddressNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpAddressNil(b bool)`
-
- SetIpAddressNil sets the value for IpAddress to be an explicit nil
-
-### UnsetIpAddress
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetIpAddress()`
-
-UnsetIpAddress ensures that no value is present for IpAddress, not even an explicit nil
 ### GetNetworkInterfaceTypeId
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaceTypeId() int64`
@@ -140,16 +130,6 @@ SetNetworkInterfaceTypeId sets NetworkInterfaceTypeId field to given value.
 
 HasNetworkInterfaceTypeId returns a boolean if a field has been set.
 
-### SetNetworkInterfaceTypeIdNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetNetworkInterfaceTypeIdNil(b bool)`
-
- SetNetworkInterfaceTypeIdNil sets the value for NetworkInterfaceTypeId to be an explicit nil
-
-### UnsetNetworkInterfaceTypeId
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetNetworkInterfaceTypeId()`
-
-UnsetNetworkInterfaceTypeId ensures that no value is present for NetworkInterfaceTypeId, not even an explicit nil
 ### GetIpMode
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetIpMode() string`
@@ -175,16 +155,6 @@ SetIpMode sets IpMode field to given value.
 
 HasIpMode returns a boolean if a field has been set.
 
-### SetIpModeNil
-
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) SetIpModeNil(b bool)`
-
- SetIpModeNil sets the value for IpMode to be an explicit nil
-
-### UnsetIpMode
-`func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) UnsetIpMode()`
-
-UnsetIpMode ensures that no value is present for IpMode, not even an explicit nil
 ### GetNetworkInterfaces
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceInterfacesInner) GetNetworkInterfaces() []InstanceInterfacesNetworkInterfacesInner1`

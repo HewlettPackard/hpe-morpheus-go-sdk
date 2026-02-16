@@ -356,6 +356,7 @@ func (v NullableAddGroups200ResponseAllOfGroupStatsServerCounts) UnmarshalMapstr
 
 	return v, nil
 }
+
 func (o *AddGroups200ResponseAllOfGroupStatsServerCounts) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

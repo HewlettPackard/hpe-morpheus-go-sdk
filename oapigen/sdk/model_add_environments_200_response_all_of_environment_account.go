@@ -176,6 +176,7 @@ func (v NullableAddEnvironments200ResponseAllOfEnvironmentAccount) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *AddEnvironments200ResponseAllOfEnvironmentAccount) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

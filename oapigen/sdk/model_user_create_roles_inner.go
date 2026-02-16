@@ -140,6 +140,7 @@ func (v NullableUserCreateRolesInner) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
+
 func (o *UserCreateRolesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableListNetworks200ResponseAllOfNetworksInnerTenantsInner) Unmarshal
 
 	return v, nil
 }
+
 func (o *ListNetworks200ResponseAllOfNetworksInnerTenantsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

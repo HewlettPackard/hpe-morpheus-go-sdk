@@ -475,6 +475,7 @@ func (v NullableGetVirtualImage200ResponseVirtualImageOsType) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *GetVirtualImage200ResponseVirtualImageOsType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -39,8 +39,8 @@ Name | Type | Description | Notes
 **MaxStorage** | Pointer to **int64** |  | [optional] 
 **SourceImage** | Pointer to [**InstanceContainerServer3SourceImage**](InstanceContainerServer3SourceImage.md) |  | [optional] 
 **ServerOs** | Pointer to [**InstanceContainerServer3ServerOs**](InstanceContainerServer3ServerOs.md) |  | [optional] 
-**Volumes** | Pointer to [**[]InstanceContainerServerVolume3**](InstanceContainerServerVolume3.md) |  | [optional] 
-**Interfaces** | Pointer to [**[]InstanceContainerServerInterfacesInner3**](InstanceContainerServerInterfacesInner3.md) |  | [optional] 
+**Volumes** | Pointer to [**[]InstanceContainerServerVolume1**](InstanceContainerServerVolume1.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]InstanceContainerServerInterfacesInner1**](InstanceContainerServerInterfacesInner1.md) |  | [optional] 
 
 ## Methods
 
@@ -1048,20 +1048,20 @@ HasServerOs returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *InstanceContainerServer3) GetVolumes() []InstanceContainerServerVolume3`
+`func (o *InstanceContainerServer3) GetVolumes() []InstanceContainerServerVolume1`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *InstanceContainerServer3) GetVolumesOk() (*[]InstanceContainerServerVolume3, bool)`
+`func (o *InstanceContainerServer3) GetVolumesOk() (*[]InstanceContainerServerVolume1, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *InstanceContainerServer3) SetVolumes(v []InstanceContainerServerVolume3)`
+`func (o *InstanceContainerServer3) SetVolumes(v []InstanceContainerServerVolume1)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -1073,20 +1073,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *InstanceContainerServer3) GetInterfaces() []InstanceContainerServerInterfacesInner3`
+`func (o *InstanceContainerServer3) GetInterfaces() []InstanceContainerServerInterfacesInner1`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *InstanceContainerServer3) GetInterfacesOk() (*[]InstanceContainerServerInterfacesInner3, bool)`
+`func (o *InstanceContainerServer3) GetInterfacesOk() (*[]InstanceContainerServerInterfacesInner1, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *InstanceContainerServer3) SetInterfaces(v []InstanceContainerServerInterfacesInner3)`
+`func (o *InstanceContainerServer3) SetInterfaces(v []InstanceContainerServerInterfacesInner1)`
 
 SetInterfaces sets Interfaces field to given value.
 

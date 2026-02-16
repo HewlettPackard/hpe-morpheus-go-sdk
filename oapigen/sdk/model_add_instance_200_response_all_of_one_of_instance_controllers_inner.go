@@ -284,6 +284,7 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceControllersInner) Unmars
 
 	return v, nil
 }
+
 func (o *AddInstance200ResponseAllOfOneOfInstanceControllersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -176,6 +176,7 @@ func (v NullableStorageServerStorageQuotaPolicyTypeConfiguration8) UnmarshalMaps
 
 	return v, nil
 }
+
 func (o *StorageServerStorageQuotaPolicyTypeConfiguration8) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

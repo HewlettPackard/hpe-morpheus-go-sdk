@@ -284,6 +284,7 @@ func (v NullableUpdateAlerts200ResponseAllOfAlertContactsInner) UnmarshalMapstru
 
 	return v, nil
 }
+
 func (o *UpdateAlerts200ResponseAllOfAlertContactsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

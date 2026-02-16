@@ -804,6 +804,7 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

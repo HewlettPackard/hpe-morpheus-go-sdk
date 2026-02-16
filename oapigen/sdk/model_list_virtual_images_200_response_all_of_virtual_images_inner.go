@@ -1955,6 +1955,7 @@ func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalMa
 
 	return v, nil
 }
+
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -203,6 +203,7 @@ func (v NullableClusterResourceNamePolicyTypeConfiguration5) UnmarshalMapstructu
 
 	return v, nil
 }
+
 func (o *ClusterResourceNamePolicyTypeConfiguration5) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

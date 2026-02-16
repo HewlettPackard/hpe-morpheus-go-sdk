@@ -1835,6 +1835,7 @@ func (v NullableGetInstanceType200ResponseInstanceTypeOptionTypesInner) Unmarsha
 
 	return v, nil
 }
+
 func (o *GetInstanceType200ResponseInstanceTypeOptionTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

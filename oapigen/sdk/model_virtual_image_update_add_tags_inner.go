@@ -158,6 +158,7 @@ func (v NullableVirtualImageUpdateAddTagsInner) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
+
 func (o *VirtualImageUpdateAddTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

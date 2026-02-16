@@ -465,6 +465,7 @@ func (v NullableUpdateEnvironments200ResponseAllOfEnvironment) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *UpdateEnvironments200ResponseAllOfEnvironment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

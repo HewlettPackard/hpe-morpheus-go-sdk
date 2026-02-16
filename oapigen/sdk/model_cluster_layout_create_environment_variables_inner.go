@@ -251,6 +251,7 @@ func (v NullableClusterLayoutCreateEnvironmentVariablesInner) UnmarshalMapstruct
 
 	return v, nil
 }
+
 func (o *ClusterLayoutCreateEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -621,6 +621,7 @@ func (v NullablePythonTaskConfig3) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
+
 func (o *PythonTaskConfig3) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

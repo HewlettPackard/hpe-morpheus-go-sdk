@@ -259,6 +259,7 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerInstancePrice) Unmars
 
 	return v, nil
 }
+
 func (o *ListInstances200ResponseAllOfInstancesInnerInstancePrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -131,6 +131,7 @@ func (v NullableMaxContainersPolicyTypeConfiguration6) UnmarshalMapstructure(dat
 
 	return v, nil
 }
+
 func (o *MaxContainersPolicyTypeConfiguration6) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

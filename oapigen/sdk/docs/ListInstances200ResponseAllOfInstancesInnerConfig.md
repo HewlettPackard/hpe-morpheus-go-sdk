@@ -179,16 +179,6 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
-### SetSecurityGroupsNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSecurityGroupsNil(b bool)`
-
- SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
-
-### UnsetSecurityGroups
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetSecurityGroups()`
-
-UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetKvmHostId
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetKvmHostId() int64`
@@ -739,16 +729,6 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
-### SetExposeNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExposeNil(b bool)`
-
- SetExposeNil sets the value for Expose to be an explicit nil
-
-### UnsetExpose
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetExpose()`
-
-UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetCreateBackup() bool`

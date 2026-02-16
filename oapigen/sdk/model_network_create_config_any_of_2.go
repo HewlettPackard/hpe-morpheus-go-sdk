@@ -164,6 +164,7 @@ func (v NullableNetworkCreateConfigAnyOf2) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
+
 func (o *NetworkCreateConfigAnyOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

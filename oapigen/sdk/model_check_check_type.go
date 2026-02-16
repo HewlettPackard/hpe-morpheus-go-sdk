@@ -248,6 +248,7 @@ func (v NullableCheckCheckType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
+
 func (o *CheckCheckType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

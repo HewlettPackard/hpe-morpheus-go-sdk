@@ -226,6 +226,7 @@ func (v NullableCatalogItemTypeInstanceCreateConfigPortsInner) UnmarshalMapstruc
 
 	return v, nil
 }
+
 func (o *CatalogItemTypeInstanceCreateConfigPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
