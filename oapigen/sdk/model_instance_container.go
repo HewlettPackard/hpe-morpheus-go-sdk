@@ -35,9 +35,9 @@ type InstanceContainer struct {
 	ContainerType        *InstanceContainerContainerType    `json:"containerType,omitempty"`
 	ContainerTypeSet     *InstanceContainerContainerTypeSet `json:"containerTypeSet,omitempty"`
 	Server               *InstanceContainerServer           `json:"server,omitempty"`
-	Cloud                *InstanceContainerInstance         `json:"cloud,omitempty"`
+	Cloud                *InstanceContainerCloud            `json:"cloud,omitempty"`
 	Ports                []InstanceContainerPortsInner      `json:"ports,omitempty"`
-	Plan                 *InstanceContainerContainerType    `json:"plan,omitempty"`
+	Plan                 *InstanceContainerPlan             `json:"plan,omitempty"`
 	DateCreated          *time.Time                         `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                         `json:"lastUpdated,omitempty"`
 	Hostname             *string                            `json:"hostname,omitempty"`
@@ -514,9 +514,9 @@ func (o *InstanceContainer) SetServer(v InstanceContainerServer) {
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *InstanceContainer) GetCloud() InstanceContainerInstance {
+func (o *InstanceContainer) GetCloud() InstanceContainerCloud {
 	if o == nil || IsNil(o.Cloud) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainerCloud
 		return ret
 	}
 	return *o.Cloud
@@ -524,7 +524,7 @@ func (o *InstanceContainer) GetCloud() InstanceContainerInstance {
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer) GetCloudOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainer) GetCloudOk() (*InstanceContainerCloud, bool) {
 	if o == nil || IsNil(o.Cloud) {
 		return nil, false
 	}
@@ -540,8 +540,8 @@ func (o *InstanceContainer) IsSetCloud() bool {
 	return false
 }
 
-// SetCloud gets a reference to the given InstanceContainerInstance and assigns it to the Cloud field.
-func (o *InstanceContainer) SetCloud(v InstanceContainerInstance) {
+// SetCloud gets a reference to the given InstanceContainerCloud and assigns it to the Cloud field.
+func (o *InstanceContainer) SetCloud(v InstanceContainerCloud) {
 	o.Cloud = &v
 }
 
@@ -578,9 +578,9 @@ func (o *InstanceContainer) SetPorts(v []InstanceContainerPortsInner) {
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *InstanceContainer) GetPlan() InstanceContainerContainerType {
+func (o *InstanceContainer) GetPlan() InstanceContainerPlan {
 	if o == nil || IsNil(o.Plan) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainerPlan
 		return ret
 	}
 	return *o.Plan
@@ -588,7 +588,7 @@ func (o *InstanceContainer) GetPlan() InstanceContainerContainerType {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer) GetPlanOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainer) GetPlanOk() (*InstanceContainerPlan, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -604,8 +604,8 @@ func (o *InstanceContainer) IsSetPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given InstanceContainerContainerType and assigns it to the Plan field.
-func (o *InstanceContainer) SetPlan(v InstanceContainerContainerType) {
+// SetPlan gets a reference to the given InstanceContainerPlan and assigns it to the Plan field.
+func (o *InstanceContainer) SetPlan(v InstanceContainerPlan) {
 	o.Plan = &v
 }
 
@@ -897,7 +897,6 @@ func (v NullableInstanceContainer) UnmarshalMapstructure(data any) (any, error) 
 
 	return v, nil
 }
-
 func (o *InstanceContainer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**InstanceTypesAccount**](InstanceTypesAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Featured** | Pointer to **bool** |  | [optional] 
 **Versions** | Pointer to **[]string** |  | [optional] 
-**InstanceTypeLayouts** | Pointer to [**[]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner**](ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner.md) |  | [optional] 
+**InstanceTypeLayouts** | Pointer to [**[]InstanceTypesInstanceTypeLayoutsInner**](InstanceTypesInstanceTypeLayoutsInner.md) |  | [optional] 
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
 **DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
 
@@ -67,20 +67,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *InstanceTypes) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *InstanceTypes) GetAccount() InstanceTypesAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *InstanceTypes) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *InstanceTypes) GetAccountOk() (*InstanceTypesAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *InstanceTypes) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *InstanceTypes) SetAccount(v InstanceTypesAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -397,20 +397,20 @@ HasVersions returns a boolean if a field has been set.
 
 ### GetInstanceTypeLayouts
 
-`func (o *InstanceTypes) GetInstanceTypeLayouts() []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner`
+`func (o *InstanceTypes) GetInstanceTypeLayouts() []InstanceTypesInstanceTypeLayoutsInner`
 
 GetInstanceTypeLayouts returns the InstanceTypeLayouts field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeLayoutsOk
 
-`func (o *InstanceTypes) GetInstanceTypeLayoutsOk() (*[]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner, bool)`
+`func (o *InstanceTypes) GetInstanceTypeLayoutsOk() (*[]InstanceTypesInstanceTypeLayoutsInner, bool)`
 
 GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypeLayouts
 
-`func (o *InstanceTypes) SetInstanceTypeLayouts(v []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner)`
+`func (o *InstanceTypes) SetInstanceTypeLayouts(v []InstanceTypesInstanceTypeLayoutsInner)`
 
 SetInstanceTypeLayouts sets InstanceTypeLayouts field to given value.
 

@@ -131,7 +131,6 @@ func (v NullableNetworkQuotaPolicyTypeConfiguration) UnmarshalMapstructure(data 
 
 	return v, nil
 }
-
 func (o *NetworkQuotaPolicyTypeConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

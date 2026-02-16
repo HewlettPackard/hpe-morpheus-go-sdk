@@ -21,7 +21,7 @@ var _ MappedNullable = &ListTasks200Response{}
 // ListTasks200Response struct for ListTasks200Response
 type ListTasks200Response struct {
 	Tasks                []ListTasks200ResponseAllOfTasksInner `json:"tasks,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta     `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta       `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListTasks200Response) SetTasks(v []ListTasks200ResponseAllOfTasksInner)
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListTasks200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListTasks200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListTasks200Response) GetMeta() ListActivity200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListTasks200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListTasks200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListTasks200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListTasks200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListTasks200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListTasks200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *ListTasks200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

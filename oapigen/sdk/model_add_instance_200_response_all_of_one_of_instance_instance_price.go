@@ -22,7 +22,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceInstancePrice{}
 type AddInstance200ResponseAllOfOneOfInstanceInstancePrice struct {
 	Price                *float32               `json:"price,omitempty"`
 	Cost                 *float32               `json:"cost,omitempty"`
-	Currency             *string                `json:"currency,omitempty"`
+	Currency             NullableString         `json:"currency,omitempty"`
 	Unit                 *string                `json:"unit,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
@@ -110,36 +110,47 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) SetCost(v float3
 	o.Cost = &v
 }
 
-// GetCurrency returns the Currency field value if set, zero value otherwise.
+// GetCurrency returns the Currency field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) GetCurrency() string {
-	if o == nil || IsNil(o.Currency) {
+	if o == nil || IsNil(o.Currency.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Currency
+	return *o.Currency.Get()
 }
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) GetCurrencyOk() (*string, bool) {
-	if o == nil || IsNil(o.Currency) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Currency, true
+	return o.Currency.Get(), o.Currency.IsSet()
 }
 
 // IsSetCurrency returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) IsSetCurrency() bool {
-	if o != nil && !IsNil(o.Currency) {
+	if o != nil && o.Currency.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrency gets a reference to the given string and assigns it to the Currency field.
+// SetCurrency gets a reference to the given NullableString and assigns it to the Currency field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) SetCurrency(v string) {
-	o.Currency = &v
+	o.Currency.Set(&v)
+}
+
+// SetCurrencyNil sets the value for Currency to be an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) SetCurrencyNil() {
+	o.Currency.Set(nil)
+}
+
+// UnsetCurrency ensures that no value is present for Currency, not even an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) UnsetCurrency() {
+	o.Currency.Unset()
 }
 
 // GetUnit returns the Unit field value if set, zero value otherwise.
@@ -190,8 +201,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceInstancePrice) ToMap() (map[stri
 	if !IsNil(o.Cost) {
 		toSerialize["cost"] = o.Cost
 	}
-	if !IsNil(o.Currency) {
-		toSerialize["currency"] = o.Currency
+	if o.Currency.IsSet() {
+		toSerialize["currency"] = o.Currency.Get()
 	}
 	if !IsNil(o.Unit) {
 		toSerialize["unit"] = o.Unit
@@ -248,7 +259,6 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceInstancePrice) Unmarshal
 
 	return v, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceInstancePrice) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -22,15 +22,15 @@ var _ MappedNullable = &ZoneDatastoreCreate{}
 type ZoneDatastoreCreate struct {
 	Name *string `json:"name,omitempty"`
 	// The code of the datatoreType
-	DatastoreType        *string                                                          `json:"datastoreType,omitempty"`
-	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
-	Visibility           *string                                                          `json:"visibility,omitempty"`
-	Active               *bool                                                            `json:"active,omitempty"`
-	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	DatastoreType        *string                                 `json:"datastoreType,omitempty"`
+	StorageServer        *ZoneDatastoreCreateStorageServer       `json:"storageServer,omitempty"`
+	Visibility           *string                                 `json:"visibility,omitempty"`
+	Active               *bool                                   `json:"active,omitempty"`
+	DefaultStore         *bool                                   `json:"defaultStore,omitempty"`
+	Tenants              []ZoneDatastoreCreateTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions  *ZoneDatastoreCreateResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _ZoneDatastoreCreate ZoneDatastoreCreate
@@ -117,9 +117,9 @@ func (o *ZoneDatastoreCreate) SetDatastoreType(v string) {
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *ZoneDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ZoneDatastoreCreate) GetStorageServer() ZoneDatastoreCreateStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ZoneDatastoreCreateStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -127,7 +127,7 @@ func (o *ZoneDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecks
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneDatastoreCreate) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ZoneDatastoreCreate) GetStorageServerOk() (*ZoneDatastoreCreateStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *ZoneDatastoreCreate) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *ZoneDatastoreCreate) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given ZoneDatastoreCreateStorageServer and assigns it to the StorageServer field.
+func (o *ZoneDatastoreCreate) SetStorageServer(v ZoneDatastoreCreateStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -245,9 +245,9 @@ func (o *ZoneDatastoreCreate) SetDefaultStore(v bool) {
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *ZoneDatastoreCreate) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *ZoneDatastoreCreate) GetTenants() []ZoneDatastoreCreateTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []ZoneDatastoreCreateTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -255,7 +255,7 @@ func (o *ZoneDatastoreCreate) GetTenants() []ListCloudDatastores200ResponseAllOf
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneDatastoreCreate) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *ZoneDatastoreCreate) GetTenantsOk() ([]ZoneDatastoreCreateTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -271,15 +271,15 @@ func (o *ZoneDatastoreCreate) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *ZoneDatastoreCreate) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []ZoneDatastoreCreateTenantsInner and assigns it to the Tenants field.
+func (o *ZoneDatastoreCreate) SetTenants(v []ZoneDatastoreCreateTenantsInner) {
 	o.Tenants = v
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *ZoneDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions {
+func (o *ZoneDatastoreCreate) GetResourcePermissions() ZoneDatastoreCreateResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveCloudDatastoreRequestDatastoreResourcePermissions
+		var ret ZoneDatastoreCreateResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -287,7 +287,7 @@ func (o *ZoneDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequest
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *ZoneDatastoreCreate) GetResourcePermissionsOk() (*ZoneDatastoreCreateResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *ZoneDatastoreCreate) IsSetResourcePermissions() bool {
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *ZoneDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given ZoneDatastoreCreateResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *ZoneDatastoreCreate) SetResourcePermissions(v ZoneDatastoreCreateResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 
@@ -429,7 +429,6 @@ func (v NullableZoneDatastoreCreate) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *ZoneDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

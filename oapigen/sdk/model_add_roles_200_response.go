@@ -20,30 +20,30 @@ var _ MappedNullable = &AddRoles200Response{}
 
 // AddRoles200Response struct for AddRoles200Response
 type AddRoles200Response struct {
-	Role                        *AddRoles200ResponseAllOfRole                          `json:"role,omitempty"`
-	FeaturePermissions          []AddRoles200ResponseAllOfFeaturePermissionsInner      `json:"featurePermissions,omitempty"`
-	GlobalSiteAccess            *string                                                `json:"globalSiteAccess,omitempty"`
-	Sites                       []AddRoles200ResponseAllOfSitesInner                   `json:"sites,omitempty"`
-	GlobalZoneAccess            *string                                                `json:"globalZoneAccess,omitempty"`
-	Zones                       []AddRoles200ResponseAllOfSitesInner                   `json:"zones,omitempty"`
-	GlobalInstanceTypeAccess    *string                                                `json:"globalInstanceTypeAccess,omitempty"`
-	InstanceTypePermissions     []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"instanceTypePermissions,omitempty"`
-	GlobalAppTemplateAccess     *string                                                `json:"globalAppTemplateAccess,omitempty"`
-	AppTemplatePermissions      []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"appTemplatePermissions,omitempty"`
-	GlobalCatalogItemTypeAccess *string                                                `json:"globalCatalogItemTypeAccess,omitempty"`
-	CatalogItemTypePermissions  []AddRoles200ResponseAllOfSitesInner                   `json:"catalogItemTypePermissions,omitempty"`
-	GlobalPersonaAccess         *string                                                `json:"globalPersonaAccess,omitempty"`
-	PersonaPermissions          []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"personaPermissions,omitempty"`
-	GlobalVdiPoolAccess         *string                                                `json:"globalVdiPoolAccess,omitempty"`
-	VdiPoolPermissions          []AddRoles200ResponseAllOfSitesInner                   `json:"vdiPoolPermissions,omitempty"`
-	GlobalReportTypeAccess      *string                                                `json:"globalReportTypeAccess,omitempty"`
-	ReportTypePermissions       []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"reportTypePermissions,omitempty"`
-	GlobalTaskAccess            *string                                                `json:"globalTaskAccess,omitempty"`
-	TaskPermissions             []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskPermissions,omitempty"`
-	GlobalTaskSetAccess         *string                                                `json:"globalTaskSetAccess,omitempty"`
-	TaskSetPermissions          []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskSetPermissions,omitempty"`
-	Success                     *bool                                                  `json:"success,omitempty"`
-	AdditionalProperties        map[string]interface{}                                 `json:",remain"`
+	Role                        *AddRoles200ResponseAllOfRole                             `json:"role,omitempty"`
+	FeaturePermissions          []AddRoles200ResponseAllOfFeaturePermissionsInner         `json:"featurePermissions,omitempty"`
+	GlobalSiteAccess            *string                                                   `json:"globalSiteAccess,omitempty"`
+	Sites                       []AddRoles200ResponseAllOfSitesInner                      `json:"sites,omitempty"`
+	GlobalZoneAccess            *string                                                   `json:"globalZoneAccess,omitempty"`
+	Zones                       []AddRoles200ResponseAllOfZonesInner                      `json:"zones,omitempty"`
+	GlobalInstanceTypeAccess    *string                                                   `json:"globalInstanceTypeAccess,omitempty"`
+	InstanceTypePermissions     []AddRoles200ResponseAllOfInstanceTypePermissionsInner    `json:"instanceTypePermissions,omitempty"`
+	GlobalAppTemplateAccess     *string                                                   `json:"globalAppTemplateAccess,omitempty"`
+	AppTemplatePermissions      []AddRoles200ResponseAllOfAppTemplatePermissionsInner     `json:"appTemplatePermissions,omitempty"`
+	GlobalCatalogItemTypeAccess *string                                                   `json:"globalCatalogItemTypeAccess,omitempty"`
+	CatalogItemTypePermissions  []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner `json:"catalogItemTypePermissions,omitempty"`
+	GlobalPersonaAccess         *string                                                   `json:"globalPersonaAccess,omitempty"`
+	PersonaPermissions          []AddRoles200ResponseAllOfPersonaPermissionsInner         `json:"personaPermissions,omitempty"`
+	GlobalVdiPoolAccess         *string                                                   `json:"globalVdiPoolAccess,omitempty"`
+	VdiPoolPermissions          []AddRoles200ResponseAllOfVdiPoolPermissionsInner         `json:"vdiPoolPermissions,omitempty"`
+	GlobalReportTypeAccess      *string                                                   `json:"globalReportTypeAccess,omitempty"`
+	ReportTypePermissions       []AddRoles200ResponseAllOfReportTypePermissionsInner      `json:"reportTypePermissions,omitempty"`
+	GlobalTaskAccess            *string                                                   `json:"globalTaskAccess,omitempty"`
+	TaskPermissions             []AddRoles200ResponseAllOfTaskPermissionsInner            `json:"taskPermissions,omitempty"`
+	GlobalTaskSetAccess         *string                                                   `json:"globalTaskSetAccess,omitempty"`
+	TaskSetPermissions          []AddRoles200ResponseAllOfTaskSetPermissionsInner         `json:"taskSetPermissions,omitempty"`
+	Success                     *bool                                                     `json:"success,omitempty"`
+	AdditionalProperties        map[string]interface{}                                    `json:",remain"`
 }
 
 type _AddRoles200Response AddRoles200Response
@@ -226,9 +226,9 @@ func (o *AddRoles200Response) SetGlobalZoneAccess(v string) {
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetZones() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddRoles200Response) GetZones() []AddRoles200ResponseAllOfZonesInner {
 	if o == nil || IsNil(o.Zones) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddRoles200ResponseAllOfZonesInner
 		return ret
 	}
 	return o.Zones
@@ -236,7 +236,7 @@ func (o *AddRoles200Response) GetZones() []AddRoles200ResponseAllOfSitesInner {
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetZonesOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddRoles200Response) GetZonesOk() ([]AddRoles200ResponseAllOfZonesInner, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -252,8 +252,8 @@ func (o *AddRoles200Response) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the Zones field.
-func (o *AddRoles200Response) SetZones(v []AddRoles200ResponseAllOfSitesInner) {
+// SetZones gets a reference to the given []AddRoles200ResponseAllOfZonesInner and assigns it to the Zones field.
+func (o *AddRoles200Response) SetZones(v []AddRoles200ResponseAllOfZonesInner) {
 	o.Zones = v
 }
 
@@ -418,9 +418,9 @@ func (o *AddRoles200Response) SetGlobalCatalogItemTypeAccess(v string) {
 }
 
 // GetCatalogItemTypePermissions returns the CatalogItemTypePermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetCatalogItemTypePermissions() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddRoles200Response) GetCatalogItemTypePermissions() []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner {
 	if o == nil || IsNil(o.CatalogItemTypePermissions) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner
 		return ret
 	}
 	return o.CatalogItemTypePermissions
@@ -428,7 +428,7 @@ func (o *AddRoles200Response) GetCatalogItemTypePermissions() []AddRoles200Respo
 
 // GetCatalogItemTypePermissionsOk returns a tuple with the CatalogItemTypePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetCatalogItemTypePermissionsOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddRoles200Response) GetCatalogItemTypePermissionsOk() ([]AddRoles200ResponseAllOfCatalogItemTypePermissionsInner, bool) {
 	if o == nil || IsNil(o.CatalogItemTypePermissions) {
 		return nil, false
 	}
@@ -444,8 +444,8 @@ func (o *AddRoles200Response) IsSetCatalogItemTypePermissions() bool {
 	return false
 }
 
-// SetCatalogItemTypePermissions gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the CatalogItemTypePermissions field.
-func (o *AddRoles200Response) SetCatalogItemTypePermissions(v []AddRoles200ResponseAllOfSitesInner) {
+// SetCatalogItemTypePermissions gets a reference to the given []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner and assigns it to the CatalogItemTypePermissions field.
+func (o *AddRoles200Response) SetCatalogItemTypePermissions(v []AddRoles200ResponseAllOfCatalogItemTypePermissionsInner) {
 	o.CatalogItemTypePermissions = v
 }
 
@@ -482,9 +482,9 @@ func (o *AddRoles200Response) SetGlobalPersonaAccess(v string) {
 }
 
 // GetPersonaPermissions returns the PersonaPermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetPersonaPermissions() []AddRoles200ResponseAllOfInstanceTypePermissionsInner {
+func (o *AddRoles200Response) GetPersonaPermissions() []AddRoles200ResponseAllOfPersonaPermissionsInner {
 	if o == nil || IsNil(o.PersonaPermissions) {
-		var ret []AddRoles200ResponseAllOfInstanceTypePermissionsInner
+		var ret []AddRoles200ResponseAllOfPersonaPermissionsInner
 		return ret
 	}
 	return o.PersonaPermissions
@@ -492,7 +492,7 @@ func (o *AddRoles200Response) GetPersonaPermissions() []AddRoles200ResponseAllOf
 
 // GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetPersonaPermissionsOk() ([]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool) {
+func (o *AddRoles200Response) GetPersonaPermissionsOk() ([]AddRoles200ResponseAllOfPersonaPermissionsInner, bool) {
 	if o == nil || IsNil(o.PersonaPermissions) {
 		return nil, false
 	}
@@ -508,8 +508,8 @@ func (o *AddRoles200Response) IsSetPersonaPermissions() bool {
 	return false
 }
 
-// SetPersonaPermissions gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the PersonaPermissions field.
-func (o *AddRoles200Response) SetPersonaPermissions(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
+// SetPersonaPermissions gets a reference to the given []AddRoles200ResponseAllOfPersonaPermissionsInner and assigns it to the PersonaPermissions field.
+func (o *AddRoles200Response) SetPersonaPermissions(v []AddRoles200ResponseAllOfPersonaPermissionsInner) {
 	o.PersonaPermissions = v
 }
 
@@ -546,9 +546,9 @@ func (o *AddRoles200Response) SetGlobalVdiPoolAccess(v string) {
 }
 
 // GetVdiPoolPermissions returns the VdiPoolPermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetVdiPoolPermissions() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddRoles200Response) GetVdiPoolPermissions() []AddRoles200ResponseAllOfVdiPoolPermissionsInner {
 	if o == nil || IsNil(o.VdiPoolPermissions) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddRoles200ResponseAllOfVdiPoolPermissionsInner
 		return ret
 	}
 	return o.VdiPoolPermissions
@@ -556,7 +556,7 @@ func (o *AddRoles200Response) GetVdiPoolPermissions() []AddRoles200ResponseAllOf
 
 // GetVdiPoolPermissionsOk returns a tuple with the VdiPoolPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetVdiPoolPermissionsOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddRoles200Response) GetVdiPoolPermissionsOk() ([]AddRoles200ResponseAllOfVdiPoolPermissionsInner, bool) {
 	if o == nil || IsNil(o.VdiPoolPermissions) {
 		return nil, false
 	}
@@ -572,8 +572,8 @@ func (o *AddRoles200Response) IsSetVdiPoolPermissions() bool {
 	return false
 }
 
-// SetVdiPoolPermissions gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the VdiPoolPermissions field.
-func (o *AddRoles200Response) SetVdiPoolPermissions(v []AddRoles200ResponseAllOfSitesInner) {
+// SetVdiPoolPermissions gets a reference to the given []AddRoles200ResponseAllOfVdiPoolPermissionsInner and assigns it to the VdiPoolPermissions field.
+func (o *AddRoles200Response) SetVdiPoolPermissions(v []AddRoles200ResponseAllOfVdiPoolPermissionsInner) {
 	o.VdiPoolPermissions = v
 }
 
@@ -610,9 +610,9 @@ func (o *AddRoles200Response) SetGlobalReportTypeAccess(v string) {
 }
 
 // GetReportTypePermissions returns the ReportTypePermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetReportTypePermissions() []AddRoles200ResponseAllOfInstanceTypePermissionsInner {
+func (o *AddRoles200Response) GetReportTypePermissions() []AddRoles200ResponseAllOfReportTypePermissionsInner {
 	if o == nil || IsNil(o.ReportTypePermissions) {
-		var ret []AddRoles200ResponseAllOfInstanceTypePermissionsInner
+		var ret []AddRoles200ResponseAllOfReportTypePermissionsInner
 		return ret
 	}
 	return o.ReportTypePermissions
@@ -620,7 +620,7 @@ func (o *AddRoles200Response) GetReportTypePermissions() []AddRoles200ResponseAl
 
 // GetReportTypePermissionsOk returns a tuple with the ReportTypePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetReportTypePermissionsOk() ([]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool) {
+func (o *AddRoles200Response) GetReportTypePermissionsOk() ([]AddRoles200ResponseAllOfReportTypePermissionsInner, bool) {
 	if o == nil || IsNil(o.ReportTypePermissions) {
 		return nil, false
 	}
@@ -636,8 +636,8 @@ func (o *AddRoles200Response) IsSetReportTypePermissions() bool {
 	return false
 }
 
-// SetReportTypePermissions gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the ReportTypePermissions field.
-func (o *AddRoles200Response) SetReportTypePermissions(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
+// SetReportTypePermissions gets a reference to the given []AddRoles200ResponseAllOfReportTypePermissionsInner and assigns it to the ReportTypePermissions field.
+func (o *AddRoles200Response) SetReportTypePermissions(v []AddRoles200ResponseAllOfReportTypePermissionsInner) {
 	o.ReportTypePermissions = v
 }
 
@@ -674,9 +674,9 @@ func (o *AddRoles200Response) SetGlobalTaskAccess(v string) {
 }
 
 // GetTaskPermissions returns the TaskPermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetTaskPermissions() []AddRoles200ResponseAllOfAppTemplatePermissionsInner {
+func (o *AddRoles200Response) GetTaskPermissions() []AddRoles200ResponseAllOfTaskPermissionsInner {
 	if o == nil || IsNil(o.TaskPermissions) {
-		var ret []AddRoles200ResponseAllOfAppTemplatePermissionsInner
+		var ret []AddRoles200ResponseAllOfTaskPermissionsInner
 		return ret
 	}
 	return o.TaskPermissions
@@ -684,7 +684,7 @@ func (o *AddRoles200Response) GetTaskPermissions() []AddRoles200ResponseAllOfApp
 
 // GetTaskPermissionsOk returns a tuple with the TaskPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetTaskPermissionsOk() ([]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool) {
+func (o *AddRoles200Response) GetTaskPermissionsOk() ([]AddRoles200ResponseAllOfTaskPermissionsInner, bool) {
 	if o == nil || IsNil(o.TaskPermissions) {
 		return nil, false
 	}
@@ -700,8 +700,8 @@ func (o *AddRoles200Response) IsSetTaskPermissions() bool {
 	return false
 }
 
-// SetTaskPermissions gets a reference to the given []AddRoles200ResponseAllOfAppTemplatePermissionsInner and assigns it to the TaskPermissions field.
-func (o *AddRoles200Response) SetTaskPermissions(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner) {
+// SetTaskPermissions gets a reference to the given []AddRoles200ResponseAllOfTaskPermissionsInner and assigns it to the TaskPermissions field.
+func (o *AddRoles200Response) SetTaskPermissions(v []AddRoles200ResponseAllOfTaskPermissionsInner) {
 	o.TaskPermissions = v
 }
 
@@ -738,9 +738,9 @@ func (o *AddRoles200Response) SetGlobalTaskSetAccess(v string) {
 }
 
 // GetTaskSetPermissions returns the TaskSetPermissions field value if set, zero value otherwise.
-func (o *AddRoles200Response) GetTaskSetPermissions() []AddRoles200ResponseAllOfAppTemplatePermissionsInner {
+func (o *AddRoles200Response) GetTaskSetPermissions() []AddRoles200ResponseAllOfTaskSetPermissionsInner {
 	if o == nil || IsNil(o.TaskSetPermissions) {
-		var ret []AddRoles200ResponseAllOfAppTemplatePermissionsInner
+		var ret []AddRoles200ResponseAllOfTaskSetPermissionsInner
 		return ret
 	}
 	return o.TaskSetPermissions
@@ -748,7 +748,7 @@ func (o *AddRoles200Response) GetTaskSetPermissions() []AddRoles200ResponseAllOf
 
 // GetTaskSetPermissionsOk returns a tuple with the TaskSetPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200Response) GetTaskSetPermissionsOk() ([]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool) {
+func (o *AddRoles200Response) GetTaskSetPermissionsOk() ([]AddRoles200ResponseAllOfTaskSetPermissionsInner, bool) {
 	if o == nil || IsNil(o.TaskSetPermissions) {
 		return nil, false
 	}
@@ -764,8 +764,8 @@ func (o *AddRoles200Response) IsSetTaskSetPermissions() bool {
 	return false
 }
 
-// SetTaskSetPermissions gets a reference to the given []AddRoles200ResponseAllOfAppTemplatePermissionsInner and assigns it to the TaskSetPermissions field.
-func (o *AddRoles200Response) SetTaskSetPermissions(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner) {
+// SetTaskSetPermissions gets a reference to the given []AddRoles200ResponseAllOfTaskSetPermissionsInner and assigns it to the TaskSetPermissions field.
+func (o *AddRoles200Response) SetTaskSetPermissions(v []AddRoles200ResponseAllOfTaskSetPermissionsInner) {
 	o.TaskSetPermissions = v
 }
 
@@ -932,7 +932,6 @@ func (v NullableAddRoles200Response) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *AddRoles200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

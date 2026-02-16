@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Config** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerConfig**](ListGroups200ResponseAllOfGroupsInnerConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Zones** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Zones** | Pointer to [**[]ListGroups200ResponseAllOfGroupsInnerZonesInner**](ListGroups200ResponseAllOfGroupsInnerZonesInner.md) |  | [optional] 
 **Stats** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStats**](ListGroups200ResponseAllOfGroupsInnerStats.md) |  | [optional] 
 **ServerCount** | Pointer to **int64** |  | [optional] 
 
@@ -335,20 +335,20 @@ HasLastUpdated returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *ListGroups200ResponseAllOfGroupsInner) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListGroups200ResponseAllOfGroupsInner) GetZones() []ListGroups200ResponseAllOfGroupsInnerZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *ListGroups200ResponseAllOfGroupsInner) GetZonesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListGroups200ResponseAllOfGroupsInner) GetZonesOk() (*[]ListGroups200ResponseAllOfGroupsInnerZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *ListGroups200ResponseAllOfGroupsInner) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListGroups200ResponseAllOfGroupsInner) SetZones(v []ListGroups200ResponseAllOfGroupsInnerZonesInner)`
 
 SetZones sets Zones field to given value.
 

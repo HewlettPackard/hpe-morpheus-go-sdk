@@ -480,7 +480,6 @@ func (v NullableGroovyTaskConfig) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *GroovyTaskConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

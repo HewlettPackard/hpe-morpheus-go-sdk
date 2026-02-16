@@ -21,7 +21,7 @@ var _ MappedNullable = &ListRoles200Response{}
 // ListRoles200Response struct for ListRoles200Response
 type ListRoles200Response struct {
 	Roles                []ListRoles200ResponseAllOfRolesInner `json:"roles,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta     `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta       `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListRoles200Response) SetRoles(v []ListRoles200ResponseAllOfRolesInner)
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListRoles200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListRoles200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListRoles200Response) GetMeta() ListActivity200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListRoles200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListRoles200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListRoles200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListRoles200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListRoles200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListRoles200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *ListRoles200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -7,29 +7,29 @@ Name | Type | Description | Notes
 **CreateUser** | Pointer to **bool** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
-**NoAgent** | Pointer to [**InstanceContainerServerPowerState**](InstanceContainerServerPowerState.md) |  | [optional] 
-**SecurityGroups** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
+**NoAgent** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent**](AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent.md) |  | [optional] 
+**SecurityGroups** | Pointer to [**[]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner**](AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner.md) |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
 **CustomOptions** | Pointer to **map[string]interface{}** |  | [optional] 
-**ResourcePoolId** | Pointer to [**InstanceInterfacesNetworkInterfacesInnerId**](InstanceInterfacesNetworkInterfacesInnerId.md) |  | [optional] 
+**ResourcePoolId** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId**](AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId.md) |  | [optional] 
 **PoolProviderType** | Pointer to **NullableString** |  | [optional] 
-**UserGroup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigUserGroup**](ListInstances200ResponseAllOfInstancesInnerConfigUserGroup.md) |  | [optional] 
+**UserGroup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup**](AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup.md) |  | [optional] 
 **ExpireDays** | Pointer to **string** |  | [optional] 
 **ShutdownDays** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
 **InstanceType** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType**](AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType.md) |  | [optional] 
-**Site** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Site** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigSite**](AddInstance200ResponseAllOfOneOfInstanceConfigSite.md) |  | [optional] 
 **EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
-**Layout** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan.md) |  | [optional] 
+**Layout** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigLayout**](AddInstance200ResponseAllOfOneOfInstanceConfigLayout.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
 **MemoryDisplay** | Pointer to **string** |  | [optional] 
 **Expose** | Pointer to **[]int64** |  | [optional] 
 **CreateBackup** | Pointer to **bool** |  | [optional] 
-**Backup** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigBackup**](ListInstances200ResponseAllOfInstancesInnerConfigBackup.md) |  | [optional] 
+**Backup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigBackup**](AddInstance200ResponseAllOfOneOfInstanceConfigBackup.md) |  | [optional] 
 **ReplicationGroup** | Pointer to [**AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup**](AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup.md) |  | [optional] 
 **LayoutSize** | Pointer to **int64** |  | [optional] 
 **LbInstances** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -130,20 +130,20 @@ HasIsVpcSelectable returns a boolean if a field has been set.
 
 ### GetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() InstanceContainerServerPowerState`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent`
 
 GetNoAgent returns the NoAgent field if non-nil, zero value otherwise.
 
 ### GetNoAgentOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*InstanceContainerServerPowerState, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent, bool)`
 
 GetNoAgentOk returns a tuple with the NoAgent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNoAgent
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v InstanceContainerServerPowerState)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent)`
 
 SetNoAgent sets NoAgent field to given value.
 
@@ -155,20 +155,20 @@ HasNoAgent returns a boolean if a field has been set.
 
 ### GetSecurityGroups
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroupsOk() (*[]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroupsOk() (*[]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSecurityGroups(v []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSecurityGroups(v []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 
@@ -178,6 +178,16 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
+### SetSecurityGroupsNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSecurityGroupsNil(b bool)`
+
+ SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
+
+### UnsetSecurityGroups
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetSecurityGroups()`
+
+UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetSmbiosAssetTag
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSmbiosAssetTag() string`
@@ -300,20 +310,20 @@ HasCustomOptions returns a boolean if a field has been set.
 
 ### GetResourcePoolId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() InstanceInterfacesNetworkInterfacesInnerId`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v InstanceInterfacesNetworkInterfacesInnerId)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 
@@ -360,20 +370,20 @@ HasPoolProviderType returns a boolean if a field has been set.
 UnsetPoolProviderType ensures that no value is present for PoolProviderType, not even an explicit nil
 ### GetUserGroup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigUserGroup`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup`
 
 GetUserGroup returns the UserGroup field if non-nil, zero value otherwise.
 
 ### GetUserGroupOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroupOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup, bool)`
 
 GetUserGroupOk returns a tuple with the UserGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserGroup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigUserGroup)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetUserGroup(v AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup)`
 
 SetUserGroup sets UserGroup field to given value.
 
@@ -510,20 +520,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSite() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSite() AddInstance200ResponseAllOfOneOfInstanceConfigSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSiteOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSiteOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSite(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSite(v AddInstance200ResponseAllOfOneOfInstanceConfigSite)`
 
 SetSite sets Site field to given value.
 
@@ -570,20 +580,20 @@ HasEnvironmentPrefix returns a boolean if a field has been set.
 UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetLayout
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() AddInstance200ResponseAllOfOneOfInstanceConfigLayout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayoutOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayoutOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigLayout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLayout(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLayout(v AddInstance200ResponseAllOfOneOfInstanceConfigLayout)`
 
 SetLayout sets Layout field to given value.
 
@@ -693,6 +703,16 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
+### SetExposeNil
+
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetExposeNil(b bool)`
+
+ SetExposeNil sets the value for Expose to be an explicit nil
+
+### UnsetExpose
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetExpose()`
+
+UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetCreateBackup() bool`
@@ -720,20 +740,20 @@ HasCreateBackup returns a boolean if a field has been set.
 
 ### GetBackup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackup() ListInstances200ResponseAllOfInstancesInnerConfigBackup`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackup() AddInstance200ResponseAllOfOneOfInstanceConfigBackup`
 
 GetBackup returns the Backup field if non-nil, zero value otherwise.
 
 ### GetBackupOk
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigBackup, bool)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackupOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigBackup, bool)`
 
 GetBackupOk returns a tuple with the Backup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackup
 
-`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetBackup(v ListInstances200ResponseAllOfInstancesInnerConfigBackup)`
+`func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetBackup(v AddInstance200ResponseAllOfOneOfInstanceConfigBackup)`
 
 SetBackup sets Backup field to given value.
 

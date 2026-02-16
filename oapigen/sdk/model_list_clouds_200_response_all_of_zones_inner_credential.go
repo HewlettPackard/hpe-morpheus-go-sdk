@@ -21,19 +21,13 @@ var _ fmt.Stringer
 
 // ListClouds200ResponseAllOfZonesInnerCredential struct for ListClouds200ResponseAllOfZonesInnerCredential
 type ListClouds200ResponseAllOfZonesInnerCredential struct {
-	ListApps200ResponseAllOfAppsInnerBlueprint          *ListApps200ResponseAllOfAppsInnerBlueprint
-	ListClouds200ResponseAllOfZonesInnerCredentialAnyOf *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+	ListClouds200ResponseAllOfZonesInnerCredentialAnyOf  *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+	ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1 *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1
 }
 
 func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalMapstructure(data any) (any, error) {
 	if dst == nil {
 		dst = &ListClouds200ResponseAllOfZonesInnerCredential{}
-	}
-
-	mapstructDecode(data, &dst.ListApps200ResponseAllOfAppsInnerBlueprint)
-
-	if IsEmpty(dst.ListApps200ResponseAllOfAppsInnerBlueprint) {
-		dst.ListApps200ResponseAllOfAppsInnerBlueprint = nil
 	}
 
 	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
@@ -42,25 +36,18 @@ func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalMapstructure
 		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = nil
 	}
 
+	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1)
+
+	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1) {
+		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1 = nil
+	}
+
 	return dst, nil
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into ListApps200ResponseAllOfAppsInnerBlueprint
-	err = json.Unmarshal(data, &dst.ListApps200ResponseAllOfAppsInnerBlueprint)
-	if err == nil {
-		jsonListApps200ResponseAllOfAppsInnerBlueprint, _ := json.Marshal(dst.ListApps200ResponseAllOfAppsInnerBlueprint)
-		if string(jsonListApps200ResponseAllOfAppsInnerBlueprint) == "{}" { // empty struct
-			dst.ListApps200ResponseAllOfAppsInnerBlueprint = nil
-		} else {
-			return nil // data stored in dst.ListApps200ResponseAllOfAppsInnerBlueprint, return on the first match
-		}
-	} else {
-		dst.ListApps200ResponseAllOfAppsInnerBlueprint = nil
-	}
-
 	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
 	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
 	if err == nil {
@@ -74,17 +61,30 @@ func (dst *ListClouds200ResponseAllOfZonesInnerCredential) UnmarshalJSON(data []
 		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf = nil
 	}
 
+	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1)
+	if err == nil {
+		jsonListClouds200ResponseAllOfZonesInnerCredentialAnyOf1, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1)
+		if string(jsonListClouds200ResponseAllOfZonesInnerCredentialAnyOf1) == "{}" { // empty struct
+			dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1 = nil
+		} else {
+			return nil // data stored in dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1, return on the first match
+		}
+	} else {
+		dst.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1 = nil
+	}
+
 	return NewResponseValidationError("data failed to match schemas in anyOf(ListClouds200ResponseAllOfZonesInnerCredential)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ListClouds200ResponseAllOfZonesInnerCredential) MarshalJSON() ([]byte, error) {
-	if src.ListApps200ResponseAllOfAppsInnerBlueprint != nil {
-		return json.Marshal(&src.ListApps200ResponseAllOfAppsInnerBlueprint)
-	}
-
 	if src.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf != nil {
 		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)
+	}
+
+	if src.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1 != nil {
+		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerCredentialAnyOf1)
 	}
 
 	return nil, nil // no data in anyOf schemas

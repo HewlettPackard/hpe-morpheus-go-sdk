@@ -20,7 +20,7 @@ var _ MappedNullable = &ResizeInstance200Response{}
 
 // ResizeInstance200Response struct for ResizeInstance200Response
 type ResizeInstance200Response struct {
-	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	Instance ResizeInstance200ResponseAllOfOneOfInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
 	ZoneId               int64                  `json:"zoneId"`
 	Success              *bool                  `json:"success,omitempty"`
@@ -34,7 +34,7 @@ type _ResizeInstance200Response ResizeInstance200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewResizeInstance200Response(instance UpdateInstance200ResponseAllOfOneOfInstance, zoneId int64) *ResizeInstance200Response {
+func NewResizeInstance200Response(instance ResizeInstance200ResponseAllOfOneOfInstance, zoneId int64) *ResizeInstance200Response {
 	this := ResizeInstance200Response{}
 	this.Instance = instance
 	this.ZoneId = zoneId
@@ -50,9 +50,9 @@ func NewResizeInstance200ResponseWithDefaults() *ResizeInstance200Response {
 }
 
 // GetInstance returns the Instance field value
-func (o *ResizeInstance200Response) GetInstance() UpdateInstance200ResponseAllOfOneOfInstance {
+func (o *ResizeInstance200Response) GetInstance() ResizeInstance200ResponseAllOfOneOfInstance {
 	if o == nil {
-		var ret UpdateInstance200ResponseAllOfOneOfInstance
+		var ret ResizeInstance200ResponseAllOfOneOfInstance
 		return ret
 	}
 
@@ -61,7 +61,7 @@ func (o *ResizeInstance200Response) GetInstance() UpdateInstance200ResponseAllOf
 
 // GetInstanceOk returns a tuple with the Instance field value
 // and a boolean to check if the value has been set.
-func (o *ResizeInstance200Response) GetInstanceOk() (*UpdateInstance200ResponseAllOfOneOfInstance, bool) {
+func (o *ResizeInstance200Response) GetInstanceOk() (*ResizeInstance200ResponseAllOfOneOfInstance, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *ResizeInstance200Response) GetInstanceOk() (*UpdateInstance200ResponseA
 }
 
 // SetInstance sets field value
-func (o *ResizeInstance200Response) SetInstance(v UpdateInstance200ResponseAllOfOneOfInstance) {
+func (o *ResizeInstance200Response) SetInstance(v ResizeInstance200ResponseAllOfOneOfInstance) {
 	o.Instance = v
 }
 
@@ -232,7 +232,6 @@ func (v NullableResizeInstance200Response) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
-
 func (o *ResizeInstance200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

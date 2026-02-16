@@ -140,7 +140,6 @@ func (v NullableSaveCloudDatastoreRequest) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
-
 func (o *SaveCloudDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InstanceTypeLayouts** | Pointer to [**[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
+**InstanceTypeLayouts** | Pointer to [**[]ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner**](ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner.md) |  | [optional] 
+**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstanceTypeLayouts
 
-`func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayouts() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner`
+`func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayouts() []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner`
 
 GetInstanceTypeLayouts returns the InstanceTypeLayouts field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeLayoutsOk
 
-`func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayoutsOk() (*[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool)`
+`func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayoutsOk() (*[]ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner, bool)`
 
 GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypeLayouts
 
-`func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner)`
+`func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner)`
 
 SetInstanceTypeLayouts sets InstanceTypeLayouts field to given value.
 
@@ -53,20 +53,20 @@ HasInstanceTypeLayouts returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListLayoutsForInstanceType200Response) GetMeta() ListActivity200ResponseAllOfMeta`
+`func (o *ListLayoutsForInstanceType200Response) GetMeta() ListClouds200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool)`
+`func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListActivity200ResponseAllOfMeta)`
+`func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**InstanceTypeAccount**](InstanceTypeAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** |  | [optional] 
 **Featured** | Pointer to **bool** |  | [optional] 
 **Versions** | Pointer to **[]string** |  | [optional] 
-**InstanceTypeLayouts** | Pointer to [**[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner.md) |  | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
+**InstanceTypeLayouts** | Pointer to [**[]InstanceTypeInstanceTypeLayoutsInner**](InstanceTypeInstanceTypeLayoutsInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]InstanceTypeOptionTypesInner**](InstanceTypeOptionTypesInner.md) |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
@@ -80,20 +80,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *InstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *InstanceType) GetAccount() InstanceTypeAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *InstanceType) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *InstanceType) GetAccountOk() (*InstanceTypeAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *InstanceType) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *InstanceType) SetAccount(v InstanceTypeAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -710,20 +710,20 @@ HasVersions returns a boolean if a field has been set.
 
 ### GetInstanceTypeLayouts
 
-`func (o *InstanceType) GetInstanceTypeLayouts() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner`
+`func (o *InstanceType) GetInstanceTypeLayouts() []InstanceTypeInstanceTypeLayoutsInner`
 
 GetInstanceTypeLayouts returns the InstanceTypeLayouts field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeLayoutsOk
 
-`func (o *InstanceType) GetInstanceTypeLayoutsOk() (*[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool)`
+`func (o *InstanceType) GetInstanceTypeLayoutsOk() (*[]InstanceTypeInstanceTypeLayoutsInner, bool)`
 
 GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypeLayouts
 
-`func (o *InstanceType) SetInstanceTypeLayouts(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner)`
+`func (o *InstanceType) SetInstanceTypeLayouts(v []InstanceTypeInstanceTypeLayoutsInner)`
 
 SetInstanceTypeLayouts sets InstanceTypeLayouts field to given value.
 
@@ -735,20 +735,20 @@ HasInstanceTypeLayouts returns a boolean if a field has been set.
 
 ### GetOptionTypes
 
-`func (o *InstanceType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *InstanceType) GetOptionTypes() []InstanceTypeOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *InstanceType) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *InstanceType) GetOptionTypesOk() (*[]InstanceTypeOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *InstanceType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *InstanceType) SetOptionTypes(v []InstanceTypeOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 

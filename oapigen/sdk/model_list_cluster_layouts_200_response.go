@@ -21,7 +21,7 @@ var _ MappedNullable = &ListClusterLayouts200Response{}
 // ListClusterLayouts200Response struct for ListClusterLayouts200Response
 type ListClusterLayouts200Response struct {
 	Layouts              []ListClusterLayouts200ResponseAllOfLayoutsInner `json:"layouts,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta                  `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                           `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListClusterLayouts200Response) SetLayouts(v []ListClusterLayouts200Resp
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterLayouts200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListClusterLayouts200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListClusterLayouts200Response) GetMeta() ListActivity200ResponseAllOfMe
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListClusterLayouts200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListClusterLayouts200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterLayouts200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListClusterLayouts200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListClusterLayouts200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *ListClusterLayouts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

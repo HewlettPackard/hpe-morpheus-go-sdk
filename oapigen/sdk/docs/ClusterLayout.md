@@ -21,17 +21,17 @@ Name | Type | Description | Notes
 **Creatable** | Pointer to **bool** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**GroupType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**GroupType** | Pointer to [**ClusterLayoutGroupType**](ClusterLayoutGroupType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]ClusterLayoutOptionTypesInner**](ClusterLayoutOptionTypesInner.md) |  | [optional] 
 **Actions** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ComputeServers** | Pointer to [**[]ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner.md) |  | [optional] 
+**ComputeServers** | Pointer to [**[]ClusterLayoutComputeServersInner**](ClusterLayoutComputeServersInner.md) |  | [optional] 
 **InstallContainerRuntime** | Pointer to **bool** |  | [optional] 
-**ProvisionType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**SpecTemplates** | Pointer to [**[]ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner**](ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner.md) |  | [optional] 
+**ProvisionType** | Pointer to [**ClusterLayoutProvisionType**](ClusterLayoutProvisionType.md) |  | [optional] 
+**SpecTemplates** | Pointer to [**[]ClusterLayoutSpecTemplatesInner**](ClusterLayoutSpecTemplatesInner.md) |  | [optional] 
 **TaskSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Type** | Pointer to [**ClusterLayoutType**](ClusterLayoutType.md) |  | [optional] 
 
 ## Methods
 
@@ -479,20 +479,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetGroupType
 
-`func (o *ClusterLayout) GetGroupType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ClusterLayout) GetGroupType() ClusterLayoutGroupType`
 
 GetGroupType returns the GroupType field if non-nil, zero value otherwise.
 
 ### GetGroupTypeOk
 
-`func (o *ClusterLayout) GetGroupTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ClusterLayout) GetGroupTypeOk() (*ClusterLayoutGroupType, bool)`
 
 GetGroupTypeOk returns a tuple with the GroupType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroupType
 
-`func (o *ClusterLayout) SetGroupType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ClusterLayout) SetGroupType(v ClusterLayoutGroupType)`
 
 SetGroupType sets GroupType field to given value.
 
@@ -554,20 +554,20 @@ HasEnvironmentVariables returns a boolean if a field has been set.
 
 ### GetOptionTypes
 
-`func (o *ClusterLayout) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *ClusterLayout) GetOptionTypes() []ClusterLayoutOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *ClusterLayout) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *ClusterLayout) GetOptionTypesOk() (*[]ClusterLayoutOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *ClusterLayout) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *ClusterLayout) SetOptionTypes(v []ClusterLayoutOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 
@@ -604,20 +604,20 @@ HasActions returns a boolean if a field has been set.
 
 ### GetComputeServers
 
-`func (o *ClusterLayout) GetComputeServers() []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner`
+`func (o *ClusterLayout) GetComputeServers() []ClusterLayoutComputeServersInner`
 
 GetComputeServers returns the ComputeServers field if non-nil, zero value otherwise.
 
 ### GetComputeServersOk
 
-`func (o *ClusterLayout) GetComputeServersOk() (*[]ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner, bool)`
+`func (o *ClusterLayout) GetComputeServersOk() (*[]ClusterLayoutComputeServersInner, bool)`
 
 GetComputeServersOk returns a tuple with the ComputeServers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComputeServers
 
-`func (o *ClusterLayout) SetComputeServers(v []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner)`
+`func (o *ClusterLayout) SetComputeServers(v []ClusterLayoutComputeServersInner)`
 
 SetComputeServers sets ComputeServers field to given value.
 
@@ -654,20 +654,20 @@ HasInstallContainerRuntime returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *ClusterLayout) GetProvisionType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ClusterLayout) GetProvisionType() ClusterLayoutProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *ClusterLayout) GetProvisionTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ClusterLayout) GetProvisionTypeOk() (*ClusterLayoutProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *ClusterLayout) SetProvisionType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ClusterLayout) SetProvisionType(v ClusterLayoutProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -679,20 +679,20 @@ HasProvisionType returns a boolean if a field has been set.
 
 ### GetSpecTemplates
 
-`func (o *ClusterLayout) GetSpecTemplates() []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner`
+`func (o *ClusterLayout) GetSpecTemplates() []ClusterLayoutSpecTemplatesInner`
 
 GetSpecTemplates returns the SpecTemplates field if non-nil, zero value otherwise.
 
 ### GetSpecTemplatesOk
 
-`func (o *ClusterLayout) GetSpecTemplatesOk() (*[]ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner, bool)`
+`func (o *ClusterLayout) GetSpecTemplatesOk() (*[]ClusterLayoutSpecTemplatesInner, bool)`
 
 GetSpecTemplatesOk returns a tuple with the SpecTemplates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSpecTemplates
 
-`func (o *ClusterLayout) SetSpecTemplates(v []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner)`
+`func (o *ClusterLayout) SetSpecTemplates(v []ClusterLayoutSpecTemplatesInner)`
 
 SetSpecTemplates sets SpecTemplates field to given value.
 
@@ -729,20 +729,20 @@ HasTaskSets returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ClusterLayout) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ClusterLayout) GetType() ClusterLayoutType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ClusterLayout) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ClusterLayout) GetTypeOk() (*ClusterLayoutType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ClusterLayout) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ClusterLayout) SetType(v ClusterLayoutType)`
 
 SetType sets Type field to given value.
 

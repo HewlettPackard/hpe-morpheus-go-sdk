@@ -43,13 +43,13 @@ type CatalogItemTypeInstanceCreate struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool                                               `json:"allowQuantity,omitempty"`
-	Config        AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig `json:"config"`
+	AllowQuantity *bool                               `json:"allowQuantity,omitempty"`
+	Config        CatalogItemTypeInstanceCreateConfig `json:"config"`
 	// The instance `config` specification as a string in the JSON format.
 	InstanceSpec *string `json:"instanceSpec,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string                                            `json:"formType,omitempty"`
-	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                            `json:"formType,omitempty"`
+	Form     *CatalogItemTypeInstanceCreateForm `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
@@ -63,7 +63,7 @@ type _CatalogItemTypeInstanceCreate CatalogItemTypeInstanceCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCatalogItemTypeInstanceCreate(config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) *CatalogItemTypeInstanceCreate {
+func NewCatalogItemTypeInstanceCreate(config CatalogItemTypeInstanceCreateConfig) *CatalogItemTypeInstanceCreate {
 	this := CatalogItemTypeInstanceCreate{}
 	var visibility string = "private"
 	this.Visibility = &visibility
@@ -516,9 +516,9 @@ func (o *CatalogItemTypeInstanceCreate) SetAllowQuantity(v bool) {
 }
 
 // GetConfig returns the Config field value
-func (o *CatalogItemTypeInstanceCreate) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig {
+func (o *CatalogItemTypeInstanceCreate) GetConfig() CatalogItemTypeInstanceCreateConfig {
 	if o == nil {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig
+		var ret CatalogItemTypeInstanceCreateConfig
 		return ret
 	}
 
@@ -527,7 +527,7 @@ func (o *CatalogItemTypeInstanceCreate) GetConfig() AddCatalogItemTypeRequestCat
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreate) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, bool) {
+func (o *CatalogItemTypeInstanceCreate) GetConfigOk() (*CatalogItemTypeInstanceCreateConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -535,7 +535,7 @@ func (o *CatalogItemTypeInstanceCreate) GetConfigOk() (*AddCatalogItemTypeReques
 }
 
 // SetConfig sets field value
-func (o *CatalogItemTypeInstanceCreate) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) {
+func (o *CatalogItemTypeInstanceCreate) SetConfig(v CatalogItemTypeInstanceCreateConfig) {
 	o.Config = v
 }
 
@@ -604,9 +604,9 @@ func (o *CatalogItemTypeInstanceCreate) SetFormType(v string) {
 }
 
 // GetForm returns the Form field value if set, zero value otherwise.
-func (o *CatalogItemTypeInstanceCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
+func (o *CatalogItemTypeInstanceCreate) GetForm() CatalogItemTypeInstanceCreateForm {
 	if o == nil || IsNil(o.Form) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
+		var ret CatalogItemTypeInstanceCreateForm
 		return ret
 	}
 	return *o.Form
@@ -614,7 +614,7 @@ func (o *CatalogItemTypeInstanceCreate) GetForm() AddCatalogItemTypeRequestCatal
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeInstanceCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool) {
+func (o *CatalogItemTypeInstanceCreate) GetFormOk() (*CatalogItemTypeInstanceCreateForm, bool) {
 	if o == nil || IsNil(o.Form) {
 		return nil, false
 	}
@@ -630,8 +630,8 @@ func (o *CatalogItemTypeInstanceCreate) IsSetForm() bool {
 	return false
 }
 
-// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfForm and assigns it to the Form field.
-func (o *CatalogItemTypeInstanceCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
+// SetForm gets a reference to the given CatalogItemTypeInstanceCreateForm and assigns it to the Form field.
+func (o *CatalogItemTypeInstanceCreate) SetForm(v CatalogItemTypeInstanceCreateForm) {
 	o.Form = &v
 }
 
@@ -813,7 +813,6 @@ func (v NullableCatalogItemTypeInstanceCreate) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *CatalogItemTypeInstanceCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

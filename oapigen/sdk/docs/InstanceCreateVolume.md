@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **int64** | Size of the LV to be created in GBs.  Uses default from service plan. | [optional] 
 **SizeId** | Pointer to **NullableInt64** | Can be used to select pre-existing LV choices from Morpheus. | [optional] 
 **StorageType** | Pointer to **NullableInt64** | Identifier for LV type | [optional] 
-**DatastoreId** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId.md) |  | [optional] 
+**DatastoreId** | Pointer to [**ResizeInstanceRequestVolumesInnerDatastoreId**](ResizeInstanceRequestVolumesInnerDatastoreId.md) |  | [optional] 
 **ControllerMountPoint** | Pointer to **string** | The controller mount point specification for this volume in the format: &#x60;\&quot;id:busNumber:typeId:unitNumber\&quot;&#x60; For new storage controllers the id is passed as -1, so an example value would be: &#x60;\&quot;-1:1:6:0\&quot;&#x60; which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use &#x60;/api/provision-types?code&#x3D;vmware&#x60; to see the available &#x60;controllerTypes&#x60; for vmware. | [optional] 
 
 ## Methods
@@ -204,20 +204,20 @@ HasStorageType returns a boolean if a field has been set.
 UnsetStorageType ensures that no value is present for StorageType, not even an explicit nil
 ### GetDatastoreId
 
-`func (o *InstanceCreateVolume) GetDatastoreId() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId`
+`func (o *InstanceCreateVolume) GetDatastoreId() ResizeInstanceRequestVolumesInnerDatastoreId`
 
 GetDatastoreId returns the DatastoreId field if non-nil, zero value otherwise.
 
 ### GetDatastoreIdOk
 
-`func (o *InstanceCreateVolume) GetDatastoreIdOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId, bool)`
+`func (o *InstanceCreateVolume) GetDatastoreIdOk() (*ResizeInstanceRequestVolumesInnerDatastoreId, bool)`
 
 GetDatastoreIdOk returns a tuple with the DatastoreId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastoreId
 
-`func (o *InstanceCreateVolume) SetDatastoreId(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId)`
+`func (o *InstanceCreateVolume) SetDatastoreId(v ResizeInstanceRequestVolumesInnerDatastoreId)`
 
 SetDatastoreId sets DatastoreId field to given value.
 

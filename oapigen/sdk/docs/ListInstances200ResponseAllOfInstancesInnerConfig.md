@@ -21,9 +21,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
 **InstanceType** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigInstanceType**](ListInstances200ResponseAllOfInstancesInnerConfigInstanceType.md) |  | [optional] 
-**Site** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Site** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigSite**](ListInstances200ResponseAllOfInstancesInnerConfigSite.md) |  | [optional] 
 **EnvironmentPrefix** | Pointer to **NullableString** |  | [optional] 
-**Layout** | Pointer to [**ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan**](ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan.md) |  | [optional] 
+**Layout** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerConfigLayout**](ListInstances200ResponseAllOfInstancesInnerConfigLayout.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **InstanceContext** | Pointer to **string** |  | [optional] 
 **MemoryDisplay** | Pointer to **string** |  | [optional] 
@@ -178,6 +178,16 @@ SetSecurityGroups sets SecurityGroups field to given value.
 
 HasSecurityGroups returns a boolean if a field has been set.
 
+### SetSecurityGroupsNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSecurityGroupsNil(b bool)`
+
+ SetSecurityGroupsNil sets the value for SecurityGroups to be an explicit nil
+
+### UnsetSecurityGroups
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetSecurityGroups()`
+
+UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetSmbiosAssetTag
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSmbiosAssetTag() string`
@@ -510,20 +520,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSite() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSite() ListInstances200ResponseAllOfInstancesInnerConfigSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSiteOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSiteOk() (*ListInstances200ResponseAllOfInstancesInnerConfigSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSite(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSite(v ListInstances200ResponseAllOfInstancesInnerConfigSite)`
 
 SetSite sets Site field to given value.
 
@@ -570,20 +580,20 @@ HasEnvironmentPrefix returns a boolean if a field has been set.
 UnsetEnvironmentPrefix ensures that no value is present for EnvironmentPrefix, not even an explicit nil
 ### GetLayout
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayout() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayout() ListInstances200ResponseAllOfInstancesInnerConfigLayout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayoutOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayoutOk() (*ListInstances200ResponseAllOfInstancesInnerConfigLayout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetLayout(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetLayout(v ListInstances200ResponseAllOfInstancesInnerConfigLayout)`
 
 SetLayout sets Layout field to given value.
 
@@ -693,6 +703,16 @@ SetExpose sets Expose field to given value.
 
 HasExpose returns a boolean if a field has been set.
 
+### SetExposeNil
+
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetExposeNil(b bool)`
+
+ SetExposeNil sets the value for Expose to be an explicit nil
+
+### UnsetExpose
+`func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetExpose()`
+
+UnsetExpose ensures that no value is present for Expose, not even an explicit nil
 ### GetCreateBackup
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetCreateBackup() bool`

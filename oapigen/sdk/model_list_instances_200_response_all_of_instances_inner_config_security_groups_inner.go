@@ -151,7 +151,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsI
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

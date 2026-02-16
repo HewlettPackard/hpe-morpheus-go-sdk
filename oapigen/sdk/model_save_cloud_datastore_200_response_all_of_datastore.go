@@ -20,32 +20,32 @@ var _ MappedNullable = &SaveCloudDatastore200ResponseAllOfDatastore{}
 
 // SaveCloudDatastore200ResponseAllOfDatastore struct for SaveCloudDatastore200ResponseAllOfDatastore
 type SaveCloudDatastore200ResponseAllOfDatastore struct {
-	Id                   *int64                                                           `json:"id,omitempty"`
-	Name                 *string                                                          `json:"name,omitempty"`
-	Code                 NullableString                                                   `json:"code,omitempty"`
-	DatastoreType        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"datastoreType,omitempty"`
-	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
-	Type                 *string                                                          `json:"type,omitempty"`
-	Visibility           *string                                                          `json:"visibility,omitempty"`
-	StorageSize          NullableInt64                                                    `json:"storageSize,omitempty"`
-	FreeSpace            NullableInt64                                                    `json:"freeSpace,omitempty"`
-	DrsEnabled           *bool                                                            `json:"drsEnabled,omitempty"`
-	Active               *bool                                                            `json:"active,omitempty"`
-	AllowWrite           *bool                                                            `json:"allowWrite,omitempty"`
-	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Online               *bool                                                            `json:"online,omitempty"`
-	AllowRead            *bool                                                            `json:"allowRead,omitempty"`
-	AllowProvision       *bool                                                            `json:"allowProvision,omitempty"`
-	RefType              *string                                                          `json:"refType,omitempty"`
-	RefId                *int64                                                           `json:"refId,omitempty"`
-	ExternalId           *string                                                          `json:"externalId,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zone,omitempty"`
-	ZonePool             *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"zonePool,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"owner,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions  `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	Id                   *int64                                                          `json:"id,omitempty"`
+	Name                 *string                                                         `json:"name,omitempty"`
+	Code                 NullableString                                                  `json:"code,omitempty"`
+	DatastoreType        *SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType       `json:"datastoreType,omitempty"`
+	StorageServer        *SaveCloudDatastore200ResponseAllOfDatastoreStorageServer       `json:"storageServer,omitempty"`
+	Type                 *string                                                         `json:"type,omitempty"`
+	Visibility           *string                                                         `json:"visibility,omitempty"`
+	StorageSize          NullableInt64                                                   `json:"storageSize,omitempty"`
+	FreeSpace            NullableInt64                                                   `json:"freeSpace,omitempty"`
+	DrsEnabled           *bool                                                           `json:"drsEnabled,omitempty"`
+	Active               *bool                                                           `json:"active,omitempty"`
+	AllowWrite           *bool                                                           `json:"allowWrite,omitempty"`
+	DefaultStore         *bool                                                           `json:"defaultStore,omitempty"`
+	Online               *bool                                                           `json:"online,omitempty"`
+	AllowRead            *bool                                                           `json:"allowRead,omitempty"`
+	AllowProvision       *bool                                                           `json:"allowProvision,omitempty"`
+	RefType              *string                                                         `json:"refType,omitempty"`
+	RefId                *int64                                                          `json:"refId,omitempty"`
+	ExternalId           *string                                                         `json:"externalId,omitempty"`
+	Zone                 *SaveCloudDatastore200ResponseAllOfDatastoreZone                `json:"zone,omitempty"`
+	ZonePool             *SaveCloudDatastore200ResponseAllOfDatastoreZonePool            `json:"zonePool,omitempty"`
+	Owner                *SaveCloudDatastore200ResponseAllOfDatastoreOwner               `json:"owner,omitempty"`
+	Tenants              []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                                        `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                          `json:",remain"`
 }
 
 type _SaveCloudDatastore200ResponseAllOfDatastore SaveCloudDatastore200ResponseAllOfDatastore
@@ -175,9 +175,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnsetCode() {
 }
 
 // GetDatastoreType returns the DatastoreType field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreType() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreType() SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType {
 	if o == nil || IsNil(o.DatastoreType) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType
 		return ret
 	}
 	return *o.DatastoreType
@@ -185,7 +185,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreType() GetAler
 
 // GetDatastoreTypeOk returns a tuple with the DatastoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetDatastoreTypeOk() (*SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType, bool) {
 	if o == nil || IsNil(o.DatastoreType) {
 		return nil, false
 	}
@@ -201,15 +201,15 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetDatastoreType() bool 
 	return false
 }
 
-// SetDatastoreType gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the DatastoreType field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetDatastoreType(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetDatastoreType gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType and assigns it to the DatastoreType field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetDatastoreType(v SaveCloudDatastore200ResponseAllOfDatastoreDatastoreType) {
 	o.DatastoreType = &v
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServer() SaveCloudDatastore200ResponseAllOfDatastoreStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -217,7 +217,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServer() GetAler
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetStorageServerOk() (*SaveCloudDatastore200ResponseAllOfDatastoreStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -233,8 +233,8 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetStorageServer() bool 
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreStorageServer and assigns it to the StorageServer field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetStorageServer(v SaveCloudDatastore200ResponseAllOfDatastoreStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -709,9 +709,9 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetExternalId(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZone() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZone() SaveCloudDatastore200ResponseAllOfDatastoreZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreZone
 		return ret
 	}
 	return *o.Zone
@@ -719,7 +719,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZone() GetAlerts200Resp
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZoneOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZoneOk() (*SaveCloudDatastore200ResponseAllOfDatastoreZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -735,15 +735,15 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Zone field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetZone(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetZone gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreZone and assigns it to the Zone field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetZone(v SaveCloudDatastore200ResponseAllOfDatastoreZone) {
 	o.Zone = &v
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePool() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePool() SaveCloudDatastore200ResponseAllOfDatastoreZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -751,7 +751,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePool() GetAlerts200
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePoolOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetZonePoolOk() (*SaveCloudDatastore200ResponseAllOfDatastoreZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -767,15 +767,15 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetZonePool() bool {
 	return false
 }
 
-// SetZonePool gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the ZonePool field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetZonePool(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetZonePool gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreZonePool and assigns it to the ZonePool field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetZonePool(v SaveCloudDatastore200ResponseAllOfDatastoreZonePool) {
 	o.ZonePool = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwner() SaveCloudDatastore200ResponseAllOfDatastoreOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastore200ResponseAllOfDatastoreOwner
 		return ret
 	}
 	return *o.Owner
@@ -783,7 +783,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwner() GetAlerts200Res
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetOwnerOk() (*SaveCloudDatastore200ResponseAllOfDatastoreOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -799,15 +799,15 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Owner field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetOwner gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastoreOwner and assigns it to the Owner field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetOwner(v SaveCloudDatastore200ResponseAllOfDatastoreOwner) {
 	o.Owner = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenants() []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -815,7 +815,7 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenants() []ListCloudDa
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) GetTenantsOk() ([]SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -831,8 +831,8 @@ func (o *SaveCloudDatastore200ResponseAllOfDatastore) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner and assigns it to the Tenants field.
+func (o *SaveCloudDatastore200ResponseAllOfDatastore) SetTenants(v []SaveCloudDatastore200ResponseAllOfDatastoreTenantsInner) {
 	o.Tenants = v
 }
 
@@ -1037,7 +1037,6 @@ func (v NullableSaveCloudDatastore200ResponseAllOfDatastore) UnmarshalMapstructu
 
 	return v, nil
 }
-
 func (o *SaveCloudDatastore200ResponseAllOfDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

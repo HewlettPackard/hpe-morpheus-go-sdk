@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | Pointer to **bool** |  | [optional] 
-**Alert** | Pointer to [**ListAlerts200ResponseAllOfAlertsInner**](ListAlerts200ResponseAllOfAlertsInner.md) |  | [optional] 
+**Alert** | Pointer to [**UpdateAlerts200ResponseAllOfAlert**](UpdateAlerts200ResponseAllOfAlert.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasSuccess returns a boolean if a field has been set.
 
 ### GetAlert
 
-`func (o *UpdateAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInner`
+`func (o *UpdateAlerts200Response) GetAlert() UpdateAlerts200ResponseAllOfAlert`
 
 GetAlert returns the Alert field if non-nil, zero value otherwise.
 
 ### GetAlertOk
 
-`func (o *UpdateAlerts200Response) GetAlertOk() (*ListAlerts200ResponseAllOfAlertsInner, bool)`
+`func (o *UpdateAlerts200Response) GetAlertOk() (*UpdateAlerts200ResponseAllOfAlert, bool)`
 
 GetAlertOk returns a tuple with the Alert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlert
 
-`func (o *UpdateAlerts200Response) SetAlert(v ListAlerts200ResponseAllOfAlertsInner)`
+`func (o *UpdateAlerts200Response) SetAlert(v UpdateAlerts200ResponseAllOfAlert)`
 
 SetAlert sets Alert field to given value.
 

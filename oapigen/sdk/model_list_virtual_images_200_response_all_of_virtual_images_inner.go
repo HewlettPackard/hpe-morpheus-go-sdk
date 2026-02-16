@@ -30,7 +30,7 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	Labels []string `json:"labels,omitempty"`
 	// Owner of the image
 	OwnerId *int64                                                     `json:"ownerId,omitempty"`
-	Tenant  NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"tenant,omitempty"`
+	Tenant  *ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant `json:"tenant,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
 	ImageType *string `json:"imageType,omitempty"`
 	// Is uploaded by an user?
@@ -46,8 +46,8 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	SshPassword     NullableString `json:"sshPassword,omitempty"`
 	SshPasswordHash NullableString `json:"sshPasswordHash,omitempty"`
 	// SSH Key
-	SshKey NullableString                                                      `json:"sshKey,omitempty"`
-	OsType *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
+	SshKey NullableString                                             `json:"sshKey,omitempty"`
+	OsType *ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType `json:"osType,omitempty"`
 	// Minimum required RAM in bytes
 	MinRam NullableInt64 `json:"minRam,omitempty"`
 	// Minimum required RAM in gigabytes
@@ -79,19 +79,19 @@ type ListVirtualImages200ResponseAllOfVirtualImagesInner struct {
 	// FIPS enabled?
 	FipsEnabled *bool `json:"fipsEnabled,omitempty"`
 	// Cloud-Init User Data, a bash script
-	UserData        NullableString                                     `json:"userData,omitempty"`
-	ConsoleKeymap   NullableString                                     `json:"consoleKeymap,omitempty"`
-	StorageProvider *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"storageProvider,omitempty"`
-	ExternalId      NullableString                                     `json:"externalId,omitempty"`
+	UserData        NullableString                                                      `json:"userData,omitempty"`
+	ConsoleKeymap   NullableString                                                      `json:"consoleKeymap,omitempty"`
+	StorageProvider *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider `json:"storageProvider,omitempty"`
+	ExternalId      NullableString                                                      `json:"externalId,omitempty"`
 	// private or public
 	Visibility         *string                                                                      `json:"visibility,omitempty"`
-	Accounts           []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"accounts,omitempty"`
+	Accounts           []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner           `json:"accounts,omitempty"`
 	Config             *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig                   `json:"config,omitempty"`
 	Volumes            []map[string]interface{}                                                     `json:"volumes,omitempty"`
 	StorageControllers []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner `json:"storageControllers,omitempty"`
 	NetworkInterfaces  []map[string]interface{}                                                     `json:"networkInterfaces,omitempty"`
 	// Metadata tags, Array of objects having a name and value
-	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner     `json:"tags,omitempty"`
+	Tags                 []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner      `json:"tags,omitempty"`
 	Locations            []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner `json:"locations,omitempty"`
 	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
 	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
@@ -289,47 +289,36 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOwnerId(v int64
 	o.OwnerId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Tenant.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetTenant returns the Tenant field value if set, zero value otherwise.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant {
+	if o == nil || IsNil(o.Tenant) {
+		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant
 		return ret
 	}
-	return *o.Tenant.Get()
+	return *o.Tenant
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant, bool) {
+	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
-	return o.Tenant.Get(), o.Tenant.IsSet()
+	return o.Tenant, true
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
+	if o != nil && !IsNil(o.Tenant) {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant() {
-	o.Tenant.Unset()
+// SetTenant gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant and assigns it to the Tenant field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant) {
+	o.Tenant = &v
 }
 
 // GetImageType returns the ImageType field value if set, zero value otherwise.
@@ -665,9 +654,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetSshKey() {
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType {
 	if o == nil || IsNil(o.OsType) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs
+		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType
 		return ret
 	}
 	return *o.OsType
@@ -675,7 +664,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListGu
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -691,8 +680,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetOsType() bool
 	return false
 }
 
-// SetOsType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs and assigns it to the OsType field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs) {
+// SetOsType gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType and assigns it to the OsType field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType) {
 	o.OsType = &v
 }
 
@@ -1340,9 +1329,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetConsoleKeymap
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider {
 	if o == nil || IsNil(o.StorageProvider) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider
 		return ret
 	}
 	return *o.StorageProvider
@@ -1350,7 +1339,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider, bool) {
 	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
@@ -1366,8 +1355,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetStorageProvid
 	return false
 }
 
-// SetStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the StorageProvider field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetStorageProvider gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider and assigns it to the StorageProvider field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider) {
 	o.StorageProvider = &v
 }
 
@@ -1447,9 +1436,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetVisibility(v st
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -1457,7 +1446,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []Ge
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -1473,8 +1462,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetAccounts() bo
 	return false
 }
 
-// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccounts gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner and assigns it to the Accounts field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner) {
 	o.Accounts = v
 }
 
@@ -1607,9 +1596,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetNetworkInterfac
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner
 		return ret
 	}
 	return o.Tags
@@ -1617,7 +1606,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []AddCat
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -1633,8 +1622,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetTags gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner and assigns it to the Tags field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner) {
 	o.Tags = v
 }
 
@@ -1791,8 +1780,8 @@ func (o ListVirtualImages200ResponseAllOfVirtualImagesInner) ToMap() (map[string
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if o.Tenant.IsSet() {
-		toSerialize["tenant"] = o.Tenant.Get()
+	if !IsNil(o.Tenant) {
+		toSerialize["tenant"] = o.Tenant
 	}
 	if !IsNil(o.ImageType) {
 		toSerialize["imageType"] = o.ImageType
@@ -1966,7 +1955,6 @@ func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalMa
 
 	return v, nil
 }
-
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

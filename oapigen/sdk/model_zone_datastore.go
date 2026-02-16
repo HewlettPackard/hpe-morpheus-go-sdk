@@ -20,17 +20,17 @@ var _ MappedNullable = &ZoneDatastore{}
 
 // ZoneDatastore struct for ZoneDatastore
 type ZoneDatastore struct {
-	Id                   *int64                                                                `json:"id,omitempty"`
-	Name                 *string                                                               `json:"name,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                    `json:"zone,omitempty"`
-	Type                 *string                                                               `json:"type,omitempty"`
-	FreeSpace            *int64                                                                `json:"freeSpace,omitempty"`
-	Online               *bool                                                                 `json:"online,omitempty"`
-	Active               *bool                                                                 `json:"active,omitempty"`
-	Visibility           *string                                                               `json:"visibility,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner      `json:"tenants,omitempty"`
-	ResourcePermission   *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	Id                   *int64                                                         `json:"id,omitempty"`
+	Name                 *string                                                        `json:"name,omitempty"`
+	Zone                 *GetCloudDatastores200ResponseAllOfDatastoreZone               `json:"zone,omitempty"`
+	Type                 *string                                                        `json:"type,omitempty"`
+	FreeSpace            *int64                                                         `json:"freeSpace,omitempty"`
+	Online               *bool                                                          `json:"online,omitempty"`
+	Active               *bool                                                          `json:"active,omitempty"`
+	Visibility           *string                                                        `json:"visibility,omitempty"`
+	Tenants              []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *GetCloudDatastores200ResponseAllOfDatastoreResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _ZoneDatastore ZoneDatastore
@@ -117,9 +117,9 @@ func (o *ZoneDatastore) SetName(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ZoneDatastore) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ZoneDatastore) GetZone() GetCloudDatastores200ResponseAllOfDatastoreZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetCloudDatastores200ResponseAllOfDatastoreZone
 		return ret
 	}
 	return *o.Zone
@@ -127,7 +127,7 @@ func (o *ZoneDatastore) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInsta
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneDatastore) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ZoneDatastore) GetZoneOk() (*GetCloudDatastores200ResponseAllOfDatastoreZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *ZoneDatastore) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ZoneDatastore) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZone gets a reference to the given GetCloudDatastores200ResponseAllOfDatastoreZone and assigns it to the Zone field.
+func (o *ZoneDatastore) SetZone(v GetCloudDatastores200ResponseAllOfDatastoreZone) {
 	o.Zone = &v
 }
 
@@ -309,9 +309,9 @@ func (o *ZoneDatastore) SetVisibility(v string) {
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ZoneDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *ZoneDatastore) GetTenants() []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner {
 	if o == nil {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -320,7 +320,7 @@ func (o *ZoneDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatast
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ZoneDatastore) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *ZoneDatastore) GetTenantsOk() ([]GetCloudDatastores200ResponseAllOfDatastoreTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -336,15 +336,15 @@ func (o *ZoneDatastore) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *ZoneDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner and assigns it to the Tenants field.
+func (o *ZoneDatastore) SetTenants(v []GetCloudDatastores200ResponseAllOfDatastoreTenantsInner) {
 	o.Tenants = v
 }
 
 // GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
-func (o *ZoneDatastore) GetResourcePermission() ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission {
+func (o *ZoneDatastore) GetResourcePermission() GetCloudDatastores200ResponseAllOfDatastoreResourcePermission {
 	if o == nil || IsNil(o.ResourcePermission) {
-		var ret ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission
+		var ret GetCloudDatastores200ResponseAllOfDatastoreResourcePermission
 		return ret
 	}
 	return *o.ResourcePermission
@@ -352,7 +352,7 @@ func (o *ZoneDatastore) GetResourcePermission() ListCloudDatastores200ResponseAl
 
 // GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneDatastore) GetResourcePermissionOk() (*ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission, bool) {
+func (o *ZoneDatastore) GetResourcePermissionOk() (*GetCloudDatastores200ResponseAllOfDatastoreResourcePermission, bool) {
 	if o == nil || IsNil(o.ResourcePermission) {
 		return nil, false
 	}
@@ -368,8 +368,8 @@ func (o *ZoneDatastore) IsSetResourcePermission() bool {
 	return false
 }
 
-// SetResourcePermission gets a reference to the given ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission and assigns it to the ResourcePermission field.
-func (o *ZoneDatastore) SetResourcePermission(v ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) {
+// SetResourcePermission gets a reference to the given GetCloudDatastores200ResponseAllOfDatastoreResourcePermission and assigns it to the ResourcePermission field.
+func (o *ZoneDatastore) SetResourcePermission(v GetCloudDatastores200ResponseAllOfDatastoreResourcePermission) {
 	o.ResourcePermission = &v
 }
 
@@ -465,7 +465,6 @@ func (v NullableZoneDatastore) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ZoneDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

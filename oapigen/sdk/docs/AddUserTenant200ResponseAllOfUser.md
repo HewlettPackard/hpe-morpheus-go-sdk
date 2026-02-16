@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **LoginAttempts** | Pointer to **int64** |  | [optional] 
 **LastLoginDate** | Pointer to **time.Time** |  | [optional] 
 **Roles** | Pointer to [**[]AddUserTenant200ResponseAllOfUserRolesInner**](AddUserTenant200ResponseAllOfUserRolesInner.md) |  | [optional] 
-**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**AddUserTenant200ResponseAllOfUserAccount**](AddUserTenant200ResponseAllOfUserAccount.md) |  | [optional] 
 **LinuxUsername** | Pointer to **NullableString** |  | [optional] 
 **LinuxPassword** | Pointer to **NullableString** |  | [optional] 
 **LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
 **WindowsUsername** | Pointer to **NullableString** |  | [optional] 
 **WindowsPassword** | Pointer to **NullableString** |  | [optional] 
-**DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**DefaultPersona** | Pointer to [**AddUserTenant200ResponseAllOfUserDefaultPersona**](AddUserTenant200ResponseAllOfUserDefaultPersona.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Access** | Pointer to [**AddUserTenant200ResponseAllOfUserAccess**](AddUserTenant200ResponseAllOfUserAccess.md) |  | [optional] 
@@ -478,20 +478,20 @@ HasRoles returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *AddUserTenant200ResponseAllOfUser) GetAccount() AddUserTenant200ResponseAllOfUserAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *AddUserTenant200ResponseAllOfUser) GetAccountOk() (*AddUserTenant200ResponseAllOfUserAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *AddUserTenant200ResponseAllOfUser) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *AddUserTenant200ResponseAllOfUser) SetAccount(v AddUserTenant200ResponseAllOfUserAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -501,16 +501,6 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
-### SetAccountNil
-
-`func (o *AddUserTenant200ResponseAllOfUser) SetAccountNil(b bool)`
-
- SetAccountNil sets the value for Account to be an explicit nil
-
-### UnsetAccount
-`func (o *AddUserTenant200ResponseAllOfUser) UnsetAccount()`
-
-UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetLinuxUsername
 
 `func (o *AddUserTenant200ResponseAllOfUser) GetLinuxUsername() string`
@@ -688,20 +678,20 @@ HasWindowsPassword returns a boolean if a field has been set.
 UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
 ### GetDefaultPersona
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *AddUserTenant200ResponseAllOfUser) GetDefaultPersona() AddUserTenant200ResponseAllOfUserDefaultPersona`
 
 GetDefaultPersona returns the DefaultPersona field if non-nil, zero value otherwise.
 
 ### GetDefaultPersonaOk
 
-`func (o *AddUserTenant200ResponseAllOfUser) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *AddUserTenant200ResponseAllOfUser) GetDefaultPersonaOk() (*AddUserTenant200ResponseAllOfUserDefaultPersona, bool)`
 
 GetDefaultPersonaOk returns a tuple with the DefaultPersona field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPersona
 
-`func (o *AddUserTenant200ResponseAllOfUser) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *AddUserTenant200ResponseAllOfUser) SetDefaultPersona(v AddUserTenant200ResponseAllOfUserDefaultPersona)`
 
 SetDefaultPersona sets DefaultPersona field to given value.
 

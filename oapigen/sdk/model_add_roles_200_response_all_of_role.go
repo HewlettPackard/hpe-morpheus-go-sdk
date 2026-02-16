@@ -28,19 +28,19 @@ type AddRoles200ResponseAllOfRole struct {
 	Authority   *string        `json:"authority,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           NullableString                                              `json:"landingUrl,omitempty"`
-	Scope                *string                                                     `json:"scope,omitempty"`
-	RoleType             *string                                                     `json:"roleType,omitempty"`
-	Multitenant          *bool                                                       `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                                       `json:"multitenantLocked,omitempty"`
-	ParentRoleId         NullableString                                              `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                                       `json:"diverged,omitempty"`
-	OwnerId              *int64                                                      `json:"ownerId,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
-	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	LandingUrl           NullableString                              `json:"landingUrl,omitempty"`
+	Scope                *string                                     `json:"scope,omitempty"`
+	RoleType             *string                                     `json:"roleType,omitempty"`
+	Multitenant          *bool                                       `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                       `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                              `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                       `json:"diverged,omitempty"`
+	OwnerId              *int64                                      `json:"ownerId,omitempty"`
+	Owner                *AddRoles200ResponseAllOfRoleOwner          `json:"owner,omitempty"`
+	DefaultPersona       *AddRoles200ResponseAllOfRoleDefaultPersona `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddRoles200ResponseAllOfRole AddRoles200ResponseAllOfRole
@@ -480,9 +480,9 @@ func (o *AddRoles200ResponseAllOfRole) SetOwnerId(v int64) {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *AddRoles200ResponseAllOfRole) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *AddRoles200ResponseAllOfRole) GetOwner() AddRoles200ResponseAllOfRoleOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddRoles200ResponseAllOfRoleOwner
 		return ret
 	}
 	return *o.Owner
@@ -490,7 +490,7 @@ func (o *AddRoles200ResponseAllOfRole) GetOwner() GetAlerts200ResponseAllOfCheck
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200ResponseAllOfRole) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *AddRoles200ResponseAllOfRole) GetOwnerOk() (*AddRoles200ResponseAllOfRoleOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -506,15 +506,15 @@ func (o *AddRoles200ResponseAllOfRole) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *AddRoles200ResponseAllOfRole) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetOwner gets a reference to the given AddRoles200ResponseAllOfRoleOwner and assigns it to the Owner field.
+func (o *AddRoles200ResponseAllOfRole) SetOwner(v AddRoles200ResponseAllOfRoleOwner) {
 	o.Owner = &v
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
-func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() AddRoles200ResponseAllOfRoleDefaultPersona {
 	if o == nil || IsNil(o.DefaultPersona) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret AddRoles200ResponseAllOfRoleDefaultPersona
 		return ret
 	}
 	return *o.DefaultPersona
@@ -522,7 +522,7 @@ func (o *AddRoles200ResponseAllOfRole) GetDefaultPersona() ListBackupSettings200
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *AddRoles200ResponseAllOfRole) GetDefaultPersonaOk() (*AddRoles200ResponseAllOfRoleDefaultPersona, bool) {
 	if o == nil || IsNil(o.DefaultPersona) {
 		return nil, false
 	}
@@ -538,8 +538,8 @@ func (o *AddRoles200ResponseAllOfRole) IsSetDefaultPersona() bool {
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultPersona field.
-func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetDefaultPersona gets a reference to the given AddRoles200ResponseAllOfRoleDefaultPersona and assigns it to the DefaultPersona field.
+func (o *AddRoles200ResponseAllOfRole) SetDefaultPersona(v AddRoles200ResponseAllOfRoleDefaultPersona) {
 	o.DefaultPersona = &v
 }
 
@@ -717,7 +717,6 @@ func (v NullableAddRoles200ResponseAllOfRole) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
-
 func (o *AddRoles200ResponseAllOfRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

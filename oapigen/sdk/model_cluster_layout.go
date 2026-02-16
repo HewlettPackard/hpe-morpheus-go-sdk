@@ -21,35 +21,35 @@ var _ MappedNullable = &ClusterLayout{}
 
 // ClusterLayout struct for ClusterLayout
 type ClusterLayout struct {
-	Id                      *int64                                                                      `json:"id,omitempty"`
-	InternalId              *string                                                                     `json:"internalId,omitempty"`
-	ServerCount             *int64                                                                      `json:"serverCount,omitempty"`
-	DateCreated             *time.Time                                                                  `json:"dateCreated,omitempty"`
-	Code                    *string                                                                     `json:"code,omitempty"`
-	LastUpdated             *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	HasAutoScale            *bool                                                                       `json:"hasAutoScale,omitempty"`
-	MemoryRequirement       *int64                                                                      `json:"memoryRequirement,omitempty"`
-	ClusterVersion          *string                                                                     `json:"clusterVersion,omitempty"`
-	ComputeVersion          *string                                                                     `json:"computeVersion,omitempty"`
-	HasSettings             *bool                                                                       `json:"hasSettings,omitempty"`
-	SortOrder               *int64                                                                      `json:"sortOrder,omitempty"`
-	HasConfig               *bool                                                                       `json:"hasConfig,omitempty"`
-	Name                    *string                                                                     `json:"name,omitempty"`
-	Creatable               *bool                                                                       `json:"creatable,omitempty"`
-	Enabled                 *bool                                                                       `json:"enabled,omitempty"`
-	Description             *string                                                                     `json:"description,omitempty"`
-	GroupType               *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"groupType,omitempty"`
-	Labels                  []string                                                                    `json:"labels,omitempty"`
-	EnvironmentVariables    []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
-	OptionTypes             []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	Actions                 []map[string]interface{}                                                    `json:"actions,omitempty"`
-	ComputeServers          []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner         `json:"computeServers,omitempty"`
-	InstallContainerRuntime *bool                                                                       `json:"installContainerRuntime,omitempty"`
-	ProvisionType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"provisionType,omitempty"`
-	SpecTemplates           []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner          `json:"specTemplates,omitempty"`
-	TaskSets                []map[string]interface{}                                                    `json:"taskSets,omitempty"`
-	Type                    *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"type,omitempty"`
-	AdditionalProperties    map[string]interface{}                                                      `json:",remain"`
+	Id                      *int64                             `json:"id,omitempty"`
+	InternalId              *string                            `json:"internalId,omitempty"`
+	ServerCount             *int64                             `json:"serverCount,omitempty"`
+	DateCreated             *time.Time                         `json:"dateCreated,omitempty"`
+	Code                    *string                            `json:"code,omitempty"`
+	LastUpdated             *time.Time                         `json:"lastUpdated,omitempty"`
+	HasAutoScale            *bool                              `json:"hasAutoScale,omitempty"`
+	MemoryRequirement       *int64                             `json:"memoryRequirement,omitempty"`
+	ClusterVersion          *string                            `json:"clusterVersion,omitempty"`
+	ComputeVersion          *string                            `json:"computeVersion,omitempty"`
+	HasSettings             *bool                              `json:"hasSettings,omitempty"`
+	SortOrder               *int64                             `json:"sortOrder,omitempty"`
+	HasConfig               *bool                              `json:"hasConfig,omitempty"`
+	Name                    *string                            `json:"name,omitempty"`
+	Creatable               *bool                              `json:"creatable,omitempty"`
+	Enabled                 *bool                              `json:"enabled,omitempty"`
+	Description             *string                            `json:"description,omitempty"`
+	GroupType               *ClusterLayoutGroupType            `json:"groupType,omitempty"`
+	Labels                  []string                           `json:"labels,omitempty"`
+	EnvironmentVariables    []map[string]interface{}           `json:"environmentVariables,omitempty"`
+	OptionTypes             []ClusterLayoutOptionTypesInner    `json:"optionTypes,omitempty"`
+	Actions                 []map[string]interface{}           `json:"actions,omitempty"`
+	ComputeServers          []ClusterLayoutComputeServersInner `json:"computeServers,omitempty"`
+	InstallContainerRuntime *bool                              `json:"installContainerRuntime,omitempty"`
+	ProvisionType           *ClusterLayoutProvisionType        `json:"provisionType,omitempty"`
+	SpecTemplates           []ClusterLayoutSpecTemplatesInner  `json:"specTemplates,omitempty"`
+	TaskSets                []map[string]interface{}           `json:"taskSets,omitempty"`
+	Type                    *ClusterLayoutType                 `json:"type,omitempty"`
+	AdditionalProperties    map[string]interface{}             `json:",remain"`
 }
 
 type _ClusterLayout ClusterLayout
@@ -616,9 +616,9 @@ func (o *ClusterLayout) SetDescription(v string) {
 }
 
 // GetGroupType returns the GroupType field value if set, zero value otherwise.
-func (o *ClusterLayout) GetGroupType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ClusterLayout) GetGroupType() ClusterLayoutGroupType {
 	if o == nil || IsNil(o.GroupType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ClusterLayoutGroupType
 		return ret
 	}
 	return *o.GroupType
@@ -626,7 +626,7 @@ func (o *ClusterLayout) GetGroupType() ListBackupSettings200ResponseBackupSettin
 
 // GetGroupTypeOk returns a tuple with the GroupType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetGroupTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ClusterLayout) GetGroupTypeOk() (*ClusterLayoutGroupType, bool) {
 	if o == nil || IsNil(o.GroupType) {
 		return nil, false
 	}
@@ -642,8 +642,8 @@ func (o *ClusterLayout) IsSetGroupType() bool {
 	return false
 }
 
-// SetGroupType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the GroupType field.
-func (o *ClusterLayout) SetGroupType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetGroupType gets a reference to the given ClusterLayoutGroupType and assigns it to the GroupType field.
+func (o *ClusterLayout) SetGroupType(v ClusterLayoutGroupType) {
 	o.GroupType = &v
 }
 
@@ -712,9 +712,9 @@ func (o *ClusterLayout) SetEnvironmentVariables(v []map[string]interface{}) {
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *ClusterLayout) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *ClusterLayout) GetOptionTypes() []ClusterLayoutOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []ClusterLayoutOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -722,7 +722,7 @@ func (o *ClusterLayout) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfC
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *ClusterLayout) GetOptionTypesOk() ([]ClusterLayoutOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -738,8 +738,8 @@ func (o *ClusterLayout) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *ClusterLayout) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []ClusterLayoutOptionTypesInner and assigns it to the OptionTypes field.
+func (o *ClusterLayout) SetOptionTypes(v []ClusterLayoutOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -776,9 +776,9 @@ func (o *ClusterLayout) SetActions(v []map[string]interface{}) {
 }
 
 // GetComputeServers returns the ComputeServers field value if set, zero value otherwise.
-func (o *ClusterLayout) GetComputeServers() []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner {
+func (o *ClusterLayout) GetComputeServers() []ClusterLayoutComputeServersInner {
 	if o == nil || IsNil(o.ComputeServers) {
-		var ret []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner
+		var ret []ClusterLayoutComputeServersInner
 		return ret
 	}
 	return o.ComputeServers
@@ -786,7 +786,7 @@ func (o *ClusterLayout) GetComputeServers() []ListClusterLayouts200ResponseAllOf
 
 // GetComputeServersOk returns a tuple with the ComputeServers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetComputeServersOk() ([]ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner, bool) {
+func (o *ClusterLayout) GetComputeServersOk() ([]ClusterLayoutComputeServersInner, bool) {
 	if o == nil || IsNil(o.ComputeServers) {
 		return nil, false
 	}
@@ -802,8 +802,8 @@ func (o *ClusterLayout) IsSetComputeServers() bool {
 	return false
 }
 
-// SetComputeServers gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner and assigns it to the ComputeServers field.
-func (o *ClusterLayout) SetComputeServers(v []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner) {
+// SetComputeServers gets a reference to the given []ClusterLayoutComputeServersInner and assigns it to the ComputeServers field.
+func (o *ClusterLayout) SetComputeServers(v []ClusterLayoutComputeServersInner) {
 	o.ComputeServers = v
 }
 
@@ -840,9 +840,9 @@ func (o *ClusterLayout) SetInstallContainerRuntime(v bool) {
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *ClusterLayout) GetProvisionType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ClusterLayout) GetProvisionType() ClusterLayoutProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ClusterLayoutProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -850,7 +850,7 @@ func (o *ClusterLayout) GetProvisionType() ListBackupSettings200ResponseBackupSe
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetProvisionTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ClusterLayout) GetProvisionTypeOk() (*ClusterLayoutProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -866,15 +866,15 @@ func (o *ClusterLayout) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the ProvisionType field.
-func (o *ClusterLayout) SetProvisionType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetProvisionType gets a reference to the given ClusterLayoutProvisionType and assigns it to the ProvisionType field.
+func (o *ClusterLayout) SetProvisionType(v ClusterLayoutProvisionType) {
 	o.ProvisionType = &v
 }
 
 // GetSpecTemplates returns the SpecTemplates field value if set, zero value otherwise.
-func (o *ClusterLayout) GetSpecTemplates() []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner {
+func (o *ClusterLayout) GetSpecTemplates() []ClusterLayoutSpecTemplatesInner {
 	if o == nil || IsNil(o.SpecTemplates) {
-		var ret []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
+		var ret []ClusterLayoutSpecTemplatesInner
 		return ret
 	}
 	return o.SpecTemplates
@@ -882,7 +882,7 @@ func (o *ClusterLayout) GetSpecTemplates() []ListClusterLayouts200ResponseAllOfL
 
 // GetSpecTemplatesOk returns a tuple with the SpecTemplates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetSpecTemplatesOk() ([]ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner, bool) {
+func (o *ClusterLayout) GetSpecTemplatesOk() ([]ClusterLayoutSpecTemplatesInner, bool) {
 	if o == nil || IsNil(o.SpecTemplates) {
 		return nil, false
 	}
@@ -898,8 +898,8 @@ func (o *ClusterLayout) IsSetSpecTemplates() bool {
 	return false
 }
 
-// SetSpecTemplates gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner and assigns it to the SpecTemplates field.
-func (o *ClusterLayout) SetSpecTemplates(v []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) {
+// SetSpecTemplates gets a reference to the given []ClusterLayoutSpecTemplatesInner and assigns it to the SpecTemplates field.
+func (o *ClusterLayout) SetSpecTemplates(v []ClusterLayoutSpecTemplatesInner) {
 	o.SpecTemplates = v
 }
 
@@ -936,9 +936,9 @@ func (o *ClusterLayout) SetTaskSets(v []map[string]interface{}) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ClusterLayout) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ClusterLayout) GetType() ClusterLayoutType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ClusterLayoutType
 		return ret
 	}
 	return *o.Type
@@ -946,7 +946,7 @@ func (o *ClusterLayout) GetType() ListBackupSettings200ResponseBackupSettingsDef
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayout) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ClusterLayout) GetTypeOk() (*ClusterLayoutType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -962,8 +962,8 @@ func (o *ClusterLayout) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Type field.
-func (o *ClusterLayout) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetType gets a reference to the given ClusterLayoutType and assigns it to the Type field.
+func (o *ClusterLayout) SetType(v ClusterLayoutType) {
 	o.Type = &v
 }
 
@@ -1113,7 +1113,6 @@ func (v NullableClusterLayout) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ClusterLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

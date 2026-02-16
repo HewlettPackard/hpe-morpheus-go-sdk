@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **PoolAssigned** | Pointer to **bool** |  | [optional] 
 **PrimaryInterface** | Pointer to **bool** |  | [optional] 
-**Network** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
-**NetworkGroup** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
-**NetworkPool** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Network** | Pointer to [**InstanceContainerServerInterfacesInnerNetwork**](InstanceContainerServerInterfacesInnerNetwork.md) |  | [optional] 
+**NetworkGroup** | Pointer to [**InstanceContainerServerInterfacesInnerNetworkGroup**](InstanceContainerServerInterfacesInnerNetworkGroup.md) |  | [optional] 
+**NetworkPool** | Pointer to [**InstanceContainerServerInterfacesInnerNetworkPool**](InstanceContainerServerInterfacesInnerNetworkPool.md) |  | [optional] 
 **IpMode** | Pointer to **string** |  | [optional] 
 **MacAddress** | Pointer to **string** |  | [optional] 
-**Interfaces** | Pointer to [**[]ListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Interfaces** | Pointer to [**[]InstanceContainerServerInstancesInnerInner**](InstanceContainerServerInstancesInnerInner.md) |  | [optional] 
 
 ## Methods
 
@@ -266,20 +266,20 @@ HasPrimaryInterface returns a boolean if a field has been set.
 
 ### GetNetwork
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetwork() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *InstanceContainerServerInterfacesInner) GetNetwork() InstanceContainerServerInterfacesInnerNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkOk() (*InstanceContainerServerInterfacesInnerNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *InstanceContainerServerInterfacesInner) SetNetwork(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *InstanceContainerServerInterfacesInner) SetNetwork(v InstanceContainerServerInterfacesInnerNetwork)`
 
 SetNetwork sets Network field to given value.
 
@@ -289,32 +289,22 @@ SetNetwork sets Network field to given value.
 
 HasNetwork returns a boolean if a field has been set.
 
-### SetNetworkNil
-
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkNil(b bool)`
-
- SetNetworkNil sets the value for Network to be an explicit nil
-
-### UnsetNetwork
-`func (o *InstanceContainerServerInterfacesInner) UnsetNetwork()`
-
-UnsetNetwork ensures that no value is present for Network, not even an explicit nil
 ### GetNetworkGroup
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkGroup() InstanceContainerServerInterfacesInnerNetworkGroup`
 
 GetNetworkGroup returns the NetworkGroup field if non-nil, zero value otherwise.
 
 ### GetNetworkGroupOk
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkGroupOk() (*InstanceContainerServerInterfacesInnerNetworkGroup, bool)`
 
 GetNetworkGroupOk returns a tuple with the NetworkGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkGroup
 
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkGroup(v InstanceContainerServerInterfacesInnerNetworkGroup)`
 
 SetNetworkGroup sets NetworkGroup field to given value.
 
@@ -324,32 +314,22 @@ SetNetworkGroup sets NetworkGroup field to given value.
 
 HasNetworkGroup returns a boolean if a field has been set.
 
-### SetNetworkGroupNil
-
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkGroupNil(b bool)`
-
- SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-
-### UnsetNetworkGroup
-`func (o *InstanceContainerServerInterfacesInner) UnsetNetworkGroup()`
-
-UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
 ### GetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() InstanceContainerServerInterfacesInnerNetworkPool`
 
 GetNetworkPool returns the NetworkPool field if non-nil, zero value otherwise.
 
 ### GetNetworkPoolOk
 
-`func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*InstanceContainerServerInterfacesInnerNetworkPool, bool)`
 
 GetNetworkPoolOk returns a tuple with the NetworkPool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkPool
 
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v InstanceContainerServerInterfacesInnerNetworkPool)`
 
 SetNetworkPool sets NetworkPool field to given value.
 
@@ -359,16 +339,6 @@ SetNetworkPool sets NetworkPool field to given value.
 
 HasNetworkPool returns a boolean if a field has been set.
 
-### SetNetworkPoolNil
-
-`func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil(b bool)`
-
- SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
-
-### UnsetNetworkPool
-`func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool()`
-
-UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
 ### GetIpMode
 
 `func (o *InstanceContainerServerInterfacesInner) GetIpMode() string`
@@ -421,20 +391,20 @@ HasMacAddress returns a boolean if a field has been set.
 
 ### GetInterfaces
 
-`func (o *InstanceContainerServerInterfacesInner) GetInterfaces() []ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *InstanceContainerServerInterfacesInner) GetInterfaces() []InstanceContainerServerInstancesInnerInner`
 
 GetInterfaces returns the Interfaces field if non-nil, zero value otherwise.
 
 ### GetInterfacesOk
 
-`func (o *InstanceContainerServerInterfacesInner) GetInterfacesOk() (*[]ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *InstanceContainerServerInterfacesInner) GetInterfacesOk() (*[]InstanceContainerServerInstancesInnerInner, bool)`
 
 GetInterfacesOk returns a tuple with the Interfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaces
 
-`func (o *InstanceContainerServerInterfacesInner) SetInterfaces(v []ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *InstanceContainerServerInterfacesInner) SetInterfaces(v []InstanceContainerServerInstancesInnerInner)`
 
 SetInterfaces sets Interfaces field to given value.
 

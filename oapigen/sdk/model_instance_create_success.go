@@ -20,8 +20,8 @@ var _ MappedNullable = &InstanceCreateSuccess{}
 
 // InstanceCreateSuccess struct for InstanceCreateSuccess
 type InstanceCreateSuccess struct {
-	Instance             AddInstance200ResponseAllOfOneOfInstance `json:"instance"`
-	AdditionalProperties map[string]interface{}                   `json:",remain"`
+	Instance             InstanceCreateSuccessInstance `json:"instance"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _InstanceCreateSuccess InstanceCreateSuccess
@@ -30,7 +30,7 @@ type _InstanceCreateSuccess InstanceCreateSuccess
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstanceCreateSuccess(instance AddInstance200ResponseAllOfOneOfInstance) *InstanceCreateSuccess {
+func NewInstanceCreateSuccess(instance InstanceCreateSuccessInstance) *InstanceCreateSuccess {
 	this := InstanceCreateSuccess{}
 	this.Instance = instance
 	return &this
@@ -45,9 +45,9 @@ func NewInstanceCreateSuccessWithDefaults() *InstanceCreateSuccess {
 }
 
 // GetInstance returns the Instance field value
-func (o *InstanceCreateSuccess) GetInstance() AddInstance200ResponseAllOfOneOfInstance {
+func (o *InstanceCreateSuccess) GetInstance() InstanceCreateSuccessInstance {
 	if o == nil {
-		var ret AddInstance200ResponseAllOfOneOfInstance
+		var ret InstanceCreateSuccessInstance
 		return ret
 	}
 
@@ -56,7 +56,7 @@ func (o *InstanceCreateSuccess) GetInstance() AddInstance200ResponseAllOfOneOfIn
 
 // GetInstanceOk returns a tuple with the Instance field value
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateSuccess) GetInstanceOk() (*AddInstance200ResponseAllOfOneOfInstance, bool) {
+func (o *InstanceCreateSuccess) GetInstanceOk() (*InstanceCreateSuccessInstance, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *InstanceCreateSuccess) GetInstanceOk() (*AddInstance200ResponseAllOfOne
 }
 
 // SetInstance sets field value
-func (o *InstanceCreateSuccess) SetInstance(v AddInstance200ResponseAllOfOneOfInstance) {
+func (o *InstanceCreateSuccess) SetInstance(v InstanceCreateSuccessInstance) {
 	o.Instance = v
 }
 
@@ -131,7 +131,6 @@ func (v NullableInstanceCreateSuccess) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
-
 func (o *InstanceCreateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

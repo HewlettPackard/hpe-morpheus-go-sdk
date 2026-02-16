@@ -23,21 +23,21 @@ var _ fmt.Stringer
 
 // AddTasksRequestTaskCredential - Map containing Credential ID or the default `{\"type\": \"local\"}` which means use the values set in the local task options username and password instead of associating a credential.
 type AddTasksRequestTaskCredential struct {
-	AddIntegrationsRequestOneOfIntegrationCredentialOneOf *AddIntegrationsRequestOneOfIntegrationCredentialOneOf
-	GetAlerts200ResponseAllOfChecksInnerAccount           *GetAlerts200ResponseAllOfChecksInnerAccount
+	AddTasksRequestTaskCredentialOneOf  *AddTasksRequestTaskCredentialOneOf
+	AddTasksRequestTaskCredentialOneOf1 *AddTasksRequestTaskCredentialOneOf1
 }
 
-// AddIntegrationsRequestOneOfIntegrationCredentialOneOfAsAddTasksRequestTaskCredential is a convenience function that returns AddIntegrationsRequestOneOfIntegrationCredentialOneOf wrapped in AddTasksRequestTaskCredential
-func AddIntegrationsRequestOneOfIntegrationCredentialOneOfAsAddTasksRequestTaskCredential(v *AddIntegrationsRequestOneOfIntegrationCredentialOneOf) AddTasksRequestTaskCredential {
+// AddTasksRequestTaskCredentialOneOfAsAddTasksRequestTaskCredential is a convenience function that returns AddTasksRequestTaskCredentialOneOf wrapped in AddTasksRequestTaskCredential
+func AddTasksRequestTaskCredentialOneOfAsAddTasksRequestTaskCredential(v *AddTasksRequestTaskCredentialOneOf) AddTasksRequestTaskCredential {
 	return AddTasksRequestTaskCredential{
-		AddIntegrationsRequestOneOfIntegrationCredentialOneOf: v,
+		AddTasksRequestTaskCredentialOneOf: v,
 	}
 }
 
-// GetAlerts200ResponseAllOfChecksInnerAccountAsAddTasksRequestTaskCredential is a convenience function that returns GetAlerts200ResponseAllOfChecksInnerAccount wrapped in AddTasksRequestTaskCredential
-func GetAlerts200ResponseAllOfChecksInnerAccountAsAddTasksRequestTaskCredential(v *GetAlerts200ResponseAllOfChecksInnerAccount) AddTasksRequestTaskCredential {
+// AddTasksRequestTaskCredentialOneOf1AsAddTasksRequestTaskCredential is a convenience function that returns AddTasksRequestTaskCredentialOneOf1 wrapped in AddTasksRequestTaskCredential
+func AddTasksRequestTaskCredentialOneOf1AsAddTasksRequestTaskCredential(v *AddTasksRequestTaskCredentialOneOf1) AddTasksRequestTaskCredential {
 	return AddTasksRequestTaskCredential{
-		GetAlerts200ResponseAllOfChecksInnerAccount: v,
+		AddTasksRequestTaskCredentialOneOf1: v,
 	}
 }
 
@@ -46,16 +46,16 @@ func (dst *AddTasksRequestTaskCredential) UnmarshalMapstructure(data any) (any, 
 		dst = &AddTasksRequestTaskCredential{}
 	}
 
-	mapstructDecode(data, &dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf)
+	mapstructDecode(data, &dst.AddTasksRequestTaskCredentialOneOf)
 
-	if IsEmpty(dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf) {
-		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
+	if IsEmpty(dst.AddTasksRequestTaskCredentialOneOf) {
+		dst.AddTasksRequestTaskCredentialOneOf = nil
 	}
 
-	mapstructDecode(data, &dst.GetAlerts200ResponseAllOfChecksInnerAccount)
+	mapstructDecode(data, &dst.AddTasksRequestTaskCredentialOneOf1)
 
-	if IsEmpty(dst.GetAlerts200ResponseAllOfChecksInnerAccount) {
-		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
+	if IsEmpty(dst.AddTasksRequestTaskCredentialOneOf1) {
+		dst.AddTasksRequestTaskCredentialOneOf1 = nil
 	}
 
 	return dst, nil
@@ -65,44 +65,44 @@ func (dst *AddTasksRequestTaskCredential) UnmarshalMapstructure(data any) (any, 
 func (dst *AddTasksRequestTaskCredential) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into AddIntegrationsRequestOneOfIntegrationCredentialOneOf
-	err = newStrictDecoder(data).Decode(&dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf)
+	// try to unmarshal data into AddTasksRequestTaskCredentialOneOf
+	err = newStrictDecoder(data).Decode(&dst.AddTasksRequestTaskCredentialOneOf)
 	if err == nil {
-		jsonAddIntegrationsRequestOneOfIntegrationCredentialOneOf, _ := json.Marshal(dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf)
-		if string(jsonAddIntegrationsRequestOneOfIntegrationCredentialOneOf) == "{}" { // empty struct
-			dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
+		jsonAddTasksRequestTaskCredentialOneOf, _ := json.Marshal(dst.AddTasksRequestTaskCredentialOneOf)
+		if string(jsonAddTasksRequestTaskCredentialOneOf) == "{}" { // empty struct
+			dst.AddTasksRequestTaskCredentialOneOf = nil
 		} else {
-			if err = validator.Validate(dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf); err != nil {
-				dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
+			if err = validator.Validate(dst.AddTasksRequestTaskCredentialOneOf); err != nil {
+				dst.AddTasksRequestTaskCredentialOneOf = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
+		dst.AddTasksRequestTaskCredentialOneOf = nil
 	}
 
-	// try to unmarshal data into GetAlerts200ResponseAllOfChecksInnerAccount
-	err = newStrictDecoder(data).Decode(&dst.GetAlerts200ResponseAllOfChecksInnerAccount)
+	// try to unmarshal data into AddTasksRequestTaskCredentialOneOf1
+	err = newStrictDecoder(data).Decode(&dst.AddTasksRequestTaskCredentialOneOf1)
 	if err == nil {
-		jsonGetAlerts200ResponseAllOfChecksInnerAccount, _ := json.Marshal(dst.GetAlerts200ResponseAllOfChecksInnerAccount)
-		if string(jsonGetAlerts200ResponseAllOfChecksInnerAccount) == "{}" { // empty struct
-			dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
+		jsonAddTasksRequestTaskCredentialOneOf1, _ := json.Marshal(dst.AddTasksRequestTaskCredentialOneOf1)
+		if string(jsonAddTasksRequestTaskCredentialOneOf1) == "{}" { // empty struct
+			dst.AddTasksRequestTaskCredentialOneOf1 = nil
 		} else {
-			if err = validator.Validate(dst.GetAlerts200ResponseAllOfChecksInnerAccount); err != nil {
-				dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
+			if err = validator.Validate(dst.AddTasksRequestTaskCredentialOneOf1); err != nil {
+				dst.AddTasksRequestTaskCredentialOneOf1 = nil
 			} else {
 				match++
 			}
 		}
 	} else {
-		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
+		dst.AddTasksRequestTaskCredentialOneOf1 = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.AddIntegrationsRequestOneOfIntegrationCredentialOneOf = nil
-		dst.GetAlerts200ResponseAllOfChecksInnerAccount = nil
+		dst.AddTasksRequestTaskCredentialOneOf = nil
+		dst.AddTasksRequestTaskCredentialOneOf1 = nil
 
 		return NewResponseValidationError("data matches more than one schema in oneOf(AddTasksRequestTaskCredential)")
 	} else if match == 1 {
@@ -114,12 +114,12 @@ func (dst *AddTasksRequestTaskCredential) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddTasksRequestTaskCredential) MarshalJSON() ([]byte, error) {
-	if src.AddIntegrationsRequestOneOfIntegrationCredentialOneOf != nil {
-		return json.Marshal(&src.AddIntegrationsRequestOneOfIntegrationCredentialOneOf)
+	if src.AddTasksRequestTaskCredentialOneOf != nil {
+		return json.Marshal(&src.AddTasksRequestTaskCredentialOneOf)
 	}
 
-	if src.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
-		return json.Marshal(&src.GetAlerts200ResponseAllOfChecksInnerAccount)
+	if src.AddTasksRequestTaskCredentialOneOf1 != nil {
+		return json.Marshal(&src.AddTasksRequestTaskCredentialOneOf1)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -130,12 +130,12 @@ func (obj *AddTasksRequestTaskCredential) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	if obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf != nil {
-		return obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf
+	if obj.AddTasksRequestTaskCredentialOneOf != nil {
+		return obj.AddTasksRequestTaskCredentialOneOf
 	}
 
-	if obj.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
-		return obj.GetAlerts200ResponseAllOfChecksInnerAccount
+	if obj.AddTasksRequestTaskCredentialOneOf1 != nil {
+		return obj.AddTasksRequestTaskCredentialOneOf1
 	}
 
 	// all schemas are nil
@@ -144,12 +144,12 @@ func (obj *AddTasksRequestTaskCredential) GetActualInstance() interface{} {
 
 // Get the actual instance value
 func (obj AddTasksRequestTaskCredential) GetActualInstanceValue() interface{} {
-	if obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf != nil {
-		return *obj.AddIntegrationsRequestOneOfIntegrationCredentialOneOf
+	if obj.AddTasksRequestTaskCredentialOneOf != nil {
+		return *obj.AddTasksRequestTaskCredentialOneOf
 	}
 
-	if obj.GetAlerts200ResponseAllOfChecksInnerAccount != nil {
-		return *obj.GetAlerts200ResponseAllOfChecksInnerAccount
+	if obj.AddTasksRequestTaskCredentialOneOf1 != nil {
+		return *obj.AddTasksRequestTaskCredentialOneOf1
 	}
 
 	// all schemas are nil

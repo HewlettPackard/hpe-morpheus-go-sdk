@@ -4,79 +4,8 @@ All URIs are relative to *https://CHANGEME*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetProvisionTypes**](ProvisioningAPI.md#GetProvisionTypes) | **Get** /api/provision-types/{id} | Retrieves a Specific Provision Type
 [**ListProvisionTypes**](ProvisioningAPI.md#ListProvisionTypes) | **Get** /api/provision-types | Retrieves all Provision Types
 
-
-
-## GetProvisionTypes
-
-> GetProvisionTypes200Response GetProvisionTypes(ctx, id).Execute()
-
-Retrieves a Specific Provision Type
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
-)
-
-func main() {
-	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProvisioningAPI.GetProvisionTypes(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProvisioningAPI.GetProvisionTypes``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetProvisionTypes`: GetProvisionTypes200Response
-	fmt.Fprintf(os.Stdout, "Response from `ProvisioningAPI.GetProvisionTypes`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int64** | Morpheus ID of the Object being referenced | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetProvisionTypesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**GetProvisionTypes200Response**](GetProvisionTypes200Response.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
 
 
 ## ListProvisionTypes

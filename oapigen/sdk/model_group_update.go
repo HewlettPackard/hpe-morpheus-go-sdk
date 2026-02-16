@@ -27,9 +27,9 @@ type GroupUpdate struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Optional location argument for your group
-	Location             *string                      `json:"location,omitempty"`
-	Config               *AddGroupsRequestGroupConfig `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	Location             *string                `json:"location,omitempty"`
+	Config               *GroupCreateConfig     `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _GroupUpdate GroupUpdate
@@ -173,9 +173,9 @@ func (o *GroupUpdate) SetLocation(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *GroupUpdate) GetConfig() AddGroupsRequestGroupConfig {
+func (o *GroupUpdate) GetConfig() GroupCreateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddGroupsRequestGroupConfig
+		var ret GroupCreateConfig
 		return ret
 	}
 	return *o.Config
@@ -183,7 +183,7 @@ func (o *GroupUpdate) GetConfig() AddGroupsRequestGroupConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GroupUpdate) GetConfigOk() (*AddGroupsRequestGroupConfig, bool) {
+func (o *GroupUpdate) GetConfigOk() (*GroupCreateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -199,8 +199,8 @@ func (o *GroupUpdate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddGroupsRequestGroupConfig and assigns it to the Config field.
-func (o *GroupUpdate) SetConfig(v AddGroupsRequestGroupConfig) {
+// SetConfig gets a reference to the given GroupCreateConfig and assigns it to the Config field.
+func (o *GroupUpdate) SetConfig(v GroupCreateConfig) {
 	o.Config = &v
 }
 
@@ -279,7 +279,6 @@ func (v NullableGroupUpdate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *GroupUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

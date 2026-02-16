@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Motd** | [**MessageOfTheDayPolicyTypeConfiguration2Motd**](MessageOfTheDayPolicyTypeConfiguration2Motd.md) |  | 
 **MotdMessage** | Pointer to **string** |  | [optional] 
 **MotdType** | Pointer to **string** |  | [optional] 
-**MotdFullPage** | Pointer to [**MessageOfTheDayPolicyTypeConfigurationMotdFullPage**](MessageOfTheDayPolicyTypeConfigurationMotdFullPage.md) |  | [optional] 
+**MotdFullPage** | Pointer to **NullableString** |  | [optional] 
 **MotdDate** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -137,20 +137,20 @@ HasMotdType returns a boolean if a field has been set.
 
 ### GetMotdFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPage() MessageOfTheDayPolicyTypeConfigurationMotdFullPage`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPage() string`
 
 GetMotdFullPage returns the MotdFullPage field if non-nil, zero value otherwise.
 
 ### GetMotdFullPageOk
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPageOk() (*MessageOfTheDayPolicyTypeConfigurationMotdFullPage, bool)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdFullPageOk() (*string, bool)`
 
 GetMotdFullPageOk returns a tuple with the MotdFullPage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMotdFullPage
 
-`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdFullPage(v MessageOfTheDayPolicyTypeConfigurationMotdFullPage)`
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdFullPage(v string)`
 
 SetMotdFullPage sets MotdFullPage field to given value.
 
@@ -160,6 +160,16 @@ SetMotdFullPage sets MotdFullPage field to given value.
 
 HasMotdFullPage returns a boolean if a field has been set.
 
+### SetMotdFullPageNil
+
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) SetMotdFullPageNil(b bool)`
+
+ SetMotdFullPageNil sets the value for MotdFullPage to be an explicit nil
+
+### UnsetMotdFullPage
+`func (o *MessageOfTheDayPolicyTypeConfiguration2) UnsetMotdFullPage()`
+
+UnsetMotdFullPage ensures that no value is present for MotdFullPage, not even an explicit nil
 ### GetMotdDate
 
 `func (o *MessageOfTheDayPolicyTypeConfiguration2) GetMotdDate() string`

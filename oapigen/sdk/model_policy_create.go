@@ -23,9 +23,9 @@ type PolicyCreate struct {
 	// A name for the policy
 	Name string `json:"name"`
 	// A description for the policy
-	Description *string                            `json:"description,omitempty"`
-	PolicyType  AddPoliciesRequestPolicyPolicyType `json:"policyType"`
-	Config      AddPoliciesRequestPolicyConfig     `json:"config"`
+	Description *string                `json:"description,omitempty"`
+	PolicyType  PolicyCreatePolicyType `json:"policyType"`
+	Config      PolicyCreateConfig     `json:"config"`
 	// Set to false to disable
 	Enabled *bool          `json:"enabled,omitempty"`
 	RefType NullableString `json:"refType,omitempty"`
@@ -44,7 +44,7 @@ type _PolicyCreate PolicyCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPolicyCreate(name string, policyType AddPoliciesRequestPolicyPolicyType, config AddPoliciesRequestPolicyConfig) *PolicyCreate {
+func NewPolicyCreate(name string, policyType PolicyCreatePolicyType, config PolicyCreateConfig) *PolicyCreate {
 	this := PolicyCreate{}
 	this.Name = name
 	this.PolicyType = policyType
@@ -121,9 +121,9 @@ func (o *PolicyCreate) SetDescription(v string) {
 }
 
 // GetPolicyType returns the PolicyType field value
-func (o *PolicyCreate) GetPolicyType() AddPoliciesRequestPolicyPolicyType {
+func (o *PolicyCreate) GetPolicyType() PolicyCreatePolicyType {
 	if o == nil {
-		var ret AddPoliciesRequestPolicyPolicyType
+		var ret PolicyCreatePolicyType
 		return ret
 	}
 
@@ -132,7 +132,7 @@ func (o *PolicyCreate) GetPolicyType() AddPoliciesRequestPolicyPolicyType {
 
 // GetPolicyTypeOk returns a tuple with the PolicyType field value
 // and a boolean to check if the value has been set.
-func (o *PolicyCreate) GetPolicyTypeOk() (*AddPoliciesRequestPolicyPolicyType, bool) {
+func (o *PolicyCreate) GetPolicyTypeOk() (*PolicyCreatePolicyType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -140,14 +140,14 @@ func (o *PolicyCreate) GetPolicyTypeOk() (*AddPoliciesRequestPolicyPolicyType, b
 }
 
 // SetPolicyType sets field value
-func (o *PolicyCreate) SetPolicyType(v AddPoliciesRequestPolicyPolicyType) {
+func (o *PolicyCreate) SetPolicyType(v PolicyCreatePolicyType) {
 	o.PolicyType = v
 }
 
 // GetConfig returns the Config field value
-func (o *PolicyCreate) GetConfig() AddPoliciesRequestPolicyConfig {
+func (o *PolicyCreate) GetConfig() PolicyCreateConfig {
 	if o == nil {
-		var ret AddPoliciesRequestPolicyConfig
+		var ret PolicyCreateConfig
 		return ret
 	}
 
@@ -156,7 +156,7 @@ func (o *PolicyCreate) GetConfig() AddPoliciesRequestPolicyConfig {
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *PolicyCreate) GetConfigOk() (*AddPoliciesRequestPolicyConfig, bool) {
+func (o *PolicyCreate) GetConfigOk() (*PolicyCreateConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -164,7 +164,7 @@ func (o *PolicyCreate) GetConfigOk() (*AddPoliciesRequestPolicyConfig, bool) {
 }
 
 // SetConfig sets field value
-func (o *PolicyCreate) SetConfig(v AddPoliciesRequestPolicyConfig) {
+func (o *PolicyCreate) SetConfig(v PolicyCreateConfig) {
 	o.Config = v
 }
 
@@ -422,7 +422,6 @@ func (v NullablePolicyCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *PolicyCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

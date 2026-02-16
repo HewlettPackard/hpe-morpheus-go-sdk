@@ -20,13 +20,13 @@ var _ MappedNullable = &BackupSettings{}
 
 // BackupSettings struct for BackupSettings
 type BackupSettings struct {
-	BackupsEnabled       *bool                                                       `json:"backupsEnabled,omitempty"`
-	CreateBackups        *bool                                                       `json:"createBackups,omitempty"`
-	BackupAppliance      *bool                                                       `json:"backupAppliance,omitempty"`
-	DefaultStorageBucket *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"defaultStorageBucket,omitempty"`
-	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
-	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	BackupsEnabled       *bool                               `json:"backupsEnabled,omitempty"`
+	CreateBackups        *bool                               `json:"createBackups,omitempty"`
+	BackupAppliance      *bool                               `json:"backupAppliance,omitempty"`
+	DefaultStorageBucket *BackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
+	DefaultSchedule      *BackupSettingsDefaultSchedule      `json:"defaultSchedule,omitempty"`
+	RetentionCount       *int64                              `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _BackupSettings BackupSettings
@@ -145,9 +145,9 @@ func (o *BackupSettings) SetBackupAppliance(v bool) {
 }
 
 // GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
-func (o *BackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *BackupSettings) GetDefaultStorageBucket() BackupSettingsDefaultStorageBucket {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret BackupSettingsDefaultStorageBucket
 		return ret
 	}
 	return *o.DefaultStorageBucket
@@ -155,7 +155,7 @@ func (o *BackupSettings) GetDefaultStorageBucket() GetAlerts200ResponseAllOfChec
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupSettings) GetDefaultStorageBucketOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *BackupSettings) GetDefaultStorageBucketOk() (*BackupSettingsDefaultStorageBucket, bool) {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
 		return nil, false
 	}
@@ -171,15 +171,15 @@ func (o *BackupSettings) IsSetDefaultStorageBucket() bool {
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the DefaultStorageBucket field.
-func (o *BackupSettings) SetDefaultStorageBucket(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetDefaultStorageBucket gets a reference to the given BackupSettingsDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
+func (o *BackupSettings) SetDefaultStorageBucket(v BackupSettingsDefaultStorageBucket) {
 	o.DefaultStorageBucket = &v
 }
 
 // GetDefaultSchedule returns the DefaultSchedule field value if set, zero value otherwise.
-func (o *BackupSettings) GetDefaultSchedule() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *BackupSettings) GetDefaultSchedule() BackupSettingsDefaultSchedule {
 	if o == nil || IsNil(o.DefaultSchedule) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret BackupSettingsDefaultSchedule
 		return ret
 	}
 	return *o.DefaultSchedule
@@ -187,7 +187,7 @@ func (o *BackupSettings) GetDefaultSchedule() ListBackupSettings200ResponseBacku
 
 // GetDefaultScheduleOk returns a tuple with the DefaultSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupSettings) GetDefaultScheduleOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *BackupSettings) GetDefaultScheduleOk() (*BackupSettingsDefaultSchedule, bool) {
 	if o == nil || IsNil(o.DefaultSchedule) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *BackupSettings) IsSetDefaultSchedule() bool {
 	return false
 }
 
-// SetDefaultSchedule gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultSchedule field.
-func (o *BackupSettings) SetDefaultSchedule(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetDefaultSchedule gets a reference to the given BackupSettingsDefaultSchedule and assigns it to the DefaultSchedule field.
+func (o *BackupSettings) SetDefaultSchedule(v BackupSettingsDefaultSchedule) {
 	o.DefaultSchedule = &v
 }
 
@@ -320,7 +320,6 @@ func (v NullableBackupSettings) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *BackupSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

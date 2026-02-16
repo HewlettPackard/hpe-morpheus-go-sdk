@@ -20,11 +20,11 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeI
 
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner struct {
-	Id           *int64                                                      `json:"id,omitempty"`
-	InstanceType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
-	Account      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
-	Code         *string                                                     `json:"code,omitempty"`
-	Name         *string                                                     `json:"name,omitempty"`
+	Id           *int64                                                                                       `json:"id,omitempty"`
+	InstanceType *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType `json:"instanceType,omitempty"`
+	Account      *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount      `json:"account,omitempty"`
+	Code         *string                                                                                      `json:"code,omitempty"`
+	Name         *string                                                                                      `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
 	Labels                   []string                                                                                             `json:"labels,omitempty"`
 	InstanceVersion          *string                                                                                              `json:"instanceVersion,omitempty"`
@@ -99,9 +99,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType {
 	if o == nil || IsNil(o.InstanceType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType
 		return ret
 	}
 	return *o.InstanceType
@@ -109,7 +109,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType, bool) {
 	if o == nil || IsNil(o.InstanceType) {
 		return nil, false
 	}
@@ -125,15 +125,15 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return false
 }
 
-// SetInstanceType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the InstanceType field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetInstanceType gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType and assigns it to the InstanceType field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerInstanceType) {
 	o.InstanceType = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -141,7 +141,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -157,8 +157,8 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccount gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount and assigns it to the Account field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerAccount) {
 	o.Account = &v
 }
 
@@ -985,7 +985,6 @@ func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceT
 
 	return v, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

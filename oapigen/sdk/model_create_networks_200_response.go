@@ -20,11 +20,11 @@ var _ MappedNullable = &CreateNetworks200Response{}
 
 // CreateNetworks200Response struct for CreateNetworks200Response
 type CreateNetworks200Response struct {
-	Network              *ListNetworks200ResponseAllOfNetworksInner `json:"network,omitempty"`
-	Errors               map[string]interface{}                     `json:"errors,omitempty"`
-	Success              *bool                                      `json:"success,omitempty"`
-	Msg                  NullableString                             `json:"msg,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	Network              *CreateNetworks200ResponseAllOfNetwork `json:"network,omitempty"`
+	Errors               map[string]interface{}                 `json:"errors,omitempty"`
+	Success              *bool                                  `json:"success,omitempty"`
+	Msg                  NullableString                         `json:"msg,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _CreateNetworks200Response CreateNetworks200Response
@@ -47,9 +47,9 @@ func NewCreateNetworks200ResponseWithDefaults() *CreateNetworks200Response {
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *CreateNetworks200Response) GetNetwork() ListNetworks200ResponseAllOfNetworksInner {
+func (o *CreateNetworks200Response) GetNetwork() CreateNetworks200ResponseAllOfNetwork {
 	if o == nil || IsNil(o.Network) {
-		var ret ListNetworks200ResponseAllOfNetworksInner
+		var ret CreateNetworks200ResponseAllOfNetwork
 		return ret
 	}
 	return *o.Network
@@ -57,7 +57,7 @@ func (o *CreateNetworks200Response) GetNetwork() ListNetworks200ResponseAllOfNet
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworks200Response) GetNetworkOk() (*ListNetworks200ResponseAllOfNetworksInner, bool) {
+func (o *CreateNetworks200Response) GetNetworkOk() (*CreateNetworks200ResponseAllOfNetwork, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *CreateNetworks200Response) IsSetNetwork() bool {
 	return false
 }
 
-// SetNetwork gets a reference to the given ListNetworks200ResponseAllOfNetworksInner and assigns it to the Network field.
-func (o *CreateNetworks200Response) SetNetwork(v ListNetworks200ResponseAllOfNetworksInner) {
+// SetNetwork gets a reference to the given CreateNetworks200ResponseAllOfNetwork and assigns it to the Network field.
+func (o *CreateNetworks200Response) SetNetwork(v CreateNetworks200ResponseAllOfNetwork) {
 	o.Network = &v
 }
 
@@ -259,7 +259,6 @@ func (v NullableCreateNetworks200Response) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
-
 func (o *CreateNetworks200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

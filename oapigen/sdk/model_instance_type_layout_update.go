@@ -46,11 +46,11 @@ type InstanceTypeLayoutUpdate struct {
 	// Array of layout spec template IDs
 	SpecTemplates []int64 `json:"specTemplates,omitempty"`
 	// The environmentVariables parameter is array of env objects
-	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
+	EnvironmentVariables []InstanceTypeLayoutUpdateEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of price set objects
-	PriceSets            []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
-	Permissions          *AddLayoutRequestInstanceTypeLayoutPermissions     `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	PriceSets            []InstanceTypeLayoutUpdatePriceSetsInner `json:"priceSets,omitempty"`
+	Permissions          *InstanceTypeLayoutUpdatePermissions     `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _InstanceTypeLayoutUpdate InstanceTypeLayoutUpdate
@@ -502,9 +502,9 @@ func (o *InstanceTypeLayoutUpdate) SetSpecTemplates(v []int64) {
 }
 
 // GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner {
+func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariables() []InstanceTypeLayoutUpdateEnvironmentVariablesInner {
 	if o == nil || IsNil(o.EnvironmentVariables) {
-		var ret []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
+		var ret []InstanceTypeLayoutUpdateEnvironmentVariablesInner
 		return ret
 	}
 	return o.EnvironmentVariables
@@ -512,7 +512,7 @@ func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariables() []AddClusterLayouts
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariablesOk() ([]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool) {
+func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariablesOk() ([]InstanceTypeLayoutUpdateEnvironmentVariablesInner, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
 	}
@@ -528,15 +528,15 @@ func (o *InstanceTypeLayoutUpdate) IsSetEnvironmentVariables() bool {
 	return false
 }
 
-// SetEnvironmentVariables gets a reference to the given []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
-func (o *InstanceTypeLayoutUpdate) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) {
+// SetEnvironmentVariables gets a reference to the given []InstanceTypeLayoutUpdateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
+func (o *InstanceTypeLayoutUpdate) SetEnvironmentVariables(v []InstanceTypeLayoutUpdateEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
 }
 
 // GetPriceSets returns the PriceSets field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdate) GetPriceSets() []AddInstanceTypeRequestInstanceTypePriceSetsInner {
+func (o *InstanceTypeLayoutUpdate) GetPriceSets() []InstanceTypeLayoutUpdatePriceSetsInner {
 	if o == nil || IsNil(o.PriceSets) {
-		var ret []AddInstanceTypeRequestInstanceTypePriceSetsInner
+		var ret []InstanceTypeLayoutUpdatePriceSetsInner
 		return ret
 	}
 	return o.PriceSets
@@ -544,7 +544,7 @@ func (o *InstanceTypeLayoutUpdate) GetPriceSets() []AddInstanceTypeRequestInstan
 
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdate) GetPriceSetsOk() ([]AddInstanceTypeRequestInstanceTypePriceSetsInner, bool) {
+func (o *InstanceTypeLayoutUpdate) GetPriceSetsOk() ([]InstanceTypeLayoutUpdatePriceSetsInner, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
 	}
@@ -560,15 +560,15 @@ func (o *InstanceTypeLayoutUpdate) IsSetPriceSets() bool {
 	return false
 }
 
-// SetPriceSets gets a reference to the given []AddInstanceTypeRequestInstanceTypePriceSetsInner and assigns it to the PriceSets field.
-func (o *InstanceTypeLayoutUpdate) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner) {
+// SetPriceSets gets a reference to the given []InstanceTypeLayoutUpdatePriceSetsInner and assigns it to the PriceSets field.
+func (o *InstanceTypeLayoutUpdate) SetPriceSets(v []InstanceTypeLayoutUpdatePriceSetsInner) {
 	o.PriceSets = v
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *InstanceTypeLayoutUpdate) GetPermissions() AddLayoutRequestInstanceTypeLayoutPermissions {
+func (o *InstanceTypeLayoutUpdate) GetPermissions() InstanceTypeLayoutUpdatePermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret AddLayoutRequestInstanceTypeLayoutPermissions
+		var ret InstanceTypeLayoutUpdatePermissions
 		return ret
 	}
 	return *o.Permissions
@@ -576,7 +576,7 @@ func (o *InstanceTypeLayoutUpdate) GetPermissions() AddLayoutRequestInstanceType
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayoutUpdate) GetPermissionsOk() (*AddLayoutRequestInstanceTypeLayoutPermissions, bool) {
+func (o *InstanceTypeLayoutUpdate) GetPermissionsOk() (*InstanceTypeLayoutUpdatePermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -592,8 +592,8 @@ func (o *InstanceTypeLayoutUpdate) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given AddLayoutRequestInstanceTypeLayoutPermissions and assigns it to the Permissions field.
-func (o *InstanceTypeLayoutUpdate) SetPermissions(v AddLayoutRequestInstanceTypeLayoutPermissions) {
+// SetPermissions gets a reference to the given InstanceTypeLayoutUpdatePermissions and assigns it to the Permissions field.
+func (o *InstanceTypeLayoutUpdate) SetPermissions(v InstanceTypeLayoutUpdatePermissions) {
 	o.Permissions = &v
 }
 
@@ -707,7 +707,6 @@ func (v NullableInstanceTypeLayoutUpdate) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *InstanceTypeLayoutUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,13 +20,13 @@ var _ MappedNullable = &AddTasks200ResponseAllOfTaskFile{}
 
 // AddTasks200ResponseAllOfTaskFile struct for AddTasks200ResponseAllOfTaskFile
 type AddTasks200ResponseAllOfTaskFile struct {
-	Id                   NullableInt64                                      `json:"id,omitempty"`
-	SourceType           NullableString                                     `json:"sourceType,omitempty"`
-	ContentRef           NullableString                                     `json:"contentRef,omitempty"`
-	ContentPath          NullableString                                     `json:"contentPath,omitempty"`
-	Repository           *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"repository,omitempty"`
-	Content              NullableString                                     `json:"content,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   NullableInt64                               `json:"id,omitempty"`
+	SourceType           NullableString                              `json:"sourceType,omitempty"`
+	ContentRef           NullableString                              `json:"contentRef,omitempty"`
+	ContentPath          NullableString                              `json:"contentPath,omitempty"`
+	Repository           *AddTasks200ResponseAllOfTaskFileRepository `json:"repository,omitempty"`
+	Content              NullableString                              `json:"content,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _AddTasks200ResponseAllOfTaskFile AddTasks200ResponseAllOfTaskFile
@@ -221,9 +221,9 @@ func (o *AddTasks200ResponseAllOfTaskFile) UnsetContentPath() {
 }
 
 // GetRepository returns the Repository field value if set, zero value otherwise.
-func (o *AddTasks200ResponseAllOfTaskFile) GetRepository() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *AddTasks200ResponseAllOfTaskFile) GetRepository() AddTasks200ResponseAllOfTaskFileRepository {
 	if o == nil || IsNil(o.Repository) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddTasks200ResponseAllOfTaskFileRepository
 		return ret
 	}
 	return *o.Repository
@@ -231,7 +231,7 @@ func (o *AddTasks200ResponseAllOfTaskFile) GetRepository() GetAlerts200ResponseA
 
 // GetRepositoryOk returns a tuple with the Repository field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasks200ResponseAllOfTaskFile) GetRepositoryOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *AddTasks200ResponseAllOfTaskFile) GetRepositoryOk() (*AddTasks200ResponseAllOfTaskFileRepository, bool) {
 	if o == nil || IsNil(o.Repository) {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *AddTasks200ResponseAllOfTaskFile) IsSetRepository() bool {
 	return false
 }
 
-// SetRepository gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Repository field.
-func (o *AddTasks200ResponseAllOfTaskFile) SetRepository(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetRepository gets a reference to the given AddTasks200ResponseAllOfTaskFileRepository and assigns it to the Repository field.
+func (o *AddTasks200ResponseAllOfTaskFile) SetRepository(v AddTasks200ResponseAllOfTaskFileRepository) {
 	o.Repository = &v
 }
 
@@ -375,7 +375,6 @@ func (v NullableAddTasks200ResponseAllOfTaskFile) UnmarshalMapstructure(data any
 
 	return v, nil
 }
-
 func (o *AddTasks200ResponseAllOfTaskFile) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

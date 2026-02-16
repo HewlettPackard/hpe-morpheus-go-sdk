@@ -21,7 +21,7 @@ var _ MappedNullable = &ListGroups200ResponseAllOfGroupsInnerStats{}
 // ListGroups200ResponseAllOfGroupsInnerStats struct for ListGroups200ResponseAllOfGroupsInnerStats
 type ListGroups200ResponseAllOfGroupsInnerStats struct {
 	InstanceCounts       *ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts `json:"instanceCounts,omitempty"`
-	ServerCounts         *ListClouds200ResponseAllOfZonesInnerStatsServerCounts    `json:"serverCounts,omitempty"`
+	ServerCounts         *ListGroups200ResponseAllOfGroupsInnerStatsServerCounts   `json:"serverCounts,omitempty"`
 	AdditionalProperties map[string]interface{}                                    `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetInstanceCounts(v ListGro
 }
 
 // GetServerCounts returns the ServerCounts field value if set, zero value otherwise.
-func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListClouds200ResponseAllOfZonesInnerStatsServerCounts {
+func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListGroups200ResponseAllOfGroupsInnerStatsServerCounts {
 	if o == nil || IsNil(o.ServerCounts) {
-		var ret ListClouds200ResponseAllOfZonesInnerStatsServerCounts
+		var ret ListGroups200ResponseAllOfGroupsInnerStatsServerCounts
 		return ret
 	}
 	return *o.ServerCounts
@@ -87,7 +87,7 @@ func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListCloud
 
 // GetServerCountsOk returns a tuple with the ServerCounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCountsOk() (*ListClouds200ResponseAllOfZonesInnerStatsServerCounts, bool) {
+func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCountsOk() (*ListGroups200ResponseAllOfGroupsInnerStatsServerCounts, bool) {
 	if o == nil || IsNil(o.ServerCounts) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListGroups200ResponseAllOfGroupsInnerStats) IsSetServerCounts() bool {
 	return false
 }
 
-// SetServerCounts gets a reference to the given ListClouds200ResponseAllOfZonesInnerStatsServerCounts and assigns it to the ServerCounts field.
-func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetServerCounts(v ListClouds200ResponseAllOfZonesInnerStatsServerCounts) {
+// SetServerCounts gets a reference to the given ListGroups200ResponseAllOfGroupsInnerStatsServerCounts and assigns it to the ServerCounts field.
+func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetServerCounts(v ListGroups200ResponseAllOfGroupsInnerStatsServerCounts) {
 	o.ServerCounts = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListGroups200ResponseAllOfGroupsInnerStats) UnmarshalMapstructur
 
 	return v, nil
 }
-
 func (o *ListGroups200ResponseAllOfGroupsInnerStats) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

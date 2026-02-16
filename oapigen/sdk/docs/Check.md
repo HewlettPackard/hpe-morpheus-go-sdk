@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**CheckAccount**](CheckAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **ApiKey** | Pointer to **string** |  | [optional] 
 **Availability** | Pointer to **float32** |  | [optional] 
 **CheckAgent** | Pointer to **NullableString** |  | [optional] 
 **CheckInterval** | Pointer to **NullableInt64** |  | [optional] 
 **CheckSpec** | Pointer to **NullableString** |  | [optional] 
-**CheckType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCheckType**](GetAlerts200ResponseAllOfChecksInnerCheckType.md) |  | [optional] 
-**Config** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerConfig**](GetAlerts200ResponseAllOfChecksInnerConfig.md) |  | [optional] 
-**Container** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**CheckType** | Pointer to [**CheckCheckType**](CheckCheckType.md) |  | [optional] 
+**Config** | Pointer to [**CheckConfig**](CheckConfig.md) |  | [optional] 
+**Container** | Pointer to [**CheckContainer**](CheckContainer.md) |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**CreatedBy** | Pointer to [**CheckCreatedBy**](CheckCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **EndDate** | Pointer to **NullableTime** |  | [optional] 
@@ -88,20 +88,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Check) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *Check) GetAccount() CheckAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Check) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *Check) GetAccountOk() (*CheckAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Check) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *Check) SetAccount(v CheckAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -293,20 +293,20 @@ HasCheckSpec returns a boolean if a field has been set.
 UnsetCheckSpec ensures that no value is present for CheckSpec, not even an explicit nil
 ### GetCheckType
 
-`func (o *Check) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckType`
+`func (o *Check) GetCheckType() CheckCheckType`
 
 GetCheckType returns the CheckType field if non-nil, zero value otherwise.
 
 ### GetCheckTypeOk
 
-`func (o *Check) GetCheckTypeOk() (*GetAlerts200ResponseAllOfChecksInnerCheckType, bool)`
+`func (o *Check) GetCheckTypeOk() (*CheckCheckType, bool)`
 
 GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckType
 
-`func (o *Check) SetCheckType(v GetAlerts200ResponseAllOfChecksInnerCheckType)`
+`func (o *Check) SetCheckType(v CheckCheckType)`
 
 SetCheckType sets CheckType field to given value.
 
@@ -318,20 +318,20 @@ HasCheckType returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Check) GetConfig() GetAlerts200ResponseAllOfChecksInnerConfig`
+`func (o *Check) GetConfig() CheckConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Check) GetConfigOk() (*GetAlerts200ResponseAllOfChecksInnerConfig, bool)`
+`func (o *Check) GetConfigOk() (*CheckConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Check) SetConfig(v GetAlerts200ResponseAllOfChecksInnerConfig)`
+`func (o *Check) SetConfig(v CheckConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -343,20 +343,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetContainer
 
-`func (o *Check) GetContainer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *Check) GetContainer() CheckContainer`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *Check) GetContainerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *Check) GetContainerOk() (*CheckContainer, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *Check) SetContainer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *Check) SetContainer(v CheckContainer)`
 
 SetContainer sets Container field to given value.
 
@@ -418,20 +418,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *Check) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *Check) GetCreatedBy() CheckCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *Check) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *Check) GetCreatedByOk() (*CheckCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *Check) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *Check) SetCreatedBy(v CheckCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

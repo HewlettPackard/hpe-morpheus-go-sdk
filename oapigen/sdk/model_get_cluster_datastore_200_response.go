@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClusterDatastore200Response{}
 
 // GetClusterDatastore200Response struct for GetClusterDatastore200Response
 type GetClusterDatastore200Response struct {
-	Datastore            *SaveCloudDatastore200ResponseAllOfDatastore `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	Datastore            *GetClusterDatastore200ResponseDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _GetClusterDatastore200Response GetClusterDatastore200Response
@@ -44,9 +44,9 @@ func NewGetClusterDatastore200ResponseWithDefaults() *GetClusterDatastore200Resp
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *GetClusterDatastore200Response) GetDatastore() SaveCloudDatastore200ResponseAllOfDatastore {
+func (o *GetClusterDatastore200Response) GetDatastore() GetClusterDatastore200ResponseDatastore {
 	if o == nil || IsNil(o.Datastore) {
-		var ret SaveCloudDatastore200ResponseAllOfDatastore
+		var ret GetClusterDatastore200ResponseDatastore
 		return ret
 	}
 	return *o.Datastore
@@ -54,7 +54,7 @@ func (o *GetClusterDatastore200Response) GetDatastore() SaveCloudDatastore200Res
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClusterDatastore200Response) GetDatastoreOk() (*SaveCloudDatastore200ResponseAllOfDatastore, bool) {
+func (o *GetClusterDatastore200Response) GetDatastoreOk() (*GetClusterDatastore200ResponseDatastore, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetClusterDatastore200Response) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given SaveCloudDatastore200ResponseAllOfDatastore and assigns it to the Datastore field.
-func (o *GetClusterDatastore200Response) SetDatastore(v SaveCloudDatastore200ResponseAllOfDatastore) {
+// SetDatastore gets a reference to the given GetClusterDatastore200ResponseDatastore and assigns it to the Datastore field.
+func (o *GetClusterDatastore200Response) SetDatastore(v GetClusterDatastore200ResponseDatastore) {
 	o.Datastore = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetClusterDatastore200Response) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
-
 func (o *GetClusterDatastore200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,8 +20,8 @@ var _ MappedNullable = &SaveDatastoreRequestDatastoreTenantPermissions{}
 
 // SaveDatastoreRequestDatastoreTenantPermissions List of tenants to assign this datastore to
 type SaveDatastoreRequestDatastoreTenantPermissions struct {
-	Accounts             []GetAlerts200ResponseAllOfChecksInnerAccount `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	Accounts             []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _SaveDatastoreRequestDatastoreTenantPermissions SaveDatastoreRequestDatastoreTenantPermissions
@@ -44,9 +44,9 @@ func NewSaveDatastoreRequestDatastoreTenantPermissionsWithDefaults() *SaveDatast
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -54,7 +54,7 @@ func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []GetAler
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() ([]SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *SaveDatastoreRequestDatastoreTenantPermissions) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Accounts field.
-func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccounts gets a reference to the given []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner and assigns it to the Accounts field.
+func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner) {
 	o.Accounts = v
 }
 
@@ -140,7 +140,6 @@ func (v NullableSaveDatastoreRequestDatastoreTenantPermissions) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *SaveDatastoreRequestDatastoreTenantPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

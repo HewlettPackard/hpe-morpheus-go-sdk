@@ -176,7 +176,6 @@ func (v NullableAddVirtualImage200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
-
 func (o *AddVirtualImage200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -1,0 +1,82 @@
+# StorageDatastoreDatastoresInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int32** | id of the component datastore | [optional] 
+**Name** | Pointer to **string** | Name of the component datastore | [optional] 
+
+## Methods
+
+### NewStorageDatastoreDatastoresInner
+
+`func NewStorageDatastoreDatastoresInner() *StorageDatastoreDatastoresInner`
+
+NewStorageDatastoreDatastoresInner instantiates a new StorageDatastoreDatastoresInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewStorageDatastoreDatastoresInnerWithDefaults
+
+`func NewStorageDatastoreDatastoresInnerWithDefaults() *StorageDatastoreDatastoresInner`
+
+NewStorageDatastoreDatastoresInnerWithDefaults instantiates a new StorageDatastoreDatastoresInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *StorageDatastoreDatastoresInner) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *StorageDatastoreDatastoresInner) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *StorageDatastoreDatastoresInner) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *StorageDatastoreDatastoresInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *StorageDatastoreDatastoresInner) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *StorageDatastoreDatastoresInner) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *StorageDatastoreDatastoresInner) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *StorageDatastoreDatastoresInner) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

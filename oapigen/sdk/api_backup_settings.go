@@ -108,7 +108,7 @@ func (a *BackupSettingsAPIService) ListBackupSettingsExecute(r ApiListBackupSett
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -119,7 +119,7 @@ func (a *BackupSettingsAPIService) ListBackupSettingsExecute(r ApiListBackupSett
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -154,7 +154,7 @@ func (r ApiUpdateBackupSettingsRequest) UpdateBackupSettingsRequest(updateBackup
 	return r
 }
 
-func (r ApiUpdateBackupSettingsRequest) Execute() (*DeleteAlerts200Response, *http.Response, error) {
+func (r ApiUpdateBackupSettingsRequest) Execute() (*UpdateBackupSettings200Response, *http.Response, error) {
 	return r.ApiService.UpdateBackupSettingsExecute(r)
 }
 
@@ -175,13 +175,13 @@ func (a *BackupSettingsAPIService) UpdateBackupSettings(ctx context.Context) Api
 
 // Execute executes the request
 //
-//	@return DeleteAlerts200Response
-func (a *BackupSettingsAPIService) UpdateBackupSettingsExecute(r ApiUpdateBackupSettingsRequest) (*DeleteAlerts200Response, *http.Response, error) {
+//	@return UpdateBackupSettings200Response
+func (a *BackupSettingsAPIService) UpdateBackupSettingsExecute(r ApiUpdateBackupSettingsRequest) (*UpdateBackupSettings200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DeleteAlerts200Response
+		localVarReturnValue *UpdateBackupSettings200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupSettingsAPIService.UpdateBackupSettings")
@@ -236,7 +236,7 @@ func (a *BackupSettingsAPIService) UpdateBackupSettingsExecute(r ApiUpdateBackup
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -247,7 +247,7 @@ func (a *BackupSettingsAPIService) UpdateBackupSettingsExecute(r ApiUpdateBackup
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

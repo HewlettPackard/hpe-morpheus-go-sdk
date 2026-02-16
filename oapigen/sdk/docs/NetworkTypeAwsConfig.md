@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **AvailabilityZone** | **string** | Availability Zone Name | 
 **Cidr** | **string** | Network CIDR | 
 **AssignPublicIp** | **bool** | Assign public IPs by default. | 
-**ZonePool** | [**CreateNetworksRequestNetworkConfigAnyOf1ZonePool**](CreateNetworksRequestNetworkConfigAnyOf1ZonePool.md) |  | 
+**ZonePool** | [**NetworkTypeAwsConfigZonePool**](NetworkTypeAwsConfigZonePool.md) |  | 
 
 ## Methods
 
 ### NewNetworkTypeAwsConfig
 
-`func NewNetworkTypeAwsConfig(availabilityZone string, cidr string, assignPublicIp bool, zonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool, ) *NetworkTypeAwsConfig`
+`func NewNetworkTypeAwsConfig(availabilityZone string, cidr string, assignPublicIp bool, zonePool NetworkTypeAwsConfigZonePool, ) *NetworkTypeAwsConfig`
 
 NewNetworkTypeAwsConfig instantiates a new NetworkTypeAwsConfig object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetAssignPublicIp sets AssignPublicIp field to given value.
 
 ### GetZonePool
 
-`func (o *NetworkTypeAwsConfig) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf1ZonePool`
+`func (o *NetworkTypeAwsConfig) GetZonePool() NetworkTypeAwsConfigZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf1ZonePool, bool)`
+`func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*NetworkTypeAwsConfigZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *NetworkTypeAwsConfig) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf1ZonePool)`
+`func (o *NetworkTypeAwsConfig) SetZonePool(v NetworkTypeAwsConfigZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 

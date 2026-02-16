@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CatalogItemType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**CatalogItemType** | Pointer to [**AddCatalogItemType200ResponseAllOfCatalogItemType**](AddCatalogItemType200ResponseAllOfCatalogItemType.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCatalogItemType
 
-`func (o *AddCatalogItemType200Response) GetCatalogItemType() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddCatalogItemType200Response) GetCatalogItemType() AddCatalogItemType200ResponseAllOfCatalogItemType`
 
 GetCatalogItemType returns the CatalogItemType field if non-nil, zero value otherwise.
 
 ### GetCatalogItemTypeOk
 
-`func (o *AddCatalogItemType200Response) GetCatalogItemTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddCatalogItemType200Response) GetCatalogItemTypeOk() (*AddCatalogItemType200ResponseAllOfCatalogItemType, bool)`
 
 GetCatalogItemTypeOk returns a tuple with the CatalogItemType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalogItemType
 
-`func (o *AddCatalogItemType200Response) SetCatalogItemType(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddCatalogItemType200Response) SetCatalogItemType(v AddCatalogItemType200ResponseAllOfCatalogItemType)`
 
 SetCatalogItemType sets CatalogItemType field to given value.
 

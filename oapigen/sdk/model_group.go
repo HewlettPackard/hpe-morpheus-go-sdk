@@ -21,21 +21,21 @@ var _ MappedNullable = &Group{}
 
 // Group struct for Group
 type Group struct {
-	Id                   *int64                                              `json:"id,omitempty"`
-	Uuid                 *string                                             `json:"uuid,omitempty"`
-	Name                 *string                                             `json:"name,omitempty"`
-	Code                 NullableString                                      `json:"code,omitempty"`
-	Labels               []string                                            `json:"labels,omitempty"`
-	Location             NullableString                                      `json:"location,omitempty"`
-	AccountId            *int64                                              `json:"accountId,omitempty"`
-	Active               *bool                                               `json:"active,omitempty"`
-	Config               *ListGroups200ResponseAllOfGroupsInnerConfig        `json:"config,omitempty"`
-	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
-	Zones                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zones,omitempty"`
-	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
-	ServerCount          *int64                                              `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	Id                   *int64                                     `json:"id,omitempty"`
+	Uuid                 *string                                    `json:"uuid,omitempty"`
+	Name                 *string                                    `json:"name,omitempty"`
+	Code                 NullableString                             `json:"code,omitempty"`
+	Labels               []string                                   `json:"labels,omitempty"`
+	Location             NullableString                             `json:"location,omitempty"`
+	AccountId            *int64                                     `json:"accountId,omitempty"`
+	Active               *bool                                      `json:"active,omitempty"`
+	Config               *AddGroups200ResponseAllOfGroupConfig      `json:"config,omitempty"`
+	DateCreated          *time.Time                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                 `json:"lastUpdated,omitempty"`
+	Zones                []AddGroups200ResponseAllOfGroupZonesInner `json:"zones,omitempty"`
+	Stats                *AddGroups200ResponseAllOfGroupStats       `json:"stats,omitempty"`
+	ServerCount          *int64                                     `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _Group Group
@@ -336,9 +336,9 @@ func (o *Group) SetActive(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *Group) GetConfig() ListGroups200ResponseAllOfGroupsInnerConfig {
+func (o *Group) GetConfig() AddGroups200ResponseAllOfGroupConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListGroups200ResponseAllOfGroupsInnerConfig
+		var ret AddGroups200ResponseAllOfGroupConfig
 		return ret
 	}
 	return *o.Config
@@ -346,7 +346,7 @@ func (o *Group) GetConfig() ListGroups200ResponseAllOfGroupsInnerConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetConfigOk() (*ListGroups200ResponseAllOfGroupsInnerConfig, bool) {
+func (o *Group) GetConfigOk() (*AddGroups200ResponseAllOfGroupConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -362,8 +362,8 @@ func (o *Group) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListGroups200ResponseAllOfGroupsInnerConfig and assigns it to the Config field.
-func (o *Group) SetConfig(v ListGroups200ResponseAllOfGroupsInnerConfig) {
+// SetConfig gets a reference to the given AddGroups200ResponseAllOfGroupConfig and assigns it to the Config field.
+func (o *Group) SetConfig(v AddGroups200ResponseAllOfGroupConfig) {
 	o.Config = &v
 }
 
@@ -432,9 +432,9 @@ func (o *Group) SetLastUpdated(v time.Time) {
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *Group) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Group) GetZones() []AddGroups200ResponseAllOfGroupZonesInner {
 	if o == nil || IsNil(o.Zones) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []AddGroups200ResponseAllOfGroupZonesInner
 		return ret
 	}
 	return o.Zones
@@ -442,7 +442,7 @@ func (o *Group) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetZonesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Group) GetZonesOk() ([]AddGroups200ResponseAllOfGroupZonesInner, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -458,15 +458,15 @@ func (o *Group) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zones field.
-func (o *Group) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZones gets a reference to the given []AddGroups200ResponseAllOfGroupZonesInner and assigns it to the Zones field.
+func (o *Group) SetZones(v []AddGroups200ResponseAllOfGroupZonesInner) {
 	o.Zones = v
 }
 
 // GetStats returns the Stats field value if set, zero value otherwise.
-func (o *Group) GetStats() ListGroups200ResponseAllOfGroupsInnerStats {
+func (o *Group) GetStats() AddGroups200ResponseAllOfGroupStats {
 	if o == nil || IsNil(o.Stats) {
-		var ret ListGroups200ResponseAllOfGroupsInnerStats
+		var ret AddGroups200ResponseAllOfGroupStats
 		return ret
 	}
 	return *o.Stats
@@ -474,7 +474,7 @@ func (o *Group) GetStats() ListGroups200ResponseAllOfGroupsInnerStats {
 
 // GetStatsOk returns a tuple with the Stats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Group) GetStatsOk() (*ListGroups200ResponseAllOfGroupsInnerStats, bool) {
+func (o *Group) GetStatsOk() (*AddGroups200ResponseAllOfGroupStats, bool) {
 	if o == nil || IsNil(o.Stats) {
 		return nil, false
 	}
@@ -490,8 +490,8 @@ func (o *Group) IsSetStats() bool {
 	return false
 }
 
-// SetStats gets a reference to the given ListGroups200ResponseAllOfGroupsInnerStats and assigns it to the Stats field.
-func (o *Group) SetStats(v ListGroups200ResponseAllOfGroupsInnerStats) {
+// SetStats gets a reference to the given AddGroups200ResponseAllOfGroupStats and assigns it to the Stats field.
+func (o *Group) SetStats(v AddGroups200ResponseAllOfGroupStats) {
 	o.Stats = &v
 }
 
@@ -631,7 +631,6 @@ func (v NullableGroup) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *Group) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

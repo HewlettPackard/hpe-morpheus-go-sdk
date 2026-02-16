@@ -45,8 +45,8 @@ type AddServicePlansRequestServicePlan struct {
 	// Max number of GPUs
 	MaxGpus *int64 `json:"maxGpus,omitempty"`
 	// Max disks allowed
-	MaxDisks      *int64                                      `json:"maxDisks,omitempty"`
-	ProvisionType AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType"`
+	MaxDisks      *int64                                         `json:"maxDisks,omitempty"`
+	ProvisionType AddServicePlansRequestServicePlanProvisionType `json:"provisionType"`
 	// Can be used to enable / disable customizable cpu
 	CustomCpu *bool `json:"customCpu,omitempty"`
 	// Can be used to enable / disable customizable cores
@@ -74,7 +74,7 @@ type _AddServicePlansRequestServicePlan AddServicePlansRequestServicePlan
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage int64, maxMemory int64, provisionType AddClusterLayoutsRequestLayoutProvisionType) *AddServicePlansRequestServicePlan {
+func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage int64, maxMemory int64, provisionType AddServicePlansRequestServicePlanProvisionType) *AddServicePlansRequestServicePlan {
 	this := AddServicePlansRequestServicePlan{}
 	this.Name = name
 	this.Code = code
@@ -505,9 +505,9 @@ func (o *AddServicePlansRequestServicePlan) SetMaxDisks(v int64) {
 }
 
 // GetProvisionType returns the ProvisionType field value
-func (o *AddServicePlansRequestServicePlan) GetProvisionType() AddClusterLayoutsRequestLayoutProvisionType {
+func (o *AddServicePlansRequestServicePlan) GetProvisionType() AddServicePlansRequestServicePlanProvisionType {
 	if o == nil {
-		var ret AddClusterLayoutsRequestLayoutProvisionType
+		var ret AddServicePlansRequestServicePlanProvisionType
 		return ret
 	}
 
@@ -516,7 +516,7 @@ func (o *AddServicePlansRequestServicePlan) GetProvisionType() AddClusterLayouts
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value
 // and a boolean to check if the value has been set.
-func (o *AddServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddClusterLayoutsRequestLayoutProvisionType, bool) {
+func (o *AddServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddServicePlansRequestServicePlanProvisionType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -524,7 +524,7 @@ func (o *AddServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddClusterLay
 }
 
 // SetProvisionType sets field value
-func (o *AddServicePlansRequestServicePlan) SetProvisionType(v AddClusterLayoutsRequestLayoutProvisionType) {
+func (o *AddServicePlansRequestServicePlan) SetProvisionType(v AddServicePlansRequestServicePlanProvisionType) {
 	o.ProvisionType = v
 }
 
@@ -972,7 +972,6 @@ func (v NullableAddServicePlansRequestServicePlan) UnmarshalMapstructure(data an
 
 	return v, nil
 }
-
 func (o *AddServicePlansRequestServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BackupsEnabled** | Pointer to **bool** |  | [optional] 
 **CreateBackups** | Pointer to **bool** |  | [optional] 
 **BackupAppliance** | Pointer to **bool** |  | [optional] 
-**DefaultStorageBucket** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**DefaultStorageBucket** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket**](ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket.md) |  | [optional] 
 **DefaultSchedule** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
 **RetentionCount** | Pointer to **int64** |  | [optional] 
 
@@ -107,20 +107,20 @@ HasBackupAppliance returns a boolean if a field has been set.
 
 ### GetDefaultStorageBucket
 
-`func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket`
 
 GetDefaultStorageBucket returns the DefaultStorageBucket field if non-nil, zero value otherwise.
 
 ### GetDefaultStorageBucketOk
 
-`func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket, bool)`
 
 GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStorageBucket
 
-`func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket)`
 
 SetDefaultStorageBucket sets DefaultStorageBucket field to given value.
 
@@ -130,16 +130,6 @@ SetDefaultStorageBucket sets DefaultStorageBucket field to given value.
 
 HasDefaultStorageBucket returns a boolean if a field has been set.
 
-### SetDefaultStorageBucketNil
-
-`func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucketNil(b bool)`
-
- SetDefaultStorageBucketNil sets the value for DefaultStorageBucket to be an explicit nil
-
-### UnsetDefaultStorageBucket
-`func (o *ListBackupSettings200ResponseBackupSettings) UnsetDefaultStorageBucket()`
-
-UnsetDefaultStorageBucket ensures that no value is present for DefaultStorageBucket, not even an explicit nil
 ### GetDefaultSchedule
 
 `func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultSchedule() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`

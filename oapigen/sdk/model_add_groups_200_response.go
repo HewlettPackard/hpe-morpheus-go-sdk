@@ -20,9 +20,9 @@ var _ MappedNullable = &AddGroups200Response{}
 
 // AddGroups200Response struct for AddGroups200Response
 type AddGroups200Response struct {
-	Group                *ListGroups200ResponseAllOfGroupsInner `json:"group,omitempty"`
-	Success              *bool                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Group                *AddGroups200ResponseAllOfGroup `json:"group,omitempty"`
+	Success              *bool                           `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}          `json:",remain"`
 }
 
 type _AddGroups200Response AddGroups200Response
@@ -45,9 +45,9 @@ func NewAddGroups200ResponseWithDefaults() *AddGroups200Response {
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *AddGroups200Response) GetGroup() ListGroups200ResponseAllOfGroupsInner {
+func (o *AddGroups200Response) GetGroup() AddGroups200ResponseAllOfGroup {
 	if o == nil || IsNil(o.Group) {
-		var ret ListGroups200ResponseAllOfGroupsInner
+		var ret AddGroups200ResponseAllOfGroup
 		return ret
 	}
 	return *o.Group
@@ -55,7 +55,7 @@ func (o *AddGroups200Response) GetGroup() ListGroups200ResponseAllOfGroupsInner 
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddGroups200Response) GetGroupOk() (*ListGroups200ResponseAllOfGroupsInner, bool) {
+func (o *AddGroups200Response) GetGroupOk() (*AddGroups200ResponseAllOfGroup, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddGroups200Response) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListGroups200ResponseAllOfGroupsInner and assigns it to the Group field.
-func (o *AddGroups200Response) SetGroup(v ListGroups200ResponseAllOfGroupsInner) {
+// SetGroup gets a reference to the given AddGroups200ResponseAllOfGroup and assigns it to the Group field.
+func (o *AddGroups200Response) SetGroup(v AddGroups200ResponseAllOfGroup) {
 	o.Group = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableAddGroups200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *AddGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

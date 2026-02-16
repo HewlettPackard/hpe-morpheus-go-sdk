@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **MemoryRequirement** | Pointer to **int64** | Memory requirement in bytes | [optional] 
 **GroupType** | [**AddClusterLayoutsRequestLayoutGroupType**](AddClusterLayoutsRequestLayoutGroupType.md) |  | 
 **ProvisionType** | [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | 
-**OptionTypes** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of cluster layout option types | [optional] 
-**TaskSets** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of cluster layout task sets | [optional] 
+**OptionTypes** | Pointer to [**[]AddClusterLayoutsRequestLayoutOptionTypesInner**](AddClusterLayoutsRequestLayoutOptionTypesInner.md) | Array of cluster layout option types | [optional] 
+**TaskSets** | Pointer to [**[]AddClusterLayoutsRequestLayoutTaskSetsInner**](AddClusterLayoutsRequestLayoutTaskSetsInner.md) | Array of cluster layout task sets | [optional] 
 **EnvironmentVariables** | Pointer to [**[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner**](AddClusterLayoutsRequestLayoutEnvironmentVariablesInner.md) | Array of cluster layout env variables | [optional] 
 **Masters** | Pointer to [**[]AddClusterLayoutsRequestLayoutMastersInner**](AddClusterLayoutsRequestLayoutMastersInner.md) | Array of cluster layout master nodes | [optional] 
-**Workers** | Pointer to [**[]AddClusterLayoutsRequestLayoutMastersInner**](AddClusterLayoutsRequestLayoutMastersInner.md) | Array of cluster layout worker nodes | [optional] 
+**Workers** | Pointer to [**[]AddClusterLayoutsRequestLayoutWorkersInner**](AddClusterLayoutsRequestLayoutWorkersInner.md) | Array of cluster layout worker nodes | [optional] 
 
 ## Methods
 
@@ -291,20 +291,20 @@ SetProvisionType sets ProvisionType field to given value.
 
 ### GetOptionTypes
 
-`func (o *AddClusterLayoutsRequestLayout) GetOptionTypes() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddClusterLayoutsRequestLayout) GetOptionTypes() []AddClusterLayoutsRequestLayoutOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *AddClusterLayoutsRequestLayout) GetOptionTypesOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddClusterLayoutsRequestLayout) GetOptionTypesOk() (*[]AddClusterLayoutsRequestLayoutOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *AddClusterLayoutsRequestLayout) SetOptionTypes(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddClusterLayoutsRequestLayout) SetOptionTypes(v []AddClusterLayoutsRequestLayoutOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 
@@ -316,20 +316,20 @@ HasOptionTypes returns a boolean if a field has been set.
 
 ### GetTaskSets
 
-`func (o *AddClusterLayoutsRequestLayout) GetTaskSets() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddClusterLayoutsRequestLayout) GetTaskSets() []AddClusterLayoutsRequestLayoutTaskSetsInner`
 
 GetTaskSets returns the TaskSets field if non-nil, zero value otherwise.
 
 ### GetTaskSetsOk
 
-`func (o *AddClusterLayoutsRequestLayout) GetTaskSetsOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddClusterLayoutsRequestLayout) GetTaskSetsOk() (*[]AddClusterLayoutsRequestLayoutTaskSetsInner, bool)`
 
 GetTaskSetsOk returns a tuple with the TaskSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskSets
 
-`func (o *AddClusterLayoutsRequestLayout) SetTaskSets(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddClusterLayoutsRequestLayout) SetTaskSets(v []AddClusterLayoutsRequestLayoutTaskSetsInner)`
 
 SetTaskSets sets TaskSets field to given value.
 
@@ -391,20 +391,20 @@ HasMasters returns a boolean if a field has been set.
 
 ### GetWorkers
 
-`func (o *AddClusterLayoutsRequestLayout) GetWorkers() []AddClusterLayoutsRequestLayoutMastersInner`
+`func (o *AddClusterLayoutsRequestLayout) GetWorkers() []AddClusterLayoutsRequestLayoutWorkersInner`
 
 GetWorkers returns the Workers field if non-nil, zero value otherwise.
 
 ### GetWorkersOk
 
-`func (o *AddClusterLayoutsRequestLayout) GetWorkersOk() (*[]AddClusterLayoutsRequestLayoutMastersInner, bool)`
+`func (o *AddClusterLayoutsRequestLayout) GetWorkersOk() (*[]AddClusterLayoutsRequestLayoutWorkersInner, bool)`
 
 GetWorkersOk returns a tuple with the Workers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkers
 
-`func (o *AddClusterLayoutsRequestLayout) SetWorkers(v []AddClusterLayoutsRequestLayoutMastersInner)`
+`func (o *AddClusterLayoutsRequestLayout) SetWorkers(v []AddClusterLayoutsRequestLayoutWorkersInner)`
 
 SetWorkers sets Workers field to given value.
 

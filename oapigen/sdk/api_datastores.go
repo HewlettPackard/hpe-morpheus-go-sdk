@@ -30,7 +30,7 @@ type ApiDeleteDatastoresRequest struct {
 	id         int64
 }
 
-func (r ApiDeleteDatastoresRequest) Execute() (*DeleteClusterDatastore200Response, *http.Response, error) {
+func (r ApiDeleteDatastoresRequest) Execute() (*DeleteDatastores200Response, *http.Response, error) {
 	return r.ApiService.DeleteDatastoresExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *DatastoresAPIService) DeleteDatastores(ctx context.Context, id int64) A
 
 // Execute executes the request
 //
-//	@return DeleteClusterDatastore200Response
-func (a *DatastoresAPIService) DeleteDatastoresExecute(r ApiDeleteDatastoresRequest) (*DeleteClusterDatastore200Response, *http.Response, error) {
+//	@return DeleteDatastores200Response
+func (a *DatastoresAPIService) DeleteDatastoresExecute(r ApiDeleteDatastoresRequest) (*DeleteDatastores200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DeleteClusterDatastore200Response
+		localVarReturnValue *DeleteDatastores200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatastoresAPIService.DeleteDatastores")
@@ -115,7 +115,7 @@ func (a *DatastoresAPIService) DeleteDatastoresExecute(r ApiDeleteDatastoresRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -126,7 +126,7 @@ func (a *DatastoresAPIService) DeleteDatastoresExecute(r ApiDeleteDatastoresRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -239,7 +239,7 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -250,7 +250,7 @@ func (a *DatastoresAPIService) GetDatastoresExecute(r ApiGetDatastoresRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -418,7 +418,7 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -429,7 +429,7 @@ func (a *DatastoresAPIService) ListDatastoresExecute(r ApiListDatastoresRequest)
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -546,7 +546,7 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -557,7 +557,7 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -582,14 +582,14 @@ func (a *DatastoresAPIService) SaveDatastoreExecute(r ApiSaveDatastoreRequest) (
 }
 
 type ApiUpdateDatastoresRequest struct {
-	ctx                          context.Context
-	ApiService                   *DatastoresAPIService
-	id                           int64
-	updateCloudDatastoresRequest *UpdateCloudDatastoresRequest
+	ctx                     context.Context
+	ApiService              *DatastoresAPIService
+	id                      int64
+	updateDatastoresRequest *UpdateDatastoresRequest
 }
 
-func (r ApiUpdateDatastoresRequest) UpdateCloudDatastoresRequest(updateCloudDatastoresRequest UpdateCloudDatastoresRequest) ApiUpdateDatastoresRequest {
-	r.updateCloudDatastoresRequest = &updateCloudDatastoresRequest
+func (r ApiUpdateDatastoresRequest) UpdateDatastoresRequest(updateDatastoresRequest UpdateDatastoresRequest) ApiUpdateDatastoresRequest {
+	r.updateDatastoresRequest = &updateDatastoresRequest
 	return r
 }
 
@@ -655,7 +655,7 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateCloudDatastoresRequest
+	localVarPostBody = r.updateDatastoresRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -678,7 +678,7 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -689,7 +689,7 @@ func (a *DatastoresAPIService) UpdateDatastoresExecute(r ApiUpdateDatastoresRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

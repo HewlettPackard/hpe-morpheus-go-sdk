@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Accounts** | Pointer to [**[]SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner**](SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccounts
 
-`func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccounts() []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *SaveDatastoreRequestDatastoreTenantPermissions) GetAccountsOk() (*[]SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *SaveDatastoreRequestDatastoreTenantPermissions) SetAccounts(v []SaveDatastoreRequestDatastoreTenantPermissionsAccountsInner)`
 
 SetAccounts sets Accounts field to given value.
 

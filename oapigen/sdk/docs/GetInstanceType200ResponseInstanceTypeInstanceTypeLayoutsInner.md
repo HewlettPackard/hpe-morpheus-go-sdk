@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**InstanceType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**InstanceType** | Pointer to [**GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType.md) |  | [optional] 
+**Account** | Pointer to [**GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **MemoryRequirement** | Pointer to **NullableInt64** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
 **SupportsConvertToManaged** | Pointer to **NullableBool** |  | [optional] 
-**ProvisionType** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType.md) |  | [optional] 
+**ProvisionType** | Pointer to [**GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType.md) |  | [optional] 
 **TaskSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ContainerTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner.md) |  | [optional] 
+**ContainerTypes** | Pointer to [**[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner.md) |  | [optional] 
 **Mounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Ports** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **OptionTypes** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **SpecTemplates** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **TfvarSecret** | Pointer to **NullableString** |  | [optional] 
-**Permissions** | Pointer to [**GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions.md) |  | [optional] 
+**Permissions** | Pointer to [**GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -74,20 +74,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetInstanceType
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType`
 
 GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeOk
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType, bool)`
 
 GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceType
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType)`
 
 SetInstanceType sets InstanceType field to given value.
 
@@ -99,20 +99,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -389,20 +389,20 @@ HasSupportsConvertToManaged returns a boolean if a field has been set.
 UnsetSupportsConvertToManaged ensures that no value is present for SupportsConvertToManaged, not even an explicit nil
 ### GetProvisionType
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionType() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionTypeOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetProvisionType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetProvisionType(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -449,20 +449,20 @@ HasTaskSets returns a boolean if a field has been set.
 UnsetTaskSets ensures that no value is present for TaskSets, not even an explicit nil
 ### GetContainerTypes
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypes() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner`
 
 GetContainerTypes returns the ContainerTypes field if non-nil, zero value otherwise.
 
 ### GetContainerTypesOk
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner, bool)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypesOk() (*[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner, bool)`
 
 GetContainerTypesOk returns a tuple with the ContainerTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerTypes
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetContainerTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetContainerTypes(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner)`
 
 SetContainerTypes sets ContainerTypes field to given value.
 
@@ -719,20 +719,20 @@ HasTfvarSecret returns a boolean if a field has been set.
 UnsetTfvarSecret ensures that no value is present for TfvarSecret, not even an explicit nil
 ### GetPermissions
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissions() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissions() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissionsOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions, bool)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissionsOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetPermissions(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions)`
+`func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetPermissions(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions)`
 
 SetPermissions sets Permissions field to given value.
 

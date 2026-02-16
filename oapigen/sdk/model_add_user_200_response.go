@@ -20,9 +20,9 @@ var _ MappedNullable = &AddUser200Response{}
 
 // AddUser200Response struct for AddUser200Response
 type AddUser200Response struct {
-	User                 *ListUsers200ResponseAllOfUsersInner `json:"user,omitempty"`
-	Success              *bool                                `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	User                 *AddUser200ResponseAllOfUser `json:"user,omitempty"`
+	Success              *bool                        `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _AddUser200Response AddUser200Response
@@ -45,9 +45,9 @@ func NewAddUser200ResponseWithDefaults() *AddUser200Response {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *AddUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner {
+func (o *AddUser200Response) GetUser() AddUser200ResponseAllOfUser {
 	if o == nil || IsNil(o.User) {
-		var ret ListUsers200ResponseAllOfUsersInner
+		var ret AddUser200ResponseAllOfUser
 		return ret
 	}
 	return *o.User
@@ -55,7 +55,7 @@ func (o *AddUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUser200Response) GetUserOk() (*ListUsers200ResponseAllOfUsersInner, bool) {
+func (o *AddUser200Response) GetUserOk() (*AddUser200ResponseAllOfUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddUser200Response) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given ListUsers200ResponseAllOfUsersInner and assigns it to the User field.
-func (o *AddUser200Response) SetUser(v ListUsers200ResponseAllOfUsersInner) {
+// SetUser gets a reference to the given AddUser200ResponseAllOfUser and assigns it to the User field.
+func (o *AddUser200Response) SetUser(v AddUser200ResponseAllOfUser) {
 	o.User = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableAddUser200Response) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *AddUser200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

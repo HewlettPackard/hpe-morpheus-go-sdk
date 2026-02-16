@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MaxCores** | Pointer to **string** |  | [optional] 
-**ExcludeContainers** | Pointer to **bool** |  | [optional] 
+**MaxCores** | **string** |  | 
+**ExcludeContainers** | Pointer to **string** |  | [optional] [default to "off"]
 
 ## Methods
 
 ### NewMaxCoresPolicyTypeConfiguration2
 
-`func NewMaxCoresPolicyTypeConfiguration2() *MaxCoresPolicyTypeConfiguration2`
+`func NewMaxCoresPolicyTypeConfiguration2(maxCores string, ) *MaxCoresPolicyTypeConfiguration2`
 
 NewMaxCoresPolicyTypeConfiguration2 instantiates a new MaxCoresPolicyTypeConfiguration2 object
 This constructor will assign default values to properties that have it defined,
@@ -45,28 +45,23 @@ and a boolean to check if the value has been set.
 
 SetMaxCores sets MaxCores field to given value.
 
-### HasMaxCores
-
-`func (o *MaxCoresPolicyTypeConfiguration2) HasMaxCores() bool`
-
-HasMaxCores returns a boolean if a field has been set.
 
 ### GetExcludeContainers
 
-`func (o *MaxCoresPolicyTypeConfiguration2) GetExcludeContainers() bool`
+`func (o *MaxCoresPolicyTypeConfiguration2) GetExcludeContainers() string`
 
 GetExcludeContainers returns the ExcludeContainers field if non-nil, zero value otherwise.
 
 ### GetExcludeContainersOk
 
-`func (o *MaxCoresPolicyTypeConfiguration2) GetExcludeContainersOk() (*bool, bool)`
+`func (o *MaxCoresPolicyTypeConfiguration2) GetExcludeContainersOk() (*string, bool)`
 
 GetExcludeContainersOk returns a tuple with the ExcludeContainers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExcludeContainers
 
-`func (o *MaxCoresPolicyTypeConfiguration2) SetExcludeContainers(v bool)`
+`func (o *MaxCoresPolicyTypeConfiguration2) SetExcludeContainers(v string)`
 
 SetExcludeContainers sets ExcludeContainers field to given value.
 

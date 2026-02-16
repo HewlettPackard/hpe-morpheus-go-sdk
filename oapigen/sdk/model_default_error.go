@@ -140,7 +140,6 @@ func (v NullableDefaultError) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *DefaultError) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

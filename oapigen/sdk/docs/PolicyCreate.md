@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | A name for the policy | 
 **Description** | Pointer to **string** | A description for the policy | [optional] 
-**PolicyType** | [**AddPoliciesRequestPolicyPolicyType**](AddPoliciesRequestPolicyPolicyType.md) |  | 
-**Config** | [**AddPoliciesRequestPolicyConfig**](AddPoliciesRequestPolicyConfig.md) |  | 
+**PolicyType** | [**PolicyCreatePolicyType**](PolicyCreatePolicyType.md) |  | 
+**Config** | [**PolicyCreateConfig**](PolicyCreateConfig.md) |  | 
 **Enabled** | Pointer to **bool** | Set to false to disable | [optional] [default to true]
 **RefType** | Pointer to **NullableString** |  | [optional] 
 **RefId** | Pointer to **int64** | Scope object ID (&#x60;group&#x60;,&#x60;cloud&#x60;,&#x60;user&#x60;, etc) | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewPolicyCreate
 
-`func NewPolicyCreate(name string, policyType AddPoliciesRequestPolicyPolicyType, config AddPoliciesRequestPolicyConfig, ) *PolicyCreate`
+`func NewPolicyCreate(name string, policyType PolicyCreatePolicyType, config PolicyCreateConfig, ) *PolicyCreate`
 
 NewPolicyCreate instantiates a new PolicyCreate object
 This constructor will assign default values to properties that have it defined,
@@ -80,40 +80,40 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetPolicyType
 
-`func (o *PolicyCreate) GetPolicyType() AddPoliciesRequestPolicyPolicyType`
+`func (o *PolicyCreate) GetPolicyType() PolicyCreatePolicyType`
 
 GetPolicyType returns the PolicyType field if non-nil, zero value otherwise.
 
 ### GetPolicyTypeOk
 
-`func (o *PolicyCreate) GetPolicyTypeOk() (*AddPoliciesRequestPolicyPolicyType, bool)`
+`func (o *PolicyCreate) GetPolicyTypeOk() (*PolicyCreatePolicyType, bool)`
 
 GetPolicyTypeOk returns a tuple with the PolicyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicyType
 
-`func (o *PolicyCreate) SetPolicyType(v AddPoliciesRequestPolicyPolicyType)`
+`func (o *PolicyCreate) SetPolicyType(v PolicyCreatePolicyType)`
 
 SetPolicyType sets PolicyType field to given value.
 
 
 ### GetConfig
 
-`func (o *PolicyCreate) GetConfig() AddPoliciesRequestPolicyConfig`
+`func (o *PolicyCreate) GetConfig() PolicyCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *PolicyCreate) GetConfigOk() (*AddPoliciesRequestPolicyConfig, bool)`
+`func (o *PolicyCreate) GetConfigOk() (*PolicyCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *PolicyCreate) SetConfig(v AddPoliciesRequestPolicyConfig)`
+`func (o *PolicyCreate) SetConfig(v PolicyCreateConfig)`
 
 SetConfig sets Config field to given value.
 

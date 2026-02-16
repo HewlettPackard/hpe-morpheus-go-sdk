@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Sites** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner.md) |  | [optional] 
+**Account** | Pointer to [**GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount**](GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount.md) |  | [optional] 
+**Sites** | Pointer to [**[]GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner**](GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner.md) |  | [optional] 
 **Plans** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -159,20 +159,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccount() GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAccount(v GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -184,20 +184,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSites() []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSitesOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSitesOk() (*[]GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetSites(v []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 

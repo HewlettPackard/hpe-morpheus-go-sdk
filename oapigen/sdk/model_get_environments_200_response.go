@@ -20,8 +20,8 @@ var _ MappedNullable = &GetEnvironments200Response{}
 
 // GetEnvironments200Response struct for GetEnvironments200Response
 type GetEnvironments200Response struct {
-	Environment          *AddEnvironments200ResponseAllOfEnvironment `json:"environment,omitempty"`
-	AdditionalProperties map[string]interface{}                      `json:",remain"`
+	Environment          *GetEnvironments200ResponseEnvironment `json:"environment,omitempty"`
+	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
 type _GetEnvironments200Response GetEnvironments200Response
@@ -44,9 +44,9 @@ func NewGetEnvironments200ResponseWithDefaults() *GetEnvironments200Response {
 }
 
 // GetEnvironment returns the Environment field value if set, zero value otherwise.
-func (o *GetEnvironments200Response) GetEnvironment() AddEnvironments200ResponseAllOfEnvironment {
+func (o *GetEnvironments200Response) GetEnvironment() GetEnvironments200ResponseEnvironment {
 	if o == nil || IsNil(o.Environment) {
-		var ret AddEnvironments200ResponseAllOfEnvironment
+		var ret GetEnvironments200ResponseEnvironment
 		return ret
 	}
 	return *o.Environment
@@ -54,7 +54,7 @@ func (o *GetEnvironments200Response) GetEnvironment() AddEnvironments200Response
 
 // GetEnvironmentOk returns a tuple with the Environment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetEnvironments200Response) GetEnvironmentOk() (*AddEnvironments200ResponseAllOfEnvironment, bool) {
+func (o *GetEnvironments200Response) GetEnvironmentOk() (*GetEnvironments200ResponseEnvironment, bool) {
 	if o == nil || IsNil(o.Environment) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetEnvironments200Response) IsSetEnvironment() bool {
 	return false
 }
 
-// SetEnvironment gets a reference to the given AddEnvironments200ResponseAllOfEnvironment and assigns it to the Environment field.
-func (o *GetEnvironments200Response) SetEnvironment(v AddEnvironments200ResponseAllOfEnvironment) {
+// SetEnvironment gets a reference to the given GetEnvironments200ResponseEnvironment and assigns it to the Environment field.
+func (o *GetEnvironments200Response) SetEnvironment(v GetEnvironments200ResponseEnvironment) {
 	o.Environment = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetEnvironments200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
-
 func (o *GetEnvironments200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

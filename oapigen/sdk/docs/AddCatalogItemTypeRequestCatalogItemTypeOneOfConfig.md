@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **SecurityGroups** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
 **NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**Metadata** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
+**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Metadata** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
 **Ports** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
@@ -417,20 +417,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -442,20 +442,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadataOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadataOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner)`
 
 SetMetadata sets Metadata field to given value.
 

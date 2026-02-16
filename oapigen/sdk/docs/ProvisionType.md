@@ -45,12 +45,12 @@ Name | Type | Description | Notes
 **ZonePoolRequired** | Pointer to **bool** |  | [optional] 
 **PlanRequiresPool** | Pointer to **bool** |  | [optional] 
 **HasFolders** | Pointer to **NullableBool** |  | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
-**CustomOptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
-**NetworkTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner.md) |  | [optional] 
-**StorageTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner.md) |  | [optional] 
-**RootStorageTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner.md) |  | [optional] 
-**ControllerTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner.md) |  | [optional] 
+**CustomOptionTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner.md) |  | [optional] 
+**NetworkTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner.md) |  | [optional] 
+**StorageTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner.md) |  | [optional] 
+**RootStorageTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner.md) |  | [optional] 
+**ControllerTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -1148,20 +1148,20 @@ HasHasFolders returns a boolean if a field has been set.
 UnsetHasFolders ensures that no value is present for HasFolders, not even an explicit nil
 ### GetOptionTypes
 
-`func (o *ProvisionType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *ProvisionType) GetOptionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *ProvisionType) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *ProvisionType) GetOptionTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *ProvisionType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *ProvisionType) SetOptionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 
@@ -1183,20 +1183,20 @@ HasOptionTypes returns a boolean if a field has been set.
 UnsetOptionTypes ensures that no value is present for OptionTypes, not even an explicit nil
 ### GetCustomOptionTypes
 
-`func (o *ProvisionType) GetCustomOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *ProvisionType) GetCustomOptionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner`
 
 GetCustomOptionTypes returns the CustomOptionTypes field if non-nil, zero value otherwise.
 
 ### GetCustomOptionTypesOk
 
-`func (o *ProvisionType) GetCustomOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *ProvisionType) GetCustomOptionTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner, bool)`
 
 GetCustomOptionTypesOk returns a tuple with the CustomOptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomOptionTypes
 
-`func (o *ProvisionType) SetCustomOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *ProvisionType) SetCustomOptionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner)`
 
 SetCustomOptionTypes sets CustomOptionTypes field to given value.
 
@@ -1218,20 +1218,20 @@ HasCustomOptionTypes returns a boolean if a field has been set.
 UnsetCustomOptionTypes ensures that no value is present for CustomOptionTypes, not even an explicit nil
 ### GetNetworkTypes
 
-`func (o *ProvisionType) GetNetworkTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner`
+`func (o *ProvisionType) GetNetworkTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner`
 
 GetNetworkTypes returns the NetworkTypes field if non-nil, zero value otherwise.
 
 ### GetNetworkTypesOk
 
-`func (o *ProvisionType) GetNetworkTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner, bool)`
+`func (o *ProvisionType) GetNetworkTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner, bool)`
 
 GetNetworkTypesOk returns a tuple with the NetworkTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkTypes
 
-`func (o *ProvisionType) SetNetworkTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner)`
+`func (o *ProvisionType) SetNetworkTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner)`
 
 SetNetworkTypes sets NetworkTypes field to given value.
 
@@ -1253,20 +1253,20 @@ HasNetworkTypes returns a boolean if a field has been set.
 UnsetNetworkTypes ensures that no value is present for NetworkTypes, not even an explicit nil
 ### GetStorageTypes
 
-`func (o *ProvisionType) GetStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner`
+`func (o *ProvisionType) GetStorageTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner`
 
 GetStorageTypes returns the StorageTypes field if non-nil, zero value otherwise.
 
 ### GetStorageTypesOk
 
-`func (o *ProvisionType) GetStorageTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool)`
+`func (o *ProvisionType) GetStorageTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner, bool)`
 
 GetStorageTypesOk returns a tuple with the StorageTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageTypes
 
-`func (o *ProvisionType) SetStorageTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner)`
+`func (o *ProvisionType) SetStorageTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner)`
 
 SetStorageTypes sets StorageTypes field to given value.
 
@@ -1288,20 +1288,20 @@ HasStorageTypes returns a boolean if a field has been set.
 UnsetStorageTypes ensures that no value is present for StorageTypes, not even an explicit nil
 ### GetRootStorageTypes
 
-`func (o *ProvisionType) GetRootStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner`
+`func (o *ProvisionType) GetRootStorageTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner`
 
 GetRootStorageTypes returns the RootStorageTypes field if non-nil, zero value otherwise.
 
 ### GetRootStorageTypesOk
 
-`func (o *ProvisionType) GetRootStorageTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool)`
+`func (o *ProvisionType) GetRootStorageTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner, bool)`
 
 GetRootStorageTypesOk returns a tuple with the RootStorageTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRootStorageTypes
 
-`func (o *ProvisionType) SetRootStorageTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner)`
+`func (o *ProvisionType) SetRootStorageTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner)`
 
 SetRootStorageTypes sets RootStorageTypes field to given value.
 
@@ -1323,20 +1323,20 @@ HasRootStorageTypes returns a boolean if a field has been set.
 UnsetRootStorageTypes ensures that no value is present for RootStorageTypes, not even an explicit nil
 ### GetControllerTypes
 
-`func (o *ProvisionType) GetControllerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner`
+`func (o *ProvisionType) GetControllerTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner`
 
 GetControllerTypes returns the ControllerTypes field if non-nil, zero value otherwise.
 
 ### GetControllerTypesOk
 
-`func (o *ProvisionType) GetControllerTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner, bool)`
+`func (o *ProvisionType) GetControllerTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner, bool)`
 
 GetControllerTypesOk returns a tuple with the ControllerTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetControllerTypes
 
-`func (o *ProvisionType) SetControllerTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner)`
+`func (o *ProvisionType) SetControllerTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner)`
 
 SetControllerTypes sets ControllerTypes field to given value.
 

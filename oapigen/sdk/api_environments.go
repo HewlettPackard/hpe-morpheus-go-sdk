@@ -117,7 +117,7 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -128,7 +128,7 @@ func (a *EnvironmentsAPIService) AddEnvironmentsExecute(r ApiAddEnvironmentsRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -158,7 +158,7 @@ type ApiDeleteEnvironmentsRequest struct {
 	id         int64
 }
 
-func (r ApiDeleteEnvironmentsRequest) Execute() (*RestartClusterContainer200Response, *http.Response, error) {
+func (r ApiDeleteEnvironmentsRequest) Execute() (*DeleteEnvironments200Response, *http.Response, error) {
 	return r.ApiService.DeleteEnvironmentsExecute(r)
 }
 
@@ -181,13 +181,13 @@ func (a *EnvironmentsAPIService) DeleteEnvironments(ctx context.Context, id int6
 
 // Execute executes the request
 //
-//	@return RestartClusterContainer200Response
-func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmentsRequest) (*RestartClusterContainer200Response, *http.Response, error) {
+//	@return DeleteEnvironments200Response
+func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmentsRequest) (*DeleteEnvironments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *RestartClusterContainer200Response
+		localVarReturnValue *DeleteEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.DeleteEnvironments")
@@ -241,7 +241,7 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -252,7 +252,7 @@ func (a *EnvironmentsAPIService) DeleteEnvironmentsExecute(r ApiDeleteEnvironmen
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -365,7 +365,7 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -376,7 +376,7 @@ func (a *EnvironmentsAPIService) GetEnvironmentsExecute(r ApiGetEnvironmentsRequ
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -567,7 +567,7 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -578,7 +578,7 @@ func (a *EnvironmentsAPIService) ListEnvironmentsExecute(r ApiListEnvironmentsRe
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -614,7 +614,7 @@ func (r ApiUpdateEnvironmentsRequest) UpdateEnvironmentsRequest(updateEnvironmen
 	return r
 }
 
-func (r ApiUpdateEnvironmentsRequest) Execute() (*AddEnvironments200Response, *http.Response, error) {
+func (r ApiUpdateEnvironmentsRequest) Execute() (*UpdateEnvironments200Response, *http.Response, error) {
 	return r.ApiService.UpdateEnvironmentsExecute(r)
 }
 
@@ -637,13 +637,13 @@ func (a *EnvironmentsAPIService) UpdateEnvironments(ctx context.Context, id int6
 
 // Execute executes the request
 //
-//	@return AddEnvironments200Response
-func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmentsRequest) (*AddEnvironments200Response, *http.Response, error) {
+//	@return UpdateEnvironments200Response
+func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmentsRequest) (*UpdateEnvironments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPut
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddEnvironments200Response
+		localVarReturnValue *UpdateEnvironments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.UpdateEnvironments")
@@ -699,7 +699,7 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -710,141 +710,7 @@ func (a *EnvironmentsAPIService) UpdateEnvironmentsExecute(r ApiUpdateEnvironmen
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.err = err
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-			newErr.model = v
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body: localVarBody,
-			err:  err,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiUpdateEnvironmentsActiveRequest struct {
-	ctx        context.Context
-	ApiService *EnvironmentsAPIService
-	id         int64
-	active     *bool
-}
-
-// True or False flag for Active
-func (r ApiUpdateEnvironmentsActiveRequest) Active(active bool) ApiUpdateEnvironmentsActiveRequest {
-	r.active = &active
-	return r
-}
-
-func (r ApiUpdateEnvironmentsActiveRequest) Execute() (*AddEnvironments200Response, *http.Response, error) {
-	return r.ApiService.UpdateEnvironmentsActiveExecute(r)
-}
-
-/*
-UpdateEnvironmentsActive Toggle Active State of Environment
-
-Toggle Active State of Environment. Default is to toggle the current value.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param id Morpheus ID of the Object being referenced
-	@return ApiUpdateEnvironmentsActiveRequest
-*/
-func (a *EnvironmentsAPIService) UpdateEnvironmentsActive(ctx context.Context, id int64) ApiUpdateEnvironmentsActiveRequest {
-	return ApiUpdateEnvironmentsActiveRequest{
-		ApiService: a,
-		ctx:        ctx,
-		id:         id,
-	}
-}
-
-// Execute executes the request
-//
-//	@return AddEnvironments200Response
-func (a *EnvironmentsAPIService) UpdateEnvironmentsActiveExecute(r ApiUpdateEnvironmentsActiveRequest) (*AddEnvironments200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *AddEnvironments200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentsAPIService.UpdateEnvironmentsActive")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
-	}
-
-	localVarPath := localBasePath + "/api/environments/{id}/toggle-active"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.active != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "active", r.active, "form", "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body: localVarBody,
-		}
-		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v ListActivity4XXResponse
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.err = err
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode >= 500 {
-			var v ListActivity5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

@@ -1685,7 +1685,6 @@ func (v NullableRouteOptionType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *RouteOptionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

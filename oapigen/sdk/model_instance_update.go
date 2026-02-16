@@ -20,9 +20,9 @@ var _ MappedNullable = &InstanceUpdate{}
 
 // InstanceUpdate struct for InstanceUpdate
 type InstanceUpdate struct {
-	Instance             *UpdateInstanceRequestInstance `json:"instance,omitempty"`
-	Config               *UpdateInstanceRequestConfig   `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	Instance             *InstanceUpdateInstance `json:"instance,omitempty"`
+	Config               *InstanceUpdateConfig   `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}  `json:",remain"`
 }
 
 type _InstanceUpdate InstanceUpdate
@@ -45,9 +45,9 @@ func NewInstanceUpdateWithDefaults() *InstanceUpdate {
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *InstanceUpdate) GetInstance() UpdateInstanceRequestInstance {
+func (o *InstanceUpdate) GetInstance() InstanceUpdateInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret UpdateInstanceRequestInstance
+		var ret InstanceUpdateInstance
 		return ret
 	}
 	return *o.Instance
@@ -55,7 +55,7 @@ func (o *InstanceUpdate) GetInstance() UpdateInstanceRequestInstance {
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceUpdate) GetInstanceOk() (*UpdateInstanceRequestInstance, bool) {
+func (o *InstanceUpdate) GetInstanceOk() (*InstanceUpdateInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *InstanceUpdate) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given UpdateInstanceRequestInstance and assigns it to the Instance field.
-func (o *InstanceUpdate) SetInstance(v UpdateInstanceRequestInstance) {
+// SetInstance gets a reference to the given InstanceUpdateInstance and assigns it to the Instance field.
+func (o *InstanceUpdate) SetInstance(v InstanceUpdateInstance) {
 	o.Instance = &v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *InstanceUpdate) GetConfig() UpdateInstanceRequestConfig {
+func (o *InstanceUpdate) GetConfig() InstanceUpdateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret UpdateInstanceRequestConfig
+		var ret InstanceUpdateConfig
 		return ret
 	}
 	return *o.Config
@@ -87,7 +87,7 @@ func (o *InstanceUpdate) GetConfig() UpdateInstanceRequestConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceUpdate) GetConfigOk() (*UpdateInstanceRequestConfig, bool) {
+func (o *InstanceUpdate) GetConfigOk() (*InstanceUpdateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *InstanceUpdate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given UpdateInstanceRequestConfig and assigns it to the Config field.
-func (o *InstanceUpdate) SetConfig(v UpdateInstanceRequestConfig) {
+// SetConfig gets a reference to the given InstanceUpdateConfig and assigns it to the Config field.
+func (o *InstanceUpdate) SetConfig(v InstanceUpdateConfig) {
 	o.Config = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableInstanceUpdate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *InstanceUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

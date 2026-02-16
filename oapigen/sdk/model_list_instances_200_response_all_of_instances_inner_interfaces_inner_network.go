@@ -20,13 +20,13 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerInterfacesInn
 
 // ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct for ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
 type ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork struct {
-	Id                   NullableInt64                                      `json:"id,omitempty"`
-	Group                NullableInt64                                      `json:"group,omitempty"`
-	Subnet               NullableString                                     `json:"subnet,omitempty"`
-	DhcpServer           NullableBool                                       `json:"dhcpServer,omitempty"`
-	Name                 NullableString                                     `json:"name,omitempty"`
-	Pool                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"pool,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   NullableInt64                                                          `json:"id,omitempty"`
+	Group                NullableInt64                                                          `json:"group,omitempty"`
+	Subnet               NullableString                                                         `json:"subnet,omitempty"`
+	DhcpServer           NullableBool                                                           `json:"dhcpServer,omitempty"`
+	Name                 NullableString                                                         `json:"name,omitempty"`
+	Pool                 *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool `json:"pool,omitempty"`
+	AdditionalProperties map[string]interface{}                                                 `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork
@@ -264,9 +264,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) Unse
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPool() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool {
 	if o == nil || IsNil(o.Pool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool
 		return ret
 	}
 	return *o.Pool
@@ -274,7 +274,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetP
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPoolOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -290,8 +290,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) IsSe
 	return false
 }
 
-// SetPool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Pool field.
-func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetPool gets a reference to the given ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool and assigns it to the Pool field.
+func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetPool(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool) {
 	o.Pool = &v
 }
 
@@ -375,7 +375,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwor
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

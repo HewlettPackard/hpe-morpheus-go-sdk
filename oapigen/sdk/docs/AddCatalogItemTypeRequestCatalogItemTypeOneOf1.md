@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Blueprint** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint.md) |  | 
 **AppSpec** | Pointer to **string** | The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfForm**](AddCatalogItemTypeRequestCatalogItemTypeOneOfForm.md) |  | [optional] 
+**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs, see Inputs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 
 ## Methods
@@ -401,20 +401,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm)`
+`func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form)`
 
 SetForm sets Form field to given value.
 

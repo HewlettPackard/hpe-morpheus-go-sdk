@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Datastore** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInner.md) |  | [optional] 
+**Datastore** | Pointer to [**GetDatastores200ResponseAllOfDatastore**](GetDatastores200ResponseAllOfDatastore.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatastore
 
-`func (o *GetDatastores200Response) GetDatastore() ListDatastores200ResponseAllOfDatastoresInner`
+`func (o *GetDatastores200Response) GetDatastore() GetDatastores200ResponseAllOfDatastore`
 
 GetDatastore returns the Datastore field if non-nil, zero value otherwise.
 
 ### GetDatastoreOk
 
-`func (o *GetDatastores200Response) GetDatastoreOk() (*ListDatastores200ResponseAllOfDatastoresInner, bool)`
+`func (o *GetDatastores200Response) GetDatastoreOk() (*GetDatastores200ResponseAllOfDatastore, bool)`
 
 GetDatastoreOk returns a tuple with the Datastore field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastore
 
-`func (o *GetDatastores200Response) SetDatastore(v ListDatastores200ResponseAllOfDatastoresInner)`
+`func (o *GetDatastores200Response) SetDatastore(v GetDatastores200ResponseAllOfDatastore)`
 
 SetDatastore sets Datastore field to given value.
 

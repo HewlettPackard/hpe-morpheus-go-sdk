@@ -21,39 +21,39 @@ var _ MappedNullable = &ServicePlan{}
 
 // ServicePlan struct for ServicePlan
 type ServicePlan struct {
-	Id                   *int64                                                                             `json:"id,omitempty"`
-	Name                 *string                                                                            `json:"name,omitempty"`
-	Code                 *string                                                                            `json:"code,omitempty"`
-	Active               *bool                                                                              `json:"active,omitempty"`
-	SortOrder            *int64                                                                             `json:"sortOrder,omitempty"`
-	Description          *string                                                                            `json:"description,omitempty"`
-	MaxStorage           *int64                                                                             `json:"maxStorage,omitempty"`
-	MaxMemory            *int64                                                                             `json:"maxMemory,omitempty"`
-	MaxCpu               NullableInt64                                                                      `json:"maxCpu,omitempty"`
-	MaxGpus              NullableInt64                                                                      `json:"maxGpus,omitempty"`
-	MaxCores             NullableInt64                                                                      `json:"maxCores,omitempty"`
-	MaxDisks             NullableInt64                                                                      `json:"maxDisks,omitempty"`
-	CoresPerSocket       NullableInt64                                                                      `json:"coresPerSocket,omitempty"`
-	CustomCpu            *bool                                                                              `json:"customCpu,omitempty"`
-	CustomCores          *bool                                                                              `json:"customCores,omitempty"`
-	CustomMaxStorage     NullableBool                                                                       `json:"customMaxStorage,omitempty"`
-	CustomMaxDataStorage NullableBool                                                                       `json:"customMaxDataStorage,omitempty"`
-	CustomMaxMemory      NullableBool                                                                       `json:"customMaxMemory,omitempty"`
-	AddVolumes           NullableBool                                                                       `json:"addVolumes,omitempty"`
-	MemoryOptionSource   NullableString                                                                     `json:"memoryOptionSource,omitempty"`
-	CpuOptionSource      NullableString                                                                     `json:"cpuOptionSource,omitempty"`
-	DateCreated          *time.Time                                                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                                         `json:"lastUpdated,omitempty"`
-	RegionCode           NullableString                                                                     `json:"regionCode,omitempty"`
-	Visibility           *string                                                                            `json:"visibility,omitempty"`
-	Editable             *bool                                                                              `json:"editable,omitempty"`
-	ProvisionType        *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType   `json:"provisionType,omitempty"`
-	Tenants              *string                                                                            `json:"tenants,omitempty"`
-	PriceSets            []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner `json:"priceSets,omitempty"`
-	Config               *ListServicePlans200ResponseAllOfServicePlansInnerConfig                           `json:"config,omitempty"`
-	Zones                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule                       `json:"zones,omitempty"`
-	Permissions          *GetServicePlans200ResponseServicePlanPermissions                                  `json:"permissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                             `json:",remain"`
+	Id                   *int64                      `json:"id,omitempty"`
+	Name                 *string                     `json:"name,omitempty"`
+	Code                 *string                     `json:"code,omitempty"`
+	Active               *bool                       `json:"active,omitempty"`
+	SortOrder            *int64                      `json:"sortOrder,omitempty"`
+	Description          *string                     `json:"description,omitempty"`
+	MaxStorage           *int64                      `json:"maxStorage,omitempty"`
+	MaxMemory            *int64                      `json:"maxMemory,omitempty"`
+	MaxCpu               NullableInt64               `json:"maxCpu,omitempty"`
+	MaxGpus              NullableInt64               `json:"maxGpus,omitempty"`
+	MaxCores             NullableInt64               `json:"maxCores,omitempty"`
+	MaxDisks             NullableInt64               `json:"maxDisks,omitempty"`
+	CoresPerSocket       NullableInt64               `json:"coresPerSocket,omitempty"`
+	CustomCpu            *bool                       `json:"customCpu,omitempty"`
+	CustomCores          *bool                       `json:"customCores,omitempty"`
+	CustomMaxStorage     NullableBool                `json:"customMaxStorage,omitempty"`
+	CustomMaxDataStorage NullableBool                `json:"customMaxDataStorage,omitempty"`
+	CustomMaxMemory      NullableBool                `json:"customMaxMemory,omitempty"`
+	AddVolumes           NullableBool                `json:"addVolumes,omitempty"`
+	MemoryOptionSource   NullableString              `json:"memoryOptionSource,omitempty"`
+	CpuOptionSource      NullableString              `json:"cpuOptionSource,omitempty"`
+	DateCreated          *time.Time                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                  `json:"lastUpdated,omitempty"`
+	RegionCode           NullableString              `json:"regionCode,omitempty"`
+	Visibility           *string                     `json:"visibility,omitempty"`
+	Editable             *bool                       `json:"editable,omitempty"`
+	ProvisionType        *ServicePlanProvisionType   `json:"provisionType,omitempty"`
+	Tenants              *string                     `json:"tenants,omitempty"`
+	PriceSets            []ServicePlanPriceSetsInner `json:"priceSets,omitempty"`
+	Config               *ServicePlanConfig          `json:"config,omitempty"`
+	Zones                []ServicePlanZonesInner     `json:"zones,omitempty"`
+	Permissions          *ServicePlanPermissions     `json:"permissions,omitempty"`
+	AdditionalProperties map[string]interface{}      `json:",remain"`
 }
 
 type _ServicePlan ServicePlan
@@ -1040,9 +1040,9 @@ func (o *ServicePlan) SetEditable(v bool) {
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *ServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType {
+func (o *ServicePlan) GetProvisionType() ServicePlanProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType
+		var ret ServicePlanProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -1050,7 +1050,7 @@ func (o *ServicePlan) GetProvisionType() ListGuidances200ResponseAllOfDiscoverie
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool) {
+func (o *ServicePlan) GetProvisionTypeOk() (*ServicePlanProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -1066,8 +1066,8 @@ func (o *ServicePlan) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType and assigns it to the ProvisionType field.
-func (o *ServicePlan) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType) {
+// SetProvisionType gets a reference to the given ServicePlanProvisionType and assigns it to the ProvisionType field.
+func (o *ServicePlan) SetProvisionType(v ServicePlanProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -1104,9 +1104,9 @@ func (o *ServicePlan) SetTenants(v string) {
 }
 
 // GetPriceSets returns the PriceSets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner {
+func (o *ServicePlan) GetPriceSets() []ServicePlanPriceSetsInner {
 	if o == nil {
-		var ret []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner
+		var ret []ServicePlanPriceSetsInner
 		return ret
 	}
 	return o.PriceSets
@@ -1115,7 +1115,7 @@ func (o *ServicePlan) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesI
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ServicePlan) GetPriceSetsOk() ([]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool) {
+func (o *ServicePlan) GetPriceSetsOk() ([]ServicePlanPriceSetsInner, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
 	}
@@ -1131,15 +1131,15 @@ func (o *ServicePlan) IsSetPriceSets() bool {
 	return false
 }
 
-// SetPriceSets gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner and assigns it to the PriceSets field.
-func (o *ServicePlan) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner) {
+// SetPriceSets gets a reference to the given []ServicePlanPriceSetsInner and assigns it to the PriceSets field.
+func (o *ServicePlan) SetPriceSets(v []ServicePlanPriceSetsInner) {
 	o.PriceSets = v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *ServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig {
+func (o *ServicePlan) GetConfig() ServicePlanConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListServicePlans200ResponseAllOfServicePlansInnerConfig
+		var ret ServicePlanConfig
 		return ret
 	}
 	return *o.Config
@@ -1147,7 +1147,7 @@ func (o *ServicePlan) GetConfig() ListServicePlans200ResponseAllOfServicePlansIn
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool) {
+func (o *ServicePlan) GetConfigOk() (*ServicePlanConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1163,15 +1163,15 @@ func (o *ServicePlan) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListServicePlans200ResponseAllOfServicePlansInnerConfig and assigns it to the Config field.
-func (o *ServicePlan) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig) {
+// SetConfig gets a reference to the given ServicePlanConfig and assigns it to the Config field.
+func (o *ServicePlan) SetConfig(v ServicePlanConfig) {
 	o.Config = &v
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *ServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ServicePlan) GetZones() []ServicePlanZonesInner {
 	if o == nil || IsNil(o.Zones) {
-		var ret []ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret []ServicePlanZonesInner
 		return ret
 	}
 	return o.Zones
@@ -1179,7 +1179,7 @@ func (o *ServicePlan) GetZones() []ListBackupSettings200ResponseBackupSettingsDe
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetZonesOk() ([]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ServicePlan) GetZonesOk() ([]ServicePlanZonesInner, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -1195,15 +1195,15 @@ func (o *ServicePlan) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Zones field.
-func (o *ServicePlan) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetZones gets a reference to the given []ServicePlanZonesInner and assigns it to the Zones field.
+func (o *ServicePlan) SetZones(v []ServicePlanZonesInner) {
 	o.Zones = v
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPermissions {
+func (o *ServicePlan) GetPermissions() ServicePlanPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret GetServicePlans200ResponseServicePlanPermissions
+		var ret ServicePlanPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -1211,7 +1211,7 @@ func (o *ServicePlan) GetPermissions() GetServicePlans200ResponseServicePlanPerm
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServicePlan) GetPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissions, bool) {
+func (o *ServicePlan) GetPermissionsOk() (*ServicePlanPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -1227,8 +1227,8 @@ func (o *ServicePlan) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissions and assigns it to the Permissions field.
-func (o *ServicePlan) SetPermissions(v GetServicePlans200ResponseServicePlanPermissions) {
+// SetPermissions gets a reference to the given ServicePlanPermissions and assigns it to the Permissions field.
+func (o *ServicePlan) SetPermissions(v ServicePlanPermissions) {
 	o.Permissions = &v
 }
 
@@ -1390,7 +1390,6 @@ func (v NullableServicePlan) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

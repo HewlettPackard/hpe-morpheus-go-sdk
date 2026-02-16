@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ShortName** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **ContainerVersion** | Pointer to **string** |  | [optional] 
-**ProvisionType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**ProvisionType** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType**](ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType.md) |  | [optional] 
 **VirtualImage** | Pointer to **NullableString** |  | [optional] 
 **Category** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -236,20 +236,20 @@ HasContainerVersion returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionType() ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetProvisionType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetProvisionType(v ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 

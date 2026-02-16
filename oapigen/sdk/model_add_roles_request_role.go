@@ -1249,7 +1249,6 @@ func (v NullableAddRolesRequestRole) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *AddRolesRequestRole) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

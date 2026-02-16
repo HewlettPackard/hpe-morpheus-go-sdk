@@ -23,8 +23,8 @@ type AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions struct {
 	// Set to true to grant access to all groups
 	All *bool `json:"all,omitempty"`
 	// Array of objects identifying groups with access
-	Sites                []GetAlerts200ResponseAllOfChecksInnerAccount `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}                        `json:",remain"`
+	Sites                []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
 }
 
 type _AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions
@@ -79,9 +79,9 @@ func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetAl
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSites() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSites() []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -89,7 +89,7 @@ func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSi
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSitesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSitesOk() ([]AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) IsSet
 	return false
 }
 
-// SetSites gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Sites field.
-func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetSites(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetSites gets a reference to the given []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetSites(v []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
@@ -178,7 +178,6 @@ func (v NullableAddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions
 
 	return v, nil
 }
-
 func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

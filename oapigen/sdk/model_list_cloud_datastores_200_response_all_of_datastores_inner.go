@@ -22,7 +22,7 @@ var _ MappedNullable = &ListCloudDatastores200ResponseAllOfDatastoresInner{}
 type ListCloudDatastores200ResponseAllOfDatastoresInner struct {
 	Id                   *int64                                                                `json:"id,omitempty"`
 	Name                 *string                                                               `json:"name,omitempty"`
-	Zone                 NullableListApprovals200ResponseAllOfApprovalsInnerAccount            `json:"zone,omitempty"`
+	Zone                 *ListCloudDatastores200ResponseAllOfDatastoresInnerZone               `json:"zone,omitempty"`
 	Type                 *string                                                               `json:"type,omitempty"`
 	FreeSpace            *int64                                                                `json:"freeSpace,omitempty"`
 	Online               *bool                                                                 `json:"online,omitempty"`
@@ -116,47 +116,36 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetName(v string) {
 	o.Name = &v
 }
 
-// GetZone returns the Zone field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Zone.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetZone returns the Zone field value if set, zero value otherwise.
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZone() ListCloudDatastores200ResponseAllOfDatastoresInnerZone {
+	if o == nil || IsNil(o.Zone) {
+		var ret ListCloudDatastores200ResponseAllOfDatastoresInnerZone
 		return ret
 	}
-	return *o.Zone.Get()
+	return *o.Zone
 }
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListCloudDatastores200ResponseAllOfDatastoresInnerZone, bool) {
+	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
-	return o.Zone.Get(), o.Zone.IsSet()
+	return o.Zone, true
 }
 
 // IsSetZone returns a boolean if a field has been set.
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) IsSetZone() bool {
-	if o != nil && o.Zone.IsSet() {
+	if o != nil && !IsNil(o.Zone) {
 		return true
 	}
 
 	return false
 }
 
-// SetZone gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Zone field.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Zone.Set(&v)
-}
-
-// SetZoneNil sets the value for Zone to be an explicit nil
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZoneNil() {
-	o.Zone.Set(nil)
-}
-
-// UnsetZone ensures that no value is present for Zone, not even an explicit nil
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnsetZone() {
-	o.Zone.Unset()
+// SetZone gets a reference to the given ListCloudDatastores200ResponseAllOfDatastoresInnerZone and assigns it to the Zone field.
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) SetZone(v ListCloudDatastores200ResponseAllOfDatastoresInnerZone) {
+	o.Zone = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -400,8 +389,8 @@ func (o ListCloudDatastores200ResponseAllOfDatastoresInner) ToMap() (map[string]
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if o.Zone.IsSet() {
-		toSerialize["zone"] = o.Zone.Get()
+	if !IsNil(o.Zone) {
+		toSerialize["zone"] = o.Zone
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
@@ -476,7 +465,6 @@ func (v NullableListCloudDatastores200ResponseAllOfDatastoresInner) UnmarshalMap
 
 	return v, nil
 }
-
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

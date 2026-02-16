@@ -20,18 +20,18 @@ var _ MappedNullable = &AddUserTenant200ResponseAllOfUserAccess{}
 
 // AddUserTenant200ResponseAllOfUserAccess struct for AddUserTenant200ResponseAllOfUserAccess
 type AddUserTenant200ResponseAllOfUserAccess struct {
-	Features             []AddUserTenant200ResponseAllOfUserAccessFeaturesInner `json:"features,omitempty"`
-	Zones                []AddRoles200ResponseAllOfSitesInner                   `json:"zones,omitempty"`
-	Sites                []AddRoles200ResponseAllOfSitesInner                   `json:"sites,omitempty"`
-	InstanceTypes        []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"instanceTypes,omitempty"`
-	AppTemplates         []AddRoles200ResponseAllOfSitesInner                   `json:"appTemplates,omitempty"`
-	CatalogItemTypes     []AddRoles200ResponseAllOfSitesInner                   `json:"catalogItemTypes,omitempty"`
-	Personas             []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"personas,omitempty"`
-	VdiPools             []AddRoles200ResponseAllOfSitesInner                   `json:"vdiPools,omitempty"`
-	ReportTypes          []AddRoles200ResponseAllOfInstanceTypePermissionsInner `json:"reportTypes,omitempty"`
-	Tasks                []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"tasks,omitempty"`
-	TaskSets             []AddRoles200ResponseAllOfAppTemplatePermissionsInner  `json:"taskSets,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	Features             []AddUserTenant200ResponseAllOfUserAccessFeaturesInner         `json:"features,omitempty"`
+	Zones                []AddUserTenant200ResponseAllOfUserAccessZonesInner            `json:"zones,omitempty"`
+	Sites                []AddUserTenant200ResponseAllOfUserAccessSitesInner            `json:"sites,omitempty"`
+	InstanceTypes        []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner    `json:"instanceTypes,omitempty"`
+	AppTemplates         []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner     `json:"appTemplates,omitempty"`
+	CatalogItemTypes     []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner `json:"catalogItemTypes,omitempty"`
+	Personas             []AddUserTenant200ResponseAllOfUserAccessPersonasInner         `json:"personas,omitempty"`
+	VdiPools             []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner         `json:"vdiPools,omitempty"`
+	ReportTypes          []AddUserTenant200ResponseAllOfUserAccessReportTypesInner      `json:"reportTypes,omitempty"`
+	Tasks                []AddUserTenant200ResponseAllOfUserAccessTasksInner            `json:"tasks,omitempty"`
+	TaskSets             []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner         `json:"taskSets,omitempty"`
+	AdditionalProperties map[string]interface{}                                         `json:",remain"`
 }
 
 type _AddUserTenant200ResponseAllOfUserAccess AddUserTenant200ResponseAllOfUserAccess
@@ -86,9 +86,9 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) SetFeatures(v []AddUserTenant2
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetZones() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetZones() []AddUserTenant200ResponseAllOfUserAccessZonesInner {
 	if o == nil || IsNil(o.Zones) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessZonesInner
 		return ret
 	}
 	return o.Zones
@@ -96,7 +96,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetZones() []AddRoles200Respon
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetZonesOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetZonesOk() ([]AddUserTenant200ResponseAllOfUserAccessZonesInner, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -112,15 +112,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the Zones field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetZones(v []AddRoles200ResponseAllOfSitesInner) {
+// SetZones gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessZonesInner and assigns it to the Zones field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetZones(v []AddUserTenant200ResponseAllOfUserAccessZonesInner) {
 	o.Zones = v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetSites() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetSites() []AddUserTenant200ResponseAllOfUserAccessSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessSitesInner
 		return ret
 	}
 	return o.Sites
@@ -128,7 +128,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetSites() []AddRoles200Respon
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetSitesOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetSitesOk() ([]AddUserTenant200ResponseAllOfUserAccessSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -144,15 +144,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetSites() bool {
 	return false
 }
 
-// SetSites gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the Sites field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetSites(v []AddRoles200ResponseAllOfSitesInner) {
+// SetSites gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessSitesInner and assigns it to the Sites field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetSites(v []AddUserTenant200ResponseAllOfUserAccessSitesInner) {
 	o.Sites = v
 }
 
 // GetInstanceTypes returns the InstanceTypes field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypes() []AddRoles200ResponseAllOfInstanceTypePermissionsInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypes() []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner {
 	if o == nil || IsNil(o.InstanceTypes) {
-		var ret []AddRoles200ResponseAllOfInstanceTypePermissionsInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner
 		return ret
 	}
 	return o.InstanceTypes
@@ -160,7 +160,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypes() []AddRoles2
 
 // GetInstanceTypesOk returns a tuple with the InstanceTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypesOk() ([]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypesOk() ([]AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner, bool) {
 	if o == nil || IsNil(o.InstanceTypes) {
 		return nil, false
 	}
@@ -176,15 +176,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetInstanceTypes() bool {
 	return false
 }
 
-// SetInstanceTypes gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the InstanceTypes field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetInstanceTypes(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
+// SetInstanceTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner and assigns it to the InstanceTypes field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetInstanceTypes(v []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner) {
 	o.InstanceTypes = v
 }
 
 // GetAppTemplates returns the AppTemplates field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplates() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplates() []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner {
 	if o == nil || IsNil(o.AppTemplates) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner
 		return ret
 	}
 	return o.AppTemplates
@@ -192,7 +192,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplates() []AddRoles20
 
 // GetAppTemplatesOk returns a tuple with the AppTemplates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplatesOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplatesOk() ([]AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner, bool) {
 	if o == nil || IsNil(o.AppTemplates) {
 		return nil, false
 	}
@@ -208,15 +208,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetAppTemplates() bool {
 	return false
 }
 
-// SetAppTemplates gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the AppTemplates field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetAppTemplates(v []AddRoles200ResponseAllOfSitesInner) {
+// SetAppTemplates gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner and assigns it to the AppTemplates field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetAppTemplates(v []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner) {
 	o.AppTemplates = v
 }
 
 // GetCatalogItemTypes returns the CatalogItemTypes field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypes() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypes() []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner {
 	if o == nil || IsNil(o.CatalogItemTypes) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner
 		return ret
 	}
 	return o.CatalogItemTypes
@@ -224,7 +224,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypes() []AddRol
 
 // GetCatalogItemTypesOk returns a tuple with the CatalogItemTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypesOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypesOk() ([]AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner, bool) {
 	if o == nil || IsNil(o.CatalogItemTypes) {
 		return nil, false
 	}
@@ -240,15 +240,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetCatalogItemTypes() bool {
 	return false
 }
 
-// SetCatalogItemTypes gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the CatalogItemTypes field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetCatalogItemTypes(v []AddRoles200ResponseAllOfSitesInner) {
+// SetCatalogItemTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner and assigns it to the CatalogItemTypes field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetCatalogItemTypes(v []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner) {
 	o.CatalogItemTypes = v
 }
 
 // GetPersonas returns the Personas field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonas() []AddRoles200ResponseAllOfInstanceTypePermissionsInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonas() []AddUserTenant200ResponseAllOfUserAccessPersonasInner {
 	if o == nil || IsNil(o.Personas) {
-		var ret []AddRoles200ResponseAllOfInstanceTypePermissionsInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessPersonasInner
 		return ret
 	}
 	return o.Personas
@@ -256,7 +256,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonas() []AddRoles200Res
 
 // GetPersonasOk returns a tuple with the Personas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonasOk() ([]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonasOk() ([]AddUserTenant200ResponseAllOfUserAccessPersonasInner, bool) {
 	if o == nil || IsNil(o.Personas) {
 		return nil, false
 	}
@@ -272,15 +272,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetPersonas() bool {
 	return false
 }
 
-// SetPersonas gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the Personas field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetPersonas(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
+// SetPersonas gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessPersonasInner and assigns it to the Personas field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetPersonas(v []AddUserTenant200ResponseAllOfUserAccessPersonasInner) {
 	o.Personas = v
 }
 
 // GetVdiPools returns the VdiPools field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPools() []AddRoles200ResponseAllOfSitesInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPools() []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner {
 	if o == nil || IsNil(o.VdiPools) {
-		var ret []AddRoles200ResponseAllOfSitesInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner
 		return ret
 	}
 	return o.VdiPools
@@ -288,7 +288,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPools() []AddRoles200Res
 
 // GetVdiPoolsOk returns a tuple with the VdiPools field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPoolsOk() ([]AddRoles200ResponseAllOfSitesInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPoolsOk() ([]AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner, bool) {
 	if o == nil || IsNil(o.VdiPools) {
 		return nil, false
 	}
@@ -304,15 +304,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetVdiPools() bool {
 	return false
 }
 
-// SetVdiPools gets a reference to the given []AddRoles200ResponseAllOfSitesInner and assigns it to the VdiPools field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetVdiPools(v []AddRoles200ResponseAllOfSitesInner) {
+// SetVdiPools gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner and assigns it to the VdiPools field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetVdiPools(v []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner) {
 	o.VdiPools = v
 }
 
 // GetReportTypes returns the ReportTypes field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypes() []AddRoles200ResponseAllOfInstanceTypePermissionsInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypes() []AddUserTenant200ResponseAllOfUserAccessReportTypesInner {
 	if o == nil || IsNil(o.ReportTypes) {
-		var ret []AddRoles200ResponseAllOfInstanceTypePermissionsInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessReportTypesInner
 		return ret
 	}
 	return o.ReportTypes
@@ -320,7 +320,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypes() []AddRoles200
 
 // GetReportTypesOk returns a tuple with the ReportTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypesOk() ([]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypesOk() ([]AddUserTenant200ResponseAllOfUserAccessReportTypesInner, bool) {
 	if o == nil || IsNil(o.ReportTypes) {
 		return nil, false
 	}
@@ -336,15 +336,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetReportTypes() bool {
 	return false
 }
 
-// SetReportTypes gets a reference to the given []AddRoles200ResponseAllOfInstanceTypePermissionsInner and assigns it to the ReportTypes field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetReportTypes(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner) {
+// SetReportTypes gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessReportTypesInner and assigns it to the ReportTypes field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetReportTypes(v []AddUserTenant200ResponseAllOfUserAccessReportTypesInner) {
 	o.ReportTypes = v
 }
 
 // GetTasks returns the Tasks field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasks() []AddRoles200ResponseAllOfAppTemplatePermissionsInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasks() []AddUserTenant200ResponseAllOfUserAccessTasksInner {
 	if o == nil || IsNil(o.Tasks) {
-		var ret []AddRoles200ResponseAllOfAppTemplatePermissionsInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessTasksInner
 		return ret
 	}
 	return o.Tasks
@@ -352,7 +352,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasks() []AddRoles200Respon
 
 // GetTasksOk returns a tuple with the Tasks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasksOk() ([]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasksOk() ([]AddUserTenant200ResponseAllOfUserAccessTasksInner, bool) {
 	if o == nil || IsNil(o.Tasks) {
 		return nil, false
 	}
@@ -368,15 +368,15 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetTasks() bool {
 	return false
 }
 
-// SetTasks gets a reference to the given []AddRoles200ResponseAllOfAppTemplatePermissionsInner and assigns it to the Tasks field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetTasks(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner) {
+// SetTasks gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessTasksInner and assigns it to the Tasks field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetTasks(v []AddUserTenant200ResponseAllOfUserAccessTasksInner) {
 	o.Tasks = v
 }
 
 // GetTaskSets returns the TaskSets field value if set, zero value otherwise.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSets() []AddRoles200ResponseAllOfAppTemplatePermissionsInner {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSets() []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner {
 	if o == nil || IsNil(o.TaskSets) {
-		var ret []AddRoles200ResponseAllOfAppTemplatePermissionsInner
+		var ret []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner
 		return ret
 	}
 	return o.TaskSets
@@ -384,7 +384,7 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSets() []AddRoles200Res
 
 // GetTaskSetsOk returns a tuple with the TaskSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSetsOk() ([]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool) {
+func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSetsOk() ([]AddUserTenant200ResponseAllOfUserAccessTaskSetsInner, bool) {
 	if o == nil || IsNil(o.TaskSets) {
 		return nil, false
 	}
@@ -400,8 +400,8 @@ func (o *AddUserTenant200ResponseAllOfUserAccess) IsSetTaskSets() bool {
 	return false
 }
 
-// SetTaskSets gets a reference to the given []AddRoles200ResponseAllOfAppTemplatePermissionsInner and assigns it to the TaskSets field.
-func (o *AddUserTenant200ResponseAllOfUserAccess) SetTaskSets(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner) {
+// SetTaskSets gets a reference to the given []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner and assigns it to the TaskSets field.
+func (o *AddUserTenant200ResponseAllOfUserAccess) SetTaskSets(v []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner) {
 	o.TaskSets = v
 }
 
@@ -500,7 +500,6 @@ func (v NullableAddUserTenant200ResponseAllOfUserAccess) UnmarshalMapstructure(d
 
 	return v, nil
 }
-
 func (o *AddUserTenant200ResponseAllOfUserAccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

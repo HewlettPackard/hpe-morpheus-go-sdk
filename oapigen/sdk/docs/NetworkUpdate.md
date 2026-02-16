@@ -14,20 +14,20 @@ Name | Type | Description | Notes
 **VlanId** | Pointer to **int64** |  | [optional] 
 **SwitchId** | Pointer to **string** | Network switch identifier | [optional] 
 **Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
-**ZonePool** | Pointer to [**CreateNetworksRequestNetworkZonePool**](CreateNetworksRequestNetworkZonePool.md) |  | [optional] 
+**ZonePool** | Pointer to [**NetworkUpdateZonePool**](NetworkUpdateZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
 **AssignPublicIp** | Pointer to **bool** | Assign Public IP | [optional] 
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
 **DhcpServer** | Pointer to **bool** | DHCP Server enabled network | [optional] 
-**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**NetworkUpdateNetworkDomain**](NetworkUpdateNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **string** | Search Domains | [optional] 
-**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**NetworkUpdateNetworkProxy**](NetworkUpdateNetworkProxy.md) |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** | Bypass Proxy for Appliance URL | [optional] 
 **NoProxy** | Pointer to **NullableString** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
 **Config** | Pointer to **map[string]interface{}** | Configuration object. Settings vary by type. | [optional] 
-**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
-**ResourcePermissions** | Pointer to [**UpdateNetworkRequestNetworkResourcePermissions**](UpdateNetworkRequestNetworkResourcePermissions.md) |  | [optional] 
+**Tenants** | Pointer to [**[]NetworkUpdateTenantsInner**](NetworkUpdateTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
+**ResourcePermissions** | Pointer to [**NetworkUpdateResourcePermissions**](NetworkUpdateResourcePermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -330,20 +330,20 @@ HasPool returns a boolean if a field has been set.
 UnsetPool ensures that no value is present for Pool, not even an explicit nil
 ### GetZonePool
 
-`func (o *NetworkUpdate) GetZonePool() CreateNetworksRequestNetworkZonePool`
+`func (o *NetworkUpdate) GetZonePool() NetworkUpdateZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *NetworkUpdate) GetZonePoolOk() (*CreateNetworksRequestNetworkZonePool, bool)`
+`func (o *NetworkUpdate) GetZonePoolOk() (*NetworkUpdateZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *NetworkUpdate) SetZonePool(v CreateNetworksRequestNetworkZonePool)`
+`func (o *NetworkUpdate) SetZonePool(v NetworkUpdateZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -455,20 +455,20 @@ HasDhcpServer returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *NetworkUpdate) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
+`func (o *NetworkUpdate) GetNetworkDomain() NetworkUpdateNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *NetworkUpdate) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
+`func (o *NetworkUpdate) GetNetworkDomainOk() (*NetworkUpdateNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *NetworkUpdate) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
+`func (o *NetworkUpdate) SetNetworkDomain(v NetworkUpdateNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -505,20 +505,20 @@ HasSearchDomains returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *NetworkUpdate) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
+`func (o *NetworkUpdate) GetNetworkProxy() NetworkUpdateNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *NetworkUpdate) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
+`func (o *NetworkUpdate) GetNetworkProxyOk() (*NetworkUpdateNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *NetworkUpdate) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
+`func (o *NetworkUpdate) SetNetworkProxy(v NetworkUpdateNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -640,20 +640,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *NetworkUpdate) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *NetworkUpdate) GetTenants() []NetworkUpdateTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *NetworkUpdate) GetTenantsOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *NetworkUpdate) GetTenantsOk() (*[]NetworkUpdateTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *NetworkUpdate) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *NetworkUpdate) SetTenants(v []NetworkUpdateTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -665,20 +665,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *NetworkUpdate) GetResourcePermissions() UpdateNetworkRequestNetworkResourcePermissions`
+`func (o *NetworkUpdate) GetResourcePermissions() NetworkUpdateResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *NetworkUpdate) GetResourcePermissionsOk() (*UpdateNetworkRequestNetworkResourcePermissions, bool)`
+`func (o *NetworkUpdate) GetResourcePermissionsOk() (*NetworkUpdateResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *NetworkUpdate) SetResourcePermissions(v UpdateNetworkRequestNetworkResourcePermissions)`
+`func (o *NetworkUpdate) SetResourcePermissions(v NetworkUpdateResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

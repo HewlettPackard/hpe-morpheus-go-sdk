@@ -14,17 +14,17 @@ Name | Type | Description | Notes
 **LayoutCode** | Pointer to **NullableString** | Identifier primarily used for Plugin Catalog Item Types | [optional] 
 **IconPath** | Pointer to **string** | Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png. | [optional] 
 **AllowQuantity** | Pointer to **bool** | Can users order more than one of this item at a time. | [optional] 
-**Blueprint** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint.md) |  | 
+**Blueprint** | [**CatalogItemTypeBlueprintCreateBlueprint**](CatalogItemTypeBlueprintCreateBlueprint.md) |  | 
 **AppSpec** | Pointer to **string** | The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfForm**](AddCatalogItemTypeRequestCatalogItemTypeOneOfForm.md) |  | [optional] 
+**Form** | Pointer to [**CatalogItemTypeBlueprintCreateForm**](CatalogItemTypeBlueprintCreateForm.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs, see Inputs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 
 ## Methods
 
 ### NewCatalogItemTypeBlueprintCreate
 
-`func NewCatalogItemTypeBlueprintCreate(blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, ) *CatalogItemTypeBlueprintCreate`
+`func NewCatalogItemTypeBlueprintCreate(blueprint CatalogItemTypeBlueprintCreateBlueprint, ) *CatalogItemTypeBlueprintCreate`
 
 NewCatalogItemTypeBlueprintCreate instantiates a new CatalogItemTypeBlueprintCreate object
 This constructor will assign default values to properties that have it defined,
@@ -331,20 +331,20 @@ HasAllowQuantity returns a boolean if a field has been set.
 
 ### GetBlueprint
 
-`func (o *CatalogItemTypeBlueprintCreate) GetBlueprint() AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint`
+`func (o *CatalogItemTypeBlueprintCreate) GetBlueprint() CatalogItemTypeBlueprintCreateBlueprint`
 
 GetBlueprint returns the Blueprint field if non-nil, zero value otherwise.
 
 ### GetBlueprintOk
 
-`func (o *CatalogItemTypeBlueprintCreate) GetBlueprintOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, bool)`
+`func (o *CatalogItemTypeBlueprintCreate) GetBlueprintOk() (*CatalogItemTypeBlueprintCreateBlueprint, bool)`
 
 GetBlueprintOk returns a tuple with the Blueprint field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBlueprint
 
-`func (o *CatalogItemTypeBlueprintCreate) SetBlueprint(v AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint)`
+`func (o *CatalogItemTypeBlueprintCreate) SetBlueprint(v CatalogItemTypeBlueprintCreateBlueprint)`
 
 SetBlueprint sets Blueprint field to given value.
 
@@ -401,20 +401,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *CatalogItemTypeBlueprintCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm`
+`func (o *CatalogItemTypeBlueprintCreate) GetForm() CatalogItemTypeBlueprintCreateForm`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *CatalogItemTypeBlueprintCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool)`
+`func (o *CatalogItemTypeBlueprintCreate) GetFormOk() (*CatalogItemTypeBlueprintCreateForm, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *CatalogItemTypeBlueprintCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm)`
+`func (o *CatalogItemTypeBlueprintCreate) SetForm(v CatalogItemTypeBlueprintCreateForm)`
 
 SetForm sets Form field to given value.
 

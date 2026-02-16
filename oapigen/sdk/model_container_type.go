@@ -20,23 +20,23 @@ var _ MappedNullable = &ContainerType{}
 
 // ContainerType struct for ContainerType
 type ContainerType struct {
-	Id                   *int32                                                                                                                  `json:"id,omitempty"`
-	Account              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"account,omitempty"`
-	Name                 *string                                                                                                                 `json:"name,omitempty"`
-	Labels               []string                                                                                                                `json:"labels,omitempty"`
-	ShortName            *string                                                                                                                 `json:"shortName,omitempty"`
-	Code                 *string                                                                                                                 `json:"code,omitempty"`
-	ContainerVersion     *string                                                                                                                 `json:"containerVersion,omitempty"`
-	ProvisionType        *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType        `json:"provisionType,omitempty"`
-	VirtualImage         *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"virtualImage,omitempty"`
-	OsType               *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount              `json:"osType,omitempty"`
-	Category             NullableString                                                                                                          `json:"category,omitempty"`
-	Config               map[string]interface{}                                                                                                  `json:"config,omitempty"`
-	ContainerPorts       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner `json:"containerPorts,omitempty"`
-	ContainerScripts     []map[string]interface{}                                                                                                `json:"containerScripts,omitempty"`
-	ContainerTemplates   []map[string]interface{}                                                                                                `json:"containerTemplates,omitempty"`
-	EnvironmentVariables []map[string]interface{}                                                                                                `json:"environmentVariables,omitempty"`
-	AdditionalProperties map[string]interface{}                                                                                                  `json:",remain"`
+	Id                   *int32                             `json:"id,omitempty"`
+	Account              *ContainerTypeAccount              `json:"account,omitempty"`
+	Name                 *string                            `json:"name,omitempty"`
+	Labels               []string                           `json:"labels,omitempty"`
+	ShortName            *string                            `json:"shortName,omitempty"`
+	Code                 *string                            `json:"code,omitempty"`
+	ContainerVersion     *string                            `json:"containerVersion,omitempty"`
+	ProvisionType        *ContainerTypeProvisionType        `json:"provisionType,omitempty"`
+	VirtualImage         *ContainerTypeVirtualImage         `json:"virtualImage,omitempty"`
+	OsType               *ContainerTypeOsType               `json:"osType,omitempty"`
+	Category             NullableString                     `json:"category,omitempty"`
+	Config               map[string]interface{}             `json:"config,omitempty"`
+	ContainerPorts       []ContainerTypeContainerPortsInner `json:"containerPorts,omitempty"`
+	ContainerScripts     []map[string]interface{}           `json:"containerScripts,omitempty"`
+	ContainerTemplates   []map[string]interface{}           `json:"containerTemplates,omitempty"`
+	EnvironmentVariables []map[string]interface{}           `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _ContainerType ContainerType
@@ -91,9 +91,9 @@ func (o *ContainerType) SetId(v int32) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ContainerType) GetAccount() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
+func (o *ContainerType) GetAccount() ContainerTypeAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
+		var ret ContainerTypeAccount
 		return ret
 	}
 	return *o.Account
@@ -101,7 +101,7 @@ func (o *ContainerType) GetAccount() GetInstanceTypeProvisioning200ResponseAllOf
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerType) GetAccountOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
+func (o *ContainerType) GetAccountOk() (*ContainerTypeAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ContainerType) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the Account field.
-func (o *ContainerType) SetAccount(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
+// SetAccount gets a reference to the given ContainerTypeAccount and assigns it to the Account field.
+func (o *ContainerType) SetAccount(v ContainerTypeAccount) {
 	o.Account = &v
 }
 
@@ -283,9 +283,9 @@ func (o *ContainerType) SetContainerVersion(v string) {
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *ContainerType) GetProvisionType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType {
+func (o *ContainerType) GetProvisionType() ContainerTypeProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType
+		var ret ContainerTypeProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -293,7 +293,7 @@ func (o *ContainerType) GetProvisionType() GetInstanceTypeProvisioning200Respons
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerType) GetProvisionTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType, bool) {
+func (o *ContainerType) GetProvisionTypeOk() (*ContainerTypeProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -309,15 +309,15 @@ func (o *ContainerType) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType and assigns it to the ProvisionType field.
-func (o *ContainerType) SetProvisionType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerProvisionType) {
+// SetProvisionType gets a reference to the given ContainerTypeProvisionType and assigns it to the ProvisionType field.
+func (o *ContainerType) SetProvisionType(v ContainerTypeProvisionType) {
 	o.ProvisionType = &v
 }
 
 // GetVirtualImage returns the VirtualImage field value if set, zero value otherwise.
-func (o *ContainerType) GetVirtualImage() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
+func (o *ContainerType) GetVirtualImage() ContainerTypeVirtualImage {
 	if o == nil || IsNil(o.VirtualImage) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
+		var ret ContainerTypeVirtualImage
 		return ret
 	}
 	return *o.VirtualImage
@@ -325,7 +325,7 @@ func (o *ContainerType) GetVirtualImage() GetInstanceTypeProvisioning200Response
 
 // GetVirtualImageOk returns a tuple with the VirtualImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerType) GetVirtualImageOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
+func (o *ContainerType) GetVirtualImageOk() (*ContainerTypeVirtualImage, bool) {
 	if o == nil || IsNil(o.VirtualImage) {
 		return nil, false
 	}
@@ -341,15 +341,15 @@ func (o *ContainerType) IsSetVirtualImage() bool {
 	return false
 }
 
-// SetVirtualImage gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the VirtualImage field.
-func (o *ContainerType) SetVirtualImage(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
+// SetVirtualImage gets a reference to the given ContainerTypeVirtualImage and assigns it to the VirtualImage field.
+func (o *ContainerType) SetVirtualImage(v ContainerTypeVirtualImage) {
 	o.VirtualImage = &v
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *ContainerType) GetOsType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount {
+func (o *ContainerType) GetOsType() ContainerTypeOsType {
 	if o == nil || IsNil(o.OsType) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount
+		var ret ContainerTypeOsType
 		return ret
 	}
 	return *o.OsType
@@ -357,7 +357,7 @@ func (o *ContainerType) GetOsType() GetInstanceTypeProvisioning200ResponseAllOfI
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerType) GetOsTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount, bool) {
+func (o *ContainerType) GetOsTypeOk() (*ContainerTypeOsType, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -373,8 +373,8 @@ func (o *ContainerType) IsSetOsType() bool {
 	return false
 }
 
-// SetOsType gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount and assigns it to the OsType field.
-func (o *ContainerType) SetOsType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerAccount) {
+// SetOsType gets a reference to the given ContainerTypeOsType and assigns it to the OsType field.
+func (o *ContainerType) SetOsType(v ContainerTypeOsType) {
 	o.OsType = &v
 }
 
@@ -455,9 +455,9 @@ func (o *ContainerType) SetConfig(v map[string]interface{}) {
 }
 
 // GetContainerPorts returns the ContainerPorts field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ContainerType) GetContainerPorts() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner {
+func (o *ContainerType) GetContainerPorts() []ContainerTypeContainerPortsInner {
 	if o == nil {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner
+		var ret []ContainerTypeContainerPortsInner
 		return ret
 	}
 	return o.ContainerPorts
@@ -466,7 +466,7 @@ func (o *ContainerType) GetContainerPorts() []GetInstanceTypeProvisioning200Resp
 // GetContainerPortsOk returns a tuple with the ContainerPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ContainerType) GetContainerPortsOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner, bool) {
+func (o *ContainerType) GetContainerPortsOk() ([]ContainerTypeContainerPortsInner, bool) {
 	if o == nil || IsNil(o.ContainerPorts) {
 		return nil, false
 	}
@@ -482,8 +482,8 @@ func (o *ContainerType) IsSetContainerPorts() bool {
 	return false
 }
 
-// SetContainerPorts gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner and assigns it to the ContainerPorts field.
-func (o *ContainerType) SetContainerPorts(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInnerContainerPortsInner) {
+// SetContainerPorts gets a reference to the given []ContainerTypeContainerPortsInner and assigns it to the ContainerPorts field.
+func (o *ContainerType) SetContainerPorts(v []ContainerTypeContainerPortsInner) {
 	o.ContainerPorts = v
 }
 
@@ -696,7 +696,6 @@ func (v NullableContainerType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

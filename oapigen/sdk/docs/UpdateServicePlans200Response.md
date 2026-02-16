@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServicePlan** | Pointer to [**GetServicePlans200ResponseServicePlan**](GetServicePlans200ResponseServicePlan.md) |  | [optional] 
+**ServicePlan** | Pointer to [**UpdateServicePlans200ResponseAllOfServicePlan**](UpdateServicePlans200ResponseAllOfServicePlan.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServicePlan
 
-`func (o *UpdateServicePlans200Response) GetServicePlan() GetServicePlans200ResponseServicePlan`
+`func (o *UpdateServicePlans200Response) GetServicePlan() UpdateServicePlans200ResponseAllOfServicePlan`
 
 GetServicePlan returns the ServicePlan field if non-nil, zero value otherwise.
 
 ### GetServicePlanOk
 
-`func (o *UpdateServicePlans200Response) GetServicePlanOk() (*GetServicePlans200ResponseServicePlan, bool)`
+`func (o *UpdateServicePlans200Response) GetServicePlanOk() (*UpdateServicePlans200ResponseAllOfServicePlan, bool)`
 
 GetServicePlanOk returns a tuple with the ServicePlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlan
 
-`func (o *UpdateServicePlans200Response) SetServicePlan(v GetServicePlans200ResponseServicePlan)`
+`func (o *UpdateServicePlans200Response) SetServicePlan(v UpdateServicePlans200ResponseAllOfServicePlan)`
 
 SetServicePlan sets ServicePlan field to given value.
 

@@ -31,7 +31,7 @@ type AddUserTenantRequestUser struct {
 	// Password to apply to the user
 	Password string `json:"password"`
 	// Array of objects with id of the role(s) to assign to the user.
-	Roles []GetAlerts200ResponseAllOfChecksInnerAccount `json:"roles"`
+	Roles []AddUserTenantRequestUserRolesInner `json:"roles"`
 	// Receive Notifications?
 	ReceiveNotifications *bool `json:"receiveNotifications,omitempty"`
 	// Linux Username, user settings for provisioning
@@ -53,7 +53,7 @@ type _AddUserTenantRequestUser AddUserTenantRequestUser
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddUserTenantRequestUser(username string, email string, password string, roles []GetAlerts200ResponseAllOfChecksInnerAccount) *AddUserTenantRequestUser {
+func NewAddUserTenantRequestUser(username string, email string, password string, roles []AddUserTenantRequestUserRolesInner) *AddUserTenantRequestUser {
 	this := AddUserTenantRequestUser{}
 	this.Username = username
 	this.Email = email
@@ -211,9 +211,9 @@ func (o *AddUserTenantRequestUser) SetPassword(v string) {
 }
 
 // GetRoles returns the Roles field value
-func (o *AddUserTenantRequestUser) GetRoles() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddUserTenantRequestUser) GetRoles() []AddUserTenantRequestUserRolesInner {
 	if o == nil {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []AddUserTenantRequestUserRolesInner
 		return ret
 	}
 
@@ -222,7 +222,7 @@ func (o *AddUserTenantRequestUser) GetRoles() []GetAlerts200ResponseAllOfChecksI
 
 // GetRolesOk returns a tuple with the Roles field value
 // and a boolean to check if the value has been set.
-func (o *AddUserTenantRequestUser) GetRolesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddUserTenantRequestUser) GetRolesOk() ([]AddUserTenantRequestUserRolesInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -230,7 +230,7 @@ func (o *AddUserTenantRequestUser) GetRolesOk() ([]GetAlerts200ResponseAllOfChec
 }
 
 // SetRoles sets field value
-func (o *AddUserTenantRequestUser) SetRoles(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+func (o *AddUserTenantRequestUser) SetRoles(v []AddUserTenantRequestUserRolesInner) {
 	o.Roles = v
 }
 
@@ -516,7 +516,6 @@ func (v NullableAddUserTenantRequestUser) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *AddUserTenantRequestUser) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

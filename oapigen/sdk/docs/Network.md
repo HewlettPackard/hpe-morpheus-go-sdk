@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name | [optional] 
 **DisplayName** | Pointer to **NullableString** | Network Display Name | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
-**Group** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerGroup**](ListNetworks200ResponseAllOfNetworksInnerGroup.md) |  | [optional] 
-**Zone** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZone**](ListNetworks200ResponseAllOfNetworksInnerZone.md) |  | [optional] 
-**Type** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerType**](ListNetworks200ResponseAllOfNetworksInnerType.md) |  | [optional] 
-**Owner** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerOwner**](ListNetworks200ResponseAllOfNetworksInnerOwner.md) |  | [optional] 
+**Group** | Pointer to [**CreateNetworks200ResponseAllOfNetworkGroup**](CreateNetworks200ResponseAllOfNetworkGroup.md) |  | [optional] 
+**Zone** | Pointer to [**CreateNetworks200ResponseAllOfNetworkZone**](CreateNetworks200ResponseAllOfNetworkZone.md) |  | [optional] 
+**Type** | Pointer to [**CreateNetworks200ResponseAllOfNetworkType**](CreateNetworks200ResponseAllOfNetworkType.md) |  | [optional] 
+**Owner** | Pointer to [**CreateNetworks200ResponseAllOfNetworkOwner**](CreateNetworks200ResponseAllOfNetworkOwner.md) |  | [optional] 
 **Code** | Pointer to **NullableString** | Network Code | [optional] 
 **Ipv4Enabled** | Pointer to **bool** |  | [optional] 
 **Ipv6Enabled** | Pointer to **bool** |  | [optional] 
@@ -51,10 +51,10 @@ Name | Type | Description | Notes
 **NetworkRole** | Pointer to **NullableString** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 
 **AvailabilityZone** | Pointer to **NullableString** |  | [optional] 
-**Pool** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerPool**](ListNetworks200ResponseAllOfNetworksInnerPool.md) |  | [optional] 
-**PoolIPv6** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerPoolIPv6**](ListNetworks200ResponseAllOfNetworksInnerPoolIPv6.md) |  | [optional] 
-**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
-**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
+**Pool** | Pointer to [**CreateNetworks200ResponseAllOfNetworkPool**](CreateNetworks200ResponseAllOfNetworkPool.md) |  | [optional] 
+**PoolIPv6** | Pointer to [**CreateNetworks200ResponseAllOfNetworkPoolIPv6**](CreateNetworks200ResponseAllOfNetworkPoolIPv6.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**CreateNetworks200ResponseAllOfNetworkNetworkProxy**](CreateNetworks200ResponseAllOfNetworkNetworkProxy.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**CreateNetworks200ResponseAllOfNetworkNetworkDomain**](CreateNetworks200ResponseAllOfNetworkNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **NullableString** |  | [optional] 
 **PrefixLength** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
@@ -64,11 +64,11 @@ Name | Type | Description | Notes
 **AssignPublicIp** | Pointer to **bool** |  | [optional] 
 **NoProxy** | Pointer to **NullableString** |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** |  | [optional] 
-**ZonePool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ZonePool** | Pointer to [**CreateNetworks200ResponseAllOfNetworkZonePool**](CreateNetworks200ResponseAllOfNetworkZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerConfig**](ListNetworks200ResponseAllOfNetworksInnerConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**ResourcePermission** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerResourcePermission**](ListNetworks200ResponseAllOfNetworksInnerResourcePermission.md) |  | [optional] 
+**Config** | Pointer to [**CreateNetworks200ResponseAllOfNetworkConfig**](CreateNetworks200ResponseAllOfNetworkConfig.md) |  | [optional] 
+**Tenants** | Pointer to [**[]CreateNetworks200ResponseAllOfNetworkTenantsInner**](CreateNetworks200ResponseAllOfNetworkTenantsInner.md) |  | [optional] 
+**ResourcePermission** | Pointer to [**CreateNetworks200ResponseAllOfNetworkResourcePermission**](CreateNetworks200ResponseAllOfNetworkResourcePermission.md) |  | [optional] 
 
 ## Methods
 
@@ -211,20 +211,20 @@ HasLabels returns a boolean if a field has been set.
 UnsetLabels ensures that no value is present for Labels, not even an explicit nil
 ### GetGroup
 
-`func (o *Network) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup`
+`func (o *Network) GetGroup() CreateNetworks200ResponseAllOfNetworkGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *Network) GetGroupOk() (*ListNetworks200ResponseAllOfNetworksInnerGroup, bool)`
+`func (o *Network) GetGroupOk() (*CreateNetworks200ResponseAllOfNetworkGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *Network) SetGroup(v ListNetworks200ResponseAllOfNetworksInnerGroup)`
+`func (o *Network) SetGroup(v CreateNetworks200ResponseAllOfNetworkGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -236,20 +236,20 @@ HasGroup returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *Network) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone`
+`func (o *Network) GetZone() CreateNetworks200ResponseAllOfNetworkZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *Network) GetZoneOk() (*ListNetworks200ResponseAllOfNetworksInnerZone, bool)`
+`func (o *Network) GetZoneOk() (*CreateNetworks200ResponseAllOfNetworkZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *Network) SetZone(v ListNetworks200ResponseAllOfNetworksInnerZone)`
+`func (o *Network) SetZone(v CreateNetworks200ResponseAllOfNetworkZone)`
 
 SetZone sets Zone field to given value.
 
@@ -261,20 +261,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *Network) GetType() ListNetworks200ResponseAllOfNetworksInnerType`
+`func (o *Network) GetType() CreateNetworks200ResponseAllOfNetworkType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *Network) GetTypeOk() (*ListNetworks200ResponseAllOfNetworksInnerType, bool)`
+`func (o *Network) GetTypeOk() (*CreateNetworks200ResponseAllOfNetworkType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *Network) SetType(v ListNetworks200ResponseAllOfNetworksInnerType)`
+`func (o *Network) SetType(v CreateNetworks200ResponseAllOfNetworkType)`
 
 SetType sets Type field to given value.
 
@@ -286,20 +286,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *Network) GetOwner() ListNetworks200ResponseAllOfNetworksInnerOwner`
+`func (o *Network) GetOwner() CreateNetworks200ResponseAllOfNetworkOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *Network) GetOwnerOk() (*ListNetworks200ResponseAllOfNetworksInnerOwner, bool)`
+`func (o *Network) GetOwnerOk() (*CreateNetworks200ResponseAllOfNetworkOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *Network) SetOwner(v ListNetworks200ResponseAllOfNetworksInnerOwner)`
+`func (o *Network) SetOwner(v CreateNetworks200ResponseAllOfNetworkOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -1606,20 +1606,20 @@ HasAvailabilityZone returns a boolean if a field has been set.
 UnsetAvailabilityZone ensures that no value is present for AvailabilityZone, not even an explicit nil
 ### GetPool
 
-`func (o *Network) GetPool() ListNetworks200ResponseAllOfNetworksInnerPool`
+`func (o *Network) GetPool() CreateNetworks200ResponseAllOfNetworkPool`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *Network) GetPoolOk() (*ListNetworks200ResponseAllOfNetworksInnerPool, bool)`
+`func (o *Network) GetPoolOk() (*CreateNetworks200ResponseAllOfNetworkPool, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *Network) SetPool(v ListNetworks200ResponseAllOfNetworksInnerPool)`
+`func (o *Network) SetPool(v CreateNetworks200ResponseAllOfNetworkPool)`
 
 SetPool sets Pool field to given value.
 
@@ -1631,20 +1631,20 @@ HasPool returns a boolean if a field has been set.
 
 ### GetPoolIPv6
 
-`func (o *Network) GetPoolIPv6() ListNetworks200ResponseAllOfNetworksInnerPoolIPv6`
+`func (o *Network) GetPoolIPv6() CreateNetworks200ResponseAllOfNetworkPoolIPv6`
 
 GetPoolIPv6 returns the PoolIPv6 field if non-nil, zero value otherwise.
 
 ### GetPoolIPv6Ok
 
-`func (o *Network) GetPoolIPv6Ok() (*ListNetworks200ResponseAllOfNetworksInnerPoolIPv6, bool)`
+`func (o *Network) GetPoolIPv6Ok() (*CreateNetworks200ResponseAllOfNetworkPoolIPv6, bool)`
 
 GetPoolIPv6Ok returns a tuple with the PoolIPv6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPoolIPv6
 
-`func (o *Network) SetPoolIPv6(v ListNetworks200ResponseAllOfNetworksInnerPoolIPv6)`
+`func (o *Network) SetPoolIPv6(v CreateNetworks200ResponseAllOfNetworkPoolIPv6)`
 
 SetPoolIPv6 sets PoolIPv6 field to given value.
 
@@ -1656,20 +1656,20 @@ HasPoolIPv6 returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *Network) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
+`func (o *Network) GetNetworkProxy() CreateNetworks200ResponseAllOfNetworkNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *Network) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
+`func (o *Network) GetNetworkProxyOk() (*CreateNetworks200ResponseAllOfNetworkNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *Network) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
+`func (o *Network) SetNetworkProxy(v CreateNetworks200ResponseAllOfNetworkNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -1681,20 +1681,20 @@ HasNetworkProxy returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *Network) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
+`func (o *Network) GetNetworkDomain() CreateNetworks200ResponseAllOfNetworkNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *Network) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
+`func (o *Network) GetNetworkDomainOk() (*CreateNetworks200ResponseAllOfNetworkNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *Network) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
+`func (o *Network) SetNetworkDomain(v CreateNetworks200ResponseAllOfNetworkNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -1961,20 +1961,20 @@ HasApplianceUrlProxyBypass returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *Network) GetZonePool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *Network) GetZonePool() CreateNetworks200ResponseAllOfNetworkZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *Network) GetZonePoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *Network) GetZonePoolOk() (*CreateNetworks200ResponseAllOfNetworkZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *Network) SetZonePool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *Network) SetZonePool(v CreateNetworks200ResponseAllOfNetworkZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -2011,20 +2011,20 @@ HasAllowStaticOverride returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *Network) GetConfig() ListNetworks200ResponseAllOfNetworksInnerConfig`
+`func (o *Network) GetConfig() CreateNetworks200ResponseAllOfNetworkConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *Network) GetConfigOk() (*ListNetworks200ResponseAllOfNetworksInnerConfig, bool)`
+`func (o *Network) GetConfigOk() (*CreateNetworks200ResponseAllOfNetworkConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *Network) SetConfig(v ListNetworks200ResponseAllOfNetworksInnerConfig)`
+`func (o *Network) SetConfig(v CreateNetworks200ResponseAllOfNetworkConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -2036,20 +2036,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *Network) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *Network) GetTenants() []CreateNetworks200ResponseAllOfNetworkTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *Network) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *Network) GetTenantsOk() (*[]CreateNetworks200ResponseAllOfNetworkTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *Network) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *Network) SetTenants(v []CreateNetworks200ResponseAllOfNetworkTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -2061,20 +2061,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermission
 
-`func (o *Network) GetResourcePermission() ListNetworks200ResponseAllOfNetworksInnerResourcePermission`
+`func (o *Network) GetResourcePermission() CreateNetworks200ResponseAllOfNetworkResourcePermission`
 
 GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionOk
 
-`func (o *Network) GetResourcePermissionOk() (*ListNetworks200ResponseAllOfNetworksInnerResourcePermission, bool)`
+`func (o *Network) GetResourcePermissionOk() (*CreateNetworks200ResponseAllOfNetworkResourcePermission, bool)`
 
 GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermission
 
-`func (o *Network) SetResourcePermission(v ListNetworks200ResponseAllOfNetworksInnerResourcePermission)`
+`func (o *Network) SetResourcePermission(v CreateNetworks200ResponseAllOfNetworkResourcePermission)`
 
 SetResourcePermission sets ResourcePermission field to given value.
 

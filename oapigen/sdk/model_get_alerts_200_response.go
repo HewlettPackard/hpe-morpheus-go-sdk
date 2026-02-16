@@ -20,7 +20,7 @@ var _ MappedNullable = &GetAlerts200Response{}
 
 // GetAlerts200Response struct for GetAlerts200Response
 type GetAlerts200Response struct {
-	Alert                *ListAlerts200ResponseAllOfAlertsInner      `json:"alert,omitempty"`
+	Alert                *GetAlerts200ResponseAllOfAlert             `json:"alert,omitempty"`
 	Checks               []GetAlerts200ResponseAllOfChecksInner      `json:"checks,omitempty"`
 	CheckGroups          []GetAlerts200ResponseAllOfCheckGroupsInner `json:"checkGroups,omitempty"`
 	Apps                 []GetAlerts200ResponseAllOfAppsInner        `json:"apps,omitempty"`
@@ -47,9 +47,9 @@ func NewGetAlerts200ResponseWithDefaults() *GetAlerts200Response {
 }
 
 // GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *GetAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInner {
+func (o *GetAlerts200Response) GetAlert() GetAlerts200ResponseAllOfAlert {
 	if o == nil || IsNil(o.Alert) {
-		var ret ListAlerts200ResponseAllOfAlertsInner
+		var ret GetAlerts200ResponseAllOfAlert
 		return ret
 	}
 	return *o.Alert
@@ -57,7 +57,7 @@ func (o *GetAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInner 
 
 // GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200Response) GetAlertOk() (*ListAlerts200ResponseAllOfAlertsInner, bool) {
+func (o *GetAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bool) {
 	if o == nil || IsNil(o.Alert) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *GetAlerts200Response) IsSetAlert() bool {
 	return false
 }
 
-// SetAlert gets a reference to the given ListAlerts200ResponseAllOfAlertsInner and assigns it to the Alert field.
-func (o *GetAlerts200Response) SetAlert(v ListAlerts200ResponseAllOfAlertsInner) {
+// SetAlert gets a reference to the given GetAlerts200ResponseAllOfAlert and assigns it to the Alert field.
+func (o *GetAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert) {
 	o.Alert = &v
 }
 
@@ -248,7 +248,6 @@ func (v NullableGetAlerts200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *GetAlerts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

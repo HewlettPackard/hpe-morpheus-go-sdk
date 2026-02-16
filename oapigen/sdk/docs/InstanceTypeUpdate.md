@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **HasAutoScale** | Pointer to **bool** | Enable Scaling (Horizontal) | [optional] 
 **HasDeployment** | Pointer to **bool** | Supports Deployments | [optional] 
 **EnvironmentPrefix** | Pointer to **string** | Environment Prefix, can be used to make exported evars unique. | [optional] 
-**EnvironmentVariables** | Pointer to [**[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner**](AddClusterLayoutsRequestLayoutEnvironmentVariablesInner.md) | Array of instance type env variables. | [optional] 
-**PriceSets** | Pointer to [**[]AddInstanceTypeRequestInstanceTypePriceSetsInner**](AddInstanceTypeRequestInstanceTypePriceSetsInner.md) | Array of price set objects | [optional] 
+**EnvironmentVariables** | Pointer to [**[]InstanceTypeUpdateEnvironmentVariablesInner**](InstanceTypeUpdateEnvironmentVariablesInner.md) | Array of instance type env variables. | [optional] 
+**PriceSets** | Pointer to [**[]InstanceTypeUpdatePriceSetsInner**](InstanceTypeUpdatePriceSetsInner.md) | Array of price set objects | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of instance type option type IDs | [optional] 
 
 ## Methods
@@ -325,20 +325,20 @@ HasEnvironmentPrefix returns a boolean if a field has been set.
 
 ### GetEnvironmentVariables
 
-`func (o *InstanceTypeUpdate) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner`
+`func (o *InstanceTypeUpdate) GetEnvironmentVariables() []InstanceTypeUpdateEnvironmentVariablesInner`
 
 GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
 
 ### GetEnvironmentVariablesOk
 
-`func (o *InstanceTypeUpdate) GetEnvironmentVariablesOk() (*[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool)`
+`func (o *InstanceTypeUpdate) GetEnvironmentVariablesOk() (*[]InstanceTypeUpdateEnvironmentVariablesInner, bool)`
 
 GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentVariables
 
-`func (o *InstanceTypeUpdate) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner)`
+`func (o *InstanceTypeUpdate) SetEnvironmentVariables(v []InstanceTypeUpdateEnvironmentVariablesInner)`
 
 SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
@@ -350,20 +350,20 @@ HasEnvironmentVariables returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *InstanceTypeUpdate) GetPriceSets() []AddInstanceTypeRequestInstanceTypePriceSetsInner`
+`func (o *InstanceTypeUpdate) GetPriceSets() []InstanceTypeUpdatePriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *InstanceTypeUpdate) GetPriceSetsOk() (*[]AddInstanceTypeRequestInstanceTypePriceSetsInner, bool)`
+`func (o *InstanceTypeUpdate) GetPriceSetsOk() (*[]InstanceTypeUpdatePriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *InstanceTypeUpdate) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner)`
+`func (o *InstanceTypeUpdate) SetPriceSets(v []InstanceTypeUpdatePriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 

@@ -20,9 +20,9 @@ var _ MappedNullable = &ListProvisionTypes200Response{}
 
 // ListProvisionTypes200Response struct for ListProvisionTypes200Response
 type ListProvisionTypes200Response struct {
-	ProvisionTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType `json:"provisionTypes,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                                                              `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                                                         `json:",remain"`
+	ProvisionTypes       []ListProvisionTypes200ResponseAllOfProvisionTypesInner `json:"provisionTypes,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta                         `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListProvisionTypes200Response ListProvisionTypes200Response
@@ -45,9 +45,9 @@ func NewListProvisionTypes200ResponseWithDefaults() *ListProvisionTypes200Respon
 }
 
 // GetProvisionTypes returns the ProvisionTypes field value if set, zero value otherwise.
-func (o *ListProvisionTypes200Response) GetProvisionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType {
+func (o *ListProvisionTypes200Response) GetProvisionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInner {
 	if o == nil || IsNil(o.ProvisionTypes) {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInner
 		return ret
 	}
 	return o.ProvisionTypes
@@ -55,7 +55,7 @@ func (o *ListProvisionTypes200Response) GetProvisionTypes() []GetInstanceTypePro
 
 // GetProvisionTypesOk returns a tuple with the ProvisionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListProvisionTypes200Response) GetProvisionTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool) {
+func (o *ListProvisionTypes200Response) GetProvisionTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInner, bool) {
 	if o == nil || IsNil(o.ProvisionTypes) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ListProvisionTypes200Response) IsSetProvisionTypes() bool {
 	return false
 }
 
-// SetProvisionTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType and assigns it to the ProvisionTypes field.
-func (o *ListProvisionTypes200Response) SetProvisionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) {
+// SetProvisionTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInner and assigns it to the ProvisionTypes field.
+func (o *ListProvisionTypes200Response) SetProvisionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInner) {
 	o.ProvisionTypes = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListProvisionTypes200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListProvisionTypes200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListProvisionTypes200Response) GetMeta() ListActivity200ResponseAllOfMe
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListProvisionTypes200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListProvisionTypes200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListProvisionTypes200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListProvisionTypes200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListProvisionTypes200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListProvisionTypes200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *ListProvisionTypes200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

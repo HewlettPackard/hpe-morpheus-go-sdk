@@ -169,7 +169,6 @@ func (v NullableAlletraMPHVMDatastoreConfiguration) UnmarshalMapstructure(data a
 
 	return v, nil
 }
-
 func (o *AlletraMPHVMDatastoreConfiguration) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

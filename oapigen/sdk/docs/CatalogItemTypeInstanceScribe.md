@@ -4,25 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup.md) |  | 
-**Cloud** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud.md) |  | 
+**Group** | [**CatalogItemTypeInstanceScribeGroup**](CatalogItemTypeInstanceScribeGroup.md) |  | 
+**Cloud** | [**CatalogItemTypeInstanceScribeCloud**](CatalogItemTypeInstanceScribeCloud.md) |  | 
 **Type** | **string** | The type of instance by code we want to fetch. | 
 **Name** | **string** | Name of the instance to be created. | 
-**Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig.md) |  | 
-**Volumes** | [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | 
+**Config** | [**CatalogItemTypeInstanceScribeConfig**](CatalogItemTypeInstanceScribeConfig.md) |  | 
+**Volumes** | [**[]CatalogItemTypeInstanceScribeVolumesInner**](CatalogItemTypeInstanceScribeVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | 
 **HostName** | Pointer to **string** | Hostname of the instance to be created.  Can be the same as the instance name. | [optional] 
 **Environment** | Pointer to **string** | Environment code | [optional] 
-**Layout** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout.md) |  | 
-**Plan** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan.md) |  | 
+**Layout** | [**CatalogItemTypeInstanceScribeLayout**](CatalogItemTypeInstanceScribeLayout.md) |  | 
+**Plan** | [**CatalogItemTypeInstanceScribePlan**](CatalogItemTypeInstanceScribePlan.md) |  | 
 **Version** | Pointer to **string** | Version of the layout to create. | [optional] 
-**Evars** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
-**ServicePlanOptions** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions.md) |  | [optional] 
-**SecurityGroups** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**Evars** | Pointer to [**[]CatalogItemTypeInstanceScribeEvarsInner**](CatalogItemTypeInstanceScribeEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
+**ServicePlanOptions** | Pointer to [**CatalogItemTypeInstanceScribeServicePlanOptions**](CatalogItemTypeInstanceScribeServicePlanOptions.md) |  | [optional] 
+**SecurityGroups** | Pointer to [**[]CatalogItemTypeInstanceScribeSecurityGroupsInner**](CatalogItemTypeInstanceScribeSecurityGroupsInner.md) | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces3**](InstancesNetworkInterfaces3.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**Metadata** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
-**Ports** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
+**Tags** | Pointer to [**[]CatalogItemTypeInstanceScribeTagsInner**](CatalogItemTypeInstanceScribeTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Metadata** | Pointer to [**[]CatalogItemTypeInstanceScribeMetadataInner**](CatalogItemTypeInstanceScribeMetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
+**Ports** | Pointer to [**[]CatalogItemTypeInstanceScribePortsInner**](CatalogItemTypeInstanceScribePortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewCatalogItemTypeInstanceScribe
 
-`func NewCatalogItemTypeInstanceScribe(group AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup, cloud AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud, type_ string, name string, config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, layout AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout, plan AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan, ) *CatalogItemTypeInstanceScribe`
+`func NewCatalogItemTypeInstanceScribe(group CatalogItemTypeInstanceScribeGroup, cloud CatalogItemTypeInstanceScribeCloud, type_ string, name string, config CatalogItemTypeInstanceScribeConfig, volumes []CatalogItemTypeInstanceScribeVolumesInner, layout CatalogItemTypeInstanceScribeLayout, plan CatalogItemTypeInstanceScribePlan, ) *CatalogItemTypeInstanceScribe`
 
 NewCatalogItemTypeInstanceScribe instantiates a new CatalogItemTypeInstanceScribe object
 This constructor will assign default values to properties that have it defined,
@@ -47,40 +47,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *CatalogItemTypeInstanceScribe) GetGroup() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup`
+`func (o *CatalogItemTypeInstanceScribe) GetGroup() CatalogItemTypeInstanceScribeGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetGroupOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetGroupOk() (*CatalogItemTypeInstanceScribeGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *CatalogItemTypeInstanceScribe) SetGroup(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigGroup)`
+`func (o *CatalogItemTypeInstanceScribe) SetGroup(v CatalogItemTypeInstanceScribeGroup)`
 
 SetGroup sets Group field to given value.
 
 
 ### GetCloud
 
-`func (o *CatalogItemTypeInstanceScribe) GetCloud() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud`
+`func (o *CatalogItemTypeInstanceScribe) GetCloud() CatalogItemTypeInstanceScribeCloud`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetCloudOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetCloudOk() (*CatalogItemTypeInstanceScribeCloud, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *CatalogItemTypeInstanceScribe) SetCloud(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigCloud)`
+`func (o *CatalogItemTypeInstanceScribe) SetCloud(v CatalogItemTypeInstanceScribeCloud)`
 
 SetCloud sets Cloud field to given value.
 
@@ -127,40 +127,40 @@ SetName sets Name field to given value.
 
 ### GetConfig
 
-`func (o *CatalogItemTypeInstanceScribe) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig`
+`func (o *CatalogItemTypeInstanceScribe) GetConfig() CatalogItemTypeInstanceScribeConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetConfigOk() (*CatalogItemTypeInstanceScribeConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CatalogItemTypeInstanceScribe) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig)`
+`func (o *CatalogItemTypeInstanceScribe) SetConfig(v CatalogItemTypeInstanceScribeConfig)`
 
 SetConfig sets Config field to given value.
 
 
 ### GetVolumes
 
-`func (o *CatalogItemTypeInstanceScribe) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner`
+`func (o *CatalogItemTypeInstanceScribe) GetVolumes() []CatalogItemTypeInstanceScribeVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetVolumesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetVolumesOk() (*[]CatalogItemTypeInstanceScribeVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *CatalogItemTypeInstanceScribe) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetVolumes(v []CatalogItemTypeInstanceScribeVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -217,40 +217,40 @@ HasEnvironment returns a boolean if a field has been set.
 
 ### GetLayout
 
-`func (o *CatalogItemTypeInstanceScribe) GetLayout() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout`
+`func (o *CatalogItemTypeInstanceScribe) GetLayout() CatalogItemTypeInstanceScribeLayout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetLayoutOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetLayoutOk() (*CatalogItemTypeInstanceScribeLayout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *CatalogItemTypeInstanceScribe) SetLayout(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigLayout)`
+`func (o *CatalogItemTypeInstanceScribe) SetLayout(v CatalogItemTypeInstanceScribeLayout)`
 
 SetLayout sets Layout field to given value.
 
 
 ### GetPlan
 
-`func (o *CatalogItemTypeInstanceScribe) GetPlan() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan`
+`func (o *CatalogItemTypeInstanceScribe) GetPlan() CatalogItemTypeInstanceScribePlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetPlanOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetPlanOk() (*CatalogItemTypeInstanceScribePlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *CatalogItemTypeInstanceScribe) SetPlan(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPlan)`
+`func (o *CatalogItemTypeInstanceScribe) SetPlan(v CatalogItemTypeInstanceScribePlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -282,20 +282,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *CatalogItemTypeInstanceScribe) GetEvars() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *CatalogItemTypeInstanceScribe) GetEvars() []CatalogItemTypeInstanceScribeEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetEvarsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetEvarsOk() (*[]CatalogItemTypeInstanceScribeEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *CatalogItemTypeInstanceScribe) SetEvars(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetEvars(v []CatalogItemTypeInstanceScribeEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -307,20 +307,20 @@ HasEvars returns a boolean if a field has been set.
 
 ### GetServicePlanOptions
 
-`func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptions() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions`
+`func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptions() CatalogItemTypeInstanceScribeServicePlanOptions`
 
 GetServicePlanOptions returns the ServicePlanOptions field if non-nil, zero value otherwise.
 
 ### GetServicePlanOptionsOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptionsOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetServicePlanOptionsOk() (*CatalogItemTypeInstanceScribeServicePlanOptions, bool)`
 
 GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlanOptions
 
-`func (o *CatalogItemTypeInstanceScribe) SetServicePlanOptions(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions)`
+`func (o *CatalogItemTypeInstanceScribe) SetServicePlanOptions(v CatalogItemTypeInstanceScribeServicePlanOptions)`
 
 SetServicePlanOptions sets ServicePlanOptions field to given value.
 
@@ -332,20 +332,20 @@ HasServicePlanOptions returns a boolean if a field has been set.
 
 ### GetSecurityGroups
 
-`func (o *CatalogItemTypeInstanceScribe) GetSecurityGroups() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner`
+`func (o *CatalogItemTypeInstanceScribe) GetSecurityGroups() []CatalogItemTypeInstanceScribeSecurityGroupsInner`
 
 GetSecurityGroups returns the SecurityGroups field if non-nil, zero value otherwise.
 
 ### GetSecurityGroupsOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetSecurityGroupsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetSecurityGroupsOk() (*[]CatalogItemTypeInstanceScribeSecurityGroupsInner, bool)`
 
 GetSecurityGroupsOk returns a tuple with the SecurityGroups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityGroups
 
-`func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetSecurityGroups(v []CatalogItemTypeInstanceScribeSecurityGroupsInner)`
 
 SetSecurityGroups sets SecurityGroups field to given value.
 
@@ -367,20 +367,20 @@ HasSecurityGroups returns a boolean if a field has been set.
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetNetworkInterfaces
 
-`func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetworkInterfaces`
+`func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfaces() []InstancesNetworkInterfaces3`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces3, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []InstancesNetworkInterfaces)`
+`func (o *CatalogItemTypeInstanceScribe) SetNetworkInterfaces(v []InstancesNetworkInterfaces3)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 
@@ -417,20 +417,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *CatalogItemTypeInstanceScribe) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *CatalogItemTypeInstanceScribe) GetTags() []CatalogItemTypeInstanceScribeTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetTagsOk() (*[]CatalogItemTypeInstanceScribeTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *CatalogItemTypeInstanceScribe) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetTags(v []CatalogItemTypeInstanceScribeTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -442,20 +442,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *CatalogItemTypeInstanceScribe) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *CatalogItemTypeInstanceScribe) GetMetadata() []CatalogItemTypeInstanceScribeMetadataInner`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetMetadataOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetMetadataOk() (*[]CatalogItemTypeInstanceScribeMetadataInner, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *CatalogItemTypeInstanceScribe) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetMetadata(v []CatalogItemTypeInstanceScribeMetadataInner)`
 
 SetMetadata sets Metadata field to given value.
 
@@ -467,20 +467,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetPorts
 
-`func (o *CatalogItemTypeInstanceScribe) GetPorts() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner`
+`func (o *CatalogItemTypeInstanceScribe) GetPorts() []CatalogItemTypeInstanceScribePortsInner`
 
 GetPorts returns the Ports field if non-nil, zero value otherwise.
 
 ### GetPortsOk
 
-`func (o *CatalogItemTypeInstanceScribe) GetPortsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner, bool)`
+`func (o *CatalogItemTypeInstanceScribe) GetPortsOk() (*[]CatalogItemTypeInstanceScribePortsInner, bool)`
 
 GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPorts
 
-`func (o *CatalogItemTypeInstanceScribe) SetPorts(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner)`
+`func (o *CatalogItemTypeInstanceScribe) SetPorts(v []CatalogItemTypeInstanceScribePortsInner)`
 
 SetPorts sets Ports field to given value.
 

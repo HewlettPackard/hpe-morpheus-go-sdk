@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OperationalWorkflowId** | **string** | Operational Workflow ID | 
-**OperationalWorkflowName** | Pointer to **string** | Operational Workflow Name | [optional] 
+**OperationalWorkflowId** | **NullableString** | Operational Workflow ID | 
+**OperationalWorkflowName** | Pointer to **NullableString** | Operational Workflow Name | [optional] 
 
 ## Methods
 
 ### NewTaskNestedWorkflowConfig
 
-`func NewTaskNestedWorkflowConfig(operationalWorkflowId string, ) *TaskNestedWorkflowConfig`
+`func NewTaskNestedWorkflowConfig(operationalWorkflowId NullableString, ) *TaskNestedWorkflowConfig`
 
 NewTaskNestedWorkflowConfig instantiates a new TaskNestedWorkflowConfig object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,16 @@ and a boolean to check if the value has been set.
 SetOperationalWorkflowId sets OperationalWorkflowId field to given value.
 
 
+### SetOperationalWorkflowIdNil
+
+`func (o *TaskNestedWorkflowConfig) SetOperationalWorkflowIdNil(b bool)`
+
+ SetOperationalWorkflowIdNil sets the value for OperationalWorkflowId to be an explicit nil
+
+### UnsetOperationalWorkflowId
+`func (o *TaskNestedWorkflowConfig) UnsetOperationalWorkflowId()`
+
+UnsetOperationalWorkflowId ensures that no value is present for OperationalWorkflowId, not even an explicit nil
 ### GetOperationalWorkflowName
 
 `func (o *TaskNestedWorkflowConfig) GetOperationalWorkflowName() string`
@@ -71,6 +81,16 @@ SetOperationalWorkflowName sets OperationalWorkflowName field to given value.
 
 HasOperationalWorkflowName returns a boolean if a field has been set.
 
+### SetOperationalWorkflowNameNil
+
+`func (o *TaskNestedWorkflowConfig) SetOperationalWorkflowNameNil(b bool)`
+
+ SetOperationalWorkflowNameNil sets the value for OperationalWorkflowName to be an explicit nil
+
+### UnsetOperationalWorkflowName
+`func (o *TaskNestedWorkflowConfig) UnsetOperationalWorkflowName()`
+
+UnsetOperationalWorkflowName ensures that no value is present for OperationalWorkflowName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -140,7 +140,6 @@ func (v NullableListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts) Unmars
 
 	return v, nil
 }
-
 func (o *ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,36 +20,36 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfig{}
 
 // AddInstance200ResponseAllOfOneOfInstanceConfig struct for AddInstance200ResponseAllOfOneOfInstanceConfig
 type AddInstance200ResponseAllOfOneOfInstanceConfig struct {
-	CreateUser           *bool                                                           `json:"createUser,omitempty"`
-	IsEC2                *bool                                                           `json:"isEC2,omitempty"`
-	IsVpcSelectable      *bool                                                           `json:"isVpcSelectable,omitempty"`
-	NoAgent              *InstanceContainerServerPowerState                              `json:"noAgent,omitempty"`
-	SecurityGroups       []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup    `json:"securityGroups,omitempty"`
-	SmbiosAssetTag       NullableString                                                  `json:"smbiosAssetTag,omitempty"`
-	NestedVirtualization NullableString                                                  `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                         `json:"vmwareFolderId,omitempty"`
-	CustomOptions        map[string]interface{}                                          `json:"customOptions,omitempty"`
-	ResourcePoolId       *InstanceInterfacesNetworkInterfacesInnerId                     `json:"resourcePoolId,omitempty"`
-	PoolProviderType     NullableString                                                  `json:"poolProviderType,omitempty"`
-	UserGroup            *ListInstances200ResponseAllOfInstancesInnerConfigUserGroup     `json:"userGroup,omitempty"`
-	ExpireDays           *string                                                         `json:"expireDays,omitempty"`
-	ShutdownDays         *string                                                         `json:"shutdownDays,omitempty"`
-	Name                 *string                                                         `json:"name,omitempty"`
-	HostName             *string                                                         `json:"hostName,omitempty"`
-	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType     `json:"instanceType,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                    `json:"site,omitempty"`
-	EnvironmentPrefix    NullableString                                                  `json:"environmentPrefix,omitempty"`
-	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan      `json:"layout,omitempty"`
-	Type                 *string                                                         `json:"type,omitempty"`
-	InstanceContext      *string                                                         `json:"instanceContext,omitempty"`
-	MemoryDisplay        *string                                                         `json:"memoryDisplay,omitempty"`
-	Expose               []int64                                                         `json:"expose,omitempty"`
-	CreateBackup         *bool                                                           `json:"createBackup,omitempty"`
-	Backup               *ListInstances200ResponseAllOfInstancesInnerConfigBackup        `json:"backup,omitempty"`
-	ReplicationGroup     *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup `json:"replicationGroup,omitempty"`
-	LayoutSize           *int64                                                          `json:"layoutSize,omitempty"`
-	LbInstances          []map[string]interface{}                                        `json:"lbInstances,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	CreateUser           *bool                                                               `json:"createUser,omitempty"`
+	IsEC2                *bool                                                               `json:"isEC2,omitempty"`
+	IsVpcSelectable      *bool                                                               `json:"isVpcSelectable,omitempty"`
+	NoAgent              *AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent              `json:"noAgent,omitempty"`
+	SecurityGroups       []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	SmbiosAssetTag       NullableString                                                      `json:"smbiosAssetTag,omitempty"`
+	NestedVirtualization NullableString                                                      `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                             `json:"vmwareFolderId,omitempty"`
+	CustomOptions        map[string]interface{}                                              `json:"customOptions,omitempty"`
+	ResourcePoolId       *AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId       `json:"resourcePoolId,omitempty"`
+	PoolProviderType     NullableString                                                      `json:"poolProviderType,omitempty"`
+	UserGroup            *AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup            `json:"userGroup,omitempty"`
+	ExpireDays           *string                                                             `json:"expireDays,omitempty"`
+	ShutdownDays         *string                                                             `json:"shutdownDays,omitempty"`
+	Name                 *string                                                             `json:"name,omitempty"`
+	HostName             *string                                                             `json:"hostName,omitempty"`
+	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType         `json:"instanceType,omitempty"`
+	Site                 *AddInstance200ResponseAllOfOneOfInstanceConfigSite                 `json:"site,omitempty"`
+	EnvironmentPrefix    NullableString                                                      `json:"environmentPrefix,omitempty"`
+	Layout               *AddInstance200ResponseAllOfOneOfInstanceConfigLayout               `json:"layout,omitempty"`
+	Type                 *string                                                             `json:"type,omitempty"`
+	InstanceContext      *string                                                             `json:"instanceContext,omitempty"`
+	MemoryDisplay        *string                                                             `json:"memoryDisplay,omitempty"`
+	Expose               []int64                                                             `json:"expose,omitempty"`
+	CreateBackup         *bool                                                               `json:"createBackup,omitempty"`
+	Backup               *AddInstance200ResponseAllOfOneOfInstanceConfigBackup               `json:"backup,omitempty"`
+	ReplicationGroup     *AddInstance200ResponseAllOfOneOfInstanceConfigReplicationGroup     `json:"replicationGroup,omitempty"`
+	LayoutSize           *int64                                                              `json:"layoutSize,omitempty"`
+	LbInstances          []map[string]interface{}                                            `json:"lbInstances,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstanceConfig AddInstance200ResponseAllOfOneOfInstanceConfig
@@ -168,9 +168,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetIsVpcSelectable(v bo
 }
 
 // GetNoAgent returns the NoAgent field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() InstanceContainerServerPowerState {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent {
 	if o == nil || IsNil(o.NoAgent) {
-		var ret InstanceContainerServerPowerState
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent
 		return ret
 	}
 	return *o.NoAgent
@@ -178,7 +178,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgent() InstanceCo
 
 // GetNoAgentOk returns a tuple with the NoAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*InstanceContainerServerPowerState, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetNoAgentOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent, bool) {
 	if o == nil || IsNil(o.NoAgent) {
 		return nil, false
 	}
@@ -194,15 +194,15 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetNoAgent() bool {
 	return false
 }
 
-// SetNoAgent gets a reference to the given InstanceContainerServerPowerState and assigns it to the NoAgent field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v InstanceContainerServerPowerState) {
+// SetNoAgent gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent and assigns it to the NoAgent field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetNoAgent(v AddInstance200ResponseAllOfOneOfInstanceConfigNoAgent) {
 	o.NoAgent = &v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup {
-	if o == nil || IsNil(o.SecurityGroups) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner {
+	if o == nil {
+		var ret []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner
 		return ret
 	}
 	return o.SecurityGroups
@@ -210,7 +210,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroups() []L
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroupsOk() ([]ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSecurityGroupsOk() ([]AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
 	}
@@ -226,8 +227,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetSecurityGroups() b
 	return false
 }
 
-// SetSecurityGroups gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup and assigns it to the SecurityGroups field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSecurityGroups(v []ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) {
+// SetSecurityGroups gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSecurityGroups(v []AddInstance200ResponseAllOfOneOfInstanceConfigSecurityGroupsInner) {
 	o.SecurityGroups = v
 }
 
@@ -382,9 +383,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetCustomOptions(v map[
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() InstanceInterfacesNetworkInterfacesInnerId {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId {
 	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret InstanceInterfacesNetworkInterfacesInnerId
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId
 		return ret
 	}
 	return *o.ResourcePoolId
@@ -392,7 +393,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolId() Ins
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*InstanceInterfacesNetworkInterfacesInnerId, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetResourcePoolIdOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -408,8 +409,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetResourcePoolId() b
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given InstanceInterfacesNetworkInterfacesInnerId and assigns it to the ResourcePoolId field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v InstanceInterfacesNetworkInterfacesInnerId) {
+// SetResourcePoolId gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId and assigns it to the ResourcePoolId field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetResourcePoolId(v AddInstance200ResponseAllOfOneOfInstanceConfigResourcePoolId) {
 	o.ResourcePoolId = &v
 }
 
@@ -457,9 +458,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetPoolProviderType()
 }
 
 // GetUserGroup returns the UserGroup field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() ListInstances200ResponseAllOfInstancesInnerConfigUserGroup {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup {
 	if o == nil || IsNil(o.UserGroup) {
-		var ret ListInstances200ResponseAllOfInstancesInnerConfigUserGroup
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup
 		return ret
 	}
 	return *o.UserGroup
@@ -467,7 +468,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroup() ListInst
 
 // GetUserGroupOk returns a tuple with the UserGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigUserGroup, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetUserGroupOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup, bool) {
 	if o == nil || IsNil(o.UserGroup) {
 		return nil, false
 	}
@@ -483,8 +484,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetUserGroup() bool {
 	return false
 }
 
-// SetUserGroup gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigUserGroup and assigns it to the UserGroup field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetUserGroup(v ListInstances200ResponseAllOfInstancesInnerConfigUserGroup) {
+// SetUserGroup gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup and assigns it to the UserGroup field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetUserGroup(v AddInstance200ResponseAllOfOneOfInstanceConfigUserGroup) {
 	o.UserGroup = &v
 }
 
@@ -649,9 +650,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetInstanceType(v AddIn
 }
 
 // GetSite returns the Site field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSite() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSite() AddInstance200ResponseAllOfOneOfInstanceConfigSite {
 	if o == nil || IsNil(o.Site) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigSite
 		return ret
 	}
 	return *o.Site
@@ -659,7 +660,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSite() GetAlerts200R
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSiteOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetSiteOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigSite, bool) {
 	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
@@ -675,8 +676,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetSite() bool {
 	return false
 }
 
-// SetSite gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Site field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSite(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetSite gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigSite and assigns it to the Site field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetSite(v AddInstance200ResponseAllOfOneOfInstanceConfigSite) {
 	o.Site = &v
 }
 
@@ -724,9 +725,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnsetEnvironmentPrefix(
 }
 
 // GetLayout returns the Layout field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() AddInstance200ResponseAllOfOneOfInstanceConfigLayout {
 	if o == nil || IsNil(o.Layout) {
-		var ret ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigLayout
 		return ret
 	}
 	return *o.Layout
@@ -734,7 +735,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayout() ListImageBu
 
 // GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayoutOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetLayoutOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigLayout, bool) {
 	if o == nil || IsNil(o.Layout) {
 		return nil, false
 	}
@@ -750,8 +751,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetLayout() bool {
 	return false
 }
 
-// SetLayout gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan and assigns it to the Layout field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLayout(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan) {
+// SetLayout gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigLayout and assigns it to the Layout field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetLayout(v AddInstance200ResponseAllOfOneOfInstanceConfigLayout) {
 	o.Layout = &v
 }
 
@@ -851,9 +852,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetMemoryDisplay(v stri
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise.
+// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64 {
-	if o == nil || IsNil(o.Expose) {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -862,6 +863,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExpose() []int64 {
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
@@ -916,9 +918,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetCreateBackup(v bool)
 }
 
 // GetBackup returns the Backup field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackup() ListInstances200ResponseAllOfInstancesInnerConfigBackup {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackup() AddInstance200ResponseAllOfOneOfInstanceConfigBackup {
 	if o == nil || IsNil(o.Backup) {
-		var ret ListInstances200ResponseAllOfInstancesInnerConfigBackup
+		var ret AddInstance200ResponseAllOfOneOfInstanceConfigBackup
 		return ret
 	}
 	return *o.Backup
@@ -926,7 +928,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackup() ListInstanc
 
 // GetBackupOk returns a tuple with the Backup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackupOk() (*ListInstances200ResponseAllOfInstancesInnerConfigBackup, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) GetBackupOk() (*AddInstance200ResponseAllOfOneOfInstanceConfigBackup, bool) {
 	if o == nil || IsNil(o.Backup) {
 		return nil, false
 	}
@@ -942,8 +944,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) IsSetBackup() bool {
 	return false
 }
 
-// SetBackup gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigBackup and assigns it to the Backup field.
-func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetBackup(v ListInstances200ResponseAllOfInstancesInnerConfigBackup) {
+// SetBackup gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceConfigBackup and assigns it to the Backup field.
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) SetBackup(v AddInstance200ResponseAllOfOneOfInstanceConfigBackup) {
 	o.Backup = &v
 }
 
@@ -1066,7 +1068,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if !IsNil(o.SecurityGroups) {
+	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if o.SmbiosAssetTag.IsSet() {
@@ -1123,7 +1125,7 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfig) ToMap() (map[string]inte
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if !IsNil(o.Expose) {
+	if o.Expose != nil {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {
@@ -1193,7 +1195,6 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

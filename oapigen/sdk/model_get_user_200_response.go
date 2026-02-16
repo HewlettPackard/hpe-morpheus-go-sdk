@@ -20,8 +20,8 @@ var _ MappedNullable = &GetUser200Response{}
 
 // GetUser200Response struct for GetUser200Response
 type GetUser200Response struct {
-	User                 *ListUsers200ResponseAllOfUsersInner `json:"user,omitempty"`
-	AdditionalProperties map[string]interface{}               `json:",remain"`
+	User                 *GetUser200ResponseUser `json:"user,omitempty"`
+	AdditionalProperties map[string]interface{}  `json:",remain"`
 }
 
 type _GetUser200Response GetUser200Response
@@ -44,9 +44,9 @@ func NewGetUser200ResponseWithDefaults() *GetUser200Response {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *GetUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner {
+func (o *GetUser200Response) GetUser() GetUser200ResponseUser {
 	if o == nil || IsNil(o.User) {
-		var ret ListUsers200ResponseAllOfUsersInner
+		var ret GetUser200ResponseUser
 		return ret
 	}
 	return *o.User
@@ -54,7 +54,7 @@ func (o *GetUser200Response) GetUser() ListUsers200ResponseAllOfUsersInner {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetUser200Response) GetUserOk() (*ListUsers200ResponseAllOfUsersInner, bool) {
+func (o *GetUser200Response) GetUserOk() (*GetUser200ResponseUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetUser200Response) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given ListUsers200ResponseAllOfUsersInner and assigns it to the User field.
-func (o *GetUser200Response) SetUser(v ListUsers200ResponseAllOfUsersInner) {
+// SetUser gets a reference to the given GetUser200ResponseUser and assigns it to the User field.
+func (o *GetUser200Response) SetUser(v GetUser200ResponseUser) {
 	o.User = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetUser200Response) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *GetUser200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

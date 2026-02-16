@@ -31,8 +31,8 @@ type InstanceCreateVolume struct {
 	// Can be used to select pre-existing LV choices from Morpheus.
 	SizeId NullableInt64 `json:"sizeId,omitempty"`
 	// Identifier for LV type
-	StorageType NullableInt64                                                               `json:"storageType,omitempty"`
-	DatastoreId *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
+	StorageType NullableInt64                                 `json:"storageType,omitempty"`
+	DatastoreId *ResizeInstanceRequestVolumesInnerDatastoreId `json:"datastoreId,omitempty"`
 	// The controller mount point specification for this volume in the format: `\"id:busNumber:typeId:unitNumber\"` For new storage controllers the id is passed as -1, so an example value would be: `\"-1:1:6:0\"` which translates to id: -1 (new), busNumber: 1, storage controller type id: 6 (SCSI VMware Paravirtual), unit number: 0. The current list of storage controllers is returned for instances and servers for determining existing id values. Use `/api/provision-types?code=vmware` to see the available `controllerTypes` for vmware.
 	ControllerMountPoint *string                `json:"controllerMountPoint,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -284,9 +284,9 @@ func (o *InstanceCreateVolume) UnsetStorageType() {
 }
 
 // GetDatastoreId returns the DatastoreId field value if set, zero value otherwise.
-func (o *InstanceCreateVolume) GetDatastoreId() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId {
+func (o *InstanceCreateVolume) GetDatastoreId() ResizeInstanceRequestVolumesInnerDatastoreId {
 	if o == nil || IsNil(o.DatastoreId) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId
+		var ret ResizeInstanceRequestVolumesInnerDatastoreId
 		return ret
 	}
 	return *o.DatastoreId
@@ -294,7 +294,7 @@ func (o *InstanceCreateVolume) GetDatastoreId() AddCatalogItemTypeRequestCatalog
 
 // GetDatastoreIdOk returns a tuple with the DatastoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceCreateVolume) GetDatastoreIdOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId, bool) {
+func (o *InstanceCreateVolume) GetDatastoreIdOk() (*ResizeInstanceRequestVolumesInnerDatastoreId, bool) {
 	if o == nil || IsNil(o.DatastoreId) {
 		return nil, false
 	}
@@ -310,8 +310,8 @@ func (o *InstanceCreateVolume) IsSetDatastoreId() bool {
 	return false
 }
 
-// SetDatastoreId gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId and assigns it to the DatastoreId field.
-func (o *InstanceCreateVolume) SetDatastoreId(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInnerDatastoreId) {
+// SetDatastoreId gets a reference to the given ResizeInstanceRequestVolumesInnerDatastoreId and assigns it to the DatastoreId field.
+func (o *InstanceCreateVolume) SetDatastoreId(v ResizeInstanceRequestVolumesInnerDatastoreId) {
 	o.DatastoreId = &v
 }
 
@@ -433,7 +433,6 @@ func (v NullableInstanceCreateVolume) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *InstanceCreateVolume) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

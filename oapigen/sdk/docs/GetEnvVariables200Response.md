@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Envs** | Pointer to [**[]GetEnvVariables200ResponseEnvsInner**](GetEnvVariables200ResponseEnvsInner.md) |  | [optional] 
 **ReadOnlyEnvs** | Pointer to [**map[string]GetEnvVariables200ResponseReadOnlyEnvsValue**](GetEnvVariables200ResponseReadOnlyEnvsValue.md) |  | [optional] 
-**ImportedEnvs** | Pointer to [**map[string]GetEnvVariables200ResponseReadOnlyEnvsValue**](GetEnvVariables200ResponseReadOnlyEnvsValue.md) |  | [optional] 
+**ImportedEnvs** | Pointer to [**map[string]GetEnvVariables200ResponseImportedEnvsValue**](GetEnvVariables200ResponseImportedEnvsValue.md) |  | [optional] 
 
 ## Methods
 
@@ -89,20 +89,20 @@ HasReadOnlyEnvs returns a boolean if a field has been set.
 
 ### GetImportedEnvs
 
-`func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseReadOnlyEnvsValue`
+`func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseImportedEnvsValue`
 
 GetImportedEnvs returns the ImportedEnvs field if non-nil, zero value otherwise.
 
 ### GetImportedEnvsOk
 
-`func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseReadOnlyEnvsValue, bool)`
+`func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseImportedEnvsValue, bool)`
 
 GetImportedEnvsOk returns a tuple with the ImportedEnvs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImportedEnvs
 
-`func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseReadOnlyEnvsValue)`
+`func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseImportedEnvsValue)`
 
 SetImportedEnvs sets ImportedEnvs field to given value.
 

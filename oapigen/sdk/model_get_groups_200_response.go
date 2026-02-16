@@ -20,8 +20,8 @@ var _ MappedNullable = &GetGroups200Response{}
 
 // GetGroups200Response struct for GetGroups200Response
 type GetGroups200Response struct {
-	Group                *ListGroups200ResponseAllOfGroupsInner `json:"group,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Group                *GetGroups200ResponseGroup `json:"group,omitempty"`
+	AdditionalProperties map[string]interface{}     `json:",remain"`
 }
 
 type _GetGroups200Response GetGroups200Response
@@ -44,9 +44,9 @@ func NewGetGroups200ResponseWithDefaults() *GetGroups200Response {
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *GetGroups200Response) GetGroup() ListGroups200ResponseAllOfGroupsInner {
+func (o *GetGroups200Response) GetGroup() GetGroups200ResponseGroup {
 	if o == nil || IsNil(o.Group) {
-		var ret ListGroups200ResponseAllOfGroupsInner
+		var ret GetGroups200ResponseGroup
 		return ret
 	}
 	return *o.Group
@@ -54,7 +54,7 @@ func (o *GetGroups200Response) GetGroup() ListGroups200ResponseAllOfGroupsInner 
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetGroups200Response) GetGroupOk() (*ListGroups200ResponseAllOfGroupsInner, bool) {
+func (o *GetGroups200Response) GetGroupOk() (*GetGroups200ResponseGroup, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetGroups200Response) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListGroups200ResponseAllOfGroupsInner and assigns it to the Group field.
-func (o *GetGroups200Response) SetGroup(v ListGroups200ResponseAllOfGroupsInner) {
+// SetGroup gets a reference to the given GetGroups200ResponseGroup and assigns it to the Group field.
+func (o *GetGroups200Response) SetGroup(v GetGroups200ResponseGroup) {
 	o.Group = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetGroups200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *GetGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

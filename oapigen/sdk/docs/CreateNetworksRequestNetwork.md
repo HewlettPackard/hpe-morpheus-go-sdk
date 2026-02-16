@@ -32,14 +32,14 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
 **DhcpServer** | Pointer to **bool** | DHCP Server enabled network | [optional] 
 **DhcpServerIPv6** | Pointer to **bool** | IPv6 DHCP Server enabled network | [optional] 
-**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**CreateNetworksRequestNetworkNetworkDomain**](CreateNetworksRequestNetworkNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **string** | Search Domains | [optional] 
-**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**CreateNetworksRequestNetworkNetworkProxy**](CreateNetworksRequestNetworkNetworkProxy.md) |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** | Bypass Proxy for Appliance URL | [optional] 
 **NoProxy** | Pointer to **NullableString** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
 **Config** | Pointer to [**CreateNetworksRequestNetworkConfig**](CreateNetworksRequestNetworkConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
+**Tenants** | Pointer to [**[]CreateNetworksRequestNetworkTenantsInner**](CreateNetworksRequestNetworkTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
 **ResourcePermission** | Pointer to [**CreateNetworksRequestNetworkResourcePermission**](CreateNetworksRequestNetworkResourcePermission.md) |  | [optional] 
 
 ## Methods
@@ -828,20 +828,20 @@ HasDhcpServerIPv6 returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
+`func (o *CreateNetworksRequestNetwork) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
+`func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
+`func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -878,20 +878,20 @@ HasSearchDomains returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
+`func (o *CreateNetworksRequestNetwork) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
+`func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
+`func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -1013,20 +1013,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *CreateNetworksRequestNetwork) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *CreateNetworksRequestNetwork) GetTenants() []CreateNetworksRequestNetworkTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *CreateNetworksRequestNetwork) GetTenantsOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *CreateNetworksRequestNetwork) GetTenantsOk() (*[]CreateNetworksRequestNetworkTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *CreateNetworksRequestNetwork) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *CreateNetworksRequestNetwork) SetTenants(v []CreateNetworksRequestNetworkTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 

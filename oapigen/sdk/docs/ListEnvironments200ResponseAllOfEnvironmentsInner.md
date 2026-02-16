@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**ListEnvironments200ResponseAllOfEnvironmentsInnerAccount**](ListEnvironments200ResponseAllOfEnvironmentsInnerAccount.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -61,20 +61,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccount() ListEnvironments200ResponseAllOfEnvironmentsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetAccountOk() (*ListEnvironments200ResponseAllOfEnvironmentsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccount(v ListEnvironments200ResponseAllOfEnvironmentsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -84,16 +84,6 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
-### SetAccountNil
-
-`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) SetAccountNil(b bool)`
-
- SetAccountNil sets the value for Account to be an explicit nil
-
-### UnsetAccount
-`func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) UnsetAccount()`
-
-UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetCode
 
 `func (o *ListEnvironments200ResponseAllOfEnvironmentsInner) GetCode() string`

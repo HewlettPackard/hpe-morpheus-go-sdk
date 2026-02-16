@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## DeleteDatastores
 
-> DeleteClusterDatastore200Response DeleteDatastores(ctx, id).Execute()
+> DeleteDatastores200Response DeleteDatastores(ctx, id).Execute()
 
 Delete a Datastore
 
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatastoresAPI.DeleteDatastores``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteDatastores`: DeleteClusterDatastore200Response
+	// response from `DeleteDatastores`: DeleteDatastores200Response
 	fmt.Fprintf(os.Stdout, "Response from `DatastoresAPI.DeleteDatastores`: %v\n", resp)
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteClusterDatastore200Response**](DeleteClusterDatastore200Response.md)
+[**DeleteDatastores200Response**](DeleteDatastores200Response.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDatastores
 
-> UpdateDatastores200Response UpdateDatastores(ctx, id).UpdateCloudDatastoresRequest(updateCloudDatastoresRequest).Execute()
+> UpdateDatastores200Response UpdateDatastores(ctx, id).UpdateDatastoresRequest(updateDatastoresRequest).Execute()
 
 Updates a Specified Datastore
 
@@ -314,11 +314,11 @@ import (
 
 func main() {
 	id := int64(1) // int64 | Morpheus ID of the Object being referenced
-	updateCloudDatastoresRequest := *openapiclient.NewUpdateCloudDatastoresRequest(*openapiclient.NewUpdateCloudDatastoresRequestDatastore()) // UpdateCloudDatastoresRequest |  (optional)
+	updateDatastoresRequest := *openapiclient.NewUpdateDatastoresRequest(*openapiclient.NewUpdateDatastoresRequestDatastore()) // UpdateDatastoresRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatastoresAPI.UpdateDatastores(context.Background(), id).UpdateCloudDatastoresRequest(updateCloudDatastoresRequest).Execute()
+	resp, r, err := apiClient.DatastoresAPI.UpdateDatastores(context.Background(), id).UpdateDatastoresRequest(updateDatastoresRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatastoresAPI.UpdateDatastores``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -344,7 +344,7 @@ Other parameters are passed through a pointer to a apiUpdateDatastoresRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateCloudDatastoresRequest** | [**UpdateCloudDatastoresRequest**](UpdateCloudDatastoresRequest.md) |  | 
+ **updateDatastoresRequest** | [**UpdateDatastoresRequest**](UpdateDatastoresRequest.md) |  | 
 
 ### Return type
 

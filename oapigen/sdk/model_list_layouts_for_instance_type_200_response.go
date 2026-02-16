@@ -20,9 +20,9 @@ var _ MappedNullable = &ListLayoutsForInstanceType200Response{}
 
 // ListLayoutsForInstanceType200Response struct for ListLayoutsForInstanceType200Response
 type ListLayoutsForInstanceType200Response struct {
-	InstanceTypeLayouts  []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                                `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	InstanceTypeLayouts  []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta                                      `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _ListLayoutsForInstanceType200Response ListLayoutsForInstanceType200Response
@@ -45,9 +45,9 @@ func NewListLayoutsForInstanceType200ResponseWithDefaults() *ListLayoutsForInsta
 }
 
 // GetInstanceTypeLayouts returns the InstanceTypeLayouts field value if set, zero value otherwise.
-func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayouts() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayouts() []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
-		var ret []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
+		var ret []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner
 		return ret
 	}
 	return o.InstanceTypeLayouts
@@ -55,7 +55,7 @@ func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayouts() []GetIn
 
 // GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayoutsOk() ([]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool) {
+func (o *ListLayoutsForInstanceType200Response) GetInstanceTypeLayoutsOk() ([]ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner, bool) {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ListLayoutsForInstanceType200Response) IsSetInstanceTypeLayouts() bool 
 	return false
 }
 
-// SetInstanceTypeLayouts gets a reference to the given []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
-func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
+// SetInstanceTypeLayouts gets a reference to the given []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
+func (o *ListLayoutsForInstanceType200Response) SetInstanceTypeLayouts(v []ListLayoutsForInstanceType200ResponseAllOfInstanceTypeLayoutsInner) {
 	o.InstanceTypeLayouts = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLayoutsForInstanceType200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListLayoutsForInstanceType200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListLayoutsForInstanceType200Response) GetMeta() ListActivity200Respons
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListLayoutsForInstanceType200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListLayoutsForInstanceType200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListLayoutsForInstanceType200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListLayoutsForInstanceType200Response) UnmarshalMapstructure(dat
 
 	return v, nil
 }
-
 func (o *ListLayoutsForInstanceType200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

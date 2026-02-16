@@ -367,7 +367,6 @@ func (v NullableListNetworks200ResponseAllOfNetworksInnerConfig) UnmarshalMapstr
 
 	return v, nil
 }
-
 func (o *ListNetworks200ResponseAllOfNetworksInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

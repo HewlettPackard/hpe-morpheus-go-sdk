@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Instance** | [**AddInstanceRequestInstance**](AddInstanceRequestInstance.md) |  | 
 **ZoneId** | Pointer to **int64** | The Cloud ID to provision the instance onto. | [optional] 
-**Evars** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
+**Evars** | Pointer to [**[]AddInstanceRequestEvarsInner**](AddInstanceRequestEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
 **Copies** | Pointer to **int64** | Number of copies to provision. | [optional] [default to 1]
 **LayoutSize** | Pointer to **int64** | Apply a multiply factor of containers/vms within the instance. | [optional] [default to 1]
 **ServicePlanOptions** | Pointer to **map[string]interface{}** | Map of custom options depending on selected service plan. | [optional] 
 **SecurityGroups** | Pointer to **[]map[string]interface{}** | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
-**Volumes** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
-**Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig.md) |  | 
+**Volumes** | Pointer to [**[]AddInstanceRequestVolumesInner**](AddInstanceRequestVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces1**](InstancesNetworkInterfaces1.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**Config** | [**AddInstanceRequestConfig**](AddInstanceRequestConfig.md) |  | 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**Metadata** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
+**Tags** | Pointer to [**[]AddInstanceRequestTagsInner**](AddInstanceRequestTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Metadata** | Pointer to [**[]AddInstanceRequestMetadataInner**](AddInstanceRequestMetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
 **Ports** | Pointer to [**[]AddInstanceRequestPortsInner**](AddInstanceRequestPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewAddInstanceRequest
 
-`func NewAddInstanceRequest(instance AddInstanceRequestInstance, config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, ) *AddInstanceRequest`
+`func NewAddInstanceRequest(instance AddInstanceRequestInstance, config AddInstanceRequestConfig, ) *AddInstanceRequest`
 
 NewAddInstanceRequest instantiates a new AddInstanceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -87,20 +87,20 @@ HasZoneId returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *AddInstanceRequest) GetEvars() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *AddInstanceRequest) GetEvars() []AddInstanceRequestEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *AddInstanceRequest) GetEvarsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *AddInstanceRequest) GetEvarsOk() (*[]AddInstanceRequestEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *AddInstanceRequest) SetEvars(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *AddInstanceRequest) SetEvars(v []AddInstanceRequestEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -222,20 +222,20 @@ HasSecurityGroups returns a boolean if a field has been set.
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetVolumes
 
-`func (o *AddInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner`
+`func (o *AddInstanceRequest) GetVolumes() []AddInstanceRequestVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *AddInstanceRequest) GetVolumesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool)`
+`func (o *AddInstanceRequest) GetVolumesOk() (*[]AddInstanceRequestVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *AddInstanceRequest) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)`
+`func (o *AddInstanceRequest) SetVolumes(v []AddInstanceRequestVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -247,20 +247,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *AddInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces`
+`func (o *AddInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces1`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *AddInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces, bool)`
+`func (o *AddInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces1, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *AddInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces)`
+`func (o *AddInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces1)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 
@@ -272,20 +272,20 @@ HasNetworkInterfaces returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *AddInstanceRequest) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig`
+`func (o *AddInstanceRequest) GetConfig() AddInstanceRequestConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *AddInstanceRequest) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, bool)`
+`func (o *AddInstanceRequest) GetConfigOk() (*AddInstanceRequestConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *AddInstanceRequest) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig)`
+`func (o *AddInstanceRequest) SetConfig(v AddInstanceRequestConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -317,20 +317,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *AddInstanceRequest) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *AddInstanceRequest) GetTags() []AddInstanceRequestTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *AddInstanceRequest) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *AddInstanceRequest) GetTagsOk() (*[]AddInstanceRequestTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *AddInstanceRequest) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *AddInstanceRequest) SetTags(v []AddInstanceRequestTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -342,20 +342,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *AddInstanceRequest) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *AddInstanceRequest) GetMetadata() []AddInstanceRequestMetadataInner`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *AddInstanceRequest) GetMetadataOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *AddInstanceRequest) GetMetadataOk() (*[]AddInstanceRequestMetadataInner, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *AddInstanceRequest) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *AddInstanceRequest) SetMetadata(v []AddInstanceRequestMetadataInner)`
 
 SetMetadata sets Metadata field to given value.
 

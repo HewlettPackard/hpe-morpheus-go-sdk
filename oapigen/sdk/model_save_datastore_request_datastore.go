@@ -28,14 +28,14 @@ type SaveDatastoreRequestDatastore struct {
 	// Type of the resource this datastore is associated with, can be 'ComputeZone' ('Cloud') or 'ComputeServerGroup' ('Cluster')
 	RefType string `json:"refType"`
 	// The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup
-	RefId         int64                                        `json:"refId"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
+	RefId         int64                                       `json:"refId"`
+	StorageServer *SaveDatastoreRequestDatastoreStorageServer `json:"storageServer,omitempty"`
 	// Visibility level of the datastore, can be 'private' or 'public'. If not specified, defaults to 'private'.
-	Visibility          *string                                                  `json:"visibility,omitempty"`
-	Active              *bool                                                    `json:"active,omitempty"`
-	DefaultStore        *bool                                                    `json:"defaultStore,omitempty"`
-	TenantPermissions   *SaveDatastoreRequestDatastoreTenantPermissions          `json:"tenantPermissions,omitempty"`
-	ResourcePermissions *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Visibility          *string                                           `json:"visibility,omitempty"`
+	Active              *bool                                             `json:"active,omitempty"`
+	DefaultStore        *bool                                             `json:"defaultStore,omitempty"`
+	TenantPermissions   *SaveDatastoreRequestDatastoreTenantPermissions   `json:"tenantPermissions,omitempty"`
+	ResourcePermissions *SaveDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
 	// List of datastores associated with this datastore, for use with vSphere clouds.
 	Datastores           []map[string]interface{} `json:"datastores,omitempty"`
 	AdditionalProperties map[string]interface{}   `json:",remain"`
@@ -186,9 +186,9 @@ func (o *SaveDatastoreRequestDatastore) SetRefId(v int64) {
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *SaveDatastoreRequestDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveDatastoreRequestDatastore) GetStorageServer() SaveDatastoreRequestDatastoreStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveDatastoreRequestDatastoreStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -196,7 +196,7 @@ func (o *SaveDatastoreRequestDatastore) GetStorageServer() GetAlerts200ResponseA
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveDatastoreRequestDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveDatastoreRequestDatastore) GetStorageServerOk() (*SaveDatastoreRequestDatastoreStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -212,8 +212,8 @@ func (o *SaveDatastoreRequestDatastore) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *SaveDatastoreRequestDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given SaveDatastoreRequestDatastoreStorageServer and assigns it to the StorageServer field.
+func (o *SaveDatastoreRequestDatastore) SetStorageServer(v SaveDatastoreRequestDatastoreStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -346,9 +346,9 @@ func (o *SaveDatastoreRequestDatastore) SetTenantPermissions(v SaveDatastoreRequ
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *SaveDatastoreRequestDatastore) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions {
+func (o *SaveDatastoreRequestDatastore) GetResourcePermissions() SaveDatastoreRequestDatastoreResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveClusterDatastoreRequestDatastoreResourcePermissions
+		var ret SaveDatastoreRequestDatastoreResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -356,7 +356,7 @@ func (o *SaveDatastoreRequestDatastore) GetResourcePermissions() SaveClusterData
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveDatastoreRequestDatastore) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *SaveDatastoreRequestDatastore) GetResourcePermissionsOk() (*SaveDatastoreRequestDatastoreResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -372,8 +372,8 @@ func (o *SaveDatastoreRequestDatastore) IsSetResourcePermissions() bool {
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *SaveDatastoreRequestDatastore) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given SaveDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *SaveDatastoreRequestDatastore) SetResourcePermissions(v SaveDatastoreRequestDatastoreResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 
@@ -497,7 +497,6 @@ func (v NullableSaveDatastoreRequestDatastore) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *SaveDatastoreRequestDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

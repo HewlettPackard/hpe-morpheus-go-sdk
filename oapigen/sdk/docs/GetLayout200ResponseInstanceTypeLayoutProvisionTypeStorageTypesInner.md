@@ -1,0 +1,248 @@
+# GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Code** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**DisplayOrder** | Pointer to **int64** |  | [optional] 
+**DefaultType** | Pointer to **bool** |  | [optional] 
+**CustomLabel** | Pointer to **bool** |  | [optional] 
+**CustomSize** | Pointer to **bool** |  | [optional] 
+**CustomSizeOptions** | Pointer to **NullableString** |  | [optional] 
+
+## Methods
+
+### NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner
+
+`func NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner() *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner`
+
+NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner instantiates a new GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInnerWithDefaults
+
+`func NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInnerWithDefaults() *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner`
+
+NewGetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInnerWithDefaults instantiates a new GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetCode
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCode() string`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCodeOk() (*string, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCode(v string)`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetDisplayOrder
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetDisplayOrder() int64`
+
+GetDisplayOrder returns the DisplayOrder field if non-nil, zero value otherwise.
+
+### GetDisplayOrderOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetDisplayOrderOk() (*int64, bool)`
+
+GetDisplayOrderOk returns a tuple with the DisplayOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayOrder
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetDisplayOrder(v int64)`
+
+SetDisplayOrder sets DisplayOrder field to given value.
+
+### HasDisplayOrder
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasDisplayOrder() bool`
+
+HasDisplayOrder returns a boolean if a field has been set.
+
+### GetDefaultType
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetDefaultType() bool`
+
+GetDefaultType returns the DefaultType field if non-nil, zero value otherwise.
+
+### GetDefaultTypeOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetDefaultTypeOk() (*bool, bool)`
+
+GetDefaultTypeOk returns a tuple with the DefaultType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultType
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetDefaultType(v bool)`
+
+SetDefaultType sets DefaultType field to given value.
+
+### HasDefaultType
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasDefaultType() bool`
+
+HasDefaultType returns a boolean if a field has been set.
+
+### GetCustomLabel
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomLabel() bool`
+
+GetCustomLabel returns the CustomLabel field if non-nil, zero value otherwise.
+
+### GetCustomLabelOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomLabelOk() (*bool, bool)`
+
+GetCustomLabelOk returns a tuple with the CustomLabel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomLabel
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomLabel(v bool)`
+
+SetCustomLabel sets CustomLabel field to given value.
+
+### HasCustomLabel
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasCustomLabel() bool`
+
+HasCustomLabel returns a boolean if a field has been set.
+
+### GetCustomSize
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomSize() bool`
+
+GetCustomSize returns the CustomSize field if non-nil, zero value otherwise.
+
+### GetCustomSizeOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomSizeOk() (*bool, bool)`
+
+GetCustomSizeOk returns a tuple with the CustomSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomSize
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomSize(v bool)`
+
+SetCustomSize sets CustomSize field to given value.
+
+### HasCustomSize
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasCustomSize() bool`
+
+HasCustomSize returns a boolean if a field has been set.
+
+### GetCustomSizeOptions
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomSizeOptions() string`
+
+GetCustomSizeOptions returns the CustomSizeOptions field if non-nil, zero value otherwise.
+
+### GetCustomSizeOptionsOk
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) GetCustomSizeOptionsOk() (*string, bool)`
+
+GetCustomSizeOptionsOk returns a tuple with the CustomSizeOptions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomSizeOptions
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomSizeOptions(v string)`
+
+SetCustomSizeOptions sets CustomSizeOptions field to given value.
+
+### HasCustomSizeOptions
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) HasCustomSizeOptions() bool`
+
+HasCustomSizeOptions returns a boolean if a field has been set.
+
+### SetCustomSizeOptionsNil
+
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) SetCustomSizeOptionsNil(b bool)`
+
+ SetCustomSizeOptionsNil sets the value for CustomSizeOptions to be an explicit nil
+
+### UnsetCustomSizeOptions
+`func (o *GetLayout200ResponseInstanceTypeLayoutProvisionTypeStorageTypesInner) UnsetCustomSizeOptions()`
+
+UnsetCustomSizeOptions ensures that no value is present for CustomSizeOptions, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

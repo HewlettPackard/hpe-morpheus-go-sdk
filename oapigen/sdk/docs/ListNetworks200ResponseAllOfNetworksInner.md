@@ -64,10 +64,10 @@ Name | Type | Description | Notes
 **AssignPublicIp** | Pointer to **bool** |  | [optional] 
 **NoProxy** | Pointer to **NullableString** |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** |  | [optional] 
-**ZonePool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**ZonePool** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerZonePool**](ListNetworks200ResponseAllOfNetworksInnerZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerConfig**](ListNetworks200ResponseAllOfNetworksInnerConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Tenants** | Pointer to [**[]ListNetworks200ResponseAllOfNetworksInnerTenantsInner**](ListNetworks200ResponseAllOfNetworksInnerTenantsInner.md) |  | [optional] 
 **ResourcePermission** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerResourcePermission**](ListNetworks200ResponseAllOfNetworksInnerResourcePermission.md) |  | [optional] 
 
 ## Methods
@@ -1961,20 +1961,20 @@ HasApplianceUrlProxyBypass returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePool() ListNetworks200ResponseAllOfNetworksInnerZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePoolOk() (*ListNetworks200ResponseAllOfNetworksInnerZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) SetZonePool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetZonePool(v ListNetworks200ResponseAllOfNetworksInnerZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -2036,20 +2036,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenants() []ListNetworks200ResponseAllOfNetworksInnerTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenantsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenantsOk() (*[]ListNetworks200ResponseAllOfNetworksInnerTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ListNetworks200ResponseAllOfNetworksInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListNetworks200ResponseAllOfNetworksInner) SetTenants(v []ListNetworks200ResponseAllOfNetworksInnerTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 

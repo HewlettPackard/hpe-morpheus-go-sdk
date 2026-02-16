@@ -4,6 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplianceUrl** | Pointer to **string** | The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance. | [optional] 
+**DatacenterName** | Pointer to **string** | A custom name used to reference the datacenter for the cloud. | [optional] 
+**ExternalId** | Pointer to **NullableString** | The external id of the cloud | [optional] 
+**InventoryLevel** | Pointer to **string** | Whether to import existing virtual machines. | [optional] 
+**ConsoleKeymap** | Pointer to **string** | The keyboard layout to use for the console | [optional] 
 **ApiUrl** | **string** | The SDK URL of the vCenter server. | 
 **ApiVersion** | **string** | The SDK version of the vCenter server. | 
 **Datacenter** | **string** | The vSphere datacenter to add. | 
@@ -39,6 +44,141 @@ will change when the set of required properties is changed
 NewCloudCreateConfigVsphereWithDefaults instantiates a new CloudCreateConfigVsphere object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplianceUrl
+
+`func (o *CloudCreateConfigVsphere) GetApplianceUrl() string`
+
+GetApplianceUrl returns the ApplianceUrl field if non-nil, zero value otherwise.
+
+### GetApplianceUrlOk
+
+`func (o *CloudCreateConfigVsphere) GetApplianceUrlOk() (*string, bool)`
+
+GetApplianceUrlOk returns a tuple with the ApplianceUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplianceUrl
+
+`func (o *CloudCreateConfigVsphere) SetApplianceUrl(v string)`
+
+SetApplianceUrl sets ApplianceUrl field to given value.
+
+### HasApplianceUrl
+
+`func (o *CloudCreateConfigVsphere) HasApplianceUrl() bool`
+
+HasApplianceUrl returns a boolean if a field has been set.
+
+### GetDatacenterName
+
+`func (o *CloudCreateConfigVsphere) GetDatacenterName() string`
+
+GetDatacenterName returns the DatacenterName field if non-nil, zero value otherwise.
+
+### GetDatacenterNameOk
+
+`func (o *CloudCreateConfigVsphere) GetDatacenterNameOk() (*string, bool)`
+
+GetDatacenterNameOk returns a tuple with the DatacenterName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatacenterName
+
+`func (o *CloudCreateConfigVsphere) SetDatacenterName(v string)`
+
+SetDatacenterName sets DatacenterName field to given value.
+
+### HasDatacenterName
+
+`func (o *CloudCreateConfigVsphere) HasDatacenterName() bool`
+
+HasDatacenterName returns a boolean if a field has been set.
+
+### GetExternalId
+
+`func (o *CloudCreateConfigVsphere) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *CloudCreateConfigVsphere) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *CloudCreateConfigVsphere) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *CloudCreateConfigVsphere) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *CloudCreateConfigVsphere) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CloudCreateConfigVsphere) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+### GetInventoryLevel
+
+`func (o *CloudCreateConfigVsphere) GetInventoryLevel() string`
+
+GetInventoryLevel returns the InventoryLevel field if non-nil, zero value otherwise.
+
+### GetInventoryLevelOk
+
+`func (o *CloudCreateConfigVsphere) GetInventoryLevelOk() (*string, bool)`
+
+GetInventoryLevelOk returns a tuple with the InventoryLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInventoryLevel
+
+`func (o *CloudCreateConfigVsphere) SetInventoryLevel(v string)`
+
+SetInventoryLevel sets InventoryLevel field to given value.
+
+### HasInventoryLevel
+
+`func (o *CloudCreateConfigVsphere) HasInventoryLevel() bool`
+
+HasInventoryLevel returns a boolean if a field has been set.
+
+### GetConsoleKeymap
+
+`func (o *CloudCreateConfigVsphere) GetConsoleKeymap() string`
+
+GetConsoleKeymap returns the ConsoleKeymap field if non-nil, zero value otherwise.
+
+### GetConsoleKeymapOk
+
+`func (o *CloudCreateConfigVsphere) GetConsoleKeymapOk() (*string, bool)`
+
+GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsoleKeymap
+
+`func (o *CloudCreateConfigVsphere) SetConsoleKeymap(v string)`
+
+SetConsoleKeymap sets ConsoleKeymap field to given value.
+
+### HasConsoleKeymap
+
+`func (o *CloudCreateConfigVsphere) HasConsoleKeymap() bool`
+
+HasConsoleKeymap returns a boolean if a field has been set.
 
 ### GetApiUrl
 

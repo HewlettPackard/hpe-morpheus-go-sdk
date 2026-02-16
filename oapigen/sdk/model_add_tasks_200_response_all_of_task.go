@@ -21,25 +21,25 @@ var _ MappedNullable = &AddTasks200ResponseAllOfTask{}
 
 // AddTasks200ResponseAllOfTask struct for AddTasks200ResponseAllOfTask
 type AddTasks200ResponseAllOfTask struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	AccountId            *int64                                                      `json:"accountId,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Code                 NullableString                                              `json:"code,omitempty"`
-	TaskType             *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"taskType,omitempty"`
-	Labels               []string                                                    `json:"labels,omitempty"`
-	Visibility           *string                                                     `json:"visibility,omitempty"`
-	TaskOptions          *AddTasks200ResponseAllOfTaskTaskOptions                    `json:"taskOptions,omitempty"`
-	File                 *AddTasks200ResponseAllOfTaskFile                           `json:"file,omitempty"`
-	ResultType           NullableString                                              `json:"resultType,omitempty"`
-	ExecuteTarget        *string                                                     `json:"executeTarget,omitempty"`
-	Retryable            *bool                                                       `json:"retryable,omitempty"`
-	RetryCount           *int64                                                      `json:"retryCount,omitempty"`
-	RetryDelaySeconds    *int64                                                      `json:"retryDelaySeconds,omitempty"`
-	AllowCustomConfig    *bool                                                       `json:"allowCustomConfig,omitempty"`
-	Credential           *ListClouds200ResponseAllOfZonesInnerCredentialAnyOf        `json:"credential,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                   `json:"id,omitempty"`
+	AccountId            *int64                                   `json:"accountId,omitempty"`
+	Name                 *string                                  `json:"name,omitempty"`
+	Code                 NullableString                           `json:"code,omitempty"`
+	TaskType             *AddTasks200ResponseAllOfTaskTaskType    `json:"taskType,omitempty"`
+	Labels               []string                                 `json:"labels,omitempty"`
+	Visibility           *string                                  `json:"visibility,omitempty"`
+	TaskOptions          *AddTasks200ResponseAllOfTaskTaskOptions `json:"taskOptions,omitempty"`
+	File                 *AddTasks200ResponseAllOfTaskFile        `json:"file,omitempty"`
+	ResultType           NullableString                           `json:"resultType,omitempty"`
+	ExecuteTarget        *string                                  `json:"executeTarget,omitempty"`
+	Retryable            *bool                                    `json:"retryable,omitempty"`
+	RetryCount           *int64                                   `json:"retryCount,omitempty"`
+	RetryDelaySeconds    *int64                                   `json:"retryDelaySeconds,omitempty"`
+	AllowCustomConfig    *bool                                    `json:"allowCustomConfig,omitempty"`
+	Credential           *AddTasks200ResponseAllOfTaskCredential  `json:"credential,omitempty"`
+	DateCreated          *time.Time                               `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                               `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _AddTasks200ResponseAllOfTask AddTasks200ResponseAllOfTask
@@ -201,9 +201,9 @@ func (o *AddTasks200ResponseAllOfTask) UnsetCode() {
 }
 
 // GetTaskType returns the TaskType field value if set, zero value otherwise.
-func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *AddTasks200ResponseAllOfTask) GetTaskType() AddTasks200ResponseAllOfTaskTaskType {
 	if o == nil || IsNil(o.TaskType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret AddTasks200ResponseAllOfTaskTaskType
 		return ret
 	}
 	return *o.TaskType
@@ -211,7 +211,7 @@ func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListBackupSettings200Respon
 
 // GetTaskTypeOk returns a tuple with the TaskType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*AddTasks200ResponseAllOfTaskTaskType, bool) {
 	if o == nil || IsNil(o.TaskType) {
 		return nil, false
 	}
@@ -227,8 +227,8 @@ func (o *AddTasks200ResponseAllOfTask) IsSetTaskType() bool {
 	return false
 }
 
-// SetTaskType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the TaskType field.
-func (o *AddTasks200ResponseAllOfTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetTaskType gets a reference to the given AddTasks200ResponseAllOfTaskTaskType and assigns it to the TaskType field.
+func (o *AddTasks200ResponseAllOfTask) SetTaskType(v AddTasks200ResponseAllOfTaskTaskType) {
 	o.TaskType = &v
 }
 
@@ -564,9 +564,9 @@ func (o *AddTasks200ResponseAllOfTask) SetAllowCustomConfig(v bool) {
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *AddTasks200ResponseAllOfTask) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf {
+func (o *AddTasks200ResponseAllOfTask) GetCredential() AddTasks200ResponseAllOfTaskCredential {
 	if o == nil || IsNil(o.Credential) {
-		var ret ListClouds200ResponseAllOfZonesInnerCredentialAnyOf
+		var ret AddTasks200ResponseAllOfTaskCredential
 		return ret
 	}
 	return *o.Credential
@@ -574,7 +574,7 @@ func (o *AddTasks200ResponseAllOfTask) GetCredential() ListClouds200ResponseAllO
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool) {
+func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*AddTasks200ResponseAllOfTaskCredential, bool) {
 	if o == nil || IsNil(o.Credential) {
 		return nil, false
 	}
@@ -590,8 +590,8 @@ func (o *AddTasks200ResponseAllOfTask) IsSetCredential() bool {
 	return false
 }
 
-// SetCredential gets a reference to the given ListClouds200ResponseAllOfZonesInnerCredentialAnyOf and assigns it to the Credential field.
-func (o *AddTasks200ResponseAllOfTask) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf) {
+// SetCredential gets a reference to the given AddTasks200ResponseAllOfTaskCredential and assigns it to the Credential field.
+func (o *AddTasks200ResponseAllOfTask) SetCredential(v AddTasks200ResponseAllOfTaskCredential) {
 	o.Credential = &v
 }
 
@@ -775,7 +775,6 @@ func (v NullableAddTasks200ResponseAllOfTask) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
-
 func (o *AddTasks200ResponseAllOfTask) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

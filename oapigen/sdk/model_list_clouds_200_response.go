@@ -21,7 +21,7 @@ var _ MappedNullable = &ListClouds200Response{}
 // ListClouds200Response struct for ListClouds200Response
 type ListClouds200Response struct {
 	Zones                []ListClouds200ResponseAllOfZonesInner `json:"zones,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta      `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta        `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                 `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListClouds200Response) SetZones(v []ListClouds200ResponseAllOfZonesInne
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClouds200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListClouds200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListClouds200Response) GetMeta() ListActivity200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListClouds200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListClouds200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClouds200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListClouds200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListClouds200Response) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
-
 func (o *ListClouds200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

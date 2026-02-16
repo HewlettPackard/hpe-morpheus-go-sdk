@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Task** | Pointer to [**AddTasks200ResponseAllOfTask**](AddTasks200ResponseAllOfTask.md) |  | [optional] 
+**Task** | Pointer to [**GetTasks200ResponseAllOfTask**](GetTasks200ResponseAllOfTask.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTask
 
-`func (o *GetTasks200Response) GetTask() AddTasks200ResponseAllOfTask`
+`func (o *GetTasks200Response) GetTask() GetTasks200ResponseAllOfTask`
 
 GetTask returns the Task field if non-nil, zero value otherwise.
 
 ### GetTaskOk
 
-`func (o *GetTasks200Response) GetTaskOk() (*AddTasks200ResponseAllOfTask, bool)`
+`func (o *GetTasks200Response) GetTaskOk() (*GetTasks200ResponseAllOfTask, bool)`
 
 GetTaskOk returns a tuple with the Task field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTask
 
-`func (o *GetTasks200Response) SetTask(v AddTasks200ResponseAllOfTask)`
+`func (o *GetTasks200Response) SetTask(v GetTasks200ResponseAllOfTask)`
 
 SetTask sets Task field to given value.
 

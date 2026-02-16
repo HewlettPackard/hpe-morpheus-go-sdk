@@ -67,11 +67,11 @@ type CreateNetworksRequestNetwork struct {
 	// DHCP Server enabled network
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	// IPv6 DHCP Server enabled network
-	DhcpServerIPv6 *bool                                                   `json:"dhcpServerIPv6,omitempty"`
-	NetworkDomain  *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
+	DhcpServerIPv6 *bool                                      `json:"dhcpServerIPv6,omitempty"`
+	NetworkDomain  *CreateNetworksRequestNetworkNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string                                                `json:"searchDomains,omitempty"`
-	NetworkProxy  *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                                   `json:"searchDomains,omitempty"`
+	NetworkProxy  *CreateNetworksRequestNetworkNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
@@ -80,7 +80,7 @@ type CreateNetworksRequestNetwork struct {
 	Visibility *string                             `json:"visibility,omitempty"`
 	Config     *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
+	Tenants              []CreateNetworksRequestNetworkTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermission   *CreateNetworksRequestNetworkResourcePermission `json:"resourcePermission,omitempty"`
 	AdditionalProperties map[string]interface{}                          `json:",remain"`
 }
@@ -1062,9 +1062,9 @@ func (o *CreateNetworksRequestNetwork) SetDhcpServerIPv6(v bool) {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetwork) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain {
+func (o *CreateNetworksRequestNetwork) GetNetworkDomain() CreateNetworksRequestNetworkNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkDomain
+		var ret CreateNetworksRequestNetworkNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -1072,7 +1072,7 @@ func (o *CreateNetworksRequestNetwork) GetNetworkDomain() ListNetworks200Respons
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool) {
+func (o *CreateNetworksRequestNetwork) GetNetworkDomainOk() (*CreateNetworksRequestNetworkNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -1088,8 +1088,8 @@ func (o *CreateNetworksRequestNetwork) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkDomain and assigns it to the NetworkDomain field.
-func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain) {
+// SetNetworkDomain gets a reference to the given CreateNetworksRequestNetworkNetworkDomain and assigns it to the NetworkDomain field.
+func (o *CreateNetworksRequestNetwork) SetNetworkDomain(v CreateNetworksRequestNetworkNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -1126,9 +1126,9 @@ func (o *CreateNetworksRequestNetwork) SetSearchDomains(v string) {
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetwork) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
+func (o *CreateNetworksRequestNetwork) GetNetworkProxy() CreateNetworksRequestNetworkNetworkProxy {
 	if o == nil || IsNil(o.NetworkProxy) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
+		var ret CreateNetworksRequestNetworkNetworkProxy
 		return ret
 	}
 	return *o.NetworkProxy
@@ -1136,7 +1136,7 @@ func (o *CreateNetworksRequestNetwork) GetNetworkProxy() ListNetworks200Response
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool) {
+func (o *CreateNetworksRequestNetwork) GetNetworkProxyOk() (*CreateNetworksRequestNetworkNetworkProxy, bool) {
 	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
@@ -1152,8 +1152,8 @@ func (o *CreateNetworksRequestNetwork) IsSetNetworkProxy() bool {
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkProxy and assigns it to the NetworkProxy field.
-func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) {
+// SetNetworkProxy gets a reference to the given CreateNetworksRequestNetworkNetworkProxy and assigns it to the NetworkProxy field.
+func (o *CreateNetworksRequestNetwork) SetNetworkProxy(v CreateNetworksRequestNetworkNetworkProxy) {
 	o.NetworkProxy = &v
 }
 
@@ -1297,9 +1297,9 @@ func (o *CreateNetworksRequestNetwork) SetConfig(v CreateNetworksRequestNetworkC
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *CreateNetworksRequestNetwork) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *CreateNetworksRequestNetwork) GetTenants() []CreateNetworksRequestNetworkTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []CreateNetworksRequestNetworkTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -1307,7 +1307,7 @@ func (o *CreateNetworksRequestNetwork) GetTenants() []GetAlerts200ResponseAllOfC
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateNetworksRequestNetwork) GetTenantsOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *CreateNetworksRequestNetwork) GetTenantsOk() ([]CreateNetworksRequestNetworkTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1323,8 +1323,8 @@ func (o *CreateNetworksRequestNetwork) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Tenants field.
-func (o *CreateNetworksRequestNetwork) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetTenants gets a reference to the given []CreateNetworksRequestNetworkTenantsInner and assigns it to the Tenants field.
+func (o *CreateNetworksRequestNetwork) SetTenants(v []CreateNetworksRequestNetworkTenantsInner) {
 	o.Tenants = v
 }
 
@@ -1527,7 +1527,6 @@ func (v NullableCreateNetworksRequestNetwork) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
-
 func (o *CreateNetworksRequestNetwork) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

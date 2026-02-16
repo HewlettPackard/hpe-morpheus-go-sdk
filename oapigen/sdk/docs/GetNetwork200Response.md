@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Network** | Pointer to [**ListNetworks200ResponseAllOfNetworksInner**](ListNetworks200ResponseAllOfNetworksInner.md) |  | [optional] 
+**Network** | Pointer to [**GetNetwork200ResponseNetwork**](GetNetwork200ResponseNetwork.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetwork
 
-`func (o *GetNetwork200Response) GetNetwork() ListNetworks200ResponseAllOfNetworksInner`
+`func (o *GetNetwork200Response) GetNetwork() GetNetwork200ResponseNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *GetNetwork200Response) GetNetworkOk() (*ListNetworks200ResponseAllOfNetworksInner, bool)`
+`func (o *GetNetwork200Response) GetNetworkOk() (*GetNetwork200ResponseNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *GetNetwork200Response) SetNetwork(v ListNetworks200ResponseAllOfNetworksInner)`
+`func (o *GetNetwork200Response) SetNetwork(v GetNetwork200ResponseNetwork)`
 
 SetNetwork sets Network field to given value.
 

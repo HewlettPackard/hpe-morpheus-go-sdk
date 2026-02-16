@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateAlerts200Response{}
 
 // UpdateAlerts200Response struct for UpdateAlerts200Response
 type UpdateAlerts200Response struct {
-	Success              *bool                                  `json:"success,omitempty"`
-	Alert                *ListAlerts200ResponseAllOfAlertsInner `json:"alert,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Success              *bool                              `json:"success,omitempty"`
+	Alert                *UpdateAlerts200ResponseAllOfAlert `json:"alert,omitempty"`
+	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
 type _UpdateAlerts200Response UpdateAlerts200Response
@@ -77,9 +77,9 @@ func (o *UpdateAlerts200Response) SetSuccess(v bool) {
 }
 
 // GetAlert returns the Alert field value if set, zero value otherwise.
-func (o *UpdateAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInner {
+func (o *UpdateAlerts200Response) GetAlert() UpdateAlerts200ResponseAllOfAlert {
 	if o == nil || IsNil(o.Alert) {
-		var ret ListAlerts200ResponseAllOfAlertsInner
+		var ret UpdateAlerts200ResponseAllOfAlert
 		return ret
 	}
 	return *o.Alert
@@ -87,7 +87,7 @@ func (o *UpdateAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInn
 
 // GetAlertOk returns a tuple with the Alert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateAlerts200Response) GetAlertOk() (*ListAlerts200ResponseAllOfAlertsInner, bool) {
+func (o *UpdateAlerts200Response) GetAlertOk() (*UpdateAlerts200ResponseAllOfAlert, bool) {
 	if o == nil || IsNil(o.Alert) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *UpdateAlerts200Response) IsSetAlert() bool {
 	return false
 }
 
-// SetAlert gets a reference to the given ListAlerts200ResponseAllOfAlertsInner and assigns it to the Alert field.
-func (o *UpdateAlerts200Response) SetAlert(v ListAlerts200ResponseAllOfAlertsInner) {
+// SetAlert gets a reference to the given UpdateAlerts200ResponseAllOfAlert and assigns it to the Alert field.
+func (o *UpdateAlerts200Response) SetAlert(v UpdateAlerts200ResponseAllOfAlert) {
 	o.Alert = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableUpdateAlerts200Response) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
-
 func (o *UpdateAlerts200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

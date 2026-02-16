@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **bool** | Set to true to grant access to all groups | [optional] 
-**Sites** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of objects identifying groups with access | [optional] 
+**Sites** | Pointer to [**[]AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner**](AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner.md) | Array of objects identifying groups with access | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSites() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSites() []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSitesOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) GetSitesOk() (*[]AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetSites(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissions) SetSites(v []AddLayoutRequestInstanceTypeLayoutPermissionsResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 

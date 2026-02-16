@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Policy** | Pointer to [**AddPolicies200ResponseAllOfPolicy**](AddPolicies200ResponseAllOfPolicy.md) |  | [optional] 
+**Policy** | Pointer to [**GetPolicies200ResponseAllOfPolicy**](GetPolicies200ResponseAllOfPolicy.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPolicy
 
-`func (o *GetPolicies200Response) GetPolicy() AddPolicies200ResponseAllOfPolicy`
+`func (o *GetPolicies200Response) GetPolicy() GetPolicies200ResponseAllOfPolicy`
 
 GetPolicy returns the Policy field if non-nil, zero value otherwise.
 
 ### GetPolicyOk
 
-`func (o *GetPolicies200Response) GetPolicyOk() (*AddPolicies200ResponseAllOfPolicy, bool)`
+`func (o *GetPolicies200Response) GetPolicyOk() (*GetPolicies200ResponseAllOfPolicy, bool)`
 
 GetPolicyOk returns a tuple with the Policy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicy
 
-`func (o *GetPolicies200Response) SetPolicy(v AddPolicies200ResponseAllOfPolicy)`
+`func (o *GetPolicies200Response) SetPolicy(v GetPolicies200ResponseAllOfPolicy)`
 
 SetPolicy sets Policy field to given value.
 

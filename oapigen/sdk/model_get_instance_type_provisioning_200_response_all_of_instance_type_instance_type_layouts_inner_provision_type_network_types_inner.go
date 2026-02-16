@@ -43,7 +43,7 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsI
 	HasCidr                *bool                                                                                                                                `json:"hasCidr,omitempty"`
 	HasStaticRoutes        *bool                                                                                                                                `json:"hasStaticRoutes,omitempty"`
 	HasFloatingIps         *bool                                                                                                                                `json:"hasFloatingIps,omitempty"`
-	OptionTypes            []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                                          `json:"optionTypes,omitempty"`
+	OptionTypes            []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner      `json:"optionTypes,omitempty"`
 	RouteOptionTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner `json:"routeOptionTypes,omitempty"`
 	AdditionalProperties   map[string]interface{}                                                                                                               `json:",remain"`
 }
@@ -837,9 +837,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetOptionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -847,7 +847,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) GetOptionTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -863,8 +863,8 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayo
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) SetOptionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -1037,7 +1037,6 @@ func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceT
 
 	return v, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

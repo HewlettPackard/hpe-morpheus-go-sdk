@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200Response{}
 // ListInstances200Response struct for ListInstances200Response
 type ListInstances200Response struct {
 	Instances            []ListInstances200ResponseAllOfInstancesInner `json:"instances,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta             `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta               `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListInstances200Response) SetInstances(v []ListInstances200ResponseAllO
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListInstances200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListInstances200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListInstances200Response) GetMeta() ListActivity200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListInstances200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListInstances200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListInstances200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListInstances200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListInstances200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *ListInstances200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -21,7 +21,7 @@ var _ MappedNullable = &GetInstanceTypeProvisioning200ResponseAllOfInstanceType{
 // GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct for GetInstanceTypeProvisioning200ResponseAllOfInstanceType
 type GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
 	Id                   *int64                                                                            `json:"id,omitempty"`
-	Account              NullableListApprovals200ResponseAllOfApprovalsInnerAccount                        `json:"account,omitempty"`
+	Account              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount                   `json:"account,omitempty"`
 	Name                 *string                                                                           `json:"name,omitempty"`
 	Labels               []string                                                                          `json:"labels,omitempty"`
 	Code                 *string                                                                           `json:"code,omitempty"`
@@ -44,7 +44,7 @@ type GetInstanceTypeProvisioning200ResponseAllOfInstanceType struct {
 	Featured             *bool                                                                             `json:"featured,omitempty"`
 	Versions             []string                                                                          `json:"versions,omitempty"`
 	InstanceTypeLayouts  []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
-	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner       `json:"optionTypes,omitempty"`
+	OptionTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner         `json:"optionTypes,omitempty"`
 	EnvironmentVariables []map[string]interface{}                                                          `json:"environmentVariables,omitempty"`
 	PriceSets            []map[string]interface{}                                                          `json:"priceSets,omitempty"`
 	// Logo image URL
@@ -105,47 +105,36 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetId(v int64)
 	o.Id = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Account.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccount() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount
 		return ret
 	}
-	return *o.Account.Get()
+	return *o.Account
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetAccountOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount, bool) {
+	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
-	return o.Account.Get(), o.Account.IsSet()
+	return o.Account, true
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
+	if o != nil && !IsNil(o.Account) {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnsetAccount() {
-	o.Account.Unset()
+// SetAccount gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount and assigns it to the Account field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetAccount(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeAccount) {
+	o.Account = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -921,9 +910,9 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetInstanceTyp
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -931,7 +920,7 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypes
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) GetOptionTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -947,8 +936,8 @@ func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) IsSetOptionTyp
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner and assigns it to the OptionTypes field.
+func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) SetOptionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -1117,8 +1106,8 @@ func (o GetInstanceTypeProvisioning200ResponseAllOfInstanceType) ToMap() (map[st
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if o.Account.IsSet() {
-		toSerialize["account"] = o.Account.Get()
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -1253,7 +1242,6 @@ func (v NullableGetInstanceTypeProvisioning200ResponseAllOfInstanceType) Unmarsh
 
 	return v, nil
 }
-
 func (o *GetInstanceTypeProvisioning200ResponseAllOfInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

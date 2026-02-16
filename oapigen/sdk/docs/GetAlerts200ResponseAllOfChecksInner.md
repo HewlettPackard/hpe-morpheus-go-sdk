@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 **CheckSpec** | Pointer to **NullableString** |  | [optional] 
 **CheckType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCheckType**](GetAlerts200ResponseAllOfChecksInnerCheckType.md) |  | [optional] 
 **Config** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerConfig**](GetAlerts200ResponseAllOfChecksInnerConfig.md) |  | [optional] 
-**Container** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Container** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerContainer**](GetAlerts200ResponseAllOfChecksInnerContainer.md) |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**CreatedBy** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCreatedBy**](GetAlerts200ResponseAllOfChecksInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **EndDate** | Pointer to **NullableTime** |  | [optional] 
@@ -343,20 +343,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetContainer
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) GetContainer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *GetAlerts200ResponseAllOfChecksInner) GetContainer() GetAlerts200ResponseAllOfChecksInnerContainer`
 
 GetContainer returns the Container field if non-nil, zero value otherwise.
 
 ### GetContainerOk
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) GetContainerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *GetAlerts200ResponseAllOfChecksInner) GetContainerOk() (*GetAlerts200ResponseAllOfChecksInnerContainer, bool)`
 
 GetContainerOk returns a tuple with the Container field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainer
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) SetContainer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *GetAlerts200ResponseAllOfChecksInner) SetContainer(v GetAlerts200ResponseAllOfChecksInnerContainer)`
 
 SetContainer sets Container field to given value.
 
@@ -418,20 +418,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *GetAlerts200ResponseAllOfChecksInner) GetCreatedBy() GetAlerts200ResponseAllOfChecksInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *GetAlerts200ResponseAllOfChecksInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfChecksInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfChecksInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *GetAlerts200ResponseAllOfChecksInner) SetCreatedBy(v GetAlerts200ResponseAllOfChecksInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

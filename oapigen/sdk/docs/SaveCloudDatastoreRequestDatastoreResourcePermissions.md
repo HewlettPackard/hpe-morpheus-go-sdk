@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **MorpheusResourceId** | Pointer to **int64** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount**](SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount.md) |  | [optional] 
 **Sites** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Plans** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
@@ -237,20 +237,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccount() SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAccount(v SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount)`
 
 SetAccount sets Account field to given value.
 

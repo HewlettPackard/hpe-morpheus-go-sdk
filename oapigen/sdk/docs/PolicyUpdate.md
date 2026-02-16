@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A name for the policy | [optional] 
 **Description** | Pointer to **string** | A description for the policy | [optional] 
-**Config** | Pointer to [**UpdatePoliciesRequestPolicyConfig**](UpdatePoliciesRequestPolicyConfig.md) |  | [optional] 
+**Config** | Pointer to [**PolicyUpdateConfig**](PolicyUpdateConfig.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | Set to false to disable | [optional] [default to true]
 **RefType** | Pointer to **string** | Scope object type | [optional] 
 **RefId** | Pointer to **int64** | Scope object ID (&#x60;group&#x60;,&#x60;cloud&#x60;,&#x60;user&#x60;, etc) | [optional] 
@@ -84,20 +84,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *PolicyUpdate) GetConfig() UpdatePoliciesRequestPolicyConfig`
+`func (o *PolicyUpdate) GetConfig() PolicyUpdateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *PolicyUpdate) GetConfigOk() (*UpdatePoliciesRequestPolicyConfig, bool)`
+`func (o *PolicyUpdate) GetConfigOk() (*PolicyUpdateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *PolicyUpdate) SetConfig(v UpdatePoliciesRequestPolicyConfig)`
+`func (o *PolicyUpdate) SetConfig(v PolicyUpdateConfig)`
 
 SetConfig sets Config field to given value.
 

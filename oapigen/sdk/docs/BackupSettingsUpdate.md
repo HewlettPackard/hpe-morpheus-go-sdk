@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **CreateBackups** | Pointer to **bool** | Use this to enable / disable create backups | [optional] 
 **BackupAppliance** | Pointer to **bool** | When enabled, a Backup will be created to backup the Morpheus appliance database | [optional] 
 **UpdateExisting** | Pointer to **bool** | Use this to update existing backups with new settings | [optional] 
-**DefaultSchedule** | Pointer to [**UpdateBackupSettingsRequestBackupSettingsDefaultSchedule**](UpdateBackupSettingsRequestBackupSettingsDefaultSchedule.md) |  | [optional] 
+**DefaultSchedule** | Pointer to [**BackupSettingsUpdateDefaultSchedule**](BackupSettingsUpdateDefaultSchedule.md) |  | [optional] 
 **ClearDefaultSchedule** | Pointer to **bool** | Use this to clear existing default backup schedule | [optional] 
-**DefaultStorageBucket** | Pointer to [**UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket**](UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket.md) |  | [optional] 
+**DefaultStorageBucket** | Pointer to [**BackupSettingsUpdateDefaultStorageBucket**](BackupSettingsUpdateDefaultStorageBucket.md) |  | [optional] 
 **ClearDefaultStorageBucket** | Pointer to **bool** | Use this to clear default store bucket | [optional] 
 
 ## Methods
@@ -160,20 +160,20 @@ HasUpdateExisting returns a boolean if a field has been set.
 
 ### GetDefaultSchedule
 
-`func (o *BackupSettingsUpdate) GetDefaultSchedule() UpdateBackupSettingsRequestBackupSettingsDefaultSchedule`
+`func (o *BackupSettingsUpdate) GetDefaultSchedule() BackupSettingsUpdateDefaultSchedule`
 
 GetDefaultSchedule returns the DefaultSchedule field if non-nil, zero value otherwise.
 
 ### GetDefaultScheduleOk
 
-`func (o *BackupSettingsUpdate) GetDefaultScheduleOk() (*UpdateBackupSettingsRequestBackupSettingsDefaultSchedule, bool)`
+`func (o *BackupSettingsUpdate) GetDefaultScheduleOk() (*BackupSettingsUpdateDefaultSchedule, bool)`
 
 GetDefaultScheduleOk returns a tuple with the DefaultSchedule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultSchedule
 
-`func (o *BackupSettingsUpdate) SetDefaultSchedule(v UpdateBackupSettingsRequestBackupSettingsDefaultSchedule)`
+`func (o *BackupSettingsUpdate) SetDefaultSchedule(v BackupSettingsUpdateDefaultSchedule)`
 
 SetDefaultSchedule sets DefaultSchedule field to given value.
 
@@ -210,20 +210,20 @@ HasClearDefaultSchedule returns a boolean if a field has been set.
 
 ### GetDefaultStorageBucket
 
-`func (o *BackupSettingsUpdate) GetDefaultStorageBucket() UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket`
+`func (o *BackupSettingsUpdate) GetDefaultStorageBucket() BackupSettingsUpdateDefaultStorageBucket`
 
 GetDefaultStorageBucket returns the DefaultStorageBucket field if non-nil, zero value otherwise.
 
 ### GetDefaultStorageBucketOk
 
-`func (o *BackupSettingsUpdate) GetDefaultStorageBucketOk() (*UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket, bool)`
+`func (o *BackupSettingsUpdate) GetDefaultStorageBucketOk() (*BackupSettingsUpdateDefaultStorageBucket, bool)`
 
 GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultStorageBucket
 
-`func (o *BackupSettingsUpdate) SetDefaultStorageBucket(v UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket)`
+`func (o *BackupSettingsUpdate) SetDefaultStorageBucket(v BackupSettingsUpdateDefaultStorageBucket)`
 
 SetDefaultStorageBucket sets DefaultStorageBucket field to given value.
 

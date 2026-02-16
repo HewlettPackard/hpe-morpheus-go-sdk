@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the catalog item type. | [optional] [default to true]
 **Featured** | Pointer to **bool** | Can be used to feature the catalog item type. | [optional] [default to false]
 **AllowQuantity** | Pointer to **bool** | Can users order more than one of this item at a time. | [optional] [default to false]
-**Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig.md) |  | 
+**Config** | [**CatalogItemTypeInstanceCreateConfig**](CatalogItemTypeInstanceCreateConfig.md) |  | 
 **InstanceSpec** | Pointer to **string** | The instance &#x60;config&#x60; specification as a string in the JSON format. | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfForm**](AddCatalogItemTypeRequestCatalogItemTypeOneOfForm.md) |  | [optional] 
+**Form** | Pointer to [**CatalogItemTypeInstanceCreateForm**](CatalogItemTypeInstanceCreateForm.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 **Content** | Pointer to **string** | Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information. | [optional] 
 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewCatalogItemTypeInstanceCreate
 
-`func NewCatalogItemTypeInstanceCreate(config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, ) *CatalogItemTypeInstanceCreate`
+`func NewCatalogItemTypeInstanceCreate(config CatalogItemTypeInstanceCreateConfig, ) *CatalogItemTypeInstanceCreate`
 
 NewCatalogItemTypeInstanceCreate instantiates a new CatalogItemTypeInstanceCreate object
 This constructor will assign default values to properties that have it defined,
@@ -384,20 +384,20 @@ HasAllowQuantity returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *CatalogItemTypeInstanceCreate) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig`
+`func (o *CatalogItemTypeInstanceCreate) GetConfig() CatalogItemTypeInstanceCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *CatalogItemTypeInstanceCreate) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, bool)`
+`func (o *CatalogItemTypeInstanceCreate) GetConfigOk() (*CatalogItemTypeInstanceCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *CatalogItemTypeInstanceCreate) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig)`
+`func (o *CatalogItemTypeInstanceCreate) SetConfig(v CatalogItemTypeInstanceCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -454,20 +454,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *CatalogItemTypeInstanceCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm`
+`func (o *CatalogItemTypeInstanceCreate) GetForm() CatalogItemTypeInstanceCreateForm`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *CatalogItemTypeInstanceCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool)`
+`func (o *CatalogItemTypeInstanceCreate) GetFormOk() (*CatalogItemTypeInstanceCreateForm, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *CatalogItemTypeInstanceCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm)`
+`func (o *CatalogItemTypeInstanceCreate) SetForm(v CatalogItemTypeInstanceCreateForm)`
 
 SetForm sets Form field to given value.
 

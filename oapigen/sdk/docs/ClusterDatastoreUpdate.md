@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** | Datastore active | [optional] [default to true]
-**Permissions** | Pointer to [**UpdateClusterDatastoreRequestDatastorePermissions**](UpdateClusterDatastoreRequestDatastorePermissions.md) |  | [optional] 
+**Permissions** | Pointer to [**ClusterDatastoreUpdatePermissions**](ClusterDatastoreUpdatePermissions.md) |  | [optional] 
 **Visibility** | Pointer to **string** | Visibility for datastore | [optional] [default to "private"]
 
 ## Methods
@@ -54,20 +54,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *ClusterDatastoreUpdate) GetPermissions() UpdateClusterDatastoreRequestDatastorePermissions`
+`func (o *ClusterDatastoreUpdate) GetPermissions() ClusterDatastoreUpdatePermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*UpdateClusterDatastoreRequestDatastorePermissions, bool)`
+`func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*ClusterDatastoreUpdatePermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *ClusterDatastoreUpdate) SetPermissions(v UpdateClusterDatastoreRequestDatastorePermissions)`
+`func (o *ClusterDatastoreUpdate) SetPermissions(v ClusterDatastoreUpdatePermissions)`
 
 SetPermissions sets Permissions field to given value.
 

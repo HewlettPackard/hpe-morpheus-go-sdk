@@ -13,405 +13,105 @@ package sdk
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// checks if the ListClouds200ResponseAllOfZonesInnerConfig type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListClouds200ResponseAllOfZonesInnerConfig{}
+// very silly way of avoiding `"fmt" imported and not used` errors
+var _ fmt.Stringer
 
 // ListClouds200ResponseAllOfZonesInnerConfig struct for ListClouds200ResponseAllOfZonesInnerConfig
 type ListClouds200ResponseAllOfZonesInnerConfig struct {
-	ApplianceUrl               NullableString         `json:"applianceUrl,omitempty"`
-	CertificateProvider        NullableString         `json:"certificateProvider,omitempty"`
-	ConfigCmdbDiscovery        *bool                  `json:"configCmdbDiscovery,omitempty"`
-	ConsoleKeymap              NullableString         `json:"consoleKeymap,omitempty"`
-	DatacenterName             NullableString         `json:"datacenterName,omitempty"`
-	EnableNetworkTypeSelection *bool                  `json:"enableNetworkTypeSelection,omitempty"`
-	ExternalId                 NullableString         `json:"externalId,omitempty"`
-	InventoryLevel             NullableString         `json:"inventoryLevel,omitempty"`
-	AdditionalProperties       map[string]interface{} `json:",remain"`
+	ListClouds200ResponseAllOfZonesInnerConfigAnyOf  *ListClouds200ResponseAllOfZonesInnerConfigAnyOf
+	ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 *ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
+	MapmapOfStringAny                                *map[string]interface{}
 }
 
-type _ListClouds200ResponseAllOfZonesInnerConfig ListClouds200ResponseAllOfZonesInnerConfig
-
-// NewListClouds200ResponseAllOfZonesInnerConfig instantiates a new ListClouds200ResponseAllOfZonesInnerConfig object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewListClouds200ResponseAllOfZonesInnerConfig() *ListClouds200ResponseAllOfZonesInnerConfig {
-	this := ListClouds200ResponseAllOfZonesInnerConfig{}
-	return &this
-}
-
-// NewListClouds200ResponseAllOfZonesInnerConfigWithDefaults instantiates a new ListClouds200ResponseAllOfZonesInnerConfig object
-// This constructor will only assign default values to properties that have it defined,
-// but it doesn't guarantee that properties required by API are set
-func NewListClouds200ResponseAllOfZonesInnerConfigWithDefaults() *ListClouds200ResponseAllOfZonesInnerConfig {
-	this := ListClouds200ResponseAllOfZonesInnerConfig{}
-	return &this
-}
-
-// GetApplianceUrl returns the ApplianceUrl field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrl() string {
-	if o == nil || IsNil(o.ApplianceUrl.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ApplianceUrl.Get()
-}
-
-// GetApplianceUrlOk returns a tuple with the ApplianceUrl field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetApplianceUrlOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ApplianceUrl.Get(), o.ApplianceUrl.IsSet()
-}
-
-// IsSetApplianceUrl returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetApplianceUrl() bool {
-	if o != nil && o.ApplianceUrl.IsSet() {
-		return true
+func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalMapstructure(data any) (any, error) {
+	if dst == nil {
+		dst = &ListClouds200ResponseAllOfZonesInnerConfig{}
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
 
-// SetApplianceUrl gets a reference to the given NullableString and assigns it to the ApplianceUrl field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetApplianceUrl(v string) {
-	o.ApplianceUrl.Set(&v)
-}
-
-// SetApplianceUrlNil sets the value for ApplianceUrl to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetApplianceUrlNil() {
-	o.ApplianceUrl.Set(nil)
-}
-
-// UnsetApplianceUrl ensures that no value is present for ApplianceUrl, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetApplianceUrl() {
-	o.ApplianceUrl.Unset()
-}
-
-// GetCertificateProvider returns the CertificateProvider field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProvider() string {
-	if o == nil || IsNil(o.CertificateProvider.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.CertificateProvider.Get()
-}
-
-// GetCertificateProviderOk returns a tuple with the CertificateProvider field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetCertificateProviderOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.CertificateProvider.Get(), o.CertificateProvider.IsSet()
-}
-
-// IsSetCertificateProvider returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetCertificateProvider() bool {
-	if o != nil && o.CertificateProvider.IsSet() {
-		return true
+	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf) {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf = nil
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
 
-// SetCertificateProvider gets a reference to the given NullableString and assigns it to the CertificateProvider field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetCertificateProvider(v string) {
-	o.CertificateProvider.Set(&v)
-}
-
-// SetCertificateProviderNil sets the value for CertificateProvider to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetCertificateProviderNil() {
-	o.CertificateProvider.Set(nil)
-}
-
-// UnsetCertificateProvider ensures that no value is present for CertificateProvider, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetCertificateProvider() {
-	o.CertificateProvider.Unset()
-}
-
-// GetConfigCmdbDiscovery returns the ConfigCmdbDiscovery field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscovery() bool {
-	if o == nil || IsNil(o.ConfigCmdbDiscovery) {
-		var ret bool
-		return ret
-	}
-	return *o.ConfigCmdbDiscovery
-}
-
-// GetConfigCmdbDiscoveryOk returns a tuple with the ConfigCmdbDiscovery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConfigCmdbDiscoveryOk() (*bool, bool) {
-	if o == nil || IsNil(o.ConfigCmdbDiscovery) {
-		return nil, false
-	}
-	return o.ConfigCmdbDiscovery, true
-}
-
-// IsSetConfigCmdbDiscovery returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConfigCmdbDiscovery() bool {
-	if o != nil && !IsNil(o.ConfigCmdbDiscovery) {
-		return true
+	if IsEmpty(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1) {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 = nil
 	}
 
-	return false
-}
+	mapstructDecode(data, &dst.MapmapOfStringAny)
 
-// SetConfigCmdbDiscovery gets a reference to the given bool and assigns it to the ConfigCmdbDiscovery field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConfigCmdbDiscovery(v bool) {
-	o.ConfigCmdbDiscovery = &v
-}
-
-// GetConsoleKeymap returns the ConsoleKeymap field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymap() string {
-	if o == nil || IsNil(o.ConsoleKeymap.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ConsoleKeymap.Get()
-}
-
-// GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetConsoleKeymapOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ConsoleKeymap.Get(), o.ConsoleKeymap.IsSet()
-}
-
-// IsSetConsoleKeymap returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetConsoleKeymap() bool {
-	if o != nil && o.ConsoleKeymap.IsSet() {
-		return true
+	if IsEmpty(dst.MapmapOfStringAny) {
+		dst.MapmapOfStringAny = nil
 	}
 
-	return false
+	return dst, nil
 }
 
-// SetConsoleKeymap gets a reference to the given NullableString and assigns it to the ConsoleKeymap field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConsoleKeymap(v string) {
-	o.ConsoleKeymap.Set(&v)
-}
-
-// SetConsoleKeymapNil sets the value for ConsoleKeymap to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetConsoleKeymapNil() {
-	o.ConsoleKeymap.Set(nil)
-}
-
-// UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetConsoleKeymap() {
-	o.ConsoleKeymap.Unset()
-}
-
-// GetDatacenterName returns the DatacenterName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterName() string {
-	if o == nil || IsNil(o.DatacenterName.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.DatacenterName.Get()
-}
-
-// GetDatacenterNameOk returns a tuple with the DatacenterName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetDatacenterNameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DatacenterName.Get(), o.DatacenterName.IsSet()
-}
-
-// IsSetDatacenterName returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetDatacenterName() bool {
-	if o != nil && o.DatacenterName.IsSet() {
-		return true
+// Unmarshal JSON data into any of the pointers in the struct
+func (dst *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte) error {
+	var err error
+	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
+	if err == nil {
+		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
+		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf) == "{}" { // empty struct
+			dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf = nil
+		} else {
+			return nil // data stored in dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf, return on the first match
+		}
+	} else {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf = nil
 	}
 
-	return false
-}
-
-// SetDatacenterName gets a reference to the given NullableString and assigns it to the DatacenterName field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetDatacenterName(v string) {
-	o.DatacenterName.Set(&v)
-}
-
-// SetDatacenterNameNil sets the value for DatacenterName to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetDatacenterNameNil() {
-	o.DatacenterName.Set(nil)
-}
-
-// UnsetDatacenterName ensures that no value is present for DatacenterName, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetDatacenterName() {
-	o.DatacenterName.Unset()
-}
-
-// GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelection() bool {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
-		var ret bool
-		return ret
-	}
-	return *o.EnableNetworkTypeSelection
-}
-
-// GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetEnableNetworkTypeSelectionOk() (*bool, bool) {
-	if o == nil || IsNil(o.EnableNetworkTypeSelection) {
-		return nil, false
-	}
-	return o.EnableNetworkTypeSelection, true
-}
-
-// IsSetEnableNetworkTypeSelection returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetEnableNetworkTypeSelection() bool {
-	if o != nil && !IsNil(o.EnableNetworkTypeSelection) {
-		return true
+	// try to unmarshal JSON data into ListClouds200ResponseAllOfZonesInnerConfigAnyOf1
+	err = json.Unmarshal(data, &dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
+	if err == nil {
+		jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf1, _ := json.Marshal(dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
+		if string(jsonListClouds200ResponseAllOfZonesInnerConfigAnyOf1) == "{}" { // empty struct
+			dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 = nil
+		} else {
+			return nil // data stored in dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1, return on the first match
+		}
+	} else {
+		dst.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 = nil
 	}
 
-	return false
+	// try to unmarshal JSON data into MapmapOfStringAny
+	err = json.Unmarshal(data, &dst.MapmapOfStringAny)
+	if err == nil {
+		jsonMapmapOfStringAny, _ := json.Marshal(dst.MapmapOfStringAny)
+		if string(jsonMapmapOfStringAny) == "{}" { // empty struct
+			dst.MapmapOfStringAny = nil
+		} else {
+			return nil // data stored in dst.MapmapOfStringAny, return on the first match
+		}
+	} else {
+		dst.MapmapOfStringAny = nil
+	}
+
+	return NewResponseValidationError("data failed to match schemas in anyOf(ListClouds200ResponseAllOfZonesInnerConfig)")
 }
 
-// SetEnableNetworkTypeSelection gets a reference to the given bool and assigns it to the EnableNetworkTypeSelection field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetEnableNetworkTypeSelection(v bool) {
-	o.EnableNetworkTypeSelection = &v
-}
-
-// GetExternalId returns the ExternalId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.ExternalId.Get()
-}
-
-// GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetExternalIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.ExternalId.Get(), o.ExternalId.IsSet()
-}
-
-// IsSetExternalId returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetExternalId() bool {
-	if o != nil && o.ExternalId.IsSet() {
-		return true
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, error) {
+	if src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf != nil {
+		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf)
 	}
 
-	return false
-}
-
-// SetExternalId gets a reference to the given NullableString and assigns it to the ExternalId field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetExternalId(v string) {
-	o.ExternalId.Set(&v)
-}
-
-// SetExternalIdNil sets the value for ExternalId to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetExternalIdNil() {
-	o.ExternalId.Set(nil)
-}
-
-// UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetExternalId() {
-	o.ExternalId.Unset()
-}
-
-// GetInventoryLevel returns the InventoryLevel field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevel() string {
-	if o == nil || IsNil(o.InventoryLevel.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.InventoryLevel.Get()
-}
-
-// GetInventoryLevelOk returns a tuple with the InventoryLevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) GetInventoryLevelOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.InventoryLevel.Get(), o.InventoryLevel.IsSet()
-}
-
-// IsSetInventoryLevel returns a boolean if a field has been set.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) IsSetInventoryLevel() bool {
-	if o != nil && o.InventoryLevel.IsSet() {
-		return true
+	if src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1 != nil {
+		return json.Marshal(&src.ListClouds200ResponseAllOfZonesInnerConfigAnyOf1)
 	}
 
-	return false
-}
-
-// SetInventoryLevel gets a reference to the given NullableString and assigns it to the InventoryLevel field.
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetInventoryLevel(v string) {
-	o.InventoryLevel.Set(&v)
-}
-
-// SetInventoryLevelNil sets the value for InventoryLevel to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) SetInventoryLevelNil() {
-	o.InventoryLevel.Set(nil)
-}
-
-// UnsetInventoryLevel ensures that no value is present for InventoryLevel, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnsetInventoryLevel() {
-	o.InventoryLevel.Unset()
-}
-
-func (o ListClouds200ResponseAllOfZonesInnerConfig) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ListClouds200ResponseAllOfZonesInnerConfig) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	if o.ApplianceUrl.IsSet() {
-		toSerialize["applianceUrl"] = o.ApplianceUrl.Get()
-	}
-	if o.CertificateProvider.IsSet() {
-		toSerialize["certificateProvider"] = o.CertificateProvider.Get()
-	}
-	if !IsNil(o.ConfigCmdbDiscovery) {
-		toSerialize["configCmdbDiscovery"] = o.ConfigCmdbDiscovery
-	}
-	if o.ConsoleKeymap.IsSet() {
-		toSerialize["consoleKeymap"] = o.ConsoleKeymap.Get()
-	}
-	if o.DatacenterName.IsSet() {
-		toSerialize["datacenterName"] = o.DatacenterName.Get()
-	}
-	if !IsNil(o.EnableNetworkTypeSelection) {
-		toSerialize["enableNetworkTypeSelection"] = o.EnableNetworkTypeSelection
-	}
-	if o.ExternalId.IsSet() {
-		toSerialize["externalId"] = o.ExternalId.Get()
-	}
-	if o.InventoryLevel.IsSet() {
-		toSerialize["inventoryLevel"] = o.InventoryLevel.Get()
+	if src.MapmapOfStringAny != nil {
+		return json.Marshal(&src.MapmapOfStringAny)
 	}
 
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
-	return toSerialize, nil
+	return nil, nil // no data in anyOf schemas
 }
 
 type NullableListClouds200ResponseAllOfZonesInnerConfig struct {
@@ -458,9 +158,3 @@ func (v NullableListClouds200ResponseAllOfZonesInnerConfig) UnmarshalMapstructur
 
 	return v, nil
 }
-
-func (o *ListClouds200ResponseAllOfZonesInnerConfig) UnmarshalJSON(data []byte) (err error) {
-	return decode(data, &o)
-}
-
-// - model_simple.mustache

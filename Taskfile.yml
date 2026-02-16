@@ -50,6 +50,7 @@ tasks:
       # --inline-schema-options SKIP_SCHEMA_REUSE=true
       - cmd: >-
           openapi-generator-cli generate 
+          --inline-schema-options SKIP_SCHEMA_REUSE=true
           -g {{.GENERATOR}}
           -i {{.BUNDLEDSPEC}}
           -c {{.GENERATORCONFIG}}
@@ -81,7 +82,7 @@ tasks:
   update-spec:
     desc: "update OpenAPI spec to match the morpheus-openapi GITREF"
     vars:
-      GITREF: '{{if (empty .GITREF)}}main{{else}}{{.GITREF}}{{end}}'
+      GITREF: '{{if (empty .GITREF)}}tf-dev{{else}}{{.GITREF}}{{end}}'
     dir: morpheus-openapi
     cmds:
       - task: clone-spec

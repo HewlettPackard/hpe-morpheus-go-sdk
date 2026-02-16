@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Groups** | Pointer to [**[]ListGroups200ResponseAllOfGroupsInner**](ListGroups200ResponseAllOfGroupsInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasGroups returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListGroups200Response) GetMeta() ListActivity200ResponseAllOfMeta`
+`func (o *ListGroups200Response) GetMeta() ListClouds200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListGroups200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool)`
+`func (o *ListGroups200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListGroups200Response) SetMeta(v ListActivity200ResponseAllOfMeta)`
+`func (o *ListGroups200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

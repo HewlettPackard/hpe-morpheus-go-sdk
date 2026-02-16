@@ -37,9 +37,9 @@ type ListInstances200ResponseAllOfInstancesInnerConfig struct {
 	Name                 *string                                                                `json:"name,omitempty"`
 	HostName             *string                                                                `json:"hostName,omitempty"`
 	InstanceType         *ListInstances200ResponseAllOfInstancesInnerConfigInstanceType         `json:"instanceType,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfChecksInnerAccount                           `json:"site,omitempty"`
+	Site                 *ListInstances200ResponseAllOfInstancesInnerConfigSite                 `json:"site,omitempty"`
 	EnvironmentPrefix    NullableString                                                         `json:"environmentPrefix,omitempty"`
-	Layout               *ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan             `json:"layout,omitempty"`
+	Layout               *ListInstances200ResponseAllOfInstancesInnerConfigLayout               `json:"layout,omitempty"`
 	Type                 *string                                                                `json:"type,omitempty"`
 	InstanceContext      *string                                                                `json:"instanceContext,omitempty"`
 	MemoryDisplay        *string                                                                `json:"memoryDisplay,omitempty"`
@@ -199,9 +199,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetNoAgent(v ListIns
 	o.NoAgent = &v
 }
 
-// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise.
+// GetSecurityGroups returns the SecurityGroups field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSecurityGroups() []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner {
-	if o == nil || IsNil(o.SecurityGroups) {
+	if o == nil {
 		var ret []ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner
 		return ret
 	}
@@ -210,6 +210,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSecurityGroups() 
 
 // GetSecurityGroupsOk returns a tuple with the SecurityGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSecurityGroupsOk() ([]ListInstances200ResponseAllOfInstancesInnerConfigSecurityGroupsInner, bool) {
 	if o == nil || IsNil(o.SecurityGroups) {
 		return nil, false
@@ -649,9 +650,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetInstanceType(v Li
 }
 
 // GetSite returns the Site field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSite() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSite() ListInstances200ResponseAllOfInstancesInnerConfigSite {
 	if o == nil || IsNil(o.Site) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ListInstances200ResponseAllOfInstancesInnerConfigSite
 		return ret
 	}
 	return *o.Site
@@ -659,7 +660,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSite() GetAlerts2
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSiteOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetSiteOk() (*ListInstances200ResponseAllOfInstancesInnerConfigSite, bool) {
 	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
@@ -675,8 +676,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetSite() bool {
 	return false
 }
 
-// SetSite gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Site field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSite(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetSite gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigSite and assigns it to the Site field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetSite(v ListInstances200ResponseAllOfInstancesInnerConfigSite) {
 	o.Site = &v
 }
 
@@ -724,9 +725,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnsetEnvironmentPref
 }
 
 // GetLayout returns the Layout field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayout() ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayout() ListInstances200ResponseAllOfInstancesInnerConfigLayout {
 	if o == nil || IsNil(o.Layout) {
-		var ret ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan
+		var ret ListInstances200ResponseAllOfInstancesInnerConfigLayout
 		return ret
 	}
 	return *o.Layout
@@ -734,7 +735,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayout() ListImag
 
 // GetLayoutOk returns a tuple with the Layout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayoutOk() (*ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetLayoutOk() (*ListInstances200ResponseAllOfInstancesInnerConfigLayout, bool) {
 	if o == nil || IsNil(o.Layout) {
 		return nil, false
 	}
@@ -750,8 +751,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) IsSetLayout() bool {
 	return false
 }
 
-// SetLayout gets a reference to the given ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan and assigns it to the Layout field.
-func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetLayout(v ListImageBuilds200ResponseAllOfImageBuildsInnerConfigPlan) {
+// SetLayout gets a reference to the given ListInstances200ResponseAllOfInstancesInnerConfigLayout and assigns it to the Layout field.
+func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetLayout(v ListInstances200ResponseAllOfInstancesInnerConfigLayout) {
 	o.Layout = &v
 }
 
@@ -851,9 +852,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) SetMemoryDisplay(v s
 	o.MemoryDisplay = &v
 }
 
-// GetExpose returns the Expose field value if set, zero value otherwise.
+// GetExpose returns the Expose field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []int64 {
-	if o == nil || IsNil(o.Expose) {
+	if o == nil {
 		var ret []int64
 		return ret
 	}
@@ -862,6 +863,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExpose() []int64 
 
 // GetExposeOk returns a tuple with the Expose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) GetExposeOk() ([]int64, bool) {
 	if o == nil || IsNil(o.Expose) {
 		return nil, false
@@ -1066,7 +1068,7 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	if !IsNil(o.NoAgent) {
 		toSerialize["noAgent"] = o.NoAgent
 	}
-	if !IsNil(o.SecurityGroups) {
+	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
 	}
 	if o.SmbiosAssetTag.IsSet() {
@@ -1123,7 +1125,7 @@ func (o ListInstances200ResponseAllOfInstancesInnerConfig) ToMap() (map[string]i
 	if !IsNil(o.MemoryDisplay) {
 		toSerialize["memoryDisplay"] = o.MemoryDisplay
 	}
-	if !IsNil(o.Expose) {
+	if o.Expose != nil {
 		toSerialize["expose"] = o.Expose
 	}
 	if !IsNil(o.CreateBackup) {
@@ -1193,7 +1195,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalMaps
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

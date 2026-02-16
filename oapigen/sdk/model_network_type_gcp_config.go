@@ -164,7 +164,6 @@ func (v NullableNetworkTypeGcpConfig) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *NetworkTypeGcpConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

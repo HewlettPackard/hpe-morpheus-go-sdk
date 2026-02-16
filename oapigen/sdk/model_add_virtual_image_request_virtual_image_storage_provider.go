@@ -140,7 +140,6 @@ func (v NullableAddVirtualImageRequestVirtualImageStorageProvider) UnmarshalMaps
 
 	return v, nil
 }
-
 func (o *AddVirtualImageRequestVirtualImageStorageProvider) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

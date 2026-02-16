@@ -20,7 +20,7 @@ var _ MappedNullable = &GetPolicies200Response{}
 
 // GetPolicies200Response struct for GetPolicies200Response
 type GetPolicies200Response struct {
-	Policy               *AddPolicies200ResponseAllOfPolicy `json:"policy,omitempty"`
+	Policy               *GetPolicies200ResponseAllOfPolicy `json:"policy,omitempty"`
 	AdditionalProperties map[string]interface{}             `json:",remain"`
 }
 
@@ -44,9 +44,9 @@ func NewGetPolicies200ResponseWithDefaults() *GetPolicies200Response {
 }
 
 // GetPolicy returns the Policy field value if set, zero value otherwise.
-func (o *GetPolicies200Response) GetPolicy() AddPolicies200ResponseAllOfPolicy {
+func (o *GetPolicies200Response) GetPolicy() GetPolicies200ResponseAllOfPolicy {
 	if o == nil || IsNil(o.Policy) {
-		var ret AddPolicies200ResponseAllOfPolicy
+		var ret GetPolicies200ResponseAllOfPolicy
 		return ret
 	}
 	return *o.Policy
@@ -54,7 +54,7 @@ func (o *GetPolicies200Response) GetPolicy() AddPolicies200ResponseAllOfPolicy {
 
 // GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetPolicies200Response) GetPolicyOk() (*AddPolicies200ResponseAllOfPolicy, bool) {
+func (o *GetPolicies200Response) GetPolicyOk() (*GetPolicies200ResponseAllOfPolicy, bool) {
 	if o == nil || IsNil(o.Policy) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetPolicies200Response) IsSetPolicy() bool {
 	return false
 }
 
-// SetPolicy gets a reference to the given AddPolicies200ResponseAllOfPolicy and assigns it to the Policy field.
-func (o *GetPolicies200Response) SetPolicy(v AddPolicies200ResponseAllOfPolicy) {
+// SetPolicy gets a reference to the given GetPolicies200ResponseAllOfPolicy and assigns it to the Policy field.
+func (o *GetPolicies200Response) SetPolicy(v GetPolicies200ResponseAllOfPolicy) {
 	o.Policy = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetPolicies200Response) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
-
 func (o *GetPolicies200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

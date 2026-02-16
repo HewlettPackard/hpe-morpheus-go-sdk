@@ -20,17 +20,17 @@ var _ MappedNullable = &ListVirtualImages200ResponseAllOfVirtualImagesInnerStora
 
 // ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner struct for ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner
 type ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Active               *bool                                                       `json:"active,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	BusNumber            *int64                                                      `json:"busNumber,omitempty"`
-	MaxDevices           *int64                                                      `json:"maxDevices,omitempty"`
-	Removable            *bool                                                       `json:"removable,omitempty"`
-	Editable             *bool                                                       `json:"editable,omitempty"`
-	ReservedUnitNumber   *int64                                                      `json:"reservedUnitNumber,omitempty"`
-	Category             *string                                                     `json:"category,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                                                          `json:"id,omitempty"`
+	Name                 *string                                                                         `json:"name,omitempty"`
+	Active               *bool                                                                           `json:"active,omitempty"`
+	Type                 *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType `json:"type,omitempty"`
+	BusNumber            *int64                                                                          `json:"busNumber,omitempty"`
+	MaxDevices           *int64                                                                          `json:"maxDevices,omitempty"`
+	Removable            *bool                                                                           `json:"removable,omitempty"`
+	Editable             *bool                                                                           `json:"editable,omitempty"`
+	ReservedUnitNumber   *int64                                                                          `json:"reservedUnitNumber,omitempty"`
+	Category             *string                                                                         `json:"category,omitempty"`
+	AdditionalProperties map[string]interface{}                                                          `json:",remain"`
 }
 
 type _ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner
@@ -149,9 +149,9 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetType() ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType
 		return ret
 	}
 	return *o.Type
@@ -159,7 +159,7 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersIn
 	return false
 }
 
-// SetType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Type field.
-func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetType gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType and assigns it to the Type field.
+func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType) {
 	o.Type = &v
 }
 
@@ -464,7 +464,6 @@ func (v NullableListVirtualImages200ResponseAllOfVirtualImagesInnerStorageContro
 
 	return v, nil
 }
-
 func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,7 +20,7 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstanceConfigInstanceTy
 
 // AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType struct for AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType
 type AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType struct {
-	Code                 *string                `json:"code,omitempty"`
+	Code                 NullableString         `json:"code,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
@@ -43,36 +43,47 @@ func NewAddInstance200ResponseAllOfOneOfInstanceConfigInstanceTypeWithDefaults()
 	return &this
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) GetCode() string {
-	if o == nil || IsNil(o.Code) {
+	if o == nil || IsNil(o.Code.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Code
+	return *o.Code.Get()
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) GetCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.Code) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Code, true
+	return o.Code.Get(), o.Code.IsSet()
 }
 
 // IsSetCode returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) IsSetCode() bool {
-	if o != nil && !IsNil(o.Code) {
+	if o != nil && o.Code.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
+// SetCode gets a reference to the given NullableString and assigns it to the Code field.
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) SetCode(v string) {
-	o.Code = &v
+	o.Code.Set(&v)
+}
+
+// SetCodeNil sets the value for Code to be an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) SetCodeNil() {
+	o.Code.Set(nil)
+}
+
+// UnsetCode ensures that no value is present for Code, not even an explicit nil
+func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) UnsetCode() {
+	o.Code.Unset()
 }
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) MarshalJSON() ([]byte, error) {
@@ -85,8 +96,8 @@ func (o AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) MarshalJSON(
 
 func (o AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Code) {
-		toSerialize["code"] = o.Code
+	if o.Code.IsSet() {
+		toSerialize["code"] = o.Code.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -140,7 +151,6 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) Unma
 
 	return v, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstanceConfigInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

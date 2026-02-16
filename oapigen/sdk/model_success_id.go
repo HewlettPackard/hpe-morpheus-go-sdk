@@ -187,7 +187,6 @@ func (v NullableSuccessId) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *SuccessId) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

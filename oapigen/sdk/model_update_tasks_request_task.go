@@ -30,9 +30,9 @@ type UpdateTasksRequestTask struct {
 	Visibility *string                         `json:"visibility,omitempty"`
 	TaskType   *UpdateTasksRequestTaskTaskType `json:"taskType,omitempty"`
 	// An array of Category labels for filtering
-	Labels      []string                        `json:"labels,omitempty"`
-	TaskOptions *AddTasksRequestTaskTaskOptions `json:"taskOptions,omitempty"`
-	ResultType  NullableString                  `json:"resultType,omitempty"`
+	Labels      []string                           `json:"labels,omitempty"`
+	TaskOptions *UpdateTasksRequestTaskTaskOptions `json:"taskOptions,omitempty"`
+	ResultType  NullableString                     `json:"resultType,omitempty"`
 	// The execution target. eg. local,remote,resource. The default value varies by task type.
 	ExecuteTarget *string `json:"executeTarget,omitempty"`
 	// If the task should be retried or not.
@@ -40,10 +40,10 @@ type UpdateTasksRequestTask struct {
 	// The number of times to retry.
 	RetryCount *int64 `json:"retryCount,omitempty"`
 	// The delay, between retries.
-	RetryDelaySeconds    *int64                                            `json:"retryDelaySeconds,omitempty"`
-	File                 *AddTasksRequestTaskFile                          `json:"file,omitempty"`
-	Credential           *AddIntegrationsRequestOneOfIntegrationCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	RetryDelaySeconds    *int64                            `json:"retryDelaySeconds,omitempty"`
+	File                 *UpdateTasksRequestTaskFile       `json:"file,omitempty"`
+	Credential           *UpdateTasksRequestTaskCredential `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _UpdateTasksRequestTask UpdateTasksRequestTask
@@ -266,9 +266,9 @@ func (o *UpdateTasksRequestTask) SetLabels(v []string) {
 }
 
 // GetTaskOptions returns the TaskOptions field value if set, zero value otherwise.
-func (o *UpdateTasksRequestTask) GetTaskOptions() AddTasksRequestTaskTaskOptions {
+func (o *UpdateTasksRequestTask) GetTaskOptions() UpdateTasksRequestTaskTaskOptions {
 	if o == nil || IsNil(o.TaskOptions) {
-		var ret AddTasksRequestTaskTaskOptions
+		var ret UpdateTasksRequestTaskTaskOptions
 		return ret
 	}
 	return *o.TaskOptions
@@ -276,7 +276,7 @@ func (o *UpdateTasksRequestTask) GetTaskOptions() AddTasksRequestTaskTaskOptions
 
 // GetTaskOptionsOk returns a tuple with the TaskOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateTasksRequestTask) GetTaskOptionsOk() (*AddTasksRequestTaskTaskOptions, bool) {
+func (o *UpdateTasksRequestTask) GetTaskOptionsOk() (*UpdateTasksRequestTaskTaskOptions, bool) {
 	if o == nil || IsNil(o.TaskOptions) {
 		return nil, false
 	}
@@ -292,8 +292,8 @@ func (o *UpdateTasksRequestTask) IsSetTaskOptions() bool {
 	return false
 }
 
-// SetTaskOptions gets a reference to the given AddTasksRequestTaskTaskOptions and assigns it to the TaskOptions field.
-func (o *UpdateTasksRequestTask) SetTaskOptions(v AddTasksRequestTaskTaskOptions) {
+// SetTaskOptions gets a reference to the given UpdateTasksRequestTaskTaskOptions and assigns it to the TaskOptions field.
+func (o *UpdateTasksRequestTask) SetTaskOptions(v UpdateTasksRequestTaskTaskOptions) {
 	o.TaskOptions = &v
 }
 
@@ -469,9 +469,9 @@ func (o *UpdateTasksRequestTask) SetRetryDelaySeconds(v int64) {
 }
 
 // GetFile returns the File field value if set, zero value otherwise.
-func (o *UpdateTasksRequestTask) GetFile() AddTasksRequestTaskFile {
+func (o *UpdateTasksRequestTask) GetFile() UpdateTasksRequestTaskFile {
 	if o == nil || IsNil(o.File) {
-		var ret AddTasksRequestTaskFile
+		var ret UpdateTasksRequestTaskFile
 		return ret
 	}
 	return *o.File
@@ -479,7 +479,7 @@ func (o *UpdateTasksRequestTask) GetFile() AddTasksRequestTaskFile {
 
 // GetFileOk returns a tuple with the File field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateTasksRequestTask) GetFileOk() (*AddTasksRequestTaskFile, bool) {
+func (o *UpdateTasksRequestTask) GetFileOk() (*UpdateTasksRequestTaskFile, bool) {
 	if o == nil || IsNil(o.File) {
 		return nil, false
 	}
@@ -495,15 +495,15 @@ func (o *UpdateTasksRequestTask) IsSetFile() bool {
 	return false
 }
 
-// SetFile gets a reference to the given AddTasksRequestTaskFile and assigns it to the File field.
-func (o *UpdateTasksRequestTask) SetFile(v AddTasksRequestTaskFile) {
+// SetFile gets a reference to the given UpdateTasksRequestTaskFile and assigns it to the File field.
+func (o *UpdateTasksRequestTask) SetFile(v UpdateTasksRequestTaskFile) {
 	o.File = &v
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *UpdateTasksRequestTask) GetCredential() AddIntegrationsRequestOneOfIntegrationCredential {
+func (o *UpdateTasksRequestTask) GetCredential() UpdateTasksRequestTaskCredential {
 	if o == nil || IsNil(o.Credential) {
-		var ret AddIntegrationsRequestOneOfIntegrationCredential
+		var ret UpdateTasksRequestTaskCredential
 		return ret
 	}
 	return *o.Credential
@@ -511,7 +511,7 @@ func (o *UpdateTasksRequestTask) GetCredential() AddIntegrationsRequestOneOfInte
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateTasksRequestTask) GetCredentialOk() (*AddIntegrationsRequestOneOfIntegrationCredential, bool) {
+func (o *UpdateTasksRequestTask) GetCredentialOk() (*UpdateTasksRequestTaskCredential, bool) {
 	if o == nil || IsNil(o.Credential) {
 		return nil, false
 	}
@@ -527,8 +527,8 @@ func (o *UpdateTasksRequestTask) IsSetCredential() bool {
 	return false
 }
 
-// SetCredential gets a reference to the given AddIntegrationsRequestOneOfIntegrationCredential and assigns it to the Credential field.
-func (o *UpdateTasksRequestTask) SetCredential(v AddIntegrationsRequestOneOfIntegrationCredential) {
+// SetCredential gets a reference to the given UpdateTasksRequestTaskCredential and assigns it to the Credential field.
+func (o *UpdateTasksRequestTask) SetCredential(v UpdateTasksRequestTaskCredential) {
 	o.Credential = &v
 }
 
@@ -636,7 +636,6 @@ func (v NullableUpdateTasksRequestTask) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
-
 func (o *UpdateTasksRequestTask) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

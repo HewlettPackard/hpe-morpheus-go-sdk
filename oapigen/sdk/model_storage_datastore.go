@@ -20,13 +20,13 @@ var _ MappedNullable = &StorageDatastore{}
 
 // StorageDatastore struct for StorageDatastore
 type StorageDatastore struct {
-	Id            int64                                                      `json:"id"`
-	Name          string                                                     `json:"name"`
-	Code          NullableString                                             `json:"code,omitempty"`
-	DatastoreType ListDatastores200ResponseAllOfDatastoresInnerDatastoreType `json:"datastoreType"`
+	Id            int64                         `json:"id"`
+	Name          string                        `json:"name"`
+	Code          NullableString                `json:"code,omitempty"`
+	DatastoreType StorageDatastoreDatastoreType `json:"datastoreType"`
 	// Configuration object. Settings vary by type.
-	Config        map[string]interface{}                       `json:"config,omitempty"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
+	Config        map[string]interface{}         `json:"config,omitempty"`
+	StorageServer *StorageDatastoreStorageServer `json:"storageServer,omitempty"`
 	// The underlying type of the datastore, e.g. 'generic', 'cluster', 'nfs', 'vmfs', 'NFS Pool', 'Directory Pool', 'GFS2 Pool (Global File System 2)', 'storage-profile', 'ext'
 	Type string `json:"type"`
 	// The current status of the datastore, e.g. 'provisioned', 'provisioning', 'failed', 'warning'
@@ -54,14 +54,14 @@ type StorageDatastore struct {
 	// External path for the datastore, e.g. mount path, datastore path, etc.
 	ExternalPath *string `json:"externalPath,omitempty"`
 	// External type for the datastore, e.g. rbd, netfs, dir:gfs2
-	ExternalType *string                                                `json:"externalType,omitempty"`
-	Zone         *ListDatastores200ResponseAllOfDatastoresInnerZone     `json:"zone,omitempty"`
-	ZonePool     *ListDatastores200ResponseAllOfDatastoresInnerZonePool `json:"zonePool,omitempty"`
-	Owner        *GetAlerts200ResponseAllOfChecksInnerAccount           `json:"owner,omitempty"`
+	ExternalType *string                   `json:"externalType,omitempty"`
+	Zone         *StorageDatastoreZone     `json:"zone,omitempty"`
+	ZonePool     *StorageDatastoreZonePool `json:"zonePool,omitempty"`
+	Owner        *StorageDatastoreOwner    `json:"owner,omitempty"`
 	// List of datastores associated with this datastore, for use with vSphere clouds.
-	Datastores           []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner `json:"datastores,omitempty"`
-	Locations            []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner  `json:"locations,omitempty"`
-	AdditionalProperties map[string]interface{}                                         `json:",remain"`
+	Datastores           []StorageDatastoreDatastoresInner `json:"datastores,omitempty"`
+	Locations            []StorageDatastoreLocationsInner  `json:"locations,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _StorageDatastore StorageDatastore
@@ -70,7 +70,7 @@ type _StorageDatastore StorageDatastore
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageDatastore(id int64, name string, datastoreType ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, type_ string, status string) *StorageDatastore {
+func NewStorageDatastore(id int64, name string, datastoreType StorageDatastoreDatastoreType, type_ string, status string) *StorageDatastore {
 	this := StorageDatastore{}
 	this.Id = id
 	this.Name = name
@@ -180,9 +180,9 @@ func (o *StorageDatastore) UnsetCode() {
 }
 
 // GetDatastoreType returns the DatastoreType field value
-func (o *StorageDatastore) GetDatastoreType() ListDatastores200ResponseAllOfDatastoresInnerDatastoreType {
+func (o *StorageDatastore) GetDatastoreType() StorageDatastoreDatastoreType {
 	if o == nil {
-		var ret ListDatastores200ResponseAllOfDatastoresInnerDatastoreType
+		var ret StorageDatastoreDatastoreType
 		return ret
 	}
 
@@ -191,7 +191,7 @@ func (o *StorageDatastore) GetDatastoreType() ListDatastores200ResponseAllOfData
 
 // GetDatastoreTypeOk returns a tuple with the DatastoreType field value
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetDatastoreTypeOk() (*ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, bool) {
+func (o *StorageDatastore) GetDatastoreTypeOk() (*StorageDatastoreDatastoreType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -199,7 +199,7 @@ func (o *StorageDatastore) GetDatastoreTypeOk() (*ListDatastores200ResponseAllOf
 }
 
 // SetDatastoreType sets field value
-func (o *StorageDatastore) SetDatastoreType(v ListDatastores200ResponseAllOfDatastoresInnerDatastoreType) {
+func (o *StorageDatastore) SetDatastoreType(v StorageDatastoreDatastoreType) {
 	o.DatastoreType = v
 }
 
@@ -236,9 +236,9 @@ func (o *StorageDatastore) SetConfig(v map[string]interface{}) {
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *StorageDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *StorageDatastore) GetStorageServer() StorageDatastoreStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret StorageDatastoreStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -246,7 +246,7 @@ func (o *StorageDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInn
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *StorageDatastore) GetStorageServerOk() (*StorageDatastoreStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -262,8 +262,8 @@ func (o *StorageDatastore) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *StorageDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given StorageDatastoreStorageServer and assigns it to the StorageServer field.
+func (o *StorageDatastore) SetStorageServer(v StorageDatastoreStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -882,9 +882,9 @@ func (o *StorageDatastore) SetExternalType(v string) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *StorageDatastore) GetZone() ListDatastores200ResponseAllOfDatastoresInnerZone {
+func (o *StorageDatastore) GetZone() StorageDatastoreZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListDatastores200ResponseAllOfDatastoresInnerZone
+		var ret StorageDatastoreZone
 		return ret
 	}
 	return *o.Zone
@@ -892,7 +892,7 @@ func (o *StorageDatastore) GetZone() ListDatastores200ResponseAllOfDatastoresInn
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetZoneOk() (*ListDatastores200ResponseAllOfDatastoresInnerZone, bool) {
+func (o *StorageDatastore) GetZoneOk() (*StorageDatastoreZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -908,15 +908,15 @@ func (o *StorageDatastore) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListDatastores200ResponseAllOfDatastoresInnerZone and assigns it to the Zone field.
-func (o *StorageDatastore) SetZone(v ListDatastores200ResponseAllOfDatastoresInnerZone) {
+// SetZone gets a reference to the given StorageDatastoreZone and assigns it to the Zone field.
+func (o *StorageDatastore) SetZone(v StorageDatastoreZone) {
 	o.Zone = &v
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *StorageDatastore) GetZonePool() ListDatastores200ResponseAllOfDatastoresInnerZonePool {
+func (o *StorageDatastore) GetZonePool() StorageDatastoreZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret ListDatastores200ResponseAllOfDatastoresInnerZonePool
+		var ret StorageDatastoreZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -924,7 +924,7 @@ func (o *StorageDatastore) GetZonePool() ListDatastores200ResponseAllOfDatastore
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetZonePoolOk() (*ListDatastores200ResponseAllOfDatastoresInnerZonePool, bool) {
+func (o *StorageDatastore) GetZonePoolOk() (*StorageDatastoreZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -940,15 +940,15 @@ func (o *StorageDatastore) IsSetZonePool() bool {
 	return false
 }
 
-// SetZonePool gets a reference to the given ListDatastores200ResponseAllOfDatastoresInnerZonePool and assigns it to the ZonePool field.
-func (o *StorageDatastore) SetZonePool(v ListDatastores200ResponseAllOfDatastoresInnerZonePool) {
+// SetZonePool gets a reference to the given StorageDatastoreZonePool and assigns it to the ZonePool field.
+func (o *StorageDatastore) SetZonePool(v StorageDatastoreZonePool) {
 	o.ZonePool = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *StorageDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *StorageDatastore) GetOwner() StorageDatastoreOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret StorageDatastoreOwner
 		return ret
 	}
 	return *o.Owner
@@ -956,7 +956,7 @@ func (o *StorageDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccoun
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *StorageDatastore) GetOwnerOk() (*StorageDatastoreOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -972,15 +972,15 @@ func (o *StorageDatastore) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Owner field.
-func (o *StorageDatastore) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetOwner gets a reference to the given StorageDatastoreOwner and assigns it to the Owner field.
+func (o *StorageDatastore) SetOwner(v StorageDatastoreOwner) {
 	o.Owner = &v
 }
 
 // GetDatastores returns the Datastores field value if set, zero value otherwise.
-func (o *StorageDatastore) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner {
+func (o *StorageDatastore) GetDatastores() []StorageDatastoreDatastoresInner {
 	if o == nil || IsNil(o.Datastores) {
-		var ret []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner
+		var ret []StorageDatastoreDatastoresInner
 		return ret
 	}
 	return o.Datastores
@@ -988,7 +988,7 @@ func (o *StorageDatastore) GetDatastores() []ListDatastores200ResponseAllOfDatas
 
 // GetDatastoresOk returns a tuple with the Datastores field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetDatastoresOk() ([]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner, bool) {
+func (o *StorageDatastore) GetDatastoresOk() ([]StorageDatastoreDatastoresInner, bool) {
 	if o == nil || IsNil(o.Datastores) {
 		return nil, false
 	}
@@ -1004,15 +1004,15 @@ func (o *StorageDatastore) IsSetDatastores() bool {
 	return false
 }
 
-// SetDatastores gets a reference to the given []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner and assigns it to the Datastores field.
-func (o *StorageDatastore) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner) {
+// SetDatastores gets a reference to the given []StorageDatastoreDatastoresInner and assigns it to the Datastores field.
+func (o *StorageDatastore) SetDatastores(v []StorageDatastoreDatastoresInner) {
 	o.Datastores = v
 }
 
 // GetLocations returns the Locations field value if set, zero value otherwise.
-func (o *StorageDatastore) GetLocations() []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner {
+func (o *StorageDatastore) GetLocations() []StorageDatastoreLocationsInner {
 	if o == nil || IsNil(o.Locations) {
-		var ret []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner
+		var ret []StorageDatastoreLocationsInner
 		return ret
 	}
 	return o.Locations
@@ -1020,7 +1020,7 @@ func (o *StorageDatastore) GetLocations() []ListDatastores200ResponseAllOfDatast
 
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastore) GetLocationsOk() ([]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner, bool) {
+func (o *StorageDatastore) GetLocationsOk() ([]StorageDatastoreLocationsInner, bool) {
 	if o == nil || IsNil(o.Locations) {
 		return nil, false
 	}
@@ -1036,8 +1036,8 @@ func (o *StorageDatastore) IsSetLocations() bool {
 	return false
 }
 
-// SetLocations gets a reference to the given []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner and assigns it to the Locations field.
-func (o *StorageDatastore) SetLocations(v []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner) {
+// SetLocations gets a reference to the given []StorageDatastoreLocationsInner and assigns it to the Locations field.
+func (o *StorageDatastore) SetLocations(v []StorageDatastoreLocationsInner) {
 	o.Locations = v
 }
 
@@ -1183,7 +1183,6 @@ func (v NullableStorageDatastore) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *StorageDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

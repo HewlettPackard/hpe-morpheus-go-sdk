@@ -34,20 +34,20 @@ type ClusterLayoutCreate struct {
 	// Install Docker (container runtime).
 	InstallContainerRuntime *bool `json:"installContainerRuntime,omitempty"`
 	// Memory requirement in bytes
-	MemoryRequirement *int64                                      `json:"memoryRequirement,omitempty"`
-	GroupType         AddClusterLayoutsRequestLayoutGroupType     `json:"groupType"`
-	ProvisionType     AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType"`
+	MemoryRequirement *int64                           `json:"memoryRequirement,omitempty"`
+	GroupType         ClusterLayoutCreateGroupType     `json:"groupType"`
+	ProvisionType     ClusterLayoutCreateProvisionType `json:"provisionType"`
 	// Array of cluster layout option types
-	OptionTypes []GetAlerts200ResponseAllOfChecksInnerAccount `json:"optionTypes,omitempty"`
+	OptionTypes []ClusterLayoutCreateOptionTypesInner `json:"optionTypes,omitempty"`
 	// Array of cluster layout task sets
-	TaskSets []GetAlerts200ResponseAllOfChecksInnerAccount `json:"taskSets,omitempty"`
+	TaskSets []ClusterLayoutCreateTaskSetsInner `json:"taskSets,omitempty"`
 	// Array of cluster layout env variables
-	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
+	EnvironmentVariables []ClusterLayoutCreateEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of cluster layout master nodes
-	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
+	Masters []ClusterLayoutCreateMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
-	Workers              []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	Workers              []ClusterLayoutCreateWorkersInner `json:"workers,omitempty"`
+	AdditionalProperties map[string]interface{}            `json:",remain"`
 }
 
 type _ClusterLayoutCreate ClusterLayoutCreate
@@ -56,7 +56,7 @@ type _ClusterLayoutCreate ClusterLayoutCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewClusterLayoutCreate(name string, computeVersion string, groupType AddClusterLayoutsRequestLayoutGroupType, provisionType AddClusterLayoutsRequestLayoutProvisionType) *ClusterLayoutCreate {
+func NewClusterLayoutCreate(name string, computeVersion string, groupType ClusterLayoutCreateGroupType, provisionType ClusterLayoutCreateProvisionType) *ClusterLayoutCreate {
 	this := ClusterLayoutCreate{}
 	this.Name = name
 	this.ComputeVersion = computeVersion
@@ -338,9 +338,9 @@ func (o *ClusterLayoutCreate) SetMemoryRequirement(v int64) {
 }
 
 // GetGroupType returns the GroupType field value
-func (o *ClusterLayoutCreate) GetGroupType() AddClusterLayoutsRequestLayoutGroupType {
+func (o *ClusterLayoutCreate) GetGroupType() ClusterLayoutCreateGroupType {
 	if o == nil {
-		var ret AddClusterLayoutsRequestLayoutGroupType
+		var ret ClusterLayoutCreateGroupType
 		return ret
 	}
 
@@ -349,7 +349,7 @@ func (o *ClusterLayoutCreate) GetGroupType() AddClusterLayoutsRequestLayoutGroup
 
 // GetGroupTypeOk returns a tuple with the GroupType field value
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetGroupTypeOk() (*AddClusterLayoutsRequestLayoutGroupType, bool) {
+func (o *ClusterLayoutCreate) GetGroupTypeOk() (*ClusterLayoutCreateGroupType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -357,14 +357,14 @@ func (o *ClusterLayoutCreate) GetGroupTypeOk() (*AddClusterLayoutsRequestLayoutG
 }
 
 // SetGroupType sets field value
-func (o *ClusterLayoutCreate) SetGroupType(v AddClusterLayoutsRequestLayoutGroupType) {
+func (o *ClusterLayoutCreate) SetGroupType(v ClusterLayoutCreateGroupType) {
 	o.GroupType = v
 }
 
 // GetProvisionType returns the ProvisionType field value
-func (o *ClusterLayoutCreate) GetProvisionType() AddClusterLayoutsRequestLayoutProvisionType {
+func (o *ClusterLayoutCreate) GetProvisionType() ClusterLayoutCreateProvisionType {
 	if o == nil {
-		var ret AddClusterLayoutsRequestLayoutProvisionType
+		var ret ClusterLayoutCreateProvisionType
 		return ret
 	}
 
@@ -373,7 +373,7 @@ func (o *ClusterLayoutCreate) GetProvisionType() AddClusterLayoutsRequestLayoutP
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetProvisionTypeOk() (*AddClusterLayoutsRequestLayoutProvisionType, bool) {
+func (o *ClusterLayoutCreate) GetProvisionTypeOk() (*ClusterLayoutCreateProvisionType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -381,14 +381,14 @@ func (o *ClusterLayoutCreate) GetProvisionTypeOk() (*AddClusterLayoutsRequestLay
 }
 
 // SetProvisionType sets field value
-func (o *ClusterLayoutCreate) SetProvisionType(v AddClusterLayoutsRequestLayoutProvisionType) {
+func (o *ClusterLayoutCreate) SetProvisionType(v ClusterLayoutCreateProvisionType) {
 	o.ProvisionType = v
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *ClusterLayoutCreate) GetOptionTypes() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ClusterLayoutCreate) GetOptionTypes() []ClusterLayoutCreateOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []ClusterLayoutCreateOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -396,7 +396,7 @@ func (o *ClusterLayoutCreate) GetOptionTypes() []GetAlerts200ResponseAllOfChecks
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetOptionTypesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ClusterLayoutCreate) GetOptionTypesOk() ([]ClusterLayoutCreateOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -412,15 +412,15 @@ func (o *ClusterLayoutCreate) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the OptionTypes field.
-func (o *ClusterLayoutCreate) SetOptionTypes(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetOptionTypes gets a reference to the given []ClusterLayoutCreateOptionTypesInner and assigns it to the OptionTypes field.
+func (o *ClusterLayoutCreate) SetOptionTypes(v []ClusterLayoutCreateOptionTypesInner) {
 	o.OptionTypes = v
 }
 
 // GetTaskSets returns the TaskSets field value if set, zero value otherwise.
-func (o *ClusterLayoutCreate) GetTaskSets() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ClusterLayoutCreate) GetTaskSets() []ClusterLayoutCreateTaskSetsInner {
 	if o == nil || IsNil(o.TaskSets) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []ClusterLayoutCreateTaskSetsInner
 		return ret
 	}
 	return o.TaskSets
@@ -428,7 +428,7 @@ func (o *ClusterLayoutCreate) GetTaskSets() []GetAlerts200ResponseAllOfChecksInn
 
 // GetTaskSetsOk returns a tuple with the TaskSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetTaskSetsOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ClusterLayoutCreate) GetTaskSetsOk() ([]ClusterLayoutCreateTaskSetsInner, bool) {
 	if o == nil || IsNil(o.TaskSets) {
 		return nil, false
 	}
@@ -444,15 +444,15 @@ func (o *ClusterLayoutCreate) IsSetTaskSets() bool {
 	return false
 }
 
-// SetTaskSets gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the TaskSets field.
-func (o *ClusterLayoutCreate) SetTaskSets(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetTaskSets gets a reference to the given []ClusterLayoutCreateTaskSetsInner and assigns it to the TaskSets field.
+func (o *ClusterLayoutCreate) SetTaskSets(v []ClusterLayoutCreateTaskSetsInner) {
 	o.TaskSets = v
 }
 
 // GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
-func (o *ClusterLayoutCreate) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner {
+func (o *ClusterLayoutCreate) GetEnvironmentVariables() []ClusterLayoutCreateEnvironmentVariablesInner {
 	if o == nil || IsNil(o.EnvironmentVariables) {
-		var ret []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
+		var ret []ClusterLayoutCreateEnvironmentVariablesInner
 		return ret
 	}
 	return o.EnvironmentVariables
@@ -460,7 +460,7 @@ func (o *ClusterLayoutCreate) GetEnvironmentVariables() []AddClusterLayoutsReque
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetEnvironmentVariablesOk() ([]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool) {
+func (o *ClusterLayoutCreate) GetEnvironmentVariablesOk() ([]ClusterLayoutCreateEnvironmentVariablesInner, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
 	}
@@ -476,15 +476,15 @@ func (o *ClusterLayoutCreate) IsSetEnvironmentVariables() bool {
 	return false
 }
 
-// SetEnvironmentVariables gets a reference to the given []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
-func (o *ClusterLayoutCreate) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) {
+// SetEnvironmentVariables gets a reference to the given []ClusterLayoutCreateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
+func (o *ClusterLayoutCreate) SetEnvironmentVariables(v []ClusterLayoutCreateEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
 }
 
 // GetMasters returns the Masters field value if set, zero value otherwise.
-func (o *ClusterLayoutCreate) GetMasters() []AddClusterLayoutsRequestLayoutMastersInner {
+func (o *ClusterLayoutCreate) GetMasters() []ClusterLayoutCreateMastersInner {
 	if o == nil || IsNil(o.Masters) {
-		var ret []AddClusterLayoutsRequestLayoutMastersInner
+		var ret []ClusterLayoutCreateMastersInner
 		return ret
 	}
 	return o.Masters
@@ -492,7 +492,7 @@ func (o *ClusterLayoutCreate) GetMasters() []AddClusterLayoutsRequestLayoutMaste
 
 // GetMastersOk returns a tuple with the Masters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetMastersOk() ([]AddClusterLayoutsRequestLayoutMastersInner, bool) {
+func (o *ClusterLayoutCreate) GetMastersOk() ([]ClusterLayoutCreateMastersInner, bool) {
 	if o == nil || IsNil(o.Masters) {
 		return nil, false
 	}
@@ -508,15 +508,15 @@ func (o *ClusterLayoutCreate) IsSetMasters() bool {
 	return false
 }
 
-// SetMasters gets a reference to the given []AddClusterLayoutsRequestLayoutMastersInner and assigns it to the Masters field.
-func (o *ClusterLayoutCreate) SetMasters(v []AddClusterLayoutsRequestLayoutMastersInner) {
+// SetMasters gets a reference to the given []ClusterLayoutCreateMastersInner and assigns it to the Masters field.
+func (o *ClusterLayoutCreate) SetMasters(v []ClusterLayoutCreateMastersInner) {
 	o.Masters = v
 }
 
 // GetWorkers returns the Workers field value if set, zero value otherwise.
-func (o *ClusterLayoutCreate) GetWorkers() []AddClusterLayoutsRequestLayoutMastersInner {
+func (o *ClusterLayoutCreate) GetWorkers() []ClusterLayoutCreateWorkersInner {
 	if o == nil || IsNil(o.Workers) {
-		var ret []AddClusterLayoutsRequestLayoutMastersInner
+		var ret []ClusterLayoutCreateWorkersInner
 		return ret
 	}
 	return o.Workers
@@ -524,7 +524,7 @@ func (o *ClusterLayoutCreate) GetWorkers() []AddClusterLayoutsRequestLayoutMaste
 
 // GetWorkersOk returns a tuple with the Workers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterLayoutCreate) GetWorkersOk() ([]AddClusterLayoutsRequestLayoutMastersInner, bool) {
+func (o *ClusterLayoutCreate) GetWorkersOk() ([]ClusterLayoutCreateWorkersInner, bool) {
 	if o == nil || IsNil(o.Workers) {
 		return nil, false
 	}
@@ -540,8 +540,8 @@ func (o *ClusterLayoutCreate) IsSetWorkers() bool {
 	return false
 }
 
-// SetWorkers gets a reference to the given []AddClusterLayoutsRequestLayoutMastersInner and assigns it to the Workers field.
-func (o *ClusterLayoutCreate) SetWorkers(v []AddClusterLayoutsRequestLayoutMastersInner) {
+// SetWorkers gets a reference to the given []ClusterLayoutCreateWorkersInner and assigns it to the Workers field.
+func (o *ClusterLayoutCreate) SetWorkers(v []ClusterLayoutCreateWorkersInner) {
 	o.Workers = v
 }
 
@@ -644,7 +644,6 @@ func (v NullableClusterLayoutCreate) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *ClusterLayoutCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

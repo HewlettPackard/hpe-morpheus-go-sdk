@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **NullableString** |  | [optional] 
-**DatastoreType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**DatastoreType** | Pointer to [**ClusterDatastoreDatastoreType**](ClusterDatastoreDatastoreType.md) |  | [optional] 
+**StorageServer** | Pointer to [**ClusterDatastoreStorageServer**](ClusterDatastoreStorageServer.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **StorageSize** | Pointer to **NullableInt64** |  | [optional] 
@@ -23,11 +23,11 @@ Name | Type | Description | Notes
 **RefType** | Pointer to **string** |  | [optional] 
 **RefId** | Pointer to **int64** |  | [optional] 
 **ExternalId** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**ZonePool** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions**](SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions.md) |  | [optional] 
+**Zone** | Pointer to [**ClusterDatastoreZone**](ClusterDatastoreZone.md) |  | [optional] 
+**ZonePool** | Pointer to [**ClusterDatastoreZonePool**](ClusterDatastoreZonePool.md) |  | [optional] 
+**Owner** | Pointer to [**ClusterDatastoreOwner**](ClusterDatastoreOwner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]ClusterDatastoreTenantsInner**](ClusterDatastoreTenantsInner.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**ClusterDatastoreResourcePermissions**](ClusterDatastoreResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -136,20 +136,20 @@ HasCode returns a boolean if a field has been set.
 UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetDatastoreType
 
-`func (o *ClusterDatastore) GetDatastoreType() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastore) GetDatastoreType() ClusterDatastoreDatastoreType`
 
 GetDatastoreType returns the DatastoreType field if non-nil, zero value otherwise.
 
 ### GetDatastoreTypeOk
 
-`func (o *ClusterDatastore) GetDatastoreTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastore) GetDatastoreTypeOk() (*ClusterDatastoreDatastoreType, bool)`
 
 GetDatastoreTypeOk returns a tuple with the DatastoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastoreType
 
-`func (o *ClusterDatastore) SetDatastoreType(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastore) SetDatastoreType(v ClusterDatastoreDatastoreType)`
 
 SetDatastoreType sets DatastoreType field to given value.
 
@@ -161,20 +161,20 @@ HasDatastoreType returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *ClusterDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastore) GetStorageServer() ClusterDatastoreStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *ClusterDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastore) GetStorageServerOk() (*ClusterDatastoreStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *ClusterDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastore) SetStorageServer(v ClusterDatastoreStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -556,20 +556,20 @@ HasExternalId returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ClusterDatastore) GetZone() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastore) GetZone() ClusterDatastoreZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ClusterDatastore) GetZoneOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastore) GetZoneOk() (*ClusterDatastoreZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ClusterDatastore) SetZone(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastore) SetZone(v ClusterDatastoreZone)`
 
 SetZone sets Zone field to given value.
 
@@ -581,20 +581,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *ClusterDatastore) GetZonePool() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastore) GetZonePool() ClusterDatastoreZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *ClusterDatastore) GetZonePoolOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastore) GetZonePoolOk() (*ClusterDatastoreZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *ClusterDatastore) SetZonePool(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastore) SetZonePool(v ClusterDatastoreZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -606,20 +606,20 @@ HasZonePool returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ClusterDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastore) GetOwner() ClusterDatastoreOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ClusterDatastore) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastore) GetOwnerOk() (*ClusterDatastoreOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ClusterDatastore) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastore) SetOwner(v ClusterDatastoreOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -631,20 +631,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ClusterDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner`
+`func (o *ClusterDatastore) GetTenants() []ClusterDatastoreTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ClusterDatastore) GetTenantsOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
+`func (o *ClusterDatastore) GetTenantsOk() (*[]ClusterDatastoreTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ClusterDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
+`func (o *ClusterDatastore) SetTenants(v []ClusterDatastoreTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -656,20 +656,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *ClusterDatastore) GetResourcePermissions() SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions`
+`func (o *ClusterDatastore) GetResourcePermissions() ClusterDatastoreResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *ClusterDatastore) GetResourcePermissionsOk() (*SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions, bool)`
+`func (o *ClusterDatastore) GetResourcePermissionsOk() (*ClusterDatastoreResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *ClusterDatastore) SetResourcePermissions(v SaveCloudDatastore200ResponseAllOfDatastoreResourcePermissions)`
+`func (o *ClusterDatastore) SetResourcePermissions(v ClusterDatastoreResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

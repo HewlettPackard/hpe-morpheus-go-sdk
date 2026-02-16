@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Type** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType**](ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType.md) |  | [optional] 
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
 **ExternalType** | Pointer to **NullableString** |  | [optional] 
 **DeploymentId** | Pointer to **NullableString** |  | [optional] 
@@ -187,20 +187,20 @@ HasCode returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetType() ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetType(v ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType)`
 
 SetType sets Type field to given value.
 

@@ -23,7 +23,7 @@ type ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission struct
 	All                  *bool                                                                            `json:"all,omitempty"`
 	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
 	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
-	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
+	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner `json:"plans,omitempty"`
 	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
 }
 
@@ -144,9 +144,9 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) S
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner {
 	if o == nil {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
+		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner
 		return ret
 	}
 	return o.Plans
@@ -155,7 +155,7 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) G
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlansOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlansOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) I
 	return false
 }
 
-// SetPlans gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner and assigns it to the Plans field.
-func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
+// SetPlans gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner and assigns it to the Plans field.
+func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner) {
 	o.Plans = v
 }
 
@@ -250,7 +250,6 @@ func (v NullableListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermis
 
 	return v, nil
 }
-
 func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

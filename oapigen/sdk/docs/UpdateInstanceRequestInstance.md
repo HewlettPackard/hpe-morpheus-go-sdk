@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Optional description field. | [optional] 
 **InstanceContext** | Pointer to **string** | Environment | [optional] 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**AddTags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
-**RemoveTags** | Pointer to [**[]ListInstances200ResponseAllOfInstancesInnerTagsInner**](ListInstances200ResponseAllOfInstancesInnerTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
+**Tags** | Pointer to [**[]UpdateInstanceRequestInstanceTagsInner**](UpdateInstanceRequestInstanceTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**AddTags** | Pointer to [**[]UpdateInstanceRequestInstanceAddTagsInner**](UpdateInstanceRequestInstanceAddTagsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
+**RemoveTags** | Pointer to [**[]UpdateInstanceRequestInstanceRemoveTagsInner**](UpdateInstanceRequestInstanceRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
 **PowerScheduleType** | Pointer to **int64** | Power schedule ID. | [optional] 
 **Site** | Pointer to [**UpdateInstanceRequestInstanceSite**](UpdateInstanceRequestInstanceSite.md) |  | [optional] 
 **OwnerId** | Pointer to **int64** | User ID, can be used to change instance owner. | [optional] 
@@ -137,20 +137,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *UpdateInstanceRequestInstance) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *UpdateInstanceRequestInstance) GetTags() []UpdateInstanceRequestInstanceTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *UpdateInstanceRequestInstance) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *UpdateInstanceRequestInstance) GetTagsOk() (*[]UpdateInstanceRequestInstanceTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *UpdateInstanceRequestInstance) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *UpdateInstanceRequestInstance) SetTags(v []UpdateInstanceRequestInstanceTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -162,20 +162,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetAddTags
 
-`func (o *UpdateInstanceRequestInstance) GetAddTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *UpdateInstanceRequestInstance) GetAddTags() []UpdateInstanceRequestInstanceAddTagsInner`
 
 GetAddTags returns the AddTags field if non-nil, zero value otherwise.
 
 ### GetAddTagsOk
 
-`func (o *UpdateInstanceRequestInstance) GetAddTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *UpdateInstanceRequestInstance) GetAddTagsOk() (*[]UpdateInstanceRequestInstanceAddTagsInner, bool)`
 
 GetAddTagsOk returns a tuple with the AddTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddTags
 
-`func (o *UpdateInstanceRequestInstance) SetAddTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *UpdateInstanceRequestInstance) SetAddTags(v []UpdateInstanceRequestInstanceAddTagsInner)`
 
 SetAddTags sets AddTags field to given value.
 
@@ -187,20 +187,20 @@ HasAddTags returns a boolean if a field has been set.
 
 ### GetRemoveTags
 
-`func (o *UpdateInstanceRequestInstance) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner`
+`func (o *UpdateInstanceRequestInstance) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner`
 
 GetRemoveTags returns the RemoveTags field if non-nil, zero value otherwise.
 
 ### GetRemoveTagsOk
 
-`func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() (*[]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool)`
+`func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() (*[]UpdateInstanceRequestInstanceRemoveTagsInner, bool)`
 
 GetRemoveTagsOk returns a tuple with the RemoveTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRemoveTags
 
-`func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner)`
+`func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner)`
 
 SetRemoveTags sets RemoveTags field to given value.
 

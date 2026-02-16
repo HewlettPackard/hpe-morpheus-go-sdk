@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **DefaultTarget** | Pointer to **bool** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Sites** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner.md) |  | [optional] 
-**Plans** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner.md) |  | [optional] 
+**Account** | Pointer to [**ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount**](ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount.md) |  | [optional] 
+**Sites** | Pointer to [**[]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner**](ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner.md) |  | [optional] 
+**Plans** | Pointer to [**[]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner**](ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner.md) |  | [optional] 
 
 ## Methods
 
@@ -159,20 +159,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccount() ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccountOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetAccount(v ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -184,20 +184,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSites() []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSitesOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSitesOk() (*[]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetSites(v []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -219,20 +219,20 @@ HasSites returns a boolean if a field has been set.
 UnsetSites ensures that no value is present for Sites, not even an explicit nil
 ### GetPlans
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlans() []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlansOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlansOk() (*[]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetPlans(v []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

@@ -23,19 +23,19 @@ type StorageDatastoreCreate struct {
 	// The name of the datastore to be created.
 	Name string `json:"name"`
 	// The code of the datatoreType
-	DatastoreType string                              `json:"datastoreType"`
-	Config        SaveDatastoreRequestDatastoreConfig `json:"config"`
+	DatastoreType string                       `json:"datastoreType"`
+	Config        StorageDatastoreCreateConfig `json:"config"`
 	// Type of the resource this datastore is associated with, can be 'ComputeZone' ('Cloud') or 'ComputeServerGroup' ('Cluster')
 	RefType string `json:"refType"`
 	// The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup
-	RefId         int64                                        `json:"refId"`
-	StorageServer *GetAlerts200ResponseAllOfChecksInnerAccount `json:"storageServer,omitempty"`
+	RefId         int64                                `json:"refId"`
+	StorageServer *StorageDatastoreCreateStorageServer `json:"storageServer,omitempty"`
 	// Visibility level of the datastore, can be 'private' or 'public'. If not specified, defaults to 'private'.
-	Visibility          *string                                                  `json:"visibility,omitempty"`
-	Active              *bool                                                    `json:"active,omitempty"`
-	DefaultStore        *bool                                                    `json:"defaultStore,omitempty"`
-	TenantPermissions   *SaveDatastoreRequestDatastoreTenantPermissions          `json:"tenantPermissions,omitempty"`
-	ResourcePermissions *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Visibility          *string                                    `json:"visibility,omitempty"`
+	Active              *bool                                      `json:"active,omitempty"`
+	DefaultStore        *bool                                      `json:"defaultStore,omitempty"`
+	TenantPermissions   *StorageDatastoreCreateTenantPermissions   `json:"tenantPermissions,omitempty"`
+	ResourcePermissions *StorageDatastoreCreateResourcePermissions `json:"resourcePermissions,omitempty"`
 	// List of datastores associated with this datastore, for use with vSphere clouds.
 	Datastores           []map[string]interface{} `json:"datastores,omitempty"`
 	AdditionalProperties map[string]interface{}   `json:",remain"`
@@ -47,7 +47,7 @@ type _StorageDatastoreCreate StorageDatastoreCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageDatastoreCreate(name string, datastoreType string, config SaveDatastoreRequestDatastoreConfig, refType string, refId int64) *StorageDatastoreCreate {
+func NewStorageDatastoreCreate(name string, datastoreType string, config StorageDatastoreCreateConfig, refType string, refId int64) *StorageDatastoreCreate {
 	this := StorageDatastoreCreate{}
 	this.Name = name
 	this.DatastoreType = datastoreType
@@ -114,9 +114,9 @@ func (o *StorageDatastoreCreate) SetDatastoreType(v string) {
 }
 
 // GetConfig returns the Config field value
-func (o *StorageDatastoreCreate) GetConfig() SaveDatastoreRequestDatastoreConfig {
+func (o *StorageDatastoreCreate) GetConfig() StorageDatastoreCreateConfig {
 	if o == nil {
-		var ret SaveDatastoreRequestDatastoreConfig
+		var ret StorageDatastoreCreateConfig
 		return ret
 	}
 
@@ -125,7 +125,7 @@ func (o *StorageDatastoreCreate) GetConfig() SaveDatastoreRequestDatastoreConfig
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetConfigOk() (*SaveDatastoreRequestDatastoreConfig, bool) {
+func (o *StorageDatastoreCreate) GetConfigOk() (*StorageDatastoreCreateConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *StorageDatastoreCreate) GetConfigOk() (*SaveDatastoreRequestDatastoreCo
 }
 
 // SetConfig sets field value
-func (o *StorageDatastoreCreate) SetConfig(v SaveDatastoreRequestDatastoreConfig) {
+func (o *StorageDatastoreCreate) SetConfig(v StorageDatastoreCreateConfig) {
 	o.Config = v
 }
 
@@ -186,9 +186,9 @@ func (o *StorageDatastoreCreate) SetRefId(v int64) {
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *StorageDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *StorageDatastoreCreate) GetStorageServer() StorageDatastoreCreateStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret StorageDatastoreCreateStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -196,7 +196,7 @@ func (o *StorageDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChe
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *StorageDatastoreCreate) GetStorageServerOk() (*StorageDatastoreCreateStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -212,8 +212,8 @@ func (o *StorageDatastoreCreate) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *StorageDatastoreCreate) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given StorageDatastoreCreateStorageServer and assigns it to the StorageServer field.
+func (o *StorageDatastoreCreate) SetStorageServer(v StorageDatastoreCreateStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -314,9 +314,9 @@ func (o *StorageDatastoreCreate) SetDefaultStore(v bool) {
 }
 
 // GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *StorageDatastoreCreate) GetTenantPermissions() SaveDatastoreRequestDatastoreTenantPermissions {
+func (o *StorageDatastoreCreate) GetTenantPermissions() StorageDatastoreCreateTenantPermissions {
 	if o == nil || IsNil(o.TenantPermissions) {
-		var ret SaveDatastoreRequestDatastoreTenantPermissions
+		var ret StorageDatastoreCreateTenantPermissions
 		return ret
 	}
 	return *o.TenantPermissions
@@ -324,7 +324,7 @@ func (o *StorageDatastoreCreate) GetTenantPermissions() SaveDatastoreRequestData
 
 // GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*SaveDatastoreRequestDatastoreTenantPermissions, bool) {
+func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*StorageDatastoreCreateTenantPermissions, bool) {
 	if o == nil || IsNil(o.TenantPermissions) {
 		return nil, false
 	}
@@ -340,15 +340,15 @@ func (o *StorageDatastoreCreate) IsSetTenantPermissions() bool {
 	return false
 }
 
-// SetTenantPermissions gets a reference to the given SaveDatastoreRequestDatastoreTenantPermissions and assigns it to the TenantPermissions field.
-func (o *StorageDatastoreCreate) SetTenantPermissions(v SaveDatastoreRequestDatastoreTenantPermissions) {
+// SetTenantPermissions gets a reference to the given StorageDatastoreCreateTenantPermissions and assigns it to the TenantPermissions field.
+func (o *StorageDatastoreCreate) SetTenantPermissions(v StorageDatastoreCreateTenantPermissions) {
 	o.TenantPermissions = &v
 }
 
 // GetResourcePermissions returns the ResourcePermissions field value if set, zero value otherwise.
-func (o *StorageDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions {
+func (o *StorageDatastoreCreate) GetResourcePermissions() StorageDatastoreCreateResourcePermissions {
 	if o == nil || IsNil(o.ResourcePermissions) {
-		var ret SaveClusterDatastoreRequestDatastoreResourcePermissions
+		var ret StorageDatastoreCreateResourcePermissions
 		return ret
 	}
 	return *o.ResourcePermissions
@@ -356,7 +356,7 @@ func (o *StorageDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRe
 
 // GetResourcePermissionsOk returns a tuple with the ResourcePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool) {
+func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*StorageDatastoreCreateResourcePermissions, bool) {
 	if o == nil || IsNil(o.ResourcePermissions) {
 		return nil, false
 	}
@@ -372,8 +372,8 @@ func (o *StorageDatastoreCreate) IsSetResourcePermissions() bool {
 	return false
 }
 
-// SetResourcePermissions gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissions and assigns it to the ResourcePermissions field.
-func (o *StorageDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions) {
+// SetResourcePermissions gets a reference to the given StorageDatastoreCreateResourcePermissions and assigns it to the ResourcePermissions field.
+func (o *StorageDatastoreCreate) SetResourcePermissions(v StorageDatastoreCreateResourcePermissions) {
 	o.ResourcePermissions = &v
 }
 
@@ -497,7 +497,6 @@ func (v NullableStorageDatastoreCreate) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
-
 func (o *StorageDatastoreCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

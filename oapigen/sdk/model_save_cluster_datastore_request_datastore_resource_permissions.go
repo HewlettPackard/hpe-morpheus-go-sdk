@@ -20,18 +20,18 @@ var _ MappedNullable = &SaveClusterDatastoreRequestDatastoreResourcePermissions{
 
 // SaveClusterDatastoreRequestDatastoreResourcePermissions struct for SaveClusterDatastoreRequestDatastoreResourcePermissions
 type SaveClusterDatastoreRequestDatastoreResourcePermissions struct {
-	AllGroups            *bool                                                        `json:"allGroups,omitempty"`
-	DefaultStore         *bool                                                        `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                                        `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                                        `json:"defaultTarget,omitempty"`
-	MorpheusResourceType *string                                                      `json:"morpheusResourceType,omitempty"`
-	MorpheusResourceId   *int64                                                       `json:"morpheusResourceId,omitempty"`
-	CanManage            *bool                                                        `json:"canManage,omitempty"`
-	All                  *bool                                                        `json:"all,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                 `json:"account,omitempty"`
-	Sites                []GetAlerts200ResponseAllOfChecksInnerAccount                `json:"sites,omitempty"`
-	Plans                []ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                       `json:",remain"`
+	AllGroups            *bool                                                               `json:"allGroups,omitempty"`
+	DefaultStore         *bool                                                               `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                               `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                               `json:"defaultTarget,omitempty"`
+	MorpheusResourceType *string                                                             `json:"morpheusResourceType,omitempty"`
+	MorpheusResourceId   *int64                                                              `json:"morpheusResourceId,omitempty"`
+	CanManage            *bool                                                               `json:"canManage,omitempty"`
+	All                  *bool                                                               `json:"all,omitempty"`
+	Account              *SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount     `json:"account,omitempty"`
+	Sites                []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner `json:"sites,omitempty"`
+	Plans                []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                              `json:",remain"`
 }
 
 type _SaveClusterDatastoreRequestDatastoreResourcePermissions SaveClusterDatastoreRequestDatastoreResourcePermissions
@@ -310,9 +310,9 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetAll(v bool)
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccount() SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount
 		return ret
 	}
 	return *o.Account
@@ -320,7 +320,7 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccount() G
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -336,15 +336,15 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) IsSetAccount()
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount and assigns it to the Account field.
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetAccount(v SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount) {
 	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSites() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSites() []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -352,7 +352,7 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSites() []G
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSitesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSitesOk() ([]SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -368,15 +368,15 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) IsSetSites() b
 	return false
 }
 
-// SetSites gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Sites field.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetSites(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetSites gets a reference to the given []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetSites(v []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlans() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlans() []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner {
 	if o == nil || IsNil(o.Plans) {
-		var ret []ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -384,7 +384,7 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlans() []L
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlansOk() ([]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlansOk() ([]SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -400,8 +400,8 @@ func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) IsSetPlans() b
 	return false
 }
 
-// SetPlans gets a reference to the given []ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Plans field.
-func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetPlans(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetPlans gets a reference to the given []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetPlans(v []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 
@@ -500,7 +500,6 @@ func (v NullableSaveClusterDatastoreRequestDatastoreResourcePermissions) Unmarsh
 
 	return v, nil
 }
-
 func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

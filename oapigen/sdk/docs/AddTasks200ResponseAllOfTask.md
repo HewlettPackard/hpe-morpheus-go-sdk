@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Code** | Pointer to **NullableString** |  | [optional] 
-**TaskType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**TaskType** | Pointer to [**AddTasks200ResponseAllOfTaskTaskType**](AddTasks200ResponseAllOfTaskTaskType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **TaskOptions** | Pointer to [**AddTasks200ResponseAllOfTaskTaskOptions**](AddTasks200ResponseAllOfTaskTaskOptions.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **RetryCount** | Pointer to **int64** |  | [optional] 
 **RetryDelaySeconds** | Pointer to **int64** |  | [optional] 
 **AllowCustomConfig** | Pointer to **bool** |  | [optional] 
-**Credential** | Pointer to [**ListClouds200ResponseAllOfZonesInnerCredentialAnyOf**](ListClouds200ResponseAllOfZonesInnerCredentialAnyOf.md) |  | [optional] 
+**Credential** | Pointer to [**AddTasks200ResponseAllOfTaskCredential**](AddTasks200ResponseAllOfTaskCredential.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -154,20 +154,20 @@ HasCode returns a boolean if a field has been set.
 UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetTaskType
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskType() AddTasks200ResponseAllOfTaskTaskType`
 
 GetTaskType returns the TaskType field if non-nil, zero value otherwise.
 
 ### GetTaskTypeOk
 
-`func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *AddTasks200ResponseAllOfTask) GetTaskTypeOk() (*AddTasks200ResponseAllOfTaskTaskType, bool)`
 
 GetTaskTypeOk returns a tuple with the TaskType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskType
 
-`func (o *AddTasks200ResponseAllOfTask) SetTaskType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *AddTasks200ResponseAllOfTask) SetTaskType(v AddTasks200ResponseAllOfTaskTaskType)`
 
 SetTaskType sets TaskType field to given value.
 
@@ -439,20 +439,20 @@ HasAllowCustomConfig returns a boolean if a field has been set.
 
 ### GetCredential
 
-`func (o *AddTasks200ResponseAllOfTask) GetCredential() ListClouds200ResponseAllOfZonesInnerCredentialAnyOf`
+`func (o *AddTasks200ResponseAllOfTask) GetCredential() AddTasks200ResponseAllOfTaskCredential`
 
 GetCredential returns the Credential field if non-nil, zero value otherwise.
 
 ### GetCredentialOk
 
-`func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*ListClouds200ResponseAllOfZonesInnerCredentialAnyOf, bool)`
+`func (o *AddTasks200ResponseAllOfTask) GetCredentialOk() (*AddTasks200ResponseAllOfTaskCredential, bool)`
 
 GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredential
 
-`func (o *AddTasks200ResponseAllOfTask) SetCredential(v ListClouds200ResponseAllOfZonesInnerCredentialAnyOf)`
+`func (o *AddTasks200ResponseAllOfTask) SetCredential(v AddTasks200ResponseAllOfTaskCredential)`
 
 SetCredential sets Credential field to given value.
 

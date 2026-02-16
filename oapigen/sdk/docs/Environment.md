@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**AddEnvironments200ResponseAllOfEnvironmentAccount**](AddEnvironments200ResponseAllOfEnvironmentAccount.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -61,20 +61,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *Environment) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *Environment) GetAccount() AddEnvironments200ResponseAllOfEnvironmentAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *Environment) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *Environment) GetAccountOk() (*AddEnvironments200ResponseAllOfEnvironmentAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *Environment) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *Environment) SetAccount(v AddEnvironments200ResponseAllOfEnvironmentAccount)`
 
 SetAccount sets Account field to given value.
 

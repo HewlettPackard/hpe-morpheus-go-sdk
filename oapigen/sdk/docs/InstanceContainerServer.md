@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **InternalId** | Pointer to **NullableString** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**InstanceContainerInstance**](InstanceContainerInstance.md) |  | [optional] 
+**Account** | Pointer to [**InstanceContainerServerAccount**](InstanceContainerServerAccount.md) |  | [optional] 
 **Owner** | Pointer to [**InstanceContainerServerOwner**](InstanceContainerServerOwner.md) |  | [optional] 
-**Zone** | Pointer to [**InstanceContainerInstance**](InstanceContainerInstance.md) |  | [optional] 
-**Plan** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
+**Zone** | Pointer to [**InstanceContainerServerZone**](InstanceContainerServerZone.md) |  | [optional] 
+**Plan** | Pointer to [**InstanceContainerServerPlan**](InstanceContainerServerPlan.md) |  | [optional] 
 **ComputeServerType** | Pointer to [**InstanceContainerServerComputeServerType**](InstanceContainerServerComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **MaxCores** | Pointer to **int64** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
-**SourceImage** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
+**SourceImage** | Pointer to [**InstanceContainerServerSourceImage**](InstanceContainerServerSourceImage.md) |  | [optional] 
 **ServerOs** | Pointer to [**InstanceContainerServerServerOs**](InstanceContainerServerServerOs.md) |  | [optional] 
 **Volumes** | Pointer to [**[]InstanceContainerServerVolume**](InstanceContainerServerVolume.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]InstanceContainerServerInterfacesInner**](InstanceContainerServerInterfacesInner.md) |  | [optional] 
@@ -233,20 +233,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *InstanceContainerServer) GetAccount() InstanceContainerInstance`
+`func (o *InstanceContainerServer) GetAccount() InstanceContainerServerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *InstanceContainerServer) GetAccountOk() (*InstanceContainerInstance, bool)`
+`func (o *InstanceContainerServer) GetAccountOk() (*InstanceContainerServerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *InstanceContainerServer) SetAccount(v InstanceContainerInstance)`
+`func (o *InstanceContainerServer) SetAccount(v InstanceContainerServerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -283,20 +283,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *InstanceContainerServer) GetZone() InstanceContainerInstance`
+`func (o *InstanceContainerServer) GetZone() InstanceContainerServerZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *InstanceContainerServer) GetZoneOk() (*InstanceContainerInstance, bool)`
+`func (o *InstanceContainerServer) GetZoneOk() (*InstanceContainerServerZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *InstanceContainerServer) SetZone(v InstanceContainerInstance)`
+`func (o *InstanceContainerServer) SetZone(v InstanceContainerServerZone)`
 
 SetZone sets Zone field to given value.
 
@@ -308,20 +308,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *InstanceContainerServer) GetPlan() InstanceContainerContainerType`
+`func (o *InstanceContainerServer) GetPlan() InstanceContainerServerPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *InstanceContainerServer) GetPlanOk() (*InstanceContainerContainerType, bool)`
+`func (o *InstanceContainerServer) GetPlanOk() (*InstanceContainerServerPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *InstanceContainerServer) SetPlan(v InstanceContainerContainerType)`
+`func (o *InstanceContainerServer) SetPlan(v InstanceContainerServerPlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -998,20 +998,20 @@ HasMaxStorage returns a boolean if a field has been set.
 
 ### GetSourceImage
 
-`func (o *InstanceContainerServer) GetSourceImage() InstanceContainerContainerType`
+`func (o *InstanceContainerServer) GetSourceImage() InstanceContainerServerSourceImage`
 
 GetSourceImage returns the SourceImage field if non-nil, zero value otherwise.
 
 ### GetSourceImageOk
 
-`func (o *InstanceContainerServer) GetSourceImageOk() (*InstanceContainerContainerType, bool)`
+`func (o *InstanceContainerServer) GetSourceImageOk() (*InstanceContainerServerSourceImage, bool)`
 
 GetSourceImageOk returns a tuple with the SourceImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceImage
 
-`func (o *InstanceContainerServer) SetSourceImage(v InstanceContainerContainerType)`
+`func (o *InstanceContainerServer) SetSourceImage(v InstanceContainerServerSourceImage)`
 
 SetSourceImage sets SourceImage field to given value.
 

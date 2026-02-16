@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **HasAutoScale** | Pointer to **bool** | Enable Scaling (Horizontal) | [optional] 
 **HasDeployment** | Pointer to **bool** | Supports Deployments | [optional] 
 **EnvironmentPrefix** | Pointer to **string** | Environment Prefix, can be used to make exported evars unique. | [optional] 
-**EnvironmentVariables** | Pointer to [**[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner**](AddClusterLayoutsRequestLayoutEnvironmentVariablesInner.md) | Array of instance type env variables. | [optional] 
+**EnvironmentVariables** | Pointer to [**[]AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner**](AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner.md) | Array of instance type env variables. | [optional] 
 **PriceSets** | Pointer to [**[]AddInstanceTypeRequestInstanceTypePriceSetsInner**](AddInstanceTypeRequestInstanceTypePriceSetsInner.md) | Array of price set objects | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of instance type option type IDs | [optional] 
 
@@ -320,20 +320,20 @@ HasEnvironmentPrefix returns a boolean if a field has been set.
 
 ### GetEnvironmentVariables
 
-`func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner`
+`func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariables() []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner`
 
 GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
 
 ### GetEnvironmentVariablesOk
 
-`func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariablesOk() (*[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool)`
+`func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariablesOk() (*[]AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner, bool)`
 
 GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentVariables
 
-`func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner)`
+`func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentVariables(v []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner)`
 
 SetEnvironmentVariables sets EnvironmentVariables field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**DatastoreType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**DatastoreType** | Pointer to [**ClusterDatastoreCreateDatastoreType**](ClusterDatastoreCreateDatastoreType.md) |  | [optional] 
+**StorageServer** | Pointer to [**ClusterDatastoreCreateStorageServer**](ClusterDatastoreCreateStorageServer.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
 **Config** | Pointer to [**ClusterDatastoreCreateConfig**](ClusterDatastoreCreateConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**Tenants** | Pointer to [**[]ClusterDatastoreCreateTenantsInner**](ClusterDatastoreCreateTenantsInner.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**ClusterDatastoreCreateResourcePermissions**](ClusterDatastoreCreateResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -61,20 +61,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetDatastoreType
 
-`func (o *ClusterDatastoreCreate) GetDatastoreType() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastoreCreate) GetDatastoreType() ClusterDatastoreCreateDatastoreType`
 
 GetDatastoreType returns the DatastoreType field if non-nil, zero value otherwise.
 
 ### GetDatastoreTypeOk
 
-`func (o *ClusterDatastoreCreate) GetDatastoreTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastoreCreate) GetDatastoreTypeOk() (*ClusterDatastoreCreateDatastoreType, bool)`
 
 GetDatastoreTypeOk returns a tuple with the DatastoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastoreType
 
-`func (o *ClusterDatastoreCreate) SetDatastoreType(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastoreCreate) SetDatastoreType(v ClusterDatastoreCreateDatastoreType)`
 
 SetDatastoreType sets DatastoreType field to given value.
 
@@ -86,20 +86,20 @@ HasDatastoreType returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *ClusterDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ClusterDatastoreCreate) GetStorageServer() ClusterDatastoreCreateStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *ClusterDatastoreCreate) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ClusterDatastoreCreate) GetStorageServerOk() (*ClusterDatastoreCreateStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *ClusterDatastoreCreate) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ClusterDatastoreCreate) SetStorageServer(v ClusterDatastoreCreateStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -211,20 +211,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ClusterDatastoreCreate) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner`
+`func (o *ClusterDatastoreCreate) GetTenants() []ClusterDatastoreCreateTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ClusterDatastoreCreate) GetTenantsOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
+`func (o *ClusterDatastoreCreate) GetTenantsOk() (*[]ClusterDatastoreCreateTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ClusterDatastoreCreate) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
+`func (o *ClusterDatastoreCreate) SetTenants(v []ClusterDatastoreCreateTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -236,20 +236,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions`
+`func (o *ClusterDatastoreCreate) GetResourcePermissions() ClusterDatastoreCreateResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *ClusterDatastoreCreate) GetResourcePermissionsOk() (*ClusterDatastoreCreateResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *ClusterDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions)`
+`func (o *ClusterDatastoreCreate) SetResourcePermissions(v ClusterDatastoreCreateResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

@@ -21,34 +21,34 @@ var _ MappedNullable = &CheckGroup{}
 
 // CheckGroup struct for CheckGroup
 type CheckGroup struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"account,omitempty"`
-	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"instance,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Description          NullableString                                              `json:"description,omitempty"`
-	InUptime             *bool                                                       `json:"inUptime,omitempty"`
-	LastCheckStatus      NullableString                                              `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      NullableTime                                                `json:"lastWarningDate,omitempty"`
-	LastErrorDate        NullableTime                                                `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      NullableTime                                                `json:"lastSuccessDate,omitempty"`
-	LastRunDate          NullableTime                                                `json:"lastRunDate,omitempty"`
-	LastError            NullableString                                              `json:"lastError,omitempty"`
-	OutageTime           *int64                                                      `json:"outageTime,omitempty"`
-	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
-	Health               *int64                                                      `json:"health,omitempty"`
-	History              NullableString                                              `json:"history,omitempty"`
-	MinHappy             *int64                                                      `json:"minHappy,omitempty"`
-	LastMetric           NullableString                                              `json:"lastMetric,omitempty"`
-	Severity             *string                                                     `json:"severity,omitempty"`
-	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
-	Muted                *bool                                                       `json:"muted,omitempty"`
-	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	Availability         NullableFloat32                                             `json:"availability,omitempty"`
-	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType              `json:"checkType,omitempty"`
-	Checks               []int64                                                     `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Account              *CheckGroupAccount     `json:"account,omitempty"`
+	Instance             *CheckGroupInstance    `json:"instance,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          NullableString         `json:"description,omitempty"`
+	InUptime             *bool                  `json:"inUptime,omitempty"`
+	LastCheckStatus      NullableString         `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime           `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime           `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime           `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime           `json:"lastRunDate,omitempty"`
+	LastError            NullableString         `json:"lastError,omitempty"`
+	OutageTime           *int64                 `json:"outageTime,omitempty"`
+	LastTimer            *int64                 `json:"lastTimer,omitempty"`
+	Health               *int64                 `json:"health,omitempty"`
+	History              NullableString         `json:"history,omitempty"`
+	MinHappy             *int64                 `json:"minHappy,omitempty"`
+	LastMetric           NullableString         `json:"lastMetric,omitempty"`
+	Severity             *string                `json:"severity,omitempty"`
+	CreateIncident       *bool                  `json:"createIncident,omitempty"`
+	Muted                *bool                  `json:"muted,omitempty"`
+	CreatedBy            *CheckGroupCreatedBy   `json:"createdBy,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	Availability         NullableFloat32        `json:"availability,omitempty"`
+	CheckType            *CheckGroupCheckType   `json:"checkType,omitempty"`
+	Checks               []int64                `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _CheckGroup CheckGroup
@@ -103,9 +103,9 @@ func (o *CheckGroup) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *CheckGroup) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *CheckGroup) GetAccount() CheckGroupAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret CheckGroupAccount
 		return ret
 	}
 	return *o.Account
@@ -113,7 +113,7 @@ func (o *CheckGroup) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *CheckGroup) GetAccountOk() (*CheckGroupAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -129,15 +129,15 @@ func (o *CheckGroup) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *CheckGroup) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given CheckGroupAccount and assigns it to the Account field.
+func (o *CheckGroup) SetAccount(v CheckGroupAccount) {
 	o.Account = &v
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *CheckGroup) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *CheckGroup) GetInstance() CheckGroupInstance {
 	if o == nil || IsNil(o.Instance) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret CheckGroupInstance
 		return ret
 	}
 	return *o.Instance
@@ -145,7 +145,7 @@ func (o *CheckGroup) GetInstance() GetAlerts200ResponseAllOfCheckGroupsInnerInst
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetInstanceOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *CheckGroup) GetInstanceOk() (*CheckGroupInstance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -161,8 +161,8 @@ func (o *CheckGroup) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Instance field.
-func (o *CheckGroup) SetInstance(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetInstance gets a reference to the given CheckGroupInstance and assigns it to the Instance field.
+func (o *CheckGroup) SetInstance(v CheckGroupInstance) {
 	o.Instance = &v
 }
 
@@ -842,9 +842,9 @@ func (o *CheckGroup) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *CheckGroup) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *CheckGroup) GetCreatedBy() CheckGroupCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret CheckGroupCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -852,7 +852,7 @@ func (o *CheckGroup) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerAct
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *CheckGroup) GetCreatedByOk() (*CheckGroupCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -868,8 +868,8 @@ func (o *CheckGroup) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the CreatedBy field.
-func (o *CheckGroup) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetCreatedBy gets a reference to the given CheckGroupCreatedBy and assigns it to the CreatedBy field.
+func (o *CheckGroup) SetCreatedBy(v CheckGroupCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -981,9 +981,9 @@ func (o *CheckGroup) UnsetAvailability() {
 }
 
 // GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *CheckGroup) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckType {
+func (o *CheckGroup) GetCheckType() CheckGroupCheckType {
 	if o == nil || IsNil(o.CheckType) {
-		var ret GetAlerts200ResponseAllOfChecksInnerCheckType
+		var ret CheckGroupCheckType
 		return ret
 	}
 	return *o.CheckType
@@ -991,7 +991,7 @@ func (o *CheckGroup) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckTyp
 
 // GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckGroup) GetCheckTypeOk() (*GetAlerts200ResponseAllOfChecksInnerCheckType, bool) {
+func (o *CheckGroup) GetCheckTypeOk() (*CheckGroupCheckType, bool) {
 	if o == nil || IsNil(o.CheckType) {
 		return nil, false
 	}
@@ -1007,8 +1007,8 @@ func (o *CheckGroup) IsSetCheckType() bool {
 	return false
 }
 
-// SetCheckType gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCheckType and assigns it to the CheckType field.
-func (o *CheckGroup) SetCheckType(v GetAlerts200ResponseAllOfChecksInnerCheckType) {
+// SetCheckType gets a reference to the given CheckGroupCheckType and assigns it to the CheckType field.
+func (o *CheckGroup) SetCheckType(v CheckGroupCheckType) {
 	o.CheckType = &v
 }
 
@@ -1187,7 +1187,6 @@ func (v NullableCheckGroup) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *CheckGroup) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -30,11 +30,11 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Editable** | Pointer to **bool** |  | [optional] 
-**ProvisionType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType.md) |  | [optional] 
+**ProvisionType** | Pointer to [**ServicePlanRowProvisionType**](ServicePlanRowProvisionType.md) |  | [optional] 
 **Tenants** | Pointer to **string** |  | [optional] 
-**PriceSets** | Pointer to [**[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner.md) |  | [optional] 
-**Config** | Pointer to [**ListServicePlans200ResponseAllOfServicePlansInnerConfig**](ListServicePlans200ResponseAllOfServicePlansInnerConfig.md) |  | [optional] 
-**Zones** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**PriceSets** | Pointer to [**[]ServicePlanRowPriceSetsInner**](ServicePlanRowPriceSetsInner.md) |  | [optional] 
+**Config** | Pointer to [**ServicePlanRowConfig**](ServicePlanRowConfig.md) |  | [optional] 
+**Zones** | Pointer to [**[]ServicePlanRowZonesInner**](ServicePlanRowZonesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -827,20 +827,20 @@ HasEditable returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *ServicePlanRow) GetProvisionType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType`
+`func (o *ServicePlanRow) GetProvisionType() ServicePlanRowProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *ServicePlanRow) GetProvisionTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType, bool)`
+`func (o *ServicePlanRow) GetProvisionTypeOk() (*ServicePlanRowProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *ServicePlanRow) SetProvisionType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionProvisionType)`
+`func (o *ServicePlanRow) SetProvisionType(v ServicePlanRowProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -877,20 +877,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *ServicePlanRow) GetPriceSets() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner`
+`func (o *ServicePlanRow) GetPriceSets() []ServicePlanRowPriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *ServicePlanRow) GetPriceSetsOk() (*[]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner, bool)`
+`func (o *ServicePlanRow) GetPriceSetsOk() (*[]ServicePlanRowPriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *ServicePlanRow) SetPriceSets(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfPlanBeforeActionPriceSetsInner)`
+`func (o *ServicePlanRow) SetPriceSets(v []ServicePlanRowPriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 
@@ -912,20 +912,20 @@ HasPriceSets returns a boolean if a field has been set.
 UnsetPriceSets ensures that no value is present for PriceSets, not even an explicit nil
 ### GetConfig
 
-`func (o *ServicePlanRow) GetConfig() ListServicePlans200ResponseAllOfServicePlansInnerConfig`
+`func (o *ServicePlanRow) GetConfig() ServicePlanRowConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *ServicePlanRow) GetConfigOk() (*ListServicePlans200ResponseAllOfServicePlansInnerConfig, bool)`
+`func (o *ServicePlanRow) GetConfigOk() (*ServicePlanRowConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *ServicePlanRow) SetConfig(v ListServicePlans200ResponseAllOfServicePlansInnerConfig)`
+`func (o *ServicePlanRow) SetConfig(v ServicePlanRowConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -937,20 +937,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *ServicePlanRow) GetZones() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ServicePlanRow) GetZones() []ServicePlanRowZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *ServicePlanRow) GetZonesOk() (*[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ServicePlanRow) GetZonesOk() (*[]ServicePlanRowZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *ServicePlanRow) SetZones(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ServicePlanRow) SetZones(v []ServicePlanRowZonesInner)`
 
 SetZones sets Zones field to given value.
 

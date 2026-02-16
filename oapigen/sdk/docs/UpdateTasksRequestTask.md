@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Visibility** | Pointer to **string** | Visibility | [optional] [default to "private"]
 **TaskType** | Pointer to [**UpdateTasksRequestTaskTaskType**](UpdateTasksRequestTaskTaskType.md) |  | [optional] 
 **Labels** | Pointer to **[]string** | An array of Category labels for filtering | [optional] 
-**TaskOptions** | Pointer to [**AddTasksRequestTaskTaskOptions**](AddTasksRequestTaskTaskOptions.md) |  | [optional] 
+**TaskOptions** | Pointer to [**UpdateTasksRequestTaskTaskOptions**](UpdateTasksRequestTaskTaskOptions.md) |  | [optional] 
 **ResultType** | Pointer to **NullableString** |  | [optional] 
 **ExecuteTarget** | Pointer to **string** | The execution target. eg. local,remote,resource. The default value varies by task type.  | [optional] 
 **Retryable** | Pointer to **bool** | If the task should be retried or not. | [optional] [default to false]
 **RetryCount** | Pointer to **int64** | The number of times to retry. | [optional] 
 **RetryDelaySeconds** | Pointer to **int64** | The delay, between retries. | [optional] 
-**File** | Pointer to [**AddTasksRequestTaskFile**](AddTasksRequestTaskFile.md) |  | [optional] 
-**Credential** | Pointer to [**AddIntegrationsRequestOneOfIntegrationCredential**](AddIntegrationsRequestOneOfIntegrationCredential.md) |  | [optional] 
+**File** | Pointer to [**UpdateTasksRequestTaskFile**](UpdateTasksRequestTaskFile.md) |  | [optional] 
+**Credential** | Pointer to [**UpdateTasksRequestTaskCredential**](UpdateTasksRequestTaskCredential.md) |  | [optional] 
 
 ## Methods
 
@@ -190,20 +190,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTaskOptions
 
-`func (o *UpdateTasksRequestTask) GetTaskOptions() AddTasksRequestTaskTaskOptions`
+`func (o *UpdateTasksRequestTask) GetTaskOptions() UpdateTasksRequestTaskTaskOptions`
 
 GetTaskOptions returns the TaskOptions field if non-nil, zero value otherwise.
 
 ### GetTaskOptionsOk
 
-`func (o *UpdateTasksRequestTask) GetTaskOptionsOk() (*AddTasksRequestTaskTaskOptions, bool)`
+`func (o *UpdateTasksRequestTask) GetTaskOptionsOk() (*UpdateTasksRequestTaskTaskOptions, bool)`
 
 GetTaskOptionsOk returns a tuple with the TaskOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskOptions
 
-`func (o *UpdateTasksRequestTask) SetTaskOptions(v AddTasksRequestTaskTaskOptions)`
+`func (o *UpdateTasksRequestTask) SetTaskOptions(v UpdateTasksRequestTaskTaskOptions)`
 
 SetTaskOptions sets TaskOptions field to given value.
 
@@ -350,20 +350,20 @@ HasRetryDelaySeconds returns a boolean if a field has been set.
 
 ### GetFile
 
-`func (o *UpdateTasksRequestTask) GetFile() AddTasksRequestTaskFile`
+`func (o *UpdateTasksRequestTask) GetFile() UpdateTasksRequestTaskFile`
 
 GetFile returns the File field if non-nil, zero value otherwise.
 
 ### GetFileOk
 
-`func (o *UpdateTasksRequestTask) GetFileOk() (*AddTasksRequestTaskFile, bool)`
+`func (o *UpdateTasksRequestTask) GetFileOk() (*UpdateTasksRequestTaskFile, bool)`
 
 GetFileOk returns a tuple with the File field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFile
 
-`func (o *UpdateTasksRequestTask) SetFile(v AddTasksRequestTaskFile)`
+`func (o *UpdateTasksRequestTask) SetFile(v UpdateTasksRequestTaskFile)`
 
 SetFile sets File field to given value.
 
@@ -375,20 +375,20 @@ HasFile returns a boolean if a field has been set.
 
 ### GetCredential
 
-`func (o *UpdateTasksRequestTask) GetCredential() AddIntegrationsRequestOneOfIntegrationCredential`
+`func (o *UpdateTasksRequestTask) GetCredential() UpdateTasksRequestTaskCredential`
 
 GetCredential returns the Credential field if non-nil, zero value otherwise.
 
 ### GetCredentialOk
 
-`func (o *UpdateTasksRequestTask) GetCredentialOk() (*AddIntegrationsRequestOneOfIntegrationCredential, bool)`
+`func (o *UpdateTasksRequestTask) GetCredentialOk() (*UpdateTasksRequestTaskCredential, bool)`
 
 GetCredentialOk returns a tuple with the Credential field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCredential
 
-`func (o *UpdateTasksRequestTask) SetCredential(v AddIntegrationsRequestOneOfIntegrationCredential)`
+`func (o *UpdateTasksRequestTask) SetCredential(v UpdateTasksRequestTaskCredential)`
 
 SetCredential sets Credential field to given value.
 

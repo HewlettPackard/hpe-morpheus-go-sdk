@@ -43,9 +43,9 @@ type InstanceTypeUpdate struct {
 	// Environment Prefix, can be used to make exported evars unique.
 	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
 	// Array of instance type env variables.
-	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
+	EnvironmentVariables []InstanceTypeUpdateEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of price set objects
-	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
+	PriceSets []InstanceTypeUpdatePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
 	OptionTypes          []int64                `json:"optionTypes,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -428,9 +428,9 @@ func (o *InstanceTypeUpdate) SetEnvironmentPrefix(v string) {
 }
 
 // GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
-func (o *InstanceTypeUpdate) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner {
+func (o *InstanceTypeUpdate) GetEnvironmentVariables() []InstanceTypeUpdateEnvironmentVariablesInner {
 	if o == nil || IsNil(o.EnvironmentVariables) {
-		var ret []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
+		var ret []InstanceTypeUpdateEnvironmentVariablesInner
 		return ret
 	}
 	return o.EnvironmentVariables
@@ -438,7 +438,7 @@ func (o *InstanceTypeUpdate) GetEnvironmentVariables() []AddClusterLayoutsReques
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeUpdate) GetEnvironmentVariablesOk() ([]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool) {
+func (o *InstanceTypeUpdate) GetEnvironmentVariablesOk() ([]InstanceTypeUpdateEnvironmentVariablesInner, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
 	}
@@ -454,15 +454,15 @@ func (o *InstanceTypeUpdate) IsSetEnvironmentVariables() bool {
 	return false
 }
 
-// SetEnvironmentVariables gets a reference to the given []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
-func (o *InstanceTypeUpdate) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) {
+// SetEnvironmentVariables gets a reference to the given []InstanceTypeUpdateEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
+func (o *InstanceTypeUpdate) SetEnvironmentVariables(v []InstanceTypeUpdateEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
 }
 
 // GetPriceSets returns the PriceSets field value if set, zero value otherwise.
-func (o *InstanceTypeUpdate) GetPriceSets() []AddInstanceTypeRequestInstanceTypePriceSetsInner {
+func (o *InstanceTypeUpdate) GetPriceSets() []InstanceTypeUpdatePriceSetsInner {
 	if o == nil || IsNil(o.PriceSets) {
-		var ret []AddInstanceTypeRequestInstanceTypePriceSetsInner
+		var ret []InstanceTypeUpdatePriceSetsInner
 		return ret
 	}
 	return o.PriceSets
@@ -470,7 +470,7 @@ func (o *InstanceTypeUpdate) GetPriceSets() []AddInstanceTypeRequestInstanceType
 
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeUpdate) GetPriceSetsOk() ([]AddInstanceTypeRequestInstanceTypePriceSetsInner, bool) {
+func (o *InstanceTypeUpdate) GetPriceSetsOk() ([]InstanceTypeUpdatePriceSetsInner, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
 	}
@@ -486,8 +486,8 @@ func (o *InstanceTypeUpdate) IsSetPriceSets() bool {
 	return false
 }
 
-// SetPriceSets gets a reference to the given []AddInstanceTypeRequestInstanceTypePriceSetsInner and assigns it to the PriceSets field.
-func (o *InstanceTypeUpdate) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner) {
+// SetPriceSets gets a reference to the given []InstanceTypeUpdatePriceSetsInner and assigns it to the PriceSets field.
+func (o *InstanceTypeUpdate) SetPriceSets(v []InstanceTypeUpdatePriceSetsInner) {
 	o.PriceSets = v
 }
 
@@ -627,7 +627,6 @@ func (v NullableInstanceTypeUpdate) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *InstanceTypeUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

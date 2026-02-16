@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **All** | Pointer to **bool** |  | [optional] 
 **Sites** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner.md) |  | [optional] 
 **AllPlans** | Pointer to **bool** |  | [optional] 
-**Plans** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner.md) |  | [optional] 
+**Plans** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner.md) |  | [optional] 
 
 ## Methods
 
@@ -115,20 +115,20 @@ HasAllPlans returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlansOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool)`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) GetPlansOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner)`
+`func (o *ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermission) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionPlansInner)`
 
 SetPlans sets Plans field to given value.
 

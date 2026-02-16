@@ -20,10 +20,10 @@ var _ MappedNullable = &ListInstances200ResponseAllOfInstancesInnerCluster{}
 
 // ListInstances200ResponseAllOfInstancesInnerCluster struct for ListInstances200ResponseAllOfInstancesInnerCluster
 type ListInstances200ResponseAllOfInstancesInnerCluster struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"type,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                                  `json:"id,omitempty"`
+	Name                 *string                                                 `json:"name,omitempty"`
+	Type                 *ListInstances200ResponseAllOfInstancesInnerClusterType `json:"type,omitempty"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _ListInstances200ResponseAllOfInstancesInnerCluster ListInstances200ResponseAllOfInstancesInnerCluster
@@ -110,9 +110,9 @@ func (o *ListInstances200ResponseAllOfInstancesInnerCluster) SetName(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetType() ListInstances200ResponseAllOfInstancesInnerClusterType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListInstances200ResponseAllOfInstancesInnerClusterType
 		return ret
 	}
 	return *o.Type
@@ -120,7 +120,7 @@ func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetType() ListBacku
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetTypeOk() (*ListInstances200ResponseAllOfInstancesInnerClusterType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *ListInstances200ResponseAllOfInstancesInnerCluster) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Type field.
-func (o *ListInstances200ResponseAllOfInstancesInnerCluster) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetType gets a reference to the given ListInstances200ResponseAllOfInstancesInnerClusterType and assigns it to the Type field.
+func (o *ListInstances200ResponseAllOfInstancesInnerCluster) SetType(v ListInstances200ResponseAllOfInstancesInnerClusterType) {
 	o.Type = &v
 }
 
@@ -212,7 +212,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerCluster) UnmarshalMap
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerCluster) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

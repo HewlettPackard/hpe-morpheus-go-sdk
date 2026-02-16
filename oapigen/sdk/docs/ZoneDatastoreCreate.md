@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **DatastoreType** | Pointer to **string** | The code of the datatoreType | [optional] 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**StorageServer** | Pointer to [**ZoneDatastoreCreateStorageServer**](ZoneDatastoreCreateStorageServer.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveCloudDatastoreRequestDatastoreResourcePermissions**](SaveCloudDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**Tenants** | Pointer to [**[]ZoneDatastoreCreateTenantsInner**](ZoneDatastoreCreateTenantsInner.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**ZoneDatastoreCreateResourcePermissions**](ZoneDatastoreCreateResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 
 ## Methods
@@ -85,20 +85,20 @@ HasDatastoreType returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *ZoneDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ZoneDatastoreCreate) GetStorageServer() ZoneDatastoreCreateStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *ZoneDatastoreCreate) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ZoneDatastoreCreate) GetStorageServerOk() (*ZoneDatastoreCreateStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *ZoneDatastoreCreate) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ZoneDatastoreCreate) SetStorageServer(v ZoneDatastoreCreateStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -185,20 +185,20 @@ HasDefaultStore returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ZoneDatastoreCreate) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner`
+`func (o *ZoneDatastoreCreate) GetTenants() []ZoneDatastoreCreateTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ZoneDatastoreCreate) GetTenantsOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
+`func (o *ZoneDatastoreCreate) GetTenantsOk() (*[]ZoneDatastoreCreateTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ZoneDatastoreCreate) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
+`func (o *ZoneDatastoreCreate) SetTenants(v []ZoneDatastoreCreateTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -210,20 +210,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *ZoneDatastoreCreate) GetResourcePermissions() SaveCloudDatastoreRequestDatastoreResourcePermissions`
+`func (o *ZoneDatastoreCreate) GetResourcePermissions() ZoneDatastoreCreateResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *ZoneDatastoreCreate) GetResourcePermissionsOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *ZoneDatastoreCreate) GetResourcePermissionsOk() (*ZoneDatastoreCreateResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *ZoneDatastoreCreate) SetResourcePermissions(v SaveCloudDatastoreRequestDatastoreResourcePermissions)`
+`func (o *ZoneDatastoreCreate) SetResourcePermissions(v ZoneDatastoreCreateResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

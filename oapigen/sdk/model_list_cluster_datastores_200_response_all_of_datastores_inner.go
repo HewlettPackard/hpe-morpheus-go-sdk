@@ -39,10 +39,10 @@ type ListClusterDatastores200ResponseAllOfDatastoresInner struct {
 	ExternalId           *string                                                                  `json:"externalId,omitempty"`
 	Status               *string                                                                  `json:"status,omitempty"`
 	StatusMessage        *string                                                                  `json:"statusMessage,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"zone,omitempty"`
-	ZonePool             *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"zonePool,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfChecksInnerAccount                             `json:"owner,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner         `json:"tenants,omitempty"`
+	Zone                 *ListClusterDatastores200ResponseAllOfDatastoresInnerZone                `json:"zone,omitempty"`
+	ZonePool             *ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool            `json:"zonePool,omitempty"`
+	Owner                *ListClusterDatastores200ResponseAllOfDatastoresInnerOwner               `json:"owner,omitempty"`
+	Tenants              []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner       `json:"tenants,omitempty"`
 	Datastores           []map[string]interface{}                                                 `json:"datastores,omitempty"`
 	Locations            []ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner     `json:"locations,omitempty"`
 	ResourcePermissions  *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions `json:"resourcePermissions,omitempty"`
@@ -710,9 +710,9 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetStatusMessage(
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZone() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZone() ListClusterDatastores200ResponseAllOfDatastoresInnerZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ListClusterDatastores200ResponseAllOfDatastoresInnerZone
 		return ret
 	}
 	return *o.Zone
@@ -720,7 +720,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZone() GetAler
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -736,15 +736,15 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) IsSetZone() bool 
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Zone field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZone(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetZone gets a reference to the given ListClusterDatastores200ResponseAllOfDatastoresInnerZone and assigns it to the Zone field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZone(v ListClusterDatastores200ResponseAllOfDatastoresInnerZone) {
 	o.Zone = &v
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePool() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePool() ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -752,7 +752,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePool() Get
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePoolOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePoolOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -768,15 +768,15 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) IsSetZonePool() b
 	return false
 }
 
-// SetZonePool gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the ZonePool field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZonePool(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetZonePool gets a reference to the given ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool and assigns it to the ZonePool field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZonePool(v ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool) {
 	o.ZonePool = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwner() ListClusterDatastores200ResponseAllOfDatastoresInnerOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ListClusterDatastores200ResponseAllOfDatastoresInnerOwner
 		return ret
 	}
 	return *o.Owner
@@ -784,7 +784,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwner() GetAle
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -800,15 +800,15 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) IsSetOwner() bool
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Owner field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetOwner gets a reference to the given ListClusterDatastores200ResponseAllOfDatastoresInnerOwner and assigns it to the Owner field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetOwner(v ListClusterDatastores200ResponseAllOfDatastoresInnerOwner) {
 	o.Owner = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenants() []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -816,7 +816,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenants() []Li
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() ([]ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -832,8 +832,8 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) IsSetTenants() bo
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetTenants(v []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
 	o.Tenants = v
 }
 
@@ -1074,7 +1074,6 @@ func (v NullableListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalM
 
 	return v, nil
 }
-
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

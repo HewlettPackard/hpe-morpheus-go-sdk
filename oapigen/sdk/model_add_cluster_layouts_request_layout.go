@@ -38,15 +38,15 @@ type AddClusterLayoutsRequestLayout struct {
 	GroupType         AddClusterLayoutsRequestLayoutGroupType     `json:"groupType"`
 	ProvisionType     AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType"`
 	// Array of cluster layout option types
-	OptionTypes []GetAlerts200ResponseAllOfChecksInnerAccount `json:"optionTypes,omitempty"`
+	OptionTypes []AddClusterLayoutsRequestLayoutOptionTypesInner `json:"optionTypes,omitempty"`
 	// Array of cluster layout task sets
-	TaskSets []GetAlerts200ResponseAllOfChecksInnerAccount `json:"taskSets,omitempty"`
+	TaskSets []AddClusterLayoutsRequestLayoutTaskSetsInner `json:"taskSets,omitempty"`
 	// Array of cluster layout env variables
 	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of cluster layout master nodes
 	Masters []AddClusterLayoutsRequestLayoutMastersInner `json:"masters,omitempty"`
 	// Array of cluster layout worker nodes
-	Workers              []AddClusterLayoutsRequestLayoutMastersInner `json:"workers,omitempty"`
+	Workers              []AddClusterLayoutsRequestLayoutWorkersInner `json:"workers,omitempty"`
 	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
@@ -386,9 +386,9 @@ func (o *AddClusterLayoutsRequestLayout) SetProvisionType(v AddClusterLayoutsReq
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *AddClusterLayoutsRequestLayout) GetOptionTypes() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddClusterLayoutsRequestLayout) GetOptionTypes() []AddClusterLayoutsRequestLayoutOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []AddClusterLayoutsRequestLayoutOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -396,7 +396,7 @@ func (o *AddClusterLayoutsRequestLayout) GetOptionTypes() []GetAlerts200Response
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterLayoutsRequestLayout) GetOptionTypesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddClusterLayoutsRequestLayout) GetOptionTypesOk() ([]AddClusterLayoutsRequestLayoutOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -412,15 +412,15 @@ func (o *AddClusterLayoutsRequestLayout) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the OptionTypes field.
-func (o *AddClusterLayoutsRequestLayout) SetOptionTypes(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetOptionTypes gets a reference to the given []AddClusterLayoutsRequestLayoutOptionTypesInner and assigns it to the OptionTypes field.
+func (o *AddClusterLayoutsRequestLayout) SetOptionTypes(v []AddClusterLayoutsRequestLayoutOptionTypesInner) {
 	o.OptionTypes = v
 }
 
 // GetTaskSets returns the TaskSets field value if set, zero value otherwise.
-func (o *AddClusterLayoutsRequestLayout) GetTaskSets() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddClusterLayoutsRequestLayout) GetTaskSets() []AddClusterLayoutsRequestLayoutTaskSetsInner {
 	if o == nil || IsNil(o.TaskSets) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []AddClusterLayoutsRequestLayoutTaskSetsInner
 		return ret
 	}
 	return o.TaskSets
@@ -428,7 +428,7 @@ func (o *AddClusterLayoutsRequestLayout) GetTaskSets() []GetAlerts200ResponseAll
 
 // GetTaskSetsOk returns a tuple with the TaskSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterLayoutsRequestLayout) GetTaskSetsOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddClusterLayoutsRequestLayout) GetTaskSetsOk() ([]AddClusterLayoutsRequestLayoutTaskSetsInner, bool) {
 	if o == nil || IsNil(o.TaskSets) {
 		return nil, false
 	}
@@ -444,8 +444,8 @@ func (o *AddClusterLayoutsRequestLayout) IsSetTaskSets() bool {
 	return false
 }
 
-// SetTaskSets gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the TaskSets field.
-func (o *AddClusterLayoutsRequestLayout) SetTaskSets(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetTaskSets gets a reference to the given []AddClusterLayoutsRequestLayoutTaskSetsInner and assigns it to the TaskSets field.
+func (o *AddClusterLayoutsRequestLayout) SetTaskSets(v []AddClusterLayoutsRequestLayoutTaskSetsInner) {
 	o.TaskSets = v
 }
 
@@ -514,9 +514,9 @@ func (o *AddClusterLayoutsRequestLayout) SetMasters(v []AddClusterLayoutsRequest
 }
 
 // GetWorkers returns the Workers field value if set, zero value otherwise.
-func (o *AddClusterLayoutsRequestLayout) GetWorkers() []AddClusterLayoutsRequestLayoutMastersInner {
+func (o *AddClusterLayoutsRequestLayout) GetWorkers() []AddClusterLayoutsRequestLayoutWorkersInner {
 	if o == nil || IsNil(o.Workers) {
-		var ret []AddClusterLayoutsRequestLayoutMastersInner
+		var ret []AddClusterLayoutsRequestLayoutWorkersInner
 		return ret
 	}
 	return o.Workers
@@ -524,7 +524,7 @@ func (o *AddClusterLayoutsRequestLayout) GetWorkers() []AddClusterLayoutsRequest
 
 // GetWorkersOk returns a tuple with the Workers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddClusterLayoutsRequestLayout) GetWorkersOk() ([]AddClusterLayoutsRequestLayoutMastersInner, bool) {
+func (o *AddClusterLayoutsRequestLayout) GetWorkersOk() ([]AddClusterLayoutsRequestLayoutWorkersInner, bool) {
 	if o == nil || IsNil(o.Workers) {
 		return nil, false
 	}
@@ -540,8 +540,8 @@ func (o *AddClusterLayoutsRequestLayout) IsSetWorkers() bool {
 	return false
 }
 
-// SetWorkers gets a reference to the given []AddClusterLayoutsRequestLayoutMastersInner and assigns it to the Workers field.
-func (o *AddClusterLayoutsRequestLayout) SetWorkers(v []AddClusterLayoutsRequestLayoutMastersInner) {
+// SetWorkers gets a reference to the given []AddClusterLayoutsRequestLayoutWorkersInner and assigns it to the Workers field.
+func (o *AddClusterLayoutsRequestLayout) SetWorkers(v []AddClusterLayoutsRequestLayoutWorkersInner) {
 	o.Workers = v
 }
 
@@ -644,7 +644,6 @@ func (v NullableAddClusterLayoutsRequestLayout) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
-
 func (o *AddClusterLayoutsRequestLayout) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,31 +20,31 @@ var _ MappedNullable = &GetInstanceType200ResponseInstanceTypeInstanceTypeLayout
 
 // GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner struct for GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
 type GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner struct {
-	Id           *int64                                                      `json:"id,omitempty"`
-	InstanceType *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"instanceType,omitempty"`
-	Account      *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"account,omitempty"`
-	Code         *string                                                     `json:"code,omitempty"`
-	Name         *string                                                     `json:"name,omitempty"`
+	Id           *int64                                                                      `json:"id,omitempty"`
+	InstanceType *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType `json:"instanceType,omitempty"`
+	Account      *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount      `json:"account,omitempty"`
+	Code         *string                                                                     `json:"code,omitempty"`
+	Name         *string                                                                     `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
-	Labels                   []string                                                                                             `json:"labels,omitempty"`
-	InstanceVersion          *string                                                                                              `json:"instanceVersion,omitempty"`
-	Description              NullableString                                                                                       `json:"description,omitempty"`
-	Creatable                *bool                                                                                                `json:"creatable,omitempty"`
-	MemoryRequirement        NullableInt64                                                                                        `json:"memoryRequirement,omitempty"`
-	SortOrder                *int64                                                                                               `json:"sortOrder,omitempty"`
-	SupportsConvertToManaged NullableBool                                                                                         `json:"supportsConvertToManaged,omitempty"`
-	ProvisionType            *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
-	TaskSets                 []map[string]interface{}                                                                             `json:"taskSets,omitempty"`
-	ContainerTypes           []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
-	Mounts                   []map[string]interface{}                                                                             `json:"mounts,omitempty"`
-	Ports                    []map[string]interface{}                                                                             `json:"ports,omitempty"`
-	OptionTypes              []map[string]interface{}                                                                             `json:"optionTypes,omitempty"`
-	EnvironmentVariables     []map[string]interface{}                                                                             `json:"environmentVariables,omitempty"`
-	PriceSets                []map[string]interface{}                                                                             `json:"priceSets,omitempty"`
-	SpecTemplates            []map[string]interface{}                                                                             `json:"specTemplates,omitempty"`
-	TfvarSecret              NullableString                                                                                       `json:"tfvarSecret,omitempty"`
-	Permissions              *GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
-	AdditionalProperties     map[string]interface{}                                                                               `json:",remain"`
+	Labels                   []string                                                                            `json:"labels,omitempty"`
+	InstanceVersion          *string                                                                             `json:"instanceVersion,omitempty"`
+	Description              NullableString                                                                      `json:"description,omitempty"`
+	Creatable                *bool                                                                               `json:"creatable,omitempty"`
+	MemoryRequirement        NullableInt64                                                                       `json:"memoryRequirement,omitempty"`
+	SortOrder                *int64                                                                              `json:"sortOrder,omitempty"`
+	SupportsConvertToManaged NullableBool                                                                        `json:"supportsConvertToManaged,omitempty"`
+	ProvisionType            *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
+	TaskSets                 []map[string]interface{}                                                            `json:"taskSets,omitempty"`
+	ContainerTypes           []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner `json:"containerTypes,omitempty"`
+	Mounts                   []map[string]interface{}                                                            `json:"mounts,omitempty"`
+	Ports                    []map[string]interface{}                                                            `json:"ports,omitempty"`
+	OptionTypes              []map[string]interface{}                                                            `json:"optionTypes,omitempty"`
+	EnvironmentVariables     []map[string]interface{}                                                            `json:"environmentVariables,omitempty"`
+	PriceSets                []map[string]interface{}                                                            `json:"priceSets,omitempty"`
+	SpecTemplates            []map[string]interface{}                                                            `json:"specTemplates,omitempty"`
+	TfvarSecret              NullableString                                                                      `json:"tfvarSecret,omitempty"`
+	Permissions              *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions          `json:"permissions,omitempty"`
+	AdditionalProperties     map[string]interface{}                                                              `json:",remain"`
 }
 
 type _GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
@@ -99,9 +99,9 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetId(v
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceType() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType {
 	if o == nil || IsNil(o.InstanceType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType
 		return ret
 	}
 	return *o.InstanceType
@@ -109,7 +109,7 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInst
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetInstanceTypeOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType, bool) {
 	if o == nil || IsNil(o.InstanceType) {
 		return nil, false
 	}
@@ -125,15 +125,15 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSetIn
 	return false
 }
 
-// SetInstanceType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the InstanceType field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetInstanceType gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType and assigns it to the InstanceType field.
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetInstanceType(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerInstanceType) {
 	o.InstanceType = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccount() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -141,7 +141,7 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAcco
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetAccountOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -157,8 +157,8 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSetAc
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccount gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount and assigns it to the Account field.
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetAccount(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerAccount) {
 	o.Account = &v
 }
 
@@ -485,9 +485,9 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) UnsetSu
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionType() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionType() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType
+		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -495,7 +495,7 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProv
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionTypeOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool) {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetProvisionTypeOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -511,8 +511,8 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSetPr
 	return false
 }
 
-// SetProvisionType gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType and assigns it to the ProvisionType field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetProvisionType(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType) {
+// SetProvisionType gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType and assigns it to the ProvisionType field.
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetProvisionType(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -550,9 +550,9 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetTask
 }
 
 // GetContainerTypes returns the ContainerTypes field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypes() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner {
 	if o == nil || IsNil(o.ContainerTypes) {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner
+		var ret []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner
 		return ret
 	}
 	return o.ContainerTypes
@@ -560,7 +560,7 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetCont
 
 // GetContainerTypesOk returns a tuple with the ContainerTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner, bool) {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetContainerTypesOk() ([]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner, bool) {
 	if o == nil || IsNil(o.ContainerTypes) {
 		return nil, false
 	}
@@ -576,8 +576,8 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSetCo
 	return false
 }
 
-// SetContainerTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner and assigns it to the ContainerTypes field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetContainerTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) {
+// SetContainerTypes gets a reference to the given []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner and assigns it to the ContainerTypes field.
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetContainerTypes(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerContainerTypesInner) {
 	o.ContainerTypes = v
 }
 
@@ -823,9 +823,9 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) UnsetTf
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissions() GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissions() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions
+		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -833,7 +833,7 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPerm
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissionsOk() (*GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions, bool) {
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) GetPermissionsOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -849,8 +849,8 @@ func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) IsSetPe
 	return false
 }
 
-// SetPermissions gets a reference to the given GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions and assigns it to the Permissions field.
-func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetPermissions(v GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerPermissions) {
+// SetPermissions gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions and assigns it to the Permissions field.
+func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) SetPermissions(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInnerPermissions) {
 	o.Permissions = &v
 }
 
@@ -985,7 +985,6 @@ func (v NullableGetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) 
 
 	return v, nil
 }
-
 func (o *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -23,14 +23,14 @@ Name | Type | Description | Notes
 **AppSpec** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceSpec** | Pointer to **NullableString** |  | [optional] 
-**Workflow** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Workflow** | Pointer to [**CatalogItemTypeWorkflow**](CatalogItemTypeWorkflow.md) |  | [optional] 
 **Content** | Pointer to **NullableString** |  | [optional] 
 **FormType** | Pointer to **string** |  | [optional] 
 **Form** | Pointer to **map[string]interface{}** | Form object that contains input options and/or field groups | [optional] 
 **FormConfig** | Pointer to **map[string]interface{}** | Form config object | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]CatalogItemTypeOptionTypesInner**](CatalogItemTypeOptionTypesInner.md) |  | [optional] 
 **CreatedBy** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Owner** | Pointer to [**CatalogItemTypeOwner**](CatalogItemTypeOwner.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -610,20 +610,20 @@ HasInstanceSpec returns a boolean if a field has been set.
 UnsetInstanceSpec ensures that no value is present for InstanceSpec, not even an explicit nil
 ### GetWorkflow
 
-`func (o *CatalogItemType) GetWorkflow() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *CatalogItemType) GetWorkflow() CatalogItemTypeWorkflow`
 
 GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
 
 ### GetWorkflowOk
 
-`func (o *CatalogItemType) GetWorkflowOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *CatalogItemType) GetWorkflowOk() (*CatalogItemTypeWorkflow, bool)`
 
 GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkflow
 
-`func (o *CatalogItemType) SetWorkflow(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *CatalogItemType) SetWorkflow(v CatalogItemTypeWorkflow)`
 
 SetWorkflow sets Workflow field to given value.
 
@@ -765,20 +765,20 @@ HasFormConfig returns a boolean if a field has been set.
 UnsetFormConfig ensures that no value is present for FormConfig, not even an explicit nil
 ### GetOptionTypes
 
-`func (o *CatalogItemType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *CatalogItemType) GetOptionTypes() []CatalogItemTypeOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *CatalogItemType) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *CatalogItemType) GetOptionTypesOk() (*[]CatalogItemTypeOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *CatalogItemType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *CatalogItemType) SetOptionTypes(v []CatalogItemTypeOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 
@@ -835,20 +835,20 @@ HasCreatedBy returns a boolean if a field has been set.
 UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetOwner
 
-`func (o *CatalogItemType) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *CatalogItemType) GetOwner() CatalogItemTypeOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *CatalogItemType) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *CatalogItemType) GetOwnerOk() (*CatalogItemTypeOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *CatalogItemType) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *CatalogItemType) SetOwner(v CatalogItemTypeOwner)`
 
 SetOwner sets Owner field to given value.
 

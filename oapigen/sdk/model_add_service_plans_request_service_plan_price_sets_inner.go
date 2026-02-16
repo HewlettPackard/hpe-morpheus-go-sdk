@@ -141,7 +141,6 @@ func (v NullableAddServicePlansRequestServicePlanPriceSetsInner) UnmarshalMapstr
 
 	return v, nil
 }
-
 func (o *AddServicePlansRequestServicePlanPriceSetsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

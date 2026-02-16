@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **All** | Pointer to **bool** | Pass true to allow access all groups | [optional] 
-**Sites** | Pointer to [**[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
+**Sites** | Pointer to [**[]UpdateNetworkRequestNetworkResourcePermissionsSitesInner**](UpdateNetworkRequestNetworkResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSites() []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner`
+`func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSites() []UpdateNetworkRequestNetworkResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSitesOk() (*[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner, bool)`
+`func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSitesOk() (*[]UpdateNetworkRequestNetworkResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *UpdateNetworkRequestNetworkResourcePermissions) SetSites(v []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner)`
+`func (o *UpdateNetworkRequestNetworkResourcePermissions) SetSites(v []UpdateNetworkRequestNetworkResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Subnet** | Pointer to **NullableString** |  | [optional] 
 **DhcpServer** | Pointer to **NullableBool** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Pool** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Pool** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool**](ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool.md) |  | [optional] 
 
 ## Methods
 
@@ -207,20 +207,20 @@ HasName returns a boolean if a field has been set.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetPool
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPool() ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool`
 
 GetPool returns the Pool field if non-nil, zero value otherwise.
 
 ### GetPoolOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetPoolOk() (*ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool, bool)`
 
 GetPoolOk returns a tuple with the Pool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPool
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetPool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetPool(v ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool)`
 
 SetPool sets Pool field to given value.
 

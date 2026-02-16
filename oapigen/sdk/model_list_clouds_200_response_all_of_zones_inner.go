@@ -21,70 +21,70 @@ var _ MappedNullable = &ListClouds200ResponseAllOfZonesInner{}
 
 // ListClouds200ResponseAllOfZonesInner struct for ListClouds200ResponseAllOfZonesInner
 type ListClouds200ResponseAllOfZonesInner struct {
-	Id                             *int64                                                      `json:"id,omitempty"`
-	Uuid                           *string                                                     `json:"uuid,omitempty"`
-	ExternalId                     NullableString                                              `json:"externalId,omitempty"`
-	Name                           *string                                                     `json:"name,omitempty"`
-	Code                           *string                                                     `json:"code,omitempty"`
-	Labels                         []string                                                    `json:"labels,omitempty"`
-	Location                       NullableString                                              `json:"location,omitempty"`
-	Owner                          NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
-	AccountId                      *int64                                                      `json:"accountId,omitempty"`
-	Account                        NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"account,omitempty"`
-	Visibility                     *string                                                     `json:"visibility,omitempty"`
-	Enabled                        *bool                                                       `json:"enabled,omitempty"`
-	Status                         *string                                                     `json:"status,omitempty"`
-	StatusMessage                  NullableString                                              `json:"statusMessage,omitempty"`
-	StatusDate                     NullableTime                                                `json:"statusDate,omitempty"`
-	CostStatus                     NullableString                                              `json:"costStatus,omitempty"`
-	CostStatusMessage              NullableString                                              `json:"costStatusMessage,omitempty"`
-	CostStatusDate                 NullableTime                                                `json:"costStatusDate,omitempty"`
-	CostLastSyncDuration           NullableInt64                                               `json:"costLastSyncDuration,omitempty"`
-	CostLastSync                   NullableTime                                                `json:"costLastSync,omitempty"`
-	ZoneType                       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"zoneType,omitempty"`
-	ZoneTypeId                     *int64                                                      `json:"zoneTypeId,omitempty"`
-	GuidanceMode                   NullableString                                              `json:"guidanceMode,omitempty"`
-	StorageMode                    *string                                                     `json:"storageMode,omitempty"`
-	AgentMode                      *string                                                     `json:"agentMode,omitempty"`
-	UserDataLinux                  NullableString                                              `json:"userDataLinux,omitempty"`
-	UserDataWindows                NullableString                                              `json:"userDataWindows,omitempty"`
-	ConsoleKeymap                  NullableString                                              `json:"consoleKeymap,omitempty"`
-	ContainerMode                  *string                                                     `json:"containerMode,omitempty"`
-	CostingMode                    NullableString                                              `json:"costingMode,omitempty"`
-	ServiceVersion                 NullableString                                              `json:"serviceVersion,omitempty"`
-	SecurityMode                   *string                                                     `json:"securityMode,omitempty"`
-	InventoryLevel                 *string                                                     `json:"inventoryLevel,omitempty"`
-	Timezone                       NullableString                                              `json:"timezone,omitempty"`
-	ApiProxy                       NullableString                                              `json:"apiProxy,omitempty"`
-	ProvisioningProxy              NullableString                                              `json:"provisioningProxy,omitempty"`
-	NetworkDomain                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"networkDomain,omitempty"`
-	DomainName                     *string                                                     `json:"domainName,omitempty"`
-	RegionCode                     NullableString                                              `json:"regionCode,omitempty"`
-	AutoRecoverPowerState          *bool                                                       `json:"autoRecoverPowerState,omitempty"`
-	ScalePriority                  *int64                                                      `json:"scalePriority,omitempty"`
-	DefaultDatastoreSyncActive     *bool                                                       `json:"defaultDatastoreSyncActive,omitempty"`
-	DefaultNetworkSyncActive       *bool                                                       `json:"defaultNetworkSyncActive,omitempty"`
-	DefaultFolderSyncActive        *bool                                                       `json:"defaultFolderSyncActive,omitempty"`
-	DefaultSecurityGroupSyncActive *bool                                                       `json:"defaultSecurityGroupSyncActive,omitempty"`
-	DefaultPoolSyncActive          *bool                                                       `json:"defaultPoolSyncActive,omitempty"`
-	DefaultPlanSyncActive          *bool                                                       `json:"defaultPlanSyncActive,omitempty"`
-	Config                         *ListClouds200ResponseAllOfZonesInnerConfig                 `json:"config,omitempty"`
-	Credential                     *ListClouds200ResponseAllOfZonesInnerCredential             `json:"credential,omitempty"`
+	Id                             *int64                                             `json:"id,omitempty"`
+	Uuid                           *string                                            `json:"uuid,omitempty"`
+	ExternalId                     NullableString                                     `json:"externalId,omitempty"`
+	Name                           *string                                            `json:"name,omitempty"`
+	Code                           *string                                            `json:"code,omitempty"`
+	Labels                         []string                                           `json:"labels,omitempty"`
+	Location                       NullableString                                     `json:"location,omitempty"`
+	Owner                          *ListClouds200ResponseAllOfZonesInnerOwner         `json:"owner,omitempty"`
+	AccountId                      *int64                                             `json:"accountId,omitempty"`
+	Account                        *ListClouds200ResponseAllOfZonesInnerAccount       `json:"account,omitempty"`
+	Visibility                     *string                                            `json:"visibility,omitempty"`
+	Enabled                        *bool                                              `json:"enabled,omitempty"`
+	Status                         *string                                            `json:"status,omitempty"`
+	StatusMessage                  NullableString                                     `json:"statusMessage,omitempty"`
+	StatusDate                     NullableTime                                       `json:"statusDate,omitempty"`
+	CostStatus                     NullableString                                     `json:"costStatus,omitempty"`
+	CostStatusMessage              NullableString                                     `json:"costStatusMessage,omitempty"`
+	CostStatusDate                 NullableTime                                       `json:"costStatusDate,omitempty"`
+	CostLastSyncDuration           NullableInt64                                      `json:"costLastSyncDuration,omitempty"`
+	CostLastSync                   NullableTime                                       `json:"costLastSync,omitempty"`
+	ZoneType                       *ListClouds200ResponseAllOfZonesInnerZoneType      `json:"zoneType,omitempty"`
+	ZoneTypeId                     *int64                                             `json:"zoneTypeId,omitempty"`
+	GuidanceMode                   NullableString                                     `json:"guidanceMode,omitempty"`
+	StorageMode                    *string                                            `json:"storageMode,omitempty"`
+	AgentMode                      *string                                            `json:"agentMode,omitempty"`
+	UserDataLinux                  NullableString                                     `json:"userDataLinux,omitempty"`
+	UserDataWindows                NullableString                                     `json:"userDataWindows,omitempty"`
+	ConsoleKeymap                  NullableString                                     `json:"consoleKeymap,omitempty"`
+	ContainerMode                  *string                                            `json:"containerMode,omitempty"`
+	CostingMode                    NullableString                                     `json:"costingMode,omitempty"`
+	ServiceVersion                 NullableString                                     `json:"serviceVersion,omitempty"`
+	SecurityMode                   *string                                            `json:"securityMode,omitempty"`
+	InventoryLevel                 *string                                            `json:"inventoryLevel,omitempty"`
+	Timezone                       NullableString                                     `json:"timezone,omitempty"`
+	ApiProxy                       NullableString                                     `json:"apiProxy,omitempty"`
+	ProvisioningProxy              NullableString                                     `json:"provisioningProxy,omitempty"`
+	NetworkDomain                  *ListClouds200ResponseAllOfZonesInnerNetworkDomain `json:"networkDomain,omitempty"`
+	DomainName                     *string                                            `json:"domainName,omitempty"`
+	RegionCode                     NullableString                                     `json:"regionCode,omitempty"`
+	AutoRecoverPowerState          *bool                                              `json:"autoRecoverPowerState,omitempty"`
+	ScalePriority                  *int64                                             `json:"scalePriority,omitempty"`
+	DefaultDatastoreSyncActive     *bool                                              `json:"defaultDatastoreSyncActive,omitempty"`
+	DefaultNetworkSyncActive       *bool                                              `json:"defaultNetworkSyncActive,omitempty"`
+	DefaultFolderSyncActive        *bool                                              `json:"defaultFolderSyncActive,omitempty"`
+	DefaultSecurityGroupSyncActive *bool                                              `json:"defaultSecurityGroupSyncActive,omitempty"`
+	DefaultPoolSyncActive          *bool                                              `json:"defaultPoolSyncActive,omitempty"`
+	DefaultPlanSyncActive          *bool                                              `json:"defaultPlanSyncActive,omitempty"`
+	Config                         *ListClouds200ResponseAllOfZonesInnerConfig        `json:"config,omitempty"`
+	Credential                     *ListClouds200ResponseAllOfZonesInnerCredential    `json:"credential,omitempty"`
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
-	DarkImagePath        NullableString                                     `json:"darkImagePath,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	LastSync             NullableTime                                       `json:"lastSync,omitempty"`
-	LastSyncDuration     NullableInt64                                      `json:"lastSyncDuration,omitempty"`
-	NextRunDate          NullableTime                                       `json:"nextRunDate,omitempty"`
-	Groups               []ListClouds200ResponseAllOfZonesInnerGroupsInner  `json:"groups,omitempty"`
-	SecurityServer       *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"securityServer,omitempty"`
-	NetworkServer        *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"networkServer,omitempty"`
-	Stats                *ListClouds200ResponseAllOfZonesInnerStats         `json:"stats,omitempty"`
-	ServerCount          *int64                                             `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	DarkImagePath        NullableString                                      `json:"darkImagePath,omitempty"`
+	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
+	LastSync             NullableTime                                        `json:"lastSync,omitempty"`
+	LastSyncDuration     NullableInt64                                       `json:"lastSyncDuration,omitempty"`
+	NextRunDate          NullableTime                                        `json:"nextRunDate,omitempty"`
+	Groups               []ListClouds200ResponseAllOfZonesInnerGroupsInner   `json:"groups,omitempty"`
+	SecurityServer       *ListClouds200ResponseAllOfZonesInnerSecurityServer `json:"securityServer,omitempty"`
+	NetworkServer        *ListClouds200ResponseAllOfZonesInnerNetworkServer  `json:"networkServer,omitempty"`
+	Stats                *ListClouds200ResponseAllOfZonesInnerStats          `json:"stats,omitempty"`
+	ServerCount          *int64                                              `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _ListClouds200ResponseAllOfZonesInner ListClouds200ResponseAllOfZonesInner
@@ -352,47 +352,36 @@ func (o *ListClouds200ResponseAllOfZonesInner) UnsetLocation() {
 	o.Location.Unset()
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Owner.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListClouds200ResponseAllOfZonesInnerOwner {
+	if o == nil || IsNil(o.Owner) {
+		var ret ListClouds200ResponseAllOfZonesInnerOwner
 		return ret
 	}
-	return *o.Owner.Get()
+	return *o.Owner
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListClouds200ResponseAllOfZonesInnerOwner, bool) {
+	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
-	return o.Owner.Get(), o.Owner.IsSet()
+	return o.Owner, true
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInner) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
+	if o != nil && !IsNil(o.Owner) {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInner) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInner) UnsetOwner() {
-	o.Owner.Unset()
+// SetOwner gets a reference to the given ListClouds200ResponseAllOfZonesInnerOwner and assigns it to the Owner field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListClouds200ResponseAllOfZonesInnerOwner) {
+	o.Owner = &v
 }
 
 // GetAccountId returns the AccountId field value if set, zero value otherwise.
@@ -427,47 +416,36 @@ func (o *ListClouds200ResponseAllOfZonesInner) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetAccount returns the Account field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Account.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetAccount returns the Account field value if set, zero value otherwise.
+func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListClouds200ResponseAllOfZonesInnerAccount {
+	if o == nil || IsNil(o.Account) {
+		var ret ListClouds200ResponseAllOfZonesInnerAccount
 		return ret
 	}
-	return *o.Account.Get()
+	return *o.Account
 }
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListClouds200ResponseAllOfZonesInnerAccount, bool) {
+	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
-	return o.Account.Get(), o.Account.IsSet()
+	return o.Account, true
 }
 
 // IsSetAccount returns a boolean if a field has been set.
 func (o *ListClouds200ResponseAllOfZonesInner) IsSetAccount() bool {
-	if o != nil && o.Account.IsSet() {
+	if o != nil && !IsNil(o.Account) {
 		return true
 	}
 
 	return false
 }
 
-// SetAccount gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Account field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Account.Set(&v)
-}
-
-// SetAccountNil sets the value for Account to be an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInner) SetAccountNil() {
-	o.Account.Set(nil)
-}
-
-// UnsetAccount ensures that no value is present for Account, not even an explicit nil
-func (o *ListClouds200ResponseAllOfZonesInner) UnsetAccount() {
-	o.Account.Unset()
+// SetAccount gets a reference to the given ListClouds200ResponseAllOfZonesInnerAccount and assigns it to the Account field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListClouds200ResponseAllOfZonesInnerAccount) {
+	o.Account = &v
 }
 
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
@@ -868,9 +846,9 @@ func (o *ListClouds200ResponseAllOfZonesInner) UnsetCostLastSync() {
 }
 
 // GetZoneType returns the ZoneType field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListClouds200ResponseAllOfZonesInnerZoneType {
 	if o == nil || IsNil(o.ZoneType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClouds200ResponseAllOfZonesInnerZoneType
 		return ret
 	}
 	return *o.ZoneType
@@ -878,7 +856,7 @@ func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListBackupSettings2
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetZoneTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClouds200ResponseAllOfZonesInner) GetZoneTypeOk() (*ListClouds200ResponseAllOfZonesInnerZoneType, bool) {
 	if o == nil || IsNil(o.ZoneType) {
 		return nil, false
 	}
@@ -894,8 +872,8 @@ func (o *ListClouds200ResponseAllOfZonesInner) IsSetZoneType() bool {
 	return false
 }
 
-// SetZoneType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the ZoneType field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetZoneType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetZoneType gets a reference to the given ListClouds200ResponseAllOfZonesInnerZoneType and assigns it to the ZoneType field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetZoneType(v ListClouds200ResponseAllOfZonesInnerZoneType) {
 	o.ZoneType = &v
 }
 
@@ -1479,9 +1457,9 @@ func (o *ListClouds200ResponseAllOfZonesInner) UnsetProvisioningProxy() {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() ListClouds200ResponseAllOfZonesInnerNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListClouds200ResponseAllOfZonesInnerNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -1489,7 +1467,7 @@ func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() GetAlerts200Re
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomainOk() (*ListClouds200ResponseAllOfZonesInnerNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -1505,8 +1483,8 @@ func (o *ListClouds200ResponseAllOfZonesInner) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkDomain field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetNetworkDomain gets a reference to the given ListClouds200ResponseAllOfZonesInnerNetworkDomain and assigns it to the NetworkDomain field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkDomain(v ListClouds200ResponseAllOfZonesInnerNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -2217,9 +2195,9 @@ func (o *ListClouds200ResponseAllOfZonesInner) SetGroups(v []ListClouds200Respon
 }
 
 // GetSecurityServer returns the SecurityServer field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServer() ListClouds200ResponseAllOfZonesInnerSecurityServer {
 	if o == nil || IsNil(o.SecurityServer) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListClouds200ResponseAllOfZonesInnerSecurityServer
 		return ret
 	}
 	return *o.SecurityServer
@@ -2227,7 +2205,7 @@ func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServer() GetAlerts200R
 
 // GetSecurityServerOk returns a tuple with the SecurityServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServerOk() (*ListClouds200ResponseAllOfZonesInnerSecurityServer, bool) {
 	if o == nil || IsNil(o.SecurityServer) {
 		return nil, false
 	}
@@ -2243,15 +2221,15 @@ func (o *ListClouds200ResponseAllOfZonesInner) IsSetSecurityServer() bool {
 	return false
 }
 
-// SetSecurityServer gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the SecurityServer field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetSecurityServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetSecurityServer gets a reference to the given ListClouds200ResponseAllOfZonesInnerSecurityServer and assigns it to the SecurityServer field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetSecurityServer(v ListClouds200ResponseAllOfZonesInnerSecurityServer) {
 	o.SecurityServer = &v
 }
 
 // GetNetworkServer returns the NetworkServer field value if set, zero value otherwise.
-func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServer() ListClouds200ResponseAllOfZonesInnerNetworkServer {
 	if o == nil || IsNil(o.NetworkServer) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListClouds200ResponseAllOfZonesInnerNetworkServer
 		return ret
 	}
 	return *o.NetworkServer
@@ -2259,7 +2237,7 @@ func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServer() GetAlerts200Re
 
 // GetNetworkServerOk returns a tuple with the NetworkServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServerOk() (*ListClouds200ResponseAllOfZonesInnerNetworkServer, bool) {
 	if o == nil || IsNil(o.NetworkServer) {
 		return nil, false
 	}
@@ -2275,8 +2253,8 @@ func (o *ListClouds200ResponseAllOfZonesInner) IsSetNetworkServer() bool {
 	return false
 }
 
-// SetNetworkServer gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the NetworkServer field.
-func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetNetworkServer gets a reference to the given ListClouds200ResponseAllOfZonesInnerNetworkServer and assigns it to the NetworkServer field.
+func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkServer(v ListClouds200ResponseAllOfZonesInnerNetworkServer) {
 	o.NetworkServer = &v
 }
 
@@ -2375,14 +2353,14 @@ func (o ListClouds200ResponseAllOfZonesInner) ToMap() (map[string]interface{}, e
 	if o.Location.IsSet() {
 		toSerialize["location"] = o.Location.Get()
 	}
-	if o.Owner.IsSet() {
-		toSerialize["owner"] = o.Owner.Get()
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
 	}
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if o.Account.IsSet() {
-		toSerialize["account"] = o.Account.Get()
+	if !IsNil(o.Account) {
+		toSerialize["account"] = o.Account
 	}
 	if !IsNil(o.Visibility) {
 		toSerialize["visibility"] = o.Visibility
@@ -2589,7 +2567,6 @@ func (v NullableListClouds200ResponseAllOfZonesInner) UnmarshalMapstructure(data
 
 	return v, nil
 }
-
 func (o *ListClouds200ResponseAllOfZonesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **All** | Pointer to **bool** | Pass true to allow access to all groups | [optional] 
 **Sites** | Pointer to [**[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner.md) | Array of groups that are allowed access | [optional] 
 **AllPlans** | Pointer to **bool** | Pass true to allow access to all plans | [optional] 
-**Plans** | Pointer to [**[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner.md) | Array of plans that are allowed access | [optional] 
+**Plans** | Pointer to [**[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsPlansInner**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsPlansInner.md) | Array of plans that are allowed access | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasAllPlans returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) GetPlans() []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) GetPlans() []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) GetPlansOk() (*[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner, bool)`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) GetPlansOk() (*[]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) SetPlans(v []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner)`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions) SetPlans(v []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

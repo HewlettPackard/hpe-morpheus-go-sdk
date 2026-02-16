@@ -141,7 +141,6 @@ func (v NullableInstancesConfigCustomOptions) UnmarshalMapstructure(data any) (a
 
 	return v, nil
 }
-
 func (o *InstancesConfigCustomOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

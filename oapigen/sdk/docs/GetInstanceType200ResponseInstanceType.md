@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Account** | Pointer to [**GetInstanceType200ResponseInstanceTypeAccount**](GetInstanceType200ResponseInstanceTypeAccount.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **Featured** | Pointer to **bool** |  | [optional] 
 **Versions** | Pointer to **[]string** |  | [optional] 
 **InstanceTypeLayouts** | Pointer to [**[]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner.md) |  | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]GetInstanceType200ResponseInstanceTypeOptionTypesInner**](GetInstanceType200ResponseInstanceTypeOptionTypesInner.md) |  | [optional] 
 **EnvironmentVariables** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
@@ -80,20 +80,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetInstanceType200ResponseInstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetInstanceType200ResponseInstanceType) GetAccount() GetInstanceType200ResponseInstanceTypeAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetInstanceType200ResponseInstanceType) GetAccountOk() (*GetInstanceType200ResponseInstanceTypeAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetInstanceType200ResponseInstanceType) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetInstanceType200ResponseInstanceType) SetAccount(v GetInstanceType200ResponseInstanceTypeAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -735,20 +735,20 @@ HasInstanceTypeLayouts returns a boolean if a field has been set.
 
 ### GetOptionTypes
 
-`func (o *GetInstanceType200ResponseInstanceType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *GetInstanceType200ResponseInstanceType) GetOptionTypes() []GetInstanceType200ResponseInstanceTypeOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *GetInstanceType200ResponseInstanceType) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *GetInstanceType200ResponseInstanceType) GetOptionTypesOk() (*[]GetInstanceType200ResponseInstanceTypeOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *GetInstanceType200ResponseInstanceType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *GetInstanceType200ResponseInstanceType) SetOptionTypes(v []GetInstanceType200ResponseInstanceTypeOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 

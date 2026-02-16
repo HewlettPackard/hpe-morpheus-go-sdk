@@ -140,7 +140,6 @@ func (v NullableExecutionId) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ExecutionId) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

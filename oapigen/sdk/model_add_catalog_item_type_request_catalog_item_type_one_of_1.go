@@ -44,8 +44,8 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOf1 struct {
 	// The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields
 	AppSpec *string `json:"appSpec,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string                                            `json:"formType,omitempty"`
-	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                                             `json:"formType,omitempty"`
+	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
 	OptionTypes          []int64                `json:"optionTypes,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -522,9 +522,9 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) SetFormType(v string) {
 }
 
 // GetForm returns the Form field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form {
 	if o == nil || IsNil(o.Form) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
+		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form
 		return ret
 	}
 	return *o.Form
@@ -532,7 +532,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetForm() AddCatalogIte
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form, bool) {
 	if o == nil || IsNil(o.Form) {
 		return nil, false
 	}
@@ -548,8 +548,8 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) IsSetForm() bool {
 	return false
 }
 
-// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfForm and assigns it to the Form field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
+// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form and assigns it to the Form field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOf1Form) {
 	o.Form = &v
 }
 
@@ -690,7 +690,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

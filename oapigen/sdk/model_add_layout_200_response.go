@@ -20,8 +20,8 @@ var _ MappedNullable = &AddLayout200Response{}
 
 // AddLayout200Response struct for AddLayout200Response
 type AddLayout200Response struct {
-	InstanceTypeLayout   *GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayout,omitempty"`
-	AdditionalProperties map[string]interface{}                                          `json:",remain"`
+	InstanceTypeLayout   *AddLayout200ResponseInstanceTypeLayout `json:"instanceTypeLayout,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _AddLayout200Response AddLayout200Response
@@ -44,9 +44,9 @@ func NewAddLayout200ResponseWithDefaults() *AddLayout200Response {
 }
 
 // GetInstanceTypeLayout returns the InstanceTypeLayout field value if set, zero value otherwise.
-func (o *AddLayout200Response) GetInstanceTypeLayout() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+func (o *AddLayout200Response) GetInstanceTypeLayout() AddLayout200ResponseInstanceTypeLayout {
 	if o == nil || IsNil(o.InstanceTypeLayout) {
-		var ret GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
+		var ret AddLayout200ResponseInstanceTypeLayout
 		return ret
 	}
 	return *o.InstanceTypeLayout
@@ -54,7 +54,7 @@ func (o *AddLayout200Response) GetInstanceTypeLayout() GetInstanceType200Respons
 
 // GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLayout200Response) GetInstanceTypeLayoutOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool) {
+func (o *AddLayout200Response) GetInstanceTypeLayoutOk() (*AddLayout200ResponseInstanceTypeLayout, bool) {
 	if o == nil || IsNil(o.InstanceTypeLayout) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *AddLayout200Response) IsSetInstanceTypeLayout() bool {
 	return false
 }
 
-// SetInstanceTypeLayout gets a reference to the given GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayout field.
-func (o *AddLayout200Response) SetInstanceTypeLayout(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
+// SetInstanceTypeLayout gets a reference to the given AddLayout200ResponseInstanceTypeLayout and assigns it to the InstanceTypeLayout field.
+func (o *AddLayout200Response) SetInstanceTypeLayout(v AddLayout200ResponseInstanceTypeLayout) {
 	o.InstanceTypeLayout = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableAddLayout200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *AddLayout200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

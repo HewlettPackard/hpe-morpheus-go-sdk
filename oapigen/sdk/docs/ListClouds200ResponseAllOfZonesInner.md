@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** |  | [optional] 
 **Location** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Owner** | Pointer to [**ListClouds200ResponseAllOfZonesInnerOwner**](ListClouds200ResponseAllOfZonesInnerOwner.md) |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**ListClouds200ResponseAllOfZonesInnerAccount**](ListClouds200ResponseAllOfZonesInnerAccount.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **CostStatusDate** | Pointer to **NullableTime** |  | [optional] 
 **CostLastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
 **CostLastSync** | Pointer to **NullableTime** |  | [optional] 
-**ZoneType** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**ZoneType** | Pointer to [**ListClouds200ResponseAllOfZonesInnerZoneType**](ListClouds200ResponseAllOfZonesInnerZoneType.md) |  | [optional] 
 **ZoneTypeId** | Pointer to **int64** |  | [optional] 
 **GuidanceMode** | Pointer to **NullableString** |  | [optional] 
 **StorageMode** | Pointer to **string** |  | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **Timezone** | Pointer to **NullableString** |  | [optional] 
 **ApiProxy** | Pointer to **NullableString** |  | [optional] 
 **ProvisioningProxy** | Pointer to **NullableString** |  | [optional] 
-**NetworkDomain** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**ListClouds200ResponseAllOfZonesInnerNetworkDomain**](ListClouds200ResponseAllOfZonesInnerNetworkDomain.md) |  | [optional] 
 **DomainName** | Pointer to **string** |  | [optional] 
 **RegionCode** | Pointer to **NullableString** |  | [optional] 
 **AutoRecoverPowerState** | Pointer to **bool** |  | [optional] 
@@ -61,8 +61,8 @@ Name | Type | Description | Notes
 **LastSyncDuration** | Pointer to **NullableInt64** |  | [optional] 
 **NextRunDate** | Pointer to **NullableTime** |  | [optional] 
 **Groups** | Pointer to [**[]ListClouds200ResponseAllOfZonesInnerGroupsInner**](ListClouds200ResponseAllOfZonesInnerGroupsInner.md) |  | [optional] 
-**SecurityServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**NetworkServer** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**SecurityServer** | Pointer to [**ListClouds200ResponseAllOfZonesInnerSecurityServer**](ListClouds200ResponseAllOfZonesInnerSecurityServer.md) |  | [optional] 
+**NetworkServer** | Pointer to [**ListClouds200ResponseAllOfZonesInnerNetworkServer**](ListClouds200ResponseAllOfZonesInnerNetworkServer.md) |  | [optional] 
 **Stats** | Pointer to [**ListClouds200ResponseAllOfZonesInnerStats**](ListClouds200ResponseAllOfZonesInnerStats.md) |  | [optional] 
 **ServerCount** | Pointer to **int64** |  | [optional] 
 
@@ -282,20 +282,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetOwner
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetOwner() ListClouds200ResponseAllOfZonesInnerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetOwnerOk() (*ListClouds200ResponseAllOfZonesInnerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetOwner(v ListClouds200ResponseAllOfZonesInnerOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -305,16 +305,6 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
-### SetOwnerNil
-
-`func (o *ListClouds200ResponseAllOfZonesInner) SetOwnerNil(b bool)`
-
- SetOwnerNil sets the value for Owner to be an explicit nil
-
-### UnsetOwner
-`func (o *ListClouds200ResponseAllOfZonesInner) UnsetOwner()`
-
-UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetAccountId
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetAccountId() int64`
@@ -342,20 +332,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetAccount() ListClouds200ResponseAllOfZonesInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetAccountOk() (*ListClouds200ResponseAllOfZonesInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetAccount(v ListClouds200ResponseAllOfZonesInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -365,16 +355,6 @@ SetAccount sets Account field to given value.
 
 HasAccount returns a boolean if a field has been set.
 
-### SetAccountNil
-
-`func (o *ListClouds200ResponseAllOfZonesInner) SetAccountNil(b bool)`
-
- SetAccountNil sets the value for Account to be an explicit nil
-
-### UnsetAccount
-`func (o *ListClouds200ResponseAllOfZonesInner) UnsetAccount()`
-
-UnsetAccount ensures that no value is present for Account, not even an explicit nil
 ### GetVisibility
 
 `func (o *ListClouds200ResponseAllOfZonesInner) GetVisibility() string`
@@ -697,20 +677,20 @@ HasCostLastSync returns a boolean if a field has been set.
 UnsetCostLastSync ensures that no value is present for CostLastSync, not even an explicit nil
 ### GetZoneType
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetZoneType() ListClouds200ResponseAllOfZonesInnerZoneType`
 
 GetZoneType returns the ZoneType field if non-nil, zero value otherwise.
 
 ### GetZoneTypeOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetZoneTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetZoneTypeOk() (*ListClouds200ResponseAllOfZonesInnerZoneType, bool)`
 
 GetZoneTypeOk returns a tuple with the ZoneType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZoneType
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetZoneType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetZoneType(v ListClouds200ResponseAllOfZonesInnerZoneType)`
 
 SetZoneType sets ZoneType field to given value.
 
@@ -1187,20 +1167,20 @@ HasProvisioningProxy returns a boolean if a field has been set.
 UnsetProvisioningProxy ensures that no value is present for ProvisioningProxy, not even an explicit nil
 ### GetNetworkDomain
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomain() ListClouds200ResponseAllOfZonesInnerNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomainOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkDomainOk() (*ListClouds200ResponseAllOfZonesInnerNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkDomain(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkDomain(v ListClouds200ResponseAllOfZonesInnerNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -1772,20 +1752,20 @@ HasGroups returns a boolean if a field has been set.
 
 ### GetSecurityServer
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServer() ListClouds200ResponseAllOfZonesInnerSecurityServer`
 
 GetSecurityServer returns the SecurityServer field if non-nil, zero value otherwise.
 
 ### GetSecurityServerOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetSecurityServerOk() (*ListClouds200ResponseAllOfZonesInnerSecurityServer, bool)`
 
 GetSecurityServerOk returns a tuple with the SecurityServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSecurityServer
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetSecurityServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetSecurityServer(v ListClouds200ResponseAllOfZonesInnerSecurityServer)`
 
 SetSecurityServer sets SecurityServer field to given value.
 
@@ -1797,20 +1777,20 @@ HasSecurityServer returns a boolean if a field has been set.
 
 ### GetNetworkServer
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServer() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServer() ListClouds200ResponseAllOfZonesInnerNetworkServer`
 
 GetNetworkServer returns the NetworkServer field if non-nil, zero value otherwise.
 
 ### GetNetworkServerOk
 
-`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListClouds200ResponseAllOfZonesInner) GetNetworkServerOk() (*ListClouds200ResponseAllOfZonesInnerNetworkServer, bool)`
 
 GetNetworkServerOk returns a tuple with the NetworkServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkServer
 
-`func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkServer(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListClouds200ResponseAllOfZonesInner) SetNetworkServer(v ListClouds200ResponseAllOfZonesInnerNetworkServer)`
 
 SetNetworkServer sets NetworkServer field to given value.
 

@@ -197,7 +197,6 @@ func (v NullableClusterDatastoreConfigNFS) UnmarshalMapstructure(data any) (any,
 
 	return v, nil
 }
-
 func (o *ClusterDatastoreConfigNFS) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

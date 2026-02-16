@@ -23,10 +23,10 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
-**Zone** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**ZonePool** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Tenants** | Pointer to [**[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
+**Zone** | Pointer to [**ListClusterDatastores200ResponseAllOfDatastoresInnerZone**](ListClusterDatastores200ResponseAllOfDatastoresInnerZone.md) |  | [optional] 
+**ZonePool** | Pointer to [**ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool**](ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool.md) |  | [optional] 
+**Owner** | Pointer to [**ListClusterDatastores200ResponseAllOfDatastoresInnerOwner**](ListClusterDatastores200ResponseAllOfDatastoresInnerOwner.md) |  | [optional] 
+**Tenants** | Pointer to [**[]ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner**](ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Locations** | Pointer to [**[]ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner**](ListClusterDatastores200ResponseAllOfDatastoresInnerLocationsInner.md) |  | [optional] 
 **ResourcePermissions** | Pointer to [**ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions**](ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions.md) |  | [optional] 
@@ -557,20 +557,20 @@ HasStatusMessage returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZone() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZone() ListClusterDatastores200ResponseAllOfDatastoresInnerZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZoneOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZone(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZone(v ListClusterDatastores200ResponseAllOfDatastoresInnerZone)`
 
 SetZone sets Zone field to given value.
 
@@ -582,20 +582,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePool() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePool() ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePoolOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetZonePoolOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZonePool(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetZonePool(v ListClusterDatastores200ResponseAllOfDatastoresInnerZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -607,20 +607,20 @@ HasZonePool returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwner() ListClusterDatastores200ResponseAllOfDatastoresInnerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetOwner(v ListClusterDatastores200ResponseAllOfDatastoresInnerOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -632,20 +632,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenants() []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() (*[]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) GetTenantsOk() (*[]ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
+`func (o *ListClusterDatastores200ResponseAllOfDatastoresInner) SetTenants(v []ListClusterDatastores200ResponseAllOfDatastoresInnerTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 

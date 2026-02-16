@@ -140,7 +140,6 @@ func (v NullableUpdateGroups200Response) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
-
 func (o *UpdateGroups200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

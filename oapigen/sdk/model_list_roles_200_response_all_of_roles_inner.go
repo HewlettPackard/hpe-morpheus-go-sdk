@@ -28,19 +28,19 @@ type ListRoles200ResponseAllOfRolesInner struct {
 	Authority   *string        `json:"authority,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           NullableString                                              `json:"landingUrl,omitempty"`
-	Scope                *string                                                     `json:"scope,omitempty"`
-	RoleType             *string                                                     `json:"roleType,omitempty"`
-	Multitenant          *bool                                                       `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                                       `json:"multitenantLocked,omitempty"`
-	ParentRoleId         NullableString                                              `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                                       `json:"diverged,omitempty"`
-	OwnerId              *int64                                                      `json:"ownerId,omitempty"`
-	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
-	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	LandingUrl           NullableString                                     `json:"landingUrl,omitempty"`
+	Scope                *string                                            `json:"scope,omitempty"`
+	RoleType             *string                                            `json:"roleType,omitempty"`
+	Multitenant          *bool                                              `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                              `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                                     `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                              `json:"diverged,omitempty"`
+	OwnerId              *int64                                             `json:"ownerId,omitempty"`
+	Owner                *ListRoles200ResponseAllOfRolesInnerOwner          `json:"owner,omitempty"`
+	DefaultPersona       *ListRoles200ResponseAllOfRolesInnerDefaultPersona `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _ListRoles200ResponseAllOfRolesInner ListRoles200ResponseAllOfRolesInner
@@ -479,53 +479,42 @@ func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerId(v int64) {
 	o.OwnerId = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Owner.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListRoles200ResponseAllOfRolesInnerOwner {
+	if o == nil || IsNil(o.Owner) {
+		var ret ListRoles200ResponseAllOfRolesInnerOwner
 		return ret
 	}
-	return *o.Owner.Get()
+	return *o.Owner
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListRoles200ResponseAllOfRolesInnerOwner, bool) {
+	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
-	return o.Owner.Get(), o.Owner.IsSet()
+	return o.Owner, true
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListRoles200ResponseAllOfRolesInner) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
+	if o != nil && !IsNil(o.Owner) {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
-func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner() {
-	o.Owner.Unset()
+// SetOwner gets a reference to the given ListRoles200ResponseAllOfRolesInnerOwner and assigns it to the Owner field.
+func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListRoles200ResponseAllOfRolesInnerOwner) {
+	o.Owner = &v
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
-func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListRoles200ResponseAllOfRolesInnerDefaultPersona {
 	if o == nil || IsNil(o.DefaultPersona) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListRoles200ResponseAllOfRolesInnerDefaultPersona
 		return ret
 	}
 	return *o.DefaultPersona
@@ -533,7 +522,7 @@ func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListBackupSett
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListRoles200ResponseAllOfRolesInnerDefaultPersona, bool) {
 	if o == nil || IsNil(o.DefaultPersona) {
 		return nil, false
 	}
@@ -549,8 +538,8 @@ func (o *ListRoles200ResponseAllOfRolesInner) IsSetDefaultPersona() bool {
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultPersona field.
-func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetDefaultPersona gets a reference to the given ListRoles200ResponseAllOfRolesInnerDefaultPersona and assigns it to the DefaultPersona field.
+func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v ListRoles200ResponseAllOfRolesInnerDefaultPersona) {
 	o.DefaultPersona = &v
 }
 
@@ -664,8 +653,8 @@ func (o ListRoles200ResponseAllOfRolesInner) ToMap() (map[string]interface{}, er
 	if !IsNil(o.OwnerId) {
 		toSerialize["ownerId"] = o.OwnerId
 	}
-	if o.Owner.IsSet() {
-		toSerialize["owner"] = o.Owner.Get()
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
 	}
 	if !IsNil(o.DefaultPersona) {
 		toSerialize["defaultPersona"] = o.DefaultPersona
@@ -728,7 +717,6 @@ func (v NullableListRoles200ResponseAllOfRolesInner) UnmarshalMapstructure(data 
 
 	return v, nil
 }
-
 func (o *ListRoles200ResponseAllOfRolesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

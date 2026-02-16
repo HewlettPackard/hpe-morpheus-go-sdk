@@ -43,15 +43,15 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOf2 struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool                                       `json:"allowQuantity,omitempty"`
-	Workflow      GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow"`
+	AllowQuantity *bool                                                  `json:"allowQuantity,omitempty"`
+	Workflow      AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow `json:"workflow"`
 	// Context for running the workflow, determines if a target resource must be selected.
 	Context *string `json:"context,omitempty"`
 	// Configuration object that contains settings for the workflow.
 	WorkflowConfig *string `json:"workflowConfig,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string                                            `json:"formType,omitempty"`
-	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                                             `json:"formType,omitempty"`
+	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
@@ -65,7 +65,7 @@ type _AddCatalogItemTypeRequestCatalogItemTypeOneOf2 AddCatalogItemTypeRequestCa
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddCatalogItemTypeRequestCatalogItemTypeOneOf2(workflow GetAlerts200ResponseAllOfChecksInnerAccount) *AddCatalogItemTypeRequestCatalogItemTypeOneOf2 {
+func NewAddCatalogItemTypeRequestCatalogItemTypeOneOf2(workflow AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow) *AddCatalogItemTypeRequestCatalogItemTypeOneOf2 {
 	this := AddCatalogItemTypeRequestCatalogItemTypeOneOf2{}
 	var visibility string = "private"
 	this.Visibility = &visibility
@@ -518,9 +518,9 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetAllowQuantity(v bool
 }
 
 // GetWorkflow returns the Workflow field value
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflow() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflow() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow {
 	if o == nil {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow
 		return ret
 	}
 
@@ -529,7 +529,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflow() GetAlerts
 
 // GetWorkflowOk returns a tuple with the Workflow field value
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflowOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflowOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -537,7 +537,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetWorkflowOk() (*GetAl
 }
 
 // SetWorkflow sets field value
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetWorkflow(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetWorkflow(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow) {
 	o.Workflow = v
 }
 
@@ -638,9 +638,9 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetFormType(v string) {
 }
 
 // GetForm returns the Form field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form {
 	if o == nil || IsNil(o.Form) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
+		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form
 		return ret
 	}
 	return *o.Form
@@ -648,7 +648,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetForm() AddCatalogIte
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form, bool) {
 	if o == nil || IsNil(o.Form) {
 		return nil, false
 	}
@@ -664,8 +664,8 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) IsSetForm() bool {
 	return false
 }
 
-// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfForm and assigns it to the Form field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
+// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form and assigns it to the Form field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form) {
 	o.Form = &v
 }
 
@@ -850,7 +850,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf2) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf2) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

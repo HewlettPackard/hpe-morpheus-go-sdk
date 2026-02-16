@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InstanceTypeLayout** | Pointer to [**GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner**](GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner.md) |  | [optional] 
+**InstanceTypeLayout** | Pointer to [**AddLayout200ResponseInstanceTypeLayout**](AddLayout200ResponseInstanceTypeLayout.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstanceTypeLayout
 
-`func (o *AddLayout200Response) GetInstanceTypeLayout() GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner`
+`func (o *AddLayout200Response) GetInstanceTypeLayout() AddLayout200ResponseInstanceTypeLayout`
 
 GetInstanceTypeLayout returns the InstanceTypeLayout field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeLayoutOk
 
-`func (o *AddLayout200Response) GetInstanceTypeLayoutOk() (*GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool)`
+`func (o *AddLayout200Response) GetInstanceTypeLayoutOk() (*AddLayout200ResponseInstanceTypeLayout, bool)`
 
 GetInstanceTypeLayoutOk returns a tuple with the InstanceTypeLayout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypeLayout
 
-`func (o *AddLayout200Response) SetInstanceTypeLayout(v GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner)`
+`func (o *AddLayout200Response) SetInstanceTypeLayout(v AddLayout200ResponseInstanceTypeLayout)`
 
 SetInstanceTypeLayout sets InstanceTypeLayout field to given value.
 

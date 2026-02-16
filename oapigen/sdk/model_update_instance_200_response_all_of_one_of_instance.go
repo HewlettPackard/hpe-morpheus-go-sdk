@@ -21,12 +21,12 @@ var _ MappedNullable = &UpdateInstance200ResponseAllOfOneOfInstance{}
 // UpdateInstance200ResponseAllOfOneOfInstance Key for name, site, instanceType layout, and plan.
 type UpdateInstance200ResponseAllOfOneOfInstance struct {
 	// Name of the instance to be created.
-	Name                 string                                 `json:"name"`
-	Site                 AddInstanceRequestInstanceSite         `json:"site"`
-	InstanceType         AddInstanceRequestInstanceInstanceType `json:"instanceType"`
-	Layout               AddInstanceRequestInstanceLayout       `json:"layout"`
-	Plan                 AddInstanceRequestInstancePlan         `json:"plan"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	Name                 string                                                  `json:"name"`
+	Site                 UpdateInstance200ResponseAllOfOneOfInstanceSite         `json:"site"`
+	InstanceType         UpdateInstance200ResponseAllOfOneOfInstanceInstanceType `json:"instanceType"`
+	Layout               UpdateInstance200ResponseAllOfOneOfInstanceLayout       `json:"layout"`
+	Plan                 UpdateInstance200ResponseAllOfOneOfInstancePlan         `json:"plan"`
+	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
 type _UpdateInstance200ResponseAllOfOneOfInstance UpdateInstance200ResponseAllOfOneOfInstance
@@ -35,7 +35,7 @@ type _UpdateInstance200ResponseAllOfOneOfInstance UpdateInstance200ResponseAllOf
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUpdateInstance200ResponseAllOfOneOfInstance(name string, site AddInstanceRequestInstanceSite, instanceType AddInstanceRequestInstanceInstanceType, layout AddInstanceRequestInstanceLayout, plan AddInstanceRequestInstancePlan) *UpdateInstance200ResponseAllOfOneOfInstance {
+func NewUpdateInstance200ResponseAllOfOneOfInstance(name string, site UpdateInstance200ResponseAllOfOneOfInstanceSite, instanceType UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, layout UpdateInstance200ResponseAllOfOneOfInstanceLayout, plan UpdateInstance200ResponseAllOfOneOfInstancePlan) *UpdateInstance200ResponseAllOfOneOfInstance {
 	this := UpdateInstance200ResponseAllOfOneOfInstance{}
 	this.Name = name
 	this.Site = site
@@ -78,9 +78,9 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetName(v string) {
 }
 
 // GetSite returns the Site field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() AddInstanceRequestInstanceSite {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() UpdateInstance200ResponseAllOfOneOfInstanceSite {
 	if o == nil {
-		var ret AddInstanceRequestInstanceSite
+		var ret UpdateInstance200ResponseAllOfOneOfInstanceSite
 		return ret
 	}
 
@@ -89,7 +89,7 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() AddInstanceReque
 
 // GetSiteOk returns a tuple with the Site field value
 // and a boolean to check if the value has been set.
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*AddInstanceRequestInstanceSite, bool) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*UpdateInstance200ResponseAllOfOneOfInstanceSite, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,14 +97,14 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*AddInstanceR
 }
 
 // SetSite sets field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetSite(v AddInstanceRequestInstanceSite) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetSite(v UpdateInstance200ResponseAllOfOneOfInstanceSite) {
 	o.Site = v
 }
 
 // GetInstanceType returns the InstanceType field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInstanceRequestInstanceInstanceType {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() UpdateInstance200ResponseAllOfOneOfInstanceInstanceType {
 	if o == nil {
-		var ret AddInstanceRequestInstanceInstanceType
+		var ret UpdateInstance200ResponseAllOfOneOfInstanceInstanceType
 		return ret
 	}
 
@@ -113,7 +113,7 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInsta
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value
 // and a boolean to check if the value has been set.
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*AddInstanceRequestInstanceInstanceType, bool) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -121,14 +121,14 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*AddI
 }
 
 // SetInstanceType sets field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstanceRequestInstanceInstanceType) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetInstanceType(v UpdateInstance200ResponseAllOfOneOfInstanceInstanceType) {
 	o.InstanceType = v
 }
 
 // GetLayout returns the Layout field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() AddInstanceRequestInstanceLayout {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() UpdateInstance200ResponseAllOfOneOfInstanceLayout {
 	if o == nil {
-		var ret AddInstanceRequestInstanceLayout
+		var ret UpdateInstance200ResponseAllOfOneOfInstanceLayout
 		return ret
 	}
 
@@ -137,7 +137,7 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() AddInstanceReq
 
 // GetLayoutOk returns a tuple with the Layout field value
 // and a boolean to check if the value has been set.
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*AddInstanceRequestInstanceLayout, bool) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*UpdateInstance200ResponseAllOfOneOfInstanceLayout, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -145,14 +145,14 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*AddInstanc
 }
 
 // SetLayout sets field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetLayout(v AddInstanceRequestInstanceLayout) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetLayout(v UpdateInstance200ResponseAllOfOneOfInstanceLayout) {
 	o.Layout = v
 }
 
 // GetPlan returns the Plan field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() AddInstanceRequestInstancePlan {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() UpdateInstance200ResponseAllOfOneOfInstancePlan {
 	if o == nil {
-		var ret AddInstanceRequestInstancePlan
+		var ret UpdateInstance200ResponseAllOfOneOfInstancePlan
 		return ret
 	}
 
@@ -161,7 +161,7 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() AddInstanceReque
 
 // GetPlanOk returns a tuple with the Plan field value
 // and a boolean to check if the value has been set.
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*AddInstanceRequestInstancePlan, bool) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*UpdateInstance200ResponseAllOfOneOfInstancePlan, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -169,7 +169,7 @@ func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*AddInstanceR
 }
 
 // SetPlan sets field value
-func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetPlan(v AddInstanceRequestInstancePlan) {
+func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetPlan(v UpdateInstance200ResponseAllOfOneOfInstancePlan) {
 	o.Plan = v
 }
 
@@ -240,7 +240,6 @@ func (v NullableUpdateInstance200ResponseAllOfOneOfInstance) UnmarshalMapstructu
 
 	return v, nil
 }
-
 func (o *UpdateInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

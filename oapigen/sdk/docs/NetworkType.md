@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **HasCidr** | Pointer to **bool** |  | [optional] 
 **HasStaticRoutes** | Pointer to **bool** |  | [optional] 
 **HasFloatingIps** | Pointer to **bool** |  | [optional] 
-**OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
-**RouteOptionTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner.md) |  | [optional] 
+**OptionTypes** | Pointer to [**[]NetworkTypeOptionTypesInner**](NetworkTypeOptionTypesInner.md) |  | [optional] 
+**RouteOptionTypes** | Pointer to [**[]NetworkTypeRouteOptionTypesInner**](NetworkTypeRouteOptionTypesInner.md) |  | [optional] 
 
 ## Methods
 
@@ -656,20 +656,20 @@ HasHasFloatingIps returns a boolean if a field has been set.
 
 ### GetOptionTypes
 
-`func (o *NetworkType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner`
+`func (o *NetworkType) GetOptionTypes() []NetworkTypeOptionTypesInner`
 
 GetOptionTypes returns the OptionTypes field if non-nil, zero value otherwise.
 
 ### GetOptionTypesOk
 
-`func (o *NetworkType) GetOptionTypesOk() (*[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool)`
+`func (o *NetworkType) GetOptionTypesOk() (*[]NetworkTypeOptionTypesInner, bool)`
 
 GetOptionTypesOk returns a tuple with the OptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionTypes
 
-`func (o *NetworkType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner)`
+`func (o *NetworkType) SetOptionTypes(v []NetworkTypeOptionTypesInner)`
 
 SetOptionTypes sets OptionTypes field to given value.
 
@@ -681,20 +681,20 @@ HasOptionTypes returns a boolean if a field has been set.
 
 ### GetRouteOptionTypes
 
-`func (o *NetworkType) GetRouteOptionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner`
+`func (o *NetworkType) GetRouteOptionTypes() []NetworkTypeRouteOptionTypesInner`
 
 GetRouteOptionTypes returns the RouteOptionTypes field if non-nil, zero value otherwise.
 
 ### GetRouteOptionTypesOk
 
-`func (o *NetworkType) GetRouteOptionTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner, bool)`
+`func (o *NetworkType) GetRouteOptionTypesOk() (*[]NetworkTypeRouteOptionTypesInner, bool)`
 
 GetRouteOptionTypesOk returns a tuple with the RouteOptionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRouteOptionTypes
 
-`func (o *NetworkType) SetRouteOptionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerRouteOptionTypesInner)`
+`func (o *NetworkType) SetRouteOptionTypes(v []NetworkTypeRouteOptionTypesInner)`
 
 SetRouteOptionTypes sets RouteOptionTypes field to given value.
 

@@ -20,8 +20,8 @@ var _ MappedNullable = &GetDatastores200Response{}
 
 // GetDatastores200Response struct for GetDatastores200Response
 type GetDatastores200Response struct {
-	Datastore            *ListDatastores200ResponseAllOfDatastoresInner `json:"datastore,omitempty"`
-	AdditionalProperties map[string]interface{}                         `json:",remain"`
+	Datastore            *GetDatastores200ResponseAllOfDatastore `json:"datastore,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _GetDatastores200Response GetDatastores200Response
@@ -44,9 +44,9 @@ func NewGetDatastores200ResponseWithDefaults() *GetDatastores200Response {
 }
 
 // GetDatastore returns the Datastore field value if set, zero value otherwise.
-func (o *GetDatastores200Response) GetDatastore() ListDatastores200ResponseAllOfDatastoresInner {
+func (o *GetDatastores200Response) GetDatastore() GetDatastores200ResponseAllOfDatastore {
 	if o == nil || IsNil(o.Datastore) {
-		var ret ListDatastores200ResponseAllOfDatastoresInner
+		var ret GetDatastores200ResponseAllOfDatastore
 		return ret
 	}
 	return *o.Datastore
@@ -54,7 +54,7 @@ func (o *GetDatastores200Response) GetDatastore() ListDatastores200ResponseAllOf
 
 // GetDatastoreOk returns a tuple with the Datastore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetDatastores200Response) GetDatastoreOk() (*ListDatastores200ResponseAllOfDatastoresInner, bool) {
+func (o *GetDatastores200Response) GetDatastoreOk() (*GetDatastores200ResponseAllOfDatastore, bool) {
 	if o == nil || IsNil(o.Datastore) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetDatastores200Response) IsSetDatastore() bool {
 	return false
 }
 
-// SetDatastore gets a reference to the given ListDatastores200ResponseAllOfDatastoresInner and assigns it to the Datastore field.
-func (o *GetDatastores200Response) SetDatastore(v ListDatastores200ResponseAllOfDatastoresInner) {
+// SetDatastore gets a reference to the given GetDatastores200ResponseAllOfDatastore and assigns it to the Datastore field.
+func (o *GetDatastores200Response) SetDatastore(v GetDatastores200ResponseAllOfDatastore) {
 	o.Datastore = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetDatastores200Response) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *GetDatastores200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

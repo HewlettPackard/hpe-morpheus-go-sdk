@@ -167,7 +167,6 @@ func (v NullableUpdateVirtualImageRequestVirtualImageRemoveTagsInner) UnmarshalM
 
 	return v, nil
 }
-
 func (o *UpdateVirtualImageRequestVirtualImageRemoveTagsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

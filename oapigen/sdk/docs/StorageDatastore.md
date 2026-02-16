@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Id** | **int64** |  | 
 **Name** | **string** |  | 
 **Code** | Pointer to **NullableString** |  | [optional] 
-**DatastoreType** | [**ListDatastores200ResponseAllOfDatastoresInnerDatastoreType**](ListDatastores200ResponseAllOfDatastoresInnerDatastoreType.md) |  | 
+**DatastoreType** | [**StorageDatastoreDatastoreType**](StorageDatastoreDatastoreType.md) |  | 
 **Config** | Pointer to **map[string]interface{}** | Configuration object. Settings vary by type. | [optional] 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**StorageServer** | Pointer to [**StorageDatastoreStorageServer**](StorageDatastoreStorageServer.md) |  | [optional] 
 **Type** | **string** | The underlying type of the datastore, e.g. &#39;generic&#39;, &#39;cluster&#39;, &#39;nfs&#39;, &#39;vmfs&#39;, &#39;NFS Pool&#39;, &#39;Directory Pool&#39;, &#39;GFS2 Pool (Global File System 2)&#39;, &#39;storage-profile&#39;, &#39;ext&#39; | 
 **Status** | **string** | The current status of the datastore, e.g. &#39;provisioned&#39;, &#39;provisioning&#39;, &#39;failed&#39;, &#39;warning&#39; | 
 **StatusMessage** | Pointer to **string** | Additional details about the current status of the datastore | [optional] 
@@ -29,17 +29,17 @@ Name | Type | Description | Notes
 **ExternalId** | Pointer to **string** | UUID for the datastore | [optional] 
 **ExternalPath** | Pointer to **string** | External path for the datastore, e.g. mount path, datastore path, etc. | [optional] 
 **ExternalType** | Pointer to **string** | External type for the datastore, e.g. rbd, netfs, dir:gfs2 | [optional] 
-**Zone** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerZone**](ListDatastores200ResponseAllOfDatastoresInnerZone.md) |  | [optional] 
-**ZonePool** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerZonePool**](ListDatastores200ResponseAllOfDatastoresInnerZonePool.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Datastores** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner.md) | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
-**Locations** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner**](ListDatastores200ResponseAllOfDatastoresInnerLocationsInner.md) |  | [optional] 
+**Zone** | Pointer to [**StorageDatastoreZone**](StorageDatastoreZone.md) |  | [optional] 
+**ZonePool** | Pointer to [**StorageDatastoreZonePool**](StorageDatastoreZonePool.md) |  | [optional] 
+**Owner** | Pointer to [**StorageDatastoreOwner**](StorageDatastoreOwner.md) |  | [optional] 
+**Datastores** | Pointer to [**[]StorageDatastoreDatastoresInner**](StorageDatastoreDatastoresInner.md) | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
+**Locations** | Pointer to [**[]StorageDatastoreLocationsInner**](StorageDatastoreLocationsInner.md) |  | [optional] 
 
 ## Methods
 
 ### NewStorageDatastore
 
-`func NewStorageDatastore(id int64, name string, datastoreType ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, type_ string, status string, ) *StorageDatastore`
+`func NewStorageDatastore(id int64, name string, datastoreType StorageDatastoreDatastoreType, type_ string, status string, ) *StorageDatastore`
 
 NewStorageDatastore instantiates a new StorageDatastore object
 This constructor will assign default values to properties that have it defined,
@@ -131,20 +131,20 @@ HasCode returns a boolean if a field has been set.
 UnsetCode ensures that no value is present for Code, not even an explicit nil
 ### GetDatastoreType
 
-`func (o *StorageDatastore) GetDatastoreType() ListDatastores200ResponseAllOfDatastoresInnerDatastoreType`
+`func (o *StorageDatastore) GetDatastoreType() StorageDatastoreDatastoreType`
 
 GetDatastoreType returns the DatastoreType field if non-nil, zero value otherwise.
 
 ### GetDatastoreTypeOk
 
-`func (o *StorageDatastore) GetDatastoreTypeOk() (*ListDatastores200ResponseAllOfDatastoresInnerDatastoreType, bool)`
+`func (o *StorageDatastore) GetDatastoreTypeOk() (*StorageDatastoreDatastoreType, bool)`
 
 GetDatastoreTypeOk returns a tuple with the DatastoreType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastoreType
 
-`func (o *StorageDatastore) SetDatastoreType(v ListDatastores200ResponseAllOfDatastoresInnerDatastoreType)`
+`func (o *StorageDatastore) SetDatastoreType(v StorageDatastoreDatastoreType)`
 
 SetDatastoreType sets DatastoreType field to given value.
 
@@ -176,20 +176,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *StorageDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *StorageDatastore) GetStorageServer() StorageDatastoreStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *StorageDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *StorageDatastore) GetStorageServerOk() (*StorageDatastoreStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *StorageDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *StorageDatastore) SetStorageServer(v StorageDatastoreStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -686,20 +686,20 @@ HasExternalType returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *StorageDatastore) GetZone() ListDatastores200ResponseAllOfDatastoresInnerZone`
+`func (o *StorageDatastore) GetZone() StorageDatastoreZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *StorageDatastore) GetZoneOk() (*ListDatastores200ResponseAllOfDatastoresInnerZone, bool)`
+`func (o *StorageDatastore) GetZoneOk() (*StorageDatastoreZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *StorageDatastore) SetZone(v ListDatastores200ResponseAllOfDatastoresInnerZone)`
+`func (o *StorageDatastore) SetZone(v StorageDatastoreZone)`
 
 SetZone sets Zone field to given value.
 
@@ -711,20 +711,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetZonePool
 
-`func (o *StorageDatastore) GetZonePool() ListDatastores200ResponseAllOfDatastoresInnerZonePool`
+`func (o *StorageDatastore) GetZonePool() StorageDatastoreZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *StorageDatastore) GetZonePoolOk() (*ListDatastores200ResponseAllOfDatastoresInnerZonePool, bool)`
+`func (o *StorageDatastore) GetZonePoolOk() (*StorageDatastoreZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *StorageDatastore) SetZonePool(v ListDatastores200ResponseAllOfDatastoresInnerZonePool)`
+`func (o *StorageDatastore) SetZonePool(v StorageDatastoreZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -736,20 +736,20 @@ HasZonePool returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *StorageDatastore) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *StorageDatastore) GetOwner() StorageDatastoreOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *StorageDatastore) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *StorageDatastore) GetOwnerOk() (*StorageDatastoreOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *StorageDatastore) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *StorageDatastore) SetOwner(v StorageDatastoreOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -761,20 +761,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetDatastores
 
-`func (o *StorageDatastore) GetDatastores() []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner`
+`func (o *StorageDatastore) GetDatastores() []StorageDatastoreDatastoresInner`
 
 GetDatastores returns the Datastores field if non-nil, zero value otherwise.
 
 ### GetDatastoresOk
 
-`func (o *StorageDatastore) GetDatastoresOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner, bool)`
+`func (o *StorageDatastore) GetDatastoresOk() (*[]StorageDatastoreDatastoresInner, bool)`
 
 GetDatastoresOk returns a tuple with the Datastores field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatastores
 
-`func (o *StorageDatastore) SetDatastores(v []ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner)`
+`func (o *StorageDatastore) SetDatastores(v []StorageDatastoreDatastoresInner)`
 
 SetDatastores sets Datastores field to given value.
 
@@ -786,20 +786,20 @@ HasDatastores returns a boolean if a field has been set.
 
 ### GetLocations
 
-`func (o *StorageDatastore) GetLocations() []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner`
+`func (o *StorageDatastore) GetLocations() []StorageDatastoreLocationsInner`
 
 GetLocations returns the Locations field if non-nil, zero value otherwise.
 
 ### GetLocationsOk
 
-`func (o *StorageDatastore) GetLocationsOk() (*[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner, bool)`
+`func (o *StorageDatastore) GetLocationsOk() (*[]StorageDatastoreLocationsInner, bool)`
 
 GetLocationsOk returns a tuple with the Locations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocations
 
-`func (o *StorageDatastore) SetLocations(v []ListDatastores200ResponseAllOfDatastoresInnerLocationsInner)`
+`func (o *StorageDatastore) SetLocations(v []StorageDatastoreLocationsInner)`
 
 SetLocations sets Locations field to given value.
 

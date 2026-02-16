@@ -21,7 +21,7 @@ var _ MappedNullable = &ListUsers200Response{}
 // ListUsers200Response struct for ListUsers200Response
 type ListUsers200Response struct {
 	Users []ListUsers200ResponseAllOfUsersInner `json:"users,omitempty"`
-	Meta  *ListActivity200ResponseAllOfMeta     `json:"meta,omitempty"`
+	Meta  *ListClouds200ResponseAllOfMeta       `json:"meta,omitempty"`
 	// Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
 	Global               *bool                  `json:"global,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -83,9 +83,9 @@ func (o *ListUsers200Response) SetUsers(v []ListUsers200ResponseAllOfUsersInner)
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListUsers200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListUsers200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -93,7 +93,7 @@ func (o *ListUsers200Response) GetMeta() ListActivity200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListUsers200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListUsers200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -109,8 +109,8 @@ func (o *ListUsers200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListUsers200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListUsers200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -217,7 +217,6 @@ func (v NullableListUsers200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *ListUsers200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

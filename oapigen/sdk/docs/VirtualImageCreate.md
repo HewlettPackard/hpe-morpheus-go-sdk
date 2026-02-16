@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for the virtual image | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
-**StorageProvider** | Pointer to [**AddVirtualImageRequestVirtualImageStorageProvider**](AddVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
+**StorageProvider** | Pointer to [**VirtualImageCreateStorageProvider**](VirtualImageCreateStorageProvider.md) |  | [optional] 
 **IsCloudInit** | Pointer to **bool** | Cloud Init Enabled? | [optional] [default to false]
 **UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
 **InstallAgent** | Pointer to **bool** | Install Agent? | [optional] [default to false]
@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **IsForceCustomization** | Pointer to **bool** | Force Guest Customization? | [optional] [default to false]
 **TrialVersion** | Pointer to **bool** | Trial Version | [optional] [default to false]
 **IsSysprep** | Pointer to **bool** | Sysprep Enabled? | [optional] [default to false]
-**Config** | Pointer to [**AddVirtualImageRequestVirtualImageConfig**](AddVirtualImageRequestVirtualImageConfig.md) |  | [optional] 
-**Tags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
+**Config** | Pointer to [**VirtualImageCreateConfig**](VirtualImageCreateConfig.md) |  | [optional] 
+**Tags** | Pointer to [**[]VirtualImageCreateTagsInner**](VirtualImageCreateTagsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
 **Url** | Pointer to **string** | Image File URL, a virtual image file will be created by fetching the specified URL | [optional] 
 **MinRam** | Pointer to **NullableInt64** |  | [optional] 
 **MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
@@ -165,20 +165,20 @@ HasImageType returns a boolean if a field has been set.
 
 ### GetStorageProvider
 
-`func (o *VirtualImageCreate) GetStorageProvider() AddVirtualImageRequestVirtualImageStorageProvider`
+`func (o *VirtualImageCreate) GetStorageProvider() VirtualImageCreateStorageProvider`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *VirtualImageCreate) GetStorageProviderOk() (*AddVirtualImageRequestVirtualImageStorageProvider, bool)`
+`func (o *VirtualImageCreate) GetStorageProviderOk() (*VirtualImageCreateStorageProvider, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *VirtualImageCreate) SetStorageProvider(v AddVirtualImageRequestVirtualImageStorageProvider)`
+`func (o *VirtualImageCreate) SetStorageProvider(v VirtualImageCreateStorageProvider)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -665,20 +665,20 @@ HasIsSysprep returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *VirtualImageCreate) GetConfig() AddVirtualImageRequestVirtualImageConfig`
+`func (o *VirtualImageCreate) GetConfig() VirtualImageCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *VirtualImageCreate) GetConfigOk() (*AddVirtualImageRequestVirtualImageConfig, bool)`
+`func (o *VirtualImageCreate) GetConfigOk() (*VirtualImageCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *VirtualImageCreate) SetConfig(v AddVirtualImageRequestVirtualImageConfig)`
+`func (o *VirtualImageCreate) SetConfig(v VirtualImageCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -690,20 +690,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *VirtualImageCreate) GetTags() []AddVirtualImageRequestVirtualImageTagsInner`
+`func (o *VirtualImageCreate) GetTags() []VirtualImageCreateTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *VirtualImageCreate) GetTagsOk() (*[]AddVirtualImageRequestVirtualImageTagsInner, bool)`
+`func (o *VirtualImageCreate) GetTagsOk() (*[]VirtualImageCreateTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *VirtualImageCreate) SetTags(v []AddVirtualImageRequestVirtualImageTagsInner)`
+`func (o *VirtualImageCreate) SetTags(v []VirtualImageCreateTagsInner)`
 
 SetTags sets Tags field to given value.
 

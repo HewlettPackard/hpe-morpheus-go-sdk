@@ -27,10 +27,10 @@ type InstanceContainerServer struct {
 	InternalId           NullableString                            `json:"internalId,omitempty"`
 	HostName             *string                                   `json:"hostName,omitempty"`
 	AccountId            *int64                                    `json:"accountId,omitempty"`
-	Account              *InstanceContainerInstance                `json:"account,omitempty"`
+	Account              *InstanceContainerServerAccount           `json:"account,omitempty"`
 	Owner                *InstanceContainerServerOwner             `json:"owner,omitempty"`
-	Zone                 *InstanceContainerInstance                `json:"zone,omitempty"`
-	Plan                 *InstanceContainerContainerType           `json:"plan,omitempty"`
+	Zone                 *InstanceContainerServerZone              `json:"zone,omitempty"`
+	Plan                 *InstanceContainerServerPlan              `json:"plan,omitempty"`
 	ComputeServerType    *InstanceContainerServerComputeServerType `json:"computeServerType,omitempty"`
 	Visibility           *string                                   `json:"visibility,omitempty"`
 	Description          NullableString                            `json:"description,omitempty"`
@@ -54,7 +54,7 @@ type InstanceContainerServer struct {
 	MaxCores             *int64                                    `json:"maxCores,omitempty"`
 	MaxMemory            *int64                                    `json:"maxMemory,omitempty"`
 	MaxStorage           *int64                                    `json:"maxStorage,omitempty"`
-	SourceImage          *InstanceContainerContainerType           `json:"sourceImage,omitempty"`
+	SourceImage          *InstanceContainerServerSourceImage       `json:"sourceImage,omitempty"`
 	ServerOs             *InstanceContainerServerServerOs          `json:"serverOs,omitempty"`
 	Volumes              []InstanceContainerServerVolume           `json:"volumes,omitempty"`
 	Interfaces           []InstanceContainerServerInterfacesInner  `json:"interfaces,omitempty"`
@@ -295,9 +295,9 @@ func (o *InstanceContainerServer) SetAccountId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *InstanceContainerServer) GetAccount() InstanceContainerInstance {
+func (o *InstanceContainerServer) GetAccount() InstanceContainerServerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainerServerAccount
 		return ret
 	}
 	return *o.Account
@@ -305,7 +305,7 @@ func (o *InstanceContainerServer) GetAccount() InstanceContainerInstance {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer) GetAccountOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainerServer) GetAccountOk() (*InstanceContainerServerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -321,8 +321,8 @@ func (o *InstanceContainerServer) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given InstanceContainerInstance and assigns it to the Account field.
-func (o *InstanceContainerServer) SetAccount(v InstanceContainerInstance) {
+// SetAccount gets a reference to the given InstanceContainerServerAccount and assigns it to the Account field.
+func (o *InstanceContainerServer) SetAccount(v InstanceContainerServerAccount) {
 	o.Account = &v
 }
 
@@ -359,9 +359,9 @@ func (o *InstanceContainerServer) SetOwner(v InstanceContainerServerOwner) {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *InstanceContainerServer) GetZone() InstanceContainerInstance {
+func (o *InstanceContainerServer) GetZone() InstanceContainerServerZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainerServerZone
 		return ret
 	}
 	return *o.Zone
@@ -369,7 +369,7 @@ func (o *InstanceContainerServer) GetZone() InstanceContainerInstance {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer) GetZoneOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainerServer) GetZoneOk() (*InstanceContainerServerZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -385,15 +385,15 @@ func (o *InstanceContainerServer) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given InstanceContainerInstance and assigns it to the Zone field.
-func (o *InstanceContainerServer) SetZone(v InstanceContainerInstance) {
+// SetZone gets a reference to the given InstanceContainerServerZone and assigns it to the Zone field.
+func (o *InstanceContainerServer) SetZone(v InstanceContainerServerZone) {
 	o.Zone = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *InstanceContainerServer) GetPlan() InstanceContainerContainerType {
+func (o *InstanceContainerServer) GetPlan() InstanceContainerServerPlan {
 	if o == nil || IsNil(o.Plan) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainerServerPlan
 		return ret
 	}
 	return *o.Plan
@@ -401,7 +401,7 @@ func (o *InstanceContainerServer) GetPlan() InstanceContainerContainerType {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer) GetPlanOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainerServer) GetPlanOk() (*InstanceContainerServerPlan, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -417,8 +417,8 @@ func (o *InstanceContainerServer) IsSetPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given InstanceContainerContainerType and assigns it to the Plan field.
-func (o *InstanceContainerServer) SetPlan(v InstanceContainerContainerType) {
+// SetPlan gets a reference to the given InstanceContainerServerPlan and assigns it to the Plan field.
+func (o *InstanceContainerServer) SetPlan(v InstanceContainerServerPlan) {
 	o.Plan = &v
 }
 
@@ -1258,9 +1258,9 @@ func (o *InstanceContainerServer) SetMaxStorage(v int64) {
 }
 
 // GetSourceImage returns the SourceImage field value if set, zero value otherwise.
-func (o *InstanceContainerServer) GetSourceImage() InstanceContainerContainerType {
+func (o *InstanceContainerServer) GetSourceImage() InstanceContainerServerSourceImage {
 	if o == nil || IsNil(o.SourceImage) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainerServerSourceImage
 		return ret
 	}
 	return *o.SourceImage
@@ -1268,7 +1268,7 @@ func (o *InstanceContainerServer) GetSourceImage() InstanceContainerContainerTyp
 
 // GetSourceImageOk returns a tuple with the SourceImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer) GetSourceImageOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainerServer) GetSourceImageOk() (*InstanceContainerServerSourceImage, bool) {
 	if o == nil || IsNil(o.SourceImage) {
 		return nil, false
 	}
@@ -1284,8 +1284,8 @@ func (o *InstanceContainerServer) IsSetSourceImage() bool {
 	return false
 }
 
-// SetSourceImage gets a reference to the given InstanceContainerContainerType and assigns it to the SourceImage field.
-func (o *InstanceContainerServer) SetSourceImage(v InstanceContainerContainerType) {
+// SetSourceImage gets a reference to the given InstanceContainerServerSourceImage and assigns it to the SourceImage field.
+func (o *InstanceContainerServer) SetSourceImage(v InstanceContainerServerSourceImage) {
 	o.SourceImage = &v
 }
 
@@ -1558,7 +1558,6 @@ func (v NullableInstanceContainerServer) UnmarshalMapstructure(data any) (any, e
 
 	return v, nil
 }
-
 func (o *InstanceContainerServer) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

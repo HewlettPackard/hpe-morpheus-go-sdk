@@ -21,7 +21,7 @@ var _ MappedNullable = &ListEnvironments200Response{}
 // ListEnvironments200Response struct for ListEnvironments200Response
 type ListEnvironments200Response struct {
 	Environments         []ListEnvironments200ResponseAllOfEnvironmentsInner `json:"environments,omitempty"`
-	Meta                 *ListActivity200ResponseAllOfMeta                   `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta                     `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListEnvironments200Response) SetEnvironments(v []ListEnvironments200Res
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListEnvironments200Response) GetMeta() ListActivity200ResponseAllOfMeta {
+func (o *ListEnvironments200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListActivity200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListEnvironments200Response) GetMeta() ListActivity200ResponseAllOfMeta
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEnvironments200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool) {
+func (o *ListEnvironments200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListEnvironments200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListActivity200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListEnvironments200Response) SetMeta(v ListActivity200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListEnvironments200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableListEnvironments200Response) UnmarshalMapstructure(data any) (an
 
 	return v, nil
 }
-
 func (o *ListEnvironments200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

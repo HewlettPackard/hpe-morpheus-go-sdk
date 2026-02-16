@@ -20,22 +20,22 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInnerComputeSer
 
 // ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType struct for ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType
 type ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Account              NullableString                                              `json:"account,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Labels               []string                                                    `json:"labels,omitempty"`
-	ShortName            *string                                                     `json:"shortName,omitempty"`
-	Code                 *string                                                     `json:"code,omitempty"`
-	ContainerVersion     *string                                                     `json:"containerVersion,omitempty"`
-	ProvisionType        *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"provisionType,omitempty"`
-	VirtualImage         NullableString                                              `json:"virtualImage,omitempty"`
-	Category             *string                                                     `json:"category,omitempty"`
-	Config               map[string]interface{}                                      `json:"config,omitempty"`
-	ContainerPorts       []map[string]interface{}                                    `json:"containerPorts,omitempty"`
-	ContainerScripts     []map[string]interface{}                                    `json:"containerScripts,omitempty"`
-	ContainerTemplates   []map[string]interface{}                                    `json:"containerTemplates,omitempty"`
-	EnvironmentVariables []map[string]interface{}                                    `json:"environmentVariables,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                                                                       `json:"id,omitempty"`
+	Account              NullableString                                                                               `json:"account,omitempty"`
+	Name                 *string                                                                                      `json:"name,omitempty"`
+	Labels               []string                                                                                     `json:"labels,omitempty"`
+	ShortName            *string                                                                                      `json:"shortName,omitempty"`
+	Code                 *string                                                                                      `json:"code,omitempty"`
+	ContainerVersion     *string                                                                                      `json:"containerVersion,omitempty"`
+	ProvisionType        *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType `json:"provisionType,omitempty"`
+	VirtualImage         NullableString                                                                               `json:"virtualImage,omitempty"`
+	Category             *string                                                                                      `json:"category,omitempty"`
+	Config               map[string]interface{}                                                                       `json:"config,omitempty"`
+	ContainerPorts       []map[string]interface{}                                                                     `json:"containerPorts,omitempty"`
+	ContainerScripts     []map[string]interface{}                                                                     `json:"containerScripts,omitempty"`
+	ContainerTemplates   []map[string]interface{}                                                                     `json:"containerTemplates,omitempty"`
+	EnvironmentVariables []map[string]interface{}                                                                     `json:"environmentVariables,omitempty"`
+	AdditionalProperties map[string]interface{}                                                                       `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType
@@ -294,9 +294,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionType() ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -304,7 +304,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) GetProvisionTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -320,8 +320,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContai
 	return false
 }
 
-// SetProvisionType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the ProvisionType field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetProvisionType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetProvisionType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType and assigns it to the ProvisionType field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) SetProvisionType(v ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerTypeProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -667,7 +667,6 @@ func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInne
 
 	return v, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInnerContainerType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

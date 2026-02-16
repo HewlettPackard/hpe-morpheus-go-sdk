@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **ContainerTypes** | Pointer to **[]int64** | Array of layout node type IDs | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of layout option type IDs | [optional] 
 **SpecTemplates** | Pointer to **[]int64** | Array of layout spec template IDs | [optional] 
-**EnvironmentVariables** | Pointer to [**[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner**](AddClusterLayoutsRequestLayoutEnvironmentVariablesInner.md) | The environmentVariables parameter is array of env objects | [optional] 
-**PriceSets** | Pointer to [**[]AddInstanceTypeRequestInstanceTypePriceSetsInner**](AddInstanceTypeRequestInstanceTypePriceSetsInner.md) | Array of price set objects | [optional] 
-**Permissions** | Pointer to [**AddLayoutRequestInstanceTypeLayoutPermissions**](AddLayoutRequestInstanceTypeLayoutPermissions.md) |  | [optional] 
+**EnvironmentVariables** | Pointer to [**[]InstanceTypeLayoutUpdateEnvironmentVariablesInner**](InstanceTypeLayoutUpdateEnvironmentVariablesInner.md) | The environmentVariables parameter is array of env objects | [optional] 
+**PriceSets** | Pointer to [**[]InstanceTypeLayoutUpdatePriceSetsInner**](InstanceTypeLayoutUpdatePriceSetsInner.md) | Array of price set objects | [optional] 
+**Permissions** | Pointer to [**InstanceTypeLayoutUpdatePermissions**](InstanceTypeLayoutUpdatePermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -377,20 +377,20 @@ HasSpecTemplates returns a boolean if a field has been set.
 
 ### GetEnvironmentVariables
 
-`func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner`
+`func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariables() []InstanceTypeLayoutUpdateEnvironmentVariablesInner`
 
 GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
 
 ### GetEnvironmentVariablesOk
 
-`func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariablesOk() (*[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool)`
+`func (o *InstanceTypeLayoutUpdate) GetEnvironmentVariablesOk() (*[]InstanceTypeLayoutUpdateEnvironmentVariablesInner, bool)`
 
 GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentVariables
 
-`func (o *InstanceTypeLayoutUpdate) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner)`
+`func (o *InstanceTypeLayoutUpdate) SetEnvironmentVariables(v []InstanceTypeLayoutUpdateEnvironmentVariablesInner)`
 
 SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
@@ -402,20 +402,20 @@ HasEnvironmentVariables returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *InstanceTypeLayoutUpdate) GetPriceSets() []AddInstanceTypeRequestInstanceTypePriceSetsInner`
+`func (o *InstanceTypeLayoutUpdate) GetPriceSets() []InstanceTypeLayoutUpdatePriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *InstanceTypeLayoutUpdate) GetPriceSetsOk() (*[]AddInstanceTypeRequestInstanceTypePriceSetsInner, bool)`
+`func (o *InstanceTypeLayoutUpdate) GetPriceSetsOk() (*[]InstanceTypeLayoutUpdatePriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *InstanceTypeLayoutUpdate) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner)`
+`func (o *InstanceTypeLayoutUpdate) SetPriceSets(v []InstanceTypeLayoutUpdatePriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 
@@ -427,20 +427,20 @@ HasPriceSets returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *InstanceTypeLayoutUpdate) GetPermissions() AddLayoutRequestInstanceTypeLayoutPermissions`
+`func (o *InstanceTypeLayoutUpdate) GetPermissions() InstanceTypeLayoutUpdatePermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *InstanceTypeLayoutUpdate) GetPermissionsOk() (*AddLayoutRequestInstanceTypeLayoutPermissions, bool)`
+`func (o *InstanceTypeLayoutUpdate) GetPermissionsOk() (*InstanceTypeLayoutUpdatePermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *InstanceTypeLayoutUpdate) SetPermissions(v AddLayoutRequestInstanceTypeLayoutPermissions)`
+`func (o *InstanceTypeLayoutUpdate) SetPermissions(v InstanceTypeLayoutUpdatePermissions)`
 
 SetPermissions sets Permissions field to given value.
 

@@ -21,32 +21,32 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfAppsInner{}
 
 // GetAlerts200ResponseAllOfAppsInner struct for GetAlerts200ResponseAllOfAppsInner
 type GetAlerts200ResponseAllOfAppsInner struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"account,omitempty"`
-	Active               *bool                                                       `json:"active,omitempty"`
-	App                  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"app,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Description          NullableString                                              `json:"description,omitempty"`
-	InUptime             *bool                                                       `json:"inUptime,omitempty"`
-	LastCheckStatus      NullableString                                              `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      NullableTime                                                `json:"lastWarningDate,omitempty"`
-	LastErrorDate        NullableTime                                                `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      NullableTime                                                `json:"lastSuccessDate,omitempty"`
-	LastRunDate          NullableTime                                                `json:"lastRunDate,omitempty"`
-	LastError            NullableString                                              `json:"lastError,omitempty"`
-	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
-	Health               *int64                                                      `json:"health,omitempty"`
-	History              NullableString                                              `json:"history,omitempty"`
-	Severity             *string                                                     `json:"severity,omitempty"`
-	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
-	Muted                *bool                                                       `json:"muted,omitempty"`
-	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	Availability         NullableString                                              `json:"availability,omitempty"`
-	Checks               []int64                                                     `json:"checks,omitempty"`
-	CheckGroups          []int64                                                     `json:"checkGroups,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                       `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfAppsInnerAccount   `json:"account,omitempty"`
+	Active               *bool                                        `json:"active,omitempty"`
+	App                  *GetAlerts200ResponseAllOfAppsInnerApp       `json:"app,omitempty"`
+	Name                 *string                                      `json:"name,omitempty"`
+	Description          NullableString                               `json:"description,omitempty"`
+	InUptime             *bool                                        `json:"inUptime,omitempty"`
+	LastCheckStatus      NullableString                               `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime                                 `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime                                 `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime                                 `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime                                 `json:"lastRunDate,omitempty"`
+	LastError            NullableString                               `json:"lastError,omitempty"`
+	LastTimer            *int64                                       `json:"lastTimer,omitempty"`
+	Health               *int64                                       `json:"health,omitempty"`
+	History              NullableString                               `json:"history,omitempty"`
+	Severity             *string                                      `json:"severity,omitempty"`
+	CreateIncident       *bool                                        `json:"createIncident,omitempty"`
+	Muted                *bool                                        `json:"muted,omitempty"`
+	CreatedBy            *GetAlerts200ResponseAllOfAppsInnerCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                   `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                   `json:"lastUpdated,omitempty"`
+	Availability         NullableString                               `json:"availability,omitempty"`
+	Checks               []int64                                      `json:"checks,omitempty"`
+	CheckGroups          []int64                                      `json:"checkGroups,omitempty"`
+	AdditionalProperties map[string]interface{}                       `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfAppsInner GetAlerts200ResponseAllOfAppsInner
@@ -101,9 +101,9 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfAppsInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret GetAlerts200ResponseAllOfAppsInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -111,7 +111,7 @@ func (o *GetAlerts200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAl
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfAppsInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -127,8 +127,8 @@ func (o *GetAlerts200ResponseAllOfAppsInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *GetAlerts200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfAppsInnerAccount and assigns it to the Account field.
+func (o *GetAlerts200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfAppsInnerAccount) {
 	o.Account = &v
 }
 
@@ -165,9 +165,9 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetActive(v bool) {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetApp() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetApp() GetAlerts200ResponseAllOfAppsInnerApp {
 	if o == nil || IsNil(o.App) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret GetAlerts200ResponseAllOfAppsInnerApp
 		return ret
 	}
 	return *o.App
@@ -175,7 +175,7 @@ func (o *GetAlerts200ResponseAllOfAppsInner) GetApp() GetAlerts200ResponseAllOfC
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetAppOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetAppOk() (*GetAlerts200ResponseAllOfAppsInnerApp, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -191,8 +191,8 @@ func (o *GetAlerts200ResponseAllOfAppsInner) IsSetApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the App field.
-func (o *GetAlerts200ResponseAllOfAppsInner) SetApp(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetApp gets a reference to the given GetAlerts200ResponseAllOfAppsInnerApp and assigns it to the App field.
+func (o *GetAlerts200ResponseAllOfAppsInner) SetApp(v GetAlerts200ResponseAllOfAppsInnerApp) {
 	o.App = &v
 }
 
@@ -765,9 +765,9 @@ func (o *GetAlerts200ResponseAllOfAppsInner) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedBy() GetAlerts200ResponseAllOfAppsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret GetAlerts200ResponseAllOfAppsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -775,7 +775,7 @@ func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedBy() ListActivity200Respo
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfAppsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -791,8 +791,8 @@ func (o *GetAlerts200ResponseAllOfAppsInner) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the CreatedBy field.
-func (o *GetAlerts200ResponseAllOfAppsInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetCreatedBy gets a reference to the given GetAlerts200ResponseAllOfAppsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *GetAlerts200ResponseAllOfAppsInner) SetCreatedBy(v GetAlerts200ResponseAllOfAppsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -1104,7 +1104,6 @@ func (v NullableGetAlerts200ResponseAllOfAppsInner) UnmarshalMapstructure(data a
 
 	return v, nil
 }
-
 func (o *GetAlerts200ResponseAllOfAppsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

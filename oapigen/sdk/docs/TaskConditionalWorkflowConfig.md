@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConditionalScript** | Pointer to **string** | Allows the user to set JavaScript logic. If it resolves to true, HPE Morpheus Enterprise will run the Operational Workflow set as the “IF OPERATIONAL WORKFLOW” and if it resolves to false, HPE Morpheus Enterprise will run the “ELSE OPERATIONAL WORKFLOW” | [optional] 
-**IfOperationalWorkflowId** | Pointer to **int64** | If Operational Workflow ID | [optional] 
-**IfOperationalWorkflowName** | Pointer to **string** | If Operational Workflow Name | [optional] 
-**ElseOperationalWorkflowId** | Pointer to **int64** | else Operational Workflow ID | [optional] 
-**ElseOperationalWorkflowName** | Pointer to **string** | Else Operational Workflow Name | [optional] 
+**ConditionalScript** | Pointer to **NullableString** | Allows the user to set JavaScript logic. If it resolves to true, HPE Morpheus Enterprise will run the Operational Workflow set as the “IF OPERATIONAL WORKFLOW” and if it resolves to false, HPE Morpheus Enterprise will run the “ELSE OPERATIONAL WORKFLOW” | [optional] 
+**IfOperationalWorkflowId** | Pointer to **NullableInt64** | If Operational Workflow ID | [optional] 
+**IfOperationalWorkflowName** | Pointer to **NullableString** | If Operational Workflow Name | [optional] 
+**ElseOperationalWorkflowId** | Pointer to **NullableInt64** | else Operational Workflow ID | [optional] 
+**ElseOperationalWorkflowName** | Pointer to **NullableString** | Else Operational Workflow Name | [optional] 
 
 ## Methods
 
@@ -54,6 +54,16 @@ SetConditionalScript sets ConditionalScript field to given value.
 
 HasConditionalScript returns a boolean if a field has been set.
 
+### SetConditionalScriptNil
+
+`func (o *TaskConditionalWorkflowConfig) SetConditionalScriptNil(b bool)`
+
+ SetConditionalScriptNil sets the value for ConditionalScript to be an explicit nil
+
+### UnsetConditionalScript
+`func (o *TaskConditionalWorkflowConfig) UnsetConditionalScript()`
+
+UnsetConditionalScript ensures that no value is present for ConditionalScript, not even an explicit nil
 ### GetIfOperationalWorkflowId
 
 `func (o *TaskConditionalWorkflowConfig) GetIfOperationalWorkflowId() int64`
@@ -79,6 +89,16 @@ SetIfOperationalWorkflowId sets IfOperationalWorkflowId field to given value.
 
 HasIfOperationalWorkflowId returns a boolean if a field has been set.
 
+### SetIfOperationalWorkflowIdNil
+
+`func (o *TaskConditionalWorkflowConfig) SetIfOperationalWorkflowIdNil(b bool)`
+
+ SetIfOperationalWorkflowIdNil sets the value for IfOperationalWorkflowId to be an explicit nil
+
+### UnsetIfOperationalWorkflowId
+`func (o *TaskConditionalWorkflowConfig) UnsetIfOperationalWorkflowId()`
+
+UnsetIfOperationalWorkflowId ensures that no value is present for IfOperationalWorkflowId, not even an explicit nil
 ### GetIfOperationalWorkflowName
 
 `func (o *TaskConditionalWorkflowConfig) GetIfOperationalWorkflowName() string`
@@ -104,6 +124,16 @@ SetIfOperationalWorkflowName sets IfOperationalWorkflowName field to given value
 
 HasIfOperationalWorkflowName returns a boolean if a field has been set.
 
+### SetIfOperationalWorkflowNameNil
+
+`func (o *TaskConditionalWorkflowConfig) SetIfOperationalWorkflowNameNil(b bool)`
+
+ SetIfOperationalWorkflowNameNil sets the value for IfOperationalWorkflowName to be an explicit nil
+
+### UnsetIfOperationalWorkflowName
+`func (o *TaskConditionalWorkflowConfig) UnsetIfOperationalWorkflowName()`
+
+UnsetIfOperationalWorkflowName ensures that no value is present for IfOperationalWorkflowName, not even an explicit nil
 ### GetElseOperationalWorkflowId
 
 `func (o *TaskConditionalWorkflowConfig) GetElseOperationalWorkflowId() int64`
@@ -129,6 +159,16 @@ SetElseOperationalWorkflowId sets ElseOperationalWorkflowId field to given value
 
 HasElseOperationalWorkflowId returns a boolean if a field has been set.
 
+### SetElseOperationalWorkflowIdNil
+
+`func (o *TaskConditionalWorkflowConfig) SetElseOperationalWorkflowIdNil(b bool)`
+
+ SetElseOperationalWorkflowIdNil sets the value for ElseOperationalWorkflowId to be an explicit nil
+
+### UnsetElseOperationalWorkflowId
+`func (o *TaskConditionalWorkflowConfig) UnsetElseOperationalWorkflowId()`
+
+UnsetElseOperationalWorkflowId ensures that no value is present for ElseOperationalWorkflowId, not even an explicit nil
 ### GetElseOperationalWorkflowName
 
 `func (o *TaskConditionalWorkflowConfig) GetElseOperationalWorkflowName() string`
@@ -154,6 +194,16 @@ SetElseOperationalWorkflowName sets ElseOperationalWorkflowName field to given v
 
 HasElseOperationalWorkflowName returns a boolean if a field has been set.
 
+### SetElseOperationalWorkflowNameNil
+
+`func (o *TaskConditionalWorkflowConfig) SetElseOperationalWorkflowNameNil(b bool)`
+
+ SetElseOperationalWorkflowNameNil sets the value for ElseOperationalWorkflowName to be an explicit nil
+
+### UnsetElseOperationalWorkflowName
+`func (o *TaskConditionalWorkflowConfig) UnsetElseOperationalWorkflowName()`
+
+UnsetElseOperationalWorkflowName ensures that no value is present for ElseOperationalWorkflowName, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

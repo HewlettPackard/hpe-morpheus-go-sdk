@@ -20,22 +20,22 @@ var _ MappedNullable = &InstanceContainerServerInterfacesInner1{}
 
 // InstanceContainerServerInterfacesInner1 struct for InstanceContainerServerInterfacesInner1
 type InstanceContainerServerInterfacesInner1 struct {
-	Id                   *int64                                                `json:"id,omitempty"`
-	Name                 *string                                               `json:"name,omitempty"`
-	UniqueId             *string                                               `json:"uniqueId,omitempty"`
-	PublicIpAddress      *string                                               `json:"publicIpAddress,omitempty"`
-	IpAddress            *string                                               `json:"ipAddress,omitempty"`
-	Dhcp                 *bool                                                 `json:"dhcp,omitempty"`
-	Active               *bool                                                 `json:"active,omitempty"`
-	PoolAssigned         *bool                                                 `json:"poolAssigned,omitempty"`
-	PrimaryInterface     *bool                                                 `json:"primaryInterface,omitempty"`
-	Network              *InstanceInterfacesNetworkInterfacesInnerNetworkPool  `json:"network,omitempty"`
-	NetworkGroup         *InstanceInterfacesNetworkInterfacesInnerNetworkPool  `json:"networkGroup,omitempty"`
-	NetworkPool          *InstanceInterfacesNetworkInterfacesInnerNetworkPool  `json:"networkPool,omitempty"`
-	IpMode               *string                                               `json:"ipMode,omitempty"`
-	MacAddress           *string                                               `json:"macAddress,omitempty"`
-	Interfaces           []InstanceInterfacesNetworkInterfacesInnerNetworkPool `json:"interfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                                `json:",remain"`
+	Id                   *int64                                               `json:"id,omitempty"`
+	Name                 *string                                              `json:"name,omitempty"`
+	UniqueId             *string                                              `json:"uniqueId,omitempty"`
+	PublicIpAddress      *string                                              `json:"publicIpAddress,omitempty"`
+	IpAddress            *string                                              `json:"ipAddress,omitempty"`
+	Dhcp                 *bool                                                `json:"dhcp,omitempty"`
+	Active               *bool                                                `json:"active,omitempty"`
+	PoolAssigned         *bool                                                `json:"poolAssigned,omitempty"`
+	PrimaryInterface     *bool                                                `json:"primaryInterface,omitempty"`
+	Network              *InstanceContainerServerInterfacesInner1Network      `json:"network,omitempty"`
+	NetworkGroup         *InstanceContainerServerInterfacesInner1NetworkGroup `json:"networkGroup,omitempty"`
+	NetworkPool          *InstanceContainerServerInterfacesInner1NetworkPool  `json:"networkPool,omitempty"`
+	IpMode               *string                                              `json:"ipMode,omitempty"`
+	MacAddress           *string                                              `json:"macAddress,omitempty"`
+	Interfaces           []InstanceContainerServerInstancesInnerInner1        `json:"interfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _InstanceContainerServerInterfacesInner1 InstanceContainerServerInterfacesInner1
@@ -346,9 +346,9 @@ func (o *InstanceContainerServerInterfacesInner1) SetPrimaryInterface(v bool) {
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner1) GetNetwork() InstanceInterfacesNetworkInterfacesInnerNetworkPool {
+func (o *InstanceContainerServerInterfacesInner1) GetNetwork() InstanceContainerServerInterfacesInner1Network {
 	if o == nil || IsNil(o.Network) {
-		var ret InstanceInterfacesNetworkInterfacesInnerNetworkPool
+		var ret InstanceContainerServerInterfacesInner1Network
 		return ret
 	}
 	return *o.Network
@@ -356,7 +356,7 @@ func (o *InstanceContainerServerInterfacesInner1) GetNetwork() InstanceInterface
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool) {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkOk() (*InstanceContainerServerInterfacesInner1Network, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -372,15 +372,15 @@ func (o *InstanceContainerServerInterfacesInner1) IsSetNetwork() bool {
 	return false
 }
 
-// SetNetwork gets a reference to the given InstanceInterfacesNetworkInterfacesInnerNetworkPool and assigns it to the Network field.
-func (o *InstanceContainerServerInterfacesInner1) SetNetwork(v InstanceInterfacesNetworkInterfacesInnerNetworkPool) {
+// SetNetwork gets a reference to the given InstanceContainerServerInterfacesInner1Network and assigns it to the Network field.
+func (o *InstanceContainerServerInterfacesInner1) SetNetwork(v InstanceContainerServerInterfacesInner1Network) {
 	o.Network = &v
 }
 
 // GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroup() InstanceInterfacesNetworkInterfacesInnerNetworkPool {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroup() InstanceContainerServerInterfacesInner1NetworkGroup {
 	if o == nil || IsNil(o.NetworkGroup) {
-		var ret InstanceInterfacesNetworkInterfacesInnerNetworkPool
+		var ret InstanceContainerServerInterfacesInner1NetworkGroup
 		return ret
 	}
 	return *o.NetworkGroup
@@ -388,7 +388,7 @@ func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroup() InstanceInte
 
 // GetNetworkGroupOk returns a tuple with the NetworkGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroupOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool) {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkGroupOk() (*InstanceContainerServerInterfacesInner1NetworkGroup, bool) {
 	if o == nil || IsNil(o.NetworkGroup) {
 		return nil, false
 	}
@@ -404,15 +404,15 @@ func (o *InstanceContainerServerInterfacesInner1) IsSetNetworkGroup() bool {
 	return false
 }
 
-// SetNetworkGroup gets a reference to the given InstanceInterfacesNetworkInterfacesInnerNetworkPool and assigns it to the NetworkGroup field.
-func (o *InstanceContainerServerInterfacesInner1) SetNetworkGroup(v InstanceInterfacesNetworkInterfacesInnerNetworkPool) {
+// SetNetworkGroup gets a reference to the given InstanceContainerServerInterfacesInner1NetworkGroup and assigns it to the NetworkGroup field.
+func (o *InstanceContainerServerInterfacesInner1) SetNetworkGroup(v InstanceContainerServerInterfacesInner1NetworkGroup) {
 	o.NetworkGroup = &v
 }
 
 // GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() InstanceInterfacesNetworkInterfacesInnerNetworkPool {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() InstanceContainerServerInterfacesInner1NetworkPool {
 	if o == nil || IsNil(o.NetworkPool) {
-		var ret InstanceInterfacesNetworkInterfacesInnerNetworkPool
+		var ret InstanceContainerServerInterfacesInner1NetworkPool
 		return ret
 	}
 	return *o.NetworkPool
@@ -420,7 +420,7 @@ func (o *InstanceContainerServerInterfacesInner1) GetNetworkPool() InstanceInter
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool) {
+func (o *InstanceContainerServerInterfacesInner1) GetNetworkPoolOk() (*InstanceContainerServerInterfacesInner1NetworkPool, bool) {
 	if o == nil || IsNil(o.NetworkPool) {
 		return nil, false
 	}
@@ -436,8 +436,8 @@ func (o *InstanceContainerServerInterfacesInner1) IsSetNetworkPool() bool {
 	return false
 }
 
-// SetNetworkPool gets a reference to the given InstanceInterfacesNetworkInterfacesInnerNetworkPool and assigns it to the NetworkPool field.
-func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v InstanceInterfacesNetworkInterfacesInnerNetworkPool) {
+// SetNetworkPool gets a reference to the given InstanceContainerServerInterfacesInner1NetworkPool and assigns it to the NetworkPool field.
+func (o *InstanceContainerServerInterfacesInner1) SetNetworkPool(v InstanceContainerServerInterfacesInner1NetworkPool) {
 	o.NetworkPool = &v
 }
 
@@ -506,9 +506,9 @@ func (o *InstanceContainerServerInterfacesInner1) SetMacAddress(v string) {
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner1) GetInterfaces() []InstanceInterfacesNetworkInterfacesInnerNetworkPool {
+func (o *InstanceContainerServerInterfacesInner1) GetInterfaces() []InstanceContainerServerInstancesInnerInner1 {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []InstanceInterfacesNetworkInterfacesInnerNetworkPool
+		var ret []InstanceContainerServerInstancesInnerInner1
 		return ret
 	}
 	return o.Interfaces
@@ -516,7 +516,7 @@ func (o *InstanceContainerServerInterfacesInner1) GetInterfaces() []InstanceInte
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner1) GetInterfacesOk() ([]InstanceInterfacesNetworkInterfacesInnerNetworkPool, bool) {
+func (o *InstanceContainerServerInterfacesInner1) GetInterfacesOk() ([]InstanceContainerServerInstancesInnerInner1, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -532,8 +532,8 @@ func (o *InstanceContainerServerInterfacesInner1) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []InstanceInterfacesNetworkInterfacesInnerNetworkPool and assigns it to the Interfaces field.
-func (o *InstanceContainerServerInterfacesInner1) SetInterfaces(v []InstanceInterfacesNetworkInterfacesInnerNetworkPool) {
+// SetInterfaces gets a reference to the given []InstanceContainerServerInstancesInnerInner1 and assigns it to the Interfaces field.
+func (o *InstanceContainerServerInterfacesInner1) SetInterfaces(v []InstanceContainerServerInstancesInnerInner1) {
 	o.Interfaces = v
 }
 
@@ -644,7 +644,6 @@ func (v NullableInstanceContainerServerInterfacesInner1) UnmarshalMapstructure(d
 
 	return v, nil
 }
-
 func (o *InstanceContainerServerInterfacesInner1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

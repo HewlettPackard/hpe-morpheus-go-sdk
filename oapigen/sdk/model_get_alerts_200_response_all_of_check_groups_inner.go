@@ -21,34 +21,34 @@ var _ MappedNullable = &GetAlerts200ResponseAllOfCheckGroupsInner{}
 
 // GetAlerts200ResponseAllOfCheckGroupsInner struct for GetAlerts200ResponseAllOfCheckGroupsInner
 type GetAlerts200ResponseAllOfCheckGroupsInner struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                `json:"account,omitempty"`
-	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"instance,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Description          NullableString                                              `json:"description,omitempty"`
-	InUptime             *bool                                                       `json:"inUptime,omitempty"`
-	LastCheckStatus      NullableString                                              `json:"lastCheckStatus,omitempty"`
-	LastWarningDate      NullableTime                                                `json:"lastWarningDate,omitempty"`
-	LastErrorDate        NullableTime                                                `json:"lastErrorDate,omitempty"`
-	LastSuccessDate      NullableTime                                                `json:"lastSuccessDate,omitempty"`
-	LastRunDate          NullableTime                                                `json:"lastRunDate,omitempty"`
-	LastError            NullableString                                              `json:"lastError,omitempty"`
-	OutageTime           *int64                                                      `json:"outageTime,omitempty"`
-	LastTimer            *int64                                                      `json:"lastTimer,omitempty"`
-	Health               *int64                                                      `json:"health,omitempty"`
-	History              NullableString                                              `json:"history,omitempty"`
-	MinHappy             *int64                                                      `json:"minHappy,omitempty"`
-	LastMetric           NullableString                                              `json:"lastMetric,omitempty"`
-	Severity             *string                                                     `json:"severity,omitempty"`
-	CreateIncident       *bool                                                       `json:"createIncident,omitempty"`
-	Muted                *bool                                                       `json:"muted,omitempty"`
-	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"createdBy,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	Availability         NullableFloat32                                             `json:"availability,omitempty"`
-	CheckType            *GetAlerts200ResponseAllOfChecksInnerCheckType              `json:"checkType,omitempty"`
-	Checks               []int64                                                     `json:"checks,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerAccount   `json:"account,omitempty"`
+	Instance             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance  `json:"instance,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	Description          NullableString                                      `json:"description,omitempty"`
+	InUptime             *bool                                               `json:"inUptime,omitempty"`
+	LastCheckStatus      NullableString                                      `json:"lastCheckStatus,omitempty"`
+	LastWarningDate      NullableTime                                        `json:"lastWarningDate,omitempty"`
+	LastErrorDate        NullableTime                                        `json:"lastErrorDate,omitempty"`
+	LastSuccessDate      NullableTime                                        `json:"lastSuccessDate,omitempty"`
+	LastRunDate          NullableTime                                        `json:"lastRunDate,omitempty"`
+	LastError            NullableString                                      `json:"lastError,omitempty"`
+	OutageTime           *int64                                              `json:"outageTime,omitempty"`
+	LastTimer            *int64                                              `json:"lastTimer,omitempty"`
+	Health               *int64                                              `json:"health,omitempty"`
+	History              NullableString                                      `json:"history,omitempty"`
+	MinHappy             *int64                                              `json:"minHappy,omitempty"`
+	LastMetric           NullableString                                      `json:"lastMetric,omitempty"`
+	Severity             *string                                             `json:"severity,omitempty"`
+	CreateIncident       *bool                                               `json:"createIncident,omitempty"`
+	Muted                *bool                                               `json:"muted,omitempty"`
+	CreatedBy            *GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy `json:"createdBy,omitempty"`
+	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
+	Availability         NullableFloat32                                     `json:"availability,omitempty"`
+	CheckType            *GetAlerts200ResponseAllOfCheckGroupsInnerCheckType `json:"checkType,omitempty"`
+	Checks               []int64                                             `json:"checks,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _GetAlerts200ResponseAllOfCheckGroupsInner GetAlerts200ResponseAllOfCheckGroupsInner
@@ -103,9 +103,9 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerAccount
 		return ret
 	}
 	return *o.Account
@@ -113,7 +113,7 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccount() GetAlerts200Res
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerAccount and assigns it to the Account field.
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerAccount) {
 	o.Account = &v
 }
 
@@ -842,9 +842,9 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetMuted(v bool) {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedBy() GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -852,7 +852,7 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedBy() ListActivity2
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -868,8 +868,8 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the CreatedBy field.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetCreatedBy gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy and assigns it to the CreatedBy field.
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCreatedBy(v GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy) {
 	o.CreatedBy = &v
 }
 
@@ -981,9 +981,9 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) UnsetAvailability() {
 }
 
 // GetCheckType returns the CheckType field value if set, zero value otherwise.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckType {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckType() GetAlerts200ResponseAllOfCheckGroupsInnerCheckType {
 	if o == nil || IsNil(o.CheckType) {
-		var ret GetAlerts200ResponseAllOfChecksInnerCheckType
+		var ret GetAlerts200ResponseAllOfCheckGroupsInnerCheckType
 		return ret
 	}
 	return *o.CheckType
@@ -991,7 +991,7 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckType() GetAlerts200R
 
 // GetCheckTypeOk returns a tuple with the CheckType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckTypeOk() (*GetAlerts200ResponseAllOfChecksInnerCheckType, bool) {
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerCheckType, bool) {
 	if o == nil || IsNil(o.CheckType) {
 		return nil, false
 	}
@@ -1007,8 +1007,8 @@ func (o *GetAlerts200ResponseAllOfCheckGroupsInner) IsSetCheckType() bool {
 	return false
 }
 
-// SetCheckType gets a reference to the given GetAlerts200ResponseAllOfChecksInnerCheckType and assigns it to the CheckType field.
-func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCheckType(v GetAlerts200ResponseAllOfChecksInnerCheckType) {
+// SetCheckType gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerCheckType and assigns it to the CheckType field.
+func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCheckType(v GetAlerts200ResponseAllOfCheckGroupsInnerCheckType) {
 	o.CheckType = &v
 }
 
@@ -1187,7 +1187,6 @@ func (v NullableGetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalMapstructure
 
 	return v, nil
 }
-
 func (o *GetAlerts200ResponseAllOfCheckGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -21,21 +21,21 @@ var _ MappedNullable = &Alert{}
 
 // Alert struct for Alert
 type Alert struct {
-	Id                   *int64                                               `json:"id,omitempty"`
-	Name                 *string                                              `json:"name,omitempty"`
-	AllApps              *bool                                                `json:"allApps,omitempty"`
-	AllChecks            *bool                                                `json:"allChecks,omitempty"`
-	AllGroups            *bool                                                `json:"allGroups,omitempty"`
-	Active               *bool                                                `json:"active,omitempty"`
-	MinSeverity          *string                                              `json:"minSeverity,omitempty"`
-	MinDuration          *int64                                               `json:"minDuration,omitempty"`
-	DateCreated          *time.Time                                           `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                           `json:"lastUpdated,omitempty"`
-	Checks               []int32                                              `json:"checks,omitempty"`
-	CheckGroups          []int32                                              `json:"checkGroups,omitempty"`
-	Apps                 []int32                                              `json:"apps,omitempty"`
-	Contacts             []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	Id                   *int64                 `json:"id,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	AllApps              *bool                  `json:"allApps,omitempty"`
+	AllChecks            *bool                  `json:"allChecks,omitempty"`
+	AllGroups            *bool                  `json:"allGroups,omitempty"`
+	Active               *bool                  `json:"active,omitempty"`
+	MinSeverity          *string                `json:"minSeverity,omitempty"`
+	MinDuration          *int64                 `json:"minDuration,omitempty"`
+	DateCreated          *time.Time             `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time             `json:"lastUpdated,omitempty"`
+	Checks               []int32                `json:"checks,omitempty"`
+	CheckGroups          []int32                `json:"checkGroups,omitempty"`
+	Apps                 []int32                `json:"apps,omitempty"`
+	Contacts             []AlertContactsInner   `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _Alert Alert
@@ -477,9 +477,9 @@ func (o *Alert) SetApps(v []int32) {
 }
 
 // GetContacts returns the Contacts field value if set, zero value otherwise.
-func (o *Alert) GetContacts() []ListAlerts200ResponseAllOfAlertsInnerContactsInner {
+func (o *Alert) GetContacts() []AlertContactsInner {
 	if o == nil || IsNil(o.Contacts) {
-		var ret []ListAlerts200ResponseAllOfAlertsInnerContactsInner
+		var ret []AlertContactsInner
 		return ret
 	}
 	return o.Contacts
@@ -487,7 +487,7 @@ func (o *Alert) GetContacts() []ListAlerts200ResponseAllOfAlertsInnerContactsInn
 
 // GetContactsOk returns a tuple with the Contacts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Alert) GetContactsOk() ([]ListAlerts200ResponseAllOfAlertsInnerContactsInner, bool) {
+func (o *Alert) GetContactsOk() ([]AlertContactsInner, bool) {
 	if o == nil || IsNil(o.Contacts) {
 		return nil, false
 	}
@@ -503,8 +503,8 @@ func (o *Alert) IsSetContacts() bool {
 	return false
 }
 
-// SetContacts gets a reference to the given []ListAlerts200ResponseAllOfAlertsInnerContactsInner and assigns it to the Contacts field.
-func (o *Alert) SetContacts(v []ListAlerts200ResponseAllOfAlertsInnerContactsInner) {
+// SetContacts gets a reference to the given []AlertContactsInner and assigns it to the Contacts field.
+func (o *Alert) SetContacts(v []AlertContactsInner) {
 	o.Contacts = v
 }
 
@@ -612,7 +612,6 @@ func (v NullableAlert) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *Alert) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

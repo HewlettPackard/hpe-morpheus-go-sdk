@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Checks** | Pointer to **[]int32** |  | [optional] 
 **CheckGroups** | Pointer to **[]int32** |  | [optional] 
 **Apps** | Pointer to **[]int32** |  | [optional] 
-**Contacts** | Pointer to [**[]ListAlerts200ResponseAllOfAlertsInnerContactsInner**](ListAlerts200ResponseAllOfAlertsInnerContactsInner.md) |  | [optional] 
+**Contacts** | Pointer to [**[]AlertContactsInner**](AlertContactsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -395,20 +395,20 @@ HasApps returns a boolean if a field has been set.
 UnsetApps ensures that no value is present for Apps, not even an explicit nil
 ### GetContacts
 
-`func (o *Alert) GetContacts() []ListAlerts200ResponseAllOfAlertsInnerContactsInner`
+`func (o *Alert) GetContacts() []AlertContactsInner`
 
 GetContacts returns the Contacts field if non-nil, zero value otherwise.
 
 ### GetContactsOk
 
-`func (o *Alert) GetContactsOk() (*[]ListAlerts200ResponseAllOfAlertsInnerContactsInner, bool)`
+`func (o *Alert) GetContactsOk() (*[]AlertContactsInner, bool)`
 
 GetContactsOk returns a tuple with the Contacts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContacts
 
-`func (o *Alert) SetContacts(v []ListAlerts200ResponseAllOfAlertsInnerContactsInner)`
+`func (o *Alert) SetContacts(v []AlertContactsInner)`
 
 SetContacts sets Contacts field to given value.
 

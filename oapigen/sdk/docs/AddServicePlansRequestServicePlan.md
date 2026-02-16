@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **CoresPerSocket** | Pointer to **int64** | Number of cores per CPU | [optional] 
 **MaxGpus** | Pointer to **int64** | Max number of GPUs | [optional] 
 **MaxDisks** | Pointer to **int64** | Max disks allowed | [optional] 
-**ProvisionType** | [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | 
+**ProvisionType** | [**AddServicePlansRequestServicePlanProvisionType**](AddServicePlansRequestServicePlanProvisionType.md) |  | 
 **CustomCpu** | Pointer to **bool** | Can be used to enable / disable customizable cpu | [optional] [default to false]
 **CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] [default to false]
 **CustomMaxStorage** | Pointer to **bool** | Can be used to enable / disable customizable storage | [optional] [default to false]
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 
 ### NewAddServicePlansRequestServicePlan
 
-`func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage int64, maxMemory int64, provisionType AddClusterLayoutsRequestLayoutProvisionType, ) *AddServicePlansRequestServicePlan`
+`func NewAddServicePlansRequestServicePlan(name string, code string, maxStorage int64, maxMemory int64, provisionType AddServicePlansRequestServicePlanProvisionType, ) *AddServicePlansRequestServicePlan`
 
 NewAddServicePlansRequestServicePlan instantiates a new AddServicePlansRequestServicePlan object
 This constructor will assign default values to properties that have it defined,
@@ -355,20 +355,20 @@ HasMaxDisks returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *AddServicePlansRequestServicePlan) GetProvisionType() AddClusterLayoutsRequestLayoutProvisionType`
+`func (o *AddServicePlansRequestServicePlan) GetProvisionType() AddServicePlansRequestServicePlanProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *AddServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddClusterLayoutsRequestLayoutProvisionType, bool)`
+`func (o *AddServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddServicePlansRequestServicePlanProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *AddServicePlansRequestServicePlan) SetProvisionType(v AddClusterLayoutsRequestLayoutProvisionType)`
+`func (o *AddServicePlansRequestServicePlan) SetProvisionType(v AddServicePlansRequestServicePlanProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 

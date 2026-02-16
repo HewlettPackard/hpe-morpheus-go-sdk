@@ -28,19 +28,19 @@ type Roles struct {
 	Authority   *string        `json:"authority,omitempty"`
 	Description NullableString `json:"description,omitempty"`
 	// An optional override for the default landing page after login for a user.
-	LandingUrl           NullableString                                              `json:"landingUrl,omitempty"`
-	Scope                *string                                                     `json:"scope,omitempty"`
-	RoleType             *string                                                     `json:"roleType,omitempty"`
-	Multitenant          *bool                                                       `json:"multitenant,omitempty"`
-	MultitenantLocked    *bool                                                       `json:"multitenantLocked,omitempty"`
-	ParentRoleId         NullableString                                              `json:"parentRoleId,omitempty"`
-	Diverged             *bool                                                       `json:"diverged,omitempty"`
-	OwnerId              *int64                                                      `json:"ownerId,omitempty"`
-	Owner                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"owner,omitempty"`
-	DefaultPersona       *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	LandingUrl           NullableString                              `json:"landingUrl,omitempty"`
+	Scope                *string                                     `json:"scope,omitempty"`
+	RoleType             *string                                     `json:"roleType,omitempty"`
+	Multitenant          *bool                                       `json:"multitenant,omitempty"`
+	MultitenantLocked    *bool                                       `json:"multitenantLocked,omitempty"`
+	ParentRoleId         NullableString                              `json:"parentRoleId,omitempty"`
+	Diverged             *bool                                       `json:"diverged,omitempty"`
+	OwnerId              *int64                                      `json:"ownerId,omitempty"`
+	Owner                *AddRoles200ResponseAllOfRoleOwner          `json:"owner,omitempty"`
+	DefaultPersona       *AddRoles200ResponseAllOfRoleDefaultPersona `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                  `json:"lastUpdated,omitempty"`
+	AdditionalProperties map[string]interface{}                      `json:",remain"`
 }
 
 type _Roles Roles
@@ -480,9 +480,9 @@ func (o *Roles) SetOwnerId(v int64) {
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Roles) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Roles) GetOwner() AddRoles200ResponseAllOfRoleOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddRoles200ResponseAllOfRoleOwner
 		return ret
 	}
 	return *o.Owner
@@ -490,7 +490,7 @@ func (o *Roles) GetOwner() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Roles) GetOwnerOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Roles) GetOwnerOk() (*AddRoles200ResponseAllOfRoleOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -506,15 +506,15 @@ func (o *Roles) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Owner field.
-func (o *Roles) SetOwner(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetOwner gets a reference to the given AddRoles200ResponseAllOfRoleOwner and assigns it to the Owner field.
+func (o *Roles) SetOwner(v AddRoles200ResponseAllOfRoleOwner) {
 	o.Owner = &v
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
-func (o *Roles) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *Roles) GetDefaultPersona() AddRoles200ResponseAllOfRoleDefaultPersona {
 	if o == nil || IsNil(o.DefaultPersona) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret AddRoles200ResponseAllOfRoleDefaultPersona
 		return ret
 	}
 	return *o.DefaultPersona
@@ -522,7 +522,7 @@ func (o *Roles) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsD
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Roles) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *Roles) GetDefaultPersonaOk() (*AddRoles200ResponseAllOfRoleDefaultPersona, bool) {
 	if o == nil || IsNil(o.DefaultPersona) {
 		return nil, false
 	}
@@ -538,8 +538,8 @@ func (o *Roles) IsSetDefaultPersona() bool {
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the DefaultPersona field.
-func (o *Roles) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetDefaultPersona gets a reference to the given AddRoles200ResponseAllOfRoleDefaultPersona and assigns it to the DefaultPersona field.
+func (o *Roles) SetDefaultPersona(v AddRoles200ResponseAllOfRoleDefaultPersona) {
 	o.DefaultPersona = &v
 }
 
@@ -717,7 +717,6 @@ func (v NullableRoles) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *Roles) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

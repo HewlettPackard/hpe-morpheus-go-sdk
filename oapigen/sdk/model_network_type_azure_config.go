@@ -188,7 +188,6 @@ func (v NullableNetworkTypeAzureConfig) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
-
 func (o *NetworkTypeAzureConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

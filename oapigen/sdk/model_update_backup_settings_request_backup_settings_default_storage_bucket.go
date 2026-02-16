@@ -141,7 +141,6 @@ func (v NullableUpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) U
 
 	return v, nil
 }
-
 func (o *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

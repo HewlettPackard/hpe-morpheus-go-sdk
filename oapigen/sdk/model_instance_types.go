@@ -20,20 +20,20 @@ var _ MappedNullable = &InstanceTypes{}
 
 // InstanceTypes struct for InstanceTypes
 type InstanceTypes struct {
-	Id                  *int64                                                                                    `json:"id,omitempty"`
-	Account             *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                                        `json:"account,omitempty"`
-	Name                *string                                                                                   `json:"name,omitempty"`
-	Labels              []string                                                                                  `json:"labels,omitempty"`
-	Code                *string                                                                                   `json:"code,omitempty"`
-	Description         NullableString                                                                            `json:"description,omitempty"`
-	ProvisionTypeCode   NullableString                                                                            `json:"provisionTypeCode,omitempty"`
-	Category            *string                                                                                   `json:"category,omitempty"`
-	Active              *bool                                                                                     `json:"active,omitempty"`
-	EnvironmentPrefix   *string                                                                                   `json:"environmentPrefix,omitempty"`
-	Visibility          *string                                                                                   `json:"visibility,omitempty"`
-	Featured            *bool                                                                                     `json:"featured,omitempty"`
-	Versions            []string                                                                                  `json:"versions,omitempty"`
-	InstanceTypeLayouts []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
+	Id                  *int64                                  `json:"id,omitempty"`
+	Account             *InstanceTypesAccount                   `json:"account,omitempty"`
+	Name                *string                                 `json:"name,omitempty"`
+	Labels              []string                                `json:"labels,omitempty"`
+	Code                *string                                 `json:"code,omitempty"`
+	Description         NullableString                          `json:"description,omitempty"`
+	ProvisionTypeCode   NullableString                          `json:"provisionTypeCode,omitempty"`
+	Category            *string                                 `json:"category,omitempty"`
+	Active              *bool                                   `json:"active,omitempty"`
+	EnvironmentPrefix   *string                                 `json:"environmentPrefix,omitempty"`
+	Visibility          *string                                 `json:"visibility,omitempty"`
+	Featured            *bool                                   `json:"featured,omitempty"`
+	Versions            []string                                `json:"versions,omitempty"`
+	InstanceTypeLayouts []InstanceTypesInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
@@ -93,9 +93,9 @@ func (o *InstanceTypes) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *InstanceTypes) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *InstanceTypes) GetAccount() InstanceTypesAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret InstanceTypesAccount
 		return ret
 	}
 	return *o.Account
@@ -103,7 +103,7 @@ func (o *InstanceTypes) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerIn
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypes) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *InstanceTypes) GetAccountOk() (*InstanceTypesAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *InstanceTypes) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *InstanceTypes) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccount gets a reference to the given InstanceTypesAccount and assigns it to the Account field.
+func (o *InstanceTypes) SetAccount(v InstanceTypesAccount) {
 	o.Account = &v
 }
 
@@ -500,9 +500,9 @@ func (o *InstanceTypes) SetVersions(v []string) {
 }
 
 // GetInstanceTypeLayouts returns the InstanceTypeLayouts field value if set, zero value otherwise.
-func (o *InstanceTypes) GetInstanceTypeLayouts() []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner {
+func (o *InstanceTypes) GetInstanceTypeLayouts() []InstanceTypesInstanceTypeLayoutsInner {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
-		var ret []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner
+		var ret []InstanceTypesInstanceTypeLayoutsInner
 		return ret
 	}
 	return o.InstanceTypeLayouts
@@ -510,7 +510,7 @@ func (o *InstanceTypes) GetInstanceTypeLayouts() []ListInstanceTypesProvisioning
 
 // GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypes) GetInstanceTypeLayoutsOk() ([]ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner, bool) {
+func (o *InstanceTypes) GetInstanceTypeLayoutsOk() ([]InstanceTypesInstanceTypeLayoutsInner, bool) {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
 		return nil, false
 	}
@@ -526,8 +526,8 @@ func (o *InstanceTypes) IsSetInstanceTypeLayouts() bool {
 	return false
 }
 
-// SetInstanceTypeLayouts gets a reference to the given []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
-func (o *InstanceTypes) SetInstanceTypeLayouts(v []ListInstanceTypesProvisioning200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner) {
+// SetInstanceTypeLayouts gets a reference to the given []InstanceTypesInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
+func (o *InstanceTypes) SetInstanceTypeLayouts(v []InstanceTypesInstanceTypeLayoutsInner) {
 	o.InstanceTypeLayouts = v
 }
 
@@ -727,7 +727,6 @@ func (v NullableInstanceTypes) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *InstanceTypes) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

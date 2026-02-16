@@ -20,15 +20,15 @@ var _ MappedNullable = &ListClusterDatastores200ResponseAllOfDatastoresInnerReso
 
 // ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct for ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 type ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions struct {
-	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
-	CanManage            *bool                                                                            `json:"canManage,omitempty"`
-	All                  *bool                                                                            `json:"all,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
-	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
+	DefaultStore         *bool                                                                               `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                                               `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                                               `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                               `json:"canManage,omitempty"`
+	All                  *bool                                                                               `json:"all,omitempty"`
+	Account              *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount     `json:"account,omitempty"`
+	Sites                []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner `json:"sites,omitempty"`
+	Plans                []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                              `json:",remain"`
 }
 
 type _ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
@@ -211,9 +211,9 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccount() ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount
 		return ret
 	}
 	return *o.Account
@@ -221,7 +221,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetAccountOk() (*ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -237,15 +237,15 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount and assigns it to the Account field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetAccount(v ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsAccount) {
 	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSites() []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner {
 	if o == nil {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
+		var ret []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -254,7 +254,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetSitesOk() ([]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -270,15 +270,15 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 	return false
 }
 
-// SetSites gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
+// SetSites gets a reference to the given []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetSites(v []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlans() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlans() []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner {
 	if o == nil {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
+		var ret []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -287,7 +287,7 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlansOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) GetPlansOk() ([]ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions
 	return false
 }
 
-// SetPlans gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner and assigns it to the Plans field.
-func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetPlans(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
+// SetPlans gets a reference to the given []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) SetPlans(v []ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 
@@ -394,7 +394,6 @@ func (v NullableListClusterDatastores200ResponseAllOfDatastoresInnerResourcePerm
 
 	return v, nil
 }
-
 func (o *ListClusterDatastores200ResponseAllOfDatastoresInnerResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

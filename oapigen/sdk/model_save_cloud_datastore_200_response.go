@@ -212,7 +212,6 @@ func (v NullableSaveCloudDatastore200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *SaveCloudDatastore200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

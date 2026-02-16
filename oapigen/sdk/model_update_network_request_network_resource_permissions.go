@@ -23,8 +23,8 @@ type UpdateNetworkRequestNetworkResourcePermissions struct {
 	// Pass true to allow access all groups
 	All *bool `json:"all,omitempty"`
 	// Array of groups that are allowed access
-	Sites                []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
-	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
+	Sites                []UpdateNetworkRequestNetworkResourcePermissionsSitesInner `json:"sites,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _UpdateNetworkRequestNetworkResourcePermissions UpdateNetworkRequestNetworkResourcePermissions
@@ -79,9 +79,9 @@ func (o *UpdateNetworkRequestNetworkResourcePermissions) SetAll(v bool) {
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSites() []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner {
+func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSites() []UpdateNetworkRequestNetworkResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner
+		var ret []UpdateNetworkRequestNetworkResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -89,7 +89,7 @@ func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSites() []UpdateClus
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSitesOk() ([]UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner, bool) {
+func (o *UpdateNetworkRequestNetworkResourcePermissions) GetSitesOk() ([]UpdateNetworkRequestNetworkResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *UpdateNetworkRequestNetworkResourcePermissions) IsSetSites() bool {
 	return false
 }
 
-// SetSites gets a reference to the given []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
-func (o *UpdateNetworkRequestNetworkResourcePermissions) SetSites(v []UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissionsSitesInner) {
+// SetSites gets a reference to the given []UpdateNetworkRequestNetworkResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *UpdateNetworkRequestNetworkResourcePermissions) SetSites(v []UpdateNetworkRequestNetworkResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
@@ -178,7 +178,6 @@ func (v NullableUpdateNetworkRequestNetworkResourcePermissions) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *UpdateNetworkRequestNetworkResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

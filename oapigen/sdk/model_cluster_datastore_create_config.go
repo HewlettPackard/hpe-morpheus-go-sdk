@@ -21,9 +21,9 @@ var _ fmt.Stringer
 
 // ClusterDatastoreCreateConfig struct for ClusterDatastoreCreateConfig
 type ClusterDatastoreCreateConfig struct {
-	AlletraMPHVMDatastoreConfiguration1 *AlletraMPHVMDatastoreConfiguration1
-	GFS2DatastoreConfiguration          *GFS2DatastoreConfiguration
-	NFSDatastoreConfiguration           *NFSDatastoreConfiguration
+	AlletraMPHVMDatastoreConfiguration2 *AlletraMPHVMDatastoreConfiguration2
+	GFS2DatastoreConfiguration2         *GFS2DatastoreConfiguration2
+	NFSDatastoreConfiguration2          *NFSDatastoreConfiguration2
 	MapmapOfStringAny                   *map[string]interface{}
 }
 
@@ -32,22 +32,22 @@ func (dst *ClusterDatastoreCreateConfig) UnmarshalMapstructure(data any) (any, e
 		dst = &ClusterDatastoreCreateConfig{}
 	}
 
-	mapstructDecode(data, &dst.AlletraMPHVMDatastoreConfiguration1)
+	mapstructDecode(data, &dst.AlletraMPHVMDatastoreConfiguration2)
 
-	if IsEmpty(dst.AlletraMPHVMDatastoreConfiguration1) {
-		dst.AlletraMPHVMDatastoreConfiguration1 = nil
+	if IsEmpty(dst.AlletraMPHVMDatastoreConfiguration2) {
+		dst.AlletraMPHVMDatastoreConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.GFS2DatastoreConfiguration)
+	mapstructDecode(data, &dst.GFS2DatastoreConfiguration2)
 
-	if IsEmpty(dst.GFS2DatastoreConfiguration) {
-		dst.GFS2DatastoreConfiguration = nil
+	if IsEmpty(dst.GFS2DatastoreConfiguration2) {
+		dst.GFS2DatastoreConfiguration2 = nil
 	}
 
-	mapstructDecode(data, &dst.NFSDatastoreConfiguration)
+	mapstructDecode(data, &dst.NFSDatastoreConfiguration2)
 
-	if IsEmpty(dst.NFSDatastoreConfiguration) {
-		dst.NFSDatastoreConfiguration = nil
+	if IsEmpty(dst.NFSDatastoreConfiguration2) {
+		dst.NFSDatastoreConfiguration2 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -62,43 +62,43 @@ func (dst *ClusterDatastoreCreateConfig) UnmarshalMapstructure(data any) (any, e
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ClusterDatastoreCreateConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AlletraMPHVMDatastoreConfiguration1
-	err = json.Unmarshal(data, &dst.AlletraMPHVMDatastoreConfiguration1)
+	// try to unmarshal JSON data into AlletraMPHVMDatastoreConfiguration2
+	err = json.Unmarshal(data, &dst.AlletraMPHVMDatastoreConfiguration2)
 	if err == nil {
-		jsonAlletraMPHVMDatastoreConfiguration1, _ := json.Marshal(dst.AlletraMPHVMDatastoreConfiguration1)
-		if string(jsonAlletraMPHVMDatastoreConfiguration1) == "{}" { // empty struct
-			dst.AlletraMPHVMDatastoreConfiguration1 = nil
+		jsonAlletraMPHVMDatastoreConfiguration2, _ := json.Marshal(dst.AlletraMPHVMDatastoreConfiguration2)
+		if string(jsonAlletraMPHVMDatastoreConfiguration2) == "{}" { // empty struct
+			dst.AlletraMPHVMDatastoreConfiguration2 = nil
 		} else {
-			return nil // data stored in dst.AlletraMPHVMDatastoreConfiguration1, return on the first match
+			return nil // data stored in dst.AlletraMPHVMDatastoreConfiguration2, return on the first match
 		}
 	} else {
-		dst.AlletraMPHVMDatastoreConfiguration1 = nil
+		dst.AlletraMPHVMDatastoreConfiguration2 = nil
 	}
 
-	// try to unmarshal JSON data into GFS2DatastoreConfiguration
-	err = json.Unmarshal(data, &dst.GFS2DatastoreConfiguration)
+	// try to unmarshal JSON data into GFS2DatastoreConfiguration2
+	err = json.Unmarshal(data, &dst.GFS2DatastoreConfiguration2)
 	if err == nil {
-		jsonGFS2DatastoreConfiguration, _ := json.Marshal(dst.GFS2DatastoreConfiguration)
-		if string(jsonGFS2DatastoreConfiguration) == "{}" { // empty struct
-			dst.GFS2DatastoreConfiguration = nil
+		jsonGFS2DatastoreConfiguration2, _ := json.Marshal(dst.GFS2DatastoreConfiguration2)
+		if string(jsonGFS2DatastoreConfiguration2) == "{}" { // empty struct
+			dst.GFS2DatastoreConfiguration2 = nil
 		} else {
-			return nil // data stored in dst.GFS2DatastoreConfiguration, return on the first match
+			return nil // data stored in dst.GFS2DatastoreConfiguration2, return on the first match
 		}
 	} else {
-		dst.GFS2DatastoreConfiguration = nil
+		dst.GFS2DatastoreConfiguration2 = nil
 	}
 
-	// try to unmarshal JSON data into NFSDatastoreConfiguration
-	err = json.Unmarshal(data, &dst.NFSDatastoreConfiguration)
+	// try to unmarshal JSON data into NFSDatastoreConfiguration2
+	err = json.Unmarshal(data, &dst.NFSDatastoreConfiguration2)
 	if err == nil {
-		jsonNFSDatastoreConfiguration, _ := json.Marshal(dst.NFSDatastoreConfiguration)
-		if string(jsonNFSDatastoreConfiguration) == "{}" { // empty struct
-			dst.NFSDatastoreConfiguration = nil
+		jsonNFSDatastoreConfiguration2, _ := json.Marshal(dst.NFSDatastoreConfiguration2)
+		if string(jsonNFSDatastoreConfiguration2) == "{}" { // empty struct
+			dst.NFSDatastoreConfiguration2 = nil
 		} else {
-			return nil // data stored in dst.NFSDatastoreConfiguration, return on the first match
+			return nil // data stored in dst.NFSDatastoreConfiguration2, return on the first match
 		}
 	} else {
-		dst.NFSDatastoreConfiguration = nil
+		dst.NFSDatastoreConfiguration2 = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -119,16 +119,16 @@ func (dst *ClusterDatastoreCreateConfig) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ClusterDatastoreCreateConfig) MarshalJSON() ([]byte, error) {
-	if src.AlletraMPHVMDatastoreConfiguration1 != nil {
-		return json.Marshal(&src.AlletraMPHVMDatastoreConfiguration1)
+	if src.AlletraMPHVMDatastoreConfiguration2 != nil {
+		return json.Marshal(&src.AlletraMPHVMDatastoreConfiguration2)
 	}
 
-	if src.GFS2DatastoreConfiguration != nil {
-		return json.Marshal(&src.GFS2DatastoreConfiguration)
+	if src.GFS2DatastoreConfiguration2 != nil {
+		return json.Marshal(&src.GFS2DatastoreConfiguration2)
 	}
 
-	if src.NFSDatastoreConfiguration != nil {
-		return json.Marshal(&src.NFSDatastoreConfiguration)
+	if src.NFSDatastoreConfiguration2 != nil {
+		return json.Marshal(&src.NFSDatastoreConfiguration2)
 	}
 
 	if src.MapmapOfStringAny != nil {

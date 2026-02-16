@@ -20,8 +20,8 @@ var _ MappedNullable = &GetClouds200Response{}
 
 // GetClouds200Response struct for GetClouds200Response
 type GetClouds200Response struct {
-	Zone                 *AddClouds200ResponseAllOfZone `json:"zone,omitempty"`
-	AdditionalProperties map[string]interface{}         `json:",remain"`
+	Zone                 *GetClouds200ResponseZone `json:"zone,omitempty"`
+	AdditionalProperties map[string]interface{}    `json:",remain"`
 }
 
 type _GetClouds200Response GetClouds200Response
@@ -44,9 +44,9 @@ func NewGetClouds200ResponseWithDefaults() *GetClouds200Response {
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *GetClouds200Response) GetZone() AddClouds200ResponseAllOfZone {
+func (o *GetClouds200Response) GetZone() GetClouds200ResponseZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret AddClouds200ResponseAllOfZone
+		var ret GetClouds200ResponseZone
 		return ret
 	}
 	return *o.Zone
@@ -54,7 +54,7 @@ func (o *GetClouds200Response) GetZone() AddClouds200ResponseAllOfZone {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetClouds200Response) GetZoneOk() (*AddClouds200ResponseAllOfZone, bool) {
+func (o *GetClouds200Response) GetZoneOk() (*GetClouds200ResponseZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetClouds200Response) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given AddClouds200ResponseAllOfZone and assigns it to the Zone field.
-func (o *GetClouds200Response) SetZone(v AddClouds200ResponseAllOfZone) {
+// SetZone gets a reference to the given GetClouds200ResponseZone and assigns it to the Zone field.
+func (o *GetClouds200Response) SetZone(v GetClouds200ResponseZone) {
 	o.Zone = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetClouds200Response) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *GetClouds200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

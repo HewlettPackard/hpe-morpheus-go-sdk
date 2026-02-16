@@ -22,7 +22,7 @@ var _ MappedNullable = &Environment{}
 // Environment struct for Environment
 type Environment struct {
 	Id                   *int64                                             `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"account,omitempty"`
+	Account              *AddEnvironments200ResponseAllOfEnvironmentAccount `json:"account,omitempty"`
 	Code                 *string                                            `json:"code,omitempty"`
 	Name                 *string                                            `json:"name,omitempty"`
 	Description          *string                                            `json:"description,omitempty"`
@@ -86,9 +86,9 @@ func (o *Environment) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *Environment) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Environment) GetAccount() AddEnvironments200ResponseAllOfEnvironmentAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddEnvironments200ResponseAllOfEnvironmentAccount
 		return ret
 	}
 	return *o.Account
@@ -96,7 +96,7 @@ func (o *Environment) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInst
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Environment) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Environment) GetAccountOk() (*AddEnvironments200ResponseAllOfEnvironmentAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -112,8 +112,8 @@ func (o *Environment) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *Environment) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccount gets a reference to the given AddEnvironments200ResponseAllOfEnvironmentAccount and assigns it to the Account field.
+func (o *Environment) SetAccount(v AddEnvironments200ResponseAllOfEnvironmentAccount) {
 	o.Account = &v
 }
 
@@ -465,7 +465,6 @@ func (v NullableEnvironment) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *Environment) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

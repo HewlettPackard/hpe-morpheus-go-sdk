@@ -21,21 +21,21 @@ var _ MappedNullable = &ListGroups200ResponseAllOfGroupsInner{}
 
 // ListGroups200ResponseAllOfGroupsInner struct for ListGroups200ResponseAllOfGroupsInner
 type ListGroups200ResponseAllOfGroupsInner struct {
-	Id                   *int64                                              `json:"id,omitempty"`
-	Uuid                 *string                                             `json:"uuid,omitempty"`
-	Name                 *string                                             `json:"name,omitempty"`
-	Code                 NullableString                                      `json:"code,omitempty"`
-	Labels               []string                                            `json:"labels,omitempty"`
-	Location             NullableString                                      `json:"location,omitempty"`
-	AccountId            *int64                                              `json:"accountId,omitempty"`
-	Active               *bool                                               `json:"active,omitempty"`
-	Config               *ListGroups200ResponseAllOfGroupsInnerConfig        `json:"config,omitempty"`
-	DateCreated          *time.Time                                          `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                          `json:"lastUpdated,omitempty"`
-	Zones                []GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"zones,omitempty"`
-	Stats                *ListGroups200ResponseAllOfGroupsInnerStats         `json:"stats,omitempty"`
-	ServerCount          *int64                                              `json:"serverCount,omitempty"`
-	AdditionalProperties map[string]interface{}                              `json:",remain"`
+	Id                   *int64                                            `json:"id,omitempty"`
+	Uuid                 *string                                           `json:"uuid,omitempty"`
+	Name                 *string                                           `json:"name,omitempty"`
+	Code                 NullableString                                    `json:"code,omitempty"`
+	Labels               []string                                          `json:"labels,omitempty"`
+	Location             NullableString                                    `json:"location,omitempty"`
+	AccountId            *int64                                            `json:"accountId,omitempty"`
+	Active               *bool                                             `json:"active,omitempty"`
+	Config               *ListGroups200ResponseAllOfGroupsInnerConfig      `json:"config,omitempty"`
+	DateCreated          *time.Time                                        `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                        `json:"lastUpdated,omitempty"`
+	Zones                []ListGroups200ResponseAllOfGroupsInnerZonesInner `json:"zones,omitempty"`
+	Stats                *ListGroups200ResponseAllOfGroupsInnerStats       `json:"stats,omitempty"`
+	ServerCount          *int64                                            `json:"serverCount,omitempty"`
+	AdditionalProperties map[string]interface{}                            `json:",remain"`
 }
 
 type _ListGroups200ResponseAllOfGroupsInner ListGroups200ResponseAllOfGroupsInner
@@ -432,9 +432,9 @@ func (o *ListGroups200ResponseAllOfGroupsInner) SetLastUpdated(v time.Time) {
 }
 
 // GetZones returns the Zones field value if set, zero value otherwise.
-func (o *ListGroups200ResponseAllOfGroupsInner) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListGroups200ResponseAllOfGroupsInner) GetZones() []ListGroups200ResponseAllOfGroupsInnerZonesInner {
 	if o == nil || IsNil(o.Zones) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []ListGroups200ResponseAllOfGroupsInnerZonesInner
 		return ret
 	}
 	return o.Zones
@@ -442,7 +442,7 @@ func (o *ListGroups200ResponseAllOfGroupsInner) GetZones() []GetAlerts200Respons
 
 // GetZonesOk returns a tuple with the Zones field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListGroups200ResponseAllOfGroupsInner) GetZonesOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListGroups200ResponseAllOfGroupsInner) GetZonesOk() ([]ListGroups200ResponseAllOfGroupsInnerZonesInner, bool) {
 	if o == nil || IsNil(o.Zones) {
 		return nil, false
 	}
@@ -458,8 +458,8 @@ func (o *ListGroups200ResponseAllOfGroupsInner) IsSetZones() bool {
 	return false
 }
 
-// SetZones gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zones field.
-func (o *ListGroups200ResponseAllOfGroupsInner) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZones gets a reference to the given []ListGroups200ResponseAllOfGroupsInnerZonesInner and assigns it to the Zones field.
+func (o *ListGroups200ResponseAllOfGroupsInner) SetZones(v []ListGroups200ResponseAllOfGroupsInnerZonesInner) {
 	o.Zones = v
 }
 
@@ -631,7 +631,6 @@ func (v NullableListGroups200ResponseAllOfGroupsInner) UnmarshalMapstructure(dat
 
 	return v, nil
 }
-
 func (o *ListGroups200ResponseAllOfGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

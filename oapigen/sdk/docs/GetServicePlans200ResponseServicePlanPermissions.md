@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourcePermissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissionsResourcePermissions**](GetServicePlans200ResponseServicePlanPermissionsResourcePermissions.md) |  | [optional] 
-**TenantPermissions** | Pointer to [**GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions**](GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions.md) |  | [optional] 
+**TenantPermissions** | Pointer to [**GetServicePlans200ResponseServicePlanPermissionsTenantPermissions**](GetServicePlans200ResponseServicePlanPermissionsTenantPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasResourcePermissions returns a boolean if a field has been set.
 
 ### GetTenantPermissions
 
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions() GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions`
+`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions() GetServicePlans200ResponseServicePlanPermissionsTenantPermissions`
 
 GetTenantPermissions returns the TenantPermissions field if non-nil, zero value otherwise.
 
 ### GetTenantPermissionsOk
 
-`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsOk() (*GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions, bool)`
+`func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissionsTenantPermissions, bool)`
 
 GetTenantPermissionsOk returns a tuple with the TenantPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenantPermissions
 
-`func (o *GetServicePlans200ResponseServicePlanPermissions) SetTenantPermissions(v GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions)`
+`func (o *GetServicePlans200ResponseServicePlanPermissions) SetTenantPermissions(v GetServicePlans200ResponseServicePlanPermissionsTenantPermissions)`
 
 SetTenantPermissions sets TenantPermissions field to given value.
 

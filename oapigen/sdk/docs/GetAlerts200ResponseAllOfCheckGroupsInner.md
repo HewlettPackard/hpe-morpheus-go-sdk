@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerAccount**](GetAlerts200ResponseAllOfCheckGroupsInnerAccount.md) |  | [optional] 
 **Instance** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
@@ -25,11 +25,11 @@ Name | Type | Description | Notes
 **Severity** | Pointer to **string** |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**CreatedBy** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy**](GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Availability** | Pointer to **NullableFloat32** |  | [optional] 
-**CheckType** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerCheckType**](GetAlerts200ResponseAllOfChecksInnerCheckType.md) |  | [optional] 
+**CheckType** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerCheckType**](GetAlerts200ResponseAllOfCheckGroupsInnerCheckType.md) |  | [optional] 
 **Checks** | Pointer to **[]int64** |  | [optional] 
 
 ## Methods
@@ -78,20 +78,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -668,20 +668,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedBy() GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCreatedBy(v GetAlerts200ResponseAllOfCheckGroupsInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 
@@ -778,20 +778,20 @@ HasAvailability returns a boolean if a field has been set.
 UnsetAvailability ensures that no value is present for Availability, not even an explicit nil
 ### GetCheckType
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckType() GetAlerts200ResponseAllOfChecksInnerCheckType`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckType() GetAlerts200ResponseAllOfCheckGroupsInnerCheckType`
 
 GetCheckType returns the CheckType field if non-nil, zero value otherwise.
 
 ### GetCheckTypeOk
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckTypeOk() (*GetAlerts200ResponseAllOfChecksInnerCheckType, bool)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) GetCheckTypeOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerCheckType, bool)`
 
 GetCheckTypeOk returns a tuple with the CheckType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckType
 
-`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCheckType(v GetAlerts200ResponseAllOfChecksInnerCheckType)`
+`func (o *GetAlerts200ResponseAllOfCheckGroupsInner) SetCheckType(v GetAlerts200ResponseAllOfCheckGroupsInnerCheckType)`
 
 SetCheckType sets CheckType field to given value.
 

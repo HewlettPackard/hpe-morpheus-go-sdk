@@ -30,7 +30,7 @@ type VirtualImage struct {
 	Labels []string `json:"labels,omitempty"`
 	// Owner of the image
 	OwnerId *int64                                             `json:"ownerId,omitempty"`
-	Tenant  *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"tenant,omitempty"`
+	Tenant  *AddVirtualImage200ResponseAllOfVirtualImageTenant `json:"tenant,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
 	ImageType *string `json:"imageType,omitempty"`
 	// Is uploaded by an user?
@@ -46,8 +46,8 @@ type VirtualImage struct {
 	SshPassword     NullableString `json:"sshPassword,omitempty"`
 	SshPasswordHash NullableString `json:"sshPasswordHash,omitempty"`
 	// SSH Key
-	SshKey NullableString                                                      `json:"sshKey,omitempty"`
-	OsType *ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs `json:"osType,omitempty"`
+	SshKey NullableString                                     `json:"sshKey,omitempty"`
+	OsType *AddVirtualImage200ResponseAllOfVirtualImageOsType `json:"osType,omitempty"`
 	// Minimum required RAM in bytes
 	MinRam NullableInt64 `json:"minRam,omitempty"`
 	// Minimum required RAM in gigabytes
@@ -79,24 +79,24 @@ type VirtualImage struct {
 	// FIPS enabled?
 	FipsEnabled *bool `json:"fipsEnabled,omitempty"`
 	// Cloud-Init User Data, a bash script
-	UserData        NullableString                                     `json:"userData,omitempty"`
-	ConsoleKeymap   NullableString                                     `json:"consoleKeymap,omitempty"`
-	StorageProvider *GetAlerts200ResponseAllOfCheckGroupsInnerInstance `json:"storageProvider,omitempty"`
-	ExternalId      NullableString                                     `json:"externalId,omitempty"`
+	UserData        NullableString                                              `json:"userData,omitempty"`
+	ConsoleKeymap   NullableString                                              `json:"consoleKeymap,omitempty"`
+	StorageProvider *AddVirtualImage200ResponseAllOfVirtualImageStorageProvider `json:"storageProvider,omitempty"`
+	ExternalId      NullableString                                              `json:"externalId,omitempty"`
 	// private or public
-	Visibility         *string                                                                      `json:"visibility,omitempty"`
-	Accounts           []GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"accounts,omitempty"`
-	Config             *ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig                   `json:"config,omitempty"`
-	Volumes            []map[string]interface{}                                                     `json:"volumes,omitempty"`
-	StorageControllers []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner `json:"storageControllers,omitempty"`
-	NetworkInterfaces  []map[string]interface{}                                                     `json:"networkInterfaces,omitempty"`
+	Visibility         *string                                                              `json:"visibility,omitempty"`
+	Accounts           []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner           `json:"accounts,omitempty"`
+	Config             *AddVirtualImage200ResponseAllOfVirtualImageConfig                   `json:"config,omitempty"`
+	Volumes            []map[string]interface{}                                             `json:"volumes,omitempty"`
+	StorageControllers []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner `json:"storageControllers,omitempty"`
+	NetworkInterfaces  []map[string]interface{}                                             `json:"networkInterfaces,omitempty"`
 	// Metadata tags, Array of objects having a name and value
-	Tags                 []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner     `json:"tags,omitempty"`
-	Locations            []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner `json:"locations,omitempty"`
-	DateCreated          *time.Time                                                          `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                          `json:"lastUpdated,omitempty"`
-	Status               *string                                                             `json:"status,omitempty"`
-	AdditionalProperties map[string]interface{}                                              `json:",remain"`
+	Tags                 []AddVirtualImage200ResponseAllOfVirtualImageTagsInner      `json:"tags,omitempty"`
+	Locations            []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner `json:"locations,omitempty"`
+	DateCreated          *time.Time                                                  `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                  `json:"lastUpdated,omitempty"`
+	Status               *string                                                     `json:"status,omitempty"`
+	AdditionalProperties map[string]interface{}                                      `json:",remain"`
 }
 
 type _VirtualImage VirtualImage
@@ -290,9 +290,9 @@ func (o *VirtualImage) SetOwnerId(v int64) {
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise.
-func (o *VirtualImage) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *VirtualImage) GetTenant() AddVirtualImage200ResponseAllOfVirtualImageTenant {
 	if o == nil || IsNil(o.Tenant) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddVirtualImage200ResponseAllOfVirtualImageTenant
 		return ret
 	}
 	return *o.Tenant
@@ -300,7 +300,7 @@ func (o *VirtualImage) GetTenant() GetAlerts200ResponseAllOfCheckGroupsInnerInst
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetTenantOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *VirtualImage) GetTenantOk() (*AddVirtualImage200ResponseAllOfVirtualImageTenant, bool) {
 	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
@@ -316,8 +316,8 @@ func (o *VirtualImage) IsSetTenant() bool {
 	return false
 }
 
-// SetTenant gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenant field.
-func (o *VirtualImage) SetTenant(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetTenant gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageTenant and assigns it to the Tenant field.
+func (o *VirtualImage) SetTenant(v AddVirtualImage200ResponseAllOfVirtualImageTenant) {
 	o.Tenant = &v
 }
 
@@ -654,9 +654,9 @@ func (o *VirtualImage) UnsetSshKey() {
 }
 
 // GetOsType returns the OsType field value if set, zero value otherwise.
-func (o *VirtualImage) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs {
+func (o *VirtualImage) GetOsType() AddVirtualImage200ResponseAllOfVirtualImageOsType {
 	if o == nil || IsNil(o.OsType) {
-		var ret ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs
+		var ret AddVirtualImage200ResponseAllOfVirtualImageOsType
 		return ret
 	}
 	return *o.OsType
@@ -664,7 +664,7 @@ func (o *VirtualImage) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInner
 
 // GetOsTypeOk returns a tuple with the OsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetOsTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs, bool) {
+func (o *VirtualImage) GetOsTypeOk() (*AddVirtualImage200ResponseAllOfVirtualImageOsType, bool) {
 	if o == nil || IsNil(o.OsType) {
 		return nil, false
 	}
@@ -680,8 +680,8 @@ func (o *VirtualImage) IsSetOsType() bool {
 	return false
 }
 
-// SetOsType gets a reference to the given ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs and assigns it to the OsType field.
-func (o *VirtualImage) SetOsType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs) {
+// SetOsType gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageOsType and assigns it to the OsType field.
+func (o *VirtualImage) SetOsType(v AddVirtualImage200ResponseAllOfVirtualImageOsType) {
 	o.OsType = &v
 }
 
@@ -1329,9 +1329,9 @@ func (o *VirtualImage) UnsetConsoleKeymap() {
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *VirtualImage) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *VirtualImage) GetStorageProvider() AddVirtualImage200ResponseAllOfVirtualImageStorageProvider {
 	if o == nil || IsNil(o.StorageProvider) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret AddVirtualImage200ResponseAllOfVirtualImageStorageProvider
 		return ret
 	}
 	return *o.StorageProvider
@@ -1339,7 +1339,7 @@ func (o *VirtualImage) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroups
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *VirtualImage) GetStorageProviderOk() (*AddVirtualImage200ResponseAllOfVirtualImageStorageProvider, bool) {
 	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
@@ -1355,8 +1355,8 @@ func (o *VirtualImage) IsSetStorageProvider() bool {
 	return false
 }
 
-// SetStorageProvider gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the StorageProvider field.
-func (o *VirtualImage) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetStorageProvider gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageStorageProvider and assigns it to the StorageProvider field.
+func (o *VirtualImage) SetStorageProvider(v AddVirtualImage200ResponseAllOfVirtualImageStorageProvider) {
 	o.StorageProvider = &v
 }
 
@@ -1436,9 +1436,9 @@ func (o *VirtualImage) SetVisibility(v string) {
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *VirtualImage) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *VirtualImage) GetAccounts() []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner {
 	if o == nil || IsNil(o.Accounts) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -1446,7 +1446,7 @@ func (o *VirtualImage) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInner
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *VirtualImage) GetAccountsOk() ([]AddVirtualImage200ResponseAllOfVirtualImageAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -1462,15 +1462,15 @@ func (o *VirtualImage) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
-func (o *VirtualImage) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccounts gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner and assigns it to the Accounts field.
+func (o *VirtualImage) SetAccounts(v []AddVirtualImage200ResponseAllOfVirtualImageAccountsInner) {
 	o.Accounts = v
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *VirtualImage) GetConfig() ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig {
+func (o *VirtualImage) GetConfig() AddVirtualImage200ResponseAllOfVirtualImageConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig
+		var ret AddVirtualImage200ResponseAllOfVirtualImageConfig
 		return ret
 	}
 	return *o.Config
@@ -1478,7 +1478,7 @@ func (o *VirtualImage) GetConfig() ListVirtualImages200ResponseAllOfVirtualImage
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetConfigOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig, bool) {
+func (o *VirtualImage) GetConfigOk() (*AddVirtualImage200ResponseAllOfVirtualImageConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1494,8 +1494,8 @@ func (o *VirtualImage) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig and assigns it to the Config field.
-func (o *VirtualImage) SetConfig(v ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig) {
+// SetConfig gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImageConfig and assigns it to the Config field.
+func (o *VirtualImage) SetConfig(v AddVirtualImage200ResponseAllOfVirtualImageConfig) {
 	o.Config = &v
 }
 
@@ -1532,9 +1532,9 @@ func (o *VirtualImage) SetVolumes(v []map[string]interface{}) {
 }
 
 // GetStorageControllers returns the StorageControllers field value if set, zero value otherwise.
-func (o *VirtualImage) GetStorageControllers() []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner {
+func (o *VirtualImage) GetStorageControllers() []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner {
 	if o == nil || IsNil(o.StorageControllers) {
-		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner
+		var ret []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner
 		return ret
 	}
 	return o.StorageControllers
@@ -1542,7 +1542,7 @@ func (o *VirtualImage) GetStorageControllers() []ListVirtualImages200ResponseAll
 
 // GetStorageControllersOk returns a tuple with the StorageControllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetStorageControllersOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner, bool) {
+func (o *VirtualImage) GetStorageControllersOk() ([]AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner, bool) {
 	if o == nil || IsNil(o.StorageControllers) {
 		return nil, false
 	}
@@ -1558,8 +1558,8 @@ func (o *VirtualImage) IsSetStorageControllers() bool {
 	return false
 }
 
-// SetStorageControllers gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner and assigns it to the StorageControllers field.
-func (o *VirtualImage) SetStorageControllers(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) {
+// SetStorageControllers gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner and assigns it to the StorageControllers field.
+func (o *VirtualImage) SetStorageControllers(v []AddVirtualImage200ResponseAllOfVirtualImageStorageControllersInner) {
 	o.StorageControllers = v
 }
 
@@ -1596,9 +1596,9 @@ func (o *VirtualImage) SetNetworkInterfaces(v []map[string]interface{}) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *VirtualImage) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *VirtualImage) GetTags() []AddVirtualImage200ResponseAllOfVirtualImageTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddVirtualImage200ResponseAllOfVirtualImageTagsInner
 		return ret
 	}
 	return o.Tags
@@ -1606,7 +1606,7 @@ func (o *VirtualImage) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOf
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *VirtualImage) GetTagsOk() ([]AddVirtualImage200ResponseAllOfVirtualImageTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -1622,15 +1622,15 @@ func (o *VirtualImage) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
-func (o *VirtualImage) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetTags gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageTagsInner and assigns it to the Tags field.
+func (o *VirtualImage) SetTags(v []AddVirtualImage200ResponseAllOfVirtualImageTagsInner) {
 	o.Tags = v
 }
 
 // GetLocations returns the Locations field value if set, zero value otherwise.
-func (o *VirtualImage) GetLocations() []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner {
+func (o *VirtualImage) GetLocations() []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner {
 	if o == nil || IsNil(o.Locations) {
-		var ret []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner
+		var ret []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner
 		return ret
 	}
 	return o.Locations
@@ -1638,7 +1638,7 @@ func (o *VirtualImage) GetLocations() []ListVirtualImages200ResponseAllOfVirtual
 
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImage) GetLocationsOk() ([]ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner, bool) {
+func (o *VirtualImage) GetLocationsOk() ([]AddVirtualImage200ResponseAllOfVirtualImageLocationsInner, bool) {
 	if o == nil || IsNil(o.Locations) {
 		return nil, false
 	}
@@ -1654,8 +1654,8 @@ func (o *VirtualImage) IsSetLocations() bool {
 	return false
 }
 
-// SetLocations gets a reference to the given []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner and assigns it to the Locations field.
-func (o *VirtualImage) SetLocations(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner) {
+// SetLocations gets a reference to the given []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner and assigns it to the Locations field.
+func (o *VirtualImage) SetLocations(v []AddVirtualImage200ResponseAllOfVirtualImageLocationsInner) {
 	o.Locations = v
 }
 
@@ -1955,7 +1955,6 @@ func (v NullableVirtualImage) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *VirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

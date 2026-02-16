@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **ContainerTypes** | Pointer to **[]int64** | Array of layout node type IDs | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of layout option type IDs | [optional] 
 **SpecTemplates** | Pointer to **[]int64** | Array of layout spec template IDs | [optional] 
-**EnvironmentVariables** | Pointer to [**[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner**](AddClusterLayoutsRequestLayoutEnvironmentVariablesInner.md) | The environmentVariables parameter is array of env objects | [optional] 
-**PriceSets** | Pointer to [**[]AddInstanceTypeRequestInstanceTypePriceSetsInner**](AddInstanceTypeRequestInstanceTypePriceSetsInner.md) | Array of price set objects | [optional] 
+**EnvironmentVariables** | Pointer to [**[]AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner**](AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner.md) | The environmentVariables parameter is array of env objects | [optional] 
+**PriceSets** | Pointer to [**[]AddLayoutRequestInstanceTypeLayoutPriceSetsInner**](AddLayoutRequestInstanceTypeLayoutPriceSetsInner.md) | Array of price set objects | [optional] 
 **Permissions** | Pointer to [**AddLayoutRequestInstanceTypeLayoutPermissions**](AddLayoutRequestInstanceTypeLayoutPermissions.md) |  | [optional] 
 
 ## Methods
@@ -362,20 +362,20 @@ HasSpecTemplates returns a boolean if a field has been set.
 
 ### GetEnvironmentVariables
 
-`func (o *AddLayoutRequestInstanceTypeLayout) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner`
+`func (o *AddLayoutRequestInstanceTypeLayout) GetEnvironmentVariables() []AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner`
 
 GetEnvironmentVariables returns the EnvironmentVariables field if non-nil, zero value otherwise.
 
 ### GetEnvironmentVariablesOk
 
-`func (o *AddLayoutRequestInstanceTypeLayout) GetEnvironmentVariablesOk() (*[]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool)`
+`func (o *AddLayoutRequestInstanceTypeLayout) GetEnvironmentVariablesOk() (*[]AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner, bool)`
 
 GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironmentVariables
 
-`func (o *AddLayoutRequestInstanceTypeLayout) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner)`
+`func (o *AddLayoutRequestInstanceTypeLayout) SetEnvironmentVariables(v []AddLayoutRequestInstanceTypeLayoutEnvironmentVariablesInner)`
 
 SetEnvironmentVariables sets EnvironmentVariables field to given value.
 
@@ -387,20 +387,20 @@ HasEnvironmentVariables returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *AddLayoutRequestInstanceTypeLayout) GetPriceSets() []AddInstanceTypeRequestInstanceTypePriceSetsInner`
+`func (o *AddLayoutRequestInstanceTypeLayout) GetPriceSets() []AddLayoutRequestInstanceTypeLayoutPriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *AddLayoutRequestInstanceTypeLayout) GetPriceSetsOk() (*[]AddInstanceTypeRequestInstanceTypePriceSetsInner, bool)`
+`func (o *AddLayoutRequestInstanceTypeLayout) GetPriceSetsOk() (*[]AddLayoutRequestInstanceTypeLayoutPriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *AddLayoutRequestInstanceTypeLayout) SetPriceSets(v []AddInstanceTypeRequestInstanceTypePriceSetsInner)`
+`func (o *AddLayoutRequestInstanceTypeLayout) SetPriceSets(v []AddLayoutRequestInstanceTypeLayoutPriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 

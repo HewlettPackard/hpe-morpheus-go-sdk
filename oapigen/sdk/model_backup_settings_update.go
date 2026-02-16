@@ -29,11 +29,11 @@ type BackupSettingsUpdate struct {
 	// When enabled, a Backup will be created to backup the Morpheus appliance database
 	BackupAppliance *bool `json:"backupAppliance,omitempty"`
 	// Use this to update existing backups with new settings
-	UpdateExisting  *bool                                                     `json:"updateExisting,omitempty"`
-	DefaultSchedule *UpdateBackupSettingsRequestBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
+	UpdateExisting  *bool                                `json:"updateExisting,omitempty"`
+	DefaultSchedule *BackupSettingsUpdateDefaultSchedule `json:"defaultSchedule,omitempty"`
 	// Use this to clear existing default backup schedule
-	ClearDefaultSchedule *bool                                                          `json:"clearDefaultSchedule,omitempty"`
-	DefaultStorageBucket *UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
+	ClearDefaultSchedule *bool                                     `json:"clearDefaultSchedule,omitempty"`
+	DefaultStorageBucket *BackupSettingsUpdateDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
 	// Use this to clear default store bucket
 	ClearDefaultStorageBucket *bool                  `json:"clearDefaultStorageBucket,omitempty"`
 	AdditionalProperties      map[string]interface{} `json:",remain"`
@@ -219,9 +219,9 @@ func (o *BackupSettingsUpdate) SetUpdateExisting(v bool) {
 }
 
 // GetDefaultSchedule returns the DefaultSchedule field value if set, zero value otherwise.
-func (o *BackupSettingsUpdate) GetDefaultSchedule() UpdateBackupSettingsRequestBackupSettingsDefaultSchedule {
+func (o *BackupSettingsUpdate) GetDefaultSchedule() BackupSettingsUpdateDefaultSchedule {
 	if o == nil || IsNil(o.DefaultSchedule) {
-		var ret UpdateBackupSettingsRequestBackupSettingsDefaultSchedule
+		var ret BackupSettingsUpdateDefaultSchedule
 		return ret
 	}
 	return *o.DefaultSchedule
@@ -229,7 +229,7 @@ func (o *BackupSettingsUpdate) GetDefaultSchedule() UpdateBackupSettingsRequestB
 
 // GetDefaultScheduleOk returns a tuple with the DefaultSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupSettingsUpdate) GetDefaultScheduleOk() (*UpdateBackupSettingsRequestBackupSettingsDefaultSchedule, bool) {
+func (o *BackupSettingsUpdate) GetDefaultScheduleOk() (*BackupSettingsUpdateDefaultSchedule, bool) {
 	if o == nil || IsNil(o.DefaultSchedule) {
 		return nil, false
 	}
@@ -245,8 +245,8 @@ func (o *BackupSettingsUpdate) IsSetDefaultSchedule() bool {
 	return false
 }
 
-// SetDefaultSchedule gets a reference to the given UpdateBackupSettingsRequestBackupSettingsDefaultSchedule and assigns it to the DefaultSchedule field.
-func (o *BackupSettingsUpdate) SetDefaultSchedule(v UpdateBackupSettingsRequestBackupSettingsDefaultSchedule) {
+// SetDefaultSchedule gets a reference to the given BackupSettingsUpdateDefaultSchedule and assigns it to the DefaultSchedule field.
+func (o *BackupSettingsUpdate) SetDefaultSchedule(v BackupSettingsUpdateDefaultSchedule) {
 	o.DefaultSchedule = &v
 }
 
@@ -283,9 +283,9 @@ func (o *BackupSettingsUpdate) SetClearDefaultSchedule(v bool) {
 }
 
 // GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
-func (o *BackupSettingsUpdate) GetDefaultStorageBucket() UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket {
+func (o *BackupSettingsUpdate) GetDefaultStorageBucket() BackupSettingsUpdateDefaultStorageBucket {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
-		var ret UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket
+		var ret BackupSettingsUpdateDefaultStorageBucket
 		return ret
 	}
 	return *o.DefaultStorageBucket
@@ -293,7 +293,7 @@ func (o *BackupSettingsUpdate) GetDefaultStorageBucket() UpdateBackupSettingsReq
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupSettingsUpdate) GetDefaultStorageBucketOk() (*UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket, bool) {
+func (o *BackupSettingsUpdate) GetDefaultStorageBucketOk() (*BackupSettingsUpdateDefaultStorageBucket, bool) {
 	if o == nil || IsNil(o.DefaultStorageBucket) {
 		return nil, false
 	}
@@ -309,8 +309,8 @@ func (o *BackupSettingsUpdate) IsSetDefaultStorageBucket() bool {
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
-func (o *BackupSettingsUpdate) SetDefaultStorageBucket(v UpdateBackupSettingsRequestBackupSettingsDefaultStorageBucket) {
+// SetDefaultStorageBucket gets a reference to the given BackupSettingsUpdateDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
+func (o *BackupSettingsUpdate) SetDefaultStorageBucket(v BackupSettingsUpdateDefaultStorageBucket) {
 	o.DefaultStorageBucket = &v
 }
 
@@ -435,7 +435,6 @@ func (v NullableBackupSettingsUpdate) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *BackupSettingsUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

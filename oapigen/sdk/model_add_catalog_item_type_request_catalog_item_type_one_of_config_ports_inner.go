@@ -226,7 +226,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) U
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

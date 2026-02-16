@@ -22,7 +22,7 @@ var _ MappedNullable = &GetEnvVariables200Response{}
 type GetEnvVariables200Response struct {
 	Envs                 []GetEnvVariables200ResponseEnvsInner                   `json:"envs,omitempty"`
 	ReadOnlyEnvs         *map[string]GetEnvVariables200ResponseReadOnlyEnvsValue `json:"readOnlyEnvs,omitempty"`
-	ImportedEnvs         *map[string]GetEnvVariables200ResponseReadOnlyEnvsValue `json:"importedEnvs,omitempty"`
+	ImportedEnvs         *map[string]GetEnvVariables200ResponseImportedEnvsValue `json:"importedEnvs,omitempty"`
 	AdditionalProperties map[string]interface{}                                  `json:",remain"`
 }
 
@@ -111,9 +111,9 @@ func (o *GetEnvVariables200Response) SetReadOnlyEnvs(v map[string]GetEnvVariable
 }
 
 // GetImportedEnvs returns the ImportedEnvs field value if set, zero value otherwise.
-func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseReadOnlyEnvsValue {
+func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariables200ResponseImportedEnvsValue {
 	if o == nil || IsNil(o.ImportedEnvs) {
-		var ret map[string]GetEnvVariables200ResponseReadOnlyEnvsValue
+		var ret map[string]GetEnvVariables200ResponseImportedEnvsValue
 		return ret
 	}
 	return *o.ImportedEnvs
@@ -121,7 +121,7 @@ func (o *GetEnvVariables200Response) GetImportedEnvs() map[string]GetEnvVariable
 
 // GetImportedEnvsOk returns a tuple with the ImportedEnvs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseReadOnlyEnvsValue, bool) {
+func (o *GetEnvVariables200Response) GetImportedEnvsOk() (*map[string]GetEnvVariables200ResponseImportedEnvsValue, bool) {
 	if o == nil || IsNil(o.ImportedEnvs) {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *GetEnvVariables200Response) IsSetImportedEnvs() bool {
 	return false
 }
 
-// SetImportedEnvs gets a reference to the given map[string]GetEnvVariables200ResponseReadOnlyEnvsValue and assigns it to the ImportedEnvs field.
-func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseReadOnlyEnvsValue) {
+// SetImportedEnvs gets a reference to the given map[string]GetEnvVariables200ResponseImportedEnvsValue and assigns it to the ImportedEnvs field.
+func (o *GetEnvVariables200Response) SetImportedEnvs(v map[string]GetEnvVariables200ResponseImportedEnvsValue) {
 	o.ImportedEnvs = &v
 }
 
@@ -213,7 +213,6 @@ func (v NullableGetEnvVariables200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
-
 func (o *GetEnvVariables200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

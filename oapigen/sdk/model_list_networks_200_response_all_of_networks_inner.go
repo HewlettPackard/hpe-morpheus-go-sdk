@@ -95,10 +95,10 @@ type ListNetworks200ResponseAllOfNetworksInner struct {
 	AssignPublicIp          *bool                                                        `json:"assignPublicIp,omitempty"`
 	NoProxy                 NullableString                                               `json:"noProxy,omitempty"`
 	ApplianceUrlProxyBypass *bool                                                        `json:"applianceUrlProxyBypass,omitempty"`
-	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"zonePool,omitempty"`
+	ZonePool                *ListNetworks200ResponseAllOfNetworksInnerZonePool           `json:"zonePool,omitempty"`
 	AllowStaticOverride     *bool                                                        `json:"allowStaticOverride,omitempty"`
 	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig             `json:"config,omitempty"`
-	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenants,omitempty"`
+	Tenants                 []ListNetworks200ResponseAllOfNetworksInnerTenantsInner      `json:"tenants,omitempty"`
 	ResourcePermission      *ListNetworks200ResponseAllOfNetworksInnerResourcePermission `json:"resourcePermission,omitempty"`
 	AdditionalProperties    map[string]interface{}                                       `json:",remain"`
 }
@@ -2440,9 +2440,9 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) SetApplianceUrlProxyBypass(v
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePool() ListNetworks200ResponseAllOfNetworksInnerZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListNetworks200ResponseAllOfNetworksInnerZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -2450,7 +2450,7 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePool() GetAlerts200Re
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetZonePoolOk() (*ListNetworks200ResponseAllOfNetworksInnerZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -2466,8 +2466,8 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) IsSetZonePool() bool {
 	return false
 }
 
-// SetZonePool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ZonePool field.
-func (o *ListNetworks200ResponseAllOfNetworksInner) SetZonePool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZonePool gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerZonePool and assigns it to the ZonePool field.
+func (o *ListNetworks200ResponseAllOfNetworksInner) SetZonePool(v ListNetworks200ResponseAllOfNetworksInnerZonePool) {
 	o.ZonePool = &v
 }
 
@@ -2536,9 +2536,9 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) SetConfig(v ListNetworks200R
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenants() []ListNetworks200ResponseAllOfNetworksInnerTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []ListNetworks200ResponseAllOfNetworksInnerTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -2546,7 +2546,7 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenants() []GetAlerts200R
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListNetworks200ResponseAllOfNetworksInner) GetTenantsOk() ([]ListNetworks200ResponseAllOfNetworksInnerTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -2562,8 +2562,8 @@ func (o *ListNetworks200ResponseAllOfNetworksInner) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
-func (o *ListNetworks200ResponseAllOfNetworksInner) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetTenants gets a reference to the given []ListNetworks200ResponseAllOfNetworksInnerTenantsInner and assigns it to the Tenants field.
+func (o *ListNetworks200ResponseAllOfNetworksInner) SetTenants(v []ListNetworks200ResponseAllOfNetworksInnerTenantsInner) {
 	o.Tenants = v
 }
 
@@ -2856,7 +2856,6 @@ func (v NullableListNetworks200ResponseAllOfNetworksInner) UnmarshalMapstructure
 
 	return v, nil
 }
-
 func (o *ListNetworks200ResponseAllOfNetworksInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -49,17 +49,7 @@ type APIClient struct {
 
 	// API Services
 
-	ActivityAPI *ActivityAPIService
-
 	AlertsAPI *AlertsAPIService
-
-	ApplianceSettingsAPI *ApplianceSettingsAPIService
-
-	ApprovalsAPI *ApprovalsAPIService
-
-	AppsAPI *AppsAPIService
-
-	ArchivesAPI *ArchivesAPIService
 
 	AuthenticationAPI *AuthenticationAPIService
 
@@ -67,141 +57,39 @@ type APIClient struct {
 
 	BackupSettingsAPI *BackupSettingsAPIService
 
-	BackupsAPI *BackupsAPIService
-
-	BillingAPI *BillingAPIService
-
-	BlueprintsAPI *BlueprintsAPIService
-
-	BudgetsAPI *BudgetsAPIService
-
 	CatalogItemsAPI *CatalogItemsAPIService
-
-	ChecksAPI *ChecksAPIService
-
-	ClientsAPI *ClientsAPIService
 
 	CloudsAPI *CloudsAPIService
 
 	ClusterLayoutsAPI *ClusterLayoutsAPIService
 
-	ClusterPackagesAPI *ClusterPackagesAPIService
-
 	ClustersAPI *ClustersAPIService
 
-	ContactsAPI *ContactsAPIService
-
-	ContainersAPI *ContainersAPIService
-
-	CredentialsAPI *CredentialsAPIService
-
-	CypherAPI *CypherAPIService
-
 	DatastoresAPI *DatastoresAPIService
-
-	DeploymentsAPI *DeploymentsAPIService
-
-	DeploysAPI *DeploysAPIService
-
-	EmailTemplatesAPI *EmailTemplatesAPIService
 
 	EnvironmentsAPI *EnvironmentsAPIService
 
 	GroupsAPI *GroupsAPIService
 
-	GuidanceAPI *GuidanceAPIService
-
-	GuidanceSettingsAPI *GuidanceSettingsAPIService
-
-	HealthAPI *HealthAPIService
-
-	HistoryAPI *HistoryAPIService
-
-	HostsAPI *HostsAPIService
-
-	IdentitySourcesAPI *IdentitySourcesAPIService
-
-	ImageBuildsAPI *ImageBuildsAPIService
-
-	IncidentsAPI *IncidentsAPIService
-
 	InstancesAPI *InstancesAPIService
 
-	IntegrationsAPI *IntegrationsAPIService
-
-	InvoicesAPI *InvoicesAPIService
-
-	JobsAPI *JobsAPIService
-
-	KeyPairsAPI *KeyPairsAPIService
-
 	LibraryAPI *LibraryAPIService
-
-	LicenseAPI *LicenseAPIService
-
-	LoadBalancersAPI *LoadBalancersAPIService
-
-	LogSettingsAPI *LogSettingsAPIService
-
-	LogsAPI *LogsAPIService
-
-	MonitoringSettingsAPI *MonitoringSettingsAPIService
 
 	NetworksAPI *NetworksAPIService
 
 	OptionsAPI *OptionsAPIService
 
-	PingAPI *PingAPIService
-
-	PluginsAPI *PluginsAPIService
-
 	PoliciesAPI *PoliciesAPIService
-
-	PriceSetsAPI *PriceSetsAPIService
-
-	PricesAPI *PricesAPIService
 
 	ProvisioningAPI *ProvisioningAPIService
 
-	ProvisioningLicensesAPI *ProvisioningLicensesAPIService
-
-	ProvisioningSettingsAPI *ProvisioningSettingsAPIService
-
-	ReportsAPI *ReportsAPIService
-
-	ResourcePoolsAPI *ResourcePoolsAPIService
-
 	RolesAPI *RolesAPIService
-
-	SSLCertificatesAPI *SSLCertificatesAPIService
-
-	SearchAPI *SearchAPIService
-
-	SecurityGroupsAPI *SecurityGroupsAPIService
-
-	SecurityPackagesAPI *SecurityPackagesAPIService
-
-	SecurityScansAPI *SecurityScansAPIService
-
-	ServiceCatalogAPI *ServiceCatalogAPIService
 
 	ServicePlansAPI *ServicePlansAPIService
 
-	SetupAPI *SetupAPIService
-
-	StorageAPI *StorageAPIService
-
 	TenantsAPI *TenantsAPIService
 
-	UsageAPI *UsageAPIService
-
 	UsersAPI *UsersAPIService
-
-	VDIAPI *VDIAPIService
-
-	WhitelabelSettingsAPI *WhitelabelSettingsAPIService
-
-	WikiAPI *WikiAPIService
 }
 
 type service struct {
@@ -220,83 +108,27 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ActivityAPI = (*ActivityAPIService)(&c.common)
 	c.AlertsAPI = (*AlertsAPIService)(&c.common)
-	c.ApplianceSettingsAPI = (*ApplianceSettingsAPIService)(&c.common)
-	c.ApprovalsAPI = (*ApprovalsAPIService)(&c.common)
-	c.AppsAPI = (*AppsAPIService)(&c.common)
-	c.ArchivesAPI = (*ArchivesAPIService)(&c.common)
 	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
 	c.AutomationAPI = (*AutomationAPIService)(&c.common)
 	c.BackupSettingsAPI = (*BackupSettingsAPIService)(&c.common)
-	c.BackupsAPI = (*BackupsAPIService)(&c.common)
-	c.BillingAPI = (*BillingAPIService)(&c.common)
-	c.BlueprintsAPI = (*BlueprintsAPIService)(&c.common)
-	c.BudgetsAPI = (*BudgetsAPIService)(&c.common)
 	c.CatalogItemsAPI = (*CatalogItemsAPIService)(&c.common)
-	c.ChecksAPI = (*ChecksAPIService)(&c.common)
-	c.ClientsAPI = (*ClientsAPIService)(&c.common)
 	c.CloudsAPI = (*CloudsAPIService)(&c.common)
 	c.ClusterLayoutsAPI = (*ClusterLayoutsAPIService)(&c.common)
-	c.ClusterPackagesAPI = (*ClusterPackagesAPIService)(&c.common)
 	c.ClustersAPI = (*ClustersAPIService)(&c.common)
-	c.ContactsAPI = (*ContactsAPIService)(&c.common)
-	c.ContainersAPI = (*ContainersAPIService)(&c.common)
-	c.CredentialsAPI = (*CredentialsAPIService)(&c.common)
-	c.CypherAPI = (*CypherAPIService)(&c.common)
 	c.DatastoresAPI = (*DatastoresAPIService)(&c.common)
-	c.DeploymentsAPI = (*DeploymentsAPIService)(&c.common)
-	c.DeploysAPI = (*DeploysAPIService)(&c.common)
-	c.EmailTemplatesAPI = (*EmailTemplatesAPIService)(&c.common)
 	c.EnvironmentsAPI = (*EnvironmentsAPIService)(&c.common)
 	c.GroupsAPI = (*GroupsAPIService)(&c.common)
-	c.GuidanceAPI = (*GuidanceAPIService)(&c.common)
-	c.GuidanceSettingsAPI = (*GuidanceSettingsAPIService)(&c.common)
-	c.HealthAPI = (*HealthAPIService)(&c.common)
-	c.HistoryAPI = (*HistoryAPIService)(&c.common)
-	c.HostsAPI = (*HostsAPIService)(&c.common)
-	c.IdentitySourcesAPI = (*IdentitySourcesAPIService)(&c.common)
-	c.ImageBuildsAPI = (*ImageBuildsAPIService)(&c.common)
-	c.IncidentsAPI = (*IncidentsAPIService)(&c.common)
 	c.InstancesAPI = (*InstancesAPIService)(&c.common)
-	c.IntegrationsAPI = (*IntegrationsAPIService)(&c.common)
-	c.InvoicesAPI = (*InvoicesAPIService)(&c.common)
-	c.JobsAPI = (*JobsAPIService)(&c.common)
-	c.KeyPairsAPI = (*KeyPairsAPIService)(&c.common)
 	c.LibraryAPI = (*LibraryAPIService)(&c.common)
-	c.LicenseAPI = (*LicenseAPIService)(&c.common)
-	c.LoadBalancersAPI = (*LoadBalancersAPIService)(&c.common)
-	c.LogSettingsAPI = (*LogSettingsAPIService)(&c.common)
-	c.LogsAPI = (*LogsAPIService)(&c.common)
-	c.MonitoringSettingsAPI = (*MonitoringSettingsAPIService)(&c.common)
 	c.NetworksAPI = (*NetworksAPIService)(&c.common)
 	c.OptionsAPI = (*OptionsAPIService)(&c.common)
-	c.PingAPI = (*PingAPIService)(&c.common)
-	c.PluginsAPI = (*PluginsAPIService)(&c.common)
 	c.PoliciesAPI = (*PoliciesAPIService)(&c.common)
-	c.PriceSetsAPI = (*PriceSetsAPIService)(&c.common)
-	c.PricesAPI = (*PricesAPIService)(&c.common)
 	c.ProvisioningAPI = (*ProvisioningAPIService)(&c.common)
-	c.ProvisioningLicensesAPI = (*ProvisioningLicensesAPIService)(&c.common)
-	c.ProvisioningSettingsAPI = (*ProvisioningSettingsAPIService)(&c.common)
-	c.ReportsAPI = (*ReportsAPIService)(&c.common)
-	c.ResourcePoolsAPI = (*ResourcePoolsAPIService)(&c.common)
 	c.RolesAPI = (*RolesAPIService)(&c.common)
-	c.SSLCertificatesAPI = (*SSLCertificatesAPIService)(&c.common)
-	c.SearchAPI = (*SearchAPIService)(&c.common)
-	c.SecurityGroupsAPI = (*SecurityGroupsAPIService)(&c.common)
-	c.SecurityPackagesAPI = (*SecurityPackagesAPIService)(&c.common)
-	c.SecurityScansAPI = (*SecurityScansAPIService)(&c.common)
-	c.ServiceCatalogAPI = (*ServiceCatalogAPIService)(&c.common)
 	c.ServicePlansAPI = (*ServicePlansAPIService)(&c.common)
-	c.SetupAPI = (*SetupAPIService)(&c.common)
-	c.StorageAPI = (*StorageAPIService)(&c.common)
 	c.TenantsAPI = (*TenantsAPIService)(&c.common)
-	c.UsageAPI = (*UsageAPIService)(&c.common)
 	c.UsersAPI = (*UsersAPIService)(&c.common)
-	c.VDIAPI = (*VDIAPIService)(&c.common)
-	c.WhitelabelSettingsAPI = (*WhitelabelSettingsAPIService)(&c.common)
-	c.WikiAPI = (*WikiAPIService)(&c.common)
 
 	return c
 }

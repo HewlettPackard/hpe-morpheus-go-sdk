@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | A name for the virtual image | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
-**StorageProvider** | Pointer to [**AddVirtualImageRequestVirtualImageStorageProvider**](AddVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
+**StorageProvider** | Pointer to [**UpdateVirtualImageRequestVirtualImageStorageProvider**](UpdateVirtualImageRequestVirtualImageStorageProvider.md) |  | [optional] 
 **IsCloudInit** | Pointer to **bool** | Cloud Init Enabled? | [optional] [default to false]
 **UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
 **Uefi** | Pointer to **bool** | UEFI enabled? | [optional] 
@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **TrialVersion** | Pointer to **bool** | Trial Version | [optional] [default to false]
 **IsSysprep** | Pointer to **bool** | Sysprep Enabled? | [optional] [default to false]
 **Config** | Pointer to [**UpdateVirtualImageRequestVirtualImageConfig**](UpdateVirtualImageRequestVirtualImageConfig.md) |  | [optional] 
-**Tags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified. | [optional] 
-**AddTags** | Pointer to [**[]AddVirtualImageRequestVirtualImageTagsInner**](AddVirtualImageRequestVirtualImageTagsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
+**Tags** | Pointer to [**[]UpdateVirtualImageRequestVirtualImageTagsInner**](UpdateVirtualImageRequestVirtualImageTagsInner.md) | Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified. | [optional] 
+**AddTags** | Pointer to [**[]UpdateVirtualImageRequestVirtualImageAddTagsInner**](UpdateVirtualImageRequestVirtualImageAddTagsInner.md) | Add or update value of Metadata tags, Array of objects having a name and value. | [optional] 
 **RemoveTags** | Pointer to [**[]UpdateVirtualImageRequestVirtualImageRemoveTagsInner**](UpdateVirtualImageRequestVirtualImageRemoveTagsInner.md) | Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed. | [optional] 
 **MinRamGB** | Pointer to **NullableInt64** |  | [optional] 
 **MinDisk** | Pointer to **NullableInt64** |  | [optional] 
@@ -139,20 +139,20 @@ HasImageType returns a boolean if a field has been set.
 
 ### GetStorageProvider
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProvider() AddVirtualImageRequestVirtualImageStorageProvider`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProvider() UpdateVirtualImageRequestVirtualImageStorageProvider`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProviderOk() (*AddVirtualImageRequestVirtualImageStorageProvider, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProviderOk() (*UpdateVirtualImageRequestVirtualImageStorageProvider, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *UpdateVirtualImageRequestVirtualImage) SetStorageProvider(v AddVirtualImageRequestVirtualImageStorageProvider)`
+`func (o *UpdateVirtualImageRequestVirtualImage) SetStorageProvider(v UpdateVirtualImageRequestVirtualImageStorageProvider)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -664,20 +664,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetTags() []AddVirtualImageRequestVirtualImageTagsInner`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetTags() []UpdateVirtualImageRequestVirtualImageTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetTagsOk() (*[]AddVirtualImageRequestVirtualImageTagsInner, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetTagsOk() (*[]UpdateVirtualImageRequestVirtualImageTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *UpdateVirtualImageRequestVirtualImage) SetTags(v []AddVirtualImageRequestVirtualImageTagsInner)`
+`func (o *UpdateVirtualImageRequestVirtualImage) SetTags(v []UpdateVirtualImageRequestVirtualImageTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -689,20 +689,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetAddTags
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetAddTags() []AddVirtualImageRequestVirtualImageTagsInner`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetAddTags() []UpdateVirtualImageRequestVirtualImageAddTagsInner`
 
 GetAddTags returns the AddTags field if non-nil, zero value otherwise.
 
 ### GetAddTagsOk
 
-`func (o *UpdateVirtualImageRequestVirtualImage) GetAddTagsOk() (*[]AddVirtualImageRequestVirtualImageTagsInner, bool)`
+`func (o *UpdateVirtualImageRequestVirtualImage) GetAddTagsOk() (*[]UpdateVirtualImageRequestVirtualImageAddTagsInner, bool)`
 
 GetAddTagsOk returns a tuple with the AddTags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddTags
 
-`func (o *UpdateVirtualImageRequestVirtualImage) SetAddTags(v []AddVirtualImageRequestVirtualImageTagsInner)`
+`func (o *UpdateVirtualImageRequestVirtualImage) SetAddTags(v []UpdateVirtualImageRequestVirtualImageAddTagsInner)`
 
 SetAddTags sets AddTags field to given value.
 

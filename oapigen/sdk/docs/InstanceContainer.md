@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **ContainerType** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
 **ContainerTypeSet** | Pointer to [**InstanceContainerContainerTypeSet**](InstanceContainerContainerTypeSet.md) |  | [optional] 
 **Server** | Pointer to [**InstanceContainerServer**](InstanceContainerServer.md) |  | [optional] 
-**Cloud** | Pointer to [**InstanceContainerInstance**](InstanceContainerInstance.md) |  | [optional] 
+**Cloud** | Pointer to [**InstanceContainerCloud**](InstanceContainerCloud.md) |  | [optional] 
 **Ports** | Pointer to [**[]InstanceContainerPortsInner**](InstanceContainerPortsInner.md) |  | [optional] 
-**Plan** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
+**Plan** | Pointer to [**InstanceContainerPlan**](InstanceContainerPlan.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
@@ -398,20 +398,20 @@ HasServer returns a boolean if a field has been set.
 
 ### GetCloud
 
-`func (o *InstanceContainer) GetCloud() InstanceContainerInstance`
+`func (o *InstanceContainer) GetCloud() InstanceContainerCloud`
 
 GetCloud returns the Cloud field if non-nil, zero value otherwise.
 
 ### GetCloudOk
 
-`func (o *InstanceContainer) GetCloudOk() (*InstanceContainerInstance, bool)`
+`func (o *InstanceContainer) GetCloudOk() (*InstanceContainerCloud, bool)`
 
 GetCloudOk returns a tuple with the Cloud field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCloud
 
-`func (o *InstanceContainer) SetCloud(v InstanceContainerInstance)`
+`func (o *InstanceContainer) SetCloud(v InstanceContainerCloud)`
 
 SetCloud sets Cloud field to given value.
 
@@ -448,20 +448,20 @@ HasPorts returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *InstanceContainer) GetPlan() InstanceContainerContainerType`
+`func (o *InstanceContainer) GetPlan() InstanceContainerPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *InstanceContainer) GetPlanOk() (*InstanceContainerContainerType, bool)`
+`func (o *InstanceContainer) GetPlanOk() (*InstanceContainerPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *InstanceContainer) SetPlan(v InstanceContainerContainerType)`
+`func (o *InstanceContainer) SetPlan(v InstanceContainerPlan)`
 
 SetPlan sets Plan field to given value.
 

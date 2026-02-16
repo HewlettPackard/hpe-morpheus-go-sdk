@@ -251,7 +251,6 @@ func (v NullableAddClusterLayoutsRequestLayoutEnvironmentVariablesInner) Unmarsh
 
 	return v, nil
 }
-
 func (o *AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Network** | Pointer to [**ListNetworks200ResponseAllOfNetworksInner**](ListNetworks200ResponseAllOfNetworksInner.md) |  | [optional] 
+**Network** | Pointer to [**CreateNetworks200ResponseAllOfNetwork**](CreateNetworks200ResponseAllOfNetwork.md) |  | [optional] 
 **Errors** | Pointer to **map[string]interface{}** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 **Msg** | Pointer to **NullableString** |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNetwork
 
-`func (o *CreateNetworks200Response) GetNetwork() ListNetworks200ResponseAllOfNetworksInner`
+`func (o *CreateNetworks200Response) GetNetwork() CreateNetworks200ResponseAllOfNetwork`
 
 GetNetwork returns the Network field if non-nil, zero value otherwise.
 
 ### GetNetworkOk
 
-`func (o *CreateNetworks200Response) GetNetworkOk() (*ListNetworks200ResponseAllOfNetworksInner, bool)`
+`func (o *CreateNetworks200Response) GetNetworkOk() (*CreateNetworks200ResponseAllOfNetwork, bool)`
 
 GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetwork
 
-`func (o *CreateNetworks200Response) SetNetwork(v ListNetworks200ResponseAllOfNetworksInner)`
+`func (o *CreateNetworks200Response) SetNetwork(v CreateNetworks200ResponseAllOfNetwork)`
 
 SetNetwork sets Network field to given value.
 

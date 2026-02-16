@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **Export** | Pointer to **bool** |  | [optional] 
 **Visible** | Pointer to **bool** |  | [optional] 
 **ExportName** | Pointer to **string** |  | [optional] 
-**LoadBalanceProtocol** | Pointer to **string** |  | [optional] 
+**LoadBalanceProtocol** | Pointer to **NullableString** |  | [optional] 
 **LoadBalance** | Pointer to **bool** |  | [optional] 
-**Protocol** | Pointer to **string** |  | [optional] 
+**Protocol** | Pointer to **NullableString** |  | [optional] 
 **Link** | Pointer to **bool** |  | [optional] 
-**ExternalIp** | Pointer to **string** |  | [optional] 
-**InternalIp** | Pointer to **string** |  | [optional] 
+**ExternalIp** | Pointer to **NullableString** |  | [optional] 
+**InternalIp** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -263,6 +263,16 @@ SetLoadBalanceProtocol sets LoadBalanceProtocol field to given value.
 
 HasLoadBalanceProtocol returns a boolean if a field has been set.
 
+### SetLoadBalanceProtocolNil
+
+`func (o *InstanceContainer1PortsInner) SetLoadBalanceProtocolNil(b bool)`
+
+ SetLoadBalanceProtocolNil sets the value for LoadBalanceProtocol to be an explicit nil
+
+### UnsetLoadBalanceProtocol
+`func (o *InstanceContainer1PortsInner) UnsetLoadBalanceProtocol()`
+
+UnsetLoadBalanceProtocol ensures that no value is present for LoadBalanceProtocol, not even an explicit nil
 ### GetLoadBalance
 
 `func (o *InstanceContainer1PortsInner) GetLoadBalance() bool`
@@ -313,6 +323,16 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### SetProtocolNil
+
+`func (o *InstanceContainer1PortsInner) SetProtocolNil(b bool)`
+
+ SetProtocolNil sets the value for Protocol to be an explicit nil
+
+### UnsetProtocol
+`func (o *InstanceContainer1PortsInner) UnsetProtocol()`
+
+UnsetProtocol ensures that no value is present for Protocol, not even an explicit nil
 ### GetLink
 
 `func (o *InstanceContainer1PortsInner) GetLink() bool`
@@ -363,6 +383,16 @@ SetExternalIp sets ExternalIp field to given value.
 
 HasExternalIp returns a boolean if a field has been set.
 
+### SetExternalIpNil
+
+`func (o *InstanceContainer1PortsInner) SetExternalIpNil(b bool)`
+
+ SetExternalIpNil sets the value for ExternalIp to be an explicit nil
+
+### UnsetExternalIp
+`func (o *InstanceContainer1PortsInner) UnsetExternalIp()`
+
+UnsetExternalIp ensures that no value is present for ExternalIp, not even an explicit nil
 ### GetInternalIp
 
 `func (o *InstanceContainer1PortsInner) GetInternalIp() string`
@@ -388,6 +418,16 @@ SetInternalIp sets InternalIp field to given value.
 
 HasInternalIp returns a boolean if a field has been set.
 
+### SetInternalIpNil
+
+`func (o *InstanceContainer1PortsInner) SetInternalIpNil(b bool)`
+
+ SetInternalIpNil sets the value for InternalIp to be an explicit nil
+
+### UnsetInternalIp
+`func (o *InstanceContainer1PortsInner) UnsetInternalIp()`
+
+UnsetInternalIp ensures that no value is present for InternalIp, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

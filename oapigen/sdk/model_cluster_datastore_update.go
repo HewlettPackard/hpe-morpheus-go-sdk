@@ -21,8 +21,8 @@ var _ MappedNullable = &ClusterDatastoreUpdate{}
 // ClusterDatastoreUpdate struct for ClusterDatastoreUpdate
 type ClusterDatastoreUpdate struct {
 	// Datastore active
-	Active      *bool                                              `json:"active,omitempty"`
-	Permissions *UpdateClusterDatastoreRequestDatastorePermissions `json:"permissions,omitempty"`
+	Active      *bool                              `json:"active,omitempty"`
+	Permissions *ClusterDatastoreUpdatePermissions `json:"permissions,omitempty"`
 	// Visibility for datastore
 	Visibility           *string                `json:"visibility,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -88,9 +88,9 @@ func (o *ClusterDatastoreUpdate) SetActive(v bool) {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *ClusterDatastoreUpdate) GetPermissions() UpdateClusterDatastoreRequestDatastorePermissions {
+func (o *ClusterDatastoreUpdate) GetPermissions() ClusterDatastoreUpdatePermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret UpdateClusterDatastoreRequestDatastorePermissions
+		var ret ClusterDatastoreUpdatePermissions
 		return ret
 	}
 	return *o.Permissions
@@ -98,7 +98,7 @@ func (o *ClusterDatastoreUpdate) GetPermissions() UpdateClusterDatastoreRequestD
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*UpdateClusterDatastoreRequestDatastorePermissions, bool) {
+func (o *ClusterDatastoreUpdate) GetPermissionsOk() (*ClusterDatastoreUpdatePermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -114,8 +114,8 @@ func (o *ClusterDatastoreUpdate) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given UpdateClusterDatastoreRequestDatastorePermissions and assigns it to the Permissions field.
-func (o *ClusterDatastoreUpdate) SetPermissions(v UpdateClusterDatastoreRequestDatastorePermissions) {
+// SetPermissions gets a reference to the given ClusterDatastoreUpdatePermissions and assigns it to the Permissions field.
+func (o *ClusterDatastoreUpdate) SetPermissions(v ClusterDatastoreUpdatePermissions) {
 	o.Permissions = &v
 }
 
@@ -222,7 +222,6 @@ func (v NullableClusterDatastoreUpdate) UnmarshalMapstructure(data any) (any, er
 
 	return v, nil
 }
-
 func (o *ClusterDatastoreUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -735,7 +735,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerVolumesInner) Unmarsh
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerVolumesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

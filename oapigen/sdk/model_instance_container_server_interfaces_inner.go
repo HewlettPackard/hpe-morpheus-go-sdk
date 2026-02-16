@@ -20,22 +20,22 @@ var _ MappedNullable = &InstanceContainerServerInterfacesInner{}
 
 // InstanceContainerServerInterfacesInner struct for InstanceContainerServerInterfacesInner
 type InstanceContainerServerInterfacesInner struct {
-	Id                   *int64                                                     `json:"id,omitempty"`
-	Name                 *string                                                    `json:"name,omitempty"`
-	UniqueId             *string                                                    `json:"uniqueId,omitempty"`
-	PublicIpAddress      *string                                                    `json:"publicIpAddress,omitempty"`
-	IpAddress            *string                                                    `json:"ipAddress,omitempty"`
-	Dhcp                 *bool                                                      `json:"dhcp,omitempty"`
-	Active               *bool                                                      `json:"active,omitempty"`
-	PoolAssigned         *bool                                                      `json:"poolAssigned,omitempty"`
-	PrimaryInterface     *bool                                                      `json:"primaryInterface,omitempty"`
-	Network              NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"network,omitempty"`
-	NetworkGroup         NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"networkGroup,omitempty"`
-	NetworkPool          NullableListApprovals200ResponseAllOfApprovalsInnerAccount `json:"networkPool,omitempty"`
-	IpMode               *string                                                    `json:"ipMode,omitempty"`
-	MacAddress           *string                                                    `json:"macAddress,omitempty"`
-	Interfaces           []ListApprovals200ResponseAllOfApprovalsInnerAccount       `json:"interfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                                     `json:",remain"`
+	Id                   *int64                                              `json:"id,omitempty"`
+	Name                 *string                                             `json:"name,omitempty"`
+	UniqueId             *string                                             `json:"uniqueId,omitempty"`
+	PublicIpAddress      *string                                             `json:"publicIpAddress,omitempty"`
+	IpAddress            *string                                             `json:"ipAddress,omitempty"`
+	Dhcp                 *bool                                               `json:"dhcp,omitempty"`
+	Active               *bool                                               `json:"active,omitempty"`
+	PoolAssigned         *bool                                               `json:"poolAssigned,omitempty"`
+	PrimaryInterface     *bool                                               `json:"primaryInterface,omitempty"`
+	Network              *InstanceContainerServerInterfacesInnerNetwork      `json:"network,omitempty"`
+	NetworkGroup         *InstanceContainerServerInterfacesInnerNetworkGroup `json:"networkGroup,omitempty"`
+	NetworkPool          *InstanceContainerServerInterfacesInnerNetworkPool  `json:"networkPool,omitempty"`
+	IpMode               *string                                             `json:"ipMode,omitempty"`
+	MacAddress           *string                                             `json:"macAddress,omitempty"`
+	Interfaces           []InstanceContainerServerInstancesInnerInner        `json:"interfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                              `json:",remain"`
 }
 
 type _InstanceContainerServerInterfacesInner InstanceContainerServerInterfacesInner
@@ -345,133 +345,100 @@ func (o *InstanceContainerServerInterfacesInner) SetPrimaryInterface(v bool) {
 	o.PrimaryInterface = &v
 }
 
-// GetNetwork returns the Network field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceContainerServerInterfacesInner) GetNetwork() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Network.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetNetwork returns the Network field value if set, zero value otherwise.
+func (o *InstanceContainerServerInterfacesInner) GetNetwork() InstanceContainerServerInterfacesInnerNetwork {
+	if o == nil || IsNil(o.Network) {
+		var ret InstanceContainerServerInterfacesInnerNetwork
 		return ret
 	}
-	return *o.Network.Get()
+	return *o.Network
 }
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceContainerServerInterfacesInner) GetNetworkOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *InstanceContainerServerInterfacesInner) GetNetworkOk() (*InstanceContainerServerInterfacesInnerNetwork, bool) {
+	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
-	return o.Network.Get(), o.Network.IsSet()
+	return o.Network, true
 }
 
 // IsSetNetwork returns a boolean if a field has been set.
 func (o *InstanceContainerServerInterfacesInner) IsSetNetwork() bool {
-	if o != nil && o.Network.IsSet() {
+	if o != nil && !IsNil(o.Network) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetwork gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Network field.
-func (o *InstanceContainerServerInterfacesInner) SetNetwork(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Network.Set(&v)
+// SetNetwork gets a reference to the given InstanceContainerServerInterfacesInnerNetwork and assigns it to the Network field.
+func (o *InstanceContainerServerInterfacesInner) SetNetwork(v InstanceContainerServerInterfacesInnerNetwork) {
+	o.Network = &v
 }
 
-// SetNetworkNil sets the value for Network to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkNil() {
-	o.Network.Set(nil)
-}
-
-// UnsetNetwork ensures that no value is present for Network, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetwork() {
-	o.Network.Unset()
-}
-
-// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceContainerServerInterfacesInner) GetNetworkGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.NetworkGroup.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetNetworkGroup returns the NetworkGroup field value if set, zero value otherwise.
+func (o *InstanceContainerServerInterfacesInner) GetNetworkGroup() InstanceContainerServerInterfacesInnerNetworkGroup {
+	if o == nil || IsNil(o.NetworkGroup) {
+		var ret InstanceContainerServerInterfacesInnerNetworkGroup
 		return ret
 	}
-	return *o.NetworkGroup.Get()
+	return *o.NetworkGroup
 }
 
 // GetNetworkGroupOk returns a tuple with the NetworkGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceContainerServerInterfacesInner) GetNetworkGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *InstanceContainerServerInterfacesInner) GetNetworkGroupOk() (*InstanceContainerServerInterfacesInnerNetworkGroup, bool) {
+	if o == nil || IsNil(o.NetworkGroup) {
 		return nil, false
 	}
-	return o.NetworkGroup.Get(), o.NetworkGroup.IsSet()
+	return o.NetworkGroup, true
 }
 
 // IsSetNetworkGroup returns a boolean if a field has been set.
 func (o *InstanceContainerServerInterfacesInner) IsSetNetworkGroup() bool {
-	if o != nil && o.NetworkGroup.IsSet() {
+	if o != nil && !IsNil(o.NetworkGroup) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the NetworkGroup field.
-func (o *InstanceContainerServerInterfacesInner) SetNetworkGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.NetworkGroup.Set(&v)
+// SetNetworkGroup gets a reference to the given InstanceContainerServerInterfacesInnerNetworkGroup and assigns it to the NetworkGroup field.
+func (o *InstanceContainerServerInterfacesInner) SetNetworkGroup(v InstanceContainerServerInterfacesInnerNetworkGroup) {
+	o.NetworkGroup = &v
 }
 
-// SetNetworkGroupNil sets the value for NetworkGroup to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkGroupNil() {
-	o.NetworkGroup.Set(nil)
-}
-
-// UnsetNetworkGroup ensures that no value is present for NetworkGroup, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetworkGroup() {
-	o.NetworkGroup.Unset()
-}
-
-// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.NetworkPool.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetNetworkPool returns the NetworkPool field value if set, zero value otherwise.
+func (o *InstanceContainerServerInterfacesInner) GetNetworkPool() InstanceContainerServerInterfacesInnerNetworkPool {
+	if o == nil || IsNil(o.NetworkPool) {
+		var ret InstanceContainerServerInterfacesInnerNetworkPool
 		return ret
 	}
-	return *o.NetworkPool.Get()
+	return *o.NetworkPool
 }
 
 // GetNetworkPoolOk returns a tuple with the NetworkPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *InstanceContainerServerInterfacesInner) GetNetworkPoolOk() (*InstanceContainerServerInterfacesInnerNetworkPool, bool) {
+	if o == nil || IsNil(o.NetworkPool) {
 		return nil, false
 	}
-	return o.NetworkPool.Get(), o.NetworkPool.IsSet()
+	return o.NetworkPool, true
 }
 
 // IsSetNetworkPool returns a boolean if a field has been set.
 func (o *InstanceContainerServerInterfacesInner) IsSetNetworkPool() bool {
-	if o != nil && o.NetworkPool.IsSet() {
+	if o != nil && !IsNil(o.NetworkPool) {
 		return true
 	}
 
 	return false
 }
 
-// SetNetworkPool gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the NetworkPool field.
-func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.NetworkPool.Set(&v)
-}
-
-// SetNetworkPoolNil sets the value for NetworkPool to be an explicit nil
-func (o *InstanceContainerServerInterfacesInner) SetNetworkPoolNil() {
-	o.NetworkPool.Set(nil)
-}
-
-// UnsetNetworkPool ensures that no value is present for NetworkPool, not even an explicit nil
-func (o *InstanceContainerServerInterfacesInner) UnsetNetworkPool() {
-	o.NetworkPool.Unset()
+// SetNetworkPool gets a reference to the given InstanceContainerServerInterfacesInnerNetworkPool and assigns it to the NetworkPool field.
+func (o *InstanceContainerServerInterfacesInner) SetNetworkPool(v InstanceContainerServerInterfacesInnerNetworkPool) {
+	o.NetworkPool = &v
 }
 
 // GetIpMode returns the IpMode field value if set, zero value otherwise.
@@ -539,9 +506,9 @@ func (o *InstanceContainerServerInterfacesInner) SetMacAddress(v string) {
 }
 
 // GetInterfaces returns the Interfaces field value if set, zero value otherwise.
-func (o *InstanceContainerServerInterfacesInner) GetInterfaces() []ListApprovals200ResponseAllOfApprovalsInnerAccount {
+func (o *InstanceContainerServerInterfacesInner) GetInterfaces() []InstanceContainerServerInstancesInnerInner {
 	if o == nil || IsNil(o.Interfaces) {
-		var ret []ListApprovals200ResponseAllOfApprovalsInnerAccount
+		var ret []InstanceContainerServerInstancesInnerInner
 		return ret
 	}
 	return o.Interfaces
@@ -549,7 +516,7 @@ func (o *InstanceContainerServerInterfacesInner) GetInterfaces() []ListApprovals
 
 // GetInterfacesOk returns a tuple with the Interfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServerInterfacesInner) GetInterfacesOk() ([]ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
+func (o *InstanceContainerServerInterfacesInner) GetInterfacesOk() ([]InstanceContainerServerInstancesInnerInner, bool) {
 	if o == nil || IsNil(o.Interfaces) {
 		return nil, false
 	}
@@ -565,8 +532,8 @@ func (o *InstanceContainerServerInterfacesInner) IsSetInterfaces() bool {
 	return false
 }
 
-// SetInterfaces gets a reference to the given []ListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Interfaces field.
-func (o *InstanceContainerServerInterfacesInner) SetInterfaces(v []ListApprovals200ResponseAllOfApprovalsInnerAccount) {
+// SetInterfaces gets a reference to the given []InstanceContainerServerInstancesInnerInner and assigns it to the Interfaces field.
+func (o *InstanceContainerServerInterfacesInner) SetInterfaces(v []InstanceContainerServerInstancesInnerInner) {
 	o.Interfaces = v
 }
 
@@ -607,14 +574,14 @@ func (o InstanceContainerServerInterfacesInner) ToMap() (map[string]interface{},
 	if !IsNil(o.PrimaryInterface) {
 		toSerialize["primaryInterface"] = o.PrimaryInterface
 	}
-	if o.Network.IsSet() {
-		toSerialize["network"] = o.Network.Get()
+	if !IsNil(o.Network) {
+		toSerialize["network"] = o.Network
 	}
-	if o.NetworkGroup.IsSet() {
-		toSerialize["networkGroup"] = o.NetworkGroup.Get()
+	if !IsNil(o.NetworkGroup) {
+		toSerialize["networkGroup"] = o.NetworkGroup
 	}
-	if o.NetworkPool.IsSet() {
-		toSerialize["networkPool"] = o.NetworkPool.Get()
+	if !IsNil(o.NetworkPool) {
+		toSerialize["networkPool"] = o.NetworkPool
 	}
 	if !IsNil(o.IpMode) {
 		toSerialize["ipMode"] = o.IpMode
@@ -677,7 +644,6 @@ func (v NullableInstanceContainerServerInterfacesInner) UnmarshalMapstructure(da
 
 	return v, nil
 }
-
 func (o *InstanceContainerServerInterfacesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

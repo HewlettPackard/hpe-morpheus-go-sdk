@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **OptionSource** | Pointer to **NullableString** |  | [optional] 
 **OptionSourceType** | Pointer to **NullableString** |  | [optional] 
-**OptionList** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**OptionList** | Pointer to [**ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerOptionList**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerOptionList.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -742,20 +742,20 @@ HasOptionSourceType returns a boolean if a field has been set.
 UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) GetOptionList() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) GetOptionList() ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerOptionList`
 
 GetOptionList returns the OptionList field if non-nil, zero value otherwise.
 
 ### GetOptionListOk
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) GetOptionListOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) GetOptionListOk() (*ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerOptionList, bool)`
 
 GetOptionListOk returns a tuple with the OptionList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionList
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) SetOptionList(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) SetOptionList(v ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInnerOptionList)`
 
 SetOptionList sets OptionList field to given value.
 

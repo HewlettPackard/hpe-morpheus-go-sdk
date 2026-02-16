@@ -25,8 +25,8 @@ type UpdateVirtualImageRequestVirtualImage struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
-	ImageType       *string                                            `json:"imageType,omitempty"`
-	StorageProvider *AddVirtualImageRequestVirtualImageStorageProvider `json:"storageProvider,omitempty"`
+	ImageType       *string                                               `json:"imageType,omitempty"`
+	StorageProvider *UpdateVirtualImageRequestVirtualImageStorageProvider `json:"storageProvider,omitempty"`
 	// Cloud Init Enabled?
 	IsCloudInit *bool `json:"isCloudInit,omitempty"`
 	// Cloud-Init User Data, a bash script
@@ -62,9 +62,9 @@ type UpdateVirtualImageRequestVirtualImage struct {
 	IsSysprep *bool                                        `json:"isSysprep,omitempty"`
 	Config    *UpdateVirtualImageRequestVirtualImageConfig `json:"config,omitempty"`
 	// Metadata tags, Array of objects having a name and value, this adds or updates the specified tags and removes any tags not specified.
-	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
+	Tags []UpdateVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
 	// Add or update value of Metadata tags, Array of objects having a name and value.
-	AddTags []AddVirtualImageRequestVirtualImageTagsInner `json:"addTags,omitempty"`
+	AddTags []UpdateVirtualImageRequestVirtualImageAddTagsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
 	RemoveTags           []UpdateVirtualImageRequestVirtualImageRemoveTagsInner `json:"removeTags,omitempty"`
 	MinRamGB             NullableInt64                                          `json:"minRamGB,omitempty"`
@@ -226,9 +226,9 @@ func (o *UpdateVirtualImageRequestVirtualImage) SetImageType(v string) {
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProvider() AddVirtualImageRequestVirtualImageStorageProvider {
+func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProvider() UpdateVirtualImageRequestVirtualImageStorageProvider {
 	if o == nil || IsNil(o.StorageProvider) {
-		var ret AddVirtualImageRequestVirtualImageStorageProvider
+		var ret UpdateVirtualImageRequestVirtualImageStorageProvider
 		return ret
 	}
 	return *o.StorageProvider
@@ -236,7 +236,7 @@ func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProvider() AddVirtualI
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProviderOk() (*AddVirtualImageRequestVirtualImageStorageProvider, bool) {
+func (o *UpdateVirtualImageRequestVirtualImage) GetStorageProviderOk() (*UpdateVirtualImageRequestVirtualImageStorageProvider, bool) {
 	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
@@ -252,8 +252,8 @@ func (o *UpdateVirtualImageRequestVirtualImage) IsSetStorageProvider() bool {
 	return false
 }
 
-// SetStorageProvider gets a reference to the given AddVirtualImageRequestVirtualImageStorageProvider and assigns it to the StorageProvider field.
-func (o *UpdateVirtualImageRequestVirtualImage) SetStorageProvider(v AddVirtualImageRequestVirtualImageStorageProvider) {
+// SetStorageProvider gets a reference to the given UpdateVirtualImageRequestVirtualImageStorageProvider and assigns it to the StorageProvider field.
+func (o *UpdateVirtualImageRequestVirtualImage) SetStorageProvider(v UpdateVirtualImageRequestVirtualImageStorageProvider) {
 	o.StorageProvider = &v
 }
 
@@ -889,9 +889,9 @@ func (o *UpdateVirtualImageRequestVirtualImage) SetConfig(v UpdateVirtualImageRe
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *UpdateVirtualImageRequestVirtualImage) GetTags() []AddVirtualImageRequestVirtualImageTagsInner {
+func (o *UpdateVirtualImageRequestVirtualImage) GetTags() []UpdateVirtualImageRequestVirtualImageTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddVirtualImageRequestVirtualImageTagsInner
+		var ret []UpdateVirtualImageRequestVirtualImageTagsInner
 		return ret
 	}
 	return o.Tags
@@ -899,7 +899,7 @@ func (o *UpdateVirtualImageRequestVirtualImage) GetTags() []AddVirtualImageReque
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImage) GetTagsOk() ([]AddVirtualImageRequestVirtualImageTagsInner, bool) {
+func (o *UpdateVirtualImageRequestVirtualImage) GetTagsOk() ([]UpdateVirtualImageRequestVirtualImageTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -915,15 +915,15 @@ func (o *UpdateVirtualImageRequestVirtualImage) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddVirtualImageRequestVirtualImageTagsInner and assigns it to the Tags field.
-func (o *UpdateVirtualImageRequestVirtualImage) SetTags(v []AddVirtualImageRequestVirtualImageTagsInner) {
+// SetTags gets a reference to the given []UpdateVirtualImageRequestVirtualImageTagsInner and assigns it to the Tags field.
+func (o *UpdateVirtualImageRequestVirtualImage) SetTags(v []UpdateVirtualImageRequestVirtualImageTagsInner) {
 	o.Tags = v
 }
 
 // GetAddTags returns the AddTags field value if set, zero value otherwise.
-func (o *UpdateVirtualImageRequestVirtualImage) GetAddTags() []AddVirtualImageRequestVirtualImageTagsInner {
+func (o *UpdateVirtualImageRequestVirtualImage) GetAddTags() []UpdateVirtualImageRequestVirtualImageAddTagsInner {
 	if o == nil || IsNil(o.AddTags) {
-		var ret []AddVirtualImageRequestVirtualImageTagsInner
+		var ret []UpdateVirtualImageRequestVirtualImageAddTagsInner
 		return ret
 	}
 	return o.AddTags
@@ -931,7 +931,7 @@ func (o *UpdateVirtualImageRequestVirtualImage) GetAddTags() []AddVirtualImageRe
 
 // GetAddTagsOk returns a tuple with the AddTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateVirtualImageRequestVirtualImage) GetAddTagsOk() ([]AddVirtualImageRequestVirtualImageTagsInner, bool) {
+func (o *UpdateVirtualImageRequestVirtualImage) GetAddTagsOk() ([]UpdateVirtualImageRequestVirtualImageAddTagsInner, bool) {
 	if o == nil || IsNil(o.AddTags) {
 		return nil, false
 	}
@@ -947,8 +947,8 @@ func (o *UpdateVirtualImageRequestVirtualImage) IsSetAddTags() bool {
 	return false
 }
 
-// SetAddTags gets a reference to the given []AddVirtualImageRequestVirtualImageTagsInner and assigns it to the AddTags field.
-func (o *UpdateVirtualImageRequestVirtualImage) SetAddTags(v []AddVirtualImageRequestVirtualImageTagsInner) {
+// SetAddTags gets a reference to the given []UpdateVirtualImageRequestVirtualImageAddTagsInner and assigns it to the AddTags field.
+func (o *UpdateVirtualImageRequestVirtualImage) SetAddTags(v []UpdateVirtualImageRequestVirtualImageAddTagsInner) {
 	o.AddTags = v
 }
 
@@ -1259,7 +1259,6 @@ func (v NullableUpdateVirtualImageRequestVirtualImage) UnmarshalMapstructure(dat
 
 	return v, nil
 }
-
 func (o *UpdateVirtualImageRequestVirtualImage) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

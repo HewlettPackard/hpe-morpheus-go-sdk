@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **InternalId** | Pointer to **NullableString** |  | [optional] 
 **HostName** | Pointer to **string** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**InstanceContainerInstance**](InstanceContainerInstance.md) |  | [optional] 
-**Owner** | Pointer to [**InstanceContainerServerOwner**](InstanceContainerServerOwner.md) |  | [optional] 
-**Zone** | Pointer to [**InstanceContainerInstance**](InstanceContainerInstance.md) |  | [optional] 
-**Plan** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
-**ComputeServerType** | Pointer to [**InstanceContainerServerComputeServerType**](InstanceContainerServerComputeServerType.md) |  | [optional] 
+**Account** | Pointer to [**InstanceContainerServer1Account**](InstanceContainerServer1Account.md) |  | [optional] 
+**Owner** | Pointer to [**InstanceContainerServer1Owner**](InstanceContainerServer1Owner.md) |  | [optional] 
+**Zone** | Pointer to [**InstanceContainerServer1Zone**](InstanceContainerServer1Zone.md) |  | [optional] 
+**Plan** | Pointer to [**InstanceContainerServer1Plan**](InstanceContainerServer1Plan.md) |  | [optional] 
+**ComputeServerType** | Pointer to [**InstanceContainerServer1ComputeServerType**](InstanceContainerServer1ComputeServerType.md) |  | [optional] 
 **Visibility** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **ZoneId** | Pointer to **int64** |  | [optional] 
@@ -31,14 +31,14 @@ Name | Type | Description | Notes
 **StatusDate** | Pointer to **time.Time** |  | [optional] 
 **StatusPercent** | Pointer to **NullableInt64** |  | [optional] 
 **StatusEta** | Pointer to **NullableInt64** |  | [optional] 
-**PowerState** | Pointer to [**InstanceContainerServerPowerState**](InstanceContainerServerPowerState.md) |  | [optional] 
+**PowerState** | Pointer to [**InstanceContainerServer1PowerState**](InstanceContainerServer1PowerState.md) |  | [optional] 
 **AgentInstalled** | Pointer to **bool** |  | [optional] 
 **LastAgentUpdate** | Pointer to **NullableTime** |  | [optional] 
 **MaxCores** | Pointer to **int64** |  | [optional] 
 **MaxMemory** | Pointer to **int64** |  | [optional] 
 **MaxStorage** | Pointer to **int64** |  | [optional] 
-**SourceImage** | Pointer to [**InstanceContainerContainerType**](InstanceContainerContainerType.md) |  | [optional] 
-**ServerOs** | Pointer to [**InstanceContainerServerServerOs**](InstanceContainerServerServerOs.md) |  | [optional] 
+**SourceImage** | Pointer to [**InstanceContainerServer1SourceImage**](InstanceContainerServer1SourceImage.md) |  | [optional] 
+**ServerOs** | Pointer to [**InstanceContainerServer1ServerOs**](InstanceContainerServer1ServerOs.md) |  | [optional] 
 **Volumes** | Pointer to [**[]InstanceContainerServerVolume1**](InstanceContainerServerVolume1.md) |  | [optional] 
 **Interfaces** | Pointer to [**[]InstanceContainerServerInterfacesInner1**](InstanceContainerServerInterfacesInner1.md) |  | [optional] 
 
@@ -233,20 +233,20 @@ HasAccountId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *InstanceContainerServer1) GetAccount() InstanceContainerInstance`
+`func (o *InstanceContainerServer1) GetAccount() InstanceContainerServer1Account`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *InstanceContainerServer1) GetAccountOk() (*InstanceContainerInstance, bool)`
+`func (o *InstanceContainerServer1) GetAccountOk() (*InstanceContainerServer1Account, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *InstanceContainerServer1) SetAccount(v InstanceContainerInstance)`
+`func (o *InstanceContainerServer1) SetAccount(v InstanceContainerServer1Account)`
 
 SetAccount sets Account field to given value.
 
@@ -258,20 +258,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *InstanceContainerServer1) GetOwner() InstanceContainerServerOwner`
+`func (o *InstanceContainerServer1) GetOwner() InstanceContainerServer1Owner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *InstanceContainerServer1) GetOwnerOk() (*InstanceContainerServerOwner, bool)`
+`func (o *InstanceContainerServer1) GetOwnerOk() (*InstanceContainerServer1Owner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *InstanceContainerServer1) SetOwner(v InstanceContainerServerOwner)`
+`func (o *InstanceContainerServer1) SetOwner(v InstanceContainerServer1Owner)`
 
 SetOwner sets Owner field to given value.
 
@@ -283,20 +283,20 @@ HasOwner returns a boolean if a field has been set.
 
 ### GetZone
 
-`func (o *InstanceContainerServer1) GetZone() InstanceContainerInstance`
+`func (o *InstanceContainerServer1) GetZone() InstanceContainerServer1Zone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *InstanceContainerServer1) GetZoneOk() (*InstanceContainerInstance, bool)`
+`func (o *InstanceContainerServer1) GetZoneOk() (*InstanceContainerServer1Zone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *InstanceContainerServer1) SetZone(v InstanceContainerInstance)`
+`func (o *InstanceContainerServer1) SetZone(v InstanceContainerServer1Zone)`
 
 SetZone sets Zone field to given value.
 
@@ -308,20 +308,20 @@ HasZone returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *InstanceContainerServer1) GetPlan() InstanceContainerContainerType`
+`func (o *InstanceContainerServer1) GetPlan() InstanceContainerServer1Plan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *InstanceContainerServer1) GetPlanOk() (*InstanceContainerContainerType, bool)`
+`func (o *InstanceContainerServer1) GetPlanOk() (*InstanceContainerServer1Plan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *InstanceContainerServer1) SetPlan(v InstanceContainerContainerType)`
+`func (o *InstanceContainerServer1) SetPlan(v InstanceContainerServer1Plan)`
 
 SetPlan sets Plan field to given value.
 
@@ -333,20 +333,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetComputeServerType
 
-`func (o *InstanceContainerServer1) GetComputeServerType() InstanceContainerServerComputeServerType`
+`func (o *InstanceContainerServer1) GetComputeServerType() InstanceContainerServer1ComputeServerType`
 
 GetComputeServerType returns the ComputeServerType field if non-nil, zero value otherwise.
 
 ### GetComputeServerTypeOk
 
-`func (o *InstanceContainerServer1) GetComputeServerTypeOk() (*InstanceContainerServerComputeServerType, bool)`
+`func (o *InstanceContainerServer1) GetComputeServerTypeOk() (*InstanceContainerServer1ComputeServerType, bool)`
 
 GetComputeServerTypeOk returns a tuple with the ComputeServerType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetComputeServerType
 
-`func (o *InstanceContainerServer1) SetComputeServerType(v InstanceContainerServerComputeServerType)`
+`func (o *InstanceContainerServer1) SetComputeServerType(v InstanceContainerServer1ComputeServerType)`
 
 SetComputeServerType sets ComputeServerType field to given value.
 
@@ -838,20 +838,20 @@ HasStatusEta returns a boolean if a field has been set.
 UnsetStatusEta ensures that no value is present for StatusEta, not even an explicit nil
 ### GetPowerState
 
-`func (o *InstanceContainerServer1) GetPowerState() InstanceContainerServerPowerState`
+`func (o *InstanceContainerServer1) GetPowerState() InstanceContainerServer1PowerState`
 
 GetPowerState returns the PowerState field if non-nil, zero value otherwise.
 
 ### GetPowerStateOk
 
-`func (o *InstanceContainerServer1) GetPowerStateOk() (*InstanceContainerServerPowerState, bool)`
+`func (o *InstanceContainerServer1) GetPowerStateOk() (*InstanceContainerServer1PowerState, bool)`
 
 GetPowerStateOk returns a tuple with the PowerState field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerState
 
-`func (o *InstanceContainerServer1) SetPowerState(v InstanceContainerServerPowerState)`
+`func (o *InstanceContainerServer1) SetPowerState(v InstanceContainerServer1PowerState)`
 
 SetPowerState sets PowerState field to given value.
 
@@ -998,20 +998,20 @@ HasMaxStorage returns a boolean if a field has been set.
 
 ### GetSourceImage
 
-`func (o *InstanceContainerServer1) GetSourceImage() InstanceContainerContainerType`
+`func (o *InstanceContainerServer1) GetSourceImage() InstanceContainerServer1SourceImage`
 
 GetSourceImage returns the SourceImage field if non-nil, zero value otherwise.
 
 ### GetSourceImageOk
 
-`func (o *InstanceContainerServer1) GetSourceImageOk() (*InstanceContainerContainerType, bool)`
+`func (o *InstanceContainerServer1) GetSourceImageOk() (*InstanceContainerServer1SourceImage, bool)`
 
 GetSourceImageOk returns a tuple with the SourceImage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceImage
 
-`func (o *InstanceContainerServer1) SetSourceImage(v InstanceContainerContainerType)`
+`func (o *InstanceContainerServer1) SetSourceImage(v InstanceContainerServer1SourceImage)`
 
 SetSourceImage sets SourceImage field to given value.
 
@@ -1023,20 +1023,20 @@ HasSourceImage returns a boolean if a field has been set.
 
 ### GetServerOs
 
-`func (o *InstanceContainerServer1) GetServerOs() InstanceContainerServerServerOs`
+`func (o *InstanceContainerServer1) GetServerOs() InstanceContainerServer1ServerOs`
 
 GetServerOs returns the ServerOs field if non-nil, zero value otherwise.
 
 ### GetServerOsOk
 
-`func (o *InstanceContainerServer1) GetServerOsOk() (*InstanceContainerServerServerOs, bool)`
+`func (o *InstanceContainerServer1) GetServerOsOk() (*InstanceContainerServer1ServerOs, bool)`
 
 GetServerOsOk returns a tuple with the ServerOs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerOs
 
-`func (o *InstanceContainerServer1) SetServerOs(v InstanceContainerServerServerOs)`
+`func (o *InstanceContainerServer1) SetServerOs(v InstanceContainerServer1ServerOs)`
 
 SetServerOs sets ServerOs field to given value.
 

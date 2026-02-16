@@ -215,7 +215,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOp
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

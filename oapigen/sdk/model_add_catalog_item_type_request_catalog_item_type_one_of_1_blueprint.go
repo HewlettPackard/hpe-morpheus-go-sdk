@@ -176,7 +176,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) Unmarsh
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

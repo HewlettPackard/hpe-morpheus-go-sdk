@@ -26,7 +26,7 @@ type ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner struct {
 	Name                 *string                                                               `json:"name,omitempty"`
 	Labels               []string                                                              `json:"labels,omitempty"`
 	Code                 *string                                                               `json:"code,omitempty"`
-	Type                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule           `json:"type,omitempty"`
+	Type                 *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType `json:"type,omitempty"`
 	ExternalId           NullableString                                                        `json:"externalId,omitempty"`
 	ExternalType         NullableString                                                        `json:"externalType,omitempty"`
 	DeploymentId         NullableString                                                        `json:"deploymentId,omitempty"`
@@ -232,9 +232,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetCo
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetType() ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType
 		return ret
 	}
 	return *o.Type
@@ -242,7 +242,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetTy
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) GetTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -258,8 +258,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) IsSet
 	return false
 }
 
-// SetType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Type field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType and assigns it to the Type field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) SetType(v ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInnerType) {
 	o.Type = &v
 }
 
@@ -759,7 +759,6 @@ func (v NullableListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner
 
 	return v, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

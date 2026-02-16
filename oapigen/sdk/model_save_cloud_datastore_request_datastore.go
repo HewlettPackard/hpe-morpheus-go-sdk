@@ -22,15 +22,15 @@ var _ MappedNullable = &SaveCloudDatastoreRequestDatastore{}
 type SaveCloudDatastoreRequestDatastore struct {
 	Name *string `json:"name,omitempty"`
 	// The code of the datatoreType
-	DatastoreType        *string                                                          `json:"datastoreType,omitempty"`
-	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
-	Visibility           *string                                                          `json:"visibility,omitempty"`
-	Active               *bool                                                            `json:"active,omitempty"`
-	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions           `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	DatastoreType        *string                                                `json:"datastoreType,omitempty"`
+	StorageServer        *SaveCloudDatastoreRequestDatastoreStorageServer       `json:"storageServer,omitempty"`
+	Visibility           *string                                                `json:"visibility,omitempty"`
+	Active               *bool                                                  `json:"active,omitempty"`
+	DefaultStore         *bool                                                  `json:"defaultStore,omitempty"`
+	Tenants              []SaveCloudDatastoreRequestDatastoreTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveCloudDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                               `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _SaveCloudDatastoreRequestDatastore SaveCloudDatastoreRequestDatastore
@@ -117,9 +117,9 @@ func (o *SaveCloudDatastoreRequestDatastore) SetDatastoreType(v string) {
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastoreRequestDatastore) GetStorageServer() SaveCloudDatastoreRequestDatastoreStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastoreRequestDatastoreStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -127,7 +127,7 @@ func (o *SaveCloudDatastoreRequestDatastore) GetStorageServer() GetAlerts200Resp
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastoreRequestDatastore) GetStorageServerOk() (*SaveCloudDatastoreRequestDatastoreStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *SaveCloudDatastoreRequestDatastore) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *SaveCloudDatastoreRequestDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given SaveCloudDatastoreRequestDatastoreStorageServer and assigns it to the StorageServer field.
+func (o *SaveCloudDatastoreRequestDatastore) SetStorageServer(v SaveCloudDatastoreRequestDatastoreStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -245,9 +245,9 @@ func (o *SaveCloudDatastoreRequestDatastore) SetDefaultStore(v bool) {
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *SaveCloudDatastoreRequestDatastore) GetTenants() []SaveCloudDatastoreRequestDatastoreTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []SaveCloudDatastoreRequestDatastoreTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -255,7 +255,7 @@ func (o *SaveCloudDatastoreRequestDatastore) GetTenants() []ListCloudDatastores2
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastore) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *SaveCloudDatastoreRequestDatastore) GetTenantsOk() ([]SaveCloudDatastoreRequestDatastoreTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *SaveCloudDatastoreRequestDatastore) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *SaveCloudDatastoreRequestDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []SaveCloudDatastoreRequestDatastoreTenantsInner and assigns it to the Tenants field.
+func (o *SaveCloudDatastoreRequestDatastore) SetTenants(v []SaveCloudDatastoreRequestDatastoreTenantsInner) {
 	o.Tenants = v
 }
 
@@ -429,7 +429,6 @@ func (v NullableSaveCloudDatastoreRequestDatastore) UnmarshalMapstructure(data a
 
 	return v, nil
 }
-
 func (o *SaveCloudDatastoreRequestDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

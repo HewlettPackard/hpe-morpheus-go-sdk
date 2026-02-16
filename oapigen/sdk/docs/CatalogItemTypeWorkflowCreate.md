@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Can be used to enable / disable the catalog item type. | [optional] [default to true]
 **Featured** | Pointer to **bool** | Can be used to feature the catalog item type. | [optional] [default to false]
 **AllowQuantity** | Pointer to **bool** | Can users order more than one of this item at a time. | [optional] [default to false]
-**Workflow** | [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | 
+**Workflow** | [**CatalogItemTypeWorkflowCreateWorkflow**](CatalogItemTypeWorkflowCreateWorkflow.md) |  | 
 **Context** | Pointer to **string** | Context for running the workflow, determines if a target resource must be selected. | [optional] 
 **WorkflowConfig** | Pointer to **string** | Configuration object that contains settings for the workflow. | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfForm**](AddCatalogItemTypeRequestCatalogItemTypeOneOfForm.md) |  | [optional] 
+**Form** | Pointer to [**CatalogItemTypeWorkflowCreateForm**](CatalogItemTypeWorkflowCreateForm.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 **Content** | Pointer to **string** | Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information. | [optional] 
 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewCatalogItemTypeWorkflowCreate
 
-`func NewCatalogItemTypeWorkflowCreate(workflow GetAlerts200ResponseAllOfChecksInnerAccount, ) *CatalogItemTypeWorkflowCreate`
+`func NewCatalogItemTypeWorkflowCreate(workflow CatalogItemTypeWorkflowCreateWorkflow, ) *CatalogItemTypeWorkflowCreate`
 
 NewCatalogItemTypeWorkflowCreate instantiates a new CatalogItemTypeWorkflowCreate object
 This constructor will assign default values to properties that have it defined,
@@ -385,20 +385,20 @@ HasAllowQuantity returns a boolean if a field has been set.
 
 ### GetWorkflow
 
-`func (o *CatalogItemTypeWorkflowCreate) GetWorkflow() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *CatalogItemTypeWorkflowCreate) GetWorkflow() CatalogItemTypeWorkflowCreateWorkflow`
 
 GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
 
 ### GetWorkflowOk
 
-`func (o *CatalogItemTypeWorkflowCreate) GetWorkflowOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *CatalogItemTypeWorkflowCreate) GetWorkflowOk() (*CatalogItemTypeWorkflowCreateWorkflow, bool)`
 
 GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkflow
 
-`func (o *CatalogItemTypeWorkflowCreate) SetWorkflow(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *CatalogItemTypeWorkflowCreate) SetWorkflow(v CatalogItemTypeWorkflowCreateWorkflow)`
 
 SetWorkflow sets Workflow field to given value.
 
@@ -480,20 +480,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *CatalogItemTypeWorkflowCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm`
+`func (o *CatalogItemTypeWorkflowCreate) GetForm() CatalogItemTypeWorkflowCreateForm`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *CatalogItemTypeWorkflowCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool)`
+`func (o *CatalogItemTypeWorkflowCreate) GetFormOk() (*CatalogItemTypeWorkflowCreateForm, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *CatalogItemTypeWorkflowCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm)`
+`func (o *CatalogItemTypeWorkflowCreate) SetForm(v CatalogItemTypeWorkflowCreateForm)`
 
 SetForm sets Form field to given value.
 

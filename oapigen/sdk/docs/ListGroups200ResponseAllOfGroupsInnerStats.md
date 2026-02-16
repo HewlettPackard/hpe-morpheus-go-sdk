@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstanceCounts** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts**](ListGroups200ResponseAllOfGroupsInnerStatsInstanceCounts.md) |  | [optional] 
-**ServerCounts** | Pointer to [**ListClouds200ResponseAllOfZonesInnerStatsServerCounts**](ListClouds200ResponseAllOfZonesInnerStatsServerCounts.md) |  | [optional] 
+**ServerCounts** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStatsServerCounts**](ListGroups200ResponseAllOfGroupsInnerStatsServerCounts.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasInstanceCounts returns a boolean if a field has been set.
 
 ### GetServerCounts
 
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListClouds200ResponseAllOfZonesInnerStatsServerCounts`
+`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCounts() ListGroups200ResponseAllOfGroupsInnerStatsServerCounts`
 
 GetServerCounts returns the ServerCounts field if non-nil, zero value otherwise.
 
 ### GetServerCountsOk
 
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCountsOk() (*ListClouds200ResponseAllOfZonesInnerStatsServerCounts, bool)`
+`func (o *ListGroups200ResponseAllOfGroupsInnerStats) GetServerCountsOk() (*ListGroups200ResponseAllOfGroupsInnerStatsServerCounts, bool)`
 
 GetServerCountsOk returns a tuple with the ServerCounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServerCounts
 
-`func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetServerCounts(v ListClouds200ResponseAllOfZonesInnerStatsServerCounts)`
+`func (o *ListGroups200ResponseAllOfGroupsInnerStats) SetServerCounts(v ListGroups200ResponseAllOfGroupsInnerStatsServerCounts)`
 
 SetServerCounts sets ServerCounts field to given value.
 

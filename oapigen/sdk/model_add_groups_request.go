@@ -131,7 +131,6 @@ func (v NullableAddGroupsRequest) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *AddGroupsRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

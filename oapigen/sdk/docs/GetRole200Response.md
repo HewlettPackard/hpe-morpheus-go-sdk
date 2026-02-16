@@ -4,28 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Role** | Pointer to [**AddRoles200ResponseAllOfRole**](AddRoles200ResponseAllOfRole.md) |  | [optional] 
-**FeaturePermissions** | Pointer to [**[]AddRoles200ResponseAllOfFeaturePermissionsInner**](AddRoles200ResponseAllOfFeaturePermissionsInner.md) |  | [optional] 
+**Role** | Pointer to [**GetRole200ResponseRole**](GetRole200ResponseRole.md) |  | [optional] 
+**FeaturePermissions** | Pointer to [**[]GetRole200ResponseFeaturePermissionsInner**](GetRole200ResponseFeaturePermissionsInner.md) |  | [optional] 
 **GlobalSiteAccess** | Pointer to **string** |  | [optional] 
-**Sites** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
+**Sites** | Pointer to [**[]GetRole200ResponseSitesInner**](GetRole200ResponseSitesInner.md) |  | [optional] 
 **GlobalZoneAccess** | Pointer to **string** |  | [optional] 
-**Zones** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
+**Zones** | Pointer to [**[]GetRole200ResponseZonesInner**](GetRole200ResponseZonesInner.md) |  | [optional] 
 **GlobalInstanceTypeAccess** | Pointer to **string** |  | [optional] 
-**InstanceTypePermissions** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
+**InstanceTypePermissions** | Pointer to [**[]GetRole200ResponseInstanceTypePermissionsInner**](GetRole200ResponseInstanceTypePermissionsInner.md) |  | [optional] 
 **GlobalAppTemplateAccess** | Pointer to **string** |  | [optional] 
-**AppTemplatePermissions** | Pointer to [**[]AddRoles200ResponseAllOfAppTemplatePermissionsInner**](AddRoles200ResponseAllOfAppTemplatePermissionsInner.md) |  | [optional] 
+**AppTemplatePermissions** | Pointer to [**[]GetRole200ResponseAppTemplatePermissionsInner**](GetRole200ResponseAppTemplatePermissionsInner.md) |  | [optional] 
 **GlobalCatalogItemTypeAccess** | Pointer to **string** |  | [optional] 
-**CatalogItemTypePermissions** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
+**CatalogItemTypePermissions** | Pointer to [**[]GetRole200ResponseCatalogItemTypePermissionsInner**](GetRole200ResponseCatalogItemTypePermissionsInner.md) |  | [optional] 
 **GlobalPersonaAccess** | Pointer to **string** |  | [optional] 
-**PersonaPermissions** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
+**PersonaPermissions** | Pointer to [**[]GetRole200ResponsePersonaPermissionsInner**](GetRole200ResponsePersonaPermissionsInner.md) |  | [optional] 
 **GlobalVdiPoolAccess** | Pointer to **string** |  | [optional] 
-**VdiPoolPermissions** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
+**VdiPoolPermissions** | Pointer to [**[]GetRole200ResponseVdiPoolPermissionsInner**](GetRole200ResponseVdiPoolPermissionsInner.md) |  | [optional] 
 **GlobalReportTypeAccess** | Pointer to **string** |  | [optional] 
-**ReportTypePermissions** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
+**ReportTypePermissions** | Pointer to [**[]GetRole200ResponseReportTypePermissionsInner**](GetRole200ResponseReportTypePermissionsInner.md) |  | [optional] 
 **GlobalTaskAccess** | Pointer to **string** |  | [optional] 
-**TaskPermissions** | Pointer to [**[]AddRoles200ResponseAllOfAppTemplatePermissionsInner**](AddRoles200ResponseAllOfAppTemplatePermissionsInner.md) |  | [optional] 
+**TaskPermissions** | Pointer to [**[]GetRole200ResponseTaskPermissionsInner**](GetRole200ResponseTaskPermissionsInner.md) |  | [optional] 
 **GlobalTaskSetAccess** | Pointer to **string** |  | [optional] 
-**TaskSetPermissions** | Pointer to [**[]AddRoles200ResponseAllOfAppTemplatePermissionsInner**](AddRoles200ResponseAllOfAppTemplatePermissionsInner.md) |  | [optional] 
+**TaskSetPermissions** | Pointer to [**[]GetRole200ResponseTaskSetPermissionsInner**](GetRole200ResponseTaskSetPermissionsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRole
 
-`func (o *GetRole200Response) GetRole() AddRoles200ResponseAllOfRole`
+`func (o *GetRole200Response) GetRole() GetRole200ResponseRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *GetRole200Response) GetRoleOk() (*AddRoles200ResponseAllOfRole, bool)`
+`func (o *GetRole200Response) GetRoleOk() (*GetRole200ResponseRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *GetRole200Response) SetRole(v AddRoles200ResponseAllOfRole)`
+`func (o *GetRole200Response) SetRole(v GetRole200ResponseRole)`
 
 SetRole sets Role field to given value.
 
@@ -73,20 +73,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetFeaturePermissions
 
-`func (o *GetRole200Response) GetFeaturePermissions() []AddRoles200ResponseAllOfFeaturePermissionsInner`
+`func (o *GetRole200Response) GetFeaturePermissions() []GetRole200ResponseFeaturePermissionsInner`
 
 GetFeaturePermissions returns the FeaturePermissions field if non-nil, zero value otherwise.
 
 ### GetFeaturePermissionsOk
 
-`func (o *GetRole200Response) GetFeaturePermissionsOk() (*[]AddRoles200ResponseAllOfFeaturePermissionsInner, bool)`
+`func (o *GetRole200Response) GetFeaturePermissionsOk() (*[]GetRole200ResponseFeaturePermissionsInner, bool)`
 
 GetFeaturePermissionsOk returns a tuple with the FeaturePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFeaturePermissions
 
-`func (o *GetRole200Response) SetFeaturePermissions(v []AddRoles200ResponseAllOfFeaturePermissionsInner)`
+`func (o *GetRole200Response) SetFeaturePermissions(v []GetRole200ResponseFeaturePermissionsInner)`
 
 SetFeaturePermissions sets FeaturePermissions field to given value.
 
@@ -123,20 +123,20 @@ HasGlobalSiteAccess returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *GetRole200Response) GetSites() []AddRoles200ResponseAllOfSitesInner`
+`func (o *GetRole200Response) GetSites() []GetRole200ResponseSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *GetRole200Response) GetSitesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *GetRole200Response) GetSitesOk() (*[]GetRole200ResponseSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *GetRole200Response) SetSites(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *GetRole200Response) SetSites(v []GetRole200ResponseSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -173,20 +173,20 @@ HasGlobalZoneAccess returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *GetRole200Response) GetZones() []AddRoles200ResponseAllOfSitesInner`
+`func (o *GetRole200Response) GetZones() []GetRole200ResponseZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *GetRole200Response) GetZonesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *GetRole200Response) GetZonesOk() (*[]GetRole200ResponseZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *GetRole200Response) SetZones(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *GetRole200Response) SetZones(v []GetRole200ResponseZonesInner)`
 
 SetZones sets Zones field to given value.
 
@@ -223,20 +223,20 @@ HasGlobalInstanceTypeAccess returns a boolean if a field has been set.
 
 ### GetInstanceTypePermissions
 
-`func (o *GetRole200Response) GetInstanceTypePermissions() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *GetRole200Response) GetInstanceTypePermissions() []GetRole200ResponseInstanceTypePermissionsInner`
 
 GetInstanceTypePermissions returns the InstanceTypePermissions field if non-nil, zero value otherwise.
 
 ### GetInstanceTypePermissionsOk
 
-`func (o *GetRole200Response) GetInstanceTypePermissionsOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *GetRole200Response) GetInstanceTypePermissionsOk() (*[]GetRole200ResponseInstanceTypePermissionsInner, bool)`
 
 GetInstanceTypePermissionsOk returns a tuple with the InstanceTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypePermissions
 
-`func (o *GetRole200Response) SetInstanceTypePermissions(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *GetRole200Response) SetInstanceTypePermissions(v []GetRole200ResponseInstanceTypePermissionsInner)`
 
 SetInstanceTypePermissions sets InstanceTypePermissions field to given value.
 
@@ -273,20 +273,20 @@ HasGlobalAppTemplateAccess returns a boolean if a field has been set.
 
 ### GetAppTemplatePermissions
 
-`func (o *GetRole200Response) GetAppTemplatePermissions() []AddRoles200ResponseAllOfAppTemplatePermissionsInner`
+`func (o *GetRole200Response) GetAppTemplatePermissions() []GetRole200ResponseAppTemplatePermissionsInner`
 
 GetAppTemplatePermissions returns the AppTemplatePermissions field if non-nil, zero value otherwise.
 
 ### GetAppTemplatePermissionsOk
 
-`func (o *GetRole200Response) GetAppTemplatePermissionsOk() (*[]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool)`
+`func (o *GetRole200Response) GetAppTemplatePermissionsOk() (*[]GetRole200ResponseAppTemplatePermissionsInner, bool)`
 
 GetAppTemplatePermissionsOk returns a tuple with the AppTemplatePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppTemplatePermissions
 
-`func (o *GetRole200Response) SetAppTemplatePermissions(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner)`
+`func (o *GetRole200Response) SetAppTemplatePermissions(v []GetRole200ResponseAppTemplatePermissionsInner)`
 
 SetAppTemplatePermissions sets AppTemplatePermissions field to given value.
 
@@ -323,20 +323,20 @@ HasGlobalCatalogItemTypeAccess returns a boolean if a field has been set.
 
 ### GetCatalogItemTypePermissions
 
-`func (o *GetRole200Response) GetCatalogItemTypePermissions() []AddRoles200ResponseAllOfSitesInner`
+`func (o *GetRole200Response) GetCatalogItemTypePermissions() []GetRole200ResponseCatalogItemTypePermissionsInner`
 
 GetCatalogItemTypePermissions returns the CatalogItemTypePermissions field if non-nil, zero value otherwise.
 
 ### GetCatalogItemTypePermissionsOk
 
-`func (o *GetRole200Response) GetCatalogItemTypePermissionsOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *GetRole200Response) GetCatalogItemTypePermissionsOk() (*[]GetRole200ResponseCatalogItemTypePermissionsInner, bool)`
 
 GetCatalogItemTypePermissionsOk returns a tuple with the CatalogItemTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalogItemTypePermissions
 
-`func (o *GetRole200Response) SetCatalogItemTypePermissions(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *GetRole200Response) SetCatalogItemTypePermissions(v []GetRole200ResponseCatalogItemTypePermissionsInner)`
 
 SetCatalogItemTypePermissions sets CatalogItemTypePermissions field to given value.
 
@@ -373,20 +373,20 @@ HasGlobalPersonaAccess returns a boolean if a field has been set.
 
 ### GetPersonaPermissions
 
-`func (o *GetRole200Response) GetPersonaPermissions() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *GetRole200Response) GetPersonaPermissions() []GetRole200ResponsePersonaPermissionsInner`
 
 GetPersonaPermissions returns the PersonaPermissions field if non-nil, zero value otherwise.
 
 ### GetPersonaPermissionsOk
 
-`func (o *GetRole200Response) GetPersonaPermissionsOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *GetRole200Response) GetPersonaPermissionsOk() (*[]GetRole200ResponsePersonaPermissionsInner, bool)`
 
 GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersonaPermissions
 
-`func (o *GetRole200Response) SetPersonaPermissions(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *GetRole200Response) SetPersonaPermissions(v []GetRole200ResponsePersonaPermissionsInner)`
 
 SetPersonaPermissions sets PersonaPermissions field to given value.
 
@@ -423,20 +423,20 @@ HasGlobalVdiPoolAccess returns a boolean if a field has been set.
 
 ### GetVdiPoolPermissions
 
-`func (o *GetRole200Response) GetVdiPoolPermissions() []AddRoles200ResponseAllOfSitesInner`
+`func (o *GetRole200Response) GetVdiPoolPermissions() []GetRole200ResponseVdiPoolPermissionsInner`
 
 GetVdiPoolPermissions returns the VdiPoolPermissions field if non-nil, zero value otherwise.
 
 ### GetVdiPoolPermissionsOk
 
-`func (o *GetRole200Response) GetVdiPoolPermissionsOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *GetRole200Response) GetVdiPoolPermissionsOk() (*[]GetRole200ResponseVdiPoolPermissionsInner, bool)`
 
 GetVdiPoolPermissionsOk returns a tuple with the VdiPoolPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdiPoolPermissions
 
-`func (o *GetRole200Response) SetVdiPoolPermissions(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *GetRole200Response) SetVdiPoolPermissions(v []GetRole200ResponseVdiPoolPermissionsInner)`
 
 SetVdiPoolPermissions sets VdiPoolPermissions field to given value.
 
@@ -473,20 +473,20 @@ HasGlobalReportTypeAccess returns a boolean if a field has been set.
 
 ### GetReportTypePermissions
 
-`func (o *GetRole200Response) GetReportTypePermissions() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *GetRole200Response) GetReportTypePermissions() []GetRole200ResponseReportTypePermissionsInner`
 
 GetReportTypePermissions returns the ReportTypePermissions field if non-nil, zero value otherwise.
 
 ### GetReportTypePermissionsOk
 
-`func (o *GetRole200Response) GetReportTypePermissionsOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *GetRole200Response) GetReportTypePermissionsOk() (*[]GetRole200ResponseReportTypePermissionsInner, bool)`
 
 GetReportTypePermissionsOk returns a tuple with the ReportTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportTypePermissions
 
-`func (o *GetRole200Response) SetReportTypePermissions(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *GetRole200Response) SetReportTypePermissions(v []GetRole200ResponseReportTypePermissionsInner)`
 
 SetReportTypePermissions sets ReportTypePermissions field to given value.
 
@@ -523,20 +523,20 @@ HasGlobalTaskAccess returns a boolean if a field has been set.
 
 ### GetTaskPermissions
 
-`func (o *GetRole200Response) GetTaskPermissions() []AddRoles200ResponseAllOfAppTemplatePermissionsInner`
+`func (o *GetRole200Response) GetTaskPermissions() []GetRole200ResponseTaskPermissionsInner`
 
 GetTaskPermissions returns the TaskPermissions field if non-nil, zero value otherwise.
 
 ### GetTaskPermissionsOk
 
-`func (o *GetRole200Response) GetTaskPermissionsOk() (*[]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool)`
+`func (o *GetRole200Response) GetTaskPermissionsOk() (*[]GetRole200ResponseTaskPermissionsInner, bool)`
 
 GetTaskPermissionsOk returns a tuple with the TaskPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskPermissions
 
-`func (o *GetRole200Response) SetTaskPermissions(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner)`
+`func (o *GetRole200Response) SetTaskPermissions(v []GetRole200ResponseTaskPermissionsInner)`
 
 SetTaskPermissions sets TaskPermissions field to given value.
 
@@ -573,20 +573,20 @@ HasGlobalTaskSetAccess returns a boolean if a field has been set.
 
 ### GetTaskSetPermissions
 
-`func (o *GetRole200Response) GetTaskSetPermissions() []AddRoles200ResponseAllOfAppTemplatePermissionsInner`
+`func (o *GetRole200Response) GetTaskSetPermissions() []GetRole200ResponseTaskSetPermissionsInner`
 
 GetTaskSetPermissions returns the TaskSetPermissions field if non-nil, zero value otherwise.
 
 ### GetTaskSetPermissionsOk
 
-`func (o *GetRole200Response) GetTaskSetPermissionsOk() (*[]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool)`
+`func (o *GetRole200Response) GetTaskSetPermissionsOk() (*[]GetRole200ResponseTaskSetPermissionsInner, bool)`
 
 GetTaskSetPermissionsOk returns a tuple with the TaskSetPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskSetPermissions
 
-`func (o *GetRole200Response) SetTaskSetPermissions(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner)`
+`func (o *GetRole200Response) SetTaskSetPermissions(v []GetRole200ResponseTaskSetPermissionsInner)`
 
 SetTaskSetPermissions sets TaskSetPermissions field to given value.
 

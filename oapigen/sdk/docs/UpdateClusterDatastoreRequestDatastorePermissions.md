@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourcePermissions** | Pointer to [**UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePermissions.md) |  | [optional] 
 **ResourcePool** | Pointer to [**UpdateClusterDatastoreRequestDatastorePermissionsResourcePool**](UpdateClusterDatastoreRequestDatastorePermissionsResourcePool.md) |  | [optional] 
-**TenantPermissions** | Pointer to [**UpdateCloudDatastoresRequestDatastoreTenantPermissions**](UpdateCloudDatastoresRequestDatastoreTenantPermissions.md) |  | [optional] 
+**TenantPermissions** | Pointer to [**UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions**](UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasResourcePool returns a boolean if a field has been set.
 
 ### GetTenantPermissions
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissions() UpdateCloudDatastoresRequestDatastoreTenantPermissions`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissions() UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions`
 
 GetTenantPermissions returns the TenantPermissions field if non-nil, zero value otherwise.
 
 ### GetTenantPermissionsOk
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissionsOk() (*UpdateCloudDatastoresRequestDatastoreTenantPermissions, bool)`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissions) GetTenantPermissionsOk() (*UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions, bool)`
 
 GetTenantPermissionsOk returns a tuple with the TenantPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenantPermissions
 
-`func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetTenantPermissions(v UpdateCloudDatastoresRequestDatastoreTenantPermissions)`
+`func (o *UpdateClusterDatastoreRequestDatastorePermissions) SetTenantPermissions(v UpdateClusterDatastoreRequestDatastorePermissionsTenantPermissions)`
 
 SetTenantPermissions sets TenantPermissions field to given value.
 

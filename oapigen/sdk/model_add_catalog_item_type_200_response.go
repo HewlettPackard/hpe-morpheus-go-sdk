@@ -20,9 +20,9 @@ var _ MappedNullable = &AddCatalogItemType200Response{}
 
 // AddCatalogItemType200Response struct for AddCatalogItemType200Response
 type AddCatalogItemType200Response struct {
-	CatalogItemType      *GetAlerts200ResponseAllOfChecksInnerAccount `json:"catalogItemType,omitempty"`
-	Success              *bool                                        `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	CatalogItemType      *AddCatalogItemType200ResponseAllOfCatalogItemType `json:"catalogItemType,omitempty"`
+	Success              *bool                                              `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                             `json:",remain"`
 }
 
 type _AddCatalogItemType200Response AddCatalogItemType200Response
@@ -45,9 +45,9 @@ func NewAddCatalogItemType200ResponseWithDefaults() *AddCatalogItemType200Respon
 }
 
 // GetCatalogItemType returns the CatalogItemType field value if set, zero value otherwise.
-func (o *AddCatalogItemType200Response) GetCatalogItemType() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *AddCatalogItemType200Response) GetCatalogItemType() AddCatalogItemType200ResponseAllOfCatalogItemType {
 	if o == nil || IsNil(o.CatalogItemType) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret AddCatalogItemType200ResponseAllOfCatalogItemType
 		return ret
 	}
 	return *o.CatalogItemType
@@ -55,7 +55,7 @@ func (o *AddCatalogItemType200Response) GetCatalogItemType() GetAlerts200Respons
 
 // GetCatalogItemTypeOk returns a tuple with the CatalogItemType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemType200Response) GetCatalogItemTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *AddCatalogItemType200Response) GetCatalogItemTypeOk() (*AddCatalogItemType200ResponseAllOfCatalogItemType, bool) {
 	if o == nil || IsNil(o.CatalogItemType) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *AddCatalogItemType200Response) IsSetCatalogItemType() bool {
 	return false
 }
 
-// SetCatalogItemType gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the CatalogItemType field.
-func (o *AddCatalogItemType200Response) SetCatalogItemType(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetCatalogItemType gets a reference to the given AddCatalogItemType200ResponseAllOfCatalogItemType and assigns it to the CatalogItemType field.
+func (o *AddCatalogItemType200Response) SetCatalogItemType(v AddCatalogItemType200ResponseAllOfCatalogItemType) {
 	o.CatalogItemType = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableAddCatalogItemType200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *AddCatalogItemType200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

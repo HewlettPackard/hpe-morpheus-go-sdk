@@ -43,15 +43,15 @@ type CatalogItemTypeWorkflowCreate struct {
 	// Can be used to feature the catalog item type.
 	Featured *bool `json:"featured,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool                                       `json:"allowQuantity,omitempty"`
-	Workflow      GetAlerts200ResponseAllOfChecksInnerAccount `json:"workflow"`
+	AllowQuantity *bool                                 `json:"allowQuantity,omitempty"`
+	Workflow      CatalogItemTypeWorkflowCreateWorkflow `json:"workflow"`
 	// Context for running the workflow, determines if a target resource must be selected.
 	Context *string `json:"context,omitempty"`
 	// Configuration object that contains settings for the workflow.
 	WorkflowConfig *string `json:"workflowConfig,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string                                            `json:"formType,omitempty"`
-	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                            `json:"formType,omitempty"`
+	Form     *CatalogItemTypeWorkflowCreateForm `json:"form,omitempty"`
 	// Array of option type IDs. Only applies to formType 'optionTypes'.
 	OptionTypes []int64 `json:"optionTypes,omitempty"`
 	// Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
@@ -65,7 +65,7 @@ type _CatalogItemTypeWorkflowCreate CatalogItemTypeWorkflowCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCatalogItemTypeWorkflowCreate(workflow GetAlerts200ResponseAllOfChecksInnerAccount) *CatalogItemTypeWorkflowCreate {
+func NewCatalogItemTypeWorkflowCreate(workflow CatalogItemTypeWorkflowCreateWorkflow) *CatalogItemTypeWorkflowCreate {
 	this := CatalogItemTypeWorkflowCreate{}
 	var visibility string = "private"
 	this.Visibility = &visibility
@@ -518,9 +518,9 @@ func (o *CatalogItemTypeWorkflowCreate) SetAllowQuantity(v bool) {
 }
 
 // GetWorkflow returns the Workflow field value
-func (o *CatalogItemTypeWorkflowCreate) GetWorkflow() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *CatalogItemTypeWorkflowCreate) GetWorkflow() CatalogItemTypeWorkflowCreateWorkflow {
 	if o == nil {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret CatalogItemTypeWorkflowCreateWorkflow
 		return ret
 	}
 
@@ -529,7 +529,7 @@ func (o *CatalogItemTypeWorkflowCreate) GetWorkflow() GetAlerts200ResponseAllOfC
 
 // GetWorkflowOk returns a tuple with the Workflow field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeWorkflowCreate) GetWorkflowOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *CatalogItemTypeWorkflowCreate) GetWorkflowOk() (*CatalogItemTypeWorkflowCreateWorkflow, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -537,7 +537,7 @@ func (o *CatalogItemTypeWorkflowCreate) GetWorkflowOk() (*GetAlerts200ResponseAl
 }
 
 // SetWorkflow sets field value
-func (o *CatalogItemTypeWorkflowCreate) SetWorkflow(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+func (o *CatalogItemTypeWorkflowCreate) SetWorkflow(v CatalogItemTypeWorkflowCreateWorkflow) {
 	o.Workflow = v
 }
 
@@ -638,9 +638,9 @@ func (o *CatalogItemTypeWorkflowCreate) SetFormType(v string) {
 }
 
 // GetForm returns the Form field value if set, zero value otherwise.
-func (o *CatalogItemTypeWorkflowCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
+func (o *CatalogItemTypeWorkflowCreate) GetForm() CatalogItemTypeWorkflowCreateForm {
 	if o == nil || IsNil(o.Form) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
+		var ret CatalogItemTypeWorkflowCreateForm
 		return ret
 	}
 	return *o.Form
@@ -648,7 +648,7 @@ func (o *CatalogItemTypeWorkflowCreate) GetForm() AddCatalogItemTypeRequestCatal
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeWorkflowCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool) {
+func (o *CatalogItemTypeWorkflowCreate) GetFormOk() (*CatalogItemTypeWorkflowCreateForm, bool) {
 	if o == nil || IsNil(o.Form) {
 		return nil, false
 	}
@@ -664,8 +664,8 @@ func (o *CatalogItemTypeWorkflowCreate) IsSetForm() bool {
 	return false
 }
 
-// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfForm and assigns it to the Form field.
-func (o *CatalogItemTypeWorkflowCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
+// SetForm gets a reference to the given CatalogItemTypeWorkflowCreateForm and assigns it to the Form field.
+func (o *CatalogItemTypeWorkflowCreate) SetForm(v CatalogItemTypeWorkflowCreateForm) {
 	o.Form = &v
 }
 
@@ -850,7 +850,6 @@ func (v NullableCatalogItemTypeWorkflowCreate) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *CatalogItemTypeWorkflowCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

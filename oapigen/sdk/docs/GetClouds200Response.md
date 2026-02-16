@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Zone** | Pointer to [**AddClouds200ResponseAllOfZone**](AddClouds200ResponseAllOfZone.md) |  | [optional] 
+**Zone** | Pointer to [**GetClouds200ResponseZone**](GetClouds200ResponseZone.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetZone
 
-`func (o *GetClouds200Response) GetZone() AddClouds200ResponseAllOfZone`
+`func (o *GetClouds200Response) GetZone() GetClouds200ResponseZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *GetClouds200Response) GetZoneOk() (*AddClouds200ResponseAllOfZone, bool)`
+`func (o *GetClouds200Response) GetZoneOk() (*GetClouds200ResponseZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *GetClouds200Response) SetZone(v AddClouds200ResponseAllOfZone)`
+`func (o *GetClouds200Response) SetZone(v GetClouds200ResponseZone)`
 
 SetZone sets Zone field to given value.
 

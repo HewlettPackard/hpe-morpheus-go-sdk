@@ -141,7 +141,6 @@ func (v NullableCreateNetworksRequestNetworkZonePool) UnmarshalMapstructure(data
 
 	return v, nil
 }
-
 func (o *CreateNetworksRequestNetworkZonePool) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

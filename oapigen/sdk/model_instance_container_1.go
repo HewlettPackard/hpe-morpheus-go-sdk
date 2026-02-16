@@ -21,29 +21,29 @@ var _ MappedNullable = &InstanceContainer1{}
 
 // InstanceContainer1 struct for InstanceContainer1
 type InstanceContainer1 struct {
-	Id                   *int64                             `json:"id,omitempty"`
-	Uuid                 *string                            `json:"uuid,omitempty"`
-	Name                 *string                            `json:"name,omitempty"`
-	Ip                   *string                            `json:"ip,omitempty"`
-	InternalIp           *string                            `json:"internalIp,omitempty"`
-	InternalHostname     *string                            `json:"internalHostname,omitempty"`
-	ExternalHostname     *string                            `json:"externalHostname,omitempty"`
-	ExternalDomain       *string                            `json:"externalDomain,omitempty"`
-	ExternalFqdn         *string                            `json:"externalFqdn,omitempty"`
-	AccountId            *int64                             `json:"accountId,omitempty"`
-	Instance             *InstanceContainerInstance         `json:"instance,omitempty"`
-	ContainerType        *InstanceContainerContainerType    `json:"containerType,omitempty"`
-	ContainerTypeSet     *InstanceContainerContainerTypeSet `json:"containerTypeSet,omitempty"`
-	Server               *InstanceContainerServer1          `json:"server,omitempty"`
-	Cloud                *InstanceContainerInstance         `json:"cloud,omitempty"`
-	Ports                []InstanceContainer1PortsInner     `json:"ports,omitempty"`
-	Plan                 *InstanceContainerContainerType    `json:"plan,omitempty"`
-	DateCreated          *time.Time                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                         `json:"lastUpdated,omitempty"`
-	Hostname             *string                            `json:"hostname,omitempty"`
-	VolumeCreated        *bool                              `json:"volumeCreated,omitempty"`
-	ContainerCreated     *bool                              `json:"containerCreated,omitempty"`
-	AdditionalProperties map[string]interface{}             `json:",remain"`
+	Id                   *int64                              `json:"id,omitempty"`
+	Uuid                 *string                             `json:"uuid,omitempty"`
+	Name                 *string                             `json:"name,omitempty"`
+	Ip                   *string                             `json:"ip,omitempty"`
+	InternalIp           *string                             `json:"internalIp,omitempty"`
+	InternalHostname     *string                             `json:"internalHostname,omitempty"`
+	ExternalHostname     *string                             `json:"externalHostname,omitempty"`
+	ExternalDomain       *string                             `json:"externalDomain,omitempty"`
+	ExternalFqdn         *string                             `json:"externalFqdn,omitempty"`
+	AccountId            *int64                              `json:"accountId,omitempty"`
+	Instance             *InstanceContainer1Instance         `json:"instance,omitempty"`
+	ContainerType        *InstanceContainer1ContainerType    `json:"containerType,omitempty"`
+	ContainerTypeSet     *InstanceContainer1ContainerTypeSet `json:"containerTypeSet,omitempty"`
+	Server               *InstanceContainerServer1           `json:"server,omitempty"`
+	Cloud                *InstanceContainer1Cloud            `json:"cloud,omitempty"`
+	Ports                []InstanceContainer1PortsInner      `json:"ports,omitempty"`
+	Plan                 *InstanceContainer1Plan             `json:"plan,omitempty"`
+	DateCreated          *time.Time                          `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                          `json:"lastUpdated,omitempty"`
+	Hostname             *string                             `json:"hostname,omitempty"`
+	VolumeCreated        *bool                               `json:"volumeCreated,omitempty"`
+	ContainerCreated     *bool                               `json:"containerCreated,omitempty"`
+	AdditionalProperties map[string]interface{}              `json:",remain"`
 }
 
 type _InstanceContainer1 InstanceContainer1
@@ -386,9 +386,9 @@ func (o *InstanceContainer1) SetAccountId(v int64) {
 }
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
-func (o *InstanceContainer1) GetInstance() InstanceContainerInstance {
+func (o *InstanceContainer1) GetInstance() InstanceContainer1Instance {
 	if o == nil || IsNil(o.Instance) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainer1Instance
 		return ret
 	}
 	return *o.Instance
@@ -396,7 +396,7 @@ func (o *InstanceContainer1) GetInstance() InstanceContainerInstance {
 
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer1) GetInstanceOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainer1) GetInstanceOk() (*InstanceContainer1Instance, bool) {
 	if o == nil || IsNil(o.Instance) {
 		return nil, false
 	}
@@ -412,15 +412,15 @@ func (o *InstanceContainer1) IsSetInstance() bool {
 	return false
 }
 
-// SetInstance gets a reference to the given InstanceContainerInstance and assigns it to the Instance field.
-func (o *InstanceContainer1) SetInstance(v InstanceContainerInstance) {
+// SetInstance gets a reference to the given InstanceContainer1Instance and assigns it to the Instance field.
+func (o *InstanceContainer1) SetInstance(v InstanceContainer1Instance) {
 	o.Instance = &v
 }
 
 // GetContainerType returns the ContainerType field value if set, zero value otherwise.
-func (o *InstanceContainer1) GetContainerType() InstanceContainerContainerType {
+func (o *InstanceContainer1) GetContainerType() InstanceContainer1ContainerType {
 	if o == nil || IsNil(o.ContainerType) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainer1ContainerType
 		return ret
 	}
 	return *o.ContainerType
@@ -428,7 +428,7 @@ func (o *InstanceContainer1) GetContainerType() InstanceContainerContainerType {
 
 // GetContainerTypeOk returns a tuple with the ContainerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer1) GetContainerTypeOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainer1) GetContainerTypeOk() (*InstanceContainer1ContainerType, bool) {
 	if o == nil || IsNil(o.ContainerType) {
 		return nil, false
 	}
@@ -444,15 +444,15 @@ func (o *InstanceContainer1) IsSetContainerType() bool {
 	return false
 }
 
-// SetContainerType gets a reference to the given InstanceContainerContainerType and assigns it to the ContainerType field.
-func (o *InstanceContainer1) SetContainerType(v InstanceContainerContainerType) {
+// SetContainerType gets a reference to the given InstanceContainer1ContainerType and assigns it to the ContainerType field.
+func (o *InstanceContainer1) SetContainerType(v InstanceContainer1ContainerType) {
 	o.ContainerType = &v
 }
 
 // GetContainerTypeSet returns the ContainerTypeSet field value if set, zero value otherwise.
-func (o *InstanceContainer1) GetContainerTypeSet() InstanceContainerContainerTypeSet {
+func (o *InstanceContainer1) GetContainerTypeSet() InstanceContainer1ContainerTypeSet {
 	if o == nil || IsNil(o.ContainerTypeSet) {
-		var ret InstanceContainerContainerTypeSet
+		var ret InstanceContainer1ContainerTypeSet
 		return ret
 	}
 	return *o.ContainerTypeSet
@@ -460,7 +460,7 @@ func (o *InstanceContainer1) GetContainerTypeSet() InstanceContainerContainerTyp
 
 // GetContainerTypeSetOk returns a tuple with the ContainerTypeSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer1) GetContainerTypeSetOk() (*InstanceContainerContainerTypeSet, bool) {
+func (o *InstanceContainer1) GetContainerTypeSetOk() (*InstanceContainer1ContainerTypeSet, bool) {
 	if o == nil || IsNil(o.ContainerTypeSet) {
 		return nil, false
 	}
@@ -476,8 +476,8 @@ func (o *InstanceContainer1) IsSetContainerTypeSet() bool {
 	return false
 }
 
-// SetContainerTypeSet gets a reference to the given InstanceContainerContainerTypeSet and assigns it to the ContainerTypeSet field.
-func (o *InstanceContainer1) SetContainerTypeSet(v InstanceContainerContainerTypeSet) {
+// SetContainerTypeSet gets a reference to the given InstanceContainer1ContainerTypeSet and assigns it to the ContainerTypeSet field.
+func (o *InstanceContainer1) SetContainerTypeSet(v InstanceContainer1ContainerTypeSet) {
 	o.ContainerTypeSet = &v
 }
 
@@ -514,9 +514,9 @@ func (o *InstanceContainer1) SetServer(v InstanceContainerServer1) {
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *InstanceContainer1) GetCloud() InstanceContainerInstance {
+func (o *InstanceContainer1) GetCloud() InstanceContainer1Cloud {
 	if o == nil || IsNil(o.Cloud) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainer1Cloud
 		return ret
 	}
 	return *o.Cloud
@@ -524,7 +524,7 @@ func (o *InstanceContainer1) GetCloud() InstanceContainerInstance {
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer1) GetCloudOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainer1) GetCloudOk() (*InstanceContainer1Cloud, bool) {
 	if o == nil || IsNil(o.Cloud) {
 		return nil, false
 	}
@@ -540,8 +540,8 @@ func (o *InstanceContainer1) IsSetCloud() bool {
 	return false
 }
 
-// SetCloud gets a reference to the given InstanceContainerInstance and assigns it to the Cloud field.
-func (o *InstanceContainer1) SetCloud(v InstanceContainerInstance) {
+// SetCloud gets a reference to the given InstanceContainer1Cloud and assigns it to the Cloud field.
+func (o *InstanceContainer1) SetCloud(v InstanceContainer1Cloud) {
 	o.Cloud = &v
 }
 
@@ -578,9 +578,9 @@ func (o *InstanceContainer1) SetPorts(v []InstanceContainer1PortsInner) {
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *InstanceContainer1) GetPlan() InstanceContainerContainerType {
+func (o *InstanceContainer1) GetPlan() InstanceContainer1Plan {
 	if o == nil || IsNil(o.Plan) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainer1Plan
 		return ret
 	}
 	return *o.Plan
@@ -588,7 +588,7 @@ func (o *InstanceContainer1) GetPlan() InstanceContainerContainerType {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainer1) GetPlanOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainer1) GetPlanOk() (*InstanceContainer1Plan, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -604,8 +604,8 @@ func (o *InstanceContainer1) IsSetPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given InstanceContainerContainerType and assigns it to the Plan field.
-func (o *InstanceContainer1) SetPlan(v InstanceContainerContainerType) {
+// SetPlan gets a reference to the given InstanceContainer1Plan and assigns it to the Plan field.
+func (o *InstanceContainer1) SetPlan(v InstanceContainer1Plan) {
 	o.Plan = &v
 }
 
@@ -897,7 +897,6 @@ func (v NullableInstanceContainer1) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *InstanceContainer1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

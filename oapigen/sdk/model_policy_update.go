@@ -23,8 +23,8 @@ type PolicyUpdate struct {
 	// A name for the policy
 	Name *string `json:"name,omitempty"`
 	// A description for the policy
-	Description *string                            `json:"description,omitempty"`
-	Config      *UpdatePoliciesRequestPolicyConfig `json:"config,omitempty"`
+	Description *string             `json:"description,omitempty"`
+	Config      *PolicyUpdateConfig `json:"config,omitempty"`
 	// Set to false to disable
 	Enabled *bool `json:"enabled,omitempty"`
 	// Scope object type
@@ -126,9 +126,9 @@ func (o *PolicyUpdate) SetDescription(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *PolicyUpdate) GetConfig() UpdatePoliciesRequestPolicyConfig {
+func (o *PolicyUpdate) GetConfig() PolicyUpdateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret UpdatePoliciesRequestPolicyConfig
+		var ret PolicyUpdateConfig
 		return ret
 	}
 	return *o.Config
@@ -136,7 +136,7 @@ func (o *PolicyUpdate) GetConfig() UpdatePoliciesRequestPolicyConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PolicyUpdate) GetConfigOk() (*UpdatePoliciesRequestPolicyConfig, bool) {
+func (o *PolicyUpdate) GetConfigOk() (*PolicyUpdateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -152,8 +152,8 @@ func (o *PolicyUpdate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given UpdatePoliciesRequestPolicyConfig and assigns it to the Config field.
-func (o *PolicyUpdate) SetConfig(v UpdatePoliciesRequestPolicyConfig) {
+// SetConfig gets a reference to the given PolicyUpdateConfig and assigns it to the Config field.
+func (o *PolicyUpdate) SetConfig(v PolicyUpdateConfig) {
 	o.Config = &v
 }
 
@@ -403,7 +403,6 @@ func (v NullablePolicyUpdate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *PolicyUpdate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

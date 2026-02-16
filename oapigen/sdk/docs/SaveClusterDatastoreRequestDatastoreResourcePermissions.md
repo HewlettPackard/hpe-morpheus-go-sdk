@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **MorpheusResourceId** | Pointer to **int64** |  | [optional] 
 **CanManage** | Pointer to **bool** |  | [optional] 
 **All** | Pointer to **bool** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Sites** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
-**Plans** | Pointer to [**[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Account** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount**](SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount.md) |  | [optional] 
+**Sites** | Pointer to [**[]SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner**](SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner.md) |  | [optional] 
+**Plans** | Pointer to [**[]SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner**](SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner.md) |  | [optional] 
 
 ## Methods
 
@@ -237,20 +237,20 @@ HasAll returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccount() SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetAccount(v SaveClusterDatastoreRequestDatastoreResourcePermissionsAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -262,20 +262,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSites() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSites() []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSitesOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetSitesOk() (*[]SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetSites(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetSites(v []SaveClusterDatastoreRequestDatastoreResourcePermissionsSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -287,20 +287,20 @@ HasSites returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlans() []ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlans() []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlansOk() (*[]ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) GetPlansOk() (*[]SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetPlans(v []ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *SaveClusterDatastoreRequestDatastoreResourcePermissions) SetPlans(v []SaveClusterDatastoreRequestDatastoreResourcePermissionsPlansInner)`
 
 SetPlans sets Plans field to given value.
 

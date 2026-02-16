@@ -33,12 +33,12 @@ type UpdateAlertsRequestAlert struct {
 	// Trigger for all check groups
 	AllGroups *bool `json:"allGroups,omitempty"`
 	// Trigger for all monitor apps
-	AllApps              *bool                                                `json:"allApps,omitempty"`
-	Checks               []int32                                              `json:"checks,omitempty"`
-	Groups               []int32                                              `json:"groups,omitempty"`
-	Apps                 []int32                                              `json:"apps,omitempty"`
-	Contacts             []ListAlerts200ResponseAllOfAlertsInnerContactsInner `json:"contacts,omitempty"`
-	AdditionalProperties map[string]interface{}                               `json:",remain"`
+	AllApps              *bool                                   `json:"allApps,omitempty"`
+	Checks               []int32                                 `json:"checks,omitempty"`
+	Groups               []int32                                 `json:"groups,omitempty"`
+	Apps                 []int32                                 `json:"apps,omitempty"`
+	Contacts             []UpdateAlertsRequestAlertContactsInner `json:"contacts,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _UpdateAlertsRequestAlert UpdateAlertsRequestAlert
@@ -405,9 +405,9 @@ func (o *UpdateAlertsRequestAlert) SetApps(v []int32) {
 }
 
 // GetContacts returns the Contacts field value if set, zero value otherwise.
-func (o *UpdateAlertsRequestAlert) GetContacts() []ListAlerts200ResponseAllOfAlertsInnerContactsInner {
+func (o *UpdateAlertsRequestAlert) GetContacts() []UpdateAlertsRequestAlertContactsInner {
 	if o == nil || IsNil(o.Contacts) {
-		var ret []ListAlerts200ResponseAllOfAlertsInnerContactsInner
+		var ret []UpdateAlertsRequestAlertContactsInner
 		return ret
 	}
 	return o.Contacts
@@ -415,7 +415,7 @@ func (o *UpdateAlertsRequestAlert) GetContacts() []ListAlerts200ResponseAllOfAle
 
 // GetContactsOk returns a tuple with the Contacts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateAlertsRequestAlert) GetContactsOk() ([]ListAlerts200ResponseAllOfAlertsInnerContactsInner, bool) {
+func (o *UpdateAlertsRequestAlert) GetContactsOk() ([]UpdateAlertsRequestAlertContactsInner, bool) {
 	if o == nil || IsNil(o.Contacts) {
 		return nil, false
 	}
@@ -431,8 +431,8 @@ func (o *UpdateAlertsRequestAlert) IsSetContacts() bool {
 	return false
 }
 
-// SetContacts gets a reference to the given []ListAlerts200ResponseAllOfAlertsInnerContactsInner and assigns it to the Contacts field.
-func (o *UpdateAlertsRequestAlert) SetContacts(v []ListAlerts200ResponseAllOfAlertsInnerContactsInner) {
+// SetContacts gets a reference to the given []UpdateAlertsRequestAlertContactsInner and assigns it to the Contacts field.
+func (o *UpdateAlertsRequestAlert) SetContacts(v []UpdateAlertsRequestAlertContactsInner) {
 	o.Contacts = v
 }
 
@@ -531,7 +531,6 @@ func (v NullableUpdateAlertsRequestAlert) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *UpdateAlertsRequestAlert) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

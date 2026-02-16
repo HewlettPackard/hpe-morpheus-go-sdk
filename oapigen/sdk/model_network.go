@@ -25,12 +25,12 @@ type Network struct {
 	// Name
 	Name *string `json:"name,omitempty"`
 	// Network Display Name
-	DisplayName NullableString                                  `json:"displayName,omitempty"`
-	Labels      []string                                        `json:"labels,omitempty"`
-	Group       *ListNetworks200ResponseAllOfNetworksInnerGroup `json:"group,omitempty"`
-	Zone        *ListNetworks200ResponseAllOfNetworksInnerZone  `json:"zone,omitempty"`
-	Type        *ListNetworks200ResponseAllOfNetworksInnerType  `json:"type,omitempty"`
-	Owner       *ListNetworks200ResponseAllOfNetworksInnerOwner `json:"owner,omitempty"`
+	DisplayName NullableString                              `json:"displayName,omitempty"`
+	Labels      []string                                    `json:"labels,omitempty"`
+	Group       *CreateNetworks200ResponseAllOfNetworkGroup `json:"group,omitempty"`
+	Zone        *CreateNetworks200ResponseAllOfNetworkZone  `json:"zone,omitempty"`
+	Type        *CreateNetworks200ResponseAllOfNetworkType  `json:"type,omitempty"`
+	Owner       *CreateNetworks200ResponseAllOfNetworkOwner `json:"owner,omitempty"`
 	// Network Code
 	Code        NullableString `json:"code,omitempty"`
 	Ipv4Enabled *bool          `json:"ipv4Enabled,omitempty"`
@@ -77,30 +77,30 @@ type Network struct {
 	TftpServer NullableString `json:"tftpServer,omitempty"`
 	BootFile   NullableString `json:"bootFile,omitempty"`
 	// Network switch identifier
-	SwitchId                NullableString                                               `json:"switchId,omitempty"`
-	FabricId                NullableString                                               `json:"fabricId,omitempty"`
-	NetworkRole             NullableString                                               `json:"networkRole,omitempty"`
-	Status                  NullableString                                               `json:"status,omitempty"`
-	AvailabilityZone        NullableString                                               `json:"availabilityZone,omitempty"`
-	Pool                    *ListNetworks200ResponseAllOfNetworksInnerPool               `json:"pool,omitempty"`
-	PoolIPv6                *ListNetworks200ResponseAllOfNetworksInnerPoolIPv6           `json:"poolIPv6,omitempty"`
-	NetworkProxy            *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy       `json:"networkProxy,omitempty"`
-	NetworkDomain           *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain      `json:"networkDomain,omitempty"`
-	SearchDomains           NullableString                                               `json:"searchDomains,omitempty"`
-	PrefixLength            NullableString                                               `json:"prefixLength,omitempty"`
-	Visibility              *string                                                      `json:"visibility,omitempty"`
-	EnableAdmin             *bool                                                        `json:"enableAdmin,omitempty"`
-	Active                  *bool                                                        `json:"active,omitempty"`
-	DefaultNetwork          *bool                                                        `json:"defaultNetwork,omitempty"`
-	AssignPublicIp          *bool                                                        `json:"assignPublicIp,omitempty"`
-	NoProxy                 NullableString                                               `json:"noProxy,omitempty"`
-	ApplianceUrlProxyBypass *bool                                                        `json:"applianceUrlProxyBypass,omitempty"`
-	ZonePool                *GetAlerts200ResponseAllOfCheckGroupsInnerInstance           `json:"zonePool,omitempty"`
-	AllowStaticOverride     *bool                                                        `json:"allowStaticOverride,omitempty"`
-	Config                  *ListNetworks200ResponseAllOfNetworksInnerConfig             `json:"config,omitempty"`
-	Tenants                 []GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"tenants,omitempty"`
-	ResourcePermission      *ListNetworks200ResponseAllOfNetworksInnerResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties    map[string]interface{}                                       `json:",remain"`
+	SwitchId                NullableString                                           `json:"switchId,omitempty"`
+	FabricId                NullableString                                           `json:"fabricId,omitempty"`
+	NetworkRole             NullableString                                           `json:"networkRole,omitempty"`
+	Status                  NullableString                                           `json:"status,omitempty"`
+	AvailabilityZone        NullableString                                           `json:"availabilityZone,omitempty"`
+	Pool                    *CreateNetworks200ResponseAllOfNetworkPool               `json:"pool,omitempty"`
+	PoolIPv6                *CreateNetworks200ResponseAllOfNetworkPoolIPv6           `json:"poolIPv6,omitempty"`
+	NetworkProxy            *CreateNetworks200ResponseAllOfNetworkNetworkProxy       `json:"networkProxy,omitempty"`
+	NetworkDomain           *CreateNetworks200ResponseAllOfNetworkNetworkDomain      `json:"networkDomain,omitempty"`
+	SearchDomains           NullableString                                           `json:"searchDomains,omitempty"`
+	PrefixLength            NullableString                                           `json:"prefixLength,omitempty"`
+	Visibility              *string                                                  `json:"visibility,omitempty"`
+	EnableAdmin             *bool                                                    `json:"enableAdmin,omitempty"`
+	Active                  *bool                                                    `json:"active,omitempty"`
+	DefaultNetwork          *bool                                                    `json:"defaultNetwork,omitempty"`
+	AssignPublicIp          *bool                                                    `json:"assignPublicIp,omitempty"`
+	NoProxy                 NullableString                                           `json:"noProxy,omitempty"`
+	ApplianceUrlProxyBypass *bool                                                    `json:"applianceUrlProxyBypass,omitempty"`
+	ZonePool                *CreateNetworks200ResponseAllOfNetworkZonePool           `json:"zonePool,omitempty"`
+	AllowStaticOverride     *bool                                                    `json:"allowStaticOverride,omitempty"`
+	Config                  *CreateNetworks200ResponseAllOfNetworkConfig             `json:"config,omitempty"`
+	Tenants                 []CreateNetworks200ResponseAllOfNetworkTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission      *CreateNetworks200ResponseAllOfNetworkResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties    map[string]interface{}                                   `json:",remain"`
 }
 
 type _Network Network
@@ -263,9 +263,9 @@ func (o *Network) SetLabels(v []string) {
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *Network) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup {
+func (o *Network) GetGroup() CreateNetworks200ResponseAllOfNetworkGroup {
 	if o == nil || IsNil(o.Group) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerGroup
+		var ret CreateNetworks200ResponseAllOfNetworkGroup
 		return ret
 	}
 	return *o.Group
@@ -273,7 +273,7 @@ func (o *Network) GetGroup() ListNetworks200ResponseAllOfNetworksInnerGroup {
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetGroupOk() (*ListNetworks200ResponseAllOfNetworksInnerGroup, bool) {
+func (o *Network) GetGroupOk() (*CreateNetworks200ResponseAllOfNetworkGroup, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -289,15 +289,15 @@ func (o *Network) IsSetGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerGroup and assigns it to the Group field.
-func (o *Network) SetGroup(v ListNetworks200ResponseAllOfNetworksInnerGroup) {
+// SetGroup gets a reference to the given CreateNetworks200ResponseAllOfNetworkGroup and assigns it to the Group field.
+func (o *Network) SetGroup(v CreateNetworks200ResponseAllOfNetworkGroup) {
 	o.Group = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *Network) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone {
+func (o *Network) GetZone() CreateNetworks200ResponseAllOfNetworkZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerZone
+		var ret CreateNetworks200ResponseAllOfNetworkZone
 		return ret
 	}
 	return *o.Zone
@@ -305,7 +305,7 @@ func (o *Network) GetZone() ListNetworks200ResponseAllOfNetworksInnerZone {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetZoneOk() (*ListNetworks200ResponseAllOfNetworksInnerZone, bool) {
+func (o *Network) GetZoneOk() (*CreateNetworks200ResponseAllOfNetworkZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -321,15 +321,15 @@ func (o *Network) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerZone and assigns it to the Zone field.
-func (o *Network) SetZone(v ListNetworks200ResponseAllOfNetworksInnerZone) {
+// SetZone gets a reference to the given CreateNetworks200ResponseAllOfNetworkZone and assigns it to the Zone field.
+func (o *Network) SetZone(v CreateNetworks200ResponseAllOfNetworkZone) {
 	o.Zone = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Network) GetType() ListNetworks200ResponseAllOfNetworksInnerType {
+func (o *Network) GetType() CreateNetworks200ResponseAllOfNetworkType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerType
+		var ret CreateNetworks200ResponseAllOfNetworkType
 		return ret
 	}
 	return *o.Type
@@ -337,7 +337,7 @@ func (o *Network) GetType() ListNetworks200ResponseAllOfNetworksInnerType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetTypeOk() (*ListNetworks200ResponseAllOfNetworksInnerType, bool) {
+func (o *Network) GetTypeOk() (*CreateNetworks200ResponseAllOfNetworkType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -353,15 +353,15 @@ func (o *Network) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerType and assigns it to the Type field.
-func (o *Network) SetType(v ListNetworks200ResponseAllOfNetworksInnerType) {
+// SetType gets a reference to the given CreateNetworks200ResponseAllOfNetworkType and assigns it to the Type field.
+func (o *Network) SetType(v CreateNetworks200ResponseAllOfNetworkType) {
 	o.Type = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *Network) GetOwner() ListNetworks200ResponseAllOfNetworksInnerOwner {
+func (o *Network) GetOwner() CreateNetworks200ResponseAllOfNetworkOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerOwner
+		var ret CreateNetworks200ResponseAllOfNetworkOwner
 		return ret
 	}
 	return *o.Owner
@@ -369,7 +369,7 @@ func (o *Network) GetOwner() ListNetworks200ResponseAllOfNetworksInnerOwner {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetOwnerOk() (*ListNetworks200ResponseAllOfNetworksInnerOwner, bool) {
+func (o *Network) GetOwnerOk() (*CreateNetworks200ResponseAllOfNetworkOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -385,8 +385,8 @@ func (o *Network) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerOwner and assigns it to the Owner field.
-func (o *Network) SetOwner(v ListNetworks200ResponseAllOfNetworksInnerOwner) {
+// SetOwner gets a reference to the given CreateNetworks200ResponseAllOfNetworkOwner and assigns it to the Owner field.
+func (o *Network) SetOwner(v CreateNetworks200ResponseAllOfNetworkOwner) {
 	o.Owner = &v
 }
 
@@ -1991,9 +1991,9 @@ func (o *Network) UnsetAvailabilityZone() {
 }
 
 // GetPool returns the Pool field value if set, zero value otherwise.
-func (o *Network) GetPool() ListNetworks200ResponseAllOfNetworksInnerPool {
+func (o *Network) GetPool() CreateNetworks200ResponseAllOfNetworkPool {
 	if o == nil || IsNil(o.Pool) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerPool
+		var ret CreateNetworks200ResponseAllOfNetworkPool
 		return ret
 	}
 	return *o.Pool
@@ -2001,7 +2001,7 @@ func (o *Network) GetPool() ListNetworks200ResponseAllOfNetworksInnerPool {
 
 // GetPoolOk returns a tuple with the Pool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetPoolOk() (*ListNetworks200ResponseAllOfNetworksInnerPool, bool) {
+func (o *Network) GetPoolOk() (*CreateNetworks200ResponseAllOfNetworkPool, bool) {
 	if o == nil || IsNil(o.Pool) {
 		return nil, false
 	}
@@ -2017,15 +2017,15 @@ func (o *Network) IsSetPool() bool {
 	return false
 }
 
-// SetPool gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerPool and assigns it to the Pool field.
-func (o *Network) SetPool(v ListNetworks200ResponseAllOfNetworksInnerPool) {
+// SetPool gets a reference to the given CreateNetworks200ResponseAllOfNetworkPool and assigns it to the Pool field.
+func (o *Network) SetPool(v CreateNetworks200ResponseAllOfNetworkPool) {
 	o.Pool = &v
 }
 
 // GetPoolIPv6 returns the PoolIPv6 field value if set, zero value otherwise.
-func (o *Network) GetPoolIPv6() ListNetworks200ResponseAllOfNetworksInnerPoolIPv6 {
+func (o *Network) GetPoolIPv6() CreateNetworks200ResponseAllOfNetworkPoolIPv6 {
 	if o == nil || IsNil(o.PoolIPv6) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerPoolIPv6
+		var ret CreateNetworks200ResponseAllOfNetworkPoolIPv6
 		return ret
 	}
 	return *o.PoolIPv6
@@ -2033,7 +2033,7 @@ func (o *Network) GetPoolIPv6() ListNetworks200ResponseAllOfNetworksInnerPoolIPv
 
 // GetPoolIPv6Ok returns a tuple with the PoolIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetPoolIPv6Ok() (*ListNetworks200ResponseAllOfNetworksInnerPoolIPv6, bool) {
+func (o *Network) GetPoolIPv6Ok() (*CreateNetworks200ResponseAllOfNetworkPoolIPv6, bool) {
 	if o == nil || IsNil(o.PoolIPv6) {
 		return nil, false
 	}
@@ -2049,15 +2049,15 @@ func (o *Network) IsSetPoolIPv6() bool {
 	return false
 }
 
-// SetPoolIPv6 gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerPoolIPv6 and assigns it to the PoolIPv6 field.
-func (o *Network) SetPoolIPv6(v ListNetworks200ResponseAllOfNetworksInnerPoolIPv6) {
+// SetPoolIPv6 gets a reference to the given CreateNetworks200ResponseAllOfNetworkPoolIPv6 and assigns it to the PoolIPv6 field.
+func (o *Network) SetPoolIPv6(v CreateNetworks200ResponseAllOfNetworkPoolIPv6) {
 	o.PoolIPv6 = &v
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *Network) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
+func (o *Network) GetNetworkProxy() CreateNetworks200ResponseAllOfNetworkNetworkProxy {
 	if o == nil || IsNil(o.NetworkProxy) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
+		var ret CreateNetworks200ResponseAllOfNetworkNetworkProxy
 		return ret
 	}
 	return *o.NetworkProxy
@@ -2065,7 +2065,7 @@ func (o *Network) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNet
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool) {
+func (o *Network) GetNetworkProxyOk() (*CreateNetworks200ResponseAllOfNetworkNetworkProxy, bool) {
 	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
@@ -2081,15 +2081,15 @@ func (o *Network) IsSetNetworkProxy() bool {
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkProxy and assigns it to the NetworkProxy field.
-func (o *Network) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) {
+// SetNetworkProxy gets a reference to the given CreateNetworks200ResponseAllOfNetworkNetworkProxy and assigns it to the NetworkProxy field.
+func (o *Network) SetNetworkProxy(v CreateNetworks200ResponseAllOfNetworkNetworkProxy) {
 	o.NetworkProxy = &v
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *Network) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain {
+func (o *Network) GetNetworkDomain() CreateNetworks200ResponseAllOfNetworkNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkDomain
+		var ret CreateNetworks200ResponseAllOfNetworkNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -2097,7 +2097,7 @@ func (o *Network) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNe
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool) {
+func (o *Network) GetNetworkDomainOk() (*CreateNetworks200ResponseAllOfNetworkNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -2113,8 +2113,8 @@ func (o *Network) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkDomain and assigns it to the NetworkDomain field.
-func (o *Network) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain) {
+// SetNetworkDomain gets a reference to the given CreateNetworks200ResponseAllOfNetworkNetworkDomain and assigns it to the NetworkDomain field.
+func (o *Network) SetNetworkDomain(v CreateNetworks200ResponseAllOfNetworkNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -2440,9 +2440,9 @@ func (o *Network) SetApplianceUrlProxyBypass(v bool) {
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *Network) GetZonePool() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Network) GetZonePool() CreateNetworks200ResponseAllOfNetworkZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret CreateNetworks200ResponseAllOfNetworkZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -2450,7 +2450,7 @@ func (o *Network) GetZonePool() GetAlerts200ResponseAllOfCheckGroupsInnerInstanc
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetZonePoolOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Network) GetZonePoolOk() (*CreateNetworks200ResponseAllOfNetworkZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -2466,8 +2466,8 @@ func (o *Network) IsSetZonePool() bool {
 	return false
 }
 
-// SetZonePool gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the ZonePool field.
-func (o *Network) SetZonePool(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZonePool gets a reference to the given CreateNetworks200ResponseAllOfNetworkZonePool and assigns it to the ZonePool field.
+func (o *Network) SetZonePool(v CreateNetworks200ResponseAllOfNetworkZonePool) {
 	o.ZonePool = &v
 }
 
@@ -2504,9 +2504,9 @@ func (o *Network) SetAllowStaticOverride(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *Network) GetConfig() ListNetworks200ResponseAllOfNetworksInnerConfig {
+func (o *Network) GetConfig() CreateNetworks200ResponseAllOfNetworkConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerConfig
+		var ret CreateNetworks200ResponseAllOfNetworkConfig
 		return ret
 	}
 	return *o.Config
@@ -2514,7 +2514,7 @@ func (o *Network) GetConfig() ListNetworks200ResponseAllOfNetworksInnerConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetConfigOk() (*ListNetworks200ResponseAllOfNetworksInnerConfig, bool) {
+func (o *Network) GetConfigOk() (*CreateNetworks200ResponseAllOfNetworkConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -2530,15 +2530,15 @@ func (o *Network) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerConfig and assigns it to the Config field.
-func (o *Network) SetConfig(v ListNetworks200ResponseAllOfNetworksInnerConfig) {
+// SetConfig gets a reference to the given CreateNetworks200ResponseAllOfNetworkConfig and assigns it to the Config field.
+func (o *Network) SetConfig(v CreateNetworks200ResponseAllOfNetworkConfig) {
 	o.Config = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *Network) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *Network) GetTenants() []CreateNetworks200ResponseAllOfNetworkTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []CreateNetworks200ResponseAllOfNetworkTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -2546,7 +2546,7 @@ func (o *Network) GetTenants() []GetAlerts200ResponseAllOfCheckGroupsInnerInstan
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetTenantsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *Network) GetTenantsOk() ([]CreateNetworks200ResponseAllOfNetworkTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -2562,15 +2562,15 @@ func (o *Network) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Tenants field.
-func (o *Network) SetTenants(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetTenants gets a reference to the given []CreateNetworks200ResponseAllOfNetworkTenantsInner and assigns it to the Tenants field.
+func (o *Network) SetTenants(v []CreateNetworks200ResponseAllOfNetworkTenantsInner) {
 	o.Tenants = v
 }
 
 // GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
-func (o *Network) GetResourcePermission() ListNetworks200ResponseAllOfNetworksInnerResourcePermission {
+func (o *Network) GetResourcePermission() CreateNetworks200ResponseAllOfNetworkResourcePermission {
 	if o == nil || IsNil(o.ResourcePermission) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerResourcePermission
+		var ret CreateNetworks200ResponseAllOfNetworkResourcePermission
 		return ret
 	}
 	return *o.ResourcePermission
@@ -2578,7 +2578,7 @@ func (o *Network) GetResourcePermission() ListNetworks200ResponseAllOfNetworksIn
 
 // GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Network) GetResourcePermissionOk() (*ListNetworks200ResponseAllOfNetworksInnerResourcePermission, bool) {
+func (o *Network) GetResourcePermissionOk() (*CreateNetworks200ResponseAllOfNetworkResourcePermission, bool) {
 	if o == nil || IsNil(o.ResourcePermission) {
 		return nil, false
 	}
@@ -2594,8 +2594,8 @@ func (o *Network) IsSetResourcePermission() bool {
 	return false
 }
 
-// SetResourcePermission gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerResourcePermission and assigns it to the ResourcePermission field.
-func (o *Network) SetResourcePermission(v ListNetworks200ResponseAllOfNetworksInnerResourcePermission) {
+// SetResourcePermission gets a reference to the given CreateNetworks200ResponseAllOfNetworkResourcePermission and assigns it to the ResourcePermission field.
+func (o *Network) SetResourcePermission(v CreateNetworks200ResponseAllOfNetworkResourcePermission) {
 	o.ResourcePermission = &v
 }
 
@@ -2856,7 +2856,6 @@ func (v NullableNetwork) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *Network) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

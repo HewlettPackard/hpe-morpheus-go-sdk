@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the instance to be created. | 
-**Site** | [**AddInstanceRequestInstanceSite**](AddInstanceRequestInstanceSite.md) |  | 
-**InstanceType** | [**AddInstanceRequestInstanceInstanceType**](AddInstanceRequestInstanceInstanceType.md) |  | 
-**Layout** | [**AddInstanceRequestInstanceLayout**](AddInstanceRequestInstanceLayout.md) |  | 
-**Plan** | [**AddInstanceRequestInstancePlan**](AddInstanceRequestInstancePlan.md) |  | 
+**Site** | [**UpdateInstance200ResponseAllOfOneOfInstanceSite**](UpdateInstance200ResponseAllOfOneOfInstanceSite.md) |  | 
+**InstanceType** | [**UpdateInstance200ResponseAllOfOneOfInstanceInstanceType**](UpdateInstance200ResponseAllOfOneOfInstanceInstanceType.md) |  | 
+**Layout** | [**UpdateInstance200ResponseAllOfOneOfInstanceLayout**](UpdateInstance200ResponseAllOfOneOfInstanceLayout.md) |  | 
+**Plan** | [**UpdateInstance200ResponseAllOfOneOfInstancePlan**](UpdateInstance200ResponseAllOfOneOfInstancePlan.md) |  | 
 
 ## Methods
 
 ### NewUpdateInstance200ResponseAllOfOneOfInstance
 
-`func NewUpdateInstance200ResponseAllOfOneOfInstance(name string, site AddInstanceRequestInstanceSite, instanceType AddInstanceRequestInstanceInstanceType, layout AddInstanceRequestInstanceLayout, plan AddInstanceRequestInstancePlan, ) *UpdateInstance200ResponseAllOfOneOfInstance`
+`func NewUpdateInstance200ResponseAllOfOneOfInstance(name string, site UpdateInstance200ResponseAllOfOneOfInstanceSite, instanceType UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, layout UpdateInstance200ResponseAllOfOneOfInstanceLayout, plan UpdateInstance200ResponseAllOfOneOfInstancePlan, ) *UpdateInstance200ResponseAllOfOneOfInstance`
 
 NewUpdateInstance200ResponseAllOfOneOfInstance instantiates a new UpdateInstance200ResponseAllOfOneOfInstance object
 This constructor will assign default values to properties that have it defined,
@@ -51,80 +51,80 @@ SetName sets Name field to given value.
 
 ### GetSite
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() AddInstanceRequestInstanceSite`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSite() UpdateInstance200ResponseAllOfOneOfInstanceSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*AddInstanceRequestInstanceSite, bool)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetSiteOk() (*UpdateInstance200ResponseAllOfOneOfInstanceSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetSite(v AddInstanceRequestInstanceSite)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetSite(v UpdateInstance200ResponseAllOfOneOfInstanceSite)`
 
 SetSite sets Site field to given value.
 
 
 ### GetInstanceType
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() AddInstanceRequestInstanceInstanceType`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceType() UpdateInstance200ResponseAllOfOneOfInstanceInstanceType`
 
 GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeOk
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*AddInstanceRequestInstanceInstanceType, bool)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetInstanceTypeOk() (*UpdateInstance200ResponseAllOfOneOfInstanceInstanceType, bool)`
 
 GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceType
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstanceRequestInstanceInstanceType)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetInstanceType(v UpdateInstance200ResponseAllOfOneOfInstanceInstanceType)`
 
 SetInstanceType sets InstanceType field to given value.
 
 
 ### GetLayout
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() AddInstanceRequestInstanceLayout`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayout() UpdateInstance200ResponseAllOfOneOfInstanceLayout`
 
 GetLayout returns the Layout field if non-nil, zero value otherwise.
 
 ### GetLayoutOk
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*AddInstanceRequestInstanceLayout, bool)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetLayoutOk() (*UpdateInstance200ResponseAllOfOneOfInstanceLayout, bool)`
 
 GetLayoutOk returns a tuple with the Layout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLayout
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetLayout(v AddInstanceRequestInstanceLayout)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetLayout(v UpdateInstance200ResponseAllOfOneOfInstanceLayout)`
 
 SetLayout sets Layout field to given value.
 
 
 ### GetPlan
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() AddInstanceRequestInstancePlan`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlan() UpdateInstance200ResponseAllOfOneOfInstancePlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*AddInstanceRequestInstancePlan, bool)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*UpdateInstance200ResponseAllOfOneOfInstancePlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetPlan(v AddInstanceRequestInstancePlan)`
+`func (o *UpdateInstance200ResponseAllOfOneOfInstance) SetPlan(v UpdateInstance200ResponseAllOfOneOfInstancePlan)`
 
 SetPlan sets Plan field to given value.
 

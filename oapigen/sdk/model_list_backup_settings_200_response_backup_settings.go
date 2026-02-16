@@ -20,13 +20,13 @@ var _ MappedNullable = &ListBackupSettings200ResponseBackupSettings{}
 
 // ListBackupSettings200ResponseBackupSettings struct for ListBackupSettings200ResponseBackupSettings
 type ListBackupSettings200ResponseBackupSettings struct {
-	BackupsEnabled       *bool                                                       `json:"backupsEnabled,omitempty"`
-	CreateBackups        *bool                                                       `json:"createBackups,omitempty"`
-	BackupAppliance      *bool                                                       `json:"backupAppliance,omitempty"`
-	DefaultStorageBucket NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"defaultStorageBucket,omitempty"`
-	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"defaultSchedule,omitempty"`
-	RetentionCount       *int64                                                      `json:"retentionCount,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	BackupsEnabled       *bool                                                            `json:"backupsEnabled,omitempty"`
+	CreateBackups        *bool                                                            `json:"createBackups,omitempty"`
+	BackupAppliance      *bool                                                            `json:"backupAppliance,omitempty"`
+	DefaultStorageBucket *ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket `json:"defaultStorageBucket,omitempty"`
+	DefaultSchedule      *ListBackupSettings200ResponseBackupSettingsDefaultSchedule      `json:"defaultSchedule,omitempty"`
+	RetentionCount       *int64                                                           `json:"retentionCount,omitempty"`
+	AdditionalProperties map[string]interface{}                                           `json:",remain"`
 }
 
 type _ListBackupSettings200ResponseBackupSettings ListBackupSettings200ResponseBackupSettings
@@ -144,47 +144,36 @@ func (o *ListBackupSettings200ResponseBackupSettings) SetBackupAppliance(v bool)
 	o.BackupAppliance = &v
 }
 
-// GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.DefaultStorageBucket.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetDefaultStorageBucket returns the DefaultStorageBucket field value if set, zero value otherwise.
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucket() ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket {
+	if o == nil || IsNil(o.DefaultStorageBucket) {
+		var ret ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket
 		return ret
 	}
-	return *o.DefaultStorageBucket.Get()
+	return *o.DefaultStorageBucket
 }
 
 // GetDefaultStorageBucketOk returns a tuple with the DefaultStorageBucket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListBackupSettings200ResponseBackupSettings) GetDefaultStorageBucketOk() (*ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket, bool) {
+	if o == nil || IsNil(o.DefaultStorageBucket) {
 		return nil, false
 	}
-	return o.DefaultStorageBucket.Get(), o.DefaultStorageBucket.IsSet()
+	return o.DefaultStorageBucket, true
 }
 
 // IsSetDefaultStorageBucket returns a boolean if a field has been set.
 func (o *ListBackupSettings200ResponseBackupSettings) IsSetDefaultStorageBucket() bool {
-	if o != nil && o.DefaultStorageBucket.IsSet() {
+	if o != nil && !IsNil(o.DefaultStorageBucket) {
 		return true
 	}
 
 	return false
 }
 
-// SetDefaultStorageBucket gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the DefaultStorageBucket field.
-func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.DefaultStorageBucket.Set(&v)
-}
-
-// SetDefaultStorageBucketNil sets the value for DefaultStorageBucket to be an explicit nil
-func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucketNil() {
-	o.DefaultStorageBucket.Set(nil)
-}
-
-// UnsetDefaultStorageBucket ensures that no value is present for DefaultStorageBucket, not even an explicit nil
-func (o *ListBackupSettings200ResponseBackupSettings) UnsetDefaultStorageBucket() {
-	o.DefaultStorageBucket.Unset()
+// SetDefaultStorageBucket gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket and assigns it to the DefaultStorageBucket field.
+func (o *ListBackupSettings200ResponseBackupSettings) SetDefaultStorageBucket(v ListBackupSettings200ResponseBackupSettingsDefaultStorageBucket) {
+	o.DefaultStorageBucket = &v
 }
 
 // GetDefaultSchedule returns the DefaultSchedule field value if set, zero value otherwise.
@@ -270,8 +259,8 @@ func (o ListBackupSettings200ResponseBackupSettings) ToMap() (map[string]interfa
 	if !IsNil(o.BackupAppliance) {
 		toSerialize["backupAppliance"] = o.BackupAppliance
 	}
-	if o.DefaultStorageBucket.IsSet() {
-		toSerialize["defaultStorageBucket"] = o.DefaultStorageBucket.Get()
+	if !IsNil(o.DefaultStorageBucket) {
+		toSerialize["defaultStorageBucket"] = o.DefaultStorageBucket
 	}
 	if !IsNil(o.DefaultSchedule) {
 		toSerialize["defaultSchedule"] = o.DefaultSchedule
@@ -331,7 +320,6 @@ func (v NullableListBackupSettings200ResponseBackupSettings) UnmarshalMapstructu
 
 	return v, nil
 }
-
 func (o *ListBackupSettings200ResponseBackupSettings) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

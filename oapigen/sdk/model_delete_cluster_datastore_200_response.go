@@ -176,7 +176,6 @@ func (v NullableDeleteClusterDatastore200Response) UnmarshalMapstructure(data an
 
 	return v, nil
 }
-
 func (o *DeleteClusterDatastore200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

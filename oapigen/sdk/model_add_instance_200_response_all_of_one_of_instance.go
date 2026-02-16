@@ -21,85 +21,85 @@ var _ MappedNullable = &AddInstance200ResponseAllOfOneOfInstance{}
 
 // AddInstance200ResponseAllOfOneOfInstance struct for AddInstance200ResponseAllOfOneOfInstance
 type AddInstance200ResponseAllOfOneOfInstance struct {
-	Id                   *int64                                                                       `json:"id,omitempty"`
-	Uuid                 *string                                                                      `json:"uuid,omitempty"`
-	AccountId            *int64                                                                       `json:"accountId,omitempty"`
-	Tenant               NullableListApprovals200ResponseAllOfApprovalsInnerAccount                   `json:"tenant,omitempty"`
-	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceInstanceType                        `json:"instanceType,omitempty"`
-	Group                NullableListApprovals200ResponseAllOfApprovalsInnerAccount                   `json:"group,omitempty"`
-	Cloud                *ListApps200ResponseAllOfAppsInnerBlueprint                                  `json:"cloud,omitempty"`
-	Cluster              *ListInstances200ResponseAllOfInstancesInnerCluster                          `json:"cluster,omitempty"`
-	Containers           []int64                                                                      `json:"containers,omitempty"`
-	Servers              []int64                                                                      `json:"servers,omitempty"`
-	ConnectionInfo       []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner                `json:"connectionInfo,omitempty"`
-	Layout               *AddInstance200ResponseAllOfOneOfInstanceLayout                              `json:"layout,omitempty"`
-	Plan                 *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                  `json:"plan,omitempty"`
-	Name                 *string                                                                      `json:"name,omitempty"`
-	DisplayName          *string                                                                      `json:"displayName,omitempty"`
-	Description          NullableString                                                               `json:"description,omitempty"`
-	Environment          NullableString                                                               `json:"environment,omitempty"`
-	Config               *AddInstance200ResponseAllOfOneOfInstanceConfig                              `json:"config,omitempty"`
-	ConfigGroup          NullableString                                                               `json:"configGroup,omitempty"`
-	ConfigId             NullableString                                                               `json:"configId,omitempty"`
-	ConfigRole           NullableString                                                               `json:"configRole,omitempty"`
-	Volumes              []AddInstance200ResponseAllOfOneOfInstanceVolumesInner                       `json:"volumes,omitempty"`
-	Controllers          []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner `json:"controllers,omitempty"`
-	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner                    `json:"interfaces,omitempty"`
-	CustomOptions        map[string]interface{}                                                       `json:"customOptions,omitempty"`
-	InstanceVersion      *string                                                                      `json:"instanceVersion,omitempty"`
-	Labels               []string                                                                     `json:"labels,omitempty"`
-	Tags                 []AddInstance200ResponseAllOfOneOfInstanceTagsInner                          `json:"tags,omitempty"`
-	Evars                []AddInstance200ResponseAllOfOneOfInstanceEvarsInner                         `json:"evars,omitempty"`
-	MaxMemory            *int64                                                                       `json:"maxMemory,omitempty"`
-	MaxStorage           *int64                                                                       `json:"maxStorage,omitempty"`
-	MaxCores             *int64                                                                       `json:"maxCores,omitempty"`
-	CoresPerSocket       NullableInt64                                                                `json:"coresPerSocket,omitempty"`
-	MaxCpu               NullableInt64                                                                `json:"maxCpu,omitempty"`
-	HourlyCost           *float32                                                                     `json:"hourlyCost,omitempty"`
-	HourlyPrice          *float32                                                                     `json:"hourlyPrice,omitempty"`
-	InstancePrice        *AddInstance200ResponseAllOfOneOfInstanceInstancePrice                       `json:"instancePrice,omitempty"`
-	DateCreated          *time.Time                                                                   `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                                                   `json:"lastUpdated,omitempty"`
-	HostName             *string                                                                      `json:"hostName,omitempty"`
-	DomainName           NullableString                                                               `json:"domainName,omitempty"`
-	EnvironmentPrefix    NullableString                                                               `json:"environmentPrefix,omitempty"`
-	FirewallEnabled      *bool                                                                        `json:"firewallEnabled,omitempty"`
-	NetworkLevel         *string                                                                      `json:"networkLevel,omitempty"`
-	AutoScale            *bool                                                                        `json:"autoScale,omitempty"`
-	InstanceContext      NullableString                                                               `json:"instanceContext,omitempty"`
-	CurrentDeployId      NullableString                                                               `json:"currentDeployId,omitempty"`
-	Locked               *bool                                                                        `json:"locked,omitempty"`
-	Status               *string                                                                      `json:"status,omitempty"`
-	StatusMessage        NullableString                                                               `json:"statusMessage,omitempty"`
-	ErrorMessage         NullableString                                                               `json:"errorMessage,omitempty"`
-	StatusDate           *time.Time                                                                   `json:"statusDate,omitempty"`
-	StatusPercent        NullableString                                                               `json:"statusPercent,omitempty"`
-	StatusEta            NullableString                                                               `json:"statusEta,omitempty"`
-	UserStatus           NullableString                                                               `json:"userStatus,omitempty"`
-	ExpireDays           *int64                                                                       `json:"expireDays,omitempty"`
-	RenewDays            *int64                                                                       `json:"renewDays,omitempty"`
-	ExpireCount          *int64                                                                       `json:"expireCount,omitempty"`
-	ExpireDate           *time.Time                                                                   `json:"expireDate,omitempty"`
-	ExpireWarningDate    *time.Time                                                                   `json:"expireWarningDate,omitempty"`
-	ExpireWarningSent    *bool                                                                        `json:"expireWarningSent,omitempty"`
-	ShutdownDays         *int64                                                                       `json:"shutdownDays,omitempty"`
-	ShutdownRenewDays    *int64                                                                       `json:"shutdownRenewDays,omitempty"`
-	ShutdownCount        *int64                                                                       `json:"shutdownCount,omitempty"`
-	ShutdownDate         *time.Time                                                                   `json:"shutdownDate,omitempty"`
-	ShutdownWarningDate  *time.Time                                                                   `json:"shutdownWarningDate,omitempty"`
-	ShutdownWarningSent  *bool                                                                        `json:"shutdownWarningSent,omitempty"`
-	RemovalDate          NullableTime                                                                 `json:"removalDate,omitempty"`
-	CreatedBy            *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                  `json:"createdBy,omitempty"`
-	Owner                *ListActivity200ResponseAllOfActivityInnerActivityInnerUser                  `json:"owner,omitempty"`
-	Notes                NullableString                                                               `json:"notes,omitempty"`
-	Stats                *AddInstance200ResponseAllOfOneOfInstanceStats                               `json:"stats,omitempty"`
-	PowerSchedule        NullableString                                                               `json:"powerSchedule,omitempty"`
-	IsScalable           *bool                                                                        `json:"isScalable,omitempty"`
-	InstanceThreshold    map[string]interface{}                                                       `json:"instanceThreshold,omitempty"`
-	IsBusy               *bool                                                                        `json:"isBusy,omitempty"`
-	Apps                 []map[string]interface{}                                                     `json:"apps,omitempty"`
-	ContainerDetails     []InstanceContainer1                                                         `json:"containerDetails,omitempty"`
-	AdditionalProperties map[string]interface{}                                                       `json:",remain"`
+	Id                   *int64                                                        `json:"id,omitempty"`
+	Uuid                 *string                                                       `json:"uuid,omitempty"`
+	AccountId            *int64                                                        `json:"accountId,omitempty"`
+	Tenant               *AddInstance200ResponseAllOfOneOfInstanceTenant               `json:"tenant,omitempty"`
+	InstanceType         *AddInstance200ResponseAllOfOneOfInstanceInstanceType         `json:"instanceType,omitempty"`
+	Group                *AddInstance200ResponseAllOfOneOfInstanceGroup                `json:"group,omitempty"`
+	Cloud                *AddInstance200ResponseAllOfOneOfInstanceCloud                `json:"cloud,omitempty"`
+	Cluster              *AddInstance200ResponseAllOfOneOfInstanceCluster              `json:"cluster,omitempty"`
+	Containers           []int64                                                       `json:"containers,omitempty"`
+	Servers              []int64                                                       `json:"servers,omitempty"`
+	ConnectionInfo       []AddInstance200ResponseAllOfOneOfInstanceConnectionInfoInner `json:"connectionInfo,omitempty"`
+	Layout               *AddInstance200ResponseAllOfOneOfInstanceLayout               `json:"layout,omitempty"`
+	Plan                 *AddInstance200ResponseAllOfOneOfInstancePlan                 `json:"plan,omitempty"`
+	Name                 *string                                                       `json:"name,omitempty"`
+	DisplayName          *string                                                       `json:"displayName,omitempty"`
+	Description          NullableString                                                `json:"description,omitempty"`
+	Environment          NullableString                                                `json:"environment,omitempty"`
+	Config               *AddInstance200ResponseAllOfOneOfInstanceConfig               `json:"config,omitempty"`
+	ConfigGroup          NullableString                                                `json:"configGroup,omitempty"`
+	ConfigId             NullableString                                                `json:"configId,omitempty"`
+	ConfigRole           NullableString                                                `json:"configRole,omitempty"`
+	Volumes              []AddInstance200ResponseAllOfOneOfInstanceVolumesInner        `json:"volumes,omitempty"`
+	Controllers          []AddInstance200ResponseAllOfOneOfInstanceControllersInner    `json:"controllers,omitempty"`
+	Interfaces           []AddInstance200ResponseAllOfOneOfInstanceInterfacesInner     `json:"interfaces,omitempty"`
+	CustomOptions        map[string]interface{}                                        `json:"customOptions,omitempty"`
+	InstanceVersion      *string                                                       `json:"instanceVersion,omitempty"`
+	Labels               []string                                                      `json:"labels,omitempty"`
+	Tags                 []AddInstance200ResponseAllOfOneOfInstanceTagsInner           `json:"tags,omitempty"`
+	Evars                []AddInstance200ResponseAllOfOneOfInstanceEvarsInner          `json:"evars,omitempty"`
+	MaxMemory            *int64                                                        `json:"maxMemory,omitempty"`
+	MaxStorage           *int64                                                        `json:"maxStorage,omitempty"`
+	MaxCores             *int64                                                        `json:"maxCores,omitempty"`
+	CoresPerSocket       NullableInt64                                                 `json:"coresPerSocket,omitempty"`
+	MaxCpu               NullableInt64                                                 `json:"maxCpu,omitempty"`
+	HourlyCost           *float32                                                      `json:"hourlyCost,omitempty"`
+	HourlyPrice          *float32                                                      `json:"hourlyPrice,omitempty"`
+	InstancePrice        *AddInstance200ResponseAllOfOneOfInstanceInstancePrice        `json:"instancePrice,omitempty"`
+	DateCreated          *time.Time                                                    `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                                    `json:"lastUpdated,omitempty"`
+	HostName             *string                                                       `json:"hostName,omitempty"`
+	DomainName           NullableString                                                `json:"domainName,omitempty"`
+	EnvironmentPrefix    NullableString                                                `json:"environmentPrefix,omitempty"`
+	FirewallEnabled      *bool                                                         `json:"firewallEnabled,omitempty"`
+	NetworkLevel         *string                                                       `json:"networkLevel,omitempty"`
+	AutoScale            *bool                                                         `json:"autoScale,omitempty"`
+	InstanceContext      NullableString                                                `json:"instanceContext,omitempty"`
+	CurrentDeployId      NullableString                                                `json:"currentDeployId,omitempty"`
+	Locked               *bool                                                         `json:"locked,omitempty"`
+	Status               *string                                                       `json:"status,omitempty"`
+	StatusMessage        NullableString                                                `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString                                                `json:"errorMessage,omitempty"`
+	StatusDate           *time.Time                                                    `json:"statusDate,omitempty"`
+	StatusPercent        NullableString                                                `json:"statusPercent,omitempty"`
+	StatusEta            NullableString                                                `json:"statusEta,omitempty"`
+	UserStatus           NullableString                                                `json:"userStatus,omitempty"`
+	ExpireDays           *int64                                                        `json:"expireDays,omitempty"`
+	RenewDays            *int64                                                        `json:"renewDays,omitempty"`
+	ExpireCount          *int64                                                        `json:"expireCount,omitempty"`
+	ExpireDate           *time.Time                                                    `json:"expireDate,omitempty"`
+	ExpireWarningDate    *time.Time                                                    `json:"expireWarningDate,omitempty"`
+	ExpireWarningSent    *bool                                                         `json:"expireWarningSent,omitempty"`
+	ShutdownDays         *int64                                                        `json:"shutdownDays,omitempty"`
+	ShutdownRenewDays    *int64                                                        `json:"shutdownRenewDays,omitempty"`
+	ShutdownCount        *int64                                                        `json:"shutdownCount,omitempty"`
+	ShutdownDate         *time.Time                                                    `json:"shutdownDate,omitempty"`
+	ShutdownWarningDate  *time.Time                                                    `json:"shutdownWarningDate,omitempty"`
+	ShutdownWarningSent  *bool                                                         `json:"shutdownWarningSent,omitempty"`
+	RemovalDate          NullableTime                                                  `json:"removalDate,omitempty"`
+	CreatedBy            *AddInstance200ResponseAllOfOneOfInstanceCreatedBy            `json:"createdBy,omitempty"`
+	Owner                *AddInstance200ResponseAllOfOneOfInstanceOwner                `json:"owner,omitempty"`
+	Notes                NullableString                                                `json:"notes,omitempty"`
+	Stats                *AddInstance200ResponseAllOfOneOfInstanceStats                `json:"stats,omitempty"`
+	PowerSchedule        NullableString                                                `json:"powerSchedule,omitempty"`
+	IsScalable           *bool                                                         `json:"isScalable,omitempty"`
+	InstanceThreshold    map[string]interface{}                                        `json:"instanceThreshold,omitempty"`
+	IsBusy               *bool                                                         `json:"isBusy,omitempty"`
+	Apps                 []map[string]interface{}                                      `json:"apps,omitempty"`
+	ContainerDetails     []InstanceContainer1                                          `json:"containerDetails,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _AddInstance200ResponseAllOfOneOfInstance AddInstance200ResponseAllOfOneOfInstance
@@ -217,47 +217,36 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetAccountId(v int64) {
 	o.AccountId = &v
 }
 
-// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Tenant.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetTenant returns the Tenant field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenant() AddInstance200ResponseAllOfOneOfInstanceTenant {
+	if o == nil || IsNil(o.Tenant) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceTenant
 		return ret
 	}
-	return *o.Tenant.Get()
+	return *o.Tenant
 }
 
 // GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetTenantOk() (*AddInstance200ResponseAllOfOneOfInstanceTenant, bool) {
+	if o == nil || IsNil(o.Tenant) {
 		return nil, false
 	}
-	return o.Tenant.Get(), o.Tenant.IsSet()
+	return o.Tenant, true
 }
 
 // IsSetTenant returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetTenant() bool {
-	if o != nil && o.Tenant.IsSet() {
+	if o != nil && !IsNil(o.Tenant) {
 		return true
 	}
 
 	return false
 }
 
-// SetTenant gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Tenant field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Tenant.Set(&v)
-}
-
-// SetTenantNil sets the value for Tenant to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenantNil() {
-	o.Tenant.Set(nil)
-}
-
-// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetTenant() {
-	o.Tenant.Unset()
+// SetTenant gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceTenant and assigns it to the Tenant field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetTenant(v AddInstance200ResponseAllOfOneOfInstanceTenant) {
+	o.Tenant = &v
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
@@ -292,53 +281,42 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetInstanceType(v AddInstance
 	o.InstanceType = &v
 }
 
-// GetGroup returns the Group field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Group.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetGroup returns the Group field value if set, zero value otherwise.
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroup() AddInstance200ResponseAllOfOneOfInstanceGroup {
+	if o == nil || IsNil(o.Group) {
+		var ret AddInstance200ResponseAllOfOneOfInstanceGroup
 		return ret
 	}
-	return *o.Group.Get()
+	return *o.Group
 }
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetGroupOk() (*AddInstance200ResponseAllOfOneOfInstanceGroup, bool) {
+	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
-	return o.Group.Get(), o.Group.IsSet()
+	return o.Group, true
 }
 
 // IsSetGroup returns a boolean if a field has been set.
 func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetGroup() bool {
-	if o != nil && o.Group.IsSet() {
+	if o != nil && !IsNil(o.Group) {
 		return true
 	}
 
 	return false
 }
 
-// SetGroup gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Group field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Group.Set(&v)
-}
-
-// SetGroupNil sets the value for Group to be an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroupNil() {
-	o.Group.Set(nil)
-}
-
-// UnsetGroup ensures that no value is present for Group, not even an explicit nil
-func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetGroup() {
-	o.Group.Unset()
+// SetGroup gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceGroup and assigns it to the Group field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetGroup(v AddInstance200ResponseAllOfOneOfInstanceGroup) {
+	o.Group = &v
 }
 
 // GetCloud returns the Cloud field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloud() ListApps200ResponseAllOfAppsInnerBlueprint {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloud() AddInstance200ResponseAllOfOneOfInstanceCloud {
 	if o == nil || IsNil(o.Cloud) {
-		var ret ListApps200ResponseAllOfAppsInnerBlueprint
+		var ret AddInstance200ResponseAllOfOneOfInstanceCloud
 		return ret
 	}
 	return *o.Cloud
@@ -346,7 +324,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloud() ListApps200Respons
 
 // GetCloudOk returns a tuple with the Cloud field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloudOk() (*ListApps200ResponseAllOfAppsInnerBlueprint, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCloudOk() (*AddInstance200ResponseAllOfOneOfInstanceCloud, bool) {
 	if o == nil || IsNil(o.Cloud) {
 		return nil, false
 	}
@@ -362,15 +340,15 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCloud() bool {
 	return false
 }
 
-// SetCloud gets a reference to the given ListApps200ResponseAllOfAppsInnerBlueprint and assigns it to the Cloud field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetCloud(v ListApps200ResponseAllOfAppsInnerBlueprint) {
+// SetCloud gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceCloud and assigns it to the Cloud field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCloud(v AddInstance200ResponseAllOfOneOfInstanceCloud) {
 	o.Cloud = &v
 }
 
 // GetCluster returns the Cluster field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetCluster() ListInstances200ResponseAllOfInstancesInnerCluster {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCluster() AddInstance200ResponseAllOfOneOfInstanceCluster {
 	if o == nil || IsNil(o.Cluster) {
-		var ret ListInstances200ResponseAllOfInstancesInnerCluster
+		var ret AddInstance200ResponseAllOfOneOfInstanceCluster
 		return ret
 	}
 	return *o.Cluster
@@ -378,7 +356,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetCluster() ListInstances200
 
 // GetClusterOk returns a tuple with the Cluster field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetClusterOk() (*ListInstances200ResponseAllOfInstancesInnerCluster, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetClusterOk() (*AddInstance200ResponseAllOfOneOfInstanceCluster, bool) {
 	if o == nil || IsNil(o.Cluster) {
 		return nil, false
 	}
@@ -394,8 +372,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCluster() bool {
 	return false
 }
 
-// SetCluster gets a reference to the given ListInstances200ResponseAllOfInstancesInnerCluster and assigns it to the Cluster field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetCluster(v ListInstances200ResponseAllOfInstancesInnerCluster) {
+// SetCluster gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceCluster and assigns it to the Cluster field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCluster(v AddInstance200ResponseAllOfOneOfInstanceCluster) {
 	o.Cluster = &v
 }
 
@@ -528,9 +506,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetLayout(v AddInstance200Res
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlan() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlan() AddInstance200ResponseAllOfOneOfInstancePlan {
 	if o == nil || IsNil(o.Plan) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret AddInstance200ResponseAllOfOneOfInstancePlan
 		return ret
 	}
 	return *o.Plan
@@ -538,7 +516,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlan() ListBackupSettings2
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetPlanOk() (*AddInstance200ResponseAllOfOneOfInstancePlan, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -554,8 +532,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Plan field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetPlan(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetPlan gets a reference to the given AddInstance200ResponseAllOfOneOfInstancePlan and assigns it to the Plan field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetPlan(v AddInstance200ResponseAllOfOneOfInstancePlan) {
 	o.Plan = &v
 }
 
@@ -903,9 +881,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetVolumes(v []AddInstance200
 }
 
 // GetControllers returns the Controllers field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []AddInstance200ResponseAllOfOneOfInstanceControllersInner {
 	if o == nil || IsNil(o.Controllers) {
-		var ret []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner
+		var ret []AddInstance200ResponseAllOfOneOfInstanceControllersInner
 		return ret
 	}
 	return o.Controllers
@@ -913,7 +891,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllers() []ListGuidan
 
 // GetControllersOk returns a tuple with the Controllers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllersOk() ([]ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetControllersOk() ([]AddInstance200ResponseAllOfOneOfInstanceControllersInner, bool) {
 	if o == nil || IsNil(o.Controllers) {
 		return nil, false
 	}
@@ -929,8 +907,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetControllers() bool {
 	return false
 }
 
-// SetControllers gets a reference to the given []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner and assigns it to the Controllers field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetControllers(v []ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceControllersInner) {
+// SetControllers gets a reference to the given []AddInstance200ResponseAllOfOneOfInstanceControllersInner and assigns it to the Controllers field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetControllers(v []AddInstance200ResponseAllOfOneOfInstanceControllersInner) {
 	o.Controllers = v
 }
 
@@ -1063,9 +1041,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetLabels(v []string) {
 	o.Labels = v
 }
 
-// GetTags returns the Tags field value if set, zero value otherwise.
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetTags() []AddInstance200ResponseAllOfOneOfInstanceTagsInner {
-	if o == nil || IsNil(o.Tags) {
+	if o == nil {
 		var ret []AddInstance200ResponseAllOfOneOfInstanceTagsInner
 		return ret
 	}
@@ -1074,6 +1052,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetTags() []AddInstance200Res
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetTagsOk() ([]AddInstance200ResponseAllOfOneOfInstanceTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
@@ -1095,9 +1074,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetTags(v []AddInstance200Res
 	o.Tags = v
 }
 
-// GetEvars returns the Evars field value if set, zero value otherwise.
+// GetEvars returns the Evars field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetEvars() []AddInstance200ResponseAllOfOneOfInstanceEvarsInner {
-	if o == nil || IsNil(o.Evars) {
+	if o == nil {
 		var ret []AddInstance200ResponseAllOfOneOfInstanceEvarsInner
 		return ret
 	}
@@ -1106,6 +1085,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetEvars() []AddInstance200Re
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetEvarsOk() ([]AddInstance200ResponseAllOfOneOfInstanceEvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
@@ -2508,9 +2488,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) UnsetRemovalDate() {
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedBy() AddInstance200ResponseAllOfOneOfInstanceCreatedBy {
 	if o == nil || IsNil(o.CreatedBy) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret AddInstance200ResponseAllOfOneOfInstanceCreatedBy
 		return ret
 	}
 	return *o.CreatedBy
@@ -2518,7 +2498,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedBy() ListActivity20
 
 // GetCreatedByOk returns a tuple with the CreatedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetCreatedByOk() (*AddInstance200ResponseAllOfOneOfInstanceCreatedBy, bool) {
 	if o == nil || IsNil(o.CreatedBy) {
 		return nil, false
 	}
@@ -2534,15 +2514,15 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetCreatedBy() bool {
 	return false
 }
 
-// SetCreatedBy gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the CreatedBy field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetCreatedBy gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceCreatedBy and assigns it to the CreatedBy field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetCreatedBy(v AddInstance200ResponseAllOfOneOfInstanceCreatedBy) {
 	o.CreatedBy = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwner() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwner() AddInstance200ResponseAllOfOneOfInstanceOwner {
 	if o == nil || IsNil(o.Owner) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret AddInstance200ResponseAllOfOneOfInstanceOwner
 		return ret
 	}
 	return *o.Owner
@@ -2550,7 +2530,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwner() ListActivity200Res
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwnerOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *AddInstance200ResponseAllOfOneOfInstance) GetOwnerOk() (*AddInstance200ResponseAllOfOneOfInstanceOwner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -2566,8 +2546,8 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the Owner field.
-func (o *AddInstance200ResponseAllOfOneOfInstance) SetOwner(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetOwner gets a reference to the given AddInstance200ResponseAllOfOneOfInstanceOwner and assigns it to the Owner field.
+func (o *AddInstance200ResponseAllOfOneOfInstance) SetOwner(v AddInstance200ResponseAllOfOneOfInstanceOwner) {
 	o.Owner = &v
 }
 
@@ -2819,9 +2799,9 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) SetApps(v []map[string]interf
 	o.Apps = v
 }
 
-// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise.
+// GetContainerDetails returns the ContainerDetails field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetails() []InstanceContainer1 {
-	if o == nil || IsNil(o.ContainerDetails) {
+	if o == nil {
 		var ret []InstanceContainer1
 		return ret
 	}
@@ -2830,6 +2810,7 @@ func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetails() []Insta
 
 // GetContainerDetailsOk returns a tuple with the ContainerDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AddInstance200ResponseAllOfOneOfInstance) GetContainerDetailsOk() ([]InstanceContainer1, bool) {
 	if o == nil || IsNil(o.ContainerDetails) {
 		return nil, false
@@ -2870,14 +2851,14 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	if !IsNil(o.AccountId) {
 		toSerialize["accountId"] = o.AccountId
 	}
-	if o.Tenant.IsSet() {
-		toSerialize["tenant"] = o.Tenant.Get()
+	if !IsNil(o.Tenant) {
+		toSerialize["tenant"] = o.Tenant
 	}
 	if !IsNil(o.InstanceType) {
 		toSerialize["instanceType"] = o.InstanceType
 	}
-	if o.Group.IsSet() {
-		toSerialize["group"] = o.Group.Get()
+	if !IsNil(o.Group) {
+		toSerialize["group"] = o.Group
 	}
 	if !IsNil(o.Cloud) {
 		toSerialize["cloud"] = o.Cloud
@@ -2942,10 +2923,10 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
-	if !IsNil(o.Tags) {
+	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !IsNil(o.Evars) {
+	if o.Evars != nil {
 		toSerialize["evars"] = o.Evars
 	}
 	if !IsNil(o.MaxMemory) {
@@ -3092,7 +3073,7 @@ func (o AddInstance200ResponseAllOfOneOfInstance) ToMap() (map[string]interface{
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
 	}
-	if !IsNil(o.ContainerDetails) {
+	if o.ContainerDetails != nil {
 		toSerialize["containerDetails"] = o.ContainerDetails
 	}
 
@@ -3147,7 +3128,6 @@ func (v NullableAddInstance200ResponseAllOfOneOfInstance) UnmarshalMapstructure(
 
 	return v, nil
 }
-
 func (o *AddInstance200ResponseAllOfOneOfInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

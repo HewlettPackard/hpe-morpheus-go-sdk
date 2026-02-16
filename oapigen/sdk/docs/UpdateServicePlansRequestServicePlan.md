@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **MaxCpu** | Pointer to **int64** |  | [optional] 
 **MaxCores** | Pointer to **int64** | Max cores | [optional] 
 **MaxDisks** | Pointer to **int64** | Max disks allowed | [optional] 
-**ProvisionType** | Pointer to [**AddClusterLayoutsRequestLayoutProvisionType**](AddClusterLayoutsRequestLayoutProvisionType.md) |  | [optional] 
+**ProvisionType** | Pointer to [**UpdateServicePlansRequestServicePlanProvisionType**](UpdateServicePlansRequestServicePlanProvisionType.md) |  | [optional] 
 **CoresPerSocket** | Pointer to **int64** |  | [optional] 
 **CustomCpu** | Pointer to **bool** | Can be used to enable / disable customizable cpu | [optional] 
 **CustomCores** | Pointer to **bool** | Can be used to enable / disable customizable cores | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **CustomMaxMemory** | Pointer to **bool** | Can be used to enable / disable customizable memory. | [optional] 
 **AddVolumes** | Pointer to **bool** | Can be used to enable / disable ability to add volumes | [optional] 
 **SortOrder** | Pointer to **int64** | Sort order | [optional] 
-**PriceSets** | Pointer to [**[]AddServicePlansRequestServicePlanPriceSetsInner**](AddServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan | [optional] 
+**PriceSets** | Pointer to [**[]UpdateServicePlansRequestServicePlanPriceSetsInner**](UpdateServicePlansRequestServicePlanPriceSetsInner.md) | List of price sets to include in service plan | [optional] 
 **Config** | Pointer to [**UpdateServicePlansRequestServicePlanConfig**](UpdateServicePlansRequestServicePlanConfig.md) |  | [optional] 
 
 ## Methods
@@ -271,20 +271,20 @@ HasMaxDisks returns a boolean if a field has been set.
 
 ### GetProvisionType
 
-`func (o *UpdateServicePlansRequestServicePlan) GetProvisionType() AddClusterLayoutsRequestLayoutProvisionType`
+`func (o *UpdateServicePlansRequestServicePlan) GetProvisionType() UpdateServicePlansRequestServicePlanProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *UpdateServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddClusterLayoutsRequestLayoutProvisionType, bool)`
+`func (o *UpdateServicePlansRequestServicePlan) GetProvisionTypeOk() (*UpdateServicePlansRequestServicePlanProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *UpdateServicePlansRequestServicePlan) SetProvisionType(v AddClusterLayoutsRequestLayoutProvisionType)`
+`func (o *UpdateServicePlansRequestServicePlan) SetProvisionType(v UpdateServicePlansRequestServicePlanProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -496,20 +496,20 @@ HasSortOrder returns a boolean if a field has been set.
 
 ### GetPriceSets
 
-`func (o *UpdateServicePlansRequestServicePlan) GetPriceSets() []AddServicePlansRequestServicePlanPriceSetsInner`
+`func (o *UpdateServicePlansRequestServicePlan) GetPriceSets() []UpdateServicePlansRequestServicePlanPriceSetsInner`
 
 GetPriceSets returns the PriceSets field if non-nil, zero value otherwise.
 
 ### GetPriceSetsOk
 
-`func (o *UpdateServicePlansRequestServicePlan) GetPriceSetsOk() (*[]AddServicePlansRequestServicePlanPriceSetsInner, bool)`
+`func (o *UpdateServicePlansRequestServicePlan) GetPriceSetsOk() (*[]UpdateServicePlansRequestServicePlanPriceSetsInner, bool)`
 
 GetPriceSetsOk returns a tuple with the PriceSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceSets
 
-`func (o *UpdateServicePlansRequestServicePlan) SetPriceSets(v []AddServicePlansRequestServicePlanPriceSetsInner)`
+`func (o *UpdateServicePlansRequestServicePlan) SetPriceSets(v []UpdateServicePlansRequestServicePlanPriceSetsInner)`
 
 SetPriceSets sets PriceSets field to given value.
 

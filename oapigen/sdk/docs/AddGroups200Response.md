@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | Pointer to [**ListGroups200ResponseAllOfGroupsInner**](ListGroups200ResponseAllOfGroupsInner.md) |  | [optional] 
+**Group** | Pointer to [**AddGroups200ResponseAllOfGroup**](AddGroups200ResponseAllOfGroup.md) |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *AddGroups200Response) GetGroup() ListGroups200ResponseAllOfGroupsInner`
+`func (o *AddGroups200Response) GetGroup() AddGroups200ResponseAllOfGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *AddGroups200Response) GetGroupOk() (*ListGroups200ResponseAllOfGroupsInner, bool)`
+`func (o *AddGroups200Response) GetGroupOk() (*AddGroups200ResponseAllOfGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *AddGroups200Response) SetGroup(v ListGroups200ResponseAllOfGroupsInner)`
+`func (o *AddGroups200Response) SetGroup(v AddGroups200ResponseAllOfGroup)`
 
 SetGroup sets Group field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Environment** | Pointer to [**AddEnvironments200ResponseAllOfEnvironment**](AddEnvironments200ResponseAllOfEnvironment.md) |  | [optional] 
+**Environment** | Pointer to [**GetEnvironments200ResponseEnvironment**](GetEnvironments200ResponseEnvironment.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEnvironment
 
-`func (o *GetEnvironments200Response) GetEnvironment() AddEnvironments200ResponseAllOfEnvironment`
+`func (o *GetEnvironments200Response) GetEnvironment() GetEnvironments200ResponseEnvironment`
 
 GetEnvironment returns the Environment field if non-nil, zero value otherwise.
 
 ### GetEnvironmentOk
 
-`func (o *GetEnvironments200Response) GetEnvironmentOk() (*AddEnvironments200ResponseAllOfEnvironment, bool)`
+`func (o *GetEnvironments200Response) GetEnvironmentOk() (*GetEnvironments200ResponseEnvironment, bool)`
 
 GetEnvironmentOk returns a tuple with the Environment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnvironment
 
-`func (o *GetEnvironments200Response) SetEnvironment(v AddEnvironments200ResponseAllOfEnvironment)`
+`func (o *GetEnvironments200Response) SetEnvironment(v GetEnvironments200ResponseEnvironment)`
 
 SetEnvironment sets Environment field to given value.
 

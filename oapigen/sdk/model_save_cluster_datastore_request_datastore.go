@@ -20,17 +20,17 @@ var _ MappedNullable = &SaveClusterDatastoreRequestDatastore{}
 
 // SaveClusterDatastoreRequestDatastore struct for SaveClusterDatastoreRequestDatastore
 type SaveClusterDatastoreRequestDatastore struct {
-	Name                 *string                                                          `json:"name,omitempty"`
-	DatastoreType        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"datastoreType,omitempty"`
-	StorageServer        *GetAlerts200ResponseAllOfChecksInnerAccount                     `json:"storageServer,omitempty"`
-	Visibility           *string                                                          `json:"visibility,omitempty"`
-	Active               *bool                                                            `json:"active,omitempty"`
-	DefaultStore         *bool                                                            `json:"defaultStore,omitempty"`
-	Config               *SaveClusterDatastoreRequestDatastoreConfig                      `json:"config,omitempty"`
-	Tenants              []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner `json:"tenants,omitempty"`
-	ResourcePermissions  *SaveClusterDatastoreRequestDatastoreResourcePermissions         `json:"resourcePermissions,omitempty"`
-	Datastores           []map[string]interface{}                                         `json:"datastores,omitempty"`
-	AdditionalProperties map[string]interface{}                                           `json:",remain"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	DatastoreType        *SaveClusterDatastoreRequestDatastoreDatastoreType       `json:"datastoreType,omitempty"`
+	StorageServer        *SaveClusterDatastoreRequestDatastoreStorageServer       `json:"storageServer,omitempty"`
+	Visibility           *string                                                  `json:"visibility,omitempty"`
+	Active               *bool                                                    `json:"active,omitempty"`
+	DefaultStore         *bool                                                    `json:"defaultStore,omitempty"`
+	Config               *SaveClusterDatastoreRequestDatastoreConfig              `json:"config,omitempty"`
+	Tenants              []SaveClusterDatastoreRequestDatastoreTenantsInner       `json:"tenants,omitempty"`
+	ResourcePermissions  *SaveClusterDatastoreRequestDatastoreResourcePermissions `json:"resourcePermissions,omitempty"`
+	Datastores           []map[string]interface{}                                 `json:"datastores,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _SaveClusterDatastoreRequestDatastore SaveClusterDatastoreRequestDatastore
@@ -85,9 +85,9 @@ func (o *SaveClusterDatastoreRequestDatastore) SetName(v string) {
 }
 
 // GetDatastoreType returns the DatastoreType field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreType() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreType() SaveClusterDatastoreRequestDatastoreDatastoreType {
 	if o == nil || IsNil(o.DatastoreType) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveClusterDatastoreRequestDatastoreDatastoreType
 		return ret
 	}
 	return *o.DatastoreType
@@ -95,7 +95,7 @@ func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreType() GetAlerts200Re
 
 // GetDatastoreTypeOk returns a tuple with the DatastoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreTypeOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveClusterDatastoreRequestDatastore) GetDatastoreTypeOk() (*SaveClusterDatastoreRequestDatastoreDatastoreType, bool) {
 	if o == nil || IsNil(o.DatastoreType) {
 		return nil, false
 	}
@@ -111,15 +111,15 @@ func (o *SaveClusterDatastoreRequestDatastore) IsSetDatastoreType() bool {
 	return false
 }
 
-// SetDatastoreType gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the DatastoreType field.
-func (o *SaveClusterDatastoreRequestDatastore) SetDatastoreType(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetDatastoreType gets a reference to the given SaveClusterDatastoreRequestDatastoreDatastoreType and assigns it to the DatastoreType field.
+func (o *SaveClusterDatastoreRequestDatastore) SetDatastoreType(v SaveClusterDatastoreRequestDatastoreDatastoreType) {
 	o.DatastoreType = &v
 }
 
 // GetStorageServer returns the StorageServer field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastore) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveClusterDatastoreRequestDatastore) GetStorageServer() SaveClusterDatastoreRequestDatastoreStorageServer {
 	if o == nil || IsNil(o.StorageServer) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveClusterDatastoreRequestDatastoreStorageServer
 		return ret
 	}
 	return *o.StorageServer
@@ -127,7 +127,7 @@ func (o *SaveClusterDatastoreRequestDatastore) GetStorageServer() GetAlerts200Re
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastore) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveClusterDatastoreRequestDatastore) GetStorageServerOk() (*SaveClusterDatastoreRequestDatastoreStorageServer, bool) {
 	if o == nil || IsNil(o.StorageServer) {
 		return nil, false
 	}
@@ -143,8 +143,8 @@ func (o *SaveClusterDatastoreRequestDatastore) IsSetStorageServer() bool {
 	return false
 }
 
-// SetStorageServer gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the StorageServer field.
-func (o *SaveClusterDatastoreRequestDatastore) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetStorageServer gets a reference to the given SaveClusterDatastoreRequestDatastoreStorageServer and assigns it to the StorageServer field.
+func (o *SaveClusterDatastoreRequestDatastore) SetStorageServer(v SaveClusterDatastoreRequestDatastoreStorageServer) {
 	o.StorageServer = &v
 }
 
@@ -277,9 +277,9 @@ func (o *SaveClusterDatastoreRequestDatastore) SetConfig(v SaveClusterDatastoreR
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *SaveClusterDatastoreRequestDatastore) GetTenants() []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner {
+func (o *SaveClusterDatastoreRequestDatastore) GetTenants() []SaveClusterDatastoreRequestDatastoreTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner
+		var ret []SaveClusterDatastoreRequestDatastoreTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -287,7 +287,7 @@ func (o *SaveClusterDatastoreRequestDatastore) GetTenants() []ListCloudDatastore
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveClusterDatastoreRequestDatastore) GetTenantsOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner, bool) {
+func (o *SaveClusterDatastoreRequestDatastore) GetTenantsOk() ([]SaveClusterDatastoreRequestDatastoreTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -303,8 +303,8 @@ func (o *SaveClusterDatastoreRequestDatastore) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner and assigns it to the Tenants field.
-func (o *SaveClusterDatastoreRequestDatastore) SetTenants(v []ListCloudDatastores200ResponseAllOfDatastoresInnerTenantsInner) {
+// SetTenants gets a reference to the given []SaveClusterDatastoreRequestDatastoreTenantsInner and assigns it to the Tenants field.
+func (o *SaveClusterDatastoreRequestDatastore) SetTenants(v []SaveClusterDatastoreRequestDatastoreTenantsInner) {
 	o.Tenants = v
 }
 
@@ -464,7 +464,6 @@ func (v NullableSaveClusterDatastoreRequestDatastore) UnmarshalMapstructure(data
 
 	return v, nil
 }
-
 func (o *SaveClusterDatastoreRequestDatastore) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

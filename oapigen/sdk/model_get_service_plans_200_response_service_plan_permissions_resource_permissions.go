@@ -20,15 +20,15 @@ var _ MappedNullable = &GetServicePlans200ResponseServicePlanPermissionsResource
 
 // GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct for GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
 type GetServicePlans200ResponseServicePlanPermissionsResourcePermissions struct {
-	DefaultStore         *bool                                                                            `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                                                            `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                                                            `json:"defaultTarget,omitempty"`
-	CanManage            *bool                                                                            `json:"canManage,omitempty"`
-	All                  *bool                                                                            `json:"all,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount                                     `json:"account,omitempty"`
-	Sites                []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner `json:"sites,omitempty"`
-	Plans                []map[string]interface{}                                                         `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                                                           `json:",remain"`
+	DefaultStore         *bool                                                                           `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                                           `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                                           `json:"defaultTarget,omitempty"`
+	CanManage            *bool                                                                           `json:"canManage,omitempty"`
+	All                  *bool                                                                           `json:"all,omitempty"`
+	Account              *GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount     `json:"account,omitempty"`
+	Sites                []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner `json:"sites,omitempty"`
+	Plans                []map[string]interface{}                                                        `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                                          `json:",remain"`
 }
 
 type _GetServicePlans200ResponseServicePlanPermissionsResourcePermissions GetServicePlans200ResponseServicePlanPermissionsResourcePermissions
@@ -211,9 +211,9 @@ func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Se
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccount() GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount
 		return ret
 	}
 	return *o.Account
@@ -221,7 +221,7 @@ func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Ge
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetAccountOk() (*GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -237,15 +237,15 @@ func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Is
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount and assigns it to the Account field.
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetAccount(v GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsAccount) {
 	o.Account = &v
 }
 
 // GetSites returns the Sites field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSites() []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSites() []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner {
 	if o == nil || IsNil(o.Sites) {
-		var ret []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner
+		var ret []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner
 		return ret
 	}
 	return o.Sites
@@ -253,7 +253,7 @@ func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Ge
 
 // GetSitesOk returns a tuple with the Sites field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSitesOk() ([]ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) GetSitesOk() ([]GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner, bool) {
 	if o == nil || IsNil(o.Sites) {
 		return nil, false
 	}
@@ -269,8 +269,8 @@ func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) Is
 	return false
 }
 
-// SetSites gets a reference to the given []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner and assigns it to the Sites field.
-func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetSites(v []ListCloudDatastores200ResponseAllOfDatastoresInnerResourcePermissionSitesInner) {
+// SetSites gets a reference to the given []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner and assigns it to the Sites field.
+func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) SetSites(v []GetServicePlans200ResponseServicePlanPermissionsResourcePermissionsSitesInner) {
 	o.Sites = v
 }
 
@@ -393,7 +393,6 @@ func (v NullableGetServicePlans200ResponseServicePlanPermissionsResourcePermissi
 
 	return v, nil
 }
-
 func (o *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

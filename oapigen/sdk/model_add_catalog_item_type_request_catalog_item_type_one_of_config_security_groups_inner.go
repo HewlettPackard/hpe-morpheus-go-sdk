@@ -141,7 +141,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroup
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigSecurityGroupsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

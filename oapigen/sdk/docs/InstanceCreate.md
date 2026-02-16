@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Instance** | [**AddInstanceRequestInstance**](AddInstanceRequestInstance.md) |  | 
+**Instance** | [**InstanceCreateInstance**](InstanceCreateInstance.md) |  | 
 **ZoneId** | Pointer to **int64** | The Cloud ID to provision the instance onto. | [optional] 
-**Evars** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
+**Evars** | Pointer to [**[]InstanceCreateEvarsInner**](InstanceCreateEvarsInner.md) | Environment Variables, an array of objects that have name and value. | [optional] 
 **Copies** | Pointer to **int64** | Number of copies to provision. | [optional] [default to 1]
 **LayoutSize** | Pointer to **int64** | Apply a multiply factor of containers/vms within the instance. | [optional] [default to 1]
 **ServicePlanOptions** | Pointer to **map[string]interface{}** | Map of custom options depending on selected service plan. | [optional] 
 **SecurityGroups** | Pointer to **[]map[string]interface{}** | Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to. | [optional] 
-**Volumes** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
-**Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig.md) |  | 
+**Volumes** | Pointer to [**[]InstanceCreateVolumesInner**](InstanceCreateVolumesInner.md) | The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces5**](InstancesNetworkInterfaces5.md) | The networkInterfaces parameter is for network configuration.  The Options API &#x60;/api/options/zoneNetworkOptions?zoneId&#x3D;5&amp;provisionTypeId&#x3D;10&#x60; can be used to see which options are available.  | [optional] 
+**Config** | [**InstanceCreateConfig**](InstanceCreateConfig.md) |  | 
 **Labels** | Pointer to **[]string** | Array of strings (keywords). | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
-**Metadata** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
-**Ports** | Pointer to [**[]AddInstanceRequestPortsInner**](AddInstanceRequestPortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
+**Tags** | Pointer to [**[]InstanceCreateTagsInner**](InstanceCreateTagsInner.md) | Metadata tags, Array of objects having a name and value. | [optional] 
+**Metadata** | Pointer to [**[]InstanceCreateMetadataInner**](InstanceCreateMetadataInner.md) | Alias for &#x60;tags&#x60;. | [optional] 
+**Ports** | Pointer to [**[]InstanceCreatePortsInner**](InstanceCreatePortsInner.md) | The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.  | [optional] 
 **TaskSetId** | Pointer to **int64** | The Workflow ID to execute. | [optional] 
 **TaskSetName** | Pointer to **string** | The Workflow Name to execute. | [optional] 
 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewInstanceCreate
 
-`func NewInstanceCreate(instance AddInstanceRequestInstance, config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, ) *InstanceCreate`
+`func NewInstanceCreate(instance InstanceCreateInstance, config InstanceCreateConfig, ) *InstanceCreate`
 
 NewInstanceCreate instantiates a new InstanceCreate object
 This constructor will assign default values to properties that have it defined,
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstance
 
-`func (o *InstanceCreate) GetInstance() AddInstanceRequestInstance`
+`func (o *InstanceCreate) GetInstance() InstanceCreateInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *InstanceCreate) GetInstanceOk() (*AddInstanceRequestInstance, bool)`
+`func (o *InstanceCreate) GetInstanceOk() (*InstanceCreateInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *InstanceCreate) SetInstance(v AddInstanceRequestInstance)`
+`func (o *InstanceCreate) SetInstance(v InstanceCreateInstance)`
 
 SetInstance sets Instance field to given value.
 
@@ -87,20 +87,20 @@ HasZoneId returns a boolean if a field has been set.
 
 ### GetEvars
 
-`func (o *InstanceCreate) GetEvars() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *InstanceCreate) GetEvars() []InstanceCreateEvarsInner`
 
 GetEvars returns the Evars field if non-nil, zero value otherwise.
 
 ### GetEvarsOk
 
-`func (o *InstanceCreate) GetEvarsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *InstanceCreate) GetEvarsOk() (*[]InstanceCreateEvarsInner, bool)`
 
 GetEvarsOk returns a tuple with the Evars field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvars
 
-`func (o *InstanceCreate) SetEvars(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *InstanceCreate) SetEvars(v []InstanceCreateEvarsInner)`
 
 SetEvars sets Evars field to given value.
 
@@ -222,20 +222,20 @@ HasSecurityGroups returns a boolean if a field has been set.
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
 ### GetVolumes
 
-`func (o *InstanceCreate) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner`
+`func (o *InstanceCreate) GetVolumes() []InstanceCreateVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *InstanceCreate) GetVolumesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool)`
+`func (o *InstanceCreate) GetVolumesOk() (*[]InstanceCreateVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *InstanceCreate) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)`
+`func (o *InstanceCreate) SetVolumes(v []InstanceCreateVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -247,20 +247,20 @@ HasVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *InstanceCreate) GetNetworkInterfaces() []InstancesNetworkInterfaces`
+`func (o *InstanceCreate) GetNetworkInterfaces() []InstancesNetworkInterfaces5`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstanceCreate) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces, bool)`
+`func (o *InstanceCreate) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces5, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstanceCreate) SetNetworkInterfaces(v []InstancesNetworkInterfaces)`
+`func (o *InstanceCreate) SetNetworkInterfaces(v []InstancesNetworkInterfaces5)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 
@@ -272,20 +272,20 @@ HasNetworkInterfaces returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *InstanceCreate) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig`
+`func (o *InstanceCreate) GetConfig() InstanceCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *InstanceCreate) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, bool)`
+`func (o *InstanceCreate) GetConfigOk() (*InstanceCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *InstanceCreate) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig)`
+`func (o *InstanceCreate) SetConfig(v InstanceCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -317,20 +317,20 @@ HasLabels returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *InstanceCreate) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *InstanceCreate) GetTags() []InstanceCreateTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *InstanceCreate) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *InstanceCreate) GetTagsOk() (*[]InstanceCreateTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *InstanceCreate) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *InstanceCreate) SetTags(v []InstanceCreateTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -342,20 +342,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *InstanceCreate) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *InstanceCreate) GetMetadata() []InstanceCreateMetadataInner`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *InstanceCreate) GetMetadataOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *InstanceCreate) GetMetadataOk() (*[]InstanceCreateMetadataInner, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *InstanceCreate) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *InstanceCreate) SetMetadata(v []InstanceCreateMetadataInner)`
 
 SetMetadata sets Metadata field to given value.
 
@@ -367,20 +367,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetPorts
 
-`func (o *InstanceCreate) GetPorts() []AddInstanceRequestPortsInner`
+`func (o *InstanceCreate) GetPorts() []InstanceCreatePortsInner`
 
 GetPorts returns the Ports field if non-nil, zero value otherwise.
 
 ### GetPortsOk
 
-`func (o *InstanceCreate) GetPortsOk() (*[]AddInstanceRequestPortsInner, bool)`
+`func (o *InstanceCreate) GetPortsOk() (*[]InstanceCreatePortsInner, bool)`
 
 GetPortsOk returns a tuple with the Ports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPorts
 
-`func (o *InstanceCreate) SetPorts(v []AddInstanceRequestPortsInner)`
+`func (o *InstanceCreate) SetPorts(v []InstanceCreatePortsInner)`
 
 SetPorts sets Ports field to given value.
 

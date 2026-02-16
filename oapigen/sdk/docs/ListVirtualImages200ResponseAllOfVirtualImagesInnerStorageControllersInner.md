@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
-**Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Type** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType**](ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType.md) |  | [optional] 
 **BusNumber** | Pointer to **int64** |  | [optional] 
 **MaxDevices** | Pointer to **int64** |  | [optional] 
 **Removable** | Pointer to **bool** |  | [optional] 
@@ -111,20 +111,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetType() ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) GetTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner) SetType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInnerType)`
 
 SetType sets Type field to given value.
 

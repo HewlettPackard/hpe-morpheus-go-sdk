@@ -19,12 +19,12 @@ Name | Type | Description | Notes
 **Config** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig.md) |  | 
 **InstanceSpec** | Pointer to **string** | The instance &#x60;config&#x60; specification as a string in the JSON format. | [optional] 
 **FormType** | Pointer to **string** | Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes). | [optional] [default to "optionTypes"]
-**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfForm**](AddCatalogItemTypeRequestCatalogItemTypeOneOfForm.md) |  | [optional] 
+**Form** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form**](AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form.md) |  | [optional] 
 **OptionTypes** | Pointer to **[]int64** | Array of option type IDs. Only applies to formType &#39;optionTypes&#39;. | [optional] 
 **Content** | Pointer to **string** | Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information. | [optional] 
 **Blueprint** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint**](AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint.md) |  | 
 **AppSpec** | Pointer to **string** | The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields | [optional] 
-**Workflow** | [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | 
+**Workflow** | [**AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow**](AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow.md) |  | 
 **Context** | Pointer to **string** | Context for running the workflow, determines if a target resource must be selected. | [optional] 
 **WorkflowConfig** | Pointer to **string** | Configuration object that contains settings for the workflow. | [optional] 
 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewAddCatalogItemTypeRequestCatalogItemType
 
-`func NewAddCatalogItemTypeRequestCatalogItemType(config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, workflow GetAlerts200ResponseAllOfChecksInnerAccount, ) *AddCatalogItemTypeRequestCatalogItemType`
+`func NewAddCatalogItemTypeRequestCatalogItemType(config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig, blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, workflow AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow, ) *AddCatalogItemTypeRequestCatalogItemType`
 
 NewAddCatalogItemTypeRequestCatalogItemType instantiates a new AddCatalogItemTypeRequestCatalogItemType object
 This constructor will assign default values to properties that have it defined,
@@ -419,20 +419,20 @@ HasFormType returns a boolean if a field has been set.
 
 ### GetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form`
 
 GetForm returns the Form field if non-nil, zero value otherwise.
 
 ### GetFormOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form, bool)`
 
 GetFormOk returns a tuple with the Form field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetForm
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Form)`
 
 SetForm sets Form field to given value.
 
@@ -539,20 +539,20 @@ HasAppSpec returns a boolean if a field has been set.
 
 ### GetWorkflow
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflow() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflow() AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow`
 
 GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
 
 ### GetWorkflowOk
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflowOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) GetWorkflowOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow, bool)`
 
 GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkflow
 
-`func (o *AddCatalogItemTypeRequestCatalogItemType) SetWorkflow(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddCatalogItemTypeRequestCatalogItemType) SetWorkflow(v AddCatalogItemTypeRequestCatalogItemTypeOneOf2Workflow)`
 
 SetWorkflow sets Workflow field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Policies** | Pointer to [**[]ListPolicies200ResponseAllOfPoliciesInner**](ListPolicies200ResponseAllOfPoliciesInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPolicies returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListPolicies200Response) GetMeta() ListActivity200ResponseAllOfMeta`
+`func (o *ListPolicies200Response) GetMeta() ListClouds200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListPolicies200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool)`
+`func (o *ListPolicies200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListPolicies200Response) SetMeta(v ListActivity200ResponseAllOfMeta)`
+`func (o *ListPolicies200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

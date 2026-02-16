@@ -20,15 +20,15 @@ var _ MappedNullable = &ResizeInstanceRequest{}
 
 // ResizeInstanceRequest struct for ResizeInstanceRequest
 type ResizeInstanceRequest struct {
-	Instance           *ResizeInstanceRequestInstance                                         `json:"instance,omitempty"`
-	ServicePlanOptions *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions `json:"servicePlanOptions,omitempty"`
+	Instance           *ResizeInstanceRequestInstance           `json:"instance,omitempty"`
+	ServicePlanOptions *ResizeInstanceRequestServicePlanOptions `json:"servicePlanOptions,omitempty"`
 	// Can be used to grow just the logical volume of the instance instead of choosing a plan
-	Volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner `json:"volumes,omitempty"`
+	Volumes []ResizeInstanceRequestVolumesInner `json:"volumes,omitempty"`
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API.
-	NetworkInterfaces    []InstancesNetworkInterfaces `json:"networkInterfaces,omitempty"`
-	AdditionalProperties map[string]interface{}       `json:",remain"`
+	NetworkInterfaces    []InstancesNetworkInterfaces2 `json:"networkInterfaces,omitempty"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _ResizeInstanceRequest ResizeInstanceRequest
@@ -87,9 +87,9 @@ func (o *ResizeInstanceRequest) SetInstance(v ResizeInstanceRequestInstance) {
 }
 
 // GetServicePlanOptions returns the ServicePlanOptions field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetServicePlanOptions() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions {
+func (o *ResizeInstanceRequest) GetServicePlanOptions() ResizeInstanceRequestServicePlanOptions {
 	if o == nil || IsNil(o.ServicePlanOptions) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions
+		var ret ResizeInstanceRequestServicePlanOptions
 		return ret
 	}
 	return *o.ServicePlanOptions
@@ -97,7 +97,7 @@ func (o *ResizeInstanceRequest) GetServicePlanOptions() AddCatalogItemTypeReques
 
 // GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions, bool) {
+func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*ResizeInstanceRequestServicePlanOptions, bool) {
 	if o == nil || IsNil(o.ServicePlanOptions) {
 		return nil, false
 	}
@@ -113,15 +113,15 @@ func (o *ResizeInstanceRequest) IsSetServicePlanOptions() bool {
 	return false
 }
 
-// SetServicePlanOptions gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions and assigns it to the ServicePlanOptions field.
-func (o *ResizeInstanceRequest) SetServicePlanOptions(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions) {
+// SetServicePlanOptions gets a reference to the given ResizeInstanceRequestServicePlanOptions and assigns it to the ServicePlanOptions field.
+func (o *ResizeInstanceRequest) SetServicePlanOptions(v ResizeInstanceRequestServicePlanOptions) {
 	o.ServicePlanOptions = &v
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner {
+func (o *ResizeInstanceRequest) GetVolumes() []ResizeInstanceRequestVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner
+		var ret []ResizeInstanceRequestVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -129,7 +129,7 @@ func (o *ResizeInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogI
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetVolumesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool) {
+func (o *ResizeInstanceRequest) GetVolumesOk() ([]ResizeInstanceRequestVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -145,8 +145,8 @@ func (o *ResizeInstanceRequest) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner and assigns it to the Volumes field.
-func (o *ResizeInstanceRequest) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) {
+// SetVolumes gets a reference to the given []ResizeInstanceRequestVolumesInner and assigns it to the Volumes field.
+func (o *ResizeInstanceRequest) SetVolumes(v []ResizeInstanceRequestVolumesInner) {
 	o.Volumes = v
 }
 
@@ -183,9 +183,9 @@ func (o *ResizeInstanceRequest) SetDeleteOriginalVolumes(v bool) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces {
+func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces2 {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces
+		var ret []InstancesNetworkInterfaces2
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -193,7 +193,7 @@ func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfa
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
+func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces2, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -209,8 +209,8 @@ func (o *ResizeInstanceRequest) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
-func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces2 and assigns it to the NetworkInterfaces field.
+func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces2) {
 	o.NetworkInterfaces = v
 }
 
@@ -291,7 +291,6 @@ func (v NullableResizeInstanceRequest) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
-
 func (o *ResizeInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

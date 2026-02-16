@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Username** | **string** | Username (unique per tenant). | 
 **Email** | **string** | Email address | 
 **Password** | **string** | Password to apply to the user | 
-**Roles** | [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of objects with id of the role(s) to assign to the user. | 
+**Roles** | [**[]AddUserTenantRequestUserRolesInner**](AddUserTenantRequestUserRolesInner.md) | Array of objects with id of the role(s) to assign to the user. | 
 **ReceiveNotifications** | Pointer to **bool** | Receive Notifications? | [optional] [default to true]
 **LinuxUsername** | Pointer to **string** | Linux Username, user settings for provisioning | [optional] 
 **LinuxPassword** | Pointer to **string** | Linux Password, user settings for provisioning | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewAddUserTenantRequestUser
 
-`func NewAddUserTenantRequestUser(username string, email string, password string, roles []GetAlerts200ResponseAllOfChecksInnerAccount, ) *AddUserTenantRequestUser`
+`func NewAddUserTenantRequestUser(username string, email string, password string, roles []AddUserTenantRequestUserRolesInner, ) *AddUserTenantRequestUser`
 
 NewAddUserTenantRequestUser instantiates a new AddUserTenantRequestUser object
 This constructor will assign default values to properties that have it defined,
@@ -148,20 +148,20 @@ SetPassword sets Password field to given value.
 
 ### GetRoles
 
-`func (o *AddUserTenantRequestUser) GetRoles() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *AddUserTenantRequestUser) GetRoles() []AddUserTenantRequestUserRolesInner`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *AddUserTenantRequestUser) GetRolesOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *AddUserTenantRequestUser) GetRolesOk() (*[]AddUserTenantRequestUserRolesInner, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *AddUserTenantRequestUser) SetRoles(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *AddUserTenantRequestUser) SetRoles(v []AddUserTenantRequestUserRolesInner)`
 
 SetRoles sets Roles field to given value.
 

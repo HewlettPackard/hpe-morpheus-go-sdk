@@ -39,13 +39,13 @@ type CatalogItemTypeBlueprintCreate struct {
 	// Icon Path, relative location of an icon image, eg. /assets/containers-png/nginx.png.
 	IconPath *string `json:"iconPath,omitempty"`
 	// Can users order more than one of this item at a time.
-	AllowQuantity *bool                                                   `json:"allowQuantity,omitempty"`
-	Blueprint     AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint `json:"blueprint"`
+	AllowQuantity *bool                                   `json:"allowQuantity,omitempty"`
+	Blueprint     CatalogItemTypeBlueprintCreateBlueprint `json:"blueprint"`
 	// The appSpec for blueprint type catalog items is a string in the Scribe YAML format with fields
 	AppSpec *string `json:"appSpec,omitempty"`
 	// Form Type determines if the configuration options come from a Form (form) or a list of Inputs (optionTypes).
-	FormType *string                                            `json:"formType,omitempty"`
-	Form     *AddCatalogItemTypeRequestCatalogItemTypeOneOfForm `json:"form,omitempty"`
+	FormType *string                             `json:"formType,omitempty"`
+	Form     *CatalogItemTypeBlueprintCreateForm `json:"form,omitempty"`
 	// Array of option type IDs, see Inputs. Only applies to formType 'optionTypes'.
 	OptionTypes          []int64                `json:"optionTypes,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -57,7 +57,7 @@ type _CatalogItemTypeBlueprintCreate CatalogItemTypeBlueprintCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCatalogItemTypeBlueprintCreate(blueprint AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) *CatalogItemTypeBlueprintCreate {
+func NewCatalogItemTypeBlueprintCreate(blueprint CatalogItemTypeBlueprintCreateBlueprint) *CatalogItemTypeBlueprintCreate {
 	this := CatalogItemTypeBlueprintCreate{}
 	var visibility string = "private"
 	this.Visibility = &visibility
@@ -434,9 +434,9 @@ func (o *CatalogItemTypeBlueprintCreate) SetAllowQuantity(v bool) {
 }
 
 // GetBlueprint returns the Blueprint field value
-func (o *CatalogItemTypeBlueprintCreate) GetBlueprint() AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint {
+func (o *CatalogItemTypeBlueprintCreate) GetBlueprint() CatalogItemTypeBlueprintCreateBlueprint {
 	if o == nil {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint
+		var ret CatalogItemTypeBlueprintCreateBlueprint
 		return ret
 	}
 
@@ -445,7 +445,7 @@ func (o *CatalogItemTypeBlueprintCreate) GetBlueprint() AddCatalogItemTypeReques
 
 // GetBlueprintOk returns a tuple with the Blueprint field value
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeBlueprintCreate) GetBlueprintOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint, bool) {
+func (o *CatalogItemTypeBlueprintCreate) GetBlueprintOk() (*CatalogItemTypeBlueprintCreateBlueprint, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -453,7 +453,7 @@ func (o *CatalogItemTypeBlueprintCreate) GetBlueprintOk() (*AddCatalogItemTypeRe
 }
 
 // SetBlueprint sets field value
-func (o *CatalogItemTypeBlueprintCreate) SetBlueprint(v AddCatalogItemTypeRequestCatalogItemTypeOneOf1Blueprint) {
+func (o *CatalogItemTypeBlueprintCreate) SetBlueprint(v CatalogItemTypeBlueprintCreateBlueprint) {
 	o.Blueprint = v
 }
 
@@ -522,9 +522,9 @@ func (o *CatalogItemTypeBlueprintCreate) SetFormType(v string) {
 }
 
 // GetForm returns the Form field value if set, zero value otherwise.
-func (o *CatalogItemTypeBlueprintCreate) GetForm() AddCatalogItemTypeRequestCatalogItemTypeOneOfForm {
+func (o *CatalogItemTypeBlueprintCreate) GetForm() CatalogItemTypeBlueprintCreateForm {
 	if o == nil || IsNil(o.Form) {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfForm
+		var ret CatalogItemTypeBlueprintCreateForm
 		return ret
 	}
 	return *o.Form
@@ -532,7 +532,7 @@ func (o *CatalogItemTypeBlueprintCreate) GetForm() AddCatalogItemTypeRequestCata
 
 // GetFormOk returns a tuple with the Form field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CatalogItemTypeBlueprintCreate) GetFormOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfForm, bool) {
+func (o *CatalogItemTypeBlueprintCreate) GetFormOk() (*CatalogItemTypeBlueprintCreateForm, bool) {
 	if o == nil || IsNil(o.Form) {
 		return nil, false
 	}
@@ -548,8 +548,8 @@ func (o *CatalogItemTypeBlueprintCreate) IsSetForm() bool {
 	return false
 }
 
-// SetForm gets a reference to the given AddCatalogItemTypeRequestCatalogItemTypeOneOfForm and assigns it to the Form field.
-func (o *CatalogItemTypeBlueprintCreate) SetForm(v AddCatalogItemTypeRequestCatalogItemTypeOneOfForm) {
+// SetForm gets a reference to the given CatalogItemTypeBlueprintCreateForm and assigns it to the Form field.
+func (o *CatalogItemTypeBlueprintCreate) SetForm(v CatalogItemTypeBlueprintCreateForm) {
 	o.Form = &v
 }
 
@@ -690,7 +690,6 @@ func (v NullableCatalogItemTypeBlueprintCreate) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
-
 func (o *CatalogItemTypeBlueprintCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -23,9 +23,9 @@ type ZoneCreate struct {
 	// A unique name scoped to your account for the cloud
 	Name string `json:"name"`
 	// Specifies which Server group this cloud should be assigned to
-	GroupId  int64                        `json:"groupId"`
-	ZoneType AddCloudsRequestZoneZoneType `json:"zoneType"`
-	Config   AddCloudsRequestZoneConfig   `json:"config"`
+	GroupId  int64              `json:"groupId"`
+	ZoneType ZoneCreateZoneType `json:"zoneType"`
+	Config   ZoneCreateConfig   `json:"config"`
 	// The method used to install the Morpheus agent on virtual machines provisioned in the cloud (ssh, cloudInit).
 	AgentMode *string `json:"agentMode,omitempty"`
 	// Optional description field if you want to put more info there
@@ -61,9 +61,9 @@ type ZoneCreate struct {
 	// Linked Account ID (enter commercial ID to get costing for AWS Govcloud)
 	LinkedAccountId *int64 `json:"linkedAccountId,omitempty"`
 	// host firewall. `off` or `internal`. a.k.a. \"local firewall\"
-	SecurityMode         *string                         `json:"securityMode,omitempty"`
-	Credential           *AddCloudsRequestZoneCredential `json:"credential,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	SecurityMode         *string                `json:"securityMode,omitempty"`
+	Credential           *ZoneCreateCredential  `json:"credential,omitempty"`
+	AdditionalProperties map[string]interface{} `json:",remain"`
 }
 
 type _ZoneCreate ZoneCreate
@@ -72,7 +72,7 @@ type _ZoneCreate ZoneCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewZoneCreate(name string, groupId int64, zoneType AddCloudsRequestZoneZoneType, config AddCloudsRequestZoneConfig) *ZoneCreate {
+func NewZoneCreate(name string, groupId int64, zoneType ZoneCreateZoneType, config ZoneCreateConfig) *ZoneCreate {
 	this := ZoneCreate{}
 	this.Name = name
 	this.GroupId = groupId
@@ -162,9 +162,9 @@ func (o *ZoneCreate) SetGroupId(v int64) {
 }
 
 // GetZoneType returns the ZoneType field value
-func (o *ZoneCreate) GetZoneType() AddCloudsRequestZoneZoneType {
+func (o *ZoneCreate) GetZoneType() ZoneCreateZoneType {
 	if o == nil {
-		var ret AddCloudsRequestZoneZoneType
+		var ret ZoneCreateZoneType
 		return ret
 	}
 
@@ -173,7 +173,7 @@ func (o *ZoneCreate) GetZoneType() AddCloudsRequestZoneZoneType {
 
 // GetZoneTypeOk returns a tuple with the ZoneType field value
 // and a boolean to check if the value has been set.
-func (o *ZoneCreate) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool) {
+func (o *ZoneCreate) GetZoneTypeOk() (*ZoneCreateZoneType, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -181,14 +181,14 @@ func (o *ZoneCreate) GetZoneTypeOk() (*AddCloudsRequestZoneZoneType, bool) {
 }
 
 // SetZoneType sets field value
-func (o *ZoneCreate) SetZoneType(v AddCloudsRequestZoneZoneType) {
+func (o *ZoneCreate) SetZoneType(v ZoneCreateZoneType) {
 	o.ZoneType = v
 }
 
 // GetConfig returns the Config field value
-func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig {
+func (o *ZoneCreate) GetConfig() ZoneCreateConfig {
 	if o == nil {
-		var ret AddCloudsRequestZoneConfig
+		var ret ZoneCreateConfig
 		return ret
 	}
 
@@ -197,7 +197,7 @@ func (o *ZoneCreate) GetConfig() AddCloudsRequestZoneConfig {
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
+func (o *ZoneCreate) GetConfigOk() (*ZoneCreateConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -205,7 +205,7 @@ func (o *ZoneCreate) GetConfigOk() (*AddCloudsRequestZoneConfig, bool) {
 }
 
 // SetConfig sets field value
-func (o *ZoneCreate) SetConfig(v AddCloudsRequestZoneConfig) {
+func (o *ZoneCreate) SetConfig(v ZoneCreateConfig) {
 	o.Config = v
 }
 
@@ -797,9 +797,9 @@ func (o *ZoneCreate) SetSecurityMode(v string) {
 }
 
 // GetCredential returns the Credential field value if set, zero value otherwise.
-func (o *ZoneCreate) GetCredential() AddCloudsRequestZoneCredential {
+func (o *ZoneCreate) GetCredential() ZoneCreateCredential {
 	if o == nil || IsNil(o.Credential) {
-		var ret AddCloudsRequestZoneCredential
+		var ret ZoneCreateCredential
 		return ret
 	}
 	return *o.Credential
@@ -807,7 +807,7 @@ func (o *ZoneCreate) GetCredential() AddCloudsRequestZoneCredential {
 
 // GetCredentialOk returns a tuple with the Credential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ZoneCreate) GetCredentialOk() (*AddCloudsRequestZoneCredential, bool) {
+func (o *ZoneCreate) GetCredentialOk() (*ZoneCreateCredential, bool) {
 	if o == nil || IsNil(o.Credential) {
 		return nil, false
 	}
@@ -823,8 +823,8 @@ func (o *ZoneCreate) IsSetCredential() bool {
 	return false
 }
 
-// SetCredential gets a reference to the given AddCloudsRequestZoneCredential and assigns it to the Credential field.
-func (o *ZoneCreate) SetCredential(v AddCloudsRequestZoneCredential) {
+// SetCredential gets a reference to the given ZoneCreateCredential and assigns it to the Credential field.
+func (o *ZoneCreate) SetCredential(v ZoneCreateCredential) {
 	o.Credential = &v
 }
 
@@ -951,7 +951,6 @@ func (v NullableZoneCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ZoneCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

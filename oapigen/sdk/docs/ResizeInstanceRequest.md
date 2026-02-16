@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Instance** | Pointer to [**ResizeInstanceRequestInstance**](ResizeInstanceRequestInstance.md) |  | [optional] 
-**ServicePlanOptions** | Pointer to [**AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions.md) |  | [optional] 
-**Volumes** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner.md) | Can be used to grow just the logical volume of the instance instead of choosing a plan | [optional] 
+**ServicePlanOptions** | Pointer to [**ResizeInstanceRequestServicePlanOptions**](ResizeInstanceRequestServicePlanOptions.md) |  | [optional] 
+**Volumes** | Pointer to [**[]ResizeInstanceRequestVolumesInner**](ResizeInstanceRequestVolumesInner.md) | Can be used to grow just the logical volume of the instance instead of choosing a plan | [optional] 
 **DeleteOriginalVolumes** | Pointer to **bool** | Delete the original volumes after resizing. (Amazon only) | [optional] [default to false]
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces**](InstancesNetworkInterfaces.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces2**](InstancesNetworkInterfaces2.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
 
 ## Methods
 
@@ -56,20 +56,20 @@ HasInstance returns a boolean if a field has been set.
 
 ### GetServicePlanOptions
 
-`func (o *ResizeInstanceRequest) GetServicePlanOptions() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions`
+`func (o *ResizeInstanceRequest) GetServicePlanOptions() ResizeInstanceRequestServicePlanOptions`
 
 GetServicePlanOptions returns the ServicePlanOptions field if non-nil, zero value otherwise.
 
 ### GetServicePlanOptionsOk
 
-`func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions, bool)`
+`func (o *ResizeInstanceRequest) GetServicePlanOptionsOk() (*ResizeInstanceRequestServicePlanOptions, bool)`
 
 GetServicePlanOptionsOk returns a tuple with the ServicePlanOptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServicePlanOptions
 
-`func (o *ResizeInstanceRequest) SetServicePlanOptions(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigServicePlanOptions)`
+`func (o *ResizeInstanceRequest) SetServicePlanOptions(v ResizeInstanceRequestServicePlanOptions)`
 
 SetServicePlanOptions sets ServicePlanOptions field to given value.
 
@@ -81,20 +81,20 @@ HasServicePlanOptions returns a boolean if a field has been set.
 
 ### GetVolumes
 
-`func (o *ResizeInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner`
+`func (o *ResizeInstanceRequest) GetVolumes() []ResizeInstanceRequestVolumesInner`
 
 GetVolumes returns the Volumes field if non-nil, zero value otherwise.
 
 ### GetVolumesOk
 
-`func (o *ResizeInstanceRequest) GetVolumesOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool)`
+`func (o *ResizeInstanceRequest) GetVolumesOk() (*[]ResizeInstanceRequestVolumesInner, bool)`
 
 GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVolumes
 
-`func (o *ResizeInstanceRequest) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner)`
+`func (o *ResizeInstanceRequest) SetVolumes(v []ResizeInstanceRequestVolumesInner)`
 
 SetVolumes sets Volumes field to given value.
 
@@ -131,20 +131,20 @@ HasDeleteOriginalVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces`
+`func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces2`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces, bool)`
+`func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces2, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces)`
+`func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces2)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

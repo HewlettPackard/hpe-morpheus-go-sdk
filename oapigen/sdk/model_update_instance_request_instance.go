@@ -29,11 +29,11 @@ type UpdateInstanceRequestInstance struct {
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
+	Tags []UpdateInstanceRequestInstanceTagsInner `json:"tags,omitempty"`
 	// Add or update value of Metadata tags, Array of objects having a name and value.
-	AddTags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"addTags,omitempty"`
+	AddTags []UpdateInstanceRequestInstanceAddTagsInner `json:"addTags,omitempty"`
 	// Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
-	RemoveTags []ListInstances200ResponseAllOfInstancesInnerTagsInner `json:"removeTags,omitempty"`
+	RemoveTags []UpdateInstanceRequestInstanceRemoveTagsInner `json:"removeTags,omitempty"`
 	// Power schedule ID.
 	PowerScheduleType *int64                             `json:"powerScheduleType,omitempty"`
 	Site              *UpdateInstanceRequestInstanceSite `json:"site,omitempty"`
@@ -192,9 +192,9 @@ func (o *UpdateInstanceRequestInstance) SetLabels(v []string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *UpdateInstanceRequestInstance) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *UpdateInstanceRequestInstance) GetTags() []UpdateInstanceRequestInstanceTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []UpdateInstanceRequestInstanceTagsInner
 		return ret
 	}
 	return o.Tags
@@ -202,7 +202,7 @@ func (o *UpdateInstanceRequestInstance) GetTags() []AddCatalogItemTypeRequestCat
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateInstanceRequestInstance) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *UpdateInstanceRequestInstance) GetTagsOk() ([]UpdateInstanceRequestInstanceTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -218,15 +218,15 @@ func (o *UpdateInstanceRequestInstance) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
-func (o *UpdateInstanceRequestInstance) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetTags gets a reference to the given []UpdateInstanceRequestInstanceTagsInner and assigns it to the Tags field.
+func (o *UpdateInstanceRequestInstance) SetTags(v []UpdateInstanceRequestInstanceTagsInner) {
 	o.Tags = v
 }
 
 // GetAddTags returns the AddTags field value if set, zero value otherwise.
-func (o *UpdateInstanceRequestInstance) GetAddTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *UpdateInstanceRequestInstance) GetAddTags() []UpdateInstanceRequestInstanceAddTagsInner {
 	if o == nil || IsNil(o.AddTags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []UpdateInstanceRequestInstanceAddTagsInner
 		return ret
 	}
 	return o.AddTags
@@ -234,7 +234,7 @@ func (o *UpdateInstanceRequestInstance) GetAddTags() []AddCatalogItemTypeRequest
 
 // GetAddTagsOk returns a tuple with the AddTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateInstanceRequestInstance) GetAddTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *UpdateInstanceRequestInstance) GetAddTagsOk() ([]UpdateInstanceRequestInstanceAddTagsInner, bool) {
 	if o == nil || IsNil(o.AddTags) {
 		return nil, false
 	}
@@ -250,15 +250,15 @@ func (o *UpdateInstanceRequestInstance) IsSetAddTags() bool {
 	return false
 }
 
-// SetAddTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the AddTags field.
-func (o *UpdateInstanceRequestInstance) SetAddTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetAddTags gets a reference to the given []UpdateInstanceRequestInstanceAddTagsInner and assigns it to the AddTags field.
+func (o *UpdateInstanceRequestInstance) SetAddTags(v []UpdateInstanceRequestInstanceAddTagsInner) {
 	o.AddTags = v
 }
 
 // GetRemoveTags returns the RemoveTags field value if set, zero value otherwise.
-func (o *UpdateInstanceRequestInstance) GetRemoveTags() []ListInstances200ResponseAllOfInstancesInnerTagsInner {
+func (o *UpdateInstanceRequestInstance) GetRemoveTags() []UpdateInstanceRequestInstanceRemoveTagsInner {
 	if o == nil || IsNil(o.RemoveTags) {
-		var ret []ListInstances200ResponseAllOfInstancesInnerTagsInner
+		var ret []UpdateInstanceRequestInstanceRemoveTagsInner
 		return ret
 	}
 	return o.RemoveTags
@@ -266,7 +266,7 @@ func (o *UpdateInstanceRequestInstance) GetRemoveTags() []ListInstances200Respon
 
 // GetRemoveTagsOk returns a tuple with the RemoveTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() ([]ListInstances200ResponseAllOfInstancesInnerTagsInner, bool) {
+func (o *UpdateInstanceRequestInstance) GetRemoveTagsOk() ([]UpdateInstanceRequestInstanceRemoveTagsInner, bool) {
 	if o == nil || IsNil(o.RemoveTags) {
 		return nil, false
 	}
@@ -282,8 +282,8 @@ func (o *UpdateInstanceRequestInstance) IsSetRemoveTags() bool {
 	return false
 }
 
-// SetRemoveTags gets a reference to the given []ListInstances200ResponseAllOfInstancesInnerTagsInner and assigns it to the RemoveTags field.
-func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []ListInstances200ResponseAllOfInstancesInnerTagsInner) {
+// SetRemoveTags gets a reference to the given []UpdateInstanceRequestInstanceRemoveTagsInner and assigns it to the RemoveTags field.
+func (o *UpdateInstanceRequestInstance) SetRemoveTags(v []UpdateInstanceRequestInstanceRemoveTagsInner) {
 	o.RemoveTags = v
 }
 
@@ -510,7 +510,6 @@ func (v NullableUpdateInstanceRequestInstance) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *UpdateInstanceRequestInstance) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

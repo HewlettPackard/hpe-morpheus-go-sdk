@@ -6,22 +6,22 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the datastore to be created. | 
 **DatastoreType** | **string** | The code of the datatoreType | 
-**Config** | [**SaveDatastoreRequestDatastoreConfig**](SaveDatastoreRequestDatastoreConfig.md) |  | 
+**Config** | [**StorageDatastoreCreateConfig**](StorageDatastoreCreateConfig.md) |  | 
 **RefType** | **string** | Type of the resource this datastore is associated with, can be &#39;ComputeZone&#39; (&#39;Cloud&#39;) or &#39;ComputeServerGroup&#39; (&#39;Cluster&#39;) | 
 **RefId** | **int64** | The ID of the resource this datastore is associated with, e.g. ComputeZone, ComputeServerGroup | 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**StorageServer** | Pointer to [**StorageDatastoreCreateStorageServer**](StorageDatastoreCreateStorageServer.md) |  | [optional] 
 **Visibility** | Pointer to **string** | Visibility level of the datastore, can be &#39;private&#39; or &#39;public&#39;. If not specified, defaults to &#39;private&#39;. | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **DefaultStore** | Pointer to **bool** |  | [optional] 
-**TenantPermissions** | Pointer to [**SaveDatastoreRequestDatastoreTenantPermissions**](SaveDatastoreRequestDatastoreTenantPermissions.md) |  | [optional] 
-**ResourcePermissions** | Pointer to [**SaveClusterDatastoreRequestDatastoreResourcePermissions**](SaveClusterDatastoreRequestDatastoreResourcePermissions.md) |  | [optional] 
+**TenantPermissions** | Pointer to [**StorageDatastoreCreateTenantPermissions**](StorageDatastoreCreateTenantPermissions.md) |  | [optional] 
+**ResourcePermissions** | Pointer to [**StorageDatastoreCreateResourcePermissions**](StorageDatastoreCreateResourcePermissions.md) |  | [optional] 
 **Datastores** | Pointer to **[]map[string]interface{}** | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
 
 ## Methods
 
 ### NewStorageDatastoreCreate
 
-`func NewStorageDatastoreCreate(name string, datastoreType string, config SaveDatastoreRequestDatastoreConfig, refType string, refId int64, ) *StorageDatastoreCreate`
+`func NewStorageDatastoreCreate(name string, datastoreType string, config StorageDatastoreCreateConfig, refType string, refId int64, ) *StorageDatastoreCreate`
 
 NewStorageDatastoreCreate instantiates a new StorageDatastoreCreate object
 This constructor will assign default values to properties that have it defined,
@@ -78,20 +78,20 @@ SetDatastoreType sets DatastoreType field to given value.
 
 ### GetConfig
 
-`func (o *StorageDatastoreCreate) GetConfig() SaveDatastoreRequestDatastoreConfig`
+`func (o *StorageDatastoreCreate) GetConfig() StorageDatastoreCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *StorageDatastoreCreate) GetConfigOk() (*SaveDatastoreRequestDatastoreConfig, bool)`
+`func (o *StorageDatastoreCreate) GetConfigOk() (*StorageDatastoreCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *StorageDatastoreCreate) SetConfig(v SaveDatastoreRequestDatastoreConfig)`
+`func (o *StorageDatastoreCreate) SetConfig(v StorageDatastoreCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -138,20 +138,20 @@ SetRefId sets RefId field to given value.
 
 ### GetStorageServer
 
-`func (o *StorageDatastoreCreate) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *StorageDatastoreCreate) GetStorageServer() StorageDatastoreCreateStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *StorageDatastoreCreate) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *StorageDatastoreCreate) GetStorageServerOk() (*StorageDatastoreCreateStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *StorageDatastoreCreate) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *StorageDatastoreCreate) SetStorageServer(v StorageDatastoreCreateStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -238,20 +238,20 @@ HasDefaultStore returns a boolean if a field has been set.
 
 ### GetTenantPermissions
 
-`func (o *StorageDatastoreCreate) GetTenantPermissions() SaveDatastoreRequestDatastoreTenantPermissions`
+`func (o *StorageDatastoreCreate) GetTenantPermissions() StorageDatastoreCreateTenantPermissions`
 
 GetTenantPermissions returns the TenantPermissions field if non-nil, zero value otherwise.
 
 ### GetTenantPermissionsOk
 
-`func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*SaveDatastoreRequestDatastoreTenantPermissions, bool)`
+`func (o *StorageDatastoreCreate) GetTenantPermissionsOk() (*StorageDatastoreCreateTenantPermissions, bool)`
 
 GetTenantPermissionsOk returns a tuple with the TenantPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenantPermissions
 
-`func (o *StorageDatastoreCreate) SetTenantPermissions(v SaveDatastoreRequestDatastoreTenantPermissions)`
+`func (o *StorageDatastoreCreate) SetTenantPermissions(v StorageDatastoreCreateTenantPermissions)`
 
 SetTenantPermissions sets TenantPermissions field to given value.
 
@@ -263,20 +263,20 @@ HasTenantPermissions returns a boolean if a field has been set.
 
 ### GetResourcePermissions
 
-`func (o *StorageDatastoreCreate) GetResourcePermissions() SaveClusterDatastoreRequestDatastoreResourcePermissions`
+`func (o *StorageDatastoreCreate) GetResourcePermissions() StorageDatastoreCreateResourcePermissions`
 
 GetResourcePermissions returns the ResourcePermissions field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionsOk
 
-`func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*SaveClusterDatastoreRequestDatastoreResourcePermissions, bool)`
+`func (o *StorageDatastoreCreate) GetResourcePermissionsOk() (*StorageDatastoreCreateResourcePermissions, bool)`
 
 GetResourcePermissionsOk returns a tuple with the ResourcePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermissions
 
-`func (o *StorageDatastoreCreate) SetResourcePermissions(v SaveClusterDatastoreRequestDatastoreResourcePermissions)`
+`func (o *StorageDatastoreCreate) SetResourcePermissions(v StorageDatastoreCreateResourcePermissions)`
 
 SetResourcePermissions sets ResourcePermissions field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Alert** | Pointer to [**ListAlerts200ResponseAllOfAlertsInner**](ListAlerts200ResponseAllOfAlertsInner.md) |  | [optional] 
+**Alert** | Pointer to [**GetAlerts200ResponseAllOfAlert**](GetAlerts200ResponseAllOfAlert.md) |  | [optional] 
 **Checks** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInner**](GetAlerts200ResponseAllOfChecksInner.md) |  | [optional] 
 **CheckGroups** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInner**](GetAlerts200ResponseAllOfCheckGroupsInner.md) |  | [optional] 
 **Apps** | Pointer to [**[]GetAlerts200ResponseAllOfAppsInner**](GetAlerts200ResponseAllOfAppsInner.md) |  | [optional] 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAlert
 
-`func (o *GetAlerts200Response) GetAlert() ListAlerts200ResponseAllOfAlertsInner`
+`func (o *GetAlerts200Response) GetAlert() GetAlerts200ResponseAllOfAlert`
 
 GetAlert returns the Alert field if non-nil, zero value otherwise.
 
 ### GetAlertOk
 
-`func (o *GetAlerts200Response) GetAlertOk() (*ListAlerts200ResponseAllOfAlertsInner, bool)`
+`func (o *GetAlerts200Response) GetAlertOk() (*GetAlerts200ResponseAllOfAlert, bool)`
 
 GetAlertOk returns a tuple with the Alert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAlert
 
-`func (o *GetAlerts200Response) SetAlert(v ListAlerts200ResponseAllOfAlertsInner)`
+`func (o *GetAlerts200Response) SetAlert(v GetAlerts200ResponseAllOfAlert)`
 
 SetAlert sets Alert field to given value.
 

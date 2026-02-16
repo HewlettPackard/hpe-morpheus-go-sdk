@@ -480,7 +480,6 @@ func (v NullableTaskPowershellConfig) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *TaskPowershellConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

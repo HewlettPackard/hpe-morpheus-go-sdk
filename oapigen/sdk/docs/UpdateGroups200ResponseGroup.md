@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **Location** | Pointer to **NullableString** |  | [optional] 
 **AccountId** | Pointer to **int64** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
-**Config** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerConfig**](ListGroups200ResponseAllOfGroupsInnerConfig.md) |  | [optional] 
+**Config** | Pointer to [**AddGroups200ResponseAllOfGroupConfig**](AddGroups200ResponseAllOfGroupConfig.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Zones** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
-**Stats** | Pointer to [**ListGroups200ResponseAllOfGroupsInnerStats**](ListGroups200ResponseAllOfGroupsInnerStats.md) |  | [optional] 
+**Zones** | Pointer to [**[]AddGroups200ResponseAllOfGroupZonesInner**](AddGroups200ResponseAllOfGroupZonesInner.md) |  | [optional] 
+**Stats** | Pointer to [**AddGroups200ResponseAllOfGroupStats**](AddGroups200ResponseAllOfGroupStats.md) |  | [optional] 
 **ServerCount** | Pointer to **int64** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
@@ -261,20 +261,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *UpdateGroups200ResponseGroup) GetConfig() ListGroups200ResponseAllOfGroupsInnerConfig`
+`func (o *UpdateGroups200ResponseGroup) GetConfig() AddGroups200ResponseAllOfGroupConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *UpdateGroups200ResponseGroup) GetConfigOk() (*ListGroups200ResponseAllOfGroupsInnerConfig, bool)`
+`func (o *UpdateGroups200ResponseGroup) GetConfigOk() (*AddGroups200ResponseAllOfGroupConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *UpdateGroups200ResponseGroup) SetConfig(v ListGroups200ResponseAllOfGroupsInnerConfig)`
+`func (o *UpdateGroups200ResponseGroup) SetConfig(v AddGroups200ResponseAllOfGroupConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -336,20 +336,20 @@ HasLastUpdated returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *UpdateGroups200ResponseGroup) GetZones() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *UpdateGroups200ResponseGroup) GetZones() []AddGroups200ResponseAllOfGroupZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *UpdateGroups200ResponseGroup) GetZonesOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *UpdateGroups200ResponseGroup) GetZonesOk() (*[]AddGroups200ResponseAllOfGroupZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *UpdateGroups200ResponseGroup) SetZones(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *UpdateGroups200ResponseGroup) SetZones(v []AddGroups200ResponseAllOfGroupZonesInner)`
 
 SetZones sets Zones field to given value.
 
@@ -361,20 +361,20 @@ HasZones returns a boolean if a field has been set.
 
 ### GetStats
 
-`func (o *UpdateGroups200ResponseGroup) GetStats() ListGroups200ResponseAllOfGroupsInnerStats`
+`func (o *UpdateGroups200ResponseGroup) GetStats() AddGroups200ResponseAllOfGroupStats`
 
 GetStats returns the Stats field if non-nil, zero value otherwise.
 
 ### GetStatsOk
 
-`func (o *UpdateGroups200ResponseGroup) GetStatsOk() (*ListGroups200ResponseAllOfGroupsInnerStats, bool)`
+`func (o *UpdateGroups200ResponseGroup) GetStatsOk() (*AddGroups200ResponseAllOfGroupStats, bool)`
 
 GetStatsOk returns a tuple with the Stats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStats
 
-`func (o *UpdateGroups200ResponseGroup) SetStats(v ListGroups200ResponseAllOfGroupsInnerStats)`
+`func (o *UpdateGroups200ResponseGroup) SetStats(v AddGroups200ResponseAllOfGroupStats)`
 
 SetStats sets Stats field to given value.
 

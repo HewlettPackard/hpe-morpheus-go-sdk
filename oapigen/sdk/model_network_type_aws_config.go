@@ -25,9 +25,9 @@ type NetworkTypeAwsConfig struct {
 	// Network CIDR
 	Cidr string `json:"cidr"`
 	// Assign public IPs by default.
-	AssignPublicIp       bool                                             `json:"assignPublicIp"`
-	ZonePool             CreateNetworksRequestNetworkConfigAnyOf1ZonePool `json:"zonePool"`
-	AdditionalProperties map[string]interface{}                           `json:",remain"`
+	AssignPublicIp       bool                         `json:"assignPublicIp"`
+	ZonePool             NetworkTypeAwsConfigZonePool `json:"zonePool"`
+	AdditionalProperties map[string]interface{}       `json:",remain"`
 }
 
 type _NetworkTypeAwsConfig NetworkTypeAwsConfig
@@ -36,7 +36,7 @@ type _NetworkTypeAwsConfig NetworkTypeAwsConfig
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkTypeAwsConfig(availabilityZone string, cidr string, assignPublicIp bool, zonePool CreateNetworksRequestNetworkConfigAnyOf1ZonePool) *NetworkTypeAwsConfig {
+func NewNetworkTypeAwsConfig(availabilityZone string, cidr string, assignPublicIp bool, zonePool NetworkTypeAwsConfigZonePool) *NetworkTypeAwsConfig {
 	this := NetworkTypeAwsConfig{}
 	this.AvailabilityZone = availabilityZone
 	this.Cidr = cidr
@@ -126,9 +126,9 @@ func (o *NetworkTypeAwsConfig) SetAssignPublicIp(v bool) {
 }
 
 // GetZonePool returns the ZonePool field value
-func (o *NetworkTypeAwsConfig) GetZonePool() CreateNetworksRequestNetworkConfigAnyOf1ZonePool {
+func (o *NetworkTypeAwsConfig) GetZonePool() NetworkTypeAwsConfigZonePool {
 	if o == nil {
-		var ret CreateNetworksRequestNetworkConfigAnyOf1ZonePool
+		var ret NetworkTypeAwsConfigZonePool
 		return ret
 	}
 
@@ -137,7 +137,7 @@ func (o *NetworkTypeAwsConfig) GetZonePool() CreateNetworksRequestNetworkConfigA
 
 // GetZonePoolOk returns a tuple with the ZonePool field value
 // and a boolean to check if the value has been set.
-func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkConfigAnyOf1ZonePool, bool) {
+func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*NetworkTypeAwsConfigZonePool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -145,7 +145,7 @@ func (o *NetworkTypeAwsConfig) GetZonePoolOk() (*CreateNetworksRequestNetworkCon
 }
 
 // SetZonePool sets field value
-func (o *NetworkTypeAwsConfig) SetZonePool(v CreateNetworksRequestNetworkConfigAnyOf1ZonePool) {
+func (o *NetworkTypeAwsConfig) SetZonePool(v NetworkTypeAwsConfigZonePool) {
 	o.ZonePool = v
 }
 
@@ -215,7 +215,6 @@ func (v NullableNetworkTypeAwsConfig) UnmarshalMapstructure(data any) (any, erro
 
 	return v, nil
 }
-
 func (o *NetworkTypeAwsConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

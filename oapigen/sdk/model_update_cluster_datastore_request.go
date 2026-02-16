@@ -140,7 +140,6 @@ func (v NullableUpdateClusterDatastoreRequest) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *UpdateClusterDatastoreRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

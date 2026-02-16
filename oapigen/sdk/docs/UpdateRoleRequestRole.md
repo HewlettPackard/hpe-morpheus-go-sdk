@@ -12,27 +12,27 @@ Name | Type | Description | Notes
 **DefaultPersona** | Pointer to **NullableString** |  | [optional] 
 **ResetPermissions** | Pointer to **bool** | Resets access levels for all feature permissions to their default values. | [optional] 
 **ResetAllAccess** | Pointer to **bool** | Resets access levels for all permissions (including feature, non-feature, and default access levels) to their default values. | [optional] 
-**FeaturePermissions** | Pointer to [**[]AddRolesRequestRoleFeaturePermissionsInner**](AddRolesRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
+**FeaturePermissions** | Pointer to [**[]UpdateRoleRequestRoleFeaturePermissionsInner**](UpdateRoleRequestRoleFeaturePermissionsInner.md) | Set the access level for the specified permissions. | [optional] 
 **GlobalSiteAccess** | Pointer to **string** | Set the default access level for for groups (sites). Only applies to user roles. | [optional] 
-**Sites** | Pointer to [**[]AddRolesRequestRoleSitesInner**](AddRolesRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
+**Sites** | Pointer to [**[]UpdateRoleRequestRoleSitesInner**](UpdateRoleRequestRoleSitesInner.md) | Set the access level for the specified groups (sites). Only applies to user roles. | [optional] 
 **GlobalZoneAccess** | Pointer to **string** | Set the default access level for for clouds (zones). Only applies to base account (tenant) roles. | [optional] 
-**Zones** | Pointer to [**[]AddRolesRequestRoleZonesInner**](AddRolesRequestRoleZonesInner.md) | Set the access level for the specified clouds (zones). Only applies to base account (tenant) roles. | [optional] 
+**Zones** | Pointer to [**[]UpdateRoleRequestRoleZonesInner**](UpdateRoleRequestRoleZonesInner.md) | Set the access level for the specified clouds (zones). Only applies to base account (tenant) roles. | [optional] 
 **GlobalInstanceTypeAccess** | Pointer to **string** | Set the default access level for for instance types | [optional] 
-**InstanceTypePermissions** | Pointer to [**[]AddRolesRequestRoleInstanceTypePermissionsInner**](AddRolesRequestRoleInstanceTypePermissionsInner.md) | Set the access level for the specified instance types | [optional] 
+**InstanceTypePermissions** | Pointer to [**[]UpdateRoleRequestRoleInstanceTypePermissionsInner**](UpdateRoleRequestRoleInstanceTypePermissionsInner.md) | Set the access level for the specified instance types | [optional] 
 **GlobalAppTemplateAccess** | Pointer to **string** | Set the default access level for blueprints | [optional] 
-**AppTemplatePermissions** | Pointer to [**[]AddRolesRequestRoleAppTemplatePermissionsInner**](AddRolesRequestRoleAppTemplatePermissionsInner.md) | Set the access level for the specified blueprints (appTemplates) | [optional] 
+**AppTemplatePermissions** | Pointer to [**[]UpdateRoleRequestRoleAppTemplatePermissionsInner**](UpdateRoleRequestRoleAppTemplatePermissionsInner.md) | Set the access level for the specified blueprints (appTemplates) | [optional] 
 **GlobalCatalogItemTypeAccess** | Pointer to **string** | Set the default access level for catalog item types | [optional] 
-**CatalogItemTypePermissions** | Pointer to [**[]AddRolesRequestRoleCatalogItemTypePermissionsInner**](AddRolesRequestRoleCatalogItemTypePermissionsInner.md) | Set the access level for the specified catalog item types | [optional] 
+**CatalogItemTypePermissions** | Pointer to [**[]UpdateRoleRequestRoleCatalogItemTypePermissionsInner**](UpdateRoleRequestRoleCatalogItemTypePermissionsInner.md) | Set the access level for the specified catalog item types | [optional] 
 **GlobalPersonaAccess** | Pointer to **string** | Set the default access level for personas | [optional] 
-**PersonaPermissions** | Pointer to [**[]AddRolesRequestRolePersonaPermissionsInner**](AddRolesRequestRolePersonaPermissionsInner.md) | Set the access level for the specified personas | [optional] 
+**PersonaPermissions** | Pointer to [**[]UpdateRoleRequestRolePersonaPermissionsInner**](UpdateRoleRequestRolePersonaPermissionsInner.md) | Set the access level for the specified personas | [optional] 
 **GlobalVdiPoolAccess** | Pointer to **string** | Set the default access level for VDI pools | [optional] 
-**VdiPoolPermissions** | Pointer to [**[]AddRolesRequestRoleVdiPoolPermissionsInner**](AddRolesRequestRoleVdiPoolPermissionsInner.md) | Set the access level for the specified VDI pools | [optional] 
+**VdiPoolPermissions** | Pointer to [**[]UpdateRoleRequestRoleVdiPoolPermissionsInner**](UpdateRoleRequestRoleVdiPoolPermissionsInner.md) | Set the access level for the specified VDI pools | [optional] 
 **GlobalReportTypeAccess** | Pointer to **string** | Set the default access level for report types | [optional] 
-**ReportTypePermissions** | Pointer to [**[]AddRolesRequestRoleReportTypePermissionsInner**](AddRolesRequestRoleReportTypePermissionsInner.md) | Set the access level for the specified report types | [optional] 
+**ReportTypePermissions** | Pointer to [**[]UpdateRoleRequestRoleReportTypePermissionsInner**](UpdateRoleRequestRoleReportTypePermissionsInner.md) | Set the access level for the specified report types | [optional] 
 **GlobalTaskAccess** | Pointer to **string** | Set the default access level for tasks | [optional] 
-**TaskPermissions** | Pointer to [**[]AddRolesRequestRoleTaskPermissionsInner**](AddRolesRequestRoleTaskPermissionsInner.md) | Set the access level for the specified tasks | [optional] 
+**TaskPermissions** | Pointer to [**[]UpdateRoleRequestRoleTaskPermissionsInner**](UpdateRoleRequestRoleTaskPermissionsInner.md) | Set the access level for the specified tasks | [optional] 
 **GlobalTaskSetAccess** | Pointer to **string** | Set the default access level for workflows (taskSets) | [optional] 
-**TaskSetPermissions** | Pointer to [**[]AddRolesRequestRoleTaskSetPermissionsInner**](AddRolesRequestRoleTaskSetPermissionsInner.md) | Set the access level for the specified workflows (taskSets) | [optional] 
+**TaskSetPermissions** | Pointer to [**[]UpdateRoleRequestRoleTaskSetPermissionsInner**](UpdateRoleRequestRoleTaskSetPermissionsInner.md) | Set the access level for the specified workflows (taskSets) | [optional] 
 
 ## Methods
 
@@ -285,20 +285,20 @@ HasResetAllAccess returns a boolean if a field has been set.
 
 ### GetFeaturePermissions
 
-`func (o *UpdateRoleRequestRole) GetFeaturePermissions() []AddRolesRequestRoleFeaturePermissionsInner`
+`func (o *UpdateRoleRequestRole) GetFeaturePermissions() []UpdateRoleRequestRoleFeaturePermissionsInner`
 
 GetFeaturePermissions returns the FeaturePermissions field if non-nil, zero value otherwise.
 
 ### GetFeaturePermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetFeaturePermissionsOk() (*[]AddRolesRequestRoleFeaturePermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetFeaturePermissionsOk() (*[]UpdateRoleRequestRoleFeaturePermissionsInner, bool)`
 
 GetFeaturePermissionsOk returns a tuple with the FeaturePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFeaturePermissions
 
-`func (o *UpdateRoleRequestRole) SetFeaturePermissions(v []AddRolesRequestRoleFeaturePermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetFeaturePermissions(v []UpdateRoleRequestRoleFeaturePermissionsInner)`
 
 SetFeaturePermissions sets FeaturePermissions field to given value.
 
@@ -335,20 +335,20 @@ HasGlobalSiteAccess returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *UpdateRoleRequestRole) GetSites() []AddRolesRequestRoleSitesInner`
+`func (o *UpdateRoleRequestRole) GetSites() []UpdateRoleRequestRoleSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *UpdateRoleRequestRole) GetSitesOk() (*[]AddRolesRequestRoleSitesInner, bool)`
+`func (o *UpdateRoleRequestRole) GetSitesOk() (*[]UpdateRoleRequestRoleSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *UpdateRoleRequestRole) SetSites(v []AddRolesRequestRoleSitesInner)`
+`func (o *UpdateRoleRequestRole) SetSites(v []UpdateRoleRequestRoleSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -385,20 +385,20 @@ HasGlobalZoneAccess returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *UpdateRoleRequestRole) GetZones() []AddRolesRequestRoleZonesInner`
+`func (o *UpdateRoleRequestRole) GetZones() []UpdateRoleRequestRoleZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *UpdateRoleRequestRole) GetZonesOk() (*[]AddRolesRequestRoleZonesInner, bool)`
+`func (o *UpdateRoleRequestRole) GetZonesOk() (*[]UpdateRoleRequestRoleZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *UpdateRoleRequestRole) SetZones(v []AddRolesRequestRoleZonesInner)`
+`func (o *UpdateRoleRequestRole) SetZones(v []UpdateRoleRequestRoleZonesInner)`
 
 SetZones sets Zones field to given value.
 
@@ -435,20 +435,20 @@ HasGlobalInstanceTypeAccess returns a boolean if a field has been set.
 
 ### GetInstanceTypePermissions
 
-`func (o *UpdateRoleRequestRole) GetInstanceTypePermissions() []AddRolesRequestRoleInstanceTypePermissionsInner`
+`func (o *UpdateRoleRequestRole) GetInstanceTypePermissions() []UpdateRoleRequestRoleInstanceTypePermissionsInner`
 
 GetInstanceTypePermissions returns the InstanceTypePermissions field if non-nil, zero value otherwise.
 
 ### GetInstanceTypePermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetInstanceTypePermissionsOk() (*[]AddRolesRequestRoleInstanceTypePermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetInstanceTypePermissionsOk() (*[]UpdateRoleRequestRoleInstanceTypePermissionsInner, bool)`
 
 GetInstanceTypePermissionsOk returns a tuple with the InstanceTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypePermissions
 
-`func (o *UpdateRoleRequestRole) SetInstanceTypePermissions(v []AddRolesRequestRoleInstanceTypePermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetInstanceTypePermissions(v []UpdateRoleRequestRoleInstanceTypePermissionsInner)`
 
 SetInstanceTypePermissions sets InstanceTypePermissions field to given value.
 
@@ -485,20 +485,20 @@ HasGlobalAppTemplateAccess returns a boolean if a field has been set.
 
 ### GetAppTemplatePermissions
 
-`func (o *UpdateRoleRequestRole) GetAppTemplatePermissions() []AddRolesRequestRoleAppTemplatePermissionsInner`
+`func (o *UpdateRoleRequestRole) GetAppTemplatePermissions() []UpdateRoleRequestRoleAppTemplatePermissionsInner`
 
 GetAppTemplatePermissions returns the AppTemplatePermissions field if non-nil, zero value otherwise.
 
 ### GetAppTemplatePermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetAppTemplatePermissionsOk() (*[]AddRolesRequestRoleAppTemplatePermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetAppTemplatePermissionsOk() (*[]UpdateRoleRequestRoleAppTemplatePermissionsInner, bool)`
 
 GetAppTemplatePermissionsOk returns a tuple with the AppTemplatePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppTemplatePermissions
 
-`func (o *UpdateRoleRequestRole) SetAppTemplatePermissions(v []AddRolesRequestRoleAppTemplatePermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetAppTemplatePermissions(v []UpdateRoleRequestRoleAppTemplatePermissionsInner)`
 
 SetAppTemplatePermissions sets AppTemplatePermissions field to given value.
 
@@ -535,20 +535,20 @@ HasGlobalCatalogItemTypeAccess returns a boolean if a field has been set.
 
 ### GetCatalogItemTypePermissions
 
-`func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissions() []AddRolesRequestRoleCatalogItemTypePermissionsInner`
+`func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissions() []UpdateRoleRequestRoleCatalogItemTypePermissionsInner`
 
 GetCatalogItemTypePermissions returns the CatalogItemTypePermissions field if non-nil, zero value otherwise.
 
 ### GetCatalogItemTypePermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissionsOk() (*[]AddRolesRequestRoleCatalogItemTypePermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetCatalogItemTypePermissionsOk() (*[]UpdateRoleRequestRoleCatalogItemTypePermissionsInner, bool)`
 
 GetCatalogItemTypePermissionsOk returns a tuple with the CatalogItemTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalogItemTypePermissions
 
-`func (o *UpdateRoleRequestRole) SetCatalogItemTypePermissions(v []AddRolesRequestRoleCatalogItemTypePermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetCatalogItemTypePermissions(v []UpdateRoleRequestRoleCatalogItemTypePermissionsInner)`
 
 SetCatalogItemTypePermissions sets CatalogItemTypePermissions field to given value.
 
@@ -585,20 +585,20 @@ HasGlobalPersonaAccess returns a boolean if a field has been set.
 
 ### GetPersonaPermissions
 
-`func (o *UpdateRoleRequestRole) GetPersonaPermissions() []AddRolesRequestRolePersonaPermissionsInner`
+`func (o *UpdateRoleRequestRole) GetPersonaPermissions() []UpdateRoleRequestRolePersonaPermissionsInner`
 
 GetPersonaPermissions returns the PersonaPermissions field if non-nil, zero value otherwise.
 
 ### GetPersonaPermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() (*[]AddRolesRequestRolePersonaPermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetPersonaPermissionsOk() (*[]UpdateRoleRequestRolePersonaPermissionsInner, bool)`
 
 GetPersonaPermissionsOk returns a tuple with the PersonaPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersonaPermissions
 
-`func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []AddRolesRequestRolePersonaPermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetPersonaPermissions(v []UpdateRoleRequestRolePersonaPermissionsInner)`
 
 SetPersonaPermissions sets PersonaPermissions field to given value.
 
@@ -635,20 +635,20 @@ HasGlobalVdiPoolAccess returns a boolean if a field has been set.
 
 ### GetVdiPoolPermissions
 
-`func (o *UpdateRoleRequestRole) GetVdiPoolPermissions() []AddRolesRequestRoleVdiPoolPermissionsInner`
+`func (o *UpdateRoleRequestRole) GetVdiPoolPermissions() []UpdateRoleRequestRoleVdiPoolPermissionsInner`
 
 GetVdiPoolPermissions returns the VdiPoolPermissions field if non-nil, zero value otherwise.
 
 ### GetVdiPoolPermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetVdiPoolPermissionsOk() (*[]AddRolesRequestRoleVdiPoolPermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetVdiPoolPermissionsOk() (*[]UpdateRoleRequestRoleVdiPoolPermissionsInner, bool)`
 
 GetVdiPoolPermissionsOk returns a tuple with the VdiPoolPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdiPoolPermissions
 
-`func (o *UpdateRoleRequestRole) SetVdiPoolPermissions(v []AddRolesRequestRoleVdiPoolPermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetVdiPoolPermissions(v []UpdateRoleRequestRoleVdiPoolPermissionsInner)`
 
 SetVdiPoolPermissions sets VdiPoolPermissions field to given value.
 
@@ -685,20 +685,20 @@ HasGlobalReportTypeAccess returns a boolean if a field has been set.
 
 ### GetReportTypePermissions
 
-`func (o *UpdateRoleRequestRole) GetReportTypePermissions() []AddRolesRequestRoleReportTypePermissionsInner`
+`func (o *UpdateRoleRequestRole) GetReportTypePermissions() []UpdateRoleRequestRoleReportTypePermissionsInner`
 
 GetReportTypePermissions returns the ReportTypePermissions field if non-nil, zero value otherwise.
 
 ### GetReportTypePermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetReportTypePermissionsOk() (*[]AddRolesRequestRoleReportTypePermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetReportTypePermissionsOk() (*[]UpdateRoleRequestRoleReportTypePermissionsInner, bool)`
 
 GetReportTypePermissionsOk returns a tuple with the ReportTypePermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportTypePermissions
 
-`func (o *UpdateRoleRequestRole) SetReportTypePermissions(v []AddRolesRequestRoleReportTypePermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetReportTypePermissions(v []UpdateRoleRequestRoleReportTypePermissionsInner)`
 
 SetReportTypePermissions sets ReportTypePermissions field to given value.
 
@@ -735,20 +735,20 @@ HasGlobalTaskAccess returns a boolean if a field has been set.
 
 ### GetTaskPermissions
 
-`func (o *UpdateRoleRequestRole) GetTaskPermissions() []AddRolesRequestRoleTaskPermissionsInner`
+`func (o *UpdateRoleRequestRole) GetTaskPermissions() []UpdateRoleRequestRoleTaskPermissionsInner`
 
 GetTaskPermissions returns the TaskPermissions field if non-nil, zero value otherwise.
 
 ### GetTaskPermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetTaskPermissionsOk() (*[]AddRolesRequestRoleTaskPermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetTaskPermissionsOk() (*[]UpdateRoleRequestRoleTaskPermissionsInner, bool)`
 
 GetTaskPermissionsOk returns a tuple with the TaskPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskPermissions
 
-`func (o *UpdateRoleRequestRole) SetTaskPermissions(v []AddRolesRequestRoleTaskPermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetTaskPermissions(v []UpdateRoleRequestRoleTaskPermissionsInner)`
 
 SetTaskPermissions sets TaskPermissions field to given value.
 
@@ -785,20 +785,20 @@ HasGlobalTaskSetAccess returns a boolean if a field has been set.
 
 ### GetTaskSetPermissions
 
-`func (o *UpdateRoleRequestRole) GetTaskSetPermissions() []AddRolesRequestRoleTaskSetPermissionsInner`
+`func (o *UpdateRoleRequestRole) GetTaskSetPermissions() []UpdateRoleRequestRoleTaskSetPermissionsInner`
 
 GetTaskSetPermissions returns the TaskSetPermissions field if non-nil, zero value otherwise.
 
 ### GetTaskSetPermissionsOk
 
-`func (o *UpdateRoleRequestRole) GetTaskSetPermissionsOk() (*[]AddRolesRequestRoleTaskSetPermissionsInner, bool)`
+`func (o *UpdateRoleRequestRole) GetTaskSetPermissionsOk() (*[]UpdateRoleRequestRoleTaskSetPermissionsInner, bool)`
 
 GetTaskSetPermissionsOk returns a tuple with the TaskSetPermissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskSetPermissions
 
-`func (o *UpdateRoleRequestRole) SetTaskSetPermissions(v []AddRolesRequestRoleTaskSetPermissionsInner)`
+`func (o *UpdateRoleRequestRole) SetTaskSetPermissions(v []UpdateRoleRequestRoleTaskSetPermissionsInner)`
 
 SetTaskSetPermissions sets TaskSetPermissions field to given value.
 

@@ -20,54 +20,54 @@ var _ MappedNullable = &ProvisionType{}
 
 // ProvisionType struct for ProvisionType
 type ProvisionType struct {
-	Id                    *int64                                                                                                             `json:"id,omitempty"`
-	Name                  *string                                                                                                            `json:"name,omitempty"`
-	Description           NullableString                                                                                                     `json:"description,omitempty"`
-	Code                  *string                                                                                                            `json:"code,omitempty"`
-	AclEnabled            *bool                                                                                                              `json:"aclEnabled,omitempty"`
-	MultiTenant           *bool                                                                                                              `json:"multiTenant,omitempty"`
-	Managed               *bool                                                                                                              `json:"managed,omitempty"`
-	HostNetwork           *bool                                                                                                              `json:"hostNetwork,omitempty"`
-	CustomSupported       *bool                                                                                                              `json:"customSupported,omitempty"`
-	MapPorts              *bool                                                                                                              `json:"mapPorts,omitempty"`
-	ExportServer          *bool                                                                                                              `json:"exportServer,omitempty"`
-	ViewSet               NullableString                                                                                                     `json:"viewSet,omitempty"`
-	ServerType            *string                                                                                                            `json:"serverType,omitempty"`
-	HostType              *string                                                                                                            `json:"hostType,omitempty"`
-	AddVolumes            *bool                                                                                                              `json:"addVolumes,omitempty"`
-	HasVolumes            *bool                                                                                                              `json:"hasVolumes,omitempty"`
-	HasDatastore          *bool                                                                                                              `json:"hasDatastore,omitempty"`
-	HasNetworks           *bool                                                                                                              `json:"hasNetworks,omitempty"`
-	MaxNetworks           *int64                                                                                                             `json:"maxNetworks,omitempty"`
-	CustomizeVolume       *bool                                                                                                              `json:"customizeVolume,omitempty"`
-	RootDiskCustomizable  *bool                                                                                                              `json:"rootDiskCustomizable,omitempty"`
-	RootDiskSizeKnown     *bool                                                                                                              `json:"rootDiskSizeKnown,omitempty"`
-	RootDiskResizable     *bool                                                                                                              `json:"rootDiskResizable,omitempty"`
-	LvmSupported          *bool                                                                                                              `json:"lvmSupported,omitempty"`
-	HostDiskMode          *string                                                                                                            `json:"hostDiskMode,omitempty"`
-	MinDisk               *int64                                                                                                             `json:"minDisk,omitempty"`
-	MaxDisk               NullableString                                                                                                     `json:"maxDisk,omitempty"`
-	ResizeCopiesVolumes   *bool                                                                                                              `json:"resizeCopiesVolumes,omitempty"`
-	SupportsAutoDatastore *bool                                                                                                              `json:"supportsAutoDatastore,omitempty"`
-	HasZonePools          *bool                                                                                                              `json:"hasZonePools,omitempty"`
-	HasSecurityGroups     *bool                                                                                                              `json:"hasSecurityGroups,omitempty"`
-	HasParameters         *bool                                                                                                              `json:"hasParameters,omitempty"`
-	CanEnforceTags        NullableBool                                                                                                       `json:"canEnforceTags,omitempty"`
-	DisableRootDatastore  *bool                                                                                                              `json:"disableRootDatastore,omitempty"`
-	HasSnapshots          *bool                                                                                                              `json:"hasSnapshots,omitempty"`
-	HasMemorySnapshots    *bool                                                                                                              `json:"hasMemorySnapshots,omitempty"`
-	HasSpecTemplates      *bool                                                                                                              `json:"hasSpecTemplates,omitempty"`
-	HasPreview            *bool                                                                                                              `json:"hasPreview,omitempty"`
-	ZonePoolRequired      *bool                                                                                                              `json:"zonePoolRequired,omitempty"`
-	PlanRequiresPool      *bool                                                                                                              `json:"planRequiresPool,omitempty"`
-	HasFolders            NullableBool                                                                                                       `json:"hasFolders,omitempty"`
-	OptionTypes           []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"optionTypes,omitempty"`
-	CustomOptionTypes     []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner                                        `json:"customOptionTypes,omitempty"`
-	NetworkTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner    `json:"networkTypes,omitempty"`
-	StorageTypes          []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"storageTypes,omitempty"`
-	RootStorageTypes      []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner    `json:"rootStorageTypes,omitempty"`
-	ControllerTypes       []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner `json:"controllerTypes,omitempty"`
-	AdditionalProperties  map[string]interface{}                                                                                             `json:",remain"`
+	Id                    *int64                                                                        `json:"id,omitempty"`
+	Name                  *string                                                                       `json:"name,omitempty"`
+	Description           NullableString                                                                `json:"description,omitempty"`
+	Code                  *string                                                                       `json:"code,omitempty"`
+	AclEnabled            *bool                                                                         `json:"aclEnabled,omitempty"`
+	MultiTenant           *bool                                                                         `json:"multiTenant,omitempty"`
+	Managed               *bool                                                                         `json:"managed,omitempty"`
+	HostNetwork           *bool                                                                         `json:"hostNetwork,omitempty"`
+	CustomSupported       *bool                                                                         `json:"customSupported,omitempty"`
+	MapPorts              *bool                                                                         `json:"mapPorts,omitempty"`
+	ExportServer          *bool                                                                         `json:"exportServer,omitempty"`
+	ViewSet               NullableString                                                                `json:"viewSet,omitempty"`
+	ServerType            *string                                                                       `json:"serverType,omitempty"`
+	HostType              *string                                                                       `json:"hostType,omitempty"`
+	AddVolumes            *bool                                                                         `json:"addVolumes,omitempty"`
+	HasVolumes            *bool                                                                         `json:"hasVolumes,omitempty"`
+	HasDatastore          *bool                                                                         `json:"hasDatastore,omitempty"`
+	HasNetworks           *bool                                                                         `json:"hasNetworks,omitempty"`
+	MaxNetworks           *int64                                                                        `json:"maxNetworks,omitempty"`
+	CustomizeVolume       *bool                                                                         `json:"customizeVolume,omitempty"`
+	RootDiskCustomizable  *bool                                                                         `json:"rootDiskCustomizable,omitempty"`
+	RootDiskSizeKnown     *bool                                                                         `json:"rootDiskSizeKnown,omitempty"`
+	RootDiskResizable     *bool                                                                         `json:"rootDiskResizable,omitempty"`
+	LvmSupported          *bool                                                                         `json:"lvmSupported,omitempty"`
+	HostDiskMode          *string                                                                       `json:"hostDiskMode,omitempty"`
+	MinDisk               *int64                                                                        `json:"minDisk,omitempty"`
+	MaxDisk               NullableString                                                                `json:"maxDisk,omitempty"`
+	ResizeCopiesVolumes   *bool                                                                         `json:"resizeCopiesVolumes,omitempty"`
+	SupportsAutoDatastore *bool                                                                         `json:"supportsAutoDatastore,omitempty"`
+	HasZonePools          *bool                                                                         `json:"hasZonePools,omitempty"`
+	HasSecurityGroups     *bool                                                                         `json:"hasSecurityGroups,omitempty"`
+	HasParameters         *bool                                                                         `json:"hasParameters,omitempty"`
+	CanEnforceTags        NullableBool                                                                  `json:"canEnforceTags,omitempty"`
+	DisableRootDatastore  *bool                                                                         `json:"disableRootDatastore,omitempty"`
+	HasSnapshots          *bool                                                                         `json:"hasSnapshots,omitempty"`
+	HasMemorySnapshots    *bool                                                                         `json:"hasMemorySnapshots,omitempty"`
+	HasSpecTemplates      *bool                                                                         `json:"hasSpecTemplates,omitempty"`
+	HasPreview            *bool                                                                         `json:"hasPreview,omitempty"`
+	ZonePoolRequired      *bool                                                                         `json:"zonePoolRequired,omitempty"`
+	PlanRequiresPool      *bool                                                                         `json:"planRequiresPool,omitempty"`
+	HasFolders            NullableBool                                                                  `json:"hasFolders,omitempty"`
+	OptionTypes           []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner       `json:"optionTypes,omitempty"`
+	CustomOptionTypes     []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner `json:"customOptionTypes,omitempty"`
+	NetworkTypes          []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner      `json:"networkTypes,omitempty"`
+	StorageTypes          []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner      `json:"storageTypes,omitempty"`
+	RootStorageTypes      []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner  `json:"rootStorageTypes,omitempty"`
+	ControllerTypes       []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner   `json:"controllerTypes,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                        `json:",remain"`
 }
 
 type _ProvisionType ProvisionType
@@ -1457,9 +1457,9 @@ func (o *ProvisionType) UnsetHasFolders() {
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *ProvisionType) GetOptionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner {
 	if o == nil {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -1468,7 +1468,7 @@ func (o *ProvisionType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfC
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *ProvisionType) GetOptionTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -1484,15 +1484,15 @@ func (o *ProvisionType) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *ProvisionType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
+func (o *ProvisionType) SetOptionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerOptionTypesInner) {
 	o.OptionTypes = v
 }
 
 // GetCustomOptionTypes returns the CustomOptionTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetCustomOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *ProvisionType) GetCustomOptionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner {
 	if o == nil {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner
 		return ret
 	}
 	return o.CustomOptionTypes
@@ -1501,7 +1501,7 @@ func (o *ProvisionType) GetCustomOptionTypes() []ListCatalogItemTypes200Response
 // GetCustomOptionTypesOk returns a tuple with the CustomOptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetCustomOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *ProvisionType) GetCustomOptionTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner, bool) {
 	if o == nil || IsNil(o.CustomOptionTypes) {
 		return nil, false
 	}
@@ -1517,15 +1517,15 @@ func (o *ProvisionType) IsSetCustomOptionTypes() bool {
 	return false
 }
 
-// SetCustomOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the CustomOptionTypes field.
-func (o *ProvisionType) SetCustomOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetCustomOptionTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner and assigns it to the CustomOptionTypes field.
+func (o *ProvisionType) SetCustomOptionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerCustomOptionTypesInner) {
 	o.CustomOptionTypes = v
 }
 
 // GetNetworkTypes returns the NetworkTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetNetworkTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner {
+func (o *ProvisionType) GetNetworkTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner {
 	if o == nil {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner
 		return ret
 	}
 	return o.NetworkTypes
@@ -1534,7 +1534,7 @@ func (o *ProvisionType) GetNetworkTypes() []GetInstanceTypeProvisioning200Respon
 // GetNetworkTypesOk returns a tuple with the NetworkTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetNetworkTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner, bool) {
+func (o *ProvisionType) GetNetworkTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner, bool) {
 	if o == nil || IsNil(o.NetworkTypes) {
 		return nil, false
 	}
@@ -1550,15 +1550,15 @@ func (o *ProvisionType) IsSetNetworkTypes() bool {
 	return false
 }
 
-// SetNetworkTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner and assigns it to the NetworkTypes field.
-func (o *ProvisionType) SetNetworkTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInner) {
+// SetNetworkTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner and assigns it to the NetworkTypes field.
+func (o *ProvisionType) SetNetworkTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerNetworkTypesInner) {
 	o.NetworkTypes = v
 }
 
 // GetStorageTypes returns the StorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner {
+func (o *ProvisionType) GetStorageTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner {
 	if o == nil {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner
 		return ret
 	}
 	return o.StorageTypes
@@ -1567,7 +1567,7 @@ func (o *ProvisionType) GetStorageTypes() []GetInstanceTypeProvisioning200Respon
 // GetStorageTypesOk returns a tuple with the StorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetStorageTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool) {
+func (o *ProvisionType) GetStorageTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner, bool) {
 	if o == nil || IsNil(o.StorageTypes) {
 		return nil, false
 	}
@@ -1583,15 +1583,15 @@ func (o *ProvisionType) IsSetStorageTypes() bool {
 	return false
 }
 
-// SetStorageTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner and assigns it to the StorageTypes field.
-func (o *ProvisionType) SetStorageTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) {
+// SetStorageTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner and assigns it to the StorageTypes field.
+func (o *ProvisionType) SetStorageTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerStorageTypesInner) {
 	o.StorageTypes = v
 }
 
 // GetRootStorageTypes returns the RootStorageTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetRootStorageTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner {
+func (o *ProvisionType) GetRootStorageTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner {
 	if o == nil {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner
 		return ret
 	}
 	return o.RootStorageTypes
@@ -1600,7 +1600,7 @@ func (o *ProvisionType) GetRootStorageTypes() []GetInstanceTypeProvisioning200Re
 // GetRootStorageTypesOk returns a tuple with the RootStorageTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetRootStorageTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner, bool) {
+func (o *ProvisionType) GetRootStorageTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner, bool) {
 	if o == nil || IsNil(o.RootStorageTypes) {
 		return nil, false
 	}
@@ -1616,15 +1616,15 @@ func (o *ProvisionType) IsSetRootStorageTypes() bool {
 	return false
 }
 
-// SetRootStorageTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner and assigns it to the RootStorageTypes field.
-func (o *ProvisionType) SetRootStorageTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeStorageTypesInner) {
+// SetRootStorageTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner and assigns it to the RootStorageTypes field.
+func (o *ProvisionType) SetRootStorageTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerRootStorageTypesInner) {
 	o.RootStorageTypes = v
 }
 
 // GetControllerTypes returns the ControllerTypes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ProvisionType) GetControllerTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner {
+func (o *ProvisionType) GetControllerTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner {
 	if o == nil {
-		var ret []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner
+		var ret []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner
 		return ret
 	}
 	return o.ControllerTypes
@@ -1633,7 +1633,7 @@ func (o *ProvisionType) GetControllerTypes() []GetInstanceTypeProvisioning200Res
 // GetControllerTypesOk returns a tuple with the ControllerTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ProvisionType) GetControllerTypesOk() ([]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner, bool) {
+func (o *ProvisionType) GetControllerTypesOk() ([]ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner, bool) {
 	if o == nil || IsNil(o.ControllerTypes) {
 		return nil, false
 	}
@@ -1649,8 +1649,8 @@ func (o *ProvisionType) IsSetControllerTypes() bool {
 	return false
 }
 
-// SetControllerTypes gets a reference to the given []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner and assigns it to the ControllerTypes field.
-func (o *ProvisionType) SetControllerTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionTypeControllerTypesInner) {
+// SetControllerTypes gets a reference to the given []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner and assigns it to the ControllerTypes field.
+func (o *ProvisionType) SetControllerTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInnerControllerTypesInner) {
 	o.ControllerTypes = v
 }
 
@@ -1857,7 +1857,6 @@ func (v NullableProvisionType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *ProvisionType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

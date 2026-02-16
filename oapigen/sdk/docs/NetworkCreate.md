@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | Display Name | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Description** | Pointer to **NullableString** | Description | [optional] 
-**Site** | [**CreateNetworksRequestNetworkSite**](CreateNetworksRequestNetworkSite.md) |  | 
-**Zone** | [**CreateNetworksRequestNetworkZone**](CreateNetworksRequestNetworkZone.md) |  | 
-**Type** | Pointer to [**CreateNetworksRequestNetworkType**](CreateNetworksRequestNetworkType.md) |  | [optional] 
+**Site** | [**NetworkCreateSite**](NetworkCreateSite.md) |  | 
+**Zone** | [**NetworkCreateZone**](NetworkCreateZone.md) |  | 
+**Type** | Pointer to [**NetworkCreateType**](NetworkCreateType.md) |  | [optional] 
 **Ipv4Enabled** | Pointer to **bool** |  | [optional] 
 **Ipv6Enabled** | Pointer to **bool** |  | [optional] 
 **Cidr** | Pointer to **string** | CIDR Network | [optional] 
@@ -26,27 +26,27 @@ Name | Type | Description | Notes
 **SwitchId** | Pointer to **string** | Network switch identifier | [optional] 
 **Pool** | Pointer to **NullableInt64** | Network Pool ID | [optional] 
 **PoolIPv6** | Pointer to **NullableInt64** | IPv6 Network Pool ID | [optional] 
-**ZonePool** | Pointer to [**CreateNetworksRequestNetworkZonePool**](CreateNetworksRequestNetworkZonePool.md) |  | [optional] 
+**ZonePool** | Pointer to [**NetworkCreateZonePool**](NetworkCreateZonePool.md) |  | [optional] 
 **AllowStaticOverride** | Pointer to **bool** | Allow IP Override | [optional] 
 **AssignPublicIp** | Pointer to **bool** | Assign Public IP | [optional] 
 **Active** | Pointer to **bool** | Activate (true) or disable (false) the network | [optional] 
 **DhcpServer** | Pointer to **bool** | DHCP Server enabled network | [optional] 
 **DhcpServerIPv6** | Pointer to **bool** | IPv6 DHCP Server enabled network | [optional] 
-**NetworkDomain** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkDomain**](ListNetworks200ResponseAllOfNetworksInnerNetworkDomain.md) |  | [optional] 
+**NetworkDomain** | Pointer to [**NetworkCreateNetworkDomain**](NetworkCreateNetworkDomain.md) |  | [optional] 
 **SearchDomains** | Pointer to **string** | Search Domains | [optional] 
-**NetworkProxy** | Pointer to [**ListNetworks200ResponseAllOfNetworksInnerNetworkProxy**](ListNetworks200ResponseAllOfNetworksInnerNetworkProxy.md) |  | [optional] 
+**NetworkProxy** | Pointer to [**NetworkCreateNetworkProxy**](NetworkCreateNetworkProxy.md) |  | [optional] 
 **ApplianceUrlProxyBypass** | Pointer to **bool** | Bypass Proxy for Appliance URL | [optional] 
 **NoProxy** | Pointer to **NullableString** | Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded. | [optional] 
 **Visibility** | Pointer to **string** | Visibility, private or public. | [optional] [default to "private"]
-**Config** | Pointer to [**CreateNetworksRequestNetworkConfig**](CreateNetworksRequestNetworkConfig.md) |  | [optional] 
-**Tenants** | Pointer to [**[]GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) | Array of tenant account ids that are allowed access | [optional] 
-**ResourcePermission** | Pointer to [**CreateNetworksRequestNetworkResourcePermission**](CreateNetworksRequestNetworkResourcePermission.md) |  | [optional] 
+**Config** | Pointer to [**NetworkCreateConfig**](NetworkCreateConfig.md) |  | [optional] 
+**Tenants** | Pointer to [**[]NetworkCreateTenantsInner**](NetworkCreateTenantsInner.md) | Array of tenant account ids that are allowed access | [optional] 
+**ResourcePermission** | Pointer to [**NetworkCreateResourcePermission**](NetworkCreateResourcePermission.md) |  | [optional] 
 
 ## Methods
 
 ### NewNetworkCreate
 
-`func NewNetworkCreate(name string, site CreateNetworksRequestNetworkSite, zone CreateNetworksRequestNetworkZone, ) *NetworkCreate`
+`func NewNetworkCreate(name string, site NetworkCreateSite, zone NetworkCreateZone, ) *NetworkCreate`
 
 NewNetworkCreate instantiates a new NetworkCreate object
 This constructor will assign default values to properties that have it defined,
@@ -178,60 +178,60 @@ HasDescription returns a boolean if a field has been set.
 UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetSite
 
-`func (o *NetworkCreate) GetSite() CreateNetworksRequestNetworkSite`
+`func (o *NetworkCreate) GetSite() NetworkCreateSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *NetworkCreate) GetSiteOk() (*CreateNetworksRequestNetworkSite, bool)`
+`func (o *NetworkCreate) GetSiteOk() (*NetworkCreateSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *NetworkCreate) SetSite(v CreateNetworksRequestNetworkSite)`
+`func (o *NetworkCreate) SetSite(v NetworkCreateSite)`
 
 SetSite sets Site field to given value.
 
 
 ### GetZone
 
-`func (o *NetworkCreate) GetZone() CreateNetworksRequestNetworkZone`
+`func (o *NetworkCreate) GetZone() NetworkCreateZone`
 
 GetZone returns the Zone field if non-nil, zero value otherwise.
 
 ### GetZoneOk
 
-`func (o *NetworkCreate) GetZoneOk() (*CreateNetworksRequestNetworkZone, bool)`
+`func (o *NetworkCreate) GetZoneOk() (*NetworkCreateZone, bool)`
 
 GetZoneOk returns a tuple with the Zone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZone
 
-`func (o *NetworkCreate) SetZone(v CreateNetworksRequestNetworkZone)`
+`func (o *NetworkCreate) SetZone(v NetworkCreateZone)`
 
 SetZone sets Zone field to given value.
 
 
 ### GetType
 
-`func (o *NetworkCreate) GetType() CreateNetworksRequestNetworkType`
+`func (o *NetworkCreate) GetType() NetworkCreateType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *NetworkCreate) GetTypeOk() (*CreateNetworksRequestNetworkType, bool)`
+`func (o *NetworkCreate) GetTypeOk() (*NetworkCreateType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *NetworkCreate) SetType(v CreateNetworksRequestNetworkType)`
+`func (o *NetworkCreate) SetType(v NetworkCreateType)`
 
 SetType sets Type field to given value.
 
@@ -678,20 +678,20 @@ HasPoolIPv6 returns a boolean if a field has been set.
 UnsetPoolIPv6 ensures that no value is present for PoolIPv6, not even an explicit nil
 ### GetZonePool
 
-`func (o *NetworkCreate) GetZonePool() CreateNetworksRequestNetworkZonePool`
+`func (o *NetworkCreate) GetZonePool() NetworkCreateZonePool`
 
 GetZonePool returns the ZonePool field if non-nil, zero value otherwise.
 
 ### GetZonePoolOk
 
-`func (o *NetworkCreate) GetZonePoolOk() (*CreateNetworksRequestNetworkZonePool, bool)`
+`func (o *NetworkCreate) GetZonePoolOk() (*NetworkCreateZonePool, bool)`
 
 GetZonePoolOk returns a tuple with the ZonePool field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZonePool
 
-`func (o *NetworkCreate) SetZonePool(v CreateNetworksRequestNetworkZonePool)`
+`func (o *NetworkCreate) SetZonePool(v NetworkCreateZonePool)`
 
 SetZonePool sets ZonePool field to given value.
 
@@ -828,20 +828,20 @@ HasDhcpServerIPv6 returns a boolean if a field has been set.
 
 ### GetNetworkDomain
 
-`func (o *NetworkCreate) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain`
+`func (o *NetworkCreate) GetNetworkDomain() NetworkCreateNetworkDomain`
 
 GetNetworkDomain returns the NetworkDomain field if non-nil, zero value otherwise.
 
 ### GetNetworkDomainOk
 
-`func (o *NetworkCreate) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool)`
+`func (o *NetworkCreate) GetNetworkDomainOk() (*NetworkCreateNetworkDomain, bool)`
 
 GetNetworkDomainOk returns a tuple with the NetworkDomain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkDomain
 
-`func (o *NetworkCreate) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain)`
+`func (o *NetworkCreate) SetNetworkDomain(v NetworkCreateNetworkDomain)`
 
 SetNetworkDomain sets NetworkDomain field to given value.
 
@@ -878,20 +878,20 @@ HasSearchDomains returns a boolean if a field has been set.
 
 ### GetNetworkProxy
 
-`func (o *NetworkCreate) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy`
+`func (o *NetworkCreate) GetNetworkProxy() NetworkCreateNetworkProxy`
 
 GetNetworkProxy returns the NetworkProxy field if non-nil, zero value otherwise.
 
 ### GetNetworkProxyOk
 
-`func (o *NetworkCreate) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool)`
+`func (o *NetworkCreate) GetNetworkProxyOk() (*NetworkCreateNetworkProxy, bool)`
 
 GetNetworkProxyOk returns a tuple with the NetworkProxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkProxy
 
-`func (o *NetworkCreate) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy)`
+`func (o *NetworkCreate) SetNetworkProxy(v NetworkCreateNetworkProxy)`
 
 SetNetworkProxy sets NetworkProxy field to given value.
 
@@ -988,20 +988,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *NetworkCreate) GetConfig() CreateNetworksRequestNetworkConfig`
+`func (o *NetworkCreate) GetConfig() NetworkCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *NetworkCreate) GetConfigOk() (*CreateNetworksRequestNetworkConfig, bool)`
+`func (o *NetworkCreate) GetConfigOk() (*NetworkCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *NetworkCreate) SetConfig(v CreateNetworksRequestNetworkConfig)`
+`func (o *NetworkCreate) SetConfig(v NetworkCreateConfig)`
 
 SetConfig sets Config field to given value.
 
@@ -1013,20 +1013,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetTenants
 
-`func (o *NetworkCreate) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *NetworkCreate) GetTenants() []NetworkCreateTenantsInner`
 
 GetTenants returns the Tenants field if non-nil, zero value otherwise.
 
 ### GetTenantsOk
 
-`func (o *NetworkCreate) GetTenantsOk() (*[]GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *NetworkCreate) GetTenantsOk() (*[]NetworkCreateTenantsInner, bool)`
 
 GetTenantsOk returns a tuple with the Tenants field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenants
 
-`func (o *NetworkCreate) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *NetworkCreate) SetTenants(v []NetworkCreateTenantsInner)`
 
 SetTenants sets Tenants field to given value.
 
@@ -1038,20 +1038,20 @@ HasTenants returns a boolean if a field has been set.
 
 ### GetResourcePermission
 
-`func (o *NetworkCreate) GetResourcePermission() CreateNetworksRequestNetworkResourcePermission`
+`func (o *NetworkCreate) GetResourcePermission() NetworkCreateResourcePermission`
 
 GetResourcePermission returns the ResourcePermission field if non-nil, zero value otherwise.
 
 ### GetResourcePermissionOk
 
-`func (o *NetworkCreate) GetResourcePermissionOk() (*CreateNetworksRequestNetworkResourcePermission, bool)`
+`func (o *NetworkCreate) GetResourcePermissionOk() (*NetworkCreateResourcePermission, bool)`
 
 GetResourcePermissionOk returns a tuple with the ResourcePermission field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePermission
 
-`func (o *NetworkCreate) SetResourcePermission(v CreateNetworksRequestNetworkResourcePermission)`
+`func (o *NetworkCreate) SetResourcePermission(v NetworkCreateResourcePermission)`
 
 SetResourcePermission sets ResourcePermission field to given value.
 

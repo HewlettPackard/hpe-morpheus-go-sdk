@@ -24,7 +24,7 @@ type AddInstanceRequest struct {
 	// The Cloud ID to provision the instance onto.
 	ZoneId *int64 `json:"zoneId,omitempty"`
 	// Environment Variables, an array of objects that have name and value.
-	Evars []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"evars,omitempty"`
+	Evars []AddInstanceRequestEvarsInner `json:"evars,omitempty"`
 	// Number of copies to provision.
 	Copies *int64 `json:"copies,omitempty"`
 	// Apply a multiply factor of containers/vms within the instance.
@@ -34,16 +34,16 @@ type AddInstanceRequest struct {
 	// Key for security group configuration. It should be passed as an array of objects containing the id of the security group to assign the instance to.
 	SecurityGroups []map[string]interface{} `json:"securityGroups,omitempty"`
 	// The (optional) volumes parameter is for LV configuration, can create additional LVs at provision It should be passed as an array of
-	Volumes []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner `json:"volumes,omitempty"`
+	Volumes []AddInstanceRequestVolumesInner `json:"volumes,omitempty"`
 	// The networkInterfaces parameter is for network configuration.  The Options API `/api/options/zoneNetworkOptions?zoneId=5&provisionTypeId=10` can be used to see which options are available.
-	NetworkInterfaces []InstancesNetworkInterfaces                              `json:"networkInterfaces,omitempty"`
-	Config            AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig `json:"config"`
+	NetworkInterfaces []InstancesNetworkInterfaces1 `json:"networkInterfaces,omitempty"`
+	Config            AddInstanceRequestConfig      `json:"config"`
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
+	Tags []AddInstanceRequestTagsInner `json:"tags,omitempty"`
 	// Alias for `tags`.
-	Metadata []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"metadata,omitempty"`
+	Metadata []AddInstanceRequestMetadataInner `json:"metadata,omitempty"`
 	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
 	Ports []AddInstanceRequestPortsInner `json:"ports,omitempty"`
 	// The Workflow ID to execute.
@@ -59,7 +59,7 @@ type _AddInstanceRequest AddInstanceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddInstanceRequest(instance AddInstanceRequestInstance, config AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) *AddInstanceRequest {
+func NewAddInstanceRequest(instance AddInstanceRequestInstance, config AddInstanceRequestConfig) *AddInstanceRequest {
 	this := AddInstanceRequest{}
 	this.Instance = instance
 	var copies int64 = 1
@@ -139,9 +139,9 @@ func (o *AddInstanceRequest) SetZoneId(v int64) {
 }
 
 // GetEvars returns the Evars field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetEvars() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *AddInstanceRequest) GetEvars() []AddInstanceRequestEvarsInner {
 	if o == nil || IsNil(o.Evars) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddInstanceRequestEvarsInner
 		return ret
 	}
 	return o.Evars
@@ -149,7 +149,7 @@ func (o *AddInstanceRequest) GetEvars() []AddCatalogItemTypeRequestCatalogItemTy
 
 // GetEvarsOk returns a tuple with the Evars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetEvarsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *AddInstanceRequest) GetEvarsOk() ([]AddInstanceRequestEvarsInner, bool) {
 	if o == nil || IsNil(o.Evars) {
 		return nil, false
 	}
@@ -165,8 +165,8 @@ func (o *AddInstanceRequest) IsSetEvars() bool {
 	return false
 }
 
-// SetEvars gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Evars field.
-func (o *AddInstanceRequest) SetEvars(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetEvars gets a reference to the given []AddInstanceRequestEvarsInner and assigns it to the Evars field.
+func (o *AddInstanceRequest) SetEvars(v []AddInstanceRequestEvarsInner) {
 	o.Evars = v
 }
 
@@ -300,9 +300,9 @@ func (o *AddInstanceRequest) SetSecurityGroups(v []map[string]interface{}) {
 }
 
 // GetVolumes returns the Volumes field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner {
+func (o *AddInstanceRequest) GetVolumes() []AddInstanceRequestVolumesInner {
 	if o == nil || IsNil(o.Volumes) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner
+		var ret []AddInstanceRequestVolumesInner
 		return ret
 	}
 	return o.Volumes
@@ -310,7 +310,7 @@ func (o *AddInstanceRequest) GetVolumes() []AddCatalogItemTypeRequestCatalogItem
 
 // GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetVolumesOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner, bool) {
+func (o *AddInstanceRequest) GetVolumesOk() ([]AddInstanceRequestVolumesInner, bool) {
 	if o == nil || IsNil(o.Volumes) {
 		return nil, false
 	}
@@ -326,15 +326,15 @@ func (o *AddInstanceRequest) IsSetVolumes() bool {
 	return false
 }
 
-// SetVolumes gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner and assigns it to the Volumes field.
-func (o *AddInstanceRequest) SetVolumes(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigVolumesInner) {
+// SetVolumes gets a reference to the given []AddInstanceRequestVolumesInner and assigns it to the Volumes field.
+func (o *AddInstanceRequest) SetVolumes(v []AddInstanceRequestVolumesInner) {
 	o.Volumes = v
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces {
+func (o *AddInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces1 {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces
+		var ret []InstancesNetworkInterfaces1
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -342,7 +342,7 @@ func (o *AddInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces, bool) {
+func (o *AddInstanceRequest) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces1, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -358,15 +358,15 @@ func (o *AddInstanceRequest) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces and assigns it to the NetworkInterfaces field.
-func (o *AddInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces1 and assigns it to the NetworkInterfaces field.
+func (o *AddInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces1) {
 	o.NetworkInterfaces = v
 }
 
 // GetConfig returns the Config field value
-func (o *AddInstanceRequest) GetConfig() AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig {
+func (o *AddInstanceRequest) GetConfig() AddInstanceRequestConfig {
 	if o == nil {
-		var ret AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig
+		var ret AddInstanceRequestConfig
 		return ret
 	}
 
@@ -375,7 +375,7 @@ func (o *AddInstanceRequest) GetConfig() AddCatalogItemTypeRequestCatalogItemTyp
 
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetConfigOk() (*AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig, bool) {
+func (o *AddInstanceRequest) GetConfigOk() (*AddInstanceRequestConfig, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -383,7 +383,7 @@ func (o *AddInstanceRequest) GetConfigOk() (*AddCatalogItemTypeRequestCatalogIte
 }
 
 // SetConfig sets field value
-func (o *AddInstanceRequest) SetConfig(v AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigConfig) {
+func (o *AddInstanceRequest) SetConfig(v AddInstanceRequestConfig) {
 	o.Config = v
 }
 
@@ -420,9 +420,9 @@ func (o *AddInstanceRequest) SetLabels(v []string) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *AddInstanceRequest) GetTags() []AddInstanceRequestTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddInstanceRequestTagsInner
 		return ret
 	}
 	return o.Tags
@@ -430,7 +430,7 @@ func (o *AddInstanceRequest) GetTags() []AddCatalogItemTypeRequestCatalogItemTyp
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *AddInstanceRequest) GetTagsOk() ([]AddInstanceRequestTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -446,15 +446,15 @@ func (o *AddInstanceRequest) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
-func (o *AddInstanceRequest) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetTags gets a reference to the given []AddInstanceRequestTagsInner and assigns it to the Tags field.
+func (o *AddInstanceRequest) SetTags(v []AddInstanceRequestTagsInner) {
 	o.Tags = v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *AddInstanceRequest) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *AddInstanceRequest) GetMetadata() []AddInstanceRequestMetadataInner {
 	if o == nil || IsNil(o.Metadata) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddInstanceRequestMetadataInner
 		return ret
 	}
 	return o.Metadata
@@ -462,7 +462,7 @@ func (o *AddInstanceRequest) GetMetadata() []AddCatalogItemTypeRequestCatalogIte
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceRequest) GetMetadataOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *AddInstanceRequest) GetMetadataOk() ([]AddInstanceRequestMetadataInner, bool) {
 	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
@@ -478,8 +478,8 @@ func (o *AddInstanceRequest) IsSetMetadata() bool {
 	return false
 }
 
-// SetMetadata gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Metadata field.
-func (o *AddInstanceRequest) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetMetadata gets a reference to the given []AddInstanceRequestMetadataInner and assigns it to the Metadata field.
+func (o *AddInstanceRequest) SetMetadata(v []AddInstanceRequestMetadataInner) {
 	o.Metadata = v
 }
 
@@ -685,7 +685,6 @@ func (v NullableAddInstanceRequest) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *AddInstanceRequest) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

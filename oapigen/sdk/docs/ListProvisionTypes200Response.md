@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProvisionTypes** | Pointer to [**[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType**](GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType.md) |  | [optional] 
-**Meta** | Pointer to [**ListActivity200ResponseAllOfMeta**](ListActivity200ResponseAllOfMeta.md) |  | [optional] 
+**ProvisionTypes** | Pointer to [**[]ListProvisionTypes200ResponseAllOfProvisionTypesInner**](ListProvisionTypes200ResponseAllOfProvisionTypesInner.md) |  | [optional] 
+**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProvisionTypes
 
-`func (o *ListProvisionTypes200Response) GetProvisionTypes() []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType`
+`func (o *ListProvisionTypes200Response) GetProvisionTypes() []ListProvisionTypes200ResponseAllOfProvisionTypesInner`
 
 GetProvisionTypes returns the ProvisionTypes field if non-nil, zero value otherwise.
 
 ### GetProvisionTypesOk
 
-`func (o *ListProvisionTypes200Response) GetProvisionTypesOk() (*[]GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType, bool)`
+`func (o *ListProvisionTypes200Response) GetProvisionTypesOk() (*[]ListProvisionTypes200ResponseAllOfProvisionTypesInner, bool)`
 
 GetProvisionTypesOk returns a tuple with the ProvisionTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionTypes
 
-`func (o *ListProvisionTypes200Response) SetProvisionTypes(v []GetInstanceTypeProvisioning200ResponseAllOfInstanceTypeInstanceTypeLayoutsInnerProvisionType)`
+`func (o *ListProvisionTypes200Response) SetProvisionTypes(v []ListProvisionTypes200ResponseAllOfProvisionTypesInner)`
 
 SetProvisionTypes sets ProvisionTypes field to given value.
 
@@ -53,20 +53,20 @@ HasProvisionTypes returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListProvisionTypes200Response) GetMeta() ListActivity200ResponseAllOfMeta`
+`func (o *ListProvisionTypes200Response) GetMeta() ListClouds200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListProvisionTypes200Response) GetMetaOk() (*ListActivity200ResponseAllOfMeta, bool)`
+`func (o *ListProvisionTypes200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListProvisionTypes200Response) SetMeta(v ListActivity200ResponseAllOfMeta)`
+`func (o *ListProvisionTypes200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -21,35 +21,35 @@ var _ MappedNullable = &ListClusterLayouts200ResponseAllOfLayoutsInner{}
 
 // ListClusterLayouts200ResponseAllOfLayoutsInner struct for ListClusterLayouts200ResponseAllOfLayoutsInner
 type ListClusterLayouts200ResponseAllOfLayoutsInner struct {
-	Id                      *int64                                                                      `json:"id,omitempty"`
-	InternalId              *string                                                                     `json:"internalId,omitempty"`
-	ServerCount             *int64                                                                      `json:"serverCount,omitempty"`
-	DateCreated             *time.Time                                                                  `json:"dateCreated,omitempty"`
-	Code                    *string                                                                     `json:"code,omitempty"`
-	LastUpdated             *time.Time                                                                  `json:"lastUpdated,omitempty"`
-	HasAutoScale            *bool                                                                       `json:"hasAutoScale,omitempty"`
-	MemoryRequirement       *int64                                                                      `json:"memoryRequirement,omitempty"`
-	ClusterVersion          *string                                                                     `json:"clusterVersion,omitempty"`
-	ComputeVersion          *string                                                                     `json:"computeVersion,omitempty"`
-	HasSettings             *bool                                                                       `json:"hasSettings,omitempty"`
-	SortOrder               *int64                                                                      `json:"sortOrder,omitempty"`
-	HasConfig               *bool                                                                       `json:"hasConfig,omitempty"`
-	Name                    *string                                                                     `json:"name,omitempty"`
-	Creatable               *bool                                                                       `json:"creatable,omitempty"`
-	Enabled                 *bool                                                                       `json:"enabled,omitempty"`
-	Description             *string                                                                     `json:"description,omitempty"`
-	GroupType               *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"groupType,omitempty"`
-	Labels                  []string                                                                    `json:"labels,omitempty"`
-	EnvironmentVariables    []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
-	OptionTypes             []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	Actions                 []map[string]interface{}                                                    `json:"actions,omitempty"`
-	ComputeServers          []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner         `json:"computeServers,omitempty"`
-	InstallContainerRuntime *bool                                                                       `json:"installContainerRuntime,omitempty"`
-	ProvisionType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"provisionType,omitempty"`
-	SpecTemplates           []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner          `json:"specTemplates,omitempty"`
-	TaskSets                []map[string]interface{}                                                    `json:"taskSets,omitempty"`
-	Type                    *ListBackupSettings200ResponseBackupSettingsDefaultSchedule                 `json:"type,omitempty"`
-	AdditionalProperties    map[string]interface{}                                                      `json:",remain"`
+	Id                      *int64                                                              `json:"id,omitempty"`
+	InternalId              *string                                                             `json:"internalId,omitempty"`
+	ServerCount             *int64                                                              `json:"serverCount,omitempty"`
+	DateCreated             *time.Time                                                          `json:"dateCreated,omitempty"`
+	Code                    *string                                                             `json:"code,omitempty"`
+	LastUpdated             *time.Time                                                          `json:"lastUpdated,omitempty"`
+	HasAutoScale            *bool                                                               `json:"hasAutoScale,omitempty"`
+	MemoryRequirement       *int64                                                              `json:"memoryRequirement,omitempty"`
+	ClusterVersion          *string                                                             `json:"clusterVersion,omitempty"`
+	ComputeVersion          *string                                                             `json:"computeVersion,omitempty"`
+	HasSettings             *bool                                                               `json:"hasSettings,omitempty"`
+	SortOrder               *int64                                                              `json:"sortOrder,omitempty"`
+	HasConfig               *bool                                                               `json:"hasConfig,omitempty"`
+	Name                    *string                                                             `json:"name,omitempty"`
+	Creatable               *bool                                                               `json:"creatable,omitempty"`
+	Enabled                 *bool                                                               `json:"enabled,omitempty"`
+	Description             *string                                                             `json:"description,omitempty"`
+	GroupType               *ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType            `json:"groupType,omitempty"`
+	Labels                  []string                                                            `json:"labels,omitempty"`
+	EnvironmentVariables    []map[string]interface{}                                            `json:"environmentVariables,omitempty"`
+	OptionTypes             []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner    `json:"optionTypes,omitempty"`
+	Actions                 []map[string]interface{}                                            `json:"actions,omitempty"`
+	ComputeServers          []ListClusterLayouts200ResponseAllOfLayoutsInnerComputeServersInner `json:"computeServers,omitempty"`
+	InstallContainerRuntime *bool                                                               `json:"installContainerRuntime,omitempty"`
+	ProvisionType           *ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType        `json:"provisionType,omitempty"`
+	SpecTemplates           []ListClusterLayouts200ResponseAllOfLayoutsInnerSpecTemplatesInner  `json:"specTemplates,omitempty"`
+	TaskSets                []map[string]interface{}                                            `json:"taskSets,omitempty"`
+	Type                    *ListClusterLayouts200ResponseAllOfLayoutsInnerType                 `json:"type,omitempty"`
+	AdditionalProperties    map[string]interface{}                                              `json:",remain"`
 }
 
 type _ListClusterLayouts200ResponseAllOfLayoutsInner ListClusterLayouts200ResponseAllOfLayoutsInner
@@ -616,9 +616,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetDescription(v string
 }
 
 // GetGroupType returns the GroupType field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupType() ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType {
 	if o == nil || IsNil(o.GroupType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType
 		return ret
 	}
 	return *o.GroupType
@@ -626,7 +626,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupType() ListBack
 
 // GetGroupTypeOk returns a tuple with the GroupType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetGroupTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType, bool) {
 	if o == nil || IsNil(o.GroupType) {
 		return nil, false
 	}
@@ -642,8 +642,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetGroupType() bool {
 	return false
 }
 
-// SetGroupType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the GroupType field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetGroupType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetGroupType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType and assigns it to the GroupType field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetGroupType(v ListClusterLayouts200ResponseAllOfLayoutsInnerGroupType) {
 	o.GroupType = &v
 }
 
@@ -712,9 +712,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetEnvironmentVariables
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypes() []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -722,7 +722,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypes() []List
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetOptionTypesOk() ([]ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -738,8 +738,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetOptionTypes() bool
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner and assigns it to the OptionTypes field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetOptionTypes(v []ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -840,9 +840,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetInstallContainerRunt
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionType() ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -850,7 +850,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionType() List
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetProvisionTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -866,8 +866,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetProvisionType() bo
 	return false
 }
 
-// SetProvisionType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the ProvisionType field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetProvisionType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetProvisionType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType and assigns it to the ProvisionType field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetProvisionType(v ListClusterLayouts200ResponseAllOfLayoutsInnerProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -936,9 +936,9 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetTaskSets(v []map[str
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetType() ListClusterLayouts200ResponseAllOfLayoutsInnerType {
 	if o == nil || IsNil(o.Type) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerType
 		return ret
 	}
 	return *o.Type
@@ -946,7 +946,7 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetType() ListBackupSet
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) GetTypeOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -962,8 +962,8 @@ func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the Type field.
-func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetType gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerType and assigns it to the Type field.
+func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) SetType(v ListClusterLayouts200ResponseAllOfLayoutsInnerType) {
 	o.Type = &v
 }
 
@@ -1113,7 +1113,6 @@ func (v NullableListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalMapstru
 
 	return v, nil
 }
-
 func (o *ListClusterLayouts200ResponseAllOfLayoutsInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

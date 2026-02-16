@@ -320,7 +320,6 @@ func (v NullableListGroups200ResponseAllOfGroupsInnerConfig) UnmarshalMapstructu
 
 	return v, nil
 }
-
 func (o *ListGroups200ResponseAllOfGroupsInnerConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

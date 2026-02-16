@@ -529,7 +529,6 @@ func (v NullableElasticSearchConfig) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *ElasticSearchConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

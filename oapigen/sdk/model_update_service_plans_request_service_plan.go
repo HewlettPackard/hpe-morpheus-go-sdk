@@ -36,9 +36,9 @@ type UpdateServicePlansRequestServicePlan struct {
 	// Max cores
 	MaxCores *int64 `json:"maxCores,omitempty"`
 	// Max disks allowed
-	MaxDisks       *int64                                       `json:"maxDisks,omitempty"`
-	ProvisionType  *AddClusterLayoutsRequestLayoutProvisionType `json:"provisionType,omitempty"`
-	CoresPerSocket *int64                                       `json:"coresPerSocket,omitempty"`
+	MaxDisks       *int64                                             `json:"maxDisks,omitempty"`
+	ProvisionType  *UpdateServicePlansRequestServicePlanProvisionType `json:"provisionType,omitempty"`
+	CoresPerSocket *int64                                             `json:"coresPerSocket,omitempty"`
 	// Can be used to enable / disable customizable cpu
 	CustomCpu *bool `json:"customCpu,omitempty"`
 	// Can be used to enable / disable customizable cores
@@ -54,9 +54,9 @@ type UpdateServicePlansRequestServicePlan struct {
 	// Sort order
 	SortOrder *int64 `json:"sortOrder,omitempty"`
 	// List of price sets to include in service plan
-	PriceSets            []AddServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
-	Config               *UpdateServicePlansRequestServicePlanConfig       `json:"config,omitempty"`
-	AdditionalProperties map[string]interface{}                            `json:",remain"`
+	PriceSets            []UpdateServicePlansRequestServicePlanPriceSetsInner `json:"priceSets,omitempty"`
+	Config               *UpdateServicePlansRequestServicePlanConfig          `json:"config,omitempty"`
+	AdditionalProperties map[string]interface{}                               `json:",remain"`
 }
 
 type _UpdateServicePlansRequestServicePlan UpdateServicePlansRequestServicePlan
@@ -371,9 +371,9 @@ func (o *UpdateServicePlansRequestServicePlan) SetMaxDisks(v int64) {
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *UpdateServicePlansRequestServicePlan) GetProvisionType() AddClusterLayoutsRequestLayoutProvisionType {
+func (o *UpdateServicePlansRequestServicePlan) GetProvisionType() UpdateServicePlansRequestServicePlanProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret AddClusterLayoutsRequestLayoutProvisionType
+		var ret UpdateServicePlansRequestServicePlanProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -381,7 +381,7 @@ func (o *UpdateServicePlansRequestServicePlan) GetProvisionType() AddClusterLayo
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequestServicePlan) GetProvisionTypeOk() (*AddClusterLayoutsRequestLayoutProvisionType, bool) {
+func (o *UpdateServicePlansRequestServicePlan) GetProvisionTypeOk() (*UpdateServicePlansRequestServicePlanProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -397,8 +397,8 @@ func (o *UpdateServicePlansRequestServicePlan) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given AddClusterLayoutsRequestLayoutProvisionType and assigns it to the ProvisionType field.
-func (o *UpdateServicePlansRequestServicePlan) SetProvisionType(v AddClusterLayoutsRequestLayoutProvisionType) {
+// SetProvisionType gets a reference to the given UpdateServicePlansRequestServicePlanProvisionType and assigns it to the ProvisionType field.
+func (o *UpdateServicePlansRequestServicePlan) SetProvisionType(v UpdateServicePlansRequestServicePlanProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -659,9 +659,9 @@ func (o *UpdateServicePlansRequestServicePlan) SetSortOrder(v int64) {
 }
 
 // GetPriceSets returns the PriceSets field value if set, zero value otherwise.
-func (o *UpdateServicePlansRequestServicePlan) GetPriceSets() []AddServicePlansRequestServicePlanPriceSetsInner {
+func (o *UpdateServicePlansRequestServicePlan) GetPriceSets() []UpdateServicePlansRequestServicePlanPriceSetsInner {
 	if o == nil || IsNil(o.PriceSets) {
-		var ret []AddServicePlansRequestServicePlanPriceSetsInner
+		var ret []UpdateServicePlansRequestServicePlanPriceSetsInner
 		return ret
 	}
 	return o.PriceSets
@@ -669,7 +669,7 @@ func (o *UpdateServicePlansRequestServicePlan) GetPriceSets() []AddServicePlansR
 
 // GetPriceSetsOk returns a tuple with the PriceSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateServicePlansRequestServicePlan) GetPriceSetsOk() ([]AddServicePlansRequestServicePlanPriceSetsInner, bool) {
+func (o *UpdateServicePlansRequestServicePlan) GetPriceSetsOk() ([]UpdateServicePlansRequestServicePlanPriceSetsInner, bool) {
 	if o == nil || IsNil(o.PriceSets) {
 		return nil, false
 	}
@@ -685,8 +685,8 @@ func (o *UpdateServicePlansRequestServicePlan) IsSetPriceSets() bool {
 	return false
 }
 
-// SetPriceSets gets a reference to the given []AddServicePlansRequestServicePlanPriceSetsInner and assigns it to the PriceSets field.
-func (o *UpdateServicePlansRequestServicePlan) SetPriceSets(v []AddServicePlansRequestServicePlanPriceSetsInner) {
+// SetPriceSets gets a reference to the given []UpdateServicePlansRequestServicePlanPriceSetsInner and assigns it to the PriceSets field.
+func (o *UpdateServicePlansRequestServicePlan) SetPriceSets(v []UpdateServicePlansRequestServicePlanPriceSetsInner) {
 	o.PriceSets = v
 }
 
@@ -844,7 +844,6 @@ func (v NullableUpdateServicePlansRequestServicePlan) UnmarshalMapstructure(data
 
 	return v, nil
 }
-
 func (o *UpdateServicePlansRequestServicePlan) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

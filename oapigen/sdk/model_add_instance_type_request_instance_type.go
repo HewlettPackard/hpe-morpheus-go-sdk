@@ -43,7 +43,7 @@ type AddInstanceTypeRequestInstanceType struct {
 	// Environment Prefix, can be used to make exported evars unique.
 	EnvironmentPrefix *string `json:"environmentPrefix,omitempty"`
 	// Array of instance type env variables.
-	EnvironmentVariables []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
+	EnvironmentVariables []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner `json:"environmentVariables,omitempty"`
 	// Array of price set objects
 	PriceSets []AddInstanceTypeRequestInstanceTypePriceSetsInner `json:"priceSets,omitempty"`
 	// Array of instance type option type IDs
@@ -421,9 +421,9 @@ func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentPrefix(v string) {
 }
 
 // GetEnvironmentVariables returns the EnvironmentVariables field value if set, zero value otherwise.
-func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariables() []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner {
+func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariables() []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner {
 	if o == nil || IsNil(o.EnvironmentVariables) {
-		var ret []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner
+		var ret []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner
 		return ret
 	}
 	return o.EnvironmentVariables
@@ -431,7 +431,7 @@ func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariables() []AddClus
 
 // GetEnvironmentVariablesOk returns a tuple with the EnvironmentVariables field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariablesOk() ([]AddClusterLayoutsRequestLayoutEnvironmentVariablesInner, bool) {
+func (o *AddInstanceTypeRequestInstanceType) GetEnvironmentVariablesOk() ([]AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner, bool) {
 	if o == nil || IsNil(o.EnvironmentVariables) {
 		return nil, false
 	}
@@ -447,8 +447,8 @@ func (o *AddInstanceTypeRequestInstanceType) IsSetEnvironmentVariables() bool {
 	return false
 }
 
-// SetEnvironmentVariables gets a reference to the given []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
-func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentVariables(v []AddClusterLayoutsRequestLayoutEnvironmentVariablesInner) {
+// SetEnvironmentVariables gets a reference to the given []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner and assigns it to the EnvironmentVariables field.
+func (o *AddInstanceTypeRequestInstanceType) SetEnvironmentVariables(v []AddInstanceTypeRequestInstanceTypeEnvironmentVariablesInner) {
 	o.EnvironmentVariables = v
 }
 
@@ -618,7 +618,6 @@ func (v NullableAddInstanceTypeRequestInstanceType) UnmarshalMapstructure(data a
 
 	return v, nil
 }
-
 func (o *AddInstanceTypeRequestInstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

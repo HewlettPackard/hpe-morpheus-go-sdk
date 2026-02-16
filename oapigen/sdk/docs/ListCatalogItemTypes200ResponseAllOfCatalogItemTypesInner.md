@@ -23,14 +23,14 @@ Name | Type | Description | Notes
 **AppSpec** | Pointer to **NullableString** |  | [optional] 
 **Config** | Pointer to **map[string]interface{}** |  | [optional] 
 **InstanceSpec** | Pointer to **NullableString** |  | [optional] 
-**Workflow** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Workflow** | Pointer to [**ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerWorkflow**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerWorkflow.md) |  | [optional] 
 **Content** | Pointer to **NullableString** |  | [optional] 
 **FormType** | Pointer to **string** |  | [optional] 
 **Form** | Pointer to **map[string]interface{}** | Form object that contains input options and/or field groups | [optional] 
 **FormConfig** | Pointer to **map[string]interface{}** | Form config object | [optional] 
 **OptionTypes** | Pointer to [**[]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner.md) |  | [optional] 
 **CreatedBy** | Pointer to **NullableString** |  | [optional] 
-**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Owner** | Pointer to [**ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner**](ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -610,20 +610,20 @@ HasInstanceSpec returns a boolean if a field has been set.
 UnsetInstanceSpec ensures that no value is present for InstanceSpec, not even an explicit nil
 ### GetWorkflow
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetWorkflow() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetWorkflow() ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerWorkflow`
 
 GetWorkflow returns the Workflow field if non-nil, zero value otherwise.
 
 ### GetWorkflowOk
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetWorkflowOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetWorkflowOk() (*ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerWorkflow, bool)`
 
 GetWorkflowOk returns a tuple with the Workflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWorkflow
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetWorkflow(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetWorkflow(v ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerWorkflow)`
 
 SetWorkflow sets Workflow field to given value.
 
@@ -835,20 +835,20 @@ HasCreatedBy returns a boolean if a field has been set.
 UnsetCreatedBy ensures that no value is present for CreatedBy, not even an explicit nil
 ### GetOwner
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwner() ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetOwnerOk() (*ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwner(v ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -858,16 +858,6 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
-### SetOwnerNil
-
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) SetOwnerNil(b bool)`
-
- SetOwnerNil sets the value for Owner to be an explicit nil
-
-### UnsetOwner
-`func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) UnsetOwner()`
-
-UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDateCreated
 
 `func (o *ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInner) GetDateCreated() time.Time`

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplianceUrl** | Pointer to **string** | The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance. | [optional] 
 **DatacenterName** | Pointer to **string** | A custom name used to reference the datacenter for the cloud. | [optional] 
-**ExternalId** | Pointer to **NullableString** | The external id of the cloud | [optional] 
+**ExternalId** | Pointer to **string** | The external id of the cloud | [optional] 
 **InventoryLevel** | Pointer to **string** | Whether to import existing virtual machines. | [optional] 
 **ConsoleKeymap** | Pointer to **string** | The keyboard layout to use for the console | [optional] 
 **Endpoint** | **string** | AWS endpoint | 
@@ -132,16 +132,6 @@ SetExternalId sets ExternalId field to given value.
 
 HasExternalId returns a boolean if a field has been set.
 
-### SetExternalIdNil
-
-`func (o *AddCloudsRequestZoneConfig) SetExternalIdNil(b bool)`
-
- SetExternalIdNil sets the value for ExternalId to be an explicit nil
-
-### UnsetExternalId
-`func (o *AddCloudsRequestZoneConfig) UnsetExternalId()`
-
-UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
 ### GetInventoryLevel
 
 `func (o *AddCloudsRequestZoneConfig) GetInventoryLevel() string`

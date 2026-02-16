@@ -223,7 +223,6 @@ func (v NullableListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) 
 
 	return v, nil
 }
-
 func (o *ListInstances200ResponseAllOfInstancesInnerConnectionInfoInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

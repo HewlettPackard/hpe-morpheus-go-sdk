@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **ParentRoleId** | Pointer to **NullableString** |  | [optional] 
 **Diverged** | Pointer to **bool** |  | [optional] 
 **OwnerId** | Pointer to **int64** |  | [optional] 
-**Owner** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
-**DefaultPersona** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Owner** | Pointer to [**ListRoles200ResponseAllOfRolesInnerOwner**](ListRoles200ResponseAllOfRolesInnerOwner.md) |  | [optional] 
+**DefaultPersona** | Pointer to [**ListRoles200ResponseAllOfRolesInnerDefaultPersona**](ListRoles200ResponseAllOfRolesInnerDefaultPersona.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 
@@ -372,20 +372,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwner() ListRoles200ResponseAllOfRolesInnerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetOwnerOk() (*ListRoles200ResponseAllOfRolesInnerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListRoles200ResponseAllOfRolesInner) SetOwner(v ListRoles200ResponseAllOfRolesInnerOwner)`
 
 SetOwner sets Owner field to given value.
 
@@ -395,32 +395,22 @@ SetOwner sets Owner field to given value.
 
 HasOwner returns a boolean if a field has been set.
 
-### SetOwnerNil
-
-`func (o *ListRoles200ResponseAllOfRolesInner) SetOwnerNil(b bool)`
-
- SetOwnerNil sets the value for Owner to be an explicit nil
-
-### UnsetOwner
-`func (o *ListRoles200ResponseAllOfRolesInner) UnsetOwner()`
-
-UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetDefaultPersona
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersona() ListRoles200ResponseAllOfRolesInnerDefaultPersona`
 
 GetDefaultPersona returns the DefaultPersona field if non-nil, zero value otherwise.
 
 ### GetDefaultPersonaOk
 
-`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListRoles200ResponseAllOfRolesInner) GetDefaultPersonaOk() (*ListRoles200ResponseAllOfRolesInnerDefaultPersona, bool)`
 
 GetDefaultPersonaOk returns a tuple with the DefaultPersona field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPersona
 
-`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListRoles200ResponseAllOfRolesInner) SetDefaultPersona(v ListRoles200ResponseAllOfRolesInnerDefaultPersona)`
 
 SetDefaultPersona sets DefaultPersona field to given value.
 

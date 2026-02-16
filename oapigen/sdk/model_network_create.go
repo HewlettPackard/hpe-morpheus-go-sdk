@@ -27,12 +27,12 @@ type NetworkCreate struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Description
-	Description NullableString                    `json:"description,omitempty"`
-	Site        CreateNetworksRequestNetworkSite  `json:"site"`
-	Zone        CreateNetworksRequestNetworkZone  `json:"zone"`
-	Type        *CreateNetworksRequestNetworkType `json:"type,omitempty"`
-	Ipv4Enabled *bool                             `json:"ipv4Enabled,omitempty"`
-	Ipv6Enabled *bool                             `json:"ipv6Enabled,omitempty"`
+	Description NullableString     `json:"description,omitempty"`
+	Site        NetworkCreateSite  `json:"site"`
+	Zone        NetworkCreateZone  `json:"zone"`
+	Type        *NetworkCreateType `json:"type,omitempty"`
+	Ipv4Enabled *bool              `json:"ipv4Enabled,omitempty"`
+	Ipv6Enabled *bool              `json:"ipv6Enabled,omitempty"`
 	// CIDR Network
 	Cidr *string `json:"cidr,omitempty"`
 	// Network Gateway
@@ -56,8 +56,8 @@ type NetworkCreate struct {
 	// Network Pool ID
 	Pool NullableInt64 `json:"pool,omitempty"`
 	// IPv6 Network Pool ID
-	PoolIPv6 NullableInt64                         `json:"poolIPv6,omitempty"`
-	ZonePool *CreateNetworksRequestNetworkZonePool `json:"zonePool,omitempty"`
+	PoolIPv6 NullableInt64          `json:"poolIPv6,omitempty"`
+	ZonePool *NetworkCreateZonePool `json:"zonePool,omitempty"`
 	// Allow IP Override
 	AllowStaticOverride *bool `json:"allowStaticOverride,omitempty"`
 	// Assign Public IP
@@ -67,22 +67,22 @@ type NetworkCreate struct {
 	// DHCP Server enabled network
 	DhcpServer *bool `json:"dhcpServer,omitempty"`
 	// IPv6 DHCP Server enabled network
-	DhcpServerIPv6 *bool                                                   `json:"dhcpServerIPv6,omitempty"`
-	NetworkDomain  *ListNetworks200ResponseAllOfNetworksInnerNetworkDomain `json:"networkDomain,omitempty"`
+	DhcpServerIPv6 *bool                       `json:"dhcpServerIPv6,omitempty"`
+	NetworkDomain  *NetworkCreateNetworkDomain `json:"networkDomain,omitempty"`
 	// Search Domains
-	SearchDomains *string                                                `json:"searchDomains,omitempty"`
-	NetworkProxy  *ListNetworks200ResponseAllOfNetworksInnerNetworkProxy `json:"networkProxy,omitempty"`
+	SearchDomains *string                    `json:"searchDomains,omitempty"`
+	NetworkProxy  *NetworkCreateNetworkProxy `json:"networkProxy,omitempty"`
 	// Bypass Proxy for Appliance URL
 	ApplianceUrlProxyBypass *bool `json:"applianceUrlProxyBypass,omitempty"`
 	// Comma-separated list of ip addresses or name servers to exclude proxy traversal for. Typically locally routable servers are excluded.
 	NoProxy NullableString `json:"noProxy,omitempty"`
 	// Visibility, private or public.
-	Visibility *string                             `json:"visibility,omitempty"`
-	Config     *CreateNetworksRequestNetworkConfig `json:"config,omitempty"`
+	Visibility *string              `json:"visibility,omitempty"`
+	Config     *NetworkCreateConfig `json:"config,omitempty"`
 	// Array of tenant account ids that are allowed access
-	Tenants              []GetAlerts200ResponseAllOfChecksInnerAccount   `json:"tenants,omitempty"`
-	ResourcePermission   *CreateNetworksRequestNetworkResourcePermission `json:"resourcePermission,omitempty"`
-	AdditionalProperties map[string]interface{}                          `json:",remain"`
+	Tenants              []NetworkCreateTenantsInner      `json:"tenants,omitempty"`
+	ResourcePermission   *NetworkCreateResourcePermission `json:"resourcePermission,omitempty"`
+	AdditionalProperties map[string]interface{}           `json:",remain"`
 }
 
 type _NetworkCreate NetworkCreate
@@ -91,7 +91,7 @@ type _NetworkCreate NetworkCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNetworkCreate(name string, site CreateNetworksRequestNetworkSite, zone CreateNetworksRequestNetworkZone) *NetworkCreate {
+func NewNetworkCreate(name string, site NetworkCreateSite, zone NetworkCreateZone) *NetworkCreate {
 	this := NetworkCreate{}
 	this.Name = name
 	this.Site = site
@@ -244,9 +244,9 @@ func (o *NetworkCreate) UnsetDescription() {
 }
 
 // GetSite returns the Site field value
-func (o *NetworkCreate) GetSite() CreateNetworksRequestNetworkSite {
+func (o *NetworkCreate) GetSite() NetworkCreateSite {
 	if o == nil {
-		var ret CreateNetworksRequestNetworkSite
+		var ret NetworkCreateSite
 		return ret
 	}
 
@@ -255,7 +255,7 @@ func (o *NetworkCreate) GetSite() CreateNetworksRequestNetworkSite {
 
 // GetSiteOk returns a tuple with the Site field value
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetSiteOk() (*CreateNetworksRequestNetworkSite, bool) {
+func (o *NetworkCreate) GetSiteOk() (*NetworkCreateSite, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -263,14 +263,14 @@ func (o *NetworkCreate) GetSiteOk() (*CreateNetworksRequestNetworkSite, bool) {
 }
 
 // SetSite sets field value
-func (o *NetworkCreate) SetSite(v CreateNetworksRequestNetworkSite) {
+func (o *NetworkCreate) SetSite(v NetworkCreateSite) {
 	o.Site = v
 }
 
 // GetZone returns the Zone field value
-func (o *NetworkCreate) GetZone() CreateNetworksRequestNetworkZone {
+func (o *NetworkCreate) GetZone() NetworkCreateZone {
 	if o == nil {
-		var ret CreateNetworksRequestNetworkZone
+		var ret NetworkCreateZone
 		return ret
 	}
 
@@ -279,7 +279,7 @@ func (o *NetworkCreate) GetZone() CreateNetworksRequestNetworkZone {
 
 // GetZoneOk returns a tuple with the Zone field value
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetZoneOk() (*CreateNetworksRequestNetworkZone, bool) {
+func (o *NetworkCreate) GetZoneOk() (*NetworkCreateZone, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -287,14 +287,14 @@ func (o *NetworkCreate) GetZoneOk() (*CreateNetworksRequestNetworkZone, bool) {
 }
 
 // SetZone sets field value
-func (o *NetworkCreate) SetZone(v CreateNetworksRequestNetworkZone) {
+func (o *NetworkCreate) SetZone(v NetworkCreateZone) {
 	o.Zone = v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *NetworkCreate) GetType() CreateNetworksRequestNetworkType {
+func (o *NetworkCreate) GetType() NetworkCreateType {
 	if o == nil || IsNil(o.Type) {
-		var ret CreateNetworksRequestNetworkType
+		var ret NetworkCreateType
 		return ret
 	}
 	return *o.Type
@@ -302,7 +302,7 @@ func (o *NetworkCreate) GetType() CreateNetworksRequestNetworkType {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetTypeOk() (*CreateNetworksRequestNetworkType, bool) {
+func (o *NetworkCreate) GetTypeOk() (*NetworkCreateType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -318,8 +318,8 @@ func (o *NetworkCreate) IsSetType() bool {
 	return false
 }
 
-// SetType gets a reference to the given CreateNetworksRequestNetworkType and assigns it to the Type field.
-func (o *NetworkCreate) SetType(v CreateNetworksRequestNetworkType) {
+// SetType gets a reference to the given NetworkCreateType and assigns it to the Type field.
+func (o *NetworkCreate) SetType(v NetworkCreateType) {
 	o.Type = &v
 }
 
@@ -870,9 +870,9 @@ func (o *NetworkCreate) UnsetPoolIPv6() {
 }
 
 // GetZonePool returns the ZonePool field value if set, zero value otherwise.
-func (o *NetworkCreate) GetZonePool() CreateNetworksRequestNetworkZonePool {
+func (o *NetworkCreate) GetZonePool() NetworkCreateZonePool {
 	if o == nil || IsNil(o.ZonePool) {
-		var ret CreateNetworksRequestNetworkZonePool
+		var ret NetworkCreateZonePool
 		return ret
 	}
 	return *o.ZonePool
@@ -880,7 +880,7 @@ func (o *NetworkCreate) GetZonePool() CreateNetworksRequestNetworkZonePool {
 
 // GetZonePoolOk returns a tuple with the ZonePool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetZonePoolOk() (*CreateNetworksRequestNetworkZonePool, bool) {
+func (o *NetworkCreate) GetZonePoolOk() (*NetworkCreateZonePool, bool) {
 	if o == nil || IsNil(o.ZonePool) {
 		return nil, false
 	}
@@ -896,8 +896,8 @@ func (o *NetworkCreate) IsSetZonePool() bool {
 	return false
 }
 
-// SetZonePool gets a reference to the given CreateNetworksRequestNetworkZonePool and assigns it to the ZonePool field.
-func (o *NetworkCreate) SetZonePool(v CreateNetworksRequestNetworkZonePool) {
+// SetZonePool gets a reference to the given NetworkCreateZonePool and assigns it to the ZonePool field.
+func (o *NetworkCreate) SetZonePool(v NetworkCreateZonePool) {
 	o.ZonePool = &v
 }
 
@@ -1062,9 +1062,9 @@ func (o *NetworkCreate) SetDhcpServerIPv6(v bool) {
 }
 
 // GetNetworkDomain returns the NetworkDomain field value if set, zero value otherwise.
-func (o *NetworkCreate) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksInnerNetworkDomain {
+func (o *NetworkCreate) GetNetworkDomain() NetworkCreateNetworkDomain {
 	if o == nil || IsNil(o.NetworkDomain) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkDomain
+		var ret NetworkCreateNetworkDomain
 		return ret
 	}
 	return *o.NetworkDomain
@@ -1072,7 +1072,7 @@ func (o *NetworkCreate) GetNetworkDomain() ListNetworks200ResponseAllOfNetworksI
 
 // GetNetworkDomainOk returns a tuple with the NetworkDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetNetworkDomainOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkDomain, bool) {
+func (o *NetworkCreate) GetNetworkDomainOk() (*NetworkCreateNetworkDomain, bool) {
 	if o == nil || IsNil(o.NetworkDomain) {
 		return nil, false
 	}
@@ -1088,8 +1088,8 @@ func (o *NetworkCreate) IsSetNetworkDomain() bool {
 	return false
 }
 
-// SetNetworkDomain gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkDomain and assigns it to the NetworkDomain field.
-func (o *NetworkCreate) SetNetworkDomain(v ListNetworks200ResponseAllOfNetworksInnerNetworkDomain) {
+// SetNetworkDomain gets a reference to the given NetworkCreateNetworkDomain and assigns it to the NetworkDomain field.
+func (o *NetworkCreate) SetNetworkDomain(v NetworkCreateNetworkDomain) {
 	o.NetworkDomain = &v
 }
 
@@ -1126,9 +1126,9 @@ func (o *NetworkCreate) SetSearchDomains(v string) {
 }
 
 // GetNetworkProxy returns the NetworkProxy field value if set, zero value otherwise.
-func (o *NetworkCreate) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksInnerNetworkProxy {
+func (o *NetworkCreate) GetNetworkProxy() NetworkCreateNetworkProxy {
 	if o == nil || IsNil(o.NetworkProxy) {
-		var ret ListNetworks200ResponseAllOfNetworksInnerNetworkProxy
+		var ret NetworkCreateNetworkProxy
 		return ret
 	}
 	return *o.NetworkProxy
@@ -1136,7 +1136,7 @@ func (o *NetworkCreate) GetNetworkProxy() ListNetworks200ResponseAllOfNetworksIn
 
 // GetNetworkProxyOk returns a tuple with the NetworkProxy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetNetworkProxyOk() (*ListNetworks200ResponseAllOfNetworksInnerNetworkProxy, bool) {
+func (o *NetworkCreate) GetNetworkProxyOk() (*NetworkCreateNetworkProxy, bool) {
 	if o == nil || IsNil(o.NetworkProxy) {
 		return nil, false
 	}
@@ -1152,8 +1152,8 @@ func (o *NetworkCreate) IsSetNetworkProxy() bool {
 	return false
 }
 
-// SetNetworkProxy gets a reference to the given ListNetworks200ResponseAllOfNetworksInnerNetworkProxy and assigns it to the NetworkProxy field.
-func (o *NetworkCreate) SetNetworkProxy(v ListNetworks200ResponseAllOfNetworksInnerNetworkProxy) {
+// SetNetworkProxy gets a reference to the given NetworkCreateNetworkProxy and assigns it to the NetworkProxy field.
+func (o *NetworkCreate) SetNetworkProxy(v NetworkCreateNetworkProxy) {
 	o.NetworkProxy = &v
 }
 
@@ -1265,9 +1265,9 @@ func (o *NetworkCreate) SetVisibility(v string) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *NetworkCreate) GetConfig() CreateNetworksRequestNetworkConfig {
+func (o *NetworkCreate) GetConfig() NetworkCreateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret CreateNetworksRequestNetworkConfig
+		var ret NetworkCreateConfig
 		return ret
 	}
 	return *o.Config
@@ -1275,7 +1275,7 @@ func (o *NetworkCreate) GetConfig() CreateNetworksRequestNetworkConfig {
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetConfigOk() (*CreateNetworksRequestNetworkConfig, bool) {
+func (o *NetworkCreate) GetConfigOk() (*NetworkCreateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -1291,15 +1291,15 @@ func (o *NetworkCreate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given CreateNetworksRequestNetworkConfig and assigns it to the Config field.
-func (o *NetworkCreate) SetConfig(v CreateNetworksRequestNetworkConfig) {
+// SetConfig gets a reference to the given NetworkCreateConfig and assigns it to the Config field.
+func (o *NetworkCreate) SetConfig(v NetworkCreateConfig) {
 	o.Config = &v
 }
 
 // GetTenants returns the Tenants field value if set, zero value otherwise.
-func (o *NetworkCreate) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *NetworkCreate) GetTenants() []NetworkCreateTenantsInner {
 	if o == nil || IsNil(o.Tenants) {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []NetworkCreateTenantsInner
 		return ret
 	}
 	return o.Tenants
@@ -1307,7 +1307,7 @@ func (o *NetworkCreate) GetTenants() []GetAlerts200ResponseAllOfChecksInnerAccou
 
 // GetTenantsOk returns a tuple with the Tenants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetTenantsOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *NetworkCreate) GetTenantsOk() ([]NetworkCreateTenantsInner, bool) {
 	if o == nil || IsNil(o.Tenants) {
 		return nil, false
 	}
@@ -1323,15 +1323,15 @@ func (o *NetworkCreate) IsSetTenants() bool {
 	return false
 }
 
-// SetTenants gets a reference to the given []GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Tenants field.
-func (o *NetworkCreate) SetTenants(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetTenants gets a reference to the given []NetworkCreateTenantsInner and assigns it to the Tenants field.
+func (o *NetworkCreate) SetTenants(v []NetworkCreateTenantsInner) {
 	o.Tenants = v
 }
 
 // GetResourcePermission returns the ResourcePermission field value if set, zero value otherwise.
-func (o *NetworkCreate) GetResourcePermission() CreateNetworksRequestNetworkResourcePermission {
+func (o *NetworkCreate) GetResourcePermission() NetworkCreateResourcePermission {
 	if o == nil || IsNil(o.ResourcePermission) {
-		var ret CreateNetworksRequestNetworkResourcePermission
+		var ret NetworkCreateResourcePermission
 		return ret
 	}
 	return *o.ResourcePermission
@@ -1339,7 +1339,7 @@ func (o *NetworkCreate) GetResourcePermission() CreateNetworksRequestNetworkReso
 
 // GetResourcePermissionOk returns a tuple with the ResourcePermission field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkCreate) GetResourcePermissionOk() (*CreateNetworksRequestNetworkResourcePermission, bool) {
+func (o *NetworkCreate) GetResourcePermissionOk() (*NetworkCreateResourcePermission, bool) {
 	if o == nil || IsNil(o.ResourcePermission) {
 		return nil, false
 	}
@@ -1355,8 +1355,8 @@ func (o *NetworkCreate) IsSetResourcePermission() bool {
 	return false
 }
 
-// SetResourcePermission gets a reference to the given CreateNetworksRequestNetworkResourcePermission and assigns it to the ResourcePermission field.
-func (o *NetworkCreate) SetResourcePermission(v CreateNetworksRequestNetworkResourcePermission) {
+// SetResourcePermission gets a reference to the given NetworkCreateResourcePermission and assigns it to the ResourcePermission field.
+func (o *NetworkCreate) SetResourcePermission(v NetworkCreateResourcePermission) {
 	o.ResourcePermission = &v
 }
 
@@ -1527,7 +1527,6 @@ func (v NullableNetworkCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *NetworkCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

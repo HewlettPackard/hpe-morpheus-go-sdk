@@ -20,7 +20,7 @@ var _ MappedNullable = &InstanceUpdateSuccess{}
 
 // InstanceUpdateSuccess struct for InstanceUpdateSuccess
 type InstanceUpdateSuccess struct {
-	Instance UpdateInstance200ResponseAllOfOneOfInstance `json:"instance"`
+	Instance InstanceUpdateSuccessInstance `json:"instance"`
 	// The Cloud ID to provision the instance onto.
 	ZoneId               int64                  `json:"zoneId"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -32,7 +32,7 @@ type _InstanceUpdateSuccess InstanceUpdateSuccess
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInstanceUpdateSuccess(instance UpdateInstance200ResponseAllOfOneOfInstance, zoneId int64) *InstanceUpdateSuccess {
+func NewInstanceUpdateSuccess(instance InstanceUpdateSuccessInstance, zoneId int64) *InstanceUpdateSuccess {
 	this := InstanceUpdateSuccess{}
 	this.Instance = instance
 	this.ZoneId = zoneId
@@ -48,9 +48,9 @@ func NewInstanceUpdateSuccessWithDefaults() *InstanceUpdateSuccess {
 }
 
 // GetInstance returns the Instance field value
-func (o *InstanceUpdateSuccess) GetInstance() UpdateInstance200ResponseAllOfOneOfInstance {
+func (o *InstanceUpdateSuccess) GetInstance() InstanceUpdateSuccessInstance {
 	if o == nil {
-		var ret UpdateInstance200ResponseAllOfOneOfInstance
+		var ret InstanceUpdateSuccessInstance
 		return ret
 	}
 
@@ -59,7 +59,7 @@ func (o *InstanceUpdateSuccess) GetInstance() UpdateInstance200ResponseAllOfOneO
 
 // GetInstanceOk returns a tuple with the Instance field value
 // and a boolean to check if the value has been set.
-func (o *InstanceUpdateSuccess) GetInstanceOk() (*UpdateInstance200ResponseAllOfOneOfInstance, bool) {
+func (o *InstanceUpdateSuccess) GetInstanceOk() (*InstanceUpdateSuccessInstance, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -67,7 +67,7 @@ func (o *InstanceUpdateSuccess) GetInstanceOk() (*UpdateInstance200ResponseAllOf
 }
 
 // SetInstance sets field value
-func (o *InstanceUpdateSuccess) SetInstance(v UpdateInstance200ResponseAllOfOneOfInstance) {
+func (o *InstanceUpdateSuccess) SetInstance(v InstanceUpdateSuccessInstance) {
 	o.Instance = v
 }
 
@@ -159,7 +159,6 @@ func (v NullableInstanceUpdateSuccess) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
-
 func (o *InstanceUpdateSuccess) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

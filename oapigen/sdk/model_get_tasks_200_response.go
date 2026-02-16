@@ -20,7 +20,7 @@ var _ MappedNullable = &GetTasks200Response{}
 
 // GetTasks200Response struct for GetTasks200Response
 type GetTasks200Response struct {
-	Task                 *AddTasks200ResponseAllOfTask `json:"task,omitempty"`
+	Task                 *GetTasks200ResponseAllOfTask `json:"task,omitempty"`
 	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
@@ -44,9 +44,9 @@ func NewGetTasks200ResponseWithDefaults() *GetTasks200Response {
 }
 
 // GetTask returns the Task field value if set, zero value otherwise.
-func (o *GetTasks200Response) GetTask() AddTasks200ResponseAllOfTask {
+func (o *GetTasks200Response) GetTask() GetTasks200ResponseAllOfTask {
 	if o == nil || IsNil(o.Task) {
-		var ret AddTasks200ResponseAllOfTask
+		var ret GetTasks200ResponseAllOfTask
 		return ret
 	}
 	return *o.Task
@@ -54,7 +54,7 @@ func (o *GetTasks200Response) GetTask() AddTasks200ResponseAllOfTask {
 
 // GetTaskOk returns a tuple with the Task field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetTasks200Response) GetTaskOk() (*AddTasks200ResponseAllOfTask, bool) {
+func (o *GetTasks200Response) GetTaskOk() (*GetTasks200ResponseAllOfTask, bool) {
 	if o == nil || IsNil(o.Task) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetTasks200Response) IsSetTask() bool {
 	return false
 }
 
-// SetTask gets a reference to the given AddTasks200ResponseAllOfTask and assigns it to the Task field.
-func (o *GetTasks200Response) SetTask(v AddTasks200ResponseAllOfTask) {
+// SetTask gets a reference to the given GetTasks200ResponseAllOfTask and assigns it to the Task field.
+func (o *GetTasks200Response) SetTask(v GetTasks200ResponseAllOfTask) {
 	o.Task = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetTasks200Response) UnmarshalMapstructure(data any) (any, error
 
 	return v, nil
 }
-
 func (o *GetTasks200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

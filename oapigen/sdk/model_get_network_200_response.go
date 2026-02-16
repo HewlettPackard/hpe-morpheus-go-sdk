@@ -20,8 +20,8 @@ var _ MappedNullable = &GetNetwork200Response{}
 
 // GetNetwork200Response struct for GetNetwork200Response
 type GetNetwork200Response struct {
-	Network              *ListNetworks200ResponseAllOfNetworksInner `json:"network,omitempty"`
-	AdditionalProperties map[string]interface{}                     `json:",remain"`
+	Network              *GetNetwork200ResponseNetwork `json:"network,omitempty"`
+	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
 type _GetNetwork200Response GetNetwork200Response
@@ -44,9 +44,9 @@ func NewGetNetwork200ResponseWithDefaults() *GetNetwork200Response {
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
-func (o *GetNetwork200Response) GetNetwork() ListNetworks200ResponseAllOfNetworksInner {
+func (o *GetNetwork200Response) GetNetwork() GetNetwork200ResponseNetwork {
 	if o == nil || IsNil(o.Network) {
-		var ret ListNetworks200ResponseAllOfNetworksInner
+		var ret GetNetwork200ResponseNetwork
 		return ret
 	}
 	return *o.Network
@@ -54,7 +54,7 @@ func (o *GetNetwork200Response) GetNetwork() ListNetworks200ResponseAllOfNetwork
 
 // GetNetworkOk returns a tuple with the Network field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetNetwork200Response) GetNetworkOk() (*ListNetworks200ResponseAllOfNetworksInner, bool) {
+func (o *GetNetwork200Response) GetNetworkOk() (*GetNetwork200ResponseNetwork, bool) {
 	if o == nil || IsNil(o.Network) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetNetwork200Response) IsSetNetwork() bool {
 	return false
 }
 
-// SetNetwork gets a reference to the given ListNetworks200ResponseAllOfNetworksInner and assigns it to the Network field.
-func (o *GetNetwork200Response) SetNetwork(v ListNetworks200ResponseAllOfNetworksInner) {
+// SetNetwork gets a reference to the given GetNetwork200ResponseNetwork and assigns it to the Network field.
+func (o *GetNetwork200Response) SetNetwork(v GetNetwork200ResponseNetwork) {
 	o.Network = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetNetwork200Response) UnmarshalMapstructure(data any) (any, err
 
 	return v, nil
 }
-
 func (o *GetNetwork200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -527,7 +527,6 @@ func (v NullableVRealizeOrchestratorTaskConfig) UnmarshalMapstructure(data any) 
 
 	return v, nil
 }
-
 func (o *VRealizeOrchestratorTaskConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

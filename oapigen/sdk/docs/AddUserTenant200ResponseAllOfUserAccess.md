@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Features** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessFeaturesInner**](AddUserTenant200ResponseAllOfUserAccessFeaturesInner.md) |  | [optional] 
-**Zones** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
-**Sites** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
-**InstanceTypes** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
-**AppTemplates** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
-**CatalogItemTypes** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
-**Personas** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
-**VdiPools** | Pointer to [**[]AddRoles200ResponseAllOfSitesInner**](AddRoles200ResponseAllOfSitesInner.md) |  | [optional] 
-**ReportTypes** | Pointer to [**[]AddRoles200ResponseAllOfInstanceTypePermissionsInner**](AddRoles200ResponseAllOfInstanceTypePermissionsInner.md) |  | [optional] 
-**Tasks** | Pointer to [**[]AddRoles200ResponseAllOfAppTemplatePermissionsInner**](AddRoles200ResponseAllOfAppTemplatePermissionsInner.md) |  | [optional] 
-**TaskSets** | Pointer to [**[]AddRoles200ResponseAllOfAppTemplatePermissionsInner**](AddRoles200ResponseAllOfAppTemplatePermissionsInner.md) |  | [optional] 
+**Zones** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessZonesInner**](AddUserTenant200ResponseAllOfUserAccessZonesInner.md) |  | [optional] 
+**Sites** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessSitesInner**](AddUserTenant200ResponseAllOfUserAccessSitesInner.md) |  | [optional] 
+**InstanceTypes** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner**](AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner.md) |  | [optional] 
+**AppTemplates** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner**](AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner.md) |  | [optional] 
+**CatalogItemTypes** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner**](AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner.md) |  | [optional] 
+**Personas** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessPersonasInner**](AddUserTenant200ResponseAllOfUserAccessPersonasInner.md) |  | [optional] 
+**VdiPools** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner**](AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner.md) |  | [optional] 
+**ReportTypes** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessReportTypesInner**](AddUserTenant200ResponseAllOfUserAccessReportTypesInner.md) |  | [optional] 
+**Tasks** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessTasksInner**](AddUserTenant200ResponseAllOfUserAccessTasksInner.md) |  | [optional] 
+**TaskSets** | Pointer to [**[]AddUserTenant200ResponseAllOfUserAccessTaskSetsInner**](AddUserTenant200ResponseAllOfUserAccessTaskSetsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -62,20 +62,20 @@ HasFeatures returns a boolean if a field has been set.
 
 ### GetZones
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetZones() []AddRoles200ResponseAllOfSitesInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetZones() []AddUserTenant200ResponseAllOfUserAccessZonesInner`
 
 GetZones returns the Zones field if non-nil, zero value otherwise.
 
 ### GetZonesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetZonesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetZonesOk() (*[]AddUserTenant200ResponseAllOfUserAccessZonesInner, bool)`
 
 GetZonesOk returns a tuple with the Zones field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetZones
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetZones(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetZones(v []AddUserTenant200ResponseAllOfUserAccessZonesInner)`
 
 SetZones sets Zones field to given value.
 
@@ -87,20 +87,20 @@ HasZones returns a boolean if a field has been set.
 
 ### GetSites
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetSites() []AddRoles200ResponseAllOfSitesInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetSites() []AddUserTenant200ResponseAllOfUserAccessSitesInner`
 
 GetSites returns the Sites field if non-nil, zero value otherwise.
 
 ### GetSitesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetSitesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetSitesOk() (*[]AddUserTenant200ResponseAllOfUserAccessSitesInner, bool)`
 
 GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSites
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetSites(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetSites(v []AddUserTenant200ResponseAllOfUserAccessSitesInner)`
 
 SetSites sets Sites field to given value.
 
@@ -112,20 +112,20 @@ HasSites returns a boolean if a field has been set.
 
 ### GetInstanceTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypes() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypes() []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner`
 
 GetInstanceTypes returns the InstanceTypes field if non-nil, zero value otherwise.
 
 ### GetInstanceTypesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypesOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetInstanceTypesOk() (*[]AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner, bool)`
 
 GetInstanceTypesOk returns a tuple with the InstanceTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetInstanceTypes(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetInstanceTypes(v []AddUserTenant200ResponseAllOfUserAccessInstanceTypesInner)`
 
 SetInstanceTypes sets InstanceTypes field to given value.
 
@@ -137,20 +137,20 @@ HasInstanceTypes returns a boolean if a field has been set.
 
 ### GetAppTemplates
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplates() []AddRoles200ResponseAllOfSitesInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplates() []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner`
 
 GetAppTemplates returns the AppTemplates field if non-nil, zero value otherwise.
 
 ### GetAppTemplatesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplatesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetAppTemplatesOk() (*[]AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner, bool)`
 
 GetAppTemplatesOk returns a tuple with the AppTemplates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAppTemplates
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetAppTemplates(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetAppTemplates(v []AddUserTenant200ResponseAllOfUserAccessAppTemplatesInner)`
 
 SetAppTemplates sets AppTemplates field to given value.
 
@@ -162,20 +162,20 @@ HasAppTemplates returns a boolean if a field has been set.
 
 ### GetCatalogItemTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypes() []AddRoles200ResponseAllOfSitesInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypes() []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner`
 
 GetCatalogItemTypes returns the CatalogItemTypes field if non-nil, zero value otherwise.
 
 ### GetCatalogItemTypesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypesOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetCatalogItemTypesOk() (*[]AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner, bool)`
 
 GetCatalogItemTypesOk returns a tuple with the CatalogItemTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCatalogItemTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetCatalogItemTypes(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetCatalogItemTypes(v []AddUserTenant200ResponseAllOfUserAccessCatalogItemTypesInner)`
 
 SetCatalogItemTypes sets CatalogItemTypes field to given value.
 
@@ -187,20 +187,20 @@ HasCatalogItemTypes returns a boolean if a field has been set.
 
 ### GetPersonas
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonas() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonas() []AddUserTenant200ResponseAllOfUserAccessPersonasInner`
 
 GetPersonas returns the Personas field if non-nil, zero value otherwise.
 
 ### GetPersonasOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonasOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetPersonasOk() (*[]AddUserTenant200ResponseAllOfUserAccessPersonasInner, bool)`
 
 GetPersonasOk returns a tuple with the Personas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersonas
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetPersonas(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetPersonas(v []AddUserTenant200ResponseAllOfUserAccessPersonasInner)`
 
 SetPersonas sets Personas field to given value.
 
@@ -212,20 +212,20 @@ HasPersonas returns a boolean if a field has been set.
 
 ### GetVdiPools
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPools() []AddRoles200ResponseAllOfSitesInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPools() []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner`
 
 GetVdiPools returns the VdiPools field if non-nil, zero value otherwise.
 
 ### GetVdiPoolsOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPoolsOk() (*[]AddRoles200ResponseAllOfSitesInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetVdiPoolsOk() (*[]AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner, bool)`
 
 GetVdiPoolsOk returns a tuple with the VdiPools field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVdiPools
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetVdiPools(v []AddRoles200ResponseAllOfSitesInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetVdiPools(v []AddUserTenant200ResponseAllOfUserAccessVdiPoolsInner)`
 
 SetVdiPools sets VdiPools field to given value.
 
@@ -237,20 +237,20 @@ HasVdiPools returns a boolean if a field has been set.
 
 ### GetReportTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypes() []AddRoles200ResponseAllOfInstanceTypePermissionsInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypes() []AddUserTenant200ResponseAllOfUserAccessReportTypesInner`
 
 GetReportTypes returns the ReportTypes field if non-nil, zero value otherwise.
 
 ### GetReportTypesOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypesOk() (*[]AddRoles200ResponseAllOfInstanceTypePermissionsInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetReportTypesOk() (*[]AddUserTenant200ResponseAllOfUserAccessReportTypesInner, bool)`
 
 GetReportTypesOk returns a tuple with the ReportTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReportTypes
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetReportTypes(v []AddRoles200ResponseAllOfInstanceTypePermissionsInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetReportTypes(v []AddUserTenant200ResponseAllOfUserAccessReportTypesInner)`
 
 SetReportTypes sets ReportTypes field to given value.
 
@@ -262,20 +262,20 @@ HasReportTypes returns a boolean if a field has been set.
 
 ### GetTasks
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasks() []AddRoles200ResponseAllOfAppTemplatePermissionsInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasks() []AddUserTenant200ResponseAllOfUserAccessTasksInner`
 
 GetTasks returns the Tasks field if non-nil, zero value otherwise.
 
 ### GetTasksOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasksOk() (*[]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTasksOk() (*[]AddUserTenant200ResponseAllOfUserAccessTasksInner, bool)`
 
 GetTasksOk returns a tuple with the Tasks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTasks
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetTasks(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetTasks(v []AddUserTenant200ResponseAllOfUserAccessTasksInner)`
 
 SetTasks sets Tasks field to given value.
 
@@ -287,20 +287,20 @@ HasTasks returns a boolean if a field has been set.
 
 ### GetTaskSets
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSets() []AddRoles200ResponseAllOfAppTemplatePermissionsInner`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSets() []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner`
 
 GetTaskSets returns the TaskSets field if non-nil, zero value otherwise.
 
 ### GetTaskSetsOk
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSetsOk() (*[]AddRoles200ResponseAllOfAppTemplatePermissionsInner, bool)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) GetTaskSetsOk() (*[]AddUserTenant200ResponseAllOfUserAccessTaskSetsInner, bool)`
 
 GetTaskSetsOk returns a tuple with the TaskSets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaskSets
 
-`func (o *AddUserTenant200ResponseAllOfUserAccess) SetTaskSets(v []AddRoles200ResponseAllOfAppTemplatePermissionsInner)`
+`func (o *AddUserTenant200ResponseAllOfUserAccess) SetTaskSets(v []AddUserTenant200ResponseAllOfUserAccessTaskSetsInner)`
 
 SetTaskSets sets TaskSets field to given value.
 

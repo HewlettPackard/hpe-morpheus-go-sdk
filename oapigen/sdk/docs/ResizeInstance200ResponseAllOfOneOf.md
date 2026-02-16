@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Instance** | [**UpdateInstance200ResponseAllOfOneOfInstance**](UpdateInstance200ResponseAllOfOneOfInstance.md) |  | 
+**Instance** | [**ResizeInstance200ResponseAllOfOneOfInstance**](ResizeInstance200ResponseAllOfOneOfInstance.md) |  | 
 **ZoneId** | **int64** | The Cloud ID to provision the instance onto. | 
 
 ## Methods
 
 ### NewResizeInstance200ResponseAllOfOneOf
 
-`func NewResizeInstance200ResponseAllOfOneOf(instance UpdateInstance200ResponseAllOfOneOfInstance, zoneId int64, ) *ResizeInstance200ResponseAllOfOneOf`
+`func NewResizeInstance200ResponseAllOfOneOf(instance ResizeInstance200ResponseAllOfOneOfInstance, zoneId int64, ) *ResizeInstance200ResponseAllOfOneOf`
 
 NewResizeInstance200ResponseAllOfOneOf instantiates a new ResizeInstance200ResponseAllOfOneOf object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInstance
 
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstance() UpdateInstance200ResponseAllOfOneOfInstance`
+`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstance() ResizeInstance200ResponseAllOfOneOfInstance`
 
 GetInstance returns the Instance field if non-nil, zero value otherwise.
 
 ### GetInstanceOk
 
-`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstanceOk() (*UpdateInstance200ResponseAllOfOneOfInstance, bool)`
+`func (o *ResizeInstance200ResponseAllOfOneOf) GetInstanceOk() (*ResizeInstance200ResponseAllOfOneOfInstance, bool)`
 
 GetInstanceOk returns a tuple with the Instance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstance
 
-`func (o *ResizeInstance200ResponseAllOfOneOf) SetInstance(v UpdateInstance200ResponseAllOfOneOfInstance)`
+`func (o *ResizeInstance200ResponseAllOfOneOf) SetInstance(v ResizeInstance200ResponseAllOfOneOfInstance)`
 
 SetInstance sets Instance field to given value.
 

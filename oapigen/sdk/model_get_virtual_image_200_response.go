@@ -20,8 +20,8 @@ var _ MappedNullable = &GetVirtualImage200Response{}
 
 // GetVirtualImage200Response struct for GetVirtualImage200Response
 type GetVirtualImage200Response struct {
-	VirtualImage         *AddVirtualImage200ResponseAllOfVirtualImage `json:"virtualImage,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	VirtualImage         *GetVirtualImage200ResponseVirtualImage `json:"virtualImage,omitempty"`
+	AdditionalProperties map[string]interface{}                  `json:",remain"`
 }
 
 type _GetVirtualImage200Response GetVirtualImage200Response
@@ -44,9 +44,9 @@ func NewGetVirtualImage200ResponseWithDefaults() *GetVirtualImage200Response {
 }
 
 // GetVirtualImage returns the VirtualImage field value if set, zero value otherwise.
-func (o *GetVirtualImage200Response) GetVirtualImage() AddVirtualImage200ResponseAllOfVirtualImage {
+func (o *GetVirtualImage200Response) GetVirtualImage() GetVirtualImage200ResponseVirtualImage {
 	if o == nil || IsNil(o.VirtualImage) {
-		var ret AddVirtualImage200ResponseAllOfVirtualImage
+		var ret GetVirtualImage200ResponseVirtualImage
 		return ret
 	}
 	return *o.VirtualImage
@@ -54,7 +54,7 @@ func (o *GetVirtualImage200Response) GetVirtualImage() AddVirtualImage200Respons
 
 // GetVirtualImageOk returns a tuple with the VirtualImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetVirtualImage200Response) GetVirtualImageOk() (*AddVirtualImage200ResponseAllOfVirtualImage, bool) {
+func (o *GetVirtualImage200Response) GetVirtualImageOk() (*GetVirtualImage200ResponseVirtualImage, bool) {
 	if o == nil || IsNil(o.VirtualImage) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *GetVirtualImage200Response) IsSetVirtualImage() bool {
 	return false
 }
 
-// SetVirtualImage gets a reference to the given AddVirtualImage200ResponseAllOfVirtualImage and assigns it to the VirtualImage field.
-func (o *GetVirtualImage200Response) SetVirtualImage(v AddVirtualImage200ResponseAllOfVirtualImage) {
+// SetVirtualImage gets a reference to the given GetVirtualImage200ResponseVirtualImage and assigns it to the VirtualImage field.
+func (o *GetVirtualImage200Response) SetVirtualImage(v GetVirtualImage200ResponseVirtualImage) {
 	o.VirtualImage = &v
 }
 
@@ -140,7 +140,6 @@ func (v NullableGetVirtualImage200Response) UnmarshalMapstructure(data any) (any
 
 	return v, nil
 }
-
 func (o *GetVirtualImage200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -4,8 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] 
-**EnableNetworkTypeSelection** | Pointer to **bool** | Enable network type selection | [optional] 
+**ApplianceUrl** | Pointer to **string** | The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance. | [optional] 
+**DatacenterName** | Pointer to **string** | A custom name used to reference the datacenter for the cloud. | [optional] 
+**ExternalId** | Pointer to **NullableString** | The external id of the cloud | [optional] 
+**InventoryLevel** | Pointer to **string** | Whether to import existing virtual machines. | [optional] 
+**ConsoleKeymap** | Pointer to **string** | The keyboard layout to use for the console | [optional] 
+**CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
+**EnableNetworkTypeSelection** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -25,6 +30,141 @@ will change when the set of required properties is changed
 NewCloudCreateConfigHVMWithDefaults instantiates a new CloudCreateConfigHVM object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplianceUrl
+
+`func (o *CloudCreateConfigHVM) GetApplianceUrl() string`
+
+GetApplianceUrl returns the ApplianceUrl field if non-nil, zero value otherwise.
+
+### GetApplianceUrlOk
+
+`func (o *CloudCreateConfigHVM) GetApplianceUrlOk() (*string, bool)`
+
+GetApplianceUrlOk returns a tuple with the ApplianceUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplianceUrl
+
+`func (o *CloudCreateConfigHVM) SetApplianceUrl(v string)`
+
+SetApplianceUrl sets ApplianceUrl field to given value.
+
+### HasApplianceUrl
+
+`func (o *CloudCreateConfigHVM) HasApplianceUrl() bool`
+
+HasApplianceUrl returns a boolean if a field has been set.
+
+### GetDatacenterName
+
+`func (o *CloudCreateConfigHVM) GetDatacenterName() string`
+
+GetDatacenterName returns the DatacenterName field if non-nil, zero value otherwise.
+
+### GetDatacenterNameOk
+
+`func (o *CloudCreateConfigHVM) GetDatacenterNameOk() (*string, bool)`
+
+GetDatacenterNameOk returns a tuple with the DatacenterName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatacenterName
+
+`func (o *CloudCreateConfigHVM) SetDatacenterName(v string)`
+
+SetDatacenterName sets DatacenterName field to given value.
+
+### HasDatacenterName
+
+`func (o *CloudCreateConfigHVM) HasDatacenterName() bool`
+
+HasDatacenterName returns a boolean if a field has been set.
+
+### GetExternalId
+
+`func (o *CloudCreateConfigHVM) GetExternalId() string`
+
+GetExternalId returns the ExternalId field if non-nil, zero value otherwise.
+
+### GetExternalIdOk
+
+`func (o *CloudCreateConfigHVM) GetExternalIdOk() (*string, bool)`
+
+GetExternalIdOk returns a tuple with the ExternalId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalId
+
+`func (o *CloudCreateConfigHVM) SetExternalId(v string)`
+
+SetExternalId sets ExternalId field to given value.
+
+### HasExternalId
+
+`func (o *CloudCreateConfigHVM) HasExternalId() bool`
+
+HasExternalId returns a boolean if a field has been set.
+
+### SetExternalIdNil
+
+`func (o *CloudCreateConfigHVM) SetExternalIdNil(b bool)`
+
+ SetExternalIdNil sets the value for ExternalId to be an explicit nil
+
+### UnsetExternalId
+`func (o *CloudCreateConfigHVM) UnsetExternalId()`
+
+UnsetExternalId ensures that no value is present for ExternalId, not even an explicit nil
+### GetInventoryLevel
+
+`func (o *CloudCreateConfigHVM) GetInventoryLevel() string`
+
+GetInventoryLevel returns the InventoryLevel field if non-nil, zero value otherwise.
+
+### GetInventoryLevelOk
+
+`func (o *CloudCreateConfigHVM) GetInventoryLevelOk() (*string, bool)`
+
+GetInventoryLevelOk returns a tuple with the InventoryLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInventoryLevel
+
+`func (o *CloudCreateConfigHVM) SetInventoryLevel(v string)`
+
+SetInventoryLevel sets InventoryLevel field to given value.
+
+### HasInventoryLevel
+
+`func (o *CloudCreateConfigHVM) HasInventoryLevel() bool`
+
+HasInventoryLevel returns a boolean if a field has been set.
+
+### GetConsoleKeymap
+
+`func (o *CloudCreateConfigHVM) GetConsoleKeymap() string`
+
+GetConsoleKeymap returns the ConsoleKeymap field if non-nil, zero value otherwise.
+
+### GetConsoleKeymapOk
+
+`func (o *CloudCreateConfigHVM) GetConsoleKeymapOk() (*string, bool)`
+
+GetConsoleKeymapOk returns a tuple with the ConsoleKeymap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConsoleKeymap
+
+`func (o *CloudCreateConfigHVM) SetConsoleKeymap(v string)`
+
+SetConsoleKeymap sets ConsoleKeymap field to given value.
+
+### HasConsoleKeymap
+
+`func (o *CloudCreateConfigHVM) HasConsoleKeymap() bool`
+
+HasConsoleKeymap returns a boolean if a field has been set.
 
 ### GetCertificateProvider
 
@@ -53,20 +193,20 @@ HasCertificateProvider returns a boolean if a field has been set.
 
 ### GetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelection() bool`
+`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelection() string`
 
 GetEnableNetworkTypeSelection returns the EnableNetworkTypeSelection field if non-nil, zero value otherwise.
 
 ### GetEnableNetworkTypeSelectionOk
 
-`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelectionOk() (*bool, bool)`
+`func (o *CloudCreateConfigHVM) GetEnableNetworkTypeSelectionOk() (*string, bool)`
 
 GetEnableNetworkTypeSelectionOk returns a tuple with the EnableNetworkTypeSelection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnableNetworkTypeSelection
 
-`func (o *CloudCreateConfigHVM) SetEnableNetworkTypeSelection(v bool)`
+`func (o *CloudCreateConfigHVM) SetEnableNetworkTypeSelection(v string)`
 
 SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given value.
 
@@ -76,6 +216,16 @@ SetEnableNetworkTypeSelection sets EnableNetworkTypeSelection field to given val
 
 HasEnableNetworkTypeSelection returns a boolean if a field has been set.
 
+### SetEnableNetworkTypeSelectionNil
+
+`func (o *CloudCreateConfigHVM) SetEnableNetworkTypeSelectionNil(b bool)`
+
+ SetEnableNetworkTypeSelectionNil sets the value for EnableNetworkTypeSelection to be an explicit nil
+
+### UnsetEnableNetworkTypeSelection
+`func (o *CloudCreateConfigHVM) UnsetEnableNetworkTypeSelection()`
+
+UnsetEnableNetworkTypeSelection ensures that no value is present for EnableNetworkTypeSelection, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,18 +20,18 @@ var _ MappedNullable = &SaveCloudDatastoreRequestDatastoreResourcePermissions{}
 
 // SaveCloudDatastoreRequestDatastoreResourcePermissions struct for SaveCloudDatastoreRequestDatastoreResourcePermissions
 type SaveCloudDatastoreRequestDatastoreResourcePermissions struct {
-	AllGroups            *bool                                        `json:"allGroups,omitempty"`
-	DefaultStore         *bool                                        `json:"defaultStore,omitempty"`
-	AllPlans             *bool                                        `json:"allPlans,omitempty"`
-	DefaultTarget        *bool                                        `json:"defaultTarget,omitempty"`
-	MorpheusResourceType *string                                      `json:"morpheusResourceType,omitempty"`
-	MorpheusResourceId   *int64                                       `json:"morpheusResourceId,omitempty"`
-	CanManage            *bool                                        `json:"canManage,omitempty"`
-	All                  *bool                                        `json:"all,omitempty"`
-	Account              *GetAlerts200ResponseAllOfChecksInnerAccount `json:"account,omitempty"`
-	Sites                []map[string]interface{}                     `json:"sites,omitempty"`
-	Plans                []map[string]interface{}                     `json:"plans,omitempty"`
-	AdditionalProperties map[string]interface{}                       `json:",remain"`
+	AllGroups            *bool                                                         `json:"allGroups,omitempty"`
+	DefaultStore         *bool                                                         `json:"defaultStore,omitempty"`
+	AllPlans             *bool                                                         `json:"allPlans,omitempty"`
+	DefaultTarget        *bool                                                         `json:"defaultTarget,omitempty"`
+	MorpheusResourceType *string                                                       `json:"morpheusResourceType,omitempty"`
+	MorpheusResourceId   *int64                                                        `json:"morpheusResourceId,omitempty"`
+	CanManage            *bool                                                         `json:"canManage,omitempty"`
+	All                  *bool                                                         `json:"all,omitempty"`
+	Account              *SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount `json:"account,omitempty"`
+	Sites                []map[string]interface{}                                      `json:"sites,omitempty"`
+	Plans                []map[string]interface{}                                      `json:"plans,omitempty"`
+	AdditionalProperties map[string]interface{}                                        `json:",remain"`
 }
 
 type _SaveCloudDatastoreRequestDatastoreResourcePermissions SaveCloudDatastoreRequestDatastoreResourcePermissions
@@ -310,9 +310,9 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAll(v bool) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccount() SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount
 		return ret
 	}
 	return *o.Account
@@ -320,7 +320,7 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccount() Get
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) GetAccountOk() (*SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -336,8 +336,8 @@ func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) IsSetAccount() b
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfChecksInnerAccount and assigns it to the Account field.
-func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount) {
+// SetAccount gets a reference to the given SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount and assigns it to the Account field.
+func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) SetAccount(v SaveCloudDatastoreRequestDatastoreResourcePermissionsAccount) {
 	o.Account = &v
 }
 
@@ -502,7 +502,6 @@ func (v NullableSaveCloudDatastoreRequestDatastoreResourcePermissions) Unmarshal
 
 	return v, nil
 }
-
 func (o *SaveCloudDatastoreRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

@@ -20,22 +20,22 @@ var _ MappedNullable = &ListPolicies200ResponseAllOfPoliciesInner{}
 
 // ListPolicies200ResponseAllOfPoliciesInner struct for ListPolicies200ResponseAllOfPoliciesInner
 type ListPolicies200ResponseAllOfPoliciesInner struct {
-	Id                   *int64                                                      `json:"id,omitempty"`
-	Name                 *string                                                     `json:"name,omitempty"`
-	Description          NullableString                                              `json:"description,omitempty"`
-	PolicyType           *ListBackupSettings200ResponseBackupSettingsDefaultSchedule `json:"policyType,omitempty"`
-	Zone                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"zone,omitempty"`
-	Site                 *GetAlerts200ResponseAllOfCheckGroupsInnerInstance          `json:"site,omitempty"`
-	User                 *ListActivity200ResponseAllOfActivityInnerActivityInnerUser `json:"user,omitempty"`
-	Role                 *ListPolicies200ResponseAllOfPoliciesInnerRole              `json:"role,omitempty"`
-	RefType              NullableString                                              `json:"refType,omitempty"`
-	RefId                NullableInt64                                               `json:"refId,omitempty"`
-	EachUser             NullableBool                                                `json:"eachUser,omitempty"`
-	Config               *ListPolicies200ResponseAllOfPoliciesInnerConfig            `json:"config,omitempty"`
-	Enabled              *bool                                                       `json:"enabled,omitempty"`
-	Owner                NullableListApprovals200ResponseAllOfApprovalsInnerAccount  `json:"owner,omitempty"`
-	Accounts             []GetAlerts200ResponseAllOfCheckGroupsInnerInstance         `json:"accounts,omitempty"`
-	AdditionalProperties map[string]interface{}                                      `json:",remain"`
+	Id                   *int64                                                   `json:"id,omitempty"`
+	Name                 *string                                                  `json:"name,omitempty"`
+	Description          NullableString                                           `json:"description,omitempty"`
+	PolicyType           *ListPolicies200ResponseAllOfPoliciesInnerPolicyType     `json:"policyType,omitempty"`
+	Zone                 *ListPolicies200ResponseAllOfPoliciesInnerZone           `json:"zone,omitempty"`
+	Site                 *ListPolicies200ResponseAllOfPoliciesInnerSite           `json:"site,omitempty"`
+	User                 *ListPolicies200ResponseAllOfPoliciesInnerUser           `json:"user,omitempty"`
+	Role                 *ListPolicies200ResponseAllOfPoliciesInnerRole           `json:"role,omitempty"`
+	RefType              NullableString                                           `json:"refType,omitempty"`
+	RefId                NullableInt64                                            `json:"refId,omitempty"`
+	EachUser             NullableBool                                             `json:"eachUser,omitempty"`
+	Config               *ListPolicies200ResponseAllOfPoliciesInnerConfig         `json:"config,omitempty"`
+	Enabled              *bool                                                    `json:"enabled,omitempty"`
+	Owner                *ListPolicies200ResponseAllOfPoliciesInnerOwner          `json:"owner,omitempty"`
+	Accounts             []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner `json:"accounts,omitempty"`
+	AdditionalProperties map[string]interface{}                                   `json:",remain"`
 }
 
 type _ListPolicies200ResponseAllOfPoliciesInner ListPolicies200ResponseAllOfPoliciesInner
@@ -165,9 +165,9 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetDescription() {
 }
 
 // GetPolicyType returns the PolicyType field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyType() ListPolicies200ResponseAllOfPoliciesInnerPolicyType {
 	if o == nil || IsNil(o.PolicyType) {
-		var ret ListBackupSettings200ResponseBackupSettingsDefaultSchedule
+		var ret ListPolicies200ResponseAllOfPoliciesInnerPolicyType
 		return ret
 	}
 	return *o.PolicyType
@@ -175,7 +175,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyType() ListBackupSe
 
 // GetPolicyTypeOk returns a tuple with the PolicyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetPolicyTypeOk() (*ListPolicies200ResponseAllOfPoliciesInnerPolicyType, bool) {
 	if o == nil || IsNil(o.PolicyType) {
 		return nil, false
 	}
@@ -191,15 +191,15 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetPolicyType() bool {
 	return false
 }
 
-// SetPolicyType gets a reference to the given ListBackupSettings200ResponseBackupSettingsDefaultSchedule and assigns it to the PolicyType field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetPolicyType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule) {
+// SetPolicyType gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerPolicyType and assigns it to the PolicyType field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetPolicyType(v ListPolicies200ResponseAllOfPoliciesInnerPolicyType) {
 	o.PolicyType = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetZone() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetZone() ListPolicies200ResponseAllOfPoliciesInnerZone {
 	if o == nil || IsNil(o.Zone) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListPolicies200ResponseAllOfPoliciesInnerZone
 		return ret
 	}
 	return *o.Zone
@@ -207,7 +207,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetZone() GetAlerts200Respon
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetZoneOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetZoneOk() (*ListPolicies200ResponseAllOfPoliciesInnerZone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -223,15 +223,15 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Zone field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetZone(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetZone gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerZone and assigns it to the Zone field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetZone(v ListPolicies200ResponseAllOfPoliciesInnerZone) {
 	o.Zone = &v
 }
 
 // GetSite returns the Site field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetSite() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetSite() ListPolicies200ResponseAllOfPoliciesInnerSite {
 	if o == nil || IsNil(o.Site) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret ListPolicies200ResponseAllOfPoliciesInnerSite
 		return ret
 	}
 	return *o.Site
@@ -239,7 +239,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetSite() GetAlerts200Respon
 
 // GetSiteOk returns a tuple with the Site field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetSiteOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetSiteOk() (*ListPolicies200ResponseAllOfPoliciesInnerSite, bool) {
 	if o == nil || IsNil(o.Site) {
 		return nil, false
 	}
@@ -255,15 +255,15 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetSite() bool {
 	return false
 }
 
-// SetSite gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Site field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetSite(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetSite gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerSite and assigns it to the Site field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetSite(v ListPolicies200ResponseAllOfPoliciesInnerSite) {
 	o.Site = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUser() ListActivity200ResponseAllOfActivityInnerActivityInnerUser {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUser() ListPolicies200ResponseAllOfPoliciesInnerUser {
 	if o == nil || IsNil(o.User) {
-		var ret ListActivity200ResponseAllOfActivityInnerActivityInnerUser
+		var ret ListPolicies200ResponseAllOfPoliciesInnerUser
 		return ret
 	}
 	return *o.User
@@ -271,7 +271,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUser() ListActivity200Res
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUserOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetUserOk() (*ListPolicies200ResponseAllOfPoliciesInnerUser, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -287,8 +287,8 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given ListActivity200ResponseAllOfActivityInnerActivityInnerUser and assigns it to the User field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetUser(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser) {
+// SetUser gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerUser and assigns it to the User field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetUser(v ListPolicies200ResponseAllOfPoliciesInnerUser) {
 	o.User = &v
 }
 
@@ -517,53 +517,42 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) SetEnabled(v bool) {
 	o.Enabled = &v
 }
 
-// GetOwner returns the Owner field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() ListApprovals200ResponseAllOfApprovalsInnerAccount {
-	if o == nil || IsNil(o.Owner.Get()) {
-		var ret ListApprovals200ResponseAllOfApprovalsInnerAccount
+// GetOwner returns the Owner field value if set, zero value otherwise.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwner() ListPolicies200ResponseAllOfPoliciesInnerOwner {
+	if o == nil || IsNil(o.Owner) {
+		var ret ListPolicies200ResponseAllOfPoliciesInnerOwner
 		return ret
 	}
-	return *o.Owner.Get()
+	return *o.Owner
 }
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool) {
-	if o == nil {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetOwnerOk() (*ListPolicies200ResponseAllOfPoliciesInnerOwner, bool) {
+	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
-	return o.Owner.Get(), o.Owner.IsSet()
+	return o.Owner, true
 }
 
 // IsSetOwner returns a boolean if a field has been set.
 func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetOwner() bool {
-	if o != nil && o.Owner.IsSet() {
+	if o != nil && !IsNil(o.Owner) {
 		return true
 	}
 
 	return false
 }
 
-// SetOwner gets a reference to the given NullableListApprovals200ResponseAllOfApprovalsInnerAccount and assigns it to the Owner field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v ListApprovals200ResponseAllOfApprovalsInnerAccount) {
-	o.Owner.Set(&v)
-}
-
-// SetOwnerNil sets the value for Owner to be an explicit nil
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwnerNil() {
-	o.Owner.Set(nil)
-}
-
-// UnsetOwner ensures that no value is present for Owner, not even an explicit nil
-func (o *ListPolicies200ResponseAllOfPoliciesInner) UnsetOwner() {
-	o.Owner.Unset()
+// SetOwner gets a reference to the given ListPolicies200ResponseAllOfPoliciesInnerOwner and assigns it to the Owner field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetOwner(v ListPolicies200ResponseAllOfPoliciesInnerOwner) {
+	o.Owner = &v
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner {
 	if o == nil {
-		var ret []GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner
 		return ret
 	}
 	return o.Accounts
@@ -572,7 +561,7 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccounts() []GetAlerts200
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccountsOk() ([]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *ListPolicies200ResponseAllOfPoliciesInner) GetAccountsOk() ([]ListPolicies200ResponseAllOfPoliciesInnerAccountsInner, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -588,8 +577,8 @@ func (o *ListPolicies200ResponseAllOfPoliciesInner) IsSetAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given []GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Accounts field.
-func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccounts gets a reference to the given []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner and assigns it to the Accounts field.
+func (o *ListPolicies200ResponseAllOfPoliciesInner) SetAccounts(v []ListPolicies200ResponseAllOfPoliciesInnerAccountsInner) {
 	o.Accounts = v
 }
 
@@ -642,8 +631,8 @@ func (o ListPolicies200ResponseAllOfPoliciesInner) ToMap() (map[string]interface
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if o.Owner.IsSet() {
-		toSerialize["owner"] = o.Owner.Get()
+	if !IsNil(o.Owner) {
+		toSerialize["owner"] = o.Owner
 	}
 	if o.Accounts != nil {
 		toSerialize["accounts"] = o.Accounts
@@ -700,7 +689,6 @@ func (v NullableListPolicies200ResponseAllOfPoliciesInner) UnmarshalMapstructure
 
 	return v, nil
 }
-
 func (o *ListPolicies200ResponseAllOfPoliciesInner) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

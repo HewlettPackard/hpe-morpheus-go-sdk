@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **SourceType** | Pointer to **NullableString** |  | [optional] 
 **ContentRef** | Pointer to **NullableString** |  | [optional] 
 **ContentPath** | Pointer to **NullableString** |  | [optional] 
-**Repository** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Repository** | Pointer to [**AddTasks200ResponseAllOfTaskFileRepository**](AddTasks200ResponseAllOfTaskFileRepository.md) |  | [optional] 
 **Content** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -172,20 +172,20 @@ HasContentPath returns a boolean if a field has been set.
 UnsetContentPath ensures that no value is present for ContentPath, not even an explicit nil
 ### GetRepository
 
-`func (o *AddTasks200ResponseAllOfTaskFile) GetRepository() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *AddTasks200ResponseAllOfTaskFile) GetRepository() AddTasks200ResponseAllOfTaskFileRepository`
 
 GetRepository returns the Repository field if non-nil, zero value otherwise.
 
 ### GetRepositoryOk
 
-`func (o *AddTasks200ResponseAllOfTaskFile) GetRepositoryOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *AddTasks200ResponseAllOfTaskFile) GetRepositoryOk() (*AddTasks200ResponseAllOfTaskFileRepository, bool)`
 
 GetRepositoryOk returns a tuple with the Repository field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRepository
 
-`func (o *AddTasks200ResponseAllOfTaskFile) SetRepository(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *AddTasks200ResponseAllOfTaskFile) SetRepository(v AddTasks200ResponseAllOfTaskFileRepository)`
 
 SetRepository sets Repository field to given value.
 

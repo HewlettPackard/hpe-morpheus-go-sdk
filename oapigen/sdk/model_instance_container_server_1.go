@@ -21,44 +21,44 @@ var _ MappedNullable = &InstanceContainerServer1{}
 
 // InstanceContainerServer1 struct for InstanceContainerServer1
 type InstanceContainerServer1 struct {
-	Id                   *int64                                    `json:"id,omitempty"`
-	Uuid                 *string                                   `json:"uuid,omitempty"`
-	ExternalId           NullableString                            `json:"externalId,omitempty"`
-	InternalId           NullableString                            `json:"internalId,omitempty"`
-	HostName             *string                                   `json:"hostName,omitempty"`
-	AccountId            *int64                                    `json:"accountId,omitempty"`
-	Account              *InstanceContainerInstance                `json:"account,omitempty"`
-	Owner                *InstanceContainerServerOwner             `json:"owner,omitempty"`
-	Zone                 *InstanceContainerInstance                `json:"zone,omitempty"`
-	Plan                 *InstanceContainerContainerType           `json:"plan,omitempty"`
-	ComputeServerType    *InstanceContainerServerComputeServerType `json:"computeServerType,omitempty"`
-	Visibility           *string                                   `json:"visibility,omitempty"`
-	Description          NullableString                            `json:"description,omitempty"`
-	ZoneId               *int64                                    `json:"zoneId,omitempty"`
-	SiteId               *int64                                    `json:"siteId,omitempty"`
-	ResourcePoolId       *int64                                    `json:"resourcePoolId,omitempty"`
-	SshHost              NullableString                            `json:"sshHost,omitempty"`
-	SshPort              *int64                                    `json:"sshPort,omitempty"`
-	ExternalIp           NullableString                            `json:"externalIp,omitempty"`
-	InternalIp           NullableString                            `json:"internalIp,omitempty"`
-	Platform             *string                                   `json:"platform,omitempty"`
-	Status               *string                                   `json:"status,omitempty"`
-	StatusMessage        NullableString                            `json:"statusMessage,omitempty"`
-	ErrorMessage         NullableString                            `json:"errorMessage,omitempty"`
-	StatusDate           *time.Time                                `json:"statusDate,omitempty"`
-	StatusPercent        NullableInt64                             `json:"statusPercent,omitempty"`
-	StatusEta            NullableInt64                             `json:"statusEta,omitempty"`
-	PowerState           *InstanceContainerServerPowerState        `json:"powerState,omitempty"`
-	AgentInstalled       *bool                                     `json:"agentInstalled,omitempty"`
-	LastAgentUpdate      NullableTime                              `json:"lastAgentUpdate,omitempty"`
-	MaxCores             *int64                                    `json:"maxCores,omitempty"`
-	MaxMemory            *int64                                    `json:"maxMemory,omitempty"`
-	MaxStorage           *int64                                    `json:"maxStorage,omitempty"`
-	SourceImage          *InstanceContainerContainerType           `json:"sourceImage,omitempty"`
-	ServerOs             *InstanceContainerServerServerOs          `json:"serverOs,omitempty"`
-	Volumes              []InstanceContainerServerVolume1          `json:"volumes,omitempty"`
-	Interfaces           []InstanceContainerServerInterfacesInner1 `json:"interfaces,omitempty"`
-	AdditionalProperties map[string]interface{}                    `json:",remain"`
+	Id                   *int64                                     `json:"id,omitempty"`
+	Uuid                 *string                                    `json:"uuid,omitempty"`
+	ExternalId           NullableString                             `json:"externalId,omitempty"`
+	InternalId           NullableString                             `json:"internalId,omitempty"`
+	HostName             *string                                    `json:"hostName,omitempty"`
+	AccountId            *int64                                     `json:"accountId,omitempty"`
+	Account              *InstanceContainerServer1Account           `json:"account,omitempty"`
+	Owner                *InstanceContainerServer1Owner             `json:"owner,omitempty"`
+	Zone                 *InstanceContainerServer1Zone              `json:"zone,omitempty"`
+	Plan                 *InstanceContainerServer1Plan              `json:"plan,omitempty"`
+	ComputeServerType    *InstanceContainerServer1ComputeServerType `json:"computeServerType,omitempty"`
+	Visibility           *string                                    `json:"visibility,omitempty"`
+	Description          NullableString                             `json:"description,omitempty"`
+	ZoneId               *int64                                     `json:"zoneId,omitempty"`
+	SiteId               *int64                                     `json:"siteId,omitempty"`
+	ResourcePoolId       *int64                                     `json:"resourcePoolId,omitempty"`
+	SshHost              NullableString                             `json:"sshHost,omitempty"`
+	SshPort              *int64                                     `json:"sshPort,omitempty"`
+	ExternalIp           NullableString                             `json:"externalIp,omitempty"`
+	InternalIp           NullableString                             `json:"internalIp,omitempty"`
+	Platform             *string                                    `json:"platform,omitempty"`
+	Status               *string                                    `json:"status,omitempty"`
+	StatusMessage        NullableString                             `json:"statusMessage,omitempty"`
+	ErrorMessage         NullableString                             `json:"errorMessage,omitempty"`
+	StatusDate           *time.Time                                 `json:"statusDate,omitempty"`
+	StatusPercent        NullableInt64                              `json:"statusPercent,omitempty"`
+	StatusEta            NullableInt64                              `json:"statusEta,omitempty"`
+	PowerState           *InstanceContainerServer1PowerState        `json:"powerState,omitempty"`
+	AgentInstalled       *bool                                      `json:"agentInstalled,omitempty"`
+	LastAgentUpdate      NullableTime                               `json:"lastAgentUpdate,omitempty"`
+	MaxCores             *int64                                     `json:"maxCores,omitempty"`
+	MaxMemory            *int64                                     `json:"maxMemory,omitempty"`
+	MaxStorage           *int64                                     `json:"maxStorage,omitempty"`
+	SourceImage          *InstanceContainerServer1SourceImage       `json:"sourceImage,omitempty"`
+	ServerOs             *InstanceContainerServer1ServerOs          `json:"serverOs,omitempty"`
+	Volumes              []InstanceContainerServerVolume1           `json:"volumes,omitempty"`
+	Interfaces           []InstanceContainerServerInterfacesInner1  `json:"interfaces,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _InstanceContainerServer1 InstanceContainerServer1
@@ -295,9 +295,9 @@ func (o *InstanceContainerServer1) SetAccountId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetAccount() InstanceContainerInstance {
+func (o *InstanceContainerServer1) GetAccount() InstanceContainerServer1Account {
 	if o == nil || IsNil(o.Account) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainerServer1Account
 		return ret
 	}
 	return *o.Account
@@ -305,7 +305,7 @@ func (o *InstanceContainerServer1) GetAccount() InstanceContainerInstance {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetAccountOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainerServer1) GetAccountOk() (*InstanceContainerServer1Account, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -321,15 +321,15 @@ func (o *InstanceContainerServer1) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given InstanceContainerInstance and assigns it to the Account field.
-func (o *InstanceContainerServer1) SetAccount(v InstanceContainerInstance) {
+// SetAccount gets a reference to the given InstanceContainerServer1Account and assigns it to the Account field.
+func (o *InstanceContainerServer1) SetAccount(v InstanceContainerServer1Account) {
 	o.Account = &v
 }
 
 // GetOwner returns the Owner field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetOwner() InstanceContainerServerOwner {
+func (o *InstanceContainerServer1) GetOwner() InstanceContainerServer1Owner {
 	if o == nil || IsNil(o.Owner) {
-		var ret InstanceContainerServerOwner
+		var ret InstanceContainerServer1Owner
 		return ret
 	}
 	return *o.Owner
@@ -337,7 +337,7 @@ func (o *InstanceContainerServer1) GetOwner() InstanceContainerServerOwner {
 
 // GetOwnerOk returns a tuple with the Owner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetOwnerOk() (*InstanceContainerServerOwner, bool) {
+func (o *InstanceContainerServer1) GetOwnerOk() (*InstanceContainerServer1Owner, bool) {
 	if o == nil || IsNil(o.Owner) {
 		return nil, false
 	}
@@ -353,15 +353,15 @@ func (o *InstanceContainerServer1) IsSetOwner() bool {
 	return false
 }
 
-// SetOwner gets a reference to the given InstanceContainerServerOwner and assigns it to the Owner field.
-func (o *InstanceContainerServer1) SetOwner(v InstanceContainerServerOwner) {
+// SetOwner gets a reference to the given InstanceContainerServer1Owner and assigns it to the Owner field.
+func (o *InstanceContainerServer1) SetOwner(v InstanceContainerServer1Owner) {
 	o.Owner = &v
 }
 
 // GetZone returns the Zone field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetZone() InstanceContainerInstance {
+func (o *InstanceContainerServer1) GetZone() InstanceContainerServer1Zone {
 	if o == nil || IsNil(o.Zone) {
-		var ret InstanceContainerInstance
+		var ret InstanceContainerServer1Zone
 		return ret
 	}
 	return *o.Zone
@@ -369,7 +369,7 @@ func (o *InstanceContainerServer1) GetZone() InstanceContainerInstance {
 
 // GetZoneOk returns a tuple with the Zone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetZoneOk() (*InstanceContainerInstance, bool) {
+func (o *InstanceContainerServer1) GetZoneOk() (*InstanceContainerServer1Zone, bool) {
 	if o == nil || IsNil(o.Zone) {
 		return nil, false
 	}
@@ -385,15 +385,15 @@ func (o *InstanceContainerServer1) IsSetZone() bool {
 	return false
 }
 
-// SetZone gets a reference to the given InstanceContainerInstance and assigns it to the Zone field.
-func (o *InstanceContainerServer1) SetZone(v InstanceContainerInstance) {
+// SetZone gets a reference to the given InstanceContainerServer1Zone and assigns it to the Zone field.
+func (o *InstanceContainerServer1) SetZone(v InstanceContainerServer1Zone) {
 	o.Zone = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetPlan() InstanceContainerContainerType {
+func (o *InstanceContainerServer1) GetPlan() InstanceContainerServer1Plan {
 	if o == nil || IsNil(o.Plan) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainerServer1Plan
 		return ret
 	}
 	return *o.Plan
@@ -401,7 +401,7 @@ func (o *InstanceContainerServer1) GetPlan() InstanceContainerContainerType {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetPlanOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainerServer1) GetPlanOk() (*InstanceContainerServer1Plan, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -417,15 +417,15 @@ func (o *InstanceContainerServer1) IsSetPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given InstanceContainerContainerType and assigns it to the Plan field.
-func (o *InstanceContainerServer1) SetPlan(v InstanceContainerContainerType) {
+// SetPlan gets a reference to the given InstanceContainerServer1Plan and assigns it to the Plan field.
+func (o *InstanceContainerServer1) SetPlan(v InstanceContainerServer1Plan) {
 	o.Plan = &v
 }
 
 // GetComputeServerType returns the ComputeServerType field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetComputeServerType() InstanceContainerServerComputeServerType {
+func (o *InstanceContainerServer1) GetComputeServerType() InstanceContainerServer1ComputeServerType {
 	if o == nil || IsNil(o.ComputeServerType) {
-		var ret InstanceContainerServerComputeServerType
+		var ret InstanceContainerServer1ComputeServerType
 		return ret
 	}
 	return *o.ComputeServerType
@@ -433,7 +433,7 @@ func (o *InstanceContainerServer1) GetComputeServerType() InstanceContainerServe
 
 // GetComputeServerTypeOk returns a tuple with the ComputeServerType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetComputeServerTypeOk() (*InstanceContainerServerComputeServerType, bool) {
+func (o *InstanceContainerServer1) GetComputeServerTypeOk() (*InstanceContainerServer1ComputeServerType, bool) {
 	if o == nil || IsNil(o.ComputeServerType) {
 		return nil, false
 	}
@@ -449,8 +449,8 @@ func (o *InstanceContainerServer1) IsSetComputeServerType() bool {
 	return false
 }
 
-// SetComputeServerType gets a reference to the given InstanceContainerServerComputeServerType and assigns it to the ComputeServerType field.
-func (o *InstanceContainerServer1) SetComputeServerType(v InstanceContainerServerComputeServerType) {
+// SetComputeServerType gets a reference to the given InstanceContainerServer1ComputeServerType and assigns it to the ComputeServerType field.
+func (o *InstanceContainerServer1) SetComputeServerType(v InstanceContainerServer1ComputeServerType) {
 	o.ComputeServerType = &v
 }
 
@@ -1055,9 +1055,9 @@ func (o *InstanceContainerServer1) UnsetStatusEta() {
 }
 
 // GetPowerState returns the PowerState field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetPowerState() InstanceContainerServerPowerState {
+func (o *InstanceContainerServer1) GetPowerState() InstanceContainerServer1PowerState {
 	if o == nil || IsNil(o.PowerState) {
-		var ret InstanceContainerServerPowerState
+		var ret InstanceContainerServer1PowerState
 		return ret
 	}
 	return *o.PowerState
@@ -1065,7 +1065,7 @@ func (o *InstanceContainerServer1) GetPowerState() InstanceContainerServerPowerS
 
 // GetPowerStateOk returns a tuple with the PowerState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetPowerStateOk() (*InstanceContainerServerPowerState, bool) {
+func (o *InstanceContainerServer1) GetPowerStateOk() (*InstanceContainerServer1PowerState, bool) {
 	if o == nil || IsNil(o.PowerState) {
 		return nil, false
 	}
@@ -1081,8 +1081,8 @@ func (o *InstanceContainerServer1) IsSetPowerState() bool {
 	return false
 }
 
-// SetPowerState gets a reference to the given InstanceContainerServerPowerState and assigns it to the PowerState field.
-func (o *InstanceContainerServer1) SetPowerState(v InstanceContainerServerPowerState) {
+// SetPowerState gets a reference to the given InstanceContainerServer1PowerState and assigns it to the PowerState field.
+func (o *InstanceContainerServer1) SetPowerState(v InstanceContainerServer1PowerState) {
 	o.PowerState = &v
 }
 
@@ -1258,9 +1258,9 @@ func (o *InstanceContainerServer1) SetMaxStorage(v int64) {
 }
 
 // GetSourceImage returns the SourceImage field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetSourceImage() InstanceContainerContainerType {
+func (o *InstanceContainerServer1) GetSourceImage() InstanceContainerServer1SourceImage {
 	if o == nil || IsNil(o.SourceImage) {
-		var ret InstanceContainerContainerType
+		var ret InstanceContainerServer1SourceImage
 		return ret
 	}
 	return *o.SourceImage
@@ -1268,7 +1268,7 @@ func (o *InstanceContainerServer1) GetSourceImage() InstanceContainerContainerTy
 
 // GetSourceImageOk returns a tuple with the SourceImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetSourceImageOk() (*InstanceContainerContainerType, bool) {
+func (o *InstanceContainerServer1) GetSourceImageOk() (*InstanceContainerServer1SourceImage, bool) {
 	if o == nil || IsNil(o.SourceImage) {
 		return nil, false
 	}
@@ -1284,15 +1284,15 @@ func (o *InstanceContainerServer1) IsSetSourceImage() bool {
 	return false
 }
 
-// SetSourceImage gets a reference to the given InstanceContainerContainerType and assigns it to the SourceImage field.
-func (o *InstanceContainerServer1) SetSourceImage(v InstanceContainerContainerType) {
+// SetSourceImage gets a reference to the given InstanceContainerServer1SourceImage and assigns it to the SourceImage field.
+func (o *InstanceContainerServer1) SetSourceImage(v InstanceContainerServer1SourceImage) {
 	o.SourceImage = &v
 }
 
 // GetServerOs returns the ServerOs field value if set, zero value otherwise.
-func (o *InstanceContainerServer1) GetServerOs() InstanceContainerServerServerOs {
+func (o *InstanceContainerServer1) GetServerOs() InstanceContainerServer1ServerOs {
 	if o == nil || IsNil(o.ServerOs) {
-		var ret InstanceContainerServerServerOs
+		var ret InstanceContainerServer1ServerOs
 		return ret
 	}
 	return *o.ServerOs
@@ -1300,7 +1300,7 @@ func (o *InstanceContainerServer1) GetServerOs() InstanceContainerServerServerOs
 
 // GetServerOsOk returns a tuple with the ServerOs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceContainerServer1) GetServerOsOk() (*InstanceContainerServerServerOs, bool) {
+func (o *InstanceContainerServer1) GetServerOsOk() (*InstanceContainerServer1ServerOs, bool) {
 	if o == nil || IsNil(o.ServerOs) {
 		return nil, false
 	}
@@ -1316,8 +1316,8 @@ func (o *InstanceContainerServer1) IsSetServerOs() bool {
 	return false
 }
 
-// SetServerOs gets a reference to the given InstanceContainerServerServerOs and assigns it to the ServerOs field.
-func (o *InstanceContainerServer1) SetServerOs(v InstanceContainerServerServerOs) {
+// SetServerOs gets a reference to the given InstanceContainerServer1ServerOs and assigns it to the ServerOs field.
+func (o *InstanceContainerServer1) SetServerOs(v InstanceContainerServer1ServerOs) {
 	o.ServerOs = &v
 }
 
@@ -1558,7 +1558,6 @@ func (v NullableInstanceContainerServer1) UnmarshalMapstructure(data any) (any, 
 
 	return v, nil
 }
-
 func (o *InstanceContainerServer1) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

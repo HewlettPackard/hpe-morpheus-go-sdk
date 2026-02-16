@@ -20,9 +20,9 @@ var _ MappedNullable = &UpdateServicePlans200Response{}
 
 // UpdateServicePlans200Response struct for UpdateServicePlans200Response
 type UpdateServicePlans200Response struct {
-	ServicePlan          *GetServicePlans200ResponseServicePlan `json:"servicePlan,omitempty"`
-	Success              *bool                                  `json:"success,omitempty"`
-	AdditionalProperties map[string]interface{}                 `json:",remain"`
+	ServicePlan          *UpdateServicePlans200ResponseAllOfServicePlan `json:"servicePlan,omitempty"`
+	Success              *bool                                          `json:"success,omitempty"`
+	AdditionalProperties map[string]interface{}                         `json:",remain"`
 }
 
 type _UpdateServicePlans200Response UpdateServicePlans200Response
@@ -45,9 +45,9 @@ func NewUpdateServicePlans200ResponseWithDefaults() *UpdateServicePlans200Respon
 }
 
 // GetServicePlan returns the ServicePlan field value if set, zero value otherwise.
-func (o *UpdateServicePlans200Response) GetServicePlan() GetServicePlans200ResponseServicePlan {
+func (o *UpdateServicePlans200Response) GetServicePlan() UpdateServicePlans200ResponseAllOfServicePlan {
 	if o == nil || IsNil(o.ServicePlan) {
-		var ret GetServicePlans200ResponseServicePlan
+		var ret UpdateServicePlans200ResponseAllOfServicePlan
 		return ret
 	}
 	return *o.ServicePlan
@@ -55,7 +55,7 @@ func (o *UpdateServicePlans200Response) GetServicePlan() GetServicePlans200Respo
 
 // GetServicePlanOk returns a tuple with the ServicePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateServicePlans200Response) GetServicePlanOk() (*GetServicePlans200ResponseServicePlan, bool) {
+func (o *UpdateServicePlans200Response) GetServicePlanOk() (*UpdateServicePlans200ResponseAllOfServicePlan, bool) {
 	if o == nil || IsNil(o.ServicePlan) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *UpdateServicePlans200Response) IsSetServicePlan() bool {
 	return false
 }
 
-// SetServicePlan gets a reference to the given GetServicePlans200ResponseServicePlan and assigns it to the ServicePlan field.
-func (o *UpdateServicePlans200Response) SetServicePlan(v GetServicePlans200ResponseServicePlan) {
+// SetServicePlan gets a reference to the given UpdateServicePlans200ResponseAllOfServicePlan and assigns it to the ServicePlan field.
+func (o *UpdateServicePlans200Response) SetServicePlan(v UpdateServicePlans200ResponseAllOfServicePlan) {
 	o.ServicePlan = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableUpdateServicePlans200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *UpdateServicePlans200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

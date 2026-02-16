@@ -22,8 +22,8 @@ var _ fmt.Stringer
 // SaveDatastoreRequestDatastoreConfig Configuration options for the datastore, varies based on the type of datastore.
 type SaveDatastoreRequestDatastoreConfig struct {
 	AlletraMPHVMDatastoreConfiguration1 *AlletraMPHVMDatastoreConfiguration1
-	GFS2DatastoreConfiguration          *GFS2DatastoreConfiguration
-	NFSDatastoreConfiguration           *NFSDatastoreConfiguration
+	GFS2DatastoreConfiguration1         *GFS2DatastoreConfiguration1
+	NFSDatastoreConfiguration1          *NFSDatastoreConfiguration1
 	MapmapOfStringAny                   *map[string]interface{}
 }
 
@@ -38,16 +38,16 @@ func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalMapstructure(data any) 
 		dst.AlletraMPHVMDatastoreConfiguration1 = nil
 	}
 
-	mapstructDecode(data, &dst.GFS2DatastoreConfiguration)
+	mapstructDecode(data, &dst.GFS2DatastoreConfiguration1)
 
-	if IsEmpty(dst.GFS2DatastoreConfiguration) {
-		dst.GFS2DatastoreConfiguration = nil
+	if IsEmpty(dst.GFS2DatastoreConfiguration1) {
+		dst.GFS2DatastoreConfiguration1 = nil
 	}
 
-	mapstructDecode(data, &dst.NFSDatastoreConfiguration)
+	mapstructDecode(data, &dst.NFSDatastoreConfiguration1)
 
-	if IsEmpty(dst.NFSDatastoreConfiguration) {
-		dst.NFSDatastoreConfiguration = nil
+	if IsEmpty(dst.NFSDatastoreConfiguration1) {
+		dst.NFSDatastoreConfiguration1 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -75,30 +75,30 @@ func (dst *SaveDatastoreRequestDatastoreConfig) UnmarshalJSON(data []byte) error
 		dst.AlletraMPHVMDatastoreConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into GFS2DatastoreConfiguration
-	err = json.Unmarshal(data, &dst.GFS2DatastoreConfiguration)
+	// try to unmarshal JSON data into GFS2DatastoreConfiguration1
+	err = json.Unmarshal(data, &dst.GFS2DatastoreConfiguration1)
 	if err == nil {
-		jsonGFS2DatastoreConfiguration, _ := json.Marshal(dst.GFS2DatastoreConfiguration)
-		if string(jsonGFS2DatastoreConfiguration) == "{}" { // empty struct
-			dst.GFS2DatastoreConfiguration = nil
+		jsonGFS2DatastoreConfiguration1, _ := json.Marshal(dst.GFS2DatastoreConfiguration1)
+		if string(jsonGFS2DatastoreConfiguration1) == "{}" { // empty struct
+			dst.GFS2DatastoreConfiguration1 = nil
 		} else {
-			return nil // data stored in dst.GFS2DatastoreConfiguration, return on the first match
+			return nil // data stored in dst.GFS2DatastoreConfiguration1, return on the first match
 		}
 	} else {
-		dst.GFS2DatastoreConfiguration = nil
+		dst.GFS2DatastoreConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into NFSDatastoreConfiguration
-	err = json.Unmarshal(data, &dst.NFSDatastoreConfiguration)
+	// try to unmarshal JSON data into NFSDatastoreConfiguration1
+	err = json.Unmarshal(data, &dst.NFSDatastoreConfiguration1)
 	if err == nil {
-		jsonNFSDatastoreConfiguration, _ := json.Marshal(dst.NFSDatastoreConfiguration)
-		if string(jsonNFSDatastoreConfiguration) == "{}" { // empty struct
-			dst.NFSDatastoreConfiguration = nil
+		jsonNFSDatastoreConfiguration1, _ := json.Marshal(dst.NFSDatastoreConfiguration1)
+		if string(jsonNFSDatastoreConfiguration1) == "{}" { // empty struct
+			dst.NFSDatastoreConfiguration1 = nil
 		} else {
-			return nil // data stored in dst.NFSDatastoreConfiguration, return on the first match
+			return nil // data stored in dst.NFSDatastoreConfiguration1, return on the first match
 		}
 	} else {
-		dst.NFSDatastoreConfiguration = nil
+		dst.NFSDatastoreConfiguration1 = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -123,12 +123,12 @@ func (src SaveDatastoreRequestDatastoreConfig) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AlletraMPHVMDatastoreConfiguration1)
 	}
 
-	if src.GFS2DatastoreConfiguration != nil {
-		return json.Marshal(&src.GFS2DatastoreConfiguration)
+	if src.GFS2DatastoreConfiguration1 != nil {
+		return json.Marshal(&src.GFS2DatastoreConfiguration1)
 	}
 
-	if src.NFSDatastoreConfiguration != nil {
-		return json.Marshal(&src.NFSDatastoreConfiguration)
+	if src.NFSDatastoreConfiguration1 != nil {
+		return json.Marshal(&src.NFSDatastoreConfiguration1)
 	}
 
 	if src.MapmapOfStringAny != nil {

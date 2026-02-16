@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**ListBackupSettings200ResponseBackupSettingsDefaultSchedule**](ListBackupSettings200ResponseBackupSettingsDefaultSchedule.md) |  | [optional] 
+**Type** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerClusterType**](ListInstances200ResponseAllOfInstancesInnerClusterType.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetType() ListBackupSettings200ResponseBackupSettingsDefaultSchedule`
+`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetType() ListInstances200ResponseAllOfInstancesInnerClusterType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetTypeOk() (*ListBackupSettings200ResponseBackupSettingsDefaultSchedule, bool)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) GetTypeOk() (*ListInstances200ResponseAllOfInstancesInnerClusterType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) SetType(v ListBackupSettings200ResponseBackupSettingsDefaultSchedule)`
+`func (o *ListInstances200ResponseAllOfInstancesInnerCluster) SetType(v ListInstances200ResponseAllOfInstancesInnerClusterType)`
 
 SetType sets Type field to given value.
 

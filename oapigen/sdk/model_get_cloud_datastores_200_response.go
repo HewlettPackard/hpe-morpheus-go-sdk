@@ -140,7 +140,6 @@ func (v NullableGetCloudDatastores200Response) UnmarshalMapstructure(data any) (
 
 	return v, nil
 }
-
 func (o *GetCloudDatastores200Response) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

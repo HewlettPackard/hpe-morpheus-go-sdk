@@ -20,33 +20,33 @@ var _ MappedNullable = &InstanceType{}
 
 // InstanceType struct for InstanceType
 type InstanceType struct {
-	Id                   *int64                                                                      `json:"id,omitempty"`
-	Account              *GetAlerts200ResponseAllOfCheckGroupsInnerInstance                          `json:"account,omitempty"`
-	Name                 *string                                                                     `json:"name,omitempty"`
-	Labels               []string                                                                    `json:"labels,omitempty"`
-	Code                 *string                                                                     `json:"code,omitempty"`
-	Description          NullableString                                                              `json:"description,omitempty"`
-	ProvisionTypeCode    NullableString                                                              `json:"provisionTypeCode,omitempty"`
-	Category             *string                                                                     `json:"category,omitempty"`
-	Active               *bool                                                                       `json:"active,omitempty"`
-	HasProvisioningStep  *bool                                                                       `json:"hasProvisioningStep,omitempty"`
-	HasDeployment        *bool                                                                       `json:"hasDeployment,omitempty"`
-	HasConfig            *bool                                                                       `json:"hasConfig,omitempty"`
-	HasSettings          *bool                                                                       `json:"hasSettings,omitempty"`
-	HasAutoScale         *bool                                                                       `json:"hasAutoScale,omitempty"`
-	ProxyType            NullableString                                                              `json:"proxyType,omitempty"`
-	ProxyPort            NullableString                                                              `json:"proxyPort,omitempty"`
-	ProxyProtocol        NullableString                                                              `json:"proxyProtocol,omitempty"`
-	EnvironmentPrefix    *string                                                                     `json:"environmentPrefix,omitempty"`
-	BackupType           NullableString                                                              `json:"backupType,omitempty"`
-	Config               map[string]interface{}                                                      `json:"config,omitempty"`
-	Visibility           *string                                                                     `json:"visibility,omitempty"`
-	Featured             *bool                                                                       `json:"featured,omitempty"`
-	Versions             []string                                                                    `json:"versions,omitempty"`
-	InstanceTypeLayouts  []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner            `json:"instanceTypeLayouts,omitempty"`
-	OptionTypes          []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner `json:"optionTypes,omitempty"`
-	EnvironmentVariables []map[string]interface{}                                                    `json:"environmentVariables,omitempty"`
-	PriceSets            []map[string]interface{}                                                    `json:"priceSets,omitempty"`
+	Id                   *int64                                 `json:"id,omitempty"`
+	Account              *InstanceTypeAccount                   `json:"account,omitempty"`
+	Name                 *string                                `json:"name,omitempty"`
+	Labels               []string                               `json:"labels,omitempty"`
+	Code                 *string                                `json:"code,omitempty"`
+	Description          NullableString                         `json:"description,omitempty"`
+	ProvisionTypeCode    NullableString                         `json:"provisionTypeCode,omitempty"`
+	Category             *string                                `json:"category,omitempty"`
+	Active               *bool                                  `json:"active,omitempty"`
+	HasProvisioningStep  *bool                                  `json:"hasProvisioningStep,omitempty"`
+	HasDeployment        *bool                                  `json:"hasDeployment,omitempty"`
+	HasConfig            *bool                                  `json:"hasConfig,omitempty"`
+	HasSettings          *bool                                  `json:"hasSettings,omitempty"`
+	HasAutoScale         *bool                                  `json:"hasAutoScale,omitempty"`
+	ProxyType            NullableString                         `json:"proxyType,omitempty"`
+	ProxyPort            NullableString                         `json:"proxyPort,omitempty"`
+	ProxyProtocol        NullableString                         `json:"proxyProtocol,omitempty"`
+	EnvironmentPrefix    *string                                `json:"environmentPrefix,omitempty"`
+	BackupType           NullableString                         `json:"backupType,omitempty"`
+	Config               map[string]interface{}                 `json:"config,omitempty"`
+	Visibility           *string                                `json:"visibility,omitempty"`
+	Featured             *bool                                  `json:"featured,omitempty"`
+	Versions             []string                               `json:"versions,omitempty"`
+	InstanceTypeLayouts  []InstanceTypeInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
+	OptionTypes          []InstanceTypeOptionTypesInner         `json:"optionTypes,omitempty"`
+	EnvironmentVariables []map[string]interface{}               `json:"environmentVariables,omitempty"`
+	PriceSets            []map[string]interface{}               `json:"priceSets,omitempty"`
 	// Logo image URL
 	ImagePath NullableString `json:"imagePath,omitempty"`
 	// Dark logo image URL
@@ -106,9 +106,9 @@ func (o *InstanceType) SetId(v int64) {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *InstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerInstance {
+func (o *InstanceType) GetAccount() InstanceTypeAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret GetAlerts200ResponseAllOfCheckGroupsInnerInstance
+		var ret InstanceTypeAccount
 		return ret
 	}
 	return *o.Account
@@ -116,7 +116,7 @@ func (o *InstanceType) GetAccount() GetAlerts200ResponseAllOfCheckGroupsInnerIns
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceType) GetAccountOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool) {
+func (o *InstanceType) GetAccountOk() (*InstanceTypeAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *InstanceType) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given GetAlerts200ResponseAllOfCheckGroupsInnerInstance and assigns it to the Account field.
-func (o *InstanceType) SetAccount(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance) {
+// SetAccount gets a reference to the given InstanceTypeAccount and assigns it to the Account field.
+func (o *InstanceType) SetAccount(v InstanceTypeAccount) {
 	o.Account = &v
 }
 
@@ -878,9 +878,9 @@ func (o *InstanceType) SetVersions(v []string) {
 }
 
 // GetInstanceTypeLayouts returns the InstanceTypeLayouts field value if set, zero value otherwise.
-func (o *InstanceType) GetInstanceTypeLayouts() []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner {
+func (o *InstanceType) GetInstanceTypeLayouts() []InstanceTypeInstanceTypeLayoutsInner {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
-		var ret []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner
+		var ret []InstanceTypeInstanceTypeLayoutsInner
 		return ret
 	}
 	return o.InstanceTypeLayouts
@@ -888,7 +888,7 @@ func (o *InstanceType) GetInstanceTypeLayouts() []GetInstanceType200ResponseInst
 
 // GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceType) GetInstanceTypeLayoutsOk() ([]GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner, bool) {
+func (o *InstanceType) GetInstanceTypeLayoutsOk() ([]InstanceTypeInstanceTypeLayoutsInner, bool) {
 	if o == nil || IsNil(o.InstanceTypeLayouts) {
 		return nil, false
 	}
@@ -904,15 +904,15 @@ func (o *InstanceType) IsSetInstanceTypeLayouts() bool {
 	return false
 }
 
-// SetInstanceTypeLayouts gets a reference to the given []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
-func (o *InstanceType) SetInstanceTypeLayouts(v []GetInstanceType200ResponseInstanceTypeInstanceTypeLayoutsInner) {
+// SetInstanceTypeLayouts gets a reference to the given []InstanceTypeInstanceTypeLayoutsInner and assigns it to the InstanceTypeLayouts field.
+func (o *InstanceType) SetInstanceTypeLayouts(v []InstanceTypeInstanceTypeLayoutsInner) {
 	o.InstanceTypeLayouts = v
 }
 
 // GetOptionTypes returns the OptionTypes field value if set, zero value otherwise.
-func (o *InstanceType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner {
+func (o *InstanceType) GetOptionTypes() []InstanceTypeOptionTypesInner {
 	if o == nil || IsNil(o.OptionTypes) {
-		var ret []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner
+		var ret []InstanceTypeOptionTypesInner
 		return ret
 	}
 	return o.OptionTypes
@@ -920,7 +920,7 @@ func (o *InstanceType) GetOptionTypes() []ListCatalogItemTypes200ResponseAllOfCa
 
 // GetOptionTypesOk returns a tuple with the OptionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceType) GetOptionTypesOk() ([]ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner, bool) {
+func (o *InstanceType) GetOptionTypesOk() ([]InstanceTypeOptionTypesInner, bool) {
 	if o == nil || IsNil(o.OptionTypes) {
 		return nil, false
 	}
@@ -936,8 +936,8 @@ func (o *InstanceType) IsSetOptionTypes() bool {
 	return false
 }
 
-// SetOptionTypes gets a reference to the given []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner and assigns it to the OptionTypes field.
-func (o *InstanceType) SetOptionTypes(v []ListCatalogItemTypes200ResponseAllOfCatalogItemTypesInnerOptionTypesInner) {
+// SetOptionTypes gets a reference to the given []InstanceTypeOptionTypesInner and assigns it to the OptionTypes field.
+func (o *InstanceType) SetOptionTypes(v []InstanceTypeOptionTypesInner) {
 	o.OptionTypes = v
 }
 
@@ -1242,7 +1242,6 @@ func (v NullableInstanceType) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *InstanceType) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

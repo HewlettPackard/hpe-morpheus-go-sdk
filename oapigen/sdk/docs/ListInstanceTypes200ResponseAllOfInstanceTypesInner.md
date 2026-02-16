@@ -1,0 +1,496 @@
+# ListInstanceTypes200ResponseAllOfInstanceTypesInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Account** | Pointer to [**ListInstanceTypes200ResponseAllOfInstanceTypesInnerAccount**](ListInstanceTypes200ResponseAllOfInstanceTypesInnerAccount.md) |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Labels** | Pointer to **[]string** |  | [optional] 
+**Code** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
+**ProvisionTypeCode** | Pointer to **NullableString** |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
+**Active** | Pointer to **bool** |  | [optional] 
+**EnvironmentPrefix** | Pointer to **string** |  | [optional] 
+**Visibility** | Pointer to **string** |  | [optional] 
+**Featured** | Pointer to **bool** |  | [optional] 
+**Versions** | Pointer to **[]string** |  | [optional] 
+**InstanceTypeLayouts** | Pointer to [**[]ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner**](ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner.md) |  | [optional] 
+**ImagePath** | Pointer to **NullableString** | Logo image URL | [optional] 
+**DarkImagePath** | Pointer to **NullableString** | Dark logo image URL | [optional] 
+
+## Methods
+
+### NewListInstanceTypes200ResponseAllOfInstanceTypesInner
+
+`func NewListInstanceTypes200ResponseAllOfInstanceTypesInner() *ListInstanceTypes200ResponseAllOfInstanceTypesInner`
+
+NewListInstanceTypes200ResponseAllOfInstanceTypesInner instantiates a new ListInstanceTypes200ResponseAllOfInstanceTypesInner object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListInstanceTypes200ResponseAllOfInstanceTypesInnerWithDefaults
+
+`func NewListInstanceTypes200ResponseAllOfInstanceTypesInnerWithDefaults() *ListInstanceTypes200ResponseAllOfInstanceTypesInner`
+
+NewListInstanceTypes200ResponseAllOfInstanceTypesInnerWithDefaults instantiates a new ListInstanceTypes200ResponseAllOfInstanceTypesInner object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetAccount
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetAccount() ListInstanceTypes200ResponseAllOfInstanceTypesInnerAccount`
+
+GetAccount returns the Account field if non-nil, zero value otherwise.
+
+### GetAccountOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetAccountOk() (*ListInstanceTypes200ResponseAllOfInstanceTypesInnerAccount, bool)`
+
+GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccount
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetAccount(v ListInstanceTypes200ResponseAllOfInstanceTypesInnerAccount)`
+
+SetAccount sets Account field to given value.
+
+### HasAccount
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasAccount() bool`
+
+HasAccount returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetLabels
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetLabels() []string`
+
+GetLabels returns the Labels field if non-nil, zero value otherwise.
+
+### GetLabelsOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetLabelsOk() (*[]string, bool)`
+
+GetLabelsOk returns a tuple with the Labels field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabels
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetLabels(v []string)`
+
+SetLabels sets Labels field to given value.
+
+### HasLabels
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasLabels() bool`
+
+HasLabels returns a boolean if a field has been set.
+
+### SetLabelsNil
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetLabelsNil(b bool)`
+
+ SetLabelsNil sets the value for Labels to be an explicit nil
+
+### UnsetLabels
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) UnsetLabels()`
+
+UnsetLabels ensures that no value is present for Labels, not even an explicit nil
+### GetCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetCode() string`
+
+GetCode returns the Code field if non-nil, zero value otherwise.
+
+### GetCodeOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetCodeOk() (*string, bool)`
+
+GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetCode(v string)`
+
+SetCode sets Code field to given value.
+
+### HasCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasCode() bool`
+
+HasCode returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### SetDescriptionNil
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
+### GetProvisionTypeCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetProvisionTypeCode() string`
+
+GetProvisionTypeCode returns the ProvisionTypeCode field if non-nil, zero value otherwise.
+
+### GetProvisionTypeCodeOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetProvisionTypeCodeOk() (*string, bool)`
+
+GetProvisionTypeCodeOk returns a tuple with the ProvisionTypeCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvisionTypeCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetProvisionTypeCode(v string)`
+
+SetProvisionTypeCode sets ProvisionTypeCode field to given value.
+
+### HasProvisionTypeCode
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasProvisionTypeCode() bool`
+
+HasProvisionTypeCode returns a boolean if a field has been set.
+
+### SetProvisionTypeCodeNil
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetProvisionTypeCodeNil(b bool)`
+
+ SetProvisionTypeCodeNil sets the value for ProvisionTypeCode to be an explicit nil
+
+### UnsetProvisionTypeCode
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) UnsetProvisionTypeCode()`
+
+UnsetProvisionTypeCode ensures that no value is present for ProvisionTypeCode, not even an explicit nil
+### GetCategory
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetCategory() string`
+
+GetCategory returns the Category field if non-nil, zero value otherwise.
+
+### GetCategoryOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetCategoryOk() (*string, bool)`
+
+GetCategoryOk returns a tuple with the Category field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCategory
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetCategory(v string)`
+
+SetCategory sets Category field to given value.
+
+### HasCategory
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasCategory() bool`
+
+HasCategory returns a boolean if a field has been set.
+
+### GetActive
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetActive() bool`
+
+GetActive returns the Active field if non-nil, zero value otherwise.
+
+### GetActiveOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetActiveOk() (*bool, bool)`
+
+GetActiveOk returns a tuple with the Active field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActive
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetActive(v bool)`
+
+SetActive sets Active field to given value.
+
+### HasActive
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasActive() bool`
+
+HasActive returns a boolean if a field has been set.
+
+### GetEnvironmentPrefix
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetEnvironmentPrefix() string`
+
+GetEnvironmentPrefix returns the EnvironmentPrefix field if non-nil, zero value otherwise.
+
+### GetEnvironmentPrefixOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetEnvironmentPrefixOk() (*string, bool)`
+
+GetEnvironmentPrefixOk returns a tuple with the EnvironmentPrefix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironmentPrefix
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetEnvironmentPrefix(v string)`
+
+SetEnvironmentPrefix sets EnvironmentPrefix field to given value.
+
+### HasEnvironmentPrefix
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasEnvironmentPrefix() bool`
+
+HasEnvironmentPrefix returns a boolean if a field has been set.
+
+### GetVisibility
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetVisibility() string`
+
+GetVisibility returns the Visibility field if non-nil, zero value otherwise.
+
+### GetVisibilityOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetVisibilityOk() (*string, bool)`
+
+GetVisibilityOk returns a tuple with the Visibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVisibility
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetVisibility(v string)`
+
+SetVisibility sets Visibility field to given value.
+
+### HasVisibility
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasVisibility() bool`
+
+HasVisibility returns a boolean if a field has been set.
+
+### GetFeatured
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetFeatured() bool`
+
+GetFeatured returns the Featured field if non-nil, zero value otherwise.
+
+### GetFeaturedOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetFeaturedOk() (*bool, bool)`
+
+GetFeaturedOk returns a tuple with the Featured field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatured
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetFeatured(v bool)`
+
+SetFeatured sets Featured field to given value.
+
+### HasFeatured
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasFeatured() bool`
+
+HasFeatured returns a boolean if a field has been set.
+
+### GetVersions
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetVersions() []string`
+
+GetVersions returns the Versions field if non-nil, zero value otherwise.
+
+### GetVersionsOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetVersionsOk() (*[]string, bool)`
+
+GetVersionsOk returns a tuple with the Versions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersions
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetVersions(v []string)`
+
+SetVersions sets Versions field to given value.
+
+### HasVersions
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasVersions() bool`
+
+HasVersions returns a boolean if a field has been set.
+
+### GetInstanceTypeLayouts
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetInstanceTypeLayouts() []ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner`
+
+GetInstanceTypeLayouts returns the InstanceTypeLayouts field if non-nil, zero value otherwise.
+
+### GetInstanceTypeLayoutsOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetInstanceTypeLayoutsOk() (*[]ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner, bool)`
+
+GetInstanceTypeLayoutsOk returns a tuple with the InstanceTypeLayouts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceTypeLayouts
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetInstanceTypeLayouts(v []ListInstanceTypes200ResponseAllOfInstanceTypesInnerInstanceTypeLayoutsInner)`
+
+SetInstanceTypeLayouts sets InstanceTypeLayouts field to given value.
+
+### HasInstanceTypeLayouts
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasInstanceTypeLayouts() bool`
+
+HasInstanceTypeLayouts returns a boolean if a field has been set.
+
+### GetImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetImagePath() string`
+
+GetImagePath returns the ImagePath field if non-nil, zero value otherwise.
+
+### GetImagePathOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetImagePathOk() (*string, bool)`
+
+GetImagePathOk returns a tuple with the ImagePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetImagePath(v string)`
+
+SetImagePath sets ImagePath field to given value.
+
+### HasImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasImagePath() bool`
+
+HasImagePath returns a boolean if a field has been set.
+
+### SetImagePathNil
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetImagePathNil(b bool)`
+
+ SetImagePathNil sets the value for ImagePath to be an explicit nil
+
+### UnsetImagePath
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) UnsetImagePath()`
+
+UnsetImagePath ensures that no value is present for ImagePath, not even an explicit nil
+### GetDarkImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetDarkImagePath() string`
+
+GetDarkImagePath returns the DarkImagePath field if non-nil, zero value otherwise.
+
+### GetDarkImagePathOk
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) GetDarkImagePathOk() (*string, bool)`
+
+GetDarkImagePathOk returns a tuple with the DarkImagePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDarkImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetDarkImagePath(v string)`
+
+SetDarkImagePath sets DarkImagePath field to given value.
+
+### HasDarkImagePath
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) HasDarkImagePath() bool`
+
+HasDarkImagePath returns a boolean if a field has been set.
+
+### SetDarkImagePathNil
+
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) SetDarkImagePathNil(b bool)`
+
+ SetDarkImagePathNil sets the value for DarkImagePath to be an explicit nil
+
+### UnsetDarkImagePath
+`func (o *ListInstanceTypes200ResponseAllOfInstanceTypesInner) UnsetDarkImagePath()`
+
+UnsetDarkImagePath ensures that no value is present for DarkImagePath, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

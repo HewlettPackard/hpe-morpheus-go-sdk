@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Code** | Pointer to **NullableString** |  | [optional] 
 **DatastoreType** | [**ListDatastores200ResponseAllOfDatastoresInnerDatastoreType**](ListDatastores200ResponseAllOfDatastoresInnerDatastoreType.md) |  | 
 **Config** | Pointer to **map[string]interface{}** | Configuration object. Settings vary by type. | [optional] 
-**StorageServer** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**StorageServer** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerStorageServer**](ListDatastores200ResponseAllOfDatastoresInnerStorageServer.md) |  | [optional] 
 **Type** | **string** | The underlying type of the datastore, e.g. &#39;generic&#39;, &#39;cluster&#39;, &#39;nfs&#39;, &#39;vmfs&#39;, &#39;NFS Pool&#39;, &#39;Directory Pool&#39;, &#39;GFS2 Pool (Global File System 2)&#39;, &#39;storage-profile&#39;, &#39;ext&#39; | 
 **Status** | **string** | The current status of the datastore, e.g. &#39;provisioned&#39;, &#39;provisioning&#39;, &#39;failed&#39;, &#39;warning&#39; | 
 **StatusMessage** | Pointer to **string** | Additional details about the current status of the datastore | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **ExternalType** | Pointer to **string** | External type for the datastore, e.g. rbd, netfs, dir:gfs2 | [optional] 
 **Zone** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerZone**](ListDatastores200ResponseAllOfDatastoresInnerZone.md) |  | [optional] 
 **ZonePool** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerZonePool**](ListDatastores200ResponseAllOfDatastoresInnerZonePool.md) |  | [optional] 
-**Owner** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Owner** | Pointer to [**ListDatastores200ResponseAllOfDatastoresInnerOwner**](ListDatastores200ResponseAllOfDatastoresInnerOwner.md) |  | [optional] 
 **Datastores** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner**](ListDatastores200ResponseAllOfDatastoresInnerDatastoresInner.md) | List of datastores associated with this datastore, for use with vSphere clouds. | [optional] 
 **Locations** | Pointer to [**[]ListDatastores200ResponseAllOfDatastoresInnerLocationsInner**](ListDatastores200ResponseAllOfDatastoresInnerLocationsInner.md) |  | [optional] 
 
@@ -176,20 +176,20 @@ HasConfig returns a boolean if a field has been set.
 
 ### GetStorageServer
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServer() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServer() ListDatastores200ResponseAllOfDatastoresInnerStorageServer`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetStorageServerOk() (*ListDatastores200ResponseAllOfDatastoresInnerStorageServer, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStorageServer(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetStorageServer(v ListDatastores200ResponseAllOfDatastoresInnerStorageServer)`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -736,20 +736,20 @@ HasZonePool returns a boolean if a field has been set.
 
 ### GetOwner
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwner() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwner() ListDatastores200ResponseAllOfDatastoresInnerOwner`
 
 GetOwner returns the Owner field if non-nil, zero value otherwise.
 
 ### GetOwnerOk
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) GetOwnerOk() (*ListDatastores200ResponseAllOfDatastoresInnerOwner, bool)`
 
 GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOwner
 
-`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetOwner(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *ListDatastores200ResponseAllOfDatastoresInner) SetOwner(v ListDatastores200ResponseAllOfDatastoresInnerOwner)`
 
 SetOwner sets Owner field to given value.
 

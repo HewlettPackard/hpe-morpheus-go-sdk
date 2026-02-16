@@ -47,9 +47,9 @@ type AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig struct {
 	// Array of strings (keywords).
 	Labels []string `json:"labels,omitempty"`
 	// Metadata tags, Array of objects having a name and value.
-	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"tags,omitempty"`
+	Tags []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner `json:"tags,omitempty"`
 	// Alias for `tags`.
-	Metadata []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner `json:"metadata,omitempty"`
+	Metadata []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner `json:"metadata,omitempty"`
 	// The ports parameter is for port configuration.  The layout may have default ports, which are defined in node types, that are always configured. This parameter will be for additional custom ports to be opened.
 	Ports []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigPortsInner `json:"ports,omitempty"`
 	// The Workflow ID to execute.
@@ -536,9 +536,9 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetLabels(v []stri
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner
 		return ret
 	}
 	return o.Tags
@@ -546,7 +546,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTags() []AddCat
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetTagsOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -562,15 +562,15 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Tags field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetTags gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner and assigns it to the Tags field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigTagsInner) {
 	o.Tags = v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadata() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner {
 	if o == nil || IsNil(o.Metadata) {
-		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner
+		var ret []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner
 		return ret
 	}
 	return o.Metadata
@@ -578,7 +578,7 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadata() []Ad
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadataOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool) {
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) GetMetadataOk() ([]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner, bool) {
 	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
@@ -594,8 +594,8 @@ func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) IsSetMetadata() bo
 	return false
 }
 
-// SetMetadata gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner and assigns it to the Metadata field.
-func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner) {
+// SetMetadata gets a reference to the given []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner and assigns it to the Metadata field.
+func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) SetMetadata(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigMetadataInner) {
 	o.Metadata = v
 }
 
@@ -804,7 +804,6 @@ func (v NullableAddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalMa
 
 	return v, nil
 }
-
 func (o *AddCatalogItemTypeRequestCatalogItemTypeOneOfConfig) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

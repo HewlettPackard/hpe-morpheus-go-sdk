@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** | Optional code for use with policies | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **Location** | Pointer to **string** | Optional location argument for your group | [optional] 
-**Config** | Pointer to [**AddGroupsRequestGroupConfig**](AddGroupsRequestGroupConfig.md) |  | [optional] 
+**Config** | Pointer to [**GroupCreateConfig**](GroupCreateConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -126,20 +126,20 @@ HasLocation returns a boolean if a field has been set.
 
 ### GetConfig
 
-`func (o *GroupUpdate) GetConfig() AddGroupsRequestGroupConfig`
+`func (o *GroupUpdate) GetConfig() GroupCreateConfig`
 
 GetConfig returns the Config field if non-nil, zero value otherwise.
 
 ### GetConfigOk
 
-`func (o *GroupUpdate) GetConfigOk() (*AddGroupsRequestGroupConfig, bool)`
+`func (o *GroupUpdate) GetConfigOk() (*GroupCreateConfig, bool)`
 
 GetConfigOk returns a tuple with the Config field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfig
 
-`func (o *GroupUpdate) SetConfig(v AddGroupsRequestGroupConfig)`
+`func (o *GroupUpdate) SetConfig(v GroupCreateConfig)`
 
 SetConfig sets Config field to given value.
 

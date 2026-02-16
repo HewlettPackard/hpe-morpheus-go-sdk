@@ -20,9 +20,9 @@ var _ MappedNullable = &GetServicePlans200ResponseServicePlanPermissions{}
 
 // GetServicePlans200ResponseServicePlanPermissions struct for GetServicePlans200ResponseServicePlanPermissions
 type GetServicePlans200ResponseServicePlanPermissions struct {
-	ResourcePermissions  *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions  `json:"resourcePermissions,omitempty"`
-	TenantPermissions    *GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions `json:"tenantPermissions,omitempty"`
-	AdditionalProperties map[string]interface{}                                                `json:",remain"`
+	ResourcePermissions  *GetServicePlans200ResponseServicePlanPermissionsResourcePermissions `json:"resourcePermissions,omitempty"`
+	TenantPermissions    *GetServicePlans200ResponseServicePlanPermissionsTenantPermissions   `json:"tenantPermissions,omitempty"`
+	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
 type _GetServicePlans200ResponseServicePlanPermissions GetServicePlans200ResponseServicePlanPermissions
@@ -77,9 +77,9 @@ func (o *GetServicePlans200ResponseServicePlanPermissions) SetResourcePermission
 }
 
 // GetTenantPermissions returns the TenantPermissions field value if set, zero value otherwise.
-func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions() GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions {
+func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions() GetServicePlans200ResponseServicePlanPermissionsTenantPermissions {
 	if o == nil || IsNil(o.TenantPermissions) {
-		var ret GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions
+		var ret GetServicePlans200ResponseServicePlanPermissionsTenantPermissions
 		return ret
 	}
 	return *o.TenantPermissions
@@ -87,7 +87,7 @@ func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissions(
 
 // GetTenantPermissionsOk returns a tuple with the TenantPermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsOk() (*GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions, bool) {
+func (o *GetServicePlans200ResponseServicePlanPermissions) GetTenantPermissionsOk() (*GetServicePlans200ResponseServicePlanPermissionsTenantPermissions, bool) {
 	if o == nil || IsNil(o.TenantPermissions) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *GetServicePlans200ResponseServicePlanPermissions) IsSetTenantPermission
 	return false
 }
 
-// SetTenantPermissions gets a reference to the given GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions and assigns it to the TenantPermissions field.
-func (o *GetServicePlans200ResponseServicePlanPermissions) SetTenantPermissions(v GetNetworkRouter200ResponseNetworkRouterPermissionsTenantPermissions) {
+// SetTenantPermissions gets a reference to the given GetServicePlans200ResponseServicePlanPermissionsTenantPermissions and assigns it to the TenantPermissions field.
+func (o *GetServicePlans200ResponseServicePlanPermissions) SetTenantPermissions(v GetServicePlans200ResponseServicePlanPermissionsTenantPermissions) {
 	o.TenantPermissions = &v
 }
 
@@ -176,7 +176,6 @@ func (v NullableGetServicePlans200ResponseServicePlanPermissions) UnmarshalMapst
 
 	return v, nil
 }
-
 func (o *GetServicePlans200ResponseServicePlanPermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

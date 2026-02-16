@@ -27,7 +27,7 @@ type UpdateCloudDatastoresRequestDatastoreResourcePermissions struct {
 	// Pass true to allow access all plans
 	AllPlans *bool `json:"allPlans,omitempty"`
 	// Array of plans that are allowed access
-	Plans                []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner `json:"plans,omitempty"`
+	Plans                []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner `json:"plans,omitempty"`
 	AdditionalProperties map[string]interface{}                                               `json:",remain"`
 }
 
@@ -155,9 +155,9 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetAllPlans(v
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner {
+func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlans() []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner {
 	if o == nil || IsNil(o.Plans) {
-		var ret []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner
+		var ret []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner
 		return ret
 	}
 	return o.Plans
@@ -165,7 +165,7 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlans() []
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlansOk() ([]UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner, bool) {
+func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) GetPlansOk() ([]UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -181,8 +181,8 @@ func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) IsSetPlans() 
 	return false
 }
 
-// SetPlans gets a reference to the given []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner and assigns it to the Plans field.
-func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateCloudDatastoresRequestDatastoreResourcePermissionsSitesInner) {
+// SetPlans gets a reference to the given []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner and assigns it to the Plans field.
+func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) SetPlans(v []UpdateCloudDatastoresRequestDatastoreResourcePermissionsPlansInner) {
 	o.Plans = v
 }
 
@@ -260,7 +260,6 @@ func (v NullableUpdateCloudDatastoresRequestDatastoreResourcePermissions) Unmars
 
 	return v, nil
 }
-
 func (o *UpdateCloudDatastoresRequestDatastoreResourcePermissions) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

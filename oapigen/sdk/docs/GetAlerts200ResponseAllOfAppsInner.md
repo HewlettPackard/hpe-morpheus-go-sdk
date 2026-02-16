@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**Account** | Pointer to [**GetAlerts200ResponseAllOfChecksInnerAccount**](GetAlerts200ResponseAllOfChecksInnerAccount.md) |  | [optional] 
+**Account** | Pointer to [**GetAlerts200ResponseAllOfAppsInnerAccount**](GetAlerts200ResponseAllOfAppsInnerAccount.md) |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
-**App** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**App** | Pointer to [**GetAlerts200ResponseAllOfAppsInnerApp**](GetAlerts200ResponseAllOfAppsInnerApp.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **NullableString** |  | [optional] 
 **InUptime** | Pointer to **bool** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Severity** | Pointer to **string** |  | [optional] 
 **CreateIncident** | Pointer to **bool** |  | [optional] 
 **Muted** | Pointer to **bool** |  | [optional] 
-**CreatedBy** | Pointer to [**ListActivity200ResponseAllOfActivityInnerActivityInnerUser**](ListActivity200ResponseAllOfActivityInnerActivityInnerUser.md) |  | [optional] 
+**CreatedBy** | Pointer to [**GetAlerts200ResponseAllOfAppsInnerCreatedBy**](GetAlerts200ResponseAllOfAppsInnerCreatedBy.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
 **Availability** | Pointer to **NullableString** |  | [optional] 
@@ -76,20 +76,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfChecksInnerAccount`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetAccount() GetAlerts200ResponseAllOfAppsInnerAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfChecksInnerAccount, bool)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetAccountOk() (*GetAlerts200ResponseAllOfAppsInnerAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfChecksInnerAccount)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetAccount(v GetAlerts200ResponseAllOfAppsInnerAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -126,20 +126,20 @@ HasActive returns a boolean if a field has been set.
 
 ### GetApp
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetApp() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetApp() GetAlerts200ResponseAllOfAppsInnerApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetAppOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetAppOk() (*GetAlerts200ResponseAllOfAppsInnerApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) SetApp(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetApp(v GetAlerts200ResponseAllOfAppsInnerApp)`
 
 SetApp sets App field to given value.
 
@@ -606,20 +606,20 @@ HasMuted returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedBy() ListActivity200ResponseAllOfActivityInnerActivityInnerUser`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedBy() GetAlerts200ResponseAllOfAppsInnerCreatedBy`
 
 GetCreatedBy returns the CreatedBy field if non-nil, zero value otherwise.
 
 ### GetCreatedByOk
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedByOk() (*ListActivity200ResponseAllOfActivityInnerActivityInnerUser, bool)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) GetCreatedByOk() (*GetAlerts200ResponseAllOfAppsInnerCreatedBy, bool)`
 
 GetCreatedByOk returns a tuple with the CreatedBy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedBy
 
-`func (o *GetAlerts200ResponseAllOfAppsInner) SetCreatedBy(v ListActivity200ResponseAllOfActivityInnerActivityInnerUser)`
+`func (o *GetAlerts200ResponseAllOfAppsInner) SetCreatedBy(v GetAlerts200ResponseAllOfAppsInnerCreatedBy)`
 
 SetCreatedBy sets CreatedBy field to given value.
 

@@ -27,8 +27,8 @@ type VirtualImageCreate struct {
 	// Array of label strings, can be used for filtering.
 	Labels []string `json:"labels,omitempty"`
 	// Code of image type. eg. vmware, ami, etc.
-	ImageType       *string                                            `json:"imageType,omitempty"`
-	StorageProvider *AddVirtualImageRequestVirtualImageStorageProvider `json:"storageProvider,omitempty"`
+	ImageType       *string                            `json:"imageType,omitempty"`
+	StorageProvider *VirtualImageCreateStorageProvider `json:"storageProvider,omitempty"`
 	// Cloud Init Enabled?
 	IsCloudInit *bool `json:"isCloudInit,omitempty"`
 	// Cloud-Init User Data, a bash script
@@ -61,10 +61,10 @@ type VirtualImageCreate struct {
 	// Trial Version
 	TrialVersion *bool `json:"trialVersion,omitempty"`
 	// Sysprep Enabled?
-	IsSysprep *bool                                     `json:"isSysprep,omitempty"`
-	Config    *AddVirtualImageRequestVirtualImageConfig `json:"config,omitempty"`
+	IsSysprep *bool                     `json:"isSysprep,omitempty"`
+	Config    *VirtualImageCreateConfig `json:"config,omitempty"`
 	// Metadata tags, Array of objects having a name and value
-	Tags []AddVirtualImageRequestVirtualImageTagsInner `json:"tags,omitempty"`
+	Tags []VirtualImageCreateTagsInner `json:"tags,omitempty"`
 	// Image File URL, a virtual image file will be created by fetching the specified URL
 	Url                  *string                `json:"url,omitempty"`
 	MinRam               NullableInt64          `json:"minRam,omitempty"`
@@ -259,9 +259,9 @@ func (o *VirtualImageCreate) SetImageType(v string) {
 }
 
 // GetStorageProvider returns the StorageProvider field value if set, zero value otherwise.
-func (o *VirtualImageCreate) GetStorageProvider() AddVirtualImageRequestVirtualImageStorageProvider {
+func (o *VirtualImageCreate) GetStorageProvider() VirtualImageCreateStorageProvider {
 	if o == nil || IsNil(o.StorageProvider) {
-		var ret AddVirtualImageRequestVirtualImageStorageProvider
+		var ret VirtualImageCreateStorageProvider
 		return ret
 	}
 	return *o.StorageProvider
@@ -269,7 +269,7 @@ func (o *VirtualImageCreate) GetStorageProvider() AddVirtualImageRequestVirtualI
 
 // GetStorageProviderOk returns a tuple with the StorageProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImageCreate) GetStorageProviderOk() (*AddVirtualImageRequestVirtualImageStorageProvider, bool) {
+func (o *VirtualImageCreate) GetStorageProviderOk() (*VirtualImageCreateStorageProvider, bool) {
 	if o == nil || IsNil(o.StorageProvider) {
 		return nil, false
 	}
@@ -285,8 +285,8 @@ func (o *VirtualImageCreate) IsSetStorageProvider() bool {
 	return false
 }
 
-// SetStorageProvider gets a reference to the given AddVirtualImageRequestVirtualImageStorageProvider and assigns it to the StorageProvider field.
-func (o *VirtualImageCreate) SetStorageProvider(v AddVirtualImageRequestVirtualImageStorageProvider) {
+// SetStorageProvider gets a reference to the given VirtualImageCreateStorageProvider and assigns it to the StorageProvider field.
+func (o *VirtualImageCreate) SetStorageProvider(v VirtualImageCreateStorageProvider) {
 	o.StorageProvider = &v
 }
 
@@ -890,9 +890,9 @@ func (o *VirtualImageCreate) SetIsSysprep(v bool) {
 }
 
 // GetConfig returns the Config field value if set, zero value otherwise.
-func (o *VirtualImageCreate) GetConfig() AddVirtualImageRequestVirtualImageConfig {
+func (o *VirtualImageCreate) GetConfig() VirtualImageCreateConfig {
 	if o == nil || IsNil(o.Config) {
-		var ret AddVirtualImageRequestVirtualImageConfig
+		var ret VirtualImageCreateConfig
 		return ret
 	}
 	return *o.Config
@@ -900,7 +900,7 @@ func (o *VirtualImageCreate) GetConfig() AddVirtualImageRequestVirtualImageConfi
 
 // GetConfigOk returns a tuple with the Config field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImageCreate) GetConfigOk() (*AddVirtualImageRequestVirtualImageConfig, bool) {
+func (o *VirtualImageCreate) GetConfigOk() (*VirtualImageCreateConfig, bool) {
 	if o == nil || IsNil(o.Config) {
 		return nil, false
 	}
@@ -916,15 +916,15 @@ func (o *VirtualImageCreate) IsSetConfig() bool {
 	return false
 }
 
-// SetConfig gets a reference to the given AddVirtualImageRequestVirtualImageConfig and assigns it to the Config field.
-func (o *VirtualImageCreate) SetConfig(v AddVirtualImageRequestVirtualImageConfig) {
+// SetConfig gets a reference to the given VirtualImageCreateConfig and assigns it to the Config field.
+func (o *VirtualImageCreate) SetConfig(v VirtualImageCreateConfig) {
 	o.Config = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise.
-func (o *VirtualImageCreate) GetTags() []AddVirtualImageRequestVirtualImageTagsInner {
+func (o *VirtualImageCreate) GetTags() []VirtualImageCreateTagsInner {
 	if o == nil || IsNil(o.Tags) {
-		var ret []AddVirtualImageRequestVirtualImageTagsInner
+		var ret []VirtualImageCreateTagsInner
 		return ret
 	}
 	return o.Tags
@@ -932,7 +932,7 @@ func (o *VirtualImageCreate) GetTags() []AddVirtualImageRequestVirtualImageTagsI
 
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualImageCreate) GetTagsOk() ([]AddVirtualImageRequestVirtualImageTagsInner, bool) {
+func (o *VirtualImageCreate) GetTagsOk() ([]VirtualImageCreateTagsInner, bool) {
 	if o == nil || IsNil(o.Tags) {
 		return nil, false
 	}
@@ -948,8 +948,8 @@ func (o *VirtualImageCreate) IsSetTags() bool {
 	return false
 }
 
-// SetTags gets a reference to the given []AddVirtualImageRequestVirtualImageTagsInner and assigns it to the Tags field.
-func (o *VirtualImageCreate) SetTags(v []AddVirtualImageRequestVirtualImageTagsInner) {
+// SetTags gets a reference to the given []VirtualImageCreateTagsInner and assigns it to the Tags field.
+func (o *VirtualImageCreate) SetTags(v []VirtualImageCreateTagsInner) {
 	o.Tags = v
 }
 
@@ -1306,7 +1306,6 @@ func (v NullableVirtualImageCreate) UnmarshalMapstructure(data any) (any, error)
 
 	return v, nil
 }
-
 func (o *VirtualImageCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }

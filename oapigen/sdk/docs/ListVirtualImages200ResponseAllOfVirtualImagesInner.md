@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **NullableString** | A description for the virtual image | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
 **OwnerId** | Pointer to **int64** | Owner of the image | [optional] 
-**Tenant** | Pointer to [**NullableListApprovals200ResponseAllOfApprovalsInnerAccount**](ListApprovals200ResponseAllOfApprovalsInnerAccount.md) |  | [optional] 
+**Tenant** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant**](ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant.md) |  | [optional] 
 **ImageType** | Pointer to **string** | Code of image type. eg. vmware, ami, etc. | [optional] 
 **UserUploaded** | Pointer to **bool** | Is uploaded by an user? | [optional] 
 **UserDefined** | Pointer to **bool** | Is defined by an user? | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **SshPassword** | Pointer to **NullableString** |  | [optional] 
 **SshPasswordHash** | Pointer to **NullableString** |  | [optional] 
 **SshKey** | Pointer to **NullableString** | SSH Key | [optional] 
-**OsType** | Pointer to [**ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs**](ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs.md) |  | [optional] 
+**OsType** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType**](ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType.md) |  | [optional] 
 **MinRam** | Pointer to **NullableInt64** | Minimum required RAM in bytes | [optional] 
 **MinRamGB** | Pointer to **NullableFloat64** | Minimum required RAM in gigabytes | [optional] 
 **MinDisk** | Pointer to **NullableInt64** | Minimum required disk size in bytes | [optional] 
@@ -37,15 +37,15 @@ Name | Type | Description | Notes
 **FipsEnabled** | Pointer to **bool** | FIPS enabled? | [optional] 
 **UserData** | Pointer to **NullableString** | Cloud-Init User Data, a bash script | [optional] 
 **ConsoleKeymap** | Pointer to **NullableString** |  | [optional] 
-**StorageProvider** | Pointer to [**GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**StorageProvider** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider**](ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider.md) |  | [optional] 
 **ExternalId** | Pointer to **NullableString** |  | [optional] 
 **Visibility** | Pointer to **string** | private or public | [optional] 
-**Accounts** | Pointer to [**[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance**](GetAlerts200ResponseAllOfCheckGroupsInnerInstance.md) |  | [optional] 
+**Accounts** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner.md) |  | [optional] 
 **Config** | Pointer to [**ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig**](ListVirtualImages200ResponseAllOfVirtualImagesInnerConfig.md) |  | [optional] 
 **Volumes** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **StorageControllers** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageControllersInner.md) |  | [optional] 
 **NetworkInterfaces** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**Tags** | Pointer to [**[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner**](AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
+**Tags** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner.md) | Metadata tags, Array of objects having a name and value | [optional] 
 **Locations** | Pointer to [**[]ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner**](ListVirtualImages200ResponseAllOfVirtualImagesInnerLocationsInner.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
@@ -207,20 +207,20 @@ HasOwnerId returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListApprovals200ResponseAllOfApprovalsInnerAccount`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenant() ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListApprovals200ResponseAllOfApprovalsInnerAccount, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTenantOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListApprovals200ResponseAllOfApprovalsInnerAccount)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenant(v ListVirtualImages200ResponseAllOfVirtualImagesInnerTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -230,16 +230,6 @@ SetTenant sets Tenant field to given value.
 
 HasTenant returns a boolean if a field has been set.
 
-### SetTenantNil
-
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTenantNil(b bool)`
-
- SetTenantNil sets the value for Tenant to be an explicit nil
-
-### UnsetTenant
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) UnsetTenant()`
-
-UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetImageType
 
 `func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetImageType() string`
@@ -507,20 +497,20 @@ HasSshKey returns a boolean if a field has been set.
 UnsetSshKey ensures that no value is present for SshKey, not even an explicit nil
 ### GetOsType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsType() ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType`
 
 GetOsType returns the OsType field if non-nil, zero value otherwise.
 
 ### GetOsTypeOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetOsTypeOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType, bool)`
 
 GetOsTypeOk returns a tuple with the OsType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOsType
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListGuidances200ResponseAllOfDiscoveriesInnerAnyOfResourceServerOs)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetOsType(v ListVirtualImages200ResponseAllOfVirtualImagesInnerOsType)`
 
 SetOsType sets OsType field to given value.
 
@@ -1047,20 +1037,20 @@ HasConsoleKeymap returns a boolean if a field has been set.
 UnsetConsoleKeymap ensures that no value is present for ConsoleKeymap, not even an explicit nil
 ### GetStorageProvider
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProvider() ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider`
 
 GetStorageProvider returns the StorageProvider field if non-nil, zero value otherwise.
 
 ### GetStorageProviderOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetStorageProviderOk() (*ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider, bool)`
 
 GetStorageProviderOk returns a tuple with the StorageProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageProvider
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetStorageProvider(v ListVirtualImages200ResponseAllOfVirtualImagesInnerStorageProvider)`
 
 SetStorageProvider sets StorageProvider field to given value.
 
@@ -1132,20 +1122,20 @@ HasVisibility returns a boolean if a field has been set.
 
 ### GetAccounts
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []GetAlerts200ResponseAllOfCheckGroupsInnerInstance`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccounts() []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner`
 
 GetAccounts returns the Accounts field if non-nil, zero value otherwise.
 
 ### GetAccountsOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() (*[]GetAlerts200ResponseAllOfCheckGroupsInnerInstance, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetAccountsOk() (*[]ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner, bool)`
 
 GetAccountsOk returns a tuple with the Accounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccounts
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []GetAlerts200ResponseAllOfCheckGroupsInnerInstance)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetAccounts(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerAccountsInner)`
 
 SetAccounts sets Accounts field to given value.
 
@@ -1257,20 +1247,20 @@ HasNetworkInterfaces returns a boolean if a field has been set.
 
 ### GetTags
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTags() []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() (*[]AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner, bool)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) GetTagsOk() (*[]ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []AddCatalogItemTypeRequestCatalogItemTypeOneOfConfigEvarsInner)`
+`func (o *ListVirtualImages200ResponseAllOfVirtualImagesInner) SetTags(v []ListVirtualImages200ResponseAllOfVirtualImagesInnerTagsInner)`
 
 SetTags sets Tags field to given value.
 

@@ -31,7 +31,7 @@ type UserCreate struct {
 	// Password to apply to the user
 	Password string `json:"password"`
 	// Array of objects with id of the role(s) to assign to the user.
-	Roles []GetAlerts200ResponseAllOfChecksInnerAccount `json:"roles"`
+	Roles []UserCreateRolesInner `json:"roles"`
 	// Receive Notifications?
 	ReceiveNotifications *bool `json:"receiveNotifications,omitempty"`
 	// Linux Username, user settings for provisioning
@@ -53,7 +53,7 @@ type _UserCreate UserCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserCreate(username string, email string, password string, roles []GetAlerts200ResponseAllOfChecksInnerAccount) *UserCreate {
+func NewUserCreate(username string, email string, password string, roles []UserCreateRolesInner) *UserCreate {
 	this := UserCreate{}
 	this.Username = username
 	this.Email = email
@@ -211,9 +211,9 @@ func (o *UserCreate) SetPassword(v string) {
 }
 
 // GetRoles returns the Roles field value
-func (o *UserCreate) GetRoles() []GetAlerts200ResponseAllOfChecksInnerAccount {
+func (o *UserCreate) GetRoles() []UserCreateRolesInner {
 	if o == nil {
-		var ret []GetAlerts200ResponseAllOfChecksInnerAccount
+		var ret []UserCreateRolesInner
 		return ret
 	}
 
@@ -222,7 +222,7 @@ func (o *UserCreate) GetRoles() []GetAlerts200ResponseAllOfChecksInnerAccount {
 
 // GetRolesOk returns a tuple with the Roles field value
 // and a boolean to check if the value has been set.
-func (o *UserCreate) GetRolesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount, bool) {
+func (o *UserCreate) GetRolesOk() ([]UserCreateRolesInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -230,7 +230,7 @@ func (o *UserCreate) GetRolesOk() ([]GetAlerts200ResponseAllOfChecksInnerAccount
 }
 
 // SetRoles sets field value
-func (o *UserCreate) SetRoles(v []GetAlerts200ResponseAllOfChecksInnerAccount) {
+func (o *UserCreate) SetRoles(v []UserCreateRolesInner) {
 	o.Roles = v
 }
 
@@ -516,7 +516,6 @@ func (v NullableUserCreate) UnmarshalMapstructure(data any) (any, error) {
 
 	return v, nil
 }
-
 func (o *UserCreate) UnmarshalJSON(data []byte) (err error) {
 	return decode(data, &o)
 }
