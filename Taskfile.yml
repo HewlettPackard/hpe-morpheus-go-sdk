@@ -46,8 +46,6 @@ tasks:
       - rm -rf {{.OUTPUTDIR}}
       - mkdir -p {{.OUTPUTDIR}}
       - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
-      # add the follow to disable schema de-duplication
-      # --inline-schema-options SKIP_SCHEMA_REUSE=true
       - cmd: >-
           openapi-generator-cli generate 
           --inline-schema-options SKIP_SCHEMA_REUSE=true
