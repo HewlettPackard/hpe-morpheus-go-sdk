@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**InstanceConfigNoAgent**](InstanceConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceConfigSecurityGroupsInner**](InstanceConfigSecurityGroupsInner.md) |  | [optional] 
+**KvmHostId** | Pointer to **NullableInt64** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
@@ -188,6 +189,41 @@ HasSecurityGroups returns a boolean if a field has been set.
 `func (o *InstanceConfig) UnsetSecurityGroups()`
 
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
+### GetKvmHostId
+
+`func (o *InstanceConfig) GetKvmHostId() int64`
+
+GetKvmHostId returns the KvmHostId field if non-nil, zero value otherwise.
+
+### GetKvmHostIdOk
+
+`func (o *InstanceConfig) GetKvmHostIdOk() (*int64, bool)`
+
+GetKvmHostIdOk returns a tuple with the KvmHostId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvmHostId
+
+`func (o *InstanceConfig) SetKvmHostId(v int64)`
+
+SetKvmHostId sets KvmHostId field to given value.
+
+### HasKvmHostId
+
+`func (o *InstanceConfig) HasKvmHostId() bool`
+
+HasKvmHostId returns a boolean if a field has been set.
+
+### SetKvmHostIdNil
+
+`func (o *InstanceConfig) SetKvmHostIdNil(b bool)`
+
+ SetKvmHostIdNil sets the value for KvmHostId to be an explicit nil
+
+### UnsetKvmHostId
+`func (o *InstanceConfig) UnsetKvmHostId()`
+
+UnsetKvmHostId ensures that no value is present for KvmHostId, not even an explicit nil
 ### GetSmbiosAssetTag
 
 `func (o *InstanceConfig) GetSmbiosAssetTag() string`

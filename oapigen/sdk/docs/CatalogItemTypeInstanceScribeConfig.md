@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BootDiagnostics** | Pointer to **string** | Boot Diagnostics | [optional] 
 **OsGuestDiagnostics** | Pointer to **string** | OS Guest Diagnostics | [optional] 
 **DiagnosticsStorageAccount** | Pointer to **string** | Diagnostics Storage Account | [optional] 
-**CreateUser** | Pointer to **bool** | Create User | [optional] [default to true]
+**CreateUser** | Pointer to **bool** | Create user | [optional] [default to false]
 **NoAgent** | Pointer to **bool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
 **HostId** | Pointer to **string** | Specific host to deploy to if so desired. | [optional] 
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 

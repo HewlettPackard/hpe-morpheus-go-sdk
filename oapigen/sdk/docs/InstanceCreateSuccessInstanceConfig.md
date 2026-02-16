@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**InstanceCreateSuccessInstanceConfigNoAgent**](InstanceCreateSuccessInstanceConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]InstanceCreateSuccessInstanceConfigSecurityGroupsInner**](InstanceCreateSuccessInstanceConfigSecurityGroupsInner.md) |  | [optional] 
+**KvmHostId** | Pointer to **NullableInt64** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
@@ -188,6 +189,41 @@ HasSecurityGroups returns a boolean if a field has been set.
 `func (o *InstanceCreateSuccessInstanceConfig) UnsetSecurityGroups()`
 
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
+### GetKvmHostId
+
+`func (o *InstanceCreateSuccessInstanceConfig) GetKvmHostId() int64`
+
+GetKvmHostId returns the KvmHostId field if non-nil, zero value otherwise.
+
+### GetKvmHostIdOk
+
+`func (o *InstanceCreateSuccessInstanceConfig) GetKvmHostIdOk() (*int64, bool)`
+
+GetKvmHostIdOk returns a tuple with the KvmHostId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvmHostId
+
+`func (o *InstanceCreateSuccessInstanceConfig) SetKvmHostId(v int64)`
+
+SetKvmHostId sets KvmHostId field to given value.
+
+### HasKvmHostId
+
+`func (o *InstanceCreateSuccessInstanceConfig) HasKvmHostId() bool`
+
+HasKvmHostId returns a boolean if a field has been set.
+
+### SetKvmHostIdNil
+
+`func (o *InstanceCreateSuccessInstanceConfig) SetKvmHostIdNil(b bool)`
+
+ SetKvmHostIdNil sets the value for KvmHostId to be an explicit nil
+
+### UnsetKvmHostId
+`func (o *InstanceCreateSuccessInstanceConfig) UnsetKvmHostId()`
+
+UnsetKvmHostId ensures that no value is present for KvmHostId, not even an explicit nil
 ### GetSmbiosAssetTag
 
 `func (o *InstanceCreateSuccessInstanceConfig) GetSmbiosAssetTag() string`

@@ -25,6 +25,7 @@ type InstanceConfig struct {
 	IsVpcSelectable      *bool                               `json:"isVpcSelectable,omitempty"`
 	NoAgent              *InstanceConfigNoAgent              `json:"noAgent,omitempty"`
 	SecurityGroups       []InstanceConfigSecurityGroupsInner `json:"securityGroups,omitempty"`
+	KvmHostId            NullableInt64                       `json:"kvmHostId,omitempty"`
 	SmbiosAssetTag       NullableString                      `json:"smbiosAssetTag,omitempty"`
 	NestedVirtualization NullableString                      `json:"nestedVirtualization,omitempty"`
 	VmwareFolderId       *string                             `json:"vmwareFolderId,omitempty"`
@@ -230,6 +231,49 @@ func (o *InstanceConfig) IsSetSecurityGroups() bool {
 // SetSecurityGroups gets a reference to the given []InstanceConfigSecurityGroupsInner and assigns it to the SecurityGroups field.
 func (o *InstanceConfig) SetSecurityGroups(v []InstanceConfigSecurityGroupsInner) {
 	o.SecurityGroups = v
+}
+
+// GetKvmHostId returns the KvmHostId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InstanceConfig) GetKvmHostId() int64 {
+	if o == nil || IsNil(o.KvmHostId.Get()) {
+		var ret int64
+		return ret
+	}
+	return *o.KvmHostId.Get()
+}
+
+// GetKvmHostIdOk returns a tuple with the KvmHostId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InstanceConfig) GetKvmHostIdOk() (*int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.KvmHostId.Get(), o.KvmHostId.IsSet()
+}
+
+// IsSetKvmHostId returns a boolean if a field has been set.
+func (o *InstanceConfig) IsSetKvmHostId() bool {
+	if o != nil && o.KvmHostId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetKvmHostId gets a reference to the given NullableInt64 and assigns it to the KvmHostId field.
+func (o *InstanceConfig) SetKvmHostId(v int64) {
+	o.KvmHostId.Set(&v)
+}
+
+// SetKvmHostIdNil sets the value for KvmHostId to be an explicit nil
+func (o *InstanceConfig) SetKvmHostIdNil() {
+	o.KvmHostId.Set(nil)
+}
+
+// UnsetKvmHostId ensures that no value is present for KvmHostId, not even an explicit nil
+func (o *InstanceConfig) UnsetKvmHostId() {
+	o.KvmHostId.Unset()
 }
 
 // GetSmbiosAssetTag returns the SmbiosAssetTag field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1070,6 +1114,9 @@ func (o InstanceConfig) ToMap() (map[string]interface{}, error) {
 	}
 	if o.SecurityGroups != nil {
 		toSerialize["securityGroups"] = o.SecurityGroups
+	}
+	if o.KvmHostId.IsSet() {
+		toSerialize["kvmHostId"] = o.KvmHostId.Get()
 	}
 	if o.SmbiosAssetTag.IsSet() {
 		toSerialize["smbiosAssetTag"] = o.SmbiosAssetTag.Get()

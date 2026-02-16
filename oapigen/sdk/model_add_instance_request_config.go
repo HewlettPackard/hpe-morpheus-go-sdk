@@ -24,6 +24,7 @@ type AddInstanceRequestConfig struct {
 	AmazonInstanceConfiguration1      *AmazonInstanceConfiguration1
 	AzureInstanceConfiguration1       *AzureInstanceConfiguration1
 	GoogleCloudInstanceConfiguration1 *GoogleCloudInstanceConfiguration1
+	HVMInstanceConfiguration          *HVMInstanceConfiguration
 	VMWareInstanceConfiguration1      *VMWareInstanceConfiguration1
 	MapmapOfStringAny                 *map[string]interface{}
 }
@@ -49,6 +50,12 @@ func (dst *AddInstanceRequestConfig) UnmarshalMapstructure(data any) (any, error
 
 	if IsEmpty(dst.GoogleCloudInstanceConfiguration1) {
 		dst.GoogleCloudInstanceConfiguration1 = nil
+	}
+
+	mapstructDecode(data, &dst.HVMInstanceConfiguration)
+
+	if IsEmpty(dst.HVMInstanceConfiguration) {
+		dst.HVMInstanceConfiguration = nil
 	}
 
 	mapstructDecode(data, &dst.VMWareInstanceConfiguration1)
@@ -108,6 +115,19 @@ func (dst *AddInstanceRequestConfig) UnmarshalJSON(data []byte) error {
 		dst.GoogleCloudInstanceConfiguration1 = nil
 	}
 
+	// try to unmarshal JSON data into HVMInstanceConfiguration
+	err = json.Unmarshal(data, &dst.HVMInstanceConfiguration)
+	if err == nil {
+		jsonHVMInstanceConfiguration, _ := json.Marshal(dst.HVMInstanceConfiguration)
+		if string(jsonHVMInstanceConfiguration) == "{}" { // empty struct
+			dst.HVMInstanceConfiguration = nil
+		} else {
+			return nil // data stored in dst.HVMInstanceConfiguration, return on the first match
+		}
+	} else {
+		dst.HVMInstanceConfiguration = nil
+	}
+
 	// try to unmarshal JSON data into VMWareInstanceConfiguration1
 	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration1)
 	if err == nil {
@@ -149,6 +169,10 @@ func (src AddInstanceRequestConfig) MarshalJSON() ([]byte, error) {
 
 	if src.GoogleCloudInstanceConfiguration1 != nil {
 		return json.Marshal(&src.GoogleCloudInstanceConfiguration1)
+	}
+
+	if src.HVMInstanceConfiguration != nil {
+		return json.Marshal(&src.HVMInstanceConfiguration)
 	}
 
 	if src.VMWareInstanceConfiguration1 != nil {

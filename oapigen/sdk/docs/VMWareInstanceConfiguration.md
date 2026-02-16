@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 
 **NestedVirtualization** | Pointer to **string** | Enable Nested Virtualization | [optional] [default to "off"]
 **VmwareFolderId** | Pointer to **string** | VMWare Folder External ID (as a String) or ID (as an Integer or String) | [optional] 
+**CreateUser** | Pointer to **NullableBool** | Create user | [optional] [default to false]
 **Template** | Pointer to **int64** | Image ID. This is the ID of a Virtual Image. | [optional] 
 
 ## Methods
@@ -191,6 +192,41 @@ SetVmwareFolderId sets VmwareFolderId field to given value.
 
 HasVmwareFolderId returns a boolean if a field has been set.
 
+### GetCreateUser
+
+`func (o *VMWareInstanceConfiguration) GetCreateUser() bool`
+
+GetCreateUser returns the CreateUser field if non-nil, zero value otherwise.
+
+### GetCreateUserOk
+
+`func (o *VMWareInstanceConfiguration) GetCreateUserOk() (*bool, bool)`
+
+GetCreateUserOk returns a tuple with the CreateUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateUser
+
+`func (o *VMWareInstanceConfiguration) SetCreateUser(v bool)`
+
+SetCreateUser sets CreateUser field to given value.
+
+### HasCreateUser
+
+`func (o *VMWareInstanceConfiguration) HasCreateUser() bool`
+
+HasCreateUser returns a boolean if a field has been set.
+
+### SetCreateUserNil
+
+`func (o *VMWareInstanceConfiguration) SetCreateUserNil(b bool)`
+
+ SetCreateUserNil sets the value for CreateUser to be an explicit nil
+
+### UnsetCreateUser
+`func (o *VMWareInstanceConfiguration) UnsetCreateUser()`
+
+UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
 ### GetTemplate
 
 `func (o *VMWareInstanceConfiguration) GetTemplate() int64`

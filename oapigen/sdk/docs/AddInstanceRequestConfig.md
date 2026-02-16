@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BootDiagnostics** | Pointer to **string** | Boot Diagnostics | [optional] 
 **OsGuestDiagnostics** | Pointer to **string** | OS Guest Diagnostics | [optional] 
 **DiagnosticsStorageAccount** | Pointer to **string** | Diagnostics Storage Account | [optional] 
-**CreateUser** | Pointer to **bool** | Create User | [optional] [default to true]
+**CreateUser** | Pointer to **bool** | Create user | [optional] [default to false]
 **NoAgent** | Pointer to **bool** | Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected. | [optional] [default to false]
 **HostId** | Pointer to **string** | Specific host to deploy to if so desired. | [optional] 
 **SmbiosAssetTag** | Pointer to **string** | Sets the asset tag on the SMBIOS for use by the guest operating system. If left blank, the virtual machine name will be used. | [optional] 
@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **PublicIpType** | Pointer to **string** | Public IP | [optional] 
 **InstanceProfile** | Pointer to **string** | IAM Profile | [optional] 
 **KmsKeyId** | Pointer to **string** | KMS Key ID | [optional] 
+**PoolProviderType** | Pointer to **string** | The type of pool provider to use for this instance, must be \&quot;mvm\&quot; | [optional] [default to "mvm"]
+**KvmHostId** | Pointer to **int64** | The ID of the KVM host to provision the instance on | [optional] 
 
 ## Methods
 
@@ -699,6 +701,56 @@ SetKmsKeyId sets KmsKeyId field to given value.
 `func (o *AddInstanceRequestConfig) HasKmsKeyId() bool`
 
 HasKmsKeyId returns a boolean if a field has been set.
+
+### GetPoolProviderType
+
+`func (o *AddInstanceRequestConfig) GetPoolProviderType() string`
+
+GetPoolProviderType returns the PoolProviderType field if non-nil, zero value otherwise.
+
+### GetPoolProviderTypeOk
+
+`func (o *AddInstanceRequestConfig) GetPoolProviderTypeOk() (*string, bool)`
+
+GetPoolProviderTypeOk returns a tuple with the PoolProviderType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPoolProviderType
+
+`func (o *AddInstanceRequestConfig) SetPoolProviderType(v string)`
+
+SetPoolProviderType sets PoolProviderType field to given value.
+
+### HasPoolProviderType
+
+`func (o *AddInstanceRequestConfig) HasPoolProviderType() bool`
+
+HasPoolProviderType returns a boolean if a field has been set.
+
+### GetKvmHostId
+
+`func (o *AddInstanceRequestConfig) GetKvmHostId() int64`
+
+GetKvmHostId returns the KvmHostId field if non-nil, zero value otherwise.
+
+### GetKvmHostIdOk
+
+`func (o *AddInstanceRequestConfig) GetKvmHostIdOk() (*int64, bool)`
+
+GetKvmHostIdOk returns a tuple with the KvmHostId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvmHostId
+
+`func (o *AddInstanceRequestConfig) SetKvmHostId(v int64)`
+
+SetKvmHostId sets KvmHostId field to given value.
+
+### HasKvmHostId
+
+`func (o *AddInstanceRequestConfig) HasKvmHostId() bool`
+
+HasKvmHostId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

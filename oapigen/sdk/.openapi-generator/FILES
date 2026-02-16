@@ -966,6 +966,8 @@ docs/HTTPTaskConfig3.md
 docs/HTTPTaskConfig4.md
 docs/HTTPTaskConfig5.md
 docs/HTTPTaskConfig6.md
+docs/HVMInstanceConfiguration.md
+docs/HVMInstanceConfiguration1.md
 docs/HostnamePolicyTypeConfiguration.md
 docs/HostnamePolicyTypeConfiguration1.md
 docs/HostnamePolicyTypeConfiguration2.md
@@ -1269,6 +1271,7 @@ docs/InstancesConfigAWS.md
 docs/InstancesConfigAzure.md
 docs/InstancesConfigCustomOptions.md
 docs/InstancesConfigGCP.md
+docs/InstancesConfigHVM.md
 docs/InstancesConfigVMWare.md
 docs/InstancesNetworkInterfaces.md
 docs/InstancesNetworkInterfaces1.md
@@ -3235,6 +3238,8 @@ model_http_task_config_3.go
 model_http_task_config_4.go
 model_http_task_config_5.go
 model_http_task_config_6.go
+model_hvm_instance_configuration.go
+model_hvm_instance_configuration_1.go
 model_instance.go
 model_instance_cloud.go
 model_instance_cluster.go
@@ -3528,6 +3533,7 @@ model_instances_config_aws.go
 model_instances_config_azure.go
 model_instances_config_custom_options.go
 model_instances_config_gcp.go
+model_instances_config_hvm.go
 model_instances_config_vm_ware.go
 model_instances_network_interfaces.go
 model_instances_network_interfaces_1.go

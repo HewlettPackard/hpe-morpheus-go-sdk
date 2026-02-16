@@ -32,6 +32,8 @@ type InstancesConfigVMWare struct {
 	NestedVirtualization *string `json:"nestedVirtualization,omitempty"`
 	// VMWare Folder External ID (as a String) or ID (as an Integer or String)
 	VmwareFolderId *string `json:"vmwareFolderId,omitempty"`
+	// Create user
+	CreateUser NullableBool `json:"createUser,omitempty"`
 	// Image ID. This is the ID of a Virtual Image.
 	Template             *int64                 `json:"template,omitempty"`
 	AdditionalProperties map[string]interface{} `json:",remain"`
@@ -49,6 +51,8 @@ func NewInstancesConfigVMWare() *InstancesConfigVMWare {
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
 	this.NestedVirtualization = &nestedVirtualization
+	var createUser bool = false
+	this.CreateUser = *NewNullableBool(&createUser)
 	return &this
 }
 
@@ -61,6 +65,8 @@ func NewInstancesConfigVMWareWithDefaults() *InstancesConfigVMWare {
 	this.NoAgent = *NewNullableBool(&noAgent)
 	var nestedVirtualization string = "off"
 	this.NestedVirtualization = &nestedVirtualization
+	var createUser bool = false
+	this.CreateUser = *NewNullableBool(&createUser)
 	return &this
 }
 
@@ -267,6 +273,49 @@ func (o *InstancesConfigVMWare) SetVmwareFolderId(v string) {
 	o.VmwareFolderId = &v
 }
 
+// GetCreateUser returns the CreateUser field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InstancesConfigVMWare) GetCreateUser() bool {
+	if o == nil || IsNil(o.CreateUser.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.CreateUser.Get()
+}
+
+// GetCreateUserOk returns a tuple with the CreateUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InstancesConfigVMWare) GetCreateUserOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CreateUser.Get(), o.CreateUser.IsSet()
+}
+
+// IsSetCreateUser returns a boolean if a field has been set.
+func (o *InstancesConfigVMWare) IsSetCreateUser() bool {
+	if o != nil && o.CreateUser.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateUser gets a reference to the given NullableBool and assigns it to the CreateUser field.
+func (o *InstancesConfigVMWare) SetCreateUser(v bool) {
+	o.CreateUser.Set(&v)
+}
+
+// SetCreateUserNil sets the value for CreateUser to be an explicit nil
+func (o *InstancesConfigVMWare) SetCreateUserNil() {
+	o.CreateUser.Set(nil)
+}
+
+// UnsetCreateUser ensures that no value is present for CreateUser, not even an explicit nil
+func (o *InstancesConfigVMWare) UnsetCreateUser() {
+	o.CreateUser.Unset()
+}
+
 // GetTemplate returns the Template field value if set, zero value otherwise.
 func (o *InstancesConfigVMWare) GetTemplate() int64 {
 	if o == nil || IsNil(o.Template) {
@@ -326,6 +375,9 @@ func (o InstancesConfigVMWare) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.VmwareFolderId) {
 		toSerialize["vmwareFolderId"] = o.VmwareFolderId
+	}
+	if o.CreateUser.IsSet() {
+		toSerialize["createUser"] = o.CreateUser.Get()
 	}
 	if !IsNil(o.Template) {
 		toSerialize["template"] = o.Template

@@ -2458,6 +2458,12 @@ paths:
                                     vmwareFolderId:
                                       type: string
                                       description: VMWare Folder External ID (as a String) or ID (as an Integer or String)
+                                    createUser:
+                                      type:
+                                        - boolean
+                                        - 'null'
+                                      description: Create user
+                                      default: false
                                     template:
                                       description: Image ID. This is the ID of a Virtual Image.
                                       type: integer
@@ -13728,6 +13734,11 @@ paths:
                                         type:
                                           - string
                                           - 'null'
+                                kvmHostId:
+                                  type:
+                                    - integer
+                                    - 'null'
+                                  format: int64
                                 smbiosAssetTag:
                                   type:
                                     - string
@@ -15422,10 +15433,10 @@ paths:
           application/json:
             schema:
               type: object
-              required: &ref_270
+              required: &ref_271
                 - instance
                 - config
-              properties: &ref_271
+              properties: &ref_272
                 instance:
                   type: object
                   description: Key for name, site, instanceType layout, and plan.
@@ -15559,6 +15570,39 @@ paths:
                       properties: *ref_49
                     - title: Generic Instance Configuration
                       type: object
+                    - title: HVM Instance Configuration
+                      type: object
+                      properties: &ref_270
+                        noAgent:
+                          type:
+                            - boolean
+                            - 'null'
+                          description: Skipping Agent installation will result in a lack of logging and guest operating system statistics. Automation scripts may also be adversely affected.
+                          default: false
+                        resourcePoolId:
+                          type: string
+                          description: id of the resource group to be used, can be prefixed with `pool-`. A resource pool group can be specified instead by prefixing its ID with `poolGroup-`.
+                        nestedVirtualization:
+                          type: string
+                          description: Enable Nested Virtualization
+                          default: 'off'
+                          enum:
+                            - 'on'
+                            - 'off'
+                        createUser:
+                          type:
+                            - boolean
+                            - 'null'
+                          description: Create user
+                          default: false
+                        poolProviderType:
+                          type: string
+                          description: The type of pool provider to use for this instance, must be "mvm"
+                          default: mvm
+                        kvmHostId:
+                          type: integer
+                          format: int64
+                          description: The ID of the KVM host to provision the instance on
                 labels:
                   type: array
                   description: Array of strings (keywords).
@@ -15785,9 +15829,9 @@ paths:
                 allOf:
                   - oneOf:
                       - type: object
-                        required: &ref_272
+                        required: &ref_273
                           - instance
-                        properties: &ref_273
+                        properties: &ref_274
                           instance:
                             type: object
                             additionalProperties: true
@@ -17013,7 +17057,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_275
+              properties: &ref_276
                 instance:
                   type: object
                   properties:
@@ -17101,7 +17145,7 @@ paths:
                       example: myInstanceDisplayName
                 config:
                   type: object
-                  properties: &ref_274
+                  properties: &ref_275
                     customOptions:
                       type: object
                       description: Custom Option Type settings object containing name value pairs.
@@ -17485,7 +17529,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_276
+                properties: &ref_277
                   envs:
                     type:
                       - array
@@ -17744,7 +17788,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_277
+              properties: &ref_278
                 instance:
                   type: object
                   description: The map containing the id of the service plan you wish to apply to the containers in this instance.
@@ -17904,7 +17948,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_278
+                          properties: &ref_279
                             id:
                               type: integer
                               format: int64
@@ -18028,9 +18072,9 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  required: &ref_279
+                  required: &ref_280
                     - name
-                  properties: &ref_280
+                  properties: &ref_281
                     name:
                       type: string
                       description: Instance type name
@@ -18209,7 +18253,7 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  properties: &ref_281
+                  properties: &ref_282
                     name:
                       type: string
                       description: Instance type name
@@ -18554,11 +18598,11 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  required: &ref_282
+                  required: &ref_283
                     - name
                     - instanceVersion
                     - provisionTypeCode
-                  properties: &ref_283
+                  properties: &ref_284
                     name:
                       type: string
                       description: Layout name
@@ -18999,7 +19043,7 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  properties: &ref_284
+                  properties: &ref_285
                     name:
                       type: string
                       description: Layout name
@@ -19679,11 +19723,11 @@ paths:
               properties:
                 network:
                   type: object
-                  required: &ref_291
+                  required: &ref_292
                     - name
                     - zone
                     - site
-                  properties: &ref_292
+                  properties: &ref_293
                     name:
                       type: string
                       description: Name
@@ -19844,11 +19888,11 @@ paths:
                       description: Configuration object. Settings vary by type.
                       anyOf:
                         - type: object
-                          required: &ref_285
+                          required: &ref_286
                             - resourceGroupId
                             - subnetName
                             - subnetCidr
-                          properties: &ref_286
+                          properties: &ref_287
                             resourceGroupId:
                               type: string
                               description: Resource Group Name
@@ -19859,12 +19903,12 @@ paths:
                               type: string
                               description: The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
                         - type: object
-                          required: &ref_287
+                          required: &ref_288
                             - availabilityZone
                             - cidr
                             - assignPublicIp
                             - zonePool
-                          properties: &ref_288
+                          properties: &ref_289
                             availabilityZone:
                               type: string
                               description: Availability Zone Name
@@ -19883,10 +19927,10 @@ paths:
                                   type: integer
                                   description: Morpheus resource pool ID of the VPC for the network.
                         - type: object
-                          required: &ref_289
+                          required: &ref_290
                             - mtu
                             - autoCreate
-                          properties: &ref_290
+                          properties: &ref_291
                             mtu:
                               type: string
                               description: GCP MTU
@@ -20524,7 +20568,7 @@ paths:
               properties:
                 network:
                   type: object
-                  properties: &ref_293
+                  properties: &ref_294
                     displayName:
                       type: string
                       description: Display Name
@@ -22269,11 +22313,11 @@ paths:
               properties:
                 policy:
                   type: object
-                  required: &ref_294
+                  required: &ref_295
                     - name
                     - policyType
                     - config
-                  properties: &ref_295
+                  properties: &ref_296
                     name:
                       type: string
                       description: A name for the policy
@@ -24607,7 +24651,7 @@ paths:
               properties:
                 policy:
                   type: object
-                  properties: &ref_296
+                  properties: &ref_297
                     name:
                       type: string
                       description: A name for the policy
@@ -25696,7 +25740,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_297
+                          properties: &ref_298
                             id:
                               type: integer
                               format: int64
@@ -29195,7 +29239,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_298
+                          properties: &ref_299
                             id:
                               type: integer
                               format: int64
@@ -34336,7 +34380,7 @@ paths:
                   - type: object
                     properties: *ref_12
                   - type: object
-                    properties: &ref_299
+                    properties: &ref_300
                       global:
                         type: boolean
                         description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
@@ -34675,7 +34719,7 @@ paths:
                       items:
                         type: object
                         description: A simple object to represent a specific resource, typically an id and name.
-                        properties: &ref_300
+                        properties: &ref_301
                           id:
                             type: integer
                             format: int64
@@ -34686,7 +34730,7 @@ paths:
                           code:
                             type: string
                             description: Resource code
-                        required: &ref_301
+                        required: &ref_302
                           - id
                     receiveNotifications:
                       type: boolean
@@ -35315,7 +35359,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_302
+                  properties: &ref_303
                     name:
                       type: string
                       description: A name for the virtual image
@@ -35710,7 +35754,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_303
+                  properties: &ref_304
                     name:
                       type: string
                       description: A name for the virtual image
@@ -36012,7 +36056,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_304
+                properties: &ref_305
                   access_token:
                     type: string
                     description: Token that grants API Access
@@ -36723,75 +36767,79 @@ components:
       type: object
       additionalProperties: true
       properties: *ref_50
+    instancesConfigHVM:
+      title: HVM Instance Configuration
+      type: object
+      properties: *ref_270
     instanceCreate:
       type: object
-      required: *ref_270
-      properties: *ref_271
+      required: *ref_271
+      properties: *ref_272
     instanceCreateSuccess:
       type: object
-      required: *ref_272
-      properties: *ref_273
+      required: *ref_273
+      properties: *ref_274
     instancesConfigCustomOptions:
       type: object
-      properties: *ref_274
+      properties: *ref_275
     instanceUpdate:
       type: object
-      properties: *ref_275
+      properties: *ref_276
     instanceUpdateSuccess:
       type: object
       required: *ref_53
       properties: *ref_54
     instanceEnvs:
       type: object
-      properties: *ref_276
+      properties: *ref_277
     instanceResize:
       type: object
-      properties: *ref_277
+      properties: *ref_278
     instanceTypes:
       type: object
-      properties: *ref_278
+      properties: *ref_279
     instanceTypeCreate:
       type: object
-      required: *ref_279
-      properties: *ref_280
+      required: *ref_280
+      properties: *ref_281
     instanceTypeUpdate:
       type: object
-      properties: *ref_281
+      properties: *ref_282
     instanceTypeLayoutCreate:
       type: object
-      required: *ref_282
-      properties: *ref_283
+      required: *ref_283
+      properties: *ref_284
     instanceTypeLayoutUpdate:
       type: object
-      properties: *ref_284
+      properties: *ref_285
     network:
       type: object
       properties: *ref_65
     networkTypeAzureConfig:
       type: object
-      required: *ref_285
-      properties: *ref_286
+      required: *ref_286
+      properties: *ref_287
     networkTypeAwsConfig:
       type: object
-      required: *ref_287
-      properties: *ref_288
+      required: *ref_288
+      properties: *ref_289
     networkTypeGcpConfig:
       type: object
-      required: *ref_289
-      properties: *ref_290
+      required: *ref_290
+      properties: *ref_291
     networkTypeGenericConfig:
       type: object
       description: Required config options will be in the network type detail API.
     networkCreate:
       type: object
-      required: *ref_291
-      properties: *ref_292
+      required: *ref_292
+      properties: *ref_293
     successMessage:
       type: object
       properties: *ref_66
     networkUpdate:
       type: object
-      properties: *ref_293
+      properties: *ref_294
     checkbox:
       type: string
       enum: *ref_67
@@ -36802,20 +36850,20 @@ components:
       properties: *ref_68
     policyCreate:
       type: object
-      required: *ref_294
-      properties: *ref_295
+      required: *ref_295
+      properties: *ref_296
     policyUpdate:
       type: object
-      properties: *ref_296
+      properties: *ref_297
     roles:
       type: object
-      properties: *ref_297
+      properties: *ref_298
     role:
       type: object
       properties: *ref_105
     servicePlanRow:
       type: object
-      properties: *ref_298
+      properties: *ref_299
     servicePlan:
       type: object
       properties: *ref_121
@@ -36922,24 +36970,24 @@ components:
       properties: *ref_141
     global:
       type: object
-      properties: *ref_299
+      properties: *ref_300
     ReferenceObject:
       type: object
       description: A simple object to represent a specific resource, typically an id and name.
-      properties: *ref_300
-      required: *ref_301
+      properties: *ref_301
+      required: *ref_302
     virtualImage:
       type: object
       properties: *ref_165
     virtualImageCreate:
       type: object
-      properties: *ref_302
+      properties: *ref_303
     virtualImageUpdate:
       type: object
-      properties: *ref_303
+      properties: *ref_304
     accessToken:
       type: object
-      properties: *ref_304
+      properties: *ref_305
   responses:
     4xx:
       description: Error Codes

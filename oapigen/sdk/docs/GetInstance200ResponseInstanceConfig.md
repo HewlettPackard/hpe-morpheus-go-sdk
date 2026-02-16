@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **NoAgent** | Pointer to [**GetInstance200ResponseInstanceConfigNoAgent**](GetInstance200ResponseInstanceConfigNoAgent.md) |  | [optional] 
 **SecurityGroups** | Pointer to [**[]GetInstance200ResponseInstanceConfigSecurityGroupsInner**](GetInstance200ResponseInstanceConfigSecurityGroupsInner.md) |  | [optional] 
+**KvmHostId** | Pointer to **NullableInt64** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
 **VmwareFolderId** | Pointer to **string** |  | [optional] 
@@ -188,6 +189,41 @@ HasSecurityGroups returns a boolean if a field has been set.
 `func (o *GetInstance200ResponseInstanceConfig) UnsetSecurityGroups()`
 
 UnsetSecurityGroups ensures that no value is present for SecurityGroups, not even an explicit nil
+### GetKvmHostId
+
+`func (o *GetInstance200ResponseInstanceConfig) GetKvmHostId() int64`
+
+GetKvmHostId returns the KvmHostId field if non-nil, zero value otherwise.
+
+### GetKvmHostIdOk
+
+`func (o *GetInstance200ResponseInstanceConfig) GetKvmHostIdOk() (*int64, bool)`
+
+GetKvmHostIdOk returns a tuple with the KvmHostId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvmHostId
+
+`func (o *GetInstance200ResponseInstanceConfig) SetKvmHostId(v int64)`
+
+SetKvmHostId sets KvmHostId field to given value.
+
+### HasKvmHostId
+
+`func (o *GetInstance200ResponseInstanceConfig) HasKvmHostId() bool`
+
+HasKvmHostId returns a boolean if a field has been set.
+
+### SetKvmHostIdNil
+
+`func (o *GetInstance200ResponseInstanceConfig) SetKvmHostIdNil(b bool)`
+
+ SetKvmHostIdNil sets the value for KvmHostId to be an explicit nil
+
+### UnsetKvmHostId
+`func (o *GetInstance200ResponseInstanceConfig) UnsetKvmHostId()`
+
+UnsetKvmHostId ensures that no value is present for KvmHostId, not even an explicit nil
 ### GetSmbiosAssetTag
 
 `func (o *GetInstance200ResponseInstanceConfig) GetSmbiosAssetTag() string`
