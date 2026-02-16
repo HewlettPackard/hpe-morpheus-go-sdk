@@ -113,7 +113,7 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -124,7 +124,7 @@ func (a *OptionsAPIService) GetOptionSourceDataExecute(r ApiGetOptionSourceDataR
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

@@ -43,10 +43,6 @@ tasks:
     env:
       _JAVA_OPTIONS: -DmaxYamlCodePoints=99999999
     cmds:
-      - mkdir -p morpheus-openapi
-      - cp {{.BUNDLEDSPEC}} morpheus-openapi/openapi.yaml
-      - defer: rm -rf morpheus-openapi
-      - task: bundle-spec
       - rm -rf {{.OUTPUTDIR}}
       - mkdir -p {{.OUTPUTDIR}}
       - cp {{.GENERATORIGNOREFILE}} {{.OUTPUTDIR}}
@@ -59,7 +55,6 @@ tasks:
           {{if .TEMPLATEDIR -}}-t {{.TEMPLATEDIR}} {{end}}
           -o {{.OUTPUTDIR}}
       - goimports -w ./oapigen
-      # - mv openapitools.json oapigen/
   
   clone-spec:
     silent: true

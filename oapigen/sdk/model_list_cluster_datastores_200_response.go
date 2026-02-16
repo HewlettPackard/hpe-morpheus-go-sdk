@@ -21,7 +21,7 @@ var _ MappedNullable = &ListClusterDatastores200Response{}
 // ListClusterDatastores200Response struct for ListClusterDatastores200Response
 type ListClusterDatastores200Response struct {
 	Datastores           []ListClusterDatastores200ResponseAllOfDatastoresInner `json:"datastores,omitempty"`
-	Meta                 *ListClouds200ResponseAllOfMeta                        `json:"meta,omitempty"`
+	Meta                 *ListCloudDatastores200ResponseAllOfMeta               `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListClusterDatastores200Response) SetDatastores(v []ListClusterDatastor
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListClusterDatastores200Response) GetMeta() ListClouds200ResponseAllOfMeta {
+func (o *ListClusterDatastores200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListClouds200ResponseAllOfMeta
+		var ret ListCloudDatastores200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListClusterDatastores200Response) GetMeta() ListClouds200ResponseAllOfM
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListClusterDatastores200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
+func (o *ListClusterDatastores200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListClusterDatastores200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListClusterDatastores200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListCloudDatastores200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListClusterDatastores200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

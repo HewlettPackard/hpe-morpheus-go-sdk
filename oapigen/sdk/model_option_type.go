@@ -20,48 +20,48 @@ var _ MappedNullable = &OptionType{}
 
 // OptionType struct for OptionType
 type OptionType struct {
-	Id                    *int64                                                                    `json:"id,omitempty"`
-	Name                  *string                                                                   `json:"name,omitempty"`
-	Labels                []string                                                                  `json:"labels,omitempty"`
-	Description           NullableString                                                            `json:"description,omitempty"`
-	Code                  *string                                                                   `json:"code,omitempty"`
-	FieldName             *string                                                                   `json:"fieldName,omitempty"`
-	FieldLabel            *string                                                                   `json:"fieldLabel,omitempty"`
-	FieldCode             NullableString                                                            `json:"fieldCode,omitempty"`
-	FieldContext          *string                                                                   `json:"fieldContext,omitempty"`
-	FieldGroup            NullableString                                                            `json:"fieldGroup,omitempty"`
-	FieldClass            NullableString                                                            `json:"fieldClass,omitempty"`
-	FieldAddOn            NullableString                                                            `json:"fieldAddOn,omitempty"`
-	FieldComponent        NullableString                                                            `json:"fieldComponent,omitempty"`
-	FieldInput            NullableString                                                            `json:"fieldInput,omitempty"`
-	PlaceHolder           NullableString                                                            `json:"placeHolder,omitempty"`
-	VerifyPattern         NullableString                                                            `json:"verifyPattern,omitempty"`
-	HelpBlock             NullableString                                                            `json:"helpBlock,omitempty"`
-	HelpBlockFieldCode    NullableString                                                            `json:"helpBlockFieldCode,omitempty"`
-	DefaultValue          NullableString                                                            `json:"defaultValue,omitempty"`
-	OptionSource          NullableString                                                            `json:"optionSource,omitempty"`
-	OptionSourceType      NullableString                                                            `json:"optionSourceType,omitempty"`
-	OptionList            *ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList `json:"optionList,omitempty"`
-	Type                  *string                                                                   `json:"type,omitempty"`
-	Advanced              *bool                                                                     `json:"advanced,omitempty"`
-	Required              *bool                                                                     `json:"required,omitempty"`
-	ExportMeta            *bool                                                                     `json:"exportMeta,omitempty"`
-	Editable              *bool                                                                     `json:"editable,omitempty"`
-	Creatable             *bool                                                                     `json:"creatable,omitempty"`
-	Config                map[string]interface{}                                                    `json:"config,omitempty"`
-	DisplayOrder          *int64                                                                    `json:"displayOrder,omitempty"`
-	WrapperClass          NullableString                                                            `json:"wrapperClass,omitempty"`
-	Enabled               *bool                                                                     `json:"enabled,omitempty"`
-	NoBlank               *bool                                                                     `json:"noBlank,omitempty"`
-	DependsOnCode         NullableString                                                            `json:"dependsOnCode,omitempty"`
-	VisibleOnCode         NullableString                                                            `json:"visibleOnCode,omitempty"`
-	RequireOnCode         NullableString                                                            `json:"requireOnCode,omitempty"`
-	ContextualDefault     NullableBool                                                              `json:"contextualDefault,omitempty"`
-	DisplayValueOnDetails NullableBool                                                              `json:"displayValueOnDetails,omitempty"`
-	ShowOnCreate          NullableBool                                                              `json:"showOnCreate,omitempty"`
-	ShowOnEdit            NullableBool                                                              `json:"showOnEdit,omitempty"`
-	LocalCredential       NullableBool                                                              `json:"localCredential,omitempty"`
-	AdditionalProperties  map[string]interface{}                                                    `json:",remain"`
+	Id                    *int64                                                                                                       `json:"id,omitempty"`
+	Name                  *string                                                                                                      `json:"name,omitempty"`
+	Labels                []string                                                                                                     `json:"labels,omitempty"`
+	Description           NullableString                                                                                               `json:"description,omitempty"`
+	Code                  *string                                                                                                      `json:"code,omitempty"`
+	FieldName             *string                                                                                                      `json:"fieldName,omitempty"`
+	FieldLabel            *string                                                                                                      `json:"fieldLabel,omitempty"`
+	FieldCode             NullableString                                                                                               `json:"fieldCode,omitempty"`
+	FieldContext          *string                                                                                                      `json:"fieldContext,omitempty"`
+	FieldGroup            NullableString                                                                                               `json:"fieldGroup,omitempty"`
+	FieldClass            NullableString                                                                                               `json:"fieldClass,omitempty"`
+	FieldAddOn            NullableString                                                                                               `json:"fieldAddOn,omitempty"`
+	FieldComponent        NullableString                                                                                               `json:"fieldComponent,omitempty"`
+	FieldInput            NullableString                                                                                               `json:"fieldInput,omitempty"`
+	PlaceHolder           NullableString                                                                                               `json:"placeHolder,omitempty"`
+	VerifyPattern         NullableString                                                                                               `json:"verifyPattern,omitempty"`
+	HelpBlock             NullableString                                                                                               `json:"helpBlock,omitempty"`
+	HelpBlockFieldCode    NullableString                                                                                               `json:"helpBlockFieldCode,omitempty"`
+	DefaultValue          NullableString                                                                                               `json:"defaultValue,omitempty"`
+	OptionSource          NullableString                                                                                               `json:"optionSource,omitempty"`
+	OptionSourceType      NullableString                                                                                               `json:"optionSourceType,omitempty"`
+	OptionList            *ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList `json:"optionList,omitempty"`
+	Type                  *string                                                                                                      `json:"type,omitempty"`
+	Advanced              *bool                                                                                                        `json:"advanced,omitempty"`
+	Required              *bool                                                                                                        `json:"required,omitempty"`
+	ExportMeta            *bool                                                                                                        `json:"exportMeta,omitempty"`
+	Editable              *bool                                                                                                        `json:"editable,omitempty"`
+	Creatable             *bool                                                                                                        `json:"creatable,omitempty"`
+	Config                map[string]interface{}                                                                                       `json:"config,omitempty"`
+	DisplayOrder          *int64                                                                                                       `json:"displayOrder,omitempty"`
+	WrapperClass          NullableString                                                                                               `json:"wrapperClass,omitempty"`
+	Enabled               *bool                                                                                                        `json:"enabled,omitempty"`
+	NoBlank               *bool                                                                                                        `json:"noBlank,omitempty"`
+	DependsOnCode         NullableString                                                                                               `json:"dependsOnCode,omitempty"`
+	VisibleOnCode         NullableString                                                                                               `json:"visibleOnCode,omitempty"`
+	RequireOnCode         NullableString                                                                                               `json:"requireOnCode,omitempty"`
+	ContextualDefault     NullableBool                                                                                                 `json:"contextualDefault,omitempty"`
+	DisplayValueOnDetails NullableBool                                                                                                 `json:"displayValueOnDetails,omitempty"`
+	ShowOnCreate          NullableBool                                                                                                 `json:"showOnCreate,omitempty"`
+	ShowOnEdit            NullableBool                                                                                                 `json:"showOnEdit,omitempty"`
+	LocalCredential       NullableBool                                                                                                 `json:"localCredential,omitempty"`
+	AdditionalProperties  map[string]interface{}                                                                                       `json:",remain"`
 }
 
 type _OptionType OptionType
@@ -911,9 +911,9 @@ func (o *OptionType) UnsetOptionSourceType() {
 }
 
 // GetOptionList returns the OptionList field value if set, zero value otherwise.
-func (o *OptionType) GetOptionList() ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList {
+func (o *OptionType) GetOptionList() ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList {
 	if o == nil || IsNil(o.OptionList) {
-		var ret ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList
+		var ret ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList
 		return ret
 	}
 	return *o.OptionList
@@ -921,7 +921,7 @@ func (o *OptionType) GetOptionList() ListClusterLayouts200ResponseAllOfLayoutsIn
 
 // GetOptionListOk returns a tuple with the OptionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OptionType) GetOptionListOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList, bool) {
+func (o *OptionType) GetOptionListOk() (*ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList, bool) {
 	if o == nil || IsNil(o.OptionList) {
 		return nil, false
 	}
@@ -937,8 +937,8 @@ func (o *OptionType) IsSetOptionList() bool {
 	return false
 }
 
-// SetOptionList gets a reference to the given ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList and assigns it to the OptionList field.
-func (o *OptionType) SetOptionList(v ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList) {
+// SetOptionList gets a reference to the given ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList and assigns it to the OptionList field.
+func (o *OptionType) SetOptionList(v ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList) {
 	o.OptionList = &v
 }
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &ListLayouts200Response{}
 // ListLayouts200Response struct for ListLayouts200Response
 type ListLayouts200Response struct {
 	InstanceTypeLayouts  []ListLayouts200ResponseAllOfInstanceTypeLayoutsInner `json:"instanceTypeLayouts,omitempty"`
-	Meta                 *ListLayouts200ResponseAllOfMeta                      `json:"meta,omitempty"`
+	Meta                 *ListCloudDatastores200ResponseAllOfMeta              `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListLayouts200Response) SetInstanceTypeLayouts(v []ListLayouts200Respon
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListLayouts200Response) GetMeta() ListLayouts200ResponseAllOfMeta {
+func (o *ListLayouts200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListLayouts200ResponseAllOfMeta
+		var ret ListCloudDatastores200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListLayouts200Response) GetMeta() ListLayouts200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListLayouts200Response) GetMetaOk() (*ListLayouts200ResponseAllOfMeta, bool) {
+func (o *ListLayouts200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListLayouts200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListLayouts200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListLayouts200Response) SetMeta(v ListLayouts200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListCloudDatastores200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListLayouts200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

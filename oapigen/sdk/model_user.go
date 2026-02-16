@@ -21,34 +21,34 @@ var _ MappedNullable = &User{}
 
 // User struct for User
 type User struct {
-	Id                   *int64                                             `json:"id,omitempty"`
-	AccountId            *int64                                             `json:"accountId,omitempty"`
-	Username             *string                                            `json:"username,omitempty"`
-	DisplayName          *string                                            `json:"displayName,omitempty"`
-	Email                *string                                            `json:"email,omitempty"`
-	FirstName            *string                                            `json:"firstName,omitempty"`
-	LastName             *string                                            `json:"lastName,omitempty"`
-	Enabled              *bool                                              `json:"enabled,omitempty"`
-	ReceiveNotifications *bool                                              `json:"receiveNotifications,omitempty"`
-	IsUsing2FA           *bool                                              `json:"isUsing2FA,omitempty"`
-	AccountExpired       *bool                                              `json:"accountExpired,omitempty"`
-	AccountLocked        *bool                                              `json:"accountLocked,omitempty"`
-	PasswordExpired      *bool                                              `json:"passwordExpired,omitempty"`
-	LoginCount           *int64                                             `json:"loginCount,omitempty"`
-	LoginAttempts        *int64                                             `json:"loginAttempts,omitempty"`
-	LastLoginDate        *time.Time                                         `json:"lastLoginDate,omitempty"`
-	Roles                []ListUsers200ResponseAllOfUsersInnerRolesInner    `json:"roles,omitempty"`
-	Account              *ListUsers200ResponseAllOfUsersInnerAccount        `json:"account,omitempty"`
-	LinuxUsername        NullableString                                     `json:"linuxUsername,omitempty"`
-	LinuxPassword        NullableString                                     `json:"linuxPassword,omitempty"`
-	LinuxKeyPairId       NullableInt64                                      `json:"linuxKeyPairId,omitempty"`
-	WindowsUsername      NullableString                                     `json:"windowsUsername,omitempty"`
-	WindowsPassword      NullableString                                     `json:"windowsPassword,omitempty"`
-	DefaultPersona       *ListUsers200ResponseAllOfUsersInnerDefaultPersona `json:"defaultPersona,omitempty"`
-	DateCreated          *time.Time                                         `json:"dateCreated,omitempty"`
-	LastUpdated          *time.Time                                         `json:"lastUpdated,omitempty"`
-	Access               *ListUsers200ResponseAllOfUsersInnerAccess         `json:"access,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	Id                   *int64                                     `json:"id,omitempty"`
+	AccountId            *int64                                     `json:"accountId,omitempty"`
+	Username             *string                                    `json:"username,omitempty"`
+	DisplayName          *string                                    `json:"displayName,omitempty"`
+	Email                *string                                    `json:"email,omitempty"`
+	FirstName            *string                                    `json:"firstName,omitempty"`
+	LastName             *string                                    `json:"lastName,omitempty"`
+	Enabled              *bool                                      `json:"enabled,omitempty"`
+	ReceiveNotifications *bool                                      `json:"receiveNotifications,omitempty"`
+	IsUsing2FA           *bool                                      `json:"isUsing2FA,omitempty"`
+	AccountExpired       *bool                                      `json:"accountExpired,omitempty"`
+	AccountLocked        *bool                                      `json:"accountLocked,omitempty"`
+	PasswordExpired      *bool                                      `json:"passwordExpired,omitempty"`
+	LoginCount           *int64                                     `json:"loginCount,omitempty"`
+	LoginAttempts        *int64                                     `json:"loginAttempts,omitempty"`
+	LastLoginDate        *time.Time                                 `json:"lastLoginDate,omitempty"`
+	Roles                []AddUser200ResponseAllOfUserRolesInner    `json:"roles,omitempty"`
+	Account              *AddUser200ResponseAllOfUserAccount        `json:"account,omitempty"`
+	LinuxUsername        NullableString                             `json:"linuxUsername,omitempty"`
+	LinuxPassword        NullableString                             `json:"linuxPassword,omitempty"`
+	LinuxKeyPairId       NullableInt64                              `json:"linuxKeyPairId,omitempty"`
+	WindowsUsername      NullableString                             `json:"windowsUsername,omitempty"`
+	WindowsPassword      NullableString                             `json:"windowsPassword,omitempty"`
+	DefaultPersona       *AddUser200ResponseAllOfUserDefaultPersona `json:"defaultPersona,omitempty"`
+	DateCreated          *time.Time                                 `json:"dateCreated,omitempty"`
+	LastUpdated          *time.Time                                 `json:"lastUpdated,omitempty"`
+	Access               *AddUser200ResponseAllOfUserAccess         `json:"access,omitempty"`
+	AdditionalProperties map[string]interface{}                     `json:",remain"`
 }
 
 type _User User
@@ -583,9 +583,9 @@ func (o *User) SetLastLoginDate(v time.Time) {
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
-func (o *User) GetRoles() []ListUsers200ResponseAllOfUsersInnerRolesInner {
+func (o *User) GetRoles() []AddUser200ResponseAllOfUserRolesInner {
 	if o == nil || IsNil(o.Roles) {
-		var ret []ListUsers200ResponseAllOfUsersInnerRolesInner
+		var ret []AddUser200ResponseAllOfUserRolesInner
 		return ret
 	}
 	return o.Roles
@@ -593,7 +593,7 @@ func (o *User) GetRoles() []ListUsers200ResponseAllOfUsersInnerRolesInner {
 
 // GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetRolesOk() ([]ListUsers200ResponseAllOfUsersInnerRolesInner, bool) {
+func (o *User) GetRolesOk() ([]AddUser200ResponseAllOfUserRolesInner, bool) {
 	if o == nil || IsNil(o.Roles) {
 		return nil, false
 	}
@@ -609,15 +609,15 @@ func (o *User) IsSetRoles() bool {
 	return false
 }
 
-// SetRoles gets a reference to the given []ListUsers200ResponseAllOfUsersInnerRolesInner and assigns it to the Roles field.
-func (o *User) SetRoles(v []ListUsers200ResponseAllOfUsersInnerRolesInner) {
+// SetRoles gets a reference to the given []AddUser200ResponseAllOfUserRolesInner and assigns it to the Roles field.
+func (o *User) SetRoles(v []AddUser200ResponseAllOfUserRolesInner) {
 	o.Roles = v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *User) GetAccount() ListUsers200ResponseAllOfUsersInnerAccount {
+func (o *User) GetAccount() AddUser200ResponseAllOfUserAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListUsers200ResponseAllOfUsersInnerAccount
+		var ret AddUser200ResponseAllOfUserAccount
 		return ret
 	}
 	return *o.Account
@@ -625,7 +625,7 @@ func (o *User) GetAccount() ListUsers200ResponseAllOfUsersInnerAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetAccountOk() (*ListUsers200ResponseAllOfUsersInnerAccount, bool) {
+func (o *User) GetAccountOk() (*AddUser200ResponseAllOfUserAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -641,8 +641,8 @@ func (o *User) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListUsers200ResponseAllOfUsersInnerAccount and assigns it to the Account field.
-func (o *User) SetAccount(v ListUsers200ResponseAllOfUsersInnerAccount) {
+// SetAccount gets a reference to the given AddUser200ResponseAllOfUserAccount and assigns it to the Account field.
+func (o *User) SetAccount(v AddUser200ResponseAllOfUserAccount) {
 	o.Account = &v
 }
 
@@ -862,9 +862,9 @@ func (o *User) UnsetWindowsPassword() {
 }
 
 // GetDefaultPersona returns the DefaultPersona field value if set, zero value otherwise.
-func (o *User) GetDefaultPersona() ListUsers200ResponseAllOfUsersInnerDefaultPersona {
+func (o *User) GetDefaultPersona() AddUser200ResponseAllOfUserDefaultPersona {
 	if o == nil || IsNil(o.DefaultPersona) {
-		var ret ListUsers200ResponseAllOfUsersInnerDefaultPersona
+		var ret AddUser200ResponseAllOfUserDefaultPersona
 		return ret
 	}
 	return *o.DefaultPersona
@@ -872,7 +872,7 @@ func (o *User) GetDefaultPersona() ListUsers200ResponseAllOfUsersInnerDefaultPer
 
 // GetDefaultPersonaOk returns a tuple with the DefaultPersona field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetDefaultPersonaOk() (*ListUsers200ResponseAllOfUsersInnerDefaultPersona, bool) {
+func (o *User) GetDefaultPersonaOk() (*AddUser200ResponseAllOfUserDefaultPersona, bool) {
 	if o == nil || IsNil(o.DefaultPersona) {
 		return nil, false
 	}
@@ -888,8 +888,8 @@ func (o *User) IsSetDefaultPersona() bool {
 	return false
 }
 
-// SetDefaultPersona gets a reference to the given ListUsers200ResponseAllOfUsersInnerDefaultPersona and assigns it to the DefaultPersona field.
-func (o *User) SetDefaultPersona(v ListUsers200ResponseAllOfUsersInnerDefaultPersona) {
+// SetDefaultPersona gets a reference to the given AddUser200ResponseAllOfUserDefaultPersona and assigns it to the DefaultPersona field.
+func (o *User) SetDefaultPersona(v AddUser200ResponseAllOfUserDefaultPersona) {
 	o.DefaultPersona = &v
 }
 
@@ -958,9 +958,9 @@ func (o *User) SetLastUpdated(v time.Time) {
 }
 
 // GetAccess returns the Access field value if set, zero value otherwise.
-func (o *User) GetAccess() ListUsers200ResponseAllOfUsersInnerAccess {
+func (o *User) GetAccess() AddUser200ResponseAllOfUserAccess {
 	if o == nil || IsNil(o.Access) {
-		var ret ListUsers200ResponseAllOfUsersInnerAccess
+		var ret AddUser200ResponseAllOfUserAccess
 		return ret
 	}
 	return *o.Access
@@ -968,7 +968,7 @@ func (o *User) GetAccess() ListUsers200ResponseAllOfUsersInnerAccess {
 
 // GetAccessOk returns a tuple with the Access field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *User) GetAccessOk() (*ListUsers200ResponseAllOfUsersInnerAccess, bool) {
+func (o *User) GetAccessOk() (*AddUser200ResponseAllOfUserAccess, bool) {
 	if o == nil || IsNil(o.Access) {
 		return nil, false
 	}
@@ -984,8 +984,8 @@ func (o *User) IsSetAccess() bool {
 	return false
 }
 
-// SetAccess gets a reference to the given ListUsers200ResponseAllOfUsersInnerAccess and assigns it to the Access field.
-func (o *User) SetAccess(v ListUsers200ResponseAllOfUsersInnerAccess) {
+// SetAccess gets a reference to the given AddUser200ResponseAllOfUserAccess and assigns it to the Access field.
+func (o *User) SetAccess(v AddUser200ResponseAllOfUserAccess) {
 	o.Access = &v
 }
 

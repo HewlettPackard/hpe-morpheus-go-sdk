@@ -20,17 +20,17 @@ Name | Type | Description | Notes
 **LoginCount** | Pointer to **int64** |  | [optional] 
 **LoginAttempts** | Pointer to **int64** |  | [optional] 
 **LastLoginDate** | Pointer to **time.Time** |  | [optional] 
-**Roles** | Pointer to [**[]ListUsers200ResponseAllOfUsersInnerRolesInner**](ListUsers200ResponseAllOfUsersInnerRolesInner.md) |  | [optional] 
-**Account** | Pointer to [**ListUsers200ResponseAllOfUsersInnerAccount**](ListUsers200ResponseAllOfUsersInnerAccount.md) |  | [optional] 
+**Roles** | Pointer to [**[]AddUser200ResponseAllOfUserRolesInner**](AddUser200ResponseAllOfUserRolesInner.md) |  | [optional] 
+**Account** | Pointer to [**AddUser200ResponseAllOfUserAccount**](AddUser200ResponseAllOfUserAccount.md) |  | [optional] 
 **LinuxUsername** | Pointer to **NullableString** |  | [optional] 
 **LinuxPassword** | Pointer to **NullableString** |  | [optional] 
 **LinuxKeyPairId** | Pointer to **NullableInt64** |  | [optional] 
 **WindowsUsername** | Pointer to **NullableString** |  | [optional] 
 **WindowsPassword** | Pointer to **NullableString** |  | [optional] 
-**DefaultPersona** | Pointer to [**ListUsers200ResponseAllOfUsersInnerDefaultPersona**](ListUsers200ResponseAllOfUsersInnerDefaultPersona.md) |  | [optional] 
+**DefaultPersona** | Pointer to [**AddUser200ResponseAllOfUserDefaultPersona**](AddUser200ResponseAllOfUserDefaultPersona.md) |  | [optional] 
 **DateCreated** | Pointer to **time.Time** |  | [optional] 
 **LastUpdated** | Pointer to **time.Time** |  | [optional] 
-**Access** | Pointer to [**ListUsers200ResponseAllOfUsersInnerAccess**](ListUsers200ResponseAllOfUsersInnerAccess.md) |  | [optional] 
+**Access** | Pointer to [**AddUser200ResponseAllOfUserAccess**](AddUser200ResponseAllOfUserAccess.md) |  | [optional] 
 
 ## Methods
 
@@ -453,20 +453,20 @@ HasLastLoginDate returns a boolean if a field has been set.
 
 ### GetRoles
 
-`func (o *User) GetRoles() []ListUsers200ResponseAllOfUsersInnerRolesInner`
+`func (o *User) GetRoles() []AddUser200ResponseAllOfUserRolesInner`
 
 GetRoles returns the Roles field if non-nil, zero value otherwise.
 
 ### GetRolesOk
 
-`func (o *User) GetRolesOk() (*[]ListUsers200ResponseAllOfUsersInnerRolesInner, bool)`
+`func (o *User) GetRolesOk() (*[]AddUser200ResponseAllOfUserRolesInner, bool)`
 
 GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRoles
 
-`func (o *User) SetRoles(v []ListUsers200ResponseAllOfUsersInnerRolesInner)`
+`func (o *User) SetRoles(v []AddUser200ResponseAllOfUserRolesInner)`
 
 SetRoles sets Roles field to given value.
 
@@ -478,20 +478,20 @@ HasRoles returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *User) GetAccount() ListUsers200ResponseAllOfUsersInnerAccount`
+`func (o *User) GetAccount() AddUser200ResponseAllOfUserAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *User) GetAccountOk() (*ListUsers200ResponseAllOfUsersInnerAccount, bool)`
+`func (o *User) GetAccountOk() (*AddUser200ResponseAllOfUserAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *User) SetAccount(v ListUsers200ResponseAllOfUsersInnerAccount)`
+`func (o *User) SetAccount(v AddUser200ResponseAllOfUserAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -678,20 +678,20 @@ HasWindowsPassword returns a boolean if a field has been set.
 UnsetWindowsPassword ensures that no value is present for WindowsPassword, not even an explicit nil
 ### GetDefaultPersona
 
-`func (o *User) GetDefaultPersona() ListUsers200ResponseAllOfUsersInnerDefaultPersona`
+`func (o *User) GetDefaultPersona() AddUser200ResponseAllOfUserDefaultPersona`
 
 GetDefaultPersona returns the DefaultPersona field if non-nil, zero value otherwise.
 
 ### GetDefaultPersonaOk
 
-`func (o *User) GetDefaultPersonaOk() (*ListUsers200ResponseAllOfUsersInnerDefaultPersona, bool)`
+`func (o *User) GetDefaultPersonaOk() (*AddUser200ResponseAllOfUserDefaultPersona, bool)`
 
 GetDefaultPersonaOk returns a tuple with the DefaultPersona field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPersona
 
-`func (o *User) SetDefaultPersona(v ListUsers200ResponseAllOfUsersInnerDefaultPersona)`
+`func (o *User) SetDefaultPersona(v AddUser200ResponseAllOfUserDefaultPersona)`
 
 SetDefaultPersona sets DefaultPersona field to given value.
 
@@ -753,20 +753,20 @@ HasLastUpdated returns a boolean if a field has been set.
 
 ### GetAccess
 
-`func (o *User) GetAccess() ListUsers200ResponseAllOfUsersInnerAccess`
+`func (o *User) GetAccess() AddUser200ResponseAllOfUserAccess`
 
 GetAccess returns the Access field if non-nil, zero value otherwise.
 
 ### GetAccessOk
 
-`func (o *User) GetAccessOk() (*ListUsers200ResponseAllOfUsersInnerAccess, bool)`
+`func (o *User) GetAccessOk() (*AddUser200ResponseAllOfUserAccess, bool)`
 
 GetAccessOk returns a tuple with the Access field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccess
 
-`func (o *User) SetAccess(v ListUsers200ResponseAllOfUsersInnerAccess)`
+`func (o *User) SetAccess(v AddUser200ResponseAllOfUserAccess)`
 
 SetAccess sets Access field to given value.
 

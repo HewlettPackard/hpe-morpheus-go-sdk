@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstanceTypeLayouts** | Pointer to [**[]ListLayouts200ResponseAllOfInstanceTypeLayoutsInner**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListLayouts200ResponseAllOfMeta**](ListLayouts200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListCloudDatastores200ResponseAllOfMeta**](ListCloudDatastores200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasInstanceTypeLayouts returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListLayouts200Response) GetMeta() ListLayouts200ResponseAllOfMeta`
+`func (o *ListLayouts200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListLayouts200Response) GetMetaOk() (*ListLayouts200ResponseAllOfMeta, bool)`
+`func (o *ListLayouts200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListLayouts200Response) SetMeta(v ListLayouts200ResponseAllOfMeta)`
+`func (o *ListLayouts200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

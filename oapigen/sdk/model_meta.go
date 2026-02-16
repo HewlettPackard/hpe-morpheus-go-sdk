@@ -20,8 +20,8 @@ var _ MappedNullable = &Meta{}
 
 // Meta struct for Meta
 type Meta struct {
-	Meta                 *ListClouds200ResponseAllOfMeta `json:"meta,omitempty"`
-	AdditionalProperties map[string]interface{}          `json:",remain"`
+	Meta                 *ListCloudDatastores200ResponseAllOfMeta `json:"meta,omitempty"`
+	AdditionalProperties map[string]interface{}                   `json:",remain"`
 }
 
 type _Meta Meta
@@ -44,9 +44,9 @@ func NewMetaWithDefaults() *Meta {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *Meta) GetMeta() ListClouds200ResponseAllOfMeta {
+func (o *Meta) GetMeta() ListCloudDatastores200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListClouds200ResponseAllOfMeta
+		var ret ListCloudDatastores200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -54,7 +54,7 @@ func (o *Meta) GetMeta() ListClouds200ResponseAllOfMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Meta) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
+func (o *Meta) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -70,8 +70,8 @@ func (o *Meta) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *Meta) SetMeta(v ListClouds200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListCloudDatastores200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *Meta) SetMeta(v ListCloudDatastores200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

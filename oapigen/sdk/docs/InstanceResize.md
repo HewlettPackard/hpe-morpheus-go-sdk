@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to [**InstanceResizeServicePlanOptions**](InstanceResizeServicePlanOptions.md) |  | [optional] 
 **Volumes** | Pointer to [**[]InstanceResizeVolumesInner**](InstanceResizeVolumesInner.md) | Can be used to grow just the logical volume of the instance instead of choosing a plan | [optional] 
 **DeleteOriginalVolumes** | Pointer to **bool** | Delete the original volumes after resizing. (Amazon only) | [optional] [default to false]
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces6**](InstancesNetworkInterfaces6.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces3**](InstancesNetworkInterfaces3.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasDeleteOriginalVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *InstanceResize) GetNetworkInterfaces() []InstancesNetworkInterfaces6`
+`func (o *InstanceResize) GetNetworkInterfaces() []InstancesNetworkInterfaces3`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *InstanceResize) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces6, bool)`
+`func (o *InstanceResize) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces3, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *InstanceResize) SetNetworkInterfaces(v []InstancesNetworkInterfaces6)`
+`func (o *InstanceResize) SetNetworkInterfaces(v []InstancesNetworkInterfaces3)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListCloudDatastores200ResponseAllOfMeta**](ListCloudDatastores200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMeta
 
-`func (o *Meta) GetMeta() ListClouds200ResponseAllOfMeta`
+`func (o *Meta) GetMeta() ListCloudDatastores200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *Meta) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
+`func (o *Meta) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *Meta) SetMeta(v ListClouds200ResponseAllOfMeta)`
+`func (o *Meta) SetMeta(v ListCloudDatastores200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

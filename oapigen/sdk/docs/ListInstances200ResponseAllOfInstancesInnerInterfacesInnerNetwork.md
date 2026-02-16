@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **NullableInt64** |  | [optional] 
 **Group** | Pointer to **NullableInt64** |  | [optional] 
 **Subnet** | Pointer to **NullableString** |  | [optional] 
-**DhcpServer** | Pointer to **NullableBool** |  | [optional] 
+**DhcpServer** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Pool** | Pointer to [**ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool**](ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetworkPool.md) |  | [optional] 
 
@@ -160,16 +160,6 @@ SetDhcpServer sets DhcpServer field to given value.
 
 HasDhcpServer returns a boolean if a field has been set.
 
-### SetDhcpServerNil
-
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) SetDhcpServerNil(b bool)`
-
- SetDhcpServerNil sets the value for DhcpServer to be an explicit nil
-
-### UnsetDhcpServer
-`func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) UnsetDhcpServer()`
-
-UnsetDhcpServer ensures that no value is present for DhcpServer, not even an explicit nil
 ### GetName
 
 `func (o *ListInstances200ResponseAllOfInstancesInnerInterfacesInnerNetwork) GetName() string`

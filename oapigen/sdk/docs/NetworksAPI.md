@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## DeleteNetwork
 
-> DeleteNetwork200Response DeleteNetwork(ctx, id).Execute()
+> DeleteLayout200Response DeleteNetwork(ctx, id).Execute()
 
 Delete a Network
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NetworksAPI.DeleteNetwork``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteNetwork`: DeleteNetwork200Response
+	// response from `DeleteNetwork`: DeleteLayout200Response
 	fmt.Fprintf(os.Stdout, "Response from `NetworksAPI.DeleteNetwork`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteNetwork200Response**](DeleteNetwork200Response.md)
+[**DeleteLayout200Response**](DeleteLayout200Response.md)
 
 ### Authorization
 

@@ -21,8 +21,8 @@ var _ MappedNullable = &InstanceTypeLayout{}
 // InstanceTypeLayout struct for InstanceTypeLayout
 type InstanceTypeLayout struct {
 	Id           *int64                                              `json:"id,omitempty"`
-	InstanceType *AddLayout200ResponseInstanceTypeLayoutInstanceType `json:"instanceType,omitempty"`
-	Account      *AddLayout200ResponseInstanceTypeLayoutAccount      `json:"account,omitempty"`
+	InstanceType *GetLayout200ResponseInstanceTypeLayoutInstanceType `json:"instanceType,omitempty"`
+	Account      *GetLayout200ResponseInstanceTypeLayoutAccount      `json:"account,omitempty"`
 	Code         *string                                             `json:"code,omitempty"`
 	Name         *string                                             `json:"name,omitempty"`
 	// Array of label strings, can be used for filtering.
@@ -33,9 +33,9 @@ type InstanceTypeLayout struct {
 	MemoryRequirement        NullableInt64                                               `json:"memoryRequirement,omitempty"`
 	SortOrder                *int64                                                      `json:"sortOrder,omitempty"`
 	SupportsConvertToManaged NullableBool                                                `json:"supportsConvertToManaged,omitempty"`
-	ProvisionType            *AddLayout200ResponseInstanceTypeLayoutProvisionType        `json:"provisionType,omitempty"`
+	ProvisionType            *GetLayout200ResponseInstanceTypeLayoutProvisionType        `json:"provisionType,omitempty"`
 	TaskSets                 []map[string]interface{}                                    `json:"taskSets,omitempty"`
-	ContainerTypes           []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner `json:"containerTypes,omitempty"`
+	ContainerTypes           []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner `json:"containerTypes,omitempty"`
 	Mounts                   []map[string]interface{}                                    `json:"mounts,omitempty"`
 	Ports                    []map[string]interface{}                                    `json:"ports,omitempty"`
 	OptionTypes              []map[string]interface{}                                    `json:"optionTypes,omitempty"`
@@ -43,7 +43,7 @@ type InstanceTypeLayout struct {
 	PriceSets                []map[string]interface{}                                    `json:"priceSets,omitempty"`
 	SpecTemplates            []map[string]interface{}                                    `json:"specTemplates,omitempty"`
 	TfvarSecret              NullableString                                              `json:"tfvarSecret,omitempty"`
-	Permissions              *AddLayout200ResponseInstanceTypeLayoutPermissions          `json:"permissions,omitempty"`
+	Permissions              *GetLayout200ResponseInstanceTypeLayoutPermissions          `json:"permissions,omitempty"`
 	AdditionalProperties     map[string]interface{}                                      `json:",remain"`
 }
 
@@ -99,9 +99,9 @@ func (o *InstanceTypeLayout) SetId(v int64) {
 }
 
 // GetInstanceType returns the InstanceType field value if set, zero value otherwise.
-func (o *InstanceTypeLayout) GetInstanceType() AddLayout200ResponseInstanceTypeLayoutInstanceType {
+func (o *InstanceTypeLayout) GetInstanceType() GetLayout200ResponseInstanceTypeLayoutInstanceType {
 	if o == nil || IsNil(o.InstanceType) {
-		var ret AddLayout200ResponseInstanceTypeLayoutInstanceType
+		var ret GetLayout200ResponseInstanceTypeLayoutInstanceType
 		return ret
 	}
 	return *o.InstanceType
@@ -109,7 +109,7 @@ func (o *InstanceTypeLayout) GetInstanceType() AddLayout200ResponseInstanceTypeL
 
 // GetInstanceTypeOk returns a tuple with the InstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayout) GetInstanceTypeOk() (*AddLayout200ResponseInstanceTypeLayoutInstanceType, bool) {
+func (o *InstanceTypeLayout) GetInstanceTypeOk() (*GetLayout200ResponseInstanceTypeLayoutInstanceType, bool) {
 	if o == nil || IsNil(o.InstanceType) {
 		return nil, false
 	}
@@ -125,15 +125,15 @@ func (o *InstanceTypeLayout) IsSetInstanceType() bool {
 	return false
 }
 
-// SetInstanceType gets a reference to the given AddLayout200ResponseInstanceTypeLayoutInstanceType and assigns it to the InstanceType field.
-func (o *InstanceTypeLayout) SetInstanceType(v AddLayout200ResponseInstanceTypeLayoutInstanceType) {
+// SetInstanceType gets a reference to the given GetLayout200ResponseInstanceTypeLayoutInstanceType and assigns it to the InstanceType field.
+func (o *InstanceTypeLayout) SetInstanceType(v GetLayout200ResponseInstanceTypeLayoutInstanceType) {
 	o.InstanceType = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *InstanceTypeLayout) GetAccount() AddLayout200ResponseInstanceTypeLayoutAccount {
+func (o *InstanceTypeLayout) GetAccount() GetLayout200ResponseInstanceTypeLayoutAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret AddLayout200ResponseInstanceTypeLayoutAccount
+		var ret GetLayout200ResponseInstanceTypeLayoutAccount
 		return ret
 	}
 	return *o.Account
@@ -141,7 +141,7 @@ func (o *InstanceTypeLayout) GetAccount() AddLayout200ResponseInstanceTypeLayout
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayout) GetAccountOk() (*AddLayout200ResponseInstanceTypeLayoutAccount, bool) {
+func (o *InstanceTypeLayout) GetAccountOk() (*GetLayout200ResponseInstanceTypeLayoutAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -157,8 +157,8 @@ func (o *InstanceTypeLayout) IsSetAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given AddLayout200ResponseInstanceTypeLayoutAccount and assigns it to the Account field.
-func (o *InstanceTypeLayout) SetAccount(v AddLayout200ResponseInstanceTypeLayoutAccount) {
+// SetAccount gets a reference to the given GetLayout200ResponseInstanceTypeLayoutAccount and assigns it to the Account field.
+func (o *InstanceTypeLayout) SetAccount(v GetLayout200ResponseInstanceTypeLayoutAccount) {
 	o.Account = &v
 }
 
@@ -485,9 +485,9 @@ func (o *InstanceTypeLayout) UnsetSupportsConvertToManaged() {
 }
 
 // GetProvisionType returns the ProvisionType field value if set, zero value otherwise.
-func (o *InstanceTypeLayout) GetProvisionType() AddLayout200ResponseInstanceTypeLayoutProvisionType {
+func (o *InstanceTypeLayout) GetProvisionType() GetLayout200ResponseInstanceTypeLayoutProvisionType {
 	if o == nil || IsNil(o.ProvisionType) {
-		var ret AddLayout200ResponseInstanceTypeLayoutProvisionType
+		var ret GetLayout200ResponseInstanceTypeLayoutProvisionType
 		return ret
 	}
 	return *o.ProvisionType
@@ -495,7 +495,7 @@ func (o *InstanceTypeLayout) GetProvisionType() AddLayout200ResponseInstanceType
 
 // GetProvisionTypeOk returns a tuple with the ProvisionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayout) GetProvisionTypeOk() (*AddLayout200ResponseInstanceTypeLayoutProvisionType, bool) {
+func (o *InstanceTypeLayout) GetProvisionTypeOk() (*GetLayout200ResponseInstanceTypeLayoutProvisionType, bool) {
 	if o == nil || IsNil(o.ProvisionType) {
 		return nil, false
 	}
@@ -511,8 +511,8 @@ func (o *InstanceTypeLayout) IsSetProvisionType() bool {
 	return false
 }
 
-// SetProvisionType gets a reference to the given AddLayout200ResponseInstanceTypeLayoutProvisionType and assigns it to the ProvisionType field.
-func (o *InstanceTypeLayout) SetProvisionType(v AddLayout200ResponseInstanceTypeLayoutProvisionType) {
+// SetProvisionType gets a reference to the given GetLayout200ResponseInstanceTypeLayoutProvisionType and assigns it to the ProvisionType field.
+func (o *InstanceTypeLayout) SetProvisionType(v GetLayout200ResponseInstanceTypeLayoutProvisionType) {
 	o.ProvisionType = &v
 }
 
@@ -550,9 +550,9 @@ func (o *InstanceTypeLayout) SetTaskSets(v []map[string]interface{}) {
 }
 
 // GetContainerTypes returns the ContainerTypes field value if set, zero value otherwise.
-func (o *InstanceTypeLayout) GetContainerTypes() []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner {
+func (o *InstanceTypeLayout) GetContainerTypes() []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner {
 	if o == nil || IsNil(o.ContainerTypes) {
-		var ret []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner
+		var ret []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner
 		return ret
 	}
 	return o.ContainerTypes
@@ -560,7 +560,7 @@ func (o *InstanceTypeLayout) GetContainerTypes() []AddLayout200ResponseInstanceT
 
 // GetContainerTypesOk returns a tuple with the ContainerTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayout) GetContainerTypesOk() ([]AddLayout200ResponseInstanceTypeLayoutContainerTypesInner, bool) {
+func (o *InstanceTypeLayout) GetContainerTypesOk() ([]GetLayout200ResponseInstanceTypeLayoutContainerTypesInner, bool) {
 	if o == nil || IsNil(o.ContainerTypes) {
 		return nil, false
 	}
@@ -576,8 +576,8 @@ func (o *InstanceTypeLayout) IsSetContainerTypes() bool {
 	return false
 }
 
-// SetContainerTypes gets a reference to the given []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner and assigns it to the ContainerTypes field.
-func (o *InstanceTypeLayout) SetContainerTypes(v []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner) {
+// SetContainerTypes gets a reference to the given []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner and assigns it to the ContainerTypes field.
+func (o *InstanceTypeLayout) SetContainerTypes(v []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner) {
 	o.ContainerTypes = v
 }
 
@@ -823,9 +823,9 @@ func (o *InstanceTypeLayout) UnsetTfvarSecret() {
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *InstanceTypeLayout) GetPermissions() AddLayout200ResponseInstanceTypeLayoutPermissions {
+func (o *InstanceTypeLayout) GetPermissions() GetLayout200ResponseInstanceTypeLayoutPermissions {
 	if o == nil || IsNil(o.Permissions) {
-		var ret AddLayout200ResponseInstanceTypeLayoutPermissions
+		var ret GetLayout200ResponseInstanceTypeLayoutPermissions
 		return ret
 	}
 	return *o.Permissions
@@ -833,7 +833,7 @@ func (o *InstanceTypeLayout) GetPermissions() AddLayout200ResponseInstanceTypeLa
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceTypeLayout) GetPermissionsOk() (*AddLayout200ResponseInstanceTypeLayoutPermissions, bool) {
+func (o *InstanceTypeLayout) GetPermissionsOk() (*GetLayout200ResponseInstanceTypeLayoutPermissions, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -849,8 +849,8 @@ func (o *InstanceTypeLayout) IsSetPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given AddLayout200ResponseInstanceTypeLayoutPermissions and assigns it to the Permissions field.
-func (o *InstanceTypeLayout) SetPermissions(v AddLayout200ResponseInstanceTypeLayoutPermissions) {
+// SetPermissions gets a reference to the given GetLayout200ResponseInstanceTypeLayoutPermissions and assigns it to the Permissions field.
+func (o *InstanceTypeLayout) SetPermissions(v GetLayout200ResponseInstanceTypeLayoutPermissions) {
 	o.Permissions = &v
 }
 

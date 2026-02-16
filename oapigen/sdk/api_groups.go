@@ -117,7 +117,7 @@ func (a *GroupsAPIService) AddGroupsExecute(r ApiAddGroupsRequest) (*AddGroups20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -128,7 +128,7 @@ func (a *GroupsAPIService) AddGroupsExecute(r ApiAddGroupsRequest) (*AddGroups20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -241,7 +241,7 @@ func (a *GroupsAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*GetGroups20
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -252,7 +252,7 @@ func (a *GroupsAPIService) GetGroupsExecute(r ApiGetGroupsRequest) (*GetGroups20
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -443,7 +443,7 @@ func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*ListGroup
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -454,7 +454,7 @@ func (a *GroupsAPIService) ListGroupsExecute(r ApiListGroupsRequest) (*ListGroup
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -567,7 +567,7 @@ func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*Remov
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -578,7 +578,7 @@ func (a *GroupsAPIService) RemoveGroupsExecute(r ApiRemoveGroupsRequest) (*Remov
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -699,7 +699,7 @@ func (a *GroupsAPIService) UpdateGroupsExecute(r ApiUpdateGroupsRequest) (*Updat
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v UpdateAlerts4XXResponse
+			var v AddClouds4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -710,7 +710,7 @@ func (a *GroupsAPIService) UpdateGroupsExecute(r ApiUpdateGroupsRequest) (*Updat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v UpdateAlerts5XXResponse
+			var v AddClouds5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
