@@ -162,6 +162,7 @@ type ApiDeleteInstanceRequest struct {
 	releaseFloatingIps *string
 	releaseEIPs        *string
 	force              *string
+	removeVolumes      *string
 }
 
 // Preserve Volumes
@@ -191,6 +192,12 @@ func (r ApiDeleteInstanceRequest) ReleaseEIPs(releaseEIPs string) ApiDeleteInsta
 // Force Delete
 func (r ApiDeleteInstanceRequest) Force(force string) ApiDeleteInstanceRequest {
 	r.force = &force
+	return r
+}
+
+// Remove Volumes
+func (r ApiDeleteInstanceRequest) RemoveVolumes(removeVolumes string) ApiDeleteInstanceRequest {
+	r.removeVolumes = &removeVolumes
 	return r
 }
 
@@ -267,6 +274,12 @@ func (a *InstancesAPIService) DeleteInstanceExecute(r ApiDeleteInstanceRequest) 
 	} else {
 		var defaultValue string = "off"
 		r.force = &defaultValue
+	}
+	if r.removeVolumes != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeVolumes", r.removeVolumes, "form", "")
+	} else {
+		var defaultValue string = "off"
+		r.removeVolumes = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

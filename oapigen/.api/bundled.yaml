@@ -315,7 +315,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_225
+                          properties: &ref_226
                             id:
                               type: integer
                               format: int64
@@ -360,10 +360,10 @@ paths:
                               anyOf:
                                 - title: Web Get Config
                                   type: object
-                                  required: &ref_213
+                                  required: &ref_214
                                     - webMethod
                                     - webUrl
-                                  properties: &ref_214
+                                  properties: &ref_215
                                     webMethod:
                                       type: string
                                       description: HTTP method to use for testing
@@ -416,14 +416,14 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: SQL Config
                                   type: object
-                                  required: &ref_215
+                                  required: &ref_216
                                     - dbPort
                                     - dbName
                                     - dbUser
                                     - dbHost
                                     - dbQuery
                                     - dbPassword
-                                  properties: &ref_216
+                                  properties: &ref_217
                                     dbHost:
                                       type: string
                                       description: Hostname or IP address of the database
@@ -494,10 +494,10 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: Elastic Search Config
                                   type: object
-                                  required: &ref_217
+                                  required: &ref_218
                                     - esHost
                                     - esPort
-                                  properties: &ref_218
+                                  properties: &ref_219
                                     esHost:
                                       type: string
                                       description: Hostname or IP address of the Elasticsearch server
@@ -538,12 +538,12 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: Socket Config
                                   type: object
-                                  required: &ref_219
+                                  required: &ref_220
                                     - port
                                     - host
                                     - send
                                     - responseMatch
-                                  properties: &ref_220
+                                  properties: &ref_221
                                     host:
                                       type: string
                                       description: Hostname or IP address of the socket server
@@ -594,9 +594,9 @@ paths:
                                   type: object
                                   maxProperties: 0
                                 - type: object
-                                  required: &ref_221
+                                  required: &ref_222
                                     - containerName
-                                  properties: &ref_222
+                                  properties: &ref_223
                                     containerName:
                                       type: string
                                     externalId:
@@ -635,10 +635,10 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: SNMP Config
                                   type: object
-                                  required: &ref_223
+                                  required: &ref_224
                                     - host
                                     - port
-                                  properties: &ref_224
+                                  properties: &ref_225
                                     host:
                                       type: string
                                       description: Hostname or IP address of the SNMP network entity
@@ -830,7 +830,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_226
+                          properties: &ref_227
                             id:
                               type: integer
                               format: int64
@@ -953,7 +953,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_227
+                          properties: &ref_228
                             id:
                               type: integer
                               format: int64
@@ -1224,7 +1224,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_228
+                properties: &ref_229
                   msg:
                     type: string
               examples:
@@ -1415,7 +1415,7 @@ paths:
                 properties:
                   backupSettings:
                     type: object
-                    properties: &ref_229
+                    properties: &ref_230
                       backupsEnabled:
                         type: boolean
                       createBackups:
@@ -1478,7 +1478,7 @@ paths:
               properties:
                 backupSettings:
                   type: object
-                  properties: &ref_230
+                  properties: &ref_231
                     backupsEnabled:
                       type: boolean
                       description: Use this to enable / disable scheduled backups
@@ -1642,7 +1642,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_231
+                          properties: &ref_232
                             id:
                               type: integer
                               format: int64
@@ -2275,9 +2275,9 @@ paths:
                 catalogItemType:
                   oneOf:
                     - type: object
-                      required: &ref_234
+                      required: &ref_235
                         - config
-                      properties: &ref_235
+                      properties: &ref_236
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -2332,7 +2332,7 @@ paths:
                           default: false
                         config:
                           type: object
-                          required: &ref_232
+                          required: &ref_233
                             - group
                             - cloud
                             - type
@@ -2341,7 +2341,7 @@ paths:
                             - volumes
                             - layout
                             - plan
-                          properties: &ref_233
+                          properties: &ref_234
                             group:
                               type: object
                               required:
@@ -2841,9 +2841,9 @@ paths:
                           type: string
                           description: Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
                     - type: object
-                      required: &ref_236
+                      required: &ref_237
                         - blueprint
-                      properties: &ref_237
+                      properties: &ref_238
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -2923,9 +2923,9 @@ paths:
                             type: integer
                             format: int64
                     - type: object
-                      required: &ref_238
+                      required: &ref_239
                         - workflow
-                      properties: &ref_239
+                      properties: &ref_240
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -3433,7 +3433,7 @@ paths:
                               additionalProperties: true
                               anyOf:
                                 - type: object
-                                  properties: &ref_240
+                                  properties: &ref_241
                                     applianceUrl:
                                       type:
                                         - string
@@ -3488,7 +3488,7 @@ paths:
                                         - string
                                         - 'null'
                                 - type: object
-                                  properties: &ref_241
+                                  properties: &ref_242
                                     applianceUrl:
                                       type:
                                         - string
@@ -4068,12 +4068,12 @@ paths:
               properties:
                 zone:
                   type: object
-                  required: &ref_248
+                  required: &ref_249
                     - name
                     - groupId
                     - zoneType
                     - config
-                  properties: &ref_249
+                  properties: &ref_250
                     name:
                       type: string
                       description: A unique name scoped to your account for the cloud
@@ -4105,9 +4105,9 @@ paths:
                       anyOf:
                         - description: Amazon Cloud
                           type: object
-                          required: &ref_242
+                          required: &ref_243
                             - endpoint
-                          properties: &ref_243
+                          properties: &ref_244
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4167,7 +4167,7 @@ paths:
                               example: vpc-25e6dae
                         - description: Azure Cloud
                           type: object
-                          properties: &ref_244
+                          properties: &ref_245
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4220,7 +4220,7 @@ paths:
                               description: The method for interacting with cloud workloads (guestexec (VMware Tools) or rpc (SSH/WinRM))
                         - description: HVM Cloud
                           type: object
-                          properties: &ref_245
+                          properties: &ref_246
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4256,11 +4256,11 @@ paths:
                               description: Whether to enable the user to select the network type during provisioning.
                         - description: VSphere Cloud
                           type: object
-                          required: &ref_246
+                          required: &ref_247
                             - apiUrl
                             - apiVersion
                             - datacenter
-                          properties: &ref_247
+                          properties: &ref_248
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -5673,7 +5673,7 @@ paths:
                                     type: boolean
                             resourcePermission:
                               type: object
-                              properties: &ref_250
+                              properties: &ref_251
                                 all:
                                   type: boolean
                                 sites:
@@ -5780,7 +5780,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_251
+                  properties: &ref_252
                     name:
                       type: string
                     datastoreType:
@@ -6361,7 +6361,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_252
+                          properties: &ref_253
                             id:
                               type: integer
                               format: int64
@@ -7121,12 +7121,12 @@ paths:
               properties:
                 layout:
                   type: object
-                  required: &ref_253
+                  required: &ref_254
                     - name
                     - computeVersion
                     - groupType
                     - provisionType
-                  properties: &ref_254
+                  properties: &ref_255
                     name:
                       type: string
                       description: Cluster layout name
@@ -7297,7 +7297,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_255
+                properties: &ref_256
                   success:
                     type: boolean
                   id:
@@ -7386,7 +7386,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_256
+                          properties: &ref_257
                             id:
                               type: integer
                               format: int64
@@ -7634,7 +7634,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_257
+                  properties: &ref_258
                     name:
                       type: string
                     datastoreType:
@@ -7952,14 +7952,14 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_259
+                  properties: &ref_260
                     active:
                       type: boolean
                       description: Datastore active
                       default: true
                     permissions:
                       type: object
-                      properties: &ref_258
+                      properties: &ref_259
                         resourcePermissions:
                           type: object
                           properties:
@@ -8436,7 +8436,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_260
+                  properties: &ref_261
                     name:
                       type: string
                       description: The name of the datastore to be created.
@@ -8553,7 +8553,7 @@ paths:
                       type: array
                       items:
                         type: object
-                  required: &ref_261
+                  required: &ref_262
                     - name
                     - datastoreType
                     - refId
@@ -9652,9 +9652,9 @@ paths:
               properties:
                 group:
                   type: object
-                  required: &ref_262
+                  required: &ref_263
                     - name
-                  properties: &ref_263
+                  properties: &ref_264
                     name:
                       type: string
                       description: A unique name scoped to your account for the group
@@ -9810,9 +9810,9 @@ paths:
               properties:
                 group:
                   type: object
-                  required: &ref_264
+                  required: &ref_265
                     - name
-                  properties: &ref_265
+                  properties: &ref_266
                     name:
                       type: string
                       description: A unique name scoped to your account for the group
@@ -10177,7 +10177,7 @@ paths:
                                         - 'null'
                                       items:
                                         type: object
-                                        properties: &ref_267
+                                        properties: &ref_268
                                           id:
                                             type: integer
                                             format: int64
@@ -10240,7 +10240,7 @@ paths:
                                             type: array
                                             items:
                                               type: object
-                                              properties: &ref_266
+                                              properties: &ref_267
                                                 id:
                                                   type: integer
                                                   format: int64
@@ -10395,7 +10395,7 @@ paths:
                                         - 'null'
                                       items:
                                         type: object
-                                        properties: &ref_268
+                                        properties: &ref_269
                                           id:
                                             type: integer
                                             format: int64
@@ -10423,7 +10423,7 @@ paths:
                                   type: array
                                   items:
                                     type: object
-                                    properties: &ref_269
+                                    properties: &ref_270
                                       id:
                                         type: integer
                                         format: int32
@@ -15433,10 +15433,10 @@ paths:
           application/json:
             schema:
               type: object
-              required: &ref_271
+              required: &ref_272
                 - instance
                 - config
-              properties: &ref_272
+              properties: &ref_273
                 instance:
                   type: object
                   description: Key for name, site, instanceType layout, and plan.
@@ -15572,7 +15572,7 @@ paths:
                       type: object
                     - title: HVM Instance Configuration
                       type: object
-                      properties: &ref_270
+                      properties: &ref_271
                         noAgent:
                           type:
                             - boolean
@@ -15829,9 +15829,9 @@ paths:
                 allOf:
                   - oneOf:
                       - type: object
-                        required: &ref_273
+                        required: &ref_274
                           - instance
-                        properties: &ref_274
+                        properties: &ref_275
                           instance:
                             type: object
                             additionalProperties: true
@@ -17057,7 +17057,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_276
+              properties: &ref_277
                 instance:
                   type: object
                   properties:
@@ -17145,7 +17145,7 @@ paths:
                       example: myInstanceDisplayName
                 config:
                   type: object
-                  properties: &ref_275
+                  properties: &ref_276
                     customOptions:
                       type: object
                       description: Custom Option Type settings object containing name value pairs.
@@ -17490,6 +17490,13 @@ paths:
             type: string
             default: 'off'
           example: 'on'
+        - name: removeVolumes
+          in: query
+          description: Remove Volumes
+          schema: &ref_199
+            type: string
+            default: 'off'
+          example: 'on'
       responses:
         '200':
           description: Successful Request
@@ -17529,7 +17536,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_277
+                properties: &ref_278
                   envs:
                     type:
                       - array
@@ -17788,7 +17795,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_278
+              properties: &ref_279
                 instance:
                   type: object
                   description: The map containing the id of the service plan you wish to apply to the containers in this instance.
@@ -17948,7 +17955,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_279
+                          properties: &ref_280
                             id:
                               type: integer
                               format: int64
@@ -18072,9 +18079,9 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  required: &ref_280
+                  required: &ref_281
                     - name
-                  properties: &ref_281
+                  properties: &ref_282
                     name:
                       type: string
                       description: Instance type name
@@ -18253,7 +18260,7 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  properties: &ref_282
+                  properties: &ref_283
                     name:
                       type: string
                       description: Instance type name
@@ -18598,11 +18605,11 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  required: &ref_283
+                  required: &ref_284
                     - name
                     - instanceVersion
                     - provisionTypeCode
-                  properties: &ref_284
+                  properties: &ref_285
                     name:
                       type: string
                       description: Layout name
@@ -19043,7 +19050,7 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  properties: &ref_285
+                  properties: &ref_286
                     name:
                       type: string
                       description: Layout name
@@ -19723,11 +19730,11 @@ paths:
               properties:
                 network:
                   type: object
-                  required: &ref_292
+                  required: &ref_293
                     - name
                     - zone
                     - site
-                  properties: &ref_293
+                  properties: &ref_294
                     name:
                       type: string
                       description: Name
@@ -19888,11 +19895,11 @@ paths:
                       description: Configuration object. Settings vary by type.
                       anyOf:
                         - type: object
-                          required: &ref_286
+                          required: &ref_287
                             - resourceGroupId
                             - subnetName
                             - subnetCidr
-                          properties: &ref_287
+                          properties: &ref_288
                             resourceGroupId:
                               type: string
                               description: Resource Group Name
@@ -19903,12 +19910,12 @@ paths:
                               type: string
                               description: The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
                         - type: object
-                          required: &ref_288
+                          required: &ref_289
                             - availabilityZone
                             - cidr
                             - assignPublicIp
                             - zonePool
-                          properties: &ref_289
+                          properties: &ref_290
                             availabilityZone:
                               type: string
                               description: Availability Zone Name
@@ -19927,10 +19934,10 @@ paths:
                                   type: integer
                                   description: Morpheus resource pool ID of the VPC for the network.
                         - type: object
-                          required: &ref_290
+                          required: &ref_291
                             - mtu
                             - autoCreate
-                          properties: &ref_291
+                          properties: &ref_292
                             mtu:
                               type: string
                               description: GCP MTU
@@ -20568,7 +20575,7 @@ paths:
               properties:
                 network:
                   type: object
-                  properties: &ref_294
+                  properties: &ref_295
                     displayName:
                       type: string
                       description: Display Name
@@ -20852,7 +20859,7 @@ paths:
           in: path
           required: true
           description: '`optionSource` to be listed'
-          schema: &ref_199
+          schema: &ref_200
             type: string
             example: keyPairs
       responses:
@@ -22313,11 +22320,11 @@ paths:
               properties:
                 policy:
                   type: object
-                  required: &ref_295
+                  required: &ref_296
                     - name
                     - policyType
                     - config
-                  properties: &ref_296
+                  properties: &ref_297
                     name:
                       type: string
                       description: A name for the policy
@@ -24651,7 +24658,7 @@ paths:
               properties:
                 policy:
                   type: object
-                  properties: &ref_297
+                  properties: &ref_298
                     name:
                       type: string
                       description: A name for the policy
@@ -25740,7 +25747,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_298
+                          properties: &ref_299
                             id:
                               type: integer
                               format: int64
@@ -29210,20 +29217,20 @@ paths:
         - name: includeZones
           in: query
           description: Indicates including zones in the service plan response payload
-          schema: &ref_200
+          schema: &ref_201
             type: boolean
             default: false
         - name: provisionTypeId
           in: query
           description: Provision type filter, restricts query to only load service plans of specified provision type
-          schema: &ref_201
+          schema: &ref_202
             type: integer
             format: int64
           example: 22
         - name: includeInactive
           in: query
           description: If true, include inactive prices in the results
-          schema: &ref_202
+          schema: &ref_203
             type: boolean
           example: true
       responses:
@@ -29239,7 +29246,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_299
+                          properties: &ref_300
                             id:
                               type: integer
                               format: int64
@@ -30439,7 +30446,7 @@ paths:
           in: path
           description: The ID of the subtenant account
           required: true
-          schema: &ref_203
+          schema: &ref_204
             type: integer
             format: int64
           example: 7
@@ -30846,7 +30853,7 @@ paths:
           description: |
             If specified will return all tasks by `task type` code.
             Refer to `Task Types` API for up to date listings.
-          schema: &ref_204
+          schema: &ref_205
             type: string
             enum:
               - ansibleTask
@@ -34329,19 +34336,19 @@ paths:
         - name: username
           in: query
           description: Username
-          schema: &ref_205
+          schema: &ref_206
             type: string
           example: administrator
         - name: email
           in: query
           description: E-Mail Address
-          schema: &ref_206
+          schema: &ref_207
             type: string
           example: mytest@email.com
         - name: roleId
           in: query
           description: Filter by Role ID (supports multiple values)
-          schema: &ref_207
+          schema: &ref_208
             type: integer
             format: int64
           example: 13
@@ -34353,14 +34360,14 @@ paths:
         - name: accountId
           in: query
           description: Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users.
-          schema: &ref_208
+          schema: &ref_209
             type: integer
             format: int64
           example: 3
         - name: global
           in: query
           description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-          schema: &ref_209
+          schema: &ref_210
             type: boolean
             default: false
       responses:
@@ -34380,7 +34387,7 @@ paths:
                   - type: object
                     properties: *ref_12
                   - type: object
-                    properties: &ref_300
+                    properties: &ref_301
                       global:
                         type: boolean
                         description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
@@ -34541,7 +34548,7 @@ paths:
         - name: includeAccess
           in: query
           description: Include `access` information in the response. This is the permissions, clouds, instanceTypes, etc. that the user is authorized for based on their assigned Role(s).
-          schema: &ref_210
+          schema: &ref_211
             type: boolean
           example: true
       responses:
@@ -34719,7 +34726,7 @@ paths:
                       items:
                         type: object
                         description: A simple object to represent a specific resource, typically an id and name.
-                        properties: &ref_301
+                        properties: &ref_302
                           id:
                             type: integer
                             format: int64
@@ -34730,7 +34737,7 @@ paths:
                           code:
                             type: string
                             description: Resource code
-                        required: &ref_302
+                        required: &ref_303
                           - id
                     receiveNotifications:
                       type: boolean
@@ -34824,7 +34831,7 @@ paths:
         - name: filterType
           in: query
           description: Filter by type, "User", "System", "Synced", or "All"
-          schema: &ref_211
+          schema: &ref_212
             type: string
             default: User
             enum:
@@ -34836,7 +34843,7 @@ paths:
         - name: imageType
           in: query
           description: Filter by image type code, "vmware", "ami", etc
-          schema: &ref_212
+          schema: &ref_213
             type: string
           example: vmware
         - name: tags.name
@@ -35359,7 +35366,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_303
+                  properties: &ref_304
                     name:
                       type: string
                       description: A name for the virtual image
@@ -35754,7 +35761,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_304
+                  properties: &ref_305
                     name:
                       type: string
                       description: A name for the virtual image
@@ -36056,7 +36063,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_305
+                properties: &ref_306
                   access_token:
                     type: string
                     description: Token that grants API Access
@@ -36394,6 +36401,12 @@ components:
       description: Force Delete
       schema: *ref_198
       example: 'on'
+    removeVolumes:
+      name: removeVolumes
+      in: query
+      description: Remove Volumes
+      schema: *ref_199
+      example: 'on'
     instanceTypeId-path:
       name: instanceTypeId
       in: path
@@ -36406,7 +36419,7 @@ components:
       in: path
       required: true
       description: '`optionSource` to be listed'
-      schema: *ref_199
+      schema: *ref_200
     includeDefaultAccess:
       name: includeDefaultAccess
       in: query
@@ -36418,25 +36431,25 @@ components:
       name: includeZones
       in: query
       description: Indicates including zones in the service plan response payload
-      schema: *ref_200
+      schema: *ref_201
     provisionTypeId:
       name: provisionTypeId
       in: query
       description: Provision type filter, restricts query to only load service plans of specified provision type
-      schema: *ref_201
+      schema: *ref_202
       example: 22
     includeInactive:
       name: includeInactive
       in: query
       description: If true, include inactive prices in the results
-      schema: *ref_202
+      schema: *ref_203
       example: true
     accountId-path:
       name: accountId
       in: path
       description: The ID of the subtenant account
       required: true
-      schema: *ref_203
+      schema: *ref_204
       example: 7
     taskTypes:
       name: type
@@ -36444,53 +36457,53 @@ components:
       description: |
         If specified will return all tasks by `task type` code.
         Refer to `Task Types` API for up to date listings.
-      schema: *ref_204
+      schema: *ref_205
     username:
       name: username
       in: query
       description: Username
-      schema: *ref_205
+      schema: *ref_206
       example: administrator
     email:
       name: email
       in: query
       description: E-Mail Address
-      schema: *ref_206
+      schema: *ref_207
       example: mytest@email.com
     roleId:
       name: roleId
       in: query
       description: Filter by Role ID (supports multiple values)
-      schema: *ref_207
+      schema: *ref_208
       example: 13
     accountId:
       name: accountId
       in: query
       description: Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users.
-      schema: *ref_208
+      schema: *ref_209
       example: 3
     global:
       name: global
       in: query
       description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-      schema: *ref_209
+      schema: *ref_210
     includeAccess:
       name: includeAccess
       in: query
       description: Include `access` information in the response. This is the permissions, clouds, instanceTypes, etc. that the user is authorized for based on their assigned Role(s).
-      schema: *ref_210
+      schema: *ref_211
       example: true
     filterType:
       name: filterType
       in: query
       description: Filter by type, "User", "System", "Synced", or "All"
-      schema: *ref_211
+      schema: *ref_212
       example: System
     imageType:
       name: imageType
       in: query
       description: Filter by image type code, "vmware", "ami", etc
-      schema: *ref_212
+      schema: *ref_213
       example: vmware
     virtualImageId-path:
       name: virtualImageId
@@ -36506,67 +36519,67 @@ components:
     checkWebConfig:
       title: Web Get Config
       type: object
-      required: *ref_213
-      properties: *ref_214
+      required: *ref_214
+      properties: *ref_215
     checkSqlConfig:
       title: SQL Config
       type: object
-      required: *ref_215
-      properties: *ref_216
+      required: *ref_216
+      properties: *ref_217
     checkElasticsearchConfig:
       title: Elastic Search Config
       type: object
-      required: *ref_217
-      properties: *ref_218
+      required: *ref_218
+      properties: *ref_219
     checkSocketConfig:
       title: Socket Config
       type: object
-      required: *ref_219
-      properties: *ref_220
+      required: *ref_220
+      properties: *ref_221
     checkPushConfig:
       title: Push Config
       type: object
       maxProperties: 0
     checkVmConfig:
       type: object
-      required: *ref_221
-      properties: *ref_222
+      required: *ref_222
+      properties: *ref_223
     checkSNMPConfig:
       title: SNMP Config
       type: object
-      required: *ref_223
-      properties: *ref_224
+      required: *ref_224
+      properties: *ref_225
     check:
       type: object
-      properties: *ref_225
+      properties: *ref_226
     checkGroup:
       type: object
-      properties: *ref_226
+      properties: *ref_227
     checkApp:
       type: object
-      properties: *ref_227
+      properties: *ref_228
     Error:
       type: object
       description: The standard response object that is returned when a request fails to complete successfully
       properties: *ref_120
     default-error:
       type: object
-      properties: *ref_228
+      properties: *ref_229
     200-success:
       type: object
       properties: *ref_4
     backupSettings:
       type: object
-      properties: *ref_229
+      properties: *ref_230
     backupSettingsUpdate:
       type: object
-      properties: *ref_230
+      properties: *ref_231
     optionType:
       type: object
       properties: *ref_22
     catalogItemType:
       type: object
-      properties: *ref_231
+      properties: *ref_232
     meta:
       type: object
       properties: *ref_12
@@ -36603,26 +36616,26 @@ components:
       properties: *ref_45
     catalogItemTypeInstanceScribe:
       type: object
-      required: *ref_232
-      properties: *ref_233
+      required: *ref_233
+      properties: *ref_234
     catalogItemTypeInstanceCreate:
       type: object
-      required: *ref_234
-      properties: *ref_235
+      required: *ref_235
+      properties: *ref_236
     catalogItemTypeBlueprintCreate:
       type: object
-      required: *ref_236
-      properties: *ref_237
+      required: *ref_237
+      properties: *ref_238
     catalogItemTypeWorkflowCreate:
       type: object
-      required: *ref_238
-      properties: *ref_239
+      required: *ref_239
+      properties: *ref_240
     cloudsConfigHVM:
       type: object
-      properties: *ref_240
+      properties: *ref_241
     cloudsConfigVMware:
       type: object
-      properties: *ref_241
+      properties: *ref_242
     cloudsConfigGeneric:
       title: Generic Cloud Configuration
       description: Generic configuration options for the cloud, varies based on the type of cloud.
@@ -36633,37 +36646,37 @@ components:
     cloudCreateConfigAWS:
       description: Amazon Cloud
       type: object
-      required: *ref_242
-      properties: *ref_243
+      required: *ref_243
+      properties: *ref_244
     cloudCreateConfigAzure:
       description: Azure Cloud
       type: object
-      properties: *ref_244
+      properties: *ref_245
     cloudCreateConfigHVM:
       description: HVM Cloud
       type: object
-      properties: *ref_245
+      properties: *ref_246
     cloudCreateConfigVsphere:
       description: VSphere Cloud
       type: object
-      required: *ref_246
-      properties: *ref_247
+      required: *ref_247
+      properties: *ref_248
     cloudCreateConfigGeneric:
       title: Generic Cloud Configuration
       type: object
     zoneCreate:
       type: object
-      required: *ref_248
-      properties: *ref_249
+      required: *ref_249
+      properties: *ref_250
     resourcePermissions:
       type: object
-      properties: *ref_250
+      properties: *ref_251
     zoneDatastore:
       type: object
       properties: *ref_19
     zoneDatastoreCreate:
       type: object
-      properties: *ref_251
+      properties: *ref_252
     clusterDatastore:
       type: object
       properties: *ref_25
@@ -36672,17 +36685,17 @@ components:
       properties: *ref_26
     clusterLayout:
       type: object
-      properties: *ref_252
+      properties: *ref_253
     clusterLayoutCreate:
       type: object
-      required: *ref_253
-      properties: *ref_254
+      required: *ref_254
+      properties: *ref_255
     successId:
       type: object
-      properties: *ref_255
+      properties: *ref_256
     clusterDatastores:
       type: object
-      properties: *ref_256
+      properties: *ref_257
     clusterDatastoreConfigNFS:
       type: object
       title: NFS Datastore Configuration
@@ -36707,21 +36720,21 @@ components:
       required: *ref_33
     clusterDatastoreCreate:
       type: object
-      properties: *ref_257
+      properties: *ref_258
     clusterUpdatePermissions:
       type: object
-      properties: *ref_258
+      properties: *ref_259
     clusterDatastoreUpdate:
       type: object
-      properties: *ref_259
+      properties: *ref_260
     storageDatastore:
       type: object
       properties: *ref_34
       required: *ref_35
     storageDatastoreCreate:
       type: object
-      properties: *ref_260
-      required: *ref_261
+      properties: *ref_261
+      required: *ref_262
     environment:
       type: object
       properties: *ref_37
@@ -36733,30 +36746,30 @@ components:
       properties: *ref_39
     groupCreate:
       type: object
-      required: *ref_262
-      properties: *ref_263
+      required: *ref_263
+      properties: *ref_264
     groupUpdate:
       type: object
-      required: *ref_264
-      properties: *ref_265
+      required: *ref_265
+      properties: *ref_266
     routeOptionType:
       type: object
-      properties: *ref_266
+      properties: *ref_267
     networkType:
       type: object
-      properties: *ref_267
+      properties: *ref_268
     storageType:
       type: object
       properties: *ref_41
     controllerType:
       type: object
-      properties: *ref_268
+      properties: *ref_269
     provisionType:
       type: object
       properties: *ref_102
     containerType:
       type: object
-      properties: *ref_269
+      properties: *ref_270
     instanceTypeLayout:
       type: object
       properties: *ref_61
@@ -36770,76 +36783,76 @@ components:
     instancesConfigHVM:
       title: HVM Instance Configuration
       type: object
-      properties: *ref_270
+      properties: *ref_271
     instanceCreate:
       type: object
-      required: *ref_271
-      properties: *ref_272
+      required: *ref_272
+      properties: *ref_273
     instanceCreateSuccess:
       type: object
-      required: *ref_273
-      properties: *ref_274
+      required: *ref_274
+      properties: *ref_275
     instancesConfigCustomOptions:
       type: object
-      properties: *ref_275
+      properties: *ref_276
     instanceUpdate:
       type: object
-      properties: *ref_276
+      properties: *ref_277
     instanceUpdateSuccess:
       type: object
       required: *ref_53
       properties: *ref_54
     instanceEnvs:
       type: object
-      properties: *ref_277
+      properties: *ref_278
     instanceResize:
       type: object
-      properties: *ref_278
+      properties: *ref_279
     instanceTypes:
       type: object
-      properties: *ref_279
+      properties: *ref_280
     instanceTypeCreate:
       type: object
-      required: *ref_280
-      properties: *ref_281
+      required: *ref_281
+      properties: *ref_282
     instanceTypeUpdate:
       type: object
-      properties: *ref_282
+      properties: *ref_283
     instanceTypeLayoutCreate:
       type: object
-      required: *ref_283
-      properties: *ref_284
+      required: *ref_284
+      properties: *ref_285
     instanceTypeLayoutUpdate:
       type: object
-      properties: *ref_285
+      properties: *ref_286
     network:
       type: object
       properties: *ref_65
     networkTypeAzureConfig:
       type: object
-      required: *ref_286
-      properties: *ref_287
+      required: *ref_287
+      properties: *ref_288
     networkTypeAwsConfig:
       type: object
-      required: *ref_288
-      properties: *ref_289
+      required: *ref_289
+      properties: *ref_290
     networkTypeGcpConfig:
       type: object
-      required: *ref_290
-      properties: *ref_291
+      required: *ref_291
+      properties: *ref_292
     networkTypeGenericConfig:
       type: object
       description: Required config options will be in the network type detail API.
     networkCreate:
       type: object
-      required: *ref_292
-      properties: *ref_293
+      required: *ref_293
+      properties: *ref_294
     successMessage:
       type: object
       properties: *ref_66
     networkUpdate:
       type: object
-      properties: *ref_294
+      properties: *ref_295
     checkbox:
       type: string
       enum: *ref_67
@@ -36850,20 +36863,20 @@ components:
       properties: *ref_68
     policyCreate:
       type: object
-      required: *ref_295
-      properties: *ref_296
+      required: *ref_296
+      properties: *ref_297
     policyUpdate:
       type: object
-      properties: *ref_297
+      properties: *ref_298
     roles:
       type: object
-      properties: *ref_298
+      properties: *ref_299
     role:
       type: object
       properties: *ref_105
     servicePlanRow:
       type: object
-      properties: *ref_299
+      properties: *ref_300
     servicePlan:
       type: object
       properties: *ref_121
@@ -36970,24 +36983,24 @@ components:
       properties: *ref_141
     global:
       type: object
-      properties: *ref_300
+      properties: *ref_301
     ReferenceObject:
       type: object
       description: A simple object to represent a specific resource, typically an id and name.
-      properties: *ref_301
-      required: *ref_302
+      properties: *ref_302
+      required: *ref_303
     virtualImage:
       type: object
       properties: *ref_165
     virtualImageCreate:
       type: object
-      properties: *ref_303
+      properties: *ref_304
     virtualImageUpdate:
       type: object
-      properties: *ref_304
+      properties: *ref_305
     accessToken:
       type: object
-      properties: *ref_305
+      properties: *ref_306
   responses:
     4xx:
       description: Error Codes

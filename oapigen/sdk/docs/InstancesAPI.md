@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## DeleteInstance
 
-> DeleteInstance200Response DeleteInstance(ctx, id).PreserveVolumes(preserveVolumes).KeepBackups(keepBackups).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).Execute()
+> DeleteInstance200Response DeleteInstance(ctx, id).PreserveVolumes(preserveVolumes).KeepBackups(keepBackups).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).RemoveVolumes(removeVolumes).Execute()
 
 Delete an instance
 
@@ -108,10 +108,11 @@ func main() {
 	releaseFloatingIps := "off" // string | Release Floating IPs (optional) (default to "on")
 	releaseEIPs := "off" // string | Alias for releaseFloatingIps (optional) (default to "on")
 	force := "on" // string | Force Delete (optional) (default to "off")
+	removeVolumes := "on" // string | Remove Volumes (optional) (default to "off")
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstancesAPI.DeleteInstance(context.Background(), id).PreserveVolumes(preserveVolumes).KeepBackups(keepBackups).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).Execute()
+	resp, r, err := apiClient.InstancesAPI.DeleteInstance(context.Background(), id).PreserveVolumes(preserveVolumes).KeepBackups(keepBackups).ReleaseFloatingIps(releaseFloatingIps).ReleaseEIPs(releaseEIPs).Force(force).RemoveVolumes(removeVolumes).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.DeleteInstance``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -142,6 +143,7 @@ Name | Type | Description  | Notes
  **releaseFloatingIps** | **string** | Release Floating IPs | [default to &quot;on&quot;]
  **releaseEIPs** | **string** | Alias for releaseFloatingIps | [default to &quot;on&quot;]
  **force** | **string** | Force Delete | [default to &quot;off&quot;]
+ **removeVolumes** | **string** | Remove Volumes | [default to &quot;off&quot;]
 
 ### Return type
 
