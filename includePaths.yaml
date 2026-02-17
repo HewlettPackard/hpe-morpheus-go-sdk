@@ -35,6 +35,8 @@ includePaths:
   - /oauth/token
   - /api/provision-types
   - /api/options/{optionSource}
+  - /api/servers
+  - /api/servers/{id}
 
 # included due to de-duplication
   - /api/catalog-item-types

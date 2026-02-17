@@ -66,6 +66,10 @@
   $ref: paths/api@roles.yaml
 /api/roles/{id}:
   $ref: paths/api@roles@id.yaml
+/api/servers:
+  $ref: paths/api@servers.yaml
+/api/servers/{id}:
+  $ref: paths/api@servers@id.yaml
 /api/service-plans:
   $ref: paths/api@service-plans.yaml
 /api/service-plans/{id}:

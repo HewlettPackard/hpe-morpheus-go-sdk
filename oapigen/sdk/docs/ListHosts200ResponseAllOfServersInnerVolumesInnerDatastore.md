@@ -1,0 +1,82 @@
+# ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+
+## Methods
+
+### NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastore
+
+`func NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastore() *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore`
+
+NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastore instantiates a new ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastoreWithDefaults
+
+`func NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastoreWithDefaults() *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore`
+
+NewListHosts200ResponseAllOfServersInnerVolumesInnerDatastoreWithDefaults instantiates a new ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *ListHosts200ResponseAllOfServersInnerVolumesInnerDatastore) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

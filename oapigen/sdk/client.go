@@ -71,6 +71,8 @@ type APIClient struct {
 
 	GroupsAPI *GroupsAPIService
 
+	HostsAPI *HostsAPIService
+
 	InstancesAPI *InstancesAPIService
 
 	LibraryAPI *LibraryAPIService
@@ -119,6 +121,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DatastoresAPI = (*DatastoresAPIService)(&c.common)
 	c.EnvironmentsAPI = (*EnvironmentsAPIService)(&c.common)
 	c.GroupsAPI = (*GroupsAPIService)(&c.common)
+	c.HostsAPI = (*HostsAPIService)(&c.common)
 	c.InstancesAPI = (*InstancesAPIService)(&c.common)
 	c.LibraryAPI = (*LibraryAPIService)(&c.common)
 	c.NetworksAPI = (*NetworksAPIService)(&c.common)

@@ -315,7 +315,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_226
+                          properties: &ref_245
                             id:
                               type: integer
                               format: int64
@@ -360,10 +360,10 @@ paths:
                               anyOf:
                                 - title: Web Get Config
                                   type: object
-                                  required: &ref_214
+                                  required: &ref_233
                                     - webMethod
                                     - webUrl
-                                  properties: &ref_215
+                                  properties: &ref_234
                                     webMethod:
                                       type: string
                                       description: HTTP method to use for testing
@@ -416,14 +416,14 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: SQL Config
                                   type: object
-                                  required: &ref_216
+                                  required: &ref_235
                                     - dbPort
                                     - dbName
                                     - dbUser
                                     - dbHost
                                     - dbQuery
                                     - dbPassword
-                                  properties: &ref_217
+                                  properties: &ref_236
                                     dbHost:
                                       type: string
                                       description: Hostname or IP address of the database
@@ -494,10 +494,10 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: Elastic Search Config
                                   type: object
-                                  required: &ref_218
+                                  required: &ref_237
                                     - esHost
                                     - esPort
-                                  properties: &ref_219
+                                  properties: &ref_238
                                     esHost:
                                       type: string
                                       description: Hostname or IP address of the Elasticsearch server
@@ -538,12 +538,12 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: Socket Config
                                   type: object
-                                  required: &ref_220
+                                  required: &ref_239
                                     - port
                                     - host
                                     - send
                                     - responseMatch
-                                  properties: &ref_221
+                                  properties: &ref_240
                                     host:
                                       type: string
                                       description: Hostname or IP address of the socket server
@@ -594,9 +594,9 @@ paths:
                                   type: object
                                   maxProperties: 0
                                 - type: object
-                                  required: &ref_222
+                                  required: &ref_241
                                     - containerName
-                                  properties: &ref_223
+                                  properties: &ref_242
                                     containerName:
                                       type: string
                                     externalId:
@@ -635,10 +635,10 @@ paths:
                                       description: Password for user, if not using key based authentication
                                 - title: SNMP Config
                                   type: object
-                                  required: &ref_224
+                                  required: &ref_243
                                     - host
                                     - port
-                                  properties: &ref_225
+                                  properties: &ref_244
                                     host:
                                       type: string
                                       description: Hostname or IP address of the SNMP network entity
@@ -830,7 +830,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_227
+                          properties: &ref_246
                             id:
                               type: integer
                               format: int64
@@ -953,7 +953,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_228
+                          properties: &ref_247
                             id:
                               type: integer
                               format: int64
@@ -1224,7 +1224,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_229
+                properties: &ref_248
                   msg:
                     type: string
               examples:
@@ -1415,7 +1415,7 @@ paths:
                 properties:
                   backupSettings:
                     type: object
-                    properties: &ref_230
+                    properties: &ref_249
                       backupsEnabled:
                         type: boolean
                       createBackups:
@@ -1478,7 +1478,7 @@ paths:
               properties:
                 backupSettings:
                   type: object
-                  properties: &ref_231
+                  properties: &ref_250
                     backupsEnabled:
                       type: boolean
                       description: Use this to enable / disable scheduled backups
@@ -1598,13 +1598,13 @@ paths:
         - name: description
           in: query
           description: Filter by description, wildcard may be specified as %. eg. `example-%`
-          schema: &ref_169
+          schema: &ref_178
             type: string
           example: The desription of my cool object
         - name: enabled
           in: query
           description: Filter by enabled
-          schema: &ref_170
+          schema: &ref_179
             type: boolean
           example: false
         - name: featured
@@ -1642,7 +1642,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_232
+                          properties: &ref_251
                             id:
                               type: integer
                               format: int64
@@ -2275,9 +2275,9 @@ paths:
                 catalogItemType:
                   oneOf:
                     - type: object
-                      required: &ref_235
+                      required: &ref_254
                         - config
-                      properties: &ref_236
+                      properties: &ref_255
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -2332,7 +2332,7 @@ paths:
                           default: false
                         config:
                           type: object
-                          required: &ref_233
+                          required: &ref_252
                             - group
                             - cloud
                             - type
@@ -2341,7 +2341,7 @@ paths:
                             - volumes
                             - layout
                             - plan
-                          properties: &ref_234
+                          properties: &ref_253
                             group:
                               type: object
                               required:
@@ -2841,9 +2841,9 @@ paths:
                           type: string
                           description: Documentation content for this Catalog Item. Markdown-formatted text is accepted and displayed appropriately when the item is ordered from the Service Catalog. A new Catalog Item-type Wiki entry will also be added containing this information.
                     - type: object
-                      required: &ref_237
+                      required: &ref_256
                         - blueprint
-                      properties: &ref_238
+                      properties: &ref_257
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -2923,9 +2923,9 @@ paths:
                             type: integer
                             format: int64
                     - type: object
-                      required: &ref_239
+                      required: &ref_258
                         - workflow
-                      properties: &ref_240
+                      properties: &ref_259
                         name:
                           type: string
                           description: Catalog Item Type name
@@ -3174,7 +3174,7 @@ paths:
           description: |
             If specified will return all zones by cloud type code.
             Refer to `Zone Types` API for up to date listings.
-          schema: &ref_171
+          schema: &ref_180
             type: string
             enum:
               - alibaba
@@ -3211,7 +3211,7 @@ paths:
         - name: groupId
           in: query
           description: If specified will return all zones assigned to a server group by id. Accepts multiple values.
-          schema: &ref_172
+          schema: &ref_181
             type: integer
             format: int64
           example: 13
@@ -3433,7 +3433,7 @@ paths:
                               additionalProperties: true
                               anyOf:
                                 - type: object
-                                  properties: &ref_241
+                                  properties: &ref_260
                                     applianceUrl:
                                       type:
                                         - string
@@ -3488,7 +3488,7 @@ paths:
                                         - string
                                         - 'null'
                                 - type: object
-                                  properties: &ref_242
+                                  properties: &ref_261
                                     applianceUrl:
                                       type:
                                         - string
@@ -4068,12 +4068,12 @@ paths:
               properties:
                 zone:
                   type: object
-                  required: &ref_249
+                  required: &ref_268
                     - name
                     - groupId
                     - zoneType
                     - config
-                  properties: &ref_250
+                  properties: &ref_269
                     name:
                       type: string
                       description: A unique name scoped to your account for the cloud
@@ -4105,9 +4105,9 @@ paths:
                       anyOf:
                         - description: Amazon Cloud
                           type: object
-                          required: &ref_243
+                          required: &ref_262
                             - endpoint
-                          properties: &ref_244
+                          properties: &ref_263
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4167,7 +4167,7 @@ paths:
                               example: vpc-25e6dae
                         - description: Azure Cloud
                           type: object
-                          properties: &ref_245
+                          properties: &ref_264
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4219,7 +4219,7 @@ paths:
                               description: The method for interacting with cloud workloads (guestexec (VMware Tools) or rpc (SSH/WinRM))
                         - description: HVM Cloud
                           type: object
-                          properties: &ref_246
+                          properties: &ref_265
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -4255,11 +4255,11 @@ paths:
                               description: Whether to enable the user to select the network type during provisioning.
                         - description: VSphere Cloud
                           type: object
-                          required: &ref_247
+                          required: &ref_266
                             - apiUrl
                             - apiVersion
                             - datacenter
-                          properties: &ref_248
+                          properties: &ref_267
                             applianceUrl:
                               type: string
                               description: The URL used by workloads provisioned in the cloud for interacting with the Morpheus appliance.
@@ -5671,7 +5671,7 @@ paths:
                                     type: boolean
                             resourcePermission:
                               type: object
-                              properties: &ref_251
+                              properties: &ref_270
                                 all:
                                   type: boolean
                                 sites:
@@ -5778,7 +5778,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_252
+                  properties: &ref_271
                     name:
                       type: string
                     datastoreType:
@@ -6359,7 +6359,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_253
+                          properties: &ref_272
                             id:
                               type: integer
                               format: int64
@@ -7119,12 +7119,12 @@ paths:
               properties:
                 layout:
                   type: object
-                  required: &ref_254
+                  required: &ref_273
                     - name
                     - computeVersion
                     - groupType
                     - provisionType
-                  properties: &ref_255
+                  properties: &ref_274
                     name:
                       type: string
                       description: Cluster layout name
@@ -7295,7 +7295,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_256
+                properties: &ref_275
                   success:
                     type: boolean
                   id:
@@ -7344,7 +7344,7 @@ paths:
         - name: order
           in: query
           description: Sort direction, use 'desc' to reverse sort
-          schema: &ref_173
+          schema: &ref_182
             type: string
             default: asc
             enum:
@@ -7367,7 +7367,7 @@ paths:
         - name: hideInactive
           in: query
           description: If true restricts query to only load active datastores
-          schema: &ref_174
+          schema: &ref_183
             type: boolean
             default: false
           example: true
@@ -7384,7 +7384,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_257
+                          properties: &ref_276
                             id:
                               type: integer
                               format: int64
@@ -7632,7 +7632,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_258
+                  properties: &ref_277
                     name:
                       type: string
                     datastoreType:
@@ -7950,14 +7950,14 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_260
+                  properties: &ref_279
                     active:
                       type: boolean
                       description: Datastore active
                       default: true
                     permissions:
                       type: object
-                      properties: &ref_259
+                      properties: &ref_278
                         resourcePermissions:
                           type: object
                           properties:
@@ -8434,7 +8434,7 @@ paths:
               properties:
                 datastore:
                   type: object
-                  properties: &ref_261
+                  properties: &ref_280
                     name:
                       type: string
                       description: The name of the datastore to be created.
@@ -8551,7 +8551,7 @@ paths:
                       type: array
                       items:
                         type: object
-                  required: &ref_262
+                  required: &ref_281
                     - name
                     - datastoreType
                     - refId
@@ -9650,9 +9650,9 @@ paths:
               properties:
                 group:
                   type: object
-                  required: &ref_263
+                  required: &ref_282
                     - name
-                  properties: &ref_264
+                  properties: &ref_283
                     name:
                       type: string
                       description: A unique name scoped to your account for the group
@@ -9808,9 +9808,9 @@ paths:
               properties:
                 group:
                   type: object
-                  required: &ref_265
+                  required: &ref_284
                     - name
-                  properties: &ref_266
+                  properties: &ref_285
                     name:
                       type: string
                       description: A unique name scoped to your account for the group
@@ -10175,7 +10175,7 @@ paths:
                                         - 'null'
                                       items:
                                         type: object
-                                        properties: &ref_268
+                                        properties: &ref_287
                                           id:
                                             type: integer
                                             format: int64
@@ -10238,7 +10238,7 @@ paths:
                                             type: array
                                             items:
                                               type: object
-                                              properties: &ref_267
+                                              properties: &ref_286
                                                 id:
                                                   type: integer
                                                   format: int64
@@ -10393,7 +10393,7 @@ paths:
                                         - 'null'
                                       items:
                                         type: object
-                                        properties: &ref_269
+                                        properties: &ref_288
                                           id:
                                             type: integer
                                             format: int64
@@ -10421,7 +10421,7 @@ paths:
                                   type: array
                                   items:
                                     type: object
-                                    properties: &ref_270
+                                    properties: &ref_289
                                       id:
                                         type: integer
                                         format: int32
@@ -13421,21 +13421,21 @@ paths:
         - name: siteId
           in: query
           description: The Group ID (Site ID) for Filtering
-          schema: &ref_175
+          schema: &ref_121
             type: integer
             format: int64
           example: 7
         - name: planId
           in: query
           description: The Plan ID for Filtering
-          schema: &ref_176
+          schema: &ref_184
             type: integer
             format: int64
           example: 1
         - name: instanceType
           in: query
           description: The Instance Type Code for Filtering
-          schema: &ref_177
+          schema: &ref_185
             type: string
             description: Instance Type
           example: ubuntu
@@ -13447,7 +13447,7 @@ paths:
         - name: createdBy
           in: query
           description: The User ID for Filtering
-          schema: &ref_178
+          schema: &ref_122
             type: integer
             format: int64
             description: User ID
@@ -13455,28 +13455,28 @@ paths:
         - name: agentInstalled
           in: query
           description: Filter instances by if agent is installed or not on the associated servers.
-          schema: &ref_179
+          schema: &ref_186
             type: boolean
             description: Agent installed status
           example: true
         - name: status
           in: query
           description: The instance status for filtering.
-          schema: &ref_180
+          schema: &ref_187
             type: string
             description: Instance status
           example: running
         - name: environment
           in: query
           description: The environment for filtering.
-          schema: &ref_181
+          schema: &ref_188
             type: string
             description: Environment
           example: lab
         - name: showDeleted
           in: query
           description: If true, includes instances in pending removal status.
-          schema: &ref_182
+          schema: &ref_189
             type: boolean
             description: Show instances in pending removal status
             default: false
@@ -13484,63 +13484,63 @@ paths:
         - name: deleted
           in: query
           description: If true, only deleted resources or instances in pending removal status are returned.
-          schema: &ref_183
+          schema: &ref_190
             type: boolean
             description: Show only deleted resources or instances in pending removal status
           example: true
         - name: expireDate
           in: query
           description: Filter by expireDate less than or equal to specified date
-          schema: &ref_184
+          schema: &ref_191
             type: string
             description: Expire date
           example: '2019-01-01'
         - name: expireDateMin
           in: query
           description: Filter expireDate greater than or equal to the specified date
-          schema: &ref_185
+          schema: &ref_192
             type: string
             description: Expire date
           example: '2019-01-01'
         - name: expireDays
           in: query
           description: Filter by expireDays less than or equal to the specified value
-          schema: &ref_186
+          schema: &ref_193
             type: string
             description: Expire days
           example: '20'
         - name: expireDaysMin
           in: query
           description: Filter by expireDays greater than or equal to the specified value
-          schema: &ref_187
+          schema: &ref_194
             type: string
             description: Expire days
           example: '20'
         - name: shutdownDate
           in: query
           description: Filter by shutdownDate less than equal to the specified date
-          schema: &ref_188
+          schema: &ref_195
             type: string
             description: Shutdown date
           example: '2019-01-01'
         - name: shutdownDateMin
           in: query
           description: Filter by shutdownDate greater than or equal to the specified date
-          schema: &ref_189
+          schema: &ref_196
             type: string
             description: Shutdown date
           example: '2019-01-01'
         - name: shutdownDays
           in: query
           description: Filter by shutdownDays less than or equal to the specified value
-          schema: &ref_190
+          schema: &ref_197
             type: string
             description: Shutdown days
           example: '20'
         - name: shutdownDaysMin
           in: query
           description: Filter by shutdownDays greater than or equal to the specified value
-          schema: &ref_191
+          schema: &ref_198
             type: string
             description: Shutdown days
           example: '20'
@@ -13556,13 +13556,13 @@ paths:
           in: query
           description: |
             Filter by tags (metadata). This allows filtering by a tag name and value(s)
-          schema: &ref_164
+          schema: &ref_123
             type: string
           example: value
         - name: details
           in: query
           description: Include details=true to return more details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
-          schema: &ref_192
+          schema: &ref_199
             type: boolean
             description: Instance details
             default: false
@@ -15431,10 +15431,10 @@ paths:
           application/json:
             schema:
               type: object
-              required: &ref_272
+              required: &ref_291
                 - instance
                 - config
-              properties: &ref_273
+              properties: &ref_292
                 instance:
                   type: object
                   description: Key for name, site, instanceType layout, and plan.
@@ -15570,7 +15570,7 @@ paths:
                       type: object
                     - title: HVM Instance Configuration
                       type: object
-                      properties: &ref_271
+                      properties: &ref_290
                         noAgent:
                           type:
                             - boolean
@@ -15827,9 +15827,9 @@ paths:
                 allOf:
                   - oneOf:
                       - type: object
-                        required: &ref_274
+                        required: &ref_293
                           - instance
-                        properties: &ref_275
+                        properties: &ref_294
                           instance:
                             type: object
                             additionalProperties: true
@@ -16549,7 +16549,7 @@ paths:
         - name: details
           in: query
           description: Include details=false to exclude extra details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
-          schema: &ref_193
+          schema: &ref_200
             type: boolean
             description: Instance details
             default: true
@@ -17055,7 +17055,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_277
+              properties: &ref_296
                 instance:
                   type: object
                   properties:
@@ -17143,7 +17143,7 @@ paths:
                       example: myInstanceDisplayName
                 config:
                   type: object
-                  properties: &ref_276
+                  properties: &ref_295
                     customOptions:
                       type: object
                       description: Custom Option Type settings object containing name value pairs.
@@ -17456,42 +17456,42 @@ paths:
         - name: preserveVolumes
           in: query
           description: Preserve Volumes
-          schema: &ref_194
+          schema: &ref_127
             type: string
             default: 'off'
           example: 'on'
         - name: keepBackups
           in: query
           description: Preserve copy of backups
-          schema: &ref_195
+          schema: &ref_201
             type: string
             default: 'off'
           example: 'on'
         - name: releaseFloatingIps
           in: query
           description: Release Floating IPs
-          schema: &ref_196
+          schema: &ref_128
             type: string
             default: 'on'
           example: 'off'
         - name: releaseEIPs
           in: query
           description: Alias for releaseFloatingIps
-          schema: &ref_197
+          schema: &ref_129
             type: string
             default: 'on'
           example: 'off'
         - name: force
           in: query
           description: Force Delete
-          schema: &ref_198
+          schema: &ref_130
             type: string
             default: 'off'
           example: 'on'
         - name: removeVolumes
           in: query
           description: Remove Volumes
-          schema: &ref_199
+          schema: &ref_202
             type: string
             default: 'off'
           example: 'on'
@@ -17534,7 +17534,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_278
+                properties: &ref_297
                   envs:
                     type:
                       - array
@@ -17793,7 +17793,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: &ref_279
+              properties: &ref_298
                 instance:
                   type: object
                   description: The map containing the id of the service plan you wish to apply to the containers in this instance.
@@ -17953,7 +17953,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_280
+                          properties: &ref_299
                             id:
                               type: integer
                               format: int64
@@ -18077,9 +18077,9 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  required: &ref_281
+                  required: &ref_300
                     - name
-                  properties: &ref_282
+                  properties: &ref_301
                     name:
                       type: string
                       description: Instance type name
@@ -18258,7 +18258,7 @@ paths:
               properties:
                 instanceType:
                   type: object
-                  properties: &ref_283
+                  properties: &ref_302
                     name:
                       type: string
                       description: Instance type name
@@ -18603,11 +18603,11 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  required: &ref_284
+                  required: &ref_303
                     - name
                     - instanceVersion
                     - provisionTypeCode
-                  properties: &ref_285
+                  properties: &ref_304
                     name:
                       type: string
                       description: Layout name
@@ -19048,7 +19048,7 @@ paths:
               properties:
                 instanceTypeLayout:
                   type: object
-                  properties: &ref_286
+                  properties: &ref_305
                     name:
                       type: string
                       description: Layout name
@@ -19728,11 +19728,11 @@ paths:
               properties:
                 network:
                   type: object
-                  required: &ref_293
+                  required: &ref_312
                     - name
                     - zone
                     - site
-                  properties: &ref_294
+                  properties: &ref_313
                     name:
                       type: string
                       description: Name
@@ -19893,11 +19893,11 @@ paths:
                       description: Configuration object. Settings vary by type.
                       anyOf:
                         - type: object
-                          required: &ref_287
+                          required: &ref_306
                             - resourceGroupId
                             - subnetName
                             - subnetCidr
-                          properties: &ref_288
+                          properties: &ref_307
                             resourceGroupId:
                               type: string
                               description: Resource Group Name
@@ -19908,12 +19908,12 @@ paths:
                               type: string
                               description: The subnet's address range in CIDR notation (e.g. 192.168.1.0/24). It must be contained by the address space of the virtual network.
                         - type: object
-                          required: &ref_289
+                          required: &ref_308
                             - availabilityZone
                             - cidr
                             - assignPublicIp
                             - zonePool
-                          properties: &ref_290
+                          properties: &ref_309
                             availabilityZone:
                               type: string
                               description: Availability Zone Name
@@ -19932,10 +19932,10 @@ paths:
                                   type: integer
                                   description: Morpheus resource pool ID of the VPC for the network.
                         - type: object
-                          required: &ref_291
+                          required: &ref_310
                             - mtu
                             - autoCreate
-                          properties: &ref_292
+                          properties: &ref_311
                             mtu:
                               type: string
                               description: GCP MTU
@@ -20573,7 +20573,7 @@ paths:
               properties:
                 network:
                   type: object
-                  properties: &ref_295
+                  properties: &ref_314
                     displayName:
                       type: string
                       description: Display Name
@@ -20857,7 +20857,7 @@ paths:
           in: path
           required: true
           description: '`optionSource` to be listed'
-          schema: &ref_200
+          schema: &ref_203
             type: string
             example: keyPairs
       responses:
@@ -22318,11 +22318,11 @@ paths:
               properties:
                 policy:
                   type: object
-                  required: &ref_296
+                  required: &ref_315
                     - name
                     - policyType
                     - config
-                  properties: &ref_297
+                  properties: &ref_316
                     name:
                       type: string
                       description: A name for the policy
@@ -24656,7 +24656,7 @@ paths:
               properties:
                 policy:
                   type: object
-                  properties: &ref_298
+                  properties: &ref_317
                     name:
                       type: string
                       description: A name for the policy
@@ -25745,7 +25745,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_299
+                          properties: &ref_318
                             id:
                               type: integer
                               format: int64
@@ -29177,6 +29177,1894 @@ paths:
         5XX:
           description: Error Codes
           content: *ref_3
+  /api/servers:
+    get:
+      summary: Get All Hosts
+      description: This endpoint retrieves a paginated list of hosts.
+      operationId: listHosts
+      tags:
+        - Hosts
+      parameters:
+        - name: name
+          in: query
+          description: Filter by name
+          schema: *ref_10
+          example: example
+        - name: phrase
+          in: query
+          description: Search phrase for partial matches on name or description
+          schema: *ref_9
+        - name: zoneId
+          in: query
+          description: The Cloud ID (Zone ID) for Filtering
+          schema: *ref_64
+          example: 3
+        - name: siteId
+          in: query
+          description: The Group ID (Site ID) for Filtering
+          schema: *ref_121
+          example: 7
+        - name: clusterId
+          in: query
+          description: The Cluster ID(s) for filtering. Accepts multiple values.
+          schema: &ref_204
+            type: integer
+            format: int64
+          example: 135
+        - name: managed
+          in: query
+          description: Filter by managed (true) or unmanaged (false)
+          schema: &ref_205
+            type: boolean
+          example: false
+        - name: serverType
+          in: query
+          description: Filter by server type code
+          schema: &ref_206
+            type: string
+          example: vmwareHypervisor
+        - name: powerState
+          in: query
+          description: Filter by power status
+          schema: &ref_207
+            type: string
+          example: 'off'
+        - name: ip
+          in: query
+          description: Filter by IP address
+          schema: &ref_208
+            type: string
+          example: 192.168.1.45
+        - name: vm
+          in: query
+          description: Filter to show only Virtual Machines (true)
+          schema: &ref_209
+            type: boolean
+          example: false
+        - name: vmHypervisor
+          in: query
+          description: Filter to show only VM Hypervisors (true)
+          schema: &ref_210
+            type: boolean
+          example: false
+        - name: bareMetalHost
+          in: query
+          description: Filter to show only Baremetal Servers
+          schema: &ref_211
+            type: boolean
+          example: false
+        - name: status
+          in: query
+          description: Filter by status
+          schema: &ref_212
+            type: string
+        - name: agentInstalled
+          in: query
+          description: Filter by agent installed (true)
+          schema: &ref_213
+            type: boolean
+          example: true
+        - name: max
+          in: query
+          description: Maximum number of records to return
+          schema: *ref_5
+        - name: offset
+          in: query
+          description: Offset records, the number of records to skip, for paginating requests
+          schema: *ref_6
+        - name: lastUpdated
+          in: query
+          description: Date filter, restricts query to only load resources updated more recently than the date specified (ISO 8601)
+          example: '2019-03-06T17:52:29+00:00'
+          schema: *ref_42
+        - name: createdBy
+          in: query
+          description: The User ID for Filtering
+          schema: *ref_122
+          example: 63
+        - name: tags.name
+          in: query
+          description: |
+            Filter by tags (metadata). This allows filtering by a tag name and value(s)
+          schema: *ref_123
+          example: value
+        - name: metadata
+          in: query
+          description: Alias for tags
+          schema: &ref_214
+            type: string
+          example: tags.env=qa&tags.env=test
+        - in: query
+          name: uuid
+          description: Filter by UUID, accepts multiple values
+          schema:
+            type: string
+        - name: externalId
+          in: query
+          description: Filter by External ID
+          schema: &ref_215
+            type: string
+        - name: internalId
+          in: query
+          description: Filter by Internal ID
+          schema: &ref_216
+            type: string
+        - name: externalUniquelId
+          in: query
+          description: Filter by External Unique ID
+          schema: &ref_217
+            type: string
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      servers:
+                        type: array
+                        items:
+                          type: object
+                          properties: &ref_124
+                            id:
+                              type: integer
+                              format: int64
+                            uuid:
+                              type: string
+                            externalId:
+                              type:
+                                - string
+                                - 'null'
+                            internalId:
+                              type:
+                                - string
+                                - 'null'
+                            externalUniqueId:
+                              type:
+                                - string
+                                - 'null'
+                            name:
+                              type: string
+                            externalName:
+                              type: string
+                            hostname:
+                              type: string
+                            parentServer:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
+                            accountId:
+                              type: integer
+                              format: int64
+                            account:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
+                            owner:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                username:
+                                  type: string
+                            zone:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
+                            plan:
+                              type: object
+                              properties:
+                                id:
+                                  type:
+                                    - integer
+                                    - 'null'
+                                  format: int64
+                                code:
+                                  type:
+                                    - string
+                                    - 'null'
+                                name:
+                                  type:
+                                    - string
+                                    - 'null'
+                            computeServerType:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                code:
+                                  type: string
+                                name:
+                                  type: string
+                                managed:
+                                  type: boolean
+                                externalDelete:
+                                  type: boolean
+                            visibility:
+                              type: string
+                            description:
+                              type:
+                                - string
+                                - 'null'
+                            zoneId:
+                              type: integer
+                              format: int64
+                            siteId:
+                              type: integer
+                              format: int64
+                            resourcePoolId:
+                              type:
+                                - integer
+                                - 'null'
+                              format: int64
+                            folderId:
+                              type:
+                                - integer
+                                - 'null'
+                              format: int64
+                            sshHost:
+                              type:
+                                - string
+                                - 'null'
+                            sshPort:
+                              type: integer
+                              format: int64
+                            externalIp:
+                              type:
+                                - string
+                                - 'null'
+                            internalIp:
+                              type:
+                                - string
+                                - 'null'
+                            volumeId:
+                              type:
+                                - string
+                                - 'null'
+                            platform:
+                              type:
+                                - string
+                                - 'null'
+                            platformVersion:
+                              type:
+                                - string
+                                - 'null'
+                            sshUsername:
+                              type:
+                                - string
+                                - 'null'
+                            sshPassword:
+                              type:
+                                - string
+                                - 'null'
+                            sshPasswordHash:
+                              type:
+                                - string
+                                - 'null'
+                            sshKeyPair:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                            osDevice:
+                              type: string
+                            osType:
+                              type: string
+                            dataDevice:
+                              type: string
+                            lvmEnabled:
+                              type: boolean
+                            apiKey:
+                              type: string
+                            softwareRaid:
+                              type: boolean
+                            dateCreated:
+                              type: string
+                              format: date-time
+                            lastUpdated:
+                              type: string
+                              format: date-time
+                            stats:
+                              type: object
+                              properties:
+                                ts:
+                                  type: string
+                                  format: date-time
+                                freeSwap:
+                                  type: integer
+                                  format: int64
+                                usedSwap:
+                                  type: integer
+                                  format: int64
+                                cpuIdleTime:
+                                  type: integer
+                                  format: int64
+                                cpuSystemTime:
+                                  type: integer
+                                  format: int64
+                                cpuUserTime:
+                                  type: integer
+                                  format: int64
+                                cpuTotalTime:
+                                  type: integer
+                                  format: int64
+                                maxMemory:
+                                  type: integer
+                                  format: int64
+                                usedMemory:
+                                  type: integer
+                                  format: int64
+                                maxStorage:
+                                  type: integer
+                                  format: int64
+                                usedStorage:
+                                  type: integer
+                                  format: int64
+                                reservedStorage:
+                                  type: integer
+                                  format: int64
+                                cpuUsage:
+                                  type: number
+                                freeMemory:
+                                  type: integer
+                                  format: int64
+                                netTxUsage:
+                                  type: integer
+                                  format: int64
+                                netRxUsage:
+                                  type: integer
+                                  format: int64
+                                networkBandwidth:
+                                  type: integer
+                                  format: int64
+                            status:
+                              type: string
+                            statusMessage:
+                              type:
+                                - string
+                                - 'null'
+                            errorMessage:
+                              type:
+                                - string
+                                - 'null'
+                            statusDate:
+                              type:
+                                - string
+                                - 'null'
+                              format: date-time
+                            statusPercent:
+                              type:
+                                - string
+                                - 'null'
+                            statusEta:
+                              type:
+                                - string
+                                - 'null'
+                            powerState:
+                              type: string
+                            agentInstalled:
+                              type: boolean
+                            lastAgentUpdate:
+                              type:
+                                - string
+                                - 'null'
+                            agentVersion:
+                              type:
+                                - string
+                                - 'null'
+                            maxCores:
+                              type: integer
+                              format: int64
+                            coresPerSocket:
+                              type:
+                                - integer
+                                - 'null'
+                              format: int64
+                            maxMemory:
+                              type: integer
+                              format: int64
+                            maxStorage:
+                              type: integer
+                              format: int64
+                            maxCpu:
+                              type:
+                                - integer
+                                - 'null'
+                              format: int64
+                            maxGpus:
+                              type:
+                                - integer
+                                - 'null'
+                              format: int64
+                            manageInternalFirewall:
+                              type: boolean
+                            enableLogs:
+                              type: boolean
+                            hourlyCost:
+                              type: number
+                            hourlyPrice:
+                              type: number
+                            sourceImage:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                code:
+                                  type: string
+                                name:
+                                  type: string
+                            serverOs:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                code:
+                                  type: string
+                                name:
+                                  type: string
+                                description:
+                                  type:
+                                    - string
+                                    - 'null'
+                                vendor:
+                                  type: string
+                                category:
+                                  type: string
+                                osFamily:
+                                  type:
+                                    - string
+                                    - 'null'
+                                osVersion:
+                                  type: string
+                                bitCount:
+                                  type: integer
+                                  format: int64
+                                platform:
+                                  type: string
+                            volumes:
+                              type: array
+                              items:
+                                type: object
+                                properties: &ref_319
+                                  id:
+                                    type: integer
+                                    format: int64
+                                  name:
+                                    type: string
+                                  description:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  controller:
+                                    type:
+                                      - object
+                                      - 'null'
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  controllerId:
+                                    type:
+                                      - integer
+                                      - 'null'
+                                    format: int64
+                                  controllerMountPoint:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  resizeable:
+                                    type:
+                                      - boolean
+                                      - 'null'
+                                  rootVolume:
+                                    type: boolean
+                                  unitNumber:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  deviceName:
+                                    type: string
+                                  deviceDisplayName:
+                                    type: string
+                                  volumeName:
+                                    type: string
+                                  volumePath:
+                                    type: string
+                                  volumeType:
+                                    type: string
+                                  refType:
+                                    type: string
+                                  refId:
+                                    type: integer
+                                    format: int64
+                                  diskMode:
+                                    type: string
+                                  diskType:
+                                    type: string
+                                  type:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      code:
+                                        type: string
+                                      name:
+                                        type: string
+                                  typeId:
+                                    type: integer
+                                    format: int64
+                                  category:
+                                    type: string
+                                  status:
+                                    type: string
+                                  statusMessage:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  configurableIOPS:
+                                    type: boolean
+                                  maxStorage:
+                                    type: integer
+                                    format: int64
+                                  usedStorage:
+                                    type: integer
+                                    format: int64
+                                  displayOrder:
+                                    type: integer
+                                    format: int64
+                                  maxIOPS:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  uuid:
+                                    type: string
+                                  active:
+                                    type: boolean
+                                  readOnly:
+                                    type: boolean
+                                  removable:
+                                    type: boolean
+                                  poolName:
+                                    type: string
+                                  zone:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  zoneId:
+                                    type: integer
+                                    format: int64
+                                  datastore:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  datastoreId:
+                                    type:
+                                      - integer
+                                      - 'null'
+                                    format: int64
+                                  datastoreOption:
+                                    type: string
+                                  storageGroup:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  namespace:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  storageServer:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  source:
+                                    type: string
+                                  uniqueId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  internalId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  externalId:
+                                    type: string
+                                  provisionType:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  copyType:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  fiberWwn:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  fileName:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  claimName:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  sharePath:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  sourceId:
+                                    type: string
+                                  sourceImage:
+                                    type: string
+                                  imageType:
+                                    type: string
+                                  online:
+                                    type: boolean
+                                  rawData:
+                                    type: string
+                                  account:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  owner:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                            controllers:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int64
+                                  name:
+                                    type: string
+                                  type:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      code:
+                                        type: string
+                                      name:
+                                        type: string
+                                  maxDevices:
+                                    type: integer
+                                    format: int64
+                                  reservedUnitNumber:
+                                    type: integer
+                                    format: int64
+                            interfaces:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                    format: int64
+                                  refType:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  refId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  name:
+                                    type: string
+                                  internalId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  externalId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  uniqueId:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  publicIpAddress:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  publicIpv6Address:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  ipAddress:
+                                    type: string
+                                  ipv6Address:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  ipSubnet:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  ipv6Subnet:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  description:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  dhcp:
+                                    type: boolean
+                                  active:
+                                    type: boolean
+                                  poolAssigned:
+                                    type: boolean
+                                  primaryInterface:
+                                    type: boolean
+                                  network:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  subnet:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  networkGroup:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  networkPosition:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  networkPool:
+                                    type:
+                                      - object
+                                      - 'null'
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  networkDomain:
+                                    type:
+                                      - object
+                                      - 'null'
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      name:
+                                        type: string
+                                  type:
+                                    type:
+                                      - object
+                                      - 'null'
+                                    properties:
+                                      id:
+                                        type: integer
+                                        format: int64
+                                      code:
+                                        type: string
+                                      name:
+                                        type: string
+                                  ipMode:
+                                    type:
+                                      - string
+                                      - 'null'
+                                  macAddress:
+                                    type:
+                                      - string
+                                      - 'null'
+                            labels:
+                              type:
+                                - array
+                                - 'null'
+                              items:
+                                type: object
+                            tags:
+                              type:
+                                - array
+                                - 'null'
+                              items:
+                                type: object
+                            enabled:
+                              type: boolean
+                            tagCompliant:
+                              type:
+                                - string
+                                - 'null'
+                            containers:
+                              type: array
+                              items:
+                                type: integer
+                                format: int64
+                            config:
+                              type: object
+                              properties:
+                                poolProviderType:
+                                  type:
+                                    - string
+                                    - 'null'
+                                isVpcSelectable:
+                                  type: boolean
+                                smbiosAssetTag:
+                                  type:
+                                    - string
+                                    - 'null'
+                                isEC2:
+                                  type: boolean
+                                resourcePoolId:
+                                  type: integer
+                                  format: int64
+                                hostId:
+                                  type:
+                                    - integer
+                                    - 'null'
+                                  format: int64
+                                createUser:
+                                  oneOf:
+                                    - type: boolean
+                                    - type: string
+                                      enum:
+                                        - 'on'
+                                        - 'off'
+                                nestedVirtualization:
+                                  type:
+                                    - string
+                                    - 'null'
+                                vmwareFolderId:
+                                  type: string
+                                noAgent:
+                                  type: boolean
+                                powerScheduleType:
+                                  type:
+                                    - integer
+                                    - 'null'
+                                  format: int64
+                            instance:
+                              type:
+                                - object
+                                - 'null'
+                              properties:
+                                id:
+                                  type: integer
+                                  format: int64
+                                name:
+                                  type: string
+                                displayName:
+                                  type: string
+                                isVpcSelectable:
+                                  type: boolean
+                                accountId:
+                                  type: integer
+                                  format: int64
+                                accountName:
+                                  type: string
+                            guestConsolePreferred:
+                              type: boolean
+                            guestConsoleType:
+                              type:
+                                - string
+                                - 'null'
+                            guestConsoleUsername:
+                              type:
+                                - string
+                                - 'null'
+                            guestConsolePassword:
+                              type:
+                                - string
+                                - 'null'
+                            guestConsolePasswordHash:
+                              type:
+                                - string
+                                - 'null'
+                            guestConsolePort:
+                              type:
+                                - string
+                                - 'null'
+                      stats:
+                        type: object
+                      multitenant:
+                        type: boolean
+                  - type: object
+                    properties: *ref_12
+              examples:
+                Hosts Response:
+                  value:
+                    servers:
+                      - id: 270414
+                        uuid: b3f44e90-7165-4264-be0b-33f799b669ce
+                        externalId: vm-80894
+                        internalId: 502d8b73-fec2-164a-636d-3deb31877f80
+                        externalUniqueId: 422dd960-a5eb-bf80-4471-8cfa50100266
+                        name: 67105test01
+                        externalName: 67105test01
+                        hostname: morphrhel
+                        parentServer:
+                          id: 220340
+                          name: demo-esxi-06.morpheusdata.com
+                        accountId: 3
+                        account:
+                          id: 3
+                          name: Morpheus
+                        owner: null
+                        zone:
+                          id: 172
+                          name: VMware Demo Cluster H5
+                        plan:
+                          id: 1093
+                          code: internal-custom-vmware
+                          name: Custom VMWare
+                        computeServerType:
+                          id: 74
+                          code: vmwareUnmanaged
+                          name: Vmware VM
+                          managed: false
+                          externalDelete: true
+                        visibility: private
+                        description: null
+                        zoneId: 172
+                        siteId: 443
+                        resourcePoolId: 4080
+                        folderId: null
+                        sshHost: 192.168.20.42
+                        sshPort: 22
+                        externalIp: 192.168.20.42
+                        internalIp: 192.168.20.42
+                        volumeId: null
+                        platform: null
+                        platformVersion: null
+                        sshUsername: root
+                        sshPassword: null
+                        sshPasswordHash: null
+                        osDevice: /dev/sda
+                        osType: other
+                        dataDevice: /dev/sdb
+                        lvmEnabled: false
+                        apiKey: 18c3e200-d093-9029-97a3-32bbb8e1d344
+                        softwareRaid: false
+                        dateCreated: '2022-07-14T06:43:08Z'
+                        lastUpdated: '2022-09-01T14:49:21Z'
+                        stats:
+                          ts: '2022-09-01T14:49:20Z'
+                          maxMemory: 17179869184
+                          usedMemory: 170917888
+                          maxStorage: 17179869184
+                          usedStorage: 0
+                          cpuUsage: 0.47857794
+                          freeMemory: 17008951296
+                        status: provisioned
+                        statusMessage: null
+                        errorMessage: null
+                        statusDate: null
+                        statusPercent: null
+                        statusEta: null
+                        powerState: 'on'
+                        agentInstalled: false
+                        lastAgentUpdate: null
+                        agentVersion: null
+                        maxCores: 2
+                        coresPerSocket: 1
+                        maxMemory: 17179869184
+                        maxStorage: 17179869184
+                        maxCpu: null
+                        manageInternalFirewall: true
+                        enableLogs: true
+                        hourlyCost: 0.1122221653
+                        hourlyPrice: 0.1122221653
+                        sourceImage: null
+                        serverOs:
+                          id: 53
+                          code: other.64
+                          name: other 64-bit
+                          description: null
+                          vendor: other
+                          category: other
+                          osFamily: null
+                          osVersion: all
+                          bitCount: 64
+                          platform: other
+                        volumes:
+                          - id: 2620495
+                            name: root
+                            controllerId: 2144621
+                            controllerMountPoint: '2144621:0:6:0'
+                            resizeable: true
+                            planResizable: true
+                            rootVolume: true
+                            unitNumber: '0'
+                            typeId: 1
+                            configurableIOPS: false
+                            datastoreId: 21317
+                            maxStorage: 17179869184
+                            displayOrder: 0
+                            maxIOPS: null
+                            uuid: 38c37d6d-3d56-44f7-9c41-0b43460d5b40
+                            uniqueId: null
+                            externalId: '2000'
+                            internalId: '[ESXi-DC2-QA-LUN01] 67105test01/67105test01.vmdk'
+                        controllers:
+                          - id: 2144619
+                            name: IDE 0
+                            type:
+                              id: 2
+                              code: vmware-ide
+                              name: IDE
+                            maxDevices: 2
+                            reservedUnitNumber: -1
+                          - id: 2144620
+                            name: IDE 1
+                            type:
+                              id: 2
+                              code: vmware-ide
+                              name: IDE
+                            maxDevices: 2
+                            reservedUnitNumber: -1
+                          - id: 2144621
+                            name: SCSI controller 0
+                            type:
+                              id: 6
+                              code: vmware-paravirtual
+                              name: SCSI VMware Paravirtual
+                            maxDevices: 15
+                            reservedUnitNumber: 7
+                        interfaces:
+                          - id: 658953
+                            refType: null
+                            refId: null
+                            name: Network adapter 1
+                            internalId: null
+                            externalId: '4000'
+                            uniqueId: null
+                            publicIpAddress: null
+                            publicIpv6Address: null
+                            ipAddress: 192.168.20.42
+                            ipv6Address: fe80::250:ffff:feaa:29d4
+                            ipSubnet: null
+                            ipv6Subnet: null
+                            description: null
+                            dhcp: true
+                            active: true
+                            poolAssigned: false
+                            primaryInterface: true
+                            network:
+                              id: 135357
+                              name: VLAN0525 - Internal Server 2
+                            subnet: null
+                            networkGroup: null
+                            networkPosition: null
+                            networkPool: null
+                            networkDomain: null
+                            type:
+                              id: 4
+                              code: vmxNet3
+                              name: VMXNET 3
+                            ipMode: null
+                            macAddress: 00:50:56:ad:29:d4
+                        labels: []
+                        tags: []
+                        enabled: true
+                        tagCompliant: null
+                        containers: []
+                        instance:
+                          id: 2342422
+                          name: 67105test01
+                          displayName: 67105test01
+                          accountId: 3
+                          accountName: Morpheus
+                        guestConsolePreferred: false
+                        guestConsoleType: null
+                        guestConsoleUsername: null
+                        guestConsolePassword: null
+                        guestConsolePasswordHash: null
+                        guestConsolePort: null
+                    stats:
+                      '2809':
+                        usedStorage: 1423470592
+                        reservedStorage: 10737418240
+                        maxStorage: 10737418240
+                        usedMemory: 0
+                        reservedMemory: 512217088
+                        maxMemory: 512217088
+                        cpuUsage: 0
+                    multiTenant: true
+                    meta:
+                      max: 25
+                      offset: 0
+                      size: 1
+                      total: 1
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
+    post:
+      summary: Add a Baremetal Host
+      description: Add a Baremetal Host
+      operationId: addBaremetalHost
+      tags:
+        - Hosts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: &ref_320
+                server:
+                  type: object
+                  properties:
+                    cloud:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 34
+                    computeServerType:
+                      type: object
+                      anyOf:
+                        - type: object
+                          properties:
+                            code:
+                              type: string
+                              description: The ComputeServerType's code
+                              example: IloBareMetalUnmanaged
+                        - type: object
+                          properties:
+                            id:
+                              type: integer
+                              description: The ComputeServerType's id
+                              example: 1
+                    description:
+                      type: string
+                      example: ''
+                    group:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                    labels:
+                      type: array
+                      items:
+                        type: string
+                      example: []
+                    name:
+                      type: string
+                      example: example
+                    visibility:
+                      type: string
+                      enum:
+                        - private
+                        - public
+                      example: private
+                    config:
+                      type: object
+                      properties:
+                        iloIpAddress:
+                          type: string
+                          format: ipv4
+                          example: 192.168.1.1
+                        iloUsername:
+                          type: string
+                          example: ''
+                        iloPassword:
+                          type: string
+                          example: ''
+                        macAddress:
+                          type: string
+                          example: ba:dc:0f:fe:ca:fe
+            examples:
+              Host Request:
+                value:
+                  server:
+                    computeServerType:
+                      code: IloBareMetalUnmanaged
+                    cloud:
+                      id: 34
+                    group:
+                      id: 2
+                    name: example
+                    description: ''
+                    visibility: private
+                    labels: []
+                    config:
+                      iloIpAddress: 192.168.1.1
+                      iloUsername: ''
+                      iloPassword: ''
+                      macAddress: ba:dc:0f:fe:ca:fe
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  server:
+                    type: object
+                    properties: *ref_124
+              examples:
+                Successful Baremetal Creation:
+                  value:
+                    success: true
+                    server:
+                      id: 22728
+                      uuid: f5510d60-8dd3-41bc-8f68-b47f6996722c
+                      externalId: null
+                      internalId: null
+                      externalUniqueId: null
+                      name: example
+                      externalName: example
+                      hostname: example
+                      iScsiInitiatorName: null
+                      accountId: 1
+                      account:
+                        id: 1
+                        name: bosmang
+                      owner: null
+                      zone:
+                        id: 34
+                        name: example-cloud
+                        type: hpe-baremetal-plugin.cloud
+                      plan:
+                        id: null
+                        code: null
+                        name: null
+                      computeServerType:
+                        id: 245
+                        code: IloBareMetalUnmanaged
+                        name: HPE ILO Server
+                        managed: false
+                        externalDelete: true
+                      visibility: public
+                      description: null
+                      zoneId: 34
+                      siteId: 2
+                      resourcePoolId: null
+                      folderId: null
+                      sshHost: null
+                      sshPort: 22
+                      externalIp: null
+                      internalIp: null
+                      volumeId: null
+                      platform: null
+                      platformVersion: null
+                      sshUsername: null
+                      sshPassword: null
+                      sshPasswordHash: null
+                      sshKeyPair: null
+                      osDevice: /dev/sda
+                      osType: linux
+                      dataDevice: /dev/sdb
+                      lvmEnabled: false
+                      apiKey: de50b34a-1278-461e-83d2-0340986aec27
+                      softwareRaid: false
+                      dateCreated: '2025-04-02T23:59:01Z'
+                      lastUpdated: '2025-04-02T23:59:01Z'
+                      stats: {}
+                      status: provisioning
+                      statusMessage: null
+                      errorMessage: null
+                      statusDate: null
+                      statusPercent: null
+                      statusEta: null
+                      powerState: unknown
+                      agentInstalled: false
+                      lastAgentUpdate: null
+                      agentVersion: null
+                      maxCores: 1
+                      coresPerSocket: 1
+                      maxMemory: 536870912
+                      maxStorage: 1073741824
+                      maxCpu: 1
+                      maxGpus: null
+                      manageInternalFirewall: true
+                      enableLogs: true
+                      hourlyCost: 0
+                      hourlyPrice: 0
+                      sourceImage: null
+                      serverOs: null
+                      volumes: []
+                      controllers: []
+                      interfaces: []
+                      labels: []
+                      tags: []
+                      enabled: true
+                      tagCompliant: null
+                      containers: []
+                      config:
+                        macAddress: ba:dc:0f:fe:ca:fe
+                        iloIpAddress: 192.168.1.1
+                        createUser: 'on'
+                        iloUsername: ''
+                        iloPassword: null
+                        maxMemory: 536870912
+                        maxStorage: 1073741824
+                        maxCpu: 1
+                        maxCores: 1
+                        coresPerSocket: 1
+                        iloPasswordHash: null
+                      guestConsolePreferred: false
+                      guestConsoleType: null
+                      guestConsoleUsername: null
+                      guestConsolePassword: null
+                      guestConsolePasswordHash: null
+                      guestConsolePort: null
+                      maintenanceMode: false
+                      placementStrategy: auto
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
+  /api/servers/{id}:
+    get:
+      summary: Get a Specific Host
+      description: This endpoint retrieves a specific host.
+      operationId: getHost
+      tags:
+        - Hosts
+      parameters:
+        - name: id
+          in: path
+          description: Morpheus ID of the Object being referenced
+          required: true
+          schema: *ref_0
+          example: 1
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  server:
+                    type: object
+                    properties: *ref_124
+                  stats:
+                    type: object
+              examples:
+                Hosts Response:
+                  value:
+                    server: &ref_125
+                      id: 837579
+                      uuid: 28f48736-e5ac-42f0-83bb-34c5d3d46f3e
+                      externalId: vm-104987
+                      internalId: 502d9a89-7fc8-1871-b192-f147984a8f3b
+                      externalUniqueId: 422d0218-8a98-da27-fa01-5532bb773433
+                      name: power-vc-proxy
+                      externalName: power-vc-proxy
+                      hostname: dd-vmw-ubuntu-1
+                      parentServer:
+                        id: 577784
+                        name: qa-dc2-esxi-03.prod.dc2.den.morpheusdata.com
+                      accountId: 1
+                      account:
+                        id: 1
+                        name: Morpheus QA
+                      owner:
+                        id: 3035
+                        username: ddeyoung
+                      zone:
+                        id: 26324
+                        name: QA VMware
+                      plan:
+                        id: 146
+                        code: vm-1024
+                        name: 1 CPU, 1GB Memory
+                      computeServerType:
+                        id: 75
+                        code: vmwareVm
+                        name: VMware Linux VM
+                        managed: true
+                        externalDelete: true
+                      visibility: private
+                      description: null
+                      zoneId: 26324
+                      siteId: 2
+                      resourcePoolId: 138293
+                      folderId: 80842
+                      sshHost: 10.32.20.254
+                      sshPort: 22
+                      externalIp: 10.32.20.254
+                      internalIp: 10.32.20.254
+                      volumeId: null
+                      platform: ubuntu
+                      platformVersion: '20.04'
+                      sshUsername: cloudinit
+                      sshPassword: '************'
+                      sshPasswordHash: 2e1c33de75664c05bbb8205a574f6ce9f29ee4862e005072957970277ef441ec
+                      osDevice: /dev/vda
+                      osType: linux
+                      dataDevice: /dev/vda
+                      lvmEnabled: false
+                      apiKey: 18c3e200-d093-9029-97a3-32bbb8e1d344
+                      softwareRaid: false
+                      dateCreated: '2022-11-22T16:27:14Z'
+                      lastUpdated: '2022-12-19T21:45:37Z'
+                      stats:
+                        ts: '2022-12-19T21:45:34+00:00'
+                        freeMemory: 623220000
+                        usedMemory: 381560000
+                        freeSwap: 0
+                        usedSwap: 0
+                        cpuIdleTime: 2335608550
+                        cpuSystemTime: 2581880
+                        cpuUserTime: 3719110
+                        cpuTotalTime: 2341909540
+                        cpuUsage: 0.25109052658081055
+                        maxStorage: 21474836480
+                        usedStorage: 2941341696
+                        reservedStorage: 21069623296
+                        netTxUsage: 37
+                        netRxUsage: 1008
+                        networkBandwidth: 1310720000
+                      status: provisioned
+                      statusMessage: null
+                      errorMessage: null
+                      statusDate: '2022-11-22T16:29:18Z'
+                      statusPercent: null
+                      statusEta: null
+                      powerState: 'on'
+                      agentInstalled: true
+                      lastAgentUpdate: '2022-12-19T21:45:37Z'
+                      agentVersion: 2.3.2
+                      maxCores: 1
+                      coresPerSocket: 1
+                      maxMemory: 1073741824
+                      maxStorage: 21474836480
+                      maxCpu: null
+                      manageInternalFirewall: true
+                      enableLogs: true
+                      hourlyCost: 0.0513888896
+                      hourlyPrice: 0.0513888896
+                      sourceImage:
+                        id: 1253896
+                        code: vmware.vsphere.image.morpheus.ubuntu.20.04.4-v2.ubuntu.20.04.4.amd64
+                        name: Morpheus Ubuntu 20.04.4 v2
+                      serverOs:
+                        id: 9
+                        code: ubuntu.64
+                        name: ubuntu 64-bit
+                        description: null
+                        vendor: canonical
+                        category: ubuntu
+                        osFamily: debian
+                        osVersion: all
+                        bitCount: 64
+                        platform: linux
+                      volumes:
+                        - id: 4248106
+                          name: root
+                          controllerId: 1988576
+                          controllerMountPoint: '1988576:0:4:0'
+                          resizeable: true
+                          planResizable: true
+                          rootVolume: true
+                          unitNumber: '0'
+                          typeId: 1
+                          configurableIOPS: false
+                          datastoreId: 73198
+                          maxStorage: 21474836480
+                          displayOrder: 0
+                          maxIOPS: null
+                          uuid: bbdc7c71-bfc7-4e22-9cb4-6d2ee27e4205
+                          uniqueId: morpheus-vol-184999-748095-0
+                          externalId: '2000'
+                          internalId: '[ESXi-DC2-QA-LUN02] dd-vmw-ubuntu-1/dd-vmw-ubuntu-1.vmdk'
+                      controllers:
+                        - id: 1988576
+                          name: SCSI controller 0
+                          type:
+                            id: 4
+                            code: vmware-lsiLogic
+                            name: SCSI LSI Logic Parallel
+                          maxDevices: 15
+                          reservedUnitNumber: 7
+                        - id: 1988577
+                          name: IDE 0
+                          type:
+                            id: 2
+                            code: vmware-ide
+                            name: IDE
+                          maxDevices: 2
+                          reservedUnitNumber: -1
+                        - id: 1988578
+                          name: IDE 1
+                          type:
+                            id: 2
+                            code: vmware-ide
+                            name: IDE
+                          maxDevices: 2
+                          reservedUnitNumber: -1
+                      interfaces:
+                        - id: 1152297
+                          refType: null
+                          refId: null
+                          name: eth0
+                          internalId: '7'
+                          externalId: '4000'
+                          uniqueId: morpheus-nic-184999-748095-0
+                          publicIpAddress: 10.32.20.254
+                          publicIpv6Address: null
+                          ipAddress: 10.32.20.254
+                          ipv6Address: fe80::250:56ff:fead:efc7
+                          ipSubnet: null
+                          ipv6Subnet: null
+                          description: null
+                          dhcp: true
+                          active: true
+                          poolAssigned: false
+                          primaryInterface: true
+                          network:
+                            id: 173431
+                            name: VLAN0002 - Internal Server
+                          subnet: null
+                          networkGroup: null
+                          networkPosition: null
+                          networkPool:
+                            id: 18823
+                            name: 10.32.20.0 /22
+                          networkDomain: null
+                          type:
+                            id: 4
+                            code: vmxNet3
+                            name: VMXNET 3
+                          ipMode: null
+                          macAddress: 00:50:56:ad:ef:c7
+                      labels: []
+                      tags: []
+                      enabled: true
+                      tagCompliant: null
+                      containers:
+                        - 748095
+                      config:
+                        poolProviderType: null
+                        isVpcSelectable: true
+                        smbiosAssetTag: null
+                        isEC2: false
+                        resourcePoolId: 138293
+                        hostId: null
+                        createUser: true
+                        nestedVirtualization: null
+                        vmwareFolderId: group-v80
+                        noAgent: false
+                        powerScheduleType: null
+                      instance:
+                        id: 2342422
+                        name: power-vc-proxy
+                        displayName: power-vc-proxy
+                        accountId: 1
+                        accountName: Morpheus QA
+                      guestConsolePreferred: true
+                      guestConsoleType: ssh
+                      guestConsoleUsername: null
+                      guestConsolePassword: null
+                      guestConsolePasswordHash: null
+                      guestConsolePort: null
+                    stats: &ref_126
+                      usedStorage: 2941341696
+                      reservedStorage: 21474836480
+                      maxStorage: 21474836480
+                      usedMemory: 381560000
+                      reservedMemory: 1028894720
+                      maxMemory: 1028894720
+                      cpuUsage: 0.25109052658081055
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
+    put:
+      summary: Updating a Host
+      description: Updating a Host
+      operationId: updateHost
+      parameters:
+        - name: id
+          in: path
+          description: Morpheus ID of the Object being referenced
+          required: true
+          schema: *ref_0
+          example: 1
+      tags:
+        - Hosts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                server:
+                  type: object
+                  properties: &ref_321
+                    name:
+                      type: string
+                      description: Unique name scoped to your account for the server.
+                      example: myserver
+                    description:
+                      type: string
+                      description: Optional description field.
+                      example: my new server
+                    enabled:
+                      type: boolean
+                      description: Flag to determine if a host can be selected for provisioning
+                      default: true
+                    manageInternalFirewall:
+                      type: boolean
+                      description: Flag to enable/disable managment of internal firewall
+                      default: true
+                    enableLogs:
+                      type: boolean
+                      description: Flag to enable/disable logs
+                      default: true
+                    sshUsername:
+                      type: string
+                      description: SSH Username
+                      example: myuser
+                    sshPassword:
+                      type:
+                        - string
+                        - 'null'
+                      description: SSH Password
+                      example: mypassword
+                    sshKeyPair:
+                      type:
+                        - object
+                        - 'null'
+                      description: SSH Key.  See `/api/options/privateKeyPairs` for available private key pairs.
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                          description: Key Pair ID
+                    powerScheduleType:
+                      description: Power schedule ID.
+                      type: integer
+                      format: int64
+                    labels:
+                      type: array
+                      items:
+                        type: string
+                    serverOs:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          format: int64
+                          description: The ID of the OS Type for this server. See GET /api/options/osTypes
+                    tags:
+                      description: Metadata tags, Array of objects having a name and value.
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type: string
+                      example:
+                        - name: hello
+                          value: world
+                        - name: flash
+                          value: bang
+                    addTags:
+                      description: Add or update value of Metadata tags, Array of objects having a name and value.
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type: string
+                      example:
+                        - name: hello
+                          value: world
+                        - name: flash
+                          value: bang
+                    removeTags:
+                      description: Remove Metadata tags, Array of objects having a name and an optional value. If value is passed, it must match to be removed.
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type:
+                              - string
+                              - 'null'
+                      example:
+                        - name: hello
+                    guestConsoleType:
+                      type: string
+                      description: The Type of guest console this server provides such as disabled, vnc, rdp, ssh
+                    guestConsoleUsername:
+                      type: string
+                      description: The optional guest console username if you don't want to use the user defaults
+                    guestConsolePassword:
+                      type: string
+                      description: The optional guest console password if not using the accessing users creds
+                    guestConsolePort:
+                      type: string
+                      description: The port the guest console is being accessed from
+                    guestConsolePreferred:
+                      type: boolean
+                      description: Can turn off guest console preferences on server in favor of hypervisor console
+                      default: true
+            examples:
+              Host Request:
+                value:
+                  server:
+                    name: my-nginx
+                    description: my-nginx
+                    addTags:
+                      - name: hello
+                        value: world
+                    removeTags:
+                      - name: oldTag
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  server:
+                    type: object
+                    properties: *ref_124
+                  stats:
+                    type: object
+              examples:
+                Hosts Response:
+                  value:
+                    server: *ref_125
+                    stats: *ref_126
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
+    delete:
+      summary: Delete a Host
+      description: Will delete a host asynchronously.
+      operationId: removeHost
+      tags:
+        - Hosts
+      parameters:
+        - name: id
+          in: path
+          description: Morpheus ID of the Object being referenced
+          required: true
+          schema: *ref_0
+          example: 1
+        - name: removeResources
+          in: query
+          description: Remove Resources
+          schema: &ref_218
+            type: string
+            default: 'on'
+          example: 'off'
+        - name: removeInstances
+          in: query
+          description: Remove Instances
+          schema: &ref_219
+            type: string
+            default: 'off'
+          example: 'on'
+        - name: preserveVolumes
+          in: query
+          description: Preserve Volumes
+          schema: *ref_127
+          example: 'on'
+        - name: releaseFloatingIps
+          in: query
+          description: Release Floating IPs
+          schema: *ref_128
+          example: 'off'
+        - name: releaseEIPs
+          in: query
+          description: Alias for releaseFloatingIps
+          schema: *ref_129
+          example: 'off'
+        - name: force
+          in: query
+          description: Force Delete
+          schema: *ref_130
+          example: 'on'
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: *ref_4
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
   /api/service-plans:
     get:
       summary: Retrieves all Service Plans
@@ -29215,20 +31103,20 @@ paths:
         - name: includeZones
           in: query
           description: Indicates including zones in the service plan response payload
-          schema: &ref_201
+          schema: &ref_220
             type: boolean
             default: false
         - name: provisionTypeId
           in: query
           description: Provision type filter, restricts query to only load service plans of specified provision type
-          schema: &ref_202
+          schema: &ref_221
             type: integer
             format: int64
           example: 22
         - name: includeInactive
           in: query
           description: If true, include inactive prices in the results
-          schema: &ref_203
+          schema: &ref_222
             type: boolean
           example: true
       responses:
@@ -29244,7 +31132,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_300
+                          properties: &ref_322
                             id:
                               type: integer
                               format: int64
@@ -29862,7 +31750,7 @@ paths:
                 properties:
                   servicePlan:
                     type: object
-                    properties: &ref_121
+                    properties: &ref_131
                       id:
                         type: integer
                         format: int64
@@ -30390,7 +32278,7 @@ paths:
                     properties:
                       servicePlan:
                         type: object
-                        properties: *ref_121
+                        properties: *ref_131
                   - type: object
                     properties: *ref_4
               examples:
@@ -30444,7 +32332,7 @@ paths:
           in: path
           description: The ID of the subtenant account
           required: true
-          schema: &ref_204
+          schema: &ref_223
             type: integer
             format: int64
           example: 7
@@ -30459,12 +32347,12 @@ paths:
                 user:
                   type: object
                   description: Payload for creating a new user
-                  required: &ref_160
+                  required: &ref_170
                     - username
                     - email
                     - password
                     - roles
-                  properties: &ref_161
+                  properties: &ref_171
                     firstName:
                       type: string
                       description: The user's first name (optional)
@@ -30518,7 +32406,7 @@ paths:
             examples:
               Create User Request:
                 value:
-                  user: &ref_162
+                  user: &ref_172
                     username: testUser
                     email: user@example.com
                     firstName: Jane
@@ -30537,7 +32425,7 @@ paths:
                     properties:
                       user:
                         type: object
-                        properties: &ref_159
+                        properties: &ref_169
                           id:
                             type: integer
                             format: int64
@@ -30795,7 +32683,7 @@ paths:
               examples:
                 Create User Response:
                   value:
-                    user: &ref_163
+                    user: &ref_173
                       id: 4
                       accountId: 3
                       username: ahicks
@@ -30851,7 +32739,7 @@ paths:
           description: |
             If specified will return all tasks by `task type` code.
             Refer to `Task Types` API for up to date listings.
-          schema: &ref_205
+          schema: &ref_224
             type: string
             enum:
               - ansibleTask
@@ -30921,7 +32809,7 @@ paths:
                         items:
                           anyOf:
                             - type: object
-                              properties: &ref_122
+                              properties: &ref_132
                                 ansibleOptions:
                                   type:
                                     - string
@@ -30980,7 +32868,7 @@ paths:
                               title: Ansible Playbook Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_123
+                              properties: &ref_133
                                 password:
                                   type:
                                     - string
@@ -31028,7 +32916,7 @@ paths:
                               title: Ansible Tower Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_124
+                              properties: &ref_134
                                 chefDataKey:
                                   type:
                                     - string
@@ -31092,7 +32980,7 @@ paths:
                               title: Chef Bootstrap Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_125
+                              properties: &ref_135
                                 localScriptGitId:
                                   type:
                                     - string
@@ -31141,7 +33029,7 @@ paths:
                               title: Email Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_126
+                              properties: &ref_136
                                 localScriptGitRef:
                                   type:
                                     - string
@@ -31179,7 +33067,7 @@ paths:
                               title: Groovy Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_127
+                              properties: &ref_137
                                 webPassword:
                                   type:
                                     - string
@@ -31247,7 +33135,7 @@ paths:
                               title: HTTP Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_128
+                              properties: &ref_138
                                 username:
                                   type:
                                     - string
@@ -31289,7 +33177,7 @@ paths:
                               title: Java Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_129
+                              properties: &ref_139
                                 host:
                                   type:
                                     - string
@@ -31335,7 +33223,7 @@ paths:
                               title: Library Script Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_130
+                              properties: &ref_140
                                 username:
                                   type:
                                     - string
@@ -31381,9 +33269,9 @@ paths:
                               title: Library Template Task Config
                             - type: object
                               additionalProperties: false
-                              required: &ref_131
+                              required: &ref_141
                                 - operationalWorkflowId
-                              properties: &ref_132
+                              properties: &ref_142
                                 operationalWorkflowId:
                                   type:
                                     - string
@@ -31397,7 +33285,7 @@ paths:
                               title: Nested Workflow Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_133
+                              properties: &ref_143
                                 host:
                                   type:
                                     - string
@@ -31435,7 +33323,7 @@ paths:
                               title: PowerShell Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_134
+                              properties: &ref_144
                                 port:
                                   type:
                                     - string
@@ -31481,7 +33369,7 @@ paths:
                               title: Puppet Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_135
+                              properties: &ref_145
                                 pythonArgs:
                                   type:
                                     - string
@@ -31531,7 +33419,7 @@ paths:
                               title: Python Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_136
+                              properties: &ref_146
                                 password:
                                   type:
                                     - string
@@ -31569,7 +33457,7 @@ paths:
                               title: Restart Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_137
+                              properties: &ref_147
                                 localScriptGitRef:
                                   type:
                                     - string
@@ -31607,7 +33495,7 @@ paths:
                               title: Shell Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_138
+                              properties: &ref_148
                                 sshKey:
                                   type:
                                     - string
@@ -31649,7 +33537,7 @@ paths:
                               title: vRealize Orchestrator Task Config
                             - type: object
                               additionalProperties: false
-                              properties: &ref_139
+                              properties: &ref_149
                                 host:
                                   type:
                                     - string
@@ -32301,19 +34189,19 @@ paths:
                       description: Map of options specific to each `task type`. eg. script
                       anyOf:
                         - type: object
-                          properties: *ref_122
+                          properties: *ref_132
                           title: Ansible Playbook Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_123
+                          properties: *ref_133
                           title: Ansible Tower Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_124
+                          properties: *ref_134
                           title: Chef Bootstrap Task Config
                         - type: object
                           additionalProperties: false
-                          properties: &ref_140
+                          properties: &ref_150
                             conditionalScript:
                               type:
                                 - string
@@ -32344,60 +34232,60 @@ paths:
                           title: Conditional Workflow Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_125
+                          properties: *ref_135
                           title: Email Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_126
+                          properties: *ref_136
                           title: Groovy Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_127
+                          properties: *ref_137
                           title: HTTP Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_128
+                          properties: *ref_138
                           title: Java Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_129
+                          properties: *ref_139
                           title: Library Script Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_130
+                          properties: *ref_140
                           title: Library Template Task Config
                         - type: object
                           additionalProperties: false
-                          required: *ref_131
-                          properties: *ref_132
+                          required: *ref_141
+                          properties: *ref_142
                           title: Nested Workflow Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_133
+                          properties: *ref_143
                           title: PowerShell Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_134
+                          properties: *ref_144
                           title: Puppet Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_135
+                          properties: *ref_145
                           title: Python Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_136
+                          properties: *ref_146
                           title: Restart Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_137
+                          properties: *ref_147
                           title: Shell Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_138
+                          properties: *ref_148
                           title: vRealize Orchestrator Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_139
+                          properties: *ref_149
                           title: Write Attributes Task Config
                         - type: object
                     resultType:
@@ -32485,7 +34373,7 @@ paths:
                     properties:
                       task:
                         type: object
-                        properties: &ref_141
+                        properties: &ref_151
                           id:
                             type: integer
                             format: int64
@@ -32517,76 +34405,76 @@ paths:
                           taskOptions:
                             anyOf:
                               - type: object
-                                properties: *ref_122
+                                properties: *ref_132
                                 title: Ansible Playbook Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_123
+                                properties: *ref_133
                                 title: Ansible Tower Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_124
+                                properties: *ref_134
                                 title: Chef Bootstrap Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_140
+                                properties: *ref_150
                                 title: Conditional Workflow Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_125
+                                properties: *ref_135
                                 title: Email Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_126
+                                properties: *ref_136
                                 title: Groovy Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_127
+                                properties: *ref_137
                                 title: HTTP Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_128
+                                properties: *ref_138
                                 title: Java Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_129
+                                properties: *ref_139
                                 title: Library Script Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_130
+                                properties: *ref_140
                                 title: Library Template Task Config
                               - type: object
                                 additionalProperties: false
-                                required: *ref_131
-                                properties: *ref_132
+                                required: *ref_141
+                                properties: *ref_142
                                 title: Nested Workflow Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_133
+                                properties: *ref_143
                                 title: PowerShell Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_134
+                                properties: *ref_144
                                 title: Puppet Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_135
+                                properties: *ref_145
                                 title: Python Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_136
+                                properties: *ref_146
                                 title: Restart Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_137
+                                properties: *ref_147
                                 title: Shell Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_138
+                                properties: *ref_148
                                 title: vRealize Orchestrator Task Config
                               - type: object
                                 additionalProperties: false
-                                properties: *ref_139
+                                properties: *ref_149
                                 title: Write Attributes Task Config
                               - type: object
                           file:
@@ -32657,7 +34545,7 @@ paths:
               examples:
                 Task Response - Create Ansible Playbook:
                   value:
-                    task: &ref_142
+                    task: &ref_152
                       id: 867
                       accountId: 1
                       name: 1.ansible playbook
@@ -32697,7 +34585,7 @@ paths:
                     success: true
                 Task Response - Create Ansible Tower:
                   value:
-                    task: &ref_143
+                    task: &ref_153
                       id: 870
                       accountId: 1
                       name: 2. Ansible Tower
@@ -32734,7 +34622,7 @@ paths:
                     success: true
                 Task Response - Create Chef Bootstrap:
                   value:
-                    task: &ref_144
+                    task: &ref_154
                       id: 873
                       accountId: 1
                       name: 3. Chef bootstrap
@@ -32775,7 +34663,7 @@ paths:
                     success: true
                 Task Response - Create Email:
                   value:
-                    task: &ref_145
+                    task: &ref_155
                       id: 876
                       accountId: 1
                       name: 4. email
@@ -32818,7 +34706,7 @@ paths:
                     success: true
                 Task Response - Create Groovy:
                   value:
-                    task: &ref_146
+                    task: &ref_156
                       id: 879
                       accountId: 1
                       name: 5. groovy
@@ -32858,7 +34746,7 @@ paths:
                     success: true
                 Task Response - Create HTTP:
                   value:
-                    task: &ref_147
+                    task: &ref_157
                       id: 882
                       accountId: 1
                       name: 6. http
@@ -32900,7 +34788,7 @@ paths:
                     success: true
                 Task Response - Create Java:
                   value:
-                    task: &ref_148
+                    task: &ref_158
                       id: 885
                       accountId: 1
                       name: 7. java
@@ -32935,7 +34823,7 @@ paths:
                     success: true
                 Task Response - Create Library Script:
                   value:
-                    task: &ref_149
+                    task: &ref_159
                       id: 891
                       accountId: 1
                       name: 9. library script
@@ -32971,7 +34859,7 @@ paths:
                     success: true
                 Task Response - Create Library Template:
                   value:
-                    task: &ref_150
+                    task: &ref_160
                       id: 894
                       accountId: 1
                       name: 10. library template
@@ -33007,7 +34895,7 @@ paths:
                     success: true
                 Task Response - Create Nested Workflow:
                   value:
-                    task: &ref_151
+                    task: &ref_161
                       id: 96
                       accountId: 1
                       name: Initialize
@@ -33034,7 +34922,7 @@ paths:
                     success: true
                 Task Response - Create PowerShell:
                   value:
-                    task: &ref_152
+                    task: &ref_162
                       id: 897
                       accountId: 1
                       name: 11. powershell
@@ -33074,7 +34962,7 @@ paths:
                     success: true
                 Task Response - Create Puppet:
                   value:
-                    task: &ref_153
+                    task: &ref_163
                       id: 900
                       accountId: 1
                       name: 12. puppet
@@ -33110,7 +34998,7 @@ paths:
                     success: true
                 Task Response - Create Python:
                   value:
-                    task: &ref_154
+                    task: &ref_164
                       id: 903
                       accountId: 1
                       name: 13. Python
@@ -33153,7 +35041,7 @@ paths:
                     success: true
                 Task Response - Create Restart:
                   value:
-                    task: &ref_155
+                    task: &ref_165
                       id: 906
                       accountId: 1
                       name: 14. restart
@@ -33187,7 +35075,7 @@ paths:
                     success: true
                 Task Response - Create Shell:
                   value:
-                    task: &ref_156
+                    task: &ref_166
                       id: 909
                       accountId: 1
                       name: 15. shell
@@ -33227,7 +35115,7 @@ paths:
                     success: true
                 Task Response - Create vRO:
                   value:
-                    task: &ref_157
+                    task: &ref_167
                       id: 912
                       accountId: 1
                       name: 16. vRO
@@ -33262,7 +35150,7 @@ paths:
                     success: true
                 Task Response - Create Write Attributes:
                   value:
-                    task: &ref_158
+                    task: &ref_168
                       id: 915
                       accountId: 1
                       name: 17. Write Attributes
@@ -33327,7 +35215,7 @@ paths:
                     properties:
                       task:
                         type: object
-                        properties: *ref_141
+                        properties: *ref_151
               examples:
                 Task Response - Get Ansible Playbook:
                   value:
@@ -34035,76 +35923,76 @@ paths:
                       description: Map of options specific to each `task type`. eg. script
                       anyOf:
                         - type: object
-                          properties: *ref_122
+                          properties: *ref_132
                           title: Ansible Playbook Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_123
+                          properties: *ref_133
                           title: Ansible Tower Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_124
+                          properties: *ref_134
                           title: Chef Bootstrap Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_140
+                          properties: *ref_150
                           title: Conditional Workflow Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_125
+                          properties: *ref_135
                           title: Email Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_126
+                          properties: *ref_136
                           title: Groovy Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_127
+                          properties: *ref_137
                           title: HTTP Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_128
+                          properties: *ref_138
                           title: Java Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_129
+                          properties: *ref_139
                           title: Library Script Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_130
+                          properties: *ref_140
                           title: Library Template Task Config
                         - type: object
                           additionalProperties: false
-                          required: *ref_131
-                          properties: *ref_132
+                          required: *ref_141
+                          properties: *ref_142
                           title: Nested Workflow Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_133
+                          properties: *ref_143
                           title: PowerShell Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_134
+                          properties: *ref_144
                           title: Puppet Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_135
+                          properties: *ref_145
                           title: Python Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_136
+                          properties: *ref_146
                           title: Restart Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_137
+                          properties: *ref_147
                           title: Shell Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_138
+                          properties: *ref_148
                           title: vRealize Orchestrator Task Config
                         - type: object
                           additionalProperties: false
-                          properties: *ref_139
+                          properties: *ref_149
                           title: Write Attributes Task Config
                         - type: object
                     resultType:
@@ -34193,77 +36081,77 @@ paths:
                     properties:
                       task:
                         type: object
-                        properties: *ref_141
+                        properties: *ref_151
                   - type: object
                     properties: *ref_4
               examples:
                 Task Response - Update Ansible Playbook:
                   value:
-                    task: *ref_142
+                    task: *ref_152
                     success: true
                 Task Response - Update Ansible Tower:
                   value:
-                    task: *ref_143
+                    task: *ref_153
                     success: true
                 Task Response - Update Chef Bootstrap:
                   value:
-                    task: *ref_144
+                    task: *ref_154
                     success: true
                 Task Response - Update Email:
                   value:
-                    task: *ref_145
+                    task: *ref_155
                     success: true
                 Task Response - Update Groovy:
                   value:
-                    task: *ref_146
+                    task: *ref_156
                     success: true
                 Task Response - Update HTTP:
                   value:
-                    task: *ref_147
+                    task: *ref_157
                     success: true
                 Task Response - Update Java:
                   value:
-                    task: *ref_148
+                    task: *ref_158
                     success: true
                 Task Response - Update Library Script:
                   value:
-                    task: *ref_149
+                    task: *ref_159
                     success: true
                 Task Response - Update Library Template:
                   value:
-                    task: *ref_150
+                    task: *ref_160
                     success: true
                 Task Response - Update Nested Workflow:
                   value:
-                    task: *ref_151
+                    task: *ref_161
                     success: true
                 Task Response - Update PowerShell:
                   value:
-                    task: *ref_152
+                    task: *ref_162
                     success: true
                 Task Response - Update Puppet:
                   value:
-                    task: *ref_153
+                    task: *ref_163
                     success: true
                 Task Response - Update Python:
                   value:
-                    task: *ref_154
+                    task: *ref_164
                     success: true
                 Task Response - Update Restart:
                   value:
-                    task: *ref_155
+                    task: *ref_165
                     success: true
                 Task Response - Update Shell:
                   value:
-                    task: *ref_156
+                    task: *ref_166
                     success: true
                 Task Response - Update vRO:
                   value:
-                    task: *ref_157
+                    task: *ref_167
                     success: true
                 Task Response - Update Write Attributes:
                   value:
-                    task: *ref_158
+                    task: *ref_168
                     success: true
         4XX:
           description: Error Codes
@@ -34334,19 +36222,19 @@ paths:
         - name: username
           in: query
           description: Username
-          schema: &ref_206
+          schema: &ref_225
             type: string
           example: administrator
         - name: email
           in: query
           description: E-Mail Address
-          schema: &ref_207
+          schema: &ref_226
             type: string
           example: mytest@email.com
         - name: roleId
           in: query
           description: Filter by Role ID (supports multiple values)
-          schema: &ref_208
+          schema: &ref_227
             type: integer
             format: int64
           example: 13
@@ -34358,14 +36246,14 @@ paths:
         - name: accountId
           in: query
           description: Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users.
-          schema: &ref_209
+          schema: &ref_228
             type: integer
             format: int64
           example: 3
         - name: global
           in: query
           description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-          schema: &ref_210
+          schema: &ref_229
             type: boolean
             default: false
       responses:
@@ -34381,11 +36269,11 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: *ref_159
+                          properties: *ref_169
                   - type: object
                     properties: *ref_12
                   - type: object
-                    properties: &ref_301
+                    properties: &ref_323
                       global:
                         type: boolean
                         description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
@@ -34498,12 +36386,12 @@ paths:
                 user:
                   type: object
                   description: Payload for creating a new user
-                  required: *ref_160
-                  properties: *ref_161
+                  required: *ref_170
+                  properties: *ref_171
             examples:
               Create User Request:
                 value:
-                  user: *ref_162
+                  user: *ref_172
       responses:
         '200':
           description: User Object
@@ -34515,13 +36403,13 @@ paths:
                     properties:
                       user:
                         type: object
-                        properties: *ref_159
+                        properties: *ref_169
                   - type: object
                     properties: *ref_4
               examples:
                 Create User Response:
                   value:
-                    user: *ref_163
+                    user: *ref_173
                     success: true
         4XX:
           description: Error Codes
@@ -34546,7 +36434,7 @@ paths:
         - name: includeAccess
           in: query
           description: Include `access` information in the response. This is the permissions, clouds, instanceTypes, etc. that the user is authorized for based on their assigned Role(s).
-          schema: &ref_211
+          schema: &ref_230
             type: boolean
           example: true
       responses:
@@ -34559,7 +36447,7 @@ paths:
                 properties:
                   user:
                     type: object
-                    properties: *ref_159
+                    properties: *ref_169
               examples:
                 Get User Response:
                   value:
@@ -34724,7 +36612,7 @@ paths:
                       items:
                         type: object
                         description: A simple object to represent a specific resource, typically an id and name.
-                        properties: &ref_302
+                        properties: &ref_324
                           id:
                             type: integer
                             format: int64
@@ -34735,7 +36623,7 @@ paths:
                           code:
                             type: string
                             description: Resource code
-                        required: &ref_303
+                        required: &ref_325
                           - id
                     receiveNotifications:
                       type: boolean
@@ -34751,13 +36639,13 @@ paths:
                     properties:
                       user:
                         type: object
-                        properties: *ref_159
+                        properties: *ref_169
                   - type: object
                     properties: *ref_4
               examples:
                 Update User Response:
                   value:
-                    user: *ref_163
+                    user: *ref_173
                     success: true
         4XX:
           description: Error Codes
@@ -34829,7 +36717,7 @@ paths:
         - name: filterType
           in: query
           description: Filter by type, "User", "System", "Synced", or "All"
-          schema: &ref_212
+          schema: &ref_231
             type: string
             default: User
             enum:
@@ -34841,14 +36729,14 @@ paths:
         - name: imageType
           in: query
           description: Filter by image type code, "vmware", "ami", etc
-          schema: &ref_213
+          schema: &ref_232
             type: string
           example: vmware
         - name: tags.name
           in: query
           description: |
             Filter by tags (metadata). This allows filtering by a tag name and value(s)
-          schema: *ref_164
+          schema: *ref_123
           example: value
         - name: labels
           in: query
@@ -34871,7 +36759,7 @@ paths:
                         type: array
                         items:
                           type: object
-                          properties: &ref_165
+                          properties: &ref_174
                             id:
                               type: integer
                               format: int64
@@ -35364,7 +37252,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_304
+                  properties: &ref_326
                     name:
                       type: string
                       description: A name for the virtual image
@@ -35553,13 +37441,13 @@ paths:
                     properties:
                       virtualImage:
                         type: object
-                        properties: *ref_165
+                        properties: *ref_174
                   - type: object
                     properties: *ref_4
               examples:
                 Virtual Image Create Response:
                   value:
-                    virtualImage: &ref_167
+                    virtualImage: &ref_176
                       id: 1246
                       name: aaaatest
                       description: null
@@ -35620,7 +37508,7 @@ paths:
                       dateCreated: '2021-06-24T15:40:16Z'
                       lastUpdated: '2021-06-24T15:41:35Z'
                       status: Active
-                    cloudFiles: &ref_168 []
+                    cloudFiles: &ref_177 []
                     success: true
         4XX:
           description: Error Codes
@@ -35640,7 +37528,7 @@ paths:
           in: path
           description: Virtual Image ID
           required: true
-          schema: &ref_166
+          schema: &ref_175
             type: integer
             format: int64
           example: 4
@@ -35654,7 +37542,7 @@ paths:
                 properties:
                   virtualImage:
                     type: object
-                    properties: *ref_165
+                    properties: *ref_174
               examples:
                 Virtual Image Response:
                   value:
@@ -35747,7 +37635,7 @@ paths:
           in: path
           description: Virtual Image ID
           required: true
-          schema: *ref_166
+          schema: *ref_175
           example: 4
       requestBody:
         content:
@@ -35759,7 +37647,7 @@ paths:
               properties:
                 virtualImage:
                   type: object
-                  properties: &ref_305
+                  properties: &ref_327
                     name:
                       type: string
                       description: A name for the virtual image
@@ -35955,14 +37843,14 @@ paths:
                     properties:
                       virtualImage:
                         type: object
-                        properties: *ref_165
+                        properties: *ref_174
                   - type: object
                     properties: *ref_4
               examples:
                 Virtual Image Create Response:
                   value:
-                    virtualImage: *ref_167
-                    cloudFiles: *ref_168
+                    virtualImage: *ref_176
+                    cloudFiles: *ref_177
                     success: true
         4XX:
           description: Error Codes
@@ -35981,7 +37869,7 @@ paths:
           in: path
           description: Virtual Image ID
           required: true
-          schema: *ref_166
+          schema: *ref_175
           example: 4
       responses:
         '200':
@@ -36061,7 +37949,7 @@ paths:
             application/json:
               schema:
                 type: object
-                properties: &ref_306
+                properties: &ref_328
                   access_token:
                     type: string
                     description: Token that grants API Access
@@ -36161,13 +38049,13 @@ components:
       name: description
       in: query
       description: Filter by description, wildcard may be specified as %. eg. `example-%`
-      schema: *ref_169
+      schema: *ref_178
       example: The desription of my cool object
     enabled:
       name: enabled
       in: query
       description: Filter by enabled
-      schema: *ref_170
+      schema: *ref_179
       example: false
     featured:
       name: featured
@@ -36203,12 +38091,12 @@ components:
       description: |
         If specified will return all zones by cloud type code.
         Refer to `Zone Types` API for up to date listings.
-      schema: *ref_171
+      schema: *ref_180
     groupId:
       name: groupId
       in: query
       description: If specified will return all zones assigned to a server group by id. Accepts multiple values.
-      schema: *ref_172
+      schema: *ref_181
       example: 13
     zoneId-path:
       name: zoneId
@@ -36235,12 +38123,12 @@ components:
       name: order
       in: query
       description: Sort direction, use 'desc' to reverse sort
-      schema: *ref_173
+      schema: *ref_182
     hideInactive:
       name: hideInactive
       in: query
       description: If true restricts query to only load active datastores
-      schema: *ref_174
+      schema: *ref_183
       example: true
     zoneId:
       name: zoneId
@@ -36252,158 +38140,158 @@ components:
       name: siteId
       in: query
       description: The Group ID (Site ID) for Filtering
-      schema: *ref_175
+      schema: *ref_121
       example: 7
     planId:
       name: planId
       in: query
       description: The Plan ID for Filtering
-      schema: *ref_176
+      schema: *ref_184
       example: 1
     instanceType:
       name: instanceType
       in: query
       description: The Instance Type Code for Filtering
-      schema: *ref_177
+      schema: *ref_185
       example: ubuntu
     createdBy:
       name: createdBy
       in: query
       description: The User ID for Filtering
-      schema: *ref_178
+      schema: *ref_122
       example: 63
     agentInstalled:
       name: agentInstalled
       in: query
       description: Filter instances by if agent is installed or not on the associated servers.
-      schema: *ref_179
+      schema: *ref_186
       example: true
     status:
       name: status
       in: query
       description: The instance status for filtering.
-      schema: *ref_180
+      schema: *ref_187
       example: running
     environment:
       name: environment
       in: query
       description: The environment for filtering.
-      schema: *ref_181
+      schema: *ref_188
       example: lab
     showDeleted:
       name: showDeleted
       in: query
       description: If true, includes instances in pending removal status.
-      schema: *ref_182
+      schema: *ref_189
       example: true
     deleted:
       name: deleted
       in: query
       description: If true, only deleted resources or instances in pending removal status are returned.
-      schema: *ref_183
+      schema: *ref_190
       example: true
     expireDate:
       name: expireDate
       in: query
       description: Filter by expireDate less than or equal to specified date
-      schema: *ref_184
+      schema: *ref_191
       example: '2019-01-01'
     expireDateMin:
       name: expireDateMin
       in: query
       description: Filter expireDate greater than or equal to the specified date
-      schema: *ref_185
+      schema: *ref_192
       example: '2019-01-01'
     expireDays:
       name: expireDays
       in: query
       description: Filter by expireDays less than or equal to the specified value
-      schema: *ref_186
+      schema: *ref_193
       example: '20'
     expireDaysMin:
       name: expireDaysMin
       in: query
       description: Filter by expireDays greater than or equal to the specified value
-      schema: *ref_187
+      schema: *ref_194
       example: '20'
     shutdownDate:
       name: shutdownDate
       in: query
       description: Filter by shutdownDate less than equal to the specified date
-      schema: *ref_188
+      schema: *ref_195
       example: '2019-01-01'
     shutdownDateMin:
       name: shutdownDateMin
       in: query
       description: Filter by shutdownDate greater than or equal to the specified date
-      schema: *ref_189
+      schema: *ref_196
       example: '2019-01-01'
     shutdownDays:
       name: shutdownDays
       in: query
       description: Filter by shutdownDays less than or equal to the specified value
-      schema: *ref_190
+      schema: *ref_197
       example: '20'
     shutdownDaysMin:
       name: shutdownDaysMin
       in: query
       description: Filter by shutdownDays greater than or equal to the specified value
-      schema: *ref_191
+      schema: *ref_198
       example: '20'
     tags:
       name: tags.name
       in: query
       description: |
         Filter by tags (metadata). This allows filtering by a tag name and value(s)
-      schema: *ref_164
+      schema: *ref_123
       example: value
     detailsFalse:
       name: details
       in: query
       description: Include details=true to return more details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
-      schema: *ref_192
+      schema: *ref_199
       example: true
     detailsTrue:
       name: details
       in: query
       description: Include details=false to exclude extra details about the instance, ie. containerDetails. Available in api version 5.2.8/5.3.2.
-      schema: *ref_193
+      schema: *ref_200
       example: true
     preserveVolumes:
       name: preserveVolumes
       in: query
       description: Preserve Volumes
-      schema: *ref_194
+      schema: *ref_127
       example: 'on'
     keepBackups:
       name: keepBackups
       in: query
       description: Preserve copy of backups
-      schema: *ref_195
+      schema: *ref_201
       example: 'on'
     releaseFloatingIps:
       name: releaseFloatingIps
       in: query
       description: Release Floating IPs
-      schema: *ref_196
+      schema: *ref_128
       example: 'off'
     releaseEIPs:
       name: releaseEIPs
       in: query
       description: Alias for releaseFloatingIps
-      schema: *ref_197
+      schema: *ref_129
       example: 'off'
     force:
       name: force
       in: query
       description: Force Delete
-      schema: *ref_198
+      schema: *ref_130
       example: 'on'
     removeVolumes:
       name: removeVolumes
       in: query
       description: Remove Volumes
-      schema: *ref_199
+      schema: *ref_202
       example: 'on'
     instanceTypeId-path:
       name: instanceTypeId
@@ -36417,7 +38305,7 @@ components:
       in: path
       required: true
       description: '`optionSource` to be listed'
-      schema: *ref_200
+      schema: *ref_203
     includeDefaultAccess:
       name: includeDefaultAccess
       in: query
@@ -36425,29 +38313,121 @@ components:
         Pass true to include all resource permissions in the response including those with access set to `default`. Only resources with access specific levels are returned by default. eg. `full`, `read` or `none`
       schema: *ref_104
       example: true
+    clusterId:
+      name: clusterId
+      in: query
+      description: The Cluster ID(s) for filtering. Accepts multiple values.
+      schema: *ref_204
+      example: 135
+    managed:
+      name: managed
+      in: query
+      description: Filter by managed (true) or unmanaged (false)
+      schema: *ref_205
+      example: false
+    serverType:
+      name: serverType
+      in: query
+      description: Filter by server type code
+      schema: *ref_206
+      example: vmwareHypervisor
+    powerState:
+      name: powerState
+      in: query
+      description: Filter by power status
+      schema: *ref_207
+      example: 'off'
+    ip:
+      name: ip
+      in: query
+      description: Filter by IP address
+      schema: *ref_208
+      example: 192.168.1.45
+    vm:
+      name: vm
+      in: query
+      description: Filter to show only Virtual Machines (true)
+      schema: *ref_209
+      example: false
+    vmHypervisor:
+      name: vmHypervisor
+      in: query
+      description: Filter to show only VM Hypervisors (true)
+      schema: *ref_210
+      example: false
+    bareMetalHost:
+      name: bareMetalHost
+      in: query
+      description: Filter to show only Baremetal Servers
+      schema: *ref_211
+      example: false
+    status-server:
+      name: status
+      in: query
+      description: Filter by status
+      schema: *ref_212
+    agentInstalled-server:
+      name: agentInstalled
+      in: query
+      description: Filter by agent installed (true)
+      schema: *ref_213
+      example: true
+    metadata:
+      name: metadata
+      in: query
+      description: Alias for tags
+      schema: *ref_214
+      example: tags.env=qa&tags.env=test
+    externalId:
+      name: externalId
+      in: query
+      description: Filter by External ID
+      schema: *ref_215
+    internalId:
+      name: internalId
+      in: query
+      description: Filter by Internal ID
+      schema: *ref_216
+    externalUniqueId:
+      name: externalUniquelId
+      in: query
+      description: Filter by External Unique ID
+      schema: *ref_217
+    removeResources:
+      name: removeResources
+      in: query
+      description: Remove Resources
+      schema: *ref_218
+      example: 'off'
+    removeInstances:
+      name: removeInstances
+      in: query
+      description: Remove Instances
+      schema: *ref_219
+      example: 'on'
     includeZones:
       name: includeZones
       in: query
       description: Indicates including zones in the service plan response payload
-      schema: *ref_201
+      schema: *ref_220
     provisionTypeId:
       name: provisionTypeId
       in: query
       description: Provision type filter, restricts query to only load service plans of specified provision type
-      schema: *ref_202
+      schema: *ref_221
       example: 22
     includeInactive:
       name: includeInactive
       in: query
       description: If true, include inactive prices in the results
-      schema: *ref_203
+      schema: *ref_222
       example: true
     accountId-path:
       name: accountId
       in: path
       description: The ID of the subtenant account
       required: true
-      schema: *ref_204
+      schema: *ref_223
       example: 7
     taskTypes:
       name: type
@@ -36455,60 +38435,60 @@ components:
       description: |
         If specified will return all tasks by `task type` code.
         Refer to `Task Types` API for up to date listings.
-      schema: *ref_205
+      schema: *ref_224
     username:
       name: username
       in: query
       description: Username
-      schema: *ref_206
+      schema: *ref_225
       example: administrator
     email:
       name: email
       in: query
       description: E-Mail Address
-      schema: *ref_207
+      schema: *ref_226
       example: mytest@email.com
     roleId:
       name: roleId
       in: query
       description: Filter by Role ID (supports multiple values)
-      schema: *ref_208
+      schema: *ref_227
       example: 13
     accountId:
       name: accountId
       in: query
       description: Filter by Tenant ID. This is only available to master tenant users with permission to manage tenants and users.
-      schema: *ref_209
+      schema: *ref_228
       example: 3
     global:
       name: global
       in: query
       description: Global (All Tenants), load users from all tenants. The default is to only see your own tenant. This is only available to master tenant users with permission to manage tenants and users.
-      schema: *ref_210
+      schema: *ref_229
     includeAccess:
       name: includeAccess
       in: query
       description: Include `access` information in the response. This is the permissions, clouds, instanceTypes, etc. that the user is authorized for based on their assigned Role(s).
-      schema: *ref_211
+      schema: *ref_230
       example: true
     filterType:
       name: filterType
       in: query
       description: Filter by type, "User", "System", "Synced", or "All"
-      schema: *ref_212
+      schema: *ref_231
       example: System
     imageType:
       name: imageType
       in: query
       description: Filter by image type code, "vmware", "ami", etc
-      schema: *ref_213
+      schema: *ref_232
       example: vmware
     virtualImageId-path:
       name: virtualImageId
       in: path
       description: Virtual Image ID
       required: true
-      schema: *ref_166
+      schema: *ref_175
       example: 4
   schemas:
     alert:
@@ -36517,67 +38497,67 @@ components:
     checkWebConfig:
       title: Web Get Config
       type: object
-      required: *ref_214
-      properties: *ref_215
+      required: *ref_233
+      properties: *ref_234
     checkSqlConfig:
       title: SQL Config
       type: object
-      required: *ref_216
-      properties: *ref_217
+      required: *ref_235
+      properties: *ref_236
     checkElasticsearchConfig:
       title: Elastic Search Config
       type: object
-      required: *ref_218
-      properties: *ref_219
+      required: *ref_237
+      properties: *ref_238
     checkSocketConfig:
       title: Socket Config
       type: object
-      required: *ref_220
-      properties: *ref_221
+      required: *ref_239
+      properties: *ref_240
     checkPushConfig:
       title: Push Config
       type: object
       maxProperties: 0
     checkVmConfig:
       type: object
-      required: *ref_222
-      properties: *ref_223
+      required: *ref_241
+      properties: *ref_242
     checkSNMPConfig:
       title: SNMP Config
       type: object
-      required: *ref_224
-      properties: *ref_225
+      required: *ref_243
+      properties: *ref_244
     check:
       type: object
-      properties: *ref_226
+      properties: *ref_245
     checkGroup:
       type: object
-      properties: *ref_227
+      properties: *ref_246
     checkApp:
       type: object
-      properties: *ref_228
+      properties: *ref_247
     Error:
       type: object
       description: The standard response object that is returned when a request fails to complete successfully
       properties: *ref_120
     default-error:
       type: object
-      properties: *ref_229
+      properties: *ref_248
     200-success:
       type: object
       properties: *ref_4
     backupSettings:
       type: object
-      properties: *ref_230
+      properties: *ref_249
     backupSettingsUpdate:
       type: object
-      properties: *ref_231
+      properties: *ref_250
     optionType:
       type: object
       properties: *ref_22
     catalogItemType:
       type: object
-      properties: *ref_232
+      properties: *ref_251
     meta:
       type: object
       properties: *ref_12
@@ -36614,26 +38594,26 @@ components:
       properties: *ref_45
     catalogItemTypeInstanceScribe:
       type: object
-      required: *ref_233
-      properties: *ref_234
+      required: *ref_252
+      properties: *ref_253
     catalogItemTypeInstanceCreate:
       type: object
-      required: *ref_235
-      properties: *ref_236
+      required: *ref_254
+      properties: *ref_255
     catalogItemTypeBlueprintCreate:
       type: object
-      required: *ref_237
-      properties: *ref_238
+      required: *ref_256
+      properties: *ref_257
     catalogItemTypeWorkflowCreate:
       type: object
-      required: *ref_239
-      properties: *ref_240
+      required: *ref_258
+      properties: *ref_259
     cloudsConfigHVM:
       type: object
-      properties: *ref_241
+      properties: *ref_260
     cloudsConfigVMware:
       type: object
-      properties: *ref_242
+      properties: *ref_261
     cloudsConfigGeneric:
       title: Generic Cloud Configuration
       description: Generic configuration options for the cloud, varies based on the type of cloud.
@@ -36644,37 +38624,37 @@ components:
     cloudCreateConfigAWS:
       description: Amazon Cloud
       type: object
-      required: *ref_243
-      properties: *ref_244
+      required: *ref_262
+      properties: *ref_263
     cloudCreateConfigAzure:
       description: Azure Cloud
       type: object
-      properties: *ref_245
+      properties: *ref_264
     cloudCreateConfigHVM:
       description: HVM Cloud
       type: object
-      properties: *ref_246
+      properties: *ref_265
     cloudCreateConfigVsphere:
       description: VSphere Cloud
       type: object
-      required: *ref_247
-      properties: *ref_248
+      required: *ref_266
+      properties: *ref_267
     cloudCreateConfigGeneric:
       title: Generic Cloud Configuration
       type: object
     zoneCreate:
       type: object
-      required: *ref_249
-      properties: *ref_250
+      required: *ref_268
+      properties: *ref_269
     resourcePermissions:
       type: object
-      properties: *ref_251
+      properties: *ref_270
     zoneDatastore:
       type: object
       properties: *ref_19
     zoneDatastoreCreate:
       type: object
-      properties: *ref_252
+      properties: *ref_271
     clusterDatastore:
       type: object
       properties: *ref_25
@@ -36683,17 +38663,17 @@ components:
       properties: *ref_26
     clusterLayout:
       type: object
-      properties: *ref_253
+      properties: *ref_272
     clusterLayoutCreate:
       type: object
-      required: *ref_254
-      properties: *ref_255
+      required: *ref_273
+      properties: *ref_274
     successId:
       type: object
-      properties: *ref_256
+      properties: *ref_275
     clusterDatastores:
       type: object
-      properties: *ref_257
+      properties: *ref_276
     clusterDatastoreConfigNFS:
       type: object
       title: NFS Datastore Configuration
@@ -36718,21 +38698,21 @@ components:
       required: *ref_33
     clusterDatastoreCreate:
       type: object
-      properties: *ref_258
+      properties: *ref_277
     clusterUpdatePermissions:
       type: object
-      properties: *ref_259
+      properties: *ref_278
     clusterDatastoreUpdate:
       type: object
-      properties: *ref_260
+      properties: *ref_279
     storageDatastore:
       type: object
       properties: *ref_34
       required: *ref_35
     storageDatastoreCreate:
       type: object
-      properties: *ref_261
-      required: *ref_262
+      properties: *ref_280
+      required: *ref_281
     environment:
       type: object
       properties: *ref_37
@@ -36744,30 +38724,30 @@ components:
       properties: *ref_39
     groupCreate:
       type: object
-      required: *ref_263
-      properties: *ref_264
+      required: *ref_282
+      properties: *ref_283
     groupUpdate:
       type: object
-      required: *ref_265
-      properties: *ref_266
+      required: *ref_284
+      properties: *ref_285
     routeOptionType:
       type: object
-      properties: *ref_267
+      properties: *ref_286
     networkType:
       type: object
-      properties: *ref_268
+      properties: *ref_287
     storageType:
       type: object
       properties: *ref_41
     controllerType:
       type: object
-      properties: *ref_269
+      properties: *ref_288
     provisionType:
       type: object
       properties: *ref_102
     containerType:
       type: object
-      properties: *ref_270
+      properties: *ref_289
     instanceTypeLayout:
       type: object
       properties: *ref_61
@@ -36781,76 +38761,76 @@ components:
     instancesConfigHVM:
       title: HVM Instance Configuration
       type: object
-      properties: *ref_271
+      properties: *ref_290
     instanceCreate:
       type: object
-      required: *ref_272
-      properties: *ref_273
+      required: *ref_291
+      properties: *ref_292
     instanceCreateSuccess:
       type: object
-      required: *ref_274
-      properties: *ref_275
+      required: *ref_293
+      properties: *ref_294
     instancesConfigCustomOptions:
       type: object
-      properties: *ref_276
+      properties: *ref_295
     instanceUpdate:
       type: object
-      properties: *ref_277
+      properties: *ref_296
     instanceUpdateSuccess:
       type: object
       required: *ref_53
       properties: *ref_54
     instanceEnvs:
       type: object
-      properties: *ref_278
+      properties: *ref_297
     instanceResize:
       type: object
-      properties: *ref_279
+      properties: *ref_298
     instanceTypes:
       type: object
-      properties: *ref_280
+      properties: *ref_299
     instanceTypeCreate:
       type: object
-      required: *ref_281
-      properties: *ref_282
+      required: *ref_300
+      properties: *ref_301
     instanceTypeUpdate:
       type: object
-      properties: *ref_283
+      properties: *ref_302
     instanceTypeLayoutCreate:
       type: object
-      required: *ref_284
-      properties: *ref_285
+      required: *ref_303
+      properties: *ref_304
     instanceTypeLayoutUpdate:
       type: object
-      properties: *ref_286
+      properties: *ref_305
     network:
       type: object
       properties: *ref_65
     networkTypeAzureConfig:
       type: object
-      required: *ref_287
-      properties: *ref_288
+      required: *ref_306
+      properties: *ref_307
     networkTypeAwsConfig:
       type: object
-      required: *ref_289
-      properties: *ref_290
+      required: *ref_308
+      properties: *ref_309
     networkTypeGcpConfig:
       type: object
-      required: *ref_291
-      properties: *ref_292
+      required: *ref_310
+      properties: *ref_311
     networkTypeGenericConfig:
       type: object
       description: Required config options will be in the network type detail API.
     networkCreate:
       type: object
-      required: *ref_293
-      properties: *ref_294
+      required: *ref_312
+      properties: *ref_313
     successMessage:
       type: object
       properties: *ref_66
     networkUpdate:
       type: object
-      properties: *ref_295
+      properties: *ref_314
     checkbox:
       type: string
       enum: *ref_67
@@ -36861,144 +38841,156 @@ components:
       properties: *ref_68
     policyCreate:
       type: object
-      required: *ref_296
-      properties: *ref_297
+      required: *ref_315
+      properties: *ref_316
     policyUpdate:
       type: object
-      properties: *ref_298
+      properties: *ref_317
     roles:
       type: object
-      properties: *ref_299
+      properties: *ref_318
     role:
       type: object
       properties: *ref_105
+    storageVolume:
+      type: object
+      properties: *ref_319
+    server:
+      type: object
+      properties: *ref_124
+    serverBaremetalCreate:
+      type: object
+      properties: *ref_320
+    hostUpdate:
+      type: object
+      properties: *ref_321
     servicePlanRow:
       type: object
-      properties: *ref_300
+      properties: *ref_322
     servicePlan:
       type: object
-      properties: *ref_121
+      properties: *ref_131
     userCreate:
       type: object
       description: Payload for creating a new user
-      required: *ref_160
-      properties: *ref_161
+      required: *ref_170
+      properties: *ref_171
     user:
       type: object
-      properties: *ref_159
+      properties: *ref_169
     taskAnsiblePlaybookConfig:
       type: object
-      properties: *ref_122
+      properties: *ref_132
       title: Ansible Playbook Task Config
     taskAnsibleTowerConfig:
       type: object
       additionalProperties: false
-      properties: *ref_123
+      properties: *ref_133
       title: Ansible Tower Task Config
     taskChefBootstrapConfig:
       type: object
       additionalProperties: false
-      properties: *ref_124
+      properties: *ref_134
       title: Chef Bootstrap Task Config
     taskEmailConfig:
       type: object
       additionalProperties: false
-      properties: *ref_125
+      properties: *ref_135
       title: Email Task Config
     taskGroovyConfig:
       type: object
       additionalProperties: false
-      properties: *ref_126
+      properties: *ref_136
       title: Groovy Task Config
     taskHttpConfig:
       type: object
       additionalProperties: false
-      properties: *ref_127
+      properties: *ref_137
       title: HTTP Task Config
     taskJavaConfig:
       type: object
       additionalProperties: false
-      properties: *ref_128
+      properties: *ref_138
       title: Java Task Config
     taskLibraryScriptConfig:
       type: object
       additionalProperties: false
-      properties: *ref_129
+      properties: *ref_139
       title: Library Script Task Config
     taskLibraryTemplateConfig:
       type: object
       additionalProperties: false
-      properties: *ref_130
+      properties: *ref_140
       title: Library Template Task Config
     taskNestedWorkflowConfig:
       type: object
       additionalProperties: false
-      required: *ref_131
-      properties: *ref_132
+      required: *ref_141
+      properties: *ref_142
       title: Nested Workflow Task Config
     taskPowershellConfig:
       type: object
       additionalProperties: false
-      properties: *ref_133
+      properties: *ref_143
       title: PowerShell Task Config
     taskPuppetConfig:
       type: object
       additionalProperties: false
-      properties: *ref_134
+      properties: *ref_144
       title: Puppet Task Config
     taskPythonConfig:
       type: object
       additionalProperties: false
-      properties: *ref_135
+      properties: *ref_145
       title: Python Task Config
     taskRestartConfig:
       type: object
       additionalProperties: false
-      properties: *ref_136
+      properties: *ref_146
       title: Restart Task Config
     taskShellConfig:
       type: object
       additionalProperties: false
-      properties: *ref_137
+      properties: *ref_147
       title: Shell Task Config
     taskVroConfig:
       type: object
       additionalProperties: false
-      properties: *ref_138
+      properties: *ref_148
       title: vRealize Orchestrator Task Config
     taskWriteAttributesConfig:
       type: object
       additionalProperties: false
-      properties: *ref_139
+      properties: *ref_149
       title: Write Attributes Task Config
     taskConditionalWorkflowConfig:
       type: object
       additionalProperties: false
-      properties: *ref_140
+      properties: *ref_150
       title: Conditional Workflow Task Config
     taskResponse:
       type: object
-      properties: *ref_141
+      properties: *ref_151
     global:
       type: object
-      properties: *ref_301
+      properties: *ref_323
     ReferenceObject:
       type: object
       description: A simple object to represent a specific resource, typically an id and name.
-      properties: *ref_302
-      required: *ref_303
+      properties: *ref_324
+      required: *ref_325
     virtualImage:
       type: object
-      properties: *ref_165
+      properties: *ref_174
     virtualImageCreate:
       type: object
-      properties: *ref_304
+      properties: *ref_326
     virtualImageUpdate:
       type: object
-      properties: *ref_305
+      properties: *ref_327
     accessToken:
       type: object
-      properties: *ref_306
+      properties: *ref_328
   responses:
     4xx:
       description: Error Codes
