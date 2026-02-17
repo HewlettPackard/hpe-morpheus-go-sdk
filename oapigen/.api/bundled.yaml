@@ -31065,6 +31065,38 @@ paths:
         5XX:
           description: Error Codes
           content: *ref_3
+  /api/servers/{id}/stop:
+    put:
+      summary: Stop a Host
+      description: This will stop a host.
+      operationId: stopHost
+      tags:
+        - Hosts
+      parameters:
+        - name: id
+          in: path
+          description: Morpheus ID of the Object being referenced
+          required: true
+          schema: *ref_0
+          example: 1
+      responses:
+        '200':
+          description: Successful Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: *ref_4
+              examples:
+                Response:
+                  value:
+                    success: true
+        4XX:
+          description: Error Codes
+          content: *ref_2
+        5XX:
+          description: Error Codes
+          content: *ref_3
   /api/service-plans:
     get:
       summary: Retrieves all Service Plans

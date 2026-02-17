@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *HostsAPI* | [**GetHost**](docs/HostsAPI.md#gethost) | **Get** /api/servers/{id} | Get a Specific Host
 *HostsAPI* | [**ListHosts**](docs/HostsAPI.md#listhosts) | **Get** /api/servers | Get All Hosts
 *HostsAPI* | [**RemoveHost**](docs/HostsAPI.md#removehost) | **Delete** /api/servers/{id} | Delete a Host
+*HostsAPI* | [**StopHost**](docs/HostsAPI.md#stophost) | **Put** /api/servers/{id}/stop | Stop a Host
 *HostsAPI* | [**UpdateHost**](docs/HostsAPI.md#updatehost) | **Put** /api/servers/{id} | Updating a Host
 *InstancesAPI* | [**AddInstance**](docs/InstancesAPI.md#addinstance) | **Post** /api/instances | Create an Instance
 *InstancesAPI* | [**DeleteInstance**](docs/InstancesAPI.md#deleteinstance) | **Delete** /api/instances/{id} | Delete an instance
@@ -2131,6 +2132,7 @@ Class | Method | HTTP request | Description
  - [ShutdownPolicyTypeConfiguration8](docs/ShutdownPolicyTypeConfiguration8.md)
  - [SocketConfig](docs/SocketConfig.md)
  - [SocketConfig1](docs/SocketConfig1.md)
+ - [StopHost200Response](docs/StopHost200Response.md)
  - [StorageDatastore](docs/StorageDatastore.md)
  - [StorageDatastoreConfigAlletraMPHVM](docs/StorageDatastoreConfigAlletraMPHVM.md)
  - [StorageDatastoreCreate](docs/StorageDatastoreCreate.md)

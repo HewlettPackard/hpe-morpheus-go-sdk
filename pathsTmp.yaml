@@ -70,6 +70,8 @@
   $ref: paths/api@servers.yaml
 /api/servers/{id}:
   $ref: paths/api@servers@id.yaml
+/api/servers/{id}/stop:
+  $ref: paths/api@servers@id@stop.yaml
 /api/service-plans:
   $ref: paths/api@service-plans.yaml
 /api/service-plans/{id}:

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GetHost**](HostsAPI.md#GetHost) | **Get** /api/servers/{id} | Get a Specific Host
 [**ListHosts**](HostsAPI.md#ListHosts) | **Get** /api/servers | Get All Hosts
 [**RemoveHost**](HostsAPI.md#RemoveHost) | **Delete** /api/servers/{id} | Delete a Host
+[**StopHost**](HostsAPI.md#StopHost) | **Put** /api/servers/{id}/stop | Stop a Host
 [**UpdateHost**](HostsAPI.md#UpdateHost) | **Put** /api/servers/{id} | Updating a Host
 
 
@@ -328,6 +329,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RemoveGroups200Response**](RemoveGroups200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## StopHost
+
+> StopHost200Response StopHost(ctx, id).Execute()
+
+Stop a Host
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.HostsAPI.StopHost(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `HostsAPI.StopHost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `StopHost`: StopHost200Response
+	fmt.Fprintf(os.Stdout, "Response from `HostsAPI.StopHost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiStopHostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**StopHost200Response**](StopHost200Response.md)
 
 ### Authorization
 

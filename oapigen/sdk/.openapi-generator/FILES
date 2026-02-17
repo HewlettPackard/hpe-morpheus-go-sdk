@@ -1991,6 +1991,7 @@ docs/ShutdownPolicyTypeConfiguration7.md
 docs/ShutdownPolicyTypeConfiguration8.md
 docs/SocketConfig.md
 docs/SocketConfig1.md
+docs/StopHost200Response.md
 docs/StorageDatastore.md
 docs/StorageDatastoreConfigAlletraMPHVM.md
 docs/StorageDatastoreCreate.md
@@ -4323,6 +4324,7 @@ model_socket_config.go
 model_socket_config_1.go
 model_sql_config.go
 model_sql_config_1.go
+model_stop_host_200_response.go
 model_storage_datastore.go
 model_storage_datastore_config_alletra_mphvm.go
 model_storage_datastore_create.go

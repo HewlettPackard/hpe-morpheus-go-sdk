@@ -37,6 +37,7 @@ includePaths:
   - /api/options/{optionSource}
   - /api/servers
   - /api/servers/{id}
+  - /api/servers/{id}/stop
 
 # included due to de-duplication
   - /api/catalog-item-types
