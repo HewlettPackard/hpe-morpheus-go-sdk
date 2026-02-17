@@ -1,3 +1,9 @@
+/api/monitoring/alerts/{id}:
+  $ref: paths/api@monitoring@alerts@id.yaml
+/api/backup-settings:
+  $ref: paths/api@backup-settings.yaml
+/api/catalog-item-types:
+  $ref: paths/api@catalog-item-types.yaml
 /api/zones:
   $ref: paths/api@zones.yaml
 /api/zones/{id}:
@@ -6,6 +12,8 @@
   $ref: paths/api@zones@zoneId@data-stores.yaml
 /api/zones/{zoneId}/data-stores/{id}:
   $ref: paths/api@zones@zoneId@data-stores@id.yaml
+/api/library/cluster-layouts:
+  $ref: paths/api@library@cluster-layouts.yaml
 /api/clusters/{clusterId}/datastores:
   $ref: paths/api@clusters@id@datastores.yaml
 /api/clusters/{clusterId}/datastores/{id}:
@@ -22,6 +30,8 @@
   $ref: paths/api@groups.yaml
 /api/groups/{id}:
   $ref: paths/api@groups@id.yaml
+/api/instance-types/{id}:
+  $ref: paths/api@instance-types@id.yaml
 /api/instances:
   $ref: paths/api@instances.yaml
 /api/instances/{id}:
@@ -32,6 +42,10 @@
   $ref: paths/api@instances@id@resize.yaml
 /api/library/instance-types:
   $ref: paths/api@library@instance-types.yaml
+/api/library/instance-types/{instanceTypeId}:
+  $ref: paths/api@library@instance-types@id.yaml
+/api/library/instance-types/{instanceTypeId}/layouts:
+  $ref: paths/api@library@instance-types@id@layouts.yaml
 /api/library/layouts:
   $ref: paths/api@library@layouts.yaml
 /api/library/layouts/{id}:
@@ -56,6 +70,8 @@
   $ref: paths/api@service-plans.yaml
 /api/service-plans/{id}:
   $ref: paths/api@service-plans@id.yaml
+/api/accounts/{accountId}/users:
+  $ref: paths/api@accounts@id@users.yaml
 /api/tasks:
   $ref: paths/api@tasks.yaml
 /api/tasks/{id}:

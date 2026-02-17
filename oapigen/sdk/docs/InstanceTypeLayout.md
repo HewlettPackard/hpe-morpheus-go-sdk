@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
-**InstanceType** | Pointer to [**GetLayout200ResponseInstanceTypeLayoutInstanceType**](GetLayout200ResponseInstanceTypeLayoutInstanceType.md) |  | [optional] 
-**Account** | Pointer to [**GetLayout200ResponseInstanceTypeLayoutAccount**](GetLayout200ResponseInstanceTypeLayoutAccount.md) |  | [optional] 
+**InstanceType** | Pointer to [**AddLayout200ResponseInstanceTypeLayoutInstanceType**](AddLayout200ResponseInstanceTypeLayoutInstanceType.md) |  | [optional] 
+**Account** | Pointer to [**AddLayout200ResponseInstanceTypeLayoutAccount**](AddLayout200ResponseInstanceTypeLayoutAccount.md) |  | [optional] 
 **Code** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Labels** | Pointer to **[]string** | Array of label strings, can be used for filtering. | [optional] 
@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **MemoryRequirement** | Pointer to **NullableInt64** |  | [optional] 
 **SortOrder** | Pointer to **int64** |  | [optional] 
 **SupportsConvertToManaged** | Pointer to **NullableBool** |  | [optional] 
-**ProvisionType** | Pointer to [**GetLayout200ResponseInstanceTypeLayoutProvisionType**](GetLayout200ResponseInstanceTypeLayoutProvisionType.md) |  | [optional] 
+**ProvisionType** | Pointer to [**AddLayout200ResponseInstanceTypeLayoutProvisionType**](AddLayout200ResponseInstanceTypeLayoutProvisionType.md) |  | [optional] 
 **TaskSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
-**ContainerTypes** | Pointer to [**[]GetLayout200ResponseInstanceTypeLayoutContainerTypesInner**](GetLayout200ResponseInstanceTypeLayoutContainerTypesInner.md) |  | [optional] 
+**ContainerTypes** | Pointer to [**[]AddLayout200ResponseInstanceTypeLayoutContainerTypesInner**](AddLayout200ResponseInstanceTypeLayoutContainerTypesInner.md) |  | [optional] 
 **Mounts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **Ports** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **OptionTypes** | Pointer to **[]map[string]interface{}** |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **PriceSets** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **SpecTemplates** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **TfvarSecret** | Pointer to **NullableString** |  | [optional] 
-**Permissions** | Pointer to [**GetLayout200ResponseInstanceTypeLayoutPermissions**](GetLayout200ResponseInstanceTypeLayoutPermissions.md) |  | [optional] 
+**Permissions** | Pointer to [**AddLayout200ResponseInstanceTypeLayoutPermissions**](AddLayout200ResponseInstanceTypeLayoutPermissions.md) |  | [optional] 
 
 ## Methods
 
@@ -74,20 +74,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetInstanceType
 
-`func (o *InstanceTypeLayout) GetInstanceType() GetLayout200ResponseInstanceTypeLayoutInstanceType`
+`func (o *InstanceTypeLayout) GetInstanceType() AddLayout200ResponseInstanceTypeLayoutInstanceType`
 
 GetInstanceType returns the InstanceType field if non-nil, zero value otherwise.
 
 ### GetInstanceTypeOk
 
-`func (o *InstanceTypeLayout) GetInstanceTypeOk() (*GetLayout200ResponseInstanceTypeLayoutInstanceType, bool)`
+`func (o *InstanceTypeLayout) GetInstanceTypeOk() (*AddLayout200ResponseInstanceTypeLayoutInstanceType, bool)`
 
 GetInstanceTypeOk returns a tuple with the InstanceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstanceType
 
-`func (o *InstanceTypeLayout) SetInstanceType(v GetLayout200ResponseInstanceTypeLayoutInstanceType)`
+`func (o *InstanceTypeLayout) SetInstanceType(v AddLayout200ResponseInstanceTypeLayoutInstanceType)`
 
 SetInstanceType sets InstanceType field to given value.
 
@@ -99,20 +99,20 @@ HasInstanceType returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *InstanceTypeLayout) GetAccount() GetLayout200ResponseInstanceTypeLayoutAccount`
+`func (o *InstanceTypeLayout) GetAccount() AddLayout200ResponseInstanceTypeLayoutAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *InstanceTypeLayout) GetAccountOk() (*GetLayout200ResponseInstanceTypeLayoutAccount, bool)`
+`func (o *InstanceTypeLayout) GetAccountOk() (*AddLayout200ResponseInstanceTypeLayoutAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *InstanceTypeLayout) SetAccount(v GetLayout200ResponseInstanceTypeLayoutAccount)`
+`func (o *InstanceTypeLayout) SetAccount(v AddLayout200ResponseInstanceTypeLayoutAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -389,20 +389,20 @@ HasSupportsConvertToManaged returns a boolean if a field has been set.
 UnsetSupportsConvertToManaged ensures that no value is present for SupportsConvertToManaged, not even an explicit nil
 ### GetProvisionType
 
-`func (o *InstanceTypeLayout) GetProvisionType() GetLayout200ResponseInstanceTypeLayoutProvisionType`
+`func (o *InstanceTypeLayout) GetProvisionType() AddLayout200ResponseInstanceTypeLayoutProvisionType`
 
 GetProvisionType returns the ProvisionType field if non-nil, zero value otherwise.
 
 ### GetProvisionTypeOk
 
-`func (o *InstanceTypeLayout) GetProvisionTypeOk() (*GetLayout200ResponseInstanceTypeLayoutProvisionType, bool)`
+`func (o *InstanceTypeLayout) GetProvisionTypeOk() (*AddLayout200ResponseInstanceTypeLayoutProvisionType, bool)`
 
 GetProvisionTypeOk returns a tuple with the ProvisionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvisionType
 
-`func (o *InstanceTypeLayout) SetProvisionType(v GetLayout200ResponseInstanceTypeLayoutProvisionType)`
+`func (o *InstanceTypeLayout) SetProvisionType(v AddLayout200ResponseInstanceTypeLayoutProvisionType)`
 
 SetProvisionType sets ProvisionType field to given value.
 
@@ -449,20 +449,20 @@ HasTaskSets returns a boolean if a field has been set.
 UnsetTaskSets ensures that no value is present for TaskSets, not even an explicit nil
 ### GetContainerTypes
 
-`func (o *InstanceTypeLayout) GetContainerTypes() []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner`
+`func (o *InstanceTypeLayout) GetContainerTypes() []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner`
 
 GetContainerTypes returns the ContainerTypes field if non-nil, zero value otherwise.
 
 ### GetContainerTypesOk
 
-`func (o *InstanceTypeLayout) GetContainerTypesOk() (*[]GetLayout200ResponseInstanceTypeLayoutContainerTypesInner, bool)`
+`func (o *InstanceTypeLayout) GetContainerTypesOk() (*[]AddLayout200ResponseInstanceTypeLayoutContainerTypesInner, bool)`
 
 GetContainerTypesOk returns a tuple with the ContainerTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainerTypes
 
-`func (o *InstanceTypeLayout) SetContainerTypes(v []GetLayout200ResponseInstanceTypeLayoutContainerTypesInner)`
+`func (o *InstanceTypeLayout) SetContainerTypes(v []AddLayout200ResponseInstanceTypeLayoutContainerTypesInner)`
 
 SetContainerTypes sets ContainerTypes field to given value.
 
@@ -719,20 +719,20 @@ HasTfvarSecret returns a boolean if a field has been set.
 UnsetTfvarSecret ensures that no value is present for TfvarSecret, not even an explicit nil
 ### GetPermissions
 
-`func (o *InstanceTypeLayout) GetPermissions() GetLayout200ResponseInstanceTypeLayoutPermissions`
+`func (o *InstanceTypeLayout) GetPermissions() AddLayout200ResponseInstanceTypeLayoutPermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *InstanceTypeLayout) GetPermissionsOk() (*GetLayout200ResponseInstanceTypeLayoutPermissions, bool)`
+`func (o *InstanceTypeLayout) GetPermissionsOk() (*AddLayout200ResponseInstanceTypeLayoutPermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *InstanceTypeLayout) SetPermissions(v GetLayout200ResponseInstanceTypeLayoutPermissions)`
+`func (o *InstanceTypeLayout) SetPermissions(v AddLayout200ResponseInstanceTypeLayoutPermissions)`
 
 SetPermissions sets Permissions field to given value.
 

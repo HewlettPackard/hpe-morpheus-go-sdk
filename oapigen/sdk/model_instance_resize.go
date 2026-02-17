@@ -27,7 +27,7 @@ type InstanceResize struct {
 	// Delete the original volumes after resizing. (Amazon only)
 	DeleteOriginalVolumes *bool `json:"deleteOriginalVolumes,omitempty"`
 	// Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API.
-	NetworkInterfaces    []InstancesNetworkInterfaces3 `json:"networkInterfaces,omitempty"`
+	NetworkInterfaces    []InstancesNetworkInterfaces6 `json:"networkInterfaces,omitempty"`
 	AdditionalProperties map[string]interface{}        `json:",remain"`
 }
 
@@ -183,9 +183,9 @@ func (o *InstanceResize) SetDeleteOriginalVolumes(v bool) {
 }
 
 // GetNetworkInterfaces returns the NetworkInterfaces field value if set, zero value otherwise.
-func (o *InstanceResize) GetNetworkInterfaces() []InstancesNetworkInterfaces3 {
+func (o *InstanceResize) GetNetworkInterfaces() []InstancesNetworkInterfaces6 {
 	if o == nil || IsNil(o.NetworkInterfaces) {
-		var ret []InstancesNetworkInterfaces3
+		var ret []InstancesNetworkInterfaces6
 		return ret
 	}
 	return o.NetworkInterfaces
@@ -193,7 +193,7 @@ func (o *InstanceResize) GetNetworkInterfaces() []InstancesNetworkInterfaces3 {
 
 // GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InstanceResize) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces3, bool) {
+func (o *InstanceResize) GetNetworkInterfacesOk() ([]InstancesNetworkInterfaces6, bool) {
 	if o == nil || IsNil(o.NetworkInterfaces) {
 		return nil, false
 	}
@@ -209,8 +209,8 @@ func (o *InstanceResize) IsSetNetworkInterfaces() bool {
 	return false
 }
 
-// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces3 and assigns it to the NetworkInterfaces field.
-func (o *InstanceResize) SetNetworkInterfaces(v []InstancesNetworkInterfaces3) {
+// SetNetworkInterfaces gets a reference to the given []InstancesNetworkInterfaces6 and assigns it to the NetworkInterfaces field.
+func (o *InstanceResize) SetNetworkInterfaces(v []InstancesNetworkInterfaces6) {
 	o.NetworkInterfaces = v
 }
 

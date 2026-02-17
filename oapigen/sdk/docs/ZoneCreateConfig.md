@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** | Azure client id | [optional] 
 **ClientSecret** | Pointer to **string** | Azure client secret | [optional] 
 **ResourceGroup** | Pointer to **string** | Azure resource group | [optional] 
-**RpcMode** | Pointer to [**NullableZoneCreateConfigAnyOf3RpcMode**](ZoneCreateConfigAnyOf3RpcMode.md) |  | [optional] [default to guestexec]
+**RpcMode** | Pointer to [**NullableZoneCreateConfigAnyOf3RpcMode**](ZoneCreateConfigAnyOf3RpcMode.md) |  | [optional] 
 **CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
 **EnableNetworkTypeSelection** | Pointer to [**NullableZoneCreateConfigAnyOf3EnableNetworkTypeSelection**](ZoneCreateConfigAnyOf3EnableNetworkTypeSelection.md) |  | [optional] 
 **ApiUrl** | **string** | The SDK URL of the vCenter server. | 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServicePlans** | Pointer to [**[]ListServicePlans200ResponseAllOfServicePlansInner**](ListServicePlans200ResponseAllOfServicePlansInner.md) |  | [optional] 
-**Meta** | Pointer to [**ListCloudDatastores200ResponseAllOfMeta**](ListCloudDatastores200ResponseAllOfMeta.md) |  | [optional] 
+**Meta** | Pointer to [**ListClouds200ResponseAllOfMeta**](ListClouds200ResponseAllOfMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasServicePlans returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListServicePlans200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta`
+`func (o *ListServicePlans200Response) GetMeta() ListClouds200ResponseAllOfMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListServicePlans200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool)`
+`func (o *ListServicePlans200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListServicePlans200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta)`
+`func (o *ListServicePlans200Response) SetMeta(v ListClouds200ResponseAllOfMeta)`
 
 SetMeta sets Meta field to given value.
 

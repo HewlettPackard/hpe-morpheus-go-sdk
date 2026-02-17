@@ -72,8 +72,6 @@ func NewCloudCreateConfigVsphere(apiUrl string, apiVersion string, datacenter st
 	this.Datacenter = datacenter
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode CloudCreateConfigVsphereRpcMode = guestexec
-	this.RpcMode = *NewNullableCloudCreateConfigVsphereRpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -88,8 +86,6 @@ func NewCloudCreateConfigVsphereWithDefaults() *CloudCreateConfigVsphere {
 	this := CloudCreateConfigVsphere{}
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode CloudCreateConfigVsphereRpcMode = guestexec
-	this.RpcMode = *NewNullableCloudCreateConfigVsphereRpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"

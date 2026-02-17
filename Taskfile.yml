@@ -75,6 +75,17 @@ tasks:
         --dereferenced 
         --output {{.BUNDLEDSPEC}}
         morpheus-openapi/openapi.yaml
+
+  update-spec-local:
+    desc: "update OpenAPI spec to match parallel local morpheus-openapi repo"
+    vars:
+      GITREF: '{{if (empty .GITREF)}}tf-dev{{else}}{{.GITREF}}{{end}}'
+    dir: morpheus-openapi
+    cmds:
+      - git clone ../../morpheus-openapi .
+      - defer: rm -rf ../morpheus-openapi
+      - git checkout {{.GITREF}}
+      - task: bundle-spec
   
   update-spec:
     desc: "update OpenAPI spec to match the morpheus-openapi GITREF"

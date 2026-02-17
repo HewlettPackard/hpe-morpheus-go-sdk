@@ -21,11 +21,11 @@ var _ fmt.Stringer
 
 // InstanceCreateConfig struct for InstanceCreateConfig
 type InstanceCreateConfig struct {
-	AmazonInstanceConfiguration1      *AmazonInstanceConfiguration1
-	AzureInstanceConfiguration1       *AzureInstanceConfiguration1
-	GoogleCloudInstanceConfiguration1 *GoogleCloudInstanceConfiguration1
+	AmazonInstanceConfiguration4      *AmazonInstanceConfiguration4
+	AzureInstanceConfiguration4       *AzureInstanceConfiguration4
+	GoogleCloudInstanceConfiguration4 *GoogleCloudInstanceConfiguration4
 	HVMInstanceConfiguration1         *HVMInstanceConfiguration1
-	VMWareInstanceConfiguration1      *VMWareInstanceConfiguration1
+	VMWareInstanceConfiguration4      *VMWareInstanceConfiguration4
 	MapmapOfStringAny                 *map[string]interface{}
 }
 
@@ -34,22 +34,22 @@ func (dst *InstanceCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 		dst = &InstanceCreateConfig{}
 	}
 
-	mapstructDecode(data, &dst.AmazonInstanceConfiguration1)
+	mapstructDecode(data, &dst.AmazonInstanceConfiguration4)
 
-	if IsEmpty(dst.AmazonInstanceConfiguration1) {
-		dst.AmazonInstanceConfiguration1 = nil
+	if IsEmpty(dst.AmazonInstanceConfiguration4) {
+		dst.AmazonInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.AzureInstanceConfiguration1)
+	mapstructDecode(data, &dst.AzureInstanceConfiguration4)
 
-	if IsEmpty(dst.AzureInstanceConfiguration1) {
-		dst.AzureInstanceConfiguration1 = nil
+	if IsEmpty(dst.AzureInstanceConfiguration4) {
+		dst.AzureInstanceConfiguration4 = nil
 	}
 
-	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration1)
+	mapstructDecode(data, &dst.GoogleCloudInstanceConfiguration4)
 
-	if IsEmpty(dst.GoogleCloudInstanceConfiguration1) {
-		dst.GoogleCloudInstanceConfiguration1 = nil
+	if IsEmpty(dst.GoogleCloudInstanceConfiguration4) {
+		dst.GoogleCloudInstanceConfiguration4 = nil
 	}
 
 	mapstructDecode(data, &dst.HVMInstanceConfiguration1)
@@ -58,10 +58,10 @@ func (dst *InstanceCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 		dst.HVMInstanceConfiguration1 = nil
 	}
 
-	mapstructDecode(data, &dst.VMWareInstanceConfiguration1)
+	mapstructDecode(data, &dst.VMWareInstanceConfiguration4)
 
-	if IsEmpty(dst.VMWareInstanceConfiguration1) {
-		dst.VMWareInstanceConfiguration1 = nil
+	if IsEmpty(dst.VMWareInstanceConfiguration4) {
+		dst.VMWareInstanceConfiguration4 = nil
 	}
 
 	mapstructDecode(data, &dst.MapmapOfStringAny)
@@ -76,43 +76,43 @@ func (dst *InstanceCreateConfig) UnmarshalMapstructure(data any) (any, error) {
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *InstanceCreateConfig) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into AmazonInstanceConfiguration1
-	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration1)
+	// try to unmarshal JSON data into AmazonInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.AmazonInstanceConfiguration4)
 	if err == nil {
-		jsonAmazonInstanceConfiguration1, _ := json.Marshal(dst.AmazonInstanceConfiguration1)
-		if string(jsonAmazonInstanceConfiguration1) == "{}" { // empty struct
-			dst.AmazonInstanceConfiguration1 = nil
+		jsonAmazonInstanceConfiguration4, _ := json.Marshal(dst.AmazonInstanceConfiguration4)
+		if string(jsonAmazonInstanceConfiguration4) == "{}" { // empty struct
+			dst.AmazonInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.AmazonInstanceConfiguration1, return on the first match
+			return nil // data stored in dst.AmazonInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.AmazonInstanceConfiguration1 = nil
+		dst.AmazonInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into AzureInstanceConfiguration1
-	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration1)
+	// try to unmarshal JSON data into AzureInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.AzureInstanceConfiguration4)
 	if err == nil {
-		jsonAzureInstanceConfiguration1, _ := json.Marshal(dst.AzureInstanceConfiguration1)
-		if string(jsonAzureInstanceConfiguration1) == "{}" { // empty struct
-			dst.AzureInstanceConfiguration1 = nil
+		jsonAzureInstanceConfiguration4, _ := json.Marshal(dst.AzureInstanceConfiguration4)
+		if string(jsonAzureInstanceConfiguration4) == "{}" { // empty struct
+			dst.AzureInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.AzureInstanceConfiguration1, return on the first match
+			return nil // data stored in dst.AzureInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.AzureInstanceConfiguration1 = nil
+		dst.AzureInstanceConfiguration4 = nil
 	}
 
-	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration1
-	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration1)
+	// try to unmarshal JSON data into GoogleCloudInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.GoogleCloudInstanceConfiguration4)
 	if err == nil {
-		jsonGoogleCloudInstanceConfiguration1, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration1)
-		if string(jsonGoogleCloudInstanceConfiguration1) == "{}" { // empty struct
-			dst.GoogleCloudInstanceConfiguration1 = nil
+		jsonGoogleCloudInstanceConfiguration4, _ := json.Marshal(dst.GoogleCloudInstanceConfiguration4)
+		if string(jsonGoogleCloudInstanceConfiguration4) == "{}" { // empty struct
+			dst.GoogleCloudInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.GoogleCloudInstanceConfiguration1, return on the first match
+			return nil // data stored in dst.GoogleCloudInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.GoogleCloudInstanceConfiguration1 = nil
+		dst.GoogleCloudInstanceConfiguration4 = nil
 	}
 
 	// try to unmarshal JSON data into HVMInstanceConfiguration1
@@ -128,17 +128,17 @@ func (dst *InstanceCreateConfig) UnmarshalJSON(data []byte) error {
 		dst.HVMInstanceConfiguration1 = nil
 	}
 
-	// try to unmarshal JSON data into VMWareInstanceConfiguration1
-	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration1)
+	// try to unmarshal JSON data into VMWareInstanceConfiguration4
+	err = json.Unmarshal(data, &dst.VMWareInstanceConfiguration4)
 	if err == nil {
-		jsonVMWareInstanceConfiguration1, _ := json.Marshal(dst.VMWareInstanceConfiguration1)
-		if string(jsonVMWareInstanceConfiguration1) == "{}" { // empty struct
-			dst.VMWareInstanceConfiguration1 = nil
+		jsonVMWareInstanceConfiguration4, _ := json.Marshal(dst.VMWareInstanceConfiguration4)
+		if string(jsonVMWareInstanceConfiguration4) == "{}" { // empty struct
+			dst.VMWareInstanceConfiguration4 = nil
 		} else {
-			return nil // data stored in dst.VMWareInstanceConfiguration1, return on the first match
+			return nil // data stored in dst.VMWareInstanceConfiguration4, return on the first match
 		}
 	} else {
-		dst.VMWareInstanceConfiguration1 = nil
+		dst.VMWareInstanceConfiguration4 = nil
 	}
 
 	// try to unmarshal JSON data into MapmapOfStringAny
@@ -159,24 +159,24 @@ func (dst *InstanceCreateConfig) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src InstanceCreateConfig) MarshalJSON() ([]byte, error) {
-	if src.AmazonInstanceConfiguration1 != nil {
-		return json.Marshal(&src.AmazonInstanceConfiguration1)
+	if src.AmazonInstanceConfiguration4 != nil {
+		return json.Marshal(&src.AmazonInstanceConfiguration4)
 	}
 
-	if src.AzureInstanceConfiguration1 != nil {
-		return json.Marshal(&src.AzureInstanceConfiguration1)
+	if src.AzureInstanceConfiguration4 != nil {
+		return json.Marshal(&src.AzureInstanceConfiguration4)
 	}
 
-	if src.GoogleCloudInstanceConfiguration1 != nil {
-		return json.Marshal(&src.GoogleCloudInstanceConfiguration1)
+	if src.GoogleCloudInstanceConfiguration4 != nil {
+		return json.Marshal(&src.GoogleCloudInstanceConfiguration4)
 	}
 
 	if src.HVMInstanceConfiguration1 != nil {
 		return json.Marshal(&src.HVMInstanceConfiguration1)
 	}
 
-	if src.VMWareInstanceConfiguration1 != nil {
-		return json.Marshal(&src.VMWareInstanceConfiguration1)
+	if src.VMWareInstanceConfiguration4 != nil {
+		return json.Marshal(&src.VMWareInstanceConfiguration4)
 	}
 
 	if src.MapmapOfStringAny != nil {

@@ -5,14 +5,19 @@ All URIs are relative to *https://CHANGEME*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddInstanceType**](LibraryAPI.md#AddInstanceType) | **Post** /api/library/instance-types | Create an Instance Type
+[**AddLayout**](LibraryAPI.md#AddLayout) | **Post** /api/library/instance-types/{instanceTypeId}/layouts | Create a Layout
 [**AddVirtualImage**](LibraryAPI.md#AddVirtualImage) | **Post** /api/virtual-images | Create a Virtual Image
+[**DeleteInstanceType**](LibraryAPI.md#DeleteInstanceType) | **Delete** /api/library/instance-types/{instanceTypeId} | Delete an Instance Type
 [**DeleteLayout**](LibraryAPI.md#DeleteLayout) | **Delete** /api/library/layouts/{id} | Delete a Layout
+[**GetInstanceType**](LibraryAPI.md#GetInstanceType) | **Get** /api/library/instance-types/{instanceTypeId} | Get a Specific Instance Type
 [**GetLayout**](LibraryAPI.md#GetLayout) | **Get** /api/library/layouts/{id} | Get a Specific Layout
 [**GetVirtualImage**](LibraryAPI.md#GetVirtualImage) | **Get** /api/virtual-images/{virtualImageId} | Get a Specific Virtual Image
 [**ListInstanceTypes**](LibraryAPI.md#ListInstanceTypes) | **Get** /api/library/instance-types | Get All Instance Types
 [**ListLayouts**](LibraryAPI.md#ListLayouts) | **Get** /api/library/layouts | Get All Layouts
+[**ListLayoutsForInstanceType**](LibraryAPI.md#ListLayoutsForInstanceType) | **Get** /api/library/instance-types/{instanceTypeId}/layouts | Get All Layouts For an Instance Type
 [**ListVirtualImages**](LibraryAPI.md#ListVirtualImages) | **Get** /api/virtual-images | Get List of Virtual Images
 [**RemoveVirtualImage**](LibraryAPI.md#RemoveVirtualImage) | **Delete** /api/virtual-images/{virtualImageId} | Delete a Virtual Image
+[**UpdateInstanceType**](LibraryAPI.md#UpdateInstanceType) | **Put** /api/library/instance-types/{instanceTypeId} | Update an Instance Type
 [**UpdateLayout**](LibraryAPI.md#UpdateLayout) | **Put** /api/library/layouts/{id} | Update a Layout
 [**UpdateVirtualImage**](LibraryAPI.md#UpdateVirtualImage) | **Put** /api/virtual-images/{virtualImageId} | Update a Virtual Image
 
@@ -20,7 +25,7 @@ Method | HTTP request | Description
 
 ## AddInstanceType
 
-> DeleteInstance200Response AddInstanceType(ctx).AddInstanceTypeRequest(addInstanceTypeRequest).Execute()
+> AddInstanceType200Response AddInstanceType(ctx).AddInstanceTypeRequest(addInstanceTypeRequest).Execute()
 
 Create an Instance Type
 
@@ -48,7 +53,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.AddInstanceType``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddInstanceType`: DeleteInstance200Response
+	// response from `AddInstanceType`: AddInstanceType200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.AddInstanceType`: %v\n", resp)
 }
 ```
@@ -68,7 +73,79 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteInstance200Response**](DeleteInstance200Response.md)
+[**AddInstanceType200Response**](AddInstanceType200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AddLayout
+
+> AddLayout200Response AddLayout(ctx, instanceTypeId).AddLayoutRequest(addLayoutRequest).Execute()
+
+Create a Layout
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
+	addLayoutRequest := *openapiclient.NewAddLayoutRequest() // AddLayoutRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LibraryAPI.AddLayout(context.Background(), instanceTypeId).AddLayoutRequest(addLayoutRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.AddLayout``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AddLayout`: AddLayout200Response
+	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.AddLayout`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceTypeId** | **int64** | The ID of the instance type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAddLayoutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **addLayoutRequest** | [**AddLayoutRequest**](AddLayoutRequest.md) |  | 
+
+### Return type
+
+[**AddLayout200Response**](AddLayout200Response.md)
 
 ### Authorization
 
@@ -150,6 +227,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteInstanceType
+
+> DeleteInstanceType200Response DeleteInstanceType(ctx, instanceTypeId).Execute()
+
+Delete an Instance Type
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LibraryAPI.DeleteInstanceType(context.Background(), instanceTypeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.DeleteInstanceType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DeleteInstanceType`: DeleteInstanceType200Response
+	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.DeleteInstanceType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceTypeId** | **int64** | The ID of the instance type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteInstanceTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DeleteInstanceType200Response**](DeleteInstanceType200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteLayout
 
 > DeleteLayout200Response DeleteLayout(ctx, id).Execute()
@@ -205,6 +352,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteLayout200Response**](DeleteLayout200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetInstanceType
+
+> GetInstanceType200Response GetInstanceType(ctx, instanceTypeId).Execute()
+
+Get a Specific Instance Type
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LibraryAPI.GetInstanceType(context.Background(), instanceTypeId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetInstanceType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInstanceType`: GetInstanceType200Response
+	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetInstanceType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceTypeId** | **int64** | The ID of the instance type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetInstanceTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetInstanceType200Response**](GetInstanceType200Response.md)
 
 ### Authorization
 
@@ -530,6 +747,96 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListLayoutsForInstanceType
+
+> ListLayoutsForInstanceType200Response ListLayoutsForInstanceType(ctx, instanceTypeId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Code(code).ProvisionType(provisionType).Labels(labels).AllLabels(allLabels).Execute()
+
+Get All Layouts For an Instance Type
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
+	max := int64(789) // int64 | Maximum number of records to return (optional) (default to 25)
+	offset := int64(789) // int64 | Offset records, the number of records to skip, for paginating requests (optional) (default to 0)
+	sort := "sort_example" // string | Sort order, the name of the property to sort by (optional) (default to "name")
+	direction := "asc" // string | Sort direction, use 'desc' to reverse sort (optional) (default to "asc")
+	phrase := "phrase_example" // string | Search phrase for partial matches on name or description (optional)
+	name := "example" // string | Filter by name (optional)
+	code := "azr" // string | If specified will return an exact match on code (optional)
+	provisionType := "provisionType_example" // string | Filter by `Provision Type` code. Refer to `Provision Types` API for up to date listings.  (optional)
+	labels := "labels_example" // string | Filter by label(s), matches records that contain any of the specified labels (optional)
+	allLabels := "allLabels_example" // string | Filter by label(s), matches records that contain all of the specified labels (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LibraryAPI.ListLayoutsForInstanceType(context.Background(), instanceTypeId).Max(max).Offset(offset).Sort(sort).Direction(direction).Phrase(phrase).Name(name).Code(code).ProvisionType(provisionType).Labels(labels).AllLabels(allLabels).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.ListLayoutsForInstanceType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListLayoutsForInstanceType`: ListLayoutsForInstanceType200Response
+	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.ListLayoutsForInstanceType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceTypeId** | **int64** | The ID of the instance type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListLayoutsForInstanceTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **max** | **int64** | Maximum number of records to return | [default to 25]
+ **offset** | **int64** | Offset records, the number of records to skip, for paginating requests | [default to 0]
+ **sort** | **string** | Sort order, the name of the property to sort by | [default to &quot;name&quot;]
+ **direction** | **string** | Sort direction, use &#39;desc&#39; to reverse sort | [default to &quot;asc&quot;]
+ **phrase** | **string** | Search phrase for partial matches on name or description | 
+ **name** | **string** | Filter by name | 
+ **code** | **string** | If specified will return an exact match on code | 
+ **provisionType** | **string** | Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.  | 
+ **labels** | **string** | Filter by label(s), matches records that contain any of the specified labels | 
+ **allLabels** | **string** | Filter by label(s), matches records that contain all of the specified labels | 
+
+### Return type
+
+[**ListLayoutsForInstanceType200Response**](ListLayoutsForInstanceType200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListVirtualImages
 
 > ListVirtualImages200Response ListVirtualImages(ctx).Max(max).Offset(offset).Name(name).Phrase(phrase).LastUpdated(lastUpdated).FilterType(filterType).ImageType(imageType).TagsName(tagsName).Labels(labels).AllLabels(allLabels).Execute()
@@ -678,6 +985,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateInstanceType
+
+> UpdateInstanceType200Response UpdateInstanceType(ctx, instanceTypeId).UpdateInstanceTypeRequest(updateInstanceTypeRequest).Execute()
+
+Update an Instance Type
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	instanceTypeId := int64(2) // int64 | The ID of the instance type
+	updateInstanceTypeRequest := *openapiclient.NewUpdateInstanceTypeRequest() // UpdateInstanceTypeRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LibraryAPI.UpdateInstanceType(context.Background(), instanceTypeId).UpdateInstanceTypeRequest(updateInstanceTypeRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.UpdateInstanceType``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateInstanceType`: UpdateInstanceType200Response
+	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.UpdateInstanceType`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**instanceTypeId** | **int64** | The ID of the instance type | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateInstanceTypeRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateInstanceTypeRequest** | [**UpdateInstanceTypeRequest**](UpdateInstanceTypeRequest.md) |  | 
+
+### Return type
+
+[**UpdateInstanceType200Response**](UpdateInstanceType200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -21,7 +21,7 @@ var _ MappedNullable = &ListVirtualImages200Response{}
 // ListVirtualImages200Response struct for ListVirtualImages200Response
 type ListVirtualImages200Response struct {
 	VirtualImages        []ListVirtualImages200ResponseAllOfVirtualImagesInner `json:"virtualImages,omitempty"`
-	Meta                 *ListCloudDatastores200ResponseAllOfMeta              `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta                       `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                                `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListVirtualImages200Response) SetVirtualImages(v []ListVirtualImages200
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListVirtualImages200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta {
+func (o *ListVirtualImages200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListCloudDatastores200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListVirtualImages200Response) GetMeta() ListCloudDatastores200ResponseA
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListVirtualImages200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool) {
+func (o *ListVirtualImages200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListVirtualImages200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListCloudDatastores200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListVirtualImages200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListVirtualImages200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

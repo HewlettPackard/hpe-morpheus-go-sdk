@@ -72,8 +72,6 @@ func NewZoneCreateConfigAnyOf3(apiUrl string, apiVersion string, datacenter stri
 	this.Datacenter = datacenter
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode ZoneCreateConfigAnyOf3RpcMode = guestexec
-	this.RpcMode = *NewNullableZoneCreateConfigAnyOf3RpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"
@@ -88,8 +86,6 @@ func NewZoneCreateConfigAnyOf3WithDefaults() *ZoneCreateConfigAnyOf3 {
 	this := ZoneCreateConfigAnyOf3{}
 	var cluster string = "all"
 	this.Cluster = &cluster
-	var rpcMode ZoneCreateConfigAnyOf3RpcMode = guestexec
-	this.RpcMode = *NewNullableZoneCreateConfigAnyOf3RpcMode(&rpcMode)
 	var storageType string = "thin"
 	this.StorageType = &storageType
 	var certificateProvider string = "internal"

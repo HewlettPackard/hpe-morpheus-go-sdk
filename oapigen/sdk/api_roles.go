@@ -127,7 +127,7 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -138,7 +138,7 @@ func (a *RolesAPIService) AddRolesExecute(r ApiAddRolesRequest) (*AddRoles200Res
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -262,7 +262,7 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*RemoveClou
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -273,7 +273,7 @@ func (a *RolesAPIService) DeleteRoleExecute(r ApiDeleteRoleRequest) (*RemoveClou
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -396,7 +396,7 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -407,7 +407,7 @@ func (a *RolesAPIService) GetRoleExecute(r ApiGetRoleRequest) (*GetRole200Respon
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -598,7 +598,7 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -609,7 +609,7 @@ func (a *RolesAPIService) ListRolesExecute(r ApiListRolesRequest) (*ListRoles200
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -740,7 +740,7 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*UpdateRole
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -751,7 +751,7 @@ func (a *RolesAPIService) UpdateRoleExecute(r ApiUpdateRoleRequest) (*UpdateRole
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

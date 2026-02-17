@@ -21,7 +21,7 @@ var _ MappedNullable = &ListInstances200Response{}
 // ListInstances200Response struct for ListInstances200Response
 type ListInstances200Response struct {
 	Instances            []ListInstances200ResponseAllOfInstancesInner `json:"instances,omitempty"`
-	Meta                 *ListCloudDatastores200ResponseAllOfMeta      `json:"meta,omitempty"`
+	Meta                 *ListClouds200ResponseAllOfMeta               `json:"meta,omitempty"`
 	AdditionalProperties map[string]interface{}                        `json:",remain"`
 }
 
@@ -77,9 +77,9 @@ func (o *ListInstances200Response) SetInstances(v []ListInstances200ResponseAllO
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListInstances200Response) GetMeta() ListCloudDatastores200ResponseAllOfMeta {
+func (o *ListInstances200Response) GetMeta() ListClouds200ResponseAllOfMeta {
 	if o == nil || IsNil(o.Meta) {
-		var ret ListCloudDatastores200ResponseAllOfMeta
+		var ret ListClouds200ResponseAllOfMeta
 		return ret
 	}
 	return *o.Meta
@@ -87,7 +87,7 @@ func (o *ListInstances200Response) GetMeta() ListCloudDatastores200ResponseAllOf
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstances200Response) GetMetaOk() (*ListCloudDatastores200ResponseAllOfMeta, bool) {
+func (o *ListInstances200Response) GetMetaOk() (*ListClouds200ResponseAllOfMeta, bool) {
 	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *ListInstances200Response) IsSetMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ListCloudDatastores200ResponseAllOfMeta and assigns it to the Meta field.
-func (o *ListInstances200Response) SetMeta(v ListCloudDatastores200ResponseAllOfMeta) {
+// SetMeta gets a reference to the given ListClouds200ResponseAllOfMeta and assigns it to the Meta field.
+func (o *ListInstances200Response) SetMeta(v ListClouds200ResponseAllOfMeta) {
 	o.Meta = &v
 }
 

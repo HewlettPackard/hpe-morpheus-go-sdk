@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteInstance**](InstancesAPI.md#DeleteInstance) | **Delete** /api/instances/{id} | Delete an instance
 [**GetEnvVariables**](InstancesAPI.md#GetEnvVariables) | **Get** /api/instances/{id}/envs | Get Env Variables
 [**GetInstance**](InstancesAPI.md#GetInstance) | **Get** /api/instances/{id} | Retrieves a Specific Instance
+[**GetInstanceTypeProvisioning**](InstancesAPI.md#GetInstanceTypeProvisioning) | **Get** /api/instance-types/{id} | Get Specific Instance Type for Provisioning
 [**ListInstances**](InstancesAPI.md#ListInstances) | **Get** /api/instances | Get All Instances
 [**ResizeInstance**](InstancesAPI.md#ResizeInstance) | **Put** /api/instances/{id}/resize | Resize an Instance
 [**UpdateInstance**](InstancesAPI.md#UpdateInstance) | **Put** /api/instances/{id} | Updating an Instance
@@ -289,6 +290,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInstance200Response**](GetInstance200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetInstanceTypeProvisioning
+
+> GetInstanceTypeProvisioning200Response GetInstanceTypeProvisioning(ctx, id).Execute()
+
+Get Specific Instance Type for Provisioning
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/HewlettPackard/hpe-morpheus-go-sdk/sdk"
+)
+
+func main() {
+	id := int64(1) // int64 | Morpheus ID of the Object being referenced
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstancesAPI.GetInstanceTypeProvisioning(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstancesAPI.GetInstanceTypeProvisioning``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetInstanceTypeProvisioning`: GetInstanceTypeProvisioning200Response
+	fmt.Fprintf(os.Stdout, "Response from `InstancesAPI.GetInstanceTypeProvisioning`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int64** | Morpheus ID of the Object being referenced | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetInstanceTypeProvisioningRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GetInstanceTypeProvisioning200Response**](GetInstanceTypeProvisioning200Response.md)
 
 ### Authorization
 

@@ -117,7 +117,7 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -128,7 +128,7 @@ func (a *NetworksAPIService) CreateNetworksExecute(r ApiCreateNetworksRequest) (
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -158,7 +158,7 @@ type ApiDeleteNetworkRequest struct {
 	id         int64
 }
 
-func (r ApiDeleteNetworkRequest) Execute() (*DeleteLayout200Response, *http.Response, error) {
+func (r ApiDeleteNetworkRequest) Execute() (*DeleteNetwork200Response, *http.Response, error) {
 	return r.ApiService.DeleteNetworkExecute(r)
 }
 
@@ -181,13 +181,13 @@ func (a *NetworksAPIService) DeleteNetwork(ctx context.Context, id int64) ApiDel
 
 // Execute executes the request
 //
-//	@return DeleteLayout200Response
-func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*DeleteLayout200Response, *http.Response, error) {
+//	@return DeleteNetwork200Response
+func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*DeleteNetwork200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DeleteLayout200Response
+		localVarReturnValue *DeleteNetwork200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NetworksAPIService.DeleteNetwork")
@@ -241,7 +241,7 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -252,7 +252,7 @@ func (a *NetworksAPIService) DeleteNetworkExecute(r ApiDeleteNetworkRequest) (*D
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -365,7 +365,7 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -376,7 +376,7 @@ func (a *NetworksAPIService) GetNetworkExecute(r ApiGetNetworkRequest) (*GetNetw
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -545,7 +545,7 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -556,7 +556,7 @@ func (a *NetworksAPIService) ListNetworksExecute(r ApiListNetworksRequest) (*Lis
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -677,7 +677,7 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*U
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -688,7 +688,7 @@ func (a *NetworksAPIService) UpdateNetworkExecute(r ApiUpdateNetworkRequest) (*U
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ServicePlanOptions** | Pointer to [**ResizeInstanceRequestServicePlanOptions**](ResizeInstanceRequestServicePlanOptions.md) |  | [optional] 
 **Volumes** | Pointer to [**[]ResizeInstanceRequestVolumesInner**](ResizeInstanceRequestVolumesInner.md) | Can be used to grow just the logical volume of the instance instead of choosing a plan | [optional] 
 **DeleteOriginalVolumes** | Pointer to **bool** | Delete the original volumes after resizing. (Amazon only) | [optional] [default to false]
-**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces1**](InstancesNetworkInterfaces1.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
+**NetworkInterfaces** | Pointer to [**[]InstancesNetworkInterfaces2**](InstancesNetworkInterfaces2.md) | Key for network configuration. Include id to update an existing interface. The existing interfaces and their id can be retrieved with the hosts API. | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasDeleteOriginalVolumes returns a boolean if a field has been set.
 
 ### GetNetworkInterfaces
 
-`func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces1`
+`func (o *ResizeInstanceRequest) GetNetworkInterfaces() []InstancesNetworkInterfaces2`
 
 GetNetworkInterfaces returns the NetworkInterfaces field if non-nil, zero value otherwise.
 
 ### GetNetworkInterfacesOk
 
-`func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces1, bool)`
+`func (o *ResizeInstanceRequest) GetNetworkInterfacesOk() (*[]InstancesNetworkInterfaces2, bool)`
 
 GetNetworkInterfacesOk returns a tuple with the NetworkInterfaces field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNetworkInterfaces
 
-`func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces1)`
+`func (o *ResizeInstanceRequest) SetNetworkInterfaces(v []InstancesNetworkInterfaces2)`
 
 SetNetworkInterfaces sets NetworkInterfaces field to given value.
 

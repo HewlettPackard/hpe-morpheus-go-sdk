@@ -36,7 +36,7 @@ func (r ApiAddInstanceTypeRequest) AddInstanceTypeRequest(addInstanceTypeRequest
 	return r
 }
 
-func (r ApiAddInstanceTypeRequest) Execute() (*DeleteInstance200Response, *http.Response, error) {
+func (r ApiAddInstanceTypeRequest) Execute() (*AddInstanceType200Response, *http.Response, error) {
 	return r.ApiService.AddInstanceTypeExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *LibraryAPIService) AddInstanceType(ctx context.Context) ApiAddInstanceT
 
 // Execute executes the request
 //
-//	@return DeleteInstance200Response
-func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) (*DeleteInstance200Response, *http.Response, error) {
+//	@return AddInstanceType200Response
+func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) (*AddInstanceType200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *DeleteInstance200Response
+		localVarReturnValue *AddInstanceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddInstanceType")
@@ -118,7 +118,7 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -129,7 +129,139 @@ func (a *LibraryAPIService) AddInstanceTypeExecute(r ApiAddInstanceTypeRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiAddLayoutRequest struct {
+	ctx              context.Context
+	ApiService       *LibraryAPIService
+	instanceTypeId   int64
+	addLayoutRequest *AddLayoutRequest
+}
+
+func (r ApiAddLayoutRequest) AddLayoutRequest(addLayoutRequest AddLayoutRequest) ApiAddLayoutRequest {
+	r.addLayoutRequest = &addLayoutRequest
+	return r
+}
+
+func (r ApiAddLayoutRequest) Execute() (*AddLayout200Response, *http.Response, error) {
+	return r.ApiService.AddLayoutExecute(r)
+}
+
+/*
+AddLayout Create a Layout
+
+Use this command to create a layout.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiAddLayoutRequest
+*/
+func (a *LibraryAPIService) AddLayout(ctx context.Context, instanceTypeId int64) ApiAddLayoutRequest {
+	return ApiAddLayoutRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		instanceTypeId: instanceTypeId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return AddLayout200Response
+func (a *LibraryAPIService) AddLayoutExecute(r ApiAddLayoutRequest) (*AddLayout200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLayout200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.AddLayout")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/layouts"
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceTypeId"+"}", url.PathEscape(parameterValueToString(r.instanceTypeId, "instanceTypeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.addLayoutRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v UpdateAlerts4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -246,7 +378,7 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -257,7 +389,131 @@ func (a *LibraryAPIService) AddVirtualImageExecute(r ApiAddVirtualImageRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiDeleteInstanceTypeRequest struct {
+	ctx            context.Context
+	ApiService     *LibraryAPIService
+	instanceTypeId int64
+}
+
+func (r ApiDeleteInstanceTypeRequest) Execute() (*DeleteInstanceType200Response, *http.Response, error) {
+	return r.ApiService.DeleteInstanceTypeExecute(r)
+}
+
+/*
+DeleteInstanceType Delete an Instance Type
+
+Will delete an instance type
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiDeleteInstanceTypeRequest
+*/
+func (a *LibraryAPIService) DeleteInstanceType(ctx context.Context, instanceTypeId int64) ApiDeleteInstanceTypeRequest {
+	return ApiDeleteInstanceTypeRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		instanceTypeId: instanceTypeId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return DeleteInstanceType200Response
+func (a *LibraryAPIService) DeleteInstanceTypeExecute(r ApiDeleteInstanceTypeRequest) (*DeleteInstanceType200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeleteInstanceType200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.DeleteInstanceType")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceTypeId"+"}", url.PathEscape(parameterValueToString(r.instanceTypeId, "instanceTypeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v UpdateAlerts4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -370,7 +626,7 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -381,7 +637,131 @@ func (a *LibraryAPIService) DeleteLayoutExecute(r ApiDeleteLayoutRequest) (*Dele
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetInstanceTypeRequest struct {
+	ctx            context.Context
+	ApiService     *LibraryAPIService
+	instanceTypeId int64
+}
+
+func (r ApiGetInstanceTypeRequest) Execute() (*GetInstanceType200Response, *http.Response, error) {
+	return r.ApiService.GetInstanceTypeExecute(r)
+}
+
+/*
+GetInstanceType Get a Specific Instance Type
+
+This endpoint retrieves a specific instance type.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiGetInstanceTypeRequest
+*/
+func (a *LibraryAPIService) GetInstanceType(ctx context.Context, instanceTypeId int64) ApiGetInstanceTypeRequest {
+	return ApiGetInstanceTypeRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		instanceTypeId: instanceTypeId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return GetInstanceType200Response
+func (a *LibraryAPIService) GetInstanceTypeExecute(r ApiGetInstanceTypeRequest) (*GetInstanceType200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetInstanceType200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetInstanceType")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceTypeId"+"}", url.PathEscape(parameterValueToString(r.instanceTypeId, "instanceTypeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v UpdateAlerts4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -494,7 +874,7 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -505,7 +885,7 @@ func (a *LibraryAPIService) GetLayoutExecute(r ApiGetLayoutRequest) (*GetLayout2
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -618,7 +998,7 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -629,7 +1009,7 @@ func (a *LibraryAPIService) GetVirtualImageExecute(r ApiGetVirtualImageRequest) 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -860,7 +1240,7 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -871,7 +1251,7 @@ func (a *LibraryAPIService) ListInstanceTypesExecute(r ApiListInstanceTypesReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1092,7 +1472,7 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1103,7 +1483,243 @@ func (a *LibraryAPIService) ListLayoutsExecute(r ApiListLayoutsRequest) (*ListLa
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiListLayoutsForInstanceTypeRequest struct {
+	ctx            context.Context
+	ApiService     *LibraryAPIService
+	instanceTypeId int64
+	max            *int64
+	offset         *int64
+	sort           *string
+	direction      *string
+	phrase         *string
+	name           *string
+	code           *string
+	provisionType  *string
+	labels         *string
+	allLabels      *string
+}
+
+// Maximum number of records to return
+func (r ApiListLayoutsForInstanceTypeRequest) Max(max int64) ApiListLayoutsForInstanceTypeRequest {
+	r.max = &max
+	return r
+}
+
+// Offset records, the number of records to skip, for paginating requests
+func (r ApiListLayoutsForInstanceTypeRequest) Offset(offset int64) ApiListLayoutsForInstanceTypeRequest {
+	r.offset = &offset
+	return r
+}
+
+// Sort order, the name of the property to sort by
+func (r ApiListLayoutsForInstanceTypeRequest) Sort(sort string) ApiListLayoutsForInstanceTypeRequest {
+	r.sort = &sort
+	return r
+}
+
+// Sort direction, use &#39;desc&#39; to reverse sort
+func (r ApiListLayoutsForInstanceTypeRequest) Direction(direction string) ApiListLayoutsForInstanceTypeRequest {
+	r.direction = &direction
+	return r
+}
+
+// Search phrase for partial matches on name or description
+func (r ApiListLayoutsForInstanceTypeRequest) Phrase(phrase string) ApiListLayoutsForInstanceTypeRequest {
+	r.phrase = &phrase
+	return r
+}
+
+// Filter by name
+func (r ApiListLayoutsForInstanceTypeRequest) Name(name string) ApiListLayoutsForInstanceTypeRequest {
+	r.name = &name
+	return r
+}
+
+// If specified will return an exact match on code
+func (r ApiListLayoutsForInstanceTypeRequest) Code(code string) ApiListLayoutsForInstanceTypeRequest {
+	r.code = &code
+	return r
+}
+
+// Filter by &#x60;Provision Type&#x60; code. Refer to &#x60;Provision Types&#x60; API for up to date listings.
+func (r ApiListLayoutsForInstanceTypeRequest) ProvisionType(provisionType string) ApiListLayoutsForInstanceTypeRequest {
+	r.provisionType = &provisionType
+	return r
+}
+
+// Filter by label(s), matches records that contain any of the specified labels
+func (r ApiListLayoutsForInstanceTypeRequest) Labels(labels string) ApiListLayoutsForInstanceTypeRequest {
+	r.labels = &labels
+	return r
+}
+
+// Filter by label(s), matches records that contain all of the specified labels
+func (r ApiListLayoutsForInstanceTypeRequest) AllLabels(allLabels string) ApiListLayoutsForInstanceTypeRequest {
+	r.allLabels = &allLabels
+	return r
+}
+
+func (r ApiListLayoutsForInstanceTypeRequest) Execute() (*ListLayoutsForInstanceType200Response, *http.Response, error) {
+	return r.ApiService.ListLayoutsForInstanceTypeExecute(r)
+}
+
+/*
+ListLayoutsForInstanceType Get All Layouts For an Instance Type
+
+This endpoint retrieves all layouts for a specific instance type.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiListLayoutsForInstanceTypeRequest
+*/
+func (a *LibraryAPIService) ListLayoutsForInstanceType(ctx context.Context, instanceTypeId int64) ApiListLayoutsForInstanceTypeRequest {
+	return ApiListLayoutsForInstanceTypeRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		instanceTypeId: instanceTypeId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return ListLayoutsForInstanceType200Response
+func (a *LibraryAPIService) ListLayoutsForInstanceTypeExecute(r ApiListLayoutsForInstanceTypeRequest) (*ListLayoutsForInstanceType200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ListLayoutsForInstanceType200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.ListLayoutsForInstanceType")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}/layouts"
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceTypeId"+"}", url.PathEscape(parameterValueToString(r.instanceTypeId, "instanceTypeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.max != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "max", r.max, "form", "")
+	} else {
+		var defaultValue int64 = 25
+		r.max = &defaultValue
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	} else {
+		var defaultValue int64 = 0
+		r.offset = &defaultValue
+	}
+	if r.sort != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort", r.sort, "form", "")
+	} else {
+		var defaultValue string = "name"
+		r.sort = &defaultValue
+	}
+	if r.direction != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "direction", r.direction, "form", "")
+	} else {
+		var defaultValue string = "asc"
+		r.direction = &defaultValue
+	}
+	if r.phrase != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "phrase", r.phrase, "form", "")
+	}
+	if r.name != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
+	}
+	if r.code != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "code", r.code, "form", "")
+	}
+	if r.provisionType != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "provisionType", r.provisionType, "form", "")
+	}
+	if r.labels != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "labels", r.labels, "form", "")
+	}
+	if r.allLabels != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "allLabels", r.allLabels, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v UpdateAlerts4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1321,7 +1937,7 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1332,7 +1948,7 @@ func (a *LibraryAPIService) ListVirtualImagesExecute(r ApiListVirtualImagesReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1445,7 +2061,7 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1456,7 +2072,139 @@ func (a *LibraryAPIService) RemoveVirtualImageExecute(r ApiRemoveVirtualImageReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+			err:  err,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateInstanceTypeRequest struct {
+	ctx                       context.Context
+	ApiService                *LibraryAPIService
+	instanceTypeId            int64
+	updateInstanceTypeRequest *UpdateInstanceTypeRequest
+}
+
+func (r ApiUpdateInstanceTypeRequest) UpdateInstanceTypeRequest(updateInstanceTypeRequest UpdateInstanceTypeRequest) ApiUpdateInstanceTypeRequest {
+	r.updateInstanceTypeRequest = &updateInstanceTypeRequest
+	return r
+}
+
+func (r ApiUpdateInstanceTypeRequest) Execute() (*UpdateInstanceType200Response, *http.Response, error) {
+	return r.ApiService.UpdateInstanceTypeExecute(r)
+}
+
+/*
+UpdateInstanceType Update an Instance Type
+
+Use this command to update an existing instance type.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param instanceTypeId The ID of the instance type
+	@return ApiUpdateInstanceTypeRequest
+*/
+func (a *LibraryAPIService) UpdateInstanceType(ctx context.Context, instanceTypeId int64) ApiUpdateInstanceTypeRequest {
+	return ApiUpdateInstanceTypeRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		instanceTypeId: instanceTypeId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return UpdateInstanceType200Response
+func (a *LibraryAPIService) UpdateInstanceTypeExecute(r ApiUpdateInstanceTypeRequest) (*UpdateInstanceType200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *UpdateInstanceType200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.UpdateInstanceType")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{err: err}
+	}
+
+	localVarPath := localBasePath + "/api/library/instance-types/{instanceTypeId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceTypeId"+"}", url.PathEscape(parameterValueToString(r.instanceTypeId, "instanceTypeId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.updateInstanceTypeRequest
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body: localVarBody,
+		}
+		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
+			var v UpdateAlerts4XXResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.err = err
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.err = errors.New(formatErrorMessage(localVarHTTPResponse.Status, &v))
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode >= 500 {
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1577,7 +2325,7 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Upda
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1588,7 +2336,7 @@ func (a *LibraryAPIService) UpdateLayoutExecute(r ApiUpdateLayoutRequest) (*Upda
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1709,7 +2457,7 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 			body: localVarBody,
 		}
 		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-			var v AddClouds4XXResponse
+			var v UpdateAlerts4XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err
@@ -1720,7 +2468,7 @@ func (a *LibraryAPIService) UpdateVirtualImageExecute(r ApiUpdateVirtualImageReq
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode >= 500 {
-			var v AddClouds5XXResponse
+			var v UpdateAlerts5XXResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.err = err

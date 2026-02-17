@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **DefaultValue** | Pointer to **NullableString** |  | [optional] 
 **OptionSource** | Pointer to **NullableString** |  | [optional] 
 **OptionSourceType** | Pointer to **NullableString** |  | [optional] 
-**OptionList** | Pointer to [**ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList**](ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList.md) |  | [optional] 
+**OptionList** | Pointer to [**ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList**](ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList.md) |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Advanced** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
@@ -742,20 +742,20 @@ HasOptionSourceType returns a boolean if a field has been set.
 UnsetOptionSourceType ensures that no value is present for OptionSourceType, not even an explicit nil
 ### GetOptionList
 
-`func (o *OptionType) GetOptionList() ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList`
+`func (o *OptionType) GetOptionList() ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList`
 
 GetOptionList returns the OptionList field if non-nil, zero value otherwise.
 
 ### GetOptionListOk
 
-`func (o *OptionType) GetOptionListOk() (*ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList, bool)`
+`func (o *OptionType) GetOptionListOk() (*ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList, bool)`
 
 GetOptionListOk returns a tuple with the OptionList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOptionList
 
-`func (o *OptionType) SetOptionList(v ListLayouts200ResponseAllOfInstanceTypeLayoutsInnerProvisionTypeNetworkTypesInnerOptionTypesInnerOptionList)`
+`func (o *OptionType) SetOptionList(v ListClusterLayouts200ResponseAllOfLayoutsInnerOptionTypesInnerOptionList)`
 
 SetOptionList sets OptionList field to given value.
 

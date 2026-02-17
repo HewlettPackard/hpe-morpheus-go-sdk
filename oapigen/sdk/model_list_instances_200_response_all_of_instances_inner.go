@@ -1008,9 +1008,9 @@ func (o *ListInstances200ResponseAllOfInstancesInner) SetInstanceVersion(v strin
 	o.InstanceVersion = &v
 }
 
-// GetLabels returns the Labels field value if set, zero value otherwise.
+// GetLabels returns the Labels field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListInstances200ResponseAllOfInstancesInner) GetLabels() []string {
-	if o == nil || IsNil(o.Labels) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -1019,6 +1019,7 @@ func (o *ListInstances200ResponseAllOfInstancesInner) GetLabels() []string {
 
 // GetLabelsOk returns a tuple with the Labels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ListInstances200ResponseAllOfInstancesInner) GetLabelsOk() ([]string, bool) {
 	if o == nil || IsNil(o.Labels) {
 		return nil, false
@@ -2916,7 +2917,7 @@ func (o ListInstances200ResponseAllOfInstancesInner) ToMap() (map[string]interfa
 	if !IsNil(o.InstanceVersion) {
 		toSerialize["instanceVersion"] = o.InstanceVersion
 	}
-	if !IsNil(o.Labels) {
+	if o.Labels != nil {
 		toSerialize["labels"] = o.Labels
 	}
 	if !IsNil(o.Tags) {

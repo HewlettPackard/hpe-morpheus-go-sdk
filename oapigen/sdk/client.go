@@ -49,11 +49,19 @@ type APIClient struct {
 
 	// API Services
 
+	AlertsAPI *AlertsAPIService
+
 	AuthenticationAPI *AuthenticationAPIService
 
 	AutomationAPI *AutomationAPIService
 
+	BackupSettingsAPI *BackupSettingsAPIService
+
+	CatalogItemsAPI *CatalogItemsAPIService
+
 	CloudsAPI *CloudsAPIService
+
+	ClusterLayoutsAPI *ClusterLayoutsAPIService
 
 	ClustersAPI *ClustersAPIService
 
@@ -79,6 +87,8 @@ type APIClient struct {
 
 	ServicePlansAPI *ServicePlansAPIService
 
+	TenantsAPI *TenantsAPIService
+
 	UsersAPI *UsersAPIService
 }
 
@@ -98,9 +108,13 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.AlertsAPI = (*AlertsAPIService)(&c.common)
 	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
 	c.AutomationAPI = (*AutomationAPIService)(&c.common)
+	c.BackupSettingsAPI = (*BackupSettingsAPIService)(&c.common)
+	c.CatalogItemsAPI = (*CatalogItemsAPIService)(&c.common)
 	c.CloudsAPI = (*CloudsAPIService)(&c.common)
+	c.ClusterLayoutsAPI = (*ClusterLayoutsAPIService)(&c.common)
 	c.ClustersAPI = (*ClustersAPIService)(&c.common)
 	c.DatastoresAPI = (*DatastoresAPIService)(&c.common)
 	c.EnvironmentsAPI = (*EnvironmentsAPIService)(&c.common)
@@ -113,6 +127,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProvisioningAPI = (*ProvisioningAPIService)(&c.common)
 	c.RolesAPI = (*RolesAPIService)(&c.common)
 	c.ServicePlansAPI = (*ServicePlansAPIService)(&c.common)
+	c.TenantsAPI = (*TenantsAPIService)(&c.common)
 	c.UsersAPI = (*UsersAPIService)(&c.common)
 
 	return c

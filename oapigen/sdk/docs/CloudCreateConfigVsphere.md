@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Cluster** | Pointer to **string** | The name of the vSphere cluster | [optional] [default to "all"]
 **ConfigManagementId** | Pointer to **string** | The id of the configuration management integration associated with the vSphere cloud. | [optional] 
 **ResourcePool** | Pointer to **string** | The name of the vSphere resource pool | [optional] 
-**RpcMode** | Pointer to [**NullableCloudCreateConfigVsphereRpcMode**](CloudCreateConfigVsphereRpcMode.md) |  | [optional] [default to guestexec]
+**RpcMode** | Pointer to [**NullableCloudCreateConfigVsphereRpcMode**](CloudCreateConfigVsphereRpcMode.md) |  | [optional] 
 **StorageType** | Pointer to **string** | The default vSphere VMDK type for virtual machines | [optional] [default to "thin"]
 **CertificateProvider** | Pointer to **string** | Certificate provider | [optional] [default to "internal"]
 **EnableVnc** | Pointer to **NullableString** |  | [optional] 
