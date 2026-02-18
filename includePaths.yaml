@@ -3,6 +3,10 @@ includePaths:
   - /api/zones/{id}
   - /api/data-stores
   - /api/data-stores/{id}
+  - /api/clusters
+  - /api/clusters/{id}
+  - /api/clusters/{id}/servers
+  - /api/servers
   - /api/clusters/{clusterId}/datastores
   - /api/clusters/{clusterId}/datastores/{id}
   - /api/zones/{zoneId}/data-stores
