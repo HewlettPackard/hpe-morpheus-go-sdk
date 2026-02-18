@@ -20,18 +20,18 @@ var _ MappedNullable = &AddBaremetalHost200ResponseServerConfig{}
 
 // AddBaremetalHost200ResponseServerConfig struct for AddBaremetalHost200ResponseServerConfig
 type AddBaremetalHost200ResponseServerConfig struct {
-	PoolProviderType     NullableString                                     `json:"poolProviderType,omitempty"`
-	IsVpcSelectable      *bool                                              `json:"isVpcSelectable,omitempty"`
-	SmbiosAssetTag       NullableString                                     `json:"smbiosAssetTag,omitempty"`
-	IsEC2                *bool                                              `json:"isEC2,omitempty"`
-	ResourcePoolId       *int64                                             `json:"resourcePoolId,omitempty"`
-	HostId               NullableInt64                                      `json:"hostId,omitempty"`
-	CreateUser           *AddBaremetalHost200ResponseServerConfigCreateUser `json:"createUser,omitempty"`
-	NestedVirtualization NullableString                                     `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                            `json:"vmwareFolderId,omitempty"`
-	NoAgent              *bool                                              `json:"noAgent,omitempty"`
-	PowerScheduleType    NullableInt64                                      `json:"powerScheduleType,omitempty"`
-	AdditionalProperties map[string]interface{}                             `json:",remain"`
+	PoolProviderType     NullableString                                         `json:"poolProviderType,omitempty"`
+	IsVpcSelectable      *bool                                                  `json:"isVpcSelectable,omitempty"`
+	SmbiosAssetTag       NullableString                                         `json:"smbiosAssetTag,omitempty"`
+	IsEC2                *bool                                                  `json:"isEC2,omitempty"`
+	ResourcePoolId       *AddBaremetalHost200ResponseServerConfigResourcePoolId `json:"resourcePoolId,omitempty"`
+	HostId               NullableInt64                                          `json:"hostId,omitempty"`
+	CreateUser           *AddBaremetalHost200ResponseServerConfigCreateUser     `json:"createUser,omitempty"`
+	NestedVirtualization NullableString                                         `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                `json:"vmwareFolderId,omitempty"`
+	NoAgent              *bool                                                  `json:"noAgent,omitempty"`
+	PowerScheduleType    NullableInt64                                          `json:"powerScheduleType,omitempty"`
+	AdditionalProperties map[string]interface{}                                 `json:",remain"`
 }
 
 type _AddBaremetalHost200ResponseServerConfig AddBaremetalHost200ResponseServerConfig
@@ -204,9 +204,9 @@ func (o *AddBaremetalHost200ResponseServerConfig) SetIsEC2(v bool) {
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolId() int64 {
+func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolId() AddBaremetalHost200ResponseServerConfigResourcePoolId {
 	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
+		var ret AddBaremetalHost200ResponseServerConfigResourcePoolId
 		return ret
 	}
 	return *o.ResourcePoolId
@@ -214,7 +214,7 @@ func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolId() int64 {
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolIdOk() (*int64, bool) {
+func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolIdOk() (*AddBaremetalHost200ResponseServerConfigResourcePoolId, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -230,8 +230,8 @@ func (o *AddBaremetalHost200ResponseServerConfig) IsSetResourcePoolId() bool {
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *AddBaremetalHost200ResponseServerConfig) SetResourcePoolId(v int64) {
+// SetResourcePoolId gets a reference to the given AddBaremetalHost200ResponseServerConfigResourcePoolId and assigns it to the ResourcePoolId field.
+func (o *AddBaremetalHost200ResponseServerConfig) SetResourcePoolId(v AddBaremetalHost200ResponseServerConfigResourcePoolId) {
 	o.ResourcePoolId = &v
 }
 

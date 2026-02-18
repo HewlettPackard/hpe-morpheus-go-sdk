@@ -20,18 +20,18 @@ var _ MappedNullable = &ListHosts200ResponseAllOfServersInnerConfig{}
 
 // ListHosts200ResponseAllOfServersInnerConfig struct for ListHosts200ResponseAllOfServersInnerConfig
 type ListHosts200ResponseAllOfServersInnerConfig struct {
-	PoolProviderType     NullableString                                         `json:"poolProviderType,omitempty"`
-	IsVpcSelectable      *bool                                                  `json:"isVpcSelectable,omitempty"`
-	SmbiosAssetTag       NullableString                                         `json:"smbiosAssetTag,omitempty"`
-	IsEC2                *bool                                                  `json:"isEC2,omitempty"`
-	ResourcePoolId       *int64                                                 `json:"resourcePoolId,omitempty"`
-	HostId               NullableInt64                                          `json:"hostId,omitempty"`
-	CreateUser           *ListHosts200ResponseAllOfServersInnerConfigCreateUser `json:"createUser,omitempty"`
-	NestedVirtualization NullableString                                         `json:"nestedVirtualization,omitempty"`
-	VmwareFolderId       *string                                                `json:"vmwareFolderId,omitempty"`
-	NoAgent              *bool                                                  `json:"noAgent,omitempty"`
-	PowerScheduleType    NullableInt64                                          `json:"powerScheduleType,omitempty"`
-	AdditionalProperties map[string]interface{}                                 `json:",remain"`
+	PoolProviderType     NullableString                                             `json:"poolProviderType,omitempty"`
+	IsVpcSelectable      *bool                                                      `json:"isVpcSelectable,omitempty"`
+	SmbiosAssetTag       NullableString                                             `json:"smbiosAssetTag,omitempty"`
+	IsEC2                *bool                                                      `json:"isEC2,omitempty"`
+	ResourcePoolId       *ListHosts200ResponseAllOfServersInnerConfigResourcePoolId `json:"resourcePoolId,omitempty"`
+	HostId               NullableInt64                                              `json:"hostId,omitempty"`
+	CreateUser           *ListHosts200ResponseAllOfServersInnerConfigCreateUser     `json:"createUser,omitempty"`
+	NestedVirtualization NullableString                                             `json:"nestedVirtualization,omitempty"`
+	VmwareFolderId       *string                                                    `json:"vmwareFolderId,omitempty"`
+	NoAgent              *bool                                                      `json:"noAgent,omitempty"`
+	PowerScheduleType    NullableInt64                                              `json:"powerScheduleType,omitempty"`
+	AdditionalProperties map[string]interface{}                                     `json:",remain"`
 }
 
 type _ListHosts200ResponseAllOfServersInnerConfig ListHosts200ResponseAllOfServersInnerConfig
@@ -204,9 +204,9 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) SetIsEC2(v bool) {
 }
 
 // GetResourcePoolId returns the ResourcePoolId field value if set, zero value otherwise.
-func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolId() int64 {
+func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolId() ListHosts200ResponseAllOfServersInnerConfigResourcePoolId {
 	if o == nil || IsNil(o.ResourcePoolId) {
-		var ret int64
+		var ret ListHosts200ResponseAllOfServersInnerConfigResourcePoolId
 		return ret
 	}
 	return *o.ResourcePoolId
@@ -214,7 +214,7 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolId() int64 
 
 // GetResourcePoolIdOk returns a tuple with the ResourcePoolId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolIdOk() (*int64, bool) {
+func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolIdOk() (*ListHosts200ResponseAllOfServersInnerConfigResourcePoolId, bool) {
 	if o == nil || IsNil(o.ResourcePoolId) {
 		return nil, false
 	}
@@ -230,8 +230,8 @@ func (o *ListHosts200ResponseAllOfServersInnerConfig) IsSetResourcePoolId() bool
 	return false
 }
 
-// SetResourcePoolId gets a reference to the given int64 and assigns it to the ResourcePoolId field.
-func (o *ListHosts200ResponseAllOfServersInnerConfig) SetResourcePoolId(v int64) {
+// SetResourcePoolId gets a reference to the given ListHosts200ResponseAllOfServersInnerConfigResourcePoolId and assigns it to the ResourcePoolId field.
+func (o *ListHosts200ResponseAllOfServersInnerConfig) SetResourcePoolId(v ListHosts200ResponseAllOfServersInnerConfigResourcePoolId) {
 	o.ResourcePoolId = &v
 }
 

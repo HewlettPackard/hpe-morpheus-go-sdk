@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **DatastoreOption** | Pointer to **string** |  | [optional] 
 **StorageGroup** | Pointer to **NullableString** |  | [optional] 
 **Namespace** | Pointer to **NullableString** |  | [optional] 
-**StorageServer** | Pointer to **NullableString** |  | [optional] 
+**StorageServer** | Pointer to **map[string]interface{}** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
 **UniqueId** | Pointer to **NullableString** |  | [optional] 
 **InternalId** | Pointer to **NullableString** |  | [optional] 
@@ -1184,20 +1184,20 @@ HasNamespace returns a boolean if a field has been set.
 UnsetNamespace ensures that no value is present for Namespace, not even an explicit nil
 ### GetStorageServer
 
-`func (o *StorageVolume) GetStorageServer() string`
+`func (o *StorageVolume) GetStorageServer() map[string]interface{}`
 
 GetStorageServer returns the StorageServer field if non-nil, zero value otherwise.
 
 ### GetStorageServerOk
 
-`func (o *StorageVolume) GetStorageServerOk() (*string, bool)`
+`func (o *StorageVolume) GetStorageServerOk() (*map[string]interface{}, bool)`
 
 GetStorageServerOk returns a tuple with the StorageServer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorageServer
 
-`func (o *StorageVolume) SetStorageServer(v string)`
+`func (o *StorageVolume) SetStorageServer(v map[string]interface{})`
 
 SetStorageServer sets StorageServer field to given value.
 
@@ -1207,16 +1207,6 @@ SetStorageServer sets StorageServer field to given value.
 
 HasStorageServer returns a boolean if a field has been set.
 
-### SetStorageServerNil
-
-`func (o *StorageVolume) SetStorageServerNil(b bool)`
-
- SetStorageServerNil sets the value for StorageServer to be an explicit nil
-
-### UnsetStorageServer
-`func (o *StorageVolume) UnsetStorageServer()`
-
-UnsetStorageServer ensures that no value is present for StorageServer, not even an explicit nil
 ### GetSource
 
 `func (o *StorageVolume) GetSource() string`

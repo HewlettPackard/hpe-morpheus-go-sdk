@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
-**ResourcePoolId** | Pointer to **int64** |  | [optional] 
+**ResourcePoolId** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfigResourcePoolId**](ListHosts200ResponseAllOfServersInnerConfigResourcePoolId.md) |  | [optional] 
 **HostId** | Pointer to **NullableInt64** |  | [optional] 
 **CreateUser** | Pointer to [**ListHosts200ResponseAllOfServersInnerConfigCreateUser**](ListHosts200ResponseAllOfServersInnerConfigCreateUser.md) |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
@@ -157,20 +157,20 @@ HasIsEC2 returns a boolean if a field has been set.
 
 ### GetResourcePoolId
 
-`func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolId() int64`
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolId() ListHosts200ResponseAllOfServersInnerConfigResourcePoolId`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolIdOk() (*int64, bool)`
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) GetResourcePoolIdOk() (*ListHosts200ResponseAllOfServersInnerConfigResourcePoolId, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetResourcePoolId(v int64)`
+`func (o *ListHosts200ResponseAllOfServersInnerConfig) SetResourcePoolId(v ListHosts200ResponseAllOfServersInnerConfigResourcePoolId)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 

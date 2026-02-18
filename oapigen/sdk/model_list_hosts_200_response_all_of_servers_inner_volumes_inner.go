@@ -60,7 +60,7 @@ type ListHosts200ResponseAllOfServersInnerVolumesInner struct {
 	DatastoreOption      *string                                                      `json:"datastoreOption,omitempty"`
 	StorageGroup         NullableString                                               `json:"storageGroup,omitempty"`
 	Namespace            NullableString                                               `json:"namespace,omitempty"`
-	StorageServer        NullableString                                               `json:"storageServer,omitempty"`
+	StorageServer        map[string]interface{}                                       `json:"storageServer,omitempty"`
 	Source               *string                                                      `json:"source,omitempty"`
 	UniqueId             NullableString                                               `json:"uniqueId,omitempty"`
 	InternalId           NullableString                                               `json:"internalId,omitempty"`
@@ -1490,47 +1490,36 @@ func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) UnsetNamespace() {
 	o.Namespace.Unset()
 }
 
-// GetStorageServer returns the StorageServer field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) GetStorageServer() string {
-	if o == nil || IsNil(o.StorageServer.Get()) {
-		var ret string
+// GetStorageServer returns the StorageServer field value if set, zero value otherwise.
+func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) GetStorageServer() map[string]interface{} {
+	if o == nil || IsNil(o.StorageServer) {
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.StorageServer.Get()
+	return o.StorageServer
 }
 
 // GetStorageServerOk returns a tuple with the StorageServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) GetStorageServerOk() (*string, bool) {
-	if o == nil {
-		return nil, false
+func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) GetStorageServerOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.StorageServer) {
+		return map[string]interface{}{}, false
 	}
-	return o.StorageServer.Get(), o.StorageServer.IsSet()
+	return o.StorageServer, true
 }
 
 // IsSetStorageServer returns a boolean if a field has been set.
 func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) IsSetStorageServer() bool {
-	if o != nil && o.StorageServer.IsSet() {
+	if o != nil && !IsNil(o.StorageServer) {
 		return true
 	}
 
 	return false
 }
 
-// SetStorageServer gets a reference to the given NullableString and assigns it to the StorageServer field.
-func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) SetStorageServer(v string) {
-	o.StorageServer.Set(&v)
-}
-
-// SetStorageServerNil sets the value for StorageServer to be an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) SetStorageServerNil() {
-	o.StorageServer.Set(nil)
-}
-
-// UnsetStorageServer ensures that no value is present for StorageServer, not even an explicit nil
-func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) UnsetStorageServer() {
-	o.StorageServer.Unset()
+// SetStorageServer gets a reference to the given map[string]interface{} and assigns it to the StorageServer field.
+func (o *ListHosts200ResponseAllOfServersInnerVolumesInner) SetStorageServer(v map[string]interface{}) {
+	o.StorageServer = v
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
@@ -2295,8 +2284,8 @@ func (o ListHosts200ResponseAllOfServersInnerVolumesInner) ToMap() (map[string]i
 	if o.Namespace.IsSet() {
 		toSerialize["namespace"] = o.Namespace.Get()
 	}
-	if o.StorageServer.IsSet() {
-		toSerialize["storageServer"] = o.StorageServer.Get()
+	if !IsNil(o.StorageServer) {
+		toSerialize["storageServer"] = o.StorageServer
 	}
 	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source

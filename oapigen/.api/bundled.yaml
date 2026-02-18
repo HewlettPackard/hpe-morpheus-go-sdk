@@ -29811,9 +29811,7 @@ paths:
                                       - string
                                       - 'null'
                                   storageServer:
-                                    type:
-                                      - string
-                                      - 'null'
+                                    type: object
                                   source:
                                     type: string
                                   uniqueId:
@@ -30065,8 +30063,10 @@ paths:
                                 isEC2:
                                   type: boolean
                                 resourcePoolId:
-                                  type: integer
-                                  format: int64
+                                  oneOf:
+                                    - type: integer
+                                      format: int64
+                                    - type: string
                                 hostId:
                                   type:
                                     - integer

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **IsVpcSelectable** | Pointer to **bool** |  | [optional] 
 **SmbiosAssetTag** | Pointer to **NullableString** |  | [optional] 
 **IsEC2** | Pointer to **bool** |  | [optional] 
-**ResourcePoolId** | Pointer to **int64** |  | [optional] 
+**ResourcePoolId** | Pointer to [**AddBaremetalHost200ResponseServerConfigResourcePoolId**](AddBaremetalHost200ResponseServerConfigResourcePoolId.md) |  | [optional] 
 **HostId** | Pointer to **NullableInt64** |  | [optional] 
 **CreateUser** | Pointer to [**AddBaremetalHost200ResponseServerConfigCreateUser**](AddBaremetalHost200ResponseServerConfigCreateUser.md) |  | [optional] 
 **NestedVirtualization** | Pointer to **NullableString** |  | [optional] 
@@ -157,20 +157,20 @@ HasIsEC2 returns a boolean if a field has been set.
 
 ### GetResourcePoolId
 
-`func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolId() int64`
+`func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolId() AddBaremetalHost200ResponseServerConfigResourcePoolId`
 
 GetResourcePoolId returns the ResourcePoolId field if non-nil, zero value otherwise.
 
 ### GetResourcePoolIdOk
 
-`func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolIdOk() (*int64, bool)`
+`func (o *AddBaremetalHost200ResponseServerConfig) GetResourcePoolIdOk() (*AddBaremetalHost200ResponseServerConfigResourcePoolId, bool)`
 
 GetResourcePoolIdOk returns a tuple with the ResourcePoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourcePoolId
 
-`func (o *AddBaremetalHost200ResponseServerConfig) SetResourcePoolId(v int64)`
+`func (o *AddBaremetalHost200ResponseServerConfig) SetResourcePoolId(v AddBaremetalHost200ResponseServerConfigResourcePoolId)`
 
 SetResourcePoolId sets ResourcePoolId field to given value.
 
