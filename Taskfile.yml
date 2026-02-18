@@ -65,6 +65,7 @@ tasks:
   bundle-spec:
     internal: true
     cmds:
+      - defer: rm -f pathsTmp.yaml
       - >-
         yq '(load("includePaths.yaml") | .includePaths) as $p | .paths[] | select(key == $p[]) | {key: .}'
         morpheus-openapi/openapi.yaml > pathsTmp.yaml
