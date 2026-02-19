@@ -1,56 +1,56 @@
 includePaths:
-  - /api/zones
-  - /api/zones/{id}
-  - /api/data-stores
-  - /api/data-stores/{id}
   - /api/clusters
-  - /api/clusters/{id}
-  - /api/clusters/{id}/servers
-  - /api/servers
   - /api/clusters/{clusterId}/datastores
   - /api/clusters/{clusterId}/datastores/{id}
-  - /api/zones/{zoneId}/data-stores
-  - /api/zones/{zoneId}/data-stores/{id}
+  - /api/clusters/{id}
+  - /api/clusters/{id}/servers
+  - /api/data-stores
+  - /api/data-stores/{id}
+  - /api/environments
+  - /api/environments/{id}
   - /api/groups
   - /api/groups/{id}
-  - /api/virtual-images
-  - /api/virtual-images/{virtualImageId}
   - /api/instances
   - /api/instances/{id}
   - /api/instances/{id}/envs
   - /api/instances/{id}/resize
+  - /api/library/instance-types
+  - /api/library/layouts
+  - /api/library/layouts/{id}
   - /api/networks
   - /api/networks/{id}
+  - /api/options/{optionSource}
   - /api/policies
   - /api/policies/{id}
+  - /api/provision-types
+  - /api/roles
+  - /api/roles/{id}
+  - /api/servers
+  - /api/servers
+  - /api/servers/{id}
+  - /api/servers/{id}/stop
   - /api/service-plans
   - /api/service-plans/{id}
   - /api/tasks
   - /api/tasks/{id}
   - /api/users
   - /api/users/{id}
-  - /api/roles
-  - /api/roles/{id}
-  - /api/environments
-  - /api/environments/{id}
-  - /api/library/layouts
-  - /api/library/layouts/{id}
-  - /api/library/instance-types
+  - /api/virtual-images
+  - /api/virtual-images/{virtualImageId}
+  - /api/zones
+  - /api/zones/{id}
+  - /api/zones/{zoneId}/data-stores
+  - /api/zones/{zoneId}/data-stores/{id}
   - /oauth/token
-  - /api/provision-types
-  - /api/options/{optionSource}
-  - /api/servers
-  - /api/servers/{id}
-  - /api/servers/{id}/stop
 
 # included due to de-duplication
-  - /api/catalog-item-types
+  # - /api/approvals
   # - /api/guidance
-  - /api/monitoring/alerts/{id}
+  - /api/accounts/{accountId}/users
+  - /api/backup-settings
+  - /api/catalog-item-types
+  - /api/instance-types/{id}
+  - /api/library/cluster-layouts
   - /api/library/instance-types/{instanceTypeId}
   - /api/library/instance-types/{instanceTypeId}/layouts
-  - /api/library/cluster-layouts
-  - /api/instance-types/{id}
-  - /api/backup-settings
-  - /api/accounts/{accountId}/users
-  # - /api/approvals
+  - /api/monitoring/alerts/{id}
